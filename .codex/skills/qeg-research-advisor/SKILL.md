@@ -5,6 +5,8 @@ description: Plan and critically review this quantum-electromagnetic-gravity res
 
 # Quantum fields and gravity research advisor
 
+For driven truncation, growing-volume or hierarchy-closure work, read [the dynamic/volume/closure contract](references/dynamic-volume-closure-contract.md). It records the distinction between exact Galerkin error and computed-state error, common-action variables, volume-deterioration counterbenchmarks and source-specific closure tests.
+
 For the coupled Yang–Mills branch, read [the two-plaquette contract](references/two-plaquette-contract.md) after the existing Yang–Mills contract. It records shared-link derivatives, quotient measure/domain, exact degree-tail control, common/difference coefficients and the finite-graph proof boundary.
 
 Read [the advisor protocol](references/advisor-pipeline.md) when planning a new research cycle or changing the panel. Read the current experiment contract and saved evidence before accepting a result; historical prose is not authoritative over the source/data it describes.

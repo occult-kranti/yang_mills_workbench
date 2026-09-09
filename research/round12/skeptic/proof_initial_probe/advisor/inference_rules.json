@@ -1,0 +1,568 @@
+{
+  "contract_version": "ym12-driven-two-square-v1",
+  "advisor_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+  "rules": [
+    {
+      "rule_id": "D01_flag",
+      "premises": [
+        "round11_physical_model"
+      ],
+      "conclusion": "degree_flag",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "Section 1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D02_band",
+      "premises": [
+        "degree_flag",
+        "bounded_drive"
+      ],
+      "conclusion": "degree_bandwidth_one",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "BAND1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D03_unitary",
+      "premises": [
+        "round11_physical_model",
+        "bounded_drive"
+      ],
+      "conclusion": "unitary_full_and_galerkin",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "Section 2"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. Real integrable coefficients; alpha physically positive.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D04_high_tail",
+      "premises": [
+        "degree_bandwidth_one",
+        "unitary_full_and_galerkin",
+        "initial_support",
+        "integrated_action"
+      ],
+      "conclusion": "unitary_tail_recursion",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "TAIL1",
+        "TAIL2",
+        "TAIL3"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. Initial norm one in P_d0; D>=d0.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D05_residual",
+      "premises": [
+        "degree_flag",
+        "degree_bandwidth_one",
+        "unitary_full_and_galerkin",
+        "initial_support"
+      ],
+      "conclusion": "boundary_duhamel",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "RES1",
+        "RES2"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D06_factorial",
+      "premises": [
+        "unitary_tail_recursion",
+        "boundary_duhamel",
+        "integrated_action"
+      ],
+      "conclusion": "factorial_representation_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "FACT1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. First omitted transition count is D-d0+1; A uses absolute coefficient values.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D07_boundary_gram",
+      "premises": [
+        "round11_physical_model",
+        "degree_bandwidth_one"
+      ],
+      "conclusion": "boundary_gram_formula",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "GRAM1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. Compute with exact or validated physical Gram data.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D08_midpoint",
+      "premises": [
+        "finite_C2_driver_and_norm_bounds"
+      ],
+      "conclusion": "midpoint_local_bound",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "MID1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. All operator norms are finite-Galerkin norms; retain compressed-coordinate commutators.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D09_total_numeric",
+      "premises": [
+        "factorial_representation_error",
+        "validated_time_error",
+        "validated_evaluation_error",
+        "matched_initial_error_gate"
+      ],
+      "conclusion": "total_computed_state_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "NUM1",
+        "NUM2"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. Evidence must bound the actual delivered trajectory, not only a requested tolerance.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D10_observable_rep",
+      "premises": [
+        "factorial_representation_error",
+        "bounded_observable_gate"
+      ],
+      "conclusion": "representation_observable_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "OBS1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. Exact normalized states; bounded observable with a proved norm.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D11_observable_total",
+      "premises": [
+        "total_computed_state_error",
+        "bounded_observable_gate",
+        "numerical_norm_gate"
+      ],
+      "conclusion": "computed_observable_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "OBS1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. Include actual numerical norm drift or validated normalization.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D12_work_energy",
+      "premises": [
+        "factorial_representation_error",
+        "bounded_observable_error",
+        "work_regular_domain"
+      ],
+      "conclusion": "work_energy_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "WORK1",
+        "WORK2"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. Fixed alpha and rho, same initial energy; regular drivers or explicit jump-work terms.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D13_clock",
+      "premises": [
+        "bounded_drive",
+        "positive_alpha_clock"
+      ],
+      "conclusion": "physical_time_action_map",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "SCALE1"
+      ],
+      "parameter_guard": "Same physical graph, Haar Gram metric, fixed rho, driver functions, time interval, initial vector and cutoff degree; common scalar phase. kappa_i=lambda_i/alpha and tau=integral alpha dt.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "V01_free",
+      "premises": [
+        "volume_graph_contract"
+      ],
+      "conclusion": "volume_free_gap",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "Section 9"
+      ],
+      "parameter_guard": "Simple open hypercubic graph, at least one square, no charges; physical singlet sector.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "V02_finite_bound",
+      "premises": [
+        "volume_graph_contract",
+        "volume_free_gap",
+        "one_link_heat_bound"
+      ],
+      "conclusion": "volume_heat_comparison",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "VOL1"
+      ],
+      "parameter_guard": "Keep E and sum lambda_p explicit; alpha>0; full heat time is 4/alpha.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "V03_tensor",
+      "premises": [
+        "round11_physical_model",
+        "independent_tensor_copies_gate"
+      ],
+      "conclusion": "tensor_gap_benchmark",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "VOL2"
+      ],
+      "parameter_guard": "Identical disconnected independent copies with a tensor-sum Hamiltonian.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "V04_no_inference",
+      "premises": [
+        "tensor_gap_benchmark"
+      ],
+      "conclusion": "bound_decay_not_gap_closure",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "VOL2"
+      ],
+      "parameter_guard": "Method counterbenchmark only; no claim about a connected-volume gap.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "C01_hierarchy",
+      "premises": [
+        "tilted_haar_contract"
+      ],
+      "conclusion": "haar_moment_hierarchy",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "CL1"
+      ],
+      "parameter_guard": "Finite Euclidean measure with its own kappa, normalized Haar and endpoint support.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "C02_variance",
+      "premises": [
+        "tilted_haar_contract"
+      ],
+      "conclusion": "positive_existing_variance",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "CL2"
+      ],
+      "parameter_guard": "Finite real kappa; variance is inf over constants, not a freely chosen variable.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "C03_reject",
+      "premises": [
+        "haar_moment_hierarchy",
+        "positive_existing_variance",
+        "defined_point_closure_gate"
+      ],
+      "conclusion": "point_closure_rejection",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "CL1",
+        "CL2"
+      ],
+      "parameter_guard": "Reject exactly m2=m1^2 with the true m1; use the next identity at kappa=0.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "D00_observable_inequality",
+      "premises": [
+        "bounded_observable_gate"
+      ],
+      "conclusion": "bounded_observable_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "OBS1"
+      ],
+      "parameter_guard": "Cauchy-Schwarz proof for named bounded O and normalized exact states; never substitute unbounded energy.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "V00_heat_input",
+      "premises": [
+        "round11_physical_model"
+      ],
+      "conclusion": "one_link_heat_bound",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "Section 9"
+      ],
+      "parameter_guard": "Retained normalized Casimir character/Taylor proof at one-link heat time4.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "X01_norm",
+      "premises": [
+        "round11_physical_model",
+        "exact_piecewise_fixture"
+      ],
+      "conclusion": "finite_generator_norm_bound",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "EX1",
+        "EX2"
+      ],
+      "parameter_guard": "D3,alpha=rho1; each sum of absolute magnetic coefficients is3/20.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "X02_taylor",
+      "premises": [
+        "finite_generator_norm_bound"
+      ],
+      "conclusion": "finite_taylor_remainder",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "EX2"
+      ],
+      "parameter_guard": "Unit duration, Taylor order100, physical selfadjoint matrix norm at most114/5.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "X03_product",
+      "premises": [
+        "finite_taylor_remainder",
+        "exact_segment_composition"
+      ],
+      "conclusion": "polynomial_product_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "EX2"
+      ],
+      "parameter_guard": "Two chronological segments; operator error is(1+b)^2-1.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "X04_zero_freezing",
+      "premises": [
+        "exact_piecewise_fixture",
+        "exact_segment_composition"
+      ],
+      "conclusion": "exact_piecewise_time_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "EX2"
+      ],
+      "parameter_guard": "No time-freezing error because each target segment is exactly constant; Taylor evaluation error is accounted separately.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "X05_exact_evaluation",
+      "premises": [
+        "polynomial_product_error",
+        "exact_taylor_vector_gate"
+      ],
+      "conclusion": "exact_polynomial_evaluation_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "EX2"
+      ],
+      "parameter_guard": "Reconstruct exact Gaussian-rational state; finite exponential approximation bound2b+b^2 includes all evaluation error.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "X06_fixture_total",
+      "premises": [
+        "factorial_representation_error",
+        "exact_piecewise_time_error",
+        "exact_polynomial_evaluation_error",
+        "matched_initial_error_gate",
+        "exact_piecewise_fixture"
+      ],
+      "conclusion": "exact_piecewise_total_error",
+      "source_artifact": "advisor.md",
+      "source_sha256": "62a9a944d1b150c63989e97d238db6899bf277e30f29ad81774c8dea428bb0c1",
+      "equation_or_section": [
+        "EX2"
+      ],
+      "parameter_guard": "Match the concrete A3/10,D3,electric-vacuum two-segment fixture; do not transfer to any floating trajectory.",
+      "status": "derived_conditional_implication"
+    }
+  ],
+  "external_gate_atoms": [
+    "initial_support",
+    "integrated_action",
+    "validated_time_error",
+    "validated_evaluation_error",
+    "matched_initial_error_gate",
+    "finite_C2_driver_and_norm_bounds",
+    "bounded_observable_gate",
+    "numerical_norm_gate",
+    "work_regular_domain",
+    "positive_alpha_clock",
+    "volume_graph_contract",
+    "independent_tensor_copies_gate",
+    "tilted_haar_contract",
+    "defined_point_closure_gate",
+    "exact_piecewise_fixture",
+    "exact_segment_composition",
+    "exact_taylor_vector_gate"
+  ],
+  "analytic_input_atoms": [
+    "round11_physical_model",
+    "bounded_drive"
+  ],
+  "currently_missing_or_conditional_atoms": [
+    "validated_time_error",
+    "validated_evaluation_error",
+    "exact_taylor_vector_gate",
+    "connected_volume_uniform_dynamics",
+    "volume_uniform_spectral_gap",
+    "continuum_scale_and_measure",
+    "continuum_reconstruction",
+    "four_dimensional_yang_mills_gap"
+  ],
+  "unresolved_atoms_with_no_producing_rules": [
+    "connected_volume_uniform_dynamics",
+    "volume_uniform_spectral_gap",
+    "continuum_scale_and_measure",
+    "continuum_reconstruction",
+    "four_dimensional_yang_mills_gap"
+  ],
+  "negative_controls": [
+    {
+      "withdraw": "degree_bandwidth_one",
+      "must_block": [
+        "unitary_tail_recursion",
+        "factorial_representation_error"
+      ]
+    },
+    {
+      "withdraw": "initial_support",
+      "must_block": [
+        "factorial_representation_error"
+      ]
+    },
+    {
+      "withdraw": "integrated_action",
+      "must_block": [
+        "factorial_representation_error"
+      ]
+    },
+    {
+      "withdraw": "validated_time_error",
+      "must_block": [
+        "total_computed_state_error"
+      ],
+      "must_not_block": [
+        "factorial_representation_error"
+      ]
+    },
+    {
+      "withdraw": "validated_evaluation_error",
+      "must_block": [
+        "total_computed_state_error"
+      ],
+      "must_not_block": [
+        "factorial_representation_error"
+      ]
+    },
+    {
+      "withdraw": "volume_graph_contract",
+      "must_block": [
+        "volume_free_gap",
+        "volume_heat_comparison"
+      ]
+    },
+    {
+      "withdraw": "positive_existing_variance",
+      "must_block": [
+        "point_closure_rejection"
+      ]
+    },
+    {
+      "withdraw": "defined_point_closure_gate",
+      "must_block": [
+        "point_closure_rejection"
+      ]
+    },
+    {
+      "withdraw": "exact_taylor_vector_gate",
+      "must_block": [
+        "exact_polynomial_evaluation_error",
+        "exact_piecewise_total_error"
+      ],
+      "must_not_block": [
+        "factorial_representation_error"
+      ]
+    },
+    {
+      "withdraw": "exact_segment_composition",
+      "must_block": [
+        "polynomial_product_error",
+        "exact_piecewise_total_error"
+      ]
+    },
+    {
+      "withdraw": "work_regular_domain",
+      "must_block": [
+        "work_energy_error"
+      ],
+      "must_not_block": [
+        "factorial_representation_error"
+      ]
+    }
+  ],
+  "warning": "Do not seed derived conclusions when testing removal of their decisive premises. Source hashes prove file identity, not the underlying theorem.",
+  "gate_scope_notes": {
+    "validated_time_error": "Still external and underived for ordinary floating cosine; exact fixture uses a separately named node.",
+    "validated_evaluation_error": "Still external and underived for ordinary floating cosine; exact fixture uses a separately named node.",
+    "exact_taylor_vector_gate": "Accepted only after independent exact fixture reconstruction; does not validate another trajectory."
+  }
+}

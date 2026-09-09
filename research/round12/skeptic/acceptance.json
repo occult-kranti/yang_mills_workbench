@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "completed_utc": "2026-09-09T21:01:48.393611+00:00",
+  "contract": "ym12-bounded-independent-review-v1",
+  "scope": "Seven-link finite graph; exact fixed nonnegative two-segment state plus separately bounded representation, finite-volume and defined-closure claims. No four-dimensional Yang-Mills or floating cosine total-error claim.",
+  "reviewed_source_hashes": {
+    "advisor/advisor.md": "bccca33b9d7540f73675243449e2dc553d736aec626f74b9fd4fbb387f1df74b",
+    "solver/drive_bound.py": "b49d1efba4693efb55444af8a9d1754062ca09bed60c8910c842f61755a248f3",
+    "solver/exact_stepper.py": "5004fd5f0916688aa1973ae04d412305028945564880caf817fd59ae3db4742d",
+    "solver/run_study.py": "cf3e4c709e7b915d5c1b233fe1a20c6f923cad3d85ff2efc0869c16929f289a6",
+    "solver/test_solver.py": "110874e76e6cffa871db5c17b58ab1e2f7f2510362a683479687e1d35f4dd42e",
+    "volume/volume_checks.py": "f39dee74be1d3223a5b7ecb59bbc564cf45c641c5d4c10bb67618ebf8e78b82a",
+    "volume/volume-bridge.md": "d093bb5be9e807a991fe42267ebd8d7255af4c1c5df736b573f169e38ae8b9e7",
+    "closure/closure_audit.py": "37f95d8044734dfb106f19494f2b263433ab2578e5b4a7d370bcdfdc1d0a3baa",
+    "closure/closure-audit.md": "cf8ed620149defe3e2991105596a4525683dfb30be774acf6cbd114dcb263dfb",
+    "proof_routes.py": "cc37907057fc537c2ab2777eb5f82fff6f8cfe88a54f8860fbd91b7e911d622c"
+  },
+  "reports": [
+    {
+      "name": "Independent banded theorem stress cases",
+      "status": "passed",
+      "count": 35,
+      "scope": "Prior reviewer: exact finite banded models and broken hypotheses; the general theorem additionally requires its analytic proof.",
+      "artifact": "banded_results.json"
+    },
+    {
+      "name": "Independent compact identities and closure",
+      "status": "passed",
+      "count": 76,
+      "scope": "Prior reviewer: exact matrix jets and rigorous tilted-Haar moment intervals for the specified finite closure.",
+      "artifact": "closure_results.json"
+    },
+    {
+      "name": "Independent action and certificate inputs",
+      "status": "passed",
+      "count": 210,
+      "scope": "Prior reviewer: independent action enclosures, factorial arithmetic, metadata and dependency mutations; repeated in normal and optimized Python.",
+      "artifact": "final_drive_normal_results.json"
+    },
+    {
+      "name": "Independent numerical diagnostics",
+      "status": "passed",
+      "count": 23,
+      "scope": "Prior reviewer: finite floating diagnostic comparison, refinement, phase/time/grid checks; no certified floating cosine error.",
+      "artifact": "final_numerical_normal_results.json"
+    },
+    {
+      "name": "Independent exact computed state",
+      "status": "passed",
+      "count": 28,
+      "scope": "Final verifier: post-fix exact backwards Horner, physical Gram algebra, total error and invalid-input/mutation checks in normal and optimized Python.",
+      "artifact": "verifier_exact_normal_results.json"
+    },
+    {
+      "name": "Independent frozen proof-wrapper admission",
+      "status": "passed",
+      "count": 34,
+      "scope": "Final verifier: current frozen source replay, fixture semantics, provenance, negative routes and target-seeding rejection in normal and optimized Python.",
+      "artifact": "verifier_proof_normal_results.json"
+    }
+  ],
+  "independent_gate_count": 406,
+  "counting_policy": "Each distinct gate is counted once; normal/optimized repetitions and earlier pre-fix runs are not added.",
+  "provenance": {
+    "inherited": "banded, closure, drive and numerical audits executed by the previous independent reviewer; artifacts copied unchanged from ym12-skeptic.",
+    "new": "Post-fix exact-stepper and proof-wrapper audits executed by the final verifier; current source inspection and all final byte bindings checked.",
+    "record": "handoff_provenance.json",
+    "current_source_review": "source_review.json"
+  },
+  "mode_replays": {
+    "drive": [
+      "final_drive_normal_results.json",
+      "final_drive_optimized_results.json"
+    ],
+    "numerical": [
+      "final_numerical_normal_results.json",
+      "final_numerical_optimized_results.json"
+    ],
+    "exact": [
+      "verifier_exact_normal_results.json",
+      "verifier_exact_optimized_results.json"
+    ],
+    "proof": [
+      "verifier_proof_normal_results.json",
+      "verifier_proof_optimized_results.json"
+    ]
+  },
+  "preserved_prior_findings": [
+    "initial_drive_audit_results.json",
+    "initial_exact_step_audit_results.json",
+    "initial_proof_mutations.json",
+    "initial_time_grid_failure.json",
+    "volume_initial_hashes.json"
+  ],
+  "exact_result": {
+    "degree": 3,
+    "alpha": "1",
+    "rho": "1",
+    "initial_state": "constant normalized product-Haar state",
+    "segments": [
+      {
+        "duration": "1",
+        "lambda1": "1/20",
+        "lambda2": "1/10"
+      },
+      {
+        "duration": "1",
+        "lambda1": "1/10",
+        "lambda2": "1/20"
+      }
+    ],
+    "polynomial_order_per_segment": 100,
+    "representation_error_upper": "27/80000",
+    "step_remainder_formula": "e=(114/5)^101/101!",
+    "total_error_formula": "27/80000+2e+e^2",
+    "strict_decimal_upper": "0.000337501",
+    "total_state_error_upper": "6096478664430686776668639566257665956763298196437967304166036558415650785111749782593692783595114296722988321699137338479753886126275459207778869031627033275385496181956688986633430953543165918932539566592681096069857134887172325119226317758383429306455167082950240708408777057609647252238115128240978250001647831985612597649063437002091247067/18063640487202034892223635689855607469368693213874419392461024793044333050358355256755585249710361142159415797222575146424636499514327042175860536466314567043441734490163170172610015599662233565036895584877312419347566687564406102155201177448187718960839604084372480749221932359600077832048176221290194942703521974181057885289192199707031250000000",
+    "computed_vector_was_renormalized": false
+  },
+  "limitations": [
+    "Conventional mathematical review and exact arithmetic execution; no proof-assistant formalization.",
+    "Floating cosine trajectories remain numerical diagnostics without certified total error.",
+    "Disconnected tensor examples do not prove a gap on growing connected lattices.",
+    "The defined finite point-concentration closure is rejected; general scalar ansatze are not all ruled out.",
+    "Construction, reconstruction, nontriviality and a four-dimensional physical mass gap remain unresolved."
+  ]
+}

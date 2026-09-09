@@ -1,0 +1,150 @@
+{
+  "status": "passed-with-public-API-defect",
+  "optimized_python": true,
+  "gate_count": 27,
+  "records": [
+    {
+      "test": "production_exact_step_replay",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "independent_form_to_coordinate_operator.0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "physical_operator_norm_bound.0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "independent_form_to_coordinate_operator.1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "physical_operator_norm_bound.1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "independent_backward_Horner_coefficients",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "independent_Haar_norm_squared",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "no_hidden_state_renormalization",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "independent_action_and_representation_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "independent_total_error_budget",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "exact_norm_defect_consistent_with_operator_error",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Euclidean_form_matrix_substitution_falsified",
+      "passed": true,
+      "detail": {
+        "wrong_state_distance_lower": "1533058316498120304898781435635251/20000000000000000000000000000000000",
+        "correct_total_error_upper": "6096478664430686776668639566257665956763298196437967304166036558415650785111749782593692783595114296722988321699137338479753886126275459207778869031627033275385496181956688986633430953543165918932539566592681096069857134887172325119226317758383429306455167082950240708408777057609647252238115128240978250001647831985612597649063437002091247067/18063640487202034892223635689855607469368693213874419392461024793044333050358355256755585249710361142159415797222575146424636499514327042175860536466314567043441734490163170172610015599662233565036895584877312419347566687564406102155201177448187718960839604084372480749221932359600077832048176221290194942703521974181057885289192199707031250000000"
+      }
+    },
+    {
+      "test": "exact_step_mutation.vector",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.norm",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.renormalized",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.int_boolean",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.bool_index",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.bool_basis",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.wrong_error",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.wrong_total",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.wrong_protocol",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.wrong_target",
+      "passed": true
+    },
+    {
+      "test": "exact_step_mutation.empty_sources",
+      "passed": true
+    },
+    {
+      "test": "invalid_product_error.[]",
+      "passed": true
+    },
+    {
+      "test": "invalid_product_error.[-1]",
+      "passed": true
+    },
+    {
+      "test": "invalid_product_error.[True]",
+      "passed": true
+    },
+    {
+      "test": "exact_step_source_unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "defects": [
+    {
+      "defect": "public norm_squared accepts float state and returns float",
+      "certificate_constructor_affected": false,
+      "input": "G=[[1]], state=[(0.1,0)]",
+      "returned_type": "float"
+    }
+  ],
+  "source_sha256": "7e1ec6bc7eaba9d6ec2ffddeffb84ed39ffed5133f8ee2a6c189deb2e7c6b570",
+  "source_hashes": {
+    "vendor/two_plaquette.py": "ae9084850538ebf523f8c34564352b48ce0b30d07955991d4b4d1980ab36ce43",
+    "vendor/round11_run_study.py": "65f4b186bb34c1659ae16c61c681cb5105264052fd638367b5172bc4da1f0cea",
+    "dependencies.json": "9c61ac79e9a5d4aaaafd7b5f40e4266e0ce066d3b73f7e96cbf0732de3b12fa2",
+    "drive_bound.py": "b49d1efba4693efb55444af8a9d1754062ca09bed60c8910c842f61755a248f3",
+    "exact_stepper.py": "7e1ec6bc7eaba9d6ec2ffddeffb84ed39ffed5133f8ee2a6c189deb2e7c6b570"
+  },
+  "audit_sha256": "8d93173b1254950f67c123378200762d23a333846b700aeae774932fa0aaf735",
+  "independent_method": "Spherical Haar moments; divergence-form kinetic polynomials; Gauss-Jordan Gram inverse; backwards rational Horner polynomial application",
+  "scope": "Fixed nonnegative two-segment swap protocol, degree3, order100, exact stored unrenormalized vector; does not certify earlier cosine trajectories."
+}

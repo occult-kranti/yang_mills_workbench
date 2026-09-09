@@ -8,6 +8,8 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
+**Current milestone:** a specified two-step drive now has an exact rational computed-state certificate with total error **below 0.000337501** in physical Haar L² on the existing finite graph. The bound includes omitted representations and the finite evolution algorithm. [Inspect that result](https://occult-kranti.github.io/yang_mills_workbench/#research/exact-evolution), [the volume/continuum review](https://occult-kranti.github.io/yang_mills_workbench/#research/volume-bridge), or [the updated advisor roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/bridge-roadmap).
+
 ## Launch locally
 
 Install Python 3.11 or newer and Git. The website and calculators need no Python packages, API key, account or JavaScript build step.
@@ -46,7 +48,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Two adjacent plaquettes | `research/round11/` | Current coupled-operator research; use the result ledger and independent review for accepted claims |
+| Driven error, volume and closure bridges | `research/round12/` | Current exact dynamic theorem, rational endpoint certificate, source critique and evidence-linked roadmap |
+| Two adjacent plaquettes | `research/round11/` | Reviewed coupled operator, stationary certificates and finite-graph analytic gap proof |
 | One physical SU(2) square | `research/round10/` | Infinite-character spectral tail controlled; exact continuous-coupling gap certificate |
 | Four-dimensional finite lattice and SU(2) transfer benchmark | `research/round9/` | Deterministic identities and finite benchmarks; beta=2.2 sampling uncertainty remains insufficient |
 | Spectral connection and free-field counterexamples | `research/round8/` | Checks that block invalid finite-volume-to-continuum inferences |
@@ -125,6 +128,23 @@ The repository's `.gitattributes` preserves exact file bytes across operating sy
 
 ## Other experiments
 
+### Reproduce the current dynamic and volume bridges
+
+```bash
+python research/round12/solver/test_solver.py
+python research/round12/solver/run_study.py
+python research/round12/solver/exact_stepper.py
+python research/round12/volume/volume_checks.py
+python research/round12/closure/closure_audit.py
+python research/round12/proof_routes.py
+```
+
+The exact dynamic theorem gives `min(2, A^(D-d0+1)/(D-d0+1)!)`, where `A` is the integral of the absolute magnetic coefficients. A reduced cosine drive at degree 4 has exact representation bound 1/3840. Floating time evolution is still separately labeled numerical.
+
+The distinct exact fixture uses two duration-one nonnegative coefficient pairs `(1/20,1/10)` and `(1/10,1/20)`, alpha=rho=1, degree 3, and the initial constant electric vacuum. Exact complex-rational Taylor polynomials of order 100 produce a stored 20-coefficient vector and exact Gram norm. Its representation error is 27/80000; the algorithm error is about 3.01×10⁻²³. The complete rational upper bound is strictly below 0.000337501. The computed vector is not renormalized.
+
+The volume report proves an explicitly volume-dependent gap comparison and tests it against independent tensor copies whose exact gap stays fixed. The hierarchy report derives the missing variance term and audits named equations of a fixed primary-source version. [Round12 README](research/round12/README.md), [advisor proof](research/round12/advisor/advisor.md), [independent review](research/round12/skeptic/REVIEW.md), and [current roadmap](research/round12/current_roadmap.json) give the precise assumptions, retained failures and next experiments.
+
 ### Reproduce the coupled two-square extension
 
 ```bash
@@ -141,7 +161,7 @@ The coupled operator now includes the shared-link derivative and uses the correc
 
 The advisor inventory contains 37 claims. The actual two-front planner replays 17 rules for the rectangle result and 13 for the analytic finite-coupling result; withholding required premises blocks the routes. See [the full round11 README](research/round11/README.md), [advisor proof](research/round11/advisor/advisor.md) and [independent review](research/round11/skeptic/REVIEW.md).
 
-The dynamic degree3→4 state difference is about0.00409; energy-work consistency is substantially tighter. The dynamic representation error remains uncertified. This is an explicit remaining accuracy limitation, not a passed continuum test.
+The historical dynamic degree 3→4 state difference is about 0.00409; energy-work consistency is substantially tighter. Round11 did not bound its dynamic representation error. Round12 now supplies a general analytic bound, but it is only the trivial 2 for that original strong drive at degree 3/4. Its useful weaker-drive and exact rational-fixture certificates are separate results; none establishes a continuum limit.
 
 ### Earlier benchmark commands
 
@@ -169,6 +189,7 @@ node dist/test_calculators.mjs
 node tests/test_ui.mjs
 node tests/test_research_plaquette.mjs
 node tests/test_two_plaquette_ui.mjs
+node tests/test_bridges_ui.mjs
 node tests/test_workbench.mjs
 python scripts/build_pages.py
 ```
@@ -180,6 +201,9 @@ Interface checks use a Node VM and a DOM stand-in. They test routes, events, esc
 `dist/` is the local site source; `docs/` is the generated GitHub Pages tree. The build rewrites only known local asset URLs for the project prefix, preserves external source links, omits server code and marks live metadata refresh as local-only.
 
 ```bash
+python research/round12/trace_archive.py
+python research/round12/build_site_data.py
+python research/round12/package_review.py
 python scripts/build_pages.py
 node tests/test_workbench.mjs
 git add dist docs research guides scripts tests README.md
@@ -210,7 +234,7 @@ The last step is unresolved. Finite-graph compactness, a positive matrix gap, a 
 |---|---|
 | `start.py` | Loopback website and optional arXiv endpoint |
 | `dist/`, `docs/` | Local source assets and generated public Pages assets |
-| `research/round8`–`round11` | Yang–Mills/spectral studies, scripts, certificates, plots and reviews |
+| `research/round8`–`round12` | Yang–Mills/spectral studies, scripts, certificates, plots and reviews |
 | `evidence/qeg-research/` | Earlier QED/gravity reproducibility evidence |
 | `scripts/`, `tests/` | Pages build and interface/transport checks |
 | `examples/` | Independent textbook numerical exercises |

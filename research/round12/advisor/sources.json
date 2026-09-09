@@ -1,0 +1,136 @@
+{
+  "ledger_version": "ym12-advisor-primary-reading-v1",
+  "checked_at_utc": "2026-09-09",
+  "scope": "Reading ledger and provenance, not independent proof of source claims. Mathematical proofs in advisor.md are project derivations; external articles do not certify them.",
+  "primary_sources": [
+    {
+      "source_id": "ciavarella_truncation_v4",
+      "title": "Truncation uncertainties for accurate quantum simulations of lattice gauge theories",
+      "authors": [
+        "Anthony N. Ciavarella",
+        "Siddharth Hariprakash",
+        "Jad C. Halimeh",
+        "Christian W. Bauer"
+      ],
+      "url": "https://arxiv.org/html/2508.00061v4",
+      "abstract_url": "https://arxiv.org/abs/2508.00061",
+      "version": "v4",
+      "first_submitted": "2025-07-31",
+      "version_date": "2026-09-04",
+      "reading_depth": "Selected full-text reading: Sections 2.1 and 2.2, including equations 23–37 and their small-parameter conditions. Abstract/version metadata checked. Not a line-by-line audit of the entire paper or code.",
+      "supports": [
+        "Context for representation truncation and boundary/Dyson mechanisms."
+      ],
+      "limitations": [
+        "The inspected perturbative refinements are leading-order estimates under stated small-parameter assumptions.",
+        "The project factorial bound is independently derived and time-dependent; it does not inherit the paper’s time-independent refinement.",
+        "No claim of novelty or priority is made."
+      ],
+      "used_in": [
+        "advisor.md Section 11"
+      ]
+    },
+    {
+      "source_id": "chatterjee_exact_identities_v1",
+      "title": "Exact Lattice Identities and Continuum-Limit Dyson–Schwinger Equations for Yang-Mills Theory",
+      "authors": [
+        "Arpan Chatterjee",
+        "Marco Frasca",
+        "Anish Ghoshal",
+        "Stefan Groote"
+      ],
+      "url": "https://arxiv.org/html/2608.05415v1",
+      "version": "v1",
+      "version_date": "2026-08-05",
+      "reading_depth": "Selected full-text reading of the introduction and Sections II–V; explicit comparison of displayed equations 8, 14, 18 and 29 with the declared Hermitian-generator contract. No independent execution of author code and no audit of every downstream equation.",
+      "supports": [
+        "The source distinguishes a formal continuum comparison and uses additional ghost/closure assumptions.",
+        "Displayed formula conventions define local algebra tests."
+      ],
+      "limitations": [
+        "Exact finite Haar identities do not themselves construct the continuum theory.",
+        "Detected coefficient, source-phase and rank issues are limited to the displayed conventions and selected ansatz.",
+        "Failure of the defined point-concentration moment closure does not reject every scalar ansatz.",
+        "A variance variable is an existing observable, not an added physical field."
+      ],
+      "used_in": [
+        "advisor.md Section 10",
+        "Root closure audit; separately executed fixtures required"
+      ]
+    },
+    {
+      "source_id": "clay_official_target",
+      "title": "Yang–Mills and Mass Gap",
+      "url": "https://www.claymath.org/millennium/yang-mills-the-maths-gap/",
+      "version": "Public official page checked 2026-09-09",
+      "reading_depth": "Official target/status page read. This is a problem statement and status source, not a proof paper.",
+      "supports": [
+        "The four-dimensional construction and mass-gap target remains unresolved."
+      ],
+      "limitations": [
+        "No finite graph certificate establishes the full target."
+      ],
+      "used_in": [
+        "advisor.md Sections 11–12"
+      ]
+    }
+  ],
+  "local_sources": [
+    {
+      "source_id": "project_advisor_skill",
+      "path": "/workspace/scratch/2f17a9d68b70/yang_mills_workbench/.codex/skills/qeg-research-advisor/SKILL.md",
+      "sha256_at_handoff": "4477211dc800aadd3e2b17dd56e12cc89a1231c1ab9fa759321ae7cee470aa54",
+      "reading_depth": "Task workflow read; source-depth, explicit-obligation, adversarial-review and bounded-claim instructions applied.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    },
+    {
+      "source_id": "two_plaquette_contract",
+      "path": "/workspace/scratch/2f17a9d68b70/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/two-plaquette-contract.md",
+      "sha256_at_handoff": "954af95e7a7769a46a5147095a129d4f095d55481a41552b41d86d4f32708822",
+      "reading_depth": "Full current physical model contract read; inherited orientation, Gauss, measure, domain, rho and parameter scope.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    },
+    {
+      "source_id": "round11_advisor",
+      "path": "/workspace/scratch/2f17a9d68b70/yang_mills_workbench/research/round11/advisor/advisor.md",
+      "sha256_at_handoff": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "reading_depth": "Inherited reviewed mathematical report read and reused. Original source readings remain in its ledger; not all were newly reread this round.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    },
+    {
+      "source_id": "round11_solver_readme",
+      "path": "/workspace/scratch/2f17a9d68b70/yang_mills_workbench/research/round11/solver/README.md",
+      "sha256_at_handoff": "9439177f8213c4c2b72ee7ac81236ee4b485d585591fbfde0a8fe1aceb5918c4",
+      "reading_depth": "Read prior exact representation and numerical/static scope; no retroactive promotion of driven diagnostics.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    },
+    {
+      "source_id": "round12_volume_review",
+      "path": "/workspace/scratch/2f17a9d68b70/ym12-volume/volume-bridge.md",
+      "sha256_at_handoff": "d093bb5be9e807a991fe42267ebd8d7255af4c1c5df736b573f169e38ae8b9e7",
+      "reading_depth": "Full report read. Independently checked free physical gap, heat-comparison constants, tensor method counterbenchmark, Gibbs obstruction, curvature condition and limit/density guards. Author-added final revisions must retain their own snapshot hashes.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    },
+    {
+      "source_id": "round12_closure_report",
+      "path": "/workspace/scratch/2f17a9d68b70/yang_mills_workbench/research/round12/closure/closure-audit.md",
+      "sha256_at_handoff": "cf8ed620149defe3e2991105596a4525683dfb30be774acf6cbd114dcb263dfb",
+      "reading_depth": "Report read; compact moment recurrence, positive-variance comparison and source-formula scope independently reviewed.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    },
+    {
+      "source_id": "round12_closure_code",
+      "path": "/workspace/scratch/2f17a9d68b70/yang_mills_workbench/research/round12/closure/closure_audit.py",
+      "sha256_at_handoff": "37f95d8044734dfb106f19494f2b263433ab2578e5b4a7d370bcdfdc1d0a3baa",
+      "reading_depth": "Read initial fixtures and corrected Gaussian-rational trace computations. This advisor did not execute the final independent checker; root/skeptic own executed verdict.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    },
+    {
+      "source_id": "round12_solver_readme",
+      "path": "/workspace/scratch/2f17a9d68b70/ym12-solver/README.md",
+      "sha256_at_handoff": "a2680ee026064471d78fa0b089d3cb758f5726173d6d7c4ef5693c4786f9b280",
+      "reading_depth": "Protocol and theorem communicated directly with solver. Final implementation was reported passing by solver; this ledger does not assert a personal line-by-line code audit.",
+      "limitation": "Snapshot provenance is not a truth certificate; a mutable downstream artifact requires its own final binding."
+    }
+  ]
+}

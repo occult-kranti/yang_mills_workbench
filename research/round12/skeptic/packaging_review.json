@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "completed_utc": "2026-09-09T21:11:21.024834+00:00",
+  "scope": "Lossless trace archives, deterministic compression, isolated loader/mutation/merge checks, compact site certificate data and portable ZIP inventory. Scientific acceptance remains separate and unchanged.",
+  "distinct_gate_count": 33,
+  "counting_policy": "The same 33 integration gates passed in normal and optimized Python; repetitions are not added to the count or the separate 406-gate scientific acceptance.",
+  "reviewed_source_hashes": {
+    "trace_archive.py": "c99a6b46585415d00b618915d40df46bf79e32b305d5f2ac1676edaac93f394a",
+    "build_site_data.py": "4c579e0e248913afbd87e0cfbe7cec48f59c1b219f52c1836978bf6f9fff3e7f",
+    "package_review.py": "2406b95ade7fa61f123a9096958b462ff27fcf822d7307f29a4c5975eb3a292d"
+  },
+  "scientific_acceptance_sha256": "795f0f9de8ac941dd8bab214aa1eef52810b981f4efd62ded8965f389e44b64a",
+  "reports": [
+    {
+      "name": "Trace packaging, normal Python",
+      "status": "passed",
+      "count": 33,
+      "scope": "Lossless trace archives, deterministic compression, isolated loader/mutation/merge checks, compact site certificate data and portable ZIP inventory. Scientific acceptance remains separate and unchanged.",
+      "artifact": "packaging_normal_results.json"
+    },
+    {
+      "name": "Trace packaging, optimized Python",
+      "status": "passed",
+      "count": 33,
+      "scope": "Lossless trace archives, deterministic compression, isolated loader/mutation/merge checks, compact site certificate data and portable ZIP inventory. Scientific acceptance remains separate and unchanged.",
+      "artifact": "packaging_optimized_results.json"
+    }
+  ],
+  "independent_precompression_baseline": "packaging_baseline.json",
+  "reproduction_script": "audit_packaging.py",
+  "audit_sha256": "86b1a246f5a419a2c04e721cf6ecaf09d41102a3076bac09dc7a6a395f1594a7",
+  "trace_original_total_bytes": 570264548,
+  "trace_compressed_total_bytes": 6279000,
+  "trace_inventory_sha256": "64c2be790241ddcb5c7a1ae164d4c45f8acb5d623114aa3544e5e420d8bf36f0",
+  "archive_sha256_at_review": "05576d0d919943648761e121a6e74af3c1c89bb399abc10f8dfe6c778f8f8711",
+  "resolved_findings": [
+    "Mixed raw/compressed-only regeneration now preserves historical inventory entries.",
+    "Declared gzip byte length is checked during verification and regeneration."
+  ],
+  "source_review": {
+    "trace_archive.py": "Reviewed current source and independently exercised raw/compressed-only loading, deterministic compression, stale/corrupt payload rejection, inventory hash/length mutations, path rejection, and mixed-history preservation.",
+    "build_site_data.py": "Reviewed explicit trace/frontier omission confined to the display document and gzip fallback/verification; checked current compact route outcomes, certificates, exact arithmetic object and full downloadable trace bytes.",
+    "package_review.py": "Reviewed verification before skipping listed raw duplicate files; replayed every ZIP manifest entry and checked each compressed trace plus current integration sources in the ZIP."
+  },
+  "limitations": [
+    "Scientific mathematical acceptance is unchanged and remains separately scoped.",
+    "No new mathematical claim is admitted by compression or display compaction.",
+    "The reviewed ZIP hash identifies the archive before adding this report; final packaging changes that container hash and requires its normal file-inventory replay."
+  ]
+}
