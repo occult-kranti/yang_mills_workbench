@@ -1,0 +1,56 @@
+{
+  "phase": "loop1",
+  "status": "accepted within declared finite-model scope",
+  "reviewer": "advisor\u2013skeptic (root)",
+  "team_size": 3,
+  "source_sha256": {
+    "forward/forward_model.py": "f9cbf653b09705467f32fb3f9829a6d28d3bbd84879c67da22024d7dbcad95b0",
+    "forward/test_forward.py": "9c663f2f8e32f2f29858f85a99763b33438a986723e11572b0361285d87f9fc3",
+    "forward/loop1.md": "f8931c5f161284c9dca533bb9dd0267bc90bff86c225d9662de8d4fa64cc9043",
+    "forward/output/results.json": "60f6914212661e974c111b6ff4d968fd3f29e56a2c6001118fa5fedd8821ad91",
+    "backward/oracle.py": "c6779c3151f1803e4baf78671d8e775eaa6baf240f3f943541fbcb2bb4ab5169",
+    "backward/backward.md": "f8911550e89797872ac6273dd2710f1a2878a1c47c5824bc7a41e8a74bdcc8fb",
+    "backward/output/oracle_results.json": "28cc91c76e52742744048c122d190383d6a842caa0a473ddb2fea05db1cc03b7",
+    "backward/graph.json": "98538afd666b48fbebc88367776ad0d5eaa6532748181b3134a980a9855e8801",
+    "advisor/advisor_checks.py": "1e920156a5d7d3b5a558bfc7b69b42dcf72466580ca4e8e354ea66687e9f2081",
+    "advisor/advisor_checks.json": "2dbcb3f8ac5e34108a9fa237b65c625b7aba98f3c74607c96cfd0d2ad0cfefc6",
+    "advisor/two-loop-protocol.md": "b0e1cf759b4b72390863cbf0cdaad19e3b130f30956d749d0e09a368c279cd68"
+  },
+  "accepted": [
+    "Exact conditional Haar reduction with removable zero field.",
+    "Exact eta0 baseline, covariance susceptibility and solvable deformed family.",
+    "Centered cumulant bound7 independently agreed by all three roles; formal raw-moment derivative identity checked.",
+    "Character and quaternion Haar moments agree; numerical quadrature remains diagnostic.",
+    "Existing round13 variance evidence gives signed small-eta covariance enclosures."
+  ],
+  "feedback_changes": [
+    {
+      "from": "backward",
+      "to": "forward",
+      "change": "Replace an exponential-valued error estimate with an entirely rational tail using successive-term ratios; Jensen supplies Z>=1."
+    },
+    {
+      "from": "forward",
+      "to": "backward",
+      "change": "Center the fourth cumulant to improve bound26 to7."
+    },
+    {
+      "from": "advisor",
+      "to": "both",
+      "change": "At k1=k2=1, eta=1/4 the sufficient perturbative bound is inconclusive; select this exact point as Loop2 target rather than claiming global sign from local response."
+    }
+  ],
+  "loop2_target": {
+    "k1": "1",
+    "k2": "1",
+    "eta": "1/4",
+    "observable": "Cov(x,y)",
+    "required_interval_width": "1/1000000000000",
+    "must_exclude_zero": true
+  },
+  "limitations": [
+    "No matched physical Hamiltonian or continuum construction.",
+    "The source constant audit does not evaluate the Hamiltonian stability threshold.",
+    "No formal proof-assistant claim."
+  ]
+}

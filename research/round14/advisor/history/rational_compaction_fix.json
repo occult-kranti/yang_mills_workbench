@@ -1,0 +1,7 @@
+{
+  "status": "preserved development failure",
+  "issue": "Squaring the very large exact round13 variance endpoints exceeded Python's default integer-to-string digit limit during JSON serialization.",
+  "effect": "The first advisor transfer run stopped before writing a successful result; no invalid interval was accepted.",
+  "fix": "Outwardly round the variance interval by exact rational floor/ceiling to denominator 10^15 before forming products. Verify containment explicitly and retain the exact old certificate as evidence.",
+  "limit": "The resulting interval is slightly wider; no floating endpoint conversion is used for its proof."
+}

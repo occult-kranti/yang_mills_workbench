@@ -1,0 +1,52 @@
+{
+  "schema": "ym14-forward-sources-v1",
+  "date": "2026-09-09",
+  "policy": "Primary sources support specific definitions and methods; project derivations are presented in full and remain scoped to their declared finite measure. No exhaustive literature claim.",
+  "sources": [
+    {
+      "id": "DLMF-INTEGRAL",
+      "title": "NIST DLMF 10.32.2: modified Bessel integral representation",
+      "url": "https://dlmf.nist.gov/10.32.E2",
+      "reading_depth": "Read the displayed general-nu integral and its Re nu > -1/2 condition on the official source page; specialize to nu=1.",
+      "supports": "Normalization Z0(h)=2I1(h)/h for normalized SU(2) Haar x marginal.",
+      "limitations": "Does not certify the two-loop numerical quadrature or supply a mass gap."
+    },
+    {
+      "id": "DLMF-RECURRENCE",
+      "title": "NIST DLMF 10.29: modified Bessel recurrences and derivatives",
+      "url": "https://dlmf.nist.gov/10.29",
+      "reading_depth": "Read the official recurrence/derivative section and used the I1-I3=4I2/h specialization.",
+      "supports": "u=I2/I1 and the cancellation-safe r=I3/(h² I1) representation.",
+      "limitations": "The conditional vector-moment derivation and positivity scope are established in the project text."
+    },
+    {
+      "id": "FINITE-N-BOOTSTRAP",
+      "title": "Bootstrap for Finite N Lattice Yang-Mills Theory",
+      "authors": [
+        "Vladimir Kazakov",
+        "Zezhen Zheng"
+      ],
+      "url": "https://arxiv.org/html/2404.16925v4",
+      "version": "v4",
+      "reading_depth": "Read introduction/main results, SU(2) trace identity and normalization notes, hierarchy section, and one-matrix normalization formulas. Did not audit every loop equation, numerical bound or the full paper.",
+      "supports": "Finite-N trace reduction retains loop geometry and a loop-length hierarchy; contextual connection to compact moment work.",
+      "limitations": "No imported proof of the present mixed-loop covariance or continuum mass gap; the present action deformation is declared separately."
+    },
+    {
+      "id": "SCIPY-IVE",
+      "title": "SciPy official reference: scipy.special.ive",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.ive.html",
+      "reading_depth": "Read scaled modified-Bessel function definition, parameters and numerical notes.",
+      "supports": "Exponentially scaled Bessels used for moderate strong conditional fields.",
+      "limitations": "Floating special functions are not certified intervals; installed version is bound in results.json."
+    },
+    {
+      "id": "SCIPY-JACOBI",
+      "title": "SciPy official reference: roots_jacobi",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.roots_jacobi.html",
+      "reading_depth": "Read quadrature weight definition and parameter conditions.",
+      "supports": "Gauss-Jacobi weights with alpha=beta=1/2 match the Haar marginal.",
+      "limitations": "The integrand is not a finite-degree polynomial; node refinement is a diagnostic rather than an exact quadrature theorem for this calculation."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "ym14-forward-final-cross-review-v1",
+  "date": "2026-09-09",
+  "status": "accepted mathematics; two prose clarifications recommended",
+  "review_kind": "Conventional mathematical cross-review and complete current UI source reading; no new experiment loop",
+  "reviewed_hashes": {
+    "yang_mills_workbench/dist/research-team.js": "ca074a3ef47b9540eb84dd3835fcb204a102297a5a20d58d4e642142991f1cc4",
+    "yang_mills_workbench/research/round14/next-roadmap.md": "cb230e492342ebcf35226e31fc1a883808b5a4d4f0859a26e8952bce988424c6"
+  },
+  "statements": [
+    {
+      "id": "bounded_observable_return",
+      "status": "accepted",
+      "statement": "For fixed scalar measurable O with ||O||infinity<=1 in the same finite family, |E_eta O-E_0 O|<=|eta|.",
+      "argument": "Differentiate the normalized exponential family: derivative Cov_eta(O,z). Cauchy–Schwarz bounds its magnitude by sqrt(Var_eta(O) Var_eta(z))<=1, since |O| and |z| are bounded by1. Integrate along the real eta segment. For complex O use E|O-EO|² in the variance.",
+      "required_scope": "k1,k2 and O fixed; one bounded mixed trace z in the declared finite action. An eta-dependent O adds a derivative term. A growing sum of mixed terms needs its own size-uniform bound."
+    },
+    {
+      "id": "uncapped_taylor_convergence",
+      "status": "accepted conditional algorithmic theorem",
+      "statement": "At every fixed finite rational triple, exact uncapped Taylor covariance intervals converge to the true finite-measure covariance; if the covariance is nonzero, some finite degree certifies its sign.",
+      "argument": "For fixed M, R_N tends to0 and N+2>M eventually holds. All four exact polynomial centers converge uniformly in the bounded insertions. Jensen keeps Z>=1, and interval addition, multiplication and positive division are continuous on the resulting bounded intervals. Both covariance endpoints therefore converge to C. Nonzero C leaves an open sign neighborhood eventually containing the complete interval.",
+      "required_scope": "The formula/oracle is extended to every finite degree and exact arithmetic succeeds at each requested degree. The delivered degree cap48 is separate and makes no eventual-sign guarantee for all parameters. At C=0 the generic sign search need not terminate."
+    },
+    {
+      "id": "covariance_lipschitz",
+      "status": "accepted",
+      "statement": "For the same fixed k1,k2 finite family, |Cprime(eta)|<=2 for every finite real eta.",
+      "argument": "Cprime is the centered third cumulant E[delta x delta y delta z]. Since |delta z|<=2, Cauchy–Schwarz gives |Cprime|<=2 E|delta x delta y|<=2 sqrt(Var x Var y)<=2. This supports exact point-enclosure transport by2 times the maximum distance to the center.",
+      "required_scope": "A parameter interval still needs exact coverage with no gaps and a positive transported margin in each cell; this derivative theorem alone does not provide a completed cover."
+    }
+  ],
+  "ui_review": {
+    "math_equations": "All displayed conditional, response, Taylor, quaternion/character and spectral statements were read; no equation error found.",
+    "scope": "The distinction between finite Euclidean covariance, physical generator, fixed-spacing Hamiltonian result and continuum target is preserved.",
+    "clarifications": [
+      {
+        "current": "A finite equal-time correlation supplies neither a physical generator...",
+        "suggested": "A finite static covariance supplies neither a physical generator...",
+        "reason": "The current measure has no declared physical time coordinate, so equal-time introduces an unnecessary convention."
+      },
+      {
+        "current": "Choose orthonormal e_n in Omega-perp and H e_n=(1/n)e_n",
+        "suggested": "Choose a complete orthonormal basis e_n of Omega-perp and H e_n=(1/n)e_n",
+        "reason": "Completeness explicitly defines the countermodel on the full vacuum complement and makes the unique-vacuum assertion immediate."
+      }
+    ],
+    "not_reviewed": "Browser rendering, keyboard behavior and the proof-planner implementation are outside this bounded review."
+  }
+}

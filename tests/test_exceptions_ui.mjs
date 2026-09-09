@@ -10,7 +10,7 @@ const ctx={console,URL,Blob,setTimeout:()=>0,location:{hash:'#research'},localSt
 ctx.window=ctx;vm.createContext(ctx);
 const html=fs.readFileSync(new URL('index.html',base),'utf8');
 const files=[...html.matchAll(/<script src="(research[^"]*\.js)"/g)].map(m=>m[1]);
-for(const file of files)vm.runInContext(fs.readFileSync(new URL(file,base),'utf8'),ctx,{filename:file});
+for(const file of files.filter(name=>!name.startsWith('research-team')))vm.runInContext(fs.readFileSync(new URL(file,base),'utf8'),ctx,{filename:file});
 const D=ctx.OBSERVATORY_EXCEPTIONS,T=ctx.ResearchObservatory;
 const read=name=>JSON.parse(fs.readFileSync(new URL(name,records),'utf8'));
 const text=name=>fs.readFileSync(new URL(name,records),'utf8');

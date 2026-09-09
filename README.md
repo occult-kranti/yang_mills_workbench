@@ -8,7 +8,7 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current milestone:** an independently reviewed application of a known product-vacuum stability theorem supplies a **volume-uniform Hamiltonian gap at fixed spacing and sufficiently small magnetic/electric ratio**. The threshold is existential, not numerically evaluated, and the weak-bare-coupling continuum trajectory exits this regime. Also added: exact compact moment bounds, an exact scalar coupling-response equation and a local boundary-influence theorem. [Inspect the restricted gap](https://occult-kranti.github.io/yang_mills_workbench/#research/strong-coupling), [the exact moment certificates](https://occult-kranti.github.io/yang_mills_workbench/#research/moment-bounds), or [the current advisor roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/exception-roadmap).
+**Current milestone:** two completed feedback loops by a three-role team (advisor–skeptic, forward researcher, backward researcher). The declared finite mixed-loop SU(2) measure now has an exact positive covariance certificate at `(k1,k2,eta)=(1,1,1/4)`, with rational interval width about **1.27e-25**. All **23 certificates** were independently reconstructed through characters. The team also derived exact susceptibility, corrected validation and proof-admission flaws, and executed two-direction proof routes. [Open the collaboration graph](https://occult-kranti.github.io/yang_mills_workbench/#research/team-map), [the exact result](https://occult-kranti.github.io/yang_mills_workbench/#research/team-loop2), or [the next roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/team-roadmap). This is an explicitly deformed finite Euclidean model, not a continuum mass-gap proof.
 
 The earlier two-step drive certificate remains available with total physical Haar L² state error **below 0.000337501** on its finite graph. Historical results are preserved with their original assumptions.
 
@@ -50,7 +50,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Exceptions, locality, compact hierarchy and restricted gap | `research/round13/` | Current exact moment certificates, scalar response, fixed-spacing local limit and qualitative uniform-gap theorem application; continuum remains open |
+| Three-role, two-loop finite correlation study | `research/round14/` | Current exact covariance, independent rational replay, collaboration graph and forward/backward feedback roadmap |
+| Exceptions, locality, compact hierarchy and restricted gap | `research/round13/` | Preserved exact moment certificates, scalar response, fixed-spacing local limit and qualitative uniform-gap theorem application; continuum remains open |
 | Driven error, volume and closure bridges | `research/round12/` | Preserved exact dynamic theorem, rational endpoint certificate, source critique and historical roadmap |
 | Two adjacent plaquettes | `research/round11/` | Reviewed coupled operator, stationary certificates and finite-graph analytic gap proof |
 | One physical SU(2) square | `research/round10/` | Infinite-character spectral tail controlled; exact continuous-coupling gap certificate |
@@ -96,6 +97,10 @@ x=\tfrac12\operatorname{Tr}U,\quad y=\tfrac12\operatorname{Tr}V,\quad z=\tfrac12
 
 The third trace retains relative orientation lost by two separate loop traces. At a central element (`|x|=1` or `|y|=1`), `z=xy`; a relative-angle formula must not divide by a vanishing sine. Adding coordinates records existing configurations. Inserting an arbitrary mass or scalar would change the theory and cannot establish the pure Yang–Mills target.
 
+## Reproduce the latest two-loop study
+
+[Round14 instructions](research/round14/README.md) contain the complete model, commands for both simulations, exact certificate generation, independent verification and bidirectional proof replay. Run scientific commands in a terminal; the site displays recorded results. The earlier fixed-spacing Hamiltonian gap theorem remains available with its qualitative small-coupling threshold explicitly unevaluated.
+
 ## Install scientific dependencies
 
 ```bash
@@ -131,7 +136,7 @@ The repository's `.gitattributes` preserves exact file bytes across operating sy
 
 ## Other experiments
 
-### Reproduce the current exceptions and hierarchy study
+### Reproduce the preserved round13 exceptions and hierarchy study
 
 ```bash
 python research/round13/moments/test_moments.py
@@ -144,7 +149,7 @@ python research/round13/test_proof_routes.py
 
 The study contains 28 exact rational moment certificates, including negative, near-zero and zero couplings; a proved complete compact-hierarchy uniqueness result; a scalar response derived from the same normalized measure; and separate boundary-locality and static vacuum-stability arguments. **532 distinct independent scientific checks pass**, repeated under optimized Python without counting the repetitions twice. Read [the full round13 guide](research/round13/README.md), [independent review](research/round13/skeptic/REVIEW.md), [next experiment contracts](research/round13/next-experiments.md) and [source ledger](research/round13/advisor/sources.json).
 
-The exact scalar identity is `kappa u' + 3u = kappa(1-u^2)`, with `u(0)=0` and `u'(0)=1/4`. Its derivative is variance with respect to a Euclidean coupling, not physical time. The current numerical trajectory comparisons are diagnostics; the rigorous initial series error is a separate bound. Twenty-four actual bidirectional routes retain 11 conditional successes and 13 rejection controls, including withheld smallness and blocked finite-to-continuum transfers.
+The exact scalar identity is `kappa u' + 3u = kappa(1-u^2)`, with `u(0)=0` and `u'(0)=1/4`. Its derivative is variance with respect to a Euclidean coupling, not physical time. The round13 numerical trajectory comparisons are diagnostics; the rigorous initial series error is a separate bound. Twenty-four actual bidirectional routes retain 11 conditional successes and 13 rejection controls, including withheld smallness and blocked finite-to-continuum transfers.
 
 ### Reproduce the earlier dynamic and volume bridges
 
@@ -220,10 +225,10 @@ Interface checks use a Node VM and a DOM stand-in. They test routes, events, esc
 `dist/` is the local site source; `docs/` is the generated GitHub Pages tree. The build rewrites only known local asset URLs for the project prefix, preserves external source links, omits server code and marks live metadata refresh as local-only.
 
 ```bash
-python research/round13/build_site_data.py
-python research/round13/package_review.py
-node tests/test_exceptions_ui.mjs
-python research/round13/package_review.py
+python research/round14/build_site_data.py
+python research/round14/package_review.py
+node tests/test_team_ui.mjs
+python research/round14/package_review.py
 python scripts/build_pages.py
 node tests/test_workbench.mjs
 git add dist docs research guides scripts tests README.md .codex/skills

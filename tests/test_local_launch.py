@@ -18,6 +18,8 @@ class LaunchTests(unittest.TestCase):
                          'research-bridges-data.js','research-bridges.js',
                          'bridge-drive-summary.csv','bridge-closure.csv','research-round12.zip',
                          'research-exceptions-data.js','research-exceptions.js',
+                         'research-team-data.js','research-team.js','team-covariance.csv',
+                         'team-certificate.csv','research-round14-certificates.json',
                          'exception-moments.csv','exception-locality.csv','exception-response.csv',
                          'research-round13-certificates.json','research-round13.zip'):
                 with urllib.request.urlopen(base+prefix+name,timeout=3) as response:

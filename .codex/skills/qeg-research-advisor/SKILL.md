@@ -66,3 +66,7 @@ For nonabelian work, read [the Yang–Mills contract](references/yang-mills-cont
 Read [the spectral connection contract](references/spectral-connection.md) when connecting the finite QED work to a mass-gap claim. Resolve the exact gauge group, dimension, physical spectrum and regulator limits before accepting a bridge. The Yang–Mills prize is a separate pure nonabelian theory, not a renamed Einstein–QED completion.
 
 A fitted effective-mass plateau cannot certify a spectral lower bound. For a positive zero-temperature spectral measure the exact effective mass bounds the lowest overlapping energy from above; a missing channel or tiny overlap can hide lighter states. Require fixed physical units, full reconstruction assumptions and a common decay rate on a dense physical-state family before admitting a Hamiltonian gap implication.
+
+## Requested three-role feedback cycles
+
+For a user-requested team of three and sequential loops, use `references/two-loop-team.md`. Count the coordinator as the advisor–skeptic, execute the first evidence gate before selecting the second target, and distinguish the published collaboration ledger from a continuously running swarm.

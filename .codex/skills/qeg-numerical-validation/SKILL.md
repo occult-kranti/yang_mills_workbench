@@ -80,3 +80,9 @@ Validate derived diagnostics as well as integrated states for finiteness. Finite
 Keep base-trajectory node refinement separate from tangent-response node refinement. Agreement as the perturbation amplitude changes does not establish response quadrature convergence. Describe normalization by max(1, reference) as a mixed absolute/relative scale, not a purely relative error.
 
 For spectral diagnostics, test lower-energy tiny overlaps and exactly absent channels, excluded zero modes, fixed-volume mesh refinement versus increasing volume, and log-domain underflow. Compare against a genuinely independent high-precision or matrix reference. A finite positive spectral matrix is only a finite necessary test; it does not establish reflection positivity for a quantum field theory.
+
+## Compact certificate and admission checks
+
+Validate public input types before memoization: cached integer calls must not allow a Boolean to bypass the domain gate. Compare nested certificate metadata with exact types; Python equality alone accepts True as1. Retain signed numerator and normalization errors when enclosing covariance. A tiny exact interval need not contain a rounded floating comparator.
+
+A serialized passed status is not proof authority. At proof-library construction, rerun independent arithmetic or validate an internally issued immutable replay record, bind all actual sources, and revalidate the in-memory rule semantics. Test forged pass objects and rule injection after a valid replay. Preserve the original failed cases and verify repairs under optimized Python.
