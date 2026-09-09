@@ -8,7 +8,9 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current milestone:** a specified two-step drive now has an exact rational computed-state certificate with total error **below 0.000337501** in physical Haar L² on the existing finite graph. The bound includes omitted representations and the finite evolution algorithm. [Inspect that result](https://occult-kranti.github.io/yang_mills_workbench/#research/exact-evolution), [the volume/continuum review](https://occult-kranti.github.io/yang_mills_workbench/#research/volume-bridge), or [the updated advisor roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/bridge-roadmap).
+**Current milestone:** an independently reviewed application of a known product-vacuum stability theorem supplies a **volume-uniform Hamiltonian gap at fixed spacing and sufficiently small magnetic/electric ratio**. The threshold is existential, not numerically evaluated, and the weak-bare-coupling continuum trajectory exits this regime. Also added: exact compact moment bounds, an exact scalar coupling-response equation and a local boundary-influence theorem. [Inspect the restricted gap](https://occult-kranti.github.io/yang_mills_workbench/#research/strong-coupling), [the exact moment certificates](https://occult-kranti.github.io/yang_mills_workbench/#research/moment-bounds), or [the current advisor roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/exception-roadmap).
+
+The earlier two-step drive certificate remains available with total physical Haar L² state error **below 0.000337501** on its finite graph. Historical results are preserved with their original assumptions.
 
 ## Launch locally
 
@@ -48,7 +50,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Driven error, volume and closure bridges | `research/round12/` | Current exact dynamic theorem, rational endpoint certificate, source critique and evidence-linked roadmap |
+| Exceptions, locality, compact hierarchy and restricted gap | `research/round13/` | Current exact moment certificates, scalar response, fixed-spacing local limit and qualitative uniform-gap theorem application; continuum remains open |
+| Driven error, volume and closure bridges | `research/round12/` | Preserved exact dynamic theorem, rational endpoint certificate, source critique and historical roadmap |
 | Two adjacent plaquettes | `research/round11/` | Reviewed coupled operator, stationary certificates and finite-graph analytic gap proof |
 | One physical SU(2) square | `research/round10/` | Infinite-character spectral tail controlled; exact continuous-coupling gap certificate |
 | Four-dimensional finite lattice and SU(2) transfer benchmark | `research/round9/` | Deterministic identities and finite benchmarks; beta=2.2 sampling uncertainty remains insufficient |
@@ -128,7 +131,22 @@ The repository's `.gitattributes` preserves exact file bytes across operating sy
 
 ## Other experiments
 
-### Reproduce the current dynamic and volume bridges
+### Reproduce the current exceptions and hierarchy study
+
+```bash
+python research/round13/moments/test_moments.py
+python research/round13/moments/run_study.py
+python research/round13/locality/locality_checks.py
+python research/round13/response/response_checks.py
+python research/round13/proof_routes.py
+python research/round13/test_proof_routes.py
+```
+
+The study contains 28 exact rational moment certificates, including negative, near-zero and zero couplings; a proved complete compact-hierarchy uniqueness result; a scalar response derived from the same normalized measure; and separate boundary-locality and static vacuum-stability arguments. **532 distinct independent scientific checks pass**, repeated under optimized Python without counting the repetitions twice. Read [the full round13 guide](research/round13/README.md), [independent review](research/round13/skeptic/REVIEW.md), [next experiment contracts](research/round13/next-experiments.md) and [source ledger](research/round13/advisor/sources.json).
+
+The exact scalar identity is `kappa u' + 3u = kappa(1-u^2)`, with `u(0)=0` and `u'(0)=1/4`. Its derivative is variance with respect to a Euclidean coupling, not physical time. The current numerical trajectory comparisons are diagnostics; the rigorous initial series error is a separate bound. Twenty-four actual bidirectional routes retain 11 conditional successes and 13 rejection controls, including withheld smallness and blocked finite-to-continuum transfers.
+
+### Reproduce the earlier dynamic and volume bridges
 
 ```bash
 python research/round12/solver/test_solver.py
@@ -143,7 +161,7 @@ The exact dynamic theorem gives `min(2, A^(D-d0+1)/(D-d0+1)!)`, where `A` is the
 
 The distinct exact fixture uses two duration-one nonnegative coefficient pairs `(1/20,1/10)` and `(1/10,1/20)`, alpha=rho=1, degree 3, and the initial constant electric vacuum. Exact complex-rational Taylor polynomials of order 100 produce a stored 20-coefficient vector and exact Gram norm. Its representation error is 27/80000; the algorithm error is about 3.01×10⁻²³. The complete rational upper bound is strictly below 0.000337501. The computed vector is not renormalized.
 
-The volume report proves an explicitly volume-dependent gap comparison and tests it against independent tensor copies whose exact gap stays fixed. The hierarchy report derives the missing variance term and audits named equations of a fixed primary-source version. [Round12 README](research/round12/README.md), [advisor proof](research/round12/advisor/advisor.md), [independent review](research/round12/skeptic/REVIEW.md), and [current roadmap](research/round12/current_roadmap.json) give the precise assumptions, retained failures and next experiments.
+The volume report proves an explicitly volume-dependent gap comparison and tests it against independent tensor copies whose exact gap stays fixed. The hierarchy report derives the missing variance term and audits named equations of a fixed primary-source version. [Round12 README](research/round12/README.md), [advisor proof](research/round12/advisor/advisor.md), [independent review](research/round12/skeptic/REVIEW.md), and [historical roadmap](research/round12/current_roadmap.json) give the precise assumptions and retained failures. Round13 adds a different, qualitative uniform-gap theorem in a restricted regime.
 
 ### Reproduce the coupled two-square extension
 
@@ -190,6 +208,7 @@ node tests/test_ui.mjs
 node tests/test_research_plaquette.mjs
 node tests/test_two_plaquette_ui.mjs
 node tests/test_bridges_ui.mjs
+node tests/test_exceptions_ui.mjs
 node tests/test_workbench.mjs
 python scripts/build_pages.py
 ```
@@ -201,12 +220,13 @@ Interface checks use a Node VM and a DOM stand-in. They test routes, events, esc
 `dist/` is the local site source; `docs/` is the generated GitHub Pages tree. The build rewrites only known local asset URLs for the project prefix, preserves external source links, omits server code and marks live metadata refresh as local-only.
 
 ```bash
-python research/round12/trace_archive.py
-python research/round12/build_site_data.py
-python research/round12/package_review.py
+python research/round13/build_site_data.py
+python research/round13/package_review.py
+node tests/test_exceptions_ui.mjs
+python research/round13/package_review.py
 python scripts/build_pages.py
 node tests/test_workbench.mjs
-git add dist docs research guides scripts tests README.md
+git add dist docs research guides scripts tests README.md .codex/skills
 git commit -m "Update research and Pages site"
 git push origin main
 ```

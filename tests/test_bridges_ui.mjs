@@ -4,7 +4,8 @@ const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',open
 const ctx={console,URL,Blob,setTimeout:()=>0,location:{hash:'#research'},localStorage:{getItem(){return null},setItem(){}},document:{querySelector:node,getElementById:id=>node('#'+id),addEventListener:(e,f)=>(events[e]??=[]).push(f)},addEventListener(){}};ctx.window=ctx;vm.createContext(ctx);
 const html=fs.readFileSync(new URL('index.html',base),'utf8');
 const scripts=[...html.matchAll(/<script src="(research[^\"]*\.js)"/g)].map(x=>x[1]);
-for(const name of scripts)vm.runInContext(fs.readFileSync(new URL(name,base),'utf8'),ctx,{filename:name});
+// Test the preserved round12 overlay; current round13 integration has its own suite.
+for(const name of scripts.filter(name=>!name.startsWith('research-exceptions')))vm.runInContext(fs.readFileSync(new URL(name,base),'utf8'),ctx,{filename:name});
 const D=ctx.OBSERVATORY_BRIDGES,T=ctx.ResearchObservatory;
 const pages=['home','dynamic-proof','exact-evolution','dynamic-experiments','volume-bridge','closure-audit','bridge-variables','bridge-roadmap','bridge-review'];
 function check(name,fn){fn();checks.push({name,passed:true});}

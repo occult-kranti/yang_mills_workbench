@@ -1,0 +1,7 @@
+{
+  "case": "certify(kappa=1,level=1,bits=32)",
+  "failure": "UnboundLocalError for v after all positive pivots exhausted the matrix",
+  "cause": "Missing positive-definite return after the congruence loop",
+  "repair": "Return None when all pivots were positive. Independent principal-minor and signed-witness checks now cover this branch.",
+  "source_record": "Initial source reconstructed by reversing the sole repair line; this provenance is explicit."
+}

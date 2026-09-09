@@ -1,0 +1,224 @@
+{
+  "version": "round13-advisor-rules-v1",
+  "policy": "Rules are public proof obligations. Hypotheses and implementation gates are not automatically admitted facts. Conditional mathematical arguments need independent review before promotion. A Horn route certifies replay only.",
+  "rules": [
+    {
+      "id": "L1",
+      "premises": [
+        "link_tensor",
+        "onsite_selfadjoint",
+        "bounded_plaquettes"
+      ],
+      "conclusion": "interaction_picture",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "L2",
+      "premises": [
+        "interaction_picture",
+        "bounded_incidence",
+        "path_count"
+      ],
+      "conclusion": "local_commutator_bound",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "L3",
+      "premises": [
+        "local_commutator_bound",
+        "boundary_shell_sum"
+      ],
+      "conclusion": "bounded_local_volume_limit",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "L4",
+      "premises": [
+        "local_commutator_bound",
+        "gauge_invariance"
+      ],
+      "conclusion": "physical_local_bound",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M1",
+      "premises": [
+        "compact_measure"
+      ],
+      "conclusion": "haar_ibp",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M2",
+      "premises": [
+        "compact_measure"
+      ],
+      "conclusion": "moment_positivity",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M3",
+      "premises": [
+        "haar_ibp",
+        "moment_positivity",
+        "rational_exclusion_gate"
+      ],
+      "conclusion": "moment_outer_interval",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M4",
+      "premises": [
+        "moment_outer_interval",
+        "variance_image_gate"
+      ],
+      "conclusion": "variance_outer_interval",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M5",
+      "premises": [
+        "all_order_constraints"
+      ],
+      "conclusion": "compact_moment_representation",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M6",
+      "premises": [
+        "compact_moment_representation",
+        "all_order_constraints"
+      ],
+      "conclusion": "ibp_C1_extension",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M7",
+      "premises": [
+        "ibp_C1_extension"
+      ],
+      "conclusion": "distribution_uniqueness",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M8",
+      "premises": [
+        "distribution_uniqueness",
+        "compact_measure"
+      ],
+      "conclusion": "hierarchy_unique",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M9",
+      "premises": [
+        "hierarchy_unique",
+        "nested_compact_relaxations"
+      ],
+      "conclusion": "hierarchy_interval_convergence",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M10",
+      "premises": [
+        "compact_measure",
+        "exponential_family_differentiation"
+      ],
+      "conclusion": "susceptibility_identity",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M11",
+      "premises": [
+        "susceptibility_identity",
+        "haar_ibp"
+      ],
+      "conclusion": "coupling_riccati",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "M12",
+      "premises": [
+        "hierarchy_interval_convergence",
+        "vanishing_optimizer_slack"
+      ],
+      "conclusion": "algorithm_interval_convergence",
+      "cost": 1,
+      "evidence": "advisor.md"
+    },
+    {
+      "id": "Y1",
+      "premises": [
+        "yarotsky_primary",
+        "electric_product_vacuum",
+        "finite_range_static_norm",
+        "stability_smallness",
+        "admissible_stability_boundary"
+      ],
+      "conclusion": "uniform_full_hamiltonian_gap",
+      "cost": 1,
+      "evidence": "weak-coupling-stability.md"
+    },
+    {
+      "id": "Y2",
+      "premises": [
+        "uniform_full_hamiltonian_gap",
+        "gauge_vacuum_restriction"
+      ],
+      "conclusion": "uniform_physical_hamiltonian_gap",
+      "cost": 1,
+      "evidence": "weak-coupling-stability.md"
+    },
+    {
+      "id": "Y3",
+      "premises": [
+        "yarotsky_primary",
+        "electric_product_vacuum",
+        "finite_range_static_norm",
+        "stability_smallness"
+      ],
+      "conclusion": "canonical_ground_state_limit",
+      "cost": 1,
+      "evidence": "weak-coupling-stability.md"
+    },
+    {
+      "id": "Y4",
+      "premises": [
+        "canonical_ground_state_limit",
+        "uniform_physical_hamiltonian_gap",
+        "gauge_vacuum_restriction"
+      ],
+      "conclusion": "canonical_physical_gap",
+      "cost": 1,
+      "evidence": "weak-coupling-stability.md"
+    },
+    {
+      "id": "G1",
+      "premises": [
+        "same_geometry_state_scale",
+        "continuum_observables",
+        "reconstruction_axioms",
+        "nontrivial_finite_energy",
+        "uniform_physical_decay"
+      ],
+      "conclusion": "yang_mills_4d_gap",
+      "cost": 1,
+      "evidence": "advisor.md"
+    }
+  ]
+}

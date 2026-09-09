@@ -1,0 +1,11 @@
+{
+  "issue": "One-shot outer_plaquettes iterable was consumed by incidence calculation before the radius calculation.",
+  "effect": "Generator input could produce an incorrect disconnected radius=None and exact-zero bound.",
+  "stored_fixture_impact": "Stored producer fixtures used reusable sets; numerical bound values were unaffected.",
+  "fix": "Freeze support, inner_links and outer_plaquettes at bound_from_geometry entry.",
+  "regression": "one_shot_geometry_iterators compares all-generator inputs against reusable sets and requires R=1 and a positive bound.",
+  "old_source_sha256": "9bd504e7600c1d1ae75f231d44f335b1b6c0fa5a9d8ac4d004c8060922aef92f",
+  "new_source_sha256": "a8090238fb7697b84b8335f6ec16a983b69f1f5c691f969ef969b7c0a71200e8",
+  "independent_discovery": "round13 skeptic agent",
+  "normal_and_optimized_checks": 90
+}

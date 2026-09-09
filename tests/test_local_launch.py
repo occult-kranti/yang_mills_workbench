@@ -16,7 +16,10 @@ class LaunchTests(unittest.TestCase):
         try:
             for name in ('','research-plaquette.js','plaquette-gaps.csv','research-round10.zip',
                          'research-bridges-data.js','research-bridges.js',
-                         'bridge-drive-summary.csv','bridge-closure.csv','research-round12.zip'):
+                         'bridge-drive-summary.csv','bridge-closure.csv','research-round12.zip',
+                         'research-exceptions-data.js','research-exceptions.js',
+                         'exception-moments.csv','exception-locality.csv','exception-response.csv',
+                         'research-round13-certificates.json','research-round13.zip'):
                 with urllib.request.urlopen(base+prefix+name,timeout=3) as response:
                     self.assertEqual(response.status,200);self.assertGreater(len(response.read()),20)
             with self.assertRaises(urllib.error.HTTPError) as failure:

@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "contract": "ym13-independent-proof-adapter-review-v1",
+  "completed_utc": "2026-09-09T21:59:22.185217+00:00",
+  "reviewed_source_hashes": {
+    "proof_routes.py": "7d483f1bdb6233448bd44e82bb70619a81010c3a964d22b29a9aa7fed030fa49",
+    "make_proof_manifest.py": "b9d2f4b124fcff28aa0535c5bdea9ac487c5f337ab43c029a87085110cfbf159",
+    "test_proof_routes.py": "9d129272523ed1b91f215a7395b023d9a28ca4ab996f20db73399d9a312124c3",
+    "proof_search.py": "07b5b397af86b6bf5a481b114844c6252046e8ca2b5604dac7d158091632be94"
+  },
+  "independent_gate_count": 69,
+  "reports": [
+    {
+      "name": "Independent adapter admission and exhaustive Horn replay",
+      "status": "passed",
+      "count": 69,
+      "artifact": "proof_adapter_normal_results.json",
+      "scope": "24 routes checked against a separate minimum-cost solver; ordered replay, explicit premise withdrawals, frozen-input mutation and file-boundary checks."
+    }
+  ],
+  "mode_replays": [
+    "proof_adapter_normal_results.json",
+    "proof_adapter_optimized_results.json"
+  ],
+  "counting_policy": "69 distinct gates once; normal/optimized replays and the initial failed run are not added. Scientific acceptance remains unchanged at 532 checks.",
+  "repaired_finding": {
+    "artifact": "proof_adapter_initial_binding_failure.json",
+    "original_source_sha256": "c93d6d96767d12943f5d62b0662c0641ee4e829f71984b709ae2f3b7d4c6da12",
+    "description": "A passed replay was not tied to later frozen bytes, permitting unreviewed changed premises under a previously reviewed rule ID. Complete fingerprints and renewed ledger validation now reject the before/after controls."
+  },
+  "result": "All 24 supplied route outcomes agree with independent exhaustive derivability and minimum cost. Stability smallness and all-order/asymptotic hypotheses remain necessary; the four-dimensional goal stays underivable.",
+  "limitations": [
+    "Conventional reviewed implications and a finite Horn solver, not a formal mathematics kernel.",
+    "The scientific ledger is a trusted source-bound artifact, not a cryptographically authenticated reviewer identity.",
+    "Graph-only abstract fixtures do not supply scientific acceptance.",
+    "Response report provenance is source-bound; floating ODE results are not promoted to exact trajectory certificates."
+  ]
+}

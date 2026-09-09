@@ -59,6 +59,8 @@ If an agent review ends before completion, preserve delivered notes and distingu
 
 ## Spectral and Millennium connections
 
+For exceptions, compact hierarchy closure, local dynamics and restricted uniform-gap arguments, apply [the round13 exception contract](references/exceptions-locality-moments.md). It records exact witness bounds, scalar coupling response, iterator geometry, source-theorem applicability and frozen evaluator inputs.
+
 For nonabelian work, read [the Yang–Mills contract](references/yang-mills-contract.md). It records the finite-Haar hierarchy, transfer-operator normalization, operator-norm and physical-time obligations. A finite selected set of identities cannot be substituted for the complete smooth-test-function family.
 
 Read [the spectral connection contract](references/spectral-connection.md) when connecting the finite QED work to a mass-gap claim. Resolve the exact gauge group, dimension, physical spectrum and regulator limits before accepting a bridge. The Yang–Mills prize is a separate pure nonabelian theory, not a renamed Einstein–QED completion.

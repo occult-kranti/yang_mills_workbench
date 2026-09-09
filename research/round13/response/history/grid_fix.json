@@ -1,0 +1,10 @@
+{
+  "finding": "Boolean grid coordinates were silently converted to floats by NumPy before validation",
+  "found_by": "independent ym13_skeptic agent",
+  "original_sha256": "fb3fc27b58a124b63cbb72cf9c730cb5f645369eb60db3be9c91d134ad693f28",
+  "original_source": "response_checks_before_grid_fix.py",
+  "reproducer": "integrate_response(grid=[True]) returned a sample at kappa=1.0 instead of rejecting input",
+  "affected_claims": "Public grid-input contract only; no recorded scientific study used Boolean coordinates",
+  "repair": "Pass every raw object-array entry through the finite-real scalar validator before float conversion",
+  "new_regressions": ["Boolean-only list", "mixed Boolean and numerical list", "NumPy Boolean array", "string coordinate", "complex coordinate"]
+}

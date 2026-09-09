@@ -1,0 +1,38 @@
+{
+  "status": "completed-selected-sections",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/1810.02428v2",
+      "title": "Quasi-Locality Bounds for Quantum Lattice Systems. Part I. Lieb-Robinson Bounds, Quasi-Local Maps, and Spectral Flow Automorphisms",
+      "reading_depth": "Introduction and Section 2 operator topology definitions; Section 3.1 Lemma 3.2 and its iterative commutator inequality; Sections 3.2\u20133.3 theorem statements and interaction-picture comparison.",
+      "use": "Independently checked that consecutive-overlap paths follow from unitary commutator resummation and that unbounded onsite terms require strong-topology distinctions.",
+      "limitation": "Not a full-paper audit. Locally integrable coefficient extension and four-link constants are separately derived in locality.md. The HTML rendering date is not a new mathematical version date."
+    },
+    {
+      "url": "https://arxiv.org/pdf/1410.8174",
+      "title": "On the dynamics of lattice systems with unbounded on-site terms in the Hamiltonian",
+      "reading_depth": "Lemma 2.2, commutator iteration around equations 71\u201373, Theorem 4.1, and finite-volume Duhamel comparison around equations 83\u201388.",
+      "use": "Confirmed that local volume convergence survives unbounded onsite terms through the interaction picture, while norm continuity cannot be assumed for arbitrary bounded operators.",
+      "limitation": "The workbench result is a scoped application; this review does not independently reconstruct every proof in the paper."
+    },
+    {
+      "url": "https://arxiv.org/pdf/math-ph/0411042",
+      "title": "Quasi-particles in weak perturbations of non-interacting quantum lattice systems",
+      "reading_depth": "Definitions and Theorems 1\u20133 on PDF pages 2\u20134; selected expansion, norm estimate and ground-state convergence discussion on pages 6\u20139.",
+      "use": "Checked infinite-dimensional onsite spaces, unbounded selfadjoint onsite operators, unique unit gap, finite-range bounded perturbations, volume-independent existential constants, and the canonical GNS generator.",
+      "limitation": "The full cluster expansion was not independently reproduced. Blocking, boundary padding and Gauss restriction are separately reviewed applications. No numerical threshold was extracted."
+    }
+  ],
+  "plot_reviews": [
+    {
+      "file": "moments/output/moment_convergence.png",
+      "status": "rendered-image-inspected",
+      "finding": "Axes, legend, title and three recorded log-width curves are readable. Raw rational intervals and CSV logarithms are independently checked by audit_moments.py."
+    },
+    {
+      "file": "response/output/response_closure.png",
+      "status": "rendered-image-inspected",
+      "finding": "Mean, susceptibility, exact origin value and both wrong-model controls have readable axes and legends. Numerical inputs are audited separately."
+    }
+  ]
+}
