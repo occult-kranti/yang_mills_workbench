@@ -121,6 +121,8 @@ The stored study contains 16 stationary certificates, an exact continuous-range 
 
 Outputs are in `research/round10/solver/output/`. Scripts may rewrite output records. Preserve a clean checkout or copy before reproducing. Hash manifests deliberately reject modified mathematical sources or changed certificate bytes. Do not remove a hash or promote a missing test to an assumed premise to make a replay pass.
 
+The repository's `.gitattributes` preserves exact file bytes across operating systems, including Windows checkouts. This prevents automatic line-ending conversion from invalidating the reviewed source hashes.
+
 ## Other experiments
 
 ### Reproduce the coupled two-square extension
