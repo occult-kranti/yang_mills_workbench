@@ -1,0 +1,49 @@
+{
+  "source_sha256": "79c79506e20af6f50491ec5e22bb975bb1913ad5c73db8177fe2f23a57c10a09",
+  "records": [
+    {
+      "case": "alternating_extreme",
+      "input_finite": true,
+      "output": {
+        "n": 2048,
+        "mean": "nan",
+        "se": "nan",
+        "batch_size": 64,
+        "n_batches": 32,
+        "tau_int": "nan",
+        "status": "insufficient"
+      },
+      "failure": "nonfinite derived diagnostics returned"
+    },
+    {
+      "case": "one_extreme",
+      "input_finite": true,
+      "output": {
+        "n": 2048,
+        "mean": 4.8828125e+304,
+        "se": "inf",
+        "batch_size": 64,
+        "n_batches": 32,
+        "tau_int": "nan",
+        "status": "insufficient"
+      },
+      "failure": "nonfinite derived diagnostics returned"
+    },
+    {
+      "case": "nonfinite_summary_mean",
+      "output": {
+        "status": "flagged",
+        "target": 0.0,
+        "z": "nan"
+      },
+      "failure": "invalid input reported as statistical flagged instead of rejected"
+    }
+  ],
+  "warning_counts": {
+    "overflow encountered in reduce": 4,
+    "invalid value encountered in reduce": 4,
+    "overflow encountered in multiply": 2,
+    "overflow encountered in dot": 513,
+    "invalid value encountered in scalar divide": 512
+  }
+}

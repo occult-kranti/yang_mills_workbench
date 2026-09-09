@@ -1,0 +1,91 @@
+{
+  "status": "all-source-mutations-rejected",
+  "optimized_python": true,
+  "production_source_sha256": "ae9084850538ebf523f8c34564352b48ce0b30d07955991d4b4d1980ab36ce43",
+  "mutation_runner_sha256": "02208c307cba7d6ab2104240c3fed9f528684e2728109e805b07bdbf16af2c89",
+  "records": [
+    {
+      "mutation": "shared_cross_sign",
+      "source_sha256": "e89e315755281d0e22967873a49d60cf9a91f2830f07f6d878e8a9a470a072be",
+      "detected": true,
+      "failures": [
+        {
+          "monomial": [
+            1,
+            1,
+            0
+          ],
+          "correct": "{(1, 1, 0): Fraction(13, 2), (0, 0, 1): Fraction(-1, 2)}",
+          "wrong": "{(1, 1, 0): Fraction(11, 2), (0, 0, 1): Fraction(1, 2)}"
+        }
+      ],
+      "source_file": "source_mutants/shared_cross_sign.py"
+    },
+    {
+      "mutation": "independent_rotors",
+      "source_sha256": "75a47ac015214257e408db982acb1e6bdb0eea81baf90d1643fb68dd882c5c8f",
+      "detected": true,
+      "failures": [
+        {
+          "monomial": [
+            0,
+            0,
+            1
+          ],
+          "correct": "{(0, 0, 1): Fraction(9, 2)}",
+          "wrong": "{(0, 0, 1): Fraction(6, 1)}"
+        },
+        {
+          "monomial": [
+            0,
+            0,
+            2
+          ],
+          "correct": "{(0, 0, 2): Fraction(12, 1), (0, 0, 0): Fraction(-3, 1)}",
+          "wrong": "{(0, 0, 2): Fraction(16, 1), (0, 0, 0): Fraction(-4, 1)}"
+        },
+        {
+          "monomial": [
+            0,
+            1,
+            1
+          ],
+          "correct": "{(0, 1, 1): Fraction(9, 1), (1, 0, 0): Fraction(-3, 2)}",
+          "wrong": "{(0, 1, 1): Fraction(11, 1), (1, 0, 0): Fraction(-2, 1)}"
+        },
+        {
+          "monomial": [
+            1,
+            0,
+            1
+          ],
+          "correct": "{(1, 0, 1): Fraction(9, 1), (0, 1, 0): Fraction(-3, 2)}",
+          "wrong": "{(1, 0, 1): Fraction(11, 1), (0, 1, 0): Fraction(-2, 1)}"
+        },
+        {
+          "monomial": [
+            1,
+            1,
+            0
+          ],
+          "correct": "{(1, 1, 0): Fraction(13, 2), (0, 0, 1): Fraction(-1, 2)}",
+          "wrong": "{(1, 1, 0): Fraction(6, 1)}"
+        }
+      ],
+      "source_file": "source_mutants/independent_rotors.py"
+    },
+    {
+      "mutation": "magnetic_diagonal_in_tail",
+      "source_sha256": "85a77acc9a9a8cef66f8a8ebb2d1460088f4d3db71bda9c279dab48937ec98f3",
+      "detected": true,
+      "failures": [
+        {
+          "fixture": "first omitted degree3",
+          "correct": "12",
+          "wrong": "14"
+        }
+      ],
+      "source_file": "source_mutants/magnetic_diagonal_in_tail.py"
+    }
+  ]
+}

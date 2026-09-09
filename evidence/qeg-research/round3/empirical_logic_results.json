@@ -1,0 +1,235 @@
+{
+  "kind": "Executed mathematical and simulated measurement checks",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "number_of_check_groups": 4,
+  "all_passed": true,
+  "checks": {
+    "action_variation_counterexample": {
+      "source": "E15, US11511891B2, Theory of Operation Eqs.1-5",
+      "model": "Free particle in a constant potential, fixed-endpoint variations",
+      "trajectory_family": "eps*t*(duration - t) + t*velocity",
+      "lagrangian": "mass*(-eps*t + eps*(duration - t) + velocity)**2/2 - offset",
+      "symbolic_residuals": {
+        "variation_at_initial_endpoint": "0",
+        "variation_at_final_endpoint": "0",
+        "first_variation_of_action": "0",
+        "euler_lagrange_residual": "0"
+      },
+      "d_Ut_dt": "offset",
+      "example_parameters": {
+        "mass": 2.0,
+        "velocity": 3.0,
+        "duration": 5.0,
+        "offset": -9.0
+      },
+      "example_stationary_action_first_variation": 0.0,
+      "example_d_Ut_dt": -9.0,
+      "example_total_energy": 0.0,
+      "conclusion": "Stationary action does not imply d(Ut)=0.",
+      "scope": "Invalidates the stated inference, not every claimed instrument observation.",
+      "passed": true
+    },
+    "isolated_electrostatic_force": {
+      "source": "E15; independent whole-system conservation comparator",
+      "units": "Scaled electrostatic units with Coulomb constant=1",
+      "charges": [
+        1,
+        2,
+        -3
+      ],
+      "positions": [
+        0,
+        1,
+        3
+      ],
+      "boundary": "Isolated finite charge collection; no external field",
+      "potential_energy": "-6/(-x1 + x2) - 3/(-x0 + x2) + 2/(-x0 + x1)",
+      "force_from_energy": [
+        "-5/3",
+        "7/2",
+        "-11/6"
+      ],
+      "direct_pairwise_force": [
+        "-5/3",
+        "7/2",
+        "-11/6"
+      ],
+      "translation_energy_residual": "0",
+      "total_force": "0",
+      "force_if_only_first_member_counted": "-5/3",
+      "conclusion": "A nonzero force on a selected member is compatible with zero total force.",
+      "scope": "Static isolated Coulomb system; not a finite-element reconstruction of the patent apparatus.",
+      "passed": true
+    },
+    "cavity_energy_accounting": {
+      "source": "E09, DIA report Section2.2.3 Eq.7, compared with mode energy balance",
+      "model": "Constant power deposited in one lossy mode; initially empty",
+      "power_convention": "Deposited power; coupling/reflection factors required for a generator rating",
+      "equation": "dU/dt=P_deposited-(omega/Q_cavity)*U",
+      "symbolic_solution_residual": "0",
+      "parameters": {
+        "deposited_power_watt": 1000.0,
+        "frequency_hz": 10000000000.0,
+        "cavity_Q": 628318.5307179586,
+        "observation_s": 1000.0
+      },
+      "ring_up_time_s": 1e-05,
+      "steady_stored_energy_joule": 0.01,
+      "report_effective_energy_expression_joule": 100000000000.0,
+      "ratio_if_effective_energy_is_interpreted_as_stored_energy": 10000000000000.0,
+      "dimensionless_time_samples": [
+        0.0,
+        0.1,
+        1.0,
+        3.0,
+        10.0,
+        30.0
+      ],
+      "numerical_normalized_energy": [
+        0.0,
+        0.0951625819640399,
+        0.6321205588290774,
+        0.9502129316320023,
+        0.9999546000704227,
+        0.9999999999999069
+      ],
+      "analytic_normalized_energy": [
+        0.0,
+        0.09516258196404043,
+        0.6321205588285577,
+        0.950212931632136,
+        0.9999546000702375,
+        0.9999999999999064
+      ],
+      "maximum_normalized_ode_error": 5.196953978270358e-13,
+      "conclusion": "Physical stored energy saturates; observation duration cannot be repeatedly counted as stored energy.",
+      "scope": "Rejects a stored-energy interpretation. Does not derive the full proposed detector sensitivity or rule out every effective estimator definition.",
+      "passed": true
+    },
+    "coherent_balanced_detection": {
+      "source": "E09/E11 motivate the question; this is an independently defined detector model",
+      "model": "Ideal balanced detection of two coherent modes; independent Poisson outputs",
+      "seed": 831704,
+      "trials_per_setting": 200000,
+      "signal_photons": 2.0,
+      "phase_radian": 0.0,
+      "statistical_check": "Mean and unbiased variance agree within6analytic standard errors at each fixed setting",
+      "snr_large_local_oscillator_limit": 2.8284271247461903,
+      "rows": [
+        {
+          "local_oscillator_photons": 0.02,
+          "output_poisson_means": [
+            1.21,
+            0.81
+          ],
+          "mean_difference_exact": 0.4,
+          "mean_difference_simulated": 0.398255,
+          "variance_difference_exact": 2.02,
+          "variance_difference_simulated": 2.0329581197655986,
+          "mean_error_in_standard_errors": -0.5490788866477886,
+          "variance_error_in_standard_errors": 1.8162062429639674,
+          "snr_exact": 0.2814390178921168,
+          "snr_simulated": 0.27931677626110957
+        },
+        {
+          "local_oscillator_photons": 0.2,
+          "output_poisson_means": [
+            1.732455532033676,
+            0.4675444679663242
+          ],
+          "mean_difference_exact": 1.2649110640673518,
+          "mean_difference_simulated": 1.25822,
+          "variance_difference_exact": 2.2,
+          "variance_difference_simulated": 2.2009834365171828,
+          "mean_error_in_standard_errors": -2.017431723603222,
+          "variance_error_in_standard_errors": 0.12760045511819923,
+          "snr_exact": 0.8528028654224418,
+          "snr_simulated": 0.8481022142440582
+        },
+        {
+          "local_oscillator_photons": 2.0,
+          "output_poisson_means": [
+            4.0,
+            0.0
+          ],
+          "mean_difference_exact": 4.0,
+          "mean_difference_simulated": 3.997665,
+          "variance_difference_exact": 4.0,
+          "variance_difference_simulated": 3.9890694931224657,
+          "mean_error_in_standard_errors": -0.5221218727461955,
+          "variance_error_in_standard_errors": -0.8147100697493245,
+          "snr_exact": 2.0,
+          "snr_simulated": 2.0015691414922303
+        },
+        {
+          "local_oscillator_photons": 20.0,
+          "output_poisson_means": [
+            17.32455532033676,
+            4.675444679663241
+          ],
+          "mean_difference_exact": 12.649110640673518,
+          "mean_difference_simulated": 12.64987,
+          "variance_difference_exact": 22.0,
+          "variance_difference_simulated": 21.90249849559248,
+          "mean_error_in_standard_errors": 0.072402070959518,
+          "variance_error_in_standard_errors": -1.3858226514496055,
+          "snr_exact": 2.6967994498529686,
+          "snr_simulated": 2.702957597589517
+        },
+        {
+          "local_oscillator_photons": 200.0,
+          "output_poisson_means": [
+            121.0,
+            81.0
+          ],
+          "mean_difference_exact": 40.0,
+          "mean_difference_simulated": 39.97634,
+          "variance_difference_exact": 202.0,
+          "variance_difference_simulated": 202.07605058465293,
+          "mean_error_in_standard_errors": -0.7444817454490812,
+          "variance_error_in_standard_errors": 0.11890860265495448,
+          "snr_exact": 2.8143901789211676,
+          "snr_simulated": 2.8121961378371814
+        },
+        {
+          "local_oscillator_photons": 2000.0,
+          "output_poisson_means": [
+            1064.2455532033675,
+            937.7544467966325
+          ],
+          "mean_difference_exact": 126.49110640673517,
+          "mean_difference_simulated": 126.526375,
+          "variance_difference_exact": 2002.0,
+          "variance_difference_simulated": 2008.040884563798,
+          "mean_error_in_standard_errors": 0.35250972182909596,
+          "variance_error_in_standard_errors": 0.9540720043520914,
+          "snr_exact": 2.827013970960878,
+          "snr_simulated": 2.8235454971342335
+        },
+        {
+          "local_oscillator_photons": 20000.0,
+          "output_poisson_means": [
+            10201.0,
+            9801.0
+          ],
+          "mean_difference_exact": 400.0,
+          "mean_difference_simulated": 400.18443,
+          "variance_difference_exact": 20002.0,
+          "variance_difference_simulated": 19976.84378979405,
+          "mean_error_in_standard_errors": 0.5831897101083637,
+          "variance_error_in_standard_errors": -0.397708871164043,
+          "snr_exact": 2.8282857139956707,
+          "snr_simulated": 2.8313708119403778
+        }
+      ],
+      "conclusion": "At fixed signal, increasing coherent local-oscillator power yields finite SNR rather than noiseless unbounded gain.",
+      "scope": "Simulated ideal coherent detector, not a complete Li-Baker geometry, squeezed-state calculation, or hardware experiment.",
+      "passed": true
+    }
+  }
+}

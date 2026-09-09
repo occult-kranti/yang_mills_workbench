@@ -1,0 +1,36 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const types={'index.html':'text/html; charset=utf-8','style.css':'text/css; charset=utf-8','app.js':'text/javascript; charset=utf-8','calculators.js':'text/javascript; charset=utf-8','content.js':'text/javascript; charset=utf-8','content.json':'application/json; charset=utf-8','expansion-tools.js':'text/javascript; charset=utf-8','patents.js':'text/javascript; charset=utf-8','patents.css':'text/css; charset=utf-8','research.css':'text/css; charset=utf-8','research.js':'text/javascript; charset=utf-8','research-data.js':'text/javascript; charset=utf-8'};
+const assets={};
+Object.assign(types,{'research-plaquette.js':'text/javascript; charset=utf-8','research-plaquette-data.js':'text/javascript; charset=utf-8','plaquette-proof-map.json':'application/json; charset=utf-8','plaquette-gaps.csv':'text/csv; charset=utf-8','plaquette-drive.csv':'text/csv; charset=utf-8'});
+Object.assign(types,{'research-yangmills.js':'text/javascript; charset=utf-8','research-yangmills-data.js':'text/javascript; charset=utf-8','yangmills-proof-map.json':'application/json; charset=utf-8'});
+for(const name of ['yangmills-lattice.csv','yangmills-transfer.csv','yangmills-stability.csv','yangmills-norm.csv'])types[name]='text/csv; charset=utf-8';
+types['scalar-response-grid.csv']='text/csv; charset=utf-8';
+Object.assign(types,{'research-millennium.js':'text/javascript; charset=utf-8','research-millennium-data.js':'text/javascript; charset=utf-8','research-millennium.css':'text/css; charset=utf-8','millennium-proof-map.json':'application/json; charset=utf-8','gap-fixed-volume.csv':'text/csv; charset=utf-8','gap-volume.csv':'text/csv; charset=utf-8','gap-spectral.csv':'text/csv; charset=utf-8'});
+Object.assign(types,{'research-hub.js':'text/javascript; charset=utf-8','research-hub-data.js':'text/javascript; charset=utf-8','research-hub.css':'text/css; charset=utf-8','research-map.json':'application/json; charset=utf-8','finite_geometry.csv':'text/csv; charset=utf-8','quadrature_refinement.csv':'text/csv; charset=utf-8','tail_behavior.csv':'text/csv; charset=utf-8','code_fix_convergence.csv':'text/csv; charset=utf-8'});
+Object.assign(types,{'research-closures.js':'text/javascript; charset=utf-8','research-closures-data.js':'text/javascript; charset=utf-8','closure-proof-map.json':'application/json; charset=utf-8'});
+for(const name of ['finite_correct.csv','finite_wrong.csv','finite_delayed.csv','finite_refinement.csv','finite_matrix.csv','gravity_constraints.csv','gravity_case_summary.csv'])types[name]='text/csv; charset=utf-8';
+for(const [name,type] of Object.entries(types))assets['/'+name]={type,body:fs.readFileSync(path.join(root,'dist',name),'utf8')};
+assets['/advisor-and-research-guide.pdf']={type:'application/pdf',binary:true,body:fs.readFileSync(path.join(root,'dist','advisor-and-research-guide.pdf')).toString('base64')};
+assets['/research-review.zip']={type:'application/zip',binary:true,body:fs.readFileSync(path.join(root,'dist','research-review.zip')).toString('base64')};
+assets['/research-round8.zip']={type:'application/zip',binary:true,body:fs.readFileSync(path.join(root,'dist','research-round8.zip')).toString('base64')};
+assets['/research-round9.zip']={type:'application/zip',binary:true,body:fs.readFileSync(path.join(root,'dist','research-round9.zip')).toString('base64')};
+assets['/research-round10.zip']={type:'application/zip',binary:true,body:fs.readFileSync(path.join(root,'dist','research-round10.zip')).toString('base64')};
+assets['/einstein-qed-variable-study.pdf']={type:'application/pdf',binary:true,body:fs.readFileSync(path.join(root,'dist','einstein-qed-variable-study.pdf')).toString('base64')};
+assets['/']=assets['/index.html'];
+const hosting=JSON.parse(fs.readFileSync(path.join(root,'.openai/hosting.json'),'utf8'));
+if(!hosting.project_id||hosting.static)throw Error('Expected registered Worker hosting configuration');
+const categories=JSON.parse(assets['/content.json'].body).feeds.map(f=>f.category);
+const sax=fs.readFileSync(path.join(root,'worker/vendor/sax.js'),'utf8');
+const main=fs.readFileSync(path.join(root,'worker/index.js'),'utf8');
+const output='// Generated from local assets and Worker sources. SAX 1.6.1: BlueOak-1.0.0; see bundled license.\n'+
+ 'const ASSETS='+JSON.stringify(assets)+';\nconst CATEGORIES=new Set('+JSON.stringify(categories)+');\n'+
+ 'const SAX=(()=>{const exports={};\n'+sax+'\nreturn exports;})();\n'+main;
+fs.mkdirSync(path.join(root,'dist/server'),{recursive:true});
+fs.mkdirSync(path.join(root,'dist/.openai'),{recursive:true});
+fs.writeFileSync(path.join(root,'dist/server/index.js'),output);
+fs.copyFileSync(path.join(root,'worker/vendor/SAX-LICENSE'),path.join(root,'dist/server/SAX-LICENSE'));
+fs.writeFileSync(path.join(root,'dist/.openai/hosting.json'),JSON.stringify(hosting)+'\n');
+console.log('Built hosted Worker with '+Object.keys(types).length+' assets and '+categories.length+' research categories.');

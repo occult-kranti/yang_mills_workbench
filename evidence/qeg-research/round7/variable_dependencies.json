@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "type": "variable_metadata_not_proof_certificate",
+  "variables": [
+    {
+      "id": "landau_cutoff",
+      "symbol": "N",
+      "type": "Nonnegative integer regulator label",
+      "determining_equation_or_input": "Choice of retained Landau levels; limit specification",
+      "ward_consequence": "Finite-mode sums can break symmetries of the continuum regulator",
+      "freedom": "Numerical resolution choice",
+      "missing_proof": "Uniform current, stress and state estimates as N grows"
+    },
+    {
+      "id": "momentum_window",
+      "symbol": "K",
+      "type": "Positive momentum-window regulator label",
+      "determining_equation_or_input": "Choice of canonical integration window",
+      "ward_consequence": "A fixed window must transform with a canonical gauge shift",
+      "freedom": "Numerical resolution choice",
+      "missing_proof": "Joint regulator limit and regulator-shape independence"
+    },
+    {
+      "id": "quadrature_resolution",
+      "symbol": "n_k",
+      "type": "Quadrature resolution integer",
+      "determining_equation_or_input": "Error tolerance for a fixed N,K",
+      "ward_consequence": "Refinement does not remove either physical cutoff",
+      "freedom": "Numerical choice",
+      "missing_proof": "Certified quadrature error; integral bounds do not transfer automatically"
+    },
+    {
+      "id": "real_interpolation",
+      "symbol": "ν",
+      "type": "Optional real interpolation label",
+      "determining_equation_or_input": "Analytic continuation of a coefficient formula, if explicitly defined",
+      "ward_consequence": "Has no new spacetime Ward identity",
+      "freedom": "Mathematical diagnostic",
+      "missing_proof": "Does not define fractional Landau levels or an underlying Hilbert space"
+    },
+    {
+      "id": "renormalization_scale",
+      "symbol": "μ_R",
+      "type": "Positive renormalization scale",
+      "determining_equation_or_input": "Scheme choice and RG equation",
+      "ward_consequence": "Physical predictions should be μ_R-independent to stated accuracy",
+      "freedom": "Description choice",
+      "missing_proof": "RG consistency of the full retained current/stress, not just one term"
+    },
+    {
+      "id": "renormalized_charge",
+      "symbol": "e_R(μ_R)",
+      "type": "Renormalized parameter as a function of scale",
+      "determining_equation_or_input": "Beta function plus reference normalization",
+      "ward_consequence": "Must be combined with wave-function/vertex conventions",
+      "freedom": "Matched, not a tunable time function",
+      "missing_proof": "Applicable threshold treatment and perturbative error"
+    },
+    {
+      "id": "bare_coefficient",
+      "symbol": "z_B(N,K;μ_R)",
+      "type": "Regulator-dependent bare gauge coefficient",
+      "determining_equation_or_input": "Common regularized action and matching",
+      "ward_consequence": "Its current and stress variations must both be retained",
+      "freedom": "Fixed after matching",
+      "missing_proof": "Covariant derivation for this Landau/window regulator"
+    },
+    {
+      "id": "magnetic_susceptibility",
+      "symbol": "χ_b",
+      "type": "Existing finite-model susceptibility",
+      "determining_equation_or_input": "The declared magnetic matching calculation",
+      "ward_consequence": "Changing it changes both the field equation and energy identity",
+      "freedom": "Already matched within the old model",
+      "missing_proof": "Justification in a new regulator or evolving geometry"
+    },
+    {
+      "id": "scalar_field",
+      "symbol": "φ(x)",
+      "type": "Genuine scalar spacetime field",
+      "determining_equation_or_input": "Scalar equation and admissible initial data",
+      "ward_consequence": "Its stress and exchange with gauge/matter sectors are required",
+      "freedom": "New physical sector",
+      "missing_proof": "Evidence for its couplings; scalar-model validity and well-posedness"
+    },
+    {
+      "id": "gauge_kinetic_function",
+      "symbol": "f(φ)",
+      "type": "Gauge kinetic function",
+      "determining_equation_or_input": "Specified effective action; f>0 on the domain",
+      "ward_consequence": "Derivatives enter Maxwell and scalar equations",
+      "freedom": "Functional model choice, then constrained",
+      "missing_proof": "Matching or measurements; absence of unacceptable instabilities"
+    },
+    {
+      "id": "scalar_functions",
+      "symbol": "V(φ), m(φ)",
+      "type": "Potential and mass functions",
+      "determining_equation_or_input": "Model definition or matching",
+      "ward_consequence": "Their derivatives enter scalar force and matter exchange",
+      "freedom": "Functional model choices",
+      "missing_proof": "Physical motivation and a renormalization prescription including scalar operators"
+    },
+    {
+      "id": "dimensionless_magnetic_field",
+      "symbol": "b=e_R B/m_ref²",
+      "type": "Derived dimensionless field",
+      "determining_equation_or_input": "Maxwell/flux evolution with fixed reference units",
+      "ward_consequence": "Cannot vary independently of B, charge normalization and geometry",
+      "freedom": "Derived observable",
+      "missing_proof": "Re-derivation of modal dynamics when B or the basis changes"
+    },
+    {
+      "id": "metric",
+      "symbol": "g_μν(x)",
+      "type": "Metric field",
+      "determining_equation_or_input": "Gravitational equations plus constraints",
+      "ward_consequence": "Bianchi identity requires conserved total source",
+      "freedom": "Initial data plus evolution",
+      "missing_proof": "Common renormalized quantum stress and gravitational existence theorem"
+    },
+    {
+      "id": "initial_quantum_state",
+      "symbol": "ω₀",
+      "type": "Initial quantum state",
+      "determining_equation_or_input": "Specified admissible two-point data and field equations",
+      "ward_consequence": "Determines finite state-dependent current/stress and noise",
+      "freedom": "Physical initial data",
+      "missing_proof": "Hadamard/adiabatic regularity and uniform ultraviolet tail control"
+    },
+    {
+      "id": "quantum_functional",
+      "symbol": "Γ_q,ren",
+      "type": "State-dependent quantum functional",
+      "determining_equation_or_input": "In-in construction or an equivalent causal operator prescription",
+      "ward_consequence": "Common variations determine J, T and scalar density",
+      "freedom": "Calculated object",
+      "missing_proof": "Explicit strong-field curved-state implementation"
+    },
+    {
+      "id": "quantum_observables",
+      "symbol": "J_q, ρ_q, p_⊥q, p_∥q",
+      "type": "Composite observables",
+      "determining_equation_or_input": "Same state, subtraction and finite counterterms",
+      "ward_consequence": "Must satisfy the force Ward identity jointly",
+      "freedom": "Calculated, not free closure knobs",
+      "missing_proof": "Independent current and directional-pressure evaluation"
+    },
+    {
+      "id": "support_sector",
+      "symbol": "J_ext, T_support",
+      "type": "Apparatus data and stress",
+      "determining_equation_or_input": "A support model or explicit open-system work budget",
+      "ward_consequence": "Omitting support creates a total Ward defect",
+      "freedom": "Specified physical setup",
+      "missing_proof": "Consistent energy and pressure of the source"
+    },
+    {
+      "id": "eft_coefficients",
+      "symbol": "c_i(μ_R)",
+      "type": "Local effective-action coefficients",
+      "determining_equation_or_input": "Matching and renormalization conditions",
+      "ward_consequence": "Their full metric/gauge variations are linked",
+      "freedom": "Matched EFT data",
+      "missing_proof": "Valid operator basis, approximation order and higher-derivative treatment"
+    }
+  ],
+  "edges": [
+    {
+      "from": "renormalization_scale",
+      "to": "renormalized_charge",
+      "relation": "determines_description_via_beta_function",
+      "status": "requires_declared_scheme"
+    },
+    {
+      "from": "scalar_field",
+      "to": "gauge_kinetic_function",
+      "relation": "evaluates_chosen_function",
+      "status": "new_physical_hypothesis"
+    },
+    {
+      "from": "initial_quantum_state",
+      "to": "quantum_functional",
+      "relation": "initial_state_dependency",
+      "status": "missing_implementation"
+    },
+    {
+      "from": "quantum_functional",
+      "to": "quantum_observables",
+      "relation": "common_physical_branch_variation",
+      "status": "missing_implementation"
+    },
+    {
+      "from": "quantum_observables",
+      "to": "metric",
+      "relation": "sources_gravitational_equations",
+      "status": "requires_common_ward_identity"
+    },
+    {
+      "from": "landau_cutoff",
+      "to": "bare_coefficient",
+      "relation": "regulator_matching_dependency",
+      "status": "requires_common_action_derivation"
+    },
+    {
+      "from": "momentum_window",
+      "to": "bare_coefficient",
+      "relation": "regulator_matching_dependency",
+      "status": "requires_common_action_derivation"
+    }
+  ]
+}

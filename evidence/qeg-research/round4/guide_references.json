@@ -1,0 +1,254 @@
+{
+  "R4A01": {
+    "title": "How we built our multi-agent research system",
+    "authors": "Jeremy Hadfield, Barry Zhang, Kenneth Lien, Florian Scholz, Jeremy Fox, Daniel Ford / Anthropic",
+    "date": "2025-06-13",
+    "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+    "role": "Parallelize separable research; avoid assuming tightly coupled coding benefits from a larger swarm.",
+    "readdepth": "Reading record: Selected substantive sections: architecture, benefit/cost discussion, coordination limitations, persistent artifact handoff.",
+    "access": "Checked 2026-09-09. Internal evaluation and developer account; no reproduction here."
+  },
+  "R4A02": {
+    "title": "Demystifying evals for AI agents",
+    "authors": "Anthropic",
+    "date": "2026-01-09",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "role": "Separate claimed success from achieved state; deterministic checks and model judgments have different scopes.",
+    "readdepth": "Reading record: Evaluation definitions, grader types, reliability metrics and roadmap sections.",
+    "access": "Checked 2026-09-09. Engineering guidance rather than validation of the physics model."
+  },
+  "R4A03": {
+    "title": "Effective context engineering for AI agents",
+    "authors": "Prithvi Rajasekaran, Ethan Dixon, Carly Ryan, Jeremy Hadfield / Anthropic",
+    "date": "2025-09-29",
+    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "role": "Use compact contracts with artifact pointers and retrieve relevant evidence at the point of use.",
+    "readdepth": "Reading record: Substantive article text including retrieval, compaction, notes and subagent architecture.",
+    "access": "Checked 2026-09-09. No measurement of the current project or installed memory system."
+  },
+  "R4A04": {
+    "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
+    "authors": "Giulio Starace et al.",
+    "date": "2025-04-07",
+    "url": "https://arxiv.org/html/2504.01848v3",
+    "role": "Code, execution and result matching must be separately graded; judge error and contamination remain.",
+    "readdepth": "Reading record: Selected full-text sections 2.3–2.6, 3.1–3.2, 4, 7, Appendix A and judge details; submission history checked.",
+    "access": "Checked 2026-09-09. ML replication benchmark; automated judge is not a physics correctness oracle."
+  },
+  "R4A05": {
+    "title": "PaperBench repository",
+    "authors": "OpenAI",
+    "date": "Date not specified",
+    "url": "https://github.com/openai/frontier-evals/tree/main/project/paperbench",
+    "role": "Reuse hierarchical rubric/reproduction-artifact design where useful.",
+    "readdepth": "Reading record: Repository page and exposed README/setup content; original preparedness URL redirects to frontier-evals.",
+    "access": "Checked 2026-09-09. Not cloned, installed or executed in this process review; no commit pinned."
+  },
+  "R4A06": {
+    "title": "Evaluating AI's ability to perform scientific research tasks",
+    "authors": "OpenAI",
+    "date": "2025-12-16",
+    "url": "https://openai.com/index/frontierscience/",
+    "role": "Expert-written constrained subtasks do not measure all activities required for scientific discovery.",
+    "readdepth": "Reading record: Benchmark construction, grading, model-performance and limitations sections.",
+    "access": "Checked 2026-09-09. Vendor benchmark; current model capability cannot be inferred from the older reported model ranking."
+  },
+  "R4A07": {
+    "title": "Our First Proof submissions",
+    "authors": "OpenAI",
+    "date": "2026-02-20",
+    "url": "https://openai.com/index/first-proof-submissions/",
+    "role": "Preserve failed/retracted interpretations and separate proof attempt from accepted proof.",
+    "readdepth": "Reading record: Announcement and explicit correction of initial confidence in problem 2.",
+    "access": "Checked 2026-09-09. Individual proof manuscripts were not independently verified here."
+  },
+  "R4A08": {
+    "title": "Recent Frontier Models Are Reward Hacking",
+    "authors": "Sydney Von Arx, Lawrence Chan, Beth Barnes / METR",
+    "date": "2025-06-05",
+    "url": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+    "role": "Candidate/evaluator separation, source hashes and checks on actual outcomes.",
+    "readdepth": "Reading record: Introduction and concrete scorer/reference/timing manipulation examples.",
+    "access": "Checked 2026-09-09. No replication of METR tasks; examples motivate protocol controls."
+  },
+  "R4A09": {
+    "title": "Accelerating scientific discovery with Co-Scientist",
+    "authors": "Juraj Gottweis, Wei-Hung Weng, Alexander Daryin et al.",
+    "date": "2026-05-19",
+    "url": "https://www.nature.com/articles/s41586-026-10644-y",
+    "role": "Use proposal-generation/reflection loops but do not treat auto-evaluation as independent ground truth.",
+    "readdepth": "Reading record: Architecture/methods, Elo evaluation, human-evaluation caveats, experimental-validation overview, ablation and limitations sections; publication and version-of-record dates checked.",
+    "access": "Checked 2026-09-09. Mostly biomedical validation; experiments and supplementary prompts not reproduced here. Version of record 2026-07-01."
+  },
+  "R4A10": {
+    "title": "On the Navier–Stokes Millennium Prize Problem",
+    "authors": "OpenAI",
+    "date": "2026-09-08",
+    "url": "https://openai.com/index/navier-stokes-solution/",
+    "role": "Separate mathematical variants, stage easier subproblems, and preserve independently checkable proof artifacts.",
+    "readdepth": "Reading record: Problem, result, agent-method and artifact-link sections.",
+    "access": "Checked 2026-09-09. Very recent developer announcement; acceptance and complete proof validity not adjudicated by this project."
+  },
+  "R4A11": {
+    "title": "Finite time blowup for Navier–Stokes",
+    "authors": "OpenAI",
+    "date": "Date not specified",
+    "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+    "role": "The announced theorem includes smooth compactly supported forcing; do not describe it as the unforced Navier–Stokes problem.",
+    "readdepth": "Reading record: Abstract, table of contents and Theorem 1.1 on opening page of 166-page manuscript.",
+    "access": "Checked 2026-09-09. No complete proof review, Lean compilation or independent certificate audit; announcement association 2026-09-08."
+  },
+  "R4A12": {
+    "title": "NavierStokesAndEuler",
+    "authors": "OpenAI",
+    "date": "Date not specified",
+    "url": "https://github.com/openai/NavierStokesAndEuler",
+    "role": "A linked formalization is an inspectable artifact, not an automatically reproduced verification.",
+    "readdepth": "Reading record: Repository listing and README theorem scope.",
+    "access": "Checked 2026-09-09. Not cloned or built; no assumptions audit or commit pin performed."
+  },
+  "R4A13": {
+    "title": "Patterns and problems in emerging multiagent systems",
+    "authors": "Anthropic Frontier Red Team",
+    "date": "2026-08-13",
+    "url": "https://www.anthropic.com/research/multiagent-systems",
+    "role": "Compare swarms on matched scope and resources; explicit roles and ownership for coupled work.",
+    "readdepth": "Reading record: Introduction and coordination comparison including search-scope/token confounding and dependent-work caveat.",
+    "access": "Checked 2026-09-09. Developer experiments in software tasks; no direct estimate of science performance."
+  },
+  "R01": {
+    "title": "Linear Response Analysis of the Semiclassical Approximation to Spin 1/2 Quantum Electrodynamics in 1+1 Dimensions",
+    "authors": "Ian M. Newsome; Paul R. Anderson; Eric M. Grotzke",
+    "date": "2025-05-01, arXiv v2; journal 2025-03-20",
+    "url": "https://arxiv.org/html/2410.22633v2",
+    "role": "Retarded-current response, unchanged vacuum preparation, necessary criterion and finite-difference comparator.",
+    "readdepth": "Reading record: Read introduction, sections III–IV, response equations 22–28 and Appendix B; previous round numerical review retained. HTML autogenerated date is not submission date.",
+    "access": "Checked 2026-09-09. 1+1-dimensional source and matter model; no numerical transfer to 3+1 Landau response."
+  },
+  "R02": {
+    "title": "Linear Response, Validity of Semi-Classical Gravity, and the Stability of Flat Space",
+    "authors": "Paul R. Anderson; Carmen Molina-Paris; Emil Mottola",
+    "date": "2002-09-21; Phys. Rev. D67 (2003) 024026",
+    "url": "https://arxiv.org/abs/gr-qc/0209075",
+    "role": "Necessary linearized gauge-invariant stability criterion.",
+    "readdepth": "Reading record: Primary abstract and publication record read; detailed stochastic formalism separately read in R04.",
+    "access": "Checked 2026-09-09. Scalar Minkowski application; not strong-field interacting spinor QED."
+  },
+  "R03": {
+    "title": "Adiabatic regularization for Dirac fields in time-varying electric backgrounds",
+    "authors": "Pau Beltran-Palau; Jose Navarro-Salas; Silvia Pla",
+    "date": "2020-05-22, v2",
+    "url": "https://arxiv.org/html/2001.08710v2",
+    "role": "Consistent adiabatic order and current/stress subtraction requirement.",
+    "readdepth": "Reading record: Read adiabatic-order discussion and Appendix C explicit terms through fourth order; submission version checked.",
+    "access": "Checked 2026-09-09. Displayed formulas are not an implemented anisotropic magnetic Bianchi-I closure."
+  },
+  "R04": {
+    "title": "Validity of semiclassical gravity in the stochastic gravity approach",
+    "authors": "Enric Verdaguer",
+    "date": "2005-07-18, v1",
+    "url": "https://arxiv.org/html/gr-qc/0507073v1",
+    "role": "Symmetrized connected noise differs from retarded response; distributions and smearing matter.",
+    "readdepth": "Reading record: Read sections III–IV noise definition, retarded response, intrinsic/induced fluctuations and order-reduction limitations.",
+    "access": "Checked 2026-09-09. Large-N/scalar examples do not give a numerical noise bound for this finite-QED model."
+  },
+  "R05": {
+    "title": "Schwinger effect with backreaction in 1+1D massive QED with a strong external field",
+    "authors": "Samuel E. Gralla; Morifumi Mizuno",
+    "date": "2026-04-09, v2",
+    "url": "https://arxiv.org/html/2511.23464v2",
+    "role": "Fully quantum first-order mass correction can be absent from a semiclassical comparator.",
+    "readdepth": "Reading record: Primary abstract and setup revisited; prior round independently reproduced its reduced oscillator and reviewed Appendix B.",
+    "access": "Checked 2026-09-09. Not all-orders QED and not a directly matched multi-Landau-level model."
+  },
+  "R06": {
+    "title": "The renormalized locally covariant Dirac field",
+    "authors": "Jochen Zahn",
+    "date": "2013, arXiv v3",
+    "url": "https://arxiv.org/html/1210.4031v3",
+    "role": "Common locally covariant source/stress framework and allowed local renormalizations.",
+    "readdepth": "Reading record: Read current-conservation proposition and ambiguity discussion, stress conservation hypotheses in sections 4.1–4.2.",
+    "access": "Checked 2026-09-09. No evaluated strong-field Bianchi-I expectation values supplied by this source."
+  },
+  "R07": {
+    "title": "Revisiting semiclassical scalar QED in 1+1 dimensions",
+    "authors": "Santiago Sanz-Wuhl; Jochen Zahn",
+    "date": "2026-05-04, v1",
+    "url": "https://arxiv.org/html/2605.02570v1",
+    "role": "Gauge-compatible finite-interval screening comparator; numerical continuation versus dynamical stability.",
+    "readdepth": "Reading record: Read setup, equations 1–10, corrected polarization comparison, fixed-point method, results, discussion, Appendix A and funding acknowledgment; PDF pp2–3 confirmed printed Eq6/7 sign inconsistency.",
+    "access": "Checked 2026-09-09. Stationary 1+1 scalar problem; its own discussion leaves electromagnetic quantum-fluctuation validity unresolved."
+  },
+  "R08": {
+    "title": "Novel Bounds From The Weak Gravity and Festina Lente Conjectures",
+    "authors": "Fayez Abu-Ajamieh; Pratik Chattopadhyay; Nobuchika Okada; Roman Pasechnik; Zhi-Wei Wang",
+    "date": "2026-03-17, v2; journal 2026-02-27",
+    "url": "https://arxiv.org/html/2509.16762v2",
+    "role": "Current conditional WGC/Festina Lente phenomenology and explicit applicability assumptions.",
+    "readdepth": "Reading record: Read introduction and fifth-force section, especially small-H/local approximation, equations 1–7 and massive-mediator caveat.",
+    "access": "Checked 2026-09-09. Bounds remain conjecture-dependent; extrapolation to massive mediator includes an additional assumption."
+  },
+  "R09": {
+    "title": "Semiclassical regularity of compact trapped regions: From dynamical horizons to inner extremality",
+    "authors": "Raul Carballo-Rubio; Francesco Di Filippo; Stefano Liberati; Matt Visser",
+    "date": "2026-07-04, v1",
+    "url": "https://arxiv.org/html/2607.03916v1",
+    "role": "Finite-lifetime trapping horizons versus eternal Cauchy horizons; possible inner-extremal alternative.",
+    "readdepth": "Reading record: Read setup, stationary Polyakov stress equations, abstract, dynamical interpretation and conclusions including explicit unsolved-backreaction statement.",
+    "access": "Checked 2026-09-09. s-wave Polyakov approximation on selected backgrounds; no solved self-consistent endpoint."
+  },
+  "R10": {
+    "title": "Violation of the Leggett-Garg inequality in photon-graviton conversion",
+    "authors": "Kimihiro Nomura; Akira Taniguchi; Kazushige Ueda",
+    "date": "2026-07-14, v2",
+    "url": "https://arxiv.org/html/2601.20436v2",
+    "role": "Separate conversion amplitude from nonclassicality witness and measurement assumptions.",
+    "readdepth": "Reading record: Read introduction, inequality assumptions, Einstein-Maxwell quantized mode setup, discussion and statistical-error appendix.",
+    "access": "Checked 2026-09-09. No Euler-Heisenberg strong-field dispersion calculation; no experimental gravity quantization detection."
+  },
+  "R11": {
+    "title": "Finite-field QED corrections to vacuum birefringence and magnetar polarization transport",
+    "authors": "Shahram Abbassi; F. A. Chishtie; S. R. Valluri",
+    "date": "2026-08-24, version of record",
+    "url": "https://link.springer.com/article/10.1140/epjc/s10052-026-16246-2",
+    "role": "Finite-field low-frequency magnetic dispersion and order-consistency comparator.",
+    "readdepth": "Reading record: Read primary abstract, polarization convention, dispersion equations and explicit loop-order caveat; previous round deep review retained.",
+    "access": "Checked 2026-09-09. Apparent response maximum from unexpanded one-loop algebra is not controlled at higher loop order."
+  },
+  "UX01": {
+    "title": "PhET: Research",
+    "authors": "University of Colorado Boulder / PhET",
+    "date": "Date not specified",
+    "url": "https://phet.colorado.edu/en/research",
+    "role": "Inquiry-oriented controls and iterative learner evaluation",
+    "readdepth": "Reading record: Primary programme page: design rationale, interview procedure, research questions and limitations of simulations",
+    "access": "Checked 2026-09-09. Our prototype has not undergone PhET's learner interview process; no equivalent educational outcome claim"
+  },
+  "UX02": {
+    "title": "Observable Plot: Accessibility",
+    "authors": "Observable",
+    "date": "Date not specified",
+    "url": "https://observablehq.com/plot/features/accessibility",
+    "role": "Accessible descriptions at plot and mark level, hiding redundant decoration",
+    "readdepth": "Reading record: Full accessibility feature section, root SVG and per-mark ARIA options",
+    "access": "Checked 2026-09-09. ARIA attributes alone do not establish WCAG conformance; no Observable Plot library installation requested"
+  },
+  "UX03": {
+    "title": "Jupyter Book: Execute & Compute",
+    "authors": "Jupyter Book / MyST",
+    "date": "Date not specified",
+    "url": "https://jupyterbook.org/stable/execution/",
+    "role": "Separating executed output, cached output and live execution capabilities",
+    "readdepth": "Reading record: Full current overview: build-time execution, caching, output reuse, interactive widgets and remote-kernel distinction",
+    "access": "Checked 2026-09-09. The Observatory is a static research frontend; no remote Jupyter kernel or hosted notebook service is implemented"
+  },
+  "UX04": {
+    "title": "ARIA Authoring Practices: Dialog (Modal) Pattern",
+    "authors": "W3C Web Accessibility Initiative",
+    "date": "Date not specified",
+    "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+    "role": "Requested modal behavior, Escape, contained tab sequence, initial and restored focus",
+    "readdepth": "Reading record: Keyboard interaction, initial focus for structured content, focus restoration and dialog labeling",
+    "access": "Checked 2026-09-09. Implementation must be exercised in browser; this spec does not claim a completed accessibility audit"
+  }
+}

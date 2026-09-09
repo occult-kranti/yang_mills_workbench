@@ -1,0 +1,189 @@
+{
+  "contract_version": "P3-v1",
+  "date": "2026-09-09",
+  "status": "accepted_finite_regulator_response",
+  "selected_production_record": "production_nk1024_baseline",
+  "selected_record": "production_nk1024_baseline",
+  "accepted_claim": "Repaired implementation of the specified homogeneous longitudinal finite-regulator Maxwell\u2013Dirac source-amplitude response, with independent small-fixture verification and accepted sampled fixed-window momentum quadrature.",
+  "parameters": {
+    "a0": 0.0,
+    "target_E": 1.0,
+    "b": 10,
+    "Tpump": 4,
+    "tfinal": 20,
+    "ncut": 4,
+    "Kmax": 20,
+    "nK": 1024,
+    "rtol": 2e-10,
+    "atol": 2e-12,
+    "max_step": 0.05,
+    "sample_count": 401,
+    "z_floor": 1e-08,
+    "chi_mode": "matched",
+    "probe_start": 8.0,
+    "probe_duration": 4.0
+  },
+  "parameter_meaning": {
+    "target_E": "Integrated dimensionless external-current impulse lambda, not the realized maximum electric field.",
+    "ncut": "Maximum Landau index; n=0 through4 inclusive.",
+    "nK": "Gauss\u2013Legendre longitudinal nodes over the fixed canonical interval.",
+    "u": "Absolute derivative of x=eE/m^2 with respect to lambda at fixed grid, b and matching."
+  },
+  "sampling": {
+    "count": 401,
+    "s_initial": 0.0,
+    "s_final": 20.0,
+    "intersample_supremum_certified": false
+  },
+  "provenance": {
+    "production_source_sha256": "0a197f5b46de8114d790c937059018d21df3f55a436c76067b91c09277035867",
+    "production_results_sha256": "1ced17a08e41ac58533a116772e30a0dc6edee0773e4047be69f9858f2c21280",
+    "independent_results_sha256": "a7fbe84c04801390bb71f74f69afedf03586ccbe3550ffde3d9b65872eaa137a",
+    "independent_comparison_sha256": "c757f853e65d3d416e3d76a6a8c4520d62d99c1b435bf4b9aa1b04ff85aa291b",
+    "contract_sha256": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0",
+    "advisor_review_sha256": "ff87a9db18a78b9ad4c4662696517b2d65ee664162bd77398dedf6c825ca5af9",
+    "legacy_source_sha256": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88"
+  },
+  "independent_verification": {
+    "finite_difference_and_falsifier_gates_passed": true,
+    "gate_count": 13,
+    "production_comparison_gates_passed": true,
+    "comparison_gate_count": 19,
+    "production_code_imported_by_comparator": false,
+    "fixtures": {
+      "baseline": {
+        "record": "verifier_small",
+        "maximum_sampled_history_absolute_differences": {
+          "u": 1.0741074696341002e-11,
+          "v": 1.1478817896204419e-11,
+          "deltaJmatter_direct": 4.001621256577437e-11,
+          "deltaJmatter": 4.001621256577437e-11,
+          "x": 3.6208813725124855e-12
+        },
+        "threshold": 2e-08
+      },
+      "heldout": {
+        "record": "holdout_small_source",
+        "maximum_sampled_history_absolute_differences": {
+          "u": 3.7560954346815834e-11,
+          "v": 8.063594236773497e-11,
+          "deltaJmatter_direct": 9.276451828910126e-11,
+          "deltaJmatter": 9.276451828910126e-11,
+          "x": 4.2885139883708234e-12
+        },
+        "threshold": 2e-08
+      }
+    },
+    "large_selected_grid_independent_spinor_run_performed": false
+  },
+  "momentum_refinement": {
+    "same_window": [
+      -20,
+      20
+    ],
+    "same_landau_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "frozen_field_tangent_threshold": 1e-06,
+    "pairs": [
+      {
+        "coarser_record": "production_nk128",
+        "finer_record": "production_nk256",
+        "maximum_sampled_history_absolute_differences": {
+          "x": 0.00028713540936486925,
+          "u": 0.05042536427169382,
+          "v": 0.0030055013972081213,
+          "deltaJmatter_direct": 9.21272680065535
+        },
+        "field_tangent_threshold": 1e-06,
+        "field_tangent_pass": false
+      },
+      {
+        "coarser_record": "production_nk256",
+        "finer_record": "production_nk512_baseline",
+        "maximum_sampled_history_absolute_differences": {
+          "x": 7.150081500550964e-05,
+          "u": 0.013029069228309889,
+          "v": 0.0005687171042367822,
+          "deltaJmatter_direct": 3.2598261069809973
+        },
+        "field_tangent_threshold": 1e-06,
+        "field_tangent_pass": false
+      },
+      {
+        "coarser_record": "production_nk512_baseline",
+        "finer_record": "production_nk1024_baseline",
+        "maximum_sampled_history_absolute_differences": {
+          "x": 9.195977312970172e-13,
+          "u": 2.1572511138545636e-10,
+          "v": 7.348788244598836e-12,
+          "deltaJmatter_direct": 8.429999398540389e-08
+        },
+        "field_tangent_threshold": 1e-06,
+        "field_tangent_pass": true
+      }
+    ],
+    "decision": "512-to-1024 passes; select1024. No2048 run needed for this known-risk gate.",
+    "direct_current_difference_is_diagnostic_not_preselected_accuracy_gate": true
+  },
+  "measured_diagnostics": {
+    "min_Z": 0.9965117049606924,
+    "max_raw_r2_error": 1.2279670613679627e-09,
+    "max_energy_work_residual_abs": 9.45632461224477e-13,
+    "max_delta_energy_work_residual_abs": 3.711475571321898e-12,
+    "max_deltaJ_residual": 2.220446049250313e-16,
+    "max_tangent_orthogonality": 5.716248363540899e-09,
+    "max_legacy_S_effect": 1.8540724511240114e-14,
+    "final_a": -16.128910329354646,
+    "final_x": 0.7284246832122947,
+    "final_v": -11.525503092531853,
+    "final_u": 0.047336333923474944
+  },
+  "observable_summary": {
+    "x": {
+      "minimum_sampled": -4.278273501899171e-37,
+      "maximum_sampled": 0.9894865610158223,
+      "final": 0.7284246832122947
+    },
+    "u": {
+      "minimum_sampled": 0.0,
+      "maximum_sampled": 0.9868916125607323,
+      "final": 0.047336333923474944
+    },
+    "deltaJmatter_direct": {
+      "minimum_sampled": -0.0017032862912867031,
+      "maximum_sampled": 0.8555083183365944,
+      "final": 0.8555083183365944
+    }
+  },
+  "claim_flags": {
+    "finite_model_implementation_verified": true,
+    "sampled_fixed_window_field_tangent_quadrature_accepted": true,
+    "longitudinal_window_removed": false,
+    "landau_cutoff_removed": false,
+    "continuum_QED_validated": false,
+    "quantum_noise_computed": false,
+    "all_perturbations_stable": false,
+    "all_time_stability_proved": false,
+    "gravitational_backreaction_implemented": false,
+    "original_four_open_fronts_solved": false
+  },
+  "retained_failures": [
+    "Round3 report/source mismatch: claimed per-mode cancellation fix absent in delivered source.",
+    "Initial round4 direct-current derivative and false-zero diagnostics, documented observation ledger; original overwritten output not fully archived.",
+    "Initial finite-difference step missed fixed threshold; refinement passed without relaxing it.",
+    "128-to-256 and256-to-512 response quadrature failures remain in results."
+  ],
+  "next_dependencies": [
+    "Independent K-window and Landau-cutoff studies with fixed physical preparation and matching.",
+    "Covariant current, energy and both directional pressures from one renormalization prescription.",
+    "Mixed current/stress retarded kernels and physically smeared symmetrized noise.",
+    "Anisotropic gravitational constraints and physically consistent stress/curvature budget."
+  ],
+  "next_solver_prompt": "targeted_solver_prompt.md",
+  "research_roadmap": "physics_completion_roadmap.md"
+}

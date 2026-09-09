@@ -1,0 +1,38 @@
+{
+  "status": "Retained pre-repair review findings; not the final acceptance report",
+  "scope": "Observed by independent source inspection and a directly executed Python probe before the implementation was repaired.",
+  "provenance_limit": "The pre-repair source hash was not recorded by the inline probe. Do not claim these observations were produced by the later hash-stamped acceptance script. The initial hash-stamped script already ran after rapid repairs.",
+  "findings": [
+    {
+      "id": "disconnected_margin_route",
+      "method": "Source and fixture inspection",
+      "observed": "The original selected-theorem search seeded positive_margin; the standalone derived_margin scenario concluded only positive_margin. The main cost-12 derivation therefore did not derive its margin from the selected constants.",
+      "required_change": "Add one combined selected-constants-to-final-theorem scenario with no positive_margin initial fact."
+    },
+    {
+      "id": "hidden_conjecture_dependency",
+      "method": "Executed inline Python probe",
+      "input": "Seed L marked theorem with assumption_ids=[C]; C marked conjecture/unverified and absent from initial/conditional facts; rule L implies T.",
+      "observed_result": "proved",
+      "required_change": "Reject the undisclosed prerequisite; retain conjectural hypotheses explicitly."
+    },
+    {
+      "id": "unverified_theorem_seed",
+      "method": "Executed inline Python probe",
+      "input": "Seed A marked theorem with verification=unverified; rule A implies T.",
+      "observed_result": "proved",
+      "required_change": "Reject unverified theorem metadata as an exact-proof seed."
+    },
+    {
+      "id": "mutable_frozen_library",
+      "method": "Executed inline Python probe",
+      "input": "After loading a rule library, replace its rule r with dataclasses.replace(r,cost=900) inside the mutable rules dictionary.",
+      "observed_result": {
+        "old_hash_retained": true,
+        "checker_passed": true,
+        "cost": 900
+      },
+      "required_change": "Make the validated mappings immutable and recheck the library digest during proof replay."
+    }
+  ]
+}

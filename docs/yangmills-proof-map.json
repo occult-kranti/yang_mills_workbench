@@ -1,0 +1,5706 @@
+{
+  "status": "passed",
+  "scope": "Reviewed conditional implications and two-front Horn search with h=0; not a formal mathematical proof kernel. No continuum route.",
+  "routes": {
+    "complete_hierarchy": {
+      "library": {
+        "nodes": [
+          {
+            "id": "H_domain",
+            "statement": "Finite connected compact Lie product G^E, smooth real action S and Borel probability nu; all link Lie algebra generators.",
+            "scope": "H",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional model contract",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_all",
+            "statement": "For every smooth test f and every link generator Li, integral(Li f-f LiS)dnu=0.",
+            "scope": "H",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_bounded",
+            "statement": "S bounded; exp(S)nu is a finite nonzero measure eta.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_insert",
+            "statement": "The complete smooth hierarchy permits f=exp(S)phi for every smooth phi.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_cancel",
+            "statement": "Derivative terms cancel, giving integral Li phi deta=0.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_flow",
+            "statement": "All one-parameter generator flows preserve eta.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_translation",
+            "statement": "Connectedness and all link generators imply full left-translation invariance.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_haar",
+            "statement": "Haar uniqueness identifies eta=cHaar.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_density",
+            "statement": "nu=c exp(-S)Haar.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_result",
+            "statement": "Normalization gives exactly nu=Z^-1 exp(-S)Haar.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "H_1",
+            "premises": [
+              "H_domain"
+            ],
+            "conclusion": "H_bounded",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_2",
+            "premises": [
+              "H_all"
+            ],
+            "conclusion": "H_insert",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_3",
+            "premises": [
+              "H_bounded",
+              "H_insert"
+            ],
+            "conclusion": "H_cancel",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_4",
+            "premises": [
+              "H_cancel"
+            ],
+            "conclusion": "H_flow",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_5",
+            "premises": [
+              "H_flow",
+              "H_domain"
+            ],
+            "conclusion": "H_translation",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_6",
+            "premises": [
+              "H_translation"
+            ],
+            "conclusion": "H_haar",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_7",
+            "premises": [
+              "H_haar",
+              "H_bounded"
+            ],
+            "conclusion": "H_density",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_8",
+            "premises": [
+              "H_density",
+              "H_domain"
+            ],
+            "conclusion": "H_result",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "H_domain",
+          "H_all"
+        ],
+        "goals": [
+          "H_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "058cc95d8ff1019c3b60e84d07a4ff051bdab672cbf45272bfc3b0058cc525b5",
+        "initial_facts": [
+          "H_all",
+          "H_domain"
+        ],
+        "goals": [
+          "H_result"
+        ],
+        "assumptions": [
+          "H_all",
+          "H_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "H_all",
+          "H_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "H_all",
+              "H_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_id": "H_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "H_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "H_density",
+              "H_domain"
+            ],
+            "rule_id": "H_8"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "H_density",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_8"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_id": "H_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_id": "H_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_id": "H_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert"
+            ],
+            "rule_id": "H_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_id": "H_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_flow"
+            ],
+            "rule_id": "H_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 4,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3",
+              "H_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 5,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert",
+              "H_translation"
+            ],
+            "rule_id": "H_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "first_meeting",
+            "forward_cost": 5,
+            "backward_cost": 3,
+            "cost": 8,
+            "forward_facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert",
+              "H_translation"
+            ],
+            "backward_goals": [
+              "H_bounded",
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3",
+              "H_4",
+              "H_5",
+              "H_6",
+              "H_7",
+              "H_8"
+            ],
+            "checker_passed": true
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "H_all",
+              "H_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_id": "H_1"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_2"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_2"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "H_all",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_3"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert"
+            ],
+            "rule_id": "H_4"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3",
+              "H_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert",
+              "H_translation"
+            ],
+            "rule_id": "H_5"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_insert",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3",
+              "H_4",
+              "H_5"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 6,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_haar",
+              "H_insert",
+              "H_translation"
+            ],
+            "rule_id": "H_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 6,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_domain",
+              "H_flow",
+              "H_haar",
+              "H_insert",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3",
+              "H_4",
+              "H_5",
+              "H_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 7,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_density",
+              "H_domain",
+              "H_flow",
+              "H_haar",
+              "H_insert",
+              "H_translation"
+            ],
+            "rule_id": "H_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 7,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_density",
+              "H_domain",
+              "H_flow",
+              "H_haar",
+              "H_insert",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3",
+              "H_4",
+              "H_5",
+              "H_6",
+              "H_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 8,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_density",
+              "H_domain",
+              "H_flow",
+              "H_haar",
+              "H_insert",
+              "H_result",
+              "H_translation"
+            ],
+            "rule_id": "H_8"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 8,
+            "facts": [
+              "H_all",
+              "H_bounded",
+              "H_cancel",
+              "H_density",
+              "H_domain",
+              "H_flow",
+              "H_haar",
+              "H_insert",
+              "H_result",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_1",
+              "H_2",
+              "H_3",
+              "H_4",
+              "H_5",
+              "H_6",
+              "H_7",
+              "H_8"
+            ]
+          }
+        ],
+        "forward_states_popped": 10,
+        "backward_states_popped": 5,
+        "candidate_search_status": "candidate",
+        "frontier": [],
+        "status": "proved",
+        "certified_cost": 8,
+        "certified_proof": {
+          "passed": true,
+          "final_facts": [
+            "H_all",
+            "H_bounded",
+            "H_cancel",
+            "H_density",
+            "H_domain",
+            "H_flow",
+            "H_haar",
+            "H_insert",
+            "H_result",
+            "H_translation"
+          ],
+          "cost": 8,
+          "steps": [
+            {
+              "rule_id": "H_1",
+              "premises": [
+                "H_domain"
+              ],
+              "conclusion": "H_bounded",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_2",
+              "premises": [
+                "H_all"
+              ],
+              "conclusion": "H_insert",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_3",
+              "premises": [
+                "H_bounded",
+                "H_insert"
+              ],
+              "conclusion": "H_cancel",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_4",
+              "premises": [
+                "H_cancel"
+              ],
+              "conclusion": "H_flow",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_5",
+              "premises": [
+                "H_flow",
+                "H_domain"
+              ],
+              "conclusion": "H_translation",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_6",
+              "premises": [
+                "H_translation"
+              ],
+              "conclusion": "H_haar",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_7",
+              "premises": [
+                "H_haar",
+                "H_bounded"
+              ],
+              "conclusion": "H_density",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_8",
+              "premises": [
+                "H_density",
+                "H_domain"
+              ],
+              "conclusion": "H_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "optimality_certificate": "independent forward uniform-cost goal pop",
+        "first_meeting_candidate": {
+          "passed": true,
+          "final_facts": [
+            "H_all",
+            "H_bounded",
+            "H_cancel",
+            "H_density",
+            "H_domain",
+            "H_flow",
+            "H_haar",
+            "H_insert",
+            "H_result",
+            "H_translation"
+          ],
+          "cost": 8,
+          "steps": [
+            {
+              "rule_id": "H_1",
+              "premises": [
+                "H_domain"
+              ],
+              "conclusion": "H_bounded",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_2",
+              "premises": [
+                "H_all"
+              ],
+              "conclusion": "H_insert",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_3",
+              "premises": [
+                "H_bounded",
+                "H_insert"
+              ],
+              "conclusion": "H_cancel",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_4",
+              "premises": [
+                "H_cancel"
+              ],
+              "conclusion": "H_flow",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_5",
+              "premises": [
+                "H_flow",
+                "H_domain"
+              ],
+              "conclusion": "H_translation",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_6",
+              "premises": [
+                "H_translation"
+              ],
+              "conclusion": "H_haar",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_7",
+              "premises": [
+                "H_haar",
+                "H_bounded"
+              ],
+              "conclusion": "H_density",
+              "cost": 1
+            },
+            {
+              "rule_id": "H_8",
+              "premises": [
+                "H_density",
+                "H_domain"
+              ],
+              "conclusion": "H_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "first_meeting_candidate_cost": 8,
+        "first_meeting_was_certified_optimal": true
+      }
+    },
+    "group_convolution": {
+      "library": {
+        "nodes": [
+          {
+            "id": "K_domain",
+            "statement": "Normalized central SU(2) convolution exp(beta ReTr(UVdagger)/2), beta>0, full L2(SU2,Haar), at>0.",
+            "scope": "K",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional model contract",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "K_haar",
+            "statement": "Class integration has weight (2/pi)sin^2(theta).",
+            "scope": "K",
+            "kind": "theorem",
+            "assumption_ids": [
+              "K_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "K_char",
+            "statement": "Spin j character sin(n theta)/sin(theta), n=2j+1.",
+            "scope": "K",
+            "kind": "theorem",
+            "assumption_ids": [
+              "K_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "K_integral",
+            "statement": "Character integral=2n I_n(beta)/beta; Z=2I1(beta)/beta.",
+            "scope": "K",
+            "kind": "theorem",
+            "assumption_ids": [
+              "K_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "K_divide",
+            "statement": "Central convolution divides character coefficient by dimension n.",
+            "scope": "K",
+            "kind": "theorem",
+            "assumption_ids": [
+              "K_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "K_spectrum",
+            "statement": "Peter-Weyl gives all eigenvalues I_n/I1 with multiplicity n^2.",
+            "scope": "K",
+            "kind": "theorem",
+            "assumption_ids": [
+              "K_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "K_order",
+            "statement": "Positive Bessel integral and recurrence give 0<I_(n+1)/I_n<1.",
+            "scope": "K",
+            "kind": "theorem",
+            "assumption_ids": [
+              "K_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "K_result",
+            "statement": "Largest nonconstant eigenvalue I2/I1; rotor generator gap -log(I2/I1)/at.",
+            "scope": "K",
+            "kind": "theorem",
+            "assumption_ids": [
+              "K_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "K_1",
+            "premises": [
+              "K_domain"
+            ],
+            "conclusion": "K_haar",
+            "cost": 1,
+            "scope": "K",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "K_2",
+            "premises": [
+              "K_domain"
+            ],
+            "conclusion": "K_char",
+            "cost": 1,
+            "scope": "K",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "K_3",
+            "premises": [
+              "K_haar",
+              "K_char"
+            ],
+            "conclusion": "K_integral",
+            "cost": 1,
+            "scope": "K",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "K_4",
+            "premises": [
+              "K_domain"
+            ],
+            "conclusion": "K_divide",
+            "cost": 1,
+            "scope": "K",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "K_5",
+            "premises": [
+              "K_integral",
+              "K_divide"
+            ],
+            "conclusion": "K_spectrum",
+            "cost": 1,
+            "scope": "K",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "K_6",
+            "premises": [
+              "K_domain"
+            ],
+            "conclusion": "K_order",
+            "cost": 1,
+            "scope": "K",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "K_7",
+            "premises": [
+              "K_spectrum",
+              "K_order"
+            ],
+            "conclusion": "K_result",
+            "cost": 1,
+            "scope": "K",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "K_domain"
+        ],
+        "goals": [
+          "K_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "966f06bbd8d79aa2a69306f0a388d2ccf43f8bac323f97f43380ea557543624c",
+        "initial_facts": [
+          "K_domain"
+        ],
+        "goals": [
+          "K_result"
+        ],
+        "assumptions": [
+          "K_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "K_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "K_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "K_char",
+              "K_domain"
+            ],
+            "rule_id": "K_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "K_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "K_order",
+              "K_spectrum"
+            ],
+            "rule_id": "K_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "K_char",
+              "K_domain"
+            ],
+            "rule_ids": [
+              "K_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_ids": [
+              "K_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "K_order",
+              "K_spectrum"
+            ],
+            "rule_ids": [
+              "K_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "K_domain",
+              "K_spectrum"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "K_divide",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_id": "K_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_integral"
+            ],
+            "rule_id": "K_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_ids": [
+              "K_2",
+              "K_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_2",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "K_divide",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_7",
+              "K_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "K_domain",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "K_char",
+              "K_divide",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "K_divide",
+              "K_domain",
+              "K_integral"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "K_domain",
+              "K_spectrum"
+            ],
+            "rule_ids": [
+              "K_7",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_integral"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_2",
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "K_char",
+              "K_divide",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_7",
+              "K_5",
+              "K_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "first_meeting",
+            "forward_cost": 3,
+            "backward_cost": 4,
+            "cost": 7,
+            "forward_facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "backward_goals": [
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_4",
+              "K_6",
+              "K_2",
+              "K_3",
+              "K_5",
+              "K_7"
+            ],
+            "checker_passed": true
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "K_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_1"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "K_char",
+              "K_domain"
+            ],
+            "rule_id": "K_2"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_2"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "K_char",
+              "K_domain"
+            ],
+            "rule_ids": [
+              "K_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_ids": [
+              "K_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_integral"
+            ],
+            "rule_id": "K_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain"
+            ],
+            "rule_ids": [
+              "K_2",
+              "K_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_2",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_integral"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral"
+            ],
+            "rule_id": "K_4"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_2",
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3",
+              "K_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_spectrum"
+            ],
+            "rule_id": "K_5"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_spectrum"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3",
+              "K_4",
+              "K_5"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 6,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order",
+              "K_spectrum"
+            ],
+            "rule_id": "K_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3",
+              "K_4",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 6,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order",
+              "K_spectrum"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3",
+              "K_4",
+              "K_5",
+              "K_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 7,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order",
+              "K_result",
+              "K_spectrum"
+            ],
+            "rule_id": "K_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 7,
+            "facts": [
+              "K_char",
+              "K_divide",
+              "K_domain",
+              "K_haar",
+              "K_integral",
+              "K_order",
+              "K_result",
+              "K_spectrum"
+            ],
+            "rule_ids": [
+              "K_1",
+              "K_2",
+              "K_3",
+              "K_4",
+              "K_5",
+              "K_6",
+              "K_7"
+            ]
+          }
+        ],
+        "forward_states_popped": 23,
+        "backward_states_popped": 5,
+        "candidate_search_status": "candidate",
+        "frontier": [],
+        "status": "proved",
+        "certified_cost": 7,
+        "certified_proof": {
+          "passed": true,
+          "final_facts": [
+            "K_char",
+            "K_divide",
+            "K_domain",
+            "K_haar",
+            "K_integral",
+            "K_order",
+            "K_result",
+            "K_spectrum"
+          ],
+          "cost": 7,
+          "steps": [
+            {
+              "rule_id": "K_1",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_haar",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_2",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_char",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_3",
+              "premises": [
+                "K_haar",
+                "K_char"
+              ],
+              "conclusion": "K_integral",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_4",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_divide",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_5",
+              "premises": [
+                "K_integral",
+                "K_divide"
+              ],
+              "conclusion": "K_spectrum",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_6",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_order",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_7",
+              "premises": [
+                "K_spectrum",
+                "K_order"
+              ],
+              "conclusion": "K_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "optimality_certificate": "independent forward uniform-cost goal pop",
+        "first_meeting_candidate": {
+          "passed": true,
+          "final_facts": [
+            "K_char",
+            "K_divide",
+            "K_domain",
+            "K_haar",
+            "K_integral",
+            "K_order",
+            "K_result",
+            "K_spectrum"
+          ],
+          "cost": 7,
+          "steps": [
+            {
+              "rule_id": "K_1",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_haar",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_4",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_divide",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_6",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_order",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_2",
+              "premises": [
+                "K_domain"
+              ],
+              "conclusion": "K_char",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_3",
+              "premises": [
+                "K_haar",
+                "K_char"
+              ],
+              "conclusion": "K_integral",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_5",
+              "premises": [
+                "K_integral",
+                "K_divide"
+              ],
+              "conclusion": "K_spectrum",
+              "cost": 1
+            },
+            {
+              "rule_id": "K_7",
+              "premises": [
+                "K_spectrum",
+                "K_order"
+              ],
+              "conclusion": "K_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "first_meeting_candidate_cost": 7,
+        "first_meeting_was_certified_optimal": true
+      }
+    },
+    "conditional_stability": {
+      "library": {
+        "nodes": [
+          {
+            "id": "T_domain",
+            "statement": "Positive self-adjoint contractions T,S on one common Hilbert space, a,m>0; logarithmic generators on support.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional model contract",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_vacuum",
+            "statement": "T Omega=S Omega=Omega for the same normalized vacuum.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_reference",
+            "statement": "Reference norm on Omega complement <=exp(-ma).",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_error",
+            "statement": "Actual operator norm ||T-S||<=epsilon>=0, not merely average kernel L1.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_budget",
+            "statement": "exp(-ma)+epsilon<1.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_invariant",
+            "statement": "The common vacuum complement is invariant under both operators.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_triangle",
+            "statement": "On that complement norm S<=exp(-ma)+epsilon.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_margin",
+            "statement": "The upper bound lies strictly below one.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_budget"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_spectrum",
+            "statement": "Spectral calculus turns contraction norm into a logarithmic energy lower bound.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_result",
+            "statement": "Gap of S on its nonvacuum support is at least -log(exp(-ma)+epsilon)/a>0.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "T_1",
+            "premises": [
+              "T_domain",
+              "T_vacuum"
+            ],
+            "conclusion": "T_invariant",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_2",
+            "premises": [
+              "T_invariant",
+              "T_reference",
+              "T_error"
+            ],
+            "conclusion": "T_triangle",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_3",
+            "premises": [
+              "T_budget"
+            ],
+            "conclusion": "T_margin",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_4",
+            "premises": [
+              "T_domain",
+              "T_triangle"
+            ],
+            "conclusion": "T_spectrum",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_5",
+            "premises": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "conclusion": "T_result",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "T_domain",
+          "T_vacuum",
+          "T_reference",
+          "T_error",
+          "T_budget"
+        ],
+        "goals": [
+          "T_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "b5bedcbcf4a451ace459dfea7022b41cb9863706202993bde84855e0380e71e4",
+        "initial_facts": [
+          "T_budget",
+          "T_domain",
+          "T_error",
+          "T_reference",
+          "T_vacuum"
+        ],
+        "goals": [
+          "T_result"
+        ],
+        "assumptions": [
+          "T_budget",
+          "T_domain",
+          "T_error",
+          "T_reference",
+          "T_vacuum"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "T_budget",
+          "T_domain",
+          "T_error",
+          "T_reference",
+          "T_vacuum"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "T_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "rule_id": "T_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "rule_ids": [
+              "T_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "T_budget",
+              "T_spectrum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "T_domain",
+              "T_margin",
+              "T_triangle"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_spectrum",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "T_budget",
+              "T_spectrum"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_triangle"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "first_meeting",
+            "forward_cost": 2,
+            "backward_cost": 3,
+            "cost": 5,
+            "forward_facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "backward_goals": [
+              "T_budget",
+              "T_domain",
+              "T_triangle"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_2",
+              "T_4",
+              "T_3",
+              "T_5"
+            ],
+            "checker_passed": true
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_2"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_spectrum",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_2",
+              "T_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_spectrum",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference",
+              "T_spectrum",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_2",
+              "T_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_spectrum",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_2",
+              "T_3",
+              "T_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_result",
+              "T_spectrum",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_id": "T_5"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_result",
+              "T_spectrum",
+              "T_triangle",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_2",
+              "T_3",
+              "T_4",
+              "T_5"
+            ]
+          }
+        ],
+        "forward_states_popped": 9,
+        "backward_states_popped": 3,
+        "candidate_search_status": "candidate",
+        "frontier": [],
+        "status": "proved",
+        "certified_cost": 5,
+        "certified_proof": {
+          "passed": true,
+          "final_facts": [
+            "T_budget",
+            "T_domain",
+            "T_error",
+            "T_invariant",
+            "T_margin",
+            "T_reference",
+            "T_result",
+            "T_spectrum",
+            "T_triangle",
+            "T_vacuum"
+          ],
+          "cost": 5,
+          "steps": [
+            {
+              "rule_id": "T_1",
+              "premises": [
+                "T_domain",
+                "T_vacuum"
+              ],
+              "conclusion": "T_invariant",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_2",
+              "premises": [
+                "T_invariant",
+                "T_reference",
+                "T_error"
+              ],
+              "conclusion": "T_triangle",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_3",
+              "premises": [
+                "T_budget"
+              ],
+              "conclusion": "T_margin",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_4",
+              "premises": [
+                "T_domain",
+                "T_triangle"
+              ],
+              "conclusion": "T_spectrum",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_5",
+              "premises": [
+                "T_margin",
+                "T_spectrum"
+              ],
+              "conclusion": "T_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "optimality_certificate": "independent forward uniform-cost goal pop",
+        "first_meeting_candidate": {
+          "passed": true,
+          "final_facts": [
+            "T_budget",
+            "T_domain",
+            "T_error",
+            "T_invariant",
+            "T_margin",
+            "T_reference",
+            "T_result",
+            "T_spectrum",
+            "T_triangle",
+            "T_vacuum"
+          ],
+          "cost": 5,
+          "steps": [
+            {
+              "rule_id": "T_1",
+              "premises": [
+                "T_domain",
+                "T_vacuum"
+              ],
+              "conclusion": "T_invariant",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_2",
+              "premises": [
+                "T_invariant",
+                "T_reference",
+                "T_error"
+              ],
+              "conclusion": "T_triangle",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_4",
+              "premises": [
+                "T_domain",
+                "T_triangle"
+              ],
+              "conclusion": "T_spectrum",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_3",
+              "premises": [
+                "T_budget"
+              ],
+              "conclusion": "T_margin",
+              "cost": 1
+            },
+            {
+              "rule_id": "T_5",
+              "premises": [
+                "T_margin",
+                "T_spectrum"
+              ],
+              "conclusion": "T_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "first_meeting_candidate_cost": 5,
+        "first_meeting_was_certified_optimal": true
+      }
+    },
+    "withheld_all_tests": {
+      "library": {
+        "nodes": [
+          {
+            "id": "H_domain",
+            "statement": "Finite connected compact Lie product G^E, smooth real action S and Borel probability nu; all link Lie algebra generators.",
+            "scope": "H",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional model contract",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_all",
+            "statement": "For every smooth test f and every link generator Li, integral(Li f-f LiS)dnu=0.",
+            "scope": "H",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_bounded",
+            "statement": "S bounded; exp(S)nu is a finite nonzero measure eta.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_insert",
+            "statement": "The complete smooth hierarchy permits f=exp(S)phi for every smooth phi.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_cancel",
+            "statement": "Derivative terms cancel, giving integral Li phi deta=0.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_flow",
+            "statement": "All one-parameter generator flows preserve eta.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_translation",
+            "statement": "Connectedness and all link generators imply full left-translation invariance.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_haar",
+            "statement": "Haar uniqueness identifies eta=cHaar.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_density",
+            "statement": "nu=c exp(-S)Haar.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "H_result",
+            "statement": "Normalization gives exactly nu=Z^-1 exp(-S)Haar.",
+            "scope": "H",
+            "kind": "theorem",
+            "assumption_ids": [
+              "H_all",
+              "H_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "H_1",
+            "premises": [
+              "H_domain"
+            ],
+            "conclusion": "H_bounded",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_2",
+            "premises": [
+              "H_all"
+            ],
+            "conclusion": "H_insert",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_3",
+            "premises": [
+              "H_bounded",
+              "H_insert"
+            ],
+            "conclusion": "H_cancel",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_4",
+            "premises": [
+              "H_cancel"
+            ],
+            "conclusion": "H_flow",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_5",
+            "premises": [
+              "H_flow",
+              "H_domain"
+            ],
+            "conclusion": "H_translation",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_6",
+            "premises": [
+              "H_translation"
+            ],
+            "conclusion": "H_haar",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_7",
+            "premises": [
+              "H_haar",
+              "H_bounded"
+            ],
+            "conclusion": "H_density",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "H_8",
+            "premises": [
+              "H_density",
+              "H_domain"
+            ],
+            "conclusion": "H_result",
+            "cost": 1,
+            "scope": "H",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "H_domain"
+        ],
+        "goals": [
+          "H_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "fdb8e2571c9dfe124d546c68ca26416a0b4517e09261da64253515c6340e680b",
+        "initial_facts": [
+          "H_domain"
+        ],
+        "goals": [
+          "H_result"
+        ],
+        "assumptions": [
+          "H_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "H_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "H_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_id": "H_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "H_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "H_density",
+              "H_domain"
+            ],
+            "rule_id": "H_8"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "H_density",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_8"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_id": "H_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_id": "H_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_id": "H_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "H_domain",
+              "H_haar"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_id": "H_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_flow"
+            ],
+            "rule_id": "H_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "H_domain",
+              "H_translation"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_1",
+              "H_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 5,
+            "goals": [
+              "H_domain",
+              "H_flow"
+            ],
+            "rule_id": "H_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_flow"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6",
+              "H_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 5,
+            "goals": [
+              "H_bounded",
+              "H_cancel",
+              "H_domain"
+            ],
+            "rule_id": "H_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 5,
+            "goals": [
+              "H_domain",
+              "H_flow"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_1",
+              "H_6",
+              "H_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 6,
+            "goals": [
+              "H_cancel",
+              "H_domain"
+            ],
+            "rule_id": "H_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 5,
+            "goals": [
+              "H_bounded",
+              "H_cancel",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6",
+              "H_5",
+              "H_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 6,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 6,
+            "goals": [
+              "H_cancel",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_1",
+              "H_6",
+              "H_5",
+              "H_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 6,
+            "goals": [
+              "H_bounded",
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6",
+              "H_5",
+              "H_4",
+              "H_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 7,
+            "goals": [
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_id": "H_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 7,
+            "goals": [
+              "H_all",
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_id": "H_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 7,
+            "goals": [
+              "H_domain",
+              "H_insert"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6",
+              "H_5",
+              "H_4",
+              "H_3",
+              "H_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 8,
+            "goals": [
+              "H_all",
+              "H_domain"
+            ],
+            "rule_id": "H_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 7,
+            "goals": [
+              "H_all",
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6",
+              "H_5",
+              "H_4",
+              "H_3",
+              "H_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 8,
+            "goals": [
+              "H_all",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_8",
+              "H_7",
+              "H_6",
+              "H_5",
+              "H_4",
+              "H_3",
+              "H_1",
+              "H_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "H_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_id": "H_1"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "H_bounded",
+              "H_domain"
+            ],
+            "rule_ids": [
+              "H_1"
+            ]
+          }
+        ],
+        "forward_states_popped": 2,
+        "backward_states_popped": 14,
+        "candidate_search_status": "exhausted",
+        "frontier": [],
+        "status": "not_derivable",
+        "reason": "not derivable in this finite rule library"
+      }
+    },
+    "withheld_common_vacuum": {
+      "library": {
+        "nodes": [
+          {
+            "id": "T_domain",
+            "statement": "Positive self-adjoint contractions T,S on one common Hilbert space, a,m>0; logarithmic generators on support.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional model contract",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_vacuum",
+            "statement": "T Omega=S Omega=Omega for the same normalized vacuum.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_reference",
+            "statement": "Reference norm on Omega complement <=exp(-ma).",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_error",
+            "statement": "Actual operator norm ||T-S||<=epsilon>=0, not merely average kernel L1.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_budget",
+            "statement": "exp(-ma)+epsilon<1.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_invariant",
+            "statement": "The common vacuum complement is invariant under both operators.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_triangle",
+            "statement": "On that complement norm S<=exp(-ma)+epsilon.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_margin",
+            "statement": "The upper bound lies strictly below one.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_budget"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_spectrum",
+            "statement": "Spectral calculus turns contraction norm into a logarithmic energy lower bound.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_result",
+            "statement": "Gap of S on its nonvacuum support is at least -log(exp(-ma)+epsilon)/a>0.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "T_1",
+            "premises": [
+              "T_domain",
+              "T_vacuum"
+            ],
+            "conclusion": "T_invariant",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_2",
+            "premises": [
+              "T_invariant",
+              "T_reference",
+              "T_error"
+            ],
+            "conclusion": "T_triangle",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_3",
+            "premises": [
+              "T_budget"
+            ],
+            "conclusion": "T_margin",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_4",
+            "premises": [
+              "T_domain",
+              "T_triangle"
+            ],
+            "conclusion": "T_spectrum",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_5",
+            "premises": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "conclusion": "T_result",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "T_domain",
+          "T_reference",
+          "T_error",
+          "T_budget"
+        ],
+        "goals": [
+          "T_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "ad0375fe05610aa187b3e696475a34544117dad84128e9f961e06807249b3dec",
+        "initial_facts": [
+          "T_budget",
+          "T_domain",
+          "T_error",
+          "T_reference"
+        ],
+        "goals": [
+          "T_result"
+        ],
+        "assumptions": [
+          "T_budget",
+          "T_domain",
+          "T_error",
+          "T_reference"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "T_budget",
+          "T_domain",
+          "T_error",
+          "T_reference"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "T_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "rule_id": "T_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_ids": [
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "rule_ids": [
+              "T_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "T_budget",
+              "T_spectrum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "T_domain",
+              "T_margin",
+              "T_triangle"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "T_budget",
+              "T_spectrum"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_triangle"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "T_domain",
+              "T_margin",
+              "T_triangle"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_id": "T_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_triangle"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3",
+              "T_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference"
+            ],
+            "rule_id": "T_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_4",
+              "T_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3",
+              "T_4",
+              "T_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 5,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_4",
+              "T_2",
+              "T_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 5,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3",
+              "T_4",
+              "T_2",
+              "T_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_ids": [
+              "T_3"
+            ]
+          }
+        ],
+        "forward_states_popped": 2,
+        "backward_states_popped": 9,
+        "candidate_search_status": "exhausted",
+        "frontier": [],
+        "status": "not_derivable",
+        "reason": "not derivable in this finite rule library"
+      }
+    },
+    "only_product_l1": {
+      "library": {
+        "nodes": [
+          {
+            "id": "T_domain",
+            "statement": "Positive self-adjoint contractions T,S on one common Hilbert space, a,m>0; logarithmic generators on support.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional model contract",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_vacuum",
+            "statement": "T Omega=S Omega=Omega for the same normalized vacuum.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_reference",
+            "statement": "Reference norm on Omega complement <=exp(-ma).",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_error",
+            "statement": "Actual operator norm ||T-S||<=epsilon>=0, not merely average kernel L1.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_budget",
+            "statement": "exp(-ma)+epsilon<1.",
+            "scope": "T",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit hypothesis; not supplied by sampled residuals",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_invariant",
+            "statement": "The common vacuum complement is invariant under both operators.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_triangle",
+            "statement": "On that complement norm S<=exp(-ma)+epsilon.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_margin",
+            "statement": "The upper bound lies strictly below one.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_budget"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_spectrum",
+            "statement": "Spectral calculus turns contraction norm into a logarithmic energy lower bound.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "T_result",
+            "statement": "Gap of S on its nonvacuum support is at least -log(exp(-ma)+epsilon)/a>0.",
+            "scope": "T",
+            "kind": "theorem",
+            "assumption_ids": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "T_1",
+            "premises": [
+              "T_domain",
+              "T_vacuum"
+            ],
+            "conclusion": "T_invariant",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_2",
+            "premises": [
+              "T_invariant",
+              "T_reference",
+              "T_error"
+            ],
+            "conclusion": "T_triangle",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_3",
+            "premises": [
+              "T_budget"
+            ],
+            "conclusion": "T_margin",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_4",
+            "premises": [
+              "T_domain",
+              "T_triangle"
+            ],
+            "conclusion": "T_spectrum",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "T_5",
+            "premises": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "conclusion": "T_result",
+            "cost": 1,
+            "scope": "T",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "T_domain",
+          "T_vacuum",
+          "T_reference",
+          "T_budget"
+        ],
+        "goals": [
+          "T_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "37e63c91ed565d8464b0270f88d679a4f43e58e2cf5fd07638e1079f410992c9",
+        "initial_facts": [
+          "T_budget",
+          "T_domain",
+          "T_reference",
+          "T_vacuum"
+        ],
+        "goals": [
+          "T_result"
+        ],
+        "assumptions": [
+          "T_budget",
+          "T_domain",
+          "T_reference",
+          "T_vacuum"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "T_budget",
+          "T_domain",
+          "T_reference",
+          "T_vacuum"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "T_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "rule_id": "T_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "T_margin",
+              "T_spectrum"
+            ],
+            "rule_ids": [
+              "T_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "T_budget",
+              "T_spectrum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "T_domain",
+              "T_margin",
+              "T_triangle"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "T_budget",
+              "T_spectrum"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_triangle"
+            ],
+            "rule_id": "T_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "T_domain",
+              "T_margin",
+              "T_triangle"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_id": "T_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_triangle"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3",
+              "T_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference"
+            ],
+            "rule_id": "T_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_margin",
+              "T_reference"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_4",
+              "T_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_invariant",
+              "T_reference"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3",
+              "T_4",
+              "T_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 5,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "T_domain",
+              "T_error",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_4",
+              "T_2",
+              "T_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 5,
+            "goals": [
+              "T_budget",
+              "T_domain",
+              "T_error",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_5",
+              "T_3",
+              "T_4",
+              "T_2",
+              "T_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_1"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_id": "T_3"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "T_budget",
+              "T_domain",
+              "T_invariant",
+              "T_margin",
+              "T_reference",
+              "T_vacuum"
+            ],
+            "rule_ids": [
+              "T_1",
+              "T_3"
+            ]
+          }
+        ],
+        "forward_states_popped": 4,
+        "backward_states_popped": 9,
+        "candidate_search_status": "exhausted",
+        "frontier": [],
+        "status": "not_derivable",
+        "reason": "not derivable in this finite rule library"
+      }
+    },
+    "yang_mills_prize": {
+      "library": {
+        "nodes": [
+          {
+            "id": "Y_domain",
+            "statement": "Project finite SU2 Wilson and auxiliary operator results only; no continuum construction assumed.",
+            "scope": "Y",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional model contract",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "Y_context",
+            "statement": "Finite models supply exact identities and falsification tools.",
+            "scope": "Y",
+            "kind": "theorem",
+            "assumption_ids": [
+              "Y_domain"
+            ],
+            "verification": "reviewed conventional implication, not proof-kernel checked",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          },
+          {
+            "id": "Y_prize",
+            "statement": "Nontrivial four-dimensional pure Yang-Mills exists with positive physical mass gap for every compact simple group.",
+            "scope": "Y",
+            "kind": "target",
+            "assumption_ids": [
+              "Y_domain"
+            ],
+            "verification": "open; no admitted proof",
+            "source": "advisor/advisor.md",
+            "version": "9.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "Y_1",
+            "premises": [
+              "Y_domain"
+            ],
+            "conclusion": "Y_context",
+            "cost": 1,
+            "scope": "Y",
+            "proof_ref": "advisor/advisor.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "Y_domain"
+        ],
+        "goals": [
+          "Y_prize"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "7528228a314decaaeecbd26c61f130f1bac329bb3e87773f364fd6b5d250fcdc",
+        "initial_facts": [
+          "Y_domain"
+        ],
+        "goals": [
+          "Y_prize"
+        ],
+        "assumptions": [
+          "Y_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "Y_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "Y_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_id": "Y_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "Y_prize"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_ids": [
+              "Y_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "Y_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_id": "Y_1"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_ids": [
+              "Y_1"
+            ]
+          }
+        ],
+        "forward_states_popped": 2,
+        "backward_states_popped": 1,
+        "candidate_search_status": "exhausted",
+        "frontier": [],
+        "status": "not_derivable",
+        "reason": "not derivable in this finite rule library"
+      }
+    }
+  },
+  "manifest": {
+    "sha256": {
+      "advisor/advisor.md": "43b6a08bc348d80fc60a0a96d742850321eab5e2645b6cd01d1e25d3c202b7bc",
+      "transfer/PROOF.md": "d2dc7f55bc7874728db9af5428cd6cd596b31ad3efb03759efa2a4c791211c35",
+      "proof_search.py": "07b5b397af86b6bf5a481b114844c6252046e8ca2b5604dac7d158091632be94",
+      "proof_routes.py": "53e1d2106a4672ec8480464ae0c216f0f036fed7ee915ad199bf18b7c6662a92"
+    }
+  }
+}

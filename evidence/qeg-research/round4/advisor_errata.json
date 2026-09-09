@@ -1,0 +1,62 @@
+{
+  "record_type": "Advisor observation ledger; this is not an archived byte-for-byte copy of every pre-fix source/output.",
+  "date": "2026-09-09",
+  "errors": [
+    {
+      "id": "ERR-R3-REPORT-SOURCE",
+      "status": "confirmed in unchanged historical source",
+      "source_sha256": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+      "claim": "Per-mode current cancellation was described as fixed in the prior report.",
+      "observation": "Delivered and current historical source instead computes j0=jrz+jkin after separately summing both terms.",
+      "correction": "New response implementation sums weights*(rz+p/omega) before aggregation; retain legacy and measure actual effect.",
+      "inference_limit": "Does not establish that historical field reversal is false."
+    },
+    {
+      "id": "ERR-R4-CURRENT-DERIVATIVE",
+      "status": "observed before freeze, repaired in current source",
+      "initial_output_source_sha256": "80827e5036e9ce2cdddadc56155a9aff06cec09df453ad0c5bf2497bda8e721b",
+      "observation": "Direct tangent current diagnostic used \u2212C*u+(chi/E2)*u with u=delta x; equation requires delta x-prime. Maxwell residual also used u instead of its derivative.",
+      "correction": "Use \u2212C*du+(chi/E2)*du and du\u2212(deltaF\u2212E2*deltaJdirect).",
+      "inference_limit": "Main tangent evolution equation already contained the correct quotient derivative; bug was in diagnostics."
+    },
+    {
+      "id": "ERR-R4-UNFILLED-DIAGNOSTICS",
+      "status": "observed before freeze, repaired in current source",
+      "initial_output_source_sha256": "80827e5036e9ce2cdddadc56155a9aff06cec09df453ad0c5bf2497bda8e721b",
+      "unpopulated_fields": [
+        "deltaJmatter_direct",
+        "deltaJ_residual",
+        "deltaU",
+        "max_tangent_orthogonality"
+      ],
+      "observation": "Arrays initialized to zero were not assigned in the sampling loop, causing false current and tangency passes.",
+      "correction": "Populate each sample, compute directly, reject missing/nonfinite data, compare to independent spinor calculation.",
+      "archive_limit": "The producer replaced the initial output before an immutable snapshot was captured; retain this explicit observation and the independent verifier narrative, not a falsely relabeled post-fix snapshot."
+    },
+    {
+      "id": "ERR-R4-UNSUPPORTED-CONTROL",
+      "status": "removed from accepted input choices",
+      "observation": "Unrenormalized mode used Z=1 while retaining matched D and deltaC terms.",
+      "correction": "Reject unrenormalized mode in response solver until a consistent separate branch is implemented."
+    },
+    {
+      "id": "ERR-R4-MOMENTUM-UNDERRESOLUTION",
+      "status": "resolved for the sampled fixed-window response by targeted512-to-1024 refinement; coarse failures preserved",
+      "parameters": {
+        "b": 10,
+        "ncut": 4,
+        "Kmax": 20,
+        "tfinal": 20
+      },
+      "final_u_nK128": 0.05459481489213355,
+      "final_u_nK256": 0.04005819630852348,
+      "observation": "Excellent work identity did not imply resolved response quadrature.",
+      "correction": "Select production_nk1024_baseline after full-history sampled field-tangent gate passed. Report separate current sensitivity; retain finite Landau cutoff and longitudinal-window limitations.",
+      "final_u_nK512": 0.047336333929359396,
+      "final_u_nK1024": 0.047336333923474944,
+      "frozen_field_tangent_gate": 1e-06,
+      "max_history_u_difference_512_to_1024": 2.1572511138545636e-10,
+      "max_history_direct_deltaJ_difference_512_to_1024": 8.429999398540389e-08
+    }
+  ]
+}

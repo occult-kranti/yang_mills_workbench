@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "scope": "Regression demonstration and proposed finite/gravity implementation corrections; no continuum or mathematical proof",
+  "checks": [
+    {
+      "name": "Original arbitrary matching comparator changes physical coefficient",
+      "passed": true,
+      "evidence": {
+        "status": "compared",
+        "passed": false,
+        "max_abs_a": 0.09653632660722022,
+        "max_abs_x": 0.024135938266560047,
+        "threshold": 3e-09,
+        "old_source": "/workspace/scratch/2f17a9d68b70/evidence/qeg-research/round6/code/response.py"
+      }
+    },
+    {
+      "name": "Revised arbitrary coefficient reports comparator unavailable",
+      "passed": true,
+      "evidence": {
+        "status": "unavailable",
+        "reason": "round6 baseline cannot represent the supplied chi_b",
+        "path": "/workspace/scratch/2f17a9d68b70/evidence/qeg-research/round6/code/response.py",
+        "requested_chi_b": 0.2,
+        "matched_chi_b": 0.005808684485064568
+      }
+    },
+    {
+      "name": "Supported matching prescription agrees None",
+      "passed": true,
+      "evidence": {
+        "status": "compared",
+        "passed": true,
+        "max_abs_a": 1.7763568394002505e-15,
+        "max_abs_x": 2.0539125955565396e-15,
+        "threshold": 3e-09,
+        "old_source": "/workspace/scratch/2f17a9d68b70/evidence/qeg-research/round6/code/response.py"
+      }
+    },
+    {
+      "name": "Supported matching prescription agrees 0.0",
+      "passed": true,
+      "evidence": {
+        "status": "compared",
+        "passed": true,
+        "max_abs_a": 1.7763568394002505e-15,
+        "max_abs_x": 2.858824288409778e-15,
+        "threshold": 3e-09,
+        "old_source": "/workspace/scratch/2f17a9d68b70/evidence/qeg-research/round6/code/response.py"
+      }
+    },
+    {
+      "name": "Supported matching prescription agrees -0.005808684485064568",
+      "passed": true,
+      "evidence": {
+        "status": "compared",
+        "passed": true,
+        "max_abs_a": 1.1102230246251565e-15,
+        "max_abs_x": 3.635980405647388e-15,
+        "threshold": 3e-09,
+        "old_source": "/workspace/scratch/2f17a9d68b70/evidence/qeg-research/round6/code/response.py"
+      }
+    },
+    {
+      "name": "Original finite states can return nonfinite energy diagnostic",
+      "passed": true,
+      "evidence": {
+        "state_is_finite": true,
+        "energy_residual": "NaN",
+        "scalar_initial_amplitude": 1e+155
+      }
+    },
+    {
+      "name": "Revised finite solver rejects overflowed observables",
+      "passed": true,
+      "evidence": "nonfinite or unpopulated diagnostic: Wtilde"
+    },
+    {
+      "name": "Diagnostic correction preserves ordinary physical histories",
+      "passed": true,
+      "evidence": {
+        "comparison": "exactly equal sampled floats across every macro field"
+      }
+    },
+    {
+      "name": "Original empty gravity collection falsely reports pass",
+      "passed": true,
+      "evidence": {
+        "status": "passed",
+        "vacuously_true_trajectory_gates": 7
+      }
+    },
+    {
+      "name": "Revised gravity results reject an empty collection",
+      "passed": true,
+      "evidence": "cannot certify an empty gravity case collection"
+    },
+    {
+      "name": "Revised gravity summary admits executed valid case",
+      "passed": true,
+      "evidence": {
+        "all_finite_trajectories": true,
+        "full_reduced_agree": true,
+        "methods_agree": true,
+        "true_constraint_small": true,
+        "fluxes_preserved": true,
+        "wrong_invariant_small": true,
+        "auxiliary_methods_agree": true,
+        "analytic_fixtures": true,
+        "wrong_constraint_fails_for_coupled_mixed": true
+      }
+    },
+    {
+      "name": "Original builder exposes contradictory status with failed constraint gate",
+      "passed": true,
+      "evidence": {
+        "status": "passed",
+        "true_constraint_small": false,
+        "input": "deliberately corrupted diagnostic record, not a physical trajectory"
+      }
+    },
+    {
+      "name": "Revised semantic status follows its failed diagnostic gate",
+      "passed": true,
+      "evidence": {
+        "status": "failed",
+        "true_constraint_small": false
+      }
+    }
+  ],
+  "passed_checks": 13,
+  "source_sha256": {
+    "/workspace/scratch/2f17a9d68b70/evidence/qeg-research/round7/finite_scalar.py": "c56856d92751077379542b22b395e5b85a8a148c8da17562ad2dd7f34e1a6ba0",
+    "/workspace/scratch/2f17a9d68b70/evidence/qeg-research/round7/gravity_sim.py": "7b811ae535a46b3cf34c0b1b1c25d955f4751bda97aa89196b73399e1df65707",
+    "/workspace/scratch/2f17a9d68b70/skeptic-output/fixed/finite_scalar.py": "3ddd8e05f1c523d156467dc25a3bad374274f511fe1b2ec32246c0960cd79888",
+    "/workspace/scratch/2f17a9d68b70/skeptic-output/fixed/gravity_sim.py": "c6ee47b5d44560e3001bb174fea2d0d4a7d00451cbdaed8504a059613a5d5c1c"
+  }
+}

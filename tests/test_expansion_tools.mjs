@@ -1,0 +1,42 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const ctx={console}; vm.createContext(ctx);
+vm.runInContext(fs.readFileSync(new URL('../dist/calculators.js',import.meta.url),'utf8'),ctx);
+const oldCatalogue=ctx.PhysicsTools.catalogue.length;
+const oldCompute=ctx.PhysicsTools.compute;
+vm.runInContext(fs.readFileSync(new URL('../dist/expansion-tools.js',import.meta.url),'utf8'),ctx);
+const T=ctx.PhysicsTools;
+assert.equal(oldCatalogue,24);
+assert.equal(T.catalogue.length,29);
+assert.deepEqual(T.compute('kinematics',{u:0,a:2,t:3}).results,oldCompute('kinematics',{u:0,a:2,t:3}).results);
+for(const id of ['acoustic_beats','regular_polygon','golden_ratio','astrometry','stellar_scaling']){
+  const x=T.compute(id,{}); assert(x.results.length>0,id); assert(x.steps.length>=3,id);
+  for(const z of x.results) assert(Number.isFinite(z.value),`${id} ${z.label}`);
+  if(x.plot) for(const s of x.plot.series) { assert(s.points.length>0); for(const p of s.points) assert(p.length===2&&p.every(Number.isFinite),id); }
+}
+const get=(id,v,label)=>T.compute(id,v).results.find(x=>x.label===label).value;
+assert(Math.abs(get('acoustic_beats',{f1:440,f2:442,c:343,L:1},'Beat frequency')-2)<1e-12);
+assert.throws(()=>T.compute('acoustic_beats',{f1:.99}),/between 1 and 2000/);
+assert.throws(()=>T.compute('acoustic_beats',{f2:2000.1}),/between 1 and 2000/);
+assert(Math.abs(get('acoustic_beats',{f1:440,f2:442,c:343,L:1},'Open-tube fundamental')-171.5)<1e-12);
+const equal=T.compute('acoustic_beats',{f1:440,f2:440}); assert(equal.warnings.some(x=>/constant/.test(x))); assert.equal(equal.plot.series[0].points.at(-1)[1],2);
+assert(Math.abs(get('regular_polygon',{n:4,R:1},'Side length')-Math.sqrt(2))<1e-12);
+assert.equal(T.compute('regular_polygon',{n:4,R:1}).plot.equalAspect,true);
+assert.equal(T.compute('golden_ratio',{a:1}).plot.equalAspect,true);
+assert(Math.abs(get('regular_polygon',{n:4,R:1},'Area')-2)<1e-12);
+assert(Math.abs(get('golden_ratio',{a:1},'Golden ratio')-1.618033988749895)<1e-12);
+assert(Math.abs(get('astrometry',{parallaxmas:100,uncertaintymas:1,angularsizearcsec:2},'Distance')-10)<1e-12);
+assert(Math.abs(get('astrometry',{parallaxmas:100,uncertaintymas:1,angularsizearcsec:2},'Transverse size (small angle)')-20)<1e-12);
+assert(T.compute('astrometry',{parallaxmas:1,uncertaintymas:.2,angularsizearcsec:1}).warnings.some(x=>/unreliable/.test(x)));
+assert(Math.abs(get('stellar_scaling',{radiusratio:2,tempK:5772,referenceTK:5772},'Luminosity ratio')-4)<1e-12);
+assert.throws(()=>T.compute('acoustic_beats',{f1:0}),/greater than 0/);
+assert.throws(()=>T.compute('regular_polygon',{n:2}),/between 3 and 100/);
+assert.throws(()=>T.compute('golden_ratio',{a:null}),/finite/);
+assert.throws(()=>T.compute('astrometry',{parallaxmas:-1}),/greater than 0/);
+assert.throws(()=>T.compute('astrometry',{angularsizearcsec:3600}),/less than 3600/);
+assert.throws(()=>T.compute('astrometry',{uncertaintymas:-1}),/nonnegative/);
+assert.throws(()=>T.compute('stellar_scaling',{tempK:true}),/finite/);
+assert.throws(()=>T.compute('stellar_scaling',{referenceTK:0}),/greater than 0/);
+assert.throws(()=>T.compute('acoustic_beats',{c:Infinity}),/finite/);
+console.log(`PASS: ${T.catalogue.length} calculators including five expansion tools; regression, formulas, plots, and validation.`);

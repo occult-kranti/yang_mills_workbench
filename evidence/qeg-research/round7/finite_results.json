@@ -1,0 +1,149 @@
+{
+  "status": "passed",
+  "scope": "Finite variational gauge-scalar bridge; no continuum QED or gravitational closure",
+  "parameters": {
+    "a0": 0.0,
+    "target_E": 0.15,
+    "b": 10.0,
+    "Tpump": 4.0,
+    "tfinal": 6.0,
+    "ncut": 1,
+    "Kmax": 20.0,
+    "nK": 128,
+    "g": 0.1,
+    "nu": 0.5,
+    "phi0": 0.4,
+    "y0": 0.1,
+    "chi_b": null,
+    "rtol": 2e-10,
+    "atol": 2e-12,
+    "max_step": 0.05,
+    "sample_count": 121,
+    "z_floor": 1e-08,
+    "probe_start": 4.5,
+    "probe_duration": 1.0
+  },
+  "constants": {
+    "alpha": 0.0072973525692838015,
+    "e2": 0.09170123688926636,
+    "chi_b": 0.005808684485064568
+  },
+  "thresholds": {
+    "min_Z_margin": 1e-08,
+    "raw_norm_max": 5e-08,
+    "correct_energy_residual_max": 5e-07,
+    "wrong_defect_residual_max": 5e-07,
+    "node_refinement_max_abs_ax": 2e-05,
+    "g0_baseline_max_abs_ax": 3e-09
+  },
+  "failures": [],
+  "source_hashes": {
+    "finite_scalar": "c56856d92751077379542b22b395e5b85a8a148c8da17562ad2dd7f34e1a6ba0",
+    "round6_response": "7b2ca58d311e916a544812902673b11ba374f565b3d1d94f11d555d6c6a3c414",
+    "round4_response_contract": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0",
+    "round7_variable_contract": "0e5b5d9b8bf0af7c19020bcd1d6fa89fe56d313c8a0f47757faabfd34f84a487"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "gates": {
+    "correct": {
+      "wrong_model": false,
+      "mode": "source_amplitude",
+      "probe_amp": 0.0,
+      "nmode": 256,
+      "min_Z": 0.9973293979235788,
+      "max_raw_r2_error": 2.220446049250313e-15,
+      "max_energy_mismatch": 1.528291382335567e-15,
+      "max_defect_integral_residual": 1.528291382335567e-15,
+      "final_a": -0.5960461313361718,
+      "final_x": 0.14869100808518082,
+      "final_phi": 0.4013431377881142,
+      "final_y": -0.09312040029668006,
+      "nfev": 1817,
+      "samples": 121
+    },
+    "wrong": {
+      "wrong_model": true,
+      "mode": "source_amplitude",
+      "probe_amp": 0.0,
+      "nmode": 256,
+      "min_Z": 0.9973294002855747,
+      "max_raw_r2_error": 2.220446049250313e-15,
+      "max_energy_mismatch": 1.9071505293148314e-05,
+      "max_defect_integral_residual": 8.7809533949601e-16,
+      "final_a": -0.5962608383254911,
+      "final_x": 0.1488391539452209,
+      "final_phi": 0.40134321210242285,
+      "final_y": -0.09312013018771745,
+      "nfev": 1817,
+      "samples": 121
+    },
+    "delayed": {
+      "wrong_model": false,
+      "mode": "delayed_probe",
+      "probe_amp": 0.15,
+      "nmode": 256,
+      "min_Z": 0.9973293979235788,
+      "max_raw_r2_error": 4.6407322429331543e-14,
+      "max_energy_mismatch": 1.0188377919106983e-12,
+      "max_defect_integral_residual": 1.0188377919106983e-12,
+      "final_a": -0.7453393317543593,
+      "final_x": 0.29691896589937744,
+      "final_phi": 0.40144160696346604,
+      "final_y": -0.0929240813061438,
+      "nfev": 1829,
+      "samples": 121
+    },
+    "zero_drive": {
+      "passed": true,
+      "threshold": 2e-08,
+      "Omega": 1.118033988749895,
+      "max_phi_error": 3.7470027081099033e-16,
+      "max_x": 4.4142523708189634e-33,
+      "max_a_drift": 2.9767536139521454e-33,
+      "max_energy_drift": 6.106226635438361e-16
+    },
+    "g0_baseline": {
+      "status": "compared",
+      "passed": true,
+      "max_abs_a": 1.4432899320127035e-15,
+      "max_abs_x": 3.7192471324942744e-15,
+      "threshold": 3e-09,
+      "old_source": "/workspace/scratch/d757324dc341/qeg-research/round6/code/response.py"
+    },
+    "delayed_finite_difference": {
+      "mode": "delayed_probe",
+      "epsilons": [
+        0.0002,
+        0.0001,
+        5e-05
+      ],
+      "probe_amp": 0.15,
+      "max_fd_x": 0.9969895710187915,
+      "successive_derivative_differences": [
+        9.020562075079397e-12,
+        3.3306690738754696e-12
+      ],
+      "pre_probe_max_abs_derivative": 2.7755575615628914e-13,
+      "derivative_difference_threshold": 2e-05,
+      "causality_threshold": 2e-06,
+      "passed": true
+    },
+    "node_refinement_max_abs_ax": 4.135270931238111e-07
+  },
+  "csv": [
+    "finite_correct.csv",
+    "finite_wrong.csv",
+    "finite_delayed.csv",
+    "finite_refinement.csv",
+    "finite_matrix.csv"
+  ],
+  "limitations": [
+    "The scalar is a declared classical EFT hypothesis with finite mode sums.",
+    "The result does not derive a continuum renormalized Einstein-QED current or stress.",
+    "Node refinement is held at fixed b, ncut and Kmax and is not a regulator-removal proof.",
+    "Wrong-control mismatch is a diagnostic for the omitted Maxwell exchange term."
+  ]
+}

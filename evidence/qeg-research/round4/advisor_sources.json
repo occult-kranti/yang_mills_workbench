@@ -1,0 +1,194 @@
+{
+  "scope": "Targeted primary-source research for the advisor protocol, not an exhaustive review of leading papers.",
+  "checked_on": "2026-09-09",
+  "records": [
+    {
+      "id": "R4A01",
+      "reference_number": 1,
+      "title": "How we built our multi-agent research system",
+      "authors": "Jeremy Hadfield, Barry Zhang, Kenneth Lien, Florian Scholz, Jeremy Fox, Daniel Ford / Anthropic",
+      "date": "2025-06-13",
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "type": "official engineering report",
+      "accessed": "2026-09-09",
+      "reading_depth": "Selected substantive sections: architecture, benefit/cost discussion, coordination limitations, persistent artifact handoff.",
+      "used_for": "Parallelize separable research; avoid assuming tightly coupled coding benefits from a larger swarm.",
+      "limitations": "Internal evaluation and developer account; no reproduction here."
+    },
+    {
+      "id": "R4A02",
+      "reference_number": 2,
+      "title": "Demystifying evals for AI agents",
+      "authors": "Anthropic",
+      "date": "2026-01-09",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "type": "official engineering report",
+      "accessed": "2026-09-09",
+      "reading_depth": "Evaluation definitions, grader types, reliability metrics and roadmap sections.",
+      "used_for": "Separate claimed success from achieved state; deterministic checks and model judgments have different scopes.",
+      "limitations": "Engineering guidance rather than validation of the physics model."
+    },
+    {
+      "id": "R4A03",
+      "reference_number": 3,
+      "title": "Effective context engineering for AI agents",
+      "authors": "Prithvi Rajasekaran, Ethan Dixon, Carly Ryan, Jeremy Hadfield / Anthropic",
+      "date": "2025-09-29",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "type": "official engineering report",
+      "accessed": "2026-09-09",
+      "reading_depth": "Substantive article text including retrieval, compaction, notes and subagent architecture.",
+      "used_for": "Use compact contracts with artifact pointers and retrieve relevant evidence at the point of use.",
+      "limitations": "No measurement of the current project or installed memory system."
+    },
+    {
+      "id": "R4A04",
+      "reference_number": 4,
+      "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
+      "authors": "Giulio Starace et al.",
+      "date": "2025-04-07",
+      "url": "https://arxiv.org/html/2504.01848v3",
+      "type": "original research preprint, version 3",
+      "accessed": "2026-09-09",
+      "reading_depth": "Selected full-text sections 2.3\u20132.6, 3.1\u20133.2, 4, 7, Appendix A and judge details; submission history checked.",
+      "used_for": "Code, execution and result matching must be separately graded; judge error and contamination remain.",
+      "limitations": "ML replication benchmark; automated judge is not a physics correctness oracle."
+    },
+    {
+      "id": "R4A05",
+      "reference_number": 5,
+      "title": "PaperBench repository",
+      "authors": "OpenAI",
+      "date": null,
+      "url": "https://github.com/openai/frontier-evals/tree/main/project/paperbench",
+      "type": "official source repository",
+      "accessed": "2026-09-09",
+      "reading_depth": "Repository page and exposed README/setup content; original preparedness URL redirects to frontier-evals.",
+      "used_for": "Reuse hierarchical rubric/reproduction-artifact design where useful.",
+      "limitations": "Not cloned, installed or executed in this process review; no commit pinned."
+    },
+    {
+      "id": "R4A06",
+      "reference_number": 6,
+      "title": "Evaluating AI's ability to perform scientific research tasks",
+      "authors": "OpenAI",
+      "date": "2025-12-16",
+      "url": "https://openai.com/index/frontierscience/",
+      "type": "official benchmark report",
+      "accessed": "2026-09-09",
+      "reading_depth": "Benchmark construction, grading, model-performance and limitations sections.",
+      "used_for": "Expert-written constrained subtasks do not measure all activities required for scientific discovery.",
+      "limitations": "Vendor benchmark; current model capability cannot be inferred from the older reported model ranking."
+    },
+    {
+      "id": "R4A07",
+      "reference_number": 7,
+      "title": "Our First Proof submissions",
+      "authors": "OpenAI",
+      "date": "2026-02-20",
+      "url": "https://openai.com/index/first-proof-submissions/",
+      "type": "official research-status report",
+      "accessed": "2026-09-09",
+      "reading_depth": "Announcement and explicit correction of initial confidence in problem 2.",
+      "used_for": "Preserve failed/retracted interpretations and separate proof attempt from accepted proof.",
+      "limitations": "Individual proof manuscripts were not independently verified here."
+    },
+    {
+      "id": "R4A08",
+      "reference_number": 8,
+      "title": "Recent Frontier Models Are Reward Hacking",
+      "authors": "Sydney Von Arx, Lawrence Chan, Beth Barnes / METR",
+      "date": "2025-06-05",
+      "url": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+      "type": "primary evaluation report",
+      "accessed": "2026-09-09",
+      "reading_depth": "Introduction and concrete scorer/reference/timing manipulation examples.",
+      "used_for": "Candidate/evaluator separation, source hashes and checks on actual outcomes.",
+      "limitations": "No replication of METR tasks; examples motivate protocol controls."
+    },
+    {
+      "id": "R4A09",
+      "reference_number": 9,
+      "title": "Accelerating scientific discovery with Co-Scientist",
+      "authors": "Juraj Gottweis, Wei-Hung Weng, Alexander Daryin et al.",
+      "date": "2026-05-19",
+      "url": "https://www.nature.com/articles/s41586-026-10644-y",
+      "type": "original peer-reviewed research",
+      "accessed": "2026-09-09",
+      "reading_depth": "Architecture/methods, Elo evaluation, human-evaluation caveats, experimental-validation overview, ablation and limitations sections; publication and version-of-record dates checked.",
+      "used_for": "Use proposal-generation/reflection loops but do not treat auto-evaluation as independent ground truth.",
+      "limitations": "Mostly biomedical validation; experiments and supplementary prompts not reproduced here. Version of record 2026-07-01."
+    },
+    {
+      "id": "R4A10",
+      "reference_number": 10,
+      "title": "On the Navier\u2013Stokes Millennium Prize Problem",
+      "authors": "OpenAI",
+      "date": "2026-09-08",
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "type": "official research announcement",
+      "accessed": "2026-09-09",
+      "reading_depth": "Problem, result, agent-method and artifact-link sections.",
+      "used_for": "Separate mathematical variants, stage easier subproblems, and preserve independently checkable proof artifacts.",
+      "limitations": "Very recent developer announcement; acceptance and complete proof validity not adjudicated by this project."
+    },
+    {
+      "id": "R4A11",
+      "reference_number": 11,
+      "title": "Finite time blowup for Navier\u2013Stokes",
+      "authors": "OpenAI",
+      "date": null,
+      "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+      "type": "announcement-linked original mathematical manuscript",
+      "accessed": "2026-09-09",
+      "reading_depth": "Abstract, table of contents and Theorem 1.1 on opening page of 166-page manuscript.",
+      "used_for": "The announced theorem includes smooth compactly supported forcing; do not describe it as the unforced Navier\u2013Stokes problem.",
+      "limitations": "No complete proof review, Lean compilation or independent certificate audit; announcement association 2026-09-08."
+    },
+    {
+      "id": "R4A12",
+      "reference_number": 12,
+      "title": "NavierStokesAndEuler",
+      "authors": "OpenAI",
+      "date": null,
+      "url": "https://github.com/openai/NavierStokesAndEuler",
+      "type": "official formalization repository",
+      "accessed": "2026-09-09",
+      "reading_depth": "Repository listing and README theorem scope.",
+      "used_for": "A linked formalization is an inspectable artifact, not an automatically reproduced verification.",
+      "limitations": "Not cloned or built; no assumptions audit or commit pin performed."
+    },
+    {
+      "id": "R4A13",
+      "reference_number": 13,
+      "title": "Patterns and problems in emerging multiagent systems",
+      "authors": "Anthropic Frontier Red Team",
+      "date": "2026-08-13",
+      "url": "https://www.anthropic.com/research/multiagent-systems",
+      "type": "primary multiagent evaluation report",
+      "accessed": "2026-09-09",
+      "reading_depth": "Introduction and coordination comparison including search-scope/token confounding and dependent-work caveat.",
+      "used_for": "Compare swarms on matched scope and resources; explicit roles and ownership for coupled work.",
+      "limitations": "Developer experiments in software tasks; no direct estimate of science performance."
+    }
+  ],
+  "access_gaps": [
+    {
+      "url": "https://www.nature.com/articles/s41586-023-06924-6",
+      "result": "Web open returned internal error; not used for a new factual claim. Prior project FunSearch review remains separate."
+    }
+  ],
+  "local_review": {
+    "files": [
+      "../round3/README.md",
+      "../round3/validation_summary.json",
+      "../round3/advisor.md",
+      "../round3/ai_methods.md",
+      "../round3/theory.md",
+      "../round3/report.md"
+    ],
+    "report_reading_depth": "Relevant model, four-front map, result/next-step sections and archived metadata; this pass does not claim full reproduction of all 81 prior sources.",
+    "delivered_solver_hash": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+    "new_source_mismatch": "Delivered j0 sums Jrz and Jkin separately; prior narrative described per-mode cancellation. Algebraic equivalence does not guarantee identical floating-point stability."
+  }
+}

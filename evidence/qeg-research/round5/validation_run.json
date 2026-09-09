@@ -1,0 +1,66 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "all_commands_passed": true,
+  "commands": [
+    {
+      "args": [
+        "symbolic_checks.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"checks\": 16, \"passed\": true, \"symbolic_system\": \"1.14.0\"}\n",
+      "stderr": "",
+      "source_sha256": "5855e6e9e1419ed864b4335645aeb5f0821ac88d02fe44326cfb2cd6d1a0d8b7"
+    },
+    {
+      "args": [
+        "counterexamples.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"independent_exact_checks_passed\",\n  \"check_count\": 24,\n  \"all_checks_passed\": true,\n  \"source_sha256\": \"909cb828219fb6ed88b0c348780475b36fd8f3499d9e77a7c45de6d2cc5cc9f6\"\n}\n",
+      "stderr": "",
+      "source_sha256": "909cb828219fb6ed88b0c348780475b36fd8f3499d9e77a7c45de6d2cc5cc9f6"
+    },
+    {
+      "args": [
+        "test_proof_search.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_conjectural_branch_is_explicitly_conditional (__main__.ProofSearchTests.test_conjectural_branch_is_explicitly_conditional) ... ok\ntest_conjecture_cannot_be_laundered_as_exact_seed (__main__.ProofSearchTests.test_conjecture_cannot_be_laundered_as_exact_seed) ... ok\ntest_conjunction_requires_all_premises (__main__.ProofSearchTests.test_conjunction_requires_all_premises) ... ok\ntest_cost_ties_are_deterministic (__main__.ProofSearchTests.test_cost_ties_are_deterministic) ... ok\ntest_costs_are_replayed_from_frozen_rules (__main__.ProofSearchTests.test_costs_are_replayed_from_frozen_rules) ... ok\ntest_cycle_without_seed_is_not_support (__main__.ProofSearchTests.test_cycle_without_seed_is_not_support) ... ok\ntest_duplicate_initial_facts_are_set_semantics (__main__.ProofSearchTests.test_duplicate_initial_facts_are_set_semantics) ... ok\ntest_explicit_blocked_goal_status (__main__.ProofSearchTests.test_explicit_blocked_goal_status) ... ok\ntest_first_meeting_candidate_is_not_automatically_optimal (__main__.ProofSearchTests.test_first_meeting_candidate_is_not_automatically_optimal) ... ok\ntest_full_selected_regulator_derives_margin_then_target (__main__.ProofSearchTests.test_full_selected_regulator_derives_margin_then_target) ... ok\ntest_full_theory_fixture_is_blocked (__main__.ProofSearchTests.test_full_theory_fixture_is_blocked) ... ok\ntest_library_mappings_are_immutable_and_hash_checked (__main__.ProofSearchTests.test_library_mappings_are_immutable_and_hash_checked) ... ok\ntest_main_fixture_proves_target_and_reports_counts (__main__.ProofSearchTests.test_main_fixture_proves_target_and_reports_counts) ... ok\ntest_missing_review_certificate_rejected (__main__.ProofSearchTests.test_missing_review_certificate_rejected) ... ok\ntest_mutated_sequence_fails_independent_checker (__main__.ProofSearchTests.test_mutated_sequence_fails_independent_checker) ... ok\ntest_nonpositive_and_nonfinite_costs_rejected (__main__.ProofSearchTests.test_nonpositive_and_nonfinite_costs_rejected) ... ok\ntest_resource_limit_is_incomplete (__main__.ProofSearchTests.test_resource_limit_is_incomplete) ... ok\ntest_reverse_implication_is_not_allowed (__main__.ProofSearchTests.test_reverse_implication_is_not_allowed) ... ok\ntest_scope_mutation_rejected (__main__.ProofSearchTests.test_scope_mutation_rejected) ... ok\ntest_seed_cannot_hide_unretained_conjectural_assumption (__main__.ProofSearchTests.test_seed_cannot_hide_unretained_conjectural_assumption) ... ok\ntest_selected_parameter_margin_is_derived_in_second_fixture (__main__.ProofSearchTests.test_selected_parameter_margin_is_derived_in_second_fixture) ... ok\ntest_shared_lemma_is_paid_once_and_reused (__main__.ProofSearchTests.test_shared_lemma_is_paid_once_and_reused) ... ok\ntest_unknown_ids_rejected_before_search (__main__.ProofSearchTests.test_unknown_ids_rejected_before_search) ... ok\ntest_unverified_theorem_cannot_be_an_exact_seed (__main__.ProofSearchTests.test_unverified_theorem_cannot_be_an_exact_seed) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.036s\n\nOK\n",
+      "source_sha256": "e0e9eaabc35066aa55dce85b72a8b1a8c5246c2cce5ca5c68bbb06d4327fade0",
+      "unit_test_count": 24
+    },
+    {
+      "args": [
+        "verify_proof_search_independent.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"output\": \"/workspace/scratch/d757324dc341/qeg-research/round5/search_independent_review.json\", \"passed\": 19, \"total\": 19, \"failed\": []}\n",
+      "stderr": "",
+      "source_sha256": "8ab0f54ad8b06c6ff1aae462548682f3ead9aa6ad0efea7f089eadb8ea476c2c"
+    },
+    {
+      "args": [
+        "proof_search.py",
+        "search_fixture.json",
+        "--output",
+        "search_results.json"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "source_sha256": "297a9e79f4e2027b651f558ea8a175b6957c429a214225e72892d9633c5f1367"
+    },
+    {
+      "args": [
+        "coefficient_certificate.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"exact_rational_rounded_coefficient_bound_passed\", \"display_only_lower\": 0.7653173589206453}\n",
+      "stderr": "",
+      "source_sha256": "6ac554c1d3dc17cdc413a45bbe9ba510d43ab65c7d819791bfc591f6c08000ea"
+    }
+  ],
+  "scope": "Exact identity/counterexample checks and finite-library proof-planning verification. No continuum QED, trajectory interval enclosure, or formal proof-assistant claim."
+}

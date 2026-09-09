@@ -1,0 +1,2097 @@
+{
+  "schema": "qeg-theory-map-v1",
+  "date": "2026-09-09",
+  "scope": "Targeted nonexhaustive map:44 nodes, formal proof premises separated from framework choices, measured inputs, numerical evidence and open bridges.",
+  "selected_target": "M09",
+  "selected_result": "M08",
+  "node_types": [
+    "conditional_lemma",
+    "conditional_limit",
+    "conditional_result",
+    "conjecture",
+    "defined_observable",
+    "effective_framework",
+    "empirical_premise",
+    "established_calculation",
+    "framework_postulate",
+    "mathematical_foundation",
+    "mathematical_framework",
+    "mathematical_theorem",
+    "method_framework",
+    "model_assumption",
+    "numerical_evidence",
+    "open_obligation",
+    "open_problem"
+  ],
+  "dependency_semantics": "Node dependencies name prerequisites or context for planning. Only a proved_hyperedge explicitly asserts a validated implication of its entire from-set under the target assumptions. No edge may be reversed as implication.",
+  "edge_types": {
+    "assumption": "Target adopts the premise or framework; no derivation of physical truth.",
+    "proved_hyperedge": "The conjunction of every source node and the listed target assumptions supports the conclusion.",
+    "context": "Related topic; no implication.",
+    "restricted_analogue": "Shared mechanism in a different scope; transfer not licensed.",
+    "unresolved_bridge": "A required proof, estimate, observable or closure is missing."
+  },
+  "nodes": [
+    {
+      "id": "F01",
+      "title": "Classical implication and proof search",
+      "type": "method_framework",
+      "status": "adopted",
+      "statement": "Backward theorem application opens all missing premises; it never reverses an implication.",
+      "assumptions": [
+        "Classical conjunction/implication rules",
+        "Frozen finite rule library for executable search"
+      ],
+      "dependencies": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S05"
+      ],
+      "scope": "The search planner proposes dependency paths; proof checking decides validity.",
+      "next_obligation": "Formalize selected statements and audit every rule application."
+    },
+    {
+      "id": "F02",
+      "title": "Real calculus and inner-product identities",
+      "type": "mathematical_foundation",
+      "status": "established",
+      "statement": "Chain rules, Cauchy–Schwarz and antisymmetry of the cross product support the finite energy argument.",
+      "assumptions": [
+        "Finite-dimensional real vector spaces",
+        "Differentiable functions"
+      ],
+      "dependencies": [],
+      "sources": [
+        "TA01",
+        "P:T"
+      ],
+      "scope": "These mathematical facts do not choose a physical closure.",
+      "next_obligation": "Check every differentiation against the definitions."
+    },
+    {
+      "id": "F03",
+      "title": "Local ODE theory and continuation",
+      "type": "mathematical_theorem",
+      "status": "established",
+      "statement": "A locally Lipschitz finite ODE has a unique local solution; compact confinement permits continuation.",
+      "assumptions": [
+        "Continuous time dependence",
+        "Open state domain and local Lipschitz regularity"
+      ],
+      "dependencies": [
+        "F02"
+      ],
+      "sources": [
+        "TA01"
+      ],
+      "scope": "Teschl sections2.2,2.4,2.6; additional estimates are required for global existence.",
+      "next_obligation": "Prove confinement and exclude denominator degeneracy."
+    },
+    {
+      "id": "F04",
+      "title": "Quantum state and unitary-evolution postulates",
+      "type": "framework_postulate",
+      "status": "assumed_framework",
+      "statement": "Positive density operators and unitary dynamics specify the quantum blocks used in the model.",
+      "assumptions": [
+        "Hilbert-space quantum mechanics",
+        "Declared state and observables"
+      ],
+      "dependencies": [],
+      "sources": [
+        "P:P3"
+      ],
+      "scope": "A physical framework, not a theorem derived from an ODE computation.",
+      "next_obligation": "Specify admissible state families before response calculations."
+    },
+    {
+      "id": "F05",
+      "title": "Maxwell–Dirac gauge framework",
+      "type": "framework_postulate",
+      "status": "assumed_framework",
+      "statement": "An abelian gauge connection coupled to a Dirac field supplies the electromagnetic matter framework.",
+      "assumptions": [
+        "Charge convention and units",
+        "Chosen action, quantum state and approximation"
+      ],
+      "dependencies": [],
+      "sources": [
+        "P:P3",
+        "R3:FT01"
+      ],
+      "scope": "The finite matched model is a selected approximation within this framework.",
+      "next_obligation": "Derive and renormalize its continuum causal observables consistently."
+    },
+    {
+      "id": "F06",
+      "title": "Einstein gravitational framework",
+      "type": "framework_postulate",
+      "status": "assumed_framework",
+      "statement": "The metric obeys Einstein equations with a declared total stress tensor and any specified higher-curvature terms.",
+      "assumptions": [
+        "Metric signature",
+        "Gravitational coupling",
+        "Matter/support sources and counterterms"
+      ],
+      "dependencies": [],
+      "sources": [
+        "P:P3",
+        "R3:H08"
+      ],
+      "scope": "A physical field equation; flat-space mode dynamics alone does not establish it.",
+      "next_obligation": "Fix the approximation order and gravitational initial constraints."
+    },
+    {
+      "id": "F07",
+      "title": "Measured constants and frozen parameter choice",
+      "type": "empirical_premise",
+      "status": "measured_and_frozen",
+      "statement": "The solver freezes alpha=1/137.035999084; the proof needs only alpha<1/137.",
+      "assumptions": [
+        "Declared Heaviside–Lorentz units",
+        "No silent update of historical parameters"
+      ],
+      "dependencies": [],
+      "sources": [
+        "TA05",
+        "TA06"
+      ],
+      "scope": "A measured constant is not a mathematical axiom; the inequality is a model premise.",
+      "next_obligation": "Keep parameter provenance separate from exact arithmetic."
+    },
+    {
+      "id": "F08",
+      "title": "Bloch-ball positivity",
+      "type": "mathematical_theorem",
+      "status": "established",
+      "statement": "The matrix (I+r·sigma)/2 is positive exactly when |r|<=1.",
+      "assumptions": [
+        "Two-dimensional Hermitian unit-trace matrix"
+      ],
+      "dependencies": [
+        "F02",
+        "F04"
+      ],
+      "sources": [
+        "P:T"
+      ],
+      "scope": "Pure blocks lie on the sphere; mixed blocks lie inside.",
+      "next_obligation": "Distinguish fixed-norm tangents from variations of purity."
+    },
+    {
+      "id": "F09",
+      "title": "Positive Gauss–Legendre quadrature",
+      "type": "mathematical_theorem",
+      "status": "established",
+      "statement": "Exact Gauss weights are positive and integrate constants exactly.",
+      "assumptions": [
+        "Exact Gauss–Legendre nodes/weights",
+        "Finite interval"
+      ],
+      "dependencies": [],
+      "sources": [
+        "TA04"
+      ],
+      "scope": "Rounded coefficient lists require their own exact or interval check.",
+      "next_obligation": "Audit the generated weights rather than assuming exact identities."
+    },
+    {
+      "id": "F10",
+      "title": "Digamma recurrence and Binet positivity",
+      "type": "mathematical_theorem",
+      "status": "established",
+      "statement": "For b>0 the matched susceptibility bracket has a positive Binet-integral representation.",
+      "assumptions": [
+        "z=1/(2b)>0",
+        "Exact special-function identities"
+      ],
+      "dependencies": [],
+      "sources": [
+        "TA02",
+        "TA03",
+        "P:T"
+      ],
+      "scope": "Proves the sign of the chosen coefficient, not the matching prescription.",
+      "next_obligation": "Use positivity to obtain a global denominator certificate."
+    },
+    {
+      "id": "F11",
+      "title": "Newtonian gravitational limit",
+      "type": "framework_limit",
+      "status": "restricted_context",
+      "statement": "Newtonian gravitational interactions form a separate weak-field context, including current entanglement arguments.",
+      "assumptions": [
+        "Weak approximately stationary metric",
+        "Slow sources and specified boundary conditions"
+      ],
+      "dependencies": [
+        "F06"
+      ],
+      "sources": [
+        "R3:H14"
+      ],
+      "scope": "The cited paper concerns the Newtonian regime; it is not used as a proof of the full relativistic limit or any strong-curvature claim.",
+      "next_obligation": "Verify the small parameters before invoking the limit."
+    },
+    {
+      "id": "M01",
+      "title": "Finite homogeneous regulator and state",
+      "type": "model_assumption",
+      "status": "frozen",
+      "statement": "Use fixed finite positive weights, positive masses and canonical momenta; production has b=10,K=20,n=0..4.",
+      "assumptions": [
+        "Flat homogeneous longitudinal sector",
+        "Fixed magnetic background",
+        "Initial Bloch vectors inside unit balls"
+      ],
+      "dependencies": [
+        "F04",
+        "F05",
+        "F08"
+      ],
+      "sources": [
+        "P:P3",
+        "TA06"
+      ],
+      "scope": "The regulator and externally supported magnetic background are part of the contract.",
+      "next_obligation": "Control independent momentum-window and Landau limits."
+    },
+    {
+      "id": "M02",
+      "title": "Matched finite Maxwell–Dirac closure",
+      "type": "model_assumption",
+      "status": "frozen",
+      "statement": "The mode equations and shared S,C,D,Z and energy definitions are fixed by T1–T5.",
+      "assumptions": [
+        "Fixed e,b,weights,masses,chi",
+        "All counterterms retained exactly once"
+      ],
+      "dependencies": [
+        "M01",
+        "F05"
+      ],
+      "sources": [
+        "P:T",
+        "P:P3"
+      ],
+      "scope": "Algebraic consistency does not independently prove continuum renormalization.",
+      "next_obligation": "Derive common covariant current and stress observables."
+    },
+    {
+      "id": "M03",
+      "title": "Admissible drive and parameter families",
+      "type": "model_assumption",
+      "status": "frozen",
+      "statement": "Use continuous drives; smooth compact pumps and differentiable source families support the production response.",
+      "assumptions": [
+        "Finite initial data",
+        "L1 drive for uniform field envelope",
+        "C1 family for first variation"
+      ],
+      "dependencies": [
+        "M01"
+      ],
+      "sources": [
+        "P:T",
+        "P:P3"
+      ],
+      "scope": "No spatial horizon or radial boundary is introduced in this temporal IVP.",
+      "next_obligation": "Retain preparation and delayed-probe support exactly."
+    },
+    {
+      "id": "M04",
+      "title": "All-potential coefficient margin",
+      "type": "mathematical_theorem",
+      "status": "proved_conditionally",
+      "statement": "For the selected regulator, Z(a)>3/4 for every real a.",
+      "assumptions": [
+        "Selected b,K,Landau range",
+        "Exact positive quadrature or separately certified rounded coefficients",
+        "alpha<1/137"
+      ],
+      "dependencies": [
+        "F07",
+        "F09",
+        "F10",
+        "M01",
+        "M02"
+      ],
+      "sources": [
+        "P:T",
+        "TA02",
+        "TA03",
+        "TA04"
+      ],
+      "scope": "The certificate does not depend on sampled trajectory minima.",
+      "next_obligation": "For a changed regulator, prove a new sufficient margin or sharper bound."
+    },
+    {
+      "id": "M05",
+      "title": "Invariant Bloch norms",
+      "type": "mathematical_theorem",
+      "status": "proved_conditionally",
+      "statement": "Precession preserves each |r_i|, hence the initial Bloch balls.",
+      "assumptions": [
+        "Exact mode equations",
+        "Fixed Hermitian block Hamiltonians"
+      ],
+      "dependencies": [
+        "M01",
+        "M02",
+        "F08"
+      ],
+      "sources": [
+        "P:T"
+      ],
+      "scope": "Floating trajectories have measurable norm errors; they are not exact theorem objects.",
+      "next_obligation": "Check numerical norm defects without clipping."
+    },
+    {
+      "id": "M06",
+      "title": "Positive finite excitation energy",
+      "type": "mathematical_theorem",
+      "status": "proved_conditionally",
+      "statement": "Positive weights and |r_i|<=1 imply U=sum w_i(h_i·r_i+omega_i)>=0.",
+      "assumptions": [
+        "Finite sums",
+        "Positive masses and weights",
+        "Admissible initial states"
+      ],
+      "dependencies": [
+        "M01",
+        "M05",
+        "F02"
+      ],
+      "sources": [
+        "P:T"
+      ],
+      "scope": "This finite positivity does not assert positivity of renormalized continuum stress.",
+      "next_obligation": "Establish any proposed continuum energy control independently."
+    },
+    {
+      "id": "M07",
+      "title": "Exact shared work balance",
+      "type": "mathematical_theorem",
+      "status": "proved_conditionally",
+      "statement": "With W=Zx²/2+e²U, the frozen equations give Wdot=xF.",
+      "assumptions": [
+        "Shared current and energy prescription",
+        "Time-independent regulator and matching"
+      ],
+      "dependencies": [
+        "M01",
+        "M02",
+        "F02"
+      ],
+      "sources": [
+        "P:T"
+      ],
+      "scope": "The identity can hold for an inaccurate finite regulator.",
+      "next_obligation": "Check observables and independent refinements as well as work."
+    },
+    {
+      "id": "M08",
+      "title": "Electric-field envelope",
+      "type": "mathematical_theorem",
+      "status": "proved_conditionally",
+      "statement": "|x(t)|<=sqrt(2W0/z*)+||F||L1(0,t)/z*; vacuum unit impulse gives |x|<=4/3.",
+      "assumptions": [
+        "Positive global z*",
+        "Positive U",
+        "Work identity",
+        "Continuous drive"
+      ],
+      "dependencies": [
+        "M03",
+        "M04",
+        "M06",
+        "M07"
+      ],
+      "sources": [
+        "P:T"
+      ],
+      "scope": "Zero initial energy is handled using sqrt(W+epsilon); this is not a derivative bound.",
+      "next_obligation": "Seek a separate norm if claiming response stability."
+    },
+    {
+      "id": "M09",
+      "title": "Selected global-forward theorem",
+      "type": "mathematical_theorem",
+      "status": "proved_conditionally",
+      "statement": "The selected finite system has a unique classical solution on every finite future interval.",
+      "assumptions": [
+        "Frozen finite model and admissible data",
+        "Global Z margin",
+        "Continuous drive"
+      ],
+      "dependencies": [
+        "F03",
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M08"
+      ],
+      "sources": [
+        "P:T"
+      ],
+      "scope": "Global existence is not continuum correctness or asymptotic stability.",
+      "next_obligation": "Investigate regulator-uniform estimates and admissible limits."
+    },
+    {
+      "id": "M10",
+      "title": "Finite-time tangent and retarded support",
+      "type": "mathematical_theorem",
+      "status": "proved_conditionally",
+      "statement": "Differentiable source/state families satisfy the tangent system; unchanged preparation gives zero response before a delayed probe.",
+      "assumptions": [
+        "C1 family",
+        "Fixed regulator and matching",
+        "Compact time interval"
+      ],
+      "dependencies": [
+        "F03",
+        "M02",
+        "M03",
+        "M09"
+      ],
+      "sources": [
+        "P:T",
+        "P:P3",
+        "R4:R01"
+      ],
+      "scope": "No uniform-in-time tangent norm or quantum noise kernel follows.",
+      "next_obligation": "Construct stronger response estimates or a discriminating instability example."
+    },
+    {
+      "id": "M11",
+      "title": "Independent finite-model numerical checks",
+      "type": "numerical_evidence",
+      "status": "accepted_limited",
+      "statement": "Round4 independent spinor/finite-difference checks and 512-to1024 momentum refinement support the recorded response implementation.",
+      "assumptions": [
+        "Frozen source hashes",
+        "Sampled finite histories",
+        "Specified tolerances and fixed cutoffs"
+      ],
+      "dependencies": [
+        "M01",
+        "M02",
+        "M03"
+      ],
+      "sources": [
+        "TA06",
+        "P:ACCEPT"
+      ],
+      "scope": "Numerical evidence is not an implication proving M09; M09 has a separate analytic proof.",
+      "next_obligation": "Keep failed coarse grids and test independent cutoff axes."
+    },
+    {
+      "id": "M12",
+      "title": "All-time response stability",
+      "type": "open_problem",
+      "status": "unresolved",
+      "statement": "Determine whether a declared physical perturbation norm remains uniformly controlled for admissible states.",
+      "assumptions": [
+        "A meaningful norm",
+        "All relevant perturbation channels",
+        "Long-time or spectral analysis"
+      ],
+      "dependencies": [
+        "M10",
+        "M08"
+      ],
+      "sources": [
+        "P:T",
+        "R4:R01",
+        "R4:R02"
+      ],
+      "scope": "Signed deltaW and ratios through field zeros cannot decide this.",
+      "next_obligation": "Prove a coercive estimate or produce a controlled counterexample."
+    },
+    {
+      "id": "Q01",
+      "title": "Hadamard and local-covariance framework",
+      "type": "mathematical_framework",
+      "status": "established_with_scope",
+      "statement": "Local covariant renormalization organizes admissible states and finite current/stress ambiguities.",
+      "assumptions": [
+        "Globally hyperbolic background region",
+        "Appropriate quantum state regularity",
+        "Declared local counterterms"
+      ],
+      "dependencies": [
+        "F04",
+        "F05"
+      ],
+      "sources": [
+        "R4:R06"
+      ],
+      "scope": "Zahn v3 section4.2 restricts background gauge curvature in its stress argument; do not generalize it silently.",
+      "next_obligation": "Supply the force Ward identity for the actual nonzero electromagnetic background."
+    },
+    {
+      "id": "Q02",
+      "title": "Common quantum current and directional stress",
+      "type": "open_obligation",
+      "status": "unresolved",
+      "statement": "Derive J,rho,p_perp,p_parallel from one state and common renormalization prescription.",
+      "assumptions": [
+        "Nonzero electromagnetic background",
+        "Common charge and gravitational finite terms"
+      ],
+      "dependencies": [
+        "Q01",
+        "M02"
+      ],
+      "sources": [
+        "P:P3",
+        "R4:R06"
+      ],
+      "scope": "An energy-only flat closure is insufficient for Einstein evolution.",
+      "next_obligation": "Compare two subtraction schemes and verify the electromagnetic force Ward identity."
+    },
+    {
+      "id": "Q03",
+      "title": "Full causal current/stress response blocks",
+      "type": "open_obligation",
+      "status": "partially_mapped",
+      "statement": "Construct retarded JJ,JT,TJ,TT variations with all contact terms from a causal state prescription.",
+      "assumptions": [
+        "Closed-time-path or equivalent retarded construction",
+        "Same state and counterterms as one-point observables"
+      ],
+      "dependencies": [
+        "Q01",
+        "Q02",
+        "M10"
+      ],
+      "sources": [
+        "P:P3",
+        "R4:R01",
+        "R4:R02"
+      ],
+      "scope": "M10 computes only a homogeneous fixed-metric projection of the JJ block.",
+      "next_obligation": "Derive the missing metric and stress variations."
+    },
+    {
+      "id": "Q04",
+      "title": "Physically smeared quantum noise",
+      "type": "open_obligation",
+      "status": "unresolved",
+      "statement": "Compute symmetrized connected current and stress fluctuations with physical smearing.",
+      "assumptions": [
+        "Same quantum state",
+        "Renormalized distributions",
+        "Declared smearing and observable scales"
+      ],
+      "dependencies": [
+        "Q01",
+        "Q02"
+      ],
+      "sources": [
+        "R4:R04",
+        "P:P3"
+      ],
+      "scope": "A source-amplitude derivative is not the symmetrized noise; no automatic nonequilibrium fluctuation-dissipation substitution.",
+      "next_obligation": "Evaluate a reduced-model noise observable and compare it with causal response."
+    },
+    {
+      "id": "Q05",
+      "title": "Controlled continuum limit",
+      "type": "open_obligation",
+      "status": "unresolved",
+      "statement": "Prove regulator-uniform bounds and convergence to a defined renormalized continuum model.",
+      "assumptions": [
+        "Fixed physical preparation",
+        "Independent momentum-window and Landau limits",
+        "Uniform estimates"
+      ],
+      "dependencies": [
+        "M09",
+        "M11",
+        "Q01"
+      ],
+      "sources": [
+        "P:T",
+        "P:CRIT",
+        "R4:R03"
+      ],
+      "scope": "Finite-grid existence cannot imply finite continuum energy; the critic supplies a divergent-energy counterexample.",
+      "next_obligation": "Find tightness, subtraction and state-tail conditions that survive the limit."
+    },
+    {
+      "id": "Q06",
+      "title": "Semiclassical validity criterion",
+      "type": "open_problem",
+      "status": "unresolved_for_target",
+      "statement": "Determine where mean-field evolution approximates the intended quantum observables.",
+      "assumptions": [
+        "Causal response",
+        "Fluctuations and state regularity",
+        "Relevant length/time scales"
+      ],
+      "dependencies": [
+        "Q03",
+        "Q04",
+        "Q05"
+      ],
+      "sources": [
+        "R4:R02",
+        "R4:R04",
+        "R4:R05"
+      ],
+      "scope": "Criteria and reduced-dimensional comparisons are informative but do not certify this 3+1 target.",
+      "next_obligation": "Compare a tractable fully quantum benchmark and specify a failure threshold."
+    },
+    {
+      "id": "G01",
+      "title": "Axisymmetric Bianchi-I reduction",
+      "type": "model_assumption",
+      "status": "candidate_reduction",
+      "statement": "Use ds²=-dt²+a_perp²(dx²+dy²)+a_parallel²dz² with aligned fields and diagonal total stress.",
+      "assumptions": [
+        "Homogeneous axisymmetric metric",
+        "Total matter, electromagnetic and supporting stresses"
+      ],
+      "dependencies": [
+        "F06"
+      ],
+      "sources": [
+        "P:P3",
+        "R3:H01"
+      ],
+      "scope": "This is a possible next geometry; it has neither a charged black-hole inner horizon nor dipole spatial structure.",
+      "next_obligation": "Prepare consistent Einstein initial data and all directional stresses."
+    },
+    {
+      "id": "G02",
+      "title": "Total Ward defect",
+      "type": "defined_observable",
+      "status": "defined",
+      "statement": "Q=rhodot+2H_perp(rho+p_perp)+H_parallel(rho+p_parallel) measures total energy-conservation failure.",
+      "assumptions": [
+        "Total rho and both total pressures",
+        "theta=2H_perp+H_parallel",
+        "Consistent source-support bookkeeping"
+      ],
+      "dependencies": [
+        "G01",
+        "Q02"
+      ],
+      "sources": [
+        "P:BIANCHI",
+        "P:P3"
+      ],
+      "scope": "Matter alone exchanges EJ with the field; total Q=0 requires the external/support sector too.",
+      "next_obligation": "Evaluate Q from independently computed source expressions."
+    },
+    {
+      "id": "G03",
+      "title": "Bianchi-I constraint propagation",
+      "type": "conditional_lemma",
+      "status": "derived_conditionally",
+      "statement": "Spatial Einstein evolution gives Cdot=-theta C-kappa Q; thus Q=0 and C(0)=0 preserve C=0.",
+      "assumptions": [
+        "C=H_perp²+2H_perp H_parallel-kappa rho",
+        "Spatial Einstein equations imposed",
+        "Constant kappa and stated stress convention",
+        "Constant cosmological term absorbed into total rho,p or set to zero"
+      ],
+      "dependencies": [
+        "F06",
+        "G01",
+        "G02"
+      ],
+      "sources": [
+        "P:BIANCHI"
+      ],
+      "scope": "This conditional geometric lemma does not supply the quantum closure or make Q vanish.",
+      "next_obligation": "Prove Q=0 for the proposed quantum/support sources before Einstein integration."
+    },
+    {
+      "id": "G04",
+      "title": "Self-consistent quantum Bianchi-I evolution",
+      "type": "open_problem",
+      "status": "unresolved",
+      "statement": "Solve the coupled geometry, fields and quantum state with constraint propagation and controlled validity.",
+      "assumptions": [
+        "Complete common source closure",
+        "Admissible initial state",
+        "Constraint-satisfying initial geometry",
+        "Controlled approximation order"
+      ],
+      "dependencies": [
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q06",
+        "G03"
+      ],
+      "sources": [
+        "P:P3",
+        "R3:H05",
+        "R3:H08"
+      ],
+      "scope": "Field strengths near electron QED scales do not alone supply curvature of order m_e².",
+      "next_obligation": "Close the directional stresses and verify the physical curvature budget."
+    },
+    {
+      "id": "O01",
+      "title": "Electric Weak Gravity Conjecture",
+      "type": "conjecture",
+      "status": "open_general_statement",
+      "statement": "Conjecture an appropriately superextremal charged state relative to the relevant gravitational extremality relation.",
+      "assumptions": [
+        "Declared gauge normalization and Planck convention",
+        "Specified scalar/moduli forces",
+        "Relevant vacuum and charge lattice"
+      ],
+      "dependencies": [
+        "F05",
+        "F06"
+      ],
+      "sources": [
+        "R3:G01",
+        "R4:R08"
+      ],
+      "scope": "q/m>=1 is not a convention-independent equation and force/extremality variants must be distinguished.",
+      "next_obligation": "Freeze normalization and derive the correct charged-scalar extremality comparison."
+    },
+    {
+      "id": "O02",
+      "title": "Magnetic Weak Gravity Conjecture",
+      "type": "conjecture",
+      "status": "open_general_statement",
+      "statement": "A magnetic/UV-scale version constrains the gauge-theory cutoff relative to gravity.",
+      "assumptions": [
+        "Specified magnetic charges and cutoff meaning",
+        "Gauge/gravity normalization"
+      ],
+      "dependencies": [
+        "F05",
+        "F06"
+      ],
+      "sources": [
+        "R3:G01",
+        "R4:R08"
+      ],
+      "scope": "This is not simply the electric particle charge-to-mass inequality with E replaced by B.",
+      "next_obligation": "Specify which magnetic version and EFT breakdown scale is being tested."
+    },
+    {
+      "id": "O03",
+      "title": "Festina Lente criterion",
+      "type": "conjecture",
+      "status": "open_general_statement",
+      "statement": "Quasi-de Sitter discharge arguments motivate a lower charged-mass bound of schematic form m⁴≳g²q²H²M_Pl².",
+      "assumptions": [
+        "Quasi-de Sitter state and timescales",
+        "Charge and coupling conventions",
+        "Applicable black-hole discharge assumptions"
+      ],
+      "dependencies": [
+        "F05",
+        "F06"
+      ],
+      "sources": [
+        "R3:G02",
+        "R3:G04",
+        "R4:R08"
+      ],
+      "scope": "Coefficients and content depend on conventions and the derivation; it is not proved by M09.",
+      "next_obligation": "Compare the bound with the same-vacuum extremality and nonequilibrium decay calculation."
+    },
+    {
+      "id": "O04",
+      "title": "Charged de-Sitter decay compatibility",
+      "type": "open_problem",
+      "status": "partially_mapped",
+      "statement": "Reconcile discharge, Hawking evaporation, extremality and possible WGC/FL constraints in one causal model.",
+      "assumptions": [
+        "Geometry-specific states and boundary conditions",
+        "Matched rates and backreaction",
+        "Explicit effective-action order"
+      ],
+      "dependencies": [
+        "O01",
+        "O02",
+        "O03",
+        "Q02",
+        "Q06"
+      ],
+      "sources": [
+        "R3:G04",
+        "R3:G14",
+        "R4:R08"
+      ],
+      "scope": "Phenomenological or conditional endpoint theorems are not a universal microscopic solution.",
+      "next_obligation": "Reproduce a limiting decay model and replace one phenomenological rate with a controlled current."
+    },
+    {
+      "id": "O05",
+      "title": "Schwinger pair creation in prescribed fields",
+      "type": "established_calculation",
+      "status": "known_with_regime",
+      "statement": "Vacuum pair production is nonperturbative in an electric field; magnetic fields alter the charged spectrum.",
+      "assumptions": [
+        "Specified background and quantum state",
+        "Loop/order and asymptotic prescription"
+      ],
+      "dependencies": [
+        "F04",
+        "F05"
+      ],
+      "sources": [
+        "R3:FT01",
+        "R3:RT06"
+      ],
+      "scope": "A prescribed-field production rate is not self-consistent current/stress backreaction.",
+      "next_obligation": "Match a known exact limiting rate and distinguish real current from an imaginary effective action."
+    },
+    {
+      "id": "O06",
+      "title": "Euler–Heisenberg and curvature expansion",
+      "type": "effective_framework",
+      "status": "known_with_regime",
+      "statement": "One-loop local effective actions encode vacuum polarization only within their field, derivative and curvature assumptions.",
+      "assumptions": [
+        "Declared loop order",
+        "Slow-background or other stated expansion",
+        "Avoid double counting dynamical fermion loops"
+      ],
+      "dependencies": [
+        "F05",
+        "F06"
+      ],
+      "sources": [
+        "R3:FT02",
+        "R3:FT06",
+        "R3:FT07"
+      ],
+      "scope": "Fucci2009 treats constant magnetic fields, zero electric field and linear curvature; it is not an arbitrary R~m_e² closure.",
+      "next_obligation": "Establish approximation control before applying it to strong curved electric fields."
+    },
+    {
+      "id": "O07",
+      "title": "Magnetized curved Schwinger backreaction",
+      "type": "open_problem",
+      "status": "unresolved_target",
+      "statement": "Compute causal pair current and stress in a chosen strongly magnetized curved geometry, then evolve backreaction.",
+      "assumptions": [
+        "Geometry, state and source supports fixed",
+        "Validity of field and curvature expansions",
+        "Common renormalization"
+      ],
+      "dependencies": [
+        "O05",
+        "O06",
+        "Q02",
+        "Q03",
+        "Q06"
+      ],
+      "sources": [
+        "P:P3",
+        "R3:FT06",
+        "R4:R03"
+      ],
+      "scope": "The flat homogeneous finite theorem is a restricted analogue, not a solution of this curved problem.",
+      "next_obligation": "Select one symmetry and test a controlled weak-curvature bridge first."
+    },
+    {
+      "id": "O08",
+      "title": "Classical mass inflation",
+      "type": "conditional_result",
+      "status": "known_with_hypotheses",
+      "statement": "Coupled fluxes can destabilize charged inner horizons and produce mass inflation under specified data and decay assumptions.",
+      "assumptions": [
+        "Charged black-hole geometry",
+        "Regularity and incoming/outgoing flux hypotheses",
+        "Specified field equations"
+      ],
+      "dependencies": [
+        "F06"
+      ],
+      "sources": [
+        "R3:G03"
+      ],
+      "scope": "A theorem for a particular data class is not a universal statement about every horizon or quantum state.",
+      "next_obligation": "Write the exact characteristic problem and match the hypotheses of the chosen theorem."
+    },
+    {
+      "id": "O09",
+      "title": "Quantum Cauchy-horizon endpoint",
+      "type": "open_problem",
+      "status": "unresolved_target",
+      "statement": "Determine the backreacted endpoint when quantum stress, evaporation and inner-horizon dynamics interact.",
+      "assumptions": [
+        "Renormalized horizon-state stress",
+        "Controlled backreaction",
+        "Specified regularity and causal boundaries"
+      ],
+      "dependencies": [
+        "O08",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q06"
+      ],
+      "sources": [
+        "R3:R227",
+        "R3:H09",
+        "R4:R09"
+      ],
+      "scope": "Fixed-background stress divergence and compact-region regularity arguments do not solve the nonlinear endpoint.",
+      "next_obligation": "Compute a geometry-matched causal stress and evolve a constrained reduced system."
+    },
+    {
+      "id": "O10",
+      "title": "Perturbative photon–graviton conversion",
+      "type": "established_calculation",
+      "status": "known_with_regime",
+      "statement": "An external magnetic field couples photon and graviton perturbations; conversion depends on phase matching and polarization.",
+      "assumptions": [
+        "Specified wave geometry and field",
+        "Linearized wave amplitudes",
+        "Consistent external-leg and dispersion prescription"
+      ],
+      "dependencies": [
+        "F05",
+        "F06"
+      ],
+      "sources": [
+        "R3:G13",
+        "R4:R10"
+      ],
+      "scope": "This transverse wave sector differs from the homogeneous longitudinal Schwinger calculation.",
+      "next_obligation": "Recover the known weak-field conversion matrix and Ward identities."
+    },
+    {
+      "id": "O11",
+      "title": "Quantum-dispersive conversion in strong fields",
+      "type": "open_problem",
+      "status": "unresolved_target",
+      "statement": "Determine when QED birefringence, plasma and geometry suppress or permit coherent conversion.",
+      "assumptions": [
+        "Validity-controlled dispersive indices",
+        "Polarization and propagation angle",
+        "Absorption/coherence and loop order"
+      ],
+      "dependencies": [
+        "O06",
+        "O10",
+        "Q03"
+      ],
+      "sources": [
+        "R3:G13",
+        "R4:R11"
+      ],
+      "scope": "A constant lossless two-mode calculator is a benchmark, not a magnetar prediction.",
+      "next_obligation": "Compute matched diagonal/off-diagonal wave operators and test limiting phase mismatch."
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01",
+      "type": "proved_hyperedge",
+      "from": [
+        "F02",
+        "F04"
+      ],
+      "to": "F08",
+      "meaning": "Both the two-dimensional state definition and spectral algebra are premises."
+    },
+    {
+      "id": "E02",
+      "type": "proved_hyperedge",
+      "from": [
+        "F07",
+        "F09",
+        "F10",
+        "M01",
+        "M02"
+      ],
+      "to": "M04",
+      "meaning": "All selected-regulator and coefficient assumptions are required; see T16–T21."
+    },
+    {
+      "id": "E03",
+      "type": "proved_hyperedge",
+      "from": [
+        "M01",
+        "M02",
+        "F08"
+      ],
+      "to": "M05",
+      "meaning": "The precession equation preserves every initial Bloch norm."
+    },
+    {
+      "id": "E04",
+      "type": "proved_hyperedge",
+      "from": [
+        "M01",
+        "M05",
+        "F02"
+      ],
+      "to": "M06",
+      "meaning": "Positivity follows by weighted Cauchy–Schwarz."
+    },
+    {
+      "id": "E05",
+      "type": "proved_hyperedge",
+      "from": [
+        "M01",
+        "M02",
+        "F02"
+      ],
+      "to": "M07",
+      "meaning": "Differentiate the shared definitions; fixed coefficients are essential."
+    },
+    {
+      "id": "E06",
+      "type": "proved_hyperedge",
+      "from": [
+        "M03",
+        "M04",
+        "M06",
+        "M07"
+      ],
+      "to": "M08",
+      "meaning": "The nonnegative energy and uniform margin give the regularized square-root estimate."
+    },
+    {
+      "id": "E07",
+      "type": "proved_hyperedge",
+      "from": [
+        "F03",
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M08"
+      ],
+      "to": "M09",
+      "meaning": "The complete premise set closes compact finite-time continuation."
+    },
+    {
+      "id": "E08",
+      "type": "proved_hyperedge",
+      "from": [
+        "F03",
+        "M02",
+        "M03",
+        "M09"
+      ],
+      "to": "M10",
+      "meaning": "Applies parameter dependence on each compact interval with the stated C1 family."
+    },
+    {
+      "id": "E09",
+      "type": "proved_hyperedge",
+      "from": [
+        "F06",
+        "G01",
+        "G02"
+      ],
+      "to": "G03",
+      "meaning": "Conditional on the spatial Einstein equations and the displayed definitions of C and Q."
+    },
+    {
+      "id": "E10",
+      "type": "assumption",
+      "from": [
+        "F04"
+      ],
+      "to": "M01",
+      "meaning": "The target adopts this premise or framework; no physical validation is implied."
+    },
+    {
+      "id": "E11",
+      "type": "assumption",
+      "from": [
+        "F05"
+      ],
+      "to": "M02",
+      "meaning": "The target adopts this premise or framework; no physical validation is implied."
+    },
+    {
+      "id": "E12",
+      "type": "assumption",
+      "from": [
+        "F06"
+      ],
+      "to": "G01",
+      "meaning": "The target adopts this premise or framework; no physical validation is implied."
+    },
+    {
+      "id": "E13",
+      "type": "assumption",
+      "from": [
+        "M03"
+      ],
+      "to": "M11",
+      "meaning": "The target adopts this premise or framework; no physical validation is implied."
+    },
+    {
+      "id": "E14",
+      "type": "context",
+      "from": [
+        "F06"
+      ],
+      "to": "F11",
+      "meaning": "Related subject matter or method; this adjacency is not an implication."
+    },
+    {
+      "id": "E15",
+      "type": "context",
+      "from": [
+        "F01"
+      ],
+      "to": "M09",
+      "meaning": "Related subject matter or method; this adjacency is not an implication."
+    },
+    {
+      "id": "E16",
+      "type": "context",
+      "from": [
+        "O01"
+      ],
+      "to": "O03",
+      "meaning": "Related subject matter or method; this adjacency is not an implication."
+    },
+    {
+      "id": "E17",
+      "type": "context",
+      "from": [
+        "O02"
+      ],
+      "to": "O03",
+      "meaning": "Related subject matter or method; this adjacency is not an implication."
+    },
+    {
+      "id": "E18",
+      "type": "context",
+      "from": [
+        "O04"
+      ],
+      "to": "O09",
+      "meaning": "Related subject matter or method; this adjacency is not an implication."
+    },
+    {
+      "id": "E19",
+      "type": "context",
+      "from": [
+        "O07"
+      ],
+      "to": "O11",
+      "meaning": "Related subject matter or method; this adjacency is not an implication."
+    },
+    {
+      "id": "E20",
+      "type": "restricted_analogue",
+      "from": [
+        "M10"
+      ],
+      "to": "Q03",
+      "meaning": "Some mechanism is shared, but geometry, state or approximation differs; transfer needs a new derivation."
+    },
+    {
+      "id": "E21",
+      "type": "restricted_analogue",
+      "from": [
+        "M09"
+      ],
+      "to": "O07",
+      "meaning": "Some mechanism is shared, but geometry, state or approximation differs; transfer needs a new derivation."
+    },
+    {
+      "id": "E22",
+      "type": "restricted_analogue",
+      "from": [
+        "M11"
+      ],
+      "to": "Q06",
+      "meaning": "Some mechanism is shared, but geometry, state or approximation differs; transfer needs a new derivation."
+    },
+    {
+      "id": "E23",
+      "type": "restricted_analogue",
+      "from": [
+        "G04"
+      ],
+      "to": "O09",
+      "meaning": "Some mechanism is shared, but geometry, state or approximation differs; transfer needs a new derivation."
+    },
+    {
+      "id": "E24",
+      "type": "restricted_analogue",
+      "from": [
+        "O05"
+      ],
+      "to": "M02",
+      "meaning": "Some mechanism is shared, but geometry, state or approximation differs; transfer needs a new derivation."
+    },
+    {
+      "id": "E25",
+      "type": "unresolved_bridge",
+      "from": [
+        "M09"
+      ],
+      "to": "Q05",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E26",
+      "type": "unresolved_bridge",
+      "from": [
+        "M10"
+      ],
+      "to": "M12",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E27",
+      "type": "unresolved_bridge",
+      "from": [
+        "M10"
+      ],
+      "to": "Q04",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E28",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q01"
+      ],
+      "to": "Q02",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E29",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q02"
+      ],
+      "to": "G04",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E30",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q03"
+      ],
+      "to": "G04",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E31",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q04"
+      ],
+      "to": "Q06",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E32",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q05"
+      ],
+      "to": "Q06",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E33",
+      "type": "unresolved_bridge",
+      "from": [
+        "G03"
+      ],
+      "to": "G04",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E34",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q02"
+      ],
+      "to": "O04",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E35",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q02"
+      ],
+      "to": "O07",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E36",
+      "type": "unresolved_bridge",
+      "from": [
+        "Q02"
+      ],
+      "to": "O09",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E37",
+      "type": "unresolved_bridge",
+      "from": [
+        "O06"
+      ],
+      "to": "O11",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    },
+    {
+      "id": "E38",
+      "type": "unresolved_bridge",
+      "from": [
+        "O10"
+      ],
+      "to": "O11",
+      "meaning": "A missing derivation, estimate or physical closure prevents this connection from being accepted as a proof step."
+    }
+  ],
+  "sources": {
+    "P:ACCEPT": {
+      "title": "Round4 acceptance and sampled numerical scope",
+      "artifact": "qeg-research/round4/physics_acceptance.json",
+      "reading_provenance": "Project derivation or saved acceptance, not an external authority.",
+      "map_source_id": "P:ACCEPT"
+    },
+    "P:BIANCHI": {
+      "title": "Root-derived Bianchi-I constraint propagation lemma",
+      "artifact": "qeg-research/round5/symbolic_checks.py",
+      "reading_provenance": "Project derivation or saved acceptance, not an external authority.",
+      "map_source_id": "P:BIANCHI",
+      "results_artifact": "qeg-research/round5/symbolic_results.json",
+      "read_depth": "Read the explicit Bianchi equations and the saved zero-residual symbolic result. This mapping pass did not rerun the checker.",
+      "scope": "The checker retains an explicit constant Lambda; the map absorbs a constant vacuum stress into total rho and pressures, equivalently Lambda=0 in the displayed form."
+    },
+    "P:CRIT": {
+      "title": "Independent proof critique and falsifiers",
+      "artifact": "qeg-research/round5/proof_critique.md",
+      "reading_provenance": "Project derivation or saved acceptance, not an external authority.",
+      "map_source_id": "P:CRIT"
+    },
+    "P:P3": {
+      "title": "Frozen P3 response contract",
+      "artifact": "qeg-research/round4/response_contract.md",
+      "reading_provenance": "Project derivation or saved acceptance, not an external authority.",
+      "map_source_id": "P:P3"
+    },
+    "P:T": {
+      "title": "Finite-model theorem and advisor review",
+      "artifact": "qeg-research/round5/theorem_advisor.md",
+      "reading_provenance": "Project derivation or saved acceptance, not an external authority.",
+      "map_source_id": "P:T"
+    },
+    "R3:FT01": {
+      "id": "FT01",
+      "title": "On Gauge Invariance and Vacuum Polarization",
+      "authors": "Julian Schwinger",
+      "year": 1951,
+      "url": "https://doi.org/10.1103/PhysRev.82.664",
+      "type": "original journal article",
+      "access": "bibliographic original; operative magnetic equations checked in FT02 full text",
+      "use": "Original proper-time QED formalism; not a new solution.",
+      "date": 1951,
+      "readdepth": "Retained from the preceding project cycle: ",
+      "role": "original journal article",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:FT01"
+    },
+    "R3:FT02": {
+      "id": "FT02",
+      "title": "Euler-Heisenberg Lagrangian to all orders in the magnetic field and the Chiral Magnetic Effect",
+      "authors": "Simon Wolfgang Mages, Matthias Aicher, Andreas Schafer",
+      "year": 2010,
+      "url": "https://arxiv.org/pdf/1009.1495",
+      "version": "v1, 8 September 2010",
+      "access": "full PDF text; section 2 and equations 13-17 inspected",
+      "use": "Pure magnetic proper-time action and electric-probe susceptibility with finite renormalization convention; susceptibility independently derived in this audit.",
+      "date": 2010,
+      "readdepth": "Retained from the preceding project cycle: ",
+      "role": "",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:FT02"
+    },
+    "R3:FT06": {
+      "id": "FT06",
+      "title": "Non-Perturbative One-Loop Effective Action for Electrodynamics in Curved Spacetime",
+      "authors": "Guglielmo Fucci",
+      "year": 2009,
+      "url": "https://arxiv.org/html/0906.2430v1",
+      "access": "full HTML; assumptions, equations 15-25 and concluding regime inspected",
+      "use": "All magnetic powers, covariantly constant field, zero electric field, linear Riemann curvature only; not arbitrary strong-curvature closure.",
+      "date": 2009,
+      "readdepth": "Retained from the preceding project cycle: ",
+      "role": "",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:FT06"
+    },
+    "R3:FT07": {
+      "id": "FT07",
+      "title": "Heat Kernels and Resummations: the Spinor Case",
+      "authors": "S. A. Franchino-Vinas, C. Garcia-Perez, F. D. Mazzitelli, S. Pla, V. Vitagliano",
+      "year": 2025,
+      "journal_year": 2026,
+      "url": "https://arxiv.org/html/2511.03315v1",
+      "journal_doi": "10.1103/yjqc-mzwb",
+      "access": "full HTML; section III equations 12-29 inspected",
+      "use": "Spinor electromagnetic heat-kernel resummation and derivative-recursion resource; curved-spacetime application not treated as already solved.",
+      "date": 2025,
+      "readdepth": "Retained from the preceding project cycle: ",
+      "role": "",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:FT07"
+    },
+    "R3:G01": {
+      "id": "G01",
+      "description": "Heidenreich, Reece, Rudelius, *Repulsive Forces and the Weak Gravity Conjecture*, JHEP 10 (2019) 055, [v2 abstract and version record](https://arxiv.org/abs/1906.02206); normalization also checked against the [WGC review](https://arxiv.org/html/2201.08380v2) and the existing project derivation.",
+      "urls": [
+        "https://arxiv.org/abs/1906.02206",
+        "https://arxiv.org/html/2201.08380v2"
+      ],
+      "url": "https://arxiv.org/abs/1906.02206",
+      "access_date": "2026-09-09",
+      "role": "Primary-source audit; precise reading depth is in description.",
+      "title": "Repulsive Forces and the Weak Gravity Conjecture",
+      "authors": "Heidenreich, Reece, Rudelius",
+      "date": "2019",
+      "access": "Heidenreich, Reece, Rudelius, *Repulsive Forces and the Weak Gravity Conjecture*, JHEP 10 (2019) 055, v2 abstract and version record; normalization also checked against the WGC review and the existing project derivation.",
+      "readdepth": "Retained from the preceding project cycle: ",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:G01"
+    },
+    "R3:G02": {
+      "id": "G02",
+      "description": "Montero et al., *The FL bound and its phenomenological implications*, JHEP 10 (2021) 009, [primary record](https://arxiv.org/abs/2106.07650). Current metadata checked; prior project full-text equations retained and independently normalized.",
+      "urls": [
+        "https://arxiv.org/abs/2106.07650"
+      ],
+      "url": "https://arxiv.org/abs/2106.07650",
+      "access_date": "2026-09-09",
+      "role": "Primary-source audit; precise reading depth is in description.",
+      "title": "The FL bound and its phenomenological implications",
+      "authors": "Montero et al.",
+      "date": "2021",
+      "access": "Montero et al., *The FL bound and its phenomenological implications*, JHEP 10 (2021) 009, primary record. Current metadata checked; prior project full-text equations retained and independently normalized.",
+      "readdepth": "Retained from the preceding project cycle: ",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:G02"
+    },
+    "R3:G03": {
+      "id": "G03",
+      "description": "Rossetti, *Mass inflation from rough initial data*, [v2](https://arxiv.org/abs/2506.08075), June 2025. Abstract and stated data/Price-law assumptions checked; long proof not independently reproduced.",
+      "urls": [
+        "https://arxiv.org/abs/2506.08075"
+      ],
+      "url": "https://arxiv.org/abs/2506.08075",
+      "access_date": "2026-09-09",
+      "role": "Primary-source audit; precise reading depth is in description.",
+      "title": "Mass inflation from rough initial data",
+      "authors": "Rossetti",
+      "date": "2025",
+      "access": "Rossetti, *Mass inflation from rough initial data*, v2, June 2025. Abstract and stated data/Price-law assumptions checked; long proof not independently reproduced.",
+      "readdepth": "Retained from the preceding project cycle: ",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:G03"
+    },
+    "R3:G04": {
+      "id": "G04",
+      "description": "Aalsma, van der Schaar, Visser, *Extremal Black Hole Decay in de Sitter Space*, JHEP 07 (2024) 259, [v2 full text](https://arxiv.org/html/2311.13742v2). Section 4 shell-energy and decay-bound comparison reopened.",
+      "urls": [
+        "https://arxiv.org/html/2311.13742v2"
+      ],
+      "url": "https://arxiv.org/html/2311.13742v2",
+      "access_date": "2026-09-09",
+      "role": "Primary-source audit; precise reading depth is in description.",
+      "title": "Extremal Black Hole Decay in de Sitter Space",
+      "authors": "Aalsma, van der Schaar, Visser",
+      "date": "2024",
+      "access": "Aalsma, van der Schaar, Visser, *Extremal Black Hole Decay in de Sitter Space*, JHEP 07 (2024) 259, v2 full text. Section 4 shell-energy and decay-bound comparison reopened.",
+      "readdepth": "Retained from the preceding project cycle: ",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:G04"
+    },
+    "R3:G13": {
+      "id": "G13",
+      "description": "Ahmadiniaz et al., *One loop photon-graviton mixing in an electromagnetic field: Part 3*, JHEP 06 (2026) 175, [primary record](https://arxiv.org/abs/2601.23279). Existing project full PDF sections 6 and 8 reread, beyond the incomplete HTML rendering; external-leg prescription and Ward identities inspected.",
+      "urls": [
+        "https://arxiv.org/abs/2601.23279"
+      ],
+      "url": "https://arxiv.org/abs/2601.23279",
+      "access_date": "2026-09-09",
+      "role": "Primary-source audit; precise reading depth is in description.",
+      "title": "One loop photon-graviton mixing in an electromagnetic field: Part 3",
+      "authors": "Ahmadiniaz et al.",
+      "date": "2026",
+      "access": "Ahmadiniaz et al., *One loop photon-graviton mixing in an electromagnetic field: Part 3*, JHEP 06 (2026) 175, primary record. Existing project full PDF sections 6 and 8 reread, beyond the incomplete HTML rendering; external-leg prescription and Ward identities inspected.",
+      "readdepth": "Retained from the preceding project cycle: ",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:G13"
+    },
+    "R3:G14": {
+      "id": "G14",
+      "description": "Easson, *The fate of Reissner–Nordström–de Sitter black holes: nonequilibrium discharge and evaporation*, [v1 full text](https://arxiv.org/html/2605.20349v1), May 2026. Equations (17)–(25), microscopic-matching explanation, hierarchy and conditional endpoint theorem reopened.",
+      "urls": [
+        "https://arxiv.org/html/2605.20349v1"
+      ],
+      "url": "https://arxiv.org/html/2605.20349v1",
+      "access_date": "2026-09-09",
+      "role": "Primary-source audit; precise reading depth is in description.",
+      "title": "The fate of Reissner–Nordström–de Sitter black holes: nonequilibrium discharge and evaporation",
+      "authors": "Easson",
+      "date": "2026",
+      "access": "Easson, *The fate of Reissner–Nordström–de Sitter black holes: nonequilibrium discharge and evaporation*, v1 full text, May 2026. Equations (17)–(25), microscopic-matching explanation, hierarchy and conditional endpoint theorem reopened.",
+      "readdepth": "Retained from the preceding project cycle: ",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:G14"
+    },
+    "R3:H01": {
+      "title": "Linear perturbations of an anisotropic Bianchi I model with a uniform magnetic field",
+      "authors": "Federico Di Gioia; Giovanni Montani",
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1807.00434v4",
+      "type": "peer-reviewed primary research",
+      "read_depth": "Abstract and bibliographic/version record checked; equations here independently derived rather than attributed to this source.",
+      "use": "Magnetized Bianchi-I precedent and anisotropy scope.",
+      "limitation": "Perfect-fluid cosmology, not renormalized Dirac backreaction.",
+      "date": "2019",
+      "readdepth": "Abstract and bibliographic/version record checked; equations here independently derived rather than attributed to this source.",
+      "role": "peer-reviewed primary research",
+      "access": "Perfect-fluid cosmology, not renormalized Dirac backreaction.",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:H01"
+    },
+    "R3:H05": {
+      "title": "On the initial value problem for semiclassical gravity without and with quantum state collapses",
+      "authors": "Benito A. Juárez-Aubry; Bernard S. Kay; Tonatiuh Miramontes; Daniel Sudarsky",
+      "year": 2023,
+      "url": "https://arxiv.org/html/2205.11671v5",
+      "type": "peer-reviewed primary research",
+      "read_depth": "Introduction, physical-solution discussion, sections 3.2-3.4 including conjectures 9, 10, 14, 16 and surface-Hadamard compatibility passages read; actual revision March 10, 2023, not HTML rebuild date.",
+      "use": "Initial state/geometry constraint compatibility and honest status of well-posedness claims.",
+      "limitation": "Important assertions are explicitly conjectures; scalar models, not completed strong-field Dirac solver.",
+      "date": "2023",
+      "readdepth": "Introduction, physical-solution discussion, sections 3.2-3.4 including conjectures 9, 10, 14, 16 and surface-Hadamard compatibility passages read; actual revision March 10, 2023, not HTML rebuild date.",
+      "role": "peer-reviewed primary research",
+      "access": "Important assertions are explicitly conjectures; scalar models, not completed strong-field Dirac solver.",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:H05"
+    },
+    "R3:H08": {
+      "title": "Einstein Equation with Quantum Corrections Reduced to Second Order",
+      "authors": "Leonard Parker; Jonathan Z. Simon",
+      "year": 1993,
+      "url": "https://arxiv.org/pdf/gr-qc/9211002",
+      "type": "peer-reviewed primary research",
+      "read_depth": "PDF introduction and section 2 through order-reduction/nonlinear-branch caveat, printed pages 1-11, read.",
+      "use": "Consistent perturbative reduction and why extra branches of truncated equations can be spurious.",
+      "limitation": "First-order semiclassical expansion; cannot automatically remove nonperturbative large-N physics or establish target state closure.",
+      "date": "1993",
+      "readdepth": "PDF introduction and section 2 through order-reduction/nonlinear-branch caveat, printed pages 1-11, read.",
+      "role": "peer-reviewed primary research",
+      "access": "First-order semiclassical expansion; cannot automatically remove nonperturbative large-N physics or establish target state closure.",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:H08"
+    },
+    "R3:H09": {
+      "title": "The Structure of Quantum Singularities on a Cauchy Horizon",
+      "authors": "Arvin Shahbazi-Moghaddam",
+      "year": 2024,
+      "url": "https://arxiv.org/html/2411.11948v1",
+      "type": "primary research preprint",
+      "read_depth": "Introduction, explicit wedge construction and assumptions, robustness discussion and qualified scope inspected beyond abstract.",
+      "use": "Regularity class, state dependence, and limitations of universal fixed-background horizon-divergence claims.",
+      "limitation": "Strict near-horizon/state-construction assumptions; no solved backreacted metric or universal desingularization.",
+      "date": "2024",
+      "readdepth": "Introduction, explicit wedge construction and assumptions, robustness discussion and qualified scope inspected beyond abstract.",
+      "role": "primary research preprint",
+      "access": "Strict near-horizon/state-construction assumptions; no solved backreacted metric or universal desingularization.",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:H09"
+    },
+    "R3:H14": {
+      "title": "Can Newtonian gravity produce quantum entanglement?",
+      "authors": "Feng-Li Lin; Sayid Mondal",
+      "year": 2026,
+      "date": "2026-03-06",
+      "url": "https://link.aps.org/pdf/10.1103/fv38-kgkb",
+      "type": "peer-reviewed primary research",
+      "read_depth": "Six-page primary PDF introduction and three-model setup/conclusion with perturbative caveat inspected.",
+      "use": "Concrete quadrupole quantum/semiclassical/stochastic model comparison.",
+      "limitation": "Specific tidal-parity model; not a laboratory detection or full quantum-gravity theory.",
+      "readdepth": "Six-page primary PDF introduction and three-model setup/conclusion with perturbative caveat inspected.",
+      "role": "peer-reviewed primary research",
+      "access": "Specific tidal-parity model; not a laboratory detection or full quantum-gravity theory.",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:H14"
+    },
+    "R3:R227": {
+      "id": "R227",
+      "title": "Quantum Instability of the Cauchy Horizon in Reissner-Nordström-deSitter Spacetime",
+      "author": "S. Hollands, R. M. Wald, J. Zahn",
+      "year": 2020,
+      "url": "https://arxiv.org/abs/1912.06047",
+      "type": "peer-reviewed mathematical/theoretical research",
+      "claim": "Finds a generically state-independent leading divergent quantum stress near the RNdS Cauchy horizon for the stated field/state class.",
+      "limitation": "Fixed-background divergence does not itself solve the nonlinear semiclassical endpoint or prove a general quantum cosmic-censorship theorem.",
+      "read_depth": "Abstract and theorem scope inspected; prior corpus already includes related work.",
+      "jurisdiction": "",
+      "status": "",
+      "checked": "2026-09-09",
+      "prior_exact_url_ids": [
+        "C07"
+      ],
+      "validation": "Source existence/claim scope checked; no independent experimental reproduction in this source investigation.",
+      "authors": "S. Hollands, R. M. Wald, J. Zahn",
+      "date": 2020,
+      "readdepth": "Retained from the preceding project cycle: Abstract and theorem scope inspected; prior corpus already includes related work.",
+      "role": "peer-reviewed mathematical/theoretical research",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:R227"
+    },
+    "R3:RT06": {
+      "id": "RT06",
+      "title": "Schwinger Pair Production in Electric and Magnetic Fields",
+      "authors": [
+        "Sang Pyo Kim",
+        "Don N. Page"
+      ],
+      "year": 2006,
+      "url": "https://arxiv.org/abs/hep-th/0301132",
+      "arxiv": "hep-th/0301132",
+      "kind": "primary research",
+      "read_sections": [
+        "abstract",
+        "constant-field Landau sum context from paper and companion full text"
+      ],
+      "supports": "Constant parallel electric/magnetic fields and summation of Landau levels.",
+      "critical_audit": "Spatial Sauter tunneling and temporal Sauter scattering have different boundary problems; do not substitute spatial potential formulas into a temporal IVP. Mean number differs from vacuum persistence beyond the dilute limit.",
+      "accessed": "2026-09-09",
+      "date": 2006,
+      "readdepth": "Retained from the preceding project cycle: Sections inspected: abstract, constant-field Landau sum context from paper and companion full text",
+      "role": "primary research",
+      "reading_provenance": "Reused existing round3 source audit; not newly reread in this mapping pass.",
+      "map_source_id": "R3:RT06"
+    },
+    "R4:R01": {
+      "id": "R01",
+      "title": "Linear Response Analysis of the Semiclassical Approximation to Spin 1/2 Quantum Electrodynamics in 1+1 Dimensions",
+      "authors": "Ian M. Newsome; Paul R. Anderson; Eric M. Grotzke",
+      "date": "2025-05-01, arXiv v2; journal 2025-03-20",
+      "url": "https://arxiv.org/html/2410.22633v2",
+      "read_depth": "Read introduction, sections III–IV, response equations 22–28 and Appendix B; previous round numerical review retained. HTML autogenerated date is not submission date.",
+      "use": "Retarded-current response, unchanged vacuum preparation, necessary criterion and finite-difference comparator.",
+      "limitation": "1+1-dimensional source and matter model; no numerical transfer to 3+1 Landau response.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R01"
+    },
+    "R4:R02": {
+      "id": "R02",
+      "title": "Linear Response, Validity of Semi-Classical Gravity, and the Stability of Flat Space",
+      "authors": "Paul R. Anderson; Carmen Molina-Paris; Emil Mottola",
+      "date": "2002-09-21; Phys. Rev. D67 (2003) 024026",
+      "url": "https://arxiv.org/abs/gr-qc/0209075",
+      "read_depth": "Primary abstract and publication record read; detailed stochastic formalism separately read in R04.",
+      "use": "Necessary linearized gauge-invariant stability criterion.",
+      "limitation": "Scalar Minkowski application; not strong-field interacting spinor QED.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R02"
+    },
+    "R4:R03": {
+      "id": "R03",
+      "title": "Adiabatic regularization for Dirac fields in time-varying electric backgrounds",
+      "authors": "Pau Beltran-Palau; Jose Navarro-Salas; Silvia Pla",
+      "date": "2020-05-22, v2",
+      "url": "https://arxiv.org/html/2001.08710v2",
+      "read_depth": "Read adiabatic-order discussion and Appendix C explicit terms through fourth order; submission version checked.",
+      "use": "Consistent adiabatic order and current/stress subtraction requirement.",
+      "limitation": "Displayed formulas are not an implemented anisotropic magnetic Bianchi-I closure.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R03"
+    },
+    "R4:R04": {
+      "id": "R04",
+      "title": "Validity of semiclassical gravity in the stochastic gravity approach",
+      "authors": "Enric Verdaguer",
+      "date": "2005-07-18, v1",
+      "url": "https://arxiv.org/html/gr-qc/0507073v1",
+      "read_depth": "Read sections III–IV noise definition, retarded response, intrinsic/induced fluctuations and order-reduction limitations.",
+      "use": "Symmetrized connected noise differs from retarded response; distributions and smearing matter.",
+      "limitation": "Large-N/scalar examples do not give a numerical noise bound for this finite-QED model.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R04"
+    },
+    "R4:R05": {
+      "id": "R05",
+      "title": "Schwinger effect with backreaction in 1+1D massive QED with a strong external field",
+      "authors": "Samuel E. Gralla; Morifumi Mizuno",
+      "date": "2026-04-09, v2",
+      "url": "https://arxiv.org/html/2511.23464v2",
+      "read_depth": "Primary abstract and setup revisited; prior round independently reproduced its reduced oscillator and reviewed Appendix B.",
+      "use": "Fully quantum first-order mass correction can be absent from a semiclassical comparator.",
+      "limitation": "Not all-orders QED and not a directly matched multi-Landau-level model.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R05"
+    },
+    "R4:R06": {
+      "id": "R06",
+      "title": "The renormalized locally covariant Dirac field",
+      "authors": "Jochen Zahn",
+      "date": "2013, arXiv v3",
+      "url": "https://arxiv.org/html/1210.4031v3",
+      "read_depth": "Read current-conservation proposition and ambiguity discussion, stress conservation hypotheses in sections 4.1–4.2.",
+      "use": "Common locally covariant source/stress framework and allowed local renormalizations.",
+      "limitation": "No evaluated strong-field Bianchi-I expectation values supplied by this source.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R06"
+    },
+    "R4:R08": {
+      "id": "R08",
+      "title": "Novel Bounds From The Weak Gravity and Festina Lente Conjectures",
+      "authors": "Fayez Abu-Ajamieh; Pratik Chattopadhyay; Nobuchika Okada; Roman Pasechnik; Zhi-Wei Wang",
+      "date": "2026-03-17, v2; journal 2026-02-27",
+      "url": "https://arxiv.org/html/2509.16762v2",
+      "read_depth": "Read introduction and fifth-force section, especially small-H/local approximation, equations 1–7 and massive-mediator caveat.",
+      "use": "Current conditional WGC/Festina Lente phenomenology and explicit applicability assumptions.",
+      "limitation": "Bounds remain conjecture-dependent; extrapolation to massive mediator includes an additional assumption.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R08"
+    },
+    "R4:R09": {
+      "id": "R09",
+      "title": "Semiclassical regularity of compact trapped regions: From dynamical horizons to inner extremality",
+      "authors": "Raul Carballo-Rubio; Francesco Di Filippo; Stefano Liberati; Matt Visser",
+      "date": "2026-07-04, v1",
+      "url": "https://arxiv.org/html/2607.03916v1",
+      "read_depth": "Read setup, stationary Polyakov stress equations, abstract, dynamical interpretation and conclusions including explicit unsolved-backreaction statement.",
+      "use": "Finite-lifetime trapping horizons versus eternal Cauchy horizons; possible inner-extremal alternative.",
+      "limitation": "s-wave Polyakov approximation on selected backgrounds; no solved self-consistent endpoint.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R09"
+    },
+    "R4:R10": {
+      "id": "R10",
+      "title": "Violation of the Leggett-Garg inequality in photon-graviton conversion",
+      "authors": "Kimihiro Nomura; Akira Taniguchi; Kazushige Ueda",
+      "date": "2026-07-14, v2",
+      "url": "https://arxiv.org/html/2601.20436v2",
+      "read_depth": "Read introduction, inequality assumptions, Einstein-Maxwell quantized mode setup, discussion and statistical-error appendix.",
+      "use": "Separate conversion amplitude from nonclassicality witness and measurement assumptions.",
+      "limitation": "No Euler-Heisenberg strong-field dispersion calculation; no experimental gravity quantization detection.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R10"
+    },
+    "R4:R11": {
+      "id": "R11",
+      "title": "Finite-field QED corrections to vacuum birefringence and magnetar polarization transport",
+      "authors": "Shahram Abbassi; F. A. Chishtie; S. R. Valluri",
+      "date": "2026-08-24, version of record",
+      "url": "https://link.springer.com/article/10.1140/epjc/s10052-026-16246-2",
+      "read_depth": "Read primary abstract, polarization convention, dispersion equations and explicit loop-order caveat; previous round deep review retained.",
+      "use": "Finite-field low-frequency magnetic dispersion and order-consistency comparator.",
+      "limitation": "Apparent response maximum from unexpanded one-loop algebra is not controlled at higher loop order.",
+      "access_date": "2026-09-09",
+      "type": "primary research or primary-author research exposition",
+      "reading_provenance": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation.",
+      "map_source_id": "R4:R11"
+    },
+    "S01": {
+      "id": "S01",
+      "title": "A Formal Basis for the Heuristic Determination of Minimum Cost Paths",
+      "authors": "Peter E. Hart, Nils J. Nilsson, Bertram Raphael",
+      "year": 1968,
+      "url": "https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/astar.pdf",
+      "doi": "10.1109/TSSC.1968.300136",
+      "type": "Original research paper, author-hosted scan",
+      "access": "Original eight-page PDF located and opened; selected page screenshots requested. Text extraction unavailable. Historical reference, not a line-by-line verification of the original optimal-efficiency proof.",
+      "supports": "Historical A* framework combining accumulated cost and a remaining-cost estimate.",
+      "does_not_support": "Unqualified optimal efficiency, optimality of a novel mixed-representation proof planner, or global mathematical discovery completeness.",
+      "reading_provenance": "Reused round5 search-source audit.",
+      "map_source_id": "S01"
+    },
+    "S02": {
+      "id": "S02",
+      "title": "Bidirectional Search That Is Guaranteed to Meet in the Middle",
+      "authors": "Robert C. Holte, Ariel Felner, Guni Sharon, Nathan R. Sturtevant",
+      "year": 2016,
+      "url": "https://www.cs.du.edu/~sturtevant/papers/MMaaai.pdf",
+      "doi": "10.1609/aaai.v30i1.10436",
+      "type": "Original AAAI research paper, author-hosted PDF",
+      "access": "Read abstract, definitions, algorithm 1, stopping-rule discussion and stated properties in sections 1–3; did not independently reprove the extended technical report.",
+      "supports": "MM's specific priority max(f,2g), its carefully justified stopping condition, and why midpoint claims require a theorem for the actual search setting.",
+      "does_not_support": "Direct transfer of MM termination or midpoint guarantees to a fact-set forward search paired with sufficient-goal backward regression.",
+      "reading_provenance": "Reused round5 search-source audit.",
+      "map_source_id": "S02"
+    },
+    "S04": {
+      "id": "S04",
+      "title": "Theorem Proving in Lean 4 — Tactics",
+      "authors": "Lean project documentation contributors",
+      "year": null,
+      "url": "https://lean-lang.org/theorem_proving_in_lean4/Tactics/",
+      "type": "Official proof-assistant documentation",
+      "access": "Read apply/exact examples and explanations, including conjunction subgoals and tactic combinators.",
+      "supports": "Backward application of a theorem turns its unsatisfied premises into goals; the conclusion is matched, not reversed as a logical implication.",
+      "does_not_support": "A claim that the present informal analytical theorem has been checked in Lean.",
+      "reading_provenance": "Reused round5 search-source audit.",
+      "map_source_id": "S04"
+    },
+    "S05": {
+      "id": "S05",
+      "title": "Lean Frequently Asked Questions",
+      "authors": "Lean project",
+      "year": null,
+      "url": "https://lean-lang.org/faq/",
+      "type": "Official proof-assistant documentation",
+      "access": "Read explanation of proof objects and verification by the trusted kernel.",
+      "supports": "Distinction between tactic generation and kernel verification of an explicit proof term.",
+      "does_not_support": "Equating JSON rule replay or a numerical test with a kernel-checked theorem.",
+      "reading_provenance": "Reused round5 search-source audit.",
+      "map_source_id": "S05"
+    },
+    "TA01": {
+      "id": "TA01",
+      "title": "Ordinary Differential Equations and Dynamical Systems",
+      "authors": "Gerald Teschl",
+      "date": "April 2012 author-hosted preliminary version",
+      "url": "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf",
+      "type": "primary-author mathematical text",
+      "read_depth": "Read the relevant statements and surrounding derivations in sections 2.2, 2.4 and 2.6; not a full-book reading.",
+      "source_locations": [
+        "Section 2.2, Theorem 2.2, printed page 38 (PDF page index 48): local existence and uniqueness",
+        "Section 2.4, Theorem 2.10, printed page 46 (PDF page index 56): smooth dependence and variational equations",
+        "Section 2.4, Theorem 2.11, printed page 47 (PDF page index 57): parameter dependence",
+        "Section 2.6, Theorem 2.13, printed page 51 (PDF page index 61): maximal solution",
+        "Section 2.6, Lemma 2.14 and Corollary 2.15, printed page 52 (PDF page index 62): continuation from compact sets"
+      ],
+      "use": "Standard ODE existence, continuation and parameter-dependence inputs; the project's energy and denominator estimates are derived independently in theorem_advisor.md.",
+      "limitation": "A finite-dimensional ODE theorem does not establish a continuum field-theory limit, physically correct renormalization, quantum fluctuation validity or all-time response stability.",
+      "access_date": "2026-09-09",
+      "map_source_id": "TA01"
+    },
+    "TA02": {
+      "id": "TA02",
+      "title": "DLMF 5.9.15: Binet integral for the digamma function",
+      "authors": "NIST Digital Library of Mathematical Functions",
+      "url": "https://dlmf.nist.gov/5.9.E15",
+      "type": "official mathematical reference",
+      "read_depth": "Read equation 5.9.15, its domain Re(z)>0, and the note identifying it as the differentiated form of Binet's formula.",
+      "source_locations": [
+        "Section 5.9(ii), equation 5.9.15"
+      ],
+      "use": "Positive integral representation of log(z)-1/(2z)-psi(z), proving matched chi_b>0 after the recurrence substitution.",
+      "limitation": "Proves a special-function sign under positive real z; it is not an independent derivation of the physical matching prescription.",
+      "access_date": "2026-09-09",
+      "map_source_id": "TA02"
+    },
+    "TA03": {
+      "id": "TA03",
+      "title": "DLMF 5.5.2: Digamma recurrence",
+      "authors": "NIST Digital Library of Mathematical Functions",
+      "url": "https://dlmf.nist.gov/5.5.E2",
+      "type": "official mathematical reference",
+      "read_depth": "Read equation 5.5.2 and its recurrence-section context.",
+      "source_locations": [
+        "Section 5.5(i), equation 5.5.2"
+      ],
+      "use": "Transforms psi(1+z) to psi(z)+1/z in the susceptibility positivity proof.",
+      "limitation": "The application here is restricted to positive real z and does not use analytic continuation near digamma poles.",
+      "access_date": "2026-09-09",
+      "map_source_id": "TA03"
+    },
+    "TA04": {
+      "id": "TA04",
+      "title": "DLMF 3.5(v): Gauss quadrature",
+      "authors": "NIST Digital Library of Mathematical Functions",
+      "url": "https://dlmf.nist.gov/3.5#v",
+      "type": "official mathematical reference",
+      "read_depth": "Read positivity of the Christoffel weights after equation 3.5.18, polynomial exactness at equation 3.5.20_1, and the Gauss-Legendre specialization 3.5.21.",
+      "source_locations": [
+        "Section 3.5(v), equations 3.5.18, 3.5.20_1 and 3.5.21"
+      ],
+      "use": "Exact positive longitudinal quadrature weights sum to the interval length, supplying the analytic global Z bound at fixed K=20 and n=0 through4.",
+      "limitation": "Exact polynomial quadrature identities do not hold literally for rounded weights; a separate exact rational certificate was checked for the generated coefficient list.",
+      "access_date": "2026-09-09",
+      "map_source_id": "TA04"
+    },
+    "TA05": {
+      "id": "TA05",
+      "title": "2022 CODATA recommended values of the fundamental physical constants",
+      "authors": "NIST/CODATA",
+      "date": "2022 adjustment; NIST wallet table",
+      "url": "https://physics.nist.gov/cuu/pdf/wallet_2022.pdf",
+      "type": "official measured-constant reference",
+      "read_depth": "Read the alpha and inverse-alpha entries in the two-page table; did not audit the underlying measurement adjustment.",
+      "source_locations": [
+        "Fine-structure constant and inverse fine-structure constant rows"
+      ],
+      "use": "Context check: the recommended alpha central value 7.2973525643e-3 also obeys the broad alpha<1/137 inequality.",
+      "limitation": "The theorem uses a declared parameter inequality, not a mathematical proof of a measured physical constant. The frozen production source retains alpha=1/137.035999084 and was not modified.",
+      "access_date": "2026-09-09",
+      "map_source_id": "TA05"
+    },
+    "TA06": {
+      "id": "TA06",
+      "title": "Frozen round-4 P3 contract, implementation and acceptance",
+      "authors": "Physics Observatory project",
+      "date": "2026-09-09",
+      "type": "project primary artifacts",
+      "artifact_paths": [
+        "qeg-research/round4/response_contract.md",
+        "qeg-research/round4/code/response.py",
+        "qeg-research/round4/physics_acceptance.json",
+        "qeg-research/round3/code/backreaction.py"
+      ],
+      "sha256": {
+        "response_contract.md": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0",
+        "response.py": "0a197f5b46de8114d790c937059018d21df3f55a436c76067b91c09277035867",
+        "physics_acceptance.json": "81be0811b12818b989e1987fbdcd7e46496431b41e152c317b894904e039781e"
+      },
+      "read_depth": "Read the complete response contract and acceptance JSON; inspected the grid, susceptibility and current definitions in response.py and the inherited constants. Executed only the coefficient construction and exact-rational inequality checks; did not rerun the trajectory.",
+      "use": "Freezes the physical and computational model to which the conditional theorem is applied.",
+      "limitation": "Recorded response errors are sampled numerical comparisons. The conditional theorem does not turn those comparisons into interval enclosures.",
+      "execution_checks": {
+        "selected_nK": 1024,
+        "numpy_version": "2.3.5",
+        "scipy_version": "1.17.0",
+        "all_generated_weights_positive": true,
+        "all_generated_masses_positive": true,
+        "exact_rational_rounded_coefficient_Z_lower_gt_three_quarters": true,
+        "exact_rational_rounded_coefficient_E2_Cstar_lt_quarter": true,
+        "display_only_rounded_coefficient_Z_lower": 0.7653173589206453,
+        "display_only_margin_above_three_quarters": 0.015317358920645334,
+        "trajectory_integration_rerun": false,
+        "floating_trajectory_interval_enclosure": false,
+        "proof_assistant_check_performed": false
+      },
+      "access_date": "2026-09-09",
+      "map_source_id": "TA06",
+      "exact_rounded_coefficient_certificate": {
+        "meaning": "Exact rational certificate for the real ODE whose constants equal the generated IEEE coefficient values; not an interval time-step certificate.",
+        "exact_E2": {
+          "numerator": "3303885250271309",
+          "denominator": "36028797018963968"
+        },
+        "exact_chi": {
+          "numerator": "6696957256307091",
+          "denominator": "1152921504606846976"
+        },
+        "minimum_exact_weight": {
+          "numerator": "2642859524211047",
+          "denominator": "73786976294838206464"
+        },
+        "groups": [
+          {
+            "landau_index": 0,
+            "exact_weight_sum": {
+              "numerator": "373809188779106264473",
+              "denominator": "36893488147419103232"
+            },
+            "exact_mass": {
+              "numerator": "1",
+              "denominator": "1"
+            }
+          },
+          {
+            "landau_index": 1,
+            "exact_weight_sum": {
+              "numerator": "373809188779106264473",
+              "denominator": "18446744073709551616"
+            },
+            "exact_mass": {
+              "numerator": "5159521548050053",
+              "denominator": "1125899906842624"
+            }
+          },
+          {
+            "landau_index": 2,
+            "exact_weight_sum": {
+              "numerator": "373809188779106264473",
+              "denominator": "18446744073709551616"
+            },
+            "exact_mass": {
+              "numerator": "28161238212607",
+              "denominator": "4398046511104"
+            }
+          },
+          {
+            "landau_index": 3,
+            "exact_weight_sum": {
+              "numerator": "373809188779106264473",
+              "denominator": "18446744073709551616"
+            },
+            "exact_mass": {
+              "numerator": "1099194922815117",
+              "denominator": "140737488355328"
+            }
+          },
+          {
+            "landau_index": 4,
+            "exact_weight_sum": {
+              "numerator": "373809188779106264473",
+              "denominator": "18446744073709551616"
+            },
+            "exact_mass": {
+              "numerator": "9",
+              "denominator": "1"
+            }
+          }
+        ],
+        "exact_Cstar": {
+          "numerator": "42570168362234201809993429180767955655779855849123476371121582297748854064968202878539550954811441075948738162259613522887637592928971104883089772967413351",
+          "denominator": "16232340539682028325461675455048445918197729539889919677169899086662103141848259454352643343502923797390171412625311508564372737472987255302264564857438208"
+        },
+        "exact_Z_lower": {
+          "numerator": "447581853929729152220181033973754859038651283702669066827389228165688174947645415994476773846827619926520306092197846941518972295908663804949289770926580365459041064790789",
+          "denominator": "584831702446903829645941351588971881708148770296029679062186988984254618533402495478912006584509099484242070420826279587370750229195041338382594821501950671566158738489344"
+        },
+        "exact_margin_above_three_quarters": {
+          "numerator": "8958077094551279985725020282025947757539705980646807530748986427497211047593544385292768908445795313338753276578137250990909624012382801162343654800117361784422010923781",
+          "denominator": "584831702446903829645941351588971881708148770296029679062186988984254618533402495478912006584509099484242070420826279587370750229195041338382594821501950671566158738489344"
+        },
+        "all_denominators_positive": true,
+        "positive_margin_numerator": "8958077094551279985725020282025947757539705980646807530748986427497211047593544385292768908445795313338753276578137250990909624012382801162343654800117361784422010923781"
+      }
+    }
+  },
+  "rejected_inferences": [
+    "WGC or Festina Lente follows from finite Maxwell–Dirac existence.",
+    "A bounded base trajectory has uniformly bounded tangents.",
+    "A fixed-background stress divergence solves the gravitational endpoint.",
+    "An adjacent theory node is logically derived from its neighbor.",
+    "The Bianchi constraint identity constructs a covariant quantum source.",
+    "A proof planner is a proof-assistant kernel."
+  ]
+}

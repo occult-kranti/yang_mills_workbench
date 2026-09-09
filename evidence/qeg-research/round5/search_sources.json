@@ -1,0 +1,97 @@
+{
+  "created": "2026-09-09",
+  "purpose": "Primary-source basis for the finite bidirectional proof-planning contract. Source access does not constitute reproduction of the source's formal guarantees.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "A Formal Basis for the Heuristic Determination of Minimum Cost Paths",
+      "authors": "Peter E. Hart, Nils J. Nilsson, Bertram Raphael",
+      "year": 1968,
+      "url": "https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/astar.pdf",
+      "doi": "10.1109/TSSC.1968.300136",
+      "type": "Original research paper, author-hosted scan",
+      "access": "Original eight-page PDF located and opened; selected page screenshots requested. Text extraction unavailable. Historical reference, not a line-by-line verification of the original optimal-efficiency proof.",
+      "supports": "Historical A* framework combining accumulated cost and a remaining-cost estimate.",
+      "does_not_support": "Unqualified optimal efficiency, optimality of a novel mixed-representation proof planner, or global mathematical discovery completeness."
+    },
+    {
+      "id": "S02",
+      "title": "Bidirectional Search That Is Guaranteed to Meet in the Middle",
+      "authors": "Robert C. Holte, Ariel Felner, Guni Sharon, Nathan R. Sturtevant",
+      "year": 2016,
+      "url": "https://www.cs.du.edu/~sturtevant/papers/MMaaai.pdf",
+      "doi": "10.1609/aaai.v30i1.10436",
+      "type": "Original AAAI research paper, author-hosted PDF",
+      "access": "Read abstract, definitions, algorithm 1, stopping-rule discussion and stated properties in sections 1–3; did not independently reprove the extended technical report.",
+      "supports": "MM's specific priority max(f,2g), its carefully justified stopping condition, and why midpoint claims require a theorem for the actual search setting.",
+      "does_not_support": "Direct transfer of MM termination or midpoint guarantees to a fact-set forward search paired with sufficient-goal backward regression."
+    },
+    {
+      "id": "S03",
+      "title": "Front-to-End Bidirectional Heuristic Search with Near-Optimal Node Expansions",
+      "authors": "Jingwei Chen, Robert C. Holte, Sandra Zilles, Nathan R. Sturtevant",
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1703.03868",
+      "type": "Original research preprint",
+      "access": "Read abstract and bibliographic record; full expansion-bound proof not independently checked.",
+      "supports": "NBS makes a precise near-optimal expansion statement within its defined model, motivating care with transferred optimization labels.",
+      "does_not_support": "An NBS expansion guarantee for the custom Horn planner."
+    },
+    {
+      "id": "S04",
+      "title": "Theorem Proving in Lean 4 — Tactics",
+      "authors": "Lean project documentation contributors",
+      "year": null,
+      "url": "https://lean-lang.org/theorem_proving_in_lean4/Tactics/",
+      "type": "Official proof-assistant documentation",
+      "access": "Read apply/exact examples and explanations, including conjunction subgoals and tactic combinators.",
+      "supports": "Backward application of a theorem turns its unsatisfied premises into goals; the conclusion is matched, not reversed as a logical implication.",
+      "does_not_support": "A claim that the present informal analytical theorem has been checked in Lean."
+    },
+    {
+      "id": "S05",
+      "title": "Lean Frequently Asked Questions",
+      "authors": "Lean project",
+      "year": null,
+      "url": "https://lean-lang.org/faq/",
+      "type": "Official proof-assistant documentation",
+      "access": "Read explanation of proof objects and verification by the trusted kernel.",
+      "supports": "Distinction between tactic generation and kernel verification of an explicit proof term.",
+      "does_not_support": "Equating JSON rule replay or a numerical test with a kernel-checked theorem."
+    },
+    {
+      "id": "S06",
+      "title": "LeanDojo: AI-Assisted Theorem Proving in Lean",
+      "authors": "LeanDojo research project",
+      "year": null,
+      "url": "https://leandojo.org/leandojo.html",
+      "type": "Official research project documentation",
+      "access": "Read data-extraction, premise-annotation, dependency and interactive-environment sections. Benchmark numbers are not used in the contract.",
+      "supports": "Proof-state feedback, premise locations, file dependencies and retrieval as concrete infrastructure for auditable mathematical dependency work.",
+      "does_not_support": "That all dependencies in the project's physics map already correspond to formalized Lean theorems."
+    },
+    {
+      "id": "S07",
+      "title": "An In-Context Learning Agent for Formal Theorem-Proving",
+      "authors": "Amitayush Thakur, George Tsoukalas, Yeming Wen, Jimmy Xin, Swarat Chaudhuri",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2310.04353",
+      "type": "Original research preprint",
+      "access": "Read abstract and bibliographic record describing COPRA's stateful tactic search and proof-environment feedback; benchmark claims not reproduced.",
+      "supports": "Proposals should be executed and checked in the underlying proof environment, with failed applications informing the next proposal.",
+      "does_not_support": "A promise that the project's scientific conjectures can be solved automatically."
+    }
+  ],
+  "local_sources": [
+    {
+      "path": "qeg-research/round4/response_contract.md",
+      "role": "Exact finite-regulator Maxwell–Dirac baseline definitions P1–P6, energy identity, tangent formulation and explicitly excluded continuum/gravity claims.",
+      "access": "Read the supplied contract; numerical evidence remains in the separate round-4 results and verification ledgers."
+    }
+  ],
+  "project_derivations": [
+    "S2–S4 define the custom fact-set/goal-regression search; no published optimality theorem is claimed for the mixed bidirectional representation.",
+    "Independent forward uniform-cost certification supplies the least-cost guarantee in the fixed finite rule library.",
+    "S5–S8 are project derivations for the specified fixed-regulator ODE under an explicit uniform positive-margin hypothesis, subject to the mathematical advisor's independent review."
+  ]
+}

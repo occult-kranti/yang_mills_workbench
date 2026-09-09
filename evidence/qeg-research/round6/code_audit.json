@@ -1,0 +1,655 @@
+{
+  "scope": "Selected 1,438 lines across six original computational files plus existing test/result artifacts; excludes dependencies, Site code, full repository, continuum physics and exhaustive dynamic/path coverage.",
+  "review_date": "2026-09-09",
+  "historical_sources_frozen": true,
+  "finding_count": 9,
+  "findings": [
+    {
+      "id": "C01",
+      "severity": "high for nonzero delayed probe experiments",
+      "title": "Comparison family centered at the wrong probe amplitude",
+      "file": "round4/code/response.py",
+      "lines": [
+        298,
+        359
+      ],
+      "repro": "audit_repro.py: nonzero_probe; test_nonzero_probe_preparation_and_centered_difference",
+      "observed": "With probe_amp=0.5, old finite differences were centered at zero; gauge and translated runs also dropped the probe. Old field comparison differed by 0.5002586.",
+      "impact": "False rejection of a valid tangent and comparison of physically different source histories. Default probe_amp=0 is unaffected.",
+      "fix": "Center plus/minus runs at probe_amp \u00b1 epsilon, retain probe in gauge/translated runs, and mark legacy comparison unavailable when its source cannot match.",
+      "status": "fixed and reproduced"
+    },
+    {
+      "id": "C02",
+      "severity": "medium",
+      "title": "Unvalidated scenario controls yield NaNs or silently select a model",
+      "file": "round4/code/response.py",
+      "lines": [
+        150,
+        165,
+        298,
+        332,
+        363,
+        379
+      ],
+      "repro": "audit_repro.py: zero_epsilon and unknown_mode_accepted; bad-epsilon and mode regressions",
+      "observed": "Unknown mode misspelled is accepted; epsilon=0 emits NaN derivative arrays. Empty epsilons fail later at min(); duplicate epsilons collapse in CSV mapping.",
+      "impact": "Invalid diagnostic output or unintended comparison family; no evidence that accepted historical defaults contain this input defect.",
+      "fix": "Validate mode, nonfinite source controls, supported gauge flag, nonempty distinct positive finite epsilon values before integration. Also reject incomplete/nonfinite returned state arrays.",
+      "status": "fixed and reproduced"
+    },
+    {
+      "id": "C03",
+      "severity": "high for automated acceptance",
+      "title": "Python optimization can disable mathematical acceptance checks",
+      "file": "round5/symbolic_checks.py; round5/coefficient_certificate.py; round5/run_checks.py",
+      "lines": [
+        8,
+        9,
+        50,
+        51,
+        32,
+        37,
+        46,
+        23,
+        33
+      ],
+      "repro": "test_historical_assert_mutant_false_success_reproduced and test_symbolic_gate_fails_even_optimized",
+      "observed": "A deliberately wrong Bloch identity (+1 defect), executed with python -O, returns exit code 0 and passed:false in historical symbolic code. The old aggregate runner checks only exit code.",
+      "impact": "A future optimized or inherited PYTHONOPTIMIZE run could be marked successful despite failed checks. The recorded nonoptimized historical run remains valid.",
+      "fix": "Replace assert acceptance with explicit exceptions; new aggregate runner requires fresh output, semantic success and unchanged source bytes.",
+      "status": "fixed and reproduced"
+    },
+    {
+      "id": "C04",
+      "severity": "medium for proof metadata integrity",
+      "title": "Explicit unsafe theorem labels bypass the narrow blacklist",
+      "file": "round5/proof_search.py",
+      "lines": [
+        201,
+        204,
+        231,
+        238
+      ],
+      "repro": "audit_repro.py: verification_proposed/conjectural/unsafe/unresolved; test_unsafe_node_verification_rejected",
+      "observed": "A declared theorem seed labeled proposed or unresolved is accepted and produces status proved.",
+      "impact": "Metadata inconsistency can be laundered into a trace. This does not show the accepted fixture has unsafe labels, nor can a text-label check establish theorem truth.",
+      "fix": "Reject the complete reserved unsafe label set after whitespace normalization. Mathematical rule certification remains an external review obligation.",
+      "status": "fixed and reproduced"
+    },
+    {
+      "id": "C05",
+      "severity": "medium for reproducibility",
+      "title": "Referenced proof bytes are absent from the graph hash",
+      "file": "round5/proof_search.py",
+      "lines": [
+        252,
+        280
+      ],
+      "repro": "test_external_proof_artifact_change_rejected; evidence_guard.py bound_plan",
+      "observed": "The library hash binds proof_ref strings, not bytes of the referenced theorem and contract documents. A changed document preserves the old library hash.",
+      "impact": "Stale external derivations could be displayed alongside a valid planning trace. This was a documented planner boundary, now additionally guarded.",
+      "fix": "New immutable-version evidence manifest binds fixture, planner and local referenced proof files; verify before/after planning, including unchanged manifest digest.",
+      "status": "provenance guard implemented and mutation tested"
+    },
+    {
+      "id": "C06",
+      "severity": "low",
+      "title": "Exact large integer costs overflow during unnecessary float conversion",
+      "file": "round5/proof_search.py",
+      "lines": [
+        61,
+        67
+      ],
+      "repro": "audit_repro.py: huge_cost; test_exact_large_integer_cost",
+      "observed": "Positive integer cost 10**400 raises OverflowError rather than following the documented integer-cost contract.",
+      "impact": "Input handling defect only; no wrong optimum for accepted ordinary-cost fixtures.",
+      "fix": "Keep positive Python integer costs exact; remove float conversion.",
+      "status": "fixed and reproduced"
+    },
+    {
+      "id": "C07",
+      "severity": "medium for temporal diagnostics",
+      "title": "Missing observation windows can be reported as a pass; work window ignores overlapping pump",
+      "file": "round4/code/response.py",
+      "lines": [
+        333,
+        341
+      ],
+      "repro": "test_no_causal_samples_does_not_pass_vacuously and test_work_constancy_waits_until_both_sources_stop",
+      "observed": "No pre-probe samples are assigned pre_max=0 and pass; no late samples return infinity. Work constancy is tested after the probe even if the primary pump remains active.",
+      "impact": "Vacuous causality pass or a false work-identity failure for a permitted pulse arrangement.",
+      "fix": "Report sample counts and null for unobserved windows; do not pass missing coverage. Begin post-drive work check only after both sources end.",
+      "status": "fixed and reproduced"
+    },
+    {
+      "id": "C08",
+      "severity": "medium for scientific presentation",
+      "title": "Legacy conditional flag can be mistaken for an unconditional theorem",
+      "file": "round5/proof_search.py",
+      "lines": [
+        507,
+        517
+      ],
+      "repro": "test_declared_conditions_are_distinct_from_conjectures; independently raised by physics skeptic",
+      "observed": "conditional:false means no explicitly retained conjecture, although finite-model hypotheses remain in assumptions.",
+      "impact": "A UI using only that flag could falsely label the result unconditional.",
+      "fix": "Emit declared_assumption_ids, conditional_on_declared_assumptions, conjectural_assumptions, conditional_flag_meaning and result_kind. Preserve old fields for compatibility.",
+      "status": "clarified and regression tested"
+    },
+    {
+      "id": "C09",
+      "severity": "medium for provenance",
+      "title": "Scenario source hash was captured only after the computation",
+      "file": "round4/code/response.py; round5/run_checks.py",
+      "lines": [
+        342,
+        351,
+        23,
+        24
+      ],
+      "repro": "test_source_changed_during_run_rejected",
+      "observed": "Historical source_hash() is evaluated at report assembly, so mid-run changes cannot be distinguished from a run of the reported source.",
+      "impact": "A general reproducibility gap; all 13 audited historical source/result/contract hashes currently match.",
+      "fix": "Capture source and imported legacy hashes before scenario execution, compare again before return. Aggregate gate checks its command source before/after execution.",
+      "status": "guard implemented and mutation tested"
+    }
+  ],
+  "coverage": [
+    {
+      "file": "round4/code/response.py",
+      "sha256": "0a197f5b46de8114d790c937059018d21df3f55a436c76067b91c09277035867",
+      "line_count": 379,
+      "review": "All source text inspected, including module imports, constants, dataclasses, serialization and executable blocks. Static review is not exhaustive runtime coverage.",
+      "functions": [
+        {
+          "name": "Grid.__init__",
+          "start": 59,
+          "end": 69,
+          "review": "Positive fixed quadrature, gauge node translation; new validation C02."
+        },
+        {
+          "name": "_validate",
+          "start": 72,
+          "end": 91,
+          "review": "Finite numeric/integer/positive checks; unsupported unrenormalized mode correctly rejected."
+        },
+        {
+          "name": "bump_integral",
+          "start": 94,
+          "end": 99,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_chi",
+          "start": 102,
+          "end": 104,
+          "review": "Matched b=10 expression reviewed; no global floating-point enclosure or small-b accuracy claim."
+        },
+        {
+          "name": "_pulse",
+          "start": 107,
+          "end": 111,
+          "review": "Smooth compact pulse and endpoint support inspected."
+        },
+        {
+          "name": "_initial_state",
+          "start": 114,
+          "end": 125,
+          "review": "Fixed magnetic vacuum and zero amplitude tangent; gauge tangent v=1, deltaK=1. Arbitrary state families are not implemented."
+        },
+        {
+          "name": "_terms",
+          "start": 128,
+          "end": 137,
+          "review": "Per-mode subtraction and C,D definitions checked against contract and symbolic identities."
+        },
+        {
+          "name": "_tangent_terms",
+          "start": 140,
+          "end": 147,
+          "review": "Unused helper restricted to source-amplitude deltaK=0; reviewed separately; not an independent solver."
+        },
+        {
+          "name": "_closures",
+          "start": 150,
+          "end": 165,
+          "review": "Source construction C01/C02."
+        },
+        {
+          "name": "_closures.drive",
+          "start": 159,
+          "end": 160,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_closures.delta_drive",
+          "start": 162,
+          "end": 163,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_solve",
+          "start": 168,
+          "end": 287,
+          "review": "Nested equations, work, raw diagnostics, NaN completeness checked; current uses u prime. Fixed small baseline equality; no intersample enclosure."
+        },
+        {
+          "name": "_solve.rhs",
+          "start": 177,
+          "end": 212,
+          "review": "Full quotient derivative, Bloch tangent, q=deltaK-v and work derivative checked against symbolic algebra."
+        },
+        {
+          "name": "source_hash",
+          "start": 290,
+          "end": 291,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "legacy_hash",
+          "start": 294,
+          "end": 295,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "run_scenario",
+          "start": 298,
+          "end": 360,
+          "review": "C01,C02,C07,C09; finite differences and gauge are preparation-specific."
+        },
+        {
+          "name": "write_csv",
+          "start": 363,
+          "end": 379,
+          "review": "Reviewed serialization; duplicate epsilon map overwrite prevented at scenario validation. CSV export itself not rerun."
+        }
+      ]
+    },
+    {
+      "file": "round3/code/backreaction.py",
+      "sha256": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+      "line_count": 305,
+      "review": "All source text inspected, including module imports, constants, dataclasses, serialization and executable blocks. Static review is not exhaustive runtime coverage.",
+      "functions": [
+        {
+          "name": "bump_integral",
+          "start": 55,
+          "end": 61,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_validate",
+          "start": 64,
+          "end": 89,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "Grid.__init__",
+          "start": 93,
+          "end": 104,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_chi",
+          "start": 107,
+          "end": 109,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_make_pump",
+          "start": 112,
+          "end": 122,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_make_pump.drive",
+          "start": 116,
+          "end": 120,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_initial_state",
+          "start": 125,
+          "end": 135,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_grid_terms",
+          "start": 138,
+          "end": 148,
+          "review": "Known legacy split-sum cancellation retained intentionally. No new fix retroactively claimed."
+        },
+        {
+          "name": "run",
+          "start": 151,
+          "end": 290,
+          "review": "Legacy comparator only; all macro keys inspected. No NaN completeness guard in this historical source. No fresh full trajectory acceptance."
+        },
+        {
+          "name": "run.rhs",
+          "start": 166,
+          "end": 184,
+          "review": "Matched branch compared; unrenormalized removes derivative subtraction consistently. Historical mode is not supported by new response tangent."
+        },
+        {
+          "name": "write_csv",
+          "start": 293,
+          "end": 301,
+          "review": "Static review only; zip truncates uneven arrays if caller supplies malformed arbitrary result; production result shapes are fixed."
+        },
+        {
+          "name": "source_hash",
+          "start": 304,
+          "end": 305,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        }
+      ]
+    },
+    {
+      "file": "round5/proof_search.py",
+      "sha256": "297a9e79f4e2027b651f558ea8a175b6957c429a214225e72892d9633c5f1367",
+      "line_count": 595,
+      "review": "All source text inspected, including module imports, constants, dataclasses, serialization and executable blocks. Static review is not exhaustive runtime coverage.",
+      "functions": [
+        {
+          "name": "_require_string",
+          "start": 42,
+          "end": 45,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_string_list",
+          "start": 48,
+          "end": 58,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_positive_integer",
+          "start": 61,
+          "end": 67,
+          "review": "C06."
+        },
+        {
+          "name": "Library.atoms",
+          "start": 104,
+          "end": 105,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "ProofStep.as_dict",
+          "start": 115,
+          "end": 121,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "CheckedProof.as_dict",
+          "start": 132,
+          "end": 139,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "load_library",
+          "start": 142,
+          "end": 265,
+          "review": "AND premises, scopes, assumption retention, statuses, frozen records checked; C04."
+        },
+        {
+          "name": "_library_hash",
+          "start": 268,
+          "end": 280,
+          "review": "Internal byte-canonical metadata hash correct; external-reference gap C05."
+        },
+        {
+          "name": "check_proof",
+          "start": 283,
+          "end": 311,
+          "review": "Every required premise is replayed; mutated library hash rejected; no implication reversal. Metadata does not substitute for a proof kernel."
+        },
+        {
+          "name": "_proof_from_ids",
+          "start": 314,
+          "end": 315,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_forward_uniform_cost",
+          "start": 318,
+          "end": 362,
+          "review": "Positive exact costs and goal-pop optimality reviewed. Scope is supplied finite rule library. Existing 24-test suite rerun on new engine."
+        },
+        {
+          "name": "_forward_uniform_cost.result",
+          "start": 330,
+          "end": 333,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_bidirectional_candidate",
+          "start": 365,
+          "end": 452,
+          "review": "First meeting is only an incumbent; independent forward pass certifies cost."
+        },
+        {
+          "name": "_bidirectional_candidate.candidate",
+          "start": 381,
+          "end": 385,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "_backward_first_meeting",
+          "start": 455,
+          "end": 494,
+          "review": "Legacy unused helper; statically reviewed, not runtime exercised by current plan path."
+        },
+        {
+          "name": "plan",
+          "start": 497,
+          "end": 555,
+          "review": "Budget, blocked goal, not-derivable and conditional labels checked; C08."
+        },
+        {
+          "name": "load_json",
+          "start": 558,
+          "end": 563,
+          "review": "Static source review; covered by owning function/fixture where exercised."
+        },
+        {
+          "name": "main",
+          "start": 566,
+          "end": 591,
+          "review": "CLI serializes all supplied scenario results. A zero exit means execution succeeded, not every target proved; new acceptance runner checks required statuses."
+        }
+      ]
+    },
+    {
+      "file": "round5/symbolic_checks.py",
+      "sha256": "5855e6e9e1419ed864b4335645aeb5f0821ac88d02fe44326cfb2cd6d1a0d8b7",
+      "line_count": 54,
+      "review": "All source text inspected, including module imports, constants, dataclasses, serialization and executable blocks. Static review is not exhaustive runtime coverage.",
+      "functions": [
+        {
+          "name": "zero",
+          "start": 8,
+          "end": 9,
+          "review": "All 16 symbolic identities/mutants inspected and rerun in explicit-failure version; C03. This is not inequality, ODE existence or continuum proof."
+        }
+      ]
+    },
+    {
+      "file": "round5/coefficient_certificate.py",
+      "sha256": "6ac554c1d3dc17cdc413a45bbe9ba510d43ab65c7d819791bfc591f6c08000ea",
+      "line_count": 65,
+      "review": "All source text inspected, including module imports, constants, dataclasses, serialization and executable blocks. Static review is not exhaustive runtime coverage.",
+      "functions": [
+        {
+          "name": "main",
+          "start": 21,
+          "end": 61,
+          "review": "Frozen round4/round3 hashes, positive rounded weights/masses, rational mass grouping and bound checked. C03. Certificate encloses rational coefficients, not a floating trajectory/digamma analytic value."
+        }
+      ]
+    },
+    {
+      "file": "round5/run_checks.py",
+      "sha256": "ea450efed24edf33d8d002dc83518c17dd7c552bb044cd4f45f3dae72cf3707d",
+      "line_count": 40,
+      "review": "All source text inspected, including module imports, constants, dataclasses, serialization and executable blocks. Static review is not exhaustive runtime coverage.",
+      "functions": [
+        {
+          "name": "main",
+          "start": 13,
+          "end": 37,
+          "review": "C03,C09. Original process output and six source hashes checked; new runner requires fresh semantic result."
+        }
+      ]
+    }
+  ],
+  "new_source_hashes": {
+    "round6/code/coefficient_certificate.py": "608c3cdfcfec9935a3d9c6a3556918082eaa45f9bfe7a35da05747babedcc551",
+    "round6/code/evidence_guard.py": "16c357f98f13174b0a7be688c044ddcd1a75e71d55b50da535619244a82f8710",
+    "round6/code/proof_search.py": "07b5b397af86b6bf5a481b114844c6252046e8ca2b5604dac7d158091632be94",
+    "round6/code/response.py": "7b2ca58d311e916a544812902673b11ba374f565b3d1d94f11d555d6c6a3c414",
+    "round6/code/run_checks.py": "0eaceee98e54d1195691e8d5db2e340886f36626bfdc2eccf288b84c15af89e7",
+    "round6/code/symbolic_checks.py": "8e2736bb06f66f55f78e8f43effebbb7a389b827a6572b0d2508b161eb825424"
+  },
+  "regression_tests": {
+    "tests_run": 18,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "results": {
+      "matched_baseline_max_diff": 0.0,
+      "historical_optimized_mutant": {
+        "exit_code": 0,
+        "reported_passed": false
+      },
+      "nonzero_probe": {
+        "fd_errors": [
+          4.590040103558124e-08,
+          5.023521376656959e-09,
+          4.700941858004626e-10
+        ],
+        "gauge": {
+          "max_v_minus_one": 0.0,
+          "max_u": 0.0,
+          "max_translated_x": 2.7755575615628914e-14,
+          "max_translated_a": 5.329070518200751e-15,
+          "passed": true
+        },
+        "gates": {
+          "tangent_fd_pass": true,
+          "gauge_pass": true,
+          "Z_floor_pass": true,
+          "energy_pass": true,
+          "current_variation_pass": true,
+          "tangent_orthogonality_pass": true,
+          "raw_norm_pass": true,
+          "delayed_pre_tangent_pass": true,
+          "delayed_post_work_constant_pass": true
+        }
+      }
+    },
+    "test_source_sha256": "b7e19b6558fc84060f101fd169bea92b8597cdbab24628b717cbad18bca95990"
+  },
+  "compatibility_tests": {
+    "passed": true,
+    "tests_run": 24,
+    "failures": 0,
+    "errors": 0,
+    "historical_test_sha256": "e0e9eaabc35066aa55dce85b72a8b1a8c5246c2cce5ca5c68bbb06d4327fade0",
+    "round6_engine_sha256": "07b5b397af86b6bf5a481b114844c6252046e8ca2b5604dac7d158091632be94",
+    "historical_sources_modified": false
+  },
+  "historical_integrity": {
+    "passed": true,
+    "checks": [
+      {
+        "path": "round4/code/response.py",
+        "recorded": "0a197f5b46de8114d790c937059018d21df3f55a436c76067b91c09277035867",
+        "actual": "0a197f5b46de8114d790c937059018d21df3f55a436c76067b91c09277035867",
+        "passed": true
+      },
+      {
+        "path": "round4/response_results.json",
+        "recorded": "1ced17a08e41ac58533a116772e30a0dc6edee0773e4047be69f9858f2c21280",
+        "actual": "1ced17a08e41ac58533a116772e30a0dc6edee0773e4047be69f9858f2c21280",
+        "passed": true
+      },
+      {
+        "path": "round4/response_verification.json",
+        "recorded": "a7fbe84c04801390bb71f74f69afedf03586ccbe3550ffde3d9b65872eaa137a",
+        "actual": "a7fbe84c04801390bb71f74f69afedf03586ccbe3550ffde3d9b65872eaa137a",
+        "passed": true
+      },
+      {
+        "path": "round4/response_production_comparison.json",
+        "recorded": "c757f853e65d3d416e3d76a6a8c4520d62d99c1b435bf4b9aa1b04ff85aa291b",
+        "actual": "c757f853e65d3d416e3d76a6a8c4520d62d99c1b435bf4b9aa1b04ff85aa291b",
+        "passed": true
+      },
+      {
+        "path": "round4/response_contract.md",
+        "recorded": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0",
+        "actual": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0",
+        "passed": true
+      },
+      {
+        "path": "round4/response_advisor_review.md",
+        "recorded": "ff87a9db18a78b9ad4c4662696517b2d65ee664162bd77398dedf6c825ca5af9",
+        "actual": "ff87a9db18a78b9ad4c4662696517b2d65ee664162bd77398dedf6c825ca5af9",
+        "passed": true
+      },
+      {
+        "path": "round3/code/backreaction.py",
+        "recorded": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+        "actual": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+        "passed": true
+      },
+      {
+        "path": "round5/symbolic_checks.py",
+        "recorded": "5855e6e9e1419ed864b4335645aeb5f0821ac88d02fe44326cfb2cd6d1a0d8b7",
+        "actual": "5855e6e9e1419ed864b4335645aeb5f0821ac88d02fe44326cfb2cd6d1a0d8b7",
+        "passed": true
+      },
+      {
+        "path": "round5/counterexamples.py",
+        "recorded": "909cb828219fb6ed88b0c348780475b36fd8f3499d9e77a7c45de6d2cc5cc9f6",
+        "actual": "909cb828219fb6ed88b0c348780475b36fd8f3499d9e77a7c45de6d2cc5cc9f6",
+        "passed": true
+      },
+      {
+        "path": "round5/test_proof_search.py",
+        "recorded": "e0e9eaabc35066aa55dce85b72a8b1a8c5246c2cce5ca5c68bbb06d4327fade0",
+        "actual": "e0e9eaabc35066aa55dce85b72a8b1a8c5246c2cce5ca5c68bbb06d4327fade0",
+        "passed": true
+      },
+      {
+        "path": "round5/verify_proof_search_independent.py",
+        "recorded": "8ab0f54ad8b06c6ff1aae462548682f3ead9aa6ad0efea7f089eadb8ea476c2c",
+        "actual": "8ab0f54ad8b06c6ff1aae462548682f3ead9aa6ad0efea7f089eadb8ea476c2c",
+        "passed": true
+      },
+      {
+        "path": "round5/proof_search.py",
+        "recorded": "297a9e79f4e2027b651f558ea8a175b6957c429a214225e72892d9633c5f1367",
+        "actual": "297a9e79f4e2027b651f558ea8a175b6957c429a214225e72892d9633c5f1367",
+        "passed": true
+      },
+      {
+        "path": "round5/coefficient_certificate.py",
+        "recorded": "6ac554c1d3dc17cdc413a45bbe9ba510d43ab65c7d819791bfc591f6c08000ea",
+        "actual": "6ac554c1d3dc17cdc413a45bbe9ba510d43ab65c7d819791bfc591f6c08000ea",
+        "passed": true
+      }
+    ],
+    "scope": "Recorded local content hashes; no trajectory rerun."
+  },
+  "scope_limits": [
+    "No fresh selected 1024-node trajectory or 2048-node refinement; historical sampled acceptance remains unchanged.",
+    "No interval enclosure between samples or proof of continuum regulator removal.",
+    "No arbitrary quantum-state tangent, finite-momentum response kernel, quantum noise or curved-spacetime pressure closure implemented.",
+    "A checked Horn trace and artifact hashes are not a formal theorem-assistant proof.",
+    "Small-b cancellation in the closed digamma expression and adversarial import/process compromise are outside the tested numerical domain."
+  ]
+}

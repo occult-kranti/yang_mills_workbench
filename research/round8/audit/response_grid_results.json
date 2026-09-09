@@ -1,0 +1,188 @@
+{
+  "status": "resolved_working_threshold",
+  "scope": "Finite-regulator centered delayed-source sensitivity; common source and physical cutoffs. No rigorous interval or continuum bound.",
+  "base_parameters": {
+    "a0": 0.0,
+    "target_E": 0.15,
+    "b": 10.0,
+    "Tpump": 4.0,
+    "tfinal": 6.0,
+    "ncut": 1,
+    "Kmax": 20.0,
+    "nK": 128,
+    "g": 0.1,
+    "nu": 0.5,
+    "phi0": 0.4,
+    "y0": 0.1,
+    "chi_b": null,
+    "rtol": 2e-10,
+    "atol": 2e-12,
+    "max_step": 0.05,
+    "sample_count": 121,
+    "z_floor": 1e-08,
+    "probe_start": 4.5,
+    "probe_duration": 1.0
+  },
+  "probe_amplitude": 0.15,
+  "epsilon": 5e-05,
+  "working_absolute_threshold": 2e-05,
+  "nodes": [
+    64,
+    128,
+    256
+  ],
+  "comparisons": [
+    {
+      "coarse_nK": 64,
+      "fine_nK": 128,
+      "max_abs_response_difference": {
+        "a": 0.00013856872094208939,
+        "x": 0.00028715392452749455,
+        "phi": 1.0451861598426149e-07,
+        "y": 1.7507717497977637e-07
+      }
+    },
+    {
+      "coarse_nK": 128,
+      "fine_nK": 256,
+      "max_abs_response_difference": {
+        "a": 3.54516416223305e-07,
+        "x": 1.389027781684149e-06,
+        "phi": 1.1457501614131615e-09,
+        "y": 1.7907897387203775e-09
+      }
+    }
+  ],
+  "integration_diagnostics": {
+    "64": {
+      "plus": {
+        "wrong_model": false,
+        "mode": "delayed_probe",
+        "probe_amp": 0.15005,
+        "nmode": 128,
+        "min_Z": 0.9971006438382151,
+        "max_raw_r2_error": 1.9984014443252818e-14,
+        "max_energy_mismatch": 8.27012069937183e-13,
+        "max_defect_integral_residual": 8.27012069937183e-13,
+        "final_a": -0.7454200036800858,
+        "final_x": 0.2969868881324884,
+        "final_phi": 0.40144161849027304,
+        "final_y": -0.09292398847921242,
+        "nfev": 1829,
+        "samples": 121
+      },
+      "minus": {
+        "wrong_model": false,
+        "mode": "delayed_probe",
+        "probe_amp": 0.14995,
+        "nmode": 128,
+        "min_Z": 0.9971006438382151,
+        "max_raw_r2_error": 1.9539925233402755e-14,
+        "max_energy_mismatch": 8.266790030297955e-13,
+        "max_defect_integral_residual": 8.266790030297955e-13,
+        "final_a": -0.7453204668821709,
+        "final_x": 0.2968881004877911,
+        "final_phi": 0.4014415324529578,
+        "final_y": -0.09292416213655176,
+        "nfev": 1829,
+        "samples": 121
+      },
+      "pre_probe_samples": 90,
+      "max_pre_probe_response": {
+        "a": 0.0,
+        "x": 0.0,
+        "phi": 0.0,
+        "y": 0.0
+      }
+    },
+    "128": {
+      "plus": {
+        "wrong_model": false,
+        "mode": "delayed_probe",
+        "probe_amp": 0.15005,
+        "nmode": 256,
+        "min_Z": 0.9973293979235788,
+        "max_raw_r2_error": 4.6407322429331543e-14,
+        "max_energy_mismatch": 1.0194414756803383e-12,
+        "max_defect_integral_residual": 1.0194414756803383e-12,
+        "final_a": -0.7453890959914904,
+        "final_x": 0.29696837407896165,
+        "final_phi": 0.40144164998031767,
+        "final_y": -0.09292399446905472,
+        "nfev": 1829,
+        "samples": 121
+      },
+      "minus": {
+        "wrong_model": false,
+        "mode": "delayed_probe",
+        "probe_amp": 0.14995,
+        "nmode": 256,
+        "min_Z": 0.9973293979235788,
+        "max_raw_r2_error": 4.6407322429331543e-14,
+        "max_energy_mismatch": 1.0179010412336709e-12,
+        "max_defect_integral_residual": 1.0179010412336709e-12,
+        "final_a": -0.7452895675170905,
+        "final_x": 0.29686955771887186,
+        "final_phi": 0.4014415639534085,
+        "final_y": -0.09292416812896967,
+        "nfev": 1829,
+        "samples": 121
+      },
+      "pre_probe_samples": 90,
+      "max_pre_probe_response": {
+        "a": 0.0,
+        "x": 0.0,
+        "phi": 0.0,
+        "y": 0.0
+      }
+    },
+    "256": {
+      "plus": {
+        "wrong_model": false,
+        "mode": "delayed_probe",
+        "probe_amp": 0.15005,
+        "nmode": 512,
+        "min_Z": 0.9973292740760522,
+        "max_raw_r2_error": 3.164135620181696e-14,
+        "max_energy_mismatch": 6.699484716987669e-13,
+        "max_defect_integral_residual": 6.699484716987669e-13,
+        "final_a": -0.7453895170280873,
+        "final_x": 0.2969682803125807,
+        "final_phi": 0.4014416504212606,
+        "final_y": -0.09292399410379706,
+        "nfev": 1829,
+        "samples": 121
+      },
+      "minus": {
+        "wrong_model": false,
+        "mode": "delayed_probe",
+        "probe_amp": 0.14995,
+        "nmode": 512,
+        "min_Z": 0.9973292740760522,
+        "max_raw_r2_error": 3.141931159689193e-14,
+        "max_energy_mismatch": 6.682120134993141e-13,
+        "max_defect_integral_residual": 6.682120134993141e-13,
+        "final_a": -0.7452899885677431,
+        "final_x": 0.2968694639104258,
+        "final_phi": 0.4014415643942369,
+        "final_y": -0.09292416776376962,
+        "nfev": 1829,
+        "samples": 121
+      },
+      "pre_probe_samples": 90,
+      "max_pre_probe_response": {
+        "a": 0.0,
+        "x": 0.0,
+        "phi": 0.0,
+        "y": 0.0
+      }
+    }
+  },
+  "source_sha256": "3ddd8e05f1c523d156467dc25a3bad374274f511fe1b2ec32246c0960cd79888",
+  "script_sha256": "8b8bc1f5cbfef7a1ff7d4bd1c1ca854640408614fa04cb8c5c330c0819743212",
+  "limitations": [
+    "Response error still contains finite-difference truncation and ODE error.",
+    "Adjacent-grid agreement is evidence, not an upper bound on all discretization error.",
+    "Landau cutoff and momentum window remain fixed; current/stress continuum limits untested."
+  ]
+}

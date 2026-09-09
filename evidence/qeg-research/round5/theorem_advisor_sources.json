@@ -1,0 +1,200 @@
+[
+  {
+    "id": "TA01",
+    "title": "Ordinary Differential Equations and Dynamical Systems",
+    "authors": "Gerald Teschl",
+    "date": "April 2012 author-hosted preliminary version",
+    "url": "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf",
+    "type": "primary-author mathematical text",
+    "read_depth": "Read the relevant statements and surrounding derivations in sections 2.2, 2.4 and 2.6; not a full-book reading.",
+    "source_locations": [
+      "Section 2.2, Theorem 2.2, printed page 38 (PDF page index 48): local existence and uniqueness",
+      "Section 2.4, Theorem 2.10, printed page 46 (PDF page index 56): smooth dependence and variational equations",
+      "Section 2.4, Theorem 2.11, printed page 47 (PDF page index 57): parameter dependence",
+      "Section 2.6, Theorem 2.13, printed page 51 (PDF page index 61): maximal solution",
+      "Section 2.6, Lemma 2.14 and Corollary 2.15, printed page 52 (PDF page index 62): continuation from compact sets"
+    ],
+    "use": "Standard ODE existence, continuation and parameter-dependence inputs; the project's energy and denominator estimates are derived independently in theorem_advisor.md.",
+    "limitation": "A finite-dimensional ODE theorem does not establish a continuum field-theory limit, physically correct renormalization, quantum fluctuation validity or all-time response stability.",
+    "access_date": "2026-09-09"
+  },
+  {
+    "id": "TA02",
+    "title": "DLMF 5.9.15: Binet integral for the digamma function",
+    "authors": "NIST Digital Library of Mathematical Functions",
+    "url": "https://dlmf.nist.gov/5.9.E15",
+    "type": "official mathematical reference",
+    "read_depth": "Read equation 5.9.15, its domain Re(z)>0, and the note identifying it as the differentiated form of Binet's formula.",
+    "source_locations": [
+      "Section 5.9(ii), equation 5.9.15"
+    ],
+    "use": "Positive integral representation of log(z)-1/(2z)-psi(z), proving matched chi_b>0 after the recurrence substitution.",
+    "limitation": "Proves a special-function sign under positive real z; it is not an independent derivation of the physical matching prescription.",
+    "access_date": "2026-09-09"
+  },
+  {
+    "id": "TA03",
+    "title": "DLMF 5.5.2: Digamma recurrence",
+    "authors": "NIST Digital Library of Mathematical Functions",
+    "url": "https://dlmf.nist.gov/5.5.E2",
+    "type": "official mathematical reference",
+    "read_depth": "Read equation 5.5.2 and its recurrence-section context.",
+    "source_locations": [
+      "Section 5.5(i), equation 5.5.2"
+    ],
+    "use": "Transforms psi(1+z) to psi(z)+1/z in the susceptibility positivity proof.",
+    "limitation": "The application here is restricted to positive real z and does not use analytic continuation near digamma poles.",
+    "access_date": "2026-09-09"
+  },
+  {
+    "id": "TA04",
+    "title": "DLMF 3.5(v): Gauss quadrature",
+    "authors": "NIST Digital Library of Mathematical Functions",
+    "url": "https://dlmf.nist.gov/3.5#v",
+    "type": "official mathematical reference",
+    "read_depth": "Read positivity of the Christoffel weights after equation 3.5.18, polynomial exactness at equation 3.5.20_1, and the Gauss-Legendre specialization 3.5.21.",
+    "source_locations": [
+      "Section 3.5(v), equations 3.5.18, 3.5.20_1 and 3.5.21"
+    ],
+    "use": "Exact positive longitudinal quadrature weights sum to the interval length, supplying the analytic global Z bound at fixed K=20 and n=0 through4.",
+    "limitation": "Exact polynomial quadrature identities do not hold literally for rounded weights; a separate exact rational certificate was checked for the generated coefficient list.",
+    "access_date": "2026-09-09"
+  },
+  {
+    "id": "TA05",
+    "title": "2022 CODATA recommended values of the fundamental physical constants",
+    "authors": "NIST/CODATA",
+    "date": "2022 adjustment; NIST wallet table",
+    "url": "https://physics.nist.gov/cuu/pdf/wallet_2022.pdf",
+    "type": "official measured-constant reference",
+    "read_depth": "Read the alpha and inverse-alpha entries in the two-page table; did not audit the underlying measurement adjustment.",
+    "source_locations": [
+      "Fine-structure constant and inverse fine-structure constant rows"
+    ],
+    "use": "Context check: the recommended alpha central value 7.2973525643e-3 also obeys the broad alpha<1/137 inequality.",
+    "limitation": "The theorem uses a declared parameter inequality, not a mathematical proof of a measured physical constant. The frozen production source retains alpha=1/137.035999084 and was not modified.",
+    "access_date": "2026-09-09"
+  },
+  {
+    "id": "TA06",
+    "title": "Frozen round-4 P3 contract, implementation and acceptance",
+    "authors": "Physics Observatory project",
+    "date": "2026-09-09",
+    "type": "project primary artifacts",
+    "artifact_paths": [
+      "qeg-research/round4/response_contract.md",
+      "qeg-research/round4/code/response.py",
+      "qeg-research/round4/physics_acceptance.json",
+      "qeg-research/round3/code/backreaction.py"
+    ],
+    "sha256": {
+      "response_contract.md": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0",
+      "response.py": "0a197f5b46de8114d790c937059018d21df3f55a436c76067b91c09277035867",
+      "physics_acceptance.json": "81be0811b12818b989e1987fbdcd7e46496431b41e152c317b894904e039781e"
+    },
+    "read_depth": "Read the complete response contract and acceptance JSON; inspected the grid, susceptibility and current definitions in response.py and the inherited constants. Executed only the coefficient construction and exact-rational inequality checks; did not rerun the trajectory.",
+    "use": "Freezes the physical and computational model to which the conditional theorem is applied.",
+    "limitation": "Recorded response errors are sampled numerical comparisons. The conditional theorem does not turn those comparisons into interval enclosures.",
+    "execution_checks": {
+      "selected_nK": 1024,
+      "numpy_version": "2.3.5",
+      "scipy_version": "1.17.0",
+      "all_generated_weights_positive": true,
+      "all_generated_masses_positive": true,
+      "exact_rational_rounded_coefficient_Z_lower_gt_three_quarters": true,
+      "exact_rational_rounded_coefficient_E2_Cstar_lt_quarter": true,
+      "display_only_rounded_coefficient_Z_lower": 0.7653173589206453,
+      "display_only_margin_above_three_quarters": 0.015317358920645334,
+      "trajectory_integration_rerun": false,
+      "floating_trajectory_interval_enclosure": false,
+      "proof_assistant_check_performed": false
+    },
+    "access_date": "2026-09-09",
+    "exact_rounded_coefficient_certificate": {
+      "meaning": "Exact rational certificate for the real ODE whose constants equal the generated IEEE coefficient values; not an interval time-step certificate.",
+      "exact_E2": {
+        "numerator": "3303885250271309",
+        "denominator": "36028797018963968"
+      },
+      "exact_chi": {
+        "numerator": "6696957256307091",
+        "denominator": "1152921504606846976"
+      },
+      "minimum_exact_weight": {
+        "numerator": "2642859524211047",
+        "denominator": "73786976294838206464"
+      },
+      "groups": [
+        {
+          "landau_index": 0,
+          "exact_weight_sum": {
+            "numerator": "373809188779106264473",
+            "denominator": "36893488147419103232"
+          },
+          "exact_mass": {
+            "numerator": "1",
+            "denominator": "1"
+          }
+        },
+        {
+          "landau_index": 1,
+          "exact_weight_sum": {
+            "numerator": "373809188779106264473",
+            "denominator": "18446744073709551616"
+          },
+          "exact_mass": {
+            "numerator": "5159521548050053",
+            "denominator": "1125899906842624"
+          }
+        },
+        {
+          "landau_index": 2,
+          "exact_weight_sum": {
+            "numerator": "373809188779106264473",
+            "denominator": "18446744073709551616"
+          },
+          "exact_mass": {
+            "numerator": "28161238212607",
+            "denominator": "4398046511104"
+          }
+        },
+        {
+          "landau_index": 3,
+          "exact_weight_sum": {
+            "numerator": "373809188779106264473",
+            "denominator": "18446744073709551616"
+          },
+          "exact_mass": {
+            "numerator": "1099194922815117",
+            "denominator": "140737488355328"
+          }
+        },
+        {
+          "landau_index": 4,
+          "exact_weight_sum": {
+            "numerator": "373809188779106264473",
+            "denominator": "18446744073709551616"
+          },
+          "exact_mass": {
+            "numerator": "9",
+            "denominator": "1"
+          }
+        }
+      ],
+      "exact_Cstar": {
+        "numerator": "42570168362234201809993429180767955655779855849123476371121582297748854064968202878539550954811441075948738162259613522887637592928971104883089772967413351",
+        "denominator": "16232340539682028325461675455048445918197729539889919677169899086662103141848259454352643343502923797390171412625311508564372737472987255302264564857438208"
+      },
+      "exact_Z_lower": {
+        "numerator": "447581853929729152220181033973754859038651283702669066827389228165688174947645415994476773846827619926520306092197846941518972295908663804949289770926580365459041064790789",
+        "denominator": "584831702446903829645941351588971881708148770296029679062186988984254618533402495478912006584509099484242070420826279587370750229195041338382594821501950671566158738489344"
+      },
+      "exact_margin_above_three_quarters": {
+        "numerator": "8958077094551279985725020282025947757539705980646807530748986427497211047593544385292768908445795313338753276578137250990909624012382801162343654800117361784422010923781",
+        "denominator": "584831702446903829645941351588971881708148770296029679062186988984254618533402495478912006584509099484242070420826279587370750229195041338382594821501950671566158738489344"
+      },
+      "all_denominators_positive": true,
+      "positive_margin_numerator": "8958077094551279985725020282025947757539705980646807530748986427497211047593544385292768908445795313338753276578137250990909624012382801162343654800117361784422010923781"
+    }
+  }
+]

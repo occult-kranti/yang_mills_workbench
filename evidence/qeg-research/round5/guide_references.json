@@ -1,0 +1,446 @@
+{
+  "D001": {
+    "title": "Ordinary Differential Equations and Dynamical Systems",
+    "authors": "Gerald Teschl",
+    "date": "April 2012 author-hosted preliminary version",
+    "url": "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf",
+    "role": "Standard ODE existence, continuation and parameter-dependence inputs; the project's energy and denominator estimates are derived independently in theorem_advisor.md.",
+    "readdepth": "Reading scope: Read the relevant statements and surrounding derivations in sections 2.2, 2.4 and 2.6; not a full-book reading.",
+    "access": "A finite-dimensional ODE theorem does not establish a continuum field-theory limit, physically correct renormalization, quantum fluctuation validity or all-time response stability."
+  },
+  "D002": {
+    "title": "DLMF 5.9.15: Binet integral for the digamma function",
+    "authors": "NIST Digital Library of Mathematical Functions",
+    "date": "Date not specified",
+    "url": "https://dlmf.nist.gov/5.9.E15",
+    "role": "Positive integral representation of log(z)-1/(2z)-psi(z), proving matched chi_b>0 after the recurrence substitution.",
+    "readdepth": "Reading scope: Read equation 5.9.15, its domain Re(z)>0, and the note identifying it as the differentiated form of Binet's formula.",
+    "access": "Proves a special-function sign under positive real z; it is not an independent derivation of the physical matching prescription."
+  },
+  "D003": {
+    "title": "DLMF 5.5.2: Digamma recurrence",
+    "authors": "NIST Digital Library of Mathematical Functions",
+    "date": "Date not specified",
+    "url": "https://dlmf.nist.gov/5.5.E2",
+    "role": "Transforms psi(1+z) to psi(z)+1/z in the susceptibility positivity proof.",
+    "readdepth": "Reading scope: Read equation 5.5.2 and its recurrence-section context.",
+    "access": "The application here is restricted to positive real z and does not use analytic continuation near digamma poles."
+  },
+  "D004": {
+    "title": "DLMF 3.5(v): Gauss quadrature",
+    "authors": "NIST Digital Library of Mathematical Functions",
+    "date": "Date not specified",
+    "url": "https://dlmf.nist.gov/3.5#v",
+    "role": "Exact positive longitudinal quadrature weights sum to the interval length, supplying the analytic global Z bound at fixed K=20 and n=0 through4.",
+    "readdepth": "Reading scope: Read positivity of the Christoffel weights after equation 3.5.18, polynomial exactness at equation 3.5.20_1, and the Gauss-Legendre specialization 3.5.21.",
+    "access": "Exact polynomial quadrature identities do not hold literally for rounded weights; a separate exact rational certificate was checked for the generated coefficient list."
+  },
+  "D005": {
+    "title": "2022 CODATA recommended values of the fundamental physical constants",
+    "authors": "NIST/CODATA",
+    "date": "2022 adjustment; NIST wallet table",
+    "url": "https://physics.nist.gov/cuu/pdf/wallet_2022.pdf",
+    "role": "Context check: the recommended alpha central value 7.2973525643e-3 also obeys the broad alpha<1/137 inequality.",
+    "readdepth": "Reading scope: Read the alpha and inverse-alpha entries in the two-page table; did not audit the underlying measurement adjustment.",
+    "access": "The theorem uses a declared parameter inequality, not a mathematical proof of a measured physical constant. The frozen production source retains alpha=1/137.035999084 and was not modified."
+  },
+  "D006": {
+    "title": "Frozen round-4 P3 contract, implementation and acceptance",
+    "authors": "Physics Observatory project",
+    "date": "2026-09-09",
+    "url": "",
+    "role": "Freezes the physical and computational model to which the conditional theorem is applied.",
+    "readdepth": "Reading scope: Read the complete response contract and acceptance JSON; inspected the grid, susceptibility and current definitions in response.py and the inherited constants. Executed only the coefficient construction and exact-rational inequality checks; did not rerun the trajectory.",
+    "access": "Recorded response errors are sampled numerical comparisons. The conditional theorem does not turn those comparisons into interval enclosures."
+  },
+  "D007": {
+    "title": "A Formal Basis for the Heuristic Determination of Minimum Cost Paths",
+    "authors": "Peter E. Hart, Nils J. Nilsson, Bertram Raphael",
+    "date": "1968",
+    "url": "https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/astar.pdf",
+    "role": "Historical A* framework combining accumulated cost and a remaining-cost estimate.",
+    "readdepth": "Reading scope: Original eight-page PDF located and opened; selected page screenshots requested. Text extraction unavailable. Historical reference, not a line-by-line verification of the original optimal-efficiency proof.",
+    "access": "Unqualified optimal efficiency, optimality of a novel mixed-representation proof planner, or global mathematical discovery completeness."
+  },
+  "D008": {
+    "title": "Bidirectional Search That Is Guaranteed to Meet in the Middle",
+    "authors": "Robert C. Holte, Ariel Felner, Guni Sharon, Nathan R. Sturtevant",
+    "date": "2016",
+    "url": "https://www.cs.du.edu/~sturtevant/papers/MMaaai.pdf",
+    "role": "MM's specific priority max(f,2g), its carefully justified stopping condition, and why midpoint claims require a theorem for the actual search setting.",
+    "readdepth": "Reading scope: Read abstract, definitions, algorithm 1, stopping-rule discussion and stated properties in sections 1–3; did not independently reprove the extended technical report.",
+    "access": "Direct transfer of MM termination or midpoint guarantees to a fact-set forward search paired with sufficient-goal backward regression."
+  },
+  "D009": {
+    "title": "Front-to-End Bidirectional Heuristic Search with Near-Optimal Node Expansions",
+    "authors": "Jingwei Chen, Robert C. Holte, Sandra Zilles, Nathan R. Sturtevant",
+    "date": "2017",
+    "url": "https://arxiv.org/abs/1703.03868",
+    "role": "NBS makes a precise near-optimal expansion statement within its defined model, motivating care with transferred optimization labels.",
+    "readdepth": "Reading scope: Read abstract and bibliographic record; full expansion-bound proof not independently checked.",
+    "access": "An NBS expansion guarantee for the custom Horn planner."
+  },
+  "D010": {
+    "title": "Theorem Proving in Lean 4 — Tactics",
+    "authors": "Lean project documentation contributors",
+    "date": "Date not specified",
+    "url": "https://lean-lang.org/theorem_proving_in_lean4/Tactics/",
+    "role": "Backward application of a theorem turns its unsatisfied premises into goals; the conclusion is matched, not reversed as a logical implication.",
+    "readdepth": "Reading scope: Read apply/exact examples and explanations, including conjunction subgoals and tactic combinators.",
+    "access": "A claim that the present informal analytical theorem has been checked in Lean."
+  },
+  "D011": {
+    "title": "Lean Frequently Asked Questions",
+    "authors": "Lean project",
+    "date": "Date not specified",
+    "url": "https://lean-lang.org/faq/",
+    "role": "Distinction between tactic generation and kernel verification of an explicit proof term.",
+    "readdepth": "Reading scope: Read explanation of proof objects and verification by the trusted kernel.",
+    "access": "Equating JSON rule replay or a numerical test with a kernel-checked theorem."
+  },
+  "D012": {
+    "title": "LeanDojo: AI-Assisted Theorem Proving in Lean",
+    "authors": "LeanDojo research project",
+    "date": "Date not specified",
+    "url": "https://leandojo.org/leandojo.html",
+    "role": "Proof-state feedback, premise locations, file dependencies and retrieval as concrete infrastructure for auditable mathematical dependency work.",
+    "readdepth": "Reading scope: Read data-extraction, premise-annotation, dependency and interactive-environment sections. Benchmark numbers are not used in the contract.",
+    "access": "That all dependencies in the project's physics map already correspond to formalized Lean theorems."
+  },
+  "D013": {
+    "title": "An In-Context Learning Agent for Formal Theorem-Proving",
+    "authors": "Amitayush Thakur, George Tsoukalas, Yeming Wen, Jimmy Xin, Swarat Chaudhuri",
+    "date": "2023",
+    "url": "https://arxiv.org/abs/2310.04353",
+    "role": "Proposals should be executed and checked in the underlying proof environment, with failed applications informing the next proposal.",
+    "readdepth": "Reading scope: Read abstract and bibliographic record describing COPRA's stateful tactic search and proof-environment feedback; benchmark claims not reproduced.",
+    "access": "A promise that the project's scientific conjectures can be solved automatically."
+  },
+  "D014": {
+    "title": "The renormalized locally covariant Dirac field",
+    "authors": "Jochen Zahn",
+    "date": "2013-10-18, arXiv v3",
+    "url": "https://arxiv.org/html/1210.4031v3",
+    "role": "Locally covariant current/stress framework and precise scope boundary.",
+    "readdepth": "Reading scope: Read introduction and section 4.2; checked the explicit restrictions of the stress argument.",
+    "access": "Section4.2 restricts its stated nonperturbative stress result; not an implemented strong-F curved closure."
+  },
+  "D015": {
+    "title": "Existence and uniqueness of solutions of the semiclassical Einstein equation in cosmological models",
+    "authors": "Paolo Meda; Nicola Pinamonti; Daniel Siemssen",
+    "date": "2020 preprint; 2021 publication",
+    "url": "https://arxiv.org/html/2007.14665v1",
+    "role": "Restricted local existence strategy using a retarded inverse and fixed-point construction.",
+    "readdepth": "Reading scope: Read introduction, section5.1, Theorem5.9, Remark5.2 and conclusion.",
+    "access": "Scalar FLRW model; mild regularity and compatible state hypotheses; not charged Dirac Bianchi I."
+  },
+  "D016": {
+    "title": "Global Existence of Solutions of the Semiclassical Einstein Equation for Cosmological Spacetimes",
+    "authors": "Nicola Pinamonti; Daniel Siemssen",
+    "date": "2013 preprint; 2015 journal",
+    "url": "https://arxiv.org/abs/1309.6303",
+    "role": "A restricted continuation result and careful interpretation of the word global.",
+    "readdepth": "Reading scope: Read arXiv and publisher abstracts and metadata; no full-proof verification this round.",
+    "access": "Conformally coupled scalar cosmology; extension can end at specified singular boundaries."
+  },
+  "D017": {
+    "title": "Validity of semiclassical gravity in the stochastic gravity approach",
+    "authors": "Enric Verdaguer",
+    "date": "2005",
+    "url": "https://arxiv.org/html/gr-qc/0507073v1",
+    "role": "Quantum-noise obligations differ from a mean-field source tangent.",
+    "readdepth": "Reading scope: Read intrinsic/induced fluctuation and validity discussion.",
+    "access": "No actual noise kernel has been calculated in this project."
+  },
+  "D018": {
+    "title": "Repulsive Forces and the Weak Gravity Conjecture",
+    "authors": "Ben Heidenreich; Matthew Reece; Tom Rudelius",
+    "date": "2019; arXiv v2 2020",
+    "url": "https://arxiv.org/abs/1906.02206",
+    "role": "Scalar forces and black-hole extremality require careful charge/mass conventions.",
+    "readdepth": "Reading scope: Reopened abstract/version metadata; used to scope distinct conjectural formulations.",
+    "access": "Does not prove WGC for arbitrary effective theories."
+  },
+  "D019": {
+    "title": "The FL bound and its phenomenological implications",
+    "authors": "Miguel Montero; Cumrun Vafa; Thomas Van Riet; Victoria Venken",
+    "date": "2021",
+    "url": "https://arxiv.org/abs/2106.07650",
+    "role": "Conditional de Sitter discharge bound, distinct from a proved ODE identity.",
+    "readdepth": "Reading scope: Reopened abstract and arXiv version record; details retained in earlier project reviews.",
+    "access": "Not an axiom or a theorem that our finite flat-space model can settle."
+  },
+  "D020": {
+    "title": "A semiclassical singularity theorem",
+    "authors": "Christopher J. Fewster; Eleni-Alexandra Kontou",
+    "date": "2021 preprint; 2022 journal",
+    "url": "https://arxiv.org/abs/2108.12668",
+    "role": "Conditional quantum-energy-inequality route to incompleteness.",
+    "readdepth": "Reading scope: Metadata checked this round; earlier round3 reviewer read Theorem5.1, its hypotheses and proof context.",
+    "access": "Minimally coupled scalar assumptions do not automatically apply to interacting spinor QED or cosmic censorship."
+  },
+  "D021": {
+    "title": "One loop photon-graviton mixing in an electromagnetic field: Part 3",
+    "authors": "Naser Ahmadiniaz; Fiorenzo Bastianelli; Felix Karbstein; Christian Schubert",
+    "date": "2026",
+    "url": "https://arxiv.org/abs/2601.23279",
+    "role": "Keep mixing vertices and external-leg/dispersion terms at consistent loop order.",
+    "readdepth": "Reading scope: Metadata reopened this round; earlier round3 review examined sections6 and8.",
+    "access": "Static longitudinal susceptibility cannot replace the complete transverse mixing calculation."
+  },
+  "D022": {
+    "title": "Chiral Anomaly, Schwinger Effect, Euler-Heisenberg Lagrangian, and application to axion inflation",
+    "authors": "Valerie Domcke; Yohei Ema; Kyohei Mukaida",
+    "date": "2020-02-28, v2",
+    "url": "https://arxiv.org/pdf/1910.01205",
+    "role": "Landau normalization and separation of transport from vacuum polarization.",
+    "readdepth": "Reading scope: Inherited round3 reading: sections2.1–2.2,3.3 and relevant anomaly/weak-field equations; this round read the ledger and frozen contract.",
+    "access": "Simplified solved modes omit scale-factor derivative; not a computed covariant gravitational closure."
+  },
+  "D023": {
+    "title": "Round4 acceptance and sampled numerical scope",
+    "authors": "Project research record",
+    "date": "Date not specified",
+    "url": "",
+    "role": "",
+    "readdepth": "Reading scope: ",
+    "access": "Project derivation or saved acceptance, not an external authority."
+  },
+  "D024": {
+    "title": "Root-derived Bianchi-I constraint propagation lemma",
+    "authors": "Project research record",
+    "date": "Date not specified",
+    "url": "",
+    "role": "",
+    "readdepth": "Reading scope: Read the explicit Bianchi equations and the saved zero-residual symbolic result. This mapping pass did not rerun the checker.",
+    "access": "Project derivation or saved acceptance, not an external authority."
+  },
+  "D025": {
+    "title": "Independent proof critique and falsifiers",
+    "authors": "Project research record",
+    "date": "Date not specified",
+    "url": "",
+    "role": "",
+    "readdepth": "Reading scope: ",
+    "access": "Project derivation or saved acceptance, not an external authority."
+  },
+  "D026": {
+    "title": "Frozen P3 response contract",
+    "authors": "Project research record",
+    "date": "Date not specified",
+    "url": "",
+    "role": "",
+    "readdepth": "Reading scope: ",
+    "access": "Project derivation or saved acceptance, not an external authority."
+  },
+  "D027": {
+    "title": "Finite-model theorem and advisor review",
+    "authors": "Project research record",
+    "date": "Date not specified",
+    "url": "",
+    "role": "",
+    "readdepth": "Reading scope: ",
+    "access": "Project derivation or saved acceptance, not an external authority."
+  },
+  "D028": {
+    "title": "On Gauge Invariance and Vacuum Polarization",
+    "authors": "Julian Schwinger",
+    "date": "1951",
+    "url": "https://doi.org/10.1103/PhysRev.82.664",
+    "role": "Original proper-time QED formalism; not a new solution.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: ",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D029": {
+    "title": "Euler-Heisenberg Lagrangian to all orders in the magnetic field and the Chiral Magnetic Effect",
+    "authors": "Simon Wolfgang Mages, Matthias Aicher, Andreas Schafer",
+    "date": "2010",
+    "url": "https://arxiv.org/pdf/1009.1495",
+    "role": "Pure magnetic proper-time action and electric-probe susceptibility with finite renormalization convention; susceptibility independently derived in this audit.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: ",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D030": {
+    "title": "Non-Perturbative One-Loop Effective Action for Electrodynamics in Curved Spacetime",
+    "authors": "Guglielmo Fucci",
+    "date": "2009",
+    "url": "https://arxiv.org/html/0906.2430v1",
+    "role": "All magnetic powers, covariantly constant field, zero electric field, linear Riemann curvature only; not arbitrary strong-curvature closure.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: ",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D031": {
+    "title": "Heat Kernels and Resummations: the Spinor Case",
+    "authors": "S. A. Franchino-Vinas, C. Garcia-Perez, F. D. Mazzitelli, S. Pla, V. Vitagliano",
+    "date": "2025",
+    "url": "https://arxiv.org/html/2511.03315v1",
+    "role": "Spinor electromagnetic heat-kernel resummation and derivative-recursion resource; curved-spacetime application not treated as already solved.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: ",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D032": {
+    "title": "Mass inflation from rough initial data",
+    "authors": "Rossetti",
+    "date": "2025",
+    "url": "https://arxiv.org/abs/2506.08075",
+    "role": "Primary-source audit; precise reading depth is in description.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: ",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D033": {
+    "title": "Extremal Black Hole Decay in de Sitter Space",
+    "authors": "Aalsma, van der Schaar, Visser",
+    "date": "2024",
+    "url": "https://arxiv.org/html/2311.13742v2",
+    "role": "Primary-source audit; precise reading depth is in description.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: ",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D034": {
+    "title": "The fate of Reissner–Nordström–de Sitter black holes: nonequilibrium discharge and evaporation",
+    "authors": "Easson",
+    "date": "2026",
+    "url": "https://arxiv.org/html/2605.20349v1",
+    "role": "Primary-source audit; precise reading depth is in description.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: ",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D035": {
+    "title": "Linear perturbations of an anisotropic Bianchi I model with a uniform magnetic field",
+    "authors": "Federico Di Gioia; Giovanni Montani",
+    "date": "2019",
+    "url": "https://arxiv.org/abs/1807.00434v4",
+    "role": "Magnetized Bianchi-I precedent and anisotropy scope.",
+    "readdepth": "Reading scope: Abstract and bibliographic/version record checked; equations here independently derived rather than attributed to this source.",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass. Perfect-fluid cosmology, not renormalized Dirac backreaction."
+  },
+  "D036": {
+    "title": "On the initial value problem for semiclassical gravity without and with quantum state collapses",
+    "authors": "Benito A. Juárez-Aubry; Bernard S. Kay; Tonatiuh Miramontes; Daniel Sudarsky",
+    "date": "2023",
+    "url": "https://arxiv.org/html/2205.11671v5",
+    "role": "Initial state/geometry constraint compatibility and honest status of well-posedness claims.",
+    "readdepth": "Reading scope: Introduction, physical-solution discussion, sections 3.2-3.4 including conjectures 9, 10, 14, 16 and surface-Hadamard compatibility passages read; actual revision March 10, 2023, not HTML rebuild date.",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass. Important assertions are explicitly conjectures; scalar models, not completed strong-field Dirac solver."
+  },
+  "D037": {
+    "title": "Einstein Equation with Quantum Corrections Reduced to Second Order",
+    "authors": "Leonard Parker; Jonathan Z. Simon",
+    "date": "1993",
+    "url": "https://arxiv.org/pdf/gr-qc/9211002",
+    "role": "Consistent perturbative reduction and why extra branches of truncated equations can be spurious.",
+    "readdepth": "Reading scope: PDF introduction and section 2 through order-reduction/nonlinear-branch caveat, printed pages 1-11, read.",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass. First-order semiclassical expansion; cannot automatically remove nonperturbative large-N physics or establish target state closure."
+  },
+  "D038": {
+    "title": "The Structure of Quantum Singularities on a Cauchy Horizon",
+    "authors": "Arvin Shahbazi-Moghaddam",
+    "date": "2024",
+    "url": "https://arxiv.org/html/2411.11948v1",
+    "role": "Regularity class, state dependence, and limitations of universal fixed-background horizon-divergence claims.",
+    "readdepth": "Reading scope: Introduction, explicit wedge construction and assumptions, robustness discussion and qualified scope inspected beyond abstract.",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass. Strict near-horizon/state-construction assumptions; no solved backreacted metric or universal desingularization."
+  },
+  "D039": {
+    "title": "Can Newtonian gravity produce quantum entanglement?",
+    "authors": "Feng-Li Lin; Sayid Mondal",
+    "date": "2026-03-06",
+    "url": "https://link.aps.org/pdf/10.1103/fv38-kgkb",
+    "role": "Concrete quadrupole quantum/semiclassical/stochastic model comparison.",
+    "readdepth": "Reading scope: Six-page primary PDF introduction and three-model setup/conclusion with perturbative caveat inspected.",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass. Specific tidal-parity model; not a laboratory detection or full quantum-gravity theory."
+  },
+  "D040": {
+    "title": "Quantum Instability of the Cauchy Horizon in Reissner-Nordström-deSitter Spacetime",
+    "authors": "S. Hollands, R. M. Wald, J. Zahn",
+    "date": "2020",
+    "url": "https://arxiv.org/abs/1912.06047",
+    "role": "peer-reviewed mathematical/theoretical research",
+    "readdepth": "Reading scope: Abstract and theorem scope inspected; prior corpus already includes related work.",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass. Fixed-background divergence does not itself solve the nonlinear semiclassical endpoint or prove a general quantum cosmic-censorship theorem."
+  },
+  "D041": {
+    "title": "Schwinger Pair Production in Electric and Magnetic Fields",
+    "authors": [
+      "Sang Pyo Kim",
+      "Don N. Page"
+    ],
+    "date": "2006",
+    "url": "https://arxiv.org/abs/hep-th/0301132",
+    "role": "Constant parallel electric/magnetic fields and summation of Landau levels.",
+    "readdepth": "Reading scope: Retained from the preceding project cycle: Sections inspected: abstract, constant-field Landau sum context from paper and companion full text",
+    "access": "Reused existing round3 source audit; not newly reread in this mapping pass."
+  },
+  "D042": {
+    "title": "Linear Response Analysis of the Semiclassical Approximation to Spin 1/2 Quantum Electrodynamics in 1+1 Dimensions",
+    "authors": "Ian M. Newsome; Paul R. Anderson; Eric M. Grotzke",
+    "date": "2025-05-01, arXiv v2; journal 2025-03-20",
+    "url": "https://arxiv.org/html/2410.22633v2",
+    "role": "Retarded-current response, unchanged vacuum preparation, necessary criterion and finite-difference comparator.",
+    "readdepth": "Reading scope: Read introduction, sections III–IV, response equations 22–28 and Appendix B; previous round numerical review retained. HTML autogenerated date is not submission date.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. 1+1-dimensional source and matter model; no numerical transfer to 3+1 Landau response."
+  },
+  "D043": {
+    "title": "Linear Response, Validity of Semi-Classical Gravity, and the Stability of Flat Space",
+    "authors": "Paul R. Anderson; Carmen Molina-Paris; Emil Mottola",
+    "date": "2002-09-21; Phys. Rev. D67 (2003) 024026",
+    "url": "https://arxiv.org/abs/gr-qc/0209075",
+    "role": "Necessary linearized gauge-invariant stability criterion.",
+    "readdepth": "Reading scope: Primary abstract and publication record read; detailed stochastic formalism separately read in R04.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. Scalar Minkowski application; not strong-field interacting spinor QED."
+  },
+  "D044": {
+    "title": "Adiabatic regularization for Dirac fields in time-varying electric backgrounds",
+    "authors": "Pau Beltran-Palau; Jose Navarro-Salas; Silvia Pla",
+    "date": "2020-05-22, v2",
+    "url": "https://arxiv.org/html/2001.08710v2",
+    "role": "Consistent adiabatic order and current/stress subtraction requirement.",
+    "readdepth": "Reading scope: Read adiabatic-order discussion and Appendix C explicit terms through fourth order; submission version checked.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. Displayed formulas are not an implemented anisotropic magnetic Bianchi-I closure."
+  },
+  "D045": {
+    "title": "Schwinger effect with backreaction in 1+1D massive QED with a strong external field",
+    "authors": "Samuel E. Gralla; Morifumi Mizuno",
+    "date": "2026-04-09, v2",
+    "url": "https://arxiv.org/html/2511.23464v2",
+    "role": "Fully quantum first-order mass correction can be absent from a semiclassical comparator.",
+    "readdepth": "Reading scope: Primary abstract and setup revisited; prior round independently reproduced its reduced oscillator and reviewed Appendix B.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. Not all-orders QED and not a directly matched multi-Landau-level model."
+  },
+  "D046": {
+    "title": "Novel Bounds From The Weak Gravity and Festina Lente Conjectures",
+    "authors": "Fayez Abu-Ajamieh; Pratik Chattopadhyay; Nobuchika Okada; Roman Pasechnik; Zhi-Wei Wang",
+    "date": "2026-03-17, v2; journal 2026-02-27",
+    "url": "https://arxiv.org/html/2509.16762v2",
+    "role": "Current conditional WGC/Festina Lente phenomenology and explicit applicability assumptions.",
+    "readdepth": "Reading scope: Read introduction and fifth-force section, especially small-H/local approximation, equations 1–7 and massive-mediator caveat.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. Bounds remain conjecture-dependent; extrapolation to massive mediator includes an additional assumption."
+  },
+  "D047": {
+    "title": "Semiclassical regularity of compact trapped regions: From dynamical horizons to inner extremality",
+    "authors": "Raul Carballo-Rubio; Francesco Di Filippo; Stefano Liberati; Matt Visser",
+    "date": "2026-07-04, v1",
+    "url": "https://arxiv.org/html/2607.03916v1",
+    "role": "Finite-lifetime trapping horizons versus eternal Cauchy horizons; possible inner-extremal alternative.",
+    "readdepth": "Reading scope: Read setup, stationary Polyakov stress equations, abstract, dynamical interpretation and conclusions including explicit unsolved-backreaction statement.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. s-wave Polyakov approximation on selected backgrounds; no solved self-consistent endpoint."
+  },
+  "D048": {
+    "title": "Violation of the Leggett-Garg inequality in photon-graviton conversion",
+    "authors": "Kimihiro Nomura; Akira Taniguchi; Kazushige Ueda",
+    "date": "2026-07-14, v2",
+    "url": "https://arxiv.org/html/2601.20436v2",
+    "role": "Separate conversion amplitude from nonclassicality witness and measurement assumptions.",
+    "readdepth": "Reading scope: Read introduction, inequality assumptions, Einstein-Maxwell quantized mode setup, discussion and statistical-error appendix.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. No Euler-Heisenberg strong-field dispersion calculation; no experimental gravity quantization detection."
+  },
+  "D049": {
+    "title": "Finite-field QED corrections to vacuum birefringence and magnetar polarization transport",
+    "authors": "Shahram Abbassi; F. A. Chishtie; S. R. Valluri",
+    "date": "2026-08-24, version of record",
+    "url": "https://link.springer.com/article/10.1140/epjc/s10052-026-16246-2",
+    "role": "Finite-field low-frequency magnetic dispersion and order-consistency comparator.",
+    "readdepth": "Reading scope: Read primary abstract, polarization convention, dispersion equations and explicit loop-order caveat; previous round deep review retained.",
+    "access": "Reused existing round4 source audit; apply root round5 correction to Zahn stress-scope interpretation. Apparent response maximum from unexpanded one-loop algebra is not controlled at higher loop order."
+  }
+}

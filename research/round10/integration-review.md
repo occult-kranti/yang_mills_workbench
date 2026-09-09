@@ -1,0 +1,13 @@
+# Round10 integration review
+
+The accepted mathematical result is a bound on an untruncated representation space for one finite square, with a uniform dimensionless coupling range. It neither changes pure Yang–Mills by inserting a mass nor supplies its infinite-volume continuum construction. The variables alpha and lambda enter a defined gauge-invariant Hamiltonian; kappa is their ratio; N is an approximation parameter; a prescribed lambda(t) includes external work.
+
+The main certificate combines a completion-of-the-square tail estimate, the variational principle, exact rational Sturm enclosures and a 2-Lipschitz gap bound. Six exact coverage cells cover closed [0,10]. The exact stored point bounds support the conservative positive lower value999999/1000000. Plot decimals and Mathieu comparisons do not participate as proof premises.
+
+The independent critic found and preserved three acceptance defects: altered certificate scope/precision/status labels were initially accepted; the midpoint method recorded work error without gating it; the proof wrapper initially accepted a manifest with required hashes omitted. The corrected checker binds certificate metadata, the midpoint method enforces its work diagnostics, and the wrapper requires every specified source/data hash with strict path and digest checks. It rejects missing and altered inputs before admitting exact-arithmetic facts into the planner.
+
+The two-front rule library yields a 13-rule certificate for the parameter-range/scaling result. Removing gauge projection, tail positivity, exact brackets or complete range coverage blocks the corresponding proof. Adding the Millennium target leaves it underivable. The reused search engine was previously audited; this round independently audits its new wrapper and decisive controls rather than claiming a new line-by-line audit of the entire historical project.
+
+Website checks cover the new pages, historical routes, certificate selection, document dialogs, malformed data, exact-to-decimal plot bindings, source links and assets. These are Node VM interface checks; browser layout and keyboard review are not claimed. Scientific figures are standard plots of actual stored data, not generated illustrations.
+
+The next physical graph is two adjacent squares with seven links and six vertices. Its gauge-reduced electric operator contains shared-link couplings and additional relative-orientation information. Deriving and independently verifying that operator is a concrete next obligation. A tensor product of two independent plaquette spectra would omit precisely that interaction.

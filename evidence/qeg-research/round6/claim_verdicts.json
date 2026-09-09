@@ -1,0 +1,428 @@
+{
+  "schema": "qeg-round6-skeptic-claim-verdicts-v1",
+  "review_date": "2026-09-09",
+  "reviewer": "independent physics skeptic",
+  "truth_rule": "Proof assumptions, explicit derivations, executed checks and source scope determine verdicts; no majority vote.",
+  "claims": [
+    {
+      "id": "R6-C01",
+      "page_slug": "finite-global-existence",
+      "title": "Finite-model global forward existence",
+      "verdict": "accepted_conditional",
+      "scope": "Fixed finite homogeneous Maxwell-Dirac model",
+      "statement": "Every admissible finite initial state has a unique solution for all finite forward times under the stated global positive Z margin.",
+      "assumptions": [
+        "Finite fixed positive masses and weights; finite real canonical momenta",
+        "Fixed finite e\u00b2>0 and susceptibility",
+        "Continuous drive on [0,infinity)",
+        "Initial Bloch norms <=1",
+        "Z(a)>=mu>0 for every real a"
+      ],
+      "evidence": [
+        "round5/theorem_advisor.md T1-T14: norm conservation, U>=0, Wprime=xF, epsilon-regularized bound, compact continuation",
+        "round5/proof_critique.md: independent proof and hypothesis-deletion counterexamples"
+      ],
+      "skeptic_objection": "Energy positivity depends on state admissibility and positive weights; bounded electric field alone is insufficient without a bound on a on each finite interval.",
+      "unresolved_obligations": [
+        "Derive the physical closure from a common continuum prescription",
+        "Prove dynamical cutoff convergence separately",
+        "No all-time bound on a or raw tangent for general pure-state data"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C02",
+      "page_slug": "global-denominator",
+      "title": "Exact discrete denominator certificate",
+      "verdict": "accepted_conditional",
+      "scope": "Exact finite positive quadrature at b10,K20,N4",
+      "statement": "Z(a)>3/4 for every real a at the selected regulator; rounded coefficients need their separate rational certificate.",
+      "assumptions": [
+        "0<alpha<1/137, pi>3.14",
+        "b10,K20,N4 inclusive",
+        "Positive quadrature weights sum exactly to40",
+        "Matched positive susceptibility"
+      ],
+      "evidence": [
+        "round5/theorem_advisor.md T17-T23",
+        "skeptic_checks_results.json old_rational_certificate: e\u00b2Cstar<66325137500/274510827927<1/4"
+      ],
+      "skeptic_objection": "Sampled minimum Z\u22480.99651 is not an all-a proof; exact quadrature and a floating trajectory are distinct objects.",
+      "unresolved_obligations": [
+        "Do not infer a machine-trajectory enclosure from coefficient rational arithmetic",
+        "Use separate certificates if window, masses or matching change"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C03",
+      "page_slug": "field-envelope",
+      "title": "Forced electric-field envelope",
+      "verdict": "accepted_conditional",
+      "scope": "Finite model and fixed-window all-finite-N extension",
+      "statement": "|x(t)|<=sqrt(2W0/mu)+(1/mu) integral_0^t |F|; vacuum normalized pulse gives |x|<=4|lambda|/3.",
+      "assumptions": [
+        "All hypotheses of R6-C01",
+        "W0=0 for the simplified vacuum bound",
+        "F=lambda*g with g>=0 and integral g=1 for the 4|lambda|/3 form"
+      ],
+      "evidence": [
+        "round5/theorem_advisor.md T12-T14,T22",
+        "skeptic_checks_results.json archived_field_below_analytic_envelope"
+      ],
+      "skeptic_objection": "The pulse amplitude is an external-current impulse, not the measured peak field; differentiating an inequality at a pumped baseline does not bound its derivative.",
+      "unresolved_obligations": [
+        "Waveform prediction requires the solver",
+        "Continuum trajectory control is separate from a uniform finite-family envelope"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C04",
+      "page_slug": "retarded-response",
+      "title": "Finite-time differentiable and causal tangent",
+      "verdict": "accepted_conditional",
+      "scope": "Fixed-regulator source/data variations on each compact time interval",
+      "statement": "The displayed tangent system is the derivative of the finite flow and has retarded support for identical pre-probe preparation.",
+      "assumptions": [
+        "A common regular parameter neighborhood",
+        "Joint/local-uniform continuity of source parameter derivatives",
+        "Differentiable admissible initial-state family",
+        "Unchanged canonical grid for a source variation",
+        "Zero initial tangent and zero source variation before probe for causal support"
+      ],
+      "evidence": [
+        "round5/theorem_advisor.md T24-T26",
+        "round4/response_contract.md P7-P26"
+      ],
+      "skeptic_objection": "Pointwise parameter derivatives alone do not justify differentiation under the time integral; mixed-state variations need not obey r dot eta=0.",
+      "unresolved_obligations": [
+        "No full-tangent all-time stability conclusion",
+        "No automatic limit-derivative interchange",
+        "No symmetrized quantum-noise calculation"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C05",
+      "page_slug": "gravity-constraint",
+      "title": "Bianchi-I constraint and Ward defect",
+      "verdict": "accepted_conditional",
+      "scope": "Displayed spatial Einstein evolution on a regular positive-volume interval",
+      "statement": "Cdot=-theta*C-kappa*Q; total Q0 and initial C0 imply constraint propagation.",
+      "assumptions": [
+        "Positive differentiable scale factors",
+        "Specified G4-G5 spatial evolution equations",
+        "Diagonal comoving total stress",
+        "Constant Lambda",
+        "Total current/source work accounted for"
+      ],
+      "evidence": [
+        "round5/research_bridge.md G2-G9 and symbolic checks",
+        "round5/proof_critique.md section5"
+      ],
+      "skeptic_objection": "Omitting apparatus stress leaves Q=-E*Jext; preserving a constraint by a pressure ansatz does not validate that pressure as QED.",
+      "unresolved_obligations": [
+        "Compute current, energy and both directional pressures in one renormalization scheme",
+        "Include external support or close the system",
+        "No continuation through zero volume or singularity-resolution claim"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C06",
+      "page_slug": "proof-planner",
+      "title": "Bidirectional proof planner",
+      "verdict": "accepted_scoped_tool",
+      "scope": "Finite frozen ground Horn rules, h0, exact fact sets",
+      "statement": "The saved selected trace replays reviewed dependencies; independent forward uniform-cost search certifies cost only inside the supplied finite rule library.",
+      "assumptions": [
+        "Each admitted rule is valid with all premises and fixed scope",
+        "Backward regression introduces sufficient premises, never reversed truth implications",
+        "All assumptions remain attached",
+        "Independent replay and correct stopping rules"
+      ],
+      "evidence": [
+        "round5/search_contract.md sections2-5",
+        "round5/search_results.json selected cost14, base cost12",
+        "round6 code auditor reports regression and metadata fix for legacy conditional:false"
+      ],
+      "skeptic_objection": "The old conditional:false flag means no conjecture seed; it does not mean an assumption-free physics theorem. Human-entered rule truth is outside the JSON checker.",
+      "unresolved_obligations": [
+        "Use explicit declared-assumption and conjectural-assumption fields in UI",
+        "Formal proof objects would require an actual proof assistant kernel",
+        "No theorem novelty or optimality among all possible proofs"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C07",
+      "page_slug": "numerical-response",
+      "title": "Archived default source-response run",
+      "verdict": "verified_limited",
+      "scope": "b10,K20,N4,nK1024, 401 sampled times through s20",
+      "statement": "Default response passes its frozen finite-model gates and selected sampled fixed-window field-tangent refinement.",
+      "assumptions": [
+        "Frozen source, equations, parameters and acceptance thresholds",
+        "Default source setup",
+        "Claim applies to recorded sampled outputs",
+        "Independent spinor comparisons were small fixtures, not the large selected grid"
+      ],
+      "evidence": [
+        "round4/physics_acceptance.json: 13 independent gates and19 comparison gates",
+        "512-to1024 maximum sampled delta u2.1572511138545636e-10; threshold1e-6",
+        "Code auditor reports all13 historical provenance hashes match"
+      ],
+      "skeptic_objection": "Coarser pairs fail and remain visible; direct-current difference is diagnostic, not its own frozen accuracy gate. Nondefault probe setup is a separate newly found implementation issue.",
+      "unresolved_obligations": [
+        "No intersample supremum enclosure",
+        "No joint cutoff removal",
+        "No large-grid independent spinor run",
+        "Correct and retest nondefault source configurations before accepting them"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C08",
+      "page_slug": "continuum-coefficient",
+      "title": "Exact-integral coefficient maximizer",
+      "verdict": "accepted_conditional",
+      "scope": "Finite K,N, exact longitudinal integration",
+      "statement": "C_KN(a) is even and strictly decreases for a>0; max C occurs at0, so the exact-integral gap is 1+chi-e\u00b2C_KN(0).",
+      "assumptions": [
+        "b>0,K>0,finite N",
+        "Positive level weights",
+        "Exact integral over centered [-K,K]",
+        "Fixed matching"
+      ],
+      "evidence": [
+        "skeptic_review.md S1-S3 and derivative-sign proof",
+        "skeptic_checks_results.json primitive_derivative, independent_integral_0..3, continuum_even and strict decrease checks"
+      ],
+      "skeptic_objection": "This maximizer property is false for arbitrary finite quadrature: b10,N0,K200,nK2 gives discrete negative Z at a node while the exact-integral gap stays positive.",
+      "unresolved_obligations": [
+        "Uniform quadrature error or separate discrete certificate required for transfer",
+        "A negative gap at0 blocks positive-gap continuation but does not itself prove trajectory blowup"
+      ],
+      "new_this_round": true,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C09",
+      "page_slug": "fixed-window-extension",
+      "title": "All Landau cutoffs at fixed longitudinal window",
+      "verdict": "accepted_conditional",
+      "scope": "b10,K20, every finite N, positive exact quadrature",
+      "statement": "Z_N(a)>3/4 uniformly in real a and every finite Landau cutoff; nested coefficient series has uniform-a tail <=alpha*K/[pi*sqrt(1+2bN)].",
+      "assumptions": [
+        "Same coupling and matched positive susceptibility",
+        "Positive per-level longitudinal quadrature sums40",
+        "Fixed K20,b10",
+        "For infinite coefficient-series statement: nested retained coefficients"
+      ],
+      "evidence": [
+        "skeptic_checks_results.json fixed_window_all_landau_certificate and landau_tail_integral",
+        "Exact rational e\u00b2Cstar<67743204500/274510827927<1/4",
+        "skeptic_review.md S7-S9"
+      ],
+      "skeptic_objection": "Uniform convergence of C alone does not establish a convergent state, current, energy, pressure, tangent or noise.",
+      "unresolved_obligations": [
+        "Prove high-mode tails for every dynamical observable required by a limit",
+        "Longitudinal removal remains obstructed for the unchanged positive-gap route"
+      ],
+      "new_this_round": true,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C10",
+      "page_slug": "joint-cutoff-obstruction",
+      "title": "Joint-cutoff positive-gap obstruction",
+      "verdict": "accepted_obstruction",
+      "scope": "Unmodified exact-integral coefficients at fixed b,e,chi; cofinal K,N to infinity",
+      "statement": "C_KN(0) diverges and no uniform positive Z margin survives; matched whole-line Z=1-e\u00b2/(12pi\u00b2)[log(2b)+psi(N+1+1/(2b))].",
+      "assumptions": [
+        "b>0,e\u00b2>0 fixed",
+        "Finite susceptibility fixed independent of cutoffs",
+        "Both K and N eventually exceed every finite threshold",
+        "Exact integrals or separately controlled quadrature"
+      ],
+      "evidence": [
+        "skeptic_review.md S3-S6: exact sum, digamma recurrence, positivity and cofinal lower bound",
+        "skeptic_checks_results.json whole_line_integral, matched_cancellation_0..3 and cofinal_lower_bound checks",
+        "https://dlmf.nist.gov/5.5.E2",
+        "https://dlmf.nist.gov/5.11.E2"
+      ],
+      "skeptic_objection": "This invalidates the existing uniform-coercivity route, not continuum QED. Divergent pieces may cancel in a jointly renormalized current before division; affordable numerical samples show no zero crossing.",
+      "unresolved_obligations": [
+        "Analyze current/subtraction as a common renormalized combination",
+        "Track allowable counterterm changes and physical matching",
+        "Do not call asymptotic divergence a measured physical pole"
+      ],
+      "new_this_round": true,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C11",
+      "page_slug": "stationary-vacuum-response",
+      "title": "Positive stationary-vacuum tangent energy",
+      "verdict": "accepted_conditional",
+      "scope": "Finite fixed stationary vacuum, tangential variations, Z0>0",
+      "statement": "Ecal=Z0*u\u00b2+e\u00b2sum w*omega*|eta+q*t|\u00b2 obeys Ecalprime=2u*f; source-free electric tangent stays bounded for all time.",
+      "assumptions": [
+        "Baseline F=0,x=0,r=-h/omega and constant a",
+        "Finite fixed masses, weights, coupling, Z0>0",
+        "h dot eta=0 initially",
+        "q=-v, qprime=u, t=partial_p(h/omega)",
+        "Integrable f for a uniform forced bound"
+      ],
+      "evidence": [
+        "skeptic_review.md S11-S15: direct independent derivation",
+        "skeptic_checks_results.json equilibrium_energy_general_residual, tangent_plane_work and matrix_weighted_skew",
+        "Small matrix exponential check and exact secular counterexample in skeptic_checks.py"
+      ],
+      "skeptic_objection": "The form is semidefinite on the full state: u1,q=t,eta=(0,-1/2,-t) has constant Ecal1 but unbounded raw eta. The result does not cover a pumped background.",
+      "unresolved_obligations": [
+        "Any pumped extension must control new time-dependent terms",
+        "No full-tangent or nonlinear Lyapunov stability claim",
+        "No quantum-noise conclusion"
+      ],
+      "new_this_round": true,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C12",
+      "page_slug": "quantum-stress-bridge",
+      "title": "Covariant quantum stress and continuum closure",
+      "verdict": "open",
+      "scope": "Strong-field charged quantum state in a dynamical curved metric",
+      "statement": "A current, energy and both directional pressures from one state and renormalization prescription are still needed.",
+      "assumptions": [
+        "Specified admissible quantum state",
+        "Common local counterterm action and finite matching",
+        "Retarded prescription and compatible force Ward identity"
+      ],
+      "evidence": [
+        "round5/research_bridge.md source audit and next obligations",
+        "https://arxiv.org/html/1210.4031v3 sections4.1-4.3"
+      ],
+      "skeptic_objection": "Zahn section4.2 does not supply an evaluated nonperturbative strong-F Bianchi-I stress closure; conservation imposed by definition is not an independent verification.",
+      "unresolved_obligations": [
+        "Construct pressures and current",
+        "Check common subtraction in an independent scheme",
+        "Compute physically smeared noise where a validity claim uses it"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C13",
+      "page_slug": "wgc-festina-lente",
+      "title": "WGC and Festina Lente connection",
+      "verdict": "open_context",
+      "scope": "Quantum-gravity conjectures with normalization, moduli and de-Sitter assumptions",
+      "statement": "No implication from the finite model or new coefficient lemmas to a general WGC/FL theorem has been established.",
+      "assumptions": [
+        "Precisely normalized charges and Planck mass",
+        "Declare scalar forces and vacuum/black-hole regime",
+        "Separate conjectures from theorems"
+      ],
+      "evidence": [
+        "https://arxiv.org/abs/1906.02206 abstract and version record",
+        "https://arxiv.org/abs/2106.07650 abstract and version record"
+      ],
+      "skeptic_objection": "Force and charge-to-mass versions differ with moduli; a flat finite electromagnetic model has no charged de-Sitter horizon or discharge theorem.",
+      "unresolved_obligations": [
+        "Formulate one exact charged-gravity statement before adding a proof edge"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C14",
+      "page_slug": "curved-pair-production",
+      "title": "Curved magnetized pair production",
+      "verdict": "open_target",
+      "scope": "Strong fields with curved-space in-in quantum backreaction",
+      "statement": "The project has finite flat-space mean-current response, not a completed curved Schwinger backreaction solution.",
+      "assumptions": [
+        "Control field, curvature, frequency and gradient scales",
+        "Specify state and retarded subtraction",
+        "Include total gravitational source"
+      ],
+      "evidence": [
+        "round4/response_contract.md scope and P27",
+        "round5/research_bridge.md G1 and curvature validity discussion"
+      ],
+      "skeptic_objection": "Static magnetic susceptibility is not a complete nonlocal pair-producing curved current; magnetar field strength does not imply electron-scale Ricci curvature.",
+      "unresolved_obligations": [
+        "Covariant stress/current closure",
+        "Physically consistent stress-curvature budget",
+        "Independent observable and cutoff validation"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C15",
+      "page_slug": "cauchy-horizon",
+      "title": "Mass inflation and quantum endpoint",
+      "verdict": "open_target",
+      "scope": "Specific charged black-hole interiors and quantum stress",
+      "statement": "Classical mass-inflation results provide restricted context; no quantum Cauchy-horizon endpoint is solved here.",
+      "assumptions": [
+        "State exact data regularity and Price-law assumptions",
+        "Distinguish scalar classical matter from quantum Dirac matter",
+        "Specify semiclassical validity"
+      ],
+      "evidence": [
+        "https://arxiv.org/abs/2506.08075 abstract and regularity/conditional clauses",
+        "round5/theory_map.json O08-O09"
+      ],
+      "skeptic_objection": "A conditional scalar mass-inflation result cannot be promoted to generic spinor-QED censorship or desingularization.",
+      "unresolved_obligations": [
+        "Compute compatible quantum stress and backreaction in the target geometry",
+        "Prove or control the stated horizon asymptotics"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    },
+    {
+      "id": "R6-C16",
+      "page_slug": "photon-graviton",
+      "title": "Quantum-dispersive photon-graviton conversion",
+      "verdict": "open_target",
+      "scope": "Transverse frequency-dependent mixed quantum response",
+      "statement": "No strong-field quantum-dispersive conversion solution follows from the longitudinal static susceptibility used by this project.",
+      "assumptions": [
+        "Consistent loop order in polarization/mixing/dispersion",
+        "Correct geometry and polarization sector",
+        "Ward identities and boundary propagation"
+      ],
+      "evidence": [
+        "https://arxiv.org/abs/2601.23279 abstract and version record",
+        "round5/theory_map.json O10-O11"
+      ],
+      "skeptic_objection": "A scalar static susceptibility omits required tensor, frequency and diagram contributions; the 2026 source is not reproduced by the finite homogeneous tangent.",
+      "unresolved_obligations": [
+        "Derive full retarded transverse blocks",
+        "Validate propagation and conversion observables separately"
+      ],
+      "new_this_round": false,
+      "review_method": "Independent derivation/scope review; agreement between agents is not the acceptance criterion."
+    }
+  ],
+  "evidence_summary": {
+    "independent_check_file": "skeptic_checks_results.json",
+    "production_solver_imported_by_skeptic": false,
+    "trajectory_interval_enclosure": false,
+    "formal_proof_kernel": false
+  },
+  "promotion_rule": "An accepted conditional result must retain its scope, assumptions and unresolved obligations on every page and home summary."
+}

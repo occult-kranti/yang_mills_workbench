@@ -1,0 +1,258 @@
+{
+  "date": "2026-09-09",
+  "scope": "Matched finite-regulator homogeneous Maxwell-Dirac mean field; classical gravity fixture and separate quantum comparator.",
+  "production_parameters": {
+    "a0": 0.0,
+    "target_E": 1.0,
+    "b": 10.0,
+    "Tpump": 4.0,
+    "tfinal": 50.0,
+    "ncut": 8,
+    "Kmax": 40.0,
+    "nK": 4096,
+    "rtol": 2e-10,
+    "atol": 2e-12,
+    "max_step": 0.05,
+    "sample_count": 251,
+    "z_floor": 1e-08,
+    "chi_mode": "matched"
+  },
+  "production_diagnostics": {
+    "final_a": -26.58640645682769,
+    "final_x": -0.037571642493999025,
+    "final_field_change": -0.037571642493999025,
+    "max_abs_x": 0.9893066812111118,
+    "min_Z": 0.9960199826129171,
+    "max_raw_r2_error": 2.9428850023549558e-08,
+    "max_energy_work_residual_abs": 5.887124121528586e-12,
+    "energy_work_scale": 0.4978069366752105,
+    "max_energy_work_residual_relative": 1.1826119099199267e-11,
+    "final_raw_occupation_min": -1.5543122344752192e-15,
+    "final_raw_occupation_max": 0.04933920247365842,
+    "final_raw_occupation_mean": 0.00041209180576613693
+  },
+  "production_source_sha256": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+  "root_production_script_checks": {
+    "executed": "2026-09-09",
+    "script": "test_backreaction.py",
+    "passed": 4,
+    "total": 4
+  },
+  "independent_checks": {
+    "flat_exact_reference": true,
+    "expansion_exact_reference": true,
+    "unit_norm_counterexample_detected": true,
+    "massless_exact_oscillator": true,
+    "frequency_coefficient": true,
+    "spinor_common_energy_identity": true,
+    "gauge_translated_grid": true,
+    "wrong_window_detected": true,
+    "missing_vacuum_detected": true,
+    "finite_boundary_integral": true
+  },
+  "implementation_comparison": {
+    "reference_generator": "independent_checks.py, spinor equations; no production imports",
+    "production_representation": "real Bloch vectors",
+    "parameters": {
+      "b": 10.0,
+      "ncut": 2,
+      "Kmax": 6.0,
+      "nK": 32,
+      "Tpump": 4.0,
+      "tfinal": 8.0,
+      "target_E": 1.0,
+      "a0": 0.0,
+      "rtol": 2e-10,
+      "atol": 2e-12,
+      "max_step": 0.02
+    },
+    "max_E_difference": 3.626543509938074e-12,
+    "max_A_difference": 4.618527782440651e-12,
+    "production_final_E": 0.9550507372030788,
+    "reference_final_E": 0.9550507371994522,
+    "production_energy_work_residual": 1.1657341758564144e-15,
+    "reference_energy_work_residual": 1.0653866677756696e-11,
+    "source_hash_before": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+    "source_hash_after": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+    "source_unchanged": true,
+    "reference_results_sha256": "90b1da2fd0a3e35abaa0feefc2d8cc1281d0f269e362e711b86a0861c55b8962",
+    "comparison_script_sha256": "8eb00730b6d4d74b8bf30166361186e7ae6fae8255b059bb9d8ad8862358d966",
+    "passed": true,
+    "scope": "same finite regulator and shared model, independent numerical representations"
+  },
+  "fixed_window_refinement": {
+    "pair": {
+      "a": "K40 nK2048 ncut8 tfinal50 sample251",
+      "b": "K40 nK4096 ncut8 tfinal50 sample251"
+    },
+    "differences": {
+      "max_abs_x": 3.2569864999443254e-09,
+      "final_x_a": -0.037571645750985525,
+      "final_x_b": -0.037571642493999025,
+      "max_abs_a": 3.340971943543991e-11,
+      "final_a_a": -26.586406456820313,
+      "final_a_b": -26.58640645682769,
+      "max_abs_J0": 1.1269972333138867e-06,
+      "final_J0_a": 0.28052710335580855,
+      "final_J0_b": 0.28052723247887457,
+      "max_abs_Jrz": 1.1267110266999225e-06,
+      "final_Jrz_a": -219.33061556774325,
+      "final_Jrz_b": -219.33061543870187,
+      "max_abs_Jkin": 2.8620661396416835e-10,
+      "final_Jkin_a": 219.61114267109906,
+      "final_Jkin_b": 219.61114267118074,
+      "max_abs_Z": 1.4432899320127035e-15,
+      "final_Z_a": 0.9960485859064627,
+      "final_Z_b": 0.9960485859064615,
+      "max_abs_Sx2": 8.366527345097332e-15,
+      "final_Sx2_a": 4.827300359072953e-08,
+      "final_Sx2_b": 4.827299522420218e-08,
+      "max_abs_Fdrive": 0.0,
+      "final_Fdrive_a": 0.0,
+      "final_Fdrive_b": 0.0,
+      "max_abs_Jren": 1.1269972354233104e-06,
+      "final_Jren_a": 0.28052715162881214,
+      "final_Jren_b": 0.2805272807518698,
+      "max_abs_effective_numerator_J0_plus_Sx2": 1.1269972354233104e-06,
+      "final_effective_numerator_a": 0.28052715162881214,
+      "final_effective_numerator_b": 0.2805272807518698,
+      "max_abs_xprime": 1.037570228866469e-07,
+      "final_xprime_a": -0.02582673892556544,
+      "final_xprime_b": -0.025826750813282857,
+      "max_abs_full_matter_current": 1.1314680848917291e-06,
+      "final_full_matter_current_a": 0.28164002800477445,
+      "final_full_matter_current_b": 0.28164015764007516
+    },
+    "notes": "J0_plus_Sx2 is the effective Maxwell numerator source entering x'=(F-e\u00b2 J0_plus_Sx2)/Z. The reconstructed full dimensionless matter current is Jmatter=(F-x')/e\u00b2 = J0-Cx'+Sx\u00b2+chi x'/e\u00b2. Whole-history differences use identical 251-point macro times."
+  },
+  "gravity_symbolic_checks": 19,
+  "gravity_fixture": {
+    "scope": "Classical Einstein-Maxwell plus phenomenological Ohmic radiation; not QED.",
+    "parameters": {
+      "kappa": 0.1,
+      "conductivity": 0.2,
+      "E0": 1.0,
+      "B0": 3.0,
+      "rho_m0": 0.2,
+      "stop": 2.0
+    },
+    "maximum_hamiltonian_residual": 4.107825191113079e-14,
+    "maximum_magnetic_flux_error": 7.860379014346108e-14,
+    "maximum_damped_electric_flux_error": 7.327471962526033e-14,
+    "independent_raychaudhuri_shear_max_error": 8.72635297355373e-14,
+    "rk4_refinement": [
+      {
+        "steps": 100,
+        "max_endpoint_abs_error": 5.6161298112034075e-09
+      },
+      {
+        "steps": 200,
+        "max_endpoint_abs_error": 3.4660713188472414e-10
+      },
+      {
+        "steps": 400,
+        "max_endpoint_abs_error": 2.152097944296827e-11
+      },
+      {
+        "steps": 800,
+        "max_endpoint_abs_error": 1.3364587214681478e-12
+      }
+    ],
+    "rk4_observed_orders": [
+      4.018203037265181,
+      4.00948569699035,
+      4.009256554412961
+    ],
+    "end_state": {
+      "log_a_perp": 0.6537113278086484,
+      "log_a_parallel": 0.13658406153125593,
+      "H_perp": 0.2373631428002292,
+      "H_parallel": -0.03305214722101659,
+      "E": 0.18133254728713427,
+      "B": 0.8115491175874516,
+      "rho_m": 0.06075865330518682
+    },
+    "initial_shear_acceleration": -1.0,
+    "classical_em_trace": 0.0
+  },
+  "bosonized_gates": {
+    "massless_frequency_abs_error_below_1e-10": true,
+    "all_period_method_differences_below_1e-7": true,
+    "energy_errors_below_1e-9": true,
+    "first_order_remainders_approach_second_order": true
+  },
+  "empirical_check_groups": 4,
+  "strict_advisor_1e_minus18_gate_passed": false,
+  "strict_advisor_gate_note": "The initial 1e-18 numerical target failed; retain the measured error rather than claim a certified precision or silently loosen the gate.",
+  "unresolved": [
+    "Rigorous continuum/tail error bound",
+    "Full quantum fluctuation validity of the 3+1 mean field",
+    "Covariantly renormalized anisotropic quantum pressures",
+    "Metric backreaction",
+    "Charged de Sitter discharge endpoint",
+    "Cauchy-horizon quantum endpoint",
+    "Matched dispersive photon-graviton conversion in a multipolar geometry"
+  ],
+  "source_record": {
+    "chapter_inputs": [
+      "chapters/00_result.md",
+      "chapters/01_master_action.md",
+      "chapters/02_fronts.md",
+      "theory.md",
+      "chapters/04_computations.md",
+      "verifier.md",
+      "chapters/06_quantum_comparator.md",
+      "gravity.md",
+      "sources_challenge.md",
+      "ai_methods.md",
+      "chapters/09_next_steps.md",
+      "astra_solver_prompt.md",
+      "advisor.md (final review only)"
+    ],
+    "references": 81,
+    "approximate_words": 18103,
+    "missing_citations": [],
+    "exact_url_aliases": {
+      "C04": "N02",
+      "V01": "N01",
+      "ROOT01": "H07",
+      "ROOT02": "H06",
+      "ROOT08": "E16",
+      "R233": "ROOT11",
+      "FT10": "E01",
+      "RT02": "C01"
+    },
+    "retained_prior_source_ids": [
+      "G01",
+      "R222",
+      "G02",
+      "G04",
+      "G14",
+      "R228",
+      "FT01",
+      "RT06",
+      "RT08",
+      "FT02",
+      "FT06",
+      "FT07",
+      "G03",
+      "R227",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G11",
+      "G12",
+      "G13",
+      "R229",
+      "ROOT13",
+      "ROOT03",
+      "ROOT05",
+      "R235",
+      "R236",
+      "R238"
+    ]
+  },
+  "warning": "Conservation and intersolver agreement do not certify the physical model or all regulator limits."
+}

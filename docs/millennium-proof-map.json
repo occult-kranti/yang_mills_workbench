@@ -1,0 +1,4418 @@
+{
+  "status": "passed",
+  "scope": "Conditional conventional lemmas and finite inference replay; no mathematical proof kernel or Yang-Mills completion.",
+  "routes": {
+    "effective_mass": {
+      "library": {
+        "nodes": [
+          {
+            "id": "E_domain",
+            "statement": "Finite nonzero positive Borel spectral measure on [0,infinity), finite norm states, t>=0 and fixed delta>0; zero-temperature semigroup.",
+            "scope": "E",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional domain",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_positive",
+            "statement": "C(t) is finite and strictly positive.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_probability",
+            "statement": "The measure exp(-Et)dmu/C(t) is a probability measure.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_support",
+            "statement": "Its energies obey E>=inf support mu.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_ratio",
+            "statement": "C(t+delta)/C(t)<=exp(-delta inf support mu).",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_bound",
+            "statement": "Effective mass >= inf support mu.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_convex",
+            "statement": "Holder implies log C is convex.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_monotone",
+            "statement": "Fixed-step negative secant slopes are nonincreasing.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_result",
+            "statement": "Effective mass is a monotone upper estimate of its channel threshold.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "E_1",
+            "premises": [
+              "E_domain"
+            ],
+            "conclusion": "E_positive",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_2",
+            "premises": [
+              "E_positive"
+            ],
+            "conclusion": "E_probability",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_3",
+            "premises": [
+              "E_domain"
+            ],
+            "conclusion": "E_support",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_4",
+            "premises": [
+              "E_probability",
+              "E_support"
+            ],
+            "conclusion": "E_ratio",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_5",
+            "premises": [
+              "E_ratio"
+            ],
+            "conclusion": "E_bound",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_6",
+            "premises": [
+              "E_domain"
+            ],
+            "conclusion": "E_convex",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_7",
+            "premises": [
+              "E_convex"
+            ],
+            "conclusion": "E_monotone",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_8",
+            "premises": [
+              "E_bound",
+              "E_monotone"
+            ],
+            "conclusion": "E_result",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "E_domain"
+        ],
+        "goals": [
+          "E_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "a0272fe0f87d5dbe9a872989c2bbd6874187ad33a44e7a193cc69bd4fa64f15b",
+        "initial_facts": [
+          "E_domain"
+        ],
+        "goals": [
+          "E_result"
+        ],
+        "assumptions": [
+          "E_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "E_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "E_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "E_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "E_bound",
+              "E_monotone"
+            ],
+            "rule_id": "E_8"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_id": "E_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_ids": [
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "E_bound",
+              "E_monotone"
+            ],
+            "rule_ids": [
+              "E_8"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "E_monotone",
+              "E_ratio"
+            ],
+            "rule_id": "E_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "E_bound",
+              "E_convex"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_ids": [
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "E_monotone",
+              "E_ratio"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "E_convex",
+              "E_ratio"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "E_monotone",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "E_bound",
+              "E_convex"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "E_bound",
+              "E_domain"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "E_monotone",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "E_convex",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "E_domain",
+              "E_monotone",
+              "E_probability"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "E_convex",
+              "E_ratio"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "E_domain",
+              "E_ratio"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "E_bound",
+              "E_domain"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_7",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 4,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 5,
+            "facts": [
+              "E_bound",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "first_meeting",
+            "forward_cost": 5,
+            "backward_cost": 3,
+            "cost": 8,
+            "forward_facts": [
+              "E_bound",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "backward_goals": [
+              "E_bound",
+              "E_domain"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4",
+              "E_5",
+              "E_6",
+              "E_7",
+              "E_8"
+            ],
+            "checker_passed": true
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "E_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_1"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_id": "E_2"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_ids": [
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_ids": [
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_4"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "E_bound",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_5"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "E_bound",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4",
+              "E_5"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 6,
+            "facts": [
+              "E_bound",
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 6,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 6,
+            "facts": [
+              "E_bound",
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4",
+              "E_5",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 7,
+            "facts": [
+              "E_bound",
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 6,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 7,
+            "facts": [
+              "E_bound",
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4",
+              "E_5",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 8,
+            "facts": [
+              "E_bound",
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_result",
+              "E_support"
+            ],
+            "rule_id": "E_8"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 8,
+            "facts": [
+              "E_bound",
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_probability",
+              "E_ratio",
+              "E_result",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_2",
+              "E_3",
+              "E_4",
+              "E_5",
+              "E_6",
+              "E_7",
+              "E_8"
+            ]
+          }
+        ],
+        "forward_states_popped": 25,
+        "backward_states_popped": 7,
+        "candidate_search_status": "candidate",
+        "frontier": [],
+        "status": "proved",
+        "certified_cost": 8,
+        "certified_proof": {
+          "passed": true,
+          "final_facts": [
+            "E_bound",
+            "E_convex",
+            "E_domain",
+            "E_monotone",
+            "E_positive",
+            "E_probability",
+            "E_ratio",
+            "E_result",
+            "E_support"
+          ],
+          "cost": 8,
+          "steps": [
+            {
+              "rule_id": "E_1",
+              "premises": [
+                "E_domain"
+              ],
+              "conclusion": "E_positive",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_2",
+              "premises": [
+                "E_positive"
+              ],
+              "conclusion": "E_probability",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_3",
+              "premises": [
+                "E_domain"
+              ],
+              "conclusion": "E_support",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_4",
+              "premises": [
+                "E_probability",
+                "E_support"
+              ],
+              "conclusion": "E_ratio",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_5",
+              "premises": [
+                "E_ratio"
+              ],
+              "conclusion": "E_bound",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_6",
+              "premises": [
+                "E_domain"
+              ],
+              "conclusion": "E_convex",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_7",
+              "premises": [
+                "E_convex"
+              ],
+              "conclusion": "E_monotone",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_8",
+              "premises": [
+                "E_bound",
+                "E_monotone"
+              ],
+              "conclusion": "E_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "optimality_certificate": "independent forward uniform-cost goal pop",
+        "first_meeting_candidate": {
+          "passed": true,
+          "final_facts": [
+            "E_bound",
+            "E_convex",
+            "E_domain",
+            "E_monotone",
+            "E_positive",
+            "E_probability",
+            "E_ratio",
+            "E_result",
+            "E_support"
+          ],
+          "cost": 8,
+          "steps": [
+            {
+              "rule_id": "E_1",
+              "premises": [
+                "E_domain"
+              ],
+              "conclusion": "E_positive",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_2",
+              "premises": [
+                "E_positive"
+              ],
+              "conclusion": "E_probability",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_3",
+              "premises": [
+                "E_domain"
+              ],
+              "conclusion": "E_support",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_4",
+              "premises": [
+                "E_probability",
+                "E_support"
+              ],
+              "conclusion": "E_ratio",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_5",
+              "premises": [
+                "E_ratio"
+              ],
+              "conclusion": "E_bound",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_6",
+              "premises": [
+                "E_domain"
+              ],
+              "conclusion": "E_convex",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_7",
+              "premises": [
+                "E_convex"
+              ],
+              "conclusion": "E_monotone",
+              "cost": 1
+            },
+            {
+              "rule_id": "E_8",
+              "premises": [
+                "E_bound",
+                "E_monotone"
+              ],
+              "conclusion": "E_result",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "first_meeting_candidate_cost": 8,
+        "first_meeting_was_certified_optimal": true
+      }
+    },
+    "uniform_decay_gap": {
+      "library": {
+        "nodes": [
+          {
+            "id": "U_domain",
+            "statement": "Assume already constructed nonnegative self-adjoint H, normalized zero vacuum, positive diagonal semigroup correlators on states spanning densely in vacuum-orthogonal space, and a common m>0 with finite per-state prefactors and onset times for all sufficiently large physical t.",
+            "scope": "U",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional domain",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "U_spectral",
+            "statement": "The diagonal correlator is the Laplace transform of a finite positive spectral measure.",
+            "scope": "U",
+            "kind": "theorem",
+            "assumption_ids": [
+              "U_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "U_upper",
+            "statement": "C_psi(t)<=A_psi exp(-m t) at every t>=t_psi.",
+            "scope": "U",
+            "kind": "theorem",
+            "assumption_ids": [
+              "U_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "U_lower",
+            "statement": "exp(-(m-epsilon)t)||P([0,m-epsilon])psi||^2 <= C_psi(t).",
+            "scope": "U",
+            "kind": "theorem",
+            "assumption_ids": [
+              "U_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "U_zero",
+            "statement": "Comparison and t->infinity force every such low-energy projection to vanish.",
+            "scope": "U",
+            "kind": "theorem",
+            "assumption_ids": [
+              "U_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "U_union",
+            "statement": "A countable increasing union excludes [0,m) on each admitted state.",
+            "scope": "U",
+            "kind": "theorem",
+            "assumption_ids": [
+              "U_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "U_density",
+            "statement": "A bounded spectral projection vanishing on a dense span vanishes throughout vacuum-orthogonal space.",
+            "scope": "U",
+            "kind": "theorem",
+            "assumption_ids": [
+              "U_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "U_gap",
+            "statement": "H restricted to the vacuum-orthogonal space has spectrum in [m,infinity).",
+            "scope": "U",
+            "kind": "theorem",
+            "assumption_ids": [
+              "U_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "U_1",
+            "premises": [
+              "U_domain"
+            ],
+            "conclusion": "U_spectral",
+            "cost": 1,
+            "scope": "U",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "U_2",
+            "premises": [
+              "U_domain"
+            ],
+            "conclusion": "U_upper",
+            "cost": 1,
+            "scope": "U",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "U_3",
+            "premises": [
+              "U_spectral"
+            ],
+            "conclusion": "U_lower",
+            "cost": 1,
+            "scope": "U",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "U_4",
+            "premises": [
+              "U_lower",
+              "U_upper"
+            ],
+            "conclusion": "U_zero",
+            "cost": 1,
+            "scope": "U",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "U_5",
+            "premises": [
+              "U_zero"
+            ],
+            "conclusion": "U_union",
+            "cost": 1,
+            "scope": "U",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "U_6",
+            "premises": [
+              "U_domain"
+            ],
+            "conclusion": "U_density",
+            "cost": 1,
+            "scope": "U",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "U_7",
+            "premises": [
+              "U_union",
+              "U_density"
+            ],
+            "conclusion": "U_gap",
+            "cost": 1,
+            "scope": "U",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "U_domain"
+        ],
+        "goals": [
+          "U_gap"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "29bfb623260365d4c9dd3ef7e51a46ffd8e13eea584c9f8a53481a94856c6469",
+        "initial_facts": [
+          "U_domain"
+        ],
+        "goals": [
+          "U_gap"
+        ],
+        "assumptions": [
+          "U_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "U_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "U_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_id": "U_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_id": "U_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "U_density",
+              "U_domain"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "U_gap"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "U_density",
+              "U_union"
+            ],
+            "rule_id": "U_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_2"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_id": "U_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "U_density",
+              "U_domain"
+            ],
+            "rule_ids": [
+              "U_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "U_density",
+              "U_union"
+            ],
+            "rule_ids": [
+              "U_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "U_domain",
+              "U_union"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "U_density",
+              "U_zero"
+            ],
+            "rule_id": "U_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_2",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "U_density",
+              "U_zero"
+            ],
+            "rule_ids": [
+              "U_7",
+              "U_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "U_domain",
+              "U_zero"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "U_density",
+              "U_lower",
+              "U_upper"
+            ],
+            "rule_id": "U_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "U_domain",
+              "U_union"
+            ],
+            "rule_ids": [
+              "U_7",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_id": "U_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_3",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "U_density",
+              "U_lower",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_7",
+              "U_5",
+              "U_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "U_domain",
+              "U_lower",
+              "U_upper"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "first_meeting",
+            "forward_cost": 3,
+            "backward_cost": 4,
+            "cost": 7,
+            "forward_facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "backward_goals": [
+              "U_domain",
+              "U_lower",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3",
+              "U_6",
+              "U_4",
+              "U_5",
+              "U_7"
+            ],
+            "checker_passed": true
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "U_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_id": "U_1"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_id": "U_2"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "U_density",
+              "U_domain"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_2"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_id": "U_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "U_density",
+              "U_domain"
+            ],
+            "rule_ids": [
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_2",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_id": "U_4"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_3",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3",
+              "U_4"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_union",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_id": "U_5"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 5,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_union",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3",
+              "U_4",
+              "U_5"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 6,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_union",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_id": "U_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 5,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3",
+              "U_4",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 6,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_lower",
+              "U_spectral",
+              "U_union",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3",
+              "U_4",
+              "U_5",
+              "U_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 7,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_gap",
+              "U_lower",
+              "U_spectral",
+              "U_union",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_id": "U_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 7,
+            "facts": [
+              "U_density",
+              "U_domain",
+              "U_gap",
+              "U_lower",
+              "U_spectral",
+              "U_union",
+              "U_upper",
+              "U_zero"
+            ],
+            "rule_ids": [
+              "U_1",
+              "U_2",
+              "U_3",
+              "U_4",
+              "U_5",
+              "U_6",
+              "U_7"
+            ]
+          }
+        ],
+        "forward_states_popped": 17,
+        "backward_states_popped": 5,
+        "candidate_search_status": "candidate",
+        "frontier": [],
+        "status": "proved",
+        "certified_cost": 7,
+        "certified_proof": {
+          "passed": true,
+          "final_facts": [
+            "U_density",
+            "U_domain",
+            "U_gap",
+            "U_lower",
+            "U_spectral",
+            "U_union",
+            "U_upper",
+            "U_zero"
+          ],
+          "cost": 7,
+          "steps": [
+            {
+              "rule_id": "U_1",
+              "premises": [
+                "U_domain"
+              ],
+              "conclusion": "U_spectral",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_2",
+              "premises": [
+                "U_domain"
+              ],
+              "conclusion": "U_upper",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_3",
+              "premises": [
+                "U_spectral"
+              ],
+              "conclusion": "U_lower",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_4",
+              "premises": [
+                "U_lower",
+                "U_upper"
+              ],
+              "conclusion": "U_zero",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_5",
+              "premises": [
+                "U_zero"
+              ],
+              "conclusion": "U_union",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_6",
+              "premises": [
+                "U_domain"
+              ],
+              "conclusion": "U_density",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_7",
+              "premises": [
+                "U_union",
+                "U_density"
+              ],
+              "conclusion": "U_gap",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "optimality_certificate": "independent forward uniform-cost goal pop",
+        "first_meeting_candidate": {
+          "passed": true,
+          "final_facts": [
+            "U_density",
+            "U_domain",
+            "U_gap",
+            "U_lower",
+            "U_spectral",
+            "U_union",
+            "U_upper",
+            "U_zero"
+          ],
+          "cost": 7,
+          "steps": [
+            {
+              "rule_id": "U_1",
+              "premises": [
+                "U_domain"
+              ],
+              "conclusion": "U_spectral",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_2",
+              "premises": [
+                "U_domain"
+              ],
+              "conclusion": "U_upper",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_3",
+              "premises": [
+                "U_spectral"
+              ],
+              "conclusion": "U_lower",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_6",
+              "premises": [
+                "U_domain"
+              ],
+              "conclusion": "U_density",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_4",
+              "premises": [
+                "U_lower",
+                "U_upper"
+              ],
+              "conclusion": "U_zero",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_5",
+              "premises": [
+                "U_zero"
+              ],
+              "conclusion": "U_union",
+              "cost": 1
+            },
+            {
+              "rule_id": "U_7",
+              "premises": [
+                "U_union",
+                "U_density"
+              ],
+              "conclusion": "U_gap",
+              "cost": 1
+            }
+          ],
+          "errors": []
+        },
+        "first_meeting_candidate_cost": 7,
+        "first_meeting_was_certified_optimal": true
+      }
+    },
+    "withheld_probability_certificate": {
+      "library": {
+        "nodes": [
+          {
+            "id": "E_domain",
+            "statement": "Finite nonzero positive Borel spectral measure on [0,infinity), finite norm states, t>=0 and fixed delta>0; zero-temperature semigroup.",
+            "scope": "E",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional domain",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_positive",
+            "statement": "C(t) is finite and strictly positive.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_probability",
+            "statement": "The measure exp(-Et)dmu/C(t) is a probability measure.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_support",
+            "statement": "Its energies obey E>=inf support mu.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_ratio",
+            "statement": "C(t+delta)/C(t)<=exp(-delta inf support mu).",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_bound",
+            "statement": "Effective mass >= inf support mu.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_convex",
+            "statement": "Holder implies log C is convex.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_monotone",
+            "statement": "Fixed-step negative secant slopes are nonincreasing.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "E_result",
+            "statement": "Effective mass is a monotone upper estimate of its channel threshold.",
+            "scope": "E",
+            "kind": "theorem",
+            "assumption_ids": [
+              "E_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "E_1",
+            "premises": [
+              "E_domain"
+            ],
+            "conclusion": "E_positive",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_3",
+            "premises": [
+              "E_domain"
+            ],
+            "conclusion": "E_support",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_4",
+            "premises": [
+              "E_probability",
+              "E_support"
+            ],
+            "conclusion": "E_ratio",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_5",
+            "premises": [
+              "E_ratio"
+            ],
+            "conclusion": "E_bound",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_6",
+            "premises": [
+              "E_domain"
+            ],
+            "conclusion": "E_convex",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_7",
+            "premises": [
+              "E_convex"
+            ],
+            "conclusion": "E_monotone",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          },
+          {
+            "id": "E_8",
+            "premises": [
+              "E_bound",
+              "E_monotone"
+            ],
+            "conclusion": "E_result",
+            "cost": 1,
+            "scope": "E",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "E_domain"
+        ],
+        "goals": [
+          "E_result"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "05c78bc5f5fe4203fc0a038652935127445a16bac85b6200399edc7e183704e3",
+        "initial_facts": [
+          "E_domain"
+        ],
+        "goals": [
+          "E_result"
+        ],
+        "assumptions": [
+          "E_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "E_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "E_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "E_result"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 1,
+            "goals": [
+              "E_bound",
+              "E_monotone"
+            ],
+            "rule_id": "E_8"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_ids": [
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 1,
+            "goals": [
+              "E_bound",
+              "E_monotone"
+            ],
+            "rule_ids": [
+              "E_8"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "E_monotone",
+              "E_ratio"
+            ],
+            "rule_id": "E_5"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 2,
+            "goals": [
+              "E_bound",
+              "E_convex"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_ids": [
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "E_monotone",
+              "E_ratio"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "E_convex",
+              "E_ratio"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "E_monotone",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_4"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 2,
+            "goals": [
+              "E_bound",
+              "E_convex"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 3,
+            "goals": [
+              "E_bound",
+              "E_domain"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "E_monotone",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_4"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "E_convex",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "E_domain",
+              "E_monotone",
+              "E_probability"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "E_convex",
+              "E_ratio"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 4,
+            "goals": [
+              "E_domain",
+              "E_ratio"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 3,
+            "goals": [
+              "E_bound",
+              "E_domain"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_7",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "E_domain",
+              "E_monotone",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_4",
+              "E_3"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 5,
+            "goals": [
+              "E_convex",
+              "E_domain",
+              "E_probability"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "E_convex",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_4",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 5,
+            "goals": [
+              "E_domain",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 4,
+            "goals": [
+              "E_domain",
+              "E_ratio"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_7",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 5,
+            "goals": [
+              "E_convex",
+              "E_domain",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_4",
+              "E_3",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_push",
+            "cost": 6,
+            "goals": [
+              "E_domain",
+              "E_probability"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 5,
+            "goals": [
+              "E_domain",
+              "E_probability",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_4",
+              "E_7",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 6,
+            "goals": [
+              "E_domain",
+              "E_probability"
+            ],
+            "rule_ids": [
+              "E_8",
+              "E_5",
+              "E_4",
+              "E_3",
+              "E_7",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "E_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_1"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_3"
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "E_convex",
+              "E_domain"
+            ],
+            "rule_ids": [
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_6"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 2,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone"
+            ],
+            "rule_ids": [
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3",
+              "E_6"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_id": "E_7"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 3,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 4,
+            "facts": [
+              "E_convex",
+              "E_domain",
+              "E_monotone",
+              "E_positive",
+              "E_support"
+            ],
+            "rule_ids": [
+              "E_1",
+              "E_3",
+              "E_6",
+              "E_7"
+            ]
+          }
+        ],
+        "forward_states_popped": 12,
+        "backward_states_popped": 13,
+        "candidate_search_status": "exhausted",
+        "frontier": [],
+        "status": "not_derivable",
+        "reason": "not derivable in this finite rule library"
+      }
+    },
+    "yang_mills_prize": {
+      "library": {
+        "nodes": [
+          {
+            "id": "Y_domain",
+            "statement": "Only the project finite-model results and the conditional spectral lemmas are established; Yang-Mills quantum existence and uniform spectral estimates are not assumed.",
+            "scope": "Y",
+            "kind": "declared_hypothesis",
+            "assumption_ids": [],
+            "verification": "explicit conditional domain",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "Y_context",
+            "statement": "The finite-model work supplies methods and counterexamples only.",
+            "scope": "Y",
+            "kind": "theorem",
+            "assumption_ids": [
+              "Y_domain"
+            ],
+            "verification": "independently reviewed conventional argument; not kernel checked",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "Y_existence",
+            "statement": "Construct nontrivial four-dimensional pure Yang-Mills for every compact simple group.",
+            "scope": "Y",
+            "kind": "target",
+            "assumption_ids": [
+              "Y_domain"
+            ],
+            "verification": "open obligation; no certificate admitted",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "Y_decay",
+            "statement": "Establish common positive physical decay rates across regulator removal on a dense family.",
+            "scope": "Y",
+            "kind": "target",
+            "assumption_ids": [
+              "Y_domain"
+            ],
+            "verification": "open obligation; no certificate admitted",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "Y_reconstruction",
+            "statement": "Establish full axiomatic reconstruction and physical-state coverage.",
+            "scope": "Y",
+            "kind": "target",
+            "assumption_ids": [
+              "Y_domain"
+            ],
+            "verification": "open obligation; no certificate admitted",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          },
+          {
+            "id": "Y_prize",
+            "statement": "Yang-Mills existence and mass gap holds for the exact prize statement.",
+            "scope": "Y",
+            "kind": "target",
+            "assumption_ids": [
+              "Y_domain"
+            ],
+            "verification": "open obligation; no certificate admitted",
+            "source": "spectral-proof.md",
+            "version": "8.1"
+          }
+        ],
+        "rules": [
+          {
+            "id": "Y_1",
+            "premises": [
+              "Y_domain"
+            ],
+            "conclusion": "Y_context",
+            "cost": 1,
+            "scope": "Y",
+            "proof_ref": "spectral-proof.md",
+            "review_status": "reviewed"
+          }
+        ],
+        "initial_facts": [
+          "Y_domain"
+        ],
+        "goals": [
+          "Y_prize"
+        ],
+        "conditional_assumptions": [],
+        "blocked_goals": []
+      },
+      "result": {
+        "library_hash": "d6ba01540ca2442e9e6348419f075934633bd42811326cf782db7be639c8d9b3",
+        "initial_facts": [
+          "Y_domain"
+        ],
+        "goals": [
+          "Y_prize"
+        ],
+        "assumptions": [
+          "Y_domain"
+        ],
+        "conditional": false,
+        "conditional_flag_meaning": "retained conjectural assumptions only",
+        "declared_assumption_ids": [
+          "Y_domain"
+        ],
+        "conditional_on_declared_assumptions": true,
+        "conjectural_assumptions": [],
+        "result_kind": "checked finite Horn trace under listed premises",
+        "conditional_assumptions": [],
+        "optimality_scope": "least cost over the supplied finite frozen ground rule library and exact fact-set states; h=0",
+        "limits": {
+          "forward_states": 100000,
+          "backward_states": 100000
+        },
+        "search_trace": [
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 0,
+            "facts": [
+              "Y_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_push",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_id": "Y_1"
+          },
+          {
+            "phase": "bidirectional",
+            "event": "backward_pop",
+            "cost": 0,
+            "goals": [
+              "Y_prize"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "bidirectional",
+            "event": "forward_pop",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_ids": [
+              "Y_1"
+            ]
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 0,
+            "facts": [
+              "Y_domain"
+            ],
+            "rule_ids": []
+          },
+          {
+            "phase": "forward",
+            "event": "push",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_id": "Y_1"
+          },
+          {
+            "phase": "forward",
+            "event": "pop",
+            "cost": 1,
+            "facts": [
+              "Y_context",
+              "Y_domain"
+            ],
+            "rule_ids": [
+              "Y_1"
+            ]
+          }
+        ],
+        "forward_states_popped": 2,
+        "backward_states_popped": 1,
+        "candidate_search_status": "exhausted",
+        "frontier": [],
+        "status": "not_derivable",
+        "reason": "not derivable in this finite rule library"
+      }
+    }
+  },
+  "checks": [
+    "effective mass route replay",
+    "uniform decay route replay",
+    "withheld prerequisite blocks route",
+    "prize stays underivable",
+    "unproved target seed rejected"
+  ],
+  "manifest": {
+    "version": "8.1",
+    "sha256": {
+      "proof_routes.py": "bc518ab5c6e724d6697c6076c1b539899bc898410c8551910f4d02cc58207d11",
+      "proof_search.py": "07b5b397af86b6bf5a481b114844c6252046e8ca2b5604dac7d158091632be94",
+      "spectral-proof.md": "1af110bee8b92fa4b0465f8a2a1929b1e68384a06162280ac66df36d0c7333e0"
+    }
+  }
+}

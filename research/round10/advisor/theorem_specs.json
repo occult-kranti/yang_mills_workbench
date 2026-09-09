@@ -1,0 +1,124 @@
+{
+  "contract": "ym10-one-square-v1",
+  "source_document": "advisor.md",
+  "formal_kernel_checked": false,
+  "finite_spatial_graph": true,
+  "infinite_representation_space": true,
+  "prize_problem_solved": false,
+  "notation": {
+    "alpha": "Strictly positive per-link Casimir energy coefficient",
+    "lambda": "Finite nonnegative magnetic-potential energy coefficient",
+    "kappa": "lambda/alpha",
+    "N": "Retained basis dimension, indices n=0,...,N-1",
+    "tau": "alpha*N*(N+2), lower threshold for omitted indices n>=N",
+    "R": "Exact rational comparison threshold satisfying certified mu_1(A_N)<R<tau",
+    "eta": "(lambda/2)^2/(tau-R)",
+    "A_N": "Finite compression of exact Jacobi Hamiltonian",
+    "B_N": "A_N-eta*projector_on_last_retained_basis_state"
+  },
+  "axioms_and_definitions": [
+    {"id":"a_graph","statement":"Four independent links on one square with four distinct vertices; no repeated-edge identifications."},
+    {"id":"a_group","statement":"SU(2), normalized Haar measure, fundamental generators sigma_a/2."},
+    {"id":"a_gauss","statement":"Independent vertex gauge invariance, no external charges or matter."},
+    {"id":"a_casimir","statement":"Per-link positive Casimir has spin-j eigenvalue j(j+1)."},
+    {"id":"a_hamiltonian","statement":"H=alpha*sum_e C_e+lambda*(1-ReTr U_p/2), alpha>0 and finite lambda>=0."},
+    {"id":"a_physical_time","statement":"hbar=1; alpha and lambda are energy coefficients; time already continuous."}
+  ],
+  "theorems": [
+    {
+      "id":"ym10_gauge_reduction",
+      "status":"derived",
+      "statement":"The one-square physical Hilbert space is unitarily equivalent to L2(SU2)^Ad with character basis chi_(n/2).",
+      "dependencies":["a_graph","a_group","a_gauss"],
+      "proof_location":"advisor.md section 2 R1-R2",
+      "failure_controls":["Independently gauged open-link endpoints leave only constants.","Two adjacent loops require simultaneous conjugation and relative orientation."],
+      "novelty":"Established one-plaquette gauge reduction, independently rederived."
+    },
+    {
+      "id":"ym10_jacobi_radial_equivalence",
+      "status":"derived",
+      "statement":"H diagonal alpha*n*(n+2)+lambda, offdiagonal -lambda/2 is equivalent to -alpha*d2/dtheta2-alpha+lambda*(1-cos theta) with Dirichlet transformed wavefunction u on (0,pi).",
+      "dependencies":["ym10_gauge_reduction","a_casimir","a_hamiltonian"],
+      "proof_location":"advisor.md section 2 R3-R4",
+      "failure_controls":["Omit four-link Casimir factor.","Omit Haar sine factor.","Add fictitious n=-1 state.","Impose boundary conditions on original f instead of transformed u."],
+      "novelty":"Established reduction matched independently to primary literature."
+    },
+    {
+      "id":"ym10_mathieu_spectrum",
+      "status":"derived",
+      "statement":"E_k=lambda-alpha+(alpha/4)*b_(2k+2)(-2lambda/alpha), k>=0, where b is an odd Mathieu characteristic value.",
+      "dependencies":["ym10_jacobi_radial_equivalence"],
+      "proof_location":"advisor.md section 2 R5",
+      "failure_controls":["Wrong Mathieu index or argument factor.","Treat floating special-function evaluation as a rigorous interval."],
+      "novelty":"Reproduction of established one-plaquette exact solution."
+    },
+    {
+      "id":"ym10_finite_graph_gap",
+      "status":"derived",
+      "statement":"For each fixed alpha>0 and finite lambda>=0, H is selfadjoint with compact resolvent, unique ground state and E1-E0>0 on the full infinite representation space.",
+      "dependencies":["ym10_jacobi_radial_equivalence","a_hamiltonian"],
+      "proof_location":"advisor.md section 3 Theorem G",
+      "failure_controls":["alpha=0 invalidates compact-resolvent argument.","Growing graph size invalidates an unproved uniformity inference."],
+      "scope":"Finite spatial graph only."
+    },
+    {
+      "id":"ym10_tail_enclosure",
+      "status":"derived",
+      "statement":"If N>=2 and mu1(A_N)<R<tau, then mu_k(B_N)<=E_k(H)<=mu_k(A_N) for k=0,1.",
+      "dependencies":["ym10_jacobi_radial_equivalence","ym10_finite_graph_gap","verified_tail_threshold","verified_strict_R_range"],
+      "proof_location":"advisor.md section 4 T1-T3",
+      "failure_controls":["Use tau+lambda while ignoring tail magnetic offdiagonals.","Confuse basis dimension N with largest retained index.","Accept R>=tau.","Use uncertified floating R premise."],
+      "scope":"Exact form bound; no asymptotic truncation estimate used."
+    },
+    {
+      "id":"ym10_rational_gap_certificate",
+      "status":"derived",
+      "statement":"Verified rational finite brackets imply l1B-u0A<=gap<=u1A-l0B; positive lower margin must be evaluated explicitly.",
+      "dependencies":["ym10_tail_enclosure","verified_sturm_indices","verified_matrix_contract"],
+      "proof_location":"advisor.md sections 4 T4 and 5",
+      "failure_controls":["Wrong first-excited-state index.","Zero pivot replaced by floating epsilon.","Empty case list or incomplete certificate.","Nonpositive lower gap silently marked positive."],
+      "scope":"Exact arithmetic certificate under reviewed analytic premises; not a formal proof-kernel result."
+    },
+    {
+      "id":"ym10_gap_lipschitz",
+      "status":"derived",
+      "statement":"For dimensionless h(kappa), |delta(kappa)-delta(kappa0)|<=2|kappa-kappa0|.",
+      "dependencies":["ym10_jacobi_radial_equivalence","bounded_cosine_operator"],
+      "proof_location":"advisor.md section 6 C1",
+      "failure_controls":["Use point interpolation as proof.","Forget common identity shift before gap comparison."],
+      "scope":"Same one-square physical Hilbert space at every kappa."
+    },
+    {
+      "id":"ym10_continuous_range_gap",
+      "status":"derived",
+      "statement":"Exact point lower bounds b_i, radii r_i with b_i-2r_i>=m>0, and verified interval coverage prove delta(kappa)>=m on the entire covered range.",
+      "dependencies":["ym10_rational_gap_certificate","ym10_gap_lipschitz","verified_interval_cover","verified_positive_margins"],
+      "proof_location":"advisor.md section 6",
+      "failure_controls":["Gap in coverage.","Missing endpoint.","Wrong radius.","Point bounds computed with alpha!=1 but treated as dimensionless."],
+      "scope":"Compact kappa domain and alpha>=positive stated lower bound for physical gap."
+    },
+    {
+      "id":"ym10_small_coupling_bound",
+      "status":"derived",
+      "statement":"gap(alpha,0)=3alpha and gap(alpha,lambda)>=3alpha-lambda.",
+      "dependencies":["ym10_jacobi_radial_equivalence","nonnegative_magnetic_potential","constant_class_trial"],
+      "proof_location":"advisor.md section 6 C2",
+      "scope":"The inequality is useful as a positive certificate only for lambda<3alpha."
+    },
+    {
+      "id":"ym10_vanishing_alpha_counterexample",
+      "status":"derived",
+      "statement":"For fixed lambda>0 and alpha/lambda<=pi²/8, 0<gap<=2sqrt(2)*pi*sqrt(alpha*lambda)-alpha, hence gap tends to zero as alpha->0+.",
+      "dependencies":["ym10_jacobi_radial_equivalence","two_dimensional_supported_trial_space","nonnegative_H"],
+      "proof_location":"advisor.md section 7 F1",
+      "failure_controls":["Conflate fixed lambda path with Kogut-Susskind matching alpha*lambda=1/a²."],
+      "scope":"Counterexample to unqualified uniformity under coefficient tuning; not a statement about the Yang–Mills continuum trajectory."
+    }
+  ],
+  "unresolved_targets": [
+    {"id":"two_square_interacting_certificate","missing":["seven-link gauge reduction","shared-link electric cross terms","independent constrained reference","multi-index tail bound"]},
+    {"id":"volume_uniform_gap","missing":["connected growing graphs","volume-controlled comparison constants","common physical observables"]},
+    {"id":"four_dimensional_continuum_gap","missing":["physical scale and bare coupling matching","nontrivial continuum construction","full axiom/reconstruction properties","uniform physical spectral gap"]},
+    {"id":"einstein_yang_mills_qed_connection","missing":["specified common action and field content","compatible quantum state and renormalization","common stress-current conservation","geometry-matched evolution"]}
+  ]
+}

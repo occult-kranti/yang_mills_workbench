@@ -1,0 +1,479 @@
+{
+  "contract_version": "ym11-two-square-v1",
+  "advisor_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+  "common_variables": {
+    "graph_id": "open_two_adjacent_squares_7links_6vertices",
+    "coordinates": [
+      "x",
+      "y",
+      "z"
+    ],
+    "coordinate_domain": "abs(x)<=1,abs(y)<=1,(z-x*y)^2<=(1-x^2)*(1-y^2)",
+    "measure": "(2/pi^2)dx dy dz",
+    "rho_role": "Coefficient alpha*rho on the existing shared link only; the uniform graph has rho = 1.",
+    "coefficients": [
+      "alpha",
+      "lambda1",
+      "lambda2",
+      "rho"
+    ],
+    "dimensionless": [
+      "kappa1=lambda1/alpha",
+      "kappa2=lambda2/alpha",
+      "kappa_plus=(lambda1+lambda2)/alpha",
+      "kappa_minus=(lambda1-lambda2)/alpha"
+    ],
+    "parameter_domain": "alpha>0;lambda_i>=0 finite;rho>0 for selected extension;kappa_plus>=abs(kappa_minus)",
+    "cutoff": "D = maximum total polynomial degree; dim(P_D) = binomial(D + 3, 3); first omitted degree = D + 1.",
+    "spectral_indices": "Indices 0 and 1, counting multiplicity.",
+    "certificate_state": [
+      "Gram",
+      "Hamiltonian_form",
+      "boundary_correction",
+      "tau",
+      "R",
+      "energy_brackets",
+      "source_hashes",
+      "parameter_tuple"
+    ]
+  },
+  "rules": [
+    {
+      "rule_id": "A01_physical_quotient",
+      "premises": [
+        "graph_contract",
+        "gauss_projection"
+      ],
+      "conclusion": "quotient_coordinates",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "Q1",
+        "Q2"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. ",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A02_haar",
+      "premises": [
+        "quotient_coordinates"
+      ],
+      "conclusion": "physical_haar",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "Q3"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. ",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A03_operator",
+      "premises": [
+        "graph_contract",
+        "gauss_projection",
+        "physical_haar"
+      ],
+      "conclusion": "sharedlink_operator",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "K1",
+        "K3",
+        "K4"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. ",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A04_polynomial",
+      "premises": [
+        "sharedlink_operator"
+      ],
+      "conclusion": "polynomial_flag",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "E1"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. ",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A05_free_spectrum",
+      "premises": [
+        "polynomial_flag",
+        "physical_haar"
+      ],
+      "conclusion": "complete_free_spectrum",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. ",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A06_electric_tail",
+      "premises": [
+        "complete_free_spectrum",
+        "parameter_domain"
+      ],
+      "conclusion": "electric_tail",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "E4",
+        "RHO2"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. D is maximum degree; the first omitted degree is D + 1.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A07_tail_H",
+      "premises": [
+        "electric_tail",
+        "bounded_positive_potential"
+      ],
+      "conclusion": "tail_hamiltonian",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "T1"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Do not add the magnetic scalar to the electric tail.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A08_boundary",
+      "premises": [
+        "polynomial_flag",
+        "rational_moments"
+      ],
+      "conclusion": "finite_boundary_coupling",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "T2",
+        "T3"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Use the exact physical Gram inner product and projection.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A09_young_minmax",
+      "premises": [
+        "tail_hamiltonian",
+        "finite_boundary_coupling",
+        "strict_R_gate"
+      ],
+      "conclusion": "finite_tail_enclosure",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "T4",
+        "T5",
+        "T6"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Certified mu1(A) < R < tau and correct B; the first two indices count multiplicity.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A10_numeric_positive",
+      "premises": [
+        "finite_tail_enclosure",
+        "finite_matrix_inertia",
+        "positive_endpoint_gate"
+      ],
+      "conclusion": "positive_numeric_point",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "T6"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. External exact certificate: l1B - u0A > 0, with every case, source, and input matched.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A11_lipschitz",
+      "premises": [
+        "parameter_domain",
+        "selfadjoint_compact"
+      ],
+      "conclusion": "parameter_lipschitz",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "C1",
+        "C2",
+        "C5"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Hold rho fixed. Physical gap units scale by alpha. The domain is kappa_plus >= abs(kappa_minus).",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "A12_continuous_rectangle",
+      "premises": [
+        "positive_numeric_point",
+        "parameter_lipschitz",
+        "exact_rectangle_cover"
+      ],
+      "conclusion": "continuous_rectangle_gap",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "C2",
+        "C5"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. The exact union covers the declared region, and every b - 2(r1 + r2) > 0 or b - 2*r_inf > 0.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B01_domain",
+      "premises": [
+        "sharedlink_operator",
+        "physical_haar",
+        "complete_free_spectrum"
+      ],
+      "conclusion": "inherited_domain",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Use invariant lifted H^2 or the closed physical form; no invented Dirichlet wall in trace coordinates.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B02_compact",
+      "premises": [
+        "inherited_domain",
+        "complete_free_spectrum",
+        "bounded_positive_potential"
+      ],
+      "conclusion": "selfadjoint_compact",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "Theorem F"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. ",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B03_ground",
+      "premises": [
+        "sharedlink_operator",
+        "inherited_domain",
+        "selfadjoint_compact"
+      ],
+      "conclusion": "positive_simple_ground",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "Theorem F"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Connected compact full SU(2)^2 has a smooth elliptic positive heat kernel; uniqueness makes its ground state invariant.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B04_free_poincare",
+      "premises": [
+        "complete_free_spectrum",
+        "parameter_domain"
+      ],
+      "conclusion": "free_physical_poincare",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "E3",
+        "RHO3"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Use the physical constant gamma_rho = min(3(3 + rho)/4, 9/2).",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B05_commuting_heat",
+      "premises": [
+        "sharedlink_operator",
+        "parameter_domain"
+      ],
+      "conclusion": "commuting_heat_factorization",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "K1",
+        "RHO1",
+        "F2 proof"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. rho >= 0 makes the shared heat semigroup a probability average; the Casimirs commute.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B06_kernel_bound",
+      "premises": [
+        "commuting_heat_factorization",
+        "su2_heat_character_bound"
+      ],
+      "conclusion": "heat_kernel_minorization",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "F2 proof"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. t = 4/3; one-group Casimir time is 4; r < 1/4 under normalized Haar measure.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B07_FK_ratio",
+      "premises": [
+        "heat_kernel_minorization",
+        "bounded_positive_potential",
+        "positive_simple_ground"
+      ],
+      "conclusion": "groundstate_ratio",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "F2 proof"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Dimensionless potential oscillation is 2*kappa_plus; the ground state is strictly positive and continuous.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B08_weighted_gap",
+      "premises": [
+        "inherited_domain",
+        "positive_simple_ground",
+        "free_physical_poincare"
+      ],
+      "conclusion": "groundstate_transform",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "F2 proof"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. Use invariant weighted variance, normalized Haar measure, and the sufficient form domain.",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B09_all_coupling",
+      "premises": [
+        "groundstate_ratio",
+        "groundstate_transform",
+        "parameter_domain"
+      ],
+      "conclusion": "all_finite_coupling_bound",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "F2",
+        "RHO4"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. The conclusion is alpha*(81/625)*gamma_rho*exp(-16*kappa_plus/3).",
+      "status": "derived_conditional_implication"
+    },
+    {
+      "rule_id": "B10_pointwise",
+      "premises": [
+        "selfadjoint_compact",
+        "positive_simple_ground"
+      ],
+      "conclusion": "pointwise_gap",
+      "source_artifact": "advisor.md",
+      "source_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "equation_or_section": [
+        "Theorem F"
+      ],
+      "parameter_guard": "Same seven-link graph, normalized Casimir and Haar measure, based loop orientation, and physical sector. alpha > 0; finite lambda_i >= 0; the same fixed rho > 0 in every premise; the uniform contract has rho = 1. ",
+      "status": "derived_conditional_implication"
+    }
+  ],
+  "external_gate_atoms": [
+    "finite_matrix_inertia",
+    "strict_R_gate",
+    "positive_endpoint_gate",
+    "exact_rectangle_cover"
+  ],
+  "analytic_input_atoms": [
+    "graph_contract",
+    "parameter_domain",
+    "gauss_projection",
+    "bounded_positive_potential",
+    "rational_moments",
+    "su2_heat_character_bound"
+  ],
+  "analytic_input_sources": {
+    "su2_heat_character_bound": {
+      "artifact": "advisor.md",
+      "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+      "section": "F2 proof",
+      "statement": "Peter-Weyl expansion with |chi_n/2|<=n+1; r<1/4 is proved by explicit Taylor/geometric bounds."
+    }
+  },
+  "unresolved_atoms_with_no_producing_rules": [
+    "volume_uniform_estimate",
+    "continuum_scale_matching",
+    "continuum_reconstruction",
+    "four_dimensional_yang_mills_gap"
+  ],
+  "negative_controls": [
+    {
+      "withdraw": "gauss_projection",
+      "must_block": [
+        "sharedlink_operator",
+        "continuous_rectangle_gap",
+        "all_finite_coupling_bound"
+      ]
+    },
+    {
+      "withdraw": "strict_R_gate",
+      "must_block": [
+        "finite_tail_enclosure",
+        "positive_numeric_point",
+        "continuous_rectangle_gap"
+      ],
+      "does_not_block": [
+        "all_finite_coupling_bound"
+      ]
+    },
+    {
+      "withdraw": "exact_rectangle_cover",
+      "must_block": [
+        "continuous_rectangle_gap"
+      ],
+      "does_not_block": [
+        "positive_numeric_point",
+        "all_finite_coupling_bound"
+      ]
+    },
+    {
+      "withdraw": "free_physical_poincare",
+      "must_block": [
+        "groundstate_transform",
+        "all_finite_coupling_bound"
+      ]
+    },
+    {
+      "withdraw": "positive_simple_ground",
+      "must_block": [
+        "groundstate_ratio",
+        "groundstate_transform",
+        "all_finite_coupling_bound"
+      ]
+    },
+    {
+      "withdraw": "su2_heat_character_bound",
+      "must_block": [
+        "heat_kernel_minorization",
+        "all_finite_coupling_bound"
+      ]
+    }
+  ]
+}

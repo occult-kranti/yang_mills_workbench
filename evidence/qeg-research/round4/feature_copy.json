@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-09",
+  "status": "Design specification; implementation and execution statuses must be set from actual results",
+  "home": {
+    "route": "research",
+    "eyebrow": "RESEARCH WORKSPACE",
+    "title": "How quantum matter changes fields—and how gravity enters.",
+    "intro": "Explore a tested model in which an electric field creates a quantum current, and that current changes the field. Follow the evidence toward a future calculation in evolving spacetime.",
+    "status": "Restricted model tested · full Einstein–QED problem open",
+    "primaryAction": "Inspect the computed result",
+    "secondaryAction": "Start with the physical picture",
+    "guideTitle": "Use this workspace in three steps",
+    "steps": [
+      {"title":"Understand the feedback", "text":"Read the physical picture, then expand the equations when you are ready."},
+      {"title":"Inspect a result and its tests", "text":"Compare a recorded trajectory with its numerical checks and the exact model assumptions."},
+      {"title":"Choose a test that could prove an idea wrong", "text":"Open an experiment, inspect its null comparison and rejection gate, and record what is still needed."}
+    ]
+  },
+  "statusLabels": {
+    "recorded":"Recorded computation",
+    "analytic":"Analytic demonstration",
+    "proposed":"Proposed experiment",
+    "unresolved":"Unresolved",
+    "superseded":"Superseded result"
+  },
+  "features": [
+    {
+      "id":"results", "title":"Computed field history", "route":"research/results", "kind":"recorded",
+      "plain":"The source first drives the electric field. After the source stops, the quantum current continues to change the field and eventually reverses its direction in this model.",
+      "how":"Inspect the field curve, then open its source, data and model details. Use the data table for exact saved values.",
+      "technical":"Homogeneous Maxwell–Dirac mean field with static magnetic field. x=eE/m², s=mt. The final recorded run uses b=10, canonical window ±40, 4096 momentum nodes and Landau levels 0–8.",
+      "meaning":"A computed trajectory within a tested finite model. It is not a measured field, a continuum bound or a solved spacetime.",
+      "dataSource":"round3/results/production_baseline.csv",
+      "metadataSource":"round3/results/production_baseline.json",
+      "sourceOffTime":4,
+      "scope":"Flat metric; constant homogeneous magnetic field; expectation-value electromagnetic backreaction",
+      "actions":["Inspect evidence", "Show data table", "Download CSV"]
+    },
+    {
+      "id":"convergence", "title":"Does the result survive refinement?", "route":"research/results", "kind":"recorded",
+      "plain":"A curve can conserve energy accurately while its momentum grid is still too coarse. Compare the separate tests before deciding which digits to trust.",
+      "how":"Compare the final fixed-window grids and read the separate Landau-level check. Open failed historical gates to see what changed.",
+      "technical":"The 2048→4096 fixed-window sampled field history differs by 3.26e−9. A separate levels 0–8→0–12 comparison shifts the endpoint by 5.06e−8. These are distinct component changes.",
+      "meaning":"Measured refinement differences, not a statistical confidence interval or a rigorous bound on all numerical and physical errors.",
+      "dataSource":"round3/results/fixed_window_refinement.json",
+      "actions":["Compare grids", "Inspect failed gate"]
+    },
+    {
+      "id":"mixing", "title":"Coherence and phase mismatch", "route":"research/demonstrations", "kind":"analytic",
+      "plain":"Two coupled waves can exchange amplitude. If their phases drift apart, conversion is limited in this constant, lossless model.",
+      "how":"Change dimensionless coupling and phase mismatch. Predict the direction of the change before computing, then compare with exact resonance.",
+      "technical":"Let u=μL and v=δL. Then P=u² sinc²(√(u²+v²/4)), where sinc z=sin(z)/z and sinc 0=1. μ is the mixing amplitude and δ the propagation mismatch.",
+      "meaning":"An exact analytic two-mode benchmark under a constant lossless matrix. It does not calculate a magnetar's full QED dispersion or gravitational signal.",
+      "inputs":[{"key":"u","label":"Integrated coupling μL","min":0,"max":25,"default":1},{"key":"v","label":"Integrated phase mismatch δL","min":-100,"max":100,"default":0}],
+      "actions":["Compute comparison", "Reset resonance", "Inspect assumptions"]
+    },
+    {
+      "id":"scales", "title":"Can the fields support the target curvature?", "route":"research/demonstrations", "kind":"analytic",
+      "plain":"Field strength and spacetime curvature are different scales. This calculator estimates the electromagnetic source budget and shows when another gravitating source is required.",
+      "how":"Enter the electric and magnetic strengths in critical-field units. Read the source scale and the assumptions used to compute it.",
+      "technical":"Use the reviewer-approved relation between κρ/m_e² and the electromagnetic energy density, with all constants and unit conventions visible.",
+      "meaning":"A dimensional source-budget check. It does not solve Einstein's constraints or construct a supporting object.",
+      "implementationGate":"Physics reviewer supplies and tests formula/constants before release",
+      "actions":["Compute scale", "Inspect units"]
+    },
+    {
+      "id":"evidence", "title":"Four problems, shared dependencies", "route":"research/evidence", "kind":"unresolved",
+      "plain":"Follow the four original questions and see what evidence each one still needs. A result in one geometry cannot automatically settle a problem in another.",
+      "how":"Choose a research front. Inspect its assumptions, central equations, validated pieces and next discriminating test.",
+      "technical":"Tracks charged de Sitter discharge, curved-space pair creation, Cauchy-horizon evolution and photon–graviton conversion, with state, renormalization and boundary-condition dependencies.",
+      "meaning":"A dependency map and claim audit; completion indicators describe documented checks, not a percentage of physics solved.",
+      "actions":["Inspect evidence", "Open next experiment"]
+    },
+    {
+      "id":"sources", "title":"Read a claim at its source", "route":"research/sources", "kind":"recorded",
+      "plain":"Find the paper or document behind an equation, criticism or experiment. See what was actually inspected and which version was used.",
+      "how":"Search by topic or author and filter by research front or reading depth. Open a source record for claim links, limitations and a direct primary link.",
+      "technical":"Separate publication metadata, inspected sections, reproduced results and source access gaps. Preserve source dates and revision identifiers.",
+      "meaning":"A targeted research ledger. Patent or government origin alone does not validate a physical claim.",
+      "actions":["Open source", "Inspect reading record", "Reset filters"]
+    },
+    {
+      "id":"experiments", "title":"Plan a test that could reject the hypothesis", "route":"research/experiments", "kind":"proposed",
+      "plain":"A useful experiment specifies what would change our mind before results are available.",
+      "how":"Choose an experiment and inspect its comparison model, observable, rejection rule and prerequisites. Save your notes or export the plan where available.",
+      "technical":"Prioritize common current/stress subtraction and quantum-response validity before coupling the metric. Record parameter ranges, tolerances and regulator checks separately.",
+      "meaning":"A proposed research plan becomes executed only when code, data and reviewer evidence exist; reviewing a card does not validate the hypothesis.",
+      "actions":["Inspect experiment", "Export plan"]
+    },
+    {
+      "id":"advisor", "title":"How the advisor evaluates a result", "route":"research/advisor", "kind":"recorded",
+      "plain":"The advisor turns a broad question into bounded tasks, asks for independent objections, and accepts only the claims supported by the evidence.",
+      "how":"Read the role pipeline and acceptance gates, then download the protocol for the next research cycle.",
+      "technical":"Separate proposer, domain reviewer, numerical implementer and independent verifier; require source provenance, explicit scope and counterexample tests at handoffs.",
+      "meaning":"A documented workflow and dated review record. This page does not imply a continuously running or autonomous agent service.",
+      "actions":["Read protocol", "Download advisor prompt"]
+    }
+  ],
+  "dialog": {
+    "trigger":"Inspect evidence", "opening":"Only explicit click or keyboard activation",
+    "initialFocus":"Focusable title for long structured content",
+    "close":"Visible Close button and Escape",
+    "focusRestore":"Invoker if present; otherwise the associated section heading",
+    "nestedDialogs":false,
+    "unsolicitedModal":false
+  },
+  "emptyStates": {
+    "sources":"No sources match these filters. Reset filters to show the research ledger.",
+    "result":"Result data unavailable. Open the recorded download or retry loading the dataset.",
+    "experiment":"This experiment is proposed. No executed result has been attached.",
+    "calculation":"Enter finite values within the displayed range to calculate this model.",
+    "storage":"Browser storage is unavailable. Export your notes to keep a copy."
+  },
+  "recordSchemas": {
+    "claim":["id","statement","front","status","assumptions","equationIds","sourceIds","resultIds","rejectionTest","limitations"],
+    "source":["id","title","authors","url","version","date","checked","readDepth","sectionsInspected","claimIds","accessLimits"],
+    "experiment":["id","hypothesis","nullComparator","dependencies","parameters","observables","rejectionGate","status","resultIds"],
+    "savedRun":["id","model","parameters","units","dataUrl","codeHash","generatedAt","validationIds","limitations"]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "purpose": "Executed project-local advisor-skill forward exercise on two artifact-based research claims",
+  "method": "Independent verifier read the two skill files and their exact-hash-matched contract/protocol references; inspected numerical JSON, historical failed record and executable verifier source; adjudicated the supplied claims. No new agent, hidden-system modification, or claimed blinded evaluator was used.",
+  "limitations": [
+    "Two selected examples are not a statistical estimate of skill effectiveness or model capability.",
+    "The reviewer wrote the independent numerical verifier, so this exercise is not blinded to its expected physical behavior.",
+    "The skill guides structured judgment; it is not an automatic theorem prover or a substitute for the executed checks."
+  ],
+  "artifacts": {
+    "qeg-research/round4/advisor_skill_claim_inputs.json": "587d0f560ffbd45f73c57d89a86798a123a7ae9eb6e35fc3f26fdd59e2af5921",
+    "qeg-research/round4/response_verification.json": "a7fbe84c04801390bb71f74f69afedf03586ccbe3550ffde3d9b65872eaa137a",
+    "qeg-research/round4/response_verification_initial.json": "981284e0f9d16184e96560f8442f937213f3b5467671d5baf27346028cb55923",
+    "qeg-research/round4/verify_response.py": "8fcc075ce28218516fa6c64ca55fe4c45e30522228d96f2f03ceeba5f1a47369",
+    "qeg-research/round4/response_contract.md": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0",
+    "physics-observatory/.codex/skills/qeg-research-advisor/SKILL.md": "dc27aecb1fb38b46392bcc509376cd0de72bc6fa233f5ab47a93948f644cf569",
+    "physics-observatory/.codex/skills/qeg-research-advisor/references/advisor-pipeline.md": "b4771aed10a4c544e5dd07902dff9c07aea976c4ed792572d7247b39d9e08e1d",
+    "physics-observatory/.codex/skills/qeg-numerical-validation/SKILL.md": "39ada7b29ea99c0bd91b35dbae9c4182e678ff1c1fbfe7e4d968c9c4b2eea45c",
+    "physics-observatory/.codex/skills/qeg-numerical-validation/references/response-contract.md": "011508358861d3da5651539490c13003ebc25e0ce9f2c9e2316db19ebcf447e0"
+  },
+  "source_hash_matches": true,
+  "cases": [
+    {
+      "id": "FWD01",
+      "input_claim": "At b=3, pump amplitude 0.5, duration 6 and final time 18, the independently implemented spinor tangent agrees with centered nonlinear pump differences to a maximum sampled field-derivative discrepancy below 8e-8 at epsilon=0.0000625. This is a derivative-consistency result for the stated finite regulator, without a continuum accuracy or semiclassical-validity claim.",
+      "disposition": "accepted_with_the_stated_finite_model_scope",
+      "evidence": {
+        "raw_key": "heldout_finite_differences[-1].max_field_derivative_difference",
+        "observed_max_abs_error": 7.860759199118661e-08,
+        "epsilon": 6.25e-05,
+        "configuration": {
+          "b": 3.0,
+          "nmax": 2,
+          "Kmax": 6.0,
+          "nK": 32,
+          "amplitude": 0.5,
+          "pump_duration": 6.0,
+          "final_time": 18.0,
+          "samples": 181,
+          "a0": 0.0,
+          "translated_grid": true,
+          "rtol": 2e-11,
+          "atol": 2e-13,
+          "max_step": 0.02
+        },
+        "finite_difference_field_errors": [
+          8.008341940912711e-05,
+          2.0096136004621457e-05,
+          5.028747667612521e-06,
+          1.2574817014332496e-06,
+          3.1438676595385573e-07,
+          7.860759199118661e-08
+        ],
+        "initial_gate_failed": true,
+        "final_gate_passed": true,
+        "gate_threshold_unchanged": 2e-07
+      },
+      "reasoning_summary": "The claim reports the observed error correctly and restricts it to the tested 181 samples and fixed regulator. The initial failure was finite-difference truncation: six steps show the predicted second-order interval. Refining epsilon, while preserving the original failure and unchanged gate, resolves that test without asserting continuum accuracy.",
+      "next_discriminating_test": "Compare the frozen production Bloch tangent/current to the independent spinor output, then vary momentum quadrature and each cutoff separately for the response observable.",
+      "prohibited_inferences": [
+        "continuum error below 8e-8",
+        "all-time stability",
+        "small quantum noise",
+        "semiclassical or gravitational validity"
+      ]
+    },
+    {
+      "id": "FWD02",
+      "input_claim": "Changing the initial gauge potential by 7.3 changes the electric-field response by approximately 0.038. This demonstrates spontaneous breaking of gauge invariance by the magnetic quantum vacuum and requires replacing the model.",
+      "disposition": "physical_inference_rejected_measurement_retained",
+      "evidence": {
+        "raw_key": "gauge",
+        "incorrect_fixed_window_difference": 0.038186197994979354,
+        "correct_translated_window_difference": 4.107825191113079e-15,
+        "pure_gauge_field_response": 0.0,
+        "source_locations": [
+          "verify_response.py:simulate canonical node construction",
+          "verify_response.py:run_all wrong_window call",
+          "response_contract.md:P7 and gauge-null preparation"
+        ]
+      },
+      "reasoning_summary": "The 0.0382 difference is real in the saved finite calculation, but that run shifts the potential without its canonical momentum window. The physical kinetic momenta and magnetic-vacuum mode set change. Translating both grid and potential leaves the field tangent unchanged within 4.11e-15; the explicit pure-gauge tangent has zero field response. Thus the observed effect is regulator dependence, not evidence of spontaneous gauge-symmetry breaking.",
+      "next_discriminating_test": "For a claimed gauge violation, hold kinetic momenta, weights and state fixed under the same gauge transformation and reproduce a nonzero discrepancy above integration error with a second representation.",
+      "prohibited_inferences": [
+        "discarding the measured fixed-window difference",
+        "claiming exact continuum gauge invariance from one finite numeric example",
+        "interpreting a changed physical regulator as a pure gauge transformation"
+      ]
+    }
+  ],
+  "checks": {
+    "finite_claim_matches_raw_error": true,
+    "initial_failure_preserved": true,
+    "final_gate_preserved": true,
+    "source_hash_checked": true,
+    "gauge_alternative_discriminates": true,
+    "pure_gauge_null_checked": true
+  },
+  "result": "Both exercises produce the evidence-bounded expected disposition. No skill text change was needed for these two cases; broader efficacy remains unmeasured.",
+  "all_mechanical_checks_passed": true
+}

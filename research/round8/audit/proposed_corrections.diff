@@ -1,0 +1,93 @@
+--- round7/finite_scalar.py
++++ round8/fixed/finite_scalar.py
+@@ -233,7 +233,7 @@
+     if not sol.success or sol.y.shape != (y0.size, ts.size) or not np.all(np.isfinite(sol.y)):
+         raise FiniteScalarFailure(f"integrator returned incomplete/nonfinite state: {sol.message}")
+ 
+-    m: dict[str, np.ndarray] = {k: np.empty(ts.size, dtype=float) for k in (
++    m: dict[str, np.ndarray] = {k: np.full(ts.size, np.nan, dtype=float) for k in (
+         "t", "a", "x", "F", "phi", "y", "f", "f_phi", "S", "C", "D", "Z",
+         "Wtilde", "Wpump", "Wdefect", "energy_mismatch", "defect_residual", "max_r2_error")}
+     omega0 = None
+@@ -254,8 +254,15 @@
+         m["max_r2_error"][j] = float(np.max(np.abs(np.sum(r * r, axis=0) - 1.0)))
+         if omega0 is None:
+             omega0 = w
++    # Finite ODE states do not guarantee representable quadratic observables.
++    # Check populated diagnostics before subtraction can turn inf-inf into NaN.
++    for name, values in m.items():
++        if name not in {"energy_mismatch", "defect_residual"} and not np.all(np.isfinite(values)):
++            raise FiniteScalarFailure(f"nonfinite or unpopulated diagnostic: {name}")
+     m["energy_mismatch"] = m["Wtilde"] - m["Wtilde"][0] - m["Wpump"]
+     m["defect_residual"] = m["energy_mismatch"] - m["Wdefect"]
++    if not all(np.all(np.isfinite(values)) for values in m.values()):
++        raise FiniteScalarFailure("derived diagnostic overflowed or was not populated")
+     diag = {
+         "wrong_model": wrong, "mode": mode, "probe_amp": probe_amp,
+         "nmode": n, "min_Z": float(np.min(m["Z"])),
+@@ -303,12 +310,21 @@
+     old, path = _load_old_response()
+     if old is None:
+         return {"status": "unavailable", "reason": "round6 response could not be imported", "path": str(path)}
++    # The historical comparator supports three discrete matching prescriptions;
++    # comparing an arbitrary override with its default changes the model.
++    validate_params(p)
++    matched = chi_match(p.b)
++    desired = matched if p.chi_b is None else float(p.chi_b)
++    supported = {matched: "matched", 0.0: "omitted_matching", -matched: "sign_reversed"}
++    if desired not in supported:
++        return {"status": "unavailable", "reason": "round6 baseline cannot represent the supplied chi_b",
++                "path": str(path), "requested_chi_b": desired, "matched_chi_b": matched}
+     scalar_p = Params(**{**asdict(p), "g": 0.0, "phi0": 0.4, "y0": 0.1})
+     ours = _solve(scalar_p)
+     old_fields = {k: v for k, v in asdict(scalar_p).items()
+                   if k in {"a0", "target_E", "b", "Tpump", "tfinal", "ncut", "Kmax", "nK",
+                            "rtol", "atol", "max_step", "sample_count", "z_floor"}}
+-    old_p = old.Params(**old_fields)
++    old_p = old.Params(**old_fields, chi_mode=supported[desired])
+     old_run = old._solve(old_p, mode="source_amplitude")
+     da = float(np.max(np.abs(np.asarray(ours["macro"]["a"]) - np.asarray(old_run["macro"]["a"]))))
+     dx = float(np.max(np.abs(np.asarray(ours["macro"]["x"]) - np.asarray(old_run["macro"]["x"]))))
+--- round7/gravity_sim.py
++++ round8/fixed/gravity_sim.py
+@@ -547,9 +547,11 @@
+ 
+ 
+ def build_results(runs: Sequence[dict[str, object]]) -> dict[str, object]:
++    if not runs:
++        raise InputError("cannot certify an empty gravity case collection")
+     source_sha256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+-    return {
+-        "status": "passed",
++    results = {
++        "status": "unverified",
+         "scope": "bounded classical scalar-Einstein-Maxwell Bianchi I benchmark; no Dirac quantum stress or cutoff removal",
+         "source_file": str(Path(__file__).name),
+         "source_sha256": source_sha256,
+@@ -603,6 +605,14 @@
+         },
+     }
+ 
++    results["gates"]["analytic_fixtures"] = results["analytic_fixtures"]["passed"]
++    mixed = [r for r in runs if r["case"].name == "coupled_mixed"]
++    results["wrong_control_discrimination"] = {"status": "tested" if mixed else "not_in_selected_cases"}
++    if mixed:
++        results["gates"]["wrong_constraint_fails_for_coupled_mixed"] = mixed[0]["diagnostics"]["wrong_model_max_constraint_abs"] > 1e-7
++    results["status"] = "passed" if all(results["gates"].values()) else "failed"
++    return results
++
+ 
+ def write_readme(results: dict[str, object]) -> None:
+     gates = results["gates"]
+@@ -636,11 +646,6 @@
+             raise InputError(f"unknown case(s): {missing}")
+     runs = [run_case(case) for case in cases]
+     results = build_results(runs)
+-    results["gates"]["analytic_fixtures"] = results["analytic_fixtures"]["passed"]
+-    mixed = [r for r in runs if r["case"].name == "coupled_mixed"]
+-    results["wrong_control_discrimination"] = {"status": "tested" if mixed else "not_in_selected_cases"}
+-    if mixed:
+-        results["gates"]["wrong_constraint_fails_for_coupled_mixed"] = mixed[0]["diagnostics"]["wrong_model_max_constraint_abs"] > 1e-7
+     failed = [name for name, ok in results["gates"].items() if not ok]
+     if failed:
+         raise RuntimeError(f"benchmark gates failed: {failed}")

@@ -1,0 +1,740 @@
+[
+  {
+    "id": "R5-T1",
+    "title": "Global existence of the finite coupled model",
+    "summary": "The finite list of quantum modes and the electric field can evolve for every finite forward time, provided the denominator stays globally positive. The proof uses a positive energy and an ODE continuation theorem.",
+    "technicalSummary": "The finite list of quantum modes and the electric field can evolve for every finite forward time, provided the denominator stays globally positive. The proof uses a positive energy and an ODE continuation theorem.",
+    "claim": "The finite list of quantum modes and the electric field can evolve for every finite forward time, provided the denominator stays globally positive. The proof uses a positive energy and an ODE continuation theorem.",
+    "equation": "a′ = −x;  rᵢ′ = 2 hᵢ × rᵢ\nx′ = [F − e²(S + D x²)] / Z\nW = Z x²/2 + e²U ≥ 0;  W′ = xF;  Z ≥ μ > 0",
+    "definitions": "In natural units ℏ=c=1, s=mₑt, a=eA_z/mₑ, x=eE_z/mₑ² and b=|eB|/mₑ². Fix canonical momenta kᵢ, Mᵢ>0, wᵢ>0, e²>0 and finite real χ. The kinetic momentum pᵢ(s)=kᵢ−a(s) evolves in time. Define hᵢ=(Mᵢ,0,pᵢ), ωᵢ=|hᵢ|, S=Σwᵢ(rᵢz+pᵢ/ωᵢ), C=ΣwᵢMᵢ²/(4ωᵢ⁵), D=Σwᵢ5Mᵢ²pᵢ/(8ωᵢ⁷), Z=1+χ−e²C, U=Σwᵢ(hᵢ·rᵢ+ωᵢ).",
+    "assumptions": [
+      "A fixed finite mode list, constant e² and χ, and finite initial data.",
+      "Physical Bloch data |rᵢ(0)| ≤ 1; fixed positive masses and weights.",
+      "F is continuous on every finite forward interval.",
+      "Z(a) ≥ μ > 0 for all real a; checking one sampled trajectory is insufficient."
+    ],
+    "steps": [
+      [
+        "Preserve physical mode norms",
+        "The cross product is orthogonal to rᵢ, so d|rᵢ|²/ds = 0."
+      ],
+      [
+        "Build a nonnegative energy",
+        "hᵢ·rᵢ ≥ −ωᵢ makes U ≥ 0. The positive denominator then controls x²."
+      ],
+      [
+        "Check every derivative and sign",
+        "pᵢ′ = x gives U′ = xS and C′ = −2Dx. Substitution cancels the mode exchange and derivative-subtraction terms, leaving W′ = xF."
+      ],
+      [
+        "Avoid dividing by zero energy",
+        "Apply the differential estimate to √(W+ε), integrate, then let ε decrease to zero. This covers a vacuum start W(0)=0."
+      ],
+      [
+        "Close the continuation argument",
+        "The energy controls x on every finite interval; a(s)=a(0)−∫x is then finite there, and every rᵢ remains bounded. The smooth finite-dimensional vector field cannot escape a compact set in finite time."
+      ]
+    ],
+    "tests": [
+      "Sixteen symbolic checks, including fourteen exact identities and two deliberate-defect controls, repeated in the corrected runner.",
+      "Independent critic checks physical-state and zero-energy premises.",
+      "Exact denominator certificates supply μ for selected finite families."
+    ],
+    "objection": "A time plot with no blow-up is not a global theorem; a coefficient that becomes zero invalidates division in the ODE. The energy argument also fails for arbitrary nonphysical Bloch data.",
+    "resolution": "The result is conditional on a global positive gap, fixed finite dimension and physical data. The selected and extended fixed-window certificates establish the gap in stated cases; the joint-cutoff counterexample prevents generalizing it.",
+    "connection": "Local ODE theory supplies continuation, while the energy identity and a separate coefficient bound supply its hypotheses. Continuum current and stress convergence are later obligations.",
+    "route": "Finite physical modes + global Z-gap + continuous F → positive work identity → finite-time bounds → global finite-model continuation",
+    "falsifiers": [
+      "Reverse a feedback sign and recheck W′−xF.",
+      "Allow Z=0 or an infinite unbounded-energy mode family: the proof no longer applies."
+    ],
+    "limit": "No continuum theorem, metric evolution, arbitrary initial quantum state or all-time bound on a is proved.",
+    "kind": "proof",
+    "new": false,
+    "doc": "round5/theorem_advisor.md",
+    "related": [
+      "R5-C1",
+      "R5-E1",
+      "R6-L2",
+      "R6-L3"
+    ],
+    "sources": [
+      "D001"
+    ],
+    "plot": null,
+    "status": "Conditional mathematical result",
+    "verification": "Conventional proof, independent scope review and exact symbolic identities; not a proof-assistant certificate.",
+    "scope": "Finite homogeneous Maxwell–Dirac mean-field ODE.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R5-C1",
+    "title": "An exact positive-denominator certificate",
+    "summary": "For the original b = 10, K = 20, N = 4 setup, the denominator exceeds 3/4 at every potential. This is an exact inequality, stronger than checking its value along a numerical run.",
+    "technicalSummary": "For the original b = 10, K = 20, N = 4 setup, the denominator exceeds 3/4 at every potential. This is an exact inequality, stronger than checking its value along a numerical run.",
+    "claim": "For the original b = 10, K = 20, N = 4 setup, the denominator exceeds 3/4 at every potential. This is an exact inequality, stronger than checking its value along a numerical run.",
+    "equation": "e²C(a) < 66325137500 / 274510827927 < 1/4\nχᵦ > 0  ⇒  Z(a) > 3/4,  for every a ∈ ℝ",
+    "definitions": "N is the inclusive highest Landau index: n=0,…,4. Mₙ²=1+2bn and dₙ=2−δₙ0. Positive longitudinal weights integrate constants exactly, summing to 2K. α=e²/(4π)<1/137 and π>157/50.",
+    "assumptions": [
+      "Exact coefficients with positive weights and total weight 2K on each level.",
+      "b=10, K=20, N=4; the all-finite-N extension is a separate new result.",
+      "The fixed susceptibility matching defined in the model."
+    ],
+    "steps": [
+      [
+        "Bound every mode independently",
+        "ω ≥ M implies M²/(4ω⁵) ≤ 1/(4M³), independent of the moving potential."
+      ],
+      [
+        "Sum only certified positive weights",
+        "The total longitudinal weight converts the estimate to bK[1+2Σₙ₌₁⁴(1+20n)⁻³ᐟ²]/(8π²)."
+      ],
+      [
+        "Replace irrational values conservatively",
+        "Use explicit lower bounds 84, 246, 427, 729 for the four mass cubes, α<1/137 and π>157/50."
+      ],
+      [
+        "Compare exact integers",
+        "Fraction arithmetic establishes the quoted rational is below 1/4. Binet’s positive integral proves χᵦ>0, so Z>3/4."
+      ]
+    ],
+    "tests": [
+      "Exact rational cross multiplication.",
+      "A separate rounded-coefficient certificate gives a conservative margin about 0.7653173589 for its stored finite list.",
+      "A deliberately coarse grid in a different K-window shows why an integral maximum cannot replace this discrete proof."
+    ],
+    "objection": "A coefficient certificate for exact weights does not automatically certify rounded machine coefficients, and neither is an interval enclosure of an ODE trajectory.",
+    "resolution": "The exact theorem and the stored rounded-coefficient check are labeled separately. The later all-N proof extends the exact finite family at the same K, without asserting state convergence.",
+    "connection": "This certificate supplies the global-gap premise of the finite continuation and forcing estimates.",
+    "route": "Mass lower bound + positive weights + exact arithmetic + χ>0 → Z>3/4 → finite continuation / forced bound",
+    "falsifiers": [
+      "Negative weights or an altered total weight invalidate the proof.",
+      "Changing K or matching requires recomputing the certificate."
+    ],
+    "limit": "This original result covers N=4 and exact coefficients; the rounding record is a different certificate.",
+    "kind": "proof",
+    "new": false,
+    "doc": "round5/theorem_advisor.md",
+    "related": [
+      "R5-T1",
+      "R6-L2",
+      "R6-L1"
+    ],
+    "sources": [
+      "D002",
+      "D003"
+    ],
+    "plot": null,
+    "status": "Conditional mathematical result",
+    "verification": "Exact rational proof independently reconstructed; rounded coefficients checked separately.",
+    "scope": "Original finite discrete family, all real a.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R5-E1",
+    "title": "An explicit bound on the driven electric field",
+    "summary": "The total size of the applied drive bounds the electric field. A vacuum-start pulse with total amplitude λ keeps |x| below 4|λ|/3 in the certified family.",
+    "technicalSummary": "The total size of the applied drive bounds the electric field. A vacuum-start pulse with total amplitude λ keeps |x| below 4|λ|/3 in the certified family.",
+    "claim": "The total size of the applied drive bounds the electric field. A vacuum-start pulse with total amplitude λ keeps |x| below 4|λ|/3 in the certified family.",
+    "equation": "|x(s)| ≤ √(2W₀/μ) + (1/μ) ∫₀ˢ |F(τ)| dτ\nW₀=0, μ=3/4, F=λg, g≥0, ∫g=1 ⇒ |x(s)| ≤ 4|λ|/3",
+    "definitions": "W is the positive total energy of the reduced model; μ is a proven global denominator lower bound. The pulse normalization is over its entire support.",
+    "assumptions": [
+      "The hypotheses of the finite continuation theorem.",
+      "Finite source integral on the interval being bounded.",
+      "For the simplified pulse bound: exact vacuum initial data and nonnegative normalized g."
+    ],
+    "steps": [
+      [
+        "Start with the exact work identity",
+        "W′=xF and W≥μx²/2 imply |W′|≤√(2W/μ)|F|."
+      ],
+      [
+        "Regularize the square root",
+        "Use W+ε to avoid a singular expression at a vacuum start. Integrate before taking ε→0."
+      ],
+      [
+        "Translate energy back to the field",
+        "Apply |x|≤√(2W/μ). For an integrable source this bound is uniform in time."
+      ],
+      [
+        "Respect what integration can do",
+        "a is the time integral of −x. A uniform bound on x alone permits linear growth of a and does not bound a for all time."
+      ]
+    ],
+    "tests": [
+      "Symbolic work identity and exact coefficient proof.",
+      "Independent counterexamples to replacing an electric bound with full-state all-time stability.",
+      "Finite source and zero-energy edge cases included in the proof review."
+    ],
+    "objection": "The bound is sometimes read as decay or stability of every variable; it states neither.",
+    "resolution": "Only the electric amplitude and positive energy receive the stated global control. Decay, scattering, potential growth and pumped tangent stability require additional analysis.",
+    "connection": "The nonlinear energy argument motivates the new positive second variation at stationary vacuum, but cannot be differentiated into a positive norm without a separate derivation.",
+    "route": "W′=xF + Z≥μ → integrated field bound → candidate stationary-vacuum response bound (new proof required)",
+    "falsifiers": [
+      "A signed source integral ∫F cannot replace ∫|F| for an arbitrary oscillatory source.",
+      "Omitting the ε argument leaves the vacuum-start proof incomplete."
+    ],
+    "limit": "No decay rate, bound on all tangent variables, or quantum-noise estimate follows.",
+    "kind": "proof",
+    "new": false,
+    "doc": "round5/theorem_advisor.md",
+    "related": [
+      "R5-T1",
+      "R5-C1",
+      "R6-L4"
+    ],
+    "sources": [
+      "D001"
+    ],
+    "plot": null,
+    "status": "Conditional mathematical result",
+    "verification": "Exact inequality under the theorem hypotheses; numerical plots are illustrations only.",
+    "scope": "Finite-model forced dynamics, locally integrable source size.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R4-R1",
+    "title": "Causal tangent response of the coupled trajectory",
+    "summary": "The code computes how the coupled field changes under a small change in the applied source, including the current’s feedback. A delayed source perturbation has no earlier response in the checked setup.",
+    "technicalSummary": "The code computes how the coupled field changes under a small change in the applied source, including the current’s feedback. A delayed source perturbation has no earlier response in the checked setup.",
+    "claim": "The code computes how the coupled field changes under a small change in the applied source, including the current’s feedback. A delayed source perturbation has no earlier response in the checked setup.",
+    "equation": "v′=−u; q=−v\nu′ = [f−e²(δS+δD x²+2Dxu)+e²δC x′]/Z\nηᵢ′ = 2hᵢ×ηᵢ + 2(0,0,q)×rᵢ",
+    "definitions": "v=δa, u=δx, ηᵢ=δrᵢ and f=δF. For fixed grid: δS=Σw[ηz+M²q/ω³], δC=−Σw5M²pq/(4ω⁷), δD=Σw5M²(M²−6p²)q/(8ω⁹). A simultaneous gauge/grid translation instead uses q=δk−v.",
+    "assumptions": [
+      "A common parameter neighborhood with differentiable admissible initial data and source parameter derivatives jointly continuous on compact time/parameter sets, on a finite interval where the base denominator stays separated from zero.",
+      "Retarded support requires zero initial tangent and no source change before the probe.",
+      "The plus/minus reference runs must be centered on the same base source, including any nonzero probe."
+    ],
+    "steps": [
+      [
+        "Differentiate the full quotient",
+        "Retain variation of Z; moving its derivative to the numerator gives the +e²δC x′ term."
+      ],
+      [
+        "Differentiate the state feedback",
+        "The Bloch variation and all counterterm variations contribute to the current. A prescribed-field response is not this coupled tangent."
+      ],
+      [
+        "Specify preparation before interpreting causality",
+        "Uniqueness of the homogeneous tangent system gives zero response before a delayed perturbation only for unchanged prior source and zero tangent data."
+      ],
+      [
+        "Cross-check independently",
+        "Compare centered finite differences, spinor controls, simultaneous grid/potential gauge translation and work/orthogonality identities. Refine time accuracy and quadrature separately."
+      ]
+    ],
+    "tests": [
+      "Historical selected response: 512→1024 nodes gives max |Δu|=2.1572511138545636e−10 at fixed b=10,K=20,N=4.",
+      "128→256 and 256→512 fail the historical 10⁻⁶ full-history gate; those failures remain recorded.",
+      "Nonzero-probe bug repaired: finite-difference error now 4.59e−8 → 5.02e−9 → 4.70e−10 on a separate small regression setup.",
+      "Gauge comparison for that corrected regression differs in x by 2.78e−14. Missing causal observation samples now cannot pass vacuously."
+    ],
+    "objection": "This source-amplitude tangent is a restricted projection of the finite-model retarded current response, including its contact terms; it does not reconstruct the full spacetime kernel or symmetrized quantum noise. A signed first variation of energy is not a norm. Some comparisons used the wrong nonzero probe history.",
+    "resolution": "The code-family bug is reproduced and fixed in round6/code; the matched default fixture is unchanged. The result remains a finite-time classical tangent of a quantum mean-field expectation trajectory, with fixed regulators.",
+    "connection": "Finite ODE differentiability supplies the tangent equations. The exact stationary vacuum allows a new positive quadratic response energy; a pumped base does not inherit it automatically.",
+    "route": "Finite smooth flow + declared source family → tangent response → vacuum-only positive second variation; quantum noise remains open",
+    "falsifiers": [
+      "Nonzero delayed-probe finite differences centered at zero reproduce the old false failure.",
+      "An initial-state perturbation can cause pre-probe response and violates the claimed retarded preparation."
+    ],
+    "limit": "No continuum convergence, full retarded QED kernel, quantum noise, metric response or all-time pumped stability is established.",
+    "kind": "check",
+    "new": false,
+    "doc": "round4/response_contract.md",
+    "related": [
+      "R5-T1",
+      "R6-L4"
+    ],
+    "sources": [
+      "D001",
+      "D042",
+      "D043"
+    ],
+    "plot": "probe",
+    "status": "Verified on stated tests",
+    "verification": "Historical fixed-grid convergence and independent controls; newly repaired nonzero-probe regression.",
+    "scope": "Finite-time response of the stated finite mean-field trajectory.",
+    "origin": "Reproduction / computational implementation",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R3-M1",
+    "title": "A recorded backreacting electric-field baseline",
+    "summary": "The electric field and quantized Dirac modes evolve together after an externally supplied pulse, with a fixed magnetic background. The recorded curves are a finite-model baseline for later response tests.",
+    "technicalSummary": "The electric field and quantized Dirac modes evolve together after an externally supplied pulse, with a fixed magnetic background. The recorded curves are a finite-model baseline for later response tests.",
+    "claim": "The electric field and quantized Dirac modes evolve together after an externally supplied pulse, with a fixed magnetic background. The recorded curves are a finite-model baseline for later response tests.",
+    "equation": "rᵢ′=2hᵢ×rᵢ; a′=−x\nZx′=F−e²(S+Dx²);  W′=xF",
+    "definitions": "Flat homogeneous background in natural units ℏ=c=1; dimensionless b=|eB|/mₑ². A fixed finite Landau list and canonical momentum window define the regulator. An external pump supplies energy before being switched off.",
+    "assumptions": [
+      "Specified matched current and energy subtraction, with a fixed magnetic field.",
+      "The initial vacuum and external pulse encoded in the archived run.",
+      "A finite numerical approximation; trajectory samples do not certify every intermediate time."
+    ],
+    "steps": [
+      [
+        "Define the state and source",
+        "Initialize the physical mode vacuum and a smooth pulse with documented normalization."
+      ],
+      [
+        "Evolve the coupled equations",
+        "Compute the expectation-value current from evolving modes and feed it into the electric evolution."
+      ],
+      [
+        "Audit the energy source",
+        "Track supplied work and the renormalized energy identity; do not interpret externally supplied energy as vacuum extraction."
+      ],
+      [
+        "Check independent observables",
+        "Norm conservation, work balance, sign tests and weak-source matching offer different checks. An energy-conserving wrong matching is still possible."
+      ]
+    ],
+    "tests": [
+      "Archived baseline, diagnostic histories and independent-control records remain accessible in Computed fields.",
+      "The new audit inspected every line of the legacy computational file but does not claim a new production rerun.",
+      "The matched small baseline comparator is bit-for-bit unchanged by round6 response fixes."
+    ],
+    "objection": "Conservation alone can pass for a self-consistent but physically wrong subtraction; a previous claimed cancellation fix was absent from the legacy source.",
+    "resolution": "Legacy source and its limitation are preserved explicitly. The current matched response implementation uses its documented per-mode organization; physical matching requires an independent low-field check.",
+    "connection": "The baseline makes a concrete trajectory available for finite-time tangent tests. It does not provide the directional quantum stresses needed for gravity.",
+    "route": "Declared finite modes + matched mean-field current → baseline trajectory → tangent and stress obligations",
+    "falsifiers": [
+      "Remove supplied work from the accounting and the energy interpretation becomes false.",
+      "Change the finite matching consistently in current and energy: conservation alone may not detect it."
+    ],
+    "limit": "Fixed magnetic background, flat metric, no collisions or full quantum photon fluctuations; no vacuum-energy extraction claim.",
+    "kind": "check",
+    "new": false,
+    "doc": "round4/response_contract.md",
+    "related": [
+      "R4-R1",
+      "R5-G1"
+    ],
+    "sources": [
+      "D041",
+      "D044"
+    ],
+    "plot": null,
+    "status": "Verified on stated tests",
+    "verification": "Archived finite numerical baseline with controls; new source audit, not a new production acceptance.",
+    "scope": "Homogeneous finite mean-field dynamics.",
+    "origin": "Reproduction / computational implementation",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R5-G1",
+    "title": "A constraint test for the stress–gravity bridge",
+    "summary": "For an anisotropically expanding background, the Einstein constraint stays satisfied only when the matter energy balance is consistent. This gives a precise test for the missing quantum stress closure.",
+    "technicalSummary": "For an anisotropically expanding background, the Einstein constraint stays satisfied only when the matter energy balance is consistent. This gives a precise test for the missing quantum stress closure.",
+    "claim": "For an anisotropically expanding background, the Einstein constraint stays satisfied only when the matter energy balance is consistent. This gives a precise test for the missing quantum stress closure.",
+    "equation": "Cɡ = H⊥² + 2H⊥H∥ − κρ − Λ\nQ = ρ̇ + 2H⊥(ρ+p⊥) + H∥(ρ+p∥)\nĊɡ = −(2H⊥+H∥)Cɡ − κQ\nCɡ(t) = [V(0)Cɡ(0) − κ∫₀ᵗ VQ dτ] / V(t)",
+    "definitions": "Bianchi I line element: ds²=−dt²+a⊥²(dx²+dy²)+a∥²dz²; H⊥=ȧ⊥/a⊥, H∥=ȧ∥/a∥, κ=8πG, V=a⊥²a∥. Spatial equations: Ḣ⊥=(Λ−κp∥−3H⊥²)/2 and Ḣ∥=Λ−κp⊥−Ḣ⊥−H⊥²−H∥²−H⊥H∥.",
+    "assumptions": [
+      "Ordinary Einstein spatial equations, regular nonzero scale factors, differentiable sources.",
+      "ρ, p⊥ and p∥ belong to the same stress tensor and state prescription.",
+      "Higher-curvature operators must be included or consistently order-reduced before using ordinary Einstein evolution."
+    ],
+    "steps": [
+      [
+        "Differentiate the constraint directly",
+        "Substitute both spatial evolution equations and collect density and pressure terms."
+      ],
+      [
+        "Identify the exact conservation residual",
+        "The remaining source is −κQ; this is an algebraic identity, not a new stress prescription."
+      ],
+      [
+        "Solve the linear propagation equation",
+        "V̇=(2H⊥+H∥)V supplies the integrating factor and the displayed integral formula."
+      ],
+      [
+        "Include support for an external current",
+        "For longitudinal fields Ė=−2H⊥E−Jq−Jext and Ḃ=−2H⊥B. Maxwell gives QEM=−E(Jq+Jext). If Qq=EJq, omitted external support leaves total Q=−EJext."
+      ]
+    ],
+    "tests": [
+      "Exact symbolic constraint propagation and electromagnetic exchange cancellation.",
+      "Explicit counterexample: omit the source-support sector during driving and Q generally remains nonzero.",
+      "Primary stress-renormalization source scope rechecked: a cited theorem does not complete the nonzero strong-field stress calculation."
+    ],
+    "objection": "A constraint-propagation identity cannot manufacture the renormalized directional quantum stresses. Omitting external-source stress or higher-curvature terms breaks the intended gravitational model.",
+    "resolution": "This is a conditional diagnostic for a future closure. The strong-field quantum stress and state prescription remain open, and the action alone is not a closed initial-value system.",
+    "connection": "The force Ward identity supplies consistent energy exchange; the constraint lemma then tests gravitational evolution. The finite electric current alone does not supply ρq,pq⊥,pq∥.",
+    "route": "Common current/stress renormalization + source support → Q=0 → constraint propagation → candidate semiclassical evolution",
+    "falsifiers": [
+      "Set Jext≠0 and omit supporting matter: the constraint acquires a source.",
+      "Cite a zero gauge-curvature theorem as if it covered the strong-field case: the missing premise remains."
+    ],
+    "limit": "No self-consistent Einstein–QED solution, black-hole interior, curved-space pair-production rate or desingularization is established.",
+    "kind": "proof",
+    "new": false,
+    "doc": "round5/research_bridge.md",
+    "related": [
+      "R3-M1",
+      "R6-L3"
+    ],
+    "sources": [
+      "D014",
+      "D035",
+      "D037"
+    ],
+    "plot": null,
+    "status": "Conditional mathematical result",
+    "verification": "Exact conditional identity and independent omitted-source counterexample.",
+    "scope": "Ordinary Einstein Bianchi I reduction with a yet-to-be-completed matter stress.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R5-P1",
+    "title": "Bidirectional proof planning with independent replay",
+    "summary": "A finite rule library can be searched from known facts and backward from a target. The program checks the meeting point, replays the route and verifies its cost independently. The rules themselves still need mathematical review.",
+    "technicalSummary": "A finite rule library can be searched from known facts and backward from a target. The program checks the meeting point, replays the route and verifies its cost independently. The rules themselves still need mathematical review.",
+    "claim": "A finite rule library can be searched from known facts and backward from a target. The program checks the meeting point, replays the route and verifies its cost independently. The rules themselves still need mathematical review.",
+    "equation": "Forward state F; backward obligation set G\nMeet only if G ⊆ F\nReplay every rule from admitted premises; compare total cost with independent uniform-cost search",
+    "definitions": "Horn rules require the conjunction of all their premises. A node may be a declared model assumption, theorem, numerical record or open obligation; those types are not interchangeable. The frozen selected route costs 14, with forward/backward meeting costs 8 and 6.",
+    "assumptions": [
+      "Finite frozen rule library with positive exact integer costs.",
+      "Only admissible premises and reviewed rules can justify an implication.",
+      "Backward regression opens sufficient premises; it never reverses an implication."
+    ],
+    "steps": [
+      [
+        "Freeze the proof-planning contract",
+        "Validate node types, rule premises, costs and proof references before search."
+      ],
+      [
+        "Expand forward and regress backward",
+        "Track known facts and all outstanding premises as sets; handle shared prerequisites without counting them as independent discoveries."
+      ],
+      [
+        "Verify the meeting and replay",
+        "The backward obligations must all be in the forward set. Reconstruct a valid ordered rule sequence from initial premises."
+      ],
+      [
+        "Use an independent cost oracle",
+        "Uniform-cost search and a separate subset-oracle test family check the selected route cost."
+      ],
+      [
+        "Seal the external evidence",
+        "Round6 additionally binds referenced proof-file bytes in an immutable evidence manifest, verifies it before and after execution, and distinguishes declared assumptions from conjectures."
+      ]
+    ],
+    "tests": [
+      "24 unchanged planner compatibility tests pass.",
+      "Historical independent review: 19 gates, including 64 separate subset-oracle libraries.",
+      "New tests reject unsafe labels, changed proof bytes and source mutation, and preserve costs such as the exact integer 10⁴⁰⁰."
+    ],
+    "objection": "A successful search is not a proof of the admitted rules. Previously, a reference string hash did not bind the document bytes, and conditional:false could be misread as unconditional physics.",
+    "resolution": "New metadata explicitly states conditional-on-declared-assumptions and binds local proof artifacts. The UI calls this a proof planner, not a formal proof kernel; unsafe labels are rejected, but labels cannot certify truth.",
+    "connection": "The planner organizes the proof obligations for finite continuation. New round6 lemmas are displayed as reviewed connections and are not silently inserted into the executable frozen rule library.",
+    "route": "Reviewed finite rules → bidirectional route → replay + independent cost check; external theorem truth remains a separate obligation",
+    "falsifiers": [
+      "Modify a referenced proof after hashing: the new evidence guard must fail.",
+      "Present a proposed or unresolved theorem as a proved seed: validation must reject it."
+    ],
+    "limit": "Not Lean/Coq kernel verification; no automatic scientific discovery, optimal real-world research plan or proof of conjectural premises.",
+    "kind": "check",
+    "new": false,
+    "doc": "round5/search_contract.md",
+    "related": [
+      "R5-T1",
+      "R6-L2"
+    ],
+    "sources": [
+      "D007",
+      "D008",
+      "D010"
+    ],
+    "plot": null,
+    "status": "Verified on stated tests",
+    "verification": "Independent replay/oracle checks, 24 compatibility tests and new metadata mutation regressions.",
+    "scope": "A finite admitted Horn-rule library.",
+    "origin": "Reproduction / computational implementation",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R6-L1",
+    "title": "The exact finite-window coefficient and its maximum",
+    "summary": "The continuous momentum integral can be evaluated exactly. Its coefficient is largest at zero potential, giving a sharp denominator bound for that integral model and a reference for testing quadrature.",
+    "technicalSummary": "The continuous momentum integral can be evaluated exactly. Its coefficient is largest at zero potential, giving a sharp denominator bound for that integral model and a reference for testing quadrature.",
+    "claim": "The continuous momentum integral can be evaluated exactly. Its coefficient is largest at zero potential, giving a sharp denominator bound for that integral model and a reference for testing quadrature.",
+    "equation": "Pᴍ(y) = [u−u³/3]/M²,  u=y/√(M²+y²)\nCₙ,ₖ(a) = b/(16π²) Σₙdₙ[Pᴍₙ(K−a)+Pᴍₙ(K+a)]\nC(a)=C(−a); C′(a)<0 for a>0\nminₐ Z(a)=1+χᵦ−e²C(0)",
+    "definitions": "b>0, K>0, finite inclusive N≥0, Mₙ²=1+2bn, d₀=1 and dₙ=2 for n>0. The defining integral is b/(16π²)Σdₙ∫₋ₖᴷ Mₙ²/[Mₙ²+(k−a)²]⁵ᐟ² dk.",
+    "assumptions": [
+      "Continuous longitudinal integration over a fixed symmetric canonical window.",
+      "Positive field parameter, finite window and finite number of Landau levels.",
+      "No identification of this integral with a finite quadrature list."
+    ],
+    "steps": [
+      [
+        "Find and verify the primitive",
+        "Set u=y/√(M²+y²). Differentiating P gives exactly M²/(M²+y²)⁵ᐟ²."
+      ],
+      [
+        "Evaluate both endpoints",
+        "Oddness of P produces the sum P(K−a)+P(K+a), immediately even in a."
+      ],
+      [
+        "Prove the global maximum",
+        "The derivative is f(K+a)−f(K−a), where f is positive, even and strictly decreasing with |y|. For a,K>0, |K+a|>|K−a|, so each term is negative."
+      ],
+      [
+        "Separate the algorithm from the formula",
+        "A floating-point difference between nearly saturated primitives can cancel. The implementation requires high-precision fallback and held-out large-potential tests."
+      ],
+      [
+        "Test the forbidden transfer",
+        "A two-node positive Gauss rule can put a sharp integrand peak exactly on a node at nonzero a, exceeding the continuous maximum."
+      ]
+    ],
+    "tests": [
+      "135 independent SciPy integrations compared with the primitive on the contracted domain.",
+      "Independent 65-digit integration and symbolic differentiation by the skeptic.",
+      "Gauss nodes 32–512 compared with the exact integral, with coarse errors retained.",
+      "Held-out tiny-window/large-potential cancellation cases required after advisor found silent zeros."
+    ],
+    "objection": "The exact continuous maximum at a=0 does not imply a discrete quadrature maximum at a=0. A mathematically exact primitive can still be numerically evaluated incorrectly.",
+    "resolution": "A retained two-node counterexample refutes the discrete transfer. The primitive is used as an independently checked integration reference, while the discrete certificate uses a separate pointwise bound. Advisor-discovered cancellation and plot errors are repaired and rechecked before publication.",
+    "connection": "The primitive supplies an exact finite-window reference; positive tails yield the all-N fixed-window certificate and the joint-cutoff obstruction.",
+    "route": "Positive even kernel → endpoint primitive → strict maximum → integral-only gap; discrete gap requires a separate argument",
+    "falsifiers": [
+      "b=10,N=0,K=200,nk=2 at a Gauss node: discrete Z becomes negative while integral Z stays positive.",
+      "At a=10⁴…10⁷, a silent zero coefficient contradicts positive high-precision integration."
+    ],
+    "limit": "The sharp maximum is for continuous integration, not arbitrary quadrature. It is not a full trajectory or continuum-QED solution.",
+    "kind": "proof",
+    "new": true,
+    "doc": "round6/extensions.md",
+    "related": [
+      "R5-C1",
+      "R6-L2",
+      "R6-L3"
+    ],
+    "sources": [
+      "R6A04"
+    ],
+    "plot": "window",
+    "status": "Conditional mathematical result",
+    "verification": "Exact derivation with independent symbolic/integral checks and a retained discrete counterexample.",
+    "scope": "Finite continuous momentum window and finite Landau sum.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R6-L2",
+    "title": "The gap survives every finite Landau cutoff at fixed window",
+    "summary": "The original Z>3/4 certificate extends from five Landau levels to every finite number of levels, as long as b=10, K=20 and the positive quadrature assumptions are preserved.",
+    "technicalSummary": "The original Z>3/4 certificate extends from five Landau levels to every finite number of levels, as long as b=10, K=20 and the positive quadrature assumptions are preserved.",
+    "claim": "The original Z>3/4 certificate extends from five Landau levels to every finite number of levels, as long as b=10, K=20 and the positive quadrature assumptions are preserved.",
+    "equation": "Σₙ₌₅∞(1+20n)⁻³ᐟ² ≤ ∫₄∞(1+20t)⁻³ᐟ²dt = 1/90\ne²C(a) < 67743204500/274510827927 < 1/4\nTherefore Z(a)>3/4 for every real a and every finite N.",
+    "definitions": "Inclusive cutoff n=0,…,N; positive longitudinal weights with sum 2K per level. This uniform coefficient estimate fixes K=20 and b=10. A nested coefficient family also has tail bound e²Σₙ>N Cₙ ≤ αK/[π√(1+2bN)], interpreted only as coefficient convergence.",
+    "assumptions": [
+      "Same exact-coefficient matching and α<1/137.",
+      "Every retained level uses positive quadrature exact on constants.",
+      "Fixed finite longitudinal window; an increasing mode dimension still needs a separate limiting theory."
+    ],
+    "steps": [
+      [
+        "Retain the original pointwise estimate",
+        "C≤bK[1+2Σₙ₌₁ᴺ(1+2bn)⁻³ᐟ²]/(8π²). This is valid for every a and does not need a grid maximum."
+      ],
+      [
+        "Control all omitted levels",
+        "For a positive decreasing function, each tail term is no larger than the integral over the preceding unit interval. The n≥5 tail is at most 1/90."
+      ],
+      [
+        "Preserve exact rational arithmetic",
+        "Add this tail to the previous four conservative mass-cube bounds. The resulting rational remains strictly less than 1/4."
+      ],
+      [
+        "Supply the theorem premise for each finite N",
+        "χ>0 gives Z>3/4, so each individual finite-dimensional system inherits the earlier continuation theorem."
+      ],
+      [
+        "Stop before exchanging solution limits",
+        "A uniform denominator does not control the initial energy of arbitrarily excited ultraviolet modes or prove convergence of current, state and tangent."
+      ]
+    ],
+    "tests": [
+      "Exact rational fraction independently reconstructed by advisor, coder and skeptic formulations.",
+      "Tail integral 1/90 checked symbolically.",
+      "The strict gap comparison is integer arithmetic, not a rounded plot."
+    ],
+    "objection": "Uniformity in one coefficient and one cutoff does not prove convergence of an increasing-dimensional ODE system, and it says nothing uniform when K also grows.",
+    "resolution": "The theorem is deliberately stated for every finite N at fixed K. The coefficient-tail corollary is separate from current/stress/state convergence. The joint-cutoff negative result shows why the distinction matters.",
+    "connection": "This closes a backward obligation of the finite existence theorem for a broader family. The next unclosed obligation is a common ultraviolet tail estimate for physical states and renormalized observables.",
+    "route": "Positive discrete weights + integrable Landau coefficient tail → all-finite-N gap at fixed K → separate finite-model existence theorems",
+    "falsifiers": [
+      "Let K grow without a new estimate: the proof is not uniform in K.",
+      "Choose high-frequency excited initial states without energy-tail control: a gap alone cannot establish convergence."
+    ],
+    "limit": "No infinite-mode evolution, regulator removal or current/stress convergence theorem follows.",
+    "kind": "proof",
+    "new": true,
+    "doc": "round6/extensions.md",
+    "related": [
+      "R5-T1",
+      "R5-C1",
+      "R6-L3"
+    ],
+    "sources": [
+      "R6A03",
+      "R6A04"
+    ],
+    "plot": null,
+    "status": "Conditional mathematical result",
+    "verification": "Exact rational tail certificate with independent reconstruction.",
+    "scope": "Every finite discrete Landau cutoff, fixed b=10,K=20.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R6-L3",
+    "title": "Why the unmodified joint-cutoff proof route fails",
+    "summary": "When both cutoffs are removed with the existing fixed matching, the coefficient loses every uniform positive lower bound. This disproves a proposed extension of our finite proof route; it does not disprove continuum QED.",
+    "technicalSummary": "When both cutoffs are removed with the existing fixed matching, the coefficient loses every uniform positive lower bound. This disproves a proposed extension of our finite proof route; it does not disprove continuum QED.",
+    "claim": "When both cutoffs are removed with the existing fixed matching, the coefficient loses every uniform positive lower bound. This disproves a proposed extension of our finite proof route; it does not disprove continuum QED.",
+    "equation": "Zₙ,∞ = 1 − e²/(12π²)[log(2b)+ψ(N+1+1/(2b))]\nN→∞ ⇒ Zₙ,∞→−∞\nK→∞ and N→∞ cofinally ⇒ Cₙ,ₖ(0)→+∞; Zₙ,ₖ(0)→−∞",
+    "definitions": "χᵦ=e²[b−log(2b)−ψ(1+1/(2b))]/(12π²) is held fixed. The longitudinal integration is continuous. Cofinal means both K and N eventually exceed any fixed finite thresholds; holding either cutoff fixed is a different question.",
+    "assumptions": [
+      "Fixed positive b,e² and the stated unmodified matching.",
+      "The same explicitly divided coefficient Z=1+χ−e²C.",
+      "Continuous integration and both regulators tending to infinity."
+    ],
+    "steps": [
+      [
+        "Take the full momentum integral at fixed N",
+        "The integral per level equals 1/(3Mₙ²) when written with its 1/4 factor. The remaining Landau sum is harmonic at large n."
+      ],
+      [
+        "Use an exact recurrence",
+        "Use the digamma recurrence to sum the finite harmonic terms, then combine them in Z=1+χᵦ−e²C with the unchanged susceptibility. The finite b-dependent pieces cancel, giving the displayed Z."
+      ],
+      [
+        "Strengthen beyond an iterated limit",
+        "For any coefficient threshold choose a finite partial sum N₀ whose full-window value exceeds it; then choose finite K₀ large enough. Positivity ensures every N≥N₀,K≥K₀ exceeds that threshold."
+      ],
+      [
+        "Identify exactly what fails",
+        "No global positive gap uniform in both cutoffs remains. Thus this positive-energy continuation route cannot be passed unchanged to that joint limit."
+      ],
+      [
+        "Keep cancellations and renormalization open",
+        "Divergence of this separated coefficient alone does not prove divergence of the fully combined, consistently renormalized current. A new common current/energy/stress derivation may reorganize the equations."
+      ]
+    ],
+    "tests": [
+      "Finite harmonic sum versus digamma expression.",
+      "Independent high-precision matching cancellation checks.",
+      "Cofinal finite-path lower-bound checks illustrate the analytic proof; they do not establish an infinite limit by sampling.",
+      "Plot generated in log cutoff coordinates, with asymptotic rows labeled and no enormous mode allocation."
+    ],
+    "objection": "An iterated limit alone does not establish every joint path. Conversely, a divergent separated coefficient is not a theorem that continuum QED has no solution.",
+    "resolution": "Monotonicity supplies a genuine cofinal proof for this coefficient. The interpretation is restricted to uniform gap failure in the unmodified closure. It is neither a physical instability in the selected run nor a measured QED Landau pole.",
+    "connection": "The obstruction redirects the continuum program toward common subtraction, a specified physical renormalization condition, state-tail control and the force Ward identity.",
+    "route": "Exact coefficient + harmonic tail + fixed matching → no joint uniform gap → rederive common renormalized closure before continuum evolution",
+    "falsifiers": [
+      "A changed matching cannot be accepted as a repair unless current, energy and stress are rederived together.",
+      "A formal log-cutoff estimate must not be labeled an exact critical integer or a physical measurement."
+    ],
+    "limit": "This rejects one uniform-coercivity extension. It does not establish nonexistence of a consistently renormalized continuum theory or a trajectory singularity.",
+    "kind": "proof",
+    "new": true,
+    "doc": "round6/extensions.md",
+    "related": [
+      "R6-L1",
+      "R6-L2",
+      "R5-G1"
+    ],
+    "sources": [
+      "R6A01",
+      "R6A02"
+    ],
+    "plot": "cutoff",
+    "status": "Conditional mathematical result",
+    "verification": "Analytic cofinal argument, exact recurrence and independent finite checks.",
+    "scope": "Unmodified matched coefficient in the joint continuous-window/Landau limit.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  },
+  {
+    "id": "R6-L4",
+    "title": "A positive response energy at exact stationary vacuum",
+    "summary": "At an exact stationary vacuum, a new positive quadratic energy bounds the electric tangent and transformed mode perturbations. The original potential and mode tangents can still grow with time.",
+    "technicalSummary": "At an exact stationary vacuum, a new positive quadratic energy bounds the electric tangent and transformed mode perturbations. The original potential and mode tangents can still grow with time.",
+    "claim": "At an exact stationary vacuum, a new positive quadratic energy bounds the electric tangent and transformed mode perturbations. The original potential and mode tangents can still grow with time.",
+    "equation": "tᵢ = ∂p(hᵢ/ωᵢ) = êz/ωᵢ − pᵢhᵢ/ωᵢ³; ξᵢ = ηᵢ + q tᵢ\nZ₀u′=f−e²Σwᵢξᵢz; ξᵢ′=2hᵢ×ξᵢ+u tᵢ; v′=−u\nE₂ = Z₀u² + e²Σwᵢωᵢ|ξᵢ|²; E₂′=2uf\nf=0 ⇒ |u(s)|≤√(E₂(0)/Z₀)",
+    "definitions": "Stationary base: x=F=0, a=a₀, rᵢ=−hᵢ/ωᵢ; Z₀=Z(a₀)>0. Fixed-grid tangent: q=−v, ηᵢ=δrᵢ and hᵢ·ηᵢ=0. ξ is a transformed first variation. E₂ is the second variation of the energy on a twice differentiable pure-state family.",
+    "assumptions": [
+      "Exact stationary vacuum, a finite mode list and positive weights.",
+      "Z₀>0 at that base; no claim about every nonlinear neighboring trajectory.",
+      "Pure-state, norm-preserving tangent data: hᵢ·ηᵢ=0.",
+      "For the conserved bound f=0; a driven version uses ∫|f|."
+    ],
+    "steps": [
+      [
+        "Reduce at the exact base",
+        "x=x′=0 makes the quadratic-field and quotient-variation terms vanish for a specified reason. The current variation becomes Σwξz."
+      ],
+      [
+        "Remove the vacuum-preparation direction",
+        "Since q′=u, the transformed variable obeys ξ′=2h×ξ+u t. It stays perpendicular to h."
+      ],
+      [
+        "Use the transverse cancellation",
+        "ωξ·t=ξz on h·ξ=0, so the feedback term cancels between the electric and mode contributions, giving E₂′=2uf."
+      ],
+      [
+        "Relate it to second variation",
+        "Differentiate the pure-state norm twice and complete the square in δ²U. This yields ω|η+q t|², not the signed first variation δW."
+      ],
+      [
+        "Keep the null and secular directions",
+        "E₂ is positive definite in (u,ξ), but only semidefinite in (v,u,η). An explicit one-mode solution has constant E₂ and linearly growing original η."
+      ]
+    ],
+    "tests": [
+      "Independent symbolic energy identity on the transverse tangent subspace.",
+      "Weighted matrix check AᵀG+GA=0 and matrix-exponential evolution; relative energy defect about 2.05e−14 for the stated small check, against a 5e−13 gate.",
+      "Executed algebraic counterexample: one mode h=(1,0,0), w=e²=1, χ=0, Z₀=3/4, u=1, q=s, η=(0,−1/2,−s), so E₂=1 stays constant while |η| grows. This is the lemma’s algebraic fixture, not the physical b=10 production setup."
+    ],
+    "objection": "A positive energy in transformed variables can be mistaken for full tangent stability. The cancellation fails for general norm-changing variations or a pumped base.",
+    "resolution": "The accepted result bounds electric and transformed transverse response only. The secular counterexample is retained. The stationary-vacuum family direction is not the simultaneous-grid gauge translation used in the earlier gauge test.",
+    "connection": "This resolves the previous lack of a positive response norm at a restricted stationary base. The pumped case still needs a separate time-dependent symmetrizer or a rigorous counterexample.",
+    "route": "Exact stationary vacuum + transverse tangent + Z₀>0 → positive second variation → electric response bound; pumped/full-tangent stability still open",
+    "falsifiers": [
+      "Reverse the feedback sign: the weighted skew identity must fail.",
+      "Drop the contact term or admit a longitudinal tangent: the cancellation is not justified.",
+      "Use the explicit secular solution to reject boundedness of the original full tangent."
+    ],
+    "limit": "No all-time bound on v or original η, pumped-trajectory stability, nonlinear orbital stability or quantum-noise control follows.",
+    "kind": "proof",
+    "new": true,
+    "doc": "round6/extensions.md",
+    "related": [
+      "R5-E1",
+      "R4-R1"
+    ],
+    "sources": [],
+    "plot": null,
+    "status": "Conditional mathematical result",
+    "verification": "Independent exact identity, weighted-matrix check, numerical matrix exponential and a retained secular counterexample.",
+    "scope": "Exact stationary-vacuum finite tangent system.",
+    "origin": "Project derivation; literature novelty unestablished",
+    "reviewStatus": "Independent skeptic reviewed the stated scope; accepted with the limitations below.",
+    "extraDoc": "round6/skeptic_review.md"
+  }
+]

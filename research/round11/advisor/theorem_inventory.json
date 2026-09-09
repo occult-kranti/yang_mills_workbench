@@ -1,0 +1,982 @@
+{
+  "contract_version": "ym11-two-square-v1",
+  "advisor_sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+  "evidence_policy": "Derived indicates an inspectable mathematical argument, not a machine formal proof. Proposed numerical gates are not admitted facts.",
+  "claims": [
+    {
+      "claim_id": "graph_contract",
+      "statement": "Seven oriented independent links, six independent vertex groups, same-circulation based loops and spanning tree.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "G1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "G2"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Kinematic graph, no numerical scope.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "parameter_domain",
+      "statement": "alpha>0 and finite lambda1,lambda2>=0; uniform rho=1, separately labeled extension rho>0.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "H1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "RHO1"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Declared physical assumptions; input validation required.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "gauss_projection",
+      "statement": "Physical space imposes all six local vertex Gauss constraints.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "graph_contract"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "G1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "G2"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "No omitted vertices or periodic identifications.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "quotient_coordinates",
+      "statement": "Gauge orbit quotient is Omega classified by x,y,z.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "gauss_projection"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Q1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Q2"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Includes collinear/central strata.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "physical_haar",
+      "statement": "Pushforward normalized product Haar is constant 2/pi^2 on Omega.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "quotient_coordinates"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Q3"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "All integrable invariant functions.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "sharedlink_operator",
+      "statement": "Exact K=-div(A grad), with the shared-link derivative L_U-R_V.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "graph_contract",
+        "gauss_projection",
+        "physical_haar"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "K1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "K3"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "K4"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "RHO1"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Uniform model plus named anisotropic extension.",
+      "counterevidence": [
+        "Independent-rotor and cross-sign alternatives are rejected by Kz and Kxy."
+      ],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "inherited_domain",
+      "statement": "Physical operator domain is invariant lifted H^2 on SU(2)^2; polynomial form core.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "sharedlink_operator",
+        "physical_haar"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "D1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "D2"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "D3"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "No imposed trace-coordinate Dirichlet boundary.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "rational_moments",
+      "statement": "All trace-polynomial moments and finite positive Gram matrices are exactly rational.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "physical_haar"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Q4"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Every finite degree.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "polynomial_flag",
+      "statement": "K preserves total polynomial degree and has diagonal top homogeneous action.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "sharedlink_operator"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "E1"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Every polynomial degree.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "complete_free_spectrum",
+      "statement": "Orthogonal degree shells yield the complete electric spectrum and polynomial essential selfadjointness.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "polynomial_flag",
+        "physical_haar"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "E1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "E2"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "E3"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Infinite-dimensional exact operator.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "electric_tail",
+      "statement": "First omitted shell bounds all later electric shells; uniform exact m_d or general rho finite shell minimum.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "complete_free_spectrum",
+        "parameter_domain"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "E3"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "E4"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "RHO2"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Any cutoff degree D>=1.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "free_physical_poincare",
+      "statement": "Invariant electric gap is gamma_rho=min(3(3+rho)/4,9/2); at rho=1 it is 3.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "complete_free_spectrum",
+        "parameter_domain"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "E3"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "RHO3"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "All nonnegative finite rho; selected certificate may restrict positive rho.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "bounded_positive_potential",
+      "statement": "0<=V<=2(lambda1+lambda2).",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "parameter_domain",
+        "quotient_coordinates"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "H1"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "All finite nonnegative magnetic coefficients.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "selfadjoint_compact",
+      "statement": "H is selfadjoint on D(K), bounded below, and has compact resolvent.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "inherited_domain",
+        "complete_free_spectrum",
+        "bounded_positive_potential"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Theorem F"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Exact finite graph; no representation cutoff.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "positive_simple_ground",
+      "statement": "Positive improving full-group semigroup yields a smooth strictly positive unique ground state, which is gauge invariant.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "sharedlink_operator",
+        "inherited_domain",
+        "selfadjoint_compact"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Theorem F"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Every fixed finite coefficient tuple.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "pointwise_gap",
+      "statement": "First physical excitation is strictly above the unique ground.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "selfadjoint_compact",
+        "positive_simple_ground"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Theorem F"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Pointwise finite graph result.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "tail_hamiltonian",
+      "statement": "QHQ>=alpha*m_(D+1)Q using nonnegative full potential compression.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "electric_tail",
+        "bounded_positive_potential"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T1"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Parameter/source matched cutoff.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "finite_boundary_coupling",
+      "statement": "CC*=PM(P_(D+1)-P_D)MP, a finite exact positive correction supported on the last retained shell.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "polynomial_flag",
+        "rational_moments"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T2"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T3"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Correct Gram inner product required.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "finite_matrix_inertia",
+      "statement": "Certified retained and corrected generalized eigenvalue brackets with exact zero and multiplicity policies.",
+      "status": "proposed",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "rational_moments",
+        "finite_boundary_coupling"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T4"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T5"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Must be supplied by independent executed certificate artifacts.",
+      "counterevidence": [],
+      "next_discriminating_test": "Independent exact certificate replay."
+    },
+    {
+      "claim_id": "strict_R_gate",
+      "statement": "Certified mu1(A)<R<tau and exact correction B=A-CC*/(tau-R).",
+      "status": "proposed",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "tail_hamiltonian",
+        "finite_boundary_coupling",
+        "finite_matrix_inertia"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T4"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Runtime gate; an unverified float is inadmissible.",
+      "counterevidence": [],
+      "next_discriminating_test": "Independent exact certificate replay."
+    },
+    {
+      "claim_id": "finite_tail_enclosure",
+      "statement": "mu_k(B)<=E_k(H)<=mu_k(A), k=0,1, with gap subtraction of opposite endpoints.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "tail_hamiltonian",
+        "finite_boundary_coupling",
+        "strict_R_gate"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T5"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T6"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Conditional on independently checked finite inputs.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "positive_numeric_point",
+      "statement": "Computed lower gap endpoint is strictly positive and all inputs/source hashes match.",
+      "status": "proposed",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "finite_tail_enclosure",
+        "finite_matrix_inertia"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "T6"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Needs a concrete executed certificate; not supplied by advisor checks.",
+      "counterevidence": [],
+      "next_discriminating_test": "Independent exact certificate replay."
+    },
+    {
+      "claim_id": "parameter_lipschitz",
+      "statement": "Dimensionless gap is 2-Lipschitz in kappa1,kappa2 l1, equivalently kappa_plus,kappa_minus linfinity, at fixed rho.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "parameter_domain",
+        "selfadjoint_compact"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C2"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C5"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Every finite pair; no differentiability inference at crossings.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "exact_rectangle_cover",
+      "statement": "Selected rectangles cover the declared domain with all source/parameter matches and positive corrected margins.",
+      "status": "proposed",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "positive_numeric_point",
+        "parameter_lipschitz"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C2"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C5"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Executed exact set-coverage gate required.",
+      "counterevidence": [],
+      "next_discriminating_test": "Independent exact certificate replay."
+    },
+    {
+      "claim_id": "continuous_rectangle_gap",
+      "statement": "A positive common gap bound holds on the entire declared covered parameter region.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "exact_rectangle_cover",
+        "parameter_lipschitz",
+        "positive_numeric_point"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C2"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C5"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Conditional on exact cover artifact, fixed rho and alpha scaling.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "commuting_heat_factorization",
+      "statement": "K_rho=3(CU+CV)+rho S with commuting terms and exp(-t rho S) a probability average.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "sharedlink_operator",
+        "parameter_domain"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "K1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "RHO1"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "F2 proof"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Full SU(2)^2, rho>=0.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "heat_kernel_minorization",
+      "statement": "At t=4/3 the normalized K_rho heat kernel is between9/16 and25/16.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "commuting_heat_factorization"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "F2 proof"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Peter-Weyl bound r<1/4 with exact Taylor/geometric estimates.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "groundstate_ratio",
+      "statement": "sup(phi)/inf(phi)<=25/9 exp(8*kappa_plus/3).",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "heat_kernel_minorization",
+        "bounded_positive_potential",
+        "positive_simple_ground"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "F2 proof"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Normalized positive full-group ground, then invariant sector.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "groundstate_transform",
+      "statement": "Weighted form identity and variance comparison yield delta>=gamma_rho*(inf(phi)/sup(phi))^2.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "inherited_domain",
+        "positive_simple_ground",
+        "free_physical_poincare"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "F2 proof"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Invariant functions; free physical Poincare constant.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "all_finite_coupling_bound",
+      "statement": "Delta>=alpha*(81/625)*gamma_rho*exp(-16*kappa_plus/3); uniform rho = 1 has prefactor 243/625.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "groundstate_ratio",
+        "groundstate_transform",
+        "parameter_domain"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "F2"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "RHO4"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "All finite nonnegative magnetic coefficients; bound can be exponentially weak.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "common_difference_variables",
+      "statement": "kappa_plus>=abs(kappa_minus), inverse coefficient map, spectrum even in kappa_minus by loop exchange.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "sharedlink_operator",
+        "parameter_domain"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C5"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "No implied differentiability of excited gaps.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "work_balance",
+      "statement": "Time-dependent coefficients require dot alpha<K>+dot lambda1<1-x>+dot lambda2<1-y>.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "inherited_domain",
+        "parameter_domain"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C3"
+        },
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C5"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Requires sufficient common-domain/form regularity and finite energy.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "alpha_collapse",
+      "statement": "At fixed positive lambda sum, Delta<=5pi/sqrt(2)*sqrt(alpha*lambda_sum) for small enough alpha, so no alpha-uniform positive gap.",
+      "status": "derived",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "sharedlink_operator",
+        "bounded_positive_potential"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "C4"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Uniformrho1; specified small-alpha condition.",
+      "counterevidence": [],
+      "next_discriminating_test": "See experiments.json and independent skeptic artifacts."
+    },
+    {
+      "claim_id": "volume_uniform_estimate",
+      "statement": "Common growing-graph physical family with a graph-size-independent positive bound.",
+      "status": "unresolved",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Section 9"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "No admitted inference rule produces this node.",
+      "counterevidence": [
+        "No finite spatial graph theorem supplies this continuum premise."
+      ],
+      "next_discriminating_test": "Construct a common growing-graph/continuum estimate with matched scale."
+    },
+    {
+      "claim_id": "continuum_scale_matching",
+      "statement": "Common physical scale and renormalization control as spacing and bare coefficients change.",
+      "status": "unresolved",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Section 9"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "No inferred RG path from finite-graph positivity.",
+      "counterevidence": [
+        "No finite spatial graph theorem supplies this continuum premise."
+      ],
+      "next_discriminating_test": "Construct a common growing-graph/continuum estimate with matched scale."
+    },
+    {
+      "claim_id": "continuum_reconstruction",
+      "statement": "Nontrivial four-dimensional continuum correlations satisfying reconstruction/axiom obligations.",
+      "status": "unresolved",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Section 9"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "No admitted inference rule produces this node.",
+      "counterevidence": [
+        "No finite spatial graph theorem supplies this continuum premise."
+      ],
+      "next_discriminating_test": "Construct a common growing-graph/continuum estimate with matched scale."
+    },
+    {
+      "claim_id": "four_dimensional_yang_mills_gap",
+      "statement": "Nontrivial four-dimensional pure Yang-Mills quantum construction with a positive physical mass gap.",
+      "status": "unresolved",
+      "contract_version": "ym11-two-square-v1",
+      "dependencies": [
+        "volume_uniform_estimate",
+        "continuum_scale_matching",
+        "continuum_reconstruction"
+      ],
+      "source_locations": [
+        {
+          "artifact": "advisor.md",
+          "sha256": "5a4853e4bbec267c7320457632c7e9346f85e3e3aa781acefd3291f4a9d1bb32",
+          "equation_or_section": "Section 9"
+        }
+      ],
+      "artifact_paths": [
+        "advisor.md"
+      ],
+      "numerical_scope": "Unresolved target, never an initial fact.",
+      "counterevidence": [
+        "No finite spatial graph theorem supplies this continuum premise."
+      ],
+      "next_discriminating_test": "Construct a common growing-graph/continuum estimate with matched scale."
+    }
+  ]
+}

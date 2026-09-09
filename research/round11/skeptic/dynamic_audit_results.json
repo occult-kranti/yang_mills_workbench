@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "optimized_python": true,
+  "gate_count": 16,
+  "records": [
+    {
+      "test": "independent_monomial_RK45_complete",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "DOP853_own_gates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "independent_basis_and_integrator_state",
+      "passed": true,
+      "detail": 1.10835265988086e-11
+    },
+    {
+      "test": "independent_final_energy",
+      "passed": true,
+      "detail": 1.1438849867317913e-11
+    },
+    {
+      "test": "independent_integrated_work",
+      "passed": true,
+      "detail": 6.350475700855895e-13
+    },
+    {
+      "test": "independent_work_norm",
+      "passed": true,
+      "detail": {
+        "work_defect": -1.404654170755748e-11,
+        "norm_defect": -2.2182256032010628e-12
+      }
+    },
+    {
+      "test": "midpoint_own_gates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "omitted_work_rejected.DOP853",
+      "passed": true,
+      "rejection": "DOP853 failed its own norm/work gates"
+    },
+    {
+      "test": "omitted_work_is_discriminating.DOP853",
+      "passed": true,
+      "detail": 4.1378748153312
+    },
+    {
+      "test": "omitted_work_rejected.midpoint",
+      "passed": true,
+      "rejection": "midpoint failed its own norm/work gates"
+    },
+    {
+      "test": "omitted_work_is_discriminating.midpoint",
+      "passed": true,
+      "detail": 4.13782367029636
+    },
+    {
+      "test": "unknown_method_rejected",
+      "passed": true,
+      "rejection": "unknown integration method"
+    },
+    {
+      "test": "empty_history_rejected",
+      "passed": true,
+      "rejection": "nonempty raw diagnostic history required"
+    },
+    {
+      "test": "transient_nonfinite_energy_rejected",
+      "passed": true,
+      "rejection": "nonfinite/incomplete raw dynamic diagnostics"
+    },
+    {
+      "test": "dishonest_summary_rejected",
+      "passed": true,
+      "rejection": "raw/summary diagnostic mismatch"
+    },
+    {
+      "test": "dynamic_sources_unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "reviewed_source_hashes": {
+    "two_plaquette.py": "ae9084850538ebf523f8c34564352b48ce0b30d07955991d4b4d1980ab36ce43",
+    "run_study.py": "65f4b186bb34c1659ae16c61c681cb5105264052fd638367b5172bc4da1f0cea",
+    "test_solver.py": "52d253dd4f85eb8e047f973be3d030d66cbff3e108445ddcc8b5eb8ff2232b8c"
+  },
+  "independent_method": "Unorthonormalized exact-moment monomial form matrices, generalized Schrodinger equation with RK45; compared against orthonormal DOP853",
+  "scope": "Finite D3 time evolution only; no untruncated dynamic error bound.",
+  "diagnostics": {
+    "state_difference_Haar_norm": 1.10835265988086e-11,
+    "energy": 4.1378748153661515,
+    "integrated_work": 4.137874815380198,
+    "norm": 0.9999999999977818
+  }
+}

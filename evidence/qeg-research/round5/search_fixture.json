@@ -1,0 +1,993 @@
+{
+  "initial_facts": [
+    "finite_model",
+    "physical_state",
+    "regular_drive",
+    "positive_margin",
+    "smooth_family",
+    "ode_theorem",
+    "param_dependence"
+  ],
+  "goals": [
+    "selected_theorem"
+  ],
+  "blocked_goals": [
+    "physical_infinite_quantumgravity"
+  ],
+  "nodes": [
+    {
+      "id": "finite_model",
+      "statement": "A finite fixed-mode homogeneous model is declared.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "declared_hypothesis",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round4/response_contract.md P1-P6",
+      "version": "r5-v1"
+    },
+    {
+      "id": "physical_state",
+      "statement": "The initial state has finite real data and bounded Bloch vectors.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "declared_hypothesis",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round4/response_contract.md P13",
+      "version": "r5-v1"
+    },
+    {
+      "id": "regular_drive",
+      "statement": "The external drive is continuous and integrable on compact intervals.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "declared_hypothesis",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round4/response_contract.md P4",
+      "version": "r5-v1"
+    },
+    {
+      "id": "positive_margin",
+      "statement": "The uniform positive kinetic-coefficient margin holds.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "declared_hypothesis",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round4/response_contract.md P3",
+      "version": "r5-v1"
+    },
+    {
+      "id": "smooth_family",
+      "statement": "The source and initial data are smooth in the finite-dimensional parameter.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "declared_hypothesis",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round4/response_contract.md P7-P15",
+      "version": "r5-v1"
+    },
+    {
+      "id": "ode_theorem",
+      "statement": "The finite-dimensional ODE local existence and continuation theorem is admitted.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md section 6 A_ode",
+      "version": "r5-v1"
+    },
+    {
+      "id": "param_dependence",
+      "statement": "The finite-time parameter-dependence theorem is admitted.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md section 6 A_dependence",
+      "version": "r5-v1"
+    },
+    {
+      "id": "norm",
+      "statement": "Bloch norms remain bounded.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R02",
+      "version": "r5-v1"
+    },
+    {
+      "id": "Zpositive",
+      "statement": "The kinetic coefficient stays positive.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R01",
+      "version": "r5-v1"
+    },
+    {
+      "id": "regular_rhs",
+      "statement": "The finite-regulator right hand side is regular.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R03",
+      "version": "r5-v1"
+    },
+    {
+      "id": "localwellposed",
+      "statement": "The finite-regulator ODE is locally uniquely well posed.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R04",
+      "version": "r5-v1"
+    },
+    {
+      "id": "energyidentity",
+      "statement": "The finite-regulator energy identity holds.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R05",
+      "version": "r5-v1"
+    },
+    {
+      "id": "Upositive",
+      "statement": "The finite-regulator energy is coercive.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R06",
+      "version": "r5-v1"
+    },
+    {
+      "id": "coercivity",
+      "statement": "The positive margin supplies a coercive energy bound.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R06",
+      "version": "r5-v1"
+    },
+    {
+      "id": "energybound",
+      "statement": "The field is bounded on every finite time compact.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R07",
+      "version": "r5-v1"
+    },
+    {
+      "id": "compacttrajectory",
+      "statement": "The state remains bounded on finite time compacts.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R08",
+      "version": "r5-v1"
+    },
+    {
+      "id": "globalwellposed",
+      "statement": "The finite-regulator ODE is globally uniquely well posed at every finite time.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R09",
+      "version": "r5-v1"
+    },
+    {
+      "id": "smoothflow",
+      "statement": "The finite-time flow is smooth in the source amplitude.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md R10",
+      "version": "r5-v1"
+    },
+    {
+      "id": "causal_tangent",
+      "statement": "For identical initial data and source histories through t*, solutions agree through t*; with zero initial tangent and a source perturbation supported after t*, the tangent vanishes before t*.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "theorem",
+      "assumption_ids": [],
+      "verification": "manual derivation/review",
+      "source": "round4/response_contract.md P24-P26; round5/theorem_advisor.md retarded-support derivation",
+      "version": "r5-v1"
+    },
+    {
+      "id": "selected_theorem",
+      "statement": "Global finite-regulator well-posedness and smooth finite-time source-amplitude dependence hold under the declared margin.",
+      "scope": "finite_homogeneous_fixed_B",
+      "kind": "target",
+      "assumption_ids": [
+        "positive_margin"
+      ],
+      "verification": "manual derivation/review",
+      "source": "round5/search_contract.md section 1",
+      "version": "r5-v1"
+    },
+    {
+      "id": "physical_infinite_quantumgravity",
+      "statement": "A controlled continuum quantum-gravity prediction is available.",
+      "scope": "continuum_quantum_gravity",
+      "kind": "target",
+      "assumption_ids": [],
+      "verification": "unverified",
+      "source": "round5/search_contract.md section 8",
+      "version": "r5-v1"
+    }
+  ],
+  "rules": [
+    {
+      "id": "R01",
+      "premises": [
+        "finite_model",
+        "positive_margin"
+      ],
+      "conclusion": "Zpositive",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R01",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R02",
+      "premises": [
+        "finite_model",
+        "physical_state"
+      ],
+      "conclusion": "norm",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R02",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R03",
+      "premises": [
+        "finite_model",
+        "Zpositive",
+        "regular_drive"
+      ],
+      "conclusion": "regular_rhs",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R03",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R04",
+      "premises": [
+        "regular_rhs",
+        "physical_state",
+        "ode_theorem"
+      ],
+      "conclusion": "localwellposed",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R04",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R05",
+      "premises": [
+        "finite_model",
+        "localwellposed"
+      ],
+      "conclusion": "energyidentity",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R05",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R06",
+      "premises": [
+        "finite_model",
+        "norm",
+        "Zpositive"
+      ],
+      "conclusion": "Upositive",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R06",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R07",
+      "premises": [
+        "energyidentity",
+        "Upositive",
+        "regular_drive"
+      ],
+      "conclusion": "energybound",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R07",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R08",
+      "premises": [
+        "finite_model",
+        "energybound",
+        "norm"
+      ],
+      "conclusion": "compacttrajectory",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R08",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R09",
+      "premises": [
+        "localwellposed",
+        "regular_rhs",
+        "Zpositive",
+        "compacttrajectory",
+        "ode_theorem"
+      ],
+      "conclusion": "globalwellposed",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R09",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R10",
+      "premises": [
+        "globalwellposed",
+        "regular_rhs",
+        "smooth_family",
+        "param_dependence"
+      ],
+      "conclusion": "smoothflow",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R10",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R11",
+      "premises": [
+        "globalwellposed",
+        "smoothflow"
+      ],
+      "conclusion": "causal_tangent",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round4/response_contract.md P24-P26; round5/theorem_advisor.md retarded-support derivation",
+      "review_status": "reviewed"
+    },
+    {
+      "id": "R12",
+      "premises": [
+        "globalwellposed",
+        "smoothflow",
+        "causal_tangent",
+        "positive_margin"
+      ],
+      "conclusion": "selected_theorem",
+      "cost": 1,
+      "scope": "finite_homogeneous_fixed_B",
+      "proof_ref": "round5/search_contract.md R11 (mapped target name)",
+      "review_status": "reviewed"
+    }
+  ],
+  "scenarios": {
+    "derived_margin": {
+      "initial_facts": [
+        "selected_b10",
+        "selected_N4",
+        "selected_K20",
+        "alpha_bound",
+        "positive_exact_quadrature",
+        "digamma_identity"
+      ],
+      "goals": [
+        "positive_margin"
+      ],
+      "nodes": [
+        {
+          "id": "selected_b10",
+          "statement": "The selected dimensionless magnetic field is b=10.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "selected_N4",
+          "statement": "The selected Landau cutoff is n=0,...,4 (five levels).",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "selected_K20",
+          "statement": "The selected momentum cutoff is K=20.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "alpha_bound",
+          "statement": "The selected coupling obeys the explicit bound 0 < alpha < 1/137.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "positive_exact_quadrature",
+          "statement": "The selected exact Gauss\u2013Legendre quadrature has positive weights whose total is 40.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "digamma_identity",
+          "statement": "The reviewed digamma identity used in the matched susceptibility holds.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "finite_parameter_certificate",
+          "statement": "The selected parameter certificate has rational bound 66325137500/274510827927 < 1/4.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "positive_margin",
+          "statement": "The selected finite-regulator kinetic coefficient has a positive margin.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T21",
+          "version": "r5-v1"
+        }
+      ],
+      "rules": [
+        {
+          "id": "PM01",
+          "premises": [
+            "selected_b10",
+            "selected_N4",
+            "selected_K20",
+            "alpha_bound"
+          ],
+          "conclusion": "finite_parameter_certificate",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/theorem_advisor.md T17-T20",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "PM02",
+          "premises": [
+            "finite_parameter_certificate",
+            "positive_exact_quadrature",
+            "digamma_identity"
+          ],
+          "conclusion": "positive_margin",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/theorem_advisor.md T17-T20",
+          "review_status": "reviewed"
+        }
+      ]
+    },
+    "full_selected_regulator": {
+      "initial_facts": [
+        "finite_model",
+        "physical_state",
+        "regular_drive",
+        "smooth_family",
+        "ode_theorem",
+        "param_dependence",
+        "selected_b10",
+        "selected_N4",
+        "selected_K20",
+        "alpha_bound",
+        "positive_exact_quadrature",
+        "digamma_identity"
+      ],
+      "goals": [
+        "selected_theorem"
+      ],
+      "nodes": [
+        {
+          "id": "Upositive",
+          "statement": "The finite-regulator energy is coercive.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R06",
+          "version": "r5-v1"
+        },
+        {
+          "id": "Zpositive",
+          "statement": "The kinetic coefficient stays positive.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R01",
+          "version": "r5-v1"
+        },
+        {
+          "id": "alpha_bound",
+          "statement": "The selected coupling obeys the explicit bound 0 < alpha < 1/137.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "causal_tangent",
+          "statement": "For identical initial data and source histories through t*, solutions agree through t*; with zero initial tangent and a source perturbation supported after t*, the tangent vanishes before t*.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round4/response_contract.md P24-P26; round5/theorem_advisor.md retarded-support derivation",
+          "version": "r5-v1"
+        },
+        {
+          "id": "coercivity",
+          "statement": "The positive margin supplies a coercive energy bound.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R06",
+          "version": "r5-v1"
+        },
+        {
+          "id": "compacttrajectory",
+          "statement": "The state remains bounded on finite time compacts.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R08",
+          "version": "r5-v1"
+        },
+        {
+          "id": "digamma_identity",
+          "statement": "The reviewed digamma identity used in the matched susceptibility holds.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "energybound",
+          "statement": "The field is bounded on every finite time compact.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R07",
+          "version": "r5-v1"
+        },
+        {
+          "id": "energyidentity",
+          "statement": "The finite-regulator energy identity holds.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R05",
+          "version": "r5-v1"
+        },
+        {
+          "id": "finite_model",
+          "statement": "A finite fixed-mode homogeneous model is declared.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round4/response_contract.md P1-P6",
+          "version": "r5-v1"
+        },
+        {
+          "id": "finite_parameter_certificate",
+          "statement": "The selected parameter certificate has rational bound 66325137500/274510827927 < 1/4.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "globalwellposed",
+          "statement": "The finite-regulator ODE is globally uniquely well posed at every finite time.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R09",
+          "version": "r5-v1"
+        },
+        {
+          "id": "localwellposed",
+          "statement": "The finite-regulator ODE is locally uniquely well posed.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R04",
+          "version": "r5-v1"
+        },
+        {
+          "id": "norm",
+          "statement": "Bloch norms remain bounded.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R02",
+          "version": "r5-v1"
+        },
+        {
+          "id": "ode_theorem",
+          "statement": "The finite-dimensional ODE local existence and continuation theorem is admitted.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md section 6 A_ode",
+          "version": "r5-v1"
+        },
+        {
+          "id": "param_dependence",
+          "statement": "The finite-time parameter-dependence theorem is admitted.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md section 6 A_dependence",
+          "version": "r5-v1"
+        },
+        {
+          "id": "physical_state",
+          "statement": "The initial state has finite real data and bounded Bloch vectors.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round4/response_contract.md P13",
+          "version": "r5-v1"
+        },
+        {
+          "id": "positive_exact_quadrature",
+          "statement": "The selected exact Gauss\u2013Legendre quadrature has positive weights whose total is 40.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "positive_margin",
+          "statement": "The selected finite-regulator margin satisfies mu > 3/4 and therefore Z(a) > 3/4 for every real a.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T21",
+          "version": "r5-v1"
+        },
+        {
+          "id": "regular_drive",
+          "statement": "The external drive is continuous and integrable on compact intervals.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round4/response_contract.md P4",
+          "version": "r5-v1"
+        },
+        {
+          "id": "regular_rhs",
+          "statement": "The finite-regulator right hand side is regular.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R03",
+          "version": "r5-v1"
+        },
+        {
+          "id": "selected_K20",
+          "statement": "The selected momentum cutoff is K=20.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "selected_N4",
+          "statement": "The selected Landau cutoff is n=0,...,4 (five levels).",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "selected_b10",
+          "statement": "The selected dimensionless magnetic field is b=10.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/theorem_advisor.md T17-T20",
+          "version": "r5-v1"
+        },
+        {
+          "id": "selected_theorem",
+          "statement": "Global finite-regulator well-posedness and smooth finite-time source-amplitude dependence hold under the declared margin.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "target",
+          "assumption_ids": [
+            "positive_margin"
+          ],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md section 1",
+          "version": "r5-v1"
+        },
+        {
+          "id": "smooth_family",
+          "statement": "The source and initial data are smooth in the finite-dimensional parameter.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "declared_hypothesis",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round4/response_contract.md P7-P15",
+          "version": "r5-v1"
+        },
+        {
+          "id": "smoothflow",
+          "statement": "The finite-time flow is smooth in the source amplitude.",
+          "scope": "finite_homogeneous_fixed_B",
+          "kind": "theorem",
+          "assumption_ids": [],
+          "verification": "manual derivation/review",
+          "source": "round5/search_contract.md R10",
+          "version": "r5-v1"
+        }
+      ],
+      "rules": [
+        {
+          "id": "PM01",
+          "premises": [
+            "selected_b10",
+            "selected_N4",
+            "selected_K20",
+            "alpha_bound"
+          ],
+          "conclusion": "finite_parameter_certificate",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/theorem_advisor.md T17-T20",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "PM02",
+          "premises": [
+            "finite_parameter_certificate",
+            "positive_exact_quadrature",
+            "digamma_identity"
+          ],
+          "conclusion": "positive_margin",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/theorem_advisor.md T17-T20",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R01",
+          "premises": [
+            "finite_model",
+            "positive_margin"
+          ],
+          "conclusion": "Zpositive",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R01",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R02",
+          "premises": [
+            "finite_model",
+            "physical_state"
+          ],
+          "conclusion": "norm",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R02",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R03",
+          "premises": [
+            "finite_model",
+            "Zpositive",
+            "regular_drive"
+          ],
+          "conclusion": "regular_rhs",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R03",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R04",
+          "premises": [
+            "regular_rhs",
+            "physical_state",
+            "ode_theorem"
+          ],
+          "conclusion": "localwellposed",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R04",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R05",
+          "premises": [
+            "finite_model",
+            "localwellposed"
+          ],
+          "conclusion": "energyidentity",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R05",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R06",
+          "premises": [
+            "finite_model",
+            "norm",
+            "Zpositive"
+          ],
+          "conclusion": "Upositive",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R06",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R07",
+          "premises": [
+            "energyidentity",
+            "Upositive",
+            "regular_drive"
+          ],
+          "conclusion": "energybound",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R07",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R08",
+          "premises": [
+            "finite_model",
+            "energybound",
+            "norm"
+          ],
+          "conclusion": "compacttrajectory",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R08",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R09",
+          "premises": [
+            "localwellposed",
+            "regular_rhs",
+            "Zpositive",
+            "compacttrajectory",
+            "ode_theorem"
+          ],
+          "conclusion": "globalwellposed",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R09",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R10",
+          "premises": [
+            "globalwellposed",
+            "regular_rhs",
+            "smooth_family",
+            "param_dependence"
+          ],
+          "conclusion": "smoothflow",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R10",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R11",
+          "premises": [
+            "globalwellposed",
+            "smoothflow"
+          ],
+          "conclusion": "causal_tangent",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round4/response_contract.md P24-P26; round5/theorem_advisor.md retarded-support derivation",
+          "review_status": "reviewed"
+        },
+        {
+          "id": "R12",
+          "premises": [
+            "globalwellposed",
+            "smoothflow",
+            "causal_tangent",
+            "positive_margin"
+          ],
+          "conclusion": "selected_theorem",
+          "cost": 1,
+          "scope": "finite_homogeneous_fixed_B",
+          "proof_ref": "round5/search_contract.md R11 (mapped target name)",
+          "review_status": "reviewed"
+        }
+      ]
+    }
+  }
+}

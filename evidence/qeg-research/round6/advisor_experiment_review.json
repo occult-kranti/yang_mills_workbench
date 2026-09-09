@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "reviewer": "round6_advisor",
+  "initial_source_sha256": "ba8fa923b28fc4fa9d0b75fe0e566417806a3a5a573d96c075fe8d407bbd8915",
+  "initial_implementation_reported_all_gates_pass": true,
+  "issues": [
+    {
+      "id": "ADV-E01",
+      "function": "cofinal_gate",
+      "failure": "The E9 lower integral includes 1/4, but code multiplied by b/(16*pi^2) instead of b/(4*pi^2). Reported bound was four times weaker than named formula.",
+      "evidence_type": "source comparison to independent derivation",
+      "status": "repaired_and_reviewed",
+      "final_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+      "resolution_evidence": "Independent E9 measure reconstruction at six N values agrees within2e-13 relative."
+    },
+    {
+      "id": "ADV-E02",
+      "function": "tail_rows",
+      "failure": "Axis log10(N+1) evaluated digamma((N+1)+1+z), an off-by-one error.",
+      "evidence_type": "source comparison to exact L13",
+      "status": "repaired_and_reviewed",
+      "final_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+      "resolution_evidence": "Eight log10(N+1) rows agree with independent90-digit digamma references within2e-13 absolute."
+    },
+    {
+      "id": "ADV-E03",
+      "function": "tail_rows",
+      "failure": "Field log10_N_critical_asymptotic stored natural logarithm; asymptotic error note also omitted shifted-argument correction.",
+      "evidence_type": "source comparison to declared units and expansion",
+      "status": "repaired_and_reviewed",
+      "final_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+      "resolution_evidence": "Base10 asymptotic critical scale checked independently; code note explicitly discloses omitted O((N+1)^-1) shifted-argument terms and no interval enclosure."
+    },
+    {
+      "id": "ADV-E04",
+      "function": "exact_C",
+      "failure": "Saturated primitive subtraction returned exact floating zero for representable positive integrals in an accepted input range.",
+      "evidence_type": "executed independent 80-digit direct integrals",
+      "source_sha256": "ba8fa923b28fc4fa9d0b75fe0e566417806a3a5a573d96c075fe8d407bbd8915",
+      "cases": [
+        {
+          "a": 1000.0,
+          "b": 10,
+          "N": 0,
+          "K": 20,
+          "observed": 2.5380355660800615e-15,
+          "reference": "2.53809497285e-15",
+          "relative_error": 2.3406045619994272e-05
+        },
+        {
+          "a": 10000.0,
+          "observed": 0.0,
+          "reference": "2.53308018889e-20",
+          "relative_error": 1.0
+        },
+        {
+          "a": 100000.0,
+          "observed": 0.0,
+          "reference": "2.53303009703e-25",
+          "relative_error": 1.0
+        },
+        {
+          "a": 1000000.0,
+          "observed": 0.0,
+          "reference": "2.53302959612e-30",
+          "relative_error": 1.0
+        },
+        {
+          "a": 10000000.0,
+          "observed": 0.0,
+          "reference": "2.53302959111e-35",
+          "relative_error": 1.0
+        }
+      ],
+      "status": "repaired_and_reviewed",
+      "intermediate_fixed_precision_counterexample": {
+        "a": 1e+30,
+        "b": 10,
+        "N": 0,
+        "K": 20,
+        "fixed_fallback_decimal_digits": 100,
+        "observed": 0.0,
+        "independent_200_digit_direct_reference": "2.533029591058444286096987e-150",
+        "status": "repaired_by_adaptive_precision_and_rechecked"
+      },
+      "final_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+      "resolution_evidence": "Adaptive precision resolves all six held-out endpoints a10^3 through10^7 and10^30; independent positive90-digit direct integrals agree within2e-13 relative."
+    },
+    {
+      "id": "ADV-E05",
+      "function": "cancellation_gate",
+      "failure": "Reference called mpmath without an explicit workdps context; default precision was 15 despite arbitrary-precision reference wording.",
+      "evidence_type": "source review",
+      "status": "repaired_and_reviewed",
+      "final_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+      "resolution_evidence": "Source now uses explicit high-precision workdps context for cancellation reference; independent advisor references use90digits."
+    },
+    {
+      "id": "ADV-E06",
+      "function": "validate_params",
+      "failure": "Potential accepted bool True; a numeric string passed validation and then caused TypeError inside exact_C.",
+      "evidence_type": "executed adversarial API inputs",
+      "status": "repaired_and_reviewed",
+      "final_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+      "resolution_evidence": "Bool True/False, numeric string, NaN and infinity all explicitly rejected with ValueError."
+    },
+    {
+      "id": "ADV-E07",
+      "function": "symbolic_gate",
+      "failure": "Declared y positive together with M while the advertised primitive domain is all real y. Identity extends, but check should use the actual hypotheses.",
+      "evidence_type": "source/claim domain comparison",
+      "status": "repaired_and_reviewed",
+      "final_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+      "resolution_evidence": "Source now declares y real and M positive separately; regenerated symbolic primitive gate passes."
+    }
+  ],
+  "final_acceptance": {
+    "decision": "accepted_for_stated_mathematical_experiment_and_tested_numerical_scope",
+    "reviewed_source_sha256": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+    "independent_tests_passed": 29,
+    "independent_tests_total": 29,
+    "results_file": "advisor_independent_results.json",
+    "implementation_gates_passed": true,
+    "interval_certification": false,
+    "not_claimed": [
+      "floating accuracy for every representable parameter",
+      "ODE trajectory or continuum convergence",
+      "physical ultraviolet pole",
+      "formal proof-assistant verification"
+    ]
+  },
+  "intermediate_regression_result": {
+    "passed": 28,
+    "total": 28,
+    "note": "Initial bounded regressions passed; additional accepted-domain a1e30 exposes remaining fixed100digit cancellation limitation."
+  },
+  "final_output_hashes": {
+    "experiments.py": "30396dbff23ade9aa7f5bf7e912571ff0e2e2a8029e5e663b65862915ddfc013",
+    "experiment_results.json": "c0bb83155e63ed4937043f754e05e67c06d15acf53f04ca5048c7d45c5774ea1",
+    "advisor_independent_checks.py": "076ab39673b8069fedfc30ba26a85b279f692c496b8084ad63f500cce98fb763",
+    "advisor_independent_results.json": "e7bcfafa47093e5f5022b8dfbf1afda1b79c1a5e43bef2e72f29535cc58b7318",
+    "plot_data/finite_geometry.csv": "b6821b093327c55e0163134b4da6a8e23bbc0fb1bd7c796abd388f022faecd49",
+    "plot_data/quadrature_refinement.csv": "14936ef78bfd4ef441c50085e93cab0f273602d273376421ee7c7b457ac042ea",
+    "plot_data/tail_behavior.csv": "5a65fdea01dacd3d1d5c62b89e52c068c9298e4f4cf190817d4f8927ede201d6"
+  },
+  "reference_numerics_note": "Direct integrands are normalized before high-precision quadrature to avoid absolute stopping-tolerance artifacts for very small coefficients.",
+  "static_review": {
+    "file": "experiments.py",
+    "lines": 351,
+    "top_level_functions": 26,
+    "complete_source_read": true,
+    "not_an_exhaustive_all_input_accuracy_certificate": true
+  }
+}

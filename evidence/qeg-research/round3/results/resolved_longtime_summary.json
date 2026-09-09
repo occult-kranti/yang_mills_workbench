@@ -1,0 +1,91 @@
+{
+  "solver_sha256": "32008bfc4fc3f731ac7ed968006fd58642820e0f421766a1ace022a2d7f08e88",
+  "rows": [
+    {
+      "case": "K40_nK1024_ncut8",
+      "ncut": 8,
+      "nK": 1024,
+      "Kmax": 40.0,
+      "tfinal": 50.0,
+      "sample_count": 251,
+      "final_x": -0.037582795446405075,
+      "max_abs_x": 0.9893066812111194,
+      "min_Z": 0.99601998261292,
+      "max_energy_work_residual_abs": 7.595535311821777e-12,
+      "max_energy_work_residual_relative": 1.5257994118268183e-11,
+      "wall_seconds": 10.804326117
+    },
+    {
+      "case": "K40_nK2048_ncut8",
+      "ncut": 8,
+      "nK": 2048,
+      "Kmax": 40.0,
+      "tfinal": 50.0,
+      "sample_count": 251,
+      "final_x": -0.037571645750985525,
+      "max_abs_x": 0.989306681211118,
+      "final_J0": 0.28052710335580855,
+      "max_abs_J0": 0.2805330562032111,
+      "min_Z": 0.9960199826129184,
+      "max_energy_work_residual_abs": 4.842459766507545e-12,
+      "max_energy_work_residual_relative": 9.72758595701918e-12,
+      "wall_seconds": 21.326658312
+    },
+    {
+      "case": "K60_nK3072_ncut8",
+      "ncut": 8,
+      "nK": 3072,
+      "Kmax": 60.0,
+      "tfinal": 50.0,
+      "sample_count": 251,
+      "final_x": -0.03757164570991101,
+      "max_abs_x": 0.9893066812124596,
+      "final_J0": 0.28051909647803086,
+      "max_abs_J0": 0.28052495601428973,
+      "min_Z": 0.9960188176293606,
+      "max_energy_work_residual_abs": 1.084649037252916e-11,
+      "max_energy_work_residual_relative": 2.1788548076447695e-11,
+      "wall_seconds": 36.288620851
+    },
+    {
+      "case": "K40_nK2048_ncut12",
+      "ncut": 12,
+      "nK": 2048,
+      "Kmax": 40.0,
+      "tfinal": 50.0,
+      "sample_count": 251,
+      "final_x": -0.037571595136045126,
+      "max_abs_x": 0.9893066813382658,
+      "min_Z": 0.995724614114085,
+      "max_energy_work_residual_abs": 1.5866696845279193e-11,
+      "max_energy_work_residual_relative": 3.1873193717840736e-11,
+      "wall_seconds": 30.951715864
+    },
+    {
+      "case": "K40_nK4096_ncut8",
+      "ncut": 8,
+      "nK": 4096,
+      "Kmax": 40.0,
+      "tfinal": 50.0,
+      "sample_count": 251,
+      "final_x": -0.037571642493999025,
+      "max_abs_x": 0.9893066812111118,
+      "min_Z": 0.9960199826129171,
+      "max_energy_work_residual_abs": 5.887124121528586e-12,
+      "max_energy_work_residual_relative": 1.1826119099199267e-11,
+      "wall_seconds": 51.370052796
+    }
+  ],
+  "comparisons": {
+    "delta_final_x_K40_nK1024_to_nK2048": -1.1149695419550298e-05,
+    "delta_final_x_K40_nK2048_to_K60_nK3072": -4.1074511847316586e-11,
+    "delta_final_x_ncut8_to_ncut12_at_K40_nK2048": -5.061494039865222e-08,
+    "delta_final_J0_K40_nK2048_to_K60_nK3072": 8.006877777688715e-06,
+    "delta_final_x_K40_nK2048_to_nK4096": -3.2569864999443254e-09,
+    "max_history_x_K40_nK2048_to_nK4096": 3.2569864999443254e-09,
+    "max_history_Jren_K40_nK2048_to_nK4096": 1.1269972354233104e-06,
+    "max_history_effective_numerator_K40_nK2048_to_nK4096": 1.1269972354233104e-06,
+    "max_history_full_matter_current_K40_nK2048_to_nK4096": 1.1314680848917291e-06
+  },
+  "note": "All targeted rows use tfinal=50. K20 is inadequate once a drifts toward -26.6; K40 leaves margin. The K40 nK1024 row was captured before higher resolution and retained as provenance summary. Fixed-window nK4096 refinement gives sampled whole-history field difference 3.26e-9. Legacy Jren names denote effective numerator Q, not full matter current. See fixed_window_refinement.json for full-current reconstruction and its 1.131468e-6 history difference in j/(e m^3) units."
+}

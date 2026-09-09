@@ -1,0 +1,224 @@
+{
+  "scope": "Finite Horn search and certificate integrity only; analytical lemmas are not kernel verified.",
+  "all_gates_passed": true,
+  "gates": [
+    {
+      "id": "developer_suite_reexecuted",
+      "passed": true,
+      "details": "test_conjectural_branch_is_explicitly_conditional (__main__.ProofSearchTests.test_conjectural_branch_is_explicitly_conditional) ... ok\ntest_conjecture_cannot_be_laundered_as_exact_seed (__main__.ProofSearchTests.test_conjecture_cannot_be_laundered_as_exact_seed) ... ok\ntest_conjunction_requires_all_premises (__main__.ProofSearchTests.test_conjunction_requires_all_premises) ... ok\ntest_cost_ties_are_deterministic (__main__.ProofSearchTests.test_cost_ties_are_deterministic) ... ok\ntest_costs_are_replayed_from_frozen_rules (__main__.ProofSearchTests.test_costs_are_replayed_from_frozen_rules) ... ok\ntest_cycle_without_seed_is_not_support (__main__.ProofSearchTests.test_cycle_without_seed_is_not_support) ... ok\ntest_duplicate_initial_facts_are_set_semantics (__main__.ProofSearchTests.test_duplicate_initial_facts_are_set_semantics) ... ok\ntest_explicit_blocked_goal_status (__main__.ProofSearchTests.test_explicit_blocked_goal_status) ... ok\ntest_first_meeting_candidate_is_not_automatically_optimal (__main__.ProofSearchTests.test_first_meeting_candidate_is_not_automatically_optimal) ... ok\ntest_full_selected_regulator_derives_margin_then_target (__main__.ProofSearchTests.test_full_selected_regulator_derives_margin_then_target) ... ok\ntest_full_theory_fixture_is_blocked (__main__.ProofSearchTests.test_full_theory_fixture_is_blocked) ... ok\ntest_library_mappings_are_immutable_and_hash_checked (__main__.ProofSearchTests.test_library_mappings_are_immutable_and_hash_checked) ... ok\ntest_main_fixture_proves_target_and_reports_counts (__main__.ProofSearchTests.test_main_fixture_proves_target_and_reports_counts) ... ok\ntest_missing_review_certificate_rejected (__main__.ProofSearchTests.test_missing_review_certificate_rejected) ... ok\ntest_mutated_sequence_fails_independent_checker (__main__.ProofSearchTests.test_mutated_sequence_fails_independent_checker) ... ok\ntest_nonpositive_and_nonfinite_costs_rejected (__main__.ProofSearchTests.test_nonpositive_and_nonfinite_costs_rejected) ... ok\ntest_resource_limit_is_incomplete (__main__.ProofSearchTests.test_resource_limit_is_incomplete) ... ok\ntest_reverse_implication_is_not_allowed (__main__.ProofSearchTests.test_reverse_implication_is_not_allowed) ... ok\ntest_scope_mutation_rejected (__main__.ProofSearchTests.test_scope_mutation_rejected) ... ok\ntest_seed_cannot_hide_unretained_conjectural_assumption (__main__.ProofSearchTests.test_seed_cannot_hide_unretained_conjectural_assumption) ... ok\ntest_selected_parameter_margin_is_derived_in_second_fixture (__main__.ProofSearchTests.test_selected_parameter_margin_is_derived_in_second_fixture) ... ok\ntest_shared_lemma_is_paid_once_and_reused (__main__.ProofSearchTests.test_shared_lemma_is_paid_once_and_reused) ... ok\ntest_unknown_ids_rejected_before_search (__main__.ProofSearchTests.test_unknown_ids_rejected_before_search) ... ok\ntest_unverified_theorem_cannot_be_an_exact_seed (__main__.ProofSearchTests.test_unverified_theorem_cannot_be_an_exact_seed) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.028s\n\nOK\n"
+    },
+    {
+      "id": "actual_intermediate_bidirectional_meeting",
+      "passed": true,
+      "details": {
+        "phase": "bidirectional",
+        "event": "first_meeting",
+        "forward_cost": 7,
+        "backward_cost": 5,
+        "cost": 12,
+        "forward_facts": [
+          "Upositive",
+          "Zpositive",
+          "energybound",
+          "energyidentity",
+          "finite_model",
+          "localwellposed",
+          "norm",
+          "ode_theorem",
+          "param_dependence",
+          "physical_state",
+          "positive_margin",
+          "regular_drive",
+          "regular_rhs",
+          "smooth_family"
+        ],
+        "backward_goals": [
+          "Zpositive",
+          "energybound",
+          "finite_model",
+          "localwellposed",
+          "norm",
+          "ode_theorem",
+          "param_dependence",
+          "positive_margin",
+          "regular_rhs",
+          "smooth_family"
+        ],
+        "rule_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R07",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12"
+        ],
+        "checker_passed": true
+      }
+    },
+    {
+      "id": "both_frontiers_expanded_before_certificate",
+      "passed": true,
+      "details": [
+        "forward_pop",
+        "forward_push",
+        "forward_push",
+        "backward_pop",
+        "backward_push",
+        "forward_pop",
+        "forward_push",
+        "forward_push",
+        "forward_pop",
+        "backward_pop",
+        "backward_push",
+        "backward_push",
+        "backward_push",
+        "forward_pop",
+        "forward_push"
+      ]
+    },
+    {
+      "id": "selected_constants_connect_to_final_theorem",
+      "passed": true,
+      "details": {
+        "scenario": "full_selected_regulator",
+        "status": "proved",
+        "cost": 14,
+        "steps": [
+          "PM01",
+          "PM02",
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R07",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12"
+        ]
+      }
+    },
+    {
+      "id": "derived_margin_is_typed_as_theorem",
+      "passed": true,
+      "details": {
+        "id": "positive_margin",
+        "statement": "The selected finite-regulator margin satisfies mu > 3/4 and therefore Z(a) > 3/4 for every real a.",
+        "scope": "finite_homogeneous_fixed_B",
+        "kind": "theorem",
+        "assumption_ids": [],
+        "verification": "manual derivation/review",
+        "source": "round5/theorem_advisor.md T17-T21",
+        "version": "r5-v1"
+      }
+    },
+    {
+      "id": "causal_metadata_records_initial_data_conditions",
+      "passed": true,
+      "details": {
+        "id": "causal_tangent",
+        "statement": "For identical initial data and source histories through t*, solutions agree through t*; with zero initial tangent and a source perturbation supported after t*, the tangent vanishes before t*.",
+        "scope": "finite_homogeneous_fixed_B",
+        "kind": "theorem",
+        "assumption_ids": [],
+        "verification": "manual derivation/review",
+        "source": "round4/response_contract.md P24-P26; round5/theorem_advisor.md retarded-support derivation",
+        "version": "r5-v1"
+      }
+    },
+    {
+      "id": "saved_results_match_fresh_execution",
+      "passed": true,
+      "details": {
+        "saved_main_hash": "888c41f24c1e72e66fa1ad8dfb39ae14493074294f9b13a2dcf56587281f1b3a",
+        "fresh_main_hash": "888c41f24c1e72e66fa1ad8dfb39ae14493074294f9b13a2dcf56587281f1b3a"
+      }
+    },
+    {
+      "id": "hidden_conjecture_dependency_rejected",
+      "passed": true,
+      "details": "seed L has undisclosed assumptions: ['C']"
+    },
+    {
+      "id": "unverified_theorem_seed_rejected",
+      "passed": true,
+      "details": "A cannot seed an exact proof without verified theorem metadata"
+    },
+    {
+      "id": "frozen_library_mutation_rejected",
+      "passed": true,
+      "details": "'mappingproxy' object does not support item assignment"
+    },
+    {
+      "id": "first_meeting_not_mistaken_for_optimum",
+      "passed": true,
+      "details": {
+        "first": 9,
+        "certified": 2
+      }
+    },
+    {
+      "id": "shared_lemma_costs_once",
+      "passed": true,
+      "details": 4
+    },
+    {
+      "id": "forward_budget_does_not_claim_non_derivability",
+      "passed": true,
+      "details": "incomplete"
+    },
+    {
+      "id": "backward_budget_does_not_invalidate_forward_certificate",
+      "passed": true,
+      "details": {
+        "status": "proved",
+        "candidate": "incomplete",
+        "cost": 3
+      }
+    },
+    {
+      "id": "all_conjuncts_required",
+      "passed": true,
+      "details": "not_derivable"
+    },
+    {
+      "id": "reverse_implication_rejected",
+      "passed": true,
+      "details": "not_derivable"
+    },
+    {
+      "id": "unsupported_cycle_has_no_proof",
+      "passed": true,
+      "details": "not_derivable"
+    },
+    {
+      "id": "independent_exhaustive_subset_oracle_64_libraries",
+      "passed": true,
+      "details": {
+        "cases": 64,
+        "mismatches": []
+      }
+    },
+    {
+      "id": "full_theory_stays_explicitly_blocked",
+      "passed": true,
+      "details": "target explicitly marked unresolved/blocked in the supplied library"
+    }
+  ],
+  "source_hashes": {
+    "proof_search.py": "297a9e79f4e2027b651f558ea8a175b6957c429a214225e72892d9633c5f1367",
+    "search_fixture.json": "3af61f86f363298b5811b1a8ca73940278007262bb01fdf64099aef84324ec49",
+    "test_proof_search.py": "e0e9eaabc35066aa55dce85b72a8b1a8c5246c2cce5ca5c68bbb06d4327fade0",
+    "verify_proof_search_independent.py": "8ab0f54ad8b06c6ff1aae462548682f3ead9aa6ad0efea7f089eadb8ea476c2c"
+  },
+  "selected_library_hash": "888c41f24c1e72e66fa1ad8dfb39ae14493074294f9b13a2dcf56587281f1b3a"
+}

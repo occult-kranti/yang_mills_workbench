@@ -1,0 +1,102 @@
+{
+  "symbolic": {
+    "zero_residual_checks": {
+      "einstein_00": "0",
+      "einstein_perp": "0",
+      "einstein_parallel": "0",
+      "ricci_scalar": "0",
+      "hamiltonian_propagation": "0",
+      "shear_equation": "0",
+      "em_work": "0",
+      "maxwell_physical_sign": "0",
+      "common_F2_counterterm_ward": "0",
+      "pressure_nullspace": "0",
+      "running_coupling_source": "0",
+      "cauchy_energy_integrand": "0",
+      "kasner_ricci_zero": "0",
+      "kasner_kretschmann": "0",
+      "anisotropic_dirac_mode_work": "0",
+      "dirac_conserved_sector": "0",
+      "dirac_hamiltonian_square": "0",
+      "rotating_sector_connection": "0",
+      "exact_product_unitary_zero_determinant": "0"
+    },
+    "n_passed": 19,
+    "derived_mixed_einstein": [
+      "h*(-h - 2*k)",
+      "-dh - dk - h**2 - h*k - k**2",
+      "-dh - dk - h**2 - h*k - k**2",
+      "-2*dh - 3*h**2"
+    ],
+    "sauter_printed_minus_required": "-4*E0*q*sinh(q*t)/cosh(q*t)**3",
+    "sauter_residual_at_q_E0_t_1": -1.279400016898449,
+    "first_order_product_truncation_determinant": "eta**2",
+    "spurious_normalized_concurrence_eta_0_1": 0.019607843137254905,
+    "kasner_kretschmann": "64/(27*t**4)",
+    "equal_mean_energy_noise_counterexample": {
+      "mean_energy": 1.0,
+      "energy_eigenstate_variance": 0.0,
+      "rare_excitation_probability": 0.01,
+      "rare_excitation_energy": 100.0,
+      "mixture_variance": 99.0
+    },
+    "pressure_nullspace_shear_source": "-f_pressure*kappa*(2*h + k)"
+  },
+  "numerical": {
+    "scope": "Classical Einstein-Maxwell plus phenomenological Ohmic radiation; not QED.",
+    "parameters": {
+      "kappa": 0.1,
+      "conductivity": 0.2,
+      "E0": 1.0,
+      "B0": 3.0,
+      "rho_m0": 0.2,
+      "stop": 2.0
+    },
+    "maximum_hamiltonian_residual": 4.107825191113079e-14,
+    "maximum_magnetic_flux_error": 7.860379014346108e-14,
+    "maximum_damped_electric_flux_error": 7.327471962526033e-14,
+    "independent_raychaudhuri_shear_max_error": 8.72635297355373e-14,
+    "rk4_refinement": [
+      {
+        "steps": 100,
+        "max_endpoint_abs_error": 5.6161298112034075e-09
+      },
+      {
+        "steps": 200,
+        "max_endpoint_abs_error": 3.4660713188472414e-10
+      },
+      {
+        "steps": 400,
+        "max_endpoint_abs_error": 2.152097944296827e-11
+      },
+      {
+        "steps": 800,
+        "max_endpoint_abs_error": 1.3364587214681478e-12
+      }
+    ],
+    "rk4_observed_orders": [
+      4.018203037265181,
+      4.00948569699035,
+      4.009256554412961
+    ],
+    "end_state": {
+      "log_a_perp": 0.6537113278086484,
+      "log_a_parallel": 0.13658406153125593,
+      "H_perp": 0.2373631428002292,
+      "H_parallel": -0.03305214722101659,
+      "E": 0.18133254728713427,
+      "B": 0.8115491175874516,
+      "rho_m": 0.06075865330518682
+    },
+    "initial_shear_acceleration": -1.0,
+    "classical_em_trace": 0.0
+  },
+  "electron_scale_budget": {
+    "G_m_e_squared": 1.7518093987907706e-45,
+    "8pi_G_m_e_squared": 4.40277723018451e-44,
+    "em_energy_over_m_e4_at_E_Ec_1_B_Bc_100": 54530.34411555377,
+    "kappa_rho_over_m_e2_at_E_Ec_1_B_Bc_100": 2.4008495742608602e-39,
+    "magnetic_b_for_kappa_rho_over_m_e2_1": 2.0409823008810258e+21,
+    "interpretation": "Stress curvature budget, not scalar Ricci R; Maxwell stress is traceless."
+  }
+}

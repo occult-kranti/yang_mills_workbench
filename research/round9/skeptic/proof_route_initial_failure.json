@@ -1,0 +1,11 @@
+{
+  "failure": "Each theorem was initially assigned every initial hypothesis, even when the rule did not inherit all of them. The unchanged validation guard correctly rejected these routes.",
+  "original_fragment": "assumption_ids=initials.copy()",
+  "observed_errors": {
+    "complete_hierarchy": "ContractError rule H_1 silently drops conclusion assumptions: ['H_all']",
+    "conditional_stability": "ContractError rule T_1 silently drops conclusion assumptions: ['T_budget', 'T_error', 'T_reference']"
+  },
+  "original_full_file_hash": "not captured before correction",
+  "repair": "Per-node hypothesis metadata is inherited from the actual rule premises; guard unchanged.",
+  "corrected_results": "Costs 8,7,5 for admitted routes; withheld all-tests/common-vacuum/operator-norm routes and prize remain not derivable."
+}
