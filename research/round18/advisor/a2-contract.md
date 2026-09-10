@@ -1,0 +1,19 @@
+# Candidate only after the A1 gate
+
+Repeat three-face xy strips at anchors(4i,2j,z), including consecutive x-faces t=0,1,2, only when the entire ten-link strip fits the n-vertex box. The proposed cluster count is n floor(n/4) floor(n/2). Link supports should be pairwise disjoint even when vertices meet. Every electric link remains.
+
+Possible stronger geometric fact: every remaining face contains a link unused by all clusters. A remaining xy face either crosses an unused x-interval or an unused y-interval; an xz or yz face contains a vertical z-link, and no selected xy strip uses z-links. This must be proved including incomplete boundary strips, not assumed from sampled boxes. If true, every remaining face has zero expectation in the dressed cluster-product reference. An absolutely summable remainder can then lose only its normβ in the gap comparison, instead of the generic2β.
+
+For each existing oriented elementary face with lower anchor(x,y,z), proposed weightw_f=2^(−x−y−z)/24. Summing over all three orientations and the nonnegative orthant gives exactly one. Putν_f=ατw_f on every remaining face. This is a full-support family forτ>0 and nonzero cluster couplings; its remaining couplings decay spatially. It is not the homogeneous nondecaying-coupling family. Under the A1 canonicalρ=1/2,σ=1/8, the proposed generic bound isα(1/8−2τ), and the untouched-link refinement would beα(1/8−τ). Atτ=1/64 these are3α/32 and7α/64. Neither is accepted before A2.
+
+The exact finite remaining-weight sum can also be derived. WithS_m=Σ_(k=0)^(m−1)2^(−k), the total finite face weight isS_(n−1)²S_n/8. The proposed selected-cluster face weight is(7/96)(Σ_i2^(−4i))(Σ_j2^(−2j))S_n, with i<floor(n/4),j<floor(n/2). Their difference is the actual remainder budget. Its candidate limit is107/135. Do not infer a uniform sharper bound from that limit: truncated boundary clusters change which finite faces receive a cluster coefficient. The safe all-volume upper bound one already follows from the positive orthant sum.
+
+A2 would need the actual all-n support and untouched-edge proofs, the full ground/Gauss argument, exact finite coefficient ledger, zeroτ branch, signed and boundary cases, a non-summable homogeneous-tail rejection and a commonα_min. This note is a proposed second-loop selection, not executed evidence.
+
+## Authorized after the accepted A1 gate
+
+The preceding candidate is now selected for execution. Prove the all-n geometry and analytic bound; sampled boxes validate implementation only. Primary n fixtures2,3,4,5,6,7,8,9, with n>=4 carrying complete strip clusters; smaller n are pure-free references plus the specified remainder and must be handled explicitly. Keep commonα_min>0, signed nonzero end and bridge choices within their absolute limits, signed remainderτ where the bound uses|τ|, τ=0 as a valid non-full-support exception, and the zero sufficient bound at|τ|=1/8. For n with no clusters use the conservativeα/8 baseline only as a weaker consequence of the free3α/4 gap. Canonical nonzero end magnitudesα/2, bridge magnitudeα/8 andτ=1/64 yield full actual-face support and the uniform7α_min/64 bound. Verify at least two nonunit physical scales.
+
+Keep the exact finite weight ledger, but use the proved orthant upper bound1 for the uniform conclusion. The candidate107/135 limit is optional and cannot silently replace that bound. Reject a homogeneous nondecaying remainder as meeting this summable hypothesis. A full-support but inhomogeneous exception is the acceptance scope; the original homogeneous dense stability goal remains open.
+
+Use standalone source/check/report/manifest and results.json conventions as A1. Include exact volume.csv and coefficient/graph evidence, independent normal/optimized implementation and complete producer comparison. Do not begin B1 until the advisor's post-A roadmap decision.

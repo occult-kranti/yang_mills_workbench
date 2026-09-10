@@ -8,7 +8,11 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current milestone:** six sequential research loops with **three scientific roles**, plus two advisor planning decisions. A1/A2 prove a restricted volume-uniform physical gap for link-disjoint interactions and retain the obstruction to a simple dense extension. B1/B2 improve a full finite physical gap bound on the dense two-cube graph; one adjoint trial component repairs the earlier endpoint. C1/C2 retain the complete four-cube central tensor and test equal-action boundaries with different joint expectations. The **dense quantitative threshold, surrounding bulk integration and continuum Yang–Mills problem remain open**. [Six-loop home](https://occult-kranti.github.io/yang_mills_workbench/#research), [finite endpoint result](https://occult-kranti.github.io/yang_mills_workbench/#research/six-adjoint), [common-variable experiment](https://occult-kranti.github.io/yang_mills_workbench/#research/six-kernel), [collaboration and next roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/six-team). Detailed code and reproduction instructions: [Round17 guide](research/round17/README.md).
+**Current milestone:** six sequential research loops with **three scientific roles**, plus two advisor decisions. A1/A2 control dressed overlapping clusters and a specified growing inhomogeneous family with a common physical energy scale. B1/B2 classify the complete low-energy complement and prove a full finite-graph gap throughout a signed coefficient box. C1/C2 retain complete Gram coordinates and integrate an actual surrounding link with all six affected weights. The **homogeneous dense volume-uniform gap, full bulk integration and continuum Yang–Mills problem remain open**.
+
+[Six-loop home](https://occult-kranti.github.io/yang_mills_workbench/#research) · [finite spectral bound](https://occult-kranti.github.io/yang_mills_workbench/#research/next-spectrum) · [two-link integral](https://occult-kranti.github.io/yang_mills_workbench/#research/next-two-link) · [team and next roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/next-team). Detailed code, derivations and reproduction: [Round18 guide](research/round18/README.md).
+
+Round17 remains available with the earlier sparse theorem, adjoint trial repair and equal-action/different-observable experiment. [Previous six-loop dashboard](https://occult-kranti.github.io/yang_mills_workbench/#research/review17-home).
 
 Round16 remains available with the eleven-face shared-link integral and the common physical-scale audit. [Previous shared-face dashboard](https://occult-kranti.github.io/yang_mills_workbench/#research/review16-home).
 
@@ -56,7 +60,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Six-loop local, spectral and conditional study | `research/round17/` | Current sparse physical theorem, finite adjoint repair, complete four-cube tensor, matched common-variable experiment and independent evidence |
+| Six-loop dressed, spectral and conditional study | `research/round18/` | Current inhomogeneous family, complete complement, signed finite gap box, sufficient Gram coordinates and six-weight two-link integral |
+| Previous local, spectral and conditional study | `research/round17/` | Preserved sparse physical theorem, finite adjoint repair, complete four-cube tensor and matched common-variable experiment |
 | Shared-face subproblem, two loops and three roles | `research/round16/` | Previous eleven-face Haar contractions, exact changed-action comparison, physical energy-scale audit and independent checks |
 | Three revised goals, six research loops | `research/round15/` | Preserved interval cover, cube integral, finite physical spectral bounds, independent reviews and retained original uniform-threshold gap |
 | Three-role, two-loop finite correlation study | `research/round14/` | Preserved exact point covariance, independent rational replay and earlier feedback roadmap |
@@ -95,7 +100,7 @@ The representation tower is infinite; the spatial graph is finite. A 2-Lipschitz
 
 ### Variables need mathematical obligations
 
-`alpha` is an electric-energy coefficient; `lambda` is a magnetic coefficient; `kappa=lambda/alpha` is a dimensionless physical ratio. `N` or polynomial degree `D` is a numerical regulator. A prescribed `lambda(t)` changes the Hamiltonian and requires its independently integrated work term. A lattice spacing and matched bare coupling require an explicitly stated normalization and scale trajectory.
+`alpha` is an electric-energy coefficient and `lambda` is a magnetic coefficient. This release uses `r=max|lambda_p|/alpha` for its dimensionless physical box; older spectral pages sometimes called that ratio `kappa`. The static integral coefficient `kappa` in the current Gram/two-link pages belongs to a separate measure and is not a matched time generator. `N` or polynomial degree `D` is a numerical regulator. A prescribed `lambda(t)` changes the Hamiltonian and requires its independently integrated work term. A lattice spacing and matched bare coupling require an explicitly stated normalization and scale trajectory.
 
 For two loop holonomies modulo simultaneous conjugation, the physical invariants are
 
@@ -106,16 +111,19 @@ x=\tfrac12\operatorname{Tr}U,\quad y=\tfrac12\operatorname{Tr}V,\quad z=\tfrac12
 
 The third trace retains relative orientation lost by two separate loop traces. At a central element (`|x|=1` or `|y|=1`), `z=xy`; a relative-angle formula must not divide by a vanishing sine. Adding coordinates records existing configurations. Inserting an arbitrary mass or scalar would change the theory and cannot establish the pure Yang–Mills target.
 
-## Reproduce the current shared-face study
+## Reproduce the current six-loop study
 
-The [Round17 guide](research/round17/README.md) contains all six loop contracts, exact outputs, retained failures and the updated physical roadmap. The [previous Round16 guide](research/round16/README.md) preserves the shared-face and energy-scale study. From the repository root:
+The [Round18 guide](research/round18/README.md) contains all six contracts, complete outputs, retained failures and the feedback roadmap. The [Round17 guide](research/round17/README.md) and [Round16 guide](research/round16/README.md) preserve the preceding studies. From the repository root:
 
 ```bash
-python3 research/round17/reproduce.py --output /absolute/path/to/new-results
-python3 research/round17/proof_routes.py --output /absolute/path/to/proof-results.json
+python3 research/round18/reproduce.py --output /absolute/path/to/new-results
+python3 research/round18/reproduce.py --optimized --output /absolute/path/to/new-optimized-results
+python3 research/round18/proof_routes.py --output /absolute/path/to/proof-results.json
 ```
 
-These run the five research programs and the actual bidirectional proof routes. NumPy supports the matrix diagnostics; Matplotlib is optional for figures. The exact integral code uses standard-library rational arithmetic. No API key is required.
+The updated project advisor and validation skills include the [dressed-cluster, complement and conditional-integration rules](.codex/skills/qeg-research-advisor/references/dressed-complement-conditional.md), with the failures that motivated them.
+
+The runner executes twelve scientific implementations and six independent producer comparisons. Normal and optimized executions repeat the same checks and are counted once. The exact scientific code uses standard-library rational arithmetic; Matplotlib is needed to regenerate figures. Proof admission reruns independent arithmetic and rejects missing premises. No API key is required.
 
 ## Reproduce the previous three-goal study
 

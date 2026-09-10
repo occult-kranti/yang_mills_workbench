@@ -23,6 +23,8 @@ class LaunchTests(unittest.TestCase):
                          'research-shared-data.js','research-shared.js','shared-energy-scale.csv',
                          'research-six-data.js','research-six.js','six-collaboration.svg','six-four-cubes.svg',
                          'research-round17.zip','research-round17-proof.json',
+                         'research-next-data.js','research-next.js','next-collaboration.svg','next-two-links.svg',
+                         'research-round18.zip','research-round18-proof.json',
                          'research-round16-certificates.json','research-round16-graph.json','research-round16.zip',
                          'research-round15-cover.json','research-round15-cube.json','research-round15.zip',
                          'team-certificate.csv','research-round14-certificates.json',

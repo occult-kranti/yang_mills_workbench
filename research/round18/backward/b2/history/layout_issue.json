@@ -1,0 +1,7 @@
+{
+  "status": "failed-before-repair",
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/2f17a9d68b70/ym18-backward/b2/compare.py\", line 160, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/workspace/scratch/2f17a9d68b70/ym18-backward/b2/compare.py\", line 109, in main\n    gate('complete frozen source history and premise manifest agrees',strict(m['files'],actual_sources) and all(sha(source/'premises'/n)==d for n,d in PINS.items()))\n  File \"/workspace/scratch/2f17a9d68b70/ym18-backward/b2/compare.py\", line 106, in gate\n    if type(ok) is not bool or not ok:raise ValueError(name)\n                                      ^^^^^^^^^^^^^^^^^^^^^^\nValueError: complete frozen source history and premise manifest agrees\n",
+  "cause": "Recursive source inventory included known nested accepted-layout output directories.",
+  "repair": "Exclude only output, output-optimized, comparison and comparison-optimized root directories; retain strict rejection of undeclared source files."
+}

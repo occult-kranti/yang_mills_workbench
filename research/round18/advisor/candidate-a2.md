@@ -1,0 +1,11 @@
+# Candidate only after the A1 gate
+
+Repeat three-face xy strips at anchors(4i,2j,z), including consecutive x-faces t=0,1,2, only when the entire ten-link strip fits the n-vertex box. The proposed cluster count is n floor(n/4) floor(n/2). Link supports should be pairwise disjoint even when vertices meet. Every electric link remains.
+
+Possible stronger geometric fact: every remaining face contains a link unused by all clusters. A remaining xy face either crosses an unused x-interval or an unused y-interval; an xz or yz face contains a vertical z-link, and no selected xy strip uses z-links. This must be proved including incomplete boundary strips, not assumed from sampled boxes. If true, every remaining face has zero expectation in the dressed cluster-product reference. An absolutely summable remainder can then lose only its normβ in the gap comparison, instead of the generic2β.
+
+For each existing oriented elementary face with lower anchor(x,y,z), proposed weightw_f=2^(−x−y−z)/24. Summing over all three orientations and the nonnegative orthant gives exactly one. Putν_f=ατw_f on every remaining face. This is a full-support family forτ>0 and nonzero cluster couplings; its remaining couplings decay spatially. It is not the homogeneous nondecaying-coupling family. Under the A1 canonicalρ=1/2,σ=1/8, the proposed generic bound isα(1/8−2τ), and the untouched-link refinement would beα(1/8−τ). Atτ=1/64 these are3α/32 and7α/64. Neither is accepted before A2.
+
+The exact finite remaining-weight sum can also be derived. WithS_m=Σ_(k=0)^(m−1)2^(−k), the total finite face weight isS_(n−1)²S_n/8. The proposed selected-cluster face weight is(7/96)(Σ_i2^(−4i))(Σ_j2^(−2j))S_n, with i<floor(n/4),j<floor(n/2). Their difference is the actual remainder budget. Its candidate limit is107/135. Do not infer a uniform sharper bound from that limit: truncated boundary clusters change which finite faces receive a cluster coefficient. The safe all-volume upper bound one already follows from the positive orthant sum.
+
+A2 would need the actual all-n support and untouched-edge proofs, the full ground/Gauss argument, exact finite coefficient ledger, zeroτ branch, signed and boundary cases, a non-summable homogeneous-tail rejection and a commonα_min. This note is a proposed second-loop selection, not executed evidence.

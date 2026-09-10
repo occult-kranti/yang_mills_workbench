@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "command": [
+        "node",
+        "tests/test_workbench.mjs"
+      ],
+      "returncode": 0,
+      "stdout": "{\"status\":\"passed\",\"count\":9,\"checks\":[{\"name\":\"Local and Pages capability flags differ intentionally\",\"passed\":true},{\"name\":\"Pages build manifest binds every published file\",\"passed\":true},{\"name\":\"All recorded download links stay under the project prefix\",\"passed\":true},{\"name\":\"Scientific certificate payloads survive the Pages transport unchanged\",\"passed\":true},{\"name\":\"Source URLs remain external and unmodified\",\"passed\":true},{\"name\":\"Core application views remain available on Pages\",\"passed\":true},{\"name\":\"Static metadata action makes no unavailable API request\",\"passed\":true},{\"name\":\"Local metadata endpoint remains functional through its mocked contract\",\"passed\":true},{\"name\":\"Unsafe source URLs remain rejected\",\"passed\":true}],\"scope\":\"Static/local execution and transport checks in a Node VM; no browser visual audit.\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests/test_local_launch.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 1.125s\n\nOK\n"
+    }
+  ]
+}

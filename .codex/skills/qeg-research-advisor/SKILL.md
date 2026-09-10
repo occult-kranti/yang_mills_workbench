@@ -74,3 +74,5 @@ For shared-face graph extensions and common physical units, use [the shared-face
 For local rotor stability, finite trial improvements and common-variable conditional contractions, use [the six-loop lattice contract](references/six-loop-lattice-contract.md). It preserves the dense target when a sparse exception is proved and separates action variables from the boundary information needed by observables.
 
 For a user-requested team of three and sequential loops, use `references/two-loop-team.md`. Count the coordinator as the advisor–skeptic, execute the first evidence gate before selecting the second target, and distinguish the published collaboration ledger from a continuously running swarm.
+
+For dressed cluster extensions, full spectral complements and the next surrounding-link integration, read [the Round18 continuation contract](references/dressed-complement-conditional.md). It records the actual zero-mean premise, boundary consistency, complete omitted channels and induced joint trace measure.

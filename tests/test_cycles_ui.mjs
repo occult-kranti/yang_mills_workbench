@@ -7,7 +7,7 @@ const nodes=new Map(),events={},checks=[];
 const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',open:false,style:{},value:'',dataset:{},addEventListener(){},querySelector(){return {focus(){}}},focus(){},showModal(){this.open=true},close(){this.open=false},setAttribute(){},classList:{toggle(){}}});return nodes.get(id)};
 const ctx={console,URL,Blob,setTimeout:()=>0,clearTimeout(){},location:{hash:'#research'},localStorage:{getItem(){return null},setItem(){}},document:{querySelector:node,getElementById:id=>node('#'+id),addEventListener:(e,f)=>(events[e]??=[]).push(f)},addEventListener(){}};
 ctx.window=ctx;vm.createContext(ctx);
-const files=[...fs.readFileSync(new URL('index.html',base),'utf8').matchAll(/<script src="(research[^\"]*\.js)"/g)].map(m=>m[1]);
+const files=[...fs.readFileSync(new URL('index.html',base),'utf8').matchAll(/<script src="(research[^\"]*\.js)"/g)].map(m=>m[1]).filter(f=>!f.startsWith('research-next'));
 for(const file of files.filter(name=>!name.startsWith('research-six')&&!name.startsWith('research-shared')))vm.runInContext(fs.readFileSync(new URL(file,base),'utf8'),ctx,{filename:file});
 const D=ctx.OBSERVATORY_CYCLES,T=ctx.ResearchObservatory;
 const read=p=>JSON.parse(fs.readFileSync(new URL(p,records),'utf8'));

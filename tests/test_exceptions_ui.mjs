@@ -9,7 +9,7 @@ function node(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',op
 const ctx={console,URL,Blob,setTimeout:()=>0,location:{hash:'#research'},localStorage:{getItem(){return null},setItem(){}},document:{querySelector:node,getElementById:id=>node('#'+id),addEventListener:(e,f)=>(events[e]??=[]).push(f)},addEventListener(){}};
 ctx.window=ctx;vm.createContext(ctx);
 const html=fs.readFileSync(new URL('index.html',base),'utf8');
-const files=[...html.matchAll(/<script src="(research[^"]*\.js)"/g)].map(m=>m[1]);
+const files=[...html.matchAll(/<script src="(research[^"]*\.js)"/g)].map(m=>m[1]).filter(f=>!f.startsWith('research-next'));
 for(const file of files.filter(name=>!name.startsWith('research-six')&&!name.startsWith('research-shared')&&!name.startsWith('research-team')&&!name.startsWith('research-cycles')))vm.runInContext(fs.readFileSync(new URL(file,base),'utf8'),ctx,{filename:file});
 const D=ctx.OBSERVATORY_EXCEPTIONS,T=ctx.ResearchObservatory;
 const read=name=>JSON.parse(fs.readFileSync(new URL(name,records),'utf8'));

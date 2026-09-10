@@ -1,0 +1,16 @@
+{
+  "status": "corrected-before-freeze",
+  "findings": [
+    {
+      "issue": "The apparently lazy anchors generator used itertools.product, which eagerly pools each input range on first iteration.",
+      "repair": "Nested range loops preserve true laziness; a billion-scale next-anchor check executes without a graph allocation.",
+      "validation": "No intentionally huge product was executed."
+    },
+    {
+      "issue": "Public arithmetic face helpers did not independently reject Boolean coordinates or out-of-box witness requests.",
+      "repair": "Shared strict face validation precedes face words, weights and arithmetic witnesses.",
+      "validation": "Boolean and out-of-box rejection tests plus accepted incomplete-boundary witness."
+    }
+  ],
+  "scope": "Independent implementation boundary review; no change to mathematical gap or weight formulas."
+}

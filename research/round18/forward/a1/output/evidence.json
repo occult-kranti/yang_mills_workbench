@@ -1,0 +1,939 @@
+{
+  "schema": "ym18-a1-evidence-v1",
+  "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+  "graph": {
+    "schema": "ym18-three-square-strip-v1",
+    "vertices": [
+      "0,0,0",
+      "0,1,0",
+      "1,0,0",
+      "1,1,0",
+      "2,0,0",
+      "2,1,0",
+      "3,0,0",
+      "3,1,0"
+    ],
+    "edges": [
+      {
+        "id": "ex:0,0,0",
+        "tail": "0,0,0",
+        "head": "1,0,0",
+        "axis": 0
+      },
+      {
+        "id": "ey:0,0,0",
+        "tail": "0,0,0",
+        "head": "0,1,0",
+        "axis": 1
+      },
+      {
+        "id": "ex:0,1,0",
+        "tail": "0,1,0",
+        "head": "1,1,0",
+        "axis": 0
+      },
+      {
+        "id": "ex:1,0,0",
+        "tail": "1,0,0",
+        "head": "2,0,0",
+        "axis": 0
+      },
+      {
+        "id": "ey:1,0,0",
+        "tail": "1,0,0",
+        "head": "1,1,0",
+        "axis": 1
+      },
+      {
+        "id": "ex:1,1,0",
+        "tail": "1,1,0",
+        "head": "2,1,0",
+        "axis": 0
+      },
+      {
+        "id": "ex:2,0,0",
+        "tail": "2,0,0",
+        "head": "3,0,0",
+        "axis": 0
+      },
+      {
+        "id": "ey:2,0,0",
+        "tail": "2,0,0",
+        "head": "2,1,0",
+        "axis": 1
+      },
+      {
+        "id": "ex:2,1,0",
+        "tail": "2,1,0",
+        "head": "3,1,0",
+        "axis": 0
+      },
+      {
+        "id": "ey:3,0,0",
+        "tail": "3,0,0",
+        "head": "3,1,0",
+        "axis": 1
+      }
+    ],
+    "faces": [
+      {
+        "id": "left",
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "vertices": [
+          "0,0,0",
+          "1,0,0",
+          "1,1,0",
+          "0,1,0"
+        ],
+        "word": [
+          {
+            "edge": "ex:0,0,0",
+            "sign": 1
+          },
+          {
+            "edge": "ey:1,0,0",
+            "sign": 1
+          },
+          {
+            "edge": "ex:0,1,0",
+            "sign": -1
+          },
+          {
+            "edge": "ey:0,0,0",
+            "sign": -1
+          }
+        ]
+      },
+      {
+        "id": "middle",
+        "anchor": [
+          1,
+          0,
+          0
+        ],
+        "vertices": [
+          "1,0,0",
+          "2,0,0",
+          "2,1,0",
+          "1,1,0"
+        ],
+        "word": [
+          {
+            "edge": "ex:1,0,0",
+            "sign": 1
+          },
+          {
+            "edge": "ey:2,0,0",
+            "sign": 1
+          },
+          {
+            "edge": "ex:1,1,0",
+            "sign": -1
+          },
+          {
+            "edge": "ey:1,0,0",
+            "sign": -1
+          }
+        ]
+      },
+      {
+        "id": "right",
+        "anchor": [
+          2,
+          0,
+          0
+        ],
+        "vertices": [
+          "2,0,0",
+          "3,0,0",
+          "3,1,0",
+          "2,1,0"
+        ],
+        "word": [
+          {
+            "edge": "ex:2,0,0",
+            "sign": 1
+          },
+          {
+            "edge": "ey:3,0,0",
+            "sign": 1
+          },
+          {
+            "edge": "ex:2,1,0",
+            "sign": -1
+          },
+          {
+            "edge": "ey:2,0,0",
+            "sign": -1
+          }
+        ]
+      }
+    ],
+    "reference_end_faces": [
+      "left",
+      "right"
+    ],
+    "bridge_face": "middle",
+    "group": "SU(2)",
+    "measure": "independent normalized Haar on all ten links",
+    "Hilbert": "full untruncated link Hilbert space first, then all-eight-vertex Gauss restriction",
+    "electric_terms": "alpha times the Casimir on every one of the ten links",
+    "external_charges": false
+  },
+  "fixtures": [
+    {
+      "id": "primary",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "1/2",
+          "lambda_right": "1/2",
+          "mu": "1/8"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "1/8",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/4",
+        "bridge_offdiagonal_norm": "1/16",
+        "bridge_offdiagonal_norm_squared": "1/256",
+        "full_E1_minus_Es_lower": "1/8",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "1/8",
+        "generic_two_norm_gap_lower": "0",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/8",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "negative_bridge",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "1/2",
+          "lambda_right": "1/2",
+          "mu": "-1/8"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "1/8",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/4",
+        "bridge_offdiagonal_norm": "1/16",
+        "bridge_offdiagonal_norm_squared": "1/256",
+        "full_E1_minus_Es_lower": "1/8",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "1/8",
+        "generic_two_norm_gap_lower": "0",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/8",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "no_bridge",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "1/2",
+          "lambda_right": "1/2",
+          "mu": "0"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "0",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/4",
+        "bridge_offdiagonal_norm": "0",
+        "bridge_offdiagonal_norm_squared": "0",
+        "full_E1_minus_Es_lower": "1/4",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "1/4",
+        "generic_two_norm_gap_lower": "1/4",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/8",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "zero_margin",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "1/2",
+          "lambda_right": "1/2",
+          "mu": "1/4"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "1/4",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/4",
+        "bridge_offdiagonal_norm": "1/8",
+        "bridge_offdiagonal_norm_squared": "1/64",
+        "full_E1_minus_Es_lower": "0",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "0",
+        "generic_two_norm_gap_lower": "-1/4",
+        "bound_status": "zero-insufficient",
+        "ground_uniqueness_certified": false,
+        "physical_Gauss_inclusion_certified": false,
+        "primary_family_member": false,
+        "primary_family_bound_at_alpha": null,
+        "primary_family_common_bound": null,
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "beyond_margin",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "1/2",
+          "lambda_right": "1/2",
+          "mu": "3/8"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "3/8",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/4",
+        "bridge_offdiagonal_norm": "3/16",
+        "bridge_offdiagonal_norm_squared": "9/256",
+        "full_E1_minus_Es_lower": "-1/8",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "-1/8",
+        "generic_two_norm_gap_lower": "-1/2",
+        "bound_status": "negative-insufficient",
+        "ground_uniqueness_certified": false,
+        "physical_Gauss_inclusion_certified": false,
+        "primary_family_member": false,
+        "primary_family_bound_at_alpha": null,
+        "primary_family_common_bound": null,
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "signed_ends",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "-1/2",
+          "lambda_right": "1/4",
+          "mu": "1/8"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "1/8",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/4",
+        "bridge_offdiagonal_norm": "1/16",
+        "bridge_offdiagonal_norm_squared": "1/256",
+        "full_E1_minus_Es_lower": "1/8",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "1/8",
+        "generic_two_norm_gap_lower": "0",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/8",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "left_end_zero",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "0",
+          "lambda_right": "1/2",
+          "mu": "1/8"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "1/8",
+        "active_reference_faces": [
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:0,0,0",
+          "ex:0,1,0",
+          "ex:1,0,0",
+          "ex:1,1,0",
+          "ey:0,0,0",
+          "ey:1,0,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0",
+            "ey:1,0,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/4",
+        "bridge_offdiagonal_norm": "1/16",
+        "bridge_offdiagonal_norm_squared": "1/256",
+        "full_E1_minus_Es_lower": "1/8",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "1/8",
+        "generic_two_norm_gap_lower": "0",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/8",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "zero_ends",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "0",
+          "lambda_right": "0",
+          "mu": "1/8"
+        },
+        "actual_end_ratio": "0",
+        "bridge_ratio": "1/8",
+        "active_reference_faces": [],
+        "reference_free_edges": [
+          "ex:0,0,0",
+          "ex:0,1,0",
+          "ex:1,0,0",
+          "ex:1,1,0",
+          "ex:2,0,0",
+          "ex:2,1,0",
+          "ey:0,0,0",
+          "ey:1,0,0",
+          "ey:2,0,0",
+          "ey:3,0,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0",
+            "ey:1,0,0",
+            "ey:2,0,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "3/4",
+        "bridge_offdiagonal_norm": "1/16",
+        "bridge_offdiagonal_norm_squared": "1/256",
+        "full_E1_minus_Es_lower": "5/8",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "5/8",
+        "generic_two_norm_gap_lower": "1/2",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/8",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "all_zero",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1",
+          "alpha_min": "1",
+          "lambda_left": "0",
+          "lambda_right": "0",
+          "mu": "0"
+        },
+        "actual_end_ratio": "0",
+        "bridge_ratio": "0",
+        "active_reference_faces": [],
+        "reference_free_edges": [
+          "ex:0,0,0",
+          "ex:0,1,0",
+          "ex:1,0,0",
+          "ex:1,1,0",
+          "ex:2,0,0",
+          "ex:2,1,0",
+          "ey:0,0,0",
+          "ey:1,0,0",
+          "ey:2,0,0",
+          "ey:3,0,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0",
+            "ey:1,0,0",
+            "ey:2,0,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "3/4",
+        "bridge_offdiagonal_norm": "0",
+        "bridge_offdiagonal_norm_squared": "0",
+        "full_E1_minus_Es_lower": "3/4",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "3/4",
+        "generic_two_norm_gap_lower": "3/4",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/8",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "scaled_double",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "2",
+          "alpha_min": "1",
+          "lambda_left": "1",
+          "lambda_right": "1",
+          "mu": "1/4"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "1/8",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/2",
+        "bridge_offdiagonal_norm": "1/8",
+        "bridge_offdiagonal_norm_squared": "1/64",
+        "full_E1_minus_Es_lower": "1/4",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "1/4",
+        "generic_two_norm_gap_lower": "0",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/4",
+        "primary_family_common_bound": "1/8",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    },
+    {
+      "id": "scaled_half",
+      "certificate": {
+        "schema": "ym18-dressed-bridge-bound-v1",
+        "source_sha256": "e511485e4dfbc0f54aa08fc4d0ba7c255485e7a98eedf46f35199bfaad94a6e0",
+        "graph_sha256": "b81d917ac81541b132a1d808b181e654a692a06300a94858da1b9591dea8dded",
+        "parameters": {
+          "alpha": "1/2",
+          "alpha_min": "1/4",
+          "lambda_left": "1/4",
+          "lambda_right": "1/4",
+          "mu": "1/16"
+        },
+        "actual_end_ratio": "1/2",
+        "bridge_ratio": "1/8",
+        "active_reference_faces": [
+          "left",
+          "right"
+        ],
+        "reference_free_edges": [
+          "ex:1,0,0",
+          "ex:1,1,0"
+        ],
+        "haar_gate": {
+          "active_reference_faces": [
+            "left",
+            "right"
+          ],
+          "reference_support_overlap": false,
+          "untouched_bridge_links": [
+            "ex:1,0,0",
+            "ex:1,1,0"
+          ],
+          "status": "proved-conditional-Haar-moments",
+          "conditional_first_moment": "0",
+          "conditional_second_moment": "1/4",
+          "norm_x_times_reference_ground": "1/2",
+          "reason": "Haar invariance on an unused link; chi1 squared equals chi0 plus chi2"
+        },
+        "reference_ground": "unique dressed product ground; wavefunction and absolute energy E_s not computed",
+        "reference_gap_lower": "1/8",
+        "bridge_offdiagonal_norm": "1/32",
+        "bridge_offdiagonal_norm_squared": "1/1024",
+        "full_E1_minus_Es_lower": "1/16",
+        "full_E0_minus_Es_upper": "0",
+        "full_gap_lower": "1/16",
+        "generic_two_norm_gap_lower": "0",
+        "bound_status": "positive",
+        "ground_uniqueness_certified": true,
+        "physical_Gauss_inclusion_certified": true,
+        "primary_family_member": true,
+        "primary_family_bound_at_alpha": "1/16",
+        "primary_family_common_bound": "1/32",
+        "scope": "Finite internally overlapping strip; full untruncated link bound followed by Gauss restriction; lower estimate not an actual computed spectrum; cluster repetition and dense uniform extensions unexecuted"
+      }
+    }
+  ],
+  "mu_rows": [
+    {
+      "mu_over_alpha": "-3/8",
+      "reference_lower": "1/4",
+      "generic_lower": "-1/2",
+      "improved_lower": "-1/8",
+      "status": "negative-insufficient",
+      "primary_family_member": false
+    },
+    {
+      "mu_over_alpha": "-1/4",
+      "reference_lower": "1/4",
+      "generic_lower": "-1/4",
+      "improved_lower": "0",
+      "status": "zero-insufficient",
+      "primary_family_member": false
+    },
+    {
+      "mu_over_alpha": "-1/8",
+      "reference_lower": "1/4",
+      "generic_lower": "0",
+      "improved_lower": "1/8",
+      "status": "positive",
+      "primary_family_member": true
+    },
+    {
+      "mu_over_alpha": "-1/16",
+      "reference_lower": "1/4",
+      "generic_lower": "1/8",
+      "improved_lower": "3/16",
+      "status": "positive",
+      "primary_family_member": true
+    },
+    {
+      "mu_over_alpha": "0",
+      "reference_lower": "1/4",
+      "generic_lower": "1/4",
+      "improved_lower": "1/4",
+      "status": "positive",
+      "primary_family_member": true
+    },
+    {
+      "mu_over_alpha": "1/16",
+      "reference_lower": "1/4",
+      "generic_lower": "1/8",
+      "improved_lower": "3/16",
+      "status": "positive",
+      "primary_family_member": true
+    },
+    {
+      "mu_over_alpha": "1/8",
+      "reference_lower": "1/4",
+      "generic_lower": "0",
+      "improved_lower": "1/8",
+      "status": "positive",
+      "primary_family_member": true
+    },
+    {
+      "mu_over_alpha": "1/4",
+      "reference_lower": "1/4",
+      "generic_lower": "-1/4",
+      "improved_lower": "0",
+      "status": "zero-insufficient",
+      "primary_family_member": false
+    },
+    {
+      "mu_over_alpha": "3/8",
+      "reference_lower": "1/4",
+      "generic_lower": "-1/2",
+      "improved_lower": "-1/8",
+      "status": "negative-insufficient",
+      "primary_family_member": false
+    }
+  ],
+  "missing_untouched_link_gate": {
+    "active_reference_faces": [
+      "middle"
+    ],
+    "reference_support_overlap": false,
+    "untouched_bridge_links": [],
+    "status": "blocked-reference-factorization-or-free-link",
+    "conditional_first_moment": null,
+    "conditional_second_moment": null,
+    "norm_x_times_reference_ground": null,
+    "reason": "the sharpened inference lacks its product-reference and untouched-link premises"
+  },
+  "generic_one_norm_counterexample": {
+    "reference_H": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "perturbation": [
+      [
+        "1/4",
+        "0"
+      ],
+      [
+        "0",
+        "-1/4"
+      ]
+    ],
+    "perturbation_norm": "1/4",
+    "reference_expectation": "1/4",
+    "actual_gap": "1/2",
+    "generic_valid_lower": "1/2",
+    "invalid_one_norm_claim": "3/4",
+    "invalid_claim_exceeds_actual_gap": true,
+    "scope": "Finite counterexample to the generic one-norm shortcut when zero reference mean is absent"
+  },
+  "primary_family": {
+    "end_ratio_max": "1/2",
+    "bridge_ratio_max": "1/8",
+    "gap_lower_over_alpha": "1/8",
+    "common_scale_required": "alpha >= alpha_min > 0"
+  },
+  "dressed_ground_wavefunctions_computed": false,
+  "scope": "Finite bridge bound; A2 repetition and remaining-interaction extensions not executed"
+}

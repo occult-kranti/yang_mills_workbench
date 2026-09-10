@@ -1,0 +1,15 @@
+# A1: an actual bridge between dressed sparse blocks
+
+Execute only after both planning reviews are recorded. Retain the Round18 initial physical contract. Build the three-square strip with vertices(x,y,0), x=0,1,2,3 and y=0,1; its full graph has8 vertices,10 links and3 faces. Left and right magnetic faces have disjoint link supports. The middle face shares a link with each, and has two other links carrying only their free electric operators in the reference Hamiltonian.
+
+Reference H_s includes every electric term and both end magnetic terms. Forρ=max(|λ_left|,|λ_right|)/α<3/4, the accepted block argument gives a unique full-space groundΨ_s, energyE_s and gapg_s≥α(3/4−ρ). The physical Hilbert space is not assumed to factor. Add−μ x_middle with realμ.
+
+Prove from an actual unused Haar link that⟨Ψ_s,x_middleΨ_s⟩=0 and∥x_middleΨ_s∥=1/2, independent of the unknown dressed end-block wavefunctions. Consequently the reference trial givesE0(H)≤E_s, while min–max givesE1(H)≥E_s+g_s−|μ|. The candidate improvement is thereforeΔ_full≥g_s−|μ|. If this is positive, justify uniqueness and continuous SU(2)^8 invariance of the resulting ground before restricting to the Gauss sector. Preserve form domains, compact resolvent, and the distinction between a lower estimate and an actual computed spectral gap.
+
+Primary family: |λ_left|,|λ_right|≤α/2 and |μ|≤α/8, predictingΔ_physical≥α/8. α must have a common positive lower bound for a uniform physical conclusion. The generic perturbation comparisong_s−2|μ| remains the valid fallback when the zero reference expectation is not proved. Missing an untouched link must block the sharper inference rather than manufacture a zero diagnostic. Show a finite counterexample to the generic one-norm shortcut without that premise.
+
+Independent computations must rebuild the signed graph and distinguish end-block disjointness from bridge overlap. Challenge the untouched-link Haar first and second moments with an independent quaternion/matrix or character integration; do not substitute the bare vacuum for the dressed product state. A finite proxy for the dressed end ground may illustrate the Haar identity but cannot replace its arbitrary-wavefunction proof. Verifyμ=0, both signs, μ/α=1/8, the zero-bound endpoint1/4, an insufficient larger value, signed/zero end couplings, and at least two nonunitα scales. Include exact input-type, empty-support and altered-graph controls.
+
+This proves a finite internally overlapping cluster estimate. Repetition of clusters and any addition of nonzero remaining-face couplings are candidates for A2 and remain unexecuted until this gate. A finite cluster success alone does not prove a homogeneous dense volume-uniform gap.
+
+Deliver self-contained check.py, report.md, source manifest and exact results/graph/parameter CSV. The independent verifier supplies its distinct implementation and a focused full required-fixture comparison. Record actual defects and source revisions, and run ordinary/optimized Python with identical semantic gates, counted once.

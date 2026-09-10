@@ -1,0 +1,41 @@
+{
+  "schema": "ym18-independent-planning-review-v1",
+  "status": "planning_only",
+  "scientific_code_executed": false,
+  "new_agents_spawned": false,
+  "next_authorization_required": "Advisor freezes A1 contract before implementation; A2/B/C remain unexecuted",
+  "a1": {
+    "graph": "Three coplanar consecutive squares, minimal 8V/10E/3F support, embedded with every original electric term retained",
+    "reference": "Two disjoint dressed four-link end blocks and two free Haar bridge links",
+    "identities_to_verify": ["Reference bridge mean zero", "Reference bridge squared norm 1/4", "Offdiagonal bridge norm |mu|/2"],
+    "sharper_gap_candidate": "alpha*(3/4-rho)-abs(mu)",
+    "generic_fallback": "alpha*(3/4-rho)-2*abs(mu)",
+    "proposed_frozen_parameters": {"rho_max": "1/2", "abs_mu_over_alpha_max": "1/8", "gap_over_alpha_lower": "1/8"},
+    "insufficient_endpoint": "rho=1/2 and abs(mu)/alpha=1/4",
+    "essential_premises": ["Compact-resolvent full link operator", "Untouched reference-Haar link", "Strict positive sufficient gap for uniqueness", "Trivial continuous characters of SU(2)^V", "Physical restriction contains full ground"],
+    "invalid_shortcuts": ["Physical Hilbert factorization", "Replacing 3alpha/4 by 3alpha", "Using the sharper expectation bound after the free-link premise is removed"]
+  },
+  "a2_candidate_only": {
+    "family": "Disjoint internally overlapping three-face clusters",
+    "proposed_cluster_count": "n*floor(n/4)*floor(n/2)",
+    "extra_perturbation": "Absolutely summable remaining-face budget beta, generic loss 2beta",
+    "limitation": "Full support with decaying inhomogeneous coefficients is not homogeneous dense Yang-Mills"
+  },
+  "b_candidate_only": {
+    "physical_complement_threshold": "9alpha/2",
+    "required_support_proof": "All physical energies below 9alpha/2 are vacuum or one of the eleven fundamental square characters",
+    "required_moments": ["Single fourth moment 1/8", "Two-face squared moment 1/16", "No closed four-distinct-face mod-two surface"],
+    "cross_norm_squared_at_common_ratio": "21alpha^2*r^2/4",
+    "candidate_interval": "0<=r<=3/8",
+    "candidate_E1_over_alpha_lower": "(27-3sqrt(70))/16",
+    "scope": "Full finite physical operator; complement and cross-block premises not yet computationally accepted"
+  },
+  "c_candidate_only": {
+    "invariant": "Joint Gram matrix of b,a1,a2,a3,a4 with PSD/rank/unit/relation constraints",
+    "next_surrounding_link": "(1,0,0)->(1,0,1)",
+    "two_link_union_face_weights": 6,
+    "constant_other_faces": 14,
+    "main_risk": "Varying this link makes b(V) generically off-axis; previous scalar-axis solver is insufficient"
+  },
+  "original_open_goals_preserved": ["Homogeneous dense volume-uniform rotor gap with applicable explicit stability constants", "Full surrounding bulk integration", "Nontrivial continuum construction and surviving physical spectral scale"]
+}

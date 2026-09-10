@@ -1,0 +1,15 @@
+# B2 candidate: a full physical gap over a signed coefficient box
+
+Authorize only after the accepted B1 complete-complement/cross gate. Keep the same actual dense two-cube graph, untruncated physical Hilbert space, Casimir convention and energy units. Freeze the entire eleven-dimensional real box |λ_p|<=3α/8, α>0. The primary conclusion is a fixed-graph family; any common physical floor is separately declared.
+
+For ψ perpendicular to the bare vacuumΩ, write ψ=u+v with u=Pψ and v=Qψ. Since u has no vacuum coordinate, its magnetic P-block quadratic form vanishes and its electric form is3α||u||². B1 supplies QH0Q>=9αQ/2 and ||QVP||²<=21α²r²/4 with r=max|λ_p|/α. Also QVQ>=−11αr Q. Thus the complete form is bounded below by the scalar matrix with diagonals3 and c=9/2−11r and offdiagonal−b, b=√21 r/2. Min–max on this codimension-one space gives a lower bound for the full E1. The bare-vacuum trial separately gives E0<=0.
+
+Prove the whole box analytically using c>=3/8 and b<=3√21/16, yielding Δphysical>=α(27−3√70)/16>0. Do not claim interval coverage from sampled r. Prove the scalar comparison including arbitrary signed coefficients and degenerate/zero cross blocks. Supply exact outward rational radical enclosures, with explicit error targets, for displayed constants. At all endpoint magnitudes, retain the signed star trial E0/α<=(24−15√3)/16 and prove the stronger endpoint gap α(3+15√3−3√70)/16.
+
+Freeze exact rational sample r values0,1/8,1/4,12/43,1/3,3/8,2/5,1/2 for illustration and insufficient larger values, without changing the accepted box. Include allplus/allminus/alternating endpoint signs, allzero, sparse/mixed interior vectors, two nonunitα scales, exact equality cases and invalid coefficient-box claims. The domain-specific certificate must not admit a larger vector by attaching a passing box label. Missing complement/cross/codimension-one premises, a deleted cross term and a Ritz-gap substitution must be blocked or discriminated by actual inequalities, not merely relabeled.
+
+Use two independent scalar eigenvalue/congruence or radical enclosure calculations. Deliver exact coupling.csv with r and rational lower/upper enclosures, complete fixturecollection, written full-form proof, standalone check.py, source manifest and independent complete compare.py. Retain insufficient accuracy/coupling cases. Normal/optimized semantic outputs must agree. A finite graph gap cannot discharge the homogeneous volume-uniform or continuum target. C1 follows only after this gate.
+
+## Authorized after B1 acceptance
+
+Both independent complement derivations and the complete producer comparison passed. This B2 contract is now selected for execution. Retain the B1 amendment distinguishing true degree-four Haar agreement, a Gaussian identity failure and higher-order full-independence failure. PV²P can be a conservative upper bound, but the sharper accepted calculation here uses the exact subtracted cross Gram. No new source theorem or higher complement threshold is assumed.

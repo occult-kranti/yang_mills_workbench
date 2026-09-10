@@ -1,0 +1,183 @@
+{
+  "schema": "ym18-three-square-strip-v1",
+  "vertices": [
+    "0,0,0",
+    "0,1,0",
+    "1,0,0",
+    "1,1,0",
+    "2,0,0",
+    "2,1,0",
+    "3,0,0",
+    "3,1,0"
+  ],
+  "edges": [
+    {
+      "id": "ex:0,0,0",
+      "tail": "0,0,0",
+      "head": "1,0,0",
+      "axis": 0
+    },
+    {
+      "id": "ey:0,0,0",
+      "tail": "0,0,0",
+      "head": "0,1,0",
+      "axis": 1
+    },
+    {
+      "id": "ex:0,1,0",
+      "tail": "0,1,0",
+      "head": "1,1,0",
+      "axis": 0
+    },
+    {
+      "id": "ex:1,0,0",
+      "tail": "1,0,0",
+      "head": "2,0,0",
+      "axis": 0
+    },
+    {
+      "id": "ey:1,0,0",
+      "tail": "1,0,0",
+      "head": "1,1,0",
+      "axis": 1
+    },
+    {
+      "id": "ex:1,1,0",
+      "tail": "1,1,0",
+      "head": "2,1,0",
+      "axis": 0
+    },
+    {
+      "id": "ex:2,0,0",
+      "tail": "2,0,0",
+      "head": "3,0,0",
+      "axis": 0
+    },
+    {
+      "id": "ey:2,0,0",
+      "tail": "2,0,0",
+      "head": "2,1,0",
+      "axis": 1
+    },
+    {
+      "id": "ex:2,1,0",
+      "tail": "2,1,0",
+      "head": "3,1,0",
+      "axis": 0
+    },
+    {
+      "id": "ey:3,0,0",
+      "tail": "3,0,0",
+      "head": "3,1,0",
+      "axis": 1
+    }
+  ],
+  "faces": [
+    {
+      "id": "left",
+      "anchor": [
+        0,
+        0,
+        0
+      ],
+      "vertices": [
+        "0,0,0",
+        "1,0,0",
+        "1,1,0",
+        "0,1,0"
+      ],
+      "word": [
+        {
+          "edge": "ex:0,0,0",
+          "sign": 1
+        },
+        {
+          "edge": "ey:1,0,0",
+          "sign": 1
+        },
+        {
+          "edge": "ex:0,1,0",
+          "sign": -1
+        },
+        {
+          "edge": "ey:0,0,0",
+          "sign": -1
+        }
+      ]
+    },
+    {
+      "id": "middle",
+      "anchor": [
+        1,
+        0,
+        0
+      ],
+      "vertices": [
+        "1,0,0",
+        "2,0,0",
+        "2,1,0",
+        "1,1,0"
+      ],
+      "word": [
+        {
+          "edge": "ex:1,0,0",
+          "sign": 1
+        },
+        {
+          "edge": "ey:2,0,0",
+          "sign": 1
+        },
+        {
+          "edge": "ex:1,1,0",
+          "sign": -1
+        },
+        {
+          "edge": "ey:1,0,0",
+          "sign": -1
+        }
+      ]
+    },
+    {
+      "id": "right",
+      "anchor": [
+        2,
+        0,
+        0
+      ],
+      "vertices": [
+        "2,0,0",
+        "3,0,0",
+        "3,1,0",
+        "2,1,0"
+      ],
+      "word": [
+        {
+          "edge": "ex:2,0,0",
+          "sign": 1
+        },
+        {
+          "edge": "ey:3,0,0",
+          "sign": 1
+        },
+        {
+          "edge": "ex:2,1,0",
+          "sign": -1
+        },
+        {
+          "edge": "ey:2,0,0",
+          "sign": -1
+        }
+      ]
+    }
+  ],
+  "reference_end_faces": [
+    "left",
+    "right"
+  ],
+  "bridge_face": "middle",
+  "group": "SU(2)",
+  "measure": "independent normalized Haar on all ten links",
+  "Hilbert": "full untruncated link Hilbert space first, then all-eight-vertex Gauss restriction",
+  "electric_terms": "alpha times the Casimir on every one of the ten links",
+  "external_charges": false
+}
