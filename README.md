@@ -8,7 +8,9 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current milestone:** two completed feedback loops by a three-role team (advisor–skeptic, forward researcher, backward researcher). The declared finite mixed-loop SU(2) measure now has an exact positive covariance certificate at `(k1,k2,eta)=(1,1,1/4)`, with rational interval width about **1.27e-25**. All **23 certificates** were independently reconstructed through characters. The team also derived exact susceptibility, corrected validation and proof-admission flaws, and executed two-direction proof routes. [Open the collaboration graph](https://occult-kranti.github.io/yang_mills_workbench/#research/team-map), [the exact result](https://occult-kranti.github.io/yang_mills_workbench/#research/team-loop2), or [the next roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/team-roadmap). This is an explicitly deformed finite Euclidean model, not a continuum mass-gap proof.
+**Current milestone:** one advisor–skeptic planning review followed by **two research loops for each of three goals**. The same three-role team completed all six loops. The fixed finite covariance is now positive throughout `eta in [1/8,1/4]`, with an exact21-cell cover. A larger closed-cube Wilson calculation rigorously excludes independent-face factorization. A separately reviewed physical cube Hamiltonian admits an improved finite-graph spectral bound. The original **numerical volume-uniform threshold remains open**, as does the continuum problem. [Collaboration and feedback](https://occult-kranti.github.io/yang_mills_workbench/#research/cycle-map), [interval proof](https://occult-kranti.github.io/yang_mills_workbench/#research/range-cover), [cube integral](https://occult-kranti.github.io/yang_mills_workbench/#research/cube-certificate), [spectral audit](https://occult-kranti.github.io/yang_mills_workbench/#research/spectral-audit), [updated roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/cycle-roadmap).
+
+The previous23 point certificates and exact positive covariance at `(1,1,1/4)` remain available in round14, with their original finite Euclidean assumptions.
 
 The earlier two-step drive certificate remains available with total physical Haar L² state error **below 0.000337501** on its finite graph. Historical results are preserved with their original assumptions.
 
@@ -50,7 +52,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Three-role, two-loop finite correlation study | `research/round14/` | Current exact covariance, independent rational replay, collaboration graph and forward/backward feedback roadmap |
+| Three revised goals, six research loops | `research/round15/` | Current interval cover, cube integral, finite physical spectral bounds, independent reviews and retained original uniform-threshold gap |
+| Three-role, two-loop finite correlation study | `research/round14/` | Preserved exact point covariance, independent rational replay and earlier feedback roadmap |
 | Exceptions, locality, compact hierarchy and restricted gap | `research/round13/` | Preserved exact moment certificates, scalar response, fixed-spacing local limit and qualitative uniform-gap theorem application; continuum remains open |
 | Driven error, volume and closure bridges | `research/round12/` | Preserved exact dynamic theorem, rational endpoint certificate, source critique and historical roadmap |
 | Two adjacent plaquettes | `research/round11/` | Reviewed coupled operator, stationary certificates and finite-graph analytic gap proof |
@@ -97,7 +100,20 @@ x=\tfrac12\operatorname{Tr}U,\quad y=\tfrac12\operatorname{Tr}V,\quad z=\tfrac12
 
 The third trace retains relative orientation lost by two separate loop traces. At a central element (`|x|=1` or `|y|=1`), `z=xy`; a relative-angle formula must not divide by a vanishing sine. Adding coordinates records existing configurations. Inserting an arbitrary mass or scalar would change the theory and cannot establish the pure Yang–Mills target.
 
-## Reproduce the latest two-loop study
+## Reproduce the current three-goal study
+
+The [round15 guide](research/round15/README.md) records the six-loop commands, exact evidence, dependencies and boundaries. From the repository root:
+
+```bash
+python3 research/round15/reproduce.py --output /absolute/path/to/new-results
+python3 research/round15/proof_routes.py --output /absolute/path/to/proof-results.json
+```
+
+The exact arithmetic uses the standard library. NumPy is needed for B1's floating matrix comparison; Matplotlib is needed only to regenerate the standalone scientific figures. The runner preserves accepted evidence and refuses to overwrite an existing output directory.
+
+The six-face Euclidean coupling `k` is an action coefficient. It is not identified with the physical Hamiltonian energy ratio `lambda/alpha`. Full trial-state and generator assumptions are recorded on the spectral page.
+
+## Reproduce the previous two-loop study
 
 [Round14 instructions](research/round14/README.md) contain the complete model, commands for both simulations, exact certificate generation, independent verification and bidirectional proof replay. Run scientific commands in a terminal; the site displays recorded results. The earlier fixed-spacing Hamiltonian gap theorem remains available with its qualitative small-coupling threshold explicitly unevaluated.
 

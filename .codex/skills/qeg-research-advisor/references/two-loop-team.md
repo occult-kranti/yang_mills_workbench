@@ -13,3 +13,9 @@ Use this procedure when the user requests an advisor–skeptic, a forward resear
 Round14 lessons: a source hash records provenance but cannot turn a caller-supplied pass object into authority. Proof admission must rerun evidence or accept only internally issued immutable verified state. Freeze and revalidate the actual rule semantics, not only their identifiers or disk bytes. A finite static state does not determine its physical generator; backward spectral obligations need an explicit state/generator match.
 
 For a finite exponential-Haar deformation, constants and variables must retain their roles. An added coefficient changes the action. A controlled removal bound for bounded finite observables is useful, but it does not automatically extend uniformly in volume or identify a continuum theory.
+
+## Several goals in one requested cycle
+
+If the user asks for two loops for each of three roadmap goals, distinguish the preliminary advisor planning review from the six research loops. Retain each original mathematical target in the goal ledger. A supported side result can justify completing a research loop while the original target remains open; do not silently replace a requested volume-uniform threshold with a finite-volume estimate.
+
+For a point-to-interval extension, keep the target interval and model fixed. Use the first loop's error decomposition to decide whether the second should refine the point evaluator or the cell radius. For a graph extension, audit topology before importing formulas: an open planar Wilson patch can still factorize, while a closed cube has a six-face constraint. Full SU(2) face reversal is a true trace invariance; a wrong single dagger is a different, discriminating control. Higher-incidence graphs require new Haar contractions rather than automatic reuse of the single-surface dimension factor.

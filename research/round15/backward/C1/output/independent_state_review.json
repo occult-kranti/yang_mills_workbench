@@ -1,0 +1,89 @@
+{
+  "schema": "ym15-C1-independent-state-review-v1",
+  "status": "passed",
+  "checks_count": 13,
+  "checks": [
+    {
+      "name": "identity actual quaternion Casimir",
+      "passed": true
+    },
+    {
+      "name": "identity independent representation matches advisor fixture",
+      "passed": true
+    },
+    {
+      "name": "one_center_link actual quaternion Casimir",
+      "passed": true
+    },
+    {
+      "name": "one_center_link independent representation matches advisor fixture",
+      "passed": true
+    },
+    {
+      "name": "one_noncentral_link actual quaternion Casimir",
+      "passed": true
+    },
+    {
+      "name": "one_noncentral_link independent representation matches advisor fixture",
+      "passed": true
+    },
+    {
+      "name": "full independently calculated fixture set",
+      "passed": true
+    },
+    {
+      "name": "center fixtures force lambda=3alpha*kappa/2",
+      "passed": true
+    },
+    {
+      "name": "matched noncentral gradient defect remains -5alpha*kappa^2/8",
+      "passed": true
+    },
+    {
+      "name": "kappa0 lambda nonzero is rejected by nonconstant S",
+      "passed": true
+    },
+    {
+      "name": "noncentral gradient is essential; central fixtures alone are inconclusive",
+      "passed": true
+    },
+    {
+      "name": "smooth full-support premise stated in advisor proof",
+      "passed": true
+    },
+    {
+      "name": "advisor source unchanged during independent review",
+      "passed": true
+    }
+  ],
+  "fixtures": [
+    {
+      "fixture": "identity",
+      "S": "6",
+      "gradient_squared": "0",
+      "electric_Casimir_S": "18"
+    },
+    {
+      "fixture": "one_center_link",
+      "S": "2",
+      "gradient_squared": "0",
+      "electric_Casimir_S": "6"
+    },
+    {
+      "fixture": "one_noncentral_link",
+      "S": "4",
+      "gradient_squared": "5/2",
+      "electric_Casimir_S": "12"
+    }
+  ],
+  "source_sha256": "6e1fceccabfa807731c1fc4f88cc5eeaf2bf5a6c12cc1f06b07faef638084a8b",
+  "advisor_source_sha256": "49b9c68e8dae2f9786d30dbec46afc98a62fcabe22e538073164912cafc3abf7",
+  "advisor_proof_sha256": "0558e37da1e2b6a523278af490d0a5f8738a79ce20728b7f02b36a69fb34ff27",
+  "quaternion_source_sha256": "88ed912040d5cc988513c5d081465cdb08a6a29f11066c9ff05405f4b55a3dcf",
+  "verdict": "For alpha>0, no lambda makes exp(kappa S/2) an eigenfunction when kappa!=0; the constant is an eigenstate only at lambda=0.",
+  "proof_review": "The smooth wavefunction is strictly positive, the Hamiltonian ratio is continuous, and Haar has full support; thus an a.e. eigenidentity would hold at the exact test configurations.",
+  "limits": [
+    "This rejects a specific state identification, not use of that function as a variational trial.",
+    "The eigenstate conclusion uses the analytic chain rule and full-support argument as well as the exact configuration calculations."
+  ]
+}

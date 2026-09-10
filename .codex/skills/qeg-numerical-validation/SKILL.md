@@ -85,4 +85,10 @@ For spectral diagnostics, test lower-energy tiny overlaps and exactly absent cha
 
 Validate public input types before memoization: cached integer calls must not allow a Boolean to bypass the domain gate. Compare nested certificate metadata with exact types; Python equality alone accepts True as1. Retain signed numerator and normalization errors when enclosing covariance. A tiny exact interval need not contain a rounded floating comparator.
 
-A serialized passed status is not proof authority. At proof-library construction, rerun independent arithmetic or validate an internally issued immutable replay record, bind all actual sources, and revalidate the in-memory rule semantics. Test forged pass objects and rule injection after a valid replay. Preserve the original failed cases and verify repairs under optimized Python.
+A serialized passed status is not proof authority. At proof-library construction, rerun independent arithmetic or validate an internally issued immutable replay record, bind all actual sources, and revalidate the complete in-memory declarations: allowed hypotheses, gate names, open premises, statements and rules. A frozen rule tuple does not prevent an unproved primitive from being inserted into the allowed starting facts. Test forged pass objects and rule injection after a valid replay. Preserve the original failed cases and verify repairs under optimized Python.
+
+## Complete covers and closed-surface insertions
+
+For adaptive interval coverage, independently replay each failed-cell transition and the final union, including capped runs that remain insufficient. Checking every certificate present does not verify completeness: require the declared fixture names, parameter values and collection envelope, including zero-coupling references. Retain the action and original closed target while refining. A very accurate midpoint cannot compensate for an unaccounted transport radius.
+
+For a closed-surface Wilson certificate, differentiate each face coefficient separately before identifying equal couplings. A high common-coupling derivative is a different insertion. Include the normalization and comparison model's tails when rejecting factorization. Proper distinct-face moments do not prove repeated-index trial norms; derive the needed stronger Haar identities first.

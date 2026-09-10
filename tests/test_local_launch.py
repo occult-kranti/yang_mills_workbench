@@ -19,6 +19,8 @@ class LaunchTests(unittest.TestCase):
                          'bridge-drive-summary.csv','bridge-closure.csv','research-round12.zip',
                          'research-exceptions-data.js','research-exceptions.js',
                          'research-team-data.js','research-team.js','team-covariance.csv',
+                         'research-cycles-data.js','research-cycles.js',
+                         'research-round15-cover.json','research-round15-cube.json','research-round15.zip',
                          'team-certificate.csv','research-round14-certificates.json',
                          'exception-moments.csv','exception-locality.csv','exception-response.csv',
                          'research-round13-certificates.json','research-round13.zip'):

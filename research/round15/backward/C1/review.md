@@ -1,0 +1,13 @@
+# C1 independent acceptance and retained original gap
+
+The finite-graph physical theorem is accepted under its stated all-Gauss, simple connected graph and no-charge premises. The exact free physical gap is3alpha*g/4; bounded-perturbation min-max and the Haar vacuum trial give gap>=3alpha*g/4-sum|lambda_p|. This is an inequality for the untruncated operator, not a lower gap inferred from a trial-space diagonalization.
+
+Fifty-two independent finite-bound gates pass, including eleven exact graph certificates, independently enumerated open-box counts and an exhaustive check of the necessary active-support condition on the cube's4095 nonempty edge subsets. The independent girth routine removes each edge and finds its shortest alternate endpoint path, differing from the producer's BFS cycle detector. Forest and singleton fixtures retain an empty physical excitation sector, rather than an invented numerical gap. At the cube coefficientlambda=alpha/2, the displayed bound is exactlyzero and remains insufficient.
+
+The review caught a draft verifier completeness flaw: removing the required zero-coupling cube fixture could still pass because the original harness recursively replayed whichever certificates were present. The failing draft and mutation are preserved in history/. The repaired verifier requires the exact collection envelope, six ordered cube fixtures, all named side fixtures and independently reconstructed volume rows. Missing evidence, forged volume entries and Boolean substitutions now fail.
+
+Thirteen further independent quaternion gates confirm the advisor's matrix state counterexample. The three exact configurations have(S,|gradS|^2)=(6,0),(2,0),(4,5/2). They establish that no choice oflambda makes exp(kappa*S/2) an eigenfunction of the stated electric-plus-Wilson Hamiltonian whenkappa!=0. The smoothness, strict positivity and full Haar support premises justify using exact point configurations to refute an a.e. eigenidentity. This rejects a particular state identification, while leaving that function available as a variational trial.
+
+Ordinary and optimized results are byte-identical, with each gate counted once. The independently inspected primary preprints still leave the requested uniform stability constants unspecified. The original volume-uniform numerical threshold therefore remains open. The finite-graph side result must not be promoted into it.
+
+The reviewed B1 Gram and repeated-face identities support a concrete C2 proposal: use the vacuum plus six square characters to improve only the ground-energy upper bound, combine it with the existing full-operator E1 lower bound and test the failedlambda=alpha/2 boundary. Its trial norm and square-root interval require their own next gate before execution.
