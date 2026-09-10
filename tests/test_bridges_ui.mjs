@@ -5,7 +5,7 @@ const ctx={console,URL,Blob,setTimeout:()=>0,location:{hash:'#research'},localSt
 const html=fs.readFileSync(new URL('index.html',base),'utf8');
 const scripts=[...html.matchAll(/<script src="(research[^\"]*\.js)"/g)].map(x=>x[1]);
 // Test the preserved round12 overlay; current round13 integration has its own suite.
-for(const name of scripts.filter(name=>!name.startsWith('research-exceptions')&&!name.startsWith('research-team')&&!name.startsWith('research-cycles')))vm.runInContext(fs.readFileSync(new URL(name,base),'utf8'),ctx,{filename:name});
+for(const name of scripts.filter(name=>!name.startsWith('research-shared')&&!name.startsWith('research-exceptions')&&!name.startsWith('research-team')&&!name.startsWith('research-cycles')))vm.runInContext(fs.readFileSync(new URL(name,base),'utf8'),ctx,{filename:name});
 const D=ctx.OBSERVATORY_BRIDGES,T=ctx.ResearchObservatory;
 const pages=['home','dynamic-proof','exact-evolution','dynamic-experiments','volume-bridge','closure-audit','bridge-variables','bridge-roadmap','bridge-review'];
 function check(name,fn){fn();checks.push({name,passed:true});}

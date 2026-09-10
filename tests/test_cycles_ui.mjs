@@ -8,7 +8,7 @@ const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',open
 const ctx={console,URL,Blob,setTimeout:()=>0,clearTimeout(){},location:{hash:'#research'},localStorage:{getItem(){return null},setItem(){}},document:{querySelector:node,getElementById:id=>node('#'+id),addEventListener:(e,f)=>(events[e]??=[]).push(f)},addEventListener(){}};
 ctx.window=ctx;vm.createContext(ctx);
 const files=[...fs.readFileSync(new URL('index.html',base),'utf8').matchAll(/<script src="(research[^\"]*\.js)"/g)].map(m=>m[1]);
-for(const file of files)vm.runInContext(fs.readFileSync(new URL(file,base),'utf8'),ctx,{filename:file});
+for(const file of files.filter(name=>!name.startsWith('research-shared')))vm.runInContext(fs.readFileSync(new URL(file,base),'utf8'),ctx,{filename:file});
 const D=ctx.OBSERVATORY_CYCLES,T=ctx.ResearchObservatory;
 const read=p=>JSON.parse(fs.readFileSync(new URL(p,records),'utf8'));
 const plain=v=>JSON.parse(JSON.stringify(v));

@@ -20,6 +20,8 @@ class LaunchTests(unittest.TestCase):
                          'research-exceptions-data.js','research-exceptions.js',
                          'research-team-data.js','research-team.js','team-covariance.csv',
                          'research-cycles-data.js','research-cycles.js',
+                         'research-shared-data.js','research-shared.js','shared-energy-scale.csv',
+                         'research-round16-certificates.json','research-round16-graph.json','research-round16.zip',
                          'research-round15-cover.json','research-round15-cube.json','research-round15.zip',
                          'team-certificate.csv','research-round14-certificates.json',
                          'exception-moments.csv','exception-locality.csv','exception-response.csv',

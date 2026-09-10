@@ -67,6 +67,8 @@ Read [the spectral connection contract](references/spectral-connection.md) when 
 
 A fitted effective-mass plateau cannot certify a spectral lower bound. For a positive zero-temperature spectral measure the exact effective mass bounds the lowest overlapping energy from above; a missing channel or tiny overlap can hide lighter states. Require fixed physical units, full reconstruction assumptions and a common decay rate on a dense physical-state family before admitting a Hamiltonian gap implication.
 
+For shared-face graph extensions and common physical units, use [the shared-face contract](references/shared-face-contract.md). It records higher incidence, matched omission comparisons, coefficient conventions and the precise scope of the energy-scale condition.
+
 ## Requested three-role feedback cycles
 
 For a user-requested team of three and sequential loops, use `references/two-loop-team.md`. Count the coordinator as the advisor–skeptic, execute the first evidence gate before selecting the second target, and distinguish the published collaboration ledger from a continuously running swarm.
