@@ -71,4 +71,6 @@ For shared-face graph extensions and common physical units, use [the shared-face
 
 ## Requested three-role feedback cycles
 
+For local rotor stability, finite trial improvements and common-variable conditional contractions, use [the six-loop lattice contract](references/six-loop-lattice-contract.md). It preserves the dense target when a sparse exception is proved and separates action variables from the boundary information needed by observables.
+
 For a user-requested team of three and sequential loops, use `references/two-loop-team.md`. Count the coordinator as the advisor–skeptic, execute the first evidence gate before selecting the second target, and distinguish the published collaboration ledger from a continuously running swarm.

@@ -1,0 +1,7 @@
+{
+  "status": "review-detected-and-repaired",
+  "issue": "The original even_mask helper could allocate an unbounded list although canonical graph materialization was capped at12.",
+  "observation": "Finite fixtures passed; no huge allocation was executed.",
+  "repair": "Cap materialized masks at12; keep arbitrary-size exact counts and lazy anchor iteration.",
+  "regression": "A request to materialize extent10^9 rejects before iteration or allocation."
+}

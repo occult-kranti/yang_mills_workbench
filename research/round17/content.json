@@ -1,0 +1,191 @@
+{
+  "summary": "Six sequential loops examine three precise mathematical goals. They separate a restricted uniform gap theorem, improved finite spectral estimates, and a conditional invariant-tensor calculation from the unresolved dense lattice and continuum problem.",
+  "open": "An explicit quantitative bound for dense overlapping interactions remains missing. The conditional central-link result still needs the surrounding bulk integration. A matched physical time generator, controlled volume and lattice-spacing limits, continuum reconstruction and the four-dimensional Yang–Mills mass gap remain unresolved.",
+  "solutions": [
+    {
+      "id": "A1",
+      "route": "six-local",
+      "title": "The local estimate and its obstruction",
+      "plain": "A useful part of the magnetic interaction has a bound independent of the lattice volume. The remaining part mixes the vacuum with an excited loop. An exact physical trial shows why that mixing cannot satisfy the same pure relative bound.",
+      "equation": "P_p x_p P_p=0, ‖Q_p x_p P_p‖=1/2, Q_p=1−P_p\n|⟨Σ_p λ_p Q_p x_p Q_p⟩| ≤ (16/3) max|λ_p| ⟨Σ_e C_e⟩\nψ_t=(Ω+tχ_p)/√(1+t²) ⇒ |⟨V⟩|/⟨H₀⟩=|λ_p|/(3α|t|) → ∞",
+      "limit": "The diagonal bound is proved. The proposed extension to the full perturbation is disproved for nonzero coupling. Neither statement says the physical gap closes.",
+      "sections": [
+        {
+          "title": "Derive the operator split",
+          "text": "Each link has normalized SU(2) Haar measure. P_p projects the four plaquette links onto constants and acts as the identity elsewhere. Haar mean zero gives P_p x_p P_p=0, while the second moment1/4 gives the exact vacuum-to-excitation norm1/2. Inserting P_p+Q_p on both sides leaves a diagonal term and two offdiagonal terms. The split holds on the full link space and preserves the Gauss sector.",
+          "equation": "x_p=Q_p x_p Q_p+P_p x_p Q_p+Q_p x_p P_p"
+        },
+        {
+          "title": "Account for every shared link",
+          "text": "The commuting link-vacuum projections give a union bound for Q_p. Every nontrivial link representation has Casimir at least3/4, and an open cubic link touches at most four plaquettes. These facts give16/3. The corresponding overlap count is at most twelve other plaquettes, or thirteen including the plaquette itself. The physical square excitation3α must not replace the unprojected link gap3α/4 in this local inequality.",
+          "equation": "Q_p ≤ Σ_(e∈p)(1−P_e) ≤ (4/3)Σ_(e∈p)C_e"
+        },
+        {
+          "title": "A physical counterexample, not just a matrix test",
+          "text": "The vacuum and a fundamental square character are both gauge invariant. Their normalized superposition has free energy quadratic in t and magnetic energy linear in t. Taking t toward zero defeats every finite pure relative constant. At t=0 the quotient is undefined; at zero coupling it is zero away from the origin. Bounds with an additive energy term and suitable local stability theorems are still possible.",
+          "equation": "⟨H₀⟩=3αt²/(1+t²),  ⟨V⟩=−λ_p t/(1+t²)"
+        }
+      ],
+      "plots": [
+        "local-obstruction"
+      ],
+      "review": "The verifier independently used Haar recurrences, actual coordinate graphs, exact noncommuting SU(2) matrices and a physical trial. A Boolean-coordinate validation defect was reproduced and repaired; its original passing run and failure record remain available. The source audit also rejects transferring a qubit/two-site numerical constant to four-link rotors.",
+      "next": "The failed shortcut selected A2: retain the Hamiltonian and test a link-disjoint support family whose blocks can be bounded directly."
+    },
+    {
+      "id": "A2",
+      "route": "six-sparse",
+      "title": "A uniform gap for a sparse interaction family",
+      "plain": "On the original full lattice, turn on magnetic terms only for plaquettes whose link sets do not overlap. Their number can grow proportionally to the lattice volume. A block argument gives an explicit positive physical gap bound that stays fixed as the lattice grows.",
+      "equation": "max_p|λ_p|/α ≤ ρ < 3/4,  α ≥ α_min > 0\nΔ_physical ≥ α_min(3/4−ρ)\nAt ρ=1/2 and α_min=1: Δ_physical ≥ 1/4",
+      "limit": "This theorem covers pairwise link-disjoint nonzero interactions. Shared vertices are allowed. Adding even a weak nonzero interaction on a shared link leaves this proof's scope; it does not establish gap closure.",
+      "sections": [
+        {
+          "title": "Keep the full graph and the correct Hilbert space",
+          "text": "Every original link and electric term remains present. The support mask sets selected existing magnetic coefficients to zero. The unprojected link Hilbert space factors into four-link interacting blocks and free links. The physical gauge-invariant space is not assumed to factorize. Compactness of the group and boundedness of the potential supply self-adjoint block operators with compact resolvent."
+        },
+        {
+          "title": "Prove a block bound and include the physical ground",
+          "text": "A block's free first excitation costs3α/4. Min–max bounds its second eigenvalue below by3α/4−|λ_p|, while the constant trial puts its ground energy at most zero. This proves a unique ground for the stated coupling range. Each block ground transforms in a one-dimensional continuous representation of its endpoint SU(2) groups; those representations are trivial. The product ground therefore satisfies global Gauss law even when blocks share vertices. Restricting to the physical sector retains that ground and cannot lower its excitation threshold.",
+          "equation": "E₁(block) ≥ 3α/4−|λ_p|,  E₀(block) ≤ 0\nΔ(block) ≥ 3α/4−|λ_p|"
+        },
+        {
+          "title": "An extensive mask, with exact boundary cases",
+          "text": "Choose xy squares at even x and even y in every z layer. An n-by-n-by-n vertex box then has n floor(n/2)² active plaquettes. The arbitrary-size combinatorial argument proves disjointness; finite samples check the implementation. The global norm estimate deteriorates with this active count, while the separate block bound stays positive. Atρ=3/4 the block estimate is insufficient, not a measurement of zero gap. The common energy prefactor is essential to the stated uniform inference.",
+          "equation": "N_active(n)=n⌊n/2⌋²\nGlobal sufficient bound: 3α−Σ_p|λ_p|"
+        }
+      ],
+      "plots": [
+        "sparse-volume"
+      ],
+      "review": "The independent implementation reconstructs supports and block/free partitions from coordinates. It accepts corner sharing and zero coefficients, rejects a nonzero overlapping bridge, and checks signed couplings and energy scales. An unbounded materialization helper was capped without limiting the arbitrary-size count formula or lazy generator.",
+      "next": "This result revised both remaining goals. B now tests the dense eleven-face graph with its own physical spectral argument. C must demonstrate the new tensor channels on its actual graph."
+    },
+    {
+      "id": "B1",
+      "route": "six-trial",
+      "title": "A physical trial on the dense two-cube graph",
+      "plain": "The vacuum and eleven fundamental plaquette states give a better variational estimate of the ground energy. Combining it with a separate bound on the full operator's first excited energy proves a stronger finite physical gap inequality.",
+      "equation": "δ=3α,  L=Σ_p|λ_p|,  Q=Σ_p λ_p²\nE₀ ≤ (δ−√(δ²+Q))/2,  E₁ ≥ δ−L\nΔ_physical ≥ (δ+√(δ²+Q))/2−L\nEqual magnitudes: sufficient positivity for |λ|/α < 12/43",
+      "limit": "This is the full untruncated physical operator on one dense finite graph. The bracket encloses the sufficient lower-bound expression; its upper endpoint is not an upper bound on the physical gap.",
+      "sections": [
+        {
+          "title": "Rebuild all trial entries",
+          "text": "The actual complex has twelve vertices, twenty links and eleven faces, including the shared face once. Character orthogonality and link-center parity give an identity Gram matrix for the vacuum and eleven fundamental characters. Repeated indices are counted before applying parity. Both researchers check all144 Gram entries and1,584 individual magnetic insertion entries. Every fundamental loop has electric energy3α; the only magnetic entries connect the vacuum to a face state.",
+          "equation": "G=I₁₂,  H₀=diag(0,3α,…,3α)\n⟨Ω,Vχ_p⟩=−λ_p/2,  ⟨χ_p,Vχ_q⟩=0"
+        },
+        {
+          "title": "Use the full excited-energy bound",
+          "text": "Gauss law forbids a degree-one vertex in nontrivial spin-network support. Such support contains a cycle; this graph has girth four. Four fundamental links attain the free physical gap3α. The magnetic norm is at most L, so min–max gives E₁≥3α−L for the full operator. The trial matrix independently gives an upper bound for E₀. Subtracting in this direction yields a valid gap lower bound; subtracting two trial eigenvalues would not."
+        },
+        {
+          "title": "Find the exact sufficient boundary",
+          "text": "For equal coupling magnitudes r, the inequality becomes B(r)>0. Squaring is used only after checking the sign of22r−3. The exact threshold is12/43. At the old endpoint3/11 the new lower bound exceeds0.0666989α. At12/43 its radical equals135/43 and the estimate is exactly zero. This records the failure that selects B2; it is not a physical gap-closing result.",
+          "equation": "B(r)=(3+√(9+11r²))/2−11r\nB(r)>0 ⇔ 0≤r<12/43;  B(12/43)=0"
+        }
+      ],
+      "plots": [
+        "finite-coupling"
+      ],
+      "review": "The backward computation uses actual link multiplicities, exact determinant checks and directed rational Newton bounds. These agree with the producer's graph/Haar calculation and dyadic square-root enclosures. Zero, signed unequal, below-threshold, endpoint and insufficient-precision fixtures remain recorded. A2's sparse theorem is explicitly excluded because these face supports overlap.",
+      "next": "B2 keeps the endpoint Hamiltonian fixed and tests one added shared-face adjoint trial component. Its amplitude changes the candidate state, not the theory."
+    },
+    {
+      "id": "B2",
+      "route": "six-adjoint",
+      "title": "One added representation repairs the finite bound",
+      "plain": "At the coupling where B1's estimate reached zero, one shared-face adjoint component lowers the trial energy enough to give a strictly positive bound on the full physical gap. The Hamiltonian and its eleven nonzero couplings remain fixed.",
+      "equation": "λ_p/α=12/43 for all eleven faces;  χ₂(U_s)=4x_s²−1\nv_η=Ω+(1/22)Σ_pχ_p+ηχ₂(U_s)\nΔ/α ≥ [(6/473)η−(347/43)η²]/[45/44+η²]\nη=3/3817 ⇒ Δ ≥ α·1388/284767457 > 0",
+      "limit": "This repairs one sufficient-bound endpoint on a dense finite graph. It supplies neither a dense volume-uniform theorem nor a continuum mass gap. η is a variational amplitude, not a new field or coupling.",
+      "sections": [
+        {
+          "title": "Verify the added character",
+          "text": "The ordinary adjoint character has norm one and electric energy8α. It is orthogonal to the previous twelve states. Its only new magnetic matrix entry couples it to the fundamental character on the actual shared face, with value−λ_s/2. The shared face is identified from geometry and incidence. All169 Gram entries and1,859 individual magnetic insertions are checked, including repeated powers.",
+          "equation": "⟨χ₂²⟩=16⟨x_s⁴⟩−8⟨x_s²⟩+1=1\n⟨χ₂,x_sχ₁⟩=8⟨x_s⁴⟩−2⟨x_s²⟩=1/2"
+        },
+        {
+          "title": "Keep both directions of the spectral argument",
+          "text": "Atα=1, the full E₁ bound and the old trial eigenvalue are both e=−3/43. The old unnormalized trial has squared norm G=45/44. Adding the adjoint produces an actual Rayleigh quotient R(η), hence E₀≤R(η). Subtracting this upper bound from the separate full E₁ lower bound gives the displayed positive gap estimate.",
+          "equation": "R(η)=[eG−(6/473)η+8η²]/[G+η²]\nE₁−E₀ ≥ e−R(η)"
+        },
+        {
+          "title": "Prove an interval and retain insufficient trials",
+          "text": "The numerator factors exactly, so positivity holds throughout the open interval0<η<6/3817. The endpoints give zero estimates and amplitudes outside give negative estimates, while every state remains valid. The selected midpoint maximizes the numerator, not the full quotient; its quotient derivative is slightly negative. No unsupported optimization claim is made. Restoringα multiplies every energy bound byα.",
+          "equation": "(6/473)η−(347/43)η²=(347/43)η(6/3817−η)"
+        }
+      ],
+      "plots": [
+        "adjoint-amplitude"
+      ],
+      "review": "The independent verifier reconstructs the matrix polynomials and Rayleigh quotient from scratch. An exclusive link proves the required mixed-square moment; parity alone is insufficient for it. Wrong character normalization, omitted mixed terms, wrong electric energy and a trial-gap substitution are discriminating controls. The exact amplitude ledger and scale checks agree between implementations.",
+      "next": "With the finite spectral target completed, C1 moves to the four-cube graph and checks a genuinely larger central invariant space. Its tensor result remains separate from a physical gap theorem."
+    },
+    {
+      "id": "C1",
+      "route": "six-graph",
+      "title": "The full central tensor on four cubes",
+      "plain": "Four cubes meeting around one link require three invariant channels for four adjoint insertions. Keeping the complete tensor gives a negative joint expectation on a realizable boundary. Removing its cross-channel terms changes the sign.",
+      "equation": "Full complex: 18 vertices, 33 links, 20 faces\nOuter boundary: 18 vertices, 32 links, 16 faces\nP=∫R(U)⊗⁴dU=B G⁻¹ Bᵀ, rank P=3\nComplete joint expectation: −1/405; diagonal-only replacement: +2/405",
+      "limit": "This integrates one central link with its surrounding links fixed. It is a conditional Haar calculation, not the full twenty-face bulk integral or a Hamiltonian spectral estimate.",
+      "sections": [
+        {
+          "title": "Construct the graph before contracting it",
+          "text": "The cells form a2×2×1 box. The central vertical link from(1,1,0) to(1,1,1) touches four faces. Those four faces are internal; the other sixteen form the outer boundary, which has no central link. The two implementations rebuild the signed face words and classify faces by cell incidence. A boundary-only surface is therefore a different complex, not a shorthand for the bulk calculation."
+        },
+        {
+          "title": "Derive the complete invariant space",
+          "text": "Pairing the four spin-one representations through intermediate spins0,1,2 proves that the invariant space has dimension three. The three Kronecker-delta pairings are not orthonormal. Their Gram matrix has diagonal9 and offdiagonal3, so its inverse has diagonal2/15 and offdiagonal−1/30. The full81×81 operator uses this inverse, including every cross term. Independent exact polynomial Haar integration checks all6,561 entries, self-adjointness, idempotence and infinitesimal rotation invariance.",
+          "equation": "B₁=δ_abδ_cd, B₂=δ_acδ_bd, B₃=δ_adδ_bc\nG=6I+3J, G⁻¹=I/6−J/30"
+        },
+        {
+          "title": "Realize the boundary and test the joint observable",
+          "text": "Four three-edge paths outside the central link have disjoint link supports. Actual assignments realize the unit quaternions listed below. Whole face words are reversed when required; changing only one dagger would change the observable. For O=∏χ₂(UH_i)/81, the complete tensor gives−1/405. A diagonal-only replacement gives+2/405 and a single pairing gives+1/729. The product of four individual Haar means is zero. This is a signed observable under a positive measure, so its negative expectation is not a negative probability.",
+          "equation": "H₁=(1,1,1,1)/2, H₂=(1,1,−1,−1)/2\nH₃=(1,−1,1,−1)/2, H₄=(1,−1,−1,1)/2\nχ₂(UH)=4[Tr(UH)/2]²−1"
+        }
+      ],
+      "plots": [],
+      "review": "The forward pairing-tensor calculation and independent S³ moment calculation agree exactly. Raw complex matrix multiplication also checks80 actual face words. A real cache bug allowed Boolean exponents and invalid rotation indices after valid cache entries existed. Strict public validation now runs before private caches; the original28-check source and reproduced failure are retained. The corrected34 independent checks and14 focused producer comparisons pass.",
+      "next": "The negative joint result selected C2: keep a nonzero central action and compare two realized boundaries with exactly the same action vector and normalization. Test whether their joint observable still needs the relative boundary directions."
+    },
+    {
+      "id": "C2",
+      "route": "six-kernel",
+      "title": "Same action variable, different joint result",
+      "plain": "A common four-component vector simplifies the central action. It does not retain everything needed for the observable. Two actual boundaries with exactly the same action and normalization give rigorously separated joint expectations at nonzero coupling.",
+      "equation": "x_i(U)=q·a_i, b=Σ_iκ_i a_i, S(U)=q·b\nAt κ_i=1/8, both boundaries have b=(1/4,0,0,0)\nE_T[O]≈−0.002469114394235138\nE_C[O]≈0.01073813525633129\nD=E_C[O]−E_T[O]≈0.013207249650566428 > 0\nOutward display: D∈[0.013207249650566427, 0.013207249650566428]",
+      "limit": "These are different boundary-dependent integrands of the same four-face functional, under one common central-link measure. The result rejects an action-vector-only observable closure. It does not complete the surrounding bulk integral or a Hamiltonian gap proof.",
+      "sections": [
+        {
+          "title": "Introduce a useful variable with its zero branch",
+          "text": "For unit-quaternion U=q, each trace is a real linear form q·a_i. Summing the four action terms gives b=Σκ_i a_i. An orthogonal change of quaternion coordinates preserves normalized S³ Haar and can align nonzero b with an axis, provided the observable directions rotate too. At b=0 use the Haar integral directly. The implemented exact routine accepts scalar-axis and zero-vector actions and rejects unsupported nonaligned inputs; it does not silently approximate a generic rotation.",
+          "equation": "S(q)=Σ_iκ_i(q·a_i)=q·b\nb=0 ⇒ exp S=1; no division by‖b‖"
+        },
+        {
+          "title": "Match the action while changing the boundary geometry",
+          "text": "The tetrahedral boundary from C1 and the commuting boundary(I,I,i,−i) both sum to(2,0,0,0). With equalκ their central action is2κq0 and their partition function agrees exactly. Both assignments are realized on the actual four-cube surrounding paths. The normalized observable is the product of four ordinary adjoint characters divided by81. Its tetrahedral and commuting central functions differ because the individual directions differ. The commuting product is nonnegative pointwise; the tetrahedral product can be negative.",
+          "equation": "O_C(q)=(4q0²−1)²(4q1²−1)²/81\nAtκ=0: E[O_T]=−1/405, E[O_C]=13/1215\nD(0)=16/1215"
+        },
+        {
+          "title": "Independently reduce the complete observable",
+          "text": "The forward program integrates the full polynomial on S³. The independent program first averages the remaining spatial directions on S² at fixedz=q0, then integrates the resulting polynomial against the normalized semicircle density. It reconstructs both displayed polynomials independently. All four individual tetrahedral normalized adjoint polynomials vanish identically, so their individual means are zero for every scalar-axis action, while the joint mean remains nonzero in the tested coupling fixtures.",
+          "equation": "g_T(z)=(1024z⁸−2752z⁶+2448z⁴−736z²+16)/8505\ng_C(z)=(768z⁸−1280z⁶+864z⁴−240z²+23)/1215\nE[O]=[∫₋₁¹g(z)e^(2κz)(2/π)√(1−z²) dz]/Z"
+        },
+        {
+          "title": "Bound both numerator and normalization errors",
+          "text": "Atκ=1/8 the action magnitude is at most M=1/4. The finite Taylor sums are exact rational numbers. A geometric bound controls the entire omitted exponential tail; the single-observable numerator tail is at mostR_N and the contrast tail at most2R_N. Jensen suppliesZ≥1. Signed interval division retains the denominator uncertainty. Degrees0,4,8 are insufficient for the frozen10⁻¹² width target; degrees12 and16 pass. The degree16 contrast enclosure has width about6.63×10⁻²⁵. Approximate numbers in the headline are display values; the downloadable certificates retain exact rational endpoints.",
+          "equation": "R_N=M^(N+1)/(N+1)! · [1−M/(N+2)]⁻¹\nA∈[A_N−R_N,A_N+R_N]\nZ∈[max(1,Z_N−R_N),Z_N+R_N]"
+        },
+        {
+          "title": "Exercise exceptions without changing the inference",
+          "text": "The checks retain negative coupling, half coupling, all-zero coefficients, and the commuting caseκ_i=(1/8,−1/8,1/8,1/8), where every coefficient is nonzero butb=0. That last case returns the exact Haar value13/1215. A cache or closure keyed only byb would confuse the two primary boundaries. The relative direction Gram matrices distinguish them. The outer sixteen face terms cancel in this normalized central expectation because they are constant with respect to this link, but still affect the surrounding marginal."
+        }
+      ],
+      "plots": [
+        "conditional-boundaries",
+        "conditional-precision"
+      ],
+      "review": "The independent angular/radial calculation agrees with every exact numerator coefficient, partition coefficient, boundary assignment and required refinement in the producer collection. Validation checks reject forged collections, missing fixtures, altered normalization and unsupported inputs. Initial lower-level helper checks missed Boolean and negative scalar indices; those actual failures and original sources are retained, and strict helper validation now repairs them. The final gate records the executed check counts.",
+      "next": "The next roadmap keepsb together with the necessary observable geometry, tests a joint-Gram reduction for the declared class of integrals, and then targets a complete surrounding-link integration. Those are planned obligations, not results already supplied by this conditional calculation."
+    }
+  ]
+}

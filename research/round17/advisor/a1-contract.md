@@ -1,0 +1,3 @@
+# A1 authorized contract
+
+Selected after both planning reviews and before A1 execution. Apply the A1 section of `revised-plan.md`: prove the local decomposition and volume-independent diagonal bound; independently expose the full relative-bound counterexample. Preserve signed and zero-coupling cases, actual cubic incidence, and the two Hilbert spaces. Both researchers derive and execute separate implementations. Acceptance requires their mathematical agreement and retained rejecting controls, not matching check counts. No numerical dense uniform threshold is authorized from this loop. A2 remains unselected until this gate completes.

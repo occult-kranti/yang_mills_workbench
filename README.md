@@ -8,7 +8,9 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current milestone:** the next shared-face subproblem is complete in its finite scope after **two sequential loops with three scientific roles**. The actual two-cube complex has12 vertices,20 links and11 faces. Independent Haar-projector and polynomial calculations certify the shared interaction’s effect on the same all-eleven trace observable, with exact total interval width about4.173e−22. A separate scale audit proves why a common dimensionless gap bound needs a common energy convention. The **numerical volume-uniform interacting threshold and continuum problem remain open**. [Graph and contractions](https://occult-kranti.github.io/yang_mills_workbench/#research/shared-haar), [exact experiment](https://occult-kranti.github.io/yang_mills_workbench/#research/shared-integral), [energy scale](https://occult-kranti.github.io/yang_mills_workbench/#research/physical-scale), [two-loop collaboration](https://occult-kranti.github.io/yang_mills_workbench/#research/shared-team), [updated roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/shared-roadmap). Detailed code and reproduction instructions: [Round16 guide](research/round16/README.md).
+**Current milestone:** six sequential research loops with **three scientific roles**, plus two advisor planning decisions. A1/A2 prove a restricted volume-uniform physical gap for link-disjoint interactions and retain the obstruction to a simple dense extension. B1/B2 improve a full finite physical gap bound on the dense two-cube graph; one adjoint trial component repairs the earlier endpoint. C1/C2 retain the complete four-cube central tensor and test equal-action boundaries with different joint expectations. The **dense quantitative threshold, surrounding bulk integration and continuum Yang–Mills problem remain open**. [Six-loop home](https://occult-kranti.github.io/yang_mills_workbench/#research), [finite endpoint result](https://occult-kranti.github.io/yang_mills_workbench/#research/six-adjoint), [common-variable experiment](https://occult-kranti.github.io/yang_mills_workbench/#research/six-kernel), [collaboration and next roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/six-team). Detailed code and reproduction instructions: [Round17 guide](research/round17/README.md).
+
+Round16 remains available with the eleven-face shared-link integral and the common physical-scale audit. [Previous shared-face dashboard](https://occult-kranti.github.io/yang_mills_workbench/#research/review16-home).
 
 Round15 remains available: a complete21-cell covariance cover over `eta in [1/8,1/4]`, a closed-cube integral rejecting independent-face factorization, and an improved finite physical spectral bound. [Previous dashboard](https://occult-kranti.github.io/yang_mills_workbench/#research/review15-home).
 
@@ -54,7 +56,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Shared-face subproblem, two loops and three roles | `research/round16/` | Current eleven-face Haar contractions, exact changed-action comparison, physical energy-scale audit and independent checks |
+| Six-loop local, spectral and conditional study | `research/round17/` | Current sparse physical theorem, finite adjoint repair, complete four-cube tensor, matched common-variable experiment and independent evidence |
+| Shared-face subproblem, two loops and three roles | `research/round16/` | Previous eleven-face Haar contractions, exact changed-action comparison, physical energy-scale audit and independent checks |
 | Three revised goals, six research loops | `research/round15/` | Preserved interval cover, cube integral, finite physical spectral bounds, independent reviews and retained original uniform-threshold gap |
 | Three-role, two-loop finite correlation study | `research/round14/` | Preserved exact point covariance, independent rational replay and earlier feedback roadmap |
 | Exceptions, locality, compact hierarchy and restricted gap | `research/round13/` | Preserved exact moment certificates, scalar response, fixed-spacing local limit and qualitative uniform-gap theorem application; continuum remains open |
@@ -105,11 +108,11 @@ The third trace retains relative orientation lost by two separate loop traces. A
 
 ## Reproduce the current shared-face study
 
-The [Round16 guide](research/round16/README.md) contains both loop contracts, exact outputs, retained failures and the updated physical roadmap. From the repository root:
+The [Round17 guide](research/round17/README.md) contains all six loop contracts, exact outputs, retained failures and the updated physical roadmap. The [previous Round16 guide](research/round16/README.md) preserves the shared-face and energy-scale study. From the repository root:
 
 ```bash
-python3 research/round16/reproduce.py --output /absolute/path/to/new-results
-python3 research/round16/proof_routes.py --output /absolute/path/to/proof-results.json
+python3 research/round17/reproduce.py --output /absolute/path/to/new-results
+python3 research/round17/proof_routes.py --output /absolute/path/to/proof-results.json
 ```
 
 These run the five research programs and the actual bidirectional proof routes. NumPy supports the matrix diagnostics; Matplotlib is optional for figures. The exact integral code uses standard-library rational arithmetic. No API key is required.

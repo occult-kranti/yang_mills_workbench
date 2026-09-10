@@ -1,0 +1,11 @@
+# Brief independent review of the next roadmap
+
+The three planned goals are scientifically coherent with the accepted limits and should remain future work, not added completed loops in this release.
+
+1. **Overlapping interactions:** the local bridge problem is a useful next fixture only when every block and bridge retains its full link Hilbert space, form domain and common energy units. A finite-cluster success must feed an explicitly applicable rotor stability implication, including an actual dense-family smallness inequality and overlap constants. The roadmap correctly retains those obligations and the near-vacuum A1 counterexample. The newly separated `applicable_rotor_stability` and `dense_coupling_smallness` proof premises are necessary; a local numerical estimate alone cannot discharge them.
+
+2. **Full excited-energy bound:** the proposed complement calculation needs a projector reducing H₀ or an explicitly bounded electric cross block, and a complete accounting of all low-energy physical channels. The updated roadmap states both. A finite list of familiar Wilson loops does not by itself establish that the complement has no lower spin-network channel. The complete complement threshold and Schur/resolvent denominator signs must be accepted before any improved E₁ lower bound is combined with the B2 Rayleigh upper bound.
+
+3. **Geometry retained for surrounding integration:** for integrands made only from the declared dot products, equal valid joint Gram matrices indeed suggest a conventional isometry argument in the central four-dimensional quaternion coordinate space. Positive semidefiniteness, rank at most four, unit directions and the exact coefficient relation for b are necessary admission conditions. This central O(4) change of variables does not automatically transform the induced measure of surrounding link products. The roadmap correctly keeps that separate, retains rank-deficient and b=0 cases, and requires every face weight affected by an integrated surrounding link. Orientation-sensitive insertions need the additional data their definitions demand.
+
+No new scientific experiment or theorem was executed for this roadmap review. It is a feasibility and dependency critique of the planned next cycle.

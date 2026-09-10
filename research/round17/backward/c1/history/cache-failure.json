@@ -1,0 +1,23 @@
+{
+  "schema": "ym17-c1-actual-cache-failure-v1",
+  "initial_projector_sha256": "4c4fdb69c05e742c5b59ccdfa28a668c9bef31d08c40ffebd209ff1567304bc4",
+  "initial_check_count": 28,
+  "cases": [
+    {
+      "name": "warm Boolean zero exponent",
+      "actual_status": "incorrectly accepted",
+      "value": "1"
+    },
+    {
+      "name": "Boolean rotation index",
+      "actual_status": "incorrectly accepted",
+      "value": "0"
+    },
+    {
+      "name": "negative rotation index",
+      "actual_status": "incorrectly accepted",
+      "value": "0"
+    }
+  ],
+  "consequence": "Input validation can be bypassed or omitted at the public cached oracle boundary. Accepted physical tensor values are unaffected; initial validation coverage was incomplete."
+}

@@ -95,4 +95,8 @@ For a closed-surface Wilson certificate, differentiate each face coefficient sep
 
 ## Shared-link and cache checks
 
+Validate nested tuple elements before a private cache lookup: cache options that distinguish top-level argument types do not distinguish Boolean coordinates inside an otherwise identical tuple. Exercise warm-cache Boolean-zero and Boolean-one aliases, negative indices and immutable return values. Apply finite materialization caps consistently to public graph/mask constructors while retaining separately documented lazy generators and arbitrary-size exact count formulas.
+
+For common-action reductions, an observable cache must include its boundary geometry, not only the action vector. Test different realized boundary assignments with equal action and normalization. Preserve the explicit zero-action-vector branch even when every individual coefficient is nonzero. A signed observable's negative expectation is not negative probability. A nonzero-coupling weighted tensor is not the unweighted Haar projector.
+
 A source hash does not protect cached mutable return values. Return defensive copies or immutable coefficient data, and test that caller mutation leaves later integrals unchanged. Validate semantic types before cache lookup. For a shared-link moment, compare the full Haar projector including signed terms with a genuinely independent contraction; dropping negative terms or choosing one independent pairing can produce a plausible wrong rational result. Treat center parity, exact amplitude, nonzero-coupling coefficients and normalization tails as separate gates. Keep an omitted-action comparator on the same observable and do not presume its baseline is zero.
