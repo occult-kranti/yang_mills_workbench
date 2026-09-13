@@ -115,6 +115,67 @@
           ]
         }
       ]
+    },
+    "b1": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/b1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/b1/output",
+          "identical_files": [
+            "results.json",
+            "graph.json",
+            "channels.json",
+            "cross-gram-coefficients.json",
+            "fixture-matrices.json",
+            "basis.csv",
+            "controls.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/b1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/b1/output",
+          "identical_files": [
+            "results.json",
+            "graph.json",
+            "channels.json",
+            "cross-gram-status.json",
+            "controls.json",
+            "manifest.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/b1/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/b1/check.py",
+            "--evidence",
+            "{run_root}/b1/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
     }
   }
 }

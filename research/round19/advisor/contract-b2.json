@@ -1,0 +1,73 @@
+{
+  "acceptance_tests": [
+    "B2 uses advisor/b1-gate.json and the final B1 exact ordered Gram/current bytes; stale Round18 P or face-only Gram is rejected.",
+    "The continuous box |lambda_f|<=alpha/8 is covered for all signs and all faces, not selected fixtures only.",
+    "The P-Omega compressed magnetic form on faces plus six-cycles is explicitly bounded; the old Round18 3alpha diagonal block is not reused for the enlarged P.",
+    "Cross terms from Q are controlled with the accepted B1 W^*W Gram or a rigorously stated fallback; PV2P without PVP subtraction is rejected.",
+    "The proof provides E1 lower and E0 upper as separate min-max/Rayleigh statements and derives the gap direction correctly.",
+    "The declared positive E_star is checked directly; E_star=0, kappa, tolerance or Fibonacci labels are rejected even when ratios remain syntactically present.",
+    "Round18 r=3/8 is reported only as rederived, rejected, limited or open for the enlarged P; historical benchmark text is not an acceptance proof.",
+    "Normal and optimized outputs are deterministic and counted once.",
+    "Independent comparison reconstructs interval bounds and rejects producer pass booleans, source hashes alone and sampled Ritz gaps."
+  ],
+  "depends_on": [
+    "advisor/b1-gate.json",
+    "methods/round19-lessons.md"
+  ],
+  "falsifying_controls": [
+    "Replace the 48-channel B1 P by the old 12-channel face-only projector and require rejection.",
+    "Use a constant 3alpha lower block for all P-Omega states and require rejection because six-cycles have H0=9alpha/2 and nonzero compressed magnetic couplings.",
+    "Omit face-six or six-six PVP terms and require rejection on a fixture where they are nonzero.",
+    "Use PV2P or a conservative norm bound as exact W^*W and require rejection.",
+    "Claim r=3/8 from Round18 without rederiving it under the enlarged P and require rejection.",
+    "Promote a finite sampled/Ritz eigenvalue over coefficient fixtures to a continuous box theorem and require rejection.",
+    "Set E_star=0 or use kappa/tolerance/Fibonacci index as physical energy reference while leaving ratios unchanged and require rejection.",
+    "Mix E1 lower and E0 upper signs so that an upper bound is treated as a lower bound and require rejection.",
+    "Delete one coefficient-box extreme or interval cell in the independent comparison and require rejection."
+  ],
+  "goal": "Goal B loop 2: continuous finite two-cube coefficient box using the accepted B1 48-channel projector and exact full ordered cross Gram",
+  "mathematical_target": {
+    "E0_upper": "Give a separate upper bound for lambda_0(H), at minimum the vacuum Rayleigh bound E0 <= 0. Do not collapse E1 lower and E0 upper into a Ritz gap.",
+    "E1_lower": "Give a rigorous lower bound for lambda_1(H) from a codimension-one min-max argument on Omega^perp. The bound must combine the 47-dimensional compressed P-Omega block, the Q threshold, and cross term controlled by the B1 ordered Gram.",
+    "benchmark": "Evaluate the old Round18 r=3/8 benchmark only as a benchmark. Preserve the old value R*(3/8)=0.11876245 as historical, not as a Round19 theorem unless rederived with the enlarged 48-channel P block.",
+    "gap_conclusion": "A gap lower bound is admitted only as E1_lower - E0_upper with the sign/direction stated. If E0_upper=0 and E1_lower>0, report gap >= E1_lower.",
+    "minimum_continuous_box": "At least prove positivity on |lambda_f| <= alpha/8 or return limited/rejected with the exact failed premise. A valid crude fallback lower bound for this box is (25-sqrt(265))*alpha/8 if the sharper full-Gram calculation fails, but the loop must still report how the accepted B1 Gram was used or why it did not improve the bound.",
+    "statement": "Prove a finite-graph interacting gap lower bound on the signed coefficient box |lambda_f| <= alpha/8 using the B1 complete P, exact PVP data and exact W^*W cross Gram."
+  },
+  "non_claims": [
+    "B2 is finite two-cube only and does not prove homogeneous dense stability, limiting spectral passage, continuum Yang-Mills or the Clay mass gap.",
+    "A static kappa coefficient box is not a physical time-generator or energy-scale match.",
+    "A plot or sampled matrix eigenvalue is not a continuous coefficient-box proof."
+  ],
+  "physical_contract": {
+    "block_structure": "On Omega^perp use faces at H0=3 alpha, six-cycles at H0=9 alpha/2, and Q at H0>=6 alpha. Do not reuse the Round18 constant 3 alpha P-Omega block.",
+    "coefficient_box": "Primary acceptance target is the continuous signed box |lambda_f| <= alpha/8 for all 11 faces. Larger boxes, including the Round18 r=3/8 benchmark, may be evaluated only with certified inequalities and must not be assumed.",
+    "graph": "same actual adjacent two-cube SU(2) graph as B1: 12 vertices, 20 links, 11 signed faces including the shared internal face",
+    "hamiltonian": "H = alpha * sum_e C_e - sum_f lambda_f x_f on the physical Gauss-invariant Hilbert space, with x_f=ReTr(U_f)/2",
+    "projector": "Use the accepted B1 strict-cutoff projector P of dimension 48: Omega plus 11 four-edge fundamental cycles and 36 six-edge fundamental cycles. Q=1-P has H0 threshold at 6 alpha.",
+    "scale": "E_star > 0 remains a declared physical reference; use alpha/E_star=2 for the checkpoint and report lambda_f/alpha separately. Static kappa, tolerances, volume and Fibonacci labels are rejected as physical energy references even if ratios are numerically present."
+  },
+  "required_outputs": {
+    "advisor_gate_path": "research/round19/advisor/b2-gate.json",
+    "backward": [
+      "independently reconstruct the B2 block argument from the accepted B1 gate and exact Gram rather than importing the forward optimizer",
+      "verify the P-Omega block split faces/six-cycles/Q and reject the old constant-3-alpha Round18 block shortcut",
+      "independently certify coefficient-box bounds over |lambda_f|<=alpha/8, including any interval or branch-and-bound arithmetic",
+      "check that E1 lower and E0 upper are separate min-max statements and that no Ritz/sample matrix gap is promoted",
+      "compare producer evidence with exact hashes and mutation controls"
+    ],
+    "backward_owned_paths": "research/round19/backward/b2/",
+    "forward": [
+      "load or copy the accepted B1 gate inputs without mutating them",
+      "construct the 47-dimensional P-Omega compressed operator with face and six-cycle H0 levels 3 and 9/2 in alpha units",
+      "use the exact B1 PVP coefficients and exact ordered W^*W coefficients to derive certified bounds over |lambda_f|<=alpha/8",
+      "derive a codimension-one E1 lower bound and a separate E0 upper bound; state the resulting finite-graph gap lower bound",
+      "evaluate but do not assume the Round18 r=3/8 benchmark under the enlarged P; if inconclusive, record it as open",
+      "produce exact rational/radical or interval certificates, source manifest, normal/optimized deterministic outputs and wrong-model controls"
+    ],
+    "forward_owned_paths": "research/round19/forward/b2/"
+  },
+  "schema": "ym19-b2-contract-v1",
+  "status": "frozen",
+  "stop_condition": "Stop after a source-bound B2 gate accepts, limits or rejects the continuous finite two-cube box. Do not freeze Goal C loop 1 from B2 plans alone; C must separately mark static kappa integrals as physical-scale-unmatched unless a real physical scale match is supplied."
+}

@@ -89,13 +89,20 @@ assert(a2.includes('accepted gap:'));
 assert(a2.includes('not finite clipped-restriction convergence'));
 assert(a2.includes('a2-source-bound-inventory.json'));
 const b1 = ctx.ResearchObservatory.render('paired-b1');
-assert(b1.includes('B1 is frozen and running'));
+const b1State = data.loops.find(x => x.id === 'B1')?.state;
+assert(b1State === 'accepted' ? b1.includes('b1-gate.json') : b1.includes('B1 is frozen and running'));
 assert(b1.includes('contract-b1.json'));
 assert(b1.includes('strict-cutoff'));
 
 const review = ctx.ResearchObservatory.render('paired-review');
 assert(review.includes('Frozen contracts and controls'));
 assert(review.includes('Advisor gates'));
+assert(review.includes('Exception ledger'));
+assert(review.includes('boundary-clipping'));
+assert(review.includes('enlarged-gram-sparsity'));
+assert(review.includes('W*W=PV^2P-(PVP)^2'));
+assert(review.includes('/blob/research/round19-paired/research/round19/exception-ledger.json'));
+assert(review.includes('/blob/research/round19-paired/research/round19/advisor/contract-b1.json'));
 assert(review.includes('No current Round19 file proves'));
 
 const round18 = ctx.ResearchObservatory.render('review18-home');
@@ -108,6 +115,9 @@ assert.equal(JSON.stringify(data.loops.map(x=>x.id)), JSON.stringify(['A1','A2',
 assert(data.loops.filter(x=>x.state === 'accepted').length <= 6);
 assert(data.evidence.length >= 4);
 assert(data.evidence.every(x => ['pending','running','accepted','limited','rejected'].includes(x.state)));
+assert(data.exception_ledger.entries.length >= 6);
+assert(data.exception_ledger.entries.filter(x => x.loop === 'B1').every(x => x.status && x.evidence.length));
+assert(data.evidence.find(x => x.key === 'forward-a1-results')?.state === 'accepted');
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('missing required accepted-gate inventory item'));
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('mathematical_result'));
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('position=(u,side)'));
@@ -152,6 +162,11 @@ for (const route of routes) {
   assert(!overviewMain.innerHTML.includes('Research page not found'), 'overview route ' + route);
   assert(overviewMain.innerHTML.includes('Branch-only review artifact') === false, 'top chrome not rerendered into main');
 }
+overviewCtx.location.hash = '#research/paired-review';
+for (const fn of overviewEvents.hashchange ?? []) fn();
+assert(overviewMain.innerHTML.includes('Exception ledger'));
+assert(overviewMain.innerHTML.includes('Static κ; physical matching open') || overviewMain.innerHTML.includes('projector-dependent-cross-gram'));
+
 overviewCtx.location.hash = '#research/review18-home';
 for (const fn of overviewEvents.hashchange ?? []) fn();
 assert(overviewMain.innerHTML.includes('Historical Round18 snapshot'));

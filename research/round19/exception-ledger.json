@@ -1,0 +1,134 @@
+{
+  "schema": "ym19-exception-ledger-v1",
+  "purpose": "Record failed premises, tested workarounds and the equations valid in each declared case. A workaround does not close its parent target automatically.",
+  "entries": [
+    {
+      "id": "boundary-clipping",
+      "loop": "A1",
+      "status": "accepted-repair",
+      "failure": "Selecting only complete three-face strips makes an old face coefficient depend on the containing box.",
+      "workaround": "Fix one infinite face assignment, take literal restrictions, and classify every clipped component at all four x phases.",
+      "equations": {
+        "proper_clipped_component": "Delta/alpha >= 3/4 - sum_f |lambda_f|/alpha",
+        "complete_LMR_component": "Delta/alpha >= 3/4 - max(|lambda_L|,|lambda_R|)/alpha - |mu|/alpha",
+        "common_conclusion": "Delta >= alpha/8 under the A1 bounds"
+      },
+      "evidence": [
+        "advisor/a1-gate.json",
+        "forward/a1/report.md",
+        "backward/a1/comparison/comparison.json"
+      ],
+      "limit": "Local boundary consistency does not establish finite-volume spectral convergence."
+    },
+    {
+      "id": "zero-mean-summable-exception",
+      "loop": "A2",
+      "status": "accepted-narrow-exception",
+      "failure": "A dense homogeneous perturbation cannot be treated as a globally norm-summable sum by the proposed bound.",
+      "workaround": "Declare a decaying omitted-face assignment in a direct incomplete product representation; prove a free-Haar witness for each omitted face.",
+      "equations": {
+        "generic_bounded_case": "Delta >= delta - 2 beta",
+        "zero_reference_mean_case": "Delta >= delta - beta, with beta < delta and <Omega_ref,V Omega_ref>=0",
+        "declared_dyadic_case": "delta=alpha/8; beta <= alpha |tau| (107/135)",
+        "tau_1_over_64": "Delta >= 973 alpha/8640"
+      },
+      "evidence": [
+        "advisor/a2-gate.json",
+        "forward/a2/report.md",
+        "backward/a2/comparison/comparison.json"
+      ],
+      "limit": "The direct representation is not proved to be the limit of clipped finite restrictions; homogeneous dense stability remains open."
+    },
+    {
+      "id": "bounded-perturbation-domain",
+      "loop": "A2",
+      "status": "corrected-and-regated",
+      "failure": "An earlier report said the bounded perturbation might change the operator domain.",
+      "workaround": "Use the bounded self-adjoint perturbation statement with exact operator-domain equality.",
+      "equations": {
+        "operator": "H=H_ref+V on D(H)=D(H_ref)",
+        "forms": "Q(H)=Q(H_ref)"
+      },
+      "evidence": [
+        "advisor/a2-decision-snapshot-v2.md",
+        "forward/a2/history/domain-equality-correction.md"
+      ],
+      "limit": "Python premise flags are not a formal proof of infinite-dimensional domain or spectral statements."
+    },
+    {
+      "id": "enlarged-gram-sparsity",
+      "loop": "B1",
+      "status": "accepted-with-declared-scope",
+      "failure": "The older 12-channel face-only Gram does not cover the new strict E_el<6 alpha projector.",
+      "workaround": "Rebuild the projector independently and eliminate Wilson-character moment candidates by link-center parity before exact Haar contraction.",
+      "equations": {
+        "parity_zero": "<chi_A chi_B chi_f chi_g>=0 unless mask(A) XOR mask(B) XOR mask(f) XOR mask(g)=0",
+        "required_exact_object": "W*W=PV^2P-(PVP)^2"
+      },
+      "evidence": [
+        "advisor/contract-b1.json",
+        "advisor/b1-advisor-watch.md",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "Full exact 48-channel Gram completed with two distinct Haar contractions. This finite graph calculation does not establish a volume-uniform or continuum gap."
+    },
+    {
+      "id": "threshold-intertwiner-multiplicity",
+      "loop": "B1",
+      "status": "accepted-with-declared-scope",
+      "failure": "The threshold support/label count was named as a physical channel count, omitting extra invariant states at degree-four vertices.",
+      "workaround": "Count the product of vertex invariant multiplicities for each admitted edge-label assignment.",
+      "equations": {
+        "physical_dimension": "dim H_E = sum_{admitted labels at E} product_v dim Inv(tensor_{e incident v} V_{j_e})",
+        "observed_threshold_audit": "99 assignments = 91 with multiplicity 1 + 8 with multiplicity 2; physical dimension = 107"
+      },
+      "evidence": [
+        "advisor/contract-b1.json",
+        "forward/b1/check.py",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "The threshold E=6 alpha is excluded from P by the strict cutoff; its multiplicity correction does not enlarge the accepted below-threshold 48-dimensional projector."
+    },
+    {
+      "id": "projector-dependent-cross-gram",
+      "loop": "B1",
+      "status": "reviewed-operator-identity",
+      "failure": "The enlarged projector changes the complement Gram, so its face principal block need not equal the older face-only complement Gram.",
+      "workaround": "Retain the PV^2P principal-block regression and explicitly subtract transitions into newly retained channels.",
+      "equations": {
+        "nested_projectors": "P_new=P_old+R, with P_old R=0",
+        "correct_regression": "P_old W_new*W_new P_old = W_old*W_old - P_old V R V P_old",
+        "ordering": "P_old W_new*W_new P_old <= W_old*W_old"
+      },
+      "evidence": [
+        "advisor/b1-forward-review.md",
+        "advisor/contract-b1.json",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "The operator identity requires the same V and graph; an altered face set is a different model."
+    },
+    {
+      "id": "matrix-versus-symmetrized-comparison",
+      "loop": "B1",
+      "status": "accepted-with-declared-scope",
+      "failure": "A comparison combined matrix triangles while also doubling already combined off-diagonal face monomials; on these data the factors canceled but an antisymmetric matrix error could be hidden.",
+      "workaround": "Combine ordered face-pair terms within each ordered matrix entry, verify transpose equality, then compare a single canonical matrix triangle.",
+      "equations": {
+        "entry_polynomial": "G_ij(lambda)=sum_{f,g} c_ijfg lambda_f lambda_g",
+        "required_matrix_check": "G_ij(lambda)=G_ji(lambda), checked before restricting to i<=j",
+        "rejecting_control": "delta G_ij=+c; delta G_ji=-c must fail even though the symmetrized quadratic form is unchanged"
+      },
+      "evidence": [
+        "backward/b1/comparison/comparison.json",
+        "backward/b1/history/comparison-before-normalization-sourcebinding-fix.json",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "Agreement of symmetrized forms alone cannot certify the complete producer matrix."
+    }
+  ],
+  "geometry": {
+    "role": "organizes paired derivation and reconstruction",
+    "physical_hypothesis": "untested",
+    "admission_rule": "No Fibonacci-dependent Hamiltonian coefficient is inferred from the diagram."
+  }
+}

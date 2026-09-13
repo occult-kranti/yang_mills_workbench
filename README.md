@@ -8,7 +8,7 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current branch milestone — Round19:** Goal A's two sequential loops are accepted: boundary-consistent clipped clusters, followed by a direct infinite-product representation with a summable perturbation. Goal B now tests the complete strict-cutoff projector and exact cross Gram on the actual two-cube graph. Three goals, two loops each, are organized by opposed Fibonacci-style spirals, with independent forward derivation and reverse reconstruction meeting under a declared physical-scale contract. The geometry's physical relevance remains untested.
+**Current branch milestone — Round19:** three of six sequential research loops are accepted. Goal A gives boundary-consistent clipped clusters and a direct product representation for a summable perturbation. B1 completes the 48-channel projector and full exact cross Gram on the actual two-cube graph; B2 now tests continuous spectral bounds with that enlarged projector. Opposed Fibonacci-style spirals organize forward derivation and reverse reconstruction under a declared physical-scale contract. The geometry's physical relevance remains untested.
 
 [Round19 evidence and reproduction](research/round19/README.md) · [standalone paired review](research/round19/overview.html) · [research branch](https://github.com/occult-kranti/yang_mills_workbench/tree/research/round19-paired).
 
@@ -62,7 +62,7 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Paired forward derivation and reverse reconstruction | `research/round19/` | Current branch: accepted Goal A pair; B/C sequentially gated |
+| Paired forward derivation and reverse reconstruction | `research/round19/` | Current branch: accepted A1/A2/B1; B2 running and C sequentially gated |
 | Six-loop dressed, spectral and conditional study | `research/round18/` | Deployed inhomogeneous family, complete complement, signed finite gap box, sufficient Gram coordinates and six-weight two-link integral |
 | Previous local, spectral and conditional study | `research/round17/` | Preserved sparse physical theorem, finite adjoint repair, complete four-cube tensor and matched common-variable experiment |
 | Shared-face subproblem, two loops and three roles | `research/round16/` | Previous eleven-face Haar contractions, exact changed-action comparison, physical energy-scale audit and independent checks |

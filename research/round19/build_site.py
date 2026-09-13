@@ -18,6 +18,7 @@ ROUND = ROOT / "research" / "round19"
 ADVISOR = ROUND / "advisor"
 DIST = ROOT / "dist"
 CONTENT = ROUND / "site-content.json"
+EXCEPTION_LEDGER = ROUND / "exception-ledger.json"
 OUTPUT = DIST / "research-paired.js"
 OVERVIEW = ROUND / "overview.html"
 
@@ -67,6 +68,51 @@ def attach_file_metadata(content: dict[str, Any], key: str, title: str, repo_pat
         "sha256": sha256(path) if path.exists() else None,
     }
     add_or_update_evidence(content, item)
+
+
+def round19_repo_path(path: str) -> str:
+    clean = str(path).lstrip("/")
+    if clean.startswith("research/round19/"):
+        return clean
+    return f"research/round19/{clean}"
+
+
+def load_exception_ledger(content: dict[str, Any]) -> None:
+    if not EXCEPTION_LEDGER.exists():
+        return
+    data = read_json(EXCEPTION_LEDGER)
+    entries = []
+    for entry in data.get("entries", []):
+        if not isinstance(entry, dict):
+            continue
+        copied = {k: entry.get(k) for k in ["id", "loop", "status", "failure", "workaround", "equations", "limit"]}
+        copied["evidence"] = [
+            {
+                "label": str(item),
+                "repo_path": round19_repo_path(str(item)),
+                "href": repo_href(round19_repo_path(str(item))),
+            }
+            for item in entry.get("evidence", [])
+            if item
+        ]
+        entries.append(copied)
+    content["exception_ledger"] = {
+        "schema": data.get("schema"),
+        "purpose": data.get("purpose"),
+        "entries": entries,
+        "geometry": data.get("geometry", {}),
+        "repo_path": "research/round19/exception-ledger.json",
+        "href": repo_href("research/round19/exception-ledger.json"),
+        "sha256": sha256(EXCEPTION_LEDGER),
+    }
+    attach_file_metadata(
+        content,
+        "exception-ledger",
+        "Round19 exception ledger",
+        "research/round19/exception-ledger.json",
+        "limited",
+        data.get("purpose") or "Records failed premises, workarounds, equations and review status.",
+    )
 
 
 def validate_hashes(files: Any) -> tuple[bool, list[str]]:
@@ -246,6 +292,16 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
             "target_statement": data.get("target_statement"),
         }
 
+    for loop_id in ("B2", "C1", "C2"):
+        lower = loop_id.lower()
+        contract_path = ADVISOR / f"contract-{lower}.json"
+        if contract_path.exists():
+            data = read_json(contract_path)
+            content.setdefault("contracts", {})[loop_id] = data
+            attach_file_metadata(content, f"contract-{lower}", f"Frozen {loop_id} contract",
+                                 f"research/round19/advisor/contract-{lower}.json", "accepted",
+                                 data.get("goal") or f"Advisor-frozen {loop_id} execution contract.")
+
     boundary = ADVISOR / "boundary-classification.json"
     if boundary.exists():
         data = read_json(boundary)
@@ -264,6 +320,8 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
             "limited",
             "Advisor-side classifier for reachable clipped components; not a scientific gate.",
         )
+
+    load_exception_ledger(content)
 
     optional_advisor = [
         ("a1-review", "A1 advisor review", "research/round19/advisor/a1-review.md", "limited", "Advisor feedback and equation/code review for A1; gate status is taken only from an advisor gate file."),
@@ -482,6 +540,14 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
             remaining = summarize_remaining_open(gate.get("remaining_open") or gate.get("open_obligations") or gate.get("next"))
             if remaining:
                 loop["next"] = remaining
+        if state == "accepted":
+            accepted_prefixes = (f"forward-{lower}", f"backward-{lower}", f"{lower}-source", f"{lower}-review")
+            for item in content.get("evidence", []):
+                key = str(item.get("key", ""))
+                repo_path = str(item.get("repo_path", ""))
+                if key.startswith(accepted_prefixes) or f"/forward/{lower}/" in repo_path or f"/backward/{lower}/" in repo_path:
+                    if item.get("state") in {"running", "limited", "rejected"}:
+                        item["state"] = "accepted"
 
 
 def validate(content: dict[str, Any]) -> None:
@@ -543,10 +609,14 @@ def js_source(content: dict[str, Any]) -> str:
   return `<figure class="paired-spiral"><svg viewBox="0 0 1040 760" role="img" aria-labelledby="paired-spiral-title paired-spiral-desc"><title id="paired-spiral-title">Round19 paired expansion and reverse reconstruction nodes</title><desc id="paired-spiral-desc">Approximate opposing golden logarithmic spirals, not exact Fibonacci arcs. The formula organizes paired research nodes only; no Round19 physical test of the geometry is recorded. A and B use spectral scale checkpoints; C marks static κ with physical matching still open.</desc><rect class="paired-sky" width="1040" height="760" rx="30"/><path class="paired-path forward" d="${{curve('forward')}}"/><path class="paired-path reverse" d="${{curve('reverse')}}"/>${{pairLines}}${{leaders}}<circle class="paired-center" cx="${{cx}}" cy="${{cy}}" r="48"/><text class="paired-center-label" x="${{cx}}" y="${{cy-7}}">E★ &gt; 0</text><text class="paired-center-sub" x="${{cx}}" y="${{cy+17}}">spectral checkpoint</text>${{nodes}}${{cards}}</svg><figcaption>${{esc(D.geometry_hypothesis?.limit)}}</figcaption>${{fallback}}</figure>`;
  }}
  function evidenceRows(keys){{const by=evidenceMap();return list(keys).map(k=>by.get(k)).filter(Boolean).map(item=>[badge(item.state),esc(item.title),esc(item.summary),evLink(item)]);}}
+ const ledgerState=(status)=>{{const s=String(status||'').toLowerCase();if(s.includes('accepted')||s.includes('corrected'))return 'accepted';if(s.includes('pending')||s.includes('investigation')||s.includes('review'))return 'running';if(s.includes('reject')||s.includes('failed'))return 'rejected';return 'limited';}};
+ const ledgerLinks=(entry)=>list(entry.evidence).map(item=>`<a href="${{safe(item.href)}}" target="_blank" rel="noopener noreferrer">${{esc(item.label)}}</a>`).join('<br>')||'—';
+ const ledgerFormulae=(entry)=>{{const equations=entry&&entry.equations&&typeof entry.equations==='object'?entry.equations:{{}};const rows=Object.entries(equations).map(([k,v])=>`<tr><th scope="row">${{esc(k.replaceAll('_',' '))}}</th><td><code class="paired-formula">${{esc(v)}}</code></td></tr>`).join('');return rows?`<table class="paired-formula-table"><tbody>${{rows}}</tbody></table>`:'<p>No formula recorded.</p>';}};
+ function exceptionLedger(){{const L=D.exception_ledger;if(!L||!Array.isArray(L.entries)||!L.entries.length)return '';const rows=L.entries.map(entry=>[`${{badge(ledgerState(entry.status))}}<br><strong>${{esc(entry.loop||'—')}}</strong><br><span class="paired-ledger-status">${{esc(entry.status)}}</span>`,`<strong>${{esc(entry.id)}}</strong><p>${{esc(entry.failure)}}</p>`,`<p>${{esc(entry.workaround)}}</p>${{ledgerFormulae(entry)}}`,`<p>${{esc(entry.limit)}}</p>${{ledgerLinks(entry)}}`]);const geom=L.geometry&&typeof L.geometry==='object'?`<p class="paired-ledger-note">Geometry role: ${{esc(L.geometry.role||'organizing aid')}}. Physical hypothesis: ${{esc(L.geometry.physical_hypothesis||'untested')}}. ${{esc(L.geometry.admission_rule||'')}}</p>`:'';return panel('Exception ledger',`<p>${{esc(L.purpose||'Failed premises, workarounds, equations and evidence status are recorded here.')}}</p>${{geom}}${{table(['Status and scope','Failed premise','Workaround and equations','Limit and evidence'],rows)}}<p><a href="${{safe(L.href)}}" target="_blank" rel="noopener noreferrer">Open exception-ledger.json</a></p>`);}}
  function home(){{return title(D.meta?.title||'Round19 paired research',D.meta?.summary)+panel('Branch-only publication state',`<p>This Round19 view is prepared on the research branch for review. It does not claim a live Round19 GitHub Pages URL.</p><p><a href="${{safe(D.meta?.repository)}}" target="_blank" rel="noopener noreferrer">Open research/round19-paired branch</a></p>`)+panel(D.geometry_hypothesis?.title||'Paired expansion model',`<p>${{esc(D.geometry_hypothesis?.claim)}}</p>${{spiral()}}`,'paired-hero')+panel('Six paired loop nodes',table(['Loop','Question','Paired expansion nodes','Next gate'],loopRows()))+panel('Common physical scale',table(['Symbol','State','Meaning','Current record'],list(D.unit_contract).map(u=>[esc(u.symbol),badge(u.state),esc(u.meaning),esc(u.record)])))+panel('Current evidence state',`<p>${{esc(statusText())}}</p>`+table(['State','Artifact','Scope','Evidence link'],evidenceRows(list(D.evidence).map(x=>x.key))))+panel('History',`${{a('review18-home','Round18 six-loop snapshot')}} · ${{a('review17-home','Earlier Round17 snapshot')}}`);}}
  function loopPage(route){{const loop=routeLoop(route);if(!loop)return old.render(route);return title(`${{loop.id}} · ${{loop.title}}`,loop.pair)+panel('Scope',`<p>${{esc(loop.scope)}}</p>${{eq(loop.math)}}`)+panel('Results',`<p>${{esc(loop.result)}}</p>`)+panel('Review',`<p>${{esc(loop.review)}}</p>`+(evidenceRows(loop.evidence_keys).length?table(['State','Artifact','Scope','Evidence link'],evidenceRows(loop.evidence_keys)):''))+panel('Next',`<p>${{esc(loop.next)}}</p>`);}}
  function roadmap(){{return title('Paired roadmap at one physical scale','Each loop is a gate with its own evidence record. Later contracts remain provisional until the prior evidence chooses them.')+panel('Forward and reverse expansion sequence',spiral(),'paired-hero')+panel('Route contract',table(['Loop','State','Forward derivation','Reverse reconstruction'],list(D.loops).map(loop=>[`${{a(loop.route,loop.id)}}<br>${{badge(loop.state)}}`,esc(loop.pair),esc(loop.forward_title),esc(loop.reverse_title)])))+panel('Next actions',table(['State','Action'],list(D.next_steps).map(x=>[badge(x.state),esc(x.item)])));}}
- function review(){{const limits=list(D.review?.limits),contracts=D.contracts&&typeof D.contracts==='object'?D.contracts:{{}};const contractRows=Object.entries(contracts).map(([id,c])=>[esc(id),badge(c.status==='frozen'||String(c.status||'').startsWith('frozen')?'running':c.status),esc(c.goal||c.schema||'Recorded contract'),String(list(c.acceptance_tests).length),String(list(c.falsifying_controls).length)]);const gateKeys=list(D.evidence).filter(x=>/^gate-/.test(x.key||'')).map(x=>x.key);return title('Evidence review and limits',D.review?.summary||'Round19 evidence is still being gathered.')+panel('Recorded evidence',table(['State','Artifact','Scope','Evidence link'],evidenceRows(list(D.evidence).map(x=>x.key))))+panel('Advisor gates',gateKeys.length?table(['State','Gate','Scope','Evidence link'],evidenceRows(gateKeys)):'<p>No advisor gates are recorded.</p>')+panel('Frozen contracts and controls',contractRows.length?table(['Loop','Contract state','Goal or schema','Acceptance tests','Falsifying controls'],contractRows):'<p>No contracts are available.</p>')+panel('Limits',`<ul>${{limits.map(x=>`<li>${{esc(x)}}</li>`).join('')}}</ul>`);}}
+ function review(){{const limits=list(D.review?.limits),contracts=D.contracts&&typeof D.contracts==='object'?D.contracts:{{}};const contractRows=Object.entries(contracts).map(([id,c])=>[esc(id),badge(c.status==='frozen'||String(c.status||'').startsWith('frozen')?'running':c.status),esc(c.goal||c.schema||'Recorded contract'),String(list(c.acceptance_tests).length),String(list(c.falsifying_controls).length)]);const gateKeys=list(D.evidence).filter(x=>/^gate-/.test(x.key||'')).map(x=>x.key);return title('Evidence review and limits',D.review?.summary||'Round19 evidence is still being gathered.')+panel('Recorded evidence',table(['State','Artifact','Scope','Evidence link'],evidenceRows(list(D.evidence).map(x=>x.key))))+panel('Advisor gates',gateKeys.length?table(['State','Gate','Scope','Evidence link'],evidenceRows(gateKeys)):'<p>No advisor gates are recorded.</p>')+panel('Frozen contracts and controls',contractRows.length?table(['Loop','Contract state','Goal or schema','Acceptance tests','Falsifying controls'],contractRows):'<p>No contracts are available.</p>')+exceptionLedger()+panel('Limits',`<ul>${{limits.map(x=>`<li>${{esc(x)}}</li>`).join('')}}</ul>`);}}
  function render(route='home'){{if(route==='review18-home')return `<div class="research-shell hub m8 paired19"><p class="hub-limit">Historical Round18 snapshot. ${{a('home','Current Round19 paired view')}}</p>${{old.render('home')}}</div>`;if(!Object.hasOwn(pages,route))return old.render(route);const body=route==='home'?home():route==='paired-roadmap'?roadmap():route==='paired-review'?review():loopPage(route);return `<div class="research-shell hub m8 paired19"><nav class="hub-nav paired-nav" aria-label="Round19 paired research navigation">${{Object.entries(pages).map(([r,t])=>`<a href="#research/${{r}}" ${{r===route?'aria-current="page"':''}}>${{esc(t)}}</a>`).join('')}}</nav>${{body}}<footer class="hub-foot paired-foot">${{a('review18-home','Round18 history')}} · ${{a('paired-review','Round19 evidence review')}} · <a href="${{safe(D.meta?.repository)}}" target="_blank" rel="noopener noreferrer">Open repository</a></footer></div>`;}}
  function afterRender(){{const r=(location.hash.split('/')[1]||'home');if(Object.hasOwn(pages,r)||r==='review18-home')document.title=(pages[r]||'Round18 history')+' · Yang–Mills Workbench';else old.afterRender();}}
  window.ResearchPaired={{render,spiral,data:D}};

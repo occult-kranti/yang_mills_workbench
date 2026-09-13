@@ -5,7 +5,7 @@
     "title": "Paired expansion and reverse reconstruction",
     "kicker": "Yang–Mills Workbench · Round19 · paired loops",
     "status": "running",
-    "summary": "Round19 has accepted Goal A in two narrow scopes: A1 boundary-consistent local clipped components and A2 a direct incomplete product-representation theorem for a summable omitted-face perturbation. The parent dense/homogeneous target, finite clipped-restriction convergence, continuum construction, and mass gap remain open. B1 is now frozen and running under the post-Goal-A advisor decision.",
+    "summary": "Three of six Round19 loops are accepted: boundary-consistent clipped clusters, a direct summable product representation, and the complete 48-channel two-cube projector with exact cross Gram. B2 now tests continuous spectral bounds. Parent dense/homogeneous stability, finite-restriction convergence, continuum construction and physical Fibonacci significance remain open.",
     "repository": "https://github.com/occult-kranti/yang_mills_workbench/tree/research/round19-paired",
     "history_route": "review18-home"
   },
@@ -58,7 +58,11 @@
         "H_N = α ∑_e C_e − ∑_f λ_f x_f",
         "target local lower estimate: gap ≥ α/8 under the frozen A1 coefficient bounds"
       ],
-      "evidence_keys": ["initial-review", "contract-a1", "boundary-classification"]
+      "evidence_keys": [
+        "initial-review",
+        "contract-a1",
+        "boundary-classification"
+      ]
     },
     {
       "id": "A2",
@@ -72,38 +76,52 @@
       "result": "A2 has an accepted advisor gate for the direct product-representation route, including the delta-beta spectral isolation statement in the declared representation when beta < delta.",
       "review": "The A2 gate accepts a narrow product-representation theorem and explicitly leaves finite clipped-restriction convergence, homogeneous dense stability, dense limiting spectral passage, continuum scaling, and mass gap open.",
       "next": "Advance to B1 under the post-Goal-A advisor decision; keep finite-restriction convergence and the parent dense/homogeneous target open.",
-      "math": ["common scale requirement: one E★ > 0 and one α_min > 0 across overlapping restrictions"],
-      "evidence_keys": ["initial-review"]
+      "math": [
+        "common scale requirement: one E★ > 0 and one α_min > 0 across overlapping restrictions"
+      ],
+      "evidence_keys": [
+        "initial-review"
+      ]
     },
     {
       "id": "B1",
       "route": "paired-b1",
       "pair": "Goal B · low-energy complement",
-      "state": "running",
+      "state": "accepted",
       "forward_title": "Classify the strict-cutoff two-cube low-energy projector on the actual graph.",
       "reverse_title": "Rebuild the complement channels needed before any cross-block bound is meaningful.",
-      "title": "Complete larger low-energy projector",
+      "title": "Complete projector and exact cross Gram",
       "scope": "Frozen B1 contract: actual two-cube SU(2) graph, strict electric cutoff E_el < 6α, complete physical channel enumeration, and full exact cross Gram if feasible.",
-      "result": "B1 is frozen and running under advisor/contract-b1.json. No B1 advisor gate is accepted yet.",
+      "result": "Accepted: 48 strict-cutoff states and the full exact cross Gram agree between quaternion and epsilon Haar contractions. At E=6 alpha, 99 label assignments give 107 physical channels through intertwiner multiplicities.",
       "review": "The post-Goal-A advisor decision moves to B1 because complement thresholds and exact Gram objects require a complete low-energy physical subspace on the actual graph.",
-      "next": "Run B1 forward/backward evidence and gate it before selecting B2.",
-      "math": ["classify all physical channels below the chosen electric threshold before bounding the complement"],
-      "evidence_keys": ["initial-review"]
+      "next": "Use the enlarged projector and its nonzero compressed magnetic block in B2. The older face-only block estimate cannot be reused unchanged.",
+      "math": [
+        "classify all physical channels below the chosen electric threshold before bounding the complement"
+      ],
+      "evidence_keys": [
+        "contract-b1",
+        "gate-b1"
+      ]
     },
     {
       "id": "B2",
       "route": "paired-b2",
       "pair": "Goal B · finite spectral bound",
-      "state": "pending",
+      "state": "running",
       "forward_title": "Compute a finite spectral bound only after B1 supplies the channel inventory.",
       "reverse_title": "Check that the finite spectral bound uses exactly the inventory B1 proves.",
       "title": "Finite spectral bound",
-      "scope": "Conditional B2 loop; selected only from actual B1 evidence.",
-      "result": "No B2 gate or accepted result is present in the current Round19 files.",
-      "review": "A finite spectral estimate is not accepted unless its domain, multiplicities, and omitted channels match the actual graph evidence.",
-      "next": "Wait for B1 evidence to decide whether a finite spectral-bound loop is feasible, narrower, or blocked.",
-      "math": ["operator block estimates remain conditional on exact channel support"],
-      "evidence_keys": ["initial-review"]
+      "scope": "Untruncated physical SU(2) Hamiltonian on the fixed two-cube graph; primary continuous signed box |lambda_f|<=alpha/8 with the earlier 3alpha/8 benchmark investigated separately.",
+      "result": "B2 is running under its frozen contract. No B2 spectral bound has been accepted yet.",
+      "review": "Use the full 47-dimensional P minus vacuum block, exact cross Gram and complete Q threshold. Establish E1 lower and E0 upper separately.",
+      "next": "Compare independent continuous-box inequalities and rejecting controls before selecting C1.",
+      "math": [
+        "operator block estimates remain conditional on exact channel support"
+      ],
+      "evidence_keys": [
+        "contract-b2",
+        "gate-b1"
+      ]
     },
     {
       "id": "C1",
@@ -117,8 +135,12 @@
       "result": "No C1 gate or accepted result is present in the current Round19 files.",
       "review": "The post-Goal-A advisor decision says A2 product representation does not supply the surrounding-link joint measure; C remains provisional.",
       "next": "Choose the minimal cluster and observable only after prior gates show which physical-scale obstruction remains.",
-      "math": ["retain the induced joint measure and normalized observable before judging a control"],
-      "evidence_keys": ["initial-review"]
+      "math": [
+        "retain the induced joint measure and normalized observable before judging a control"
+      ],
+      "evidence_keys": [
+        "initial-review"
+      ]
     },
     {
       "id": "C2",
@@ -132,8 +154,12 @@
       "result": "No C2 gate or accepted result is present in the current Round19 files.",
       "review": "Any route that tries to promote a local component result to a homogeneous dense, thermodynamic, continuum, or mass-gap theorem is blocked unless later evidence directly proves those steps.",
       "next": "Use C1 evidence to decide whether C2 should extend, narrow, or reject the integrated-cluster route.",
-      "math": ["local finite-graph evidence remains separate from continuum construction and Clay mass-gap criteria"],
-      "evidence_keys": ["initial-review"]
+      "math": [
+        "local finite-graph evidence remains separate from continuum construction and Clay mass-gap criteria"
+      ],
+      "evidence_keys": [
+        "initial-review"
+      ]
     }
   ],
   "evidence": [
@@ -161,26 +187,26 @@
   ],
   "review": {
     "state": "running",
-    "summary": "Round19 currently has accepted A1 and A2 gates in narrow Goal A scopes, a post-Goal-A decision advancing to B1, and a frozen B1 contract. B1 is running; B2 and C remain conditional.",
+    "summary": "A1, A2 and B1 are accepted within their declared scopes. B1 required threshold-multiplicity, matrix-normalization, source-binding and explicit energy-reference repairs; the final independent comparison passes 24 checks. B2 is running; C remains conditional.",
     "limits": [
       "The double-spiral geometry is a hypothesis and work organizer, not physical evidence.",
       "A2 is a direct product-representation theorem, not finite clipped-restriction convergence or homogeneous dense stability.",
-      "B1 is frozen by the post-Goal-A advisor decision; B2 and C remain conditional on later evidence.",
-      "No current Round19 file proves a continuum Yang–Mills construction, thermodynamic state, or Clay mass gap."
+      "B1 is accepted on the finite two-cube graph; B2 is running and C remains conditional on later evidence.",
+      "No current Round19 file proves a continuum Yang–Mills construction, finite-restriction convergence to the A2 representation, or Clay mass gap."
     ]
   },
   "next_steps": [
     {
       "state": "running",
-      "item": "Run the paired B1 forward and backward loops under the frozen strict-cutoff two-cube contract."
+      "item": "Complete B2 with the full enlarged projector, exact cross Gram and a continuous signed-box argument."
     },
     {
       "state": "pending",
-      "item": "Compare B1 source manifests, exact graph/channel enumeration, threshold controls, Gram evidence, and semantic outputs before any B1 gate decision."
+      "item": "Select C1 after B2 evidence, retaining all affected faces and the actual surrounding-link measure."
     },
     {
       "state": "pending",
-      "item": "After B1 terminates, use its gate evidence to select, narrow, or block B2 and keep C static-integral matching conditional."
+      "item": "Select C2 from C1 evidence and certify numerator, partition and full normalized error."
     }
   ]
 }
