@@ -5,9 +5,16 @@
     "title": "Paired expansion and reverse reconstruction",
     "kicker": "Yang–Mills Workbench · Round19 · paired loops",
     "status": "running",
-    "summary": "Three of six Round19 loops are accepted: boundary-consistent clipped clusters, a direct summable product representation, and the complete 48-channel two-cube projector with exact cross Gram. B2 now tests continuous spectral bounds. Parent dense/homogeneous stability, finite-restriction convergence, continuum construction and physical Fibonacci significance remain open.",
+    "summary": "Four of six Round19 loop gates are accepted: boundary-consistent clipped clusters, a direct product representation, the complete 48-channel two-cube projector with exact cross Gram, and a finite two-cube continuous signed-box spectral certificate. C1 is running under its own static-integral contract. Parent dense/homogeneous stability, finite-restriction convergence, continuum construction and physical Fibonacci significance remain open.",
     "repository": "https://github.com/occult-kranti/yang_mills_workbench/tree/research/round19-paired",
-    "history_route": "review18-home"
+    "history_route": "review18-home",
+    "accepted_loop_count": 4,
+    "accepted_loop_ids": [
+      "A1",
+      "A2",
+      "B1",
+      "B2"
+    ]
   },
   "geometry_hypothesis": {
     "state": "limited",
@@ -18,27 +25,27 @@
   "unit_contract": [
     {
       "symbol": "E★",
-      "state": "running",
-      "meaning": "fixed positive reference energy, E★ > 0, used as the common unit anchor",
-      "record": "No numeric value is selected by the current Round19 advisor files. Future accepted evidence must preserve one fixed E★ when reporting physical-scale statements."
+      "state": "accepted",
+      "meaning": "fixed positive symbolic reference energy, E★ > 0, used as the declared scale anchor for spectral checkpoints",
+      "record": "Accepted A and B gates keep E★ positive. No numeric physical energy value, Hamiltonian time bridge, lattice-spacing limit or continuum mass scale is selected."
     },
     {
-      "symbol": "α/E★",
-      "state": "running",
-      "meaning": "dimensionless electric coefficient relative to the fixed reference energy",
-      "record": "Recorded when a loop supplies accepted physical-scale evidence; A1 currently freezes the requirement for a common α_min > 0."
+      "symbol": "α_min/E★ and α/E★",
+      "state": "accepted",
+      "meaning": "dimensionless electric coefficients relative to the same positive reference energy",
+      "record": "Goal A records α_min/E★ = 1 for its common-scale local/product contract. Goal B records α/E★ = 2 for the finite two-cube spectral checkpoint."
     },
     {
       "symbol": "λ_f/α and μ/α",
-      "state": "limited",
-      "meaning": "dimensionless magnetic-face coefficients relative to the same α",
-      "record": "The A1 contract bounds |λ_left|/α and |λ_right|/α by 1/2, and |μ_bridge|/α by 1/8, with signs and zeros allowed."
+      "state": "accepted",
+      "meaning": "dimensionless magnetic-face coefficients relative to α, separate from the E★ anchor",
+      "record": "A1 bounds |λ_left|/α and |λ_right|/α by 1/2 and |μ_bridge|/α by 1/8. B2 records the signed box radius r = |λ_f|/α, including accepted finite two-cube bounds over the certified range."
     },
     {
       "symbol": "κ",
-      "state": "pending",
-      "meaning": "static Euclidean coefficient kept outside the Hamiltonian energy-scale register",
-      "record": "κ is kept separate from α/E★ and λ/α. Current C-side static-integral work must not treat κ as physical time matching or as a Hamiltonian energy scale."
+      "state": "running",
+      "meaning": "static Euclidean coefficient for C-side integrals, kept outside the Hamiltonian energy-scale register",
+      "record": "C1 is running under a static-integral contract. κ is not a regulator, physical time matching variable or Hamiltonian energy scale in the accepted A/B evidence."
     }
   ],
   "loops": [
@@ -46,7 +53,7 @@
       "id": "A1",
       "route": "paired-a1",
       "pair": "Goal A · boundary consistency",
-      "state": "running",
+      "state": "accepted",
       "forward_title": "Declare one infinite local assignment and restrict it into finite boxes.",
       "reverse_title": "Reconstruct the consistency premises needed for a common α scale.",
       "title": "Boundary-consistent local clusters",
@@ -61,13 +68,16 @@
       "evidence_keys": [
         "initial-review",
         "contract-a1",
-        "boundary-classification"
+        "boundary-classification",
+        "forward-a1-results",
+        "backward-a1-comparison",
+        "gate-a1"
       ]
     },
     {
       "id": "A2",
       "route": "paired-a2",
-      "pair": "Goal A · representation bridge",
+      "pair": "Goal A · product representation",
       "state": "accepted",
       "forward_title": "Construct the direct incomplete product representation and summable omitted-face perturbation.",
       "reverse_title": "Test what a dense common-scale conclusion would force at finite boundaries.",
@@ -80,25 +90,32 @@
         "common scale requirement: one E★ > 0 and one α_min > 0 across overlapping restrictions"
       ],
       "evidence_keys": [
-        "initial-review"
+        "initial-review",
+        "contract-a2",
+        "a2-source-bound-inventory",
+        "gate-a2",
+        "post-a-decision",
+        "post-a-roadmap"
       ]
     },
     {
       "id": "B1",
       "route": "paired-b1",
-      "pair": "Goal B · low-energy complement",
+      "pair": "Goal B · strict cutoff and cross Gram",
       "state": "accepted",
       "forward_title": "Classify the strict-cutoff two-cube low-energy projector on the actual graph.",
       "reverse_title": "Rebuild the complement channels needed before any cross-block bound is meaningful.",
       "title": "Complete projector and exact cross Gram",
-      "scope": "Frozen B1 contract: actual two-cube SU(2) graph, strict electric cutoff E_el < 6α, complete physical channel enumeration, and full exact cross Gram if feasible.",
-      "result": "Accepted: 48 strict-cutoff states and the full exact cross Gram agree between quaternion and epsilon Haar contractions. At E=6 alpha, 99 label assignments give 107 physical channels through intertwiner multiplicities.",
-      "review": "The post-Goal-A advisor decision moves to B1 because complement thresholds and exact Gram objects require a complete low-energy physical subspace on the actual graph.",
-      "next": "Use the enlarged projector and its nonzero compressed magnetic block in B2. The older face-only block estimate cannot be reused unchanged.",
+      "scope": "Accepted B1 finite two-cube result: actual adjacent two-cube SU(2) graph, strict electric cutoff E_el < 6α, 48-dimensional projector, complete physical channel enumeration and exact ordered cross Gram.",
+      "result": "B1 has an accepted advisor gate for the complete 48-channel strict-cutoff projector and the full exact cross Gram. This remains a finite two-cube result.",
+      "review": "The accepted gate records independent agreement between quaternion and epsilon Haar contractions, with threshold multiplicity and source-binding repairs preserved.",
+      "next": "Use the accepted projector, compressed magnetic block and exact cross Gram in B2; do not reuse the older face-only Round18 block shortcut.",
       "math": [
         "classify all physical channels below the chosen electric threshold before bounding the complement"
       ],
       "evidence_keys": [
+        "post-a-decision",
+        "post-a-roadmap",
         "contract-b1",
         "gate-b1"
       ]
@@ -106,40 +123,58 @@
     {
       "id": "B2",
       "route": "paired-b2",
-      "pair": "Goal B · finite spectral bound",
-      "state": "running",
+      "pair": "Goal B · continuous finite spectral bound",
+      "state": "accepted",
       "forward_title": "Compute a finite spectral bound only after B1 supplies the channel inventory.",
       "reverse_title": "Check that the finite spectral bound uses exactly the inventory B1 proves.",
-      "title": "Finite spectral bound",
-      "scope": "Untruncated physical SU(2) Hamiltonian on the fixed two-cube graph; primary continuous signed box |lambda_f|<=alpha/8 with the earlier 3alpha/8 benchmark investigated separately.",
-      "result": "B2 is running under its frozen contract. No B2 spectral bound has been accepted yet.",
-      "review": "Use the full 47-dimensional P minus vacuum block, exact cross Gram and complete Q threshold. Establish E1 lower and E0 upper separately.",
-      "next": "Compare independent continuous-box inequalities and rejecting controls before selecting C1.",
+      "title": "Finite two-cube spectral bound",
+      "scope": "Accepted B2 finite two-cube continuous signed coefficient-box gap certificate using the accepted B1 48-channel projector, full compressed PVP ledger and exact ordered W*W cross Gram; no dense limit, continuum Yang-Mills, Clay mass gap or physical-scale matching claim is accepted.",
+      "result": "B2 has an accepted advisor gate for the finite two-cube coefficient box. At r=1/8, gap/α ≥ (59−2√61)/16 with outward interval [2.711218790511668, 2.711218790511669].",
+      "review": "The gate accepts the source-bound finite Schur/min-max argument, separate E1 lower and E0 upper statements, normal/optimized agreement counted once, and independent comparison with 26 checks.",
+      "next": "Select C1 only from the B2 advisor decision/contract. Static κ integrals remain unmatched to Hamiltonian time or physical energy unless a later gate proves that match.",
       "math": [
-        "operator block estimates remain conditional on exact channel support"
+        "R(r) = [9 − 13r − sqrt(100r² − 54r + 9)]/2",
+        "r = 1/8: gap/α ≥ (59 − 2√61)/16 ≈ 2.711218790511668",
+        "r = 3/8: gap/α ≥ (33 − 6√5)/16 ≈ 1.223974508437578",
+        "r = 7/16: exact gap/α ≥ 19/32",
+        "positive range: 0 ≤ r < (30 − 2√87)/23 ≈ 0.493271386687929",
+        "r = 1/2: row-envelope certificate insufficient; not a physical failure"
       ],
       "evidence_keys": [
         "contract-b2",
-        "gate-b1"
+        "b2-preliminary-review",
+        "forward-b2-source",
+        "forward-b2-results",
+        "forward-b2-report",
+        "forward-b2-source-manifest",
+        "forward-b2-optimized-comparison",
+        "backward-b2-source",
+        "backward-b2-compare-source",
+        "backward-b2-comparison",
+        "backward-b2-report",
+        "backward-b2-manifest",
+        "gate-b2",
+        "validation-b2"
       ]
     },
     {
       "id": "C1",
       "route": "paired-c1",
       "pair": "Goal C · integrated cluster",
-      "state": "pending",
+      "state": "running",
       "forward_title": "Unfreeze a specified surrounding link or minimal cluster with the induced measure retained.",
       "reverse_title": "Start from the target observable and reconstruct the discriminator it needs.",
       "title": "Integrated link-cluster discriminator",
-      "scope": "Conditional static-integral path; no C contract is frozen by the post-Goal-A decision.",
-      "result": "No C1 gate or accepted result is present in the current Round19 files.",
-      "review": "The post-Goal-A advisor decision says A2 product representation does not supply the surrounding-link joint measure; C remains provisional.",
-      "next": "Choose the minimal cluster and observable only after prior gates show which physical-scale obstruction remains.",
+      "scope": "C1 is running under advisor/contract-c1.json: an exact static three-link U-V-W chain integral and common-V dependence test on the actual Round18/Round19 four-cube graph.",
+      "result": "C1 has a frozen static-integral contract, but no C1 advisor gate is accepted yet.",
+      "review": "Stop after C1 evidence and advisor gate. Static κ remains a coefficient, not a Hamiltonian time match or physical energy scale.",
+      "next": "Run C1 against its own contract; freeze C2 only after C1 evidence shows which static-integral statement is supported.",
       "math": [
         "retain the induced joint measure and normalized observable before judging a control"
       ],
       "evidence_keys": [
-        "initial-review"
+        "initial-review",
+        "contract-c1"
       ]
     },
     {
@@ -151,8 +186,8 @@
       "reverse_title": "Reconstruct whether the static integral supports only the local model or a broader claim.",
       "title": "Certified static integral",
       "scope": "Conditional certified static-integral loop with κ treated as a static coefficient and physical matching open.",
-      "result": "No C2 gate or accepted result is present in the current Round19 files.",
-      "review": "Any route that tries to promote a local component result to a homogeneous dense, thermodynamic, continuum, or mass-gap theorem is blocked unless later evidence directly proves those steps.",
+      "result": "No C2 contract or accepted result is present in the current Round19 files.",
+      "review": "C2 must be selected from C1 evidence and cannot inherit a physical-scale match from static κ alone.",
       "next": "Use C1 evidence to decide whether C2 should extend, narrow, or reject the integrated-cluster route.",
       "math": [
         "local finite-graph evidence remains separate from continuum construction and Clay mass-gap criteria"
@@ -187,26 +222,27 @@
   ],
   "review": {
     "state": "running",
-    "summary": "A1, A2 and B1 are accepted within their declared scopes. B1 required threshold-multiplicity, matrix-normalization, source-binding and explicit energy-reference repairs; the final independent comparison passes 24 checks. B2 is running; C remains conditional.",
+    "summary": "A1, A2, B1 and B2 are accepted within their declared finite/product scopes. B2 accepts a finite two-cube continuous signed-box certificate, not a dense limit, continuum theorem, Clay mass-gap result, or static κ physical match. C1 is running under a separate static-integral contract.",
     "limits": [
       "The double-spiral geometry is a hypothesis and work organizer, not physical evidence.",
       "A2 is a direct product-representation theorem, not finite clipped-restriction convergence or homogeneous dense stability.",
-      "B1 is accepted on the finite two-cube graph; B2 is running and C remains conditional on later evidence.",
-      "No current Round19 file proves a continuum Yang–Mills construction, finite-restriction convergence to the A2 representation, or Clay mass gap."
+      "B1 and B2 are finite two-cube spectral results; they do not prove the dense limiting spectral passage or continuum Yang-Mills.",
+      "Static κ is a coefficient for later Euclidean integrals, not a regulator, Hamiltonian time match, or physical energy scale.",
+      "No current Round19 file proves a continuum Yang-Mills construction, finite-restriction convergence to the A2 representation, or Clay mass gap."
     ]
   },
   "next_steps": [
     {
+      "state": "accepted",
+      "item": "Goal B branch evidence is ready for publication review with accepted B2 gate and validation-b2 replay evidence."
+    },
+    {
       "state": "running",
-      "item": "Complete B2 with the full enlarged projector, exact cross Gram and a continuous signed-box argument."
+      "item": "Run C1 under its own static three-link U-V-W chain contract; keep κ static and physical matching open."
     },
     {
       "state": "pending",
-      "item": "Select C1 after B2 evidence, retaining all affected faces and the actual surrounding-link measure."
-    },
-    {
-      "state": "pending",
-      "item": "Select C2 from C1 evidence and certify numerator, partition and full normalized error."
+      "item": "Select C2 from C1 evidence and certify numerator, partition and full normalized error if C1 warrants it."
     }
   ]
 }

@@ -8,9 +8,11 @@ This cycle authorizes three goals with two sequential research loops each, plus 
 
 The [initial advisor review](advisor/initial-review.md) recovered the preceding Goal A pair and revised the plan. Both new Goal A loops have now passed their gates. A1 covers all six reachable clipped component types, with full-link lower estimates of at least `alpha/8` and 44 independently reconstructed boundary fixtures. A2 constructs a direct incomplete product representation with a bounded, summable omitted-face perturbation. At `tau=1/64`, its exact coefficient ledger yields `gap >= 973 alpha/8640`. This is a reviewed written operator argument supported by exact arithmetic checks; it is not a machine-formalized proof.
 
-The [post-Goal-A advisor decision](advisor/post-a-roadmap.md) keeps finite-restriction convergence and homogeneous dense stability open, and selected [B1](advisor/contract-b1.json) at the strict electric cutoff `E_el < 6 alpha` on the actual two-cube graph. B1 is now accepted: the complete 48-dimensional projector and exact cross Gram agree under two different Haar contractions. At the excluded threshold, 99 edge-label assignments represent 107 physical channels after intertwiner multiplicities. [B2](advisor/contract-b2.json) is now running with the enlarged magnetic block. Three of six research loops are accepted. Failed comparisons and corrected domain wording are preserved with their provenance.
+The [post-Goal-A advisor decision](advisor/post-a-roadmap.md) keeps finite-restriction convergence and homogeneous dense stability open, and selected [B1](advisor/contract-b1.json) at the strict electric cutoff `E_el < 6 alpha` on the actual two-cube graph. B1 is now accepted: the complete 48-dimensional projector and exact cross Gram agree under two different Haar contractions. At the excluded threshold, 99 edge-label assignments represent 107 physical channels after intertwiner multiplicities. [B2](advisor/contract-b2.json) is also accepted through [advisor/b2-gate.json](advisor/b2-gate.json): the finite two-cube continuous signed-box certificate uses the accepted B1 projector, full compressed `PVP` ledger and exact ordered `W*W` cross Gram. The accepted B2 statement is finite two-cube only; it is not a dense limit, continuum Yang–Mills theorem, Clay mass-gap result or static `kappa` physical match. Four of six research loops are accepted. Failed comparisons and corrected domain wording are preserved with their provenance.
 
-The [standalone paired review](overview.html) displays the current evidence. This milestone is published on `research/round19-paired`; the live Pages deployment remains Round18 pending review and merge.
+The [B2 validation record](validation-b2.json) records ordinary and optimized B2 replay with all earlier gate inventories verified and the accepted B2 gate hash. [C1](advisor/contract-c1.json) is now running under a separate static three-link U-V-W chain contract; static `kappa` remains a coefficient, not a Hamiltonian time match or physical energy scale.
+
+The [standalone paired review](overview.html) displays the current evidence. This milestone is prepared on `research/round19-paired`; the live Pages deployment remains Round18 pending review and merge.
 | Goal | Loop 1 target | Loop 2 selection condition |
 |---|---|---|
 | A | Literal restrictions of one infinite coefficient assignment; all clipped cluster types | Select limiting-state or spectral-passage work only after boundary evidence |
@@ -31,14 +33,20 @@ The Paired Physics Research skill was created, validated and applied to the advi
 
 [Round18 evidence and reproduction](../round18/README.md) remain preserved. New gates and commands will be added as each loop completes; planned work is never counted as executed.
 
-## Reproduce through the accepted B1 milestone
+## Reproduce through the accepted B2 milestone
 
 From the repository root, use a new output directory outside this round:
 
 ```bash
-python3 research/round19/reproduce.py --through b1 --output /absolute/path/to/new-b1-results
+python3 research/round19/reproduce.py --through b2 --output /absolute/path/to/new-b2-results
 ```
 
-This executes the forward calculation, independent reconstruction and comparison on fresh outputs, after checking the reviewed inventory. The exact calculations use Python standard-library arithmetic.
+This executes the accepted calculations through B2 on fresh outputs after checking the reviewed inventory. The exact calculations use Python standard-library arithmetic. The B2 certificate records
+
+- `R(r) = [9 - 13r - sqrt(100r^2 - 54r + 9)]/2`,
+- at `r=3/8`, `gap/alpha >= (33 - 6 sqrt(5))/16 ≈ 1.223974508437578`,
+- at `r=7/16`, the exact lower bound `19 alpha / 32`,
+- positivity for `0 <= r < (30 - 2 sqrt(87))/23 ≈ 0.493271386687929`, and
+- `r=1/2` as an insufficient row-envelope certificate, not a physical failure.
 
 The [exception ledger](exception-ledger.json) and [method lessons](methods/round19-lessons.md) retain the actual failed premises and the equations valid after repair. Independent implementations share the contract and methodological discussion; they are distinct calculations, not a claim of statistically independent human peer review.

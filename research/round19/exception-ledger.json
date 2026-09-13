@@ -124,6 +124,66 @@
         "advisor/b1-gate.json"
       ],
       "limit": "Agreement of symmetrized forms alone cannot certify the complete producer matrix."
+    },
+    {
+      "id": "enlarged-projector-magnetic-block",
+      "loop": "B2",
+      "status": "accepted-with-declared-scope",
+      "failure": "The old face-only compressed magnetic form vanished on vacuum-perpendicular states; the enlarged projector has nonzero magnetic couplings.",
+      "workaround": "Use all compressed coefficients and the exact complement Gram to bound both operator blocks and their cross term.",
+      "equations": {
+        "compressed_block": "RHR/alpha >= 3-2r",
+        "complement": "QHQ/alpha >= 6-11r",
+        "cross_norm": "||QVR||^2/alpha^2 <= 19r^2/4",
+        "codimension_one_lower_bound": "E1/alpha >= (9-13r-sqrt(100r^2-54r+9))/2"
+      },
+      "evidence": [
+        "advisor/contract-b2.json",
+        "forward/b2/report.md",
+        "backward/b2/report.md",
+        "advisor/b2-gate.json",
+        "backward/b2/comparison/comparison.json"
+      ],
+      "limit": "These are bounds for the full operator on one finite graph; no growing-volume or continuum conclusion follows."
+    },
+    {
+      "id": "spectral-certificate-boundary",
+      "loop": "B2",
+      "status": "accepted-with-declared-scope",
+      "failure": "At r=1/2 the scalar determinant is negative, so this method no longer certifies a positive lower bound.",
+      "workaround": "State the certified parameter range and retain a fixed smaller closed box for a common positive floor.",
+      "equations": {
+        "determinant": "18-45r+69r^2/4",
+        "positive_range": "0 <= r < (30-2sqrt(87))/23",
+        "fixed_closed_box": "r <= 7/16 implies gap >= 19alpha/32",
+        "common_physical_floor": "alpha >= alpha_min > 0 and r <= 7/16 imply gap/E_star >= 19alpha_min/(32E_star)"
+      },
+      "evidence": [
+        "advisor/contract-b2.json",
+        "forward/b2/report.md",
+        "backward/b2/report.md",
+        "advisor/b2-gate.json",
+        "backward/b2/comparison/comparison.json"
+      ],
+      "limit": "Failure at r=1/2 is not a proof that the actual gap closes. The bound approaches zero at its open parameter boundary, so it gives no uniform positive floor over that entire open range."
+    },
+    {
+      "id": "independent-source-provenance",
+      "loop": "B2",
+      "status": "accepted-repair",
+      "failure": "A comparator required the producer to report the reverse implementation's B1 source hashes, even though the producer used the accepted forward B1 files.",
+      "workaround": "Validate each implementation's actual source and input paths against the accepted gate, then compare their mathematical objects under the declared coordinate mapping.",
+      "equations": {
+        "mathematical_agreement": "G_forward = T* G_reverse T after the declared basis/face mapping",
+        "provenance_rule": "Each claimed input hash must equal its own gate-bound file hash; independent source hashes need not be equal."
+      },
+      "evidence": [
+        "advisor/b1-gate.json",
+        "forward/b2/backward-comparison/comparison.json",
+        "advisor/b2-gate.json",
+        "backward/b2/comparison/comparison.json"
+      ],
+      "limit": "Different hashes are not evidence of agreement; independent mathematical reconstruction and correct per-source provenance are both required."
     }
   ],
   "geometry": {

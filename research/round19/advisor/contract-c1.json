@@ -1,0 +1,149 @@
+{
+  "acceptance_tests": [
+    "Actual graph reconstruction returns 18 vertices, 33 edges, 20 faces, the declared U,V,W links, seven affected faces and thirteen constant faces with exact signed face words.",
+    "The exact reduction to variables x,y,z,w,t and S=3x+y+z+w+t is proved from signed words, not hard-coded from labels.",
+    "The observable O=(4x^2-1)^3(4w^2-1)/81 is kept unchanged and tied to the U-V branch.",
+    "Two independent exact moment routes agree on every monomial used by the numerator and partition through the declared degree/remainder ladder.",
+    "The normalized finite-kappa interval is rigorous, source-bound, deterministic under normal and optimized runs, and has the requested precision or reports a limited result with exact failed premise.",
+    "The unweighted common-V discriminator E[x*z*w*t]=1/64 is verified, and an independent-V-resampling control gives 0 and is rejected as the primary model.",
+    "The Freeze-W=I regression recovers the Round18 C2 two-link normalized expectation after constant cancellation.",
+    "Reports explicitly mark static kappa as a mathematical checkpoint with physical scale matching open/unmatched."
+  ],
+  "deliverables": [
+    "forward/c1/check.py, report.md, source-manifest and normal/optimized outputs",
+    "backward/c1/check.py, report.md, source-manifest and normal/optimized outputs",
+    "complete graph/reduction JSON with signed face words and active/fixed face ledger",
+    "moment table and exact coefficient/interval/refinement outputs",
+    "independent comparison reconstructing graph, moments, intervals, source bindings and controls",
+    "advisor c1-gate.json only after final comparison acceptance"
+  ],
+  "depends_on": {
+    "b2_gate": "advisor/b2-gate.json",
+    "b2_gate_sha256": "cd0c1082b460ca3af1c465daf2398c698ca5819caa11781bc64688f539709b8c",
+    "lessons": "methods/round19-lessons.md",
+    "lessons_sha256": "f120ef9657b0d301cbe15b0730e5d6d45544e4f2875407f646a48ed848f738a1"
+  },
+  "falsifying_controls": [
+    "wrong graph counts, wrong active link coordinates, omitted affected face or omitted constant-face ledger",
+    "altered single signed face word on a noncommuting fixture",
+    "hard-coded S=3x+y+z+w+t without signed-word reconstruction",
+    "three independent trace variables or independent V copies claimed as the primary measure",
+    "missing SU(2) representation dimension divisor or wrong parity/triangle fusion rule",
+    "bare Haar average of normalized inner expectations, or missing Z_U(V) outer weight, claimed as the primary normalized integral",
+    "freeze-W regression fails or treats the constant +1 as changing the normalized quotient",
+    "truncated Taylor coefficients presented as the full integral without a rigorous remainder interval",
+    "noncanonical rational kappa, wrong kappa, Boolean exponent/degree, negative exponent, wrong exponent dimension or mutable cache aliasing",
+    "kappa/Fibonacci/static labels claimed as physical energy scale matching",
+    "forcing a global dagger-substitution mismatch as an integrated control when the substitution is a consistent Haar-preserving change of variables; pointwise signed-word reconstruction must still be checked"
+  ],
+  "goal": "Goal C loop 1: exact static three-link U-V-W chain integral and common-V dependence test on the actual Round18/Round19 four-cube graph",
+  "graph_model": {
+    "active_links": {
+      "U": "vertical e2 link at coordinate (1,1,0)",
+      "V": "vertical e2 link at coordinate (1,0,0)",
+      "W": "vertical e2 link at coordinate (0,0,0)"
+    },
+    "affected_face_words_from_root_audit": [
+      {
+        "face": "f1:0,0,0",
+        "reduced_trace": "t = Tr(V W^dagger)/2"
+      },
+      {
+        "face": "f1:0,1,0",
+        "reduced_trace": "x = Tr(U)/2"
+      },
+      {
+        "face": "f1:1,0,0",
+        "reduced_trace": "y = Tr(V^dagger)/2 = Tr(V)/2"
+      },
+      {
+        "face": "f1:1,1,0",
+        "reduced_trace": "x = Tr(U^dagger)/2 = Tr(U)/2"
+      },
+      {
+        "face": "f0:0,0,0",
+        "reduced_trace": "z = Tr(W^dagger)/2 = Tr(W)/2"
+      },
+      {
+        "face": "f0:1,0,0",
+        "reduced_trace": "w = Tr(U V^dagger)/2"
+      },
+      {
+        "face": "f0:1,1,0",
+        "reduced_trace": "x = Tr(U^dagger)/2 = Tr(U)/2"
+      }
+    ],
+    "expected_counts": {
+      "active_links": 3,
+      "affected_faces": 7,
+      "constant_faces": 13,
+      "edges": 33,
+      "faces": 20,
+      "fixed_links": 30,
+      "vertices": 18
+    },
+    "freeze_W_identity_regression": "Setting W=I must reduce the variable action to 3*x + 2*y + w + 1 and recover the Round18 C2 two-link normalized expectation after the constant factor is cancelled.",
+    "graph": "actual four-cube graph used by Round18 C2, independently reconstructed from signed face words",
+    "required_reduction": "The seven affected face terms reduce to S=3*x + y + z + w + t, with the remaining 13 face terms constant and canceling only in this normalized conditional quotient."
+  },
+  "loop": "c1",
+  "mandatory_diagnostics": [
+    "Exact unweighted Haar common-V discriminator: E[x*z*w*t]=1/64 under the shared V variable, while a construction that resamples independent V copies between the U-V and V-W branches gives 0.",
+    "Freeze-W regression: W=I gives S=old Round18 C2 S + 1, i.e. 3*x+2*y+w+1, and the normalized expectation matches the old two-link result after constant cancellation.",
+    "Kappa-zero checks: partition equals 1; numerator equals the exact unweighted expectation for the three-link observable and is independently derived rather than assumed.",
+    "Signed kappa fixture at -1/64 to catch false evenness if the exact action is not even.",
+    "True outer partition-weight check using e^(kappa*y) K_kappa(y) Z_U(V), not bare Haar and not averaged normalized inner values."
+  ],
+  "observable_and_weight": {
+    "exact_expansion": "Store exact numerator and partition Taylor coefficients and rigorous normalized interval/remainder data through a predeclared degree ladder; do not present a truncated polynomial as the full integral.",
+    "normalized_expectation": "E[O exp(kappa*S)] / E[exp(kappa*S)] with U,V,W independent normalized SU(2) Haar and S=3*x+y+z+w+t",
+    "observable": "O=(4*x^2-1)^3*(4*w^2-1)/81, the old U-V observable unchanged by adding W",
+    "primary_static_coupling": "kappa=1/64 frozen for the primary finite static integral fixture",
+    "variables": [
+      "x=Tr(U)/2",
+      "y=Tr(V)/2",
+      "z=Tr(W)/2",
+      "w=Tr(U V^dagger)/2",
+      "t=Tr(V W^dagger)/2"
+    ]
+  },
+  "physical_scale_exception": {
+    "classification": "static kappa checkpoint only; physical matching remains open/unmatched",
+    "controls": [
+      "kappa_as_E_star_or_physical_scale must fail",
+      "Fibonacci/static labels as physical matching must fail"
+    ],
+    "required_wording": "Reports and gates must say that common kappa is a static integral coupling, not E_star and not a physical energy/time scale. The user common-physical-scale analogy is not satisfied by kappa alone."
+  },
+  "schema": "ym19-c1-contract-v1",
+  "scope": {
+    "excluded": "No physical time-generator or energy-scale matching, no dense/continuum Yang-Mills, no spectral gap theorem, and no full unfixed 20-face bulk integral beyond this static three-link checkpoint.",
+    "included": "Reconstruct and integrate the graph-derived static U-V-W vertical chain with all other links fixed to identity, using exact SU(2) Haar moment arithmetic and a normalized static Boltzmann weight at common kappa."
+  },
+  "status": "frozen_after_b2_gate",
+  "stop_condition": "Stop after C1 evidence and advisor gate. Do not freeze C2 until the accepted C1 result shows which static-integral statement is actually supported. If graph reduction, independent moment agreement, rigorous normalization, or static/physical-scope wording fails, return limited or rejected with the exact failed premise.",
+  "two_independent_routes": {
+    "character_fusion_route": {
+      "moment_formula": "For nonnegative exponents (a,b,c,d,e) on (x,y,z,w,t), compute 2^-(a+b+c+d+e) * sum_{i,k,m} mult(a,i) mult(d,i) mult(c,k) mult(e,k) mult(b,m) N(i,k,m)/((i+1)(k+1)). Here mult(p,n) is the multiplicity of SU(2) character index n in chi_1^p, and N(i,k,m) is the parity-and-triangle fusion multiplicity for the common V character product.",
+      "must_verify": [
+        "normalization moment E[1]=1",
+        "semicircle one-link moments",
+        "dimension divisors (i+1)(k+1)",
+        "parity and triangle fusion N",
+        "exact unweighted Haar common-V discriminator E[x*z*w*t]=1/64"
+      ]
+    },
+    "conditional_angular_or_polynomial_route": {
+      "must_verify": [
+        "regularity at y=-1 and y=1",
+        "no division by vanishing sine factors",
+        "same exact moments and normalized intervals as the character route"
+      ],
+      "requirement": "Use a genuinely distinct implementation, for example conditioning on the common V and integrating U and W with angular polynomial moments, or an independent coordinate polynomial integration. It must not import the producer moment table."
+    },
+    "conditional_weight_checkpoint": {
+      "K_kappa_y": "After integrating W at fixed V, K_kappa(y)=sum_m [kappa^2*(1+y)/2]^m/[m!*(m+1)!], smooth at y=-1 and kappa=0 with K=1.",
+      "outer_weight": "The outer V integral must use e^(kappa*y) * K_kappa(y) * Z_U(V). Averaging normalized inner expectations against bare Haar, or dropping the Z_U(V) factor, is a different calculation and must fail when claimed as primary."
+    }
+  }
+}

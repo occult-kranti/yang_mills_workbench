@@ -212,6 +212,45 @@ def summarize_review(value: Any) -> str | None:
     return summarize_gate_result(value)
 
 
+LOOP_SUMMARY_LABELS = {
+    "A1": "boundary-consistent clipped clusters",
+    "A2": "direct product representation",
+    "B1": "complete 48-channel two-cube projector and exact cross Gram",
+    "B2": "continuous finite two-cube spectral bound",
+    "C1": "static integrated-cluster discriminator",
+    "C2": "certified static integral",
+}
+
+
+def refresh_meta_summary(content: dict[str, Any]) -> None:
+    loops = [loop for loop in content.get("loops", []) if isinstance(loop, dict)]
+    accepted = [loop for loop in loops if safe_state(loop.get("state")) == "accepted"]
+    running = [loop for loop in loops if safe_state(loop.get("state")) == "running"]
+    accepted_ids = [str(loop.get("id")) for loop in accepted]
+    labels = [LOOP_SUMMARY_LABELS.get(loop_id, loop_id) for loop_id in accepted_ids]
+    count = len(accepted)
+    meta = content.setdefault("meta", {})
+    meta["accepted_loop_count"] = count
+    meta["accepted_loop_ids"] = accepted_ids
+    meta["status"] = "accepted" if count == len(LOOP_IDS) else "running"
+    if labels:
+        if len(labels) == 1:
+            accepted_text = labels[0]
+        else:
+            accepted_text = ", ".join(labels[:-1]) + ", and " + labels[-1]
+        summary = f"{count} of six Round19 loop gates are accepted: {accepted_text}."
+    else:
+        summary = "No Round19 loop gate is accepted yet."
+    if any(loop.get("id") == "B2" and safe_state(loop.get("state")) != "accepted" for loop in loops):
+        b2_keys = {item.get("key") for item in content.get("evidence", []) if isinstance(item, dict)}
+        if {"forward-b2-results", "backward-b2-comparison"}.issubset(b2_keys):
+            summary += " B2 has source-bound forward/reverse comparison evidence under advisor review, but no B2 loop gate is accepted yet."
+    if running:
+        summary += " Current running loop: " + str(running[0].get("id")) + "."
+    summary += " Parent dense/homogeneous stability, finite-restriction convergence, continuum construction and physical Fibonacci significance remain open."
+    meta["summary"] = summary
+
+
 def merge_advisor_files(content: dict[str, Any]) -> None:
     manifest = ADVISOR / "manifest.json"
     if manifest.exists():
@@ -339,6 +378,8 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
         ("post-a-roadmap", "Post-Goal-A roadmap", "research/round19/advisor/post-a-roadmap.md", "accepted", "Explains why Goal A remains narrow and why B1 is frozen next."),
         ("provisional-bc-plan", "Provisional B/C plan", "research/round19/advisor/provisional-bc-plan.md", "limited", "Planning notes for later B/C branches."),
         ("contract-b1", "Frozen B1 contract", "research/round19/advisor/contract-b1.json", "accepted", "Advisor-frozen contract for the strict-cutoff two-cube B1 loop."),
+        ("b2-preliminary-review", "B2 preliminary advisor review", "research/round19/advisor/b2-preliminary-review.md", "limited", "Preliminary mathematical review only; it is not a B2 gate and does not start C1."),
+        ("b2-preliminary-review-manifest", "B2 preliminary review manifest", "research/round19/advisor/b2-preliminary-review-manifest.json", "limited", "SHA inventory for the provisional B2 review; gate status is taken only from b2-gate.json."),
     ]
     for key, title, repo_path, state, summary in optional_advisor:
         if (ROOT / repo_path).exists():
@@ -474,6 +515,110 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
                 "c_plan": decision.get("c_plan"),
             }
 
+    for loop_id in ("B2", "C1", "C2"):
+        lower = loop_id.lower()
+        loop = loops.get(loop_id)
+        contract_data = content.get("contracts", {}).get(loop_id)
+        if not loop or not contract_data:
+            continue
+        keys = loop.setdefault("evidence_keys", [])
+        contract_key = f"contract-{lower}"
+        if any(item.get("key") == contract_key for item in content.get("evidence", [])) and contract_key not in keys:
+            keys.append(contract_key)
+        loop["state"] = "running"
+        target_data = contract_data.get("mathematical_target", {}) if isinstance(contract_data.get("mathematical_target"), dict) else {}
+        loop["scope"] = contract_data.get("goal") or target_data.get("statement") or loop.get("scope")
+        if loop_id == "B2":
+            loop["result"] = "B2 is running under advisor/contract-b2.json. Source-bound forward and reverse comparison artifacts may be present, but B2 is not accepted until advisor/b2-gate.json exists and passes validation."
+            loop["review"] = contract_data.get("stop_condition") or loop.get("review")
+            if target_data.get("statement"):
+                loop["next"] = target_data["statement"]
+        else:
+            loop["result"] = f"{loop_id} has a frozen contract, but no {loop_id} advisor gate is accepted yet."
+            loop["review"] = contract_data.get("stop_condition") or loop.get("review")
+
+    b2 = loops.get("B2")
+    b2_forward_results = ROUND / "forward" / "b2" / "output" / "results.json"
+    if b2_forward_results.exists():
+        attach_file_metadata(
+            content,
+            "forward-b2-results",
+            "Forward B2 finite-box results",
+            "research/round19/forward/b2/output/results.json",
+            "running",
+            "Forward B2 output reports passed exact continuous-box certificates; this is source evidence awaiting the B2 advisor gate.",
+        )
+        for repo_path, key, title, summary in [
+            ("research/round19/forward/b2/check.py", "forward-b2-source", "Forward B2 checker", "Source for the finite two-cube continuous coefficient-box certificate."),
+            ("research/round19/forward/b2/report.md", "forward-b2-report", "Forward B2 report", "Written forward B2 derivation for the finite two-cube box."),
+            ("research/round19/forward/b2/output/source-manifest.json", "forward-b2-source-manifest", "Forward B2 source manifest", "Source and output hash manifest for the forward B2 run."),
+            ("research/round19/forward/b2/optimized-comparison.json", "forward-b2-optimized-comparison", "Forward B2 normal/optimized comparison", "Deterministic normal and optimized B2 output comparison."),
+        ]:
+            if (ROOT / repo_path).exists():
+                attach_file_metadata(content, key, title, repo_path, "running", summary)
+        if b2:
+            keys = b2.setdefault("evidence_keys", [])
+            for key in ["contract-b2", "b2-preliminary-review", "b2-preliminary-review-manifest", "forward-b2-source", "forward-b2-results", "forward-b2-report", "forward-b2-source-manifest", "forward-b2-optimized-comparison"]:
+                if any(item.get("key") == key for item in content.get("evidence", [])) and key not in keys:
+                    keys.append(key)
+            b2["state"] = "running"
+            b2["math"] = [
+                "R(r) = [9 − 13r − sqrt(100r² − 54r + 9)]/2",
+                "r = 3/8: gap ≥ (33 − 6√5)α/16 ≈ 1.223974508437578",
+                "r = 7/16: exact gap ≥ 19α/32",
+                "positive range: 0 ≤ r < (30 − 2√87)/23 ≈ 0.493271386687929",
+                "r = 1/2: current row-envelope certificate is insufficient; this is not a physical failure",
+            ]
+            b2["result"] = "B2 forward evidence reports passed continuous finite-box certificates using the accepted B1 projector. The final forward/reverse comparison evidence is still pre-gate; B2 is not an accepted loop until advisor/b2-gate.json is present and validated."
+            b2["review"] = "The finite two-cube claim remains source-bound and under advisor review. It separates E1 lower from E0 upper, keeps E★ positive, records λ_f/α through the box radius r, and keeps static κ out of the Hamiltonian scale register."
+            b2["next"] = "Await the B2 advisor gate. If accepted, C1 may be frozen separately; if limited or rejected, preserve the failed premise and do not start C from B2 plans alone."
+
+    b2_validation = ROUND / "validation-b2.json"
+    if b2_validation.exists():
+        validation_data = read_json(b2_validation)
+        ordinary = validation_data.get("ordinary", {}) if isinstance(validation_data.get("ordinary"), dict) else {}
+        optimized = validation_data.get("optimized", {}) if isinstance(validation_data.get("optimized"), dict) else {}
+        gate_hashes = validation_data.get("gate_sha256", {}) if isinstance(validation_data.get("gate_sha256"), dict) else {}
+        attach_file_metadata(
+            content,
+            "validation-b2",
+            "B2 reproduction validation",
+            "research/round19/validation-b2.json",
+            "accepted" if ordinary.get("status") == "passed" and optimized.get("status") == "passed" else "limited",
+            f"Fresh ordinary and optimized B2 replay status: {ordinary.get('status', 'unknown')} / {optimized.get('status', 'unknown')}; gate hash {gate_hashes.get('b2', 'unrecorded')}.",
+        )
+        if b2:
+            keys = b2.setdefault("evidence_keys", [])
+            if "validation-b2" not in keys:
+                keys.append("validation-b2")
+
+    b2_comparison = ROUND / "backward" / "b2" / "comparison" / "comparison.json"
+    if b2_comparison.exists():
+        data = read_json(b2_comparison)
+        checks = data.get("checks_count")
+        summary = f"Independent B2 comparison reports status {data.get('status')} across {checks} checks; this is not an advisor gate." if checks else "Independent B2 comparison is recorded; this is not an advisor gate."
+        attach_file_metadata(
+            content,
+            "backward-b2-comparison",
+            "Backward B2 final comparison",
+            "research/round19/backward/b2/comparison/comparison.json",
+            "running",
+            summary,
+        )
+        for repo_path, key, title, item_summary in [
+            ("research/round19/backward/b2/check.py", "backward-b2-source", "Backward B2 checker", "Independent reverse/skeptic checker for the B2 bound."),
+            ("research/round19/backward/b2/compare.py", "backward-b2-compare-source", "Backward B2 comparison source", "Independent comparison source with mutation controls."),
+            ("research/round19/backward/b2/report.md", "backward-b2-report", "Backward B2 report", "Written reverse/skeptic B2 reconstruction."),
+            ("research/round19/backward/b2/manifest.json", "backward-b2-manifest", "Backward B2 final manifest", "Final B2 comparison manifest; no C1 start is claimed by this file."),
+        ]:
+            if (ROOT / repo_path).exists():
+                attach_file_metadata(content, key, title, repo_path, "running", item_summary)
+        if b2:
+            keys = b2.setdefault("evidence_keys", [])
+            for key in ["backward-b2-source", "backward-b2-compare-source", "backward-b2-comparison", "backward-b2-report", "backward-b2-manifest"]:
+                if any(item.get("key") == key for item in content.get("evidence", [])) and key not in keys:
+                    keys.append(key)
+
     for loop_id in LOOP_IDS:
         lower = loop_id.lower()
         gate_path = ADVISOR / f"{lower}-gate.json"
@@ -548,6 +693,8 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
                 if key.startswith(accepted_prefixes) or f"/forward/{lower}/" in repo_path or f"/backward/{lower}/" in repo_path:
                     if item.get("state") in {"running", "limited", "rejected"}:
                         item["state"] = "accepted"
+
+    refresh_meta_summary(content)
 
 
 def validate(content: dict[str, Any]) -> None:

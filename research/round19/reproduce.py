@@ -45,15 +45,20 @@ def main():
     ap.add_argument('--output', required=True, type=Path)
     ap.add_argument('--optimized', action='store_true')
     ap.add_argument('--through', choices=LOOPS, default='c2')
+    ap.add_argument('--from-loop', choices=LOOPS, default='a1', help='Replay only this loop onward; still verify all earlier reviewed gates')
     args = ap.parse_args()
     out = args.output.resolve()
     if out.exists() or HERE == out or HERE in out.parents:
         raise ValueError('choose a new output directory outside research/round19')
-    selected = LOOPS[:LOOPS.index(args.through)+1]
+    start, end = LOOPS.index(args.from_loop), LOOPS.index(args.through)+1
+    if start >= end:
+        raise ValueError('--from-loop must not follow --through')
+    dependencies = LOOPS[:end]
+    selected = LOOPS[start:end]
     specifications = json.loads((HERE / 'execution.json').read_text())
     if tuple(specifications['order']) != LOOPS:
         raise ValueError('unexpected loop order')
-    gates = {loop: verify_gate(loop) for loop in selected}
+    gates = {loop: verify_gate(loop) for loop in dependencies}
     out.mkdir(parents=True)
     executions = []
     flags = ['-B'] + (['-O'] if args.optimized else [])
@@ -86,7 +91,7 @@ def main():
                 raise ValueError('execution has no evidence check: ' + name)
             executions.append({'loop':loop,'task':name,'status':'passed','comparisons':comparisons})
         verify_gate(loop)
-    result = {'status':'passed','loops_replayed':list(selected),'optimized':args.optimized,'repeat_counting':'optimized execution is not an additional research loop or independent formulation','executions':executions}
+    result = {'status':'passed','loops_replayed':list(selected),'reviewed_gate_dependencies':list(dependencies),'optimized':args.optimized,'repeat_counting':'optimized execution is not an additional research loop or independent formulation','executions':executions}
     (out / 'reproduction.json').write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps({'status':'passed','loops':len(selected),'executions':len(executions)}))
 

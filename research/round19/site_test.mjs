@@ -61,8 +61,11 @@ assert(home.includes('E★ and common α scale.'));
 assert(home.includes('spectral checkpoint'));
 assert(/accepted loop gates? recorded/.test(home));
 assert(home.includes('E★ &gt; 0'));
+assert(home.includes('α_min/E★ and α/E★'));
+assert(home.includes('Goal B records α/E★ = 2'));
 assert(home.includes('λ_f/α'));
 assert(home.includes('κ'));
+assert(home.includes('not a regulator, physical time matching variable or Hamiltonian energy scale'));
 assert(home.includes('research/round19/advisor/contract-a1.json'));
 assert(home.includes('/blob/research/round19-paired/research/round19/advisor/contract-a1.json'));
 assert(!/\b100%\b|progress meter/i.test(home));
@@ -94,6 +97,21 @@ assert(b1State === 'accepted' ? b1.includes('b1-gate.json') : b1.includes('B1 is
 assert(b1.includes('contract-b1.json'));
 assert(b1.includes('strict-cutoff'));
 
+const b2 = ctx.ResearchObservatory.render('paired-b2');
+assert(b2.includes('b2-gate.json'));
+assert(b2.includes('validation-b2.json'));
+assert(b2.includes('26 checks'));
+assert(b2.includes('R(r) = [9 − 13r − sqrt(100r² − 54r + 9)]/2'));
+assert(b2.includes('(33 − 6√5)α/16'));
+assert(b2.includes('19α/32'));
+assert(b2.includes('(30 − 2√87)/23'));
+assert(b2.includes('not a physical failure'));
+assert(!b2.includes('Clay mass gap result'));
+const c1 = ctx.ResearchObservatory.render('paired-c1');
+assert(c1.includes('contract-c1.json'));
+assert(c1.includes('Static κ') || c1.includes('static'));
+assert(c1.includes('no C1 advisor gate is accepted'));
+
 const review = ctx.ResearchObservatory.render('paired-review');
 assert(review.includes('Frozen contracts and controls'));
 assert(review.includes('Advisor gates'));
@@ -112,12 +130,20 @@ assert(ctx.ResearchObservatory.render('review17-home').includes('Historical Roun
 assert(ctx.ResearchObservatory.render('__proto__').includes('Research page not found'));
 
 assert.equal(JSON.stringify(data.loops.map(x=>x.id)), JSON.stringify(['A1','A2','B1','B2','C1','C2']));
-assert(data.loops.filter(x=>x.state === 'accepted').length <= 6);
+const acceptedLoopIds = data.loops.filter(x=>x.state === 'accepted').map(x=>x.id);
+assert.equal(JSON.stringify(acceptedLoopIds), JSON.stringify(['A1','A2','B1','B2']));
+assert.equal(data.meta.accepted_loop_count, 4);
+assert(data.meta.summary.includes('4 of six Round19 loop gates are accepted'));
+assert.equal(data.loops.find(x=>x.id === 'C1')?.state, 'running');
 assert(data.evidence.length >= 4);
 assert(data.evidence.every(x => ['pending','running','accepted','limited','rejected'].includes(x.state)));
-assert(data.exception_ledger.entries.length >= 6);
+assert(data.exception_ledger.entries.length >= 10);
 assert(data.exception_ledger.entries.filter(x => x.loop === 'B1').every(x => x.status && x.evidence.length));
 assert(data.evidence.find(x => x.key === 'forward-a1-results')?.state === 'accepted');
+assert.equal(data.evidence.find(x => x.key === 'gate-b2')?.state, 'accepted');
+assert.equal(data.evidence.find(x => x.key === 'gate-b2')?.hashes_ok, true);
+assert.equal(data.evidence.find(x => x.key === 'gate-b2')?.inventory_complete, true);
+assert.equal(data.evidence.find(x => x.key === 'validation-b2')?.state, 'accepted');
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('missing required accepted-gate inventory item'));
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('mathematical_result'));
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('position=(u,side)'));
@@ -165,6 +191,7 @@ for (const route of routes) {
 overviewCtx.location.hash = '#research/paired-review';
 for (const fn of overviewEvents.hashchange ?? []) fn();
 assert(overviewMain.innerHTML.includes('Exception ledger'));
+assert(overviewMain.innerHTML.includes('validation-b2.json'));
 assert(overviewMain.innerHTML.includes('Static κ; physical matching open') || overviewMain.innerHTML.includes('projector-dependent-cross-gram'));
 
 overviewCtx.location.hash = '#research/review18-home';

@@ -1,0 +1,436 @@
+{
+  "admission_failures": [],
+  "checks": [
+    {
+      "name": "positive E_star and alpha/E_star=2 are declared",
+      "passed": true,
+      "scale": {
+        "E_star": "positive symbolic physical energy reference",
+        "alpha": "positive Hamiltonian coefficient",
+        "alpha_over_E_star": "2",
+        "fibonacci_labels": "organizing analogy only",
+        "kappa": "absent",
+        "lambda_f_over_alpha": "box radius r is certified separately",
+        "strict_cutoff_over_E_star": "12"
+      }
+    },
+    {
+      "b1_inputs": {
+        "PminusOmega_dimension": 47,
+        "Q_threshold_over_alpha": "6",
+        "b1_forward_check_sha256": "e3410b3955be695c8ffbdf8062b5904fe9d5be3612c437678574670f5e148f4d",
+        "b1_forward_cross_gram_sha256": "387344ba4108afcf32e21a89a0aff023abc3f8134f1767008a9acd0b959bec33",
+        "b1_forward_results_sha256": "792f2d43ab72de2779a4d4fb6505bb221323497da561e482b2033ac16c6bbde4",
+        "b1_gate_sha256": "eaf3604ffa2aa651d4d3672e83c89b5e1722ae0c087d266df5d87d36c843c370",
+        "projector_dimension": 48
+      },
+      "name": "B1 source bindings use accepted 48-channel exact Gram inputs",
+      "passed": true
+    },
+    {
+      "block_envelope": {
+        "H0_energy_counts_over_alpha": {
+          "3": 11,
+          "9/2": 36
+        },
+        "R_dimension": 47,
+        "compressed_pvp_RR_nonzero_count": 208,
+        "max_compressed_pvp_abs_row_sum": "2",
+        "max_exact_gram_abs_row_sum": "19/4",
+        "projector_dimension": 48
+      },
+      "name": "block envelope aggregate fields match independent exact rows",
+      "passed": true
+    },
+    {
+      "name": "full 47-row envelope table matches by canonical channel mask",
+      "passed": true,
+      "row_count": 47
+    },
+    {
+      "entry_count": 208,
+      "name": "compressed PVP_RR ledger matches by canonical row/column/face masks",
+      "passed": true
+    },
+    {
+      "expected": {
+        "1/2": {
+          "E0_upper": "0",
+          "E1_exact": "(5/2-sqrt(7))/2",
+          "a": "2",
+          "d": "1/2",
+          "determinant": "-3/16",
+          "discriminant": "7",
+          "positive": false,
+          "r": "1/2",
+          "trace": "5/2",
+          "w": "19/16"
+        },
+        "1/8": {
+          "E0_upper": "0",
+          "E1_exact": "(59/8-sqrt(61/16))/2",
+          "a": "11/4",
+          "d": "37/8",
+          "determinant": "3237/256",
+          "discriminant": "61/16",
+          "positive": true,
+          "r": "1/8",
+          "trace": "59/8",
+          "w": "19/256"
+        },
+        "3/8": {
+          "E0_upper": "0",
+          "E1_exact": "(33/8-sqrt(45/16))/2",
+          "a": "9/4",
+          "d": "15/8",
+          "determinant": "909/256",
+          "discriminant": "45/16",
+          "positive": true,
+          "r": "3/8",
+          "trace": "33/8",
+          "w": "171/256"
+        },
+        "7/16": {
+          "E0_upper": "0",
+          "E1_exact": "19/32",
+          "a": "17/8",
+          "d": "19/16",
+          "determinant": "1653/1024",
+          "discriminant": "289/64",
+          "positive": true,
+          "r": "7/16",
+          "trace": "53/16",
+          "w": "931/1024"
+        }
+      },
+      "name": "exact certificates match for r=1/8, 3/8, 7/16 and failed 1/2",
+      "passed": true,
+      "producer": {
+        "1/2": {
+          "E0_upper": "0",
+          "E1_exact": "(5/2-sqrt(7))/2",
+          "a": "2",
+          "d": "1/2",
+          "determinant": "-3/16",
+          "discriminant": "7",
+          "positive": false,
+          "r": "1/2",
+          "trace": "5/2",
+          "w": "19/16"
+        },
+        "1/8": {
+          "E0_upper": "0",
+          "E1_exact": "(59/8-sqrt(61/16))/2",
+          "a": "11/4",
+          "d": "37/8",
+          "determinant": "3237/256",
+          "discriminant": "61/16",
+          "positive": true,
+          "r": "1/8",
+          "trace": "59/8",
+          "w": "19/256"
+        },
+        "3/8": {
+          "E0_upper": "0",
+          "E1_exact": "(33/8-sqrt(45/16))/2",
+          "a": "9/4",
+          "d": "15/8",
+          "determinant": "909/256",
+          "discriminant": "45/16",
+          "positive": true,
+          "r": "3/8",
+          "trace": "33/8",
+          "w": "171/256"
+        },
+        "7/16": {
+          "E0_upper": "0",
+          "E1_exact": "19/32",
+          "a": "17/8",
+          "d": "19/16",
+          "determinant": "1653/1024",
+          "discriminant": "289/64",
+          "positive": true,
+          "r": "7/16",
+          "trace": "53/16",
+          "w": "931/1024"
+        }
+      }
+    },
+    {
+      "formula": {
+        "a_r_over_alpha": "3-2r",
+        "d_r_over_alpha": "6-11r",
+        "determinant_condition": "18-45r+69r^2/4>0",
+        "schur_lower_R_r_over_alpha": "(9-13r-sqrt(100r^2-54r+9))/2",
+        "w_r_over_alpha_squared": "19r^2/4"
+      },
+      "name": "parameter inequality and formula match independent envelope",
+      "passed": true,
+      "range": "0<=r<(30-2sqrt(87))/23"
+    },
+    {
+      "name": "E1 lower, E0 upper and gap direction are separate",
+      "passed": true
+    },
+    {
+      "name": "source manifest binds required source and output files",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "block_projector_levels"
+      ],
+      "name": "mutation rejects old_12_channel_projector",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "block_projector_levels"
+      ],
+      "name": "mutation rejects constant_3alpha_block_shortcut",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "compressed_pvp_RR"
+      ],
+      "name": "mutation rejects omit_face_six_or_six_six_PVP_entry",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "compressed_pvp_RR"
+      ],
+      "name": "mutation rejects change_PVP_coefficient",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "block_envelope:max_exact_gram_abs_row_sum"
+      ],
+      "name": "mutation rejects wrong_cross_factor",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "certificates"
+      ],
+      "name": "mutation rejects claim_round18_benchmark_without_rederived_certificate",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "separate_E1_E0_gap_direction"
+      ],
+      "name": "mutation rejects sample_Ritz_gap_replaces_minmax",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "mutation rejects zero_E_star",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "mutation rejects kappa_as_E_star",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "mutation rejects fibonacci_as_E_star",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "separate_E1_E0_gap_direction"
+      ],
+      "name": "mutation rejects E1_E0_sign_error",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "row_envelopes"
+      ],
+      "name": "mutation rejects delete_row_envelope_cell",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "certificates"
+      ],
+      "name": "mutation rejects misstate_7_16_bound",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "certificates"
+      ],
+      "name": "mutation rejects misstate_half_as_positive",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "parameter_range"
+      ],
+      "name": "mutation rejects delete_parameter_range",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_source_entry:check.py"
+      ],
+      "name": "mutation rejects manifest_missing_check_hash",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_output_entry:results.json"
+      ],
+      "name": "mutation rejects manifest_missing_results_output",
+      "passed": true
+    }
+  ],
+  "checks_count": 26,
+  "independent_results_sha256": "fb7c63566c508c74a9c07d84739c53932884c35ca79e396644154d5a02ce9797",
+  "mutation_controls": [
+    {
+      "detected_failures": [
+        "block_projector_levels"
+      ],
+      "name": "old_12_channel_projector",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "block_projector_levels"
+      ],
+      "name": "constant_3alpha_block_shortcut",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "compressed_pvp_RR"
+      ],
+      "name": "omit_face_six_or_six_six_PVP_entry",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "compressed_pvp_RR"
+      ],
+      "name": "change_PVP_coefficient",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "block_envelope:max_exact_gram_abs_row_sum"
+      ],
+      "name": "wrong_cross_factor",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "certificates"
+      ],
+      "name": "claim_round18_benchmark_without_rederived_certificate",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "separate_E1_E0_gap_direction"
+      ],
+      "name": "sample_Ritz_gap_replaces_minmax",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "zero_E_star",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "kappa_as_E_star",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "fibonacci_as_E_star",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "separate_E1_E0_gap_direction"
+      ],
+      "name": "E1_E0_sign_error",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "row_envelopes"
+      ],
+      "name": "delete_row_envelope_cell",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "certificates"
+      ],
+      "name": "misstate_7_16_bound",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "certificates"
+      ],
+      "name": "misstate_half_as_positive",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "parameter_range"
+      ],
+      "name": "delete_parameter_range",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_source_entry:check.py"
+      ],
+      "name": "manifest_missing_check_hash",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_output_entry:results.json"
+      ],
+      "name": "manifest_missing_results_output",
+      "passed": true
+    }
+  ],
+  "producer_block_envelopes_sha256": "c2210dc4b1772954e1bdf39f92f8374c7ffa238ef5ed210a06ded174a263fb80",
+  "producer_certificates_sha256": "4400f28fa848fe4f1b39f9d69149fa88ebe66aa4e74aefbefd9e5656d902835e",
+  "producer_evidence": "/workspace/scratch/544697acf6a6/yang_mills_workbench/research/round19/forward/b2/output",
+  "producer_pvp_rr_sha256": "f79ab1f147975e331be21dbef38f3bb39462d67580358e3506edf5088a46827c",
+  "producer_results_sha256": "0e13e1ffb50c05b47260d3a6c830a6126b0286ff5771b98872f1cb47f888f0a5",
+  "producer_source": "/workspace/scratch/544697acf6a6/yang_mills_workbench/research/round19/forward/b2",
+  "reported_bounds": {
+    "r_1_2_positive": false,
+    "r_1_8_E1_lower": "(59/8-sqrt(61/16))/2",
+    "r_3_8_E1_lower": "(33/8-sqrt(45/16))/2",
+    "r_7_16_E1_lower": "19/32"
+  },
+  "schema": "ym19-backward-b2-comparison-v2",
+  "status": "accepted"
+}

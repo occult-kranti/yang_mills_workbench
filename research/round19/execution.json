@@ -176,6 +176,68 @@
           ]
         }
       ]
+    },
+    "b2": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/b2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/b2/output",
+          "identical_files": [
+            "results.json",
+            "block-envelopes.json",
+            "certificates.json",
+            "compressed-pvp-RR.json",
+            "block-certificate.json",
+            "pvp-linear.json",
+            "controls.json",
+            "row-envelopes.csv",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/b2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/b2/output",
+          "identical_files": [
+            "results.json",
+            "block-certificate.json",
+            "pvp-linear.json",
+            "row-envelopes.json",
+            "source-manifest.json",
+            "manifest.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/b2/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/b2/check.py",
+            "--evidence",
+            "{run_root}/b2/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
     }
   }
 }

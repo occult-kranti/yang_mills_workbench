@@ -61,3 +61,6 @@ B1 is accepted in `advisor/b1-gate.json` after the final scale-reference compara
 Accepted B1 result: complete 48-dimensional strict `E_el < 6 alpha` physical projector on the actual two-cube graph and exact 48-channel `W^*W=PV^2P-(PVP)^2` cross Gram with 867 ordered quadratic coefficients. Threshold channels at `6 alpha` are excluded; 99 support/label assignments give 107 physical threshold channels after intertwiners.
 
 B2 is frozen in `advisor/contract-b2.json`. It targets a continuous signed box `|lambda_f| <= alpha/8` using the accepted B1 ordered Gram, with separate `E1` lower and `E0` upper. The old Round18 `r=3/8` and `R*(3/8)=0.11876245` remain benchmarks only until rederived with the enlarged 48-channel projector.
+## 2026-09-13 B2 gate and C1 contract
+
+B2 accepted after final forward/reverse comparison: finite two-cube continuous coefficient-box certificate with primary r=1/8, rederived r=3/8 benchmark, 7/16 positive control and 1/2 insufficient control. Advisor gate: `advisor/b2-gate.json`. C1 frozen as a static U-V-W chain integral contract with physical scale matching explicitly open: `advisor/contract-c1.json`.
