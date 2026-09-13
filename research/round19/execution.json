@@ -1,0 +1,66 @@
+{
+  "schema": "ym19-execution-v1",
+  "order": [
+    "a1",
+    "a2",
+    "b1",
+    "b2",
+    "c1",
+    "c2"
+  ],
+  "loops": {
+    "a1": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/a1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/a1/output",
+          "identical_files": [
+            "results.json",
+            "component_templates.json",
+            "controls.json",
+            "phase_counts.csv",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/a1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/a1/output",
+          "identical_files": [
+            "results.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/a1/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/a1/check.py",
+            "--evidence",
+            "{run_root}/a1/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

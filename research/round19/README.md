@@ -6,7 +6,7 @@ This cycle authorizes three goals with two sequential research loops each, plus 
 
 ## Initial milestone
 
-The [advisor review](advisor/initial-review.md) and [frozen A1 contract](advisor/contract-a1.json) recover the preceding Goal A pair and revise the plan. At this milestone, no new research loop has passed its gate.
+The [advisor review](advisor/initial-review.md) and [frozen A1 contract](advisor/contract-a1.json) recover the preceding Goal A pair and revise the plan. A1 has now passed its [advisor gate](advisor/a1-gate.json): all six reachable clipped component types have a full-link lower estimate of at least alpha/8. Both independent implementations cover 44 boundary fixtures and reconstruct the signed bounds. The first failed comparison and manifest repair remain in the history. A2 is selected from this result and is running under its [separate product-representation contract](advisor/contract-a2.json). One of six new research loops is accepted.
 
 | Goal | Loop 1 target | Loop 2 selection condition |
 |---|---|---|
@@ -27,3 +27,13 @@ Fibonacci geometry has no admitted physical role in this cycle. Its relevance re
 The Paired Physics Research skill was created, validated and applied to the advisor's actual A1 contract. Exact snapshots are retained in `methods/` for reproduction. The initial contract records the creation-time skill paths as provenance; `methods/external-dependencies.json` maps them to included copies with identical bytes.
 
 [Round18 evidence and reproduction](../round18/README.md) remain preserved. New gates and commands will be added as each loop completes; planned work is never counted as executed.
+
+## Reproduce the accepted A1 milestone
+
+From the repository root, use a new output directory outside this round:
+
+```bash
+python3 research/round19/reproduce.py --through a1 --output /absolute/path/to/new-a1-results
+```
+
+This executes the forward calculation, independent reconstruction and comparison on fresh outputs, after checking the reviewed inventory. The exact calculations use Python standard-library arithmetic.

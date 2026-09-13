@@ -1,0 +1,79 @@
+{
+  "accept_reject_conditions": {
+    "accept": "all local signed types pass, canonical counts match, E_star is positive and separate, all four x-phases are enumerated, source hash is bound, and no continuum claim is made",
+    "current_reject_reason": "producer evidence appears to be the pre-contract proposal and lacks the frozen v1.1 E_star field and four-phase finite evidence"
+  },
+  "checks": [
+    {
+      "evidence": "research/round19/forward/output/clipped_restrictions_results.json",
+      "name": "producer evidence is JSON object",
+      "passed": true
+    },
+    {
+      "name": "producer source hash syntax is sha256",
+      "passed": true
+    },
+    {
+      "actual": "d771357bc3bbf1564277cef2c20be1ef6e5ece409e7848905710bc90e57a6800",
+      "declared": "d771357bc3bbf1564277cef2c20be1ef6e5ece409e7848905710bc90e57a6800",
+      "name": "producer source hash matches evidence",
+      "passed": true
+    },
+    {
+      "name": "producer local signed cases cover six contiguous component types",
+      "passed": true,
+      "roles_seen": [
+        "L",
+        "LM",
+        "LMR",
+        "M",
+        "MR",
+        "R"
+      ]
+    },
+    {
+      "name": "producer local signed case count is 54",
+      "passed": true
+    },
+    {
+      "name": "all producer signed cases pass alpha/8 target",
+      "passed": true
+    },
+    {
+      "name": "producer rejects non-contiguous clipped types",
+      "passed": true
+    },
+    {
+      "mismatches": [],
+      "name": "producer canonical origin n=2..12 counts match independent enumeration",
+      "passed": true
+    },
+    {
+      "name": "producer declares positive E_star separate from alpha and ratios",
+      "passed": false,
+      "reason": "required by frozen ym19-a1-contract-v1.1"
+    },
+    {
+      "name": "producer finite evidence enumerates all four x phases",
+      "passed": false,
+      "reason": "canonical origin boxes alone do not satisfy the v1.1 finite-enumeration gate"
+    },
+    {
+      "name": "producer records stable coefficient witness for face (xy,4,0,0)",
+      "passed": true
+    },
+    {
+      "name": "independent verifier result itself passed",
+      "own_sha256": "82c0c1ab99e8af6e0bdd171c701c005b7d5a3477b6f8b815915b93675ab0901d",
+      "passed": true
+    }
+  ],
+  "evidence": "research/round19/forward/output/clipped_restrictions_results.json",
+  "producer": "research/round19/forward/clipped_restrictions.py",
+  "producer_hashes": {
+    "research/round19/forward/clipped_restrictions.py": "d771357bc3bbf1564277cef2c20be1ef6e5ece409e7848905710bc90e57a6800"
+  },
+  "schema": "ym19-backward-a1-comparison-v1",
+  "scope": "source/evidence comparison only; producer code is read as bytes and never imported",
+  "status": "producer-incomplete-under-frozen-v1.1"
+}

@@ -1,0 +1,133 @@
+{
+  "accept_reject_conditions": {
+    "accept": "exact positive scale fields, 44 unique phase fixtures with matching counts/edges/witnesses, independently recomputed Fraction local bounds, stable restriction witness, mutation controls and source provenance all pass",
+    "reject": "any forged pass Boolean, altered rational bound, missing phase, duplicate fixture, zero E_star or unbound source blocks acceptance"
+  },
+  "checks": [
+    {
+      "evidence": "research/round19/forward/a1/output/results.json",
+      "kind": "provenance",
+      "name": "producer evidence is JSON object",
+      "passed": true
+    },
+    {
+      "kind": "provenance",
+      "name": "producer source hash syntax is sha256",
+      "passed": true
+    },
+    {
+      "actual": "00094b5779eb61613b52397885710b1634a325497874bfcf767a0da31bb56f9d",
+      "declared": "00094b5779eb61613b52397885710b1634a325497874bfcf767a0da31bb56f9d",
+      "kind": "provenance",
+      "name": "producer source hash matches supplied source bytes",
+      "passed": true
+    },
+    {
+      "kind": "provenance",
+      "manifest": "research/round19/forward/a1/output/source-manifest.json",
+      "name": "producer source manifest matches source files and output files",
+      "passed": true,
+      "problems": [],
+      "sha256": "acf9cc1e4838713c3ad912c6f0c8cb54b0804ccd2fb59feef64428520f603304"
+    },
+    {
+      "E_star": "positive symbolic physical energy reference",
+      "alpha_min_over_E_star": "1",
+      "alpha_over_E_star": "2",
+      "fields_seen": [
+        "E_star",
+        "alpha_min_over_E_star",
+        "alpha_over_E_star",
+        "gauge_group",
+        "gauss_law",
+        "hamiltonian",
+        "hilbert_space",
+        "kappa",
+        "lambda_left_over_alpha_bound",
+        "lambda_right_over_alpha_bound",
+        "lattice_spacing_label",
+        "mu_bridge_over_alpha_bound",
+        "scope"
+      ],
+      "kind": "mathematics",
+      "name": "exact positive E_star and alpha_over_E_star are declared separately",
+      "passed": true
+    },
+    {
+      "actual_count": 54,
+      "declared_count": 54,
+      "error": null,
+      "kind": "mathematics",
+      "name": "signed cases cover exactly recomputable contiguous component roles",
+      "passed": true,
+      "roles_seen": [
+        "L",
+        "LM",
+        "LMR",
+        "M",
+        "MR",
+        "R"
+      ]
+    },
+    {
+      "kind": "mathematics",
+      "name": "every signed local bound matches independent Fraction arithmetic",
+      "passed": true
+    },
+    {
+      "explicit_control_present": false,
+      "kind": "mathematics",
+      "name": "non-contiguous clipped types are not admitted",
+      "passed": true
+    },
+    {
+      "count": 44,
+      "duplicates": 0,
+      "kind": "mathematics",
+      "missing": [],
+      "name": "finite phase fixtures cover exactly n=2..12 times four x phases",
+      "passed": true
+    },
+    {
+      "errors": [],
+      "kind": "mathematics",
+      "name": "phase fixture counts, edge counts and witness counts match independent enumeration",
+      "passed": true
+    },
+    {
+      "control": true,
+      "direct": false,
+      "kind": "mathematics",
+      "name": "stable restriction witness for face (xy,4,0,0) is recorded",
+      "passed": true
+    },
+    {
+      "kind": "mathematics",
+      "name": "independent verifier result itself passed",
+      "passed": true
+    },
+    {
+      "kind": "mutation-control",
+      "name": "altered signed lower bound is rejected by recomputation",
+      "passed": true
+    },
+    {
+      "kind": "mutation-control",
+      "name": "missing phase fixture is rejected by exact coverage gate",
+      "passed": true
+    }
+  ],
+  "evidence": "research/round19/forward/a1/output/results.json",
+  "producer": "research/round19/forward/a1/check.py",
+  "producer_hashes": {
+    "research/round19/forward/a1/check.py": "00094b5779eb61613b52397885710b1634a325497874bfcf767a0da31bb56f9d"
+  },
+  "schema": "ym19-backward-a1-comparison-v2",
+  "scope": "provenance checks and mathematical comparison are distinct; producer source/evidence are read as bytes and producer code is not imported",
+  "status": "accepted",
+  "summary": {
+    "mathematics_failures": 0,
+    "provenance_failures": 0,
+    "source_hashes_do_not_admit_json_by_themselves": true
+  }
+}

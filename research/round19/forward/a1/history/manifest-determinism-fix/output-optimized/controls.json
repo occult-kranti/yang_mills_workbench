@@ -1,0 +1,76 @@
+[
+  {
+    "control": "reject_zero_E_star_or_alpha_normalization",
+    "passed": true,
+    "reason": "common scale requires alpha/E_star >= alpha_min/E_star > 0"
+  },
+  {
+    "control": "reject_kappa_as_energy_reference",
+    "passed": true,
+    "reason": "A1 requires the symbolic positive physical energy reference E_star"
+  },
+  {
+    "complete_strip_only_B6_ratio": "1/24576",
+    "complete_strip_only_B8_ratio": "1/2",
+    "control": "reject_complete_strip_only_coefficient_reclassification",
+    "face": [
+      0,
+      1,
+      4,
+      0,
+      0
+    ],
+    "literal_B6_ratio": "1/2",
+    "literal_B8_ratio": "1/2",
+    "passed": true
+  },
+  {
+    "control": "detect_missing_reachable_component_left-end",
+    "passed": true,
+    "withheld_boundary_phase_example": {
+      "component_counts": {
+        "left-end": 2
+      },
+      "n": 2,
+      "x_phase_offset": 0
+    }
+  },
+  {
+    "control": "detect_missing_reachable_component_left-end+bridge",
+    "passed": true,
+    "withheld_boundary_phase_example": {
+      "component_counts": {
+        "left-end+bridge": 3
+      },
+      "n": 3,
+      "x_phase_offset": 0
+    }
+  },
+  {
+    "control": "detect_missing_reachable_component_bridge+right-end",
+    "passed": true,
+    "withheld_boundary_phase_example": {
+      "component_counts": {
+        "bridge+right-end": 3
+      },
+      "n": 3,
+      "x_phase_offset": 1
+    }
+  },
+  {
+    "control": "block_one_norm_bound_when_free_link_zero_mean_is_withdrawn",
+    "generic_two_norm_fallback_over_alpha": "-1/2",
+    "meaning": "without the zero-reference-expectation premise, the sharper alpha/8 LM claim is not admitted",
+    "passed": true
+  },
+  {
+    "control": "block_common_physical_bound_when_alpha_min_over_E_star_is_withdrawn",
+    "meaning": "local alpha-scaled formulas remain, but no common E_star-scaled lower bound is output without alpha_min/E_star>0",
+    "passed": true
+  },
+  {
+    "control": "reject_altered_signed_face_word",
+    "meaning": "canonical signed plaquette word is source-bound in component templates",
+    "passed": true
+  }
+]
