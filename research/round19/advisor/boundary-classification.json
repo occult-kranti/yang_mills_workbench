@@ -1,0 +1,1490 @@
+{
+  "schema": "ym19-advisor-boundary-classification-v1",
+  "purpose": "preliminary exact combinatorial classification for Round19 A1 contract; not a scientific gate",
+  "literal_assignment": "xy faces are locally labelled left-end, bridge, right-end by x mod 4 in {0,1,2} on even y rows; finite boxes inherit coefficients by restriction instead of waiting for complete three-face strips",
+  "component_obligations": [
+    {
+      "type": "single face",
+      "possible_labels": [
+        "left-end",
+        "bridge",
+        "right-end"
+      ],
+      "safe_free_bound": "3alpha/4 - max(alpha/2, alpha/8) >= alpha/4 for end faces and >=5alpha/8 for bridge-only"
+    },
+    {
+      "type": "two contiguous faces",
+      "possible_labels": [
+        "left-end+bridge",
+        "bridge+right-end"
+      ],
+      "safe_free_bound": "3alpha/4 - (alpha/2+alpha/8) = alpha/8"
+    },
+    {
+      "type": "three contiguous faces",
+      "possible_labels": [
+        "left-end+bridge+right-end"
+      ],
+      "required_bound": "reuse/reprove dressed-bridge A1 bound alpha/8 with actual untouched bridge link"
+    }
+  ],
+  "samples_n_2_to_12": [
+    {
+      "n": 2,
+      "even_y_z_rows": 2,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end": 2
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "bridge"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge": 2
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 2
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [],
+          "finite_box_component_counts": {}
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "even_y_z_rows": 3,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge": 3
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 3
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 3
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end": 3
+          }
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "even_y_z_rows": 8,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 8
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 8
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 8,
+            "left-end": 8
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge": 8
+          }
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "even_y_z_rows": 10,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 10
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 10,
+            "left-end": 10
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 10,
+            "left-end+bridge": 10
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 10
+          }
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "even_y_z_rows": 18,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                4
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 18,
+            "left-end": 18
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 18,
+            "left-end+bridge": 18
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 18,
+            "left-end+bridge+right-end": 18
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 18
+          }
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "even_y_z_rows": 21,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                4,
+                5
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 21,
+            "left-end+bridge": 21
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3,
+                4,
+                5
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 21,
+            "left-end+bridge+right-end": 21
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 21,
+            "left-end+bridge+right-end": 21
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                5
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 21,
+            "left-end": 21
+          }
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "even_y_z_rows": 32,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                4,
+                5,
+                6
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 64
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3,
+                4,
+                5
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 32,
+            "left-end+bridge+right-end": 32
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                6
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 32,
+            "left-end+bridge+right-end": 32,
+            "left-end": 32
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                5,
+                6
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 32,
+            "left-end+bridge": 32
+          }
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "even_y_z_rows": 36,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                4,
+                5,
+                6
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 72
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3,
+                4,
+                5
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                7
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 36,
+            "left-end+bridge+right-end": 36,
+            "left-end": 36
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                6,
+                7
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 36,
+            "left-end+bridge+right-end": 36,
+            "left-end+bridge": 36
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                5,
+                6,
+                7
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 72
+          }
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "even_y_z_rows": 50,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                4,
+                5,
+                6
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                8
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 100,
+            "left-end": 50
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3,
+                4,
+                5
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                7,
+                8
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 50,
+            "left-end+bridge+right-end": 50,
+            "left-end+bridge": 50
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                6,
+                7,
+                8
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 50,
+            "left-end+bridge+right-end": 100
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                5,
+                6,
+                7
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 100
+          }
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "even_y_z_rows": 55,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                4,
+                5,
+                6
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                8,
+                9
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 110,
+            "left-end+bridge": 55
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3,
+                4,
+                5
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                7,
+                8,
+                9
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 55,
+            "left-end+bridge+right-end": 110
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                6,
+                7,
+                8
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 55,
+            "left-end+bridge+right-end": 110
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                5,
+                6,
+                7
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                9
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 110,
+            "left-end": 55
+          }
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "even_y_z_rows": 72,
+      "phase_cases": [
+        {
+          "x_phase_offset": 0,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1,
+                2
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                4,
+                5,
+                6
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                8,
+                9,
+                10
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 216
+          }
+        },
+        {
+          "x_phase_offset": 1,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0,
+                1
+              ],
+              "labels": [
+                "bridge",
+                "right-end"
+              ],
+              "length": 2
+            },
+            {
+              "x_anchors": [
+                3,
+                4,
+                5
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                7,
+                8,
+                9
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            }
+          ],
+          "finite_box_component_counts": {
+            "bridge+right-end": 72,
+            "left-end+bridge+right-end": 144
+          }
+        },
+        {
+          "x_phase_offset": 2,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                0
+              ],
+              "labels": [
+                "right-end"
+              ],
+              "length": 1
+            },
+            {
+              "x_anchors": [
+                2,
+                3,
+                4
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                6,
+                7,
+                8
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                10
+              ],
+              "labels": [
+                "left-end"
+              ],
+              "length": 1
+            }
+          ],
+          "finite_box_component_counts": {
+            "right-end": 72,
+            "left-end+bridge+right-end": 144,
+            "left-end": 72
+          }
+        },
+        {
+          "x_phase_offset": 3,
+          "one_row_runs": [
+            {
+              "x_anchors": [
+                1,
+                2,
+                3
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                5,
+                6,
+                7
+              ],
+              "labels": [
+                "left-end",
+                "bridge",
+                "right-end"
+              ],
+              "length": 3
+            },
+            {
+              "x_anchors": [
+                9,
+                10
+              ],
+              "labels": [
+                "left-end",
+                "bridge"
+              ],
+              "length": 2
+            }
+          ],
+          "finite_box_component_counts": {
+            "left-end+bridge+right-end": 144,
+            "left-end+bridge": 72
+          }
+        }
+      ]
+    }
+  ]
+}

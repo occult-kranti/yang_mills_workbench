@@ -1,0 +1,133 @@
+{
+  "schema": "ym19-a1-contract-v1.1",
+  "status": "frozen-by-advisor-after-paired-physics-skill-review",
+  "starting_commit": "b9d32afb9e74c91477fd8914411eba347430e606",
+  "round19_plan": {
+    "roles": "root integration with delegated advisor-skeptic function, plus forward derivation and independent reverse/skeptic reconstruction roles as assigned; count advisory reviews separately from scientific research loops",
+    "authorized_scientific_loops": [
+      "A1",
+      "A2",
+      "B1",
+      "B2",
+      "C1",
+      "C2"
+    ],
+    "advisor_decisions": [
+      "initial review before A1",
+      "post-Goal-A review after A1 and A2"
+    ],
+    "sequential_gate_rule": "only A1 is frozen now; A2 is selected after A1 evidence; B/C remain provisional until the post-Goal-A advisor decision; repeated execution of one implementation is not independent reconstruction"
+  },
+  "goal": "Goal A boundary-consistent local clusters and dense stability bridge",
+  "a1_question": "Can the strip-family boundary rule be replaced by literal restrictions of one fixed infinite coefficient assignment while preserving a uniform local full-link lower bound for every clipped component that appears in finite boxes?",
+  "physical_contract": {
+    "gauge_group": "SU(2)",
+    "hilbert_space": "untruncated L2 product Haar link space on finite open cubic subgraphs, with all-vertex Gauss law imposed only after the full-link ground/gap argument",
+    "hamiltonian": "H_N = alpha * sum_e C_e - sum_f lambda_f x_f, C_e=j(j+1), x_f=Tr(U_f)/2",
+    "units": "alpha, lambda_f, mu and E_star are physical energy coefficients; C_e and x_f are dimensionless; any physical family conclusion requires fixed local coefficients on overlaps and alpha/E_star bounded below by a declared positive value, equivalently alpha >= alpha_min > 0 when E_star is fixed",
+    "state": "finite-volume ground and first excitation of the full-link operator; no continuum or thermodynamic state is assumed",
+    "boundary": "finite boxes inherit all terms whose faces are present from one declared infinite local coefficient assignment; faces may be clipped into one-, two-, or three-face components",
+    "regulator": "finite open cubic graph only; no representation truncation, no continuum limit, no Euclidean kappa/time-generator matching",
+    "observable": "proved lower bound on the full-link gap and the induced Gauss-sector physical gap for the declared boundary-consistent local family",
+    "energy_reference": "Freeze one symbolic E_star > 0 for Round19 A1 spectral comparisons. Record alpha/E_star separately from every lambda/alpha or mu/alpha ratio, finite volume N and any lattice-spacing label. Reject E_star=0 normalization.",
+    "not_physical_energies": "static Euclidean kappa, Fibonacci/golden-ratio node labels, graph coordinates and presentation geometry do not define Hamiltonian energies, physical time or volume scaling without a separate matching equation and test"
+  },
+  "fixed_candidate_assignment": {
+    "selected_faces": "xy faces on even y rows with x phase 0,1,2 mod 4 carry left, bridge, right coefficients respectively; all other faces are omitted for A1 unless explicitly classified as a separate remainder in A2",
+    "coefficient_bounds": "|lambda_left|, |lambda_right| <= alpha/2 and |mu_bridge| <= alpha/8, with signs and zeros allowed",
+    "component_types_to_prove": [
+      "single selected face",
+      "two contiguous selected faces: left+bridge and bridge+right",
+      "full three-face strip"
+    ],
+    "common_local_target": "each component must have a full-link gap lower estimate at least alpha/8 under the same alpha and fixed local coefficients",
+    "scale_register": "A1 must output E_star, alpha/E_star, lambda_left/alpha, lambda_right/alpha, mu_bridge/alpha, finite graph extent/phase, and any lattice-spacing label as separate fields; kappa is absent from the A1 Hamiltonian contract."
+  },
+  "forward_loop_required_output": {
+    "owned_paths": "research/round19/forward/a1/",
+    "tasks": [
+      "derive the finite component bounds for every clipped component from the actual signed graph and full-link domains",
+      "prove the zero reference expectations from an actual free Haar link or use the generic two-norm fallback",
+      "enumerate finite boxes and phase offsets to show every inherited selected component is classified",
+      "produce exact fixtures and source manifest"
+    ],
+    "forbidden": [
+      "do not claim thermodynamic spectral convergence",
+      "do not replace fixed local coefficients with n-dependent complete-strip selection",
+      "do not identify Euclidean kappa with lambda/alpha"
+    ]
+  },
+  "backward_loop_required_output": {
+    "owned_paths": "research/round19/backward/a1/",
+    "tasks": [
+      "start from the desired nested-restriction conclusion and independently reconstruct the necessary coefficient consistency, component classification and gap inequalities",
+      "construct rejecting fixtures for n-dependent reclassification, missing clipped types, missing free-link zero mean and common-scale withdrawal",
+      "compare producer evidence without importing producer classification code"
+    ],
+    "forbidden": [
+      "do not certify by matching producer JSON alone",
+      "do not convert an insufficient lower estimate into a zero residual pass"
+    ]
+  },
+  "acceptance_tests": [
+    "A positive E_star is declared once; alpha/E_star is recorded independently of coupling ratios and finite volume. Any E_star=0 or tolerance-based normalization is rejected.",
+    "The infinite coefficient assignment is declared once and every finite coefficient is the literal restriction of it; a face present in two boxes has the same coefficient in both.",
+    "All one-face, two-face and three-face clipped components reachable by finite-box phase/side choices are classified with exact signed links and domains.",
+    "For each component type, the proof supplies a full-link gap lower estimate >= alpha/8 or explicitly blocks that type; Gauss-sector restriction is justified only after full-link uniqueness/invariance.",
+    "At least one exact finite enumeration covers n=2..12 and all four x-phase offsets, with a separate analytic argument for all n.",
+    "Independent verification uses different representation or graph construction and passes withheld boundary phases.",
+    "Normal and optimized executions produce identical semantic results and all accepted files are source-hash bound."
+  ],
+  "falsifying_controls": [
+    "Set E_star=0 or replace E_star by a static Euclidean kappa/tolerance/Fibonacci index; the spectral comparison must reject the run before any gap claim.",
+    "Round18-style complete-strip-only selection where f2:4,0,0 changes coefficient between n=6 and n=8 must be rejected as non-restriction.",
+    "Omit a one-face or two-face clipped component and require the verifier to find a reachable finite-box phase that is unclassified.",
+    "Remove the actual free-link Haar premise and require the sharper one-norm lower bound to block or fall back to the generic bound.",
+    "Withdraw alpha_min > 0 or let alpha vary without local coefficient convergence; any physical common-scale conclusion must block.",
+    "Alter one signed face word or use an outer-boundary-only graph; exact graph validation must fail.",
+    "Try to promote this local component result to a homogeneous dense, thermodynamic, continuum, or mass-gap theorem; route must remain open/blocked."
+  ],
+  "stop_condition": "Stop A1 after the smallest all-component classification and independent verifier comparison either prove the alpha/8 local bound for literal restrictions or identify a concrete component/premise where it fails. Do not expand to A2 compactness/spectral-passage work inside A1.",
+  "known_not_proved": [
+    "existence of a thermodynamic limiting dynamics/state",
+    "volume-uniform dense nondecaying homogeneous rotor stability",
+    "continuum Yang-Mills construction or Clay mass gap",
+    "physical role of the double-Fibonacci/common-scale analogy",
+    "physical significance of paired or double-Fibonacci expansion geometry without a declared held-out observable and comparison model"
+  ],
+  "advisor_preliminary_evidence": {
+    "boundary_classification": "research/round19/advisor/boundary-classification.json"
+  },
+  "source_hashes": {
+    ".codex/skills/qeg-research-advisor/SKILL.md": "dd56403f0c9b26c537332c290c5012e77d14ddf289a35dbf6917743ccb285644",
+    ".codex/skills/qeg-research-advisor/references/yang-mills-contract.md": "55257749e5fc0b98cbe055141dfbd6ca655e2df631f2df94fa63bca6090a8a8a",
+    ".codex/skills/qeg-research-advisor/references/two-loop-team.md": "52934d3fa3d4350ebecb5bb852734ae9c36ffc60cbd4f5365c7a69b63735d724",
+    ".codex/skills/qeg-research-advisor/references/dressed-complement-conditional.md": "71804753fc1639fca578372ad6a45acf6ebf131be517f006c96936220d0dd56f",
+    ".codex/skills/qeg-research-advisor/references/shared-face-contract.md": "7e2a4b9aca6982e36c1cb9c6f090473a3ea39295fe040b5f7d4de302aed479b5",
+    "research/round18/README.md": "17cb10f7818fbe0d9eeabcecf4d2318f25c3d1e695e5d398da1cb2bad8c924d9",
+    "research/round18/next-roadmap.md": "60cfd0eba2453b5159d58c788f099418de3b7207bfaeeaedb61a79e8c0f4ea06",
+    "research/round18/advisor/next-roadmap-supplement.md": "f8cf938f3b8568fbfa28b6e07b01ba8a0106ddecfd7970f8680ce862539b42aa",
+    "research/round18/advisor/a1-gate.json": "6a33c18d08a506adfe81a8b8bfe703856dc98183813bce160329287d0694f4ac",
+    "research/round18/advisor/a2-gate.json": "a3dbf18034db6044b98dcacda88d60d80851c1049a5014add3dc0de3a6904ff5",
+    "research/round18/advisor/post-a-gate.json": "fa166766d36945f42d6fae80d339b54304dfa837fd7b996dff93ab7873ed289c",
+    "research/round17/next-roadmap.md": "b489a603662f6cbad0cde8d0ca7948f4774c4d46c4c11cdca18cf38c2c21ea6c",
+    "research/round17/advisor/a1-gate.json": "7d27e2c4e4094ff5452fcfff2aeb5b451ea846923d9ee35c4a924860136684f9",
+    "research/round17/advisor/a2-gate.json": "a6d659a24c3f7b746b19a0b7086898552bc48ee811fd1ef10695df973291b602",
+    "/root/.codex/skills/remote-skills/paired-physics-research/SKILL.md": "8ba4bbb8cbc7dee2c6a8ab7e643863a7737e06eb6a8becb8eb16e9151e2b7b80",
+    "/root/.codex/skills/remote-skills/paired-physics-research/references/scale-and-exceptions.md": "a96d1ab5b367ab81f9e9f2767d5532aea6339150b7ed24cb798f70e6dd5bbdb4"
+  },
+  "decision_relevant_ambiguities_or_omissions": [
+    {
+      "issue": "The handoff named exactly three team members in places, while the current steering says the recorded arrangement is root integration plus delegated advisor and scientific roles.",
+      "decision": "The contract counts functions and reviews, not an exact active-agent count; A1 still requires independent forward and reverse evidence before acceptance."
+    },
+    {
+      "issue": "The pre-skill draft used alpha_min/common alpha language but did not explicitly freeze E_star.",
+      "decision": "A1 now freezes symbolic E_star > 0 and records alpha/E_star separately from lambda/alpha, mu/alpha, graph extent and any presentation geometry."
+    },
+    {
+      "issue": "The physical role of the double-Fibonacci geometry is not specified by an observable or competing model.",
+      "decision": "It is retained only as an organizing hypothesis; it cannot enter the Hamiltonian or acceptance gate."
+    }
+  ]
+}
