@@ -61,6 +61,60 @@
           ]
         }
       ]
+    },
+    "a2": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/a2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/a2/output",
+          "identical_files": [
+            "results.json",
+            "operator-theorem.json",
+            "representative-ledger.json",
+            "tail-fixtures.csv",
+            "controls.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/a2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/a2/output",
+          "identical_files": [
+            "results.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/a2/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/a2/check.py",
+            "--evidence",
+            "{run_root}/a2/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
     }
   }
 }

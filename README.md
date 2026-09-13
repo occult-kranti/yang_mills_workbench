@@ -8,9 +8,11 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current milestone:** six sequential research loops with **three scientific roles**, plus two advisor decisions. A1/A2 control dressed overlapping clusters and a specified growing inhomogeneous family with a common physical energy scale. B1/B2 classify the complete low-energy complement and prove a full finite-graph gap throughout a signed coefficient box. C1/C2 retain complete Gram coordinates and integrate an actual surrounding link with all six affected weights. The **homogeneous dense volume-uniform gap, full bulk integration and continuum Yang–Mills problem remain open**.
+**Current branch milestone — Round19:** Goal A's two sequential loops are accepted: boundary-consistent clipped clusters, followed by a direct infinite-product representation with a summable perturbation. Goal B now tests the complete strict-cutoff projector and exact cross Gram on the actual two-cube graph. Three goals, two loops each, are organized by opposed Fibonacci-style spirals, with independent forward derivation and reverse reconstruction meeting under a declared physical-scale contract. The geometry's physical relevance remains untested.
 
-[Six-loop home](https://occult-kranti.github.io/yang_mills_workbench/#research) · [finite spectral bound](https://occult-kranti.github.io/yang_mills_workbench/#research/next-spectrum) · [two-link integral](https://occult-kranti.github.io/yang_mills_workbench/#research/next-two-link) · [team and next roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/next-team). Detailed code, derivations and reproduction: [Round18 guide](research/round18/README.md).
+[Round19 evidence and reproduction](research/round19/README.md) · [standalone paired review](research/round19/overview.html) · [research branch](https://github.com/occult-kranti/yang_mills_workbench/tree/research/round19-paired).
+
+**Live website — Round18:** the preceding six-loop study remains deployed while Round19 is reviewed. [Six-loop home](https://occult-kranti.github.io/yang_mills_workbench/#research) · [Round18 guide](research/round18/README.md). Homogeneous dense volume-uniform stability, full bulk integration and continuum Yang–Mills remain open.
 
 Round17 remains available with the earlier sparse theorem, adjoint trial repair and equal-action/different-observable experiment. [Previous six-loop dashboard](https://occult-kranti.github.io/yang_mills_workbench/#research/review17-home).
 
@@ -60,7 +62,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Six-loop dressed, spectral and conditional study | `research/round18/` | Current inhomogeneous family, complete complement, signed finite gap box, sufficient Gram coordinates and six-weight two-link integral |
+| Paired forward derivation and reverse reconstruction | `research/round19/` | Current branch: accepted Goal A pair; B/C sequentially gated |
+| Six-loop dressed, spectral and conditional study | `research/round18/` | Deployed inhomogeneous family, complete complement, signed finite gap box, sufficient Gram coordinates and six-weight two-link integral |
 | Previous local, spectral and conditional study | `research/round17/` | Preserved sparse physical theorem, finite adjoint repair, complete four-cube tensor and matched common-variable experiment |
 | Shared-face subproblem, two loops and three roles | `research/round16/` | Previous eleven-face Haar contractions, exact changed-action comparison, physical energy-scale audit and independent checks |
 | Three revised goals, six research loops | `research/round15/` | Preserved interval cover, cube integral, finite physical spectral bounds, independent reviews and retained original uniform-threshold gap |
@@ -111,9 +114,9 @@ x=\tfrac12\operatorname{Tr}U,\quad y=\tfrac12\operatorname{Tr}V,\quad z=\tfrac12
 
 The third trace retains relative orientation lost by two separate loop traces. At a central element (`|x|=1` or `|y|=1`), `z=xy`; a relative-angle formula must not divide by a vanishing sine. Adding coordinates records existing configurations. Inserting an arbitrary mass or scalar would change the theory and cannot establish the pure Yang–Mills target.
 
-## Reproduce the current six-loop study
+## Reproduce the studies
 
-The [Round18 guide](research/round18/README.md) contains all six contracts, complete outputs, retained failures and the feedback roadmap. The [Round17 guide](research/round17/README.md) and [Round16 guide](research/round16/README.md) preserve the preceding studies. From the repository root:
+The [Round19 guide](research/round19/README.md) provides current branch reproduction. The [Round18 guide](research/round18/README.md) contains all six preceding contracts, complete outputs, retained failures and the feedback roadmap. The [Round17 guide](research/round17/README.md) and [Round16 guide](research/round16/README.md) preserve the preceding studies. From the repository root:
 
 ```bash
 python3 research/round18/reproduce.py --output /absolute/path/to/new-results

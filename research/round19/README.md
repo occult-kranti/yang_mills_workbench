@@ -4,10 +4,13 @@ Continuation of `main` at `b9d32afb9e74c91477fd8914411eba347430e606` (Round18). 
 
 This cycle authorizes three goals with two sequential research loops each, plus initial and post-Goal-A advisor decisions: six research loops and eight stages. Each second loop is selected from its first loop's evidence. The scientific team uses GPT-5.5 advisor, forward researcher and independent reverse/skeptic researcher; root coordinates integration and publication. Agent review is not human peer review.
 
-## Initial milestone
+## Goal A milestone
 
-The [advisor review](advisor/initial-review.md) and [frozen A1 contract](advisor/contract-a1.json) recover the preceding Goal A pair and revise the plan. A1 has now passed its [advisor gate](advisor/a1-gate.json): all six reachable clipped component types have a full-link lower estimate of at least alpha/8. Both independent implementations cover 44 boundary fixtures and reconstruct the signed bounds. The first failed comparison and manifest repair remain in the history. A2 is selected from this result and is running under its [separate product-representation contract](advisor/contract-a2.json). One of six new research loops is accepted.
+The [initial advisor review](advisor/initial-review.md) recovered the preceding Goal A pair and revised the plan. Both new Goal A loops have now passed their gates. A1 covers all six reachable clipped component types, with full-link lower estimates of at least `alpha/8` and 44 independently reconstructed boundary fixtures. A2 constructs a direct incomplete product representation with a bounded, summable omitted-face perturbation. At `tau=1/64`, its exact coefficient ledger yields `gap >= 973 alpha/8640`. This is a reviewed written operator argument supported by exact arithmetic checks; it is not a machine-formalized proof.
 
+The [post-Goal-A advisor decision](advisor/post-a-roadmap.md) keeps finite-restriction convergence and homogeneous dense stability open, and freezes [B1](advisor/contract-b1.json) at the strict electric cutoff `E_el < 6 alpha` on the actual two-cube graph. Two of six research loops are accepted. Failed comparisons and corrected domain wording are preserved with their provenance.
+
+The [standalone paired review](overview.html) displays the current evidence. This milestone is published on `research/round19-paired`; the live Pages deployment remains Round18 pending review and merge.
 | Goal | Loop 1 target | Loop 2 selection condition |
 |---|---|---|
 | A | Literal restrictions of one infinite coefficient assignment; all clipped cluster types | Select limiting-state or spectral-passage work only after boundary evidence |
@@ -28,12 +31,12 @@ The Paired Physics Research skill was created, validated and applied to the advi
 
 [Round18 evidence and reproduction](../round18/README.md) remain preserved. New gates and commands will be added as each loop completes; planned work is never counted as executed.
 
-## Reproduce the accepted A1 milestone
+## Reproduce the accepted Goal A milestone
 
 From the repository root, use a new output directory outside this round:
 
 ```bash
-python3 research/round19/reproduce.py --through a1 --output /absolute/path/to/new-a1-results
+python3 research/round19/reproduce.py --through a2 --output /absolute/path/to/new-goal-a-results
 ```
 
 This executes the forward calculation, independent reconstruction and comparison on fresh outputs, after checking the reviewed inventory. The exact calculations use Python standard-library arithmetic.
