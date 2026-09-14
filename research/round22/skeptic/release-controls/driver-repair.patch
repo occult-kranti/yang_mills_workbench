@@ -1,0 +1,59 @@
+--- driver-v1.py
++++ check_release_semantics.py
+@@ -227,7 +227,7 @@
+ 
+ 
+ def replay_fixture(root, optimized, inherited=False):
+-    loops = INHERITED if inherited else LOOPS
++    loops = list(INHERITED if inherited else LOOPS)
+     round_name = 'round21' if inherited else 'round22'
+     rows, gates = [], {}
+     for loop in loops:
+@@ -319,7 +319,7 @@
+         need(baseline == {'accepted': True}, 'positive complete inventory/preflight failed: ' + str(baseline))
+         positive.append({'stage': 'validate', 'mode': mode, 'accepted': True})
+     try:
+-        for name, path, mutation, error_text in semantic_cases():
++        for name, path, mutation, error_text in (semantic_cases() if 'semantic' in args.stages else []):
+             target = fixtures / name
+             copy_candidate(candidate, target, frozen)
+             before = snapshot_json(target, frozen)
+@@ -341,7 +341,7 @@
+             if not args.keep_fixtures:
+                 shutil.rmtree(target)
+ 
+-        for name, stage, inherited, mutation in summary_cases():
++        for name, stage, inherited, mutation in (summary_cases() if 'summary' in args.stages else []):
+             outcomes = []
+             for optimized in [False, True]:
+                 mode = 'optimized' if optimized else 'normal'
+@@ -365,8 +365,10 @@
+                          'positive_summary_control_passed': True, 'error': outcomes[0]['error'],
+                          'summary_fixture_from_bound_outputs_not_new_execution': True})
+ 
+-        run_inventory_cases(candidate, frozen, args, out, fixtures, rows)
+-        run_build_cases(candidate, frozen, args, out, fixtures, rows, positive)
++        if 'inventory' in args.stages:
++            run_inventory_cases(candidate, frozen, args, out, fixtures, rows)
++        if 'build' in args.stages:
++            run_build_cases(candidate, frozen, args, out, fixtures, rows, positive)
+         for name, digest in frozen['files'].items():
+             need(sha(candidate / name) == digest, 'source candidate changed during fixtures: ' + name)
+         need(sha(candidate / INVENTORY) == args.inventory_sha256, 'source canonical inventory changed')
+@@ -377,6 +379,7 @@
+                   'source_hashes': {VERIFIER: args.verifier_sha256, ADMISSION: sha(candidate / ADMISSION),
+                                     'research/round22/skeptic/check_release_semantics.py': sha(Path(__file__).resolve())},
+                   'positive_stage_controls': positive, 'controls': rows, 'control_count': len(rows),
++                  'stages_executed': args.stages,
+                   'normal_optimized_equal': True, 'source_candidate_preserved': True,
+                   'git_mutation_cases_executed': False, 'research_producer_executions': 0,
+                   'research_loops_added': 0, 'final_release_admission_claimed': False,
+@@ -533,6 +536,8 @@
+     run.add_argument('--verifier-sha256', required=True)
+     run.add_argument('--output', type=Path, required=True)
+     run.add_argument('--keep-fixtures', action='store_true')
++    run.add_argument('--stages', nargs='+', choices=['semantic', 'summary', 'inventory', 'build'],
++                     default=['semantic', 'summary', 'inventory', 'build'])
+     internal = sub.add_parser('_stage')
+     internal.add_argument('--root', type=Path, required=True)
+     internal.add_argument('--verifier-sha256', required=True)

@@ -41,7 +41,7 @@
   let cleanup = () => {};
   function afterRender() {
     cleanup(); cleanup = () => {};
-    if (location.hash.split('/')[1] !== 'journey') { prior?.afterRender?.(); return; }
+    if (!['journey','journey21'].includes(location.hash.split('/')[1])) { prior?.afterRender?.(); return; }
     const root = document.querySelector('.journey');
     if (!root) { prior?.afterRender?.(); return; }
     document.title = 'Toward Yang–Mills · The research journey';
@@ -83,6 +83,6 @@
     if (route === 'home') return `<a class="j-invitation" href="#research/journey"><span>A new way through the research</span><strong>Toward Yang–Mills. One proof at a time.</strong><span>Explore the scrolling journey →</span></a>`+html;
     return html;
   }
-  window.ResearchJourney = {render:renderJourney,evaluateBound};
+  window.ResearchJourney = {render:renderJourney,evaluateBound,cleanup:()=>cleanup()};
   window.ResearchObservatory = {...prior,render,afterRender};
 })();

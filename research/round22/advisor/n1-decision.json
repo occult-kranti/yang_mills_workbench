@@ -1,0 +1,83 @@
+{
+  "loop": "n1",
+  "status": "accepted",
+  "claim": "Stationary Heisenberg comparison proves the sharper local connected-correlation bound in the canonical summable model.",
+  "scope": "Fixed-spacing canonical M1/M2 full-link SU(2) selected-strip/free representation; fixed E_star, alpha/E_star, hbar>0 and eta in (0,1); bounded complex local gauge-invariant observables with fixed complete factor covers; all real t.",
+  "equations": [
+    "|C_q(t)-C_ref(t)|<=||A||||B||[6d_q+2alpha tau_q |t| D_FB(q)/hbar]",
+    "T_q=(hbar/alpha)C(1-q)^(-gamma), 0<=gamma<3: error=O((1-q)^min(3/2,3-gamma))",
+    "tau_q/(1-q)^3 -> 8eta/7; sigma_q^2/[alpha^2 eta^2(1-q)^3] -> 1/5376"
+  ],
+  "target_verdict": "Proposed bound proved. The old gamma=3/2 endpoint is included; actual gamma=3 behavior remains unresolved.",
+  "next_missing_premise": "Exact control when complete observable support grows; actual endpoint dynamics needs spectral/resonance information beyond the first commutator certificate.",
+  "limits": [
+    "The coefficient six and growing-window range are sufficient, not claimed optimal.",
+    "A nonvanishing upper certificate does not prove actual nonconvergence.",
+    "No arbitrary bounded-operator domain preservation, global operator-norm dynamics convergence, homogeneous representation transfer or physical clock identification is assumed.",
+    "No continuum Yang\u2013Mills construction or mass-gap solution."
+  ],
+  "independence": {
+    "initial_derivations": "Separate fresh agents; shared frozen contract and inherited evidence only. Both submissions frozen before cross-review.",
+    "contamination_before_freeze": false,
+    "post_review_repairs": false,
+    "physical_data": "No independent physical observations; exact controls accompany mathematical proofs."
+  },
+  "expected_results": {
+    "forward": {
+      "status": "proved_scoped",
+      "passed": true,
+      "claims": {
+        "complete_support_for_all_reference_times": true,
+        "continuum_or_homogeneous_transfer": false,
+        "correlation_bound": "||A||||B||[6d_q+2alpha*tau_q*|t|*D_F(q)/hbar]",
+        "d_certificate_scaled_squared_limit_per_eta_over_one_minus_eta_squared": "1/84",
+        "gamma3_actual_correlations": "unresolved",
+        "gamma3_certificate_limit": "2*eta*C*m_F/21",
+        "local_dynamical_coefficient": 2,
+        "scaled_profile_limit": "7/64",
+        "sigma_squared_scaled_limit_per_eta_squared": "1/5376",
+        "state_distance_coefficient": 6,
+        "stationary_heisenberg_rewrite": true,
+        "strong_integral_without_observable_domain_invariance": true,
+        "sufficient_gamma_range": "[0,3)",
+        "sufficient_rate": "O((1-q)^min(3/2,3-gamma))",
+        "tau_scaled_limit_per_eta": "8/7"
+      }
+    },
+    "reverse": {
+      "status": "proved_scoped",
+      "passed": true,
+      "claims": {
+        "all_real_times": true,
+        "arbitrary_bounded_operator_domain_invariance_assumed": false,
+        "complete_factor_support_preserved_under_reference_times": true,
+        "complex_centering_and_both_means": true,
+        "correlation_projector_coefficient": "6",
+        "dynamic_commutator_coefficient": "2",
+        "endpoint_actual_behavior": "unresolved",
+        "endpoint_certificate_limit": "16*C*eta*D_FB(1)/7",
+        "fixed_time_rate_exponent": "3/2",
+        "general_rate": "min(3/2,3-gamma)",
+        "homogeneous_representation_transfer": false,
+        "scalar_energy_term_in_heisenberg_bound": "0",
+        "sigma_squared_over_alpha_squared_eta_squared_epsilon_cubed_limit": "1/5376",
+        "strong_integral_proved": true,
+        "tau_over_eta_epsilon_cubed_limit": "8/7",
+        "vacuum_residual_term_in_dynamic_bound": "0",
+        "window_gamma_lower_included": "0",
+        "window_gamma_upper_excluded": "3"
+      }
+    }
+  },
+  "skeptic_review_frozen": true,
+  "review_inputs": [
+    "research/round22/advisor/n1-decision.md",
+    "research/round22/advisor/n1-pair-comparison.json",
+    "research/round22/advisor/n1-root-replay.json",
+    "research/round22/skeptic/n1.md",
+    "research/round22/skeptic/n1-review.json",
+    "research/round22/skeptic/n1-replay-summary.json",
+    "research/round22/skeptic/n1-primary-source-map.json",
+    "research/round22/methods/team-protocol.md"
+  ]
+}

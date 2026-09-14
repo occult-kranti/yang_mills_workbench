@@ -1,0 +1,15 @@
+# Q1 advisor derivation before opening producer review
+
+This is an advisor check of the frozen question, not an admission. The producers have not exchanged current solutions; their submitted arguments and the skeptic still require review.
+
+Deleting the tree edges from the original signed face words groups the omitted chord supports into singletons or distinct larger sets, except faces9,14,15, which all use chord25. Face8 has no omitted chord. Every other distinct pair has an omitted chord appearing once, so its conditional product mean vanishes by central sign symmetry. Each non-retained face has conditional square mean1/4 by Haar invariance. The shared triple consists of quaternion inner products of the omitted unit quaternion with u,w,e0. Their pair means are r/4,x/4,z/4, respectively, where r=Tr(UW†)/2.
+
+Thus for b=Tr(VW†)/2 and the complete action Vpot, the conditional mean is20−b and its variance is K=19/4+(r+x+z)/2=4+||u+w+e0||²/4. The extrema4 and25/4 are achieved: u,w with scalar−1/2 and opposite imaginary parts give the minimum; u=w=e0 give the maximum. Continuity and full Haar support make these essential extrema. The positive multiplication operator J*Vpot(1−P)VpotJ is K, whereas its Haar expectation is only19/4.
+
+P reduces H_E from P2. Since Vpot is bounded, positive and smooth, H_lambda has the same self-adjoint domain, and its block decomposition has self-adjoint positive diagonal operators A,D plus bounded off-diagonal B=alpha lambda(1−P)VpotJ. The exact norm is5 alpha lambda/2 and its lower norm bound is2 alpha lambda. No nonzero selected vector can be an interacting eigenvector when lambda>0.
+
+On invariant smooth Peter–Weyl polynomials, all finite powers used in Taylor differentiation exist. J*H_lambda²J=A²+B*B, so the strong second derivative difference is B*B/hbar². This is a core/strong assertion. Bounded off-diagonal Duhamel separately gives the all-vector norm bound ||J*exp(−tH/hbar)J−exp(−tA/hbar)||≤t²||B||²/(2hbar²), because the complementary component is bounded by t||B||/hbar. The reference vector is not presumed to be an interacting vacuum.
+
+There is also a decisive obstruction to upgrading the second-order expansion to operator norm. At every t>0 both compressed heat evolution and the effective heat operator are compact: the finite compact-group electric operators have compact resolvent, and bounded magnetic perturbations preserve it. Their rescaled difference is compact. The strong second-order limit is a nonzero scalar times K, a bounded-below multiplication operator on an infinite-dimensional Hilbert space, hence noncompact. Norm convergence to that limit is impossible. This argument does not invalidate the norm O(t²) bound.
+
+A common scalar shift multiplies both evolutions by the same exponential and leaves B, the first nonzero coefficient and selected non-reduction intact. At lambda=0 every defect disappears. These are finite fixed-graph statements. No stationary interacting correlation, homogeneous stability or continuum conclusion follows.

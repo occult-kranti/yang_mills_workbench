@@ -1,0 +1,242 @@
+{
+  "title": "Sharper correlations. Explicit obstructions.",
+  "summary": "Five feedback-driven goals test local correlation estimates, homogeneous stability and physical dynamic matching. Each accepted statement keeps its model, assumptions and remaining gap beside the result.",
+  "novelty_note": "These are workbench derivations, applications of established mathematics and proved obstructions within declared models. Scientific priority is unverified.",
+  "goals": [
+    {
+      "id": "N",
+      "title": "How much support and time can the comparison cover?",
+      "reason": "M2 left an avoidable dynamic residual and a fixed-support restriction. N1 tests stationary evolution; N2 follows its review by counting complete growing supports."
+    },
+    {
+      "id": "O",
+      "title": "Can homogeneous stability be made numerical?",
+      "reason": "Retain all overlapping interactions, generated terms and unbounded onsite domains."
+    },
+    {
+      "id": "P",
+      "title": "Does the conditional clock match physical dynamics?",
+      "reason": "A generator relation needs a declared map, states, domains and information beyond fitted initial slopes."
+    },
+    {
+      "id": "Q",
+      "title": "Does the exact map retain magnetic dynamics?",
+      "reason": "Selected after the six-loop review: transport all twenty physical faces and test the selected Haar projection beyond its exact electric reduction."
+    },
+    {
+      "id": "R",
+      "title": "Can the actual diagonal improve the inverse?",
+      "reason": "Selected after the six-loop review: include the retained homogeneous diagonal in a local inverse, with every boundary term and support/domain condition."
+    }
+  ],
+  "loops": {
+    "n1": {
+      "title": "A stationary local correlation bound",
+      "novelty_category": "Model-specific derivation using established operator methods",
+      "prior_work": "M2 is the closest inherited bound. Nachtergaele–Sims/Young and Teschl supply strong operator and bounded perturbation methods; they do not establish this profile constant or scientific priority.",
+      "steps": [
+        "Rewrite the shifted stationary correlation as an expectation of A* times Heisenberg-evolved B; this preserves complex conjugation and cancels the scalar phase legitimately.",
+        "Differentiate a relative unitary product first on the common Hamiltonian domain. Integrate its bounded derivative and extend to every Hilbert vector before inserting an arbitrary bounded observable.",
+        "Use reference tensor factorization to keep the complete finite factor cover fixed for all reference times. Only the finite incident omitted-face set contributes to the commutator.",
+        "Bound that commutator by 2 alpha tau_q ||B|| D_FB(q). The strong vector integral gives an operator-norm comparison without assuming B preserves the generator domain.",
+        "Changing the raw state costs 2d_q and changing each mean costs another 2d_q. Add these to the local dynamic cost to obtain the coefficient-six inequality.",
+        "Substitute the exact profile asymptotics: the two terms scale as epsilon^(3/2) and epsilon^(3-gamma). This proves the sufficient range gamma<3; it leaves actual endpoint behavior open."
+      ],
+      "forward": "Derives a relative-unitary interpolation with a fixed reference-evolved observable, then proves the complete-support commutator and trace-state estimate.",
+      "reverse": "Reconstructs the sufficient premises from the target, uses the oppositely oriented cocycle and tests the integral exactly with a noncommuting spectral fixture.",
+      "objection": "Formal differentiation through H_ref B is invalid for arbitrary bounded B. Both reports instead prove an all-vector bounded derivative before inserting B.",
+      "exception": "A scalar energy cancels in stationary Heisenberg conjugation; it cannot be dropped from an unshifted single-unitary matrix element. A positive endpoint upper certificate does not prove a positive actual error."
+    },
+    "n2": {
+      "title": "Exact support and time budget",
+      "novelty_category": "Model-specific geometry and observation-protocol derivation",
+      "prior_work": "N1 supplies the stationary operator estimate; I1 supplies complete tail ownership. Finite geometric sums and exponential limits are established tools. No new external stability theorem is used.",
+      "steps": [
+        "Own every positive link whose tail lies in the origin rectangle of side lengths 4L, 2L and L. This preserves complete selected strips and all free factors, including outgoing links.",
+        "Downward closure proves that a face meets the owned links exactly when its anchor lies in that rectangle. Count each omitted face once, including crossing faces.",
+        "Subtract the selected-face geometric sum from all three orientations. Factor the finite numerators to obtain D_L=B(q)(1-q^(4L))(1-q^(2L))(1-q^L).",
+        "Apply N1 separately at each q to the same moving observables in both states. Uniform trace duality leaves the state cost unchanged and tau_q D_L equals eta times the finite product divided by eight.",
+        "Analyze epsilon L with epsilon=1-q. The product scales as 8L^3 epsilon^3 below critical support growth, tends to a positive exponential product at beta=1, and tends to one above it.",
+        "The normalized upper certificate vanishes for beta<1 and gamma<3(1-beta). At beta=0 use the actual integer floor; fixed-support logarithmic shortening also certifies the gamma=3 window."
+      ],
+      "forward": "Uses direct incident-face generation and exact selected-face subtraction, then derives every support-growth regime.",
+      "reverse": "Reconstructs the necessary vanishing condition for the specified upper certificate and verifies it with independently generated edges, exact sums and exponential enclosures.",
+      "objection": "Clipping outgoing links, dropping crossing faces or substituting the infinite budget changes the exact finite budget. Each shortcut is rejected by explicit witnesses.",
+      "exception": "The origin rectangle is downward closed; translated rectangles may receive incoming faces anchored outside. A positive upper certificate is not a lower bound on actual correlation error."
+    },
+    "o1": {
+      "title": "Every overlapping term retained",
+      "novelty_category": "Explicit model-specific constants and a scoped obstruction",
+      "prior_work": "I2 gives a one-star rotation; O1 extends its bookkeeping to a complete simultaneous rotation. Yarotsky and multidimensional Lie–Schwinger methods motivate the approach; their unevaluated constants are not substituted for these bounds. Scientific priority is unverified.",
+      "steps": [
+        "Prove each local skew generator preserves the full unbounded operator domain and has a bounded commutator with H0. Finite sums and graph-norm exponentiation give domain preservation for the simultaneous rotation.",
+        "Integrate the first bounded commutator before expanding bounded interactions. Retain the factorial difference between the transformed perturbation and the integrated reference contribution.",
+        "Expand every ordered connected word. Generated supports grow to at most4+3n sites; repeat anchors and outer generators that meet only the new support remain in the count.",
+        "Forward counts insertions per root site; reverse counts relative words and their root-containing translates. Their scalar series give independent volume-uniform quadratic bounds.",
+        "On the common interval |tau|<=5/1664, both support ||R||_w<=(25460736/25)tau². The retained first-order diagonal term has relative coefficient28|tau|.",
+        "The actual SU2 remainder has a negative quadratic vacuum mean in each fixed finite cuboid with at least one retained anchor for small nonzero tau. Separate qubit controls show why scalar centering alone cannot universally remove mixing. No iterative gap bound follows yet."
+      ],
+      "forward": "A per-site recurrence sums to a rising-factorial majorant. A separate actual-SU2 Haar calculation detects the uncentered vacuum remainder.",
+      "reverse": "Rooted relative word counting gives a smaller quadratic constant on a smaller interval, and an exact seven-qubit overlap fixture tests centered mixing.",
+      "objection": "A local remainder norm is not a global operator-norm bound; small one-step error does not certify all later rotations or a gap.",
+      "exception": "The actual-model negative vacuum mean and finite-spin centered-mixing counterexamples have different scopes. Neither implies that the homogeneous model is gapless."
+    },
+    "o2": {
+      "title": "A complete recurrence—and where it stops",
+      "novelty_category": "Explicit estimates and a proved obstruction to a stated certificate",
+      "prior_work": "O1 supplies the initial remainder. Classical homological elimination and exponential interaction weights supply the method; the source inductions use additional structure or interacting inverses. No new numerical source threshold or scientific priority is claimed.",
+      "steps": [
+        "Split every local residual into its vacuum scalar, vacuum-mixing block and centered diagonal block. The bare product reference has inverse gap one on every nonempty support.",
+        "Use that inverse to build a bounded skew generator with a bounded first commutator. Absolute summability in finite volume preserves the full unbounded domain under exponentiation.",
+        "Retain every ordered intersecting support pair and split the per-site sum according to which support contains the root. A loss between exponential weights absorbs the support-size factor.",
+        "Allocate the weight loss across all nested commutators before summing the series. The sharper reverse estimate uses rho=4r/delta and gives r_next<=(d+3r/2)rho/(1-rho).",
+        "Track diagonal norm, relative coefficient and scalar energy alongside the residual. Retaining D creates a term linear in r; a one-step decrease requires delta>4d+10r for the reverse majorant.",
+        "Every positive summable loss schedule has delta_n tending to zero, while the chosen diagonal budget stays positive. The positive residual budget must eventually outgrow its series radius. This rejects these certificates without proving actual algorithm or gap failure."
+      ],
+      "forward": "Derives a conservative all-order ratio12r/delta, a structured parity counterexample and a two-sided rational example whose first series failure is step42.",
+      "reverse": "Derives the sharper ratio4r/delta and exact contraction criterion, then proves eventual loss of admissibility without extrapolating from its four early shrinking steps.",
+      "objection": "The retained diagonal term cannot be deleted to manufacture a quadratic iteration. Generic norm failure also does not show that the actual SU2 trajectory has the worst-case structure.",
+      "exception": "A reverse fixture uses1/64 after regrouping on actual support. With its declared pair-union supports the value is(9N+16)/(64(3N+1)); it remains bounded. The post-freeze clarification is independently checked and disclosed."
+    },
+    "p1": {
+      "title": "A section is not a physical Hilbert map",
+      "novelty_category": "Proved obstruction on the actual finite graph",
+      "prior_work": "C1 supplies the static section; K1/L2 supply narrower symbol and finite-slope cautions. Burbano–Bauer, arXiv:2409.13812v2, gives genuine tree and electric transport methods. Character orthogonality and compact-group Casimirs are established mathematics; priority is unverified.",
+      "steps": [
+        "Reconstruct all20 signed faces and the30-fixed-link subgraph. Its13 remaining cycles show that the prescription imposes physical constraints beyond a17-edge tree gauge.",
+        "Use normalized invariant characters of a fixed face: their physical L2 norm tends to zero while the section value stays one. This rules out every closable extension agreeing on the smooth core.",
+        "Strengthen the sequence using three edge-disjoint faces. The squared physical norm is(n+1)^-6 and the electric eigenvalue is3 alpha n(n+2), so even its electric graph norm tends to zero at fixed alpha/E_star.",
+        "Differentiate all four links of each physical face before taking the section. F0 gives a constant3 alpha core defect for every conditional coefficient; ground-compatible scalar shifts do not remove it.",
+        "Fit c=4 alpha from F9 alone. Its variance is1/4 and its whole training curve happens to match, but that adds no reserved information.",
+        "The held-out F16 curve is exp(-3 alpha t/hbar)/4 while the fitted conditional curve is exp(-6 alpha t/hbar)/4. They differ at every finite positive time."
+      ],
+      "forward": "One-character nonclosability, exact all-face electric derivatives and a certified full-time held-out discrepancy.",
+      "reverse": "An independent three-character sequence proves electric graph-domain nonclosability, followed by a separately reconstructed training and reserved-time test.",
+      "objection": "A smooth pointwise section or orbit formula does not imply a bounded L2 map. Differentiating only the links left active after restriction also omits physical electric terms.",
+      "exception": "This rejects the specified section and clock. It does not exclude a genuine maximal-tree Haar map or all physical reductions; P2 selects that repair."
+    },
+    "p2": {
+      "title": "A genuine map, a different induced clock",
+      "novelty_category": "Established Haar and operator methods applied to an exact graph-specific reduction, with a proved matching obstruction",
+      "prior_work": "P1 rejected the original section. Burbano–Bauer arXiv2409.13812v2 supplies genuine tree and electric transport methods; the chosen tree, selected-image reduction and dynamic reserve are derived here. Scientific priority is unverified.",
+      "steps": [
+        "Choose the actual17-edge spanning tree and retain all16 chord holonomies. At fixed tree variables, each chord change is left/right Haar multiplication; Fubini proves the full measure identity and unitary invariant-Hilbert identification.",
+        "Embed three-variable functions by independence of the other13 chords. Its adjoint integrates those variables with Haar measure and preserves constants, state means and the complex inner product.",
+        "Differentiate every original link. A tree link acts on every chord endpoint path, including internal chords and mixed derivatives. The complete electric form is a sum of squares of those fields plus all chord Casimirs.",
+        "Use positive finite Peter–Weyl blocks to compare the transported form to the product Casimir form, with full coefficient77 and selected coefficient16. Close on H1 forms and H2 operator domains.",
+        "Integration over the unused original chord links commutes with the electric heat semigroup. The selected image therefore reduces the operator, giving exact graph-norm and common-clock semigroup intertwining with its actual induced generator.",
+        "The mapped x,y,z loops have6,8,6 distinct links and energies9 alpha/2,6 alpha,9 alpha/2. The new mapped x differs physically from P1 F9 although their old section values agree.",
+        "Training x alone fixes c=6 alpha and leaves zeta unresolved. Reserved curvature adds9 alpha² zeta²/(4 hbar²), forcing zeta=0 for equality.",
+        "At that sole candidate the reserved y curve still differs: its physical rate is6 alpha and its conditional rate is9 alpha/2. No admissible affine mobility fits all reserved information."
+      ],
+      "forward": "Direct Haar/Fubini and closed-form reduction, complete tree incidence and816 exact quaternion second-order checks, followed by an exact curvature and time comparison.",
+      "reverse": "Original-link Haar projection proves reduction independently; representation blocks give explicit domain comparisons and1,584 exact chord second-jet checks.",
+      "objection": "A Haar isometry does not justify dropping tree-link or mixed electric terms. Correctly mapped observables can have different physical energies despite identical section coordinates.",
+      "exception": "The exact induced electric generator is supported. The scalar-clock affine-mobility conditional family fails. Restoring a magnetic interaction or enlarging the model family requires a new contract and proof."
+    },
+    "q1": {
+      "title": "Magnetic leakage through the selected map",
+      "novelty_category": "Graph-specific Haar calculation and proved dynamic obstruction using established operator methods",
+      "prior_work": "P2 supplies the exact electric map. Burbano–Bauer supplies full tree/plaquette transport; Teschl supplies bounded-perturbation and compactness facts. The actual conditional moments and leakage are derived here; priority is unverified.",
+      "steps": [
+        "Transport all twenty ordered physical face traces through the genuine sixteen-chord Haar map. Only face8 depends entirely on the three retained chords.",
+        "Classify every distinct pair by omitted-chord support. Three pairs sharing chord25 survive conditional integration and contribute r/4,x/4,z/4.",
+        "Add every diagonal and twice every cross term. The conditional variance is K=19/4+(r+x+z)/2=4+|u+w+e0|²/4, with sharp essential bounds4 and25/4.",
+        "Bounded magnetic perturbation preserves the physical, selected and complementary H2 operator and H1 form domains. Full unitary equivalence survives, but B_lambda*B_lambda=(alpha lambda)²M_K proves strict selected leakage.",
+        "Compute the second derivative on the smooth core, then separately integrate the bounded off-diagonal perturbation twice. The norm error is bounded by25/8 times(alpha lambda t/hbar)².",
+        "Reverse extends the scaled quotient strongly to every selected vector and obtains the scalar norm asymptotic25/8. The independently prepared compactness objection rules out operator-norm convergence of that quotient.",
+        "Retain common scalar shifts and the actual Haar-reference variance5. This reference is not an interacting ground, and no stationary interacting correlation is inferred."
+      ],
+      "forward": "Complete signed graph transport, omitted-support pair classification and Haar covariance contraction, followed by core differentiation and symmetric double Duhamel.",
+      "reverse": "Independent symbolic contraction of 20 diagonal and 190 distinct unordered face pairs, exact block/domain reconstruction, and additional strong/scalar-norm asymptotics.",
+      "objection": "Conditional face independence drops real cross terms. An O(t²) norm bound also does not imply an operator-norm Taylor expansion of the unbounded dynamics.",
+      "exception": "The full sixteen-chord unitary remains valid while the selected three-chord dynamics is nonautonomous. Compact heat operators cannot approach the noncompact variance multiplier in operator norm."
+    },
+    "q2": {
+      "title": "Exact spectral memory with controlled error",
+      "novelty_category": "Graph-specific spectral derivation and explicit error bounds using established operator methods",
+      "prior_work": "P2/Q1 provide the graph and map. Burbano–Bauer supplies Peter–Weyl/Gauss structure; Teschl supplies bounded perturbation and resolvent tools. Schur/Feshbach methods are classical; the finite-rank bounded-map source statement is not applied directly. Priority is unverified.",
+      "steps": [
+        "Use every physical Gauss constraint: a nonconstant spin network has no leaf in its active-edge support, hence contains a cycle. The actual girth4 gives electric energy at least3alpha; W0 attains it in the complement.",
+        "Close the positive bounded magnetic perturbation on QD(H_E). Solve the complementary block equation strongly to obtain the exact Volterra return with the full compressed T as its final factor.",
+        "Eliminate the complementary resolvent component. The bounded self-energy enters with a minus sign; quadratic-form minimization proves the Schur operator on D(A) is at least z.",
+        "Reconstruct the six-link physical U channel and all19 nonretained face products. Shared-path lengths0,1,2,3 have counts9,6,2,2.",
+        "Decompose each connected shared path into spin0 and spin1, with squared norms1/16 and3/16. Edge-center sectors separate the diagonal-channel face spectra. In the cross channel, the exceptional face pair9,15 supplies two ordered cross terms, each1/8, totaling weight1/4 at energy3alpha.",
+        "Assemble the exact seven-energy matrix kernel and self-energy on the frozen orthonormal channels(1,2x). Their equal instantaneous diagonals do not imply equal spectral or time dependence.",
+        "Use the actual complement gap and ||QVmagQ||<=40 in strong Duhamel and the second resolvent identity. The full-Hilbert errors are cubic in lambda, uniformly bounded in delay and at small positive complementary resolvent energy."
+      ],
+      "forward": "Exact original-link Casimir jets, finite Haar cubature and positive matrix weights, with an independently derived all-vector Volterra/Schur argument.",
+      "reverse": "Signed three-path reconstruction and symbolic Casimir/Haar polynomial decomposition, checked against the full conditional multiplier and noncommuting block return coefficients.",
+      "objection": "An averaged scalar/reference kernel or finite channel matrix does not close the projected dynamics. A generic finite-rank Schur theorem also cannot replace the actual infinite-rank domain proof.",
+      "exception": "Uniform absolute error is not uniform relative late-time accuracy. The complement stays gapped, while the full compressed resolvent need not be uniformly bounded as z approaches zero."
+    },
+    "r1": {
+      "title": "The interacting inverse still has a boundary",
+      "novelty_category": "Actual-model inverse and boundary diagnostic with explicit constants",
+      "prior_work": "O1/O2 identify the initial diagonal and support obstruction. Del Vecchio–Frohlich–Pizzo supplies interacting-inverse methodology under evolving hypotheses; no numerical source threshold is imported. Priority is unverified.",
+      "steps": [
+        "Use the actual bounded D_b=Q_b phi_b Q_b and four-star incidence to obtain the signed form bound28|tau| H0.",
+        "Prove the unique vacuum, complementary gap1-28|tau| and common finite-volume operator/form domains.",
+        "Invert the local G_Y and prove rank-two generator domain preservation before exponentiation. Direct multiplication fixes the cancellation sign.",
+        "Extend by identity and retain every crossing star. Track the declared union support and its multiplicity. Origin and bulk cube counts differ by three incoming planes.",
+        "Apply the full commutator to the fixed actual free-character source. Free-edge parity cancels210 cross moments, while all21 diagonal face contributions survive.",
+        "Obtain the nonzero squared vacuum defect7tau^2/432. Preserve the distinction between this admissible diagnostic and an actual generated O1 residual.",
+        "Independently review the forward-only family weight-loss bound and actual-star bare-inverse diagnostic without attributing them to both producers."
+      ],
+      "forward": "Actual ownership census, conditional Haar second moments, explicit graph/form bounds, plus a family weight-loss estimate and separate actual-star diagnostic.",
+      "reverse": "Independent analytic Haar moments, complete crossing enumeration and an indefinite noncommuting inverse control.",
+      "objection": "An interior inverse identity does not cancel crossing interactions in the full volume. Physical incidence with one probe link also does not justify dropping the other nineteen faces.",
+      "exception": "The boundary defect is for the frozen diagnostic. Initial H0+D stability and one weight-loss bound do not establish the H0+D+R gap or all-stage convergence."
+    },
+    "r2": {
+      "title": "A convergent response with a limited operator meaning",
+      "novelty_category": "Actual initial-model response theorem and precisely scoped certificate obstruction",
+      "prior_work": "Closed-form representation, KLMN and Neumann inversion are established methods (Teschl2009/2014 at separately recorded theorem locations). R1 supplies the actual diagonal and Haar controls. No source locality threshold or complete iteration is imported. Priority is unverified.",
+      "steps": [
+        "Construct H0 on the complete-factor product-reference space. Absolute summation of the actual star forms gives relative bound28|tau|, hence a closed initial form G with gap at least381/416 on the vacuum complement.",
+        "Define the bounded sandwiched form K and test the inverse equation against every form-domain vector. This proves the I+K inverse and its Neumann expansion without assuming a bounded unsandwiched global interaction.",
+        "Every star disjoint from a coefficient support annihilates it. Bare inverse powers preserve its vacuum exterior, so coefficient n lies in the n-th collar and has norm and half-energy at most r k^n.",
+        "Use H0 u_(n+1)=-D u_n and the complete count of meeting stars. A cubic polynomial times the geometric factor is summable, proving response-specific H0 graph regularity with explicit tails.",
+        "Telescope G p_N-v=D u_N for the G graph tail. A containing collar makes finite and infinite coefficients identical through that order; sum the remaining tails to obtain uniform finite-volume errors.",
+        "The exact global rank-two source is A_Y tensor P_ext. On the prescribed actual exterior free-character excitation, the difference from A_Y tensor I has norm1 even at zero coupling.",
+        "The declared origin collar has volume(n+1)^3. Its exponential volume weight overwhelms the geometric upper majorant at fixed nonzero coupling. This disproves that certificate, not convergence of the actual weighted coefficients.",
+        "Reverse additionally sums local rank-two creators in operator norm with L Omega=u. That lift is not the global vacuum generator and has no proved full local-source homological identity. Forward-only sharper origin and wrong-sign bounds remain separately attributed."
+      ],
+      "forward": "Closed-form construction, direct response/domain proof, sharper origin polynomial tails and an actual wrong-first-sign residual lower bound.",
+      "reverse": "Excitation-sector reconstruction, explicit finite-volume H0/G graph comparison and a norm-convergent local-creator lift, with independent source and weight controls.",
+      "objection": "A global vacuum inverse need not solve a local operator equation on excited exterior states. Geometric spatial tails also need not supply the positive volume-weight norm required by the iteration.",
+      "exception": "The response belongs to both operator domains, but equality of their global domains is not proved. The failed upper certificate is not a lower divergence result or an all-stage no-go theorem."
+    }
+  },
+  "continuum_obligations": [
+    "A common physical energy scale must be maintained while lattice spacing, volume, coupling and observables are matched.",
+    "A nontrivial four-dimensional continuum theory with the required quantum-field-theory axioms remains to be constructed.",
+    "A positive spectral gap must survive that physical continuum construction in the correct observable sector. Fixed-spacing and finite-model checks do not supply this passage."
+  ],
+  "models": [
+    {
+      "name": "Canonical summable profile · N",
+      "fixed": "Positive-octant selected-strip/free reference; fixed a, alpha/E_star, hbar and eta.",
+      "varied": "q changes the interaction profile. L(q) and T(q) change observation support and duration.",
+      "boundary": "q→1 returns to the strip reference; it is not a lattice-spacing continuum limit."
+    },
+    {
+      "name": "Homogeneous full-link stability · O and R",
+      "fixed": "Complete24-link onsite factors and21 omitted faces per anchor; finite retained-star cuboids and R2 initial-diagonal response in their fixed product-reference incomplete tensor product; fixed physical scales.",
+      "varied": "tau is a homogeneous coupling. Exponential support weights and their losses are proof parameters.",
+      "boundary": "A local or weighted remainder estimate does not yet provide a numerical uniform gap."
+    },
+    {
+      "name": "Finite physical electric reduction · P",
+      "fixed": "Actual18-vertex33-link C1 graph; normalized Haar, all-vertex Gauss invariance, fixed alpha/E_star,a,hbar. Magnetic coefficient zero.",
+      "varied": "The reduction map is tested. c is a proposed energy coefficient; zeta changes conditional mobility.",
+      "boundary": "Mapped observables and generator domains must agree. Analytic channel fits are not measured physical calibration."
+    },
+    {
+      "name": "Finite physical magnetic deformation · Q",
+      "fixed": "The actual P2 graph, Haar map, all twenty physical faces, alpha/E_star,a and hbar.",
+      "varied": "lambda≥0 is a declared dimensionless magnetic coefficient in H_E+alpha lambda V.",
+      "boundary": "Haar averaging, full unitary transport and closed selected dynamics are separate tests. The electric Haar vacuum is not presumed to be the interacting ground."
+    }
+  ]
+}

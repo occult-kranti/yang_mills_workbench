@@ -1,0 +1,13 @@
+# Q2 advisor decision — controlled actual projected memory
+
+Admit the exact projected Volterra and Schur identities, actual complementary electric gap3alpha, exact fixed-channel seven-energy matrices and full-Hilbert cubic magnetic remainders. Root read both full proofs/source notes, all696 checker lines, the independent skeptical preparation and final review. Four root and four skeptical fresh normal/optimized producer replays agree bytewise. No blocking defect or producer repair remains.
+
+Both directions independently reconstruct the actual six-link U28 channel and its19 face products. The shared-path census9,6,2,2 and spin0/spin1 squared weights1/16,3/16 produce the same seven energy matrices. Center parities separate entire spectral sectors, not only initial inner products. The cross entry1/4 occurs at energy3alpha. Agreement of the instantaneous diagonal19/4 is not sufficient evidence for scalar memory: the first energy moments57/4 and285/8 differ.
+
+The no-charge Gauss constraints and actual girth4 prove the full physical electric lower bound3alpha away from constants; W0 attains it in Q. Positive bounded magnetic compression retains that lower bound. This is a finite-graph result, unrelated to O's homogeneous reference gap. Both derive the exact common-domain block formulas, the full compressed return factor in Volterra, and the minus self-energy Schur sign directly. Dusson/Sigal/Stamm Theorem1.2 is useful attribution but its stated bounded-Feshbach-map premise does not apply to the infinite-rank P with unbounded A. No such import is used.
+
+The leading memory and self-energy are controlled as operators on the full selected Hilbert space, for all lambda>=0, including the frozen weak interval. Their two-channel spectral formulas are exact coefficients, not a closed finite-channel evolution. Absolute error is uniform in delay and remains bounded as the complementary resolvent energy decreases to zero at fixed alpha. No uniform relative late-delay accuracy or uniformly bounded full compressed resolvent at z=0 follows. The resolvent-order refinement is valid; heat-operator order is not inferred. The Haar state remains the electric reference.
+
+## Reassessed final goal
+
+Retain the independently ranked R direction from the six-loop checkpoint. Q2 supplies no homogeneous stability premise or transfer. R1 will freeze the actual initial O1 retained diagonal, its local interacting inverse and complete crossing-boundary commutator. An explicit actual-SU2 source will distinguish interior cancellation from a global homological identity. R2 remains unselected until that proof and skeptical review. No eleventh loop is scheduled.

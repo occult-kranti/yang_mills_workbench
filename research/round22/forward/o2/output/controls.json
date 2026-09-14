@@ -1,0 +1,174 @@
+{
+  "controls": [
+    {
+      "name": "omitted_scalar_is_not_a_valid_splitting",
+      "outcome": {
+        "A": [
+          [
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "0",
+            "0"
+          ]
+        ],
+        "S": [
+          [
+            "0",
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ]
+        ],
+        "Z": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "-1"
+          ],
+          [
+            "0",
+            "-1",
+            "2"
+          ]
+        ],
+        "c": "2"
+      },
+      "passed": true
+    },
+    {
+      "name": "scalar_is_retained_but_commutes",
+      "outcome": "cI is an energy term; it is not discarded from the Hamiltonian",
+      "passed": true
+    },
+    {
+      "name": "equal_weight_universal_constant_rejected",
+      "outcome": {
+        "all_size_formula": "ratio=m/2 -> infinity",
+        "fixtures": [
+          {
+            "commutator_norm": 2,
+            "diagonal_norm": 1,
+            "generator_norm": 2,
+            "mu": "log(2)",
+            "ratio": "1",
+            "sites": 2
+          },
+          {
+            "commutator_norm": 3,
+            "diagonal_norm": 1,
+            "generator_norm": 2,
+            "mu": "log(2)",
+            "ratio": "3/2",
+            "sites": 3
+          },
+          {
+            "commutator_norm": 4,
+            "diagonal_norm": 1,
+            "generator_norm": 2,
+            "mu": "log(2)",
+            "ratio": "2",
+            "sites": 4
+          }
+        ],
+        "vacuum_diagonal": "2^(-m)(product Z-I)/2 annihilates the vacuum"
+      },
+      "passed": true
+    },
+    {
+      "name": "retained_D_linear_term_cannot_be_dropped",
+      "outcome": {
+        "all_r_statement": "d/r diverges at fixed d>0; scalar shifts do not change this entry",
+        "commutator": [
+          [
+            "0",
+            "-1/10000"
+          ],
+          [
+            "-1/10000",
+            "0"
+          ]
+        ],
+        "d": "1/10",
+        "leading_ratio_to_r_squared": "100",
+        "r": "1/1000"
+      },
+      "passed": true
+    },
+    {
+      "name": "positive_limit_weight_schedule",
+      "outcome": {
+        "delta_n": "log(2)/(2(n+1)(n+2))",
+        "justification": "strict convex midpoint integral gives log(2)>2/3",
+        "mu_infinity": "log(2)/2",
+        "rational_lower_delta": "1/(3(n+1)(n+2))",
+        "total_loss": "log(2)/2"
+      },
+      "passed": true
+    },
+    {
+      "name": "initial_smallness_does_not_certify_full_iteration",
+      "outcome": {
+        "first_loss_series_failure_step": 42,
+        "last_rho_enclosure": {
+          "lower": "172775822865217781221619/100000000000000000000000",
+          "upper": "1727758228652177812216191/1000000000000000000000000"
+        },
+        "relative_condition_still_below": "1/1000",
+        "residual_minimum_step": 15,
+        "scope": "conservative rational certificate, not physical residuals"
+      },
+      "passed": true
+    },
+    {
+      "name": "rounding_does_not_cause_the_obstruction",
+      "outcome": {
+        "all_previous_upper_rho_below_one": true,
+        "directed_rational_enclosures": true,
+        "rounding_grid": "2^(-256)"
+      },
+      "passed": true
+    },
+    {
+      "name": "certificate_failure_is_not_gap_or_algorithm_failure",
+      "outcome": {
+        "actual_homogeneous_gap_failure": false,
+        "actual_iteration_failure": false,
+        "proved": "scalar majorant loses admissibility",
+        "unproved_gap_threshold": "none"
+      },
+      "passed": true
+    },
+    {
+      "name": "optimized_mode_keeps_strict_validation",
+      "outcome": "False and non-Boolean statuses raise explicit ValueError",
+      "passed": true
+    }
+  ],
+  "direction": "forward",
+  "loop": "o2",
+  "passed": true,
+  "schema": "ym22-forward-o2-controls-v1"
+}

@@ -1,0 +1,11 @@
+# P2 advisor decision — exact electric reduction and conditional-family mismatch
+
+Admit the genuine maximal-tree Haar unitary J16 and selected isometry J3, its Haar adjoint, complete transported electric operator and exact reducing-image dynamics. Both full reports/source notes and all644 checker lines were read. Four fresh root and four skeptical normal/optimized runs reproduce the frozen outputs. The skeptic independently confirms the domain budgets, mixed terms, reserved dynamic discrepancy and the disclosed pre-freeze replacement of a nondiscriminating reverse control. No blocking defect, post-freeze producer edit or cross-direction repair remains.
+
+Haar/Fubini and invariant density give the a.e. Hilbert map. All17 tree derivatives and16 chords occur in the full electric form. The reverse representation-block comparison gives full and selected upper constants77 and16 against the product-Casimir form, with lower coefficient1; it closes H1 forms and H2 operators. Original-link Haar integration commutes with the electric semigroup, and the independent closed-form proof gives the same reducing-image conclusion. Physical and induced graph norms and common-clock semigroups agree exactly.
+
+The induced operator retains mixed derivatives. Its mapped x,y,z loops have6,8,6 distinct links and energies9 alpha/2,6 alpha,9 alpha/2. The new mapped x is not the old P1 face F9 despite identical section values. The new training fit c=6 alpha leaves zeta free; reserved curvature forces zeta=0, then the reserved y full-time curve still fails. This proves a specific conditional-family mismatch alongside a successful physical electric map. It supplies no measured calibration or magnetic, homogeneous, summable-profile or continuum transfer.
+
+## Required six-loop checkpoint
+
+N1,N2,O1,O2,P1,P2 now complete six reviewed investigations: four accepted scoped outcomes and two limited numerical-stability targets. The skeptic must reassess all six and rank possible Q/R goals by importance of the missing premise, discriminating value, feasibility and reuse of admitted evidence. Q/R are still unselected at this admission. The advisor will select them only after that separate checkpoint is frozen. Repairs, source checks, reviews and skill updates add zero research loops.

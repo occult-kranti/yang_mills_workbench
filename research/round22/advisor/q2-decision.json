@@ -1,0 +1,293 @@
+{
+  "claim": "The actual magnetic projection has exact memory/resolvent identities, seven-energy fixed-channel leading matrices and explicit cubic full-Hilbert operator remainders.",
+  "equations": [
+    "C0>=3 alpha sharply on Q; C_lambda=C0+alpha lambda QVmagQ>=3 alpha",
+    "K_lambda(s)=B_lambda*exp(-s C_lambda/hbar)B_lambda; Sigma_lambda(z)=B_lambda*(C_lambda+z)^-1B_lambda",
+    "T_lambda=exp(-t A_lambda/hbar)+hbar^-2 integral_(0<=u<=s<=t) exp(-(t-s)A_lambda/hbar) K_lambda(s-u) T_lambda(u) du ds",
+    "J*(H_lambda+z)^-1J=(A_lambda+z-Sigma_lambda(z))^-1, D(Schur)=D(A_lambda), Schur>=z I",
+    "K_lead(s)=(alpha lambda)^2 B1*exp(-s C0/hbar)B1; Sigma_lead(z)=(alpha lambda)^2 B1*(C0+z)^-1B1",
+    "Fixed channels(1,2x): leading matrices=(alpha lambda)^2 sum_e W_e exp(-e alpha s/hbar), or (alpha lambda)^2 sum_e W_e/(e alpha+z)",
+    "W_3=[[19/4,1/4],[1/4,1/8]]; W_e only11 for e=(9/2,6,15/2,8,17/2,9), with weights(1/8,3/8,9/4,9/8,3/8,3/8)",
+    "||K_lambda-K_lead||<=250 alpha^3 lambda^3 (s/hbar) exp(-3 alpha s/hbar)<=250 alpha^2 lambda^3/(3e)",
+    "||Sigma_lambda-Sigma_lead||<=250 alpha^3 lambda^3/(3 alpha+z)^2<=250 alpha lambda^3/9; 0<=Sigma_lambda<=Sigma_lead"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "R1_executed": false,
+        "Schur": "J*(H_lambda+z)^-1 J=(A_lambda+z-Sigma_lambda(z))^-1, z>0",
+        "Volterra": "T=E_A+hbar^-2 integral_triangle E_A K_lambda T",
+        "complement_exact_electric_gap": "3 alpha",
+        "complement_form_domain": "Q D(H_E^(1/2))",
+        "complement_magnetic_lower_bound": "3 alpha",
+        "complement_operator_domain": "Q D(H_E)",
+        "continuum_transfer": false,
+        "coupling_regime": "all lambda>=0, includes [0,1/100]",
+        "fixed_channels": [
+          "1",
+          "2x, actual P2 completion"
+        ],
+        "homogeneous_transfer": false,
+        "integral_topology": "strong vector-valued",
+        "interacting_ground_claim": false,
+        "kernel_remainder": "250 alpha^2 lambda^3 sigma exp(-3sigma), sigma=alpha s/hbar",
+        "leading_kernel": "(alpha lambda)^2 sum_e exp(-e alpha s/hbar) W_e",
+        "leading_self_energy": "(alpha lambda)^2 sum_e W_e/(e alpha+z)",
+        "offdiagonal_leading_kernel": "(alpha lambda)^2 exp(-3 alpha s/hbar)/4",
+        "offdiagonal_leading_self_energy": "(alpha lambda)^2/[4(3alpha+z)]",
+        "operator_norm_time_Taylor_claim": false,
+        "physical_calibration": false,
+        "remainder_scope": "full infinite-dimensional selected H3",
+        "self_energy_remainder": "250 alpha^3 lambda^3/(3alpha+z)^2",
+        "spectral_weights": {
+          "15/2": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "9/4"
+            ]
+          ],
+          "17/2": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "3/8"
+            ]
+          ],
+          "3": [
+            [
+              "19/4",
+              "1/4"
+            ],
+            [
+              "1/4",
+              "1/8"
+            ]
+          ],
+          "6": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "3/8"
+            ]
+          ],
+          "8": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "9/8"
+            ]
+          ],
+          "9": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "3/8"
+            ]
+          ],
+          "9/2": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1/8"
+            ]
+          ]
+        },
+        "two_channel_autonomous_closure": false,
+        "uniform_delay_kernel_remainder": "250 alpha^2 lambda^3/(3e)",
+        "uniform_positive_z_remainder": "250 alpha lambda^3/9"
+      },
+      "passed": true,
+      "status": "proved_scoped"
+    },
+    "reverse": {
+      "claims": {
+        "C_lambda_lower": "3*alpha for lambda>=0",
+        "Schur_lower": "z for z>0",
+        "Schur_operator_domain": "D(A_lambda)",
+        "absolute_kernel_error_uniform_in_delay": true,
+        "bounds_hold_for_all_lambda_ge_zero": true,
+        "channels": [
+          "1",
+          "2x with actual P2 U28 completion"
+        ],
+        "complement_electric_lower_over_alpha": "3",
+        "complement_electric_lower_sharp": true,
+        "complement_form_domain": "QD(H_E^(1/2))",
+        "complement_operator_domain": "QD(H_E)",
+        "exact_Volterra_kernel": "B_lambda* exp(-s*C_lambda/hbar) B_lambda",
+        "exact_Volterra_right_factor": "T_lambda(r)",
+        "exact_compressed_resolvent": "(A_lambda+z-Sigma_lambda(z))^-1",
+        "finite_autonomous_closure_proved": false,
+        "finite_spectral_cutoff_used": false,
+        "homogeneous_or_continuum_transfer": false,
+        "interacting_ground_identified": false,
+        "kernel_full_Hilbert_remainder": "250*alpha^3*lambda^3*(s/hbar)*exp(-3*alpha*s/hbar)",
+        "leading_kernel_formula": "(alpha*lambda)^2 sum_epsilon W_epsilon exp(-epsilon*alpha*s/hbar)",
+        "leading_self_energy_formula": "(alpha*lambda)^2 sum_epsilon W_epsilon/(epsilon*alpha+z)",
+        "leading_spectral_weights": [
+          {
+            "energy_over_alpha": "3",
+            "matrix": [
+              [
+                "19/4",
+                "1/4"
+              ],
+              [
+                "1/4",
+                "1/8"
+              ]
+            ]
+          },
+          {
+            "energy_over_alpha": "9/2",
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/8"
+              ]
+            ]
+          },
+          {
+            "energy_over_alpha": "6",
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "3/8"
+              ]
+            ]
+          },
+          {
+            "energy_over_alpha": "15/2",
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "9/4"
+              ]
+            ]
+          },
+          {
+            "energy_over_alpha": "8",
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "9/8"
+              ]
+            ]
+          },
+          {
+            "energy_over_alpha": "17/2",
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "3/8"
+              ]
+            ]
+          },
+          {
+            "energy_over_alpha": "9",
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "3/8"
+              ]
+            ]
+          }
+        ],
+        "nonconstant_channel_spectral_energy_count": 7,
+        "offdiagonal_energy3_weight": "1/4",
+        "operator_norm_time_Taylor_claimed": false,
+        "required_weak_interval_included": true,
+        "self_energy_error_uniform_as_z_down_to_zero": true,
+        "self_energy_full_Hilbert_remainder": "250*alpha^3*lambda^3/(3*alpha+z)^2",
+        "uniform_relative_late_delay_accuracy_claimed": false
+      },
+      "passed": true,
+      "status": "proved_actual_projected_memory_spectra_and_controlled_remainders"
+    }
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "physical_data": "Analytic finite-model predictions only; no measured calibration.",
+    "producer_repairs": false,
+    "routes": "Forward exact original-link jets and Haar cubature; reverse symbolic path Casimirs and exact Haar polynomials with explicitly bound own frozen helper.",
+    "shared": "Frozen contract and inherited graph/P2/Q1 evidence only before production.",
+    "skeptic": "Independent preparation frozen before reading either current producer; exact spectra/block controls and four fresh replays."
+  },
+  "limits": [
+    "Two-channel spectral data do not supply an autonomous two-channel or three-variable semigroup.",
+    "Uniform absolute kernel error is not uniform relative accuracy at arbitrarily late delay.",
+    "Complementary small-z error control does not bound the full compressed resolvent uniformly at zero.",
+    "Haar is the electric reference, not an interacting ground; no norm time Taylor expansion, homogeneous stability or continuum transfer."
+  ],
+  "loop": "q2",
+  "next_missing_premise": "A certified operator approximation to the full selected evolution or further physical matching requires separate work; R returns to the actual homogeneous diagonal boundary obstruction.",
+  "review_inputs": [
+    "research/round22/skeptic/check_q2_preparation.py",
+    "research/round22/skeptic/check_q2_review.py",
+    "research/round22/skeptic/q2-independent-comparison.json",
+    "research/round22/skeptic/q2-independent-replay.json",
+    "research/round22/skeptic/q2-preparation-checks.json",
+    "research/round22/skeptic/q2-preparation-manifest.json",
+    "research/round22/skeptic/q2-preparation-replay.json",
+    "research/round22/skeptic/q2-preparation.md",
+    "research/round22/skeptic/q2-primary-source-addendum.json",
+    "research/round22/skeptic/q2-primary-source-map.json",
+    "research/round22/skeptic/q2-replay-summary.json",
+    "research/round22/skeptic/q2-review.json",
+    "research/round22/skeptic/q2.md",
+    "research/round22/skeptic/replay_frozen_loop.py",
+    "research/round22/advisor/replay_pair.py",
+    "research/round22/advisor/q2-decision.md",
+    "research/round22/advisor/q2-pair-comparison.json",
+    "research/round22/advisor/q2-root-replay.json",
+    "research/round22/advisor/q2-root-analysis.md",
+    "research/round22/advisor/q2-root-source-note.json"
+  ],
+  "scope": "Same finite18-vertex33-link20-face physical SU2 graph and P2 Haar projection; fixed a,E_star,alpha/E_star,hbar; lambda>=0,delay s>=0,resolvent energy z>0.",
+  "skeptic_review_frozen": true,
+  "status": "accepted",
+  "target_verdict": "Graph-specific controlled memory and self-energy proved; no autonomous finite closure or interacting-ground identification."
+}

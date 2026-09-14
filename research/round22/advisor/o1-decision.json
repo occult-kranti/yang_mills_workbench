@@ -1,0 +1,94 @@
+{
+  "claim": "Complete simultaneous homogeneous rotation has explicit weighted remainder with preserved unbounded operator domain.",
+  "equations": [
+    "exp(X)(H0+Phi)exp(-X)=H0+D+R on D(H0)",
+    "||R||_w <= (25460736/25)tau^2 for |tau|<=5/1664",
+    "|<psi,D psi>| <= 28|tau|<psi,H0 psi>",
+    "R=sum_(n>=1) [ad_X^n(Phi)/n!-ad_X^n(A)/(n+1)!]"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "actual_remainder_pure_relative": false,
+        "actual_vacuum_mean_leading": "-tau^2*<U1,H0 U1>, strictly negative coefficient for a nonempty anchor set",
+        "diagonal_relative_at_tau_1_over_4096": "7/1024",
+        "finite_volume_domain_preserved": true,
+        "infinite_global_unitary_or_ITP_transfer_proved": false,
+        "iteration_contraction_proved": false,
+        "maximum_site_star_overlap": 4,
+        "maximum_star_overlap_displacements": 13,
+        "numerical_homogeneous_gap_proved": false,
+        "ordered_support_size_bound": "4+3*n",
+        "quadratic_constant": "25460736/25",
+        "relative_diagonal_coefficient": "28*abs(tau)",
+        "remainder_at_tau_1_over_4096": "777/12800",
+        "remainder_ratio_at_tau_2_power_minus_22": "777/3200",
+        "remainder_series": "sum_n>=1 ad_X^n(Phi)/n!-ad_X^n(A)/(n+1)!",
+        "rotation_identity": "exp(X)(H0+Phi)exp(-X)=H0+D+R",
+        "s_bound": "4*abs(tau)/5",
+        "scalar_majorant": "64*(M+a0/2)*((1-192*s)^(-8/3)-1)",
+        "tau_interval_closed": "abs(tau)<=5/1536",
+        "unbounded_H0_norm_series_used": false,
+        "weighted_norm_recurrence": "N_(n+1)<=64*s*(8+3*n)*N_n; N_0<=64*b"
+      },
+      "passed": true,
+      "status": "limited"
+    },
+    "reverse": {
+      "claims": {
+        "diagonal_relative_coefficient": "28*abs(tau)",
+        "first_commutator": "[X,H0]=-sum A_b",
+        "first_step_upper_budget_shrink_interval": "abs(tau)<=1/2000",
+        "generated_support_upper": "4+3*n",
+        "infinite_global_unitary_proved": false,
+        "iterative_contraction_proved": false,
+        "numerical_homogeneous_gap_proved": false,
+        "quadratic_interval_tau_closed": "5/1664",
+        "quadratic_remainder_constant": "1970176/5",
+        "relative_ordered_word_count_upper": "13^n*n!",
+        "remainder_automatically_vacuum_annihilating": false,
+        "remainder_majorant": "16*(v+a/2)*z*(7-4*z)/(1-z)^2; z=208*s",
+        "rooted_weighted_commutator_upper": "16*(4+3*n)*(208*s)^n*n!*sup_norm_K",
+        "series_radius_tau_open": "5/832",
+        "simultaneous_rotation_preserves_operator_domain": true,
+        "site_star_overlap": "4",
+        "star_overlap_translates": "13",
+        "unbounded_H0_norm_series_used": false
+      },
+      "passed": true,
+      "status": "proved_remainder_gap_limited"
+    }
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "physical_data": "analytic proofs and independent exact controls, not independent measurements",
+    "post_review_repairs": false
+  },
+  "limits": [
+    "No numerical homogeneous gap or iterative contraction is proved.",
+    "No infinite globally bounded unitary or canonical-profile transfer is proved.",
+    "Actual SU2 negative vacuum mean does not establish centered mixing; finite-spin fixtures test the general lemma.",
+    "No continuum consequence or scientific-priority claim."
+  ],
+  "loop": "o1",
+  "next_missing_premise": "An explicit generated-support homological/commutator estimate with retained diagonal part, inverse gaps and cumulative support-weight control that actually closes a numerical iteration.",
+  "review_inputs": [
+    "research/round22/advisor/o1-decision.md",
+    "research/round22/advisor/o1-pair-comparison.json",
+    "research/round22/advisor/o1-root-replay.json",
+    "research/round22/skeptic/o1-independent-checks.json",
+    "research/round22/skeptic/o1-independent-replay.json",
+    "research/round22/skeptic/o1-preparation-manifest.json",
+    "research/round22/skeptic/o1-preparation.md",
+    "research/round22/skeptic/o1-primary-source-map.json",
+    "research/round22/skeptic/o1-replay-summary.json",
+    "research/round22/skeptic/o1-review.json",
+    "research/round22/skeptic/o1.md",
+    "research/round22/skeptic/check_o1_independent.py",
+    "research/round22/skeptic/replay_frozen_loop.py"
+  ],
+  "scope": "Finite-volume homogeneous I1/I2 full-link model; all dimensionless energies normalized by delta=alpha/8 with fixed positive physical scales; no canonical-profile or continuum transfer.",
+  "skeptic_review_frozen": true,
+  "status": "limited",
+  "target_verdict": "All-order volume-uniform remainder proved; numerical homogeneous stability not closed."
+}

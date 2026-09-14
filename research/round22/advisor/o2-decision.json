@@ -1,0 +1,110 @@
+{
+  "claim": "The bare-reference elimination has explicit all-support bounds, but its retained-diagonal loss majorants cannot certify an infinite iteration at nonzero coupling.",
+  "equations": [
+    "R_Y=c_Y I+A_Y+Q_Y(R_Y-c_Y I)Q_Y; ||S_Y||<=||R_Y||",
+    "||[Phi,Psi]||_(mu-delta)<=4||Phi||_mu||Psi||_mu/(e delta) (reverse bound)",
+    "r_next<=(d+3r/2)rho/(1-rho), rho=4r/delta<1; d_next<=d+2r",
+    "For this reverse majorant: r_next<r iff delta>4d+10r",
+    "mu_n=log(2)/2+log(2)/(2(n+1)); both stated positive-budget recurrences eventually leave their radius for tau!=0"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "actual_algorithm_failure_proved": false,
+        "actual_homogeneous_gap_failure_proved": false,
+        "all_positive_tau_baseline_majorant_obstruction": true,
+        "arbitrary_support_homological_inverse_gap": "1 (bare H0)",
+        "diagonal_bound": "norm(Z_Y)<=2 norm(R_Y)",
+        "diagonal_norm_update": "d_next<=d+2r",
+        "equal_weight_universal_commutator_bound": false,
+        "exact_log_majorant_eventual_obstruction": true,
+        "full_remainder_recurrence": "r_next<=(d+3r/2)*rho/(1-rho)",
+        "generator_bound": "norm(S_Y)<=norm(R_Y)",
+        "infinite_ITP_transfer": false,
+        "intensive_scalar_increment_bound": "exp(-mu)*r",
+        "loss_commutator_constant": "4/delta_w",
+        "mixing_bound": "norm(A_Y)<=norm(R_Y)",
+        "mu_positive_limit": "log(2)/2",
+        "nested_series_ratio": "12*r/delta_w",
+        "numerical_gap_threshold_proved": false,
+        "operator_domain_preserved": true,
+        "rational_recurrence_first_failure_step": 42,
+        "rational_recurrence_lambda_n": "36*(n+1)*(n+2)",
+        "rational_recurrence_minimum_step": 15,
+        "relative_update": "kappa_next<=kappa+2r",
+        "retained_D_included": true,
+        "scalar_bound": "abs(c_Y)<=norm(R_Y)",
+        "tau_example": "1/4194304"
+      },
+      "passed": true,
+      "status": "limited"
+    },
+    "reverse": {
+      "claims": {
+        "A_bound": "r",
+        "S_bound": "r",
+        "Z_bound": "2*r",
+        "actual_algorithm_failure_proved": false,
+        "actual_homogeneous_gap_failure_proved": false,
+        "all_support_commutator_loss_constant": "4/(e*delta)",
+        "arbitrary_support_bare_inverse_gap": "1",
+        "baseline_loss": "log(2)/(2*(n+1)*(n+2))",
+        "diagonal_norm_update": "b+2*r",
+        "diagonal_relative_update": "a+2*r",
+        "eventual_doubling_coarse_stage_example": "197",
+        "infinite_global_unitary_proved": false,
+        "nested_divided_factorial_bound": "(4*s/delta)^n*norm(K)",
+        "numerical_homogeneous_gap_proved": false,
+        "operator_domain_preserved": true,
+        "positive_limit_weight": "log(2)/2",
+        "positive_tau_baseline_majorant_closes": false,
+        "scalar_bound": "r",
+        "scalar_density_increment_upper": "r",
+        "step_majorant": "[4*r/(delta-4*r)]*(b+3*r/2)",
+        "step_radius": "4*r<delta",
+        "strict_majorant_contraction_iff": "delta>4*b+10*r",
+        "structured_homological_exception_retained": true,
+        "tau_example": "1/100000000"
+      },
+      "passed": true,
+      "status": "proved_majorant_obstruction_gap_limited"
+    }
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "physical_data": "Analytic arguments and exact lemma controls only.",
+    "post_freeze_clarification": "Advisor and skeptic clarified reverse support decomposition; explicitly disclosed, frozen producer files unchanged.",
+    "producer_repairs": false
+  },
+  "limits": [
+    "Failure concerns the stated upper-budget recurrences, not actual residuals or the true algorithm.",
+    "No numerical homogeneous gap or actual gap failure is proved.",
+    "Generic structured counterexamples do not identify the actual SU2 generated trajectory.",
+    "Reverse1/64 fixture value uses regrouped actual support; indexed union value is(9N+16)/(64(3N+1)).",
+    "No infinite global unitary, representation transfer or continuum consequence."
+  ],
+  "loop": "o2",
+  "next_missing_premise": "A structure-sensitive treatment of retained D or a matched interacting inverse with proved domains and generated-support estimates that avoids the recurring linear loss cost.",
+  "review_inputs": [
+    "research/round22/advisor/o2-decision.md",
+    "research/round22/advisor/o2-pair-comparison.json",
+    "research/round22/advisor/o2-root-replay.json",
+    "research/round22/advisor/replay_pair.py",
+    "research/round22/skeptic/o2-independent-checks.json",
+    "research/round22/skeptic/o2-independent-replay.json",
+    "research/round22/skeptic/o2-preparation-checks.json",
+    "research/round22/skeptic/o2-preparation-manifest.json",
+    "research/round22/skeptic/o2-preparation.md",
+    "research/round22/skeptic/o2-primary-source-map.json",
+    "research/round22/skeptic/o2-replay-summary.json",
+    "research/round22/skeptic/o2-review.json",
+    "research/round22/skeptic/o2.md",
+    "research/round22/skeptic/check_o2_preparation.py",
+    "research/round22/skeptic/check_o2_review.py",
+    "research/round22/skeptic/replay_frozen_loop.py"
+  ],
+  "scope": "Homogeneous I1/I2/O1 full-link finite cuboids at fixed physical scales; proof weights only; no canonical profile or continuum promotion.",
+  "skeptic_review_frozen": true,
+  "status": "limited",
+  "target_verdict": "Generated-support estimates and a precise recurrence obstruction proved; numerical homogeneous gap remains open."
+}

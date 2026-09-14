@@ -1,0 +1,204 @@
+{
+  "claim": "The full magnetic action has correlated positive conditional variance, proving selected-image leakage and a quantitative nonautonomous dynamic defect.",
+  "equations": [
+    "H_lambda=H_E+alpha lambda Vmag; Vmag=sum_(20 faces)(1-W_p),0<=Vmag<=40",
+    "m=E[Vmag|U,V,W]=20-b; b=Tr(VW^-1)/2",
+    "E[Vmag^2|U,V,W]=m^2+K; K=19/4+(r+x+z)/2=4+|u+w+e0|^2/4; r=Tr(UW^-1)/2,x=TrU/2,z=TrW/2",
+    "J*Vmag(1-P)VmagJ=M_K;4I<=M_K<=25I/4; ||B_lambda||=5 alpha lambda/2",
+    "A_lambda=H_eff+alpha lambda M_m; [T_lambda(t)-exp(-t A_lambda/hbar)]f=(alpha lambda t/hbar)^2 M_K f/2+o_f(t^2) on the invariant smooth core",
+    "||T_lambda(t)-exp(-t A_lambda/hbar)||<=min(1,(25/8)(alpha lambda t/hbar)^2)",
+    "For fixed lambda>0, scaled quotient tends strongly to M_K/2 and its scalar norm tends to25/8; quotient does not converge in operator norm"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "Haar_V_mean": "20",
+        "Haar_V_second_moment": "405",
+        "Haar_V_variance": "5",
+        "Haar_core_difference": "(19/8)(alpha lambda t/hbar)^2+o(t^2)",
+        "Haar_reference_interacting_ground": false,
+        "K_Haar_mean": "19/4",
+        "K_sharp_lower": "4",
+        "K_sharp_upper": "25/4",
+        "Q2_selected": false,
+        "complement_form_domain": "Q D(H_E^(1/2))",
+        "complement_operator_domain": "Q D(H_E)",
+        "compression_generator": "H_eff+alpha lambda(20-b)",
+        "conditional_mean": "20-b, b=Tr(V W^-1)/2",
+        "conditional_second_moment": "(20-b)^2+19/4+(r+x+z)/2, r=Tr(U W^-1)/2",
+        "conditional_variance_operator": "M_K, K=19/4+(r+x+z)/2",
+        "continuum_transfer": false,
+        "core_Taylor_difference": "(alpha lambda t/hbar)^2 K f/2+o_f(t^2)",
+        "cross_pair_moments": [
+          "r/4",
+          "x/4",
+          "z/4"
+        ],
+        "full_J16_unitary_equivalence_preserved": true,
+        "full_magnetic_face_count": 20,
+        "global_norm_upper_bound": "(25/8)(alpha lambda t/hbar)^2",
+        "homogeneous_transfer": false,
+        "integral_topology": "strong vector-valued",
+        "leakage_norm": "5 alpha lambda/2",
+        "leakage_squared": "(alpha lambda)^2 M_K",
+        "magnetic_multiplier_range": [
+          "0",
+          "40"
+        ],
+        "operator_norm_Taylor_claim": false,
+        "physical_calibration": false,
+        "physical_operator_domain": "H2(SU2^33) intersect Hphys",
+        "scalar_shift_repairs_leakage": false,
+        "selected_closure_lambda_zero": true,
+        "selected_closure_positive_lambda": false,
+        "selected_operator_domain": "H2(SU2^3) intersect H3",
+        "stationary_interacting_correlation_claim": false,
+        "surviving_cross_pairs": [
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            14,
+            15
+          ]
+        ]
+      },
+      "passed": true,
+      "status": "proved_scoped"
+    },
+    "reverse": {
+      "claims": {
+        "B_lambda_norm": "5*alpha*lambda/2",
+        "B_lambda_reference_norm_squared": "19*(alpha*lambda)^2/4",
+        "Haar_reference_is_interacting_eigenvector_for_positive_lambda": false,
+        "J_star_V_Q_V_J": "multiplication by d=19/4+(r+x+z)/2",
+        "all_time_operator_norm_bound": "min(1,(25/8)*(alpha*lambda*t/hbar)^2)",
+        "autonomous_compressed_semigroup_for_positive_lambda": false,
+        "conditional_mean": "20-tau",
+        "conditional_second_moment": "(20-tau)^2+19/4+(r+x+z)/2",
+        "d_Haar_mean": "19/4",
+        "d_essential_infimum": "4",
+        "d_essential_supremum": "25/4",
+        "d_squared_Haar_mean": "91/4",
+        "electric_recovery_at_lambda_zero": true,
+        "full_H_lambda_nonnegative_for_lambda_ge_zero": true,
+        "full_J16_unitary_preserved": true,
+        "homogeneous_or_continuum_transfer": false,
+        "interacting_ground_identified": false,
+        "operator_norm_Taylor_expansion_claimed": false,
+        "physical_calibration_completed": false,
+        "physical_form_domain": "H1(SU2^33)^Gauss",
+        "physical_operator_domain": "H2(SU2^33)^Gauss",
+        "potential_bound": "0<=V_pot<=40",
+        "reference_matrix_element_leading_coefficient": "19/8",
+        "reference_vector_norm_leading_coefficient": "sqrt(91)/4",
+        "scaled_defect_parameter": "alpha*lambda*t/hbar",
+        "selected_compression_operator_domain": "H2(SU2^3)^Ad",
+        "selected_reduces_for_positive_lambda": false,
+        "small_time_scaled_operator_norm_limit": "25/8 for fixed lambda>0",
+        "strong_limit_on_all_selected_vectors": true,
+        "strong_scaled_compressed_defect_limit": "M_d/2",
+        "surviving_distinct_conditional_pairs": [
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            14,
+            15
+          ]
+        ]
+      },
+      "passed": true,
+      "status": "proved_correlated_magnetic_leakage_and_nonautonomous_compression"
+    }
+  },
+  "files": {
+    "research/round19/forward/c1/output/graph-reduction.json": "b808c6c59d899b51c56c93305c0d4f3bce0c70f5c4e4ec8fcd92ef91525611de",
+    "research/round22/advisor/p2-decision.md": "67539a026dfcf6638da7cce494ff86a229d55aee5b431cf540654cb745e58471",
+    "research/round22/advisor/p2-gate.json": "4946fd428777ee887b875f0b2f36294e6daeaea98bc1fcc034d588fb3cd49411",
+    "research/round22/advisor/physical-source-preparation.json": "954e9e762a75ddf40f38695ab9c390530d32c86bb98838c60c57fba64ad696e7",
+    "research/round22/advisor/post-six-selection.json": "9c1956c564e3069968c7108c443f941aa54776bf8411a4f8dc78a8195b8411e4",
+    "research/round22/advisor/q1-decision.json": "59a897983a624281e8a7907a3a4e2543119d95b9cdaf9bfaced23d835aad8bbf",
+    "research/round22/advisor/q1-decision.md": "b97efa6c5a051cea681f2a11cd0fe7b5d59e14d874cc1726de63cca77956e1c8",
+    "research/round22/advisor/q1-pair-comparison.json": "2e4141b2f6b84bca95c26b052eaac5a780225fc67b688a4fd1a1975f9889a0c6",
+    "research/round22/advisor/q1-root-analysis.md": "e5db64a39e28b8857cae2620ac9aa88ae51c191b5e0f1b83f83efdeab2235344",
+    "research/round22/advisor/q1-root-replay.json": "70c9170029dc4897a23d8060c7a4bee4d528ad7cec747eae98681a8d7f940087",
+    "research/round22/advisor/q1-root-source-note.json": "38d4843436d60b473e2d87f6fa82e39c7a29e2e7497c0ef53665510d48cbed7d",
+    "research/round22/advisor/replay_pair.py": "b5d8e1134b566701798535edf079c18846d23a23a9d35c3abdab719001f8ccfe",
+    "research/round22/contracts/q1.json": "bc6ba8654f98814173385ae99cb77478ab8a16ec4cc80543a59678ffa149330f",
+    "research/round22/forward/p2/check.py": "bccce69e4774ee0e3a6711cf0f43b51533a6f46ad4482bdb18fc57b2c3252f98",
+    "research/round22/forward/p2/report.md": "ce15f87738c1726e5e73e85204d07a9ffd592c4c122b7f13beefb1aefe4c8a61",
+    "research/round22/forward/p2/source-notes.md": "2e8e3e87811f4b534a24aa512d5f3a70d185b80c3ff56feb2ac93ba0f7d3094f",
+    "research/round22/forward/q1/check.py": "399dc6aa30d10b364d5bdc17e8362f0d4fe45e76e98f4a735daab550071bff03",
+    "research/round22/forward/q1/output/controls.json": "acea014e81740013680dcfa17223305118933c1457adceaadcd5121265104e59",
+    "research/round22/forward/q1/output/results.json": "acb655318d9b581fae63a1b36beed5f4ff3031791c2fc300d0d3e8938e92a8be",
+    "research/round22/forward/q1/output/source-manifest.json": "51654716bad58a780afb2ba1a5a540ea8abff2b861b16eb74ce99e998c3e87a9",
+    "research/round22/forward/q1/report.md": "fbc94aa0fbd72749403550471aad4bd8f733cfcac8a79ff46065785e94675d33",
+    "research/round22/forward/q1/source-notes.md": "954d8bf903034e9d85777b1bcafbb054b0a9b340468f9e42fe4e18afbca6b323",
+    "research/round22/forward/q1/submission.json": "1456b14d382cb48a8365c1bf3f10929495a3137c1ff994e056be768312928699",
+    "research/round22/methods/team-protocol.md": "6249e2ee14901fa6a8cf4dc6e4c98c4190c80e6ee270471eb36826781e02d4a1",
+    "research/round22/methods/v3/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+    "research/round22/methods/v3/stationarity-support-and-admission.md": "43d61dab42434f19266df7920d3fccdf5bf5b81f75182429dbbd95d5bf6b5690",
+    "research/round22/methods/v4/AGENTS-at-selection.md": "788f2057dde1bc0e3fe0bb724f2d251e07c468b7b605fbea3b216408c0900338",
+    "research/round22/methods/v4/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+    "research/round22/methods/v4/haar-maps-and-induced-dynamics.md": "2a02cf71e12d1cdb1777f0e582f3592c3f09998451233d74f548c68b33a1cab9",
+    "research/round22/methods/v4/paired-physics-research-at-selection.md": "0ad7375ecccb3794b5bdc0b0c60f893ea5acac9c11ac95db022e8b97c02dc52f",
+    "research/round22/methods/v4/stationarity-support-and-admission.md": "43d61dab42434f19266df7920d3fccdf5bf5b81f75182429dbbd95d5bf6b5690",
+    "research/round22/reverse/n1/inputs/advisor-finite-observations.md": "8b8ed522f672d8255ba6d1007b9808b2f5ece1cdf85693549787849d9301403a",
+    "research/round22/reverse/n1/inputs/paired-admission-matching.md": "5759836a5535ca38df772ab3765e2396cc191145522321c6630e9b1a81db0090",
+    "research/round22/reverse/p2/report.md": "564413f575fadbe0a0fd86ffd8036095d2168fd0213c13027a0d723bf20185bb",
+    "research/round22/reverse/p2/source-review.json": "4f7d5eed853d0ed5b52216390f94cf0b42460ec6d9dbe94a3a2aff2a78ab049c",
+    "research/round22/reverse/q1/check.py": "40204a8962b84e5a71a7aceb0f6b999eb429d0fcfc9b58db82d645ff96a4fb17",
+    "research/round22/reverse/q1/independence.json": "3ab0acc9b6af109b8edc04e0b3cf82a436282cb3a28cbec8920fbd53a5d5f207",
+    "research/round22/reverse/q1/output/controls.json": "ab3ea636a01753ad1dc6c35fa8a6bbb00a5abb34e18d8c5d9cf500bf1259d3c7",
+    "research/round22/reverse/q1/output/results.json": "e347218053b87debb985879fa5012fbfc9043c1258f6153daf14f101991ee08f",
+    "research/round22/reverse/q1/output/source-manifest.json": "0ea8502bf18fd6036a723840aa1a10885e7e4902376d10f992d29c1428966ba9",
+    "research/round22/reverse/q1/report.md": "a9e8e3444520d95f4579dcfdb94b3c4c732481c5c323ffa9054b871cb5237fd1",
+    "research/round22/reverse/q1/source-review.json": "3fc8204ca9fc3a53575f4ae913f0504091b5714fb44d12b9e91b5d80c44015a5",
+    "research/round22/reverse/q1/submission.json": "3b6495d29b44091e6c0bcf49ee70ebf1360f66516ffa3b8ba330a861a9866d75",
+    "research/round22/skeptic/check_q1_preparation.py": "08709e17c63e5d35215b0cc8e02e9abb65349c1df3ff31de1a31c161101798cd",
+    "research/round22/skeptic/check_q1_review.py": "4f385e244e59bf406c040168d6ccb231afb67930475bebe42895fe0d388fb2de",
+    "research/round22/skeptic/p2.md": "031b902ed98bdd239231bcd1b891ac85c18896aa9620d14b28b3ed08f6a8a6ba",
+    "research/round22/skeptic/post-six-review.json": "355691c00b0bb921ba07d1b7136288465556a4689d435862f0470be6691d5890",
+    "research/round22/skeptic/q1-independent-checks.json": "3efb8476bca1123d696926826f014c69ae0d91e615328c4415cce1bb5f261fc3",
+    "research/round22/skeptic/q1-independent-replay.json": "25b5e01dcca42625b0d1198e3051fd2450e6a85cef183dd1e2ceb21d1407a98a",
+    "research/round22/skeptic/q1-preparation-checks.json": "6af36aacd08acf5fba025f8e6bc9ae4dbd8e1081d662173f54b4d972e35b06d5",
+    "research/round22/skeptic/q1-preparation-manifest.json": "6383f32984fb250963006cb51cb04d639e92dbe6df82b08d6c3e8aea6bdd9266",
+    "research/round22/skeptic/q1-preparation.md": "cdf52b706999279c2d9cd5eebb3b2bfa46deed32e9ed27a1f8bbd2ff3e9e12ed",
+    "research/round22/skeptic/q1-primary-source-map.json": "84f599f1ad8218afaa6fea8f433fdb67d59f41d06288b22347c23803771bdf58",
+    "research/round22/skeptic/q1-replay-summary.json": "a596a5724558e7b81ec9296897c06823b8135359b698a558229c526181a85c60",
+    "research/round22/skeptic/q1-review.json": "b1a622bde5348e39b9c870930e927f1496fee4fd6429f8546041a4a5df14d052",
+    "research/round22/skeptic/q1.md": "50656c88260fb494dbc7dc87d645f7f119ffa2b129fa46cd8739855c77aa09bf",
+    "research/round22/skeptic/replay_frozen_loop.py": "35b873de7787625230c1afd4c4c2f79ab69e1eaf8adc7c056ed250194046ab54"
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "control_development": "Skeptic disclosed its failed noncommutation fixture and pre-freeze replacement; no producer evidence changed.",
+    "physical_data": "Analytic finite-model predictions only.",
+    "producer_repairs": false,
+    "refinements": "Reverse-only all-vector/scalar-norm refinements are separately attributed; compactness qualification is independent skeptical preparation and root review.",
+    "shared": "Frozen contract and inherited P2/C1 evidence; distinct exact implementations."
+  },
+  "limits": [
+    "The Haar vector is not an interacting ground at positive lambda.",
+    "The selected compression is nonautonomous; full sixteen-chord unitary equivalence remains valid.",
+    "Strong/scalar norm asymptotics do not imply operator-norm Taylor convergence or finite-time operator positivity.",
+    "No measured calibration, homogeneous stability or continuum transfer."
+  ],
+  "loop": "q1",
+  "next_missing_premise": "Quantitative actual projected memory/self-energy with graph-specific channels and controlled remainders, selected as Q2 after this review.",
+  "schema": "ym22-gate-v1",
+  "scope": "Actual18-vertex33-link20-face SU2 graph and P2 Haar map; fixed a,E_star,alpha/E_star,hbar; dimensionless lambda>=0; invariant H1/H2 domains.",
+  "status": "accepted",
+  "target_verdict": "Exact full transport and moments proved; selected magnetic reduction and autonomous compressed semigroup rejected for lambda>0."
+}

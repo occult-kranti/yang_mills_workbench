@@ -1,0 +1,43 @@
+{
+  "schema": "ym22-contract-v1",
+  "loop": "n1",
+  "status": "frozen",
+  "selected_at": "2026-09-14T05:50:24.826890+00:00",
+  "base_commit": "382e61571b029e198d87abbeec99d88157d3c168",
+  "target": "Prove or reject the proposed stationary-Heisenberg local correlation bound; derive only consequences supported by the proved bound.",
+  "model": "M1/M2 canonical summable full-link SU(2) selected-strip/free incomplete tensor product; octant cubic graph, exact inherited block partition and complete reference factor algebra; infinite-volume summable perturbation in that fixed representation. No homogeneous representation transfer.",
+  "dependencies": {
+    "research/round21/advisor/m1-gate.json": "a0deffb2019cd6d704fe15d0c31238f1efab45b2fbc9605ae27dcb31579e80e5",
+    "research/round21/advisor/m2-gate.json": "8c896da9bdca441f16dd01d2642f6e5cd627a7462d1bff5192945df74ac326bf",
+    "research/round21/advisor/post-ten-roadmap.json": "e9befc80dea5e3016f5d5ad14e15cce08c7c1d27d87b71af601bdd8f4b5486f4"
+  },
+  "definitions": {
+    "H_q": "H_ref+V_q; V_q=-alpha*tau_q*sum_omitted_f q^(x+y+z)*x_f/24; x_f=Tr(U_f)/2",
+    "profile_B": "B(q)=(2+5q+5q^2+6q^3+3q^4)/(24*(1-q)^3*(1+q)^2*(1+q^2)); distinct from observable B",
+    "tau_q": "eta/[8 B(q)]",
+    "gbar": "alpha*(1-eta)/8",
+    "sigma_q_squared": "alpha^2*tau_q^2*B(q^2)/96",
+    "d_q": "||P_q-P_ref|| <= sigma_q/gbar",
+    "energy_shift": "e_q=inf spec H_q; -sigma_q^2/gbar <= e_q <=0",
+    "correlation": "C_q(t)=<Psi_q,A* exp[-it(H_q-e_q)/hbar] B Psi_q>-omega_q(A*)omega_q(B)",
+    "D_FB(q)": "sum_omitted_faces_meeting_all_links_of_complete_factor_cover_F_B q^(x+y+z)/24"
+  },
+  "domain_units": "q,eta in (0,1); E_star,alpha,hbar and spacing positive and fixed; alpha/E_star fixed; q,eta,tau dimensionless action-profile parameters; t real in physical time. alpha,e_q,sigma_q,gbar energies; d_q,D dimensionless.",
+  "observables": "Fixed bounded complex local gauge-invariant A,B; complete finite factor cover F_B; no assumed invariance of D(H_ref) by A or B.",
+  "proposed_not_accepted": "|C_q(t)-C_ref(t)| <= ||A||||B|| [6 d_q + (2 alpha tau_q |t|/hbar) D_FB(q)]",
+  "required": [
+    "Prove stationary Heisenberg rewrite and legitimate cancellation of scalar ground energy.",
+    "Prove strong operator integral/norm inequality without differentiating arbitrary bounded observables through the unbounded generator domain.",
+    "Retain complete factor support for all reference times, complex conjugation and both mean products; all real t.",
+    "Determine sufficient growing-window range only after proving the operator estimate, with explicit q->1 constants and endpoints; upper-bound insufficiency is not actual nonconvergence.",
+    "Independent exact or controlled checks for centering, scalar shifts, complete support, domain failure control and endpoint scope; no arithmetic script called an infinite proof."
+  ],
+  "acceptance": "Accept precise estimate with complete argument plus independent rejecting controls; otherwise record precise obstruction/limited outcome. No assumption of target truth.",
+  "next_loop": "N2 unselected until N1 reports and skeptic review.",
+  "instruction_inputs": [
+    "research/round22/methods/team-protocol.md",
+    "research/round22/methods/AGENTS-at-selection.md",
+    "research/round22/methods/paired-physics-research-at-selection.md",
+    "research/round22/methods/continuation-prompt.md"
+  ]
+}
