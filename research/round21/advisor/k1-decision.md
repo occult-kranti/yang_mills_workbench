@@ -1,0 +1,6 @@
+# K1 advisor decision
+Both independent reconstructions and the root product-rule audit obtain the reversible divergence operator, the complete transformed potential and the mobility-dependent lower gap estimate. Omitting grad(m) fails stationarity even at kappa=0; omitting its transformed potential contribution fails the ground-state equation. These are discriminating operator checks.
+
+Exact Haar moments give the two-rate matrix in (c,c*zeta), determinant 3/128, and the corresponding Jacobian 3c/128 in (c,zeta). The parity-even pair loses the mobility parameter. Admit the conditional model discrimination and inverse at known kappa=0. No physical rates have been measured or supplied, and no lattice-to-three-link reduction is established. Principal-symbol preservation supplies only the declared necessary matching obstruction.
+
+Select K2 from the real remaining gap: pointwise Haar rank does not certify the signed kappa interval. Introduce a dimensionless observable-design parameter a, use the monotonicity of (1+2ax)^2 to test interval-wide rank, and test an out-of-family mobility direction that two rates cannot see. This parameter changes the measured test function, not the dynamics. L and M remain unselected until the sixth gate.

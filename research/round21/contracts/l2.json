@@ -1,0 +1,30 @@
+{
+  "schema": "ym21-contract-v1",
+  "loop": "l2",
+  "status": "frozen",
+  "depends_on": {
+    "gate": "research/round21/advisor/l1-gate.json",
+    "sha256": "ba1e9832d23313343d68097444ebb82464f8d15b089b711a7fdeff77398ea9a0"
+  },
+  "goal": "Construct positive mobility changes invisible to all L1 slopes and prove the limit of any finite list of initial slope observations.",
+  "selection_reason": "L1 resolves the cubic inside a three-parameter family but retains unrestricted-mobility ambiguity. L2 must make that ambiguity constructive and quantify positivity.",
+  "model": "Fixed known conditional density rho_kappa on compact SU(2)^3, c>0 fixed; smooth strictly positive baseline mobility m0. General theorem concerns a finite set of smooth observables and only their initial imaginary-time slopes. Explicit polynomial fixture at kappa=0, baseline m0=1 and L1 observables f=x,g=x+x^2/4,h=x^2+x^3.",
+  "required": [
+    "For N finite slope functionals L_j(P)=integral rho_kappa P(x) Gamma(f_j), construct a nonzero polynomial in a finite-dimensional nullspace. Justify nonzero as a function on full marginal support and normalize by a proved finite coefficient or sup norm bound.",
+    "Prove m_epsilon=m0+epsilon P remains positive for an explicit interval tied to inf m0 and ||P||infinity; all N initial slopes and the stationary density remain unchanged while the generator changes.",
+    "Do not extend finite-slope underidentification to complete time-correlation curves, full generators or data outside the finite list. Distinguish exact formal moment matrices from noisy numerical estimates.",
+    "Derive the proposed fifth polynomial as an explicit null direction for all three L1 rates, verify its positivity interval and nonzero generator residual.",
+    "Check the NIST Gegenbauer finite sum: any identification with C5^(2)/192 makes the polynomial classical, not a newly invented family.",
+    "Explain the operational workaround: declare a finite mobility basis, require a full-rank rate matrix, reserve observations to falsify the model class, and record physical matching as an independent task. Additional variables alone cannot establish uniqueness."
+  ],
+  "proposed_not_assumed": [
+    "p5=x^5-5x^3/6+x/8",
+    "integral p5 Gamma(f)=integral p5 Gamma(g)=integral p5 Gamma(h)=0 at kappa=0",
+    "||p5||infinity<=47/24, so 1+epsilon p5>=49/96 for |epsilon|<=1/4",
+    "p5=C5^(2)/192",
+    "For m0>=m_star>0, normalize ||P||infinity<=1 and choose |epsilon|<=m_star/2 to retain m_epsilon>=m_star/2",
+    "At x=0, the change in A_m x from the p5 deformation is -epsilon/32, nonzero for epsilon!=0"
+  ],
+  "acceptance": "Constructive finite-data obstruction and exact positive hidden-direction fixture, preserving finite-family successful inverses and physical limits.",
+  "comparison_protocol": "Standard deterministic independent report/check/results and complete source/output manifest. Both proof and scope matter; fixtures do not establish the general theorem by sampling."
+}

@@ -1,0 +1,130 @@
+{
+  "comparison": {
+    "blind_polynomial": "x^5-5x^3/6+x/8",
+    "classical_gegenbauer_scale": "192",
+    "complete_time_curve_obstruction_claimed": false,
+    "finite_slope_general_obstruction": true,
+    "mobility_floor_fixture": "49/96",
+    "three_rate_null_vector": true
+  },
+  "controls": {
+    "finite_family_success_preserved": true,
+    "full_time_curve_nonidentifiability_rejected": true,
+    "noisy_matrix_exact_nullspace_inference_rejected": true,
+    "same_full_generator_rejected": true,
+    "wrong_p5_coefficients_rejected": true
+  },
+  "direction": "reverse",
+  "exact": {
+    "C5_lambda2": {
+      "1": "24",
+      "3": "-160",
+      "5": "192"
+    },
+    "generator_difference_polynomial_over_epsilon": {
+      "0": "-1/32",
+      "2": "3/4",
+      "4": "-5/2",
+      "6": "2"
+    },
+    "generator_difference_squared_norm": "1/1024",
+    "normalized_nullvector_degree_at_most_three": [
+      "36/1151",
+      "-237/1151",
+      "-216/1151",
+      "662/1151"
+    ],
+    "p5_coefficient_norm": "47/24",
+    "p5_null_moments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signed_mobility_fixtures": [
+      {
+        "A_x_difference_at_zero": "1/128",
+        "epsilon": "-1/4",
+        "initial_rate_differences": [
+          "0",
+          "0",
+          "0"
+        ],
+        "mobility_lower": "49/96",
+        "second_correlation_derivative_difference_times_hbar_squared_over_c_squared": "1/16384"
+      },
+      {
+        "A_x_difference_at_zero": "0",
+        "epsilon": "0",
+        "initial_rate_differences": [
+          "0",
+          "0",
+          "0"
+        ],
+        "mobility_lower": "1",
+        "second_correlation_derivative_difference_times_hbar_squared_over_c_squared": "0"
+      },
+      {
+        "A_x_difference_at_zero": "-1/128",
+        "epsilon": "1/4",
+        "initial_rate_differences": [
+          "0",
+          "0",
+          "0"
+        ],
+        "mobility_lower": "49/96",
+        "second_correlation_derivative_difference_times_hbar_squared_over_c_squared": "1/16384"
+      }
+    ],
+    "three_by_four_moment_matrix": [
+      [
+        "3/16",
+        "0",
+        "1/32",
+        "0"
+      ],
+      [
+        "25/128",
+        "1/32",
+        "35/1024",
+        "3/256"
+      ],
+      [
+        "59/256",
+        "9/64",
+        "51/512",
+        "9/128"
+      ]
+    ],
+    "wrong_polynomial_initial_rate_differences": [
+      "0",
+      "1/2560",
+      "3/1280"
+    ]
+  },
+  "general_theorem": {
+    "N_constraints": "N by N+1 polynomial moment matrix, degree at most N",
+    "assumptions": "fixed finite kappa, full positive x marginal support, finite smooth observables, smooth positive m0",
+    "changed_generator": "nonzero principal symbol change on an open set",
+    "normalization": "divide coefficients by their positive l1 sum, ensuring sup norm <=1",
+    "positive_interval": "|epsilon|<=m_star/2 implies m_epsilon>=m_star/2",
+    "scope": "finite initial slopes only; complete correlation curves can distinguish the example"
+  },
+  "loop": "l2",
+  "passed": true,
+  "primary_source": {
+    "equation": "18.5.10",
+    "novelty": "classical polynomial",
+    "substitution": "n=5,lambda=2: C5=192x5-160x3+24x",
+    "url": "https://dlmf.nist.gov/18.5.E10"
+  },
+  "schema": "ym21-reverse-l2-v1",
+  "source_bindings": {
+    "research/round21/advisor/l1-gate.json": "ba1e9832d23313343d68097444ebb82464f8d15b089b711a7fdeff77398ea9a0",
+    "research/round21/contracts/l2.json": "57d08df9af2502c63d38c81cd4446f7bef394df4b73a8b9f3259bbfaf37117fe",
+    "research/round21/reverse/k1/report.md": "d4ced020d65203a330695f3cfdcdde923854712ac307b1b60ac96506c0d3dcff",
+    "research/round21/reverse/l1/report.md": "80508952f09e80b45169487c825ac164a571516194b627c5a8e06ea5249df7c2",
+    "research/round21/reverse/l2/check.py": "b1cdef8bef483ae337ee708eb7c684e44edb44b693165f1fd8ba8e8f9866f62f",
+    "research/round21/reverse/l2/report.md": "e4387db689595c781189c5196f5b1de16552f862724d8d0792ab3e21ac1b32bf"
+  },
+  "target_verdict": "constructive_finite_initial_slope_nonidentifiability_verified"
+}

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/82ba53fe7aca/yang_mills_workbench/research/round19/reproduce.py", line 99, in <module>
+    main()
+  File "/workspace/scratch/82ba53fe7aca/yang_mills_workbench/research/round19/reproduce.py", line 61, in main
+    gates = {loop: verify_gate(loop) for loop in dependencies}
+                   ^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/82ba53fe7aca/yang_mills_workbench/research/round19/reproduce.py", line 39, in verify_gate
+    if not isinstance(expected, str) or len(expected) != 64 or digest(checked_path(name)) != expected:
+                                                                      ^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/82ba53fe7aca/yang_mills_workbench/research/round19/reproduce.py", line 27, in checked_path
+    raise ValueError('missing gate file: ' + relative)
+ValueError: missing gate file: backward/c2/history/pre-round20-validator-audit/__pycache__/compare.cpython-312.pyc

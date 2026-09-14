@@ -1,0 +1,109 @@
+{
+  "comparison": {
+    "arbitrary_mobility_identified": false,
+    "gap_factor_box": "13/192",
+    "hidden_cubic_detected": true,
+    "linear_determinant": "27/262144",
+    "mobility_floor_box": "13/32",
+    "third_rate_xi_coefficient": "9/512"
+  },
+  "controls": {
+    "arbitrary_mobility_identification_rejected": true,
+    "hidden_cubic_omission_rejected": true,
+    "outside_box_negative_mobility_inference_rejected": true,
+    "wrong_third_observable_rank_failure": true
+  },
+  "direction": "reverse",
+  "exact": {
+    "gegenbauer_C3_lambda2": {
+      "1": "-12",
+      "3": "32"
+    },
+    "omitted_cubic_third_rate_residual": "9/1024",
+    "rate_matrix": [
+      [
+        "3/16",
+        "0",
+        "0"
+      ],
+      [
+        "25/128",
+        "1/32",
+        "0"
+      ],
+      [
+        "59/256",
+        "9/64",
+        "9/512"
+      ]
+    ],
+    "synthetic_recovery": [
+      {
+        "c": "1",
+        "original_coordinate_jacobian": "27/262144",
+        "rates": [
+          "3/16",
+          "25/128",
+          "59/256"
+        ],
+        "xi": "0",
+        "zeta": "0"
+      },
+      {
+        "c": "2",
+        "original_coordinate_jacobian": "27/65536",
+        "rates": [
+          "3/8",
+          "51/128",
+          "517/1024"
+        ],
+        "xi": "1/4",
+        "zeta": "1/8"
+      },
+      {
+        "c": "3/7",
+        "original_coordinate_jacobian": "243/12845056",
+        "rates": [
+          "9/112",
+          "9/112",
+          "1173/14336"
+        ],
+        "xi": "-1/4",
+        "zeta": "-1/4"
+      }
+    ],
+    "wrong_third_x_cubed_row": [
+      "27/256",
+      "0",
+      "0"
+    ]
+  },
+  "loop": "l1",
+  "passed": true,
+  "primary_source": {
+    "accessed": "2026-09-14",
+    "equation": "18.5.10",
+    "novelty": "classical Gegenbauer polynomial; no new polynomial family",
+    "substitution": "n=3, lambda=2: C3=32x^3-12x",
+    "url": "https://dlmf.nist.gov/18.5.E10"
+  },
+  "schema": "ym21-reverse-l1-v1",
+  "scope": {
+    "gap_interval": "|kappa|<=1/8; |zeta|,|xi|<=1/4; c>0",
+    "inverse_static_point": "known kappa=0",
+    "jacobian": "c^2 times linear determinant",
+    "lattice_model_matched": false,
+    "mobility_extension": "explicit dynamics deformation; rho unchanged",
+    "physical_data_supplied": false
+  },
+  "source_bindings": {
+    "research/round21/advisor/k2-gate.json": "a31e2ff641159d9358756003b9b59476af904a1b536624f9eb71a174bbcc94af",
+    "research/round21/advisor/post-six-selection.json": "ae2e69f47c358ca33f607775745b625f2167e5bfaa680c4a7aafa7fe1c4effff",
+    "research/round21/contracts/l1.json": "372b2fd3a9df728431e2b6aa65b91f98c52f713563bc6eb1cf1c4b6c6a80a92f",
+    "research/round21/reverse/k1/report.md": "d4ced020d65203a330695f3cfdcdde923854712ac307b1b60ac96506c0d3dcff",
+    "research/round21/reverse/k2/report.md": "41f30a72c0e48fac2a0f2730bbeb5d346b72ce9db16bbba00929f7f9fb9d3c9f",
+    "research/round21/reverse/l1/check.py": "78137ab69d723cd96a8ee5d3d93d3cd7c2e25475eaf648ca15e749397d6684ba",
+    "research/round21/reverse/l1/report.md": "80508952f09e80b45169487c825ac164a571516194b627c5a8e06ea5249df7c2"
+  },
+  "target_verdict": "three_parameter_conditional_inverse_and_positive_box_verified"
+}

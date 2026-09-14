@@ -3,7 +3,11 @@ name: qeg-numerical-validation
 description: Verify the project's Maxwell–Dirac and tangent-response computations using exact identities, independent formulations and separate numerical limits. Use when writing or reviewing quantum-field solver code and result claims.
 ---
 
+For finite mobility inverses and strong-limit tests, use the advisor's [finite-observation and operator-limit lessons](../qeg-research-advisor/references/finite-observations-and-operator-limits.md). Test a held-out dynamic quantity; distinguish a failed sufficient estimate from failure of the actual limit.
+
 ## Nonabelian finite-model gates
+
+For local stability, physical-sector or dynamic-calibration work after Round20, read the advisor's [admission and matching contract](../qeg-research-advisor/references/admission-and-matching.md). New evidence inventories must reproduce from a Git tree, excluding interpreter caches while preserving failed historical gates. Test parameter identifiability and the actual divergence term of a variable mobility; shared static moments do not fix dynamics.
 
 For round13 and later work, read the advisor's [exception and moment contract](../qeg-research-advisor/references/exceptions-locality-moments.md). Retain exact dual witnesses, feasible inner points, zero-coupling handling, generator/list equivalence, pre-conversion Boolean rejection, explicit existential thresholds and post-replay frozen-rule mutation tests. Separate a rigorous launch bound from sampled trajectory agreement.
 

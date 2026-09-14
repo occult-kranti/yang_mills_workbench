@@ -1,0 +1,104 @@
+{
+  "comparison": {
+    "arbitrary_mobility_identified": false,
+    "blind_polynomial": "x^3-3x/8",
+    "design_a": "1/4",
+    "kappa_absolute_bound": "1/8",
+    "two_parameter_inverse_identified": true,
+    "uniform_determinant_lower": "1/7168",
+    "zero_kappa_determinant": "3/512"
+  },
+  "controls": {
+    "arbitrary_mobility_identification_rejected": true,
+    "inadmissible_inverse_rejected": true,
+    "nonmonotone_positivity_argument_rejected": true,
+    "universal_rank_failure_outside_range_rejected": true,
+    "wrong_determinant_sign_rejected": true,
+    "zero_a_rank_collapse": true
+  },
+  "direction": "reverse",
+  "exact": {
+    "blind_mobility_lower": "21/32",
+    "blind_moments": [
+      "0",
+      "0"
+    ],
+    "double_copy_Haar_base": "3/256",
+    "double_copy_Haar_determinant": "3/512",
+    "exp_three_upper": "250622950251876362521/12477781938012160000",
+    "invalid_inverse_controls": [
+      {
+        "reason": "inverse has nonpositive c",
+        "rf": "0",
+        "rg": "1"
+      },
+      {
+        "reason": "inverse has nonpositive c",
+        "rf": "-1",
+        "rg": "0"
+      },
+      {
+        "reason": "inverse mobility outside allowed range",
+        "rf": "3/16",
+        "rg": "29/128"
+      },
+      {
+        "reason": "inverse mobility outside allowed range",
+        "rf": "3/16",
+        "rg": "21/128"
+      }
+    ],
+    "nonmonotone_Haar_determinant": "3/128",
+    "synthetic_recovery": [
+      {
+        "c": "2",
+        "rf": "3/8",
+        "rg": "27/64",
+        "zeta": "1/2"
+      },
+      {
+        "c": "3/7",
+        "rf": "9/112",
+        "rg": "33/448",
+        "zeta": "-3/4"
+      },
+      {
+        "c": "1",
+        "rf": "3/16",
+        "rg": "25/128",
+        "zeta": "0"
+      }
+    ],
+    "zero_kappa_matrix": [
+      [
+        "3/16",
+        "0"
+      ],
+      [
+        "25/128",
+        "1/32"
+      ]
+    ]
+  },
+  "loop": "k2",
+  "passed": true,
+  "schema": "ym21-reverse-k2-v1",
+  "scope": {
+    "copy_variables": "independent copies of the full interacting x marginal, not independently sampled interacting links",
+    "design_a": "dimensionless observable coefficient only",
+    "known_static_parameter": true,
+    "noise": "rate inversion remains sensitive in zeta as c approaches zero; arbitrary noise not admitted",
+    "parameterization": "linear variables (c,c*zeta); original-coordinate Jacobian is c*D",
+    "physical_measurements_supplied": false,
+    "positive_all_finite_kappa": "holds for 0<a<1/2; displayed numerical floor only for |kappa|<=1/8"
+  },
+  "source_bindings": {
+    "research/round20/reverse/f2/report.md": "e228ee0796875058551c8e718120ee0c2272f1ca4efef7d7208f9aa05ac41164",
+    "research/round21/advisor/k1-gate.json": "ca2f3702d29d8caa12dabd90c3e1f90c8a2126ee5902770886c170b25b9aaac2",
+    "research/round21/contracts/k2.json": "ff31c5313cecc82cfeda8f855767ac6a9d35f3869704f9d618b53f8feb879f97",
+    "research/round21/reverse/k1/report.md": "d4ced020d65203a330695f3cfdcdde923854712ac307b1b60ac96506c0d3dcff",
+    "research/round21/reverse/k2/check.py": "454d7c6ac9a3735e6adfc28a6722ac6f866fb09d954399887570f814114498b0",
+    "research/round21/reverse/k2/report.md": "41f30a72c0e48fac2a0f2730bbeb5d346b72ce9db16bbba00929f7f9fb9d3c9f"
+  },
+  "target_verdict": "uniform_rank_and_family_inverse_verified_arbitrary_mobility_not_identified"
+}

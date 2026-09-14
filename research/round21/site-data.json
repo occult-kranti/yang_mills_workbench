@@ -1,0 +1,1042 @@
+{
+  "title": "What the new equations establish.",
+  "summary": "All ten requested loop reviews are recorded: eight supported results and two local results with the original numerical target still insufficient. The five goals connect local stability, physical observables, dynamic identification and operator limits. Each equation retains its model, physical energy scale and missing implication.",
+  "novelty_note": "The contribution is in these explicit model calculations, certified constants, discriminating counterexamples and operator-support proofs. Stability theorems, unitary dressing, GNS construction, reversible diffusion, rank–nullity, Gegenbauer polynomials and resolvent/Duhamel methods are established. Scientific priority for the project-specific results remains unverified.",
+  "models": [
+    {
+      "id": "homogeneous",
+      "title": "Homogeneous local stability",
+      "loops": [
+        "I1",
+        "I2"
+      ],
+      "definition": "Fixed-spacing full-link SU(2) model with a selected-strip onsite reference and homogeneous omitted-face amplitude tau.",
+      "energy": "alpha/E_star > 0; normalize by delta=alpha/8.",
+      "boundary": "Exact local constants and a qualitative theorem application; no numerical homogeneous interval is certified."
+    },
+    {
+      "id": "dyadic",
+      "title": "Dyadic physical observable sector",
+      "loops": [
+        "J1",
+        "J2"
+      ],
+      "definition": "The fixed dyadic summable full-link model in its declared incomplete tensor-product representation, |tau| ≤ 1/64.",
+      "energy": "alpha/E_star > 0; physical gap bound 973 alpha/8640.",
+      "boundary": "The GNS and gap statements belong to this representation; the variance is dimensionless and is not a measured mass."
+    },
+    {
+      "id": "conditional",
+      "title": "Conditional mobility models",
+      "loops": [
+        "K1",
+        "K2",
+        "L1",
+        "L2"
+      ],
+      "definition": "Compact SU(2)^3, known static density rho, and a chosen positive mobility function m. Each mobility changes the reversible dynamics.",
+      "energy": "Independent c/E_star > 0; rates r_f=-hbar C_f′(0+) have energy units.",
+      "boundary": "Finite-family inverses use synthetic checks. Matching c or this generator to the full-link Hamiltonian remains unproved."
+    },
+    {
+      "id": "profile",
+      "title": "Canonical summable profile",
+      "loops": [
+        "M1",
+        "M2"
+      ],
+      "definition": "The fixed selected-strip representation with tau_q=eta/[8B(q)], 0<q<1 and fixed 0<eta<1.",
+      "energy": "alpha/E_star > 0; profile gap scale g_bar=alpha(1-eta)/8.",
+      "boundary": "M1 proves strong convergence to the selected-strip reference. M2 proves connected-correlation convergence for 0≤gamma<3/2; this is a sufficient range, not an optimality claim or a homogeneous return limit."
+    }
+  ],
+  "parameters": [
+    {
+      "symbol": "E_star, alpha",
+      "role": "Positive physical energy reference and lattice energy coefficient",
+      "units": "Energy",
+      "definition": "Keep alpha/E_star fixed independently of spacing, volume and profile. E_star=0 is outside the comparison.",
+      "loops": [
+        "I1",
+        "I2",
+        "J1",
+        "J2",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "delta=alpha/8",
+      "role": "Derived normalization",
+      "units": "Energy",
+      "definition": "I uses normalized operators. The physical I2 remainder is delta R.",
+      "loops": [
+        "I1",
+        "I2"
+      ]
+    },
+    {
+      "symbol": "tau",
+      "role": "Action amplitude after specifying the spatial profile",
+      "units": "Dimensionless",
+      "definition": "Homogeneous I, dyadic J and canonical tau_q in M are distinct model choices. A shared letter does not identify their results.",
+      "loops": [
+        "I1",
+        "I2",
+        "J1",
+        "J2",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "epsilon=7|tau|",
+      "role": "Derived local interaction budget",
+      "units": "Dimensionless",
+      "definition": "Exact normalized local norm in I; it does not evaluate the theorem constants c1(S), c2(S).",
+      "loops": [
+        "I1",
+        "I2"
+      ]
+    },
+    {
+      "symbol": "u, S, R",
+      "role": "Local coordinate change and retained remainder",
+      "units": "Dimensionless in I2",
+      "definition": "u=(H0 restricted to Q)^(-1) phi Omega; S is skew-adjoint. The exact unitary rotation retains R; deleting R changes the operator.",
+      "loops": [
+        "I2"
+      ]
+    },
+    {
+      "symbol": "Omega, Psi; P_ref, P",
+      "role": "Reference and perturbed ground states and their rank-one projections",
+      "units": "Normalized vectors; dimensionless projections",
+      "definition": "d=||P-P_ref|| controls the transfer of both bounded moments. A reference variance alone is insufficient.",
+      "loops": [
+        "I2",
+        "J1",
+        "J2",
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "W; H_inv; K_phys",
+      "role": "Wilson observable, invariant space and physical energy generator",
+      "units": "W dimensionless; K_phys energy",
+      "definition": "W is an actual omitted loop. The physical cyclic space is identified by finite gauge averaging, and K_phys is the restricted shifted generator.",
+      "loops": [
+        "J1",
+        "J2",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "rho, kappa, S",
+      "role": "Conditional stationary density and static action",
+      "units": "Dimensionless",
+      "definition": "rho=exp(kappa S)/Z on SU(2)^3. This S is the static action, distinct from the local skew operator in I2. kappa is assumed known.",
+      "loops": [
+        "K1",
+        "K2",
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "symbol": "c",
+      "role": "Independent dynamics coefficient",
+      "units": "Positive energy",
+      "definition": "H=c A_m. c/E_star is separate from alpha/E_star until a physical matching argument establishes a relation.",
+      "loops": [
+        "K1",
+        "K2",
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "symbol": "m, zeta, xi",
+      "role": "Mobility and its proposed model deformations",
+      "units": "Dimensionless",
+      "definition": "K uses m=1+zeta x; L1 uses m=1+zeta x+xi p3. Positivity is checked before constructing the reversible generator.",
+      "loops": [
+        "K1",
+        "K2",
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "symbol": "x; Gamma(f)",
+      "role": "Trace coordinate and derivative energy density",
+      "units": "Dimensionless in the declared Casimir metric",
+      "definition": "x=Tr(U)/2 ∈ [-1,1]; Gamma(f)=|grad f|². For f=x, Gamma(x)=(1-x²)/4.",
+      "loops": [
+        "K1",
+        "K2",
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "symbol": "a; g_a; h",
+      "role": "Observable design coefficient and probes",
+      "units": "Dimensionless",
+      "definition": "g_a=x+a x², with a=1/4 in K2/L; h=x²+x³ detects the cubic. This a is not lattice spacing.",
+      "loops": [
+        "K2",
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "symbol": "p3, p5",
+      "role": "Classical polynomial mobility directions",
+      "units": "Dimensionless",
+      "definition": "p3=C3^(2)/32 and p5=C5^(2)/192 are scaled Gegenbauer polynomials. Their invisibility or visibility concerns specified observations.",
+      "loops": [
+        "K2",
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "symbol": "epsilon in L2; m_star",
+      "role": "Mobility perturbation coefficient and positive baseline margin",
+      "units": "Dimensionless",
+      "definition": "m_epsilon=m0+epsilon P remains positive for |epsilon|≤m_star/2 after ||P||∞≤1. This epsilon is distinct from the derived I budget.",
+      "loops": [
+        "L2"
+      ]
+    },
+    {
+      "symbol": "r_f, C_f(t), hbar",
+      "role": "Initial slope, correlation and time conversion",
+      "units": "r_f energy; t time; hbar energy × time",
+      "definition": "r_f=-hbar C_f′(0+). K/L slopes and J2 bounds use imaginary time; they do not assert real-time exponential decay.",
+      "loops": [
+        "J2",
+        "K1",
+        "K2",
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "symbol": "q, eta, B(q), tau_q",
+      "role": "Spatial profile, fixed budget fraction, absolute weight budget and amplitude",
+      "units": "Dimensionless",
+      "definition": "0<q<1, 0<eta<1 and tau_q=eta/[8B(q)]. q changes spatial decay at fixed lattice spacing.",
+      "loops": [
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "sigma_q, e_q, g_bar",
+      "role": "Vacuum residual norm, ground energy and profile gap scale",
+      "units": "Energy",
+      "definition": "sigma_q=||V_q Omega||; |e_q|≤sigma_q²/g_bar; g_bar=alpha(1-eta)/8. These are profile quantities, not the dyadic J2 constant.",
+      "loops": [
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "E(F), D_F(q)",
+      "role": "Complete factor support and intersecting omitted-face weight",
+      "units": "Finite set of links; dimensionless budget",
+      "definition": "Close support to every link in the reference factors. Count each intersecting omitted face once; D_F(q)≤|E(F)|/6.",
+      "loops": [
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "T, hbar",
+      "role": "Observation window and time conversion",
+      "units": "Time; energy × time",
+      "definition": "M1 gives fixed-vector real-time dynamics on fixed finite windows. M2 controls fixed-observable connected correlations on T_q=(hbar/alpha)C(1-q)^(-gamma) for 0≤gamma<3/2.",
+      "loops": [
+        "M1",
+        "M2"
+      ]
+    },
+    {
+      "symbol": "gamma, C; epsilon=1-q",
+      "role": "Observation-window exponent, fixed window coefficient and distance to the profile endpoint",
+      "units": "Dimensionless; T_q is time",
+      "definition": "T_q=(hbar/alpha)C epsilon^(-gamma), C>0 and 0≤gamma<3/2. M2’s sufficient error is O(epsilon^(3/2-gamma)). This epsilon is distinct from I’s budget and L2’s mobility coefficient.",
+      "loops": [
+        "M2"
+      ]
+    }
+  ],
+  "next_roadmap": {
+    "status": "queued_not_executed",
+    "title": "Next cycle: N, O and P are queued.",
+    "summary": "Selected after the ten completed reviews. These are proposed research targets: zero additional loops have executed. Each second loop waits for its first-loop evidence. Q and R remain unselected until N, O and P complete their six reviews.",
+    "goals": [
+      "N · Test a sharper local real-time comparison. Prove or reject the proposed Heisenberg local-commutator correlation estimate with complete factor support, complex centering and a justified strong operator integral. Unselected until N1 evidence and skeptical review; investigate the actual endpoint or support-growth obstruction.",
+      "O · Quantify the homogeneous local stability interval. Construct an explicit interaction norm and generated-support bound for overlapping stars; obtain a numerical contraction or isolate a proved blocking inequality. Unselected until O1 evidence; pursue an applicable alternative theorem or quantitative boundary conditions.",
+      "P · Test physical generator matching with held-out information. Specify one actual reduction/intertwining map with observables, domains, state spaces and common physical clock; prove matching or a discriminating mismatch. Unselected until P1 evidence and skeptical review."
+    ],
+    "evidence": [
+      {
+        "label": "Advisor selection after ten reviews",
+        "path": "advisor/post-ten-roadmap.json"
+      },
+      {
+        "label": "Post-ten skeptical assessment and recommendations",
+        "path": "skeptic/post-ten-review.md"
+      }
+    ]
+  },
+  "open_questions": [
+    "Numerical homogeneous stability: I1 establishes qualitative fixed-spacing stability for sufficiently small coupling. Evaluate applicable constants, prove a convergent overlapping-star iteration, and separately address equivalence of homogeneous boundary limits.",
+    "Physical dynamic matching: identify the conditional generator, its observables and c against independently specified lattice time data.",
+    "Observation design beyond finite initial slopes: determine what additional data identify a declared mobility class and certify noisy inversion.",
+    "Profile topology: determine the actual norm-resolvent and propagator-norm limits; M1’s general controls do not decide this family.",
+    "Boundary topology: the summable model already has an infinite product construction and distinct finite-factor, literal-box state and local-dynamics limits. Global norm convergence of arbitrary-phase boundary vectors was not proved.",
+    "Physical correlation windows: M2 proves the sufficient range 0≤gamma<3/2. Actual endpoint behavior and stronger window estimates remain unresolved.",
+    "Continuum four-dimensional Yang–Mills construction and Clay mass gap remain open. No finite calculation or fixed-spacing result closes that target.",
+    "The paired double-Fibonacci geometry remains an organizing analogy without an independently tested physical observable or prediction."
+  ],
+  "c2_repair": {
+    "status": "Reviewed replay passed; staged release validation is separate",
+    "summary": "The original C2 command still fails on its recorded untracked interpreter-cache entry. A new portable inventory preserves that defect and reproduces the unchanged C2 mathematics from a minimal checkout, with normal and optimized checks. This is a reproducibility repair with zero new research loops.",
+    "evidence": [
+      {
+        "label": "Preserved defect and repair report",
+        "path": "release/report.md"
+      },
+      {
+        "label": "Minimal-checkout and mutation controls",
+        "path": "release/admission-controls-with-clean-replay.json"
+      },
+      {
+        "label": "Fresh C2 replay",
+        "path": "release/replay-normal.json"
+      }
+    ]
+  },
+  "goals": [
+    {
+      "id": "I",
+      "title": "Local stability with homogeneous couplings",
+      "description": "I1 supplies a complete theorem dictionary. Its review selects I2’s local vacuum dressing attempt; the numerical homogeneous interval remains insufficient.",
+      "loops": [
+        {
+          "id": "I1",
+          "title": "A complete local stability dictionary",
+          "status": "limited",
+          "gate": "advisor/i1-gate.json",
+          "derivation": [
+            "Assign every positive link to its 4×2×1 tail block; one complete strip and fourteen free links give 24 links.",
+            "Enumerate all face orientations and phases. The 21 omitted faces cross blocks and fit inside one four-site star.",
+            "Divide the interaction by delta=alpha/8 to obtain the exact local norm 7|tau|.",
+            "Match the local stability theorem and distinguish its whole-star boundary from actual-face support; padding transfers finite-volume bounds.",
+            "Retain the unevaluated source constants, so no numerical homogeneous coupling interval is certified."
+          ],
+          "failure": "Counting only faces contained in one block discards every omitted interaction.",
+          "workaround": "Use complete ownership and crossing supports, then apply the theorem with its actual boundary convention.",
+          "limitations": [
+            "Known stability theorem applied; exact blocking coefficients derived for this model.",
+            "Numerical homogeneous interval and continuum matching remain open."
+          ],
+          "forward": "Build the actual coarse onsite factors and enumerate every crossing interaction before computing its normalized local budget.",
+          "reverse": "Start from the stability theorem’s hypotheses and reconstruct the site, finite-range support and boundary conventions the model must satisfy.",
+          "origin_type": "Known stability theorem applied here",
+          "local_contribution": "Complete block ownership, 21 crossing faces and the exact 7|tau| local norm for this geometry.",
+          "prior_work_limit": "A qualitative existence threshold remains an unevaluated theorem constant.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/i1.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/i1/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/i1/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/i1.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/i1-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/i1-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops i1 --output /tmp/ym21-i1-fresh"
+        },
+        {
+          "id": "I2",
+          "title": "Local vacuum dressing with its remainder",
+          "status": "limited",
+          "gate": "advisor/i2-gate.json",
+          "derivation": [
+            "Use unmatched free Haar links to obtain the exact local forcing norm squared 7tau²/12.",
+            "Test a vector Omega+t u: its interaction form is linear in t while the reference energy is quadratic, ruling out a pure relative bound.",
+            "Define u=(H0 restricted to Q)^(-1)phi Omega and the finite-rank skew generator S.",
+            "Prove domain preservation and the correct commutator cancellation under exp(S).",
+            "Retain the exact unitary-integral remainder and bound it by 707tau²/60."
+          ],
+          "failure": "Discarding the remainder changes the spectrum; reversing the conjugation sign doubles the first-order mixing.",
+          "workaround": "Keep the full transformed operator and its proved quadratic remainder.",
+          "limitations": [
+            "Established unitary method with model-specific constants.",
+            "Overlapping-star convergence and numerical global constants remain unresolved."
+          ],
+          "forward": "Compute the exact vacuum forcing, define the finite-rank generator and bound the complete unitary remainder.",
+          "reverse": "Start from first-order cancellation, recover the required sign and domain conditions, then challenge a pure relative-bound alternative.",
+          "origin_type": "Known unitary dressing method; model-specific lemma",
+          "local_contribution": "The exact local forcing norm and retained remainder bound 707 tau²/60.",
+          "prior_work_limit": "A local rotation is not a convergent infinite product over overlapping stars.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/i2.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/i2/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/i2/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/i2.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/i2-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/i2-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops i2 --output /tmp/ym21-i2-fresh"
+        }
+      ]
+    },
+    {
+      "id": "J",
+      "title": "The gauge-invariant observable sector",
+      "description": "J1 supplies a fluctuation in the actual dyadic vacuum. J2 then identifies its physical cyclic representation and restricted energy generator.",
+      "loops": [
+        {
+          "id": "J1",
+          "title": "A physical Wilson fluctuation survives",
+          "status": "accepted",
+          "gate": "advisor/j1-gate.json",
+          "derivation": [
+            "Return explicitly to the controlled dyadic summable model and construct its finite-support gauge action.",
+            "Prove invariance of both vacua and define the norm closure of invariant bounded local observables.",
+            "Choose an actual omitted xz Wilson loop with two free Haar links, giving reference mean zero and second moment one quarter.",
+            "Use the exact residual to bound the actual ground projector distance by d<1/150.",
+            "Transfer both moments to the perturbed vacuum and subtract its actual mean square, giving variance at least 5321/22500."
+          ],
+          "failure": "Reference variance alone does not prove a fluctuation survives in the perturbed state.",
+          "workaround": "Control the actual ground projection and transfer both bounded moments.",
+          "limitations": [
+            "Gauge and trace-distance tools are established; the rational model margin is derived here.",
+            "The variance is not a measured physical mass."
+          ],
+          "forward": "Choose a concrete omitted Wilson loop, compute its reference moments and transfer both to the perturbed state.",
+          "reverse": "Require a nonzero vector in the physical fluctuation sector, then reconstruct a gauge-invariant witness with a controlled actual variance.",
+          "origin_type": "Known gauge and projector methods; model-specific bound",
+          "local_contribution": "An actual omitted Wilson observable with perturbed-vacuum variance at least 5321/22500.",
+          "prior_work_limit": "The rational margin is a property of the stated dyadic model, not experimental mass data.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/j1.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/j1/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/j1/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/j1.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/j1-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/j1-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops j1 --output /tmp/ym21-j1-fresh"
+        },
+        {
+          "id": "J2",
+          "title": "The physical GNS energy sector",
+          "status": "accepted",
+          "gate": "advisor/j2-gate.json",
+          "derivation": [
+            "Approximate an invariant vector using the full bounded-local algebra acting on the invariant vacuum.",
+            "Haar-average each local approximant over its finite endpoint groups; the weak operator integral preserves support and contracts the vector error.",
+            "Deduce that the physical cyclic space equals the invariant subspace, which is proper in the full space.",
+            "Identify the physical GNS quotient and restrict H-e to its reducing domain.",
+            "Apply the spectral bound to the nonzero Wilson fluctuation, obtaining a positive imaginary-time correlation and an exponential upper bound."
+          ],
+          "failure": "Full-space irreducibility cannot simply be transferred to the invariant subalgebra, and an energy gap does not imply real-time exponential decay.",
+          "workaround": "Use finite gauge averaging, a reducing-subspace proof and the appropriate spectral kernel.",
+          "limitations": [
+            "Established GNS and spectral methods applied to this declared representation.",
+            "No equality with a homogeneous or continuum representation is established."
+          ],
+          "forward": "Gauge-average local approximants and restrict the shifted Hamiltonian to the resulting reducing invariant space.",
+          "reverse": "Reconstruct the GNS quotient from the invariant observable algebra and check which spectral and time-correlation statements follow.",
+          "origin_type": "Known GNS and spectral methods applied here",
+          "local_contribution": "Gauge averaging identifies this model’s physical cyclic sector, with its restricted generator and Wilson witness.",
+          "prior_work_limit": "The general physical-algebra/GNS agenda already exists in infinite-lattice gauge research.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/j2.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/j2/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/j2/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/j2.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/j2-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/j2-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops j2 --output /tmp/ym21-j2-fresh"
+        }
+      ]
+    },
+    {
+      "id": "K",
+      "title": "Dynamics beyond static moments",
+      "description": "K1 tests a declared mobility family and its dynamic inverse. K2 extends the interval certificate and exposes an out-of-family blind direction.",
+      "loops": [
+        {
+          "id": "K1",
+          "title": "Same static density, different dynamics",
+          "status": "accepted",
+          "gate": "advisor/k1-gate.json",
+          "derivation": [
+            "Introduce the explicit mobility deformation m=1+zeta x while holding the conditional stationary density fixed.",
+            "Derive the reversible divergence operator and retain every mobility derivative in the ground-state transform.",
+            "Compare Dirichlet forms to obtain the gap factor 1-|zeta|.",
+            "Integrate Haar polynomials to compute the slopes of x and x+x² and invert their rank-two matrix.",
+            "Reject parity-blind observables and compare principal symbols under the stated restricted matching hypothesis."
+          ],
+          "failure": "Static moments and the selected pair x,x² hide mobility; omitting the divergence drift fails stationarity.",
+          "workaround": "Choose dynamic observables with independent rate sensitivities and retain the full operator.",
+          "limitations": [
+            "The inverse shown here assumes known kappa=0.",
+            "This conditional family is not identified with the physical lattice dynamics; no measured slopes were supplied."
+          ],
+          "forward": "Derive the reversible divergence form, full ground-state transform and exact observable slopes.",
+          "reverse": "Start from static indistinguishability and identify the dynamic measurements and rank conditions needed to recover the declared coefficients.",
+          "origin_type": "Known reversible diffusion tools; model-specific inverse",
+          "local_contribution": "Exact stationarity controls, a two-rate inverse, and a necessary restricted principal-symbol matching test.",
+          "prior_work_limit": "Neither mobility nor physical time is determined by equal static moments.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/k1.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/k1/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/k1/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/k1.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/k1-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/k1-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops k1 --output /tmp/ym21-k1-fresh"
+        },
+        {
+          "id": "K2",
+          "title": "A uniform inverse and a hidden cubic",
+          "status": "accepted",
+          "gate": "advisor/k2-gate.json",
+          "derivation": [
+            "Choose g_a=x+a x² and form the two-rate matrix from the full interacting x marginal.",
+            "Symmetrize its determinant using two independent copies of that marginal.",
+            "For 0<a<1/2, use a nonnegative kernel and density comparison to prove interval-wide positivity.",
+            "Set a=1/4 and certify the rational determinant floor 1/7168 on |kappa|≤1/8.",
+            "Construct the positive cubic mobility direction p3=x³-3x/8 that leaves both Haar initial slopes unchanged."
+          ],
+          "failure": "A full-rank fit within two parameters does not determine arbitrary mobility functions.",
+          "workaround": "State the fitted model class and test a new observable against its explicit blind direction.",
+          "limitations": [
+            "The blind cubic is the classical Gegenbauer C3^(2)/32.",
+            "The uniform inverse concerns known kappa and exact matrix coefficients; recovering zeta is sensitive near c=0."
+          ],
+          "forward": "Symmetrize the weighted determinant and derive a continuous positive bound over the known static interval.",
+          "reverse": "Challenge uniqueness outside the fitted family with a positive cubic that leaves the selected slopes unchanged.",
+          "origin_type": "Model-specific certificate and counterexample",
+          "local_contribution": "A uniform determinant floor across the stated kappa interval and an explicit positive blind direction.",
+          "prior_work_limit": "The blind polynomial is classical; identifying a finite family does not identify arbitrary mobility.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/k2.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/k2/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/k2/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/k2.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/k2-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/k2-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops k2 --output /tmp/ym21-k2-fresh"
+        }
+      ]
+    },
+    {
+      "id": "L",
+      "title": "Detect hidden mobility and test finite observations",
+      "description": "Selected after the first six gates. L1 detects the hidden cubic; L2 proves the finite-slope obstruction and supplies a higher-derivative discriminator.",
+      "loops": [
+        {
+          "id": "L1",
+          "title": "A third observable detects the cubic",
+          "status": "accepted",
+          "gate": "advisor/l1-gate.json",
+          "derivation": [
+            "Extend the declared mobility to 1+zeta x+xi p3 and verify a sufficient positive parameter box.",
+            "Add h=x²+x³, whose squared derivative has the term needed to detect the cubic.",
+            "Integrate all three rate rows exactly; their determinant is 27/262144.",
+            "Invert for c,zeta,xi and test synthetic recovery and the omitted-cubic residual.",
+            "Preserve the distinction between this finite family and arbitrary mobility."
+          ],
+          "failure": "An unsuitable third observable can leave the hidden coefficient invisible through parity.",
+          "workaround": "Choose a derivative weight with nonzero cubic sensitivity, here 9c/512.",
+          "limitations": [
+            "Rate inversion is at known kappa=0; the positivity/gap box is a separate statement.",
+            "The polynomial family is classical and all calibration fixtures are synthetic."
+          ],
+          "forward": "Add a third probe with nonzero cubic sensitivity and compute the exact forward rate matrix.",
+          "reverse": "Solve the three-rate map, test admissibility and reject third probes that remain parity-blind.",
+          "origin_type": "Model-specific observable design and inverse",
+          "local_contribution": "A third observable with cubic sensitivity and an exact three-parameter inversion.",
+          "prior_work_limit": "The inverse is at known kappa=0, while its positivity/gap box is a separate statement.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/l1.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/l1/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/l1/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/l1.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/l1-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/l1-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops l1 --output /tmp/ym21-l1-fresh"
+        },
+        {
+          "id": "L2",
+          "title": "Finite slopes leave a positive mobility family",
+          "status": "accepted",
+          "gate": "advisor/l2-gate.json",
+          "derivation": [
+            "Write each of N initial slopes as a linear functional of the mobility. Restrict those functionals to N+1 polynomial coefficients.",
+            "Use rank–nullity to find a nonzero polynomial, then full marginal support to prove it is a nonzero function. Normalize its coefficient sum to bound its supremum by one.",
+            "Perturb a strictly positive baseline by that polynomial inside an explicit positive interval. Every selected initial slope and the stationary density stay fixed; the principal symbol changes.",
+            "For the three L1 observables at Haar, integrate the classical fifth-degree direction exactly and verify all three slope residuals are zero.",
+            "Compute the same observable’s second time derivative: its curvature increases by c² epsilon²/(1024 hbar²). Complete time curves can detect this example."
+          ],
+          "failure": "A full-rank finite-family inverse does not identify arbitrary mobility; equal first slopes do not mean equal full correlation curves.",
+          "workaround": "Declare the fitted basis, retain an explicit positive null direction as a model challenge, and reserve higher derivatives or other observations to test family membership.",
+          "limitations": [
+            "The general construction uses exact moment functionals. Approximate or noisy rank certification is a separate problem.",
+            "The fifth-degree formula is the classical Gegenbauer C5^(2)/192; the polynomial family and rank–nullity principle are established.",
+            "The obstruction concerns only a finite list of initial slopes. The explicit fifth-degree example is distinguishable through curvature."
+          ],
+          "forward": "Construct a normalized polynomial null direction and preserve positivity in a whole interval of distinct generators.",
+          "reverse": "Start from finite measurement functionals, recover their unavoidable nullspace and test a higher derivative that distinguishes the explicit example.",
+          "origin_type": "Known rank–nullity principle; constructive obstruction here",
+          "local_contribution": "Positive initial-slope ambiguity, an exact fifth-degree instance, and a second-derivative discriminator.",
+          "prior_work_limit": "The obstruction does not extend to complete time traces; the polynomial is classical.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/l2.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/l2/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/l2/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/l2.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/l2-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/l2-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops l2 --output /tmp/ym21-l2-fresh"
+        }
+      ]
+    },
+    {
+      "id": "M",
+      "title": "Strong profile dynamics and physical correlations",
+      "description": "Selected after the first six gates. M1 proves strong operator and dynamics limits; its review selected M2’s quantitative connected-correlation estimate, sufficient growing-time range and physical Wilson fluctuation.",
+      "loops": [
+        {
+          "id": "M1",
+          "title": "A strong dynamics limit with a constant perturbation norm",
+          "status": "accepted",
+          "gate": "advisor/m1-gate.json",
+          "derivation": [
+            "Fix the selected-strip Hilbert representation, spacing, positive alpha and fixed budget fraction eta. Along tau_q=eta/[8B(q)], every fixed omitted-face coefficient tends to zero.",
+            "Close a local operator’s support to all links of its complete reference factors. Each link meets at most four faces; count each omitted face once to obtain D_F(q) ≤ |E(F)|/6.",
+            "Split V_q A Omega into A V_q Omega and the finite commutator. The vacuum residual and local interaction budget both tend to zero.",
+            "Use bounded rank-one operators on complete finite factors to obtain a dense orbit. A uniform operator bound extends convergence from that orbit to every fixed vector.",
+            "Apply the resolvent identity to a fixed reference-resolvent vector, then Duhamel uniformly on the compact reference orbit for each finite time window. Include the vanishing ground-energy shift.",
+            "Check moving-projection counterexamples: strong convergence does not determine the operator-norm resolvent or propagator limits."
+          ],
+          "failure": "Displayed Wilson edges undercount a general operator’s dressed-factor support. A constant perturbation norm alone settles neither norm-resolvent nor propagator-norm convergence.",
+          "workaround": "Use the complete factor cover and a finite incidence proof. State fixed-vector strong convergence, and justify compact-time uniformity on a compact reference orbit.",
+          "limitations": [
+            "The endpoint is the selected-strip reference; the selected couplings remain and the omitted fixed-face couplings vanish.",
+            "q=1 lies outside the summable family. It is not a fixed nonzero homogeneous omitted interaction.",
+            "M1 proves fixed-vector strong convergence on finite time windows. Norm-resolvent, propagator-norm and arbitrary growing-window conclusions are not established here."
+          ],
+          "forward": "Use complete-factor incidence to bound the local commutator, then extend strong convergence through density.",
+          "reverse": "Reconstruct the fixed-vector, domain and compact-time premises required by resolvents and Duhamel; use controls to reject unsupported norm conclusions.",
+          "origin_type": "Known operator convergence tools; model-specific proof",
+          "local_contribution": "Complete-factor incidence extends a vacuum residual to a full-space strong limit and compact-time strong dynamics.",
+          "prior_work_limit": "Constant perturbation norm alone cannot decide either actual norm-resolvent or propagator-norm convergence.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/m1.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/m1/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/m1/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/m1.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/m1-decision.md"
+            },
+            {
+              "label": "Independent comparison",
+              "path": "advisor/m1-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops m1 --output /tmp/ym21-m1-fresh"
+        },
+        {
+          "id": "M2",
+          "title": "Physical correlations on growing time windows",
+          "status": "accepted",
+          "gate": "advisor/m2-gate.json",
+          "derivation": [
+            "Fix the canonical full-link profile, its complete reference factors and positive physical energy scale. Re-establish its unique gauge-invariant vacuum, physical cyclic sector and generator with g_bar=alpha(1-eta)/8.",
+            "Define the connected real-time correlation with A*, the shifted evolution H_q-e_q, and both subtracted means. Complex observables and time zero obey the same definition.",
+            "Use pure-state trace duality: changing the uncentered state costs 2d_q, and the two mean-product terms cost 2d_q each. Their sum gives the sufficient coefficient six.",
+            "Factorize the reference evolution. It preserves B’s complete reference-factor support for all real times, so M1’s local commutator bound applies uniformly without an arbitrary bounded-operator domain assumption.",
+            "Apply bounded-perturbation Duhamel and retain the ground-energy phase. Insert the vacuum residual, projector estimate and complete-support budget to obtain the uniform correlation error bound.",
+            "Substitute T_q=(hbar/alpha)C(1-q)^(-gamma). Every error term vanishes for 0≤gamma<3/2, with sufficient order (1-q)^(3/2-gamma). The endpoint’s nonvanishing upper-bound term does not prove actual nonconvergence.",
+            "Transfer the origin-xz Wilson loop’s mean zero and second moment one quarter to the actual vacuum. If sigma_q/g_bar≤1/16, its variance is at least 7/64; eta=1/2 and q≥3/4 is one sufficient region."
+          ],
+          "forward": "Reconstruct the profile’s physical sector, split the exact complex connected-correlation difference and derive its trace-distance, Duhamel and ground-phase error terms.",
+          "reverse": "Start from a uniform physical-correlation target, identify the complete-factor and centering premises it requires, then test the exponent endpoint, physical scale and nonzero-fluctuation conditions independently.",
+          "failure": "Leaving out a subtracted mean, complex conjugation or the ground-energy phase changes the connected correlation. The displayed loop edges alone do not support the general operator estimate. A nonvanishing endpoint upper bound is not a lower bound on the true error.",
+          "workaround": "Retain both means, A*, shifted evolution and the complete reference-factor cover. State the sufficient gamma range and variance region with this profile’s own gap scale.",
+          "limitations": [
+            "The observables and complete factor covers are fixed before q→1. Growing supports need a separate estimate.",
+            "The coefficient six, gamma<3/2 and stated variance region are sufficient, not claimed sharp. Actual endpoint behavior remains unresolved.",
+            "The target limit is the selected-strip reference at fixed spacing. No fixed nonzero homogeneous omitted interaction or continuum limit is obtained."
+          ],
+          "origin_type": "Known trace-distance and operator methods; model-specific estimate",
+          "local_contribution": "The explicit connected-correlation error budget, profile-wide physical sector, sufficient growing-time range and quantitative actual Wilson fluctuation region.",
+          "prior_work_limit": "Gauge averaging, GNS reconstruction, trace duality, spectral restriction and Duhamel are established. Scientific priority for this explicit profile result is unverified.",
+          "evidence": [
+            {
+              "label": "Frozen contract",
+              "path": "contracts/m2.json"
+            },
+            {
+              "label": "Forward proof",
+              "path": "forward/m2/report.md"
+            },
+            {
+              "label": "Reverse reconstruction",
+              "path": "reverse/m2/report.md"
+            },
+            {
+              "label": "Skeptical review",
+              "path": "skeptic/m2.md"
+            },
+            {
+              "label": "Advisor decision",
+              "path": "advisor/m2-decision.md"
+            },
+            {
+              "label": "Independent comparison and 24 mutation controls",
+              "path": "advisor/m2-comparison.json"
+            }
+          ],
+          "reproduction": "python3 -B research/round21/reproduce.py --loops m2 --output /tmp/ym21-m2-fresh"
+        }
+      ]
+    }
+  ],
+  "contributions": [
+    {
+      "id": "i1",
+      "loop": "I1",
+      "title": "A complete local stability dictionary",
+      "origin_type": "Known stability theorem applied here",
+      "local_contribution": "Complete block ownership, 21 crossing faces and the exact 7|tau| local norm for this geometry.",
+      "prior_work_limit": "A qualitative existence threshold remains an unevaluated theorem constant.",
+      "sources": [
+        {
+          "label": "Yarotsky: weak perturbations of quantum lattice systems",
+          "path": "https://arxiv.org/pdf/math-ph/0411042"
+        }
+      ]
+    },
+    {
+      "id": "i2",
+      "loop": "I2",
+      "title": "Local vacuum dressing with its remainder",
+      "origin_type": "Known unitary dressing method; model-specific lemma",
+      "local_contribution": "The exact local forcing norm and retained remainder bound 707 tau²/60.",
+      "prior_work_limit": "A local rotation is not a convergent infinite product over overlapping stars.",
+      "sources": [
+        {
+          "label": "Lie–Schwinger block diagonalization in quantum chains",
+          "path": "https://arxiv.org/pdf/1908.07450"
+        },
+        {
+          "label": "Yarotsky: relatively bounded perturbations",
+          "path": "https://arxiv.org/pdf/math-ph/0412040"
+        }
+      ]
+    },
+    {
+      "id": "j1",
+      "loop": "J1",
+      "title": "A physical Wilson fluctuation survives",
+      "origin_type": "Known gauge and projector methods; model-specific bound",
+      "local_contribution": "An actual omitted Wilson observable with perturbed-vacuum variance at least 5321/22500.",
+      "prior_work_limit": "The rational margin is a property of the stated dyadic model, not experimental mass data.",
+      "sources": [
+        {
+          "label": "Grundling–Rudolph: Dynamics for QCD on an infinite lattice",
+          "path": "https://arxiv.org/abs/1512.06319"
+        }
+      ]
+    },
+    {
+      "id": "j2",
+      "loop": "J2",
+      "title": "The physical GNS energy sector",
+      "origin_type": "Known GNS and spectral methods applied here",
+      "local_contribution": "Gauge averaging identifies this model’s physical cyclic sector, with its restricted generator and Wilson witness.",
+      "prior_work_limit": "The general physical-algebra/GNS agenda already exists in infinite-lattice gauge research.",
+      "sources": [
+        {
+          "label": "Grundling–Rudolph: Dynamics for QCD on an infinite lattice",
+          "path": "https://arxiv.org/abs/1512.06319"
+        }
+      ]
+    },
+    {
+      "id": "k1",
+      "loop": "K1",
+      "title": "Same static density, different dynamics",
+      "origin_type": "Known reversible diffusion tools; model-specific inverse",
+      "local_contribution": "Exact stationarity controls, a two-rate inverse, and a necessary restricted principal-symbol matching test.",
+      "prior_work_limit": "Neither mobility nor physical time is determined by equal static moments.",
+      "sources": [
+        {
+          "label": "Ledoux: The geometry of Markov diffusion generators",
+          "path": "https://www.numdam.org/item/AFST_2000_6_9_2_305_0.pdf"
+        }
+      ]
+    },
+    {
+      "id": "k2",
+      "loop": "K2",
+      "title": "A uniform inverse and a hidden cubic",
+      "origin_type": "Model-specific certificate and counterexample",
+      "local_contribution": "A uniform determinant floor across the stated kappa interval and an explicit positive blind direction.",
+      "prior_work_limit": "The blind polynomial is classical; identifying a finite family does not identify arbitrary mobility.",
+      "sources": [
+        {
+          "label": "NIST DLMF: Gegenbauer finite series",
+          "path": "https://dlmf.nist.gov/18.5.E10"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "loop": "L1",
+      "title": "A third observable detects the cubic",
+      "origin_type": "Model-specific observable design and inverse",
+      "local_contribution": "A third observable with cubic sensitivity and an exact three-parameter inversion.",
+      "prior_work_limit": "The inverse is at known kappa=0, while its positivity/gap box is a separate statement.",
+      "sources": [
+        {
+          "label": "NIST DLMF: Gegenbauer finite series",
+          "path": "https://dlmf.nist.gov/18.5.E10"
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "loop": "L2",
+      "title": "Finite slopes leave a positive mobility family",
+      "origin_type": "Known rank–nullity principle; constructive obstruction here",
+      "local_contribution": "Positive initial-slope ambiguity, an exact fifth-degree instance, and a second-derivative discriminator.",
+      "prior_work_limit": "The obstruction does not extend to complete time traces; the polynomial is classical.",
+      "sources": [
+        {
+          "label": "NIST DLMF: Gegenbauer finite series",
+          "path": "https://dlmf.nist.gov/18.5.E10"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "loop": "M1",
+      "title": "A strong dynamics limit with a constant perturbation norm",
+      "origin_type": "Known operator convergence tools; model-specific proof",
+      "local_contribution": "Complete-factor incidence extends a vacuum residual to a full-space strong limit and compact-time strong dynamics.",
+      "prior_work_limit": "Constant perturbation norm alone cannot decide either actual norm-resolvent or propagator-norm convergence.",
+      "sources": [
+        {
+          "label": "Teschl: Mathematical Methods in Quantum Mechanics, §6.6",
+          "path": "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Physical correlations on growing time windows",
+      "origin_type": "Known trace-distance and operator methods; model-specific estimate",
+      "local_contribution": "The explicit connected-correlation error budget, profile-wide physical sector, sufficient growing-time range and quantitative actual Wilson fluctuation region.",
+      "prior_work_limit": "Gauge averaging, GNS reconstruction, trace duality, spectral restriction and Duhamel are established. Scientific priority for this explicit profile result is unverified.",
+      "id": "m2",
+      "loop": "M2",
+      "sources": [
+        {
+          "label": "Teschl: established spectral and operator framework, §6.6",
+          "path": "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+        }
+      ]
+    }
+  ],
+  "supporting_docs": [
+    {
+      "label": "Final skeptical assessment: contributions and corrected open items",
+      "path": "skeptic/post-ten-review.md"
+    },
+    {
+      "label": "Recovery review: resolved premises and current limits",
+      "path": "skeptic/recovery-review.md"
+    },
+    {
+      "label": "Primary-source comparison and reading depth",
+      "path": "advisor/sources.json"
+    },
+    {
+      "label": "Evidence-led selection of goals L and M",
+      "path": "advisor/post-six-selection.json"
+    }
+  ]
+}

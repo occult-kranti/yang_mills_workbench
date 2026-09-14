@@ -1,0 +1,99 @@
+{
+  "comparison": {
+    "gap_factor": "(1-|zeta|)/6",
+    "mobility_lower": "1-|zeta|",
+    "physical_model_matched": false,
+    "rate_f_c": "3/16",
+    "rate_g_c_constant": "5/16",
+    "rate_g_c_zeta": "1/8",
+    "static_parameters_identified": false,
+    "two_rate_determinant": "3/128"
+  },
+  "controls": {
+    "constant_observable_rejected": true,
+    "missing_divergence_drift_rejected": true,
+    "missing_grad_m_potential_rejected": true,
+    "negative_mobility_rejected": true,
+    "same_coordinate_nonconstant_symbol_match_rejected": true,
+    "static_clock_inference_rejected": true,
+    "symmetric_pair_rank_failure": true
+  },
+  "direction": "reverse",
+  "gap": {
+    "bound": "3*c*(1-|zeta|)*exp(-12|kappa|)/4 >= c*(1-|zeta|)/6",
+    "exp_three_halves_upper": "15831075461/3532390400",
+    "haar_gap": "3/4",
+    "range": "|kappa|<=1/8, |zeta|<1, c>0"
+  },
+  "gradient_fixture": {
+    "Gamma_S": "6",
+    "Gamma_x_S": "1",
+    "correct_divergence_stationary_mean": "0",
+    "missing_grad_m_potential_residual_over_ground": "-1/32",
+    "wrong_nondivergence_stationary_mean": "3/32"
+  },
+  "haar": {
+    "f_rate_coefficients": [
+      "3/16",
+      "0"
+    ],
+    "g_rate_coefficients": [
+      "5/16",
+      "1/8"
+    ],
+    "moments": {
+      "0": "1",
+      "1": "0",
+      "2": "1/4",
+      "3": "0",
+      "4": "1/8",
+      "5": "0",
+      "6": "5/64"
+    },
+    "parameterization": "determinant 3/128 applies to (c,c*zeta); original Jacobian determinant is 3*c/128",
+    "synthetic_recovery": [
+      {
+        "c": "1",
+        "jacobian_original_coordinates": "3/128",
+        "r_f": "3/16",
+        "r_g": "5/16",
+        "zeta": "0"
+      },
+      {
+        "c": "2",
+        "jacobian_original_coordinates": "3/64",
+        "r_f": "3/8",
+        "r_g": "3/4",
+        "zeta": "1/2"
+      },
+      {
+        "c": "3/7",
+        "jacobian_original_coordinates": "9/896",
+        "r_f": "9/112",
+        "r_g": "3/32",
+        "zeta": "-3/4"
+      }
+    ],
+    "x_squared_rate_coefficients": [
+      "1/8",
+      "0"
+    ]
+  },
+  "loop": "k1",
+  "passed": true,
+  "schema": "ym21-reverse-k1-v1",
+  "scope": {
+    "deformation": "m=1+zeta*x is an explicit reversible-dynamics deformation",
+    "physical_data_supplied": false,
+    "physical_scale": "c/E_star and alpha/E_star remain distinct",
+    "symbol_claim": "necessary condition under same-coordinate multiplication conjugacy only"
+  },
+  "source_bindings": {
+    "research/round20/reverse/f2/report.md": "e228ee0796875058551c8e718120ee0c2272f1ca4efef7d7208f9aa05ac41164",
+    "research/round21/advisor/j2-gate.json": "cdb21ddb765a728876c784063ace227b517308587f6756a227b56bf25559a02a",
+    "research/round21/contracts/k1.json": "afbe7cfecd14ebd8aaadc571ee156be0da01698f24188b4e34d33e9e8c58b32b",
+    "research/round21/reverse/k1/check.py": "1366995e28296937ccd85a57095eac255ea0c550b683f748a1f373ba625ed239",
+    "research/round21/reverse/k1/report.md": "d4ced020d65203a330695f3cfdcdde923854712ac307b1b60ac96506c0d3dcff"
+  },
+  "target_verdict": "conditional_mobility_operator_and_two_rate_inverse_verified_physical_matching_unverified"
+}

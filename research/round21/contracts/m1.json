@@ -1,0 +1,33 @@
+{
+  "schema": "ym21-contract-v1",
+  "loop": "m1",
+  "status": "frozen",
+  "depends_on": {
+    "gate": "research/round21/advisor/k2-gate.json",
+    "sha256": "a31e2ff641159d9358756003b9b59476af904a1b536624f9eb71a174bbcc94af"
+  },
+  "selection_record": "research/round21/advisor/post-six-selection.json",
+  "goal": "Prove or refute strong perturbation and strong dynamics convergence along the H2 canonical fixed-budget profile.",
+  "model": "Return explicitly to full-link selected-strip reference H_ref in its fixed A2 incomplete tensor product; alpha/E_star>0, hbar>0, spacing fixed, 0<eta<1 fixed, 0<q<1, tau_q=eta/[8B(q)], omitted weights w_f(q)=q^(x+y+z)/24. H_q=H_ref+V_q. No identification with K/L conditional diffusion.",
+  "premises": [
+    "H2 exact B(q), sigma_q^2=alpha^2*tau_q^2*B(q^2)/96, gap margin gbar=alpha(1-eta)/8",
+    "H2 ||V_q||=alpha eta/8, ||P_q-P_ref||<=sigma_q/gbar, -sigma_q^2/gbar<=e_q<=0, sigma_q=O(alpha(1-q)^(3/2))",
+    "G2 full local bounded-factor cyclicity and dense finite excitations; J2 scoped physical-sector method"
+  ],
+  "required": [
+    "For A supported on finitely many complete reference factors F, bound V_q A Omega via A V_q Omega plus the finite commutator. Count every face meeting the full factor link support; do not use only the displayed Wilson edges when a factor is dressed.",
+    "Show D_F(q)=sum of w_f over omitted faces meeting F is finite and <=|E(F)|/6 because each cubic link meets at most4 faces. Verify boundary conventions and a complete-cover fixture.",
+    "Use tau_q->0 and sigma_q->0 to prove strong V_q->0 on a dense set and then every fixed vector, with uniform boundedness. An alternative multiplier-density proof needs any strict-positivity premise justified.",
+    "Derive strong-resolvent convergence H_q->H_ref and compact-time uniform strong convergence of unitary groups, including shift e_q if used. Give domains/topology explicitly.",
+    "Reject norm-smallness and fixed nonzero homogeneous-coupling conclusions; nonvanishing perturbation norm by itself settles neither norm-resolvent nor propagator-norm convergence.",
+    "Use deterministic exact profile/support arithmetic and discriminating moving-vector or wrong-topology controls. No continuum or mass measurement. M2 selected only from this gate."
+  ],
+  "proposed_not_assumed": [
+    "||V_q A Omega|| <= ||A||[sigma_q+2alpha tau_q D_F(q)] <=||A||[sigma_q+alpha tau_q |E(F)|/3]",
+    "V_q ->0 strongly although ||V_q||=alpha eta/8",
+    "(H_q-z)^(-1)->(H_ref-z)^(-1) strongly for Im z!=0",
+    "sup_|t|<=T ||[exp(-it(H_q-e_q)/hbar)-exp(-itH_ref/hbar)]psi||->0 for each fixed psi,T"
+  ],
+  "acceptance": "A scoped strong-topology theorem and honest limits; M2 adapts from the actual bound.",
+  "comparison_protocol": "Standard independent report/check.py --output, output/results.json plus complete source-manifest inputs/outputs. No mutable global execution file as producer input."
+}

@@ -5,11 +5,15 @@ description: Plan and critically review this quantum-electromagnetic-gravity res
 
 # Quantum fields and gravity research advisor
 
+For post-Round20 local stability, physical-sector reconstruction, dynamic identification or a clean-checkout admission repair, read [the admission and matching contract](references/admission-and-matching.md). Use the current `AGENTS.md` ownership boundaries and frozen Round21 contracts for this continuation.
+
 For driven truncation, growing-volume or hierarchy-closure work, read [the dynamic/volume/closure contract](references/dynamic-volume-closure-contract.md). It records the distinction between exact Galerkin error and computed-state error, common-action variables, volume-deterioration counterbenchmarks and source-specific closure tests.
 
 For the coupled Yang–Mills branch, read [the two-plaquette contract](references/two-plaquette-contract.md) after the existing Yang–Mills contract. It records shared-link derivatives, quotient measure/domain, exact degree-tail control, common/difference coefficients and the finite-graph proof boundary.
 
 Read [the advisor protocol](references/advisor-pipeline.md) when planning a new research cycle or changing the panel. Read the current experiment contract and saved evidence before accepting a result; historical prose is not authoritative over the source/data it describes.
+
+For finite dynamic observations or strong operator limits, read [the finite-observation and operator-limit lessons](references/finite-observations-and-operator-limits.md). They record model-class ambiguity, higher-derivative checks, complete factor support and topology-specific convergence.
 
 ## Establish the physical contract
 
