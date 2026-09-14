@@ -28,7 +28,7 @@ const ctx = {
 ctx.window = ctx;
 vm.createContext(ctx);
 const index = fs.readFileSync(new URL('index.html', dist), 'utf8');
-const researchScripts = [...index.matchAll(/<script src="(research[^"]*\.js)"/g)].map(m=>m[1]);
+const researchScripts = [...index.matchAll(/<script src="(research[^"]*\.js)"/g)].map(m=>m[1]).filter(file=>file!=='research-contributions.js');
 for (const file of researchScripts) vm.runInContext(fs.readFileSync(new URL(file, dist), 'utf8'), ctx, {filename:file});
 vm.runInContext(fs.readFileSync(new URL('research-paired.js', dist), 'utf8'), ctx, {filename:'research-paired.js'});
 
@@ -67,7 +67,7 @@ assert(home.includes('λ_f/α'));
 assert(home.includes('κ'));
 assert(home.includes('not a regulator, physical time matching variable or Hamiltonian energy scale'));
 assert(home.includes('research/round19/advisor/contract-a1.json'));
-assert(home.includes('/blob/research/round19-paired/research/round19/advisor/contract-a1.json'));
+assert(home.includes('/blob/main/research/round19/advisor/contract-a1.json'));
 assert(!/\b100%\b|progress meter/i.test(home));
 assert(!/solved Yang|Clay mass gap proved/i.test(home));
 
@@ -123,8 +123,8 @@ assert(review.includes('Exception ledger'));
 assert(review.includes('boundary-clipping'));
 assert(review.includes('enlarged-gram-sparsity'));
 assert(review.includes('W*W=PV^2P-(PVP)^2'));
-assert(review.includes('/blob/research/round19-paired/research/round19/exception-ledger.json'));
-assert(review.includes('/blob/research/round19-paired/research/round19/advisor/contract-b1.json'));
+assert(review.includes('/blob/main/research/round19/exception-ledger.json'));
+assert(review.includes('/blob/main/research/round19/advisor/contract-b1.json'));
 assert(review.includes('No current Round19 file proves'));
 
 const round18 = ctx.ResearchObservatory.render('review18-home');
@@ -135,10 +135,11 @@ assert(ctx.ResearchObservatory.render('__proto__').includes('Research page not f
 
 assert.equal(JSON.stringify(data.loops.map(x=>x.id)), JSON.stringify(['A1','A2','B1','B2','C1','C2']));
 const acceptedLoopIds = data.loops.filter(x=>x.state === 'accepted').map(x=>x.id);
-assert.equal(JSON.stringify(acceptedLoopIds), JSON.stringify(['A1','A2','B1','B2','C1']));
-assert.equal(data.meta.accepted_loop_count, 5);
-assert(data.meta.summary.includes('5 of six Round19 loop gates are accepted'));
-assert.equal(data.loops.find(x=>x.id === 'C2')?.state, data.evidence.some(x => x.key === 'contract-c2') ? 'running' : 'pending');
+assert.equal(JSON.stringify(acceptedLoopIds), JSON.stringify(['A1','A2','B1','B2','C1','C2']));
+assert.equal(data.meta.accepted_loop_count, 6);
+assert(data.meta.summary.includes('6 of six Round19 loop gates are accepted'));
+assert.equal(data.loops.find(x=>x.id === 'C2')?.state, 'accepted');
+assert.equal(data.evidence.find(x=>x.key === 'gate-c2')?.hashes_ok, true);
 assert(data.evidence.length >= 4);
 assert(data.evidence.every(x => ['pending','running','accepted','limited','rejected'].includes(x.state)));
 assert(data.exception_ledger.entries.length >= 10);
@@ -167,9 +168,9 @@ console.log(JSON.stringify({routes:routes.length,evidence:data.evidence.length,s
 
 // Standalone overview artifact: no legacy megabyte bundles, hash navigation across every new route.
 const overviewHtml = fs.readFileSync(new URL('round19/overview.html', new URL('../', import.meta.url)), 'utf8');
-assert(overviewHtml.includes('Branch-only review artifact'));
-assert(overviewHtml.includes('not published on GitHub Pages'));
-assert(overviewHtml.includes('research/round19-paired'));
+assert(overviewHtml.includes('Round19 review artifact'));
+assert(!overviewHtml.includes('not published on GitHub Pages'));
+assert(overviewHtml.includes('/tree/main'));
 assert(!overviewHtml.includes('research-next-data.js'));
 assert(!overviewHtml.includes('OBSERVATORY_NEXT'));
 const overviewEvents = {};

@@ -1,0 +1,9 @@
+# H1 decision: accepted within the summable family
+
+The total-minus-selected and disjoint omitted-class ledgers agree as rational functions, not just at sampled q values. Their independent coordinate ledgers match at all 16 shared q/cutoff fixtures; the other cutoffs also pass each source's direct enumeration. The advisor recomputes both distinct exact brackets for the unique B(q)=8 certificate boundary. Neither bracket is a physical critical point. Three deliberate comparison corruptions are rejected. Fresh source replays reproduce the admitted scientific result bytes, and ordinary/optimized evidence agrees.
+
+The reviewed theorem is B(q)=[2+5q+5q²+6q³+3q⁴]/[24(1−q)³(1+q)²(1+q²)], with (1−q)³B(q)→7/64, at fixed selected-strip coefficients and positive physical alpha/E_star. The dyadic regression is107/135. The default norm certificate stays positive below the unique q satisfying B(q)=8, bracketed by0.764003 and0.764004; its failure does not prove gap closure.
+
+This loop establishes that a strict uniform global perturbation budget forces the omitted amplitude to vanish as q approaches1. H2 will now test what happens to the actual ground states under that ray. The external skeptic proposed a stronger route than the provisional local-state target: bounded overlap between complete reference factors can make the variance of V(q) in the reference vacuum vanish even when its operator norm remains constant. That is a new target for the second loop, requiring independent proofs and explicit topology controls. The earlier local-decoupling sketch must not divide by an absolute threshold relative to an unexamined remote ground energy; it is retained as a failed premise.
+
+No endpoint q=1 operator is admitted by substituting a finite coordinate sum, and no homogeneous or continuum Yang–Mills conclusion follows from the certificate boundary.

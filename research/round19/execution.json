@@ -303,6 +303,70 @@
           ]
         }
       ]
+    },
+    "c2": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/c2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/c2/output",
+          "identical_files": [
+            "boundary-diagnostics.json",
+            "boundary-probe.csv",
+            "coefficients.json",
+            "controls.json",
+            "manifest.json",
+            "primary-certificate.json",
+            "results.json",
+            "sign-asymmetry.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/c2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/c2/output",
+          "identical_files": [
+            "boundary-diagnostics.json",
+            "coefficients.json",
+            "controls.json",
+            "manifest.json",
+            "primary-certificate.json",
+            "results.json",
+            "sign-asymmetry.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/c2/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/c2/check.py",
+            "--evidence",
+            "{run_root}/c2/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
     }
   }
 }

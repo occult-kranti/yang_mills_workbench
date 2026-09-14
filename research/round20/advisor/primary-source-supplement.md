@@ -1,0 +1,7 @@
+# Final source and inherited-scope check
+
+Accessed2026-09-14. The final roadmap rechecked [Yarotsky, Quasi-particles in weak perturbations of non-interacting quantum lattice systems](https://arxiv.org/pdf/math-ph/0411042), definitions and Theorems1–3 on printed pages2–4. The hypotheses explicitly allow infinite-dimensional site Hilbert spaces and unbounded nonnegative onsite operators with a unique unit-gap vacuum. The perturbation is bounded and finite range; the displayed smallness and gap constants depend on that range and are existential. We did not independently reconstruct the full cluster expansion or extract those constants.
+
+The inherited application is [Round13's weak-coupling-stability review](../../round13/advisor/weak-coupling-stability.md). Its qualitative fixed-spacing local result remains admitted. The new4×2×1 selected-strip blocking and estimate epsilon_local<=7|tau| are prospective dictionary checks recorded in the roadmap, not a new accepted loop. H2's global absolute-sum obstruction cannot be promoted to a theorem against that separate local approach.
+
+The final review also reopened the previously checked official Teschl book, Ledoux article and Jaffe–Witten problem statement listed in [sources](sources.md) and [diffusion notes](diffusion-source-notes.md). Reading depth remains targeted theorem/definition passages, not full-book review or exhaustive novelty comparison. Claims of scientific priority are unverified.

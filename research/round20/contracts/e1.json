@@ -1,0 +1,32 @@
+{
+  "schema": "ym20-loop-contract-v1",
+  "id": "e1",
+  "status": "frozen_after_d2_gate",
+  "depends_on": {
+    "gate": "research/round20/advisor/d2-gate.json",
+    "sha256": "23d3e6574cab6dc4684df2b1e53b5f2b408471e0734abddbdbbf14c046937621"
+  },
+  "title": "Literal aligned boxes and explicit reference-energy renormalization",
+  "theory": "A1 literal vertex boxes Lambda_N={0,...,N}^3, selected xy strips anchored (4i,2j,z), A2 omitted coefficients unchanged; select N=4m+3.",
+  "scale": {
+    "E_star": "fixed positive physical energy",
+    "alpha": "energy",
+    "N": "dimensionless lattice extent",
+    "a": "lattice spacing, length, fixed independently",
+    "c_N": "sum of complete-strip ground energies, energy-origin subtraction not an added interaction"
+  },
+  "target": "Prove literal aligned boxes contain only complete strip factors and free links. Derive exact omitted face weight W_N with orientation ranges xy x,y<N,z<=N; xz x,z<N,y<=N; yz y,z<N,x<=N. Define original unshifted H_box,N and c_N=sum_{C in box} E_C, and prove H_box,N-c_N plus the exact exterior reference generator is H_ref+V_box,N. Use D1/D2 on this literal family to obtain norm-resolvent/ground-state estimates.",
+  "acceptance": [
+    "General all-m alignment/factor proof, not just fixtures",
+    "Exact face/strip count and dyadic tail checks N=3,7,11,15 plus at least one nonaligned boundary",
+    "Explicit scalar energy subtraction and proof it preserves states/gaps but not unshifted resolvents or absolute energies",
+    "All retained couplings unchanged and every orientation cutoff correct",
+    "Executed controls wrong all-three-anchor cube, nonaligned full-factor promotion, omit c_N, discard exterior generator, E_star=0",
+    "No arbitrary-phase convergence claim before E2"
+  ],
+  "limits": [
+    "Aligned subsequence only",
+    "Fixed spacing and summable coefficients; no homogeneous/continuum result"
+  ],
+  "loop2_selection": "Use E1 evidence to select or reject arbitrary-phase local-state convergence target."
+}

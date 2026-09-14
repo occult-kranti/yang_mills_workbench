@@ -8,11 +8,13 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current branch milestone — Round19:** five of six sequential research loops are accepted. Goal A gives boundary-consistent clipped clusters and a direct product representation for a summable perturbation. Goal B adds the complete 48-channel projector, exact cross Gram on the actual two-cube graph, and an accepted finite two-cube continuous signed-box spectral certificate using that enlarged projector. C1 now accepts a finite static U-V-W chain integral and common-V discriminator on the actual four-cube graph. Opposed Fibonacci-style spirals organize forward derivation and reverse reconstruction under a declared scale contract; the geometry's physical relevance remains untested. Static κ remains a separate coefficient for Euclidean integrals, with physical-scale matching open and no accepted Hamiltonian/time matching.
+**Current study — Round20:** C2 is complete, and all ten new research loops are accepted within their declared models. The five adaptive goals each completed two forward/reverse loops: finite-factor convergence, literal finite-box states, static/dynamic scale identification, limiting dynamics and GNS representation, and a continuous decay profile. The study closes the literal finite-box local-state limit for the summable model, derives the shared-link generator terms in a separate conditional model, and proves an exact vacuum-variance identity with global ground-state return along a bounded-budget profile. Each accepted result links its assumptions, independent calculations and skeptical gate. The final two goals were selected only after the first three pairs completed.
 
-[Round19 evidence and reproduction](research/round19/README.md) · [standalone paired review](research/round19/overview.html) · [research branch](https://github.com/occult-kranti/yang_mills_workbench/tree/research/round19-paired).
+[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Ten-loop roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/round20-roadmap) · [Round20 guide](research/round20/README.md).
 
-**Live website — Round18:** the preceding six-loop study remains deployed while Round19 is reviewed. [Six-loop home](https://occult-kranti.github.io/yang_mills_workbench/#research) · [Round18 guide](research/round18/README.md). Homogeneous dense volume-uniform stability, full bulk integration and continuum Yang–Mills remain open.
+**Round19:** all six loops are accepted within their stated model scopes. The A/B/C1 milestone was merged in [PR #1](https://github.com/occult-kranti/yang_mills_workbench/pull/1). C2 adds the continuous static bound F(kappa)>=kappa²/2048 for |kappa|<=1/8 and a separately certified sign asymmetry. [Round19 evidence and reproduction](research/round19/README.md) · [Historical paired review](https://occult-kranti.github.io/yang_mills_workbench/#research/review19-home).
+
+[Round18 history](https://occult-kranti.github.io/yang_mills_workbench/#research/review18-home) preserves the preceding six-loop study. Round13 preserves a qualitative homogeneous fixed-spacing stability result. Explicit stability constants for the selected-strip family and the matched continuum Yang–Mills target remain open. The double Fibonacci spiral organizes the work; its physical significance remains untested.
 
 Round17 remains available with the earlier sparse theorem, adjoint trial repair and equal-action/different-observable experiment. [Previous six-loop dashboard](https://occult-kranti.github.io/yang_mills_workbench/#research/review17-home).
 
@@ -62,7 +64,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Paired forward derivation and reverse reconstruction | `research/round19/` | Current branch: accepted A1/A2/B1/B2/C1; C2 running under continuous static-κ contract |
+| Adaptive five-goal research study | `research/round20/` | Ten-loop finite-limit, dynamics, scale and decay investigation with source-bound gates |
+| Paired forward derivation and reverse reconstruction | `research/round19/` | Six accepted loops, including the repaired continuous static-κ certificate |
 | Six-loop dressed, spectral and conditional study | `research/round18/` | Deployed inhomogeneous family, complete complement, signed finite gap box, sufficient Gram coordinates and six-weight two-link integral |
 | Previous local, spectral and conditional study | `research/round17/` | Preserved sparse physical theorem, finite adjoint repair, complete four-cube tensor and matched common-variable experiment |
 | Shared-face subproblem, two loops and three roles | `research/round16/` | Previous eleven-face Haar contractions, exact changed-action comparison, physical energy-scale audit and independent checks |
@@ -116,7 +119,7 @@ The third trace retains relative orientation lost by two separate loop traces. A
 
 ## Reproduce the studies
 
-The [Round19 guide](research/round19/README.md) provides current branch reproduction. The [Round18 guide](research/round18/README.md) contains all six preceding contracts, complete outputs, retained failures and the feedback roadmap. The [Round17 guide](research/round17/README.md) and [Round16 guide](research/round16/README.md) preserve the preceding studies. From the repository root:
+The [Round20 guide](research/round20/README.md) provides current study reproduction. The [Round19 guide](research/round19/README.md) preserves its six preceding loops. The [Round18 guide](research/round18/README.md) contains all six preceding contracts, complete outputs, retained failures and the feedback roadmap. The [Round17 guide](research/round17/README.md) and [Round16 guide](research/round16/README.md) preserve the preceding studies. From the repository root:
 
 ```bash
 python3 research/round18/reproduce.py --output /absolute/path/to/new-results

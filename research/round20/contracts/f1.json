@@ -1,0 +1,37 @@
+{
+  "schema": "ym20-loop-contract-v1",
+  "id": "f1",
+  "status": "frozen_after_e2_gate",
+  "depends_on": {
+    "gate": "research/round20/advisor/e2-gate.json",
+    "sha256": "f9db577d828671f5c61b45b86d01e5afd01147988b43298f731af378f8c51974"
+  },
+  "title": "Static common-V density does not identify a local reversible time generator",
+  "source_premises": [
+    "research/round19/advisor/c2-gate.json",
+    "research/round19/forward/c1/report.md",
+    "research/round20/advisor/diffusion-source-notes.md"
+  ],
+  "theory": "M=SU(2)^3 active U,V,W with exact C1 density rho_kappa=exp(kappa S)/Z over product Haar. S=3x+y+z+w+t; same shared V. Casimir metric fixed so negative Laplacian eigenvalue of fundamental character is3/4.",
+  "scale": {
+    "kappa": "dimensionless static action coefficient",
+    "c": "strictly positive externally specified energy coefficient, not inferred from kappa or alpha",
+    "E_star": "fixed positive physical energy",
+    "hbar": "action constant connecting time units",
+    "a": "independent fixed spatial lattice length"
+  },
+  "target": "Construct nonnegative self-adjoint weighted generator A_kappa=-rho^-1 div(rho grad) from its closed Dirichlet form. Show constants are its unique zero mode and every H_kappa,c=c A_kappa has the same static density and ground state while excitation energies multiply by c. Prove nonidentifiability by two explicit c values at same kappa, with exact kappa=0 spectral discriminator; optionally a general positive-gap argument on compact M. Preserve that this family is added dynamics, not reconstruction of original Yang-Mills Hamiltonian.",
+  "acceptance": [
+    "Closed form domain, integration by parts, positive density and connectedness stated",
+    "Gauge-fixed C1 state space retained; no additional gauge-sector claim without proof",
+    "Exact signed-kappa and c fixtures, wrong drift sign and missing rho measure controls",
+    "Same static moments cannot identify rate; actual dynamic observable or matched c required",
+    "Reject c=0 as positive-gap case, E_star=0, c=kappa or c=alpha inferred from notation, Fibonacci energy matching",
+    "Independent proofs and executed exact algebraic checks; no finite numeric sample promoted to manifold theorem"
+  ],
+  "limits": [
+    "A family of specified reversible diffusions is not the Yang-Mills transfer Hamiltonian",
+    "No temporal reflection-positivity/continuum reconstruction conclusion"
+  ],
+  "loop2_selection": "Select from F1 evidence; possible explicit ground-state transform and conditional matched-coefficient bound, not preaccepted."
+}

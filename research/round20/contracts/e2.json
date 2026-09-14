@@ -1,0 +1,34 @@
+{
+  "schema": "ym20-loop-contract-v1",
+  "id": "e2",
+  "status": "frozen_after_e1_gate",
+  "depends_on": {
+    "gate": "research/round20/advisor/e1-gate.json",
+    "sha256": "3040c8d9ff9a4bbdb9f5675adb0a0318231f4b1eb1b095622652264c0ca06a07"
+  },
+  "title": "All-phase literal box ground states converge on every local algebra",
+  "theory": "Same A1/A2 fixed coefficient family and positive-orthant reference; rectangular vertices [0,Nx]x[0,Ny]x[0,Nz], min side tends infinity. Subtract c_box=sum clipped-component ground energies; this does not change finite ground states.",
+  "scale": {
+    "E_star": "fixed positive physical energy",
+    "alpha": "energy",
+    "tau": "dimensionless fixed signed amplitude with alpha abs(tau)107/135<alpha/8",
+    "M": "fixed interior coordinate regulator, enlarged for local observable support",
+    "epsilon_M": "energy alpha abs(tau)t_M from D1",
+    "g_M": "energy alpha/8-alpha abs(tau)s_M"
+  },
+  "target": "For bounded local A and every large enough literal box, construct central complete factors covering A and V_M. Truncated box ground has same central marginal as infinite truncated ground and remote clipped reference. Prove all finite full grounds unique using A1 and free-Haar omitted-face witnesses, and |omega_box(A)-omega_infty(A)|<=4||A||min(1,epsilon_M/g_M) (or a justified sharper bound), uniformly in all sufficiently large boundary phases. Deduce local weak-star convergence without global boundary-vector norm claim.",
+  "acceptance": [
+    "Uniform mathematical proof for all growing rectangular boxes; eight Nxmod4/Nyparity fixtures are implementation checks only",
+    "Explicit component energy subtraction and zero-mean witness in clipped references",
+    "Central factors must include A even if A outside V_M support; require enough geometric margin",
+    "Tail epsilon_M independent of outer size and signed cancellation disallowed",
+    "Actual wrong controls: omit observable support, independent boundary-vacuum embedding falsely treated as norm convergence, use unshifted component energies, remove A1 uniform delta, claim global norm-resolvent or homogeneous convergence from local-state result",
+    "Independent exact local error ledgers and geometry fixtures; ordinary/optimized source runs"
+  ],
+  "limits": [
+    "Anchored lower boundary and fixed lattice spacing",
+    "Summable omitted weights",
+    "Local-state convergence only for arbitrary phases; global vector/resolvent convergence not inferred"
+  ],
+  "loop2_status": "Second loop of Goal E; advisor replans F and keeps G/H deferred until F pair done."
+}

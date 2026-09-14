@@ -1,0 +1,33 @@
+{
+  "schema": "ym20-loop-contract-v1",
+  "id": "h2",
+  "status": "frozen_after_h1_gate",
+  "depends_on": {
+    "gate": "research/round20/advisor/h1-gate.json",
+    "sha256": "8d57aa240a75e964727543b9f14fed2531d5bfdcf0fc30c44e5f61917a74e8b4"
+  },
+  "title": "Uniform-budget endpoint: covariance decay and actual return to the strip reference",
+  "theory": "Same A2 product reference and omitted profile w_f(q)=q^(x+y+z)/24. Fix 0<eta<1, physical alpha/E_star>0 and spacing, and choose signed amplitudes with abs(tau(q))B(q)<=eta/8. Canonical nonzero-budget ray tau(q)=eta/[8B(q)].",
+  "scale": {
+    "q": "dimensionless continuous spatial-profile deformation,0<q<1",
+    "eta": "dimensionless strict perturbation budget fraction,0<eta<1",
+    "tau(q)": "dimensionless signed action amplitude explicitly varied with q",
+    "alpha/E_star": "fixed positive finite ratio; not F diffusion coefficient c",
+    "g_bar": "alpha(1-eta)/8, positive energy"
+  },
+  "target": "Prove abs(tau)=O((1-q)^3) and test actual global ground-projector convergence to the selected-strip reference. Independently justify complete-factor support dependence: each face touches <=4 factors, each factor <=10 links, each link <=4 faces, giving overlap row degree <=160 including self. Product reference and omitted free-Haar witnesses make disjoint factor covariances zero. Seek ||V_q Omega||^2<=160 alpha\u00b2 tau\u00b2 sum_omitted w_f(q)^2 <=(5/6)alpha\u00b2 tau\u00b2/(1-q\u00b2)^3. Use absolute excited threshold g_bar and H_q Omega=V_q Omega to obtain ||P_q-P_Omega||<=min(1,||V_q Omega||/g_bar) and -||V_q Omega||\u00b2/g_bar<=e_q<=0. Conclude global projector and state convergence under the uniform budget, without pretending the perturbation operator norm tends to zero.",
+  "acceptance": [
+    "Two independent combinatorial covariance and residual/Schur proofs; one finite explicit graph factor-overlap enumeration supporting but not replacing general160 proof",
+    "Exact q/eta fixtures and asymptotic exponents; q=1 not an admitted finite-budget operator",
+    "Canonical-ray operator norm equality ||V_q||=alpha eta/8 justified by finite-factor near-identity localization then tail limit",
+    "Executed controls: disjoint links do not imply independent complete factors; invalid zero-mean threshold relative to a remote perturbed ground; constant operator norm does not refute state convergence; fixture max degree not universal proof; varying alpha to hide diverging B rejected",
+    "Mean zero and reference factor support justify covariance cancellation, not independent-face assumption",
+    "Plain distinction: endpoint selected-strip reference still has selected interactions; fixed nonzero homogeneous omitted coupling is outside this certificate route, not disproved physics"
+  ],
+  "limits": [
+    "Same inhomogeneous reference representation and fixed lattice spacing",
+    "No Gauss-only GNS equivalence, original static-to-physical matching, homogeneous gap or continuum theorem",
+    "Any exact reported polynomial/constant must be matched by independent reconstruction"
+  ],
+  "feedback": "H1 exact divergence forced tau to vanish; external skeptic replaced an unsafe remote-energy shortcut with reference-vacuum variance. H2 is the tenth actual research loop; final skeptical roadmap will be written only after its gate."
+}
