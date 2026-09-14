@@ -23,6 +23,9 @@ For physical reductions and dynamic matching, read [the Haar-map and induced-dyn
 
 For projected dynamics, initial-diagonal inverses or spatial response tails, read [the projected-memory and boundary-response lessons](references/projected-memory-and-boundary-response.md). Keep exact source sectors, unbounded domains, convergence topology and volume-weight certificates separate.
 
+
+For local-source commutator filters and their infinite-volume identification, read [the filtered-source and connected-limit lessons](references/filtered-sources-and-connected-limits.md). Retain the spectral residual and distinguish a local norm limit from a global generator claim.
+
 ## Establish the physical contract
 
 Specify action, units, metric signature, charge convention, quantum state and preparation, supporting sources, approximation order, regulator, boundaries and observable. Distinguish mathematical consistency, implementation correctness and physical applicability. The four original research fronts use different geometries; a homogeneous response does not close a charged horizon or a transverse mixing calculation.

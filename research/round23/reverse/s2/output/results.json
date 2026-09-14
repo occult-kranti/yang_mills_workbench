@@ -1,0 +1,200 @@
+{
+  "bohr_L": "(1-sinc(Theta*omega))/omega, continuous value0",
+  "bohr_residual": "sinc(Theta*omega), value1 at frequency0",
+  "certificate": {
+    "F_z_max": "6784/961",
+    "L_weighted_uniform_coefficient": "54272/961",
+    "R_weighted_uniform_coefficient": "108544/961",
+    "all_time_series_certified": false,
+    "bad_all_time_ratio_n20": "128037/40000",
+    "tail_checks": [
+      {
+        "N": 0,
+        "tail": "0",
+        "z": "0"
+      },
+      {
+        "N": 1,
+        "tail": "0",
+        "z": "0"
+      },
+      {
+        "N": 4,
+        "tail": "0",
+        "z": "0"
+      },
+      {
+        "N": 12,
+        "tail": "0",
+        "z": "0"
+      },
+      {
+        "N": 0,
+        "tail": "232/3267",
+        "z": "1/100"
+      },
+      {
+        "N": 1,
+        "tail": "331/326700",
+        "z": "1/100"
+      },
+      {
+        "N": 4,
+        "tail": "157/81675000000",
+        "z": "1/100"
+      },
+      {
+        "N": 12,
+        "tail": "71/163350000000000000000000000",
+        "z": "1/100"
+      },
+      {
+        "N": 0,
+        "tail": "2940/961",
+        "z": "35/128"
+      },
+      {
+        "N": 1,
+        "tail": "140875/123008",
+        "z": "35/128"
+      },
+      {
+        "N": 4,
+        "tail": "682784375/16122904576",
+        "z": "35/128"
+      },
+      {
+        "N": 12,
+        "tail": "6741544913572998046875/2323555425299317273785270272",
+        "z": "35/128"
+      }
+    ],
+    "z_max": "35/128"
+  },
+  "coefficients": [
+    {
+      "average_coefficient": "1",
+      "k": 0,
+      "triangular_coefficient": "1/6"
+    },
+    {
+      "average_coefficient": "-1/6",
+      "k": 1,
+      "triangular_coefficient": "-1/120"
+    },
+    {
+      "average_coefficient": "1/120",
+      "k": 2,
+      "triangular_coefficient": "1/5040"
+    },
+    {
+      "average_coefficient": "-1/5040",
+      "k": 3,
+      "triangular_coefficient": "-1/362880"
+    },
+    {
+      "average_coefficient": "1/362880",
+      "k": 4,
+      "triangular_coefficient": "1/39916800"
+    },
+    {
+      "average_coefficient": "-1/39916800",
+      "k": 5,
+      "triangular_coefficient": "-1/6227020800"
+    },
+    {
+      "average_coefficient": "1/6227020800",
+      "k": 6,
+      "triangular_coefficient": "1/1307674368000"
+    },
+    {
+      "average_coefficient": "-1/1307674368000",
+      "k": 7,
+      "triangular_coefficient": "-1/355687428096000"
+    }
+  ],
+  "comparison": {
+    "actual_SU2_residual_lower_bound": false,
+    "all_stage_gap_proved": false,
+    "domain_preservation": true,
+    "exponential_domain_preservation": true,
+    "infinite_G_identification_proved": false,
+    "radius_z_max": "35/128",
+    "regulator_removed": false,
+    "source_extended_by_identity": true,
+    "weight": "2^|Y|",
+    "weighted_L_bound": "8*r_star*Theta*(4-z)/(1-z)^2",
+    "weighted_R_bound": "16*r_star*(4-z)/(1-z)^2"
+  },
+  "direction": "reverse",
+  "identity": "[L_Theta,G]=-A+R_Theta(A)",
+  "loop": "s2",
+  "novelty": "direct project derivation, scientific priority unverified",
+  "passed": true,
+  "residual": "(2Theta)^(-1) integral[-Theta,Theta] alpha_s(A) ds",
+  "schema": "ym23-reverse-s2-v1",
+  "source": "actual S1 cubic same-anchor source; nonzero for nonzero tau; not entire BCH residual",
+  "spectral_checks": [
+    {
+      "L_interval": [
+        "-29759111388161519626307917821608940259717199/45718923739059394916964920767416806580997324800",
+        "-799924914113781647555156831044848314181198309119999/1228924670105916535368017070228163760897208090624000000"
+      ],
+      "Theta": "1/16",
+      "omega": "-1",
+      "residual_interval": [
+        "45689164627671233397338612849595197640737607601/45718923739059394916964920767416806580997324800",
+        "1228124745191802753720461913397118912583026892314880001/1228924670105916535368017070228163760897208090624000000"
+      ]
+    },
+    {
+      "L_interval": [
+        "0",
+        "0"
+      ],
+      "Theta": "1/16",
+      "omega": "0",
+      "residual_interval": [
+        "1",
+        "1"
+      ]
+    },
+    {
+      "L_interval": [
+        "799924914113781647555156831044848314181198309119999/1228924670105916535368017070228163760897208090624000000",
+        "29759111388161519626307917821608940259717199/45718923739059394916964920767416806580997324800"
+      ],
+      "Theta": "1/16",
+      "omega": "1",
+      "residual_interval": [
+        "45689164627671233397338612849595197640737607601/45718923739059394916964920767416806580997324800",
+        "1228124745191802753720461913397118912583026892314880001/1228924670105916535368017070228163760897208090624000000"
+      ]
+    }
+  ],
+  "status": "checks_passed_regulated_target_accepted_unregularized_limited",
+  "support": {
+    "counts": [
+      {
+        "exact_words": 13,
+        "n": 1,
+        "word_upper": 13
+      },
+      {
+        "exact_words": 253,
+        "n": 2,
+        "word_upper": 338
+      },
+      {
+        "exact_words": 6421,
+        "n": 3,
+        "word_upper": 13182
+      }
+    ],
+    "n1_crossing_rooted_words": 84,
+    "n1_exact_weight_sum": 10816,
+    "n1_rooted_words": 88,
+    "n1_upper_weight_sum": 11648
+  },
+  "target_verdict": "regulated_full_source_identity_and_connected_weighted_certificate_proved"
+}

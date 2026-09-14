@@ -27,3 +27,7 @@ For overlapping rotations and stability iterations, read `.codex/skills/qeg-rese
 For physical reductions, read `.codex/skills/qeg-research-advisor/references/haar-maps-and-induced-dynamics.md`. Prove measure and closed-domain relations separately, retain all tree and mixed derivatives, and freeze the full physical observable completion before fitting a conditional coefficient. Record nondiscriminating controls and their replacements honestly.
 
 For projected dynamics and boundary-complete responses, read `.codex/skills/qeg-research-advisor/references/projected-memory-and-boundary-response.md`. Preserve the full memory return factor, actual infinite-rank domains and strong-versus-norm topology. A global vacuum source is not a local source extended by identity. Prove response graph regularity and useful interaction support sums separately; a failed geometric upper certificate is not actual divergence.
+
+## Lessons admitted during Round23 S
+
+For generated local sources and filtered commutators, read `.codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md`. Keep an indexed source distinct from a summed remainder, retain the resonant filter residual, and count all ordered connected words before claiming a weighted bound. Attribute a direction-only refinement after independent review. An actual initial-operator limit does not establish later-diagonal induction. Freeze updated instruction snapshots only for subsequently selected contracts.
