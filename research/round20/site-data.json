@@ -1,0 +1,395 @@
+{
+  "schema": "ym20-site-data-v1",
+  "completed_research_loops": 10,
+  "c2": {
+    "status": "accepted",
+    "gate": "research/round19/advisor/c2-gate.json",
+    "result": "Continuous static integral certificate and independently repaired admission"
+  },
+  "goals": [
+    {
+      "id": "D",
+      "title": "From finite factors to limiting ground states",
+      "status": "accepted",
+      "loops": [
+        {
+          "id": "D1",
+          "status": "accepted",
+          "title": "Finite-factor resolvent limit",
+          "claim": "Exact factor support completion and dyadic tail yield norm-resolvent convergence in the A2 representation.",
+          "result": "Nine independent exact ledgers agree; the wrong exterior embedding fails.",
+          "equations": [
+            "epsilon_L = alpha |tau| t_L",
+            "||R_H(z)-R_HL(z)|| <= epsilon_L/|Im z|^2"
+          ],
+          "gate": "research/round20/advisor/d1-gate.json",
+          "evidence": [
+            "research/round20/forward/d1/report.md",
+            "research/round20/reverse/d1/report.md",
+            "research/round20/advisor/d1-comparison.json"
+          ],
+          "limitations": [
+            "Not yet literal clipped boxes",
+            "Finitely many infinite-dimensional factors",
+            "No continuum conclusion"
+          ]
+        },
+        {
+          "id": "D2",
+          "title": "Ground projection and observable convergence",
+          "status": "accepted",
+          "evidence": [
+            "research/round20/forward/d2/report.md",
+            "research/round20/reverse/d2/report.md"
+          ],
+          "claim": "Ground energies, rank-one projections and bounded observables converge with explicit tail errors.",
+          "result": "Zero-mean structure gives the sharper denominator g_L; independent contour check agrees.",
+          "equations": [
+            "|e-e_L| <= epsilon_L",
+            "||P-P_L|| <= min(1,epsilon_L/g_L)",
+            "|omega(A)-omega_L(A)| <= 2||A|| min(1,epsilon_L/g_L)"
+          ],
+          "gate": "research/round20/advisor/d2-gate.json",
+          "limitations": [
+            "Zero trial mean and rank one are required",
+            "Literal boxes are next"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Literal boundary limits",
+      "status": "accepted",
+      "loops": [
+        {
+          "id": "E1",
+          "title": "Literal aligned boxes",
+          "status": "accepted",
+          "claim": "Aligned vertex boxes N=4m+3 admit exact factor decomposition after reference-energy subtraction.",
+          "equations": [
+            "(H_box,N-c_N) tensor I + I tensor H_ref,out = H_ref+V_box,N"
+          ],
+          "gate": "research/round20/advisor/e1-gate.json",
+          "evidence": [
+            "research/round20/forward/e1/report.md",
+            "research/round20/reverse/e1/report.md"
+          ],
+          "limitations": [
+            "Absolute unshifted energies may diverge"
+          ]
+        },
+        {
+          "id": "E2",
+          "title": "All boundary phases: local-state convergence",
+          "status": "accepted",
+          "claim": "Every bounded local observable converges to the A2 infinite ground-state expectation across all growing upper-boundary phases.",
+          "equations": [
+            "|omega_box(A)-omega_infty(A)| <= 4||A|| min(1,epsilon_M/g_M)"
+          ],
+          "gate": "research/round20/advisor/e2-gate.json",
+          "evidence": [
+            "research/round20/forward/e2/report.md",
+            "research/round20/reverse/e2/report.md",
+            "research/round20/advisor/e2-comparison.json"
+          ],
+          "limitations": [
+            "Summable fixed coefficients, fixed lattice spacing and anchored lower boundary",
+            "Local-state topology; no global boundary-vector convergence inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "title": "Identifying physical time from static data",
+      "status": "accepted",
+      "loops": [
+        {
+          "id": "F1",
+          "title": "A static law does not identify a clock",
+          "status": "accepted",
+          "claim": "Local reversible generators with different positive c share the same static density but have different gaps.",
+          "equations": [
+            "H_kappa,c=c A_kappa",
+            "gap(H_0,c)=3c/4"
+          ],
+          "gate": "research/round20/advisor/f1-gate.json",
+          "evidence": [
+            "research/round20/forward/f1/report.md",
+            "research/round20/reverse/f1/report.md"
+          ],
+          "limitations": [
+            "Added diffusion family; c remains unmatched"
+          ]
+        },
+        {
+          "id": "F2",
+          "title": "Shared-middle gradient closure and exact action range",
+          "status": "accepted",
+          "claim": "The generated gradient algebra requires r=Tr(UW\u2020)/2; exact action range[-5,7] yields a conditional diffusion gap c/6.",
+          "equations": [
+            "Gamma(S)=[15+8y+2x+2z+2r-(3x+w)^2-(y+w+t)^2-(z+t)^2]/4",
+            "H_tilde=c[-Delta+(kappa/2)DeltaS+(kappa^2/4)Gamma(S)]",
+            "gap>=c/6 for |kappa|<=1/8"
+          ],
+          "gate": "research/round20/advisor/f2-gate.json",
+          "evidence": [
+            "research/round20/forward/f2/report.md",
+            "research/round20/reverse/f2/report.md",
+            "research/round20/advisor/f2-comparison.json"
+          ],
+          "limitations": [
+            "Finite added dynamics; no original Yang-Mills identification",
+            "Calibration identity uses dynamic data that have not been measured"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "title": "Real-time dynamics and limiting-state representation",
+      "status": "accepted",
+      "loops": [
+        {
+          "id": "G1",
+          "title": "Fixed-time local dynamics and the continuity exception",
+          "status": "accepted",
+          "claim": "Literal-box real-time dynamics converges in operator norm on each local observable at fixed physical time, with a strongly continuous Hilbert implementation.",
+          "result": "Domain-safe proof, 72 exact time rows total, eight support phases and actual rotor counterexample accepted.",
+          "equations": [
+            "||alpha_t_box(A)-alpha_t_infty(A)||<=4||A|||t|epsilon_M/hbar",
+            "t_n=4*pi*hbar/[alpha(2n+3)] ->0 while ||alpha_tn(T)-T||=2 in free case"
+          ],
+          "gate": "research/round20/advisor/g1-gate.json",
+          "evidence": [
+            "research/round20/forward/g1/report.md",
+            "research/round20/reverse/g1/report.md",
+            "research/round20/advisor/g1-comparison.json"
+          ],
+          "limitations": [
+            "No point-norm time continuity on full local bounded algebra",
+            "Fixed spacing and summable interactions",
+            "No relativistic/continuum implication"
+          ]
+        },
+        {
+          "id": "G2",
+          "title": "Full-factor GNS identification",
+          "status": "accepted",
+          "claim": "The E2 limiting local state GNS on the full factor algebra is the A2 representation with canonical generator H-e and its inherited gap.",
+          "result": "Two complete irreducibility/GNS proofs, exact Gram-rank controls, source replays and external skeptical proof check accepted.",
+          "equations": [
+            "W[A]=A Psi",
+            "U_GNS(t)=exp[it(H-e)/hbar]",
+            "gap(K_GNS)>=alpha/8-alpha abs(tau)107/135"
+          ],
+          "gate": "research/round20/advisor/g2-gate.json",
+          "evidence": [
+            "research/round20/forward/g2/report.md",
+            "research/round20/reverse/g2/report.md",
+            "research/round20/advisor/g2-comparison.json"
+          ],
+          "limitations": [
+            "Full bounded local-factor algebra only",
+            "Smallness beta<delta restored",
+            "No Gauss-only equivalence or continuum claim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "title": "Continuous decay and the homogeneous-limit obstruction",
+      "status": "accepted",
+      "loops": [
+        {
+          "id": "H1",
+          "title": "Exact continuous-profile budget",
+          "status": "accepted",
+          "claim": "The continuous omitted-face profile has an exact budget and a rigorously delimited sufficient gap certificate at fixed physical scale.",
+          "result": "Independent rational/coordinate ledgers, analytic monotonicity and endpoint proof, exact bracket comparison and executed corruptions accepted; external mathematical check found no defect.",
+          "equations": [
+            "B(q)=[2+5q+5q\u00b2+6q\u00b3+3q\u2074]/[24(1\u2212q)\u00b3(1+q)\u00b2(1+q\u00b2)]",
+            "lim_(q\u21921) (1\u2212q)\u00b3B(q)=7/64",
+            "gap(H(q))>=alpha[1/8-abs(tau)B(q)]"
+          ],
+          "gate": "research/round20/advisor/h1-gate.json",
+          "evidence": [
+            "research/round20/forward/h1/report.md",
+            "research/round20/reverse/h1/report.md",
+            "research/round20/advisor/h1-comparison.json"
+          ],
+          "limitations": [
+            "0<q<1; fixed selected-strip reference and spacing",
+            "Certificate failure is not spectral gap closure",
+            "q is an action-profile parameter, not energy or an inferred physical law"
+          ]
+        },
+        {
+          "id": "H2",
+          "title": "Exact variance and return to the strip reference",
+          "status": "accepted",
+          "evidence": [
+            "research/round20/forward/h2/report.md",
+            "research/round20/reverse/h2/report.md",
+            "research/round20/advisor/h2-comparison.json"
+          ],
+          "claim": "Every strict uniform global perturbation-budget ray returns the actual ground projection to the selected-strip reference, with an exact vacuum variance and a quantitative rate.",
+          "result": "Two independent geometry/Haar/variance and spectral proofs, exact physical ray comparisons, actual norm topology controls and separate final mathematical review accepted.",
+          "equations": [
+            "sigma_q\u00b2=alpha\u00b2 tau(q)\u00b2 B(q\u00b2)/96",
+            "||P_q-P_ref||<=min(1,sigma_q/[alpha(1-eta)/8])",
+            "-sigma_q\u00b2/[alpha(1-eta)/8]<=e_q<=0",
+            "tau(q)=eta/[8B(q)] implies ||V_q||=alpha eta/8 and ||P_q-P_ref||=O((1-q)^(3/2))"
+          ],
+          "gate": "research/round20/advisor/h2-gate.json",
+          "limitations": [
+            "Fixed0<eta<1,alpha/E_star>0 and lattice spacing",
+            "The endpoint still has selected-strip interactions",
+            "Obstruction concerns the global l1 perturbation-budget route; other local stability methods are not excluded",
+            "No Gauss-only GNS, physical diffusion matching, continuum or novelty-priority claim"
+          ]
+        }
+      ]
+    }
+  ],
+  "contributions": [
+    {
+      "id": "D1-tail",
+      "loop": "D1",
+      "title": "A computable finite-factor error",
+      "classification": "accepted within model",
+      "equation": "||R_H-R_HL|| <= alpha |tau| t_L / |Im z|^2",
+      "scope": "A2 summable product representation with exact exterior generator",
+      "derivation": "Forward total-minus-selected and reverse omitted-class weights agree, including all crossing support links.",
+      "failure": "Padding the finite Hamiltonian with zero exterior energy leaves a persistent free-link resolvent discrepancy.",
+      "workaround": "Complete touched strip factors and retain the exterior reference Hamiltonian.",
+      "limitations": [
+        "Standard resolvent method applied to this ledger; literature novelty not established"
+      ],
+      "source": "research/round20/advisor/d1-gate.json"
+    },
+    {
+      "id": "D2-projector",
+      "loop": "D2",
+      "title": "Ground states converge with a computable error",
+      "classification": "accepted within model",
+      "equation": "||P-P_L|| <= epsilon_L/(delta-beta_L)",
+      "scope": "Finite-factor A2 lifts with zero reference trial mean",
+      "derivation": "Residual of the limiting ground in the finite lift is bounded by the exact omitted coefficient tail.",
+      "failure": "Without nonpositive ground energy, dividing by the absolute spectral threshold is wrong.",
+      "workaround": "Keep the zero-mean premise or separately subtract the ground energy in the denominator.",
+      "source": "research/round20/advisor/d2-gate.json",
+      "limitations": [
+        "Known spectral tools; literature priority not established"
+      ]
+    },
+    {
+      "id": "E2-local-limit",
+      "loop": "E2",
+      "title": "The literal finite-box state limit is now proved",
+      "classification": "accepted within model",
+      "equation": "|omega_box(A)-omega_infty(A)| <= 4||A|| min(1,epsilon_M/g_M)",
+      "scope": "Fixed-spacing summable strip model, every upper-boundary phase",
+      "derivation": "Both finite and infinite states compare to the same complete central factors; the remote clipped components retain A1 gap.",
+      "failure": "A local state limit does not imply global boundary-vector convergence. Blindly completing boundary strips also changes the literal box.",
+      "workaround": "Use actual clipped components, subtract their energy origins, and compare bounded local observables.",
+      "source": "research/round20/advisor/e2-gate.json",
+      "limitations": [
+        "A previously open premise for this model is closed",
+        "No literature-priority or continuum Yang-Mills claim"
+      ]
+    },
+    {
+      "id": "F2-closure",
+      "loop": "F2",
+      "title": "The shared middle link creates an additional observable",
+      "classification": "accepted within model",
+      "equation": "r=Tr(UW\u2020)/2; Gamma(S) contains (r-wt)/2 from the middle link",
+      "scope": "Exact ground-state transform of the declared finite reversible diffusion",
+      "derivation": "Projected quaternion gradients and independent Lie derivatives agree; removing the cross term breaks ground annihilation.",
+      "failure": "Static common-V moments do not determine a kinetic coefficient, and independent middle-link copies change the derivative algebra.",
+      "workaround": "Keep r as a derived observable and c as an independently calibrated/model energy coefficient.",
+      "source": "research/round20/advisor/f2-gate.json",
+      "limitations": [
+        "Model-specific derivation; novelty priority not established",
+        "No new universal axiom or solved mass-gap problem"
+      ]
+    },
+    {
+      "id": "G2-state-dynamics",
+      "loop": "G2",
+      "title": "The limiting local state has the inherited generator",
+      "classification": "accepted within model",
+      "equation": "W[A]=A Psi; K_GNS=H-e; gap(K_GNS)>=973 alpha/8640 at |tau|=1/64",
+      "scope": "Full bounded finite-factor algebra in the specified product representation",
+      "derivation": "A2 product representation is irreducible, every nonzero ground vector is cyclic, and the local-state GNS quotient maps isometrically onto it.",
+      "failure": "A state restriction to the Gauss-invariant subalgebra need not preserve this full-algebra cyclicity argument.",
+      "workaround": "State the observable algebra and time implementation explicitly; keep the Gauss-only identification as an open premise.",
+      "source": "research/round20/advisor/g2-gate.json",
+      "limitations": [
+        "Inherited spectral bound, not a new larger gap",
+        "Fixed-time automorphisms exist; point-norm time continuity fails on all bounded local operators"
+      ]
+    },
+    {
+      "id": "H2-budget-limit",
+      "loop": "H2",
+      "title": "The uniform-budget endpoint returns to the strip reference",
+      "classification": "accepted within model",
+      "equations": [
+        "sigma_q\u00b2=||V_q Omega||\u00b2=alpha\u00b2 tau(q)\u00b2 B(q\u00b2)/96",
+        "tau(q)=eta/[8B(q)]",
+        "||P_q-P_ref||<=min(1,sigma_q/[alpha(1-eta)/8])=O((1-q)^(3/2))",
+        "||V_q||=alpha eta/8"
+      ],
+      "scope": "Fixed energy, fixed lattice spacing, same selected-strip reference,0<eta<1; q approaches1 from below.",
+      "derivation": "Two free Haar links on every omitted elementary face force all distinct-face vacuum second moments to zero; each diagonal moment is1/4. Exact variance then controls the actual spectral projection, even though the perturbation norm remains nonzero.",
+      "steps": [
+        "H1 proves B(q)~7/[64(1-q)^3], so a strict uniform norm budget forces tau(q)=O((1-q)^3).",
+        "The actual face geometry gives sigma_q\u00b2=alpha\u00b2tau(q)\u00b2B(q\u00b2)/96.",
+        "The excited spectral threshold alpha(1-eta)/8 yields a global projector and state convergence bound.",
+        "Finite-factor localization near identity proves the canonical perturbation norm staysalpha eta/8."
+      ],
+      "failure": "Extending the global absolute-sum budget to fixed nonzero homogeneous omitted couplings fails; dropping the remote ground-energy shift would also invalidate a residual shortcut.",
+      "workaround": "Use reference-vacuum variance for the endpoint theorem. A nonzero homogeneous lattice extension needs a separate local-stability argument with its own verified hypotheses.",
+      "source": [
+        "research/round20/advisor/h2-gate.json",
+        "research/round20/advisor/h2-decision.md"
+      ],
+      "limitations": [
+        "The limiting reference still contains selected interactions.",
+        "The displayed rates are upper bounds, not measured leading physical errors.",
+        "Inherited qualitative homogeneous lattice stability results are not disproved.",
+        "Model-specific derivation; literature novelty and continuum relevance remain unverified."
+      ]
+    }
+  ],
+  "obstructions": [
+    "The conditional static density does not identify a physical clock or diffusion coefficient c.",
+    "The H2 global absolute-sum budget cannot retain nonzero homogeneous omitted couplings; separate qualitative local lattice-stability routes remain available under their hypotheses.",
+    "Gauss-only GNS identification for this strip-limit construction and matched continuum Yang-Mills remain open."
+  ],
+  "scale_register": {
+    "E_star": "fixed positive physical energy shared by compared statements",
+    "alpha": "original lattice energy coefficient; alpha/E_star fixed positive finite",
+    "c": "independent positive energy coefficient of the added conditional diffusion; c is not identified with alpha",
+    "tau": "dimensionless signed omitted interaction amplitude; H2 may explicitly vary tau(q)",
+    "q": "dimensionless continuous spatial-profile deformation; q=1/2 restores original weights",
+    "eta": "dimensionless uniform perturbation budget fraction,0<eta<1",
+    "kappa": "static dimensionless coupling of the conditional common-V integral; does not set physical time",
+    "L, M, N": "integer coordinate regulators independent of q",
+    "r": "dimensionless derived observable Tr(UW\u2020)/2 required by shared-middle gradient closure",
+    "hbar": "energy times time; t is physical time in original lattice dynamics",
+    "spiral": "investigation and presentation coordinate only; no physical constant inferred"
+  },
+  "skeptic_summary": "Ten new paired loops close the fixed-spacing summable finite-box state limit and identify its full-factor dynamics. The exact shared-link gradient and vacuum-variance identities are new derivations in this workbench. The uniform-budget homogeneous-profile attempt returns to the selected-strip reference; it does not disprove local strong-coupling lattice stability. No physical clock calibration, new universal axiom or continuum mass-gap solution is claimed.",
+  "audit_files": [
+    "research/round20/advisor/post-ten-roadmap.md",
+    "research/round20/advisor/contributions-audit.md",
+    "research/round20/advisor/exception-ledger.json",
+    "research/round20/external-audit/report.md",
+    "research/round20/methods/team-and-protocol.md"
+  ]
+}

@@ -25,7 +25,7 @@ OVERVIEW = ROUND / "overview.html"
 VALID_STATES = {"pending", "running", "accepted", "limited", "rejected"}
 LOOP_IDS = ("A1", "A2", "B1", "B2", "C1", "C2")
 REPO = "https://github.com/occult-kranti/yang_mills_workbench"
-RESEARCH_BRANCH = "research/round19-paired"
+RESEARCH_BRANCH = "main"
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -253,7 +253,7 @@ def refresh_meta_summary(content: dict[str, Any]) -> None:
             summary += " C1 has source-bound static-integral evidence under advisor review; physical scale matching remains open/unmatched."
     if any(loop.get("id") == "C2" and safe_state(loop.get("state")) == "pending" for loop in loops):
         summary += " C2 remains pending until a valid C1 gate and actual C2 contract."
-    summary += " Parent dense/homogeneous stability, finite-restriction convergence, continuum construction and physical Fibonacci significance remain open."
+    summary += " At this Round19 checkpoint, dense/homogeneous stability, finite-restriction convergence, continuum construction and physical Fibonacci significance remain open; see Round20 for later results."
     meta["summary"] = summary
 
 
@@ -868,7 +868,7 @@ def js_source(content: dict[str, Any]) -> str:
  const ledgerLinks=(entry)=>list(entry.evidence).map(item=>`<a href="${{safe(item.href)}}" target="_blank" rel="noopener noreferrer">${{esc(item.label)}}</a>`).join('<br>')||'—';
  const ledgerFormulae=(entry)=>{{const equations=entry&&entry.equations&&typeof entry.equations==='object'?entry.equations:{{}};const rows=Object.entries(equations).map(([k,v])=>`<tr><th scope="row">${{esc(k.replaceAll('_',' '))}}</th><td><code class="paired-formula">${{esc(v)}}</code></td></tr>`).join('');return rows?`<table class="paired-formula-table"><tbody>${{rows}}</tbody></table>`:'<p>No formula recorded.</p>';}};
  function exceptionLedger(){{const L=D.exception_ledger;if(!L||!Array.isArray(L.entries)||!L.entries.length)return '';const rows=L.entries.map(entry=>[`${{badge(ledgerState(entry.status))}}<br><strong>${{esc(entry.loop||'—')}}</strong><br><span class="paired-ledger-status">${{esc(entry.status)}}</span>`,`<strong>${{esc(entry.id)}}</strong><p>${{esc(entry.failure)}}</p>`,`<p>${{esc(entry.workaround)}}</p>${{ledgerFormulae(entry)}}`,`<p>${{esc(entry.limit)}}</p>${{ledgerLinks(entry)}}`]);const geom=L.geometry&&typeof L.geometry==='object'?`<p class="paired-ledger-note">Geometry role: ${{esc(L.geometry.role||'organizing aid')}}. Physical hypothesis: ${{esc(L.geometry.physical_hypothesis||'untested')}}. ${{esc(L.geometry.admission_rule||'')}}</p>`:'';return panel('Exception ledger',`<p>${{esc(L.purpose||'Failed premises, workarounds, equations and evidence status are recorded here.')}}</p>${{geom}}${{table(['Status and scope','Failed premise','Workaround and equations','Limit and evidence'],rows)}}<p><a href="${{safe(L.href)}}" target="_blank" rel="noopener noreferrer">Open exception-ledger.json</a></p>`);}}
- function home(){{return title(D.meta?.title||'Round19 paired research',D.meta?.summary)+panel('Branch-only publication state',`<p>This Round19 view is prepared on the research branch for review. It does not claim a live Round19 GitHub Pages URL.</p><p><a href="${{safe(D.meta?.repository)}}" target="_blank" rel="noopener noreferrer">Open research/round19-paired branch</a></p>`)+panel(D.geometry_hypothesis?.title||'Paired expansion model',`<p>${{esc(D.geometry_hypothesis?.claim)}}</p>${{spiral()}}`,'paired-hero')+panel('Six paired loop nodes',table(['Loop','Question','Paired expansion nodes','Next gate'],loopRows()))+panel('Common physical scale',table(['Symbol','State','Meaning','Current record'],list(D.unit_contract).map(u=>[esc(u.symbol),badge(u.state),esc(u.meaning),esc(u.record)])))+panel('Current evidence state',`<p>${{esc(statusText())}}</p>`+table(['State','Artifact','Scope','Evidence link'],evidenceRows(list(D.evidence).map(x=>x.key))))+panel('History',`${{a('review18-home','Round18 six-loop snapshot')}} · ${{a('review17-home','Earlier Round17 snapshot')}}`);}}
+ function home(){{return title(D.meta?.title||'Round19 paired research',D.meta?.summary)+panel('Round19 research record',`<p>This page preserves the six-loop Round19 checkpoint. The current contributions page tracks later results and remaining obligations.</p><p><a href="${{safe(D.meta?.repository)}}" target="_blank" rel="noopener noreferrer">Open published research</a></p>`)+panel(D.geometry_hypothesis?.title||'Paired expansion model',`<p>${{esc(D.geometry_hypothesis?.claim)}}</p>${{spiral()}}`,'paired-hero')+panel('Six paired loop nodes',table(['Loop','Question','Paired expansion nodes','Next gate'],loopRows()))+panel('Common physical scale',table(['Symbol','State','Meaning','Current record'],list(D.unit_contract).map(u=>[esc(u.symbol),badge(u.state),esc(u.meaning),esc(u.record)])))+panel('Current evidence state',`<p>${{esc(statusText())}}</p>`+table(['State','Artifact','Scope','Evidence link'],evidenceRows(list(D.evidence).map(x=>x.key))))+panel('History',`${{a('review18-home','Round18 six-loop snapshot')}} · ${{a('review17-home','Earlier Round17 snapshot')}}`);}}
  function loopPage(route){{const loop=routeLoop(route);if(!loop)return old.render(route);return title(`${{loop.id}} · ${{loop.title}}`,loop.pair)+panel('Scope',`<p>${{esc(loop.scope)}}</p>${{eq(loop.math)}}`)+panel('Results',`<p>${{esc(loop.result)}}</p>`)+panel('Review',`<p>${{esc(loop.review)}}</p>`+(evidenceRows(loop.evidence_keys).length?table(['State','Artifact','Scope','Evidence link'],evidenceRows(loop.evidence_keys)):''))+panel('Next',`<p>${{esc(loop.next)}}</p>`);}}
  function roadmap(){{return title('Paired roadmap at one physical scale','Each loop is a gate with its own evidence record. Later contracts remain provisional until the prior evidence chooses them.')+panel('Forward and reverse expansion sequence',spiral(),'paired-hero')+panel('Route contract',table(['Loop','State','Forward derivation','Reverse reconstruction'],list(D.loops).map(loop=>[`${{a(loop.route,loop.id)}}<br>${{badge(loop.state)}}`,esc(loop.pair),esc(loop.forward_title),esc(loop.reverse_title)])))+panel('Next actions',table(['State','Action'],list(D.next_steps).map(x=>[badge(x.state),esc(x.item)])));}}
  function review(){{const limits=list(D.review?.limits),contracts=D.contracts&&typeof D.contracts==='object'?D.contracts:{{}};const contractRows=Object.entries(contracts).map(([id,c])=>[esc(id),badge(c.status==='frozen'||String(c.status||'').startsWith('frozen')?'running':c.status),esc(c.goal||c.schema||'Recorded contract'),String(list(c.acceptance_tests).length),String(list(c.falsifying_controls).length)]);const gateKeys=list(D.evidence).filter(x=>/^gate-/.test(x.key||'')).map(x=>x.key);return title('Evidence review and limits',D.review?.summary||'Round19 evidence is still being gathered.')+panel('Recorded evidence',table(['State','Artifact','Scope','Evidence link'],evidenceRows(list(D.evidence).map(x=>x.key))))+panel('Advisor gates',gateKeys.length?table(['State','Gate','Scope','Evidence link'],evidenceRows(gateKeys)):'<p>No advisor gates are recorded.</p>')+panel('Frozen contracts and controls',contractRows.length?table(['Loop','Contract state','Goal or schema','Acceptance tests','Falsifying controls'],contractRows):'<p>No contracts are available.</p>')+exceptionLedger()+panel('Limits',`<ul>${{limits.map(x=>`<li>${{esc(x)}}</li>`).join('')}}</ul>`);}}
@@ -911,7 +911,7 @@ window.ResearchObservatory={{
   const links=['home','next-bridge','next-summable','next-complement','next-spectrum','next-gram','next-two-link','next-team','next-review'];
   const e=window.ResearchHub.escape;
   const list=links.map(r=>`<li><a href="${{live}}${{r}}" target="_blank" rel="noopener noreferrer">Round18 ${{e(r)}}</a></li>`).join('');
-  return `<section class="hub-panel paired-panel history-fallback"><h2>Historical research route</h2><p>This standalone branch artifact does not embed the legacy megabyte research bundles. Open the existing live Round18 route instead.</p><ul>${{list}}</ul></section>`;
+  return `<section class="hub-panel paired-panel history-fallback"><h2>Historical research route</h2><p>This standalone artifact links to the historical research routes on the live site.</p><ul>${{list}}</ul></section>`;
  }},
  afterRender(){{}}
 }};
@@ -947,9 +947,9 @@ window.ResearchObservatory={{
 </head>
 <body>
 <header class="standalone-top">
-<span class="branch-note">Branch-only review artifact · not published on GitHub Pages · <a href="{branch_url}" target="_blank" rel="noopener noreferrer">research/round19-paired</a></span>
+<span class="branch-note">Round19 review artifact · <a href="{branch_url}" target="_blank" rel="noopener noreferrer">published research</a></span>
 <h1>{title_text}</h1>
-<p>This self-contained HTML file is generated from the Round19 branch model so the new routes can be inspected before any main-branch or Pages merge. It does not claim a live Round19 publication URL.</p>
+<p>This self-contained HTML file preserves the Round19 evidence and six paired loops. Later conclusions are recorded on the Round20 contributions page.</p>
 </header>
 <noscript><p class="noscript">JavaScript is required to switch among the embedded Round19 routes in this standalone artifact.</p></noscript>
 <main id="main" class="standalone-main" tabindex="-1"></main>

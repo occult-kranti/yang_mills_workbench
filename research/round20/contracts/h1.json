@@ -1,0 +1,33 @@
+{
+  "schema": "ym20-loop-contract-v1",
+  "id": "h1",
+  "status": "frozen_after_g2_gate",
+  "depends_on": {
+    "gate": "research/round20/advisor/g2-gate.json",
+    "sha256": "e0f33141714a4883feb1d7870e73736a8cd64b8ee2008cb251f1113038e269d2"
+  },
+  "title": "Continuous spatial decay: exact omitted budget and admissibility boundary",
+  "theory": "Replace only omitted face weights by w_f(q)=q^(x+y+z)/24,0<q<1; same fixed selected-strip coefficient family and reference representation. Original model recovered q=1/2.",
+  "scale": {
+    "q": "dimensionless continuous action-profile deformation, not energy or physical law",
+    "alpha/E_star": "fixed positive finite physical ratio",
+    "tau": "dimensionless signed amplitude, may be chosen as function of q only with explicit equation",
+    "B(q)": "dimensionless absolute omitted coefficient sum",
+    "L": "coordinate regulator independent of q"
+  },
+  "target": "Derive exact closed B(q)=sum_omitted w_f(q), its finite-coordinate tails and monotonicity. Prove bounded summable perturbation and inherited gap floor alpha[1/8-abs(tau)B(q)] when abs(tau)B(q)<1/8. Verify q=1/2 gives107/135. Determine exact asymptotic (1-q)^3B(q) as q increases1 and a rigorous bracket for the default tau=1/64 loss of this sufficient certificate. Separate method failure from gap closure.",
+  "acceptance": [
+    "Two independent infinite ledgers (total-minus-selected and omitted classes) agree as rational functions",
+    "Exact q fixtures at1/4,1/2,3/4,7/8 and finite L checks; general geometric proof supplies theorem",
+    "Positive absolute tail with separate L and q limits; do not silently reuse dyadic budget for allq",
+    "Monotonicity and homogeneous-endpoint divergence analytically established",
+    "Exact rational critical bracket for B(q)=8 at defaulttau; interval not a sampled gap claim",
+    "Wrong controls fixed107/135 budget under changedq, signed cancellation, q=1 finite-sum promotion, alpha/E_star=0, failed normcertificate interpreted as gapclosed"
+  ],
+  "limits": [
+    "Fixed selected-strip reference and fixed lattice spacing",
+    "Continuous profile is an action deformation",
+    "No homogeneous continuum claim from this bounded-perturbation method"
+  ],
+  "loop2_selection": "Select H2 after actual B(q) evidence; candidate uniform-budget ray and local return to selected-strip reference."
+}

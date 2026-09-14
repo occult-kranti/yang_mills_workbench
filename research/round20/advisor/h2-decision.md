@@ -1,0 +1,15 @@
+# H2 decision: accepted; ten new research loops complete
+
+H2 was selected after H1's exact divergence forced the omitted amplitude to vanish on every strict uniform norm-budget ray. The separate mathematical auditor proposed a reference-vacuum variance route, then noticed two free Haar witnesses per omitted face. Both directions independently reconstructed the geometry and conditional integrals. This is openly shared target selection, not independent discovery provenance.
+
+The original conservative overlap proof remains valid with universal row degree160. The stronger actual-model identity is sigma_q²=||V_q Omega||²=alpha² tau(q)² B(q²)/96. The pairwise cancellation requires two distinct elementary faces and a free link appearing in one and absent in the other. It does not assume whole-face or shared-factor independence. The diagonal conditional Haar moment is1/4.
+
+The advisor reviewed both spectral steps separately: the actual excited spectral subspace of H_q has absolute threshold g_bar=alpha(1−eta)/8, yielding ||P_q−P_Omega||<=min(1,sigma_q/g_bar); the reference-vacuum orthogonal compression yields the Schur bound−sigma_q²/g_bar<=e_q<=0. These steps retain the common operator domain and zero reference trial mean. The provisional remote-ground shortcut is not used.
+
+For |tau(q)|B(q)<=eta/8, fixed0<eta<1 and physical alpha/E_star fixed positive, the actual ground projections converge in norm to the selected-strip reference at an O((1−q)^(3/2)) error bound; energy tends to0 with O((1−q)^3) bound. On the canonical tau(q)=eta/[8B(q)] ray, sigma_q²/[alpha² eta²(1−q)^3] tends to1/5376 and the squared projection bound divided by(1−q)^3 tends toeta²/[84(1−eta)²]. These are upper-bound rates, not asserted exact asymptotics for the actual projection error.
+
+Finite-factor localization near identity followed by the absolute tail limit proves ||V_q||=alpha eta/8 on that ray. Thus the perturbation operator norm remains nonzero while the ground state converges. The endpoint retains selected interactions. It rules out reaching fixed nonzero homogeneous omitted couplings INSIDE THIS global absolute-sum budget route; it does not rule out separate local-stability theorems or a homogeneous lattice gap.
+
+The independent producer ledgers agree at12 shared q/eta fixtures after physical rescaling (forward alpha/E_star1, reverse2). Exact checks cover168/63 seed faces and14028/1953 distinct-face pairs respectively; different observed neighbor maxima60/53 remain finite fixtures, while160 has the general incidence proof. Three executed advisor corruptions, including a coherent false variance, are rejected. Fresh ordinary source replays reproduce frozen result bytes; optimized evidence agrees. The separate mathematical auditor has read both final proofs and found no unresolved mathematical issue. The final full-ten replay and post-ten roadmap are subsequent integration checks, not extra research loops.
+
+No Gauss-only GNS equivalence, physical identification of the conditional diffusion coefficient c, continuum Yang–Mills construction, new universal axiom or literature-priority claim is admitted.
