@@ -1,0 +1,31 @@
+{
+  "schema": "ym21-contract-v1",
+  "loop": "k2",
+  "status": "frozen",
+  "goal": "Extend two-rate identification from kappa=0 to the full declared static interval using a continuously tunable observable design.",
+  "model": "K1 conditional SU(2)^3 mobility family, known |kappa|<=1/8, c>0 in energy units, |zeta|<1. No physical data or equivalence to the full lattice Hamiltonian. The new a is a dimensionless observable-design coefficient, not a new action or dynamics parameter.",
+  "selection_reason": "K1 gives exact rank at kappa=0, but a parity-degenerate observable pair fails and pointwise rank does not certify an interval. Test a monotone derivative-weight design to control the inverse continuously.",
+  "required": [
+    "Choose f=x and g_a=x+a x^2 with 0<a<1/2; define G=Gamma(x)=(1-x^2)/4 and h_a=(1+2ax)^2. Use nu_kappa for the marginal law of x; double-integral variables X,Xprime are independent copies of that marginal, not independent interacting links.",
+    "For r_f,r_g derive the linear matrix in (c,c*zeta), its determinant D=a1*b2-a2*b1 and inverse. Distinguish from Jacobian in (c,zeta).",
+    "Reconstruct D as a double integral and prove positivity using monotonicity for all finite kappa; use the S oscillation to derive a uniform quantitative lower bound on |kappa|<=1/8.",
+    "Test the proposed choice a=1/4, exact kappa0 matrix, and continuous-interval lower bound. Certify any exponential rounding with rational arithmetic.",
+    "Reject a=0 rank collapse, a nonmonotone-design inference outside its sufficient range, wrong determinant sign, and physically inadmissible inverse output c<=0 or |zeta|>=1. Do not claim rank always fails beyond the sufficient design range.",
+    "Synthetic forward/inverse recovery is a check, not measured calibration. State sensitivity/conditioning limits; no claim of stable inference under arbitrary noise.",
+    "Test the family restriction: at kappa=0, can a positive added mobility xi*p3(x), p3=x^3-3x/8, preserve both selected initial rates? Derive any zero moments and positivity range; this is an out-of-family counterexample, not a failure of rank inside (c,zeta)."
+  ],
+  "proposed_not_assumed": [
+    "D=2a integral integral G(X)G(Xprime)(X-Xprime)^2[1+a(X+Xprime)] dnu_kappa(X)dnu_kappa(Xprime)",
+    "D>=(3a(1-2a)/128)exp(-24|kappa|)",
+    "a=1/4 gives D>=1/7168 for |kappa|<=1/8",
+    "at kappa=0, matrix [[3/16,0],[25/128,1/32]], D=3/512",
+    "c=(r_f*b2-r_g*b1)/D; c*zeta=(a1*r_g-a2*r_f)/D",
+    "At kappa=0, integral p3 G=integral p3 h_a G=0; at zeta=0, |xi|<=1/4 preserves positive mobility using |p3|<=11/8."
+  ],
+  "acceptance": "A certified continuous-interval rank/inverse within the conditional family, or a scoped obstruction. Goals L/M remain unselected until this sixth gate.",
+  "comparison_protocol": "Use concise report, deterministic check.py --output, complete source/output manifest. Root supplies common comparison names after independent verification if needed.",
+  "depends_on": {
+    "gate": "research/round21/advisor/k1-gate.json",
+    "sha256": "ca2f3702d29d8caa12dabd90c3e1f90c8a2126ee5902770886c170b25b9aaac2"
+  }
+}

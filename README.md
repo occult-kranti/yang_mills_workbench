@@ -8,9 +8,15 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current study — Round20:** C2 is complete, and all ten new research loops are accepted within their declared models. The five adaptive goals each completed two forward/reverse loops: finite-factor convergence, literal finite-box states, static/dynamic scale identification, limiting dynamics and GNS representation, and a continuous decay profile. The study closes the literal finite-box local-state limit for the summable model, derives the shared-link generator terms in a separate conditional model, and proves an exact vacuum-variance identity with global ground-state return along a bounded-budget profile. Each accepted result links its assumptions, independent calculations and skeptical gate. The final two goals were selected only after the first three pairs completed.
+**Current study — Round21:** All ten loop reviews are recorded: eight supported results and two local results with the numerical homogeneous target still insufficient. I1/I2 give a qualitative stability dictionary and a local vacuum-dressing lemma; J1/J2 identify the dyadic physical observable sector; K1/K2 and L1/L2 derive conditional dynamic inverses and constructive limits of finite initial slopes; M1 establishes strong profile dynamics convergence. M2 proves connected physical-correlation convergence on sufficient windows with `0 ≤ gamma < 3/2` and a nonzero actual Wilson fluctuation. The endpoint and stronger window estimates remain unresolved. The final two goals were selected after the first six gates. Scientific priority for these model-specific contributions remains unverified.
 
-[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Ten-loop roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/round20-roadmap) · [Round20 guide](research/round20/README.md).
+**Queued next, not executed:** N tests a sharper local real-time comparison; O seeks a numerical homogeneous stability interval; P tests physical generator matching with held-out dynamic information. Each second loop follows its first review. Q and R remain unselected until those three goals complete six reviews. [Post-ten roadmap](research/round21/advisor/post-ten-roadmap.json).
+
+The new C2 replay repairs a missing interpreter-cache dependency through a separate reviewed portable inventory. The original failed admission command and historical evidence remain preserved; the repair adds zero research loops.
+
+[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Round21 roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/round21-roadmap) · [Variables and model boundaries](https://occult-kranti.github.io/yang_mills_workbench/#research/round21-variables) · [Evidence review](https://occult-kranti.github.io/yang_mills_workbench/#research/round21-review).
+
+**Round20 history:** The ten-loop study established separate finite-factor, literal-box local-state and local-dynamics limits in the summable model, a conditional static/dynamic identification audit, and exact ground-state return along the canonical profile. Its historical C2 admission defect is documented by the Round21 repair. [Round20 research record](https://occult-kranti.github.io/yang_mills_workbench/#research/review20-home) · [Round20 guide](research/round20/README.md).
 
 **Round19:** all six loops are accepted within their stated model scopes. The A/B/C1 milestone was merged in [PR #1](https://github.com/occult-kranti/yang_mills_workbench/pull/1). C2 adds the continuous static bound F(kappa)>=kappa²/2048 for |kappa|<=1/8 and a separately certified sign asymmetry. [Round19 evidence and reproduction](research/round19/README.md) · [Historical paired review](https://occult-kranti.github.io/yang_mills_workbench/#research/review19-home).
 
@@ -64,7 +70,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Adaptive five-goal research study | `research/round20/` | Ten-loop finite-limit, dynamics, scale and decay investigation with source-bound gates |
+| Current five-goal paired research study | `research/round21/` | Ten reviewed loops: eight supported and two supported with limits. Local stability, physical observables, mobility identification and profile dynamics |
+| Earlier adaptive five-goal research study | `research/round20/` | Ten-loop finite-limit, dynamics, scale and decay investigation with source-bound gates |
 | Paired forward derivation and reverse reconstruction | `research/round19/` | Six accepted loops, including the repaired continuous static-κ certificate |
 | Six-loop dressed, spectral and conditional study | `research/round18/` | Deployed inhomogeneous family, complete complement, signed finite gap box, sufficient Gram coordinates and six-weight two-link integral |
 | Previous local, spectral and conditional study | `research/round17/` | Preserved sparse physical theorem, finite adjoint repair, complete four-cube tensor and matched common-variable experiment |

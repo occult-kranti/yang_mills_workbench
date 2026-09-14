@@ -1,0 +1,30 @@
+{
+  "schema": "ym21-contract-v1",
+  "loop": "k1",
+  "status": "frozen",
+  "goal": "Construct a discriminating positive-mobility diffusion family and reconstruct which dynamic observations identify its parameters.",
+  "model": "Conditional SU(2)^3 model from F1/F2: S=3x+y+z+w+t, rho_kappa=e^(kappa S)/Z, |kappa|<=1/8, c>0 in energy units, hbar>0; m_zeta=1+zeta x, |zeta|<1 is an explicitly introduced dynamics deformation. No identity to the original lattice Hamiltonian or measured time data is assumed. Treat kappa as known when calibrating c,zeta. No physical time-correlation observations are supplied.",
+  "required": [
+    "Derive reversible divergence-form operator A=-rho^-1 div(rho m grad), its weighted Dirichlet form, zero mode and self-adjoint realization on compact SU2^3.",
+    "Derive full ground-state transform including grad(m) drift and kappa/2 div(m grad S) potential; retain shared-link Gamma(S) and cross terms from F2.",
+    "Prove a gap bound with the explicit mobility factor 1-|zeta| and alpha/E_star versus c/E_star distinction.",
+    "Show same static moments for all c,zeta. Derive initial imaginary-time correlation slopes for nonconstant observables. Synthetic values stay synthetic.",
+    "At kappa=0 compare f=x and g=x+x^2 with a parity-degenerate pair x,x^2. Derive exact Haar moments and identify c,zeta or prove rank failure.",
+    "Reject missing divergence drift, wrong mobility range, vanishing observable Dirichlet form and false physical matching. Use exact coefficient/rank fixtures, no optional Monte Carlo.",
+    "As a necessary matching test, compare principal symbols under same-coordinate multiplication ground-state conjugacy: nonconstant m_zeta cannot equal a constant-mobility rotor kinetic term. Do not assert that the physical infinite-lattice model reduces to this conditional three-link model."
+  ],
+  "proposed_not_assumed": [
+    "H_tilde=c[-div(m grad)+(kappa/2)div(m grad S)+(kappa^2/4)m Gamma(S)]",
+    "Delta>=3c(1-|zeta|)exp(-12|kappa|)/4 >= c(1-|zeta|)/6",
+    "r_f=-hbar C_f'(0)=3c/16",
+    "r_g=c(5/16+zeta/8)",
+    "c=16r_f/3; zeta=8r_g/c-5/2"
+  ],
+  "acceptance": "Verified conditional model discrimination and inverse map; physical matching remains unverified. K2 chosen from rank and conditioning evidence.",
+  "comparison_protocol": "Use the standard report/check/output manifest with repo-relative inputs and output-relative outputs. Root can supply common comparison field names after independent reconstruction.",
+  "depends_on": {
+    "gate": "research/round21/advisor/j2-gate.json",
+    "sha256": "cdb21ddb765a728876c784063ace227b517308587f6756a227b56bf25559a02a"
+  },
+  "selection_reason": "J2 constructs a genuine physical GNS generator, but no reduction to conditional three-link diffusion. K1 now tests this distinction with same-density/different-dynamics and principal-symbol controls."
+}

@@ -1,0 +1,6 @@
+# J2 advisor decision
+The forward and reverse reconstructions identify the physical cyclic GNS completion with the invariant subspace of the declared dyadic representation. The root independently checks the decisive approximation: for invariant xi and Psi, finite endpoint Haar averaging of local A gives ||E(A)Psi-xi|| <= ||A Psi-xi||. The integral requires weak operator/strong vector continuity only and preserves support. This proves equality without transferring full-algebra irreducibility to the restricted algebra.
+
+The subspace reduces the spectral measure, so the self-adjoint restriction has domain D(H) intersect H_inv, and H-e fixes the cyclic vector. The inherited lower threshold survives restriction. J1's nonzero centered Wilson vector gives a nonzero positive spectral measure; the resulting exponential is an upper bound on imaginary-time correlation, not a real-time decay law or a measured glueball mass. Admit the scoped target.
+
+Goal K follows this completed physical-sector pair. It will test a separate conditional diffusion family's dynamic nonidentifiability and inverse map; the new physical GNS construction does not supply a reduction or a matching to that three-link family. Any state-dependent mobility is an explicit model deformation until such matching is established.

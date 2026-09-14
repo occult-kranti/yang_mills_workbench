@@ -1,0 +1,4 @@
+# L2 advisor decision
+Both independent constructions prove the finite-dimensional nullspace statement with coefficient normalization, full-support nonvanishing, and a positive interval of mobilities. Fresh root replays reproduce every declared output. The classical fifth-degree Gegenbauer example preserves all three L1 slopes and changes the generator.
+
+The root and skeptic independently verified the additional curvature discriminator: the even generator residual T has Haar squared norm 1/1024 and zero cross term with 3x/4. Thus the complete x correlation changes for every nonzero epsilon. Admit the finite-initial-slope obstruction, not an impossibility result for full time curves. All polynomial-family and rank-nullity ingredients are established; scientific priority for the concrete application remains unverified. This is L's second executed loop. No extra loop is counted for the scope control.

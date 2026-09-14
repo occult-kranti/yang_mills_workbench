@@ -1,0 +1,67 @@
+{
+  "schema": "ym21-presentation-validation-v1",
+  "repository": "/workspace/scratch/e6d8077ee5fa/yang_mills_workbench",
+  "source_build": {
+    "command": "python3 -B research/round21/build_site.py",
+    "loops": 10,
+    "verified_gates": 10,
+    "accepted": 8,
+    "limited": 2,
+    "pending": []
+  },
+  "runtime_tests": {
+    "command": "node research/round21/site_test.mjs",
+    "status": "passed",
+    "current_routes": 15,
+    "historical_routes": 21,
+    "checks": [
+      "Source-hash gate binding",
+      "Authoritative gate claims, equations, scope and target verdict",
+      "Unavailable, modified or missing files rejected",
+      "Nonportable caches, malformed IDs and symlinks rejected",
+      "Duplicate keys and duplicate loop IDs rejected",
+      "Escaping of HTML, formula text and URL boundaries",
+      "Historical route delegation and archived H1 calculator",
+      "Variable-definition route and reproduction CLI syntax"
+    ],
+    "checked_after_m2_admission": true,
+    "checked_after_final_roadmap_integration": true
+  },
+  "visual_qa": {
+    "status": "blocked",
+    "attempted_viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "reason": "Playwright package is available but its Chromium executable and all checked system/runtime browser binaries are absent. Browser-only installation from cdn.playwright.dev timed out. Repeated downloads were stopped. No browser render or screenshot was produced.",
+    "screenshots": [],
+    "script": "/workspace/scratch/e6d8077ee5fa/round21_visual_qa.cjs",
+    "limitation": "DOM string tests do not verify actual font metrics, clipping or viewport layout."
+  },
+  "presentation_sources": {
+    "research/round21/site-data.json": "1670c5931f35d6d1c0082ac1958caaeb45c47e044f6310baa5b88a23dabb7c28",
+    "research/round21/build_site.py": "2bfd76d6fb7ccabf18048f1119dff5d2ee4ce7df3cf8dc08c5c921d21c8a44de",
+    "research/round21/site_test.mjs": "18771d345800cb68f2e8ad79d1acce78d2a3f8200de9e2fe0f2907b9f1d6d559",
+    "dist/research-round21.js": "91cc878f13658ffbd3a8259d301125499fca7ce0e9863d2085280d66f3a4d4da",
+    "dist/research-round21.css": "b5a8fa3e06964ae13f04c260a050096a94620d5f4c30f8695a57eb39d53eabbf",
+    "README.md": "ac7c016d22afc66bc85576a6546fee0755cd5203f1ae87c63b8d2a44476804dc"
+  },
+  "next_roadmap": {
+    "queued": [
+      "N",
+      "O",
+      "P"
+    ],
+    "unselected": [
+      "Q",
+      "R"
+    ],
+    "new_research_loops_executed": 0
+  }
+}

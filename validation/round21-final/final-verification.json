@@ -1,0 +1,124 @@
+{
+  "c2_command": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/scratch/e6d8077ee5fa/round21-release-tree/research/round21/release/replay_c2.py",
+      "--output",
+      "/workspace/scratch/e6d8077ee5fa/round21-final-replay/c2"
+    ],
+    "log_sha256": "c566afe2e1cf7710235f781c581aa35822c918f0bb08fb96b5e0b37b34ae7cc9",
+    "returncode": 0
+  },
+  "c2_replay_sha256": "e0cc37e1875ebe158f0c09a96cc97b46daa608c5c2254bd7e9846cef0d022867",
+  "historical_base": {
+    "status": "not requested; source hashes and repaired historical inventory still verified"
+  },
+  "inventory_sha256": "80e9c905df3481ecd4e7427840ef45fbb804daf39c24ee4e7d6133ed6f9a6e5a",
+  "loops": [
+    "i1",
+    "i2",
+    "j1",
+    "j2",
+    "k1",
+    "k2",
+    "l1",
+    "l2",
+    "m1",
+    "m2"
+  ],
+  "normal": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/scratch/e6d8077ee5fa/round21-release-tree/research/round21/reproduce.py",
+      "--output",
+      "/workspace/scratch/e6d8077ee5fa/round21-final-replay/normal",
+      "--loops",
+      "i1",
+      "i2",
+      "j1",
+      "j2",
+      "k1",
+      "k2",
+      "l1",
+      "l2",
+      "m1",
+      "m2"
+    ],
+    "log_sha256": "7f859af23d9ccd5b6bc4590e7988598db0af12296732c99454c3940dea4e19fb",
+    "returncode": 0
+  },
+  "normal_optimized_scientific_hashes_equal": true,
+  "optimized": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-O",
+      "/workspace/scratch/e6d8077ee5fa/round21-release-tree/research/round21/reproduce.py",
+      "--output",
+      "/workspace/scratch/e6d8077ee5fa/round21-final-replay/optimized",
+      "--loops",
+      "i1",
+      "i2",
+      "j1",
+      "j2",
+      "k1",
+      "k2",
+      "l1",
+      "l2",
+      "m1",
+      "m2",
+      "--optimized"
+    ],
+    "log_sha256": "7f859af23d9ccd5b6bc4590e7988598db0af12296732c99454c3940dea4e19fb",
+    "returncode": 0
+  },
+  "research_loops_added_by_verification": 0,
+  "schema": "ym21-final-verification-v1",
+  "site": {
+    "build": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/e6d8077ee5fa/round21-final-replay/site-work/scripts/build_pages.py"
+      ],
+      "log_sha256": "f455e7aa9ae717d2820d7e348fce175178aca0fb052ffec2c27e97b83bb5239e",
+      "returncode": 0
+    },
+    "node_status": "executed",
+    "node_tests": [
+      {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/workspace/scratch/e6d8077ee5fa/round21-final-replay/site-work/research/round21/site_test.mjs"
+        ],
+        "log_sha256": "7ba5c462eaf48717a66e25d962a38d6b9f1f17b9d3f86a675c94129ef778a6ab",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/workspace/scratch/e6d8077ee5fa/round21-final-replay/site-work/tests/test_workbench.mjs"
+        ],
+        "log_sha256": "fe154841e83c9a23efd220621a92988d14d8ea4c6ba294f944e9707c0728a3dc",
+        "returncode": 0
+      }
+    ],
+    "rebuilt_dist_identical": true,
+    "rebuilt_docs_identical": true,
+    "round21_build": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/e6d8077ee5fa/round21-final-replay/site-work/research/round21/build_site.py"
+      ],
+      "log_sha256": "828e7e6147f85838945f21124e7e30d501c40bdc05e01a39bd5cd111abb8f655",
+      "returncode": 0
+    },
+    "round21_displayed_gates_verified": 10,
+    "scope": "Static build and chosen Node checks; no browser visual audit."
+  },
+  "source_file_count": 849,
+  "status": "passed"
+}

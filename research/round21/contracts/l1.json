@@ -1,0 +1,29 @@
+{
+  "schema": "ym21-contract-v1",
+  "loop": "l1",
+  "status": "frozen",
+  "depends_on": {
+    "gate": "research/round21/advisor/k2-gate.json",
+    "sha256": "a31e2ff641159d9358756003b9b59476af904a1b536624f9eb71a174bbcc94af"
+  },
+  "selection_record": "research/round21/advisor/post-six-selection.json",
+  "goal": "Expose K2 hidden cubic using a third dynamic observable and reconstruct the enlarged finite-parameter model.",
+  "model": "Conditional SU(2)^3 rho_kappa from K1. New mobility m=1+zeta*x+xi*p3(x), p3=x^3-3x/8. c>0 in energy units; use |zeta|,|xi|<=1/4 as a sufficient positive box. Exact rate inversion assumes known kappa=0. No physical time data or lattice matching.",
+  "required": [
+    "Derive uniform positivity and the reversible form/generator for this explicit model extension; inherit the general divergence identity only with its hypotheses checked.",
+    "Use f=x, g=x+x^2/4, h=x^2+x^3. Derive all three initial slopes by exact Haar polynomial integration and the matrix in (c,c*zeta,c*xi).",
+    "Prove nonzero determinant, inverse, and detection of xi by h; distinguish the Jacobian in (c,zeta,xi).",
+    "Verify the sufficient positive-box gap factor for |kappa|<=1/8 separately from kappa=0 inversion. Outside the box means the certificate is unavailable, not automatic negative mobility.",
+    "Use exact synthetic recovery, wrong-third-observable and hidden-cubic-omission controls. State that three rates identify the declared family only.",
+    "Record p3 as C3^(2)/32 from NIST DLMF18.5.10, with exact substitution; the polynomial family is classical."
+  ],
+  "proposed_not_assumed": [
+    "m>=13/32 in the declared box",
+    "Delta>=13c/192 for |kappa|<=1/8",
+    "Rate matrix [[3/16,0,0],[25/128,1/32,0],[59/256,9/64,9/512]]",
+    "det=27/262144; original-parameter Jacobian=c^2 det",
+    "c=16r_f/3; zeta=32r_g/c-25/4; xi=512r_h/(9c)-118/9-8zeta"
+  ],
+  "acceptance": "Declared finite-family reconstruction and discriminating third observable, with physical and general-mobility limits retained. L2 chosen from admitted L1 evidence.",
+  "comparison_protocol": "Standard independent report/check.py --output, output/results.json and source-manifest.json with nonempty repo-relative inputs and output-relative outputs. Both code/report/contract must be inputs."
+}

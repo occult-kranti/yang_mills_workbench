@@ -1,0 +1,34 @@
+{
+  "schema": "ym21-contract-v1",
+  "loop": "m2",
+  "status": "frozen",
+  "depends_on": {
+    "gate": "research/round21/advisor/m1-gate.json",
+    "sha256": "a0deffb2019cd6d704fe15d0c31238f1efab45b2fbc9605ae27dcb31579e80e5"
+  },
+  "selection_record": "research/round21/advisor/m1-decision.md",
+  "goal": "Quantify connected physical correlation convergence and admissible growing real-time windows using the admitted M1 local estimate.",
+  "model": "Exactly M1/H2 canonical full-link selected-strip profile: fixed alpha/E_star>0, hbar>0, spacing, eta in (0,1), q in (0,1), tau_q=eta/[8B(q)], gbar=alpha(1-eta)/8. No conditional K/L generator identification.",
+  "premises": [
+    "M1 complete-factor local bound, strong convergence and support retention under reference factor dynamics",
+    "H2 d_q=||P_q-P_ref||<=sigma_q/gbar, |e_q|<=sigma_q^2/gbar, sigma_q=O(alpha(1-q)^(3/2)), tau_q=O((1-q)^3)",
+    "J2 physical-sector proof method, but its dyadic numerical gap is not inherited for this profile"
+  ],
+  "required": [
+    "Re-establish gauge-invariant unique ground state, invariant observable algebra and reducing physical cyclic sector throughout this profile; use its own gap gbar, not the dyadic 973alpha/8640 constant.",
+    "Define connected real-time C_q^{A,B}(t)=<Psi_q,A* exp(-it(H_q-e_q)/hbar)B Psi_q>-omega_q(A*)omega_q(B) for fixed bounded local gauge-invariant A,B. Include t=0 and complex observables correctly.",
+    "Derive a uniform error bound using pure-state trace distance, both subtracted means, ground-energy shift and Duhamel on B Omega. Establish that reference evolution preserves the complete finite factor cover F_B for all times; no arbitrary bounded-operator domain-invariance premise.",
+    "Prove or repair the proposed coefficient6 estimate and determine growing-time exponent from the actual bound. Reject endpoint sufficiency without claiming actual endpoint nonconvergence.",
+    "Re-establish nonzero physical Wilson fluctuation eventually along q using reference variance1/4 and the profile projector bound. Give a concrete sufficient condition and floor.",
+    "Exact profile arithmetic, centering, omitted-energy-shift, incomplete-support and time-exponent scope controls. No simulated outputs described as measured data.",
+    "No new research loop beyond this tenth loop. Select next goals after M2 evidence only."
+  ],
+  "proposed_not_assumed": [
+    "|C_q(t)-C_ref(t)|<=||A||||B||[6d_q+(|t|/hbar)(|e_q|+sigma_q+2alpha tau_q D_FB(q))]",
+    "<=||A||||B||[6sigma_q/gbar+(T/hbar)(sigma_q^2/gbar+sigma_q+alpha tau_q |E(F_B)|/3)] for |t|<=T",
+    "T_q=(hbar/alpha)C(1-q)^(-gamma), fixed C>0, 0<=gamma<3/2, gives error O((1-q)^(3/2-gamma))",
+    "If sigma_q/gbar<=1/16 then Var_Psiq W>=7/64 for the actual origin-xz Wilson loop"
+  ],
+  "acceptance": "Scoped quantitative physical correlation convergence, with sufficient time-window range, concrete nonzero fluctuations and explicit unresolved endpoint/matching limitations.",
+  "comparison_protocol": "Independent report/check.py --output, complete source-manifest. Suggested payload after proof: connected_error_projector_coefficient=6, time_window_exponent_upper=3/2, time_window_endpoint_included=false, fixed_time_error_exponent=3/2, physical_sector_rechecked=true, variance_floor_fixture=7/64, homogeneous_limit_obtained=false. All numeric values as strings. Bind immutable instruction snapshots, not mutable global execution or AGENTS."
+}
