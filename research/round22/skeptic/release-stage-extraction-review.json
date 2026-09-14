@@ -1,0 +1,33 @@
+{
+  "current_r1_producers_read": false,
+  "full_release_validation_executed": false,
+  "input_hashes": {
+    "research/round22/advisor/presentation-repair.json": "0fe58fc7a2badb8090f74534829c4d0a9984ec30255073a061a17b28685209b0",
+    "research/round22/presentation_schema.py": "d137ae1b69440eb87cd14e97659e699e89b0456090628e1b6cf52f72a03f6680",
+    "research/round22/release/check_presentation_schema.py": "b7a635da55af96d57c28ab631bd870dafa736f25b90ec5112bce980e183110df",
+    "research/round22/release/final_verify.py": "55946920fcc75bf6d06d81c5ee7fa7c6854640ad219ed9c0aace13f6c8a64419",
+    "research/round22/release/presentation-schema-checks.json": "75cce4cbce9c35d5b8eec673a48d1f33f27483e139aa5a1040db50c56b2f8dcd",
+    "research/round22/release/protocol.md": "f375ed8dacc3777164cedac96ae95f8ffd6eb31e394e145e7e2046bc3e26f3db",
+    "research/round22/skeptic/release-fresh-build-repair-review.json": "b4453932593922f7edb07771cad8c6ed5c1cc178cab57291623cb31cde1801d8"
+  },
+  "new_blocking_source_findings": [],
+  "reading_depth": "Read complete extracted verify_site and full verify caller, surrounding inventory validation/Git checks/error handling, revised protocol, full shared presentation schema and eight-case rejection driver. Prior full verifier reviews remain separately frozen; UI renderer and Node suites were not independently reread in this bounded extraction check.",
+  "remaining_final_audit": "After ten admitted gates, inspect final sources, execute the existing coherent preflight/Git/build rejection cases in both modes, bind the resulting hashes, and separately assess actual presentation/browser evidence. Old external-pin rejection must not mask the intended internal predicate. No final mutation is claimed here.",
+  "required_eventual_controls": [
+    "successful_noop_claim_map_builder",
+    "successful_noop_round22_data_builder",
+    "successful_noop_pages_builder",
+    "stale_nested_docs_preservation"
+  ],
+  "research_loops_added": 0,
+  "schema": "ym22-skeptic-infrastructure-repair-review-v1",
+  "source_assessment": [
+    "verify_site performs the real claim-map, data and Pages builds; it removes the map and current data immediately before rebuilding and removes all docs before the Pages builder.",
+    "The map digest and complete dist/docs file sets and byte hashes remain compared to the frozen inventory; extraction does not replace any predicate with a mock.",
+    "All three Node suites run in the rebuilt mirror. The actual presentation-schema driver executes in ordinary and optimized modes and each output is compared bytewise with the frozen result.",
+    "The shared presentation schema requires genuine nonempty strings, at least three derivation steps, exactly three distinct future-goal IDs and executed is exactly False. The eight driver cases exercise concrete malformed values.",
+    "The full verify path still validates the external/canonical inventory and detached committed Git blobs before execution; it calls the extracted stage and then revalidates both inventory and Git state before setting status passed.",
+    "Calling verify_site alone is deliberately a build-stage test. Its success is not full release admission: the mutation harness must supply a coherent frozen fixture and fresh external output and state which real predicate rejected."
+  ],
+  "status": "source_extraction_confirmed_final_mutations_pending"
+}

@@ -1,0 +1,48 @@
+{
+  "before_verifier_sha256": "e58e0a824fc0cdfe0b4fd5183e5a7c6270533359d0cfbea4e522816439a79605",
+  "current_q2_producers_read": false,
+  "existing_pending_controls": "Retain canonical-inventory, checkpoint/ledger/roadmap, exact replay identities, historical closure, detached/ignored/assume-unchanged/skip-worktree and Git mode cases from prior preparation records.",
+  "finding_record": {
+    "path": "research/round22/skeptic/release-preparation-second-followup.md",
+    "sha256": "e44daf71d02cfee63b50a875daae9a2d6bfabaccce27f5906c51fe534e623e5f"
+  },
+  "full_release_validation_executed": false,
+  "mutation_execution_rule": "After ten gates exist, run ordinary and optimized rejection cases using coherent internal hashes and candidate Git tree/pins where needed. Keep old-external-pin rejection a distinct test so it does not mask the fresh-build predicate.",
+  "new_blocking_source_findings": [],
+  "reading_depth": "Rechecked the changed mirror/build sequence and surrounding validation/error handling, plus current protocol; prior complete verifier review is preserved separately",
+  "required_eventual_controls": [
+    {
+      "expected": "Reject missing independently regenerated claim map",
+      "id": "successful_noop_claim_map_builder",
+      "mutation": "Replace the claim-map builder with a successful no-op in an external coherent candidate"
+    },
+    {
+      "expected": "Reject missing generated Round22 data in the complete dist comparison",
+      "id": "successful_noop_round22_data_builder",
+      "mutation": "Replace the Round22 data builder with a successful no-op in an external coherent candidate"
+    },
+    {
+      "expected": "Reject absent regenerated docs outputs",
+      "id": "successful_noop_pages_builder",
+      "mutation": "Replace the Pages builder with a successful no-op in an external coherent candidate"
+    },
+    {
+      "expected": "Reject the complete docs comparison after rebuilding from an empty destination",
+      "id": "stale_nested_docs_preservation",
+      "mutation": "Add a tracked and inventoried nested docs artifact with no corresponding source-generated asset"
+    }
+  ],
+  "research_loops_added": 0,
+  "reviewed_protocol_sha256": "a2b2cfed0c4ab38cdb3717a2e26c59877458c1f667ba2051aa6797ad85dfd309",
+  "reviewed_verifier_sha256": "2103a03ffcb725cfd6c5c66b75055d76bf373e9a30b16e98f47449a46d6f8e50",
+  "schema": "ym22-skeptic-infrastructure-repair-review-v1",
+  "scope": "Source-level assessment only; not final release admission, publication permission or a completed mutation suite.",
+  "source_assessment": [
+    "The mirrored claim map is unlinked before build_claim_map.py; a no-op leaves the required regenerated file absent.",
+    "The mirrored generated Round22 data file is unlinked before build_site.py; a no-op fails the complete expected dist file set.",
+    "The entire mirrored docs directory is removed before build_pages.py; no-op builds and nested artifacts lacking a dist input cannot survive by seeding.",
+    "Dist authored static assets remain valid inputs; complete output-set and byte comparisons remain after each appropriate build.",
+    "All mutations are confined to the external mirror; reviewed source and canonical inventory remain untouched."
+  ],
+  "status": "source_repair_confirmed_final_mutations_pending"
+}

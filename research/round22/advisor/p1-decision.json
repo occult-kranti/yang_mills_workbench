@@ -1,0 +1,122 @@
+{
+  "claim": "The prescribed section is nonclosable and its fitted clock fails the reserved correlation.",
+  "equations": [
+    "||psi_n||^2=(n+1)^-6; H_E psi_n=3 alpha n(n+2) psi_n; R psi_n=1",
+    "||psi_n||_graph^2 <= (n+1)^-6+9(alpha/E_star)^2 (n+1)^-2 -> 0",
+    "R H_E F0-H_c R F0=3 alpha",
+    "c=4 alpha from F9 alone; C_phys(F16)-C_cond(w)=(exp(-3 alpha t/hbar)-exp(-6 alpha t/hbar))/4"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "F0_core_defect_norm": "3 alpha",
+        "all_n_core_sequence": "chi_(n/2)(L0)/(n+1)",
+        "all_n_physical_norm": "1/(n+1)",
+        "all_n_section_value": "1",
+        "any_c_core_intertwining": false,
+        "conditional_w_energy": "3 c/2",
+        "conditional_x_energy": "3 c/4",
+        "continuum_transfer": false,
+        "fixed_physical_scales": true,
+        "fixed_subgraph_cycle_rank": 13,
+        "full_cycle_rank": 16,
+        "fundamental_face_energy": "3 alpha",
+        "graph_edges": 33,
+        "graph_faces": 20,
+        "graph_vertices": 18,
+        "heldout_core_defect_norm": "3 alpha/2",
+        "heldout_defect_at_t_star": "(exp(-3)-exp(-6))/4",
+        "heldout_defect_strict_interval": [
+          "0.01182707904779939613907431",
+          "0.01182707904779939613907432"
+        ],
+        "heldout_fitted_conditional_correlation": "exp(-6 alpha t/hbar)/4",
+        "heldout_full_time_match": false,
+        "heldout_physical_correlation": "exp(-3 alpha t/hbar)/4",
+        "heldout_variance": "1/4",
+        "interacting_J2_transfer": false,
+        "measured_calibration_data": false,
+        "physical_calibration": "open",
+        "repair_selected": false,
+        "section_bounded_L2_extension": false,
+        "section_closable": false,
+        "section_smooth_core_map": true,
+        "state_compatible": false,
+        "training_c_over_alpha": "4",
+        "training_full_time_match": true,
+        "training_variance": "1/4"
+      },
+      "passed": true,
+      "status": "proved_scoped"
+    },
+    "reverse": {
+      "claims": {
+        "additional_fixed_chords": 13,
+        "all_physical_reductions_impossible": false,
+        "conditional_holdout_energy_over_alpha": "6",
+        "core_intertwiner_for_any_c": false,
+        "domain_sequence_L2_norm_squared": "(n+1)^-6",
+        "domain_sequence_R_image": "1",
+        "domain_sequence_energy_over_alpha": "3*n*(n+2)",
+        "domain_sequence_faces": [
+          0,
+          1,
+          13
+        ],
+        "full_chord_variables": 16,
+        "full_edges": 33,
+        "full_faces": 20,
+        "full_vertices": 18,
+        "holdout_difference_at_t_star": "(exp(-3)-exp(-6))/4",
+        "holdout_difference_strictly_positive_for_t_gt_zero": true,
+        "interacting_or_continuum_transfer": false,
+        "physical_calibration_completed": false,
+        "physical_holdout_energy_over_alpha": "3",
+        "scalar_shift_repairs_intertwiner": false,
+        "section_L2_closable": false,
+        "section_exists_on_smooth_invariant_core": true,
+        "section_graph_domain_closable": false,
+        "section_state_preserving": false,
+        "training_and_holdout_variance": "1/4",
+        "training_c_over_alpha": "4",
+        "true_tree_fixed_links": 17
+      },
+      "passed": true,
+      "status": "rejected_section_and_fitted_clock_match"
+    }
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "physical_data": "Analytic finite-model predictions only.",
+    "producer_repairs": false
+  },
+  "limits": [
+    "No bounded or closable extension of this section agrees on its stated core.",
+    "Other physical reductions are not excluded.",
+    "No measured calibration, interacting, homogeneous or continuum transfer."
+  ],
+  "loop": "p1",
+  "next_missing_premise": "A genuine Haar map with its complete induced electric operator, followed by independent dynamic matching.",
+  "review_inputs": [
+    "research/round22/skeptic/check_p1_preparation.py",
+    "research/round22/skeptic/check_p1_review.py",
+    "research/round22/skeptic/p1-independent-checks.json",
+    "research/round22/skeptic/p1-independent-replay.json",
+    "research/round22/skeptic/p1-preparation-checks.json",
+    "research/round22/skeptic/p1-preparation-manifest.json",
+    "research/round22/skeptic/p1-preparation.md",
+    "research/round22/skeptic/p1-primary-source-map.json",
+    "research/round22/skeptic/p1-replay-summary.json",
+    "research/round22/skeptic/p1-review.json",
+    "research/round22/skeptic/p1.md",
+    "research/round22/skeptic/replay_frozen_loop.py",
+    "research/round22/advisor/replay_pair.py",
+    "research/round22/advisor/p1-root-replay.json",
+    "research/round22/advisor/p1-pair-comparison.json",
+    "research/round22/advisor/p1-decision.md"
+  ],
+  "scope": "Actual finite 18-vertex33-link electric endpoint, normalized Haar, fixed alpha/E_star,a,hbar; magnetic coefficient zero.",
+  "skeptic_review_frozen": true,
+  "status": "accepted",
+  "target_verdict": "Scoped section and clock obstruction proved; physical calibration remains open."
+}

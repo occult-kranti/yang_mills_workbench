@@ -1,0 +1,11 @@
+# R1 advisor decision — initial inverse with actual boundary obstruction
+
+Accept the actual initial retained-diagonal inverse, common operator/form domains, complete crossing identity and fixed SU2 boundary defect. Root read both full proofs and all559 checker lines, source notes and skeptical review; four root and four skeptical fresh normal/optimized producer runs are byte-exact. There is no blocking defect or producer repair.
+
+The signed form bound gives g=1-28|tau|>=381/416. The inverse and local generator preserve the stated domains, but the full-volume commutator retains every crossing star. All21 faces contribute to the frozen character probe, even though only two physically touch its free link. Its squared boundary vacuum defect is7tau^2/432. This diagnostic is not an actual generated O1 residual. Forward additionally proves a valid family weight-loss upper bound and an actual-star bare-versus-interacting inverse diagnostic; both are independently verified after freeze and remain forward-only refinements. The skeptic independently supplies the two-versus21 control and connected-support census. No post-review shared repair is reclassified as independent discovery.
+
+## R2 selection after the review
+
+Choose the skeptic's first ranked direction: boundary-complete initial response with quantitative spatial tails, explicitly in the vacuum-offdiagonal sector. This is more bounded and discriminating for the remaining final loop than reconstructing a complete source induction or selecting one generated residual coefficient. The global vacuum rank-two operator is not the local source extended by identity; that qualification is part of the frozen target. Require an actual excited-exterior control and separately assess whether the specified spatial support certificate suffices for O2's positive volume weight. The target is a proof or a delimited failure of these particular certificates, not automatic all-stage closure.
+
+R2 is the tenth and final loop. Thereafter audit all claims and plan exactly three unexecuted goals. Initial H0+D stability does not prove a gap for H0+D+R, the homogeneous interacting vacuum, a representation transfer or the four-dimensional continuum problem.

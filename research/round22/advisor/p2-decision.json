@@ -1,0 +1,131 @@
+{
+  "claim": "A genuine Haar reduction exactly transports the finite electric dynamics; the declared conditional family fails the reserved data.",
+  "equations": [
+    "J16:H16 -> Hphys is unitary; J3*J3=I; J3*=Haar average over13 omitted chords after J16 inverse",
+    "H16=alpha(sum_chord C - sum_tree,a D_tree,a^2); alpha q0<=q16<=77 alpha q0",
+    "H_eff/alpha=3CU+3CV+CW+KL(VW)+KR(VW)+KL(UVW)+2KR(UVW), with KL(S)=-sum_a(sum_(j in S)ell_j,a)^2 and similarly KR",
+    "H_E J3=J3 H_eff; exp(-t H_E/hbar)J3=J3 exp(-t H_eff/hbar)",
+    "c=6 alpha from mapped x slope; reserved curvature excess=9 alpha^2 zeta^2/(4 hbar^2)",
+    "At zeta=0: C_cond,y-C_phys,y=(exp(-9 alpha t/(2 hbar))-exp(-6 alpha t/hbar))/4>0 for finite t>0"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "Q_R_selected": false,
+        "conditional_family_match": false,
+        "continuum_transfer": false,
+        "curvature_defect_times_hbar_squared": "9 alpha^2 zeta^2/4",
+        "exact_graph_norm_isometry": true,
+        "exact_semigroup_intertwining": true,
+        "form_domain": "H1 intersect simultaneous-Ad invariant sector",
+        "full_Haar_identification_unitary_onto": true,
+        "full_chords_retained": 16,
+        "full_operator": "alpha(sum_chord C-sum_tree,a D_tree,a^2)",
+        "full_tree_derivatives_retained": 17,
+        "interacting_transfer": false,
+        "mapped_x_energy": "9 alpha/2",
+        "mapped_x_is_P1_F9": false,
+        "mapped_y_energy": "6 alpha",
+        "mapped_z_energy": "9 alpha/2",
+        "measured_calibration": false,
+        "operator_domain": "H2 intersect simultaneous-Ad invariant sector",
+        "physical_calibration": "open",
+        "reserved_positive_time_defect": "(exp(-9s/2)-exp(-6s))/4, s=alpha t/hbar>0",
+        "reserved_y_conditional_correlation_after_curvature": "exp(-9 alpha t/(2 hbar))/4",
+        "reserved_y_physical_correlation": "exp(-6 alpha t/hbar)/4",
+        "selected_adjoint": "Haar integration over 13 omitted chords after J16 inverse",
+        "selected_image_reduces_electric_operator": true,
+        "selected_map_isometry": true,
+        "selected_operator": "alpha(3CU+3CV+CW+KL(VW)+KR(VW)+KL(UVW)+2KR(UVW))",
+        "state_and_ground_preserved": true,
+        "t_star_defect_interval": [
+          "0.00215756109039398701827449",
+          "0.00215756109039398701827450"
+        ],
+        "training_c_over_alpha": "6",
+        "zeta_after_curvature": "0",
+        "zeta_after_slope": "(-1,1)"
+      },
+      "passed": true,
+      "status": "proved_scoped"
+    },
+    "reverse": {
+      "claims": {
+        "conditional_family_matches_all_reserved_data": false,
+        "exact_common_clock_semigroup_intertwiner": true,
+        "form_comparison_lower": 1,
+        "full_J16_unitary": true,
+        "full_and_selected_state_preserving": true,
+        "full_form_comparison_upper": 77,
+        "full_form_domain": "H1(SU2^16)^Ad",
+        "full_operator_domain": "H2(SU2^16)^Ad",
+        "heldout_variance": "1/4",
+        "heldout_y_discrepancy_at_t_star": "(exp(-9/2)-exp(-6))/4",
+        "interacting_or_continuum_transfer": false,
+        "physical_calibration_completed": false,
+        "reserved_curvature_excess_times_hbar_squared_over_alpha_squared": "9*zeta^2/4",
+        "reserved_curvature_forces_zeta": "0",
+        "selected_J3_isometry": true,
+        "selected_adjoint": "Haar integration of other 13 chords",
+        "selected_form_comparison_upper": 16,
+        "selected_form_domain": "H1(SU2^3)^Ad",
+        "selected_graph_isometry": true,
+        "selected_image_reduces_HE": true,
+        "selected_operator_domain": "H2(SU2^3)^Ad",
+        "selected_physical_energies_over_alpha": [
+          "9/2",
+          "6",
+          "9/2"
+        ],
+        "selected_physical_loop_lengths": [
+          6,
+          8,
+          6
+        ],
+        "selected_projection": "Haar integration over 13 unused original chord links",
+        "slope_zeta_ambiguity": "(-1,1)",
+        "training_c_over_alpha": "6",
+        "training_variance": "1/4"
+      },
+      "passed": true,
+      "status": "proved_exact_electric_reduction_rejected_conditional_family_match"
+    }
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "physical_data": "Analytic finite-model predictions only.",
+    "prefreeze_control_replacement": "Reverse disclosed a failed nondiscriminating test and a successful invariant-product replacement; independently checked by skeptic.",
+    "producer_repairs": false
+  },
+  "limits": [
+    "The mapped observable completion differs from P1 F9.",
+    "Exact reduction is for the pure electric endpoint; no magnetic transfer proved.",
+    "Conditional-family mismatch does not reject every possible conditional model.",
+    "No measured physical calibration, homogeneous/summable transfer or continuum result."
+  ],
+  "loop": "p2",
+  "next_missing_premise": "A justified extension beyond the pure electric reducing subspace and a dynamically matched conditional model, selected after the six-loop review.",
+  "review_inputs": [
+    "research/round22/skeptic/check_p2_preparation.py",
+    "research/round22/skeptic/check_p2_review.py",
+    "research/round22/skeptic/p2-independent-checks.json",
+    "research/round22/skeptic/p2-independent-replay.json",
+    "research/round22/skeptic/p2-preparation-checks.json",
+    "research/round22/skeptic/p2-preparation-manifest.json",
+    "research/round22/skeptic/p2-preparation.md",
+    "research/round22/skeptic/p2-primary-source-map.json",
+    "research/round22/skeptic/p2-replay-summary.json",
+    "research/round22/skeptic/p2-review.json",
+    "research/round22/skeptic/p2.md",
+    "research/round22/advisor/p2-decision.md",
+    "research/round22/advisor/p2-pair-comparison.json",
+    "research/round22/advisor/p2-root-replay.json",
+    "research/round22/advisor/p2-root-source-note.json",
+    "research/round22/advisor/replay_pair.py",
+    "research/round22/skeptic/replay_frozen_loop.py"
+  ],
+  "scope": "Actual18-vertex33-link electric endpoint, tree0..15+26, normalized Haar, invariant H1/H2 domains; fixed alpha/E_star,a,hbar and zero magnetic coefficient.",
+  "skeptic_review_frozen": true,
+  "status": "accepted",
+  "target_verdict": "Exact finite electric map and induced generator proved; affine scalar-mobility match rejected."
+}

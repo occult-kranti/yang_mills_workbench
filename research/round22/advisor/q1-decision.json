@@ -1,0 +1,165 @@
+{
+  "claim": "The full magnetic action has correlated positive conditional variance, proving selected-image leakage and a quantitative nonautonomous dynamic defect.",
+  "equations": [
+    "H_lambda=H_E+alpha lambda Vmag; Vmag=sum_(20 faces)(1-W_p),0<=Vmag<=40",
+    "m=E[Vmag|U,V,W]=20-b; b=Tr(VW^-1)/2",
+    "E[Vmag^2|U,V,W]=m^2+K; K=19/4+(r+x+z)/2=4+|u+w+e0|^2/4; r=Tr(UW^-1)/2,x=TrU/2,z=TrW/2",
+    "J*Vmag(1-P)VmagJ=M_K;4I<=M_K<=25I/4; ||B_lambda||=5 alpha lambda/2",
+    "A_lambda=H_eff+alpha lambda M_m; [T_lambda(t)-exp(-t A_lambda/hbar)]f=(alpha lambda t/hbar)^2 M_K f/2+o_f(t^2) on the invariant smooth core",
+    "||T_lambda(t)-exp(-t A_lambda/hbar)||<=min(1,(25/8)(alpha lambda t/hbar)^2)",
+    "For fixed lambda>0, scaled quotient tends strongly to M_K/2 and its scalar norm tends to25/8; quotient does not converge in operator norm"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "Haar_V_mean": "20",
+        "Haar_V_second_moment": "405",
+        "Haar_V_variance": "5",
+        "Haar_core_difference": "(19/8)(alpha lambda t/hbar)^2+o(t^2)",
+        "Haar_reference_interacting_ground": false,
+        "K_Haar_mean": "19/4",
+        "K_sharp_lower": "4",
+        "K_sharp_upper": "25/4",
+        "Q2_selected": false,
+        "complement_form_domain": "Q D(H_E^(1/2))",
+        "complement_operator_domain": "Q D(H_E)",
+        "compression_generator": "H_eff+alpha lambda(20-b)",
+        "conditional_mean": "20-b, b=Tr(V W^-1)/2",
+        "conditional_second_moment": "(20-b)^2+19/4+(r+x+z)/2, r=Tr(U W^-1)/2",
+        "conditional_variance_operator": "M_K, K=19/4+(r+x+z)/2",
+        "continuum_transfer": false,
+        "core_Taylor_difference": "(alpha lambda t/hbar)^2 K f/2+o_f(t^2)",
+        "cross_pair_moments": [
+          "r/4",
+          "x/4",
+          "z/4"
+        ],
+        "full_J16_unitary_equivalence_preserved": true,
+        "full_magnetic_face_count": 20,
+        "global_norm_upper_bound": "(25/8)(alpha lambda t/hbar)^2",
+        "homogeneous_transfer": false,
+        "integral_topology": "strong vector-valued",
+        "leakage_norm": "5 alpha lambda/2",
+        "leakage_squared": "(alpha lambda)^2 M_K",
+        "magnetic_multiplier_range": [
+          "0",
+          "40"
+        ],
+        "operator_norm_Taylor_claim": false,
+        "physical_calibration": false,
+        "physical_operator_domain": "H2(SU2^33) intersect Hphys",
+        "scalar_shift_repairs_leakage": false,
+        "selected_closure_lambda_zero": true,
+        "selected_closure_positive_lambda": false,
+        "selected_operator_domain": "H2(SU2^3) intersect H3",
+        "stationary_interacting_correlation_claim": false,
+        "surviving_cross_pairs": [
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            14,
+            15
+          ]
+        ]
+      },
+      "passed": true,
+      "status": "proved_scoped"
+    },
+    "reverse": {
+      "claims": {
+        "B_lambda_norm": "5*alpha*lambda/2",
+        "B_lambda_reference_norm_squared": "19*(alpha*lambda)^2/4",
+        "Haar_reference_is_interacting_eigenvector_for_positive_lambda": false,
+        "J_star_V_Q_V_J": "multiplication by d=19/4+(r+x+z)/2",
+        "all_time_operator_norm_bound": "min(1,(25/8)*(alpha*lambda*t/hbar)^2)",
+        "autonomous_compressed_semigroup_for_positive_lambda": false,
+        "conditional_mean": "20-tau",
+        "conditional_second_moment": "(20-tau)^2+19/4+(r+x+z)/2",
+        "d_Haar_mean": "19/4",
+        "d_essential_infimum": "4",
+        "d_essential_supremum": "25/4",
+        "d_squared_Haar_mean": "91/4",
+        "electric_recovery_at_lambda_zero": true,
+        "full_H_lambda_nonnegative_for_lambda_ge_zero": true,
+        "full_J16_unitary_preserved": true,
+        "homogeneous_or_continuum_transfer": false,
+        "interacting_ground_identified": false,
+        "operator_norm_Taylor_expansion_claimed": false,
+        "physical_calibration_completed": false,
+        "physical_form_domain": "H1(SU2^33)^Gauss",
+        "physical_operator_domain": "H2(SU2^33)^Gauss",
+        "potential_bound": "0<=V_pot<=40",
+        "reference_matrix_element_leading_coefficient": "19/8",
+        "reference_vector_norm_leading_coefficient": "sqrt(91)/4",
+        "scaled_defect_parameter": "alpha*lambda*t/hbar",
+        "selected_compression_operator_domain": "H2(SU2^3)^Ad",
+        "selected_reduces_for_positive_lambda": false,
+        "small_time_scaled_operator_norm_limit": "25/8 for fixed lambda>0",
+        "strong_limit_on_all_selected_vectors": true,
+        "strong_scaled_compressed_defect_limit": "M_d/2",
+        "surviving_distinct_conditional_pairs": [
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            14,
+            15
+          ]
+        ]
+      },
+      "passed": true,
+      "status": "proved_correlated_magnetic_leakage_and_nonautonomous_compression"
+    }
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "control_development": "Skeptic disclosed its failed noncommutation fixture and pre-freeze replacement; no producer evidence changed.",
+    "physical_data": "Analytic finite-model predictions only.",
+    "producer_repairs": false,
+    "refinements": "Reverse-only all-vector/scalar-norm refinements are separately attributed; compactness qualification is independent skeptical preparation and root review.",
+    "shared": "Frozen contract and inherited P2/C1 evidence; distinct exact implementations."
+  },
+  "limits": [
+    "The Haar vector is not an interacting ground at positive lambda.",
+    "The selected compression is nonautonomous; full sixteen-chord unitary equivalence remains valid.",
+    "Strong/scalar norm asymptotics do not imply operator-norm Taylor convergence or finite-time operator positivity.",
+    "No measured calibration, homogeneous stability or continuum transfer."
+  ],
+  "loop": "q1",
+  "next_missing_premise": "Quantitative actual projected memory/self-energy with graph-specific channels and controlled remainders, selected as Q2 after this review.",
+  "review_inputs": [
+    "research/round22/skeptic/check_q1_preparation.py",
+    "research/round22/skeptic/check_q1_review.py",
+    "research/round22/skeptic/q1-independent-checks.json",
+    "research/round22/skeptic/q1-independent-replay.json",
+    "research/round22/skeptic/q1-preparation-checks.json",
+    "research/round22/skeptic/q1-preparation-manifest.json",
+    "research/round22/skeptic/q1-preparation.md",
+    "research/round22/skeptic/q1-primary-source-map.json",
+    "research/round22/skeptic/q1-replay-summary.json",
+    "research/round22/skeptic/q1-review.json",
+    "research/round22/skeptic/q1.md",
+    "research/round22/skeptic/replay_frozen_loop.py",
+    "research/round22/advisor/replay_pair.py",
+    "research/round22/advisor/q1-decision.md",
+    "research/round22/advisor/q1-pair-comparison.json",
+    "research/round22/advisor/q1-root-replay.json",
+    "research/round22/advisor/q1-root-analysis.md",
+    "research/round22/advisor/q1-root-source-note.json"
+  ],
+  "scope": "Actual18-vertex33-link20-face SU2 graph and P2 Haar map; fixed a,E_star,alpha/E_star,hbar; dimensionless lambda>=0; invariant H1/H2 domains.",
+  "skeptic_review_frozen": true,
+  "status": "accepted",
+  "target_verdict": "Exact full transport and moments proved; selected magnetic reduction and autonomous compressed semigroup rejected for lambda>0."
+}

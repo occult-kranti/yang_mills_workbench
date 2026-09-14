@@ -5,7 +5,7 @@ description: Plan and critically review this quantum-electromagnetic-gravity res
 
 # Quantum fields and gravity research advisor
 
-For post-Round20 local stability, physical-sector reconstruction, dynamic identification or a clean-checkout admission repair, read [the admission and matching contract](references/admission-and-matching.md). Use the current `AGENTS.md` ownership boundaries and frozen Round21 contracts for this continuation.
+For post-Round20 local stability, physical-sector reconstruction, dynamic identification or a clean-checkout admission repair, read [the admission and matching contract](references/admission-and-matching.md). Use the current `AGENTS.md` ownership boundaries and the explicitly selected round’s frozen contracts.
 
 For driven truncation, growing-volume or hierarchy-closure work, read [the dynamic/volume/closure contract](references/dynamic-volume-closure-contract.md). It records the distinction between exact Galerkin error and computed-state error, common-action variables, volume-deterioration counterbenchmarks and source-specific closure tests.
 
@@ -14,6 +14,14 @@ For the coupled Yang–Mills branch, read [the two-plaquette contract](reference
 Read [the advisor protocol](references/advisor-pipeline.md) when planning a new research cycle or changing the panel. Read the current experiment contract and saved evidence before accepting a result; historical prose is not authoritative over the source/data it describes.
 
 For finite dynamic observations or strong operator limits, read [the finite-observation and operator-limit lessons](references/finite-observations-and-operator-limits.md). They record model-class ambiguity, higher-derivative checks, complete factor support and topology-specific convergence.
+
+For stationary comparisons, growing supports or admission repairs, read [the stationarity, support and admission lessons](references/stationarity-support-and-admission.md). Keep strong-integral domain arguments and coherent evidence mutations explicit.
+
+For overlapping rotations or stability iterations, read [the generated-support and iteration lessons](references/generated-support-and-iteration.md). Bind the support decomposition and keep retained diagonal terms in every recurrence.
+
+For physical reductions and dynamic matching, read [the Haar-map and induced-dynamics lessons](references/haar-maps-and-induced-dynamics.md). A pointwise section, an L2 map and a generator intertwiner are separate obligations; preserve actual observable completions and reserved data.
+
+For projected dynamics, initial-diagonal inverses or spatial response tails, read [the projected-memory and boundary-response lessons](references/projected-memory-and-boundary-response.md). Keep exact source sectors, unbounded domains, convergence topology and volume-weight certificates separate.
 
 ## Establish the physical contract
 

@@ -1,0 +1,49 @@
+{
+  "after_source_hashes": {
+    "research/round22/admission.py": "a22759910cf716acca371f936ff55f20eb756d9b5feafb6cb50061640a9f6d72",
+    "research/round22/skeptic/check_admission_regressions.py": "312602e6e9a2458fa9e14b335c1d80bacb3b4b357f3a5e06dc365a24eae9c833",
+    "research/round22/test_admission.py": "dd64faa170b3d919804d3a9a888f20cad9670b2e6d925a73d17d19a11a4d4584"
+  },
+  "before_source_hashes": {
+    "research/round22/admission.py": "8a84ff1dc9be9e0ecf18b6545f70f4ffd741850a1b6ca8562270c994aba342ae",
+    "research/round22/test_admission.py": "3520c0194856c0f9db88e4a7af8084b3dca877daf4f88af6957cfad619134bef"
+  },
+  "evidence_hashes": {
+    "research/round22/skeptic/admission-audit-initial.json": "002190d5b6f08f61e5f219c4ebaee2bd74bff1053456d5daca3a60287d4a90b7",
+    "research/round22/skeptic/admission-regressions-normal.json": "3da067919e5eece5eea16a3ebfcd6a63d006b917df2bc4045c66a370ad782b83",
+    "research/round22/skeptic/admission-regressions-optimized.json": "3bbbd4b6dc52df95e20ffb91dd3826c2ea8934716e8b6d0d4a13d3fe68fd2bc7",
+    "research/round22/skeptic/check_admission_regressions.py": "312602e6e9a2458fa9e14b335c1d80bacb3b4b357f3a5e06dc365a24eae9c833"
+  },
+  "independent_normal_and_optimized_rejections": true,
+  "mutations": [
+    {
+      "mutation": "drop_required_instruction",
+      "reason": "missing contract-declared instruction input",
+      "rejected": true
+    },
+    {
+      "mutation": "false_controls_status",
+      "reason": "controls must explicitly pass",
+      "rejected": true
+    }
+  ],
+  "n1_gate_unchanged_sha256": "d79e8fb646a9983227f8eee9810a737db6c40b3eedd8e631e2cbee97831a5366",
+  "original_defects": [
+    {
+      "mutation": "Delete methods/AGENTS-at-selection.md named in frozen contract instruction_inputs; remove it from both producer manifests and gate files; rebind manifests.",
+      "name": "drop_required_instruction",
+      "required_repair": "Enforce every contract instruction_input in producer inputs and source gate closure.",
+      "result": "admitted"
+    },
+    {
+      "mutation": "Set forward controls.json passed=false; coherently rebind manifest output and gate files.",
+      "name": "false_controls_status",
+      "required_repair": "Validate controls semantic status or reviewed controls expectations, including strict true Boolean passed when present.",
+      "result": "admitted"
+    }
+  ],
+  "research_loops_added": 0,
+  "schema": "ym22-skeptic-admission-repair-v1",
+  "scope": "The two reproduced coherent-mutation holes now reject. Root separately reports 16 mutation tests passed in both modes. This check does not claim admission is universally tamper-proof.",
+  "status": "repair_verified"
+}

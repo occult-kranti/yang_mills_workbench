@@ -1,0 +1,5 @@
+# Admission repair 1 (no research loop)
+
+The skeptic found two coherent mutation holes in the initial admission checker at checkpoint f155bb6: contract-declared instruction snapshots beyond the mandatory team protocol could be dropped from both manifests and the gate inventory; and a controls file with passed=false could be rebound without semantic rejection. The actual N1 sources/outputs were not changed and no failed scientific output was admitted.
+
+The revised verifier enforces every contract instruction snapshot in each producer input closure and gate inventory, binds declared dependencies in the inventory, validates controls identity, and requires top-level and nested passed flags to be the Boolean true. The test suite preserves earlier controls and adds those coherent changes plus a truthy-string control. Sixteen mutation cases reject in both normal and optimized Python. The original twelve-case test outputs remain in place. This machinery repair changes no historical gate or research verdict.

@@ -1,0 +1,27 @@
+{
+  "baseline_gate_sha256": "d79e8fb646a9983227f8eee9810a737db6c40b3eedd8e631e2cbee97831a5366",
+  "execution": "Two disposable complete N1 gate copies; original root and producer files unchanged.",
+  "mutations": [
+    {
+      "mutation": "Delete methods/AGENTS-at-selection.md named in frozen contract instruction_inputs; remove it from both producer manifests and gate files; rebind manifests.",
+      "name": "drop_required_instruction",
+      "required_repair": "Enforce every contract instruction_input in producer inputs and source gate closure.",
+      "result": "admitted"
+    },
+    {
+      "mutation": "Set forward controls.json passed=false; coherently rebind manifest output and gate files.",
+      "name": "false_controls_status",
+      "required_repair": "Validate controls semantic status or reviewed controls expectations, including strict true Boolean passed when present.",
+      "result": "admitted"
+    }
+  ],
+  "note": "This is an admission machinery defect, not a refutation of N1. Root notified immediately.",
+  "research_loops_added": 0,
+  "schema": "ym22-skeptic-admission-audit-v1",
+  "scientific_n1_evidence_changed": false,
+  "source_hashes": {
+    "research/round22/admission.py": "8a84ff1dc9be9e0ecf18b6545f70f4ffd741850a1b6ca8562270c994aba342ae",
+    "research/round22/test_admission.py": "3520c0194856c0f9db88e4a7af8084b3dca877daf4f88af6957cfad619134bef"
+  },
+  "status": "defects_reproduced"
+}

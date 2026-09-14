@@ -1,0 +1,87 @@
+{
+  "claim": "Complete tail-block cubes have an exact weighted incident-face budget, yielding a joint support/time convergence certificate.",
+  "equations": [
+    "D_L(q)=B(q)(1-q^(4L))(1-q^(2L))(1-q^L)",
+    "tau_q D_L(q)=eta(1-q^(4L))(1-q^(2L))(1-q^L)/8",
+    "L=max(1,floor(ell epsilon^-beta)), T=(hbar/alpha)Cepsilon^-gamma: certificate vanishes iff0<=beta<1 and0<=gamma<3(1-beta)",
+    "error=O(epsilon^min(3/2,3(1-beta)-gamma)) in the sufficient region"
+  ],
+  "expected_results": {
+    "forward": {
+      "claims": {
+        "D_L_at_one": "7*L^3/8",
+        "D_L_closed": "B(q)*(1-q^(4L))*(1-q^(2L))*(1-q^L)",
+        "actual_endpoint_nonconvergence_proved": false,
+        "beta_zero_L": "max(1,floor(ell))",
+        "complete_owned_links": "24*L^3",
+        "critical_support_P_limit": "(1-exp(-4*ell))*(1-exp(-2*ell))*(1-exp(-ell))",
+        "fixed_L_endpoint_constant": "2*eta*C*L^3",
+        "fixed_L_log_shortening_k_positive": true,
+        "homogeneous_or_continuum_transfer": false,
+        "incident_iff_anchor_in_origin_tail_rectangle": true,
+        "incident_omitted_faces": "21*L^3",
+        "rate": "min(3/2,3*(1-beta)-gamma)",
+        "subcritical_endpoint_constant_beta_positive": "2*eta*C*ell^3",
+        "supercritical_support_P_limit": "1",
+        "tau_D_L": "eta*(1-q^(4L))*(1-q^(2L))*(1-q^L)/8",
+        "uniform_certificate": "6*sigma_q/gbar+(eta*C/4)*epsilon^(-gamma)*P_L(q)",
+        "vanishing_certificate_region": "0<=beta<1 and 0<=gamma<3*(1-beta)"
+      },
+      "passed": true,
+      "status": "proved_scoped"
+    },
+    "reverse": {
+      "claims": {
+        "D_L": "B(q)*(1-q^(4L))*(1-q^(2L))*(1-q^L)",
+        "D_L_at_one": "7*L^3/8",
+        "actual_endpoint_nonconvergence_proved": false,
+        "beta_above_one_gamma_zero_limit": "C*eta/4",
+        "beta_one_gamma_zero_limit": "C*eta*(1-exp(-4*ell))*(1-exp(-2*ell))*(1-exp(-ell))/4",
+        "boundary_beta_between_zero_one_limit": "2*C*eta*ell^3",
+        "boundary_beta_zero_limit": "2*C*eta*L0^3",
+        "certificate_vanishing_region": "0<=beta<1 and 0<=gamma<3*(1-beta)",
+        "complete_strips": "L^3",
+        "fixed_L_log_shortened_gamma_three": "all k>0 sufficient",
+        "free_factors": "14*L^3",
+        "incident_iff_face_base_in_tail_rectangle": true,
+        "model_changed": false,
+        "necessity_scope": "this normalized nonnegative certificate only",
+        "normalized_dynamic_certificate": "C*eta*epsilon^(-gamma)*F_L(q)/4",
+        "omitted_incident_faces": "21*L^3",
+        "owned_links": "24*L^3",
+        "tau_D_L": "eta*(1-q^(4L))*(1-q^(2L))*(1-q^L)/8"
+      },
+      "passed": true,
+      "status": "proved_scoped"
+    }
+  },
+  "independence": {
+    "contamination_before_freeze": false,
+    "initial_derivations": "Separate forward and reverse derivations under frozen contract and inherited evidence; both frozen before skeptical cross-review.",
+    "physical_data": "No independent physical data; analytic proof with exact control fixtures.",
+    "post_review_repairs": false
+  },
+  "limits": [
+    "Origin downward closure is essential for this exact face-anchor characterization.",
+    "For beta=0 the constant uses the actual fixed integer L0, not ell.",
+    "The nonvanishing upper certificate proves no actual nonconvergence.",
+    "No homogeneous state, physical clock or continuum construction is transferred."
+  ],
+  "loop": "n2",
+  "next_missing_premise": "Actual endpoint dynamics requires a sharper cancellation estimate or a lower bound; homogeneous stability still requires overlap and iteration control.",
+  "review_inputs": [
+    "research/round22/advisor/n2-decision.md",
+    "research/round22/advisor/n2-pair-comparison.json",
+    "research/round22/advisor/n2-root-replay.json",
+    "research/round22/skeptic/n2.md",
+    "research/round22/skeptic/n2-review.json",
+    "research/round22/skeptic/n2-replay-summary.json",
+    "research/round22/skeptic/n2-preparation.md",
+    "research/round22/skeptic/n2-preparation-manifest.json",
+    "research/round22/skeptic/replay_frozen_loop.py"
+  ],
+  "scope": "Fixed-spacing canonical N1 summable SU(2) selected-strip/free model; origin tail cubes of24L^3 links; fixed E_star,alpha/E_star,hbar,a,eta; bounded complex gauge-invariant moving observables with uniformly bounded norm products.",
+  "skeptic_review_frozen": true,
+  "status": "accepted",
+  "target_verdict": "Exact geometry and joint certificate proved; necessity concerns this normalized upper certificate only."
+}
