@@ -4,6 +4,8 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 **Research website:** [Open Yang–Mills Workbench on GitHub Pages](https://occult-kranti.github.io/yang_mills_workbench/#research)
 
+**Scrolling research journey:** [Toward Yang–Mills. One proof at a time.](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) follows the ten reviewed loops, distinguishes model-specific contributions from open continuum obligations, and evaluates the accepted M2 correlation bound interactively. Authored assets are `dist/research-journey.js` and `dist/research-journey.css`; `npm run build` publishes their copies into `docs`. Run `npm run test:journey` to compare the calculator with the frozen M2 rational fixtures. This presentation adds no research loops or scientific admissions.
+
 **Repository:** [occult-kranti/yang_mills_workbench](https://github.com/occult-kranti/yang_mills_workbench)
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
