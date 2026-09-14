@@ -1,0 +1,426 @@
+{
+  "checks": [
+    {
+      "name": "positive E_star and separate alpha delta beta tau scale fields",
+      "passed": true
+    },
+    {
+      "name": "infinite product reference and finite-excitation core are defined independently of finite-box convergence",
+      "passed": true
+    },
+    {
+      "name": "H_ref closed nonnegative form with uniform local core gap delta=alpha/8",
+      "passed": true
+    },
+    {
+      "name": "summable V has absolute norm beta<=alpha|tau| without signed cancellation",
+      "passed": true
+    },
+    {
+      "name": "termwise zero trial mean comes from exhaustive actual unused Haar link classes",
+      "passed": true
+    },
+    {
+      "name": "spectral projection rank argument isolates a genuine eigenvector without compact resolvent",
+      "passed": true
+    },
+    {
+      "name": "generic no-zero-mean fallback is distinct and weaker",
+      "passed": true
+    },
+    {
+      "name": "finite tensor core is restricted to local form/operator domains",
+      "passed": true
+    },
+    {
+      "name": "local gauge invariance and non-vacuous physical excitations are recorded",
+      "passed": true
+    },
+    {
+      "name": "finite restriction convergence, dense stability and continuum remain open",
+      "passed": true
+    }
+  ],
+  "contract": "ym19-a2-contract-v1",
+  "endpoint_beta_equals_delta_control": {
+    "message": "beta>=delta blocks positive product-representation gap",
+    "status": "blocked-as-required"
+  },
+  "falsifying_controls": [
+    {
+      "message": "E_star must be positive",
+      "name": "E_star=0 rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "static kappa is absent from A2 Hamiltonian energy scale",
+      "name": "kappa as energy scale rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "V is not bounded by an absolute summable coefficient ledger",
+      "name": "homogeneous nondecaying remainder fails beta bound",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "beta>=delta blocks positive product-representation gap",
+      "name": "beta>=delta blocks positive theorem",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "sharp theorem requires zero trial mean; only generic fallback may be reported",
+      "name": "missing zero mean blocks sharp theorem rather than passing it",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "finite eigenvalue or budget rerun is not an infinite product-representation proof",
+      "name": "finite-only rerun presented as theorem rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "closed form/self-adjoint H_ref construction is missing",
+      "name": "missing closed form/domain argument rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "essential-spectrum/codimension-one isolation argument is missing",
+      "name": "missing essential-spectrum isolation argument rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "finite clipped-restriction convergence requires a separate state/form/resolvent proof",
+      "name": "finite clipped-restriction convergence claim rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "A2 does not prove dense homogeneous stability or continuum mass gap",
+      "name": "dense/continuum promotion rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "tau must be rational, not bool",
+      "name": "Boolean tau rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    },
+    {
+      "message": "alpha_over_E_star must be positive",
+      "name": "negative alpha/E_star rejected",
+      "passed": true,
+      "rejection": "ValueError"
+    }
+  ],
+  "finite_excitation_exact_levels": [
+    {
+      "excited_components": 0,
+      "lower_form_over_E_star_if_alpha_over_E_star_2": "0"
+    },
+    {
+      "excited_components": 1,
+      "lower_form_over_E_star_if_alpha_over_E_star_2": "1/4"
+    },
+    {
+      "excited_components": 2,
+      "lower_form_over_E_star_if_alpha_over_E_star_2": "1/2"
+    },
+    {
+      "excited_components": 3,
+      "lower_form_over_E_star_if_alpha_over_E_star_2": "3/4"
+    },
+    {
+      "excited_components": 4,
+      "lower_form_over_E_star_if_alpha_over_E_star_2": "1"
+    },
+    {
+      "excited_components": 5,
+      "lower_form_over_E_star_if_alpha_over_E_star_2": "5/4"
+    }
+  ],
+  "generic_fallback_without_zero_mean": {
+    "E_star": "positive symbolic physical energy reference",
+    "alpha_over_E_star": "2",
+    "beta_lt_delta": true,
+    "beta_over_E_star": "1/32",
+    "delta_over_E_star": "1/4",
+    "gap_lower_over_E_star": "3/16",
+    "status": "generic-fallback-only",
+    "tau": "1/64",
+    "zero_mean_used": false
+  },
+  "physical_sector": {
+    "gauge_invariance": "each complete strip Hamiltonian, free Casimir and remainder Wilson face trace is locally gauge invariant, so the full operator reduces the Gauss sector",
+    "ground_invariance": "the isolated one-dimensional ground projection carries a continuous one-dimensional representation of the local gauge group; SU(2) perfectness makes it trivial",
+    "non_vacuous_excitation_condition": "the physical gap claim assumes the Gauss sector contains at least one non-ground finite-energy vector; local Wilson-loop/character excitations in complete strip blocks provide such vectors when a selected block is present, while the no-block/free case uses closed gauge-loop excitations",
+    "scope": "this gives the induced product-representation physical-sector gap only, not a continuum particle spectrum"
+  },
+  "product_representation": {
+    "H_ref_form": "closed monotone sum of nonnegative local forms H_C-E_C and free alpha C_e with common local gap delta",
+    "finite_excitation_core": "algebraic finite tensors whose finitely many non-reference factors lie in the corresponding local closed form domains, with an operator-core subcore for graph-norm statements",
+    "isolation_statement": "q_ref[psi] >= delta ||(1-|Omega><Omega|)psi||^2 on the closed form domain",
+    "local_algebra": "bounded operators with finite support are used only after applying them to vectors in the local form/operator domains",
+    "reference_vector": "infinite tensor product of complete LMR strip ground states and free normalized Haar vectors, stabilized by Omega_ref"
+  },
+  "remainder_assignment": {
+    "formula": "nu_f = alpha*tau*2^(-x-y-z)/24 on every positive-orientation face outside complete LMR selected strips",
+    "total_absolute_weight_bound": {
+      "all_positive_orientation_face_sum": "1",
+      "finite_box_samples": {
+        "2": "1/8",
+        "3": "49/128",
+        "4": "35/64",
+        "5": "16585/24576",
+        "6": "23877/32768",
+        "7": "399161/524288",
+        "8": "25415/32768"
+      },
+      "norm_bound": "||V|| <= alpha*|tau| because ||x_f||<=1 and no signed cancellation is used",
+      "orientation_sum": "1/3",
+      "remaining_face_sum_bound": "<= 1"
+    }
+  },
+  "schema": "ym19-backward-a2-results-v1",
+  "scope": "direct incomplete tensor-product representation theorem for a summable perturbation; no finite-restriction convergence, dense homogeneous theorem, continuum construction or Clay mass-gap result",
+  "source_sha256": {},
+  "spectral_argument": {
+    "canonical_values": "alpha/E_star=2, delta/E_star=1/4, tau=1/64, beta/E_star=1/32, gap/E_star>=7/32",
+    "compression_bound": "on Q=1-|Omega_ref><Omega_ref|, Q(H_ref+V)Q >= (delta-beta)Q as a form inequality",
+    "eigenvector_conclusion": "rank-one nonzero projection below the isolated threshold yields a genuine isolated ground eigenvector even without compact resolvent",
+    "gap_conclusion": "the rest of the spectrum is at least delta-beta, so the ground gap is at least delta-beta when beta<delta",
+    "projection_rank": "if two orthonormal vectors lay in E_H((-infty,delta-beta)), their span would contain a nonzero vector orthogonal to Omega_ref, contradicting the compression bound; hence rank E_H((-infty,delta-beta)) <= 1",
+    "trial_bound": "zero termwise mean gives <Omega_ref,(H_ref+V)Omega_ref>=0 < delta-beta, so the spectral projection is nonzero"
+  },
+  "status": "passed",
+  "theorem": {
+    "E_star": "positive symbolic physical energy reference",
+    "alpha_over_E_star": "2",
+    "beta_lt_delta": true,
+    "beta_over_E_star": "1/32",
+    "delta_over_E_star": "1/4",
+    "gap_lower_over_E_star": "7/32",
+    "status": "sharp-zero-mean-theorem",
+    "tau": "1/64",
+    "zero_mean_used": true
+  },
+  "unused_link_witness_sample": {
+    "counts": {
+      "free_witness_failures": 0,
+      "remainder_faces": 558,
+      "selected_complete_strip_faces": 90
+    },
+    "exhaustive_argument": [
+      "Any xz or yz remainder face contains a z-directed link, while complete selected strips contain only xy links.",
+      "Any xy remainder face with odd lower y contains a y-link on an odd y interval, while selected strips use only even y intervals.",
+      "Any xy remainder face on an even selected row must have x residue 3 modulo 4; its x-link at that separator is outside every complete LMR strip support."
+    ],
+    "exhaustive_classes": {
+      "non_xy_face_z_link": 432,
+      "odd_y_xy_face_odd_y_link": 108,
+      "x_separator_xy_face_x_link": 18
+    },
+    "sample_radius": 6,
+    "witness_examples": [
+      {
+        "face": [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          1,
+          2
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          1,
+          3
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          1,
+          4
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          1,
+          4
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          1,
+          5
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          1,
+          5
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          3,
+          0
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          3,
+          0
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          3,
+          1
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          3,
+          1
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          3,
+          2
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          3,
+          3
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          3,
+          4
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          3,
+          4
+        ]
+      },
+      {
+        "face": [
+          0,
+          1,
+          0,
+          3,
+          5
+        ],
+        "reason": "odd-y y-link; complete strips use only even-y intervals",
+        "unused_link": [
+          1,
+          1,
+          3,
+          5
+        ]
+      }
+    ]
+  }
+}

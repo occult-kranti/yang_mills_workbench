@@ -1,0 +1,120 @@
+{
+  "checks": [
+    {
+      "evidence": "research/round19/forward/a2/output/results.json",
+      "kind": "provenance",
+      "name": "producer evidence is JSON object",
+      "passed": true
+    },
+    {
+      "kind": "provenance",
+      "name": "producer source hash syntax is sha256",
+      "passed": true
+    },
+    {
+      "actual": "29c9cf087ac0cba888c82daa2bd2da4f47a7c70bc57bc21c1fee507cf179601e",
+      "declared": "29c9cf087ac0cba888c82daa2bd2da4f47a7c70bc57bc21c1fee507cf179601e",
+      "kind": "provenance",
+      "name": "producer source hash matches supplied source bytes",
+      "passed": true
+    },
+    {
+      "kind": "provenance",
+      "manifest": "research/round19/forward/a2/output/source-manifest.json",
+      "name": "producer source manifest matches source and outputs",
+      "passed": true,
+      "problems": [],
+      "sha256": "7b9e8e52198a95f0f4b948ace910068430ad4d5cd13ffd027ba56ca29e0bd3c5"
+    },
+    {
+      "alpha_over_E_star": "2",
+      "beta_crude_over_E_star": "1/32",
+      "beta_exact_over_E_star": "107/4320",
+      "common_crude_gap_lower_over_E_star": "7/64",
+      "delta_over_E_star": "1/4",
+      "gap_lower_crude_over_E_star": "7/32",
+      "gap_lower_exact_over_E_star": "973/4320",
+      "kind": "mathematics",
+      "name": "product-representation theorem scale/gap fields recompute exactly",
+      "passed": true,
+      "tau": "1/64"
+    },
+    {
+      "expected": {
+        "beta_crude_over_alpha_for_abs_tau": "|tau|",
+        "beta_exact_over_alpha_for_abs_tau": "|tau|*107/135",
+        "omitted_le_total": true,
+        "omitted_weight": "107/135",
+        "selected_weight": "28/135",
+        "total_weight": "1"
+      },
+      "kind": "mathematics",
+      "name": "full dyadic summable ledger recomputes to selected 28/135 and omitted 107/135",
+      "passed": true,
+      "problems": {}
+    },
+    {
+      "kind": "mathematics",
+      "name": "truncation tail fixtures and CSV match exact dyadic formulas",
+      "passed": true,
+      "problems": [],
+      "rows": 9
+    },
+    {
+      "kind": "mathematics",
+      "name": "representative coefficients and zero-mean witnesses match exact assignment",
+      "passed": true,
+      "problems": [],
+      "rows": 7
+    },
+    {
+      "kind": "mathematics",
+      "name": "structured domain/gauge/open-claim premises are present",
+      "passed": false,
+      "problems": [
+        {
+          "field": "operator_theorem.domain_essential_spectrum_record",
+          "reason": "must explicitly state bounded-perturbation operator-domain equality and unchanged form domain"
+        }
+      ]
+    },
+    {
+      "kind": "mathematics",
+      "name": "independent verifier itself passed",
+      "passed": true
+    },
+    {
+      "kind": "mutation-control",
+      "name": "beta>=delta mutation rejected",
+      "passed": true
+    },
+    {
+      "kind": "mutation-control",
+      "name": "altered exact gap lower bound rejected",
+      "passed": true
+    },
+    {
+      "kind": "mutation-control",
+      "name": "missing tail fixture rejected",
+      "passed": true
+    },
+    {
+      "kind": "mutation-control",
+      "name": "missing zero-mean witness rejected",
+      "passed": true
+    }
+  ],
+  "evidence": "research/round19/forward/a2/output/results.json",
+  "producer": "research/round19/forward/a2/check.py",
+  "producer_hashes": {
+    "research/round19/forward/a2/check.py": "29c9cf087ac0cba888c82daa2bd2da4f47a7c70bc57bc21c1fee507cf179601e"
+  },
+  "schema": "ym19-backward-a2-comparison-v1",
+  "scope": "provenance and mathematics are distinct; producer code is not imported",
+  "status": "producer-mathematics-incomplete",
+  "summary": {
+    "mathematics_failures": 1,
+    "provenance_failures": 0,
+    "source_hashes_do_not_admit_json_by_themselves": true
+  }
+}

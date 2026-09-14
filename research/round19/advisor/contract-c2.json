@@ -1,0 +1,102 @@
+{
+  "schema": "ym19-c2-contract-v1",
+  "loop": "c2",
+  "status": "frozen_after_c1_gate",
+  "frozen_by": "advisor",
+  "title": "Goal C loop 2: continuous static-kappa certificate and sign-asymmetry range for the accepted U-V-W chain",
+  "depends_on": {
+    "c1_gate": "advisor/c1-gate.json",
+    "c1_gate_sha256": "6d4e07ac09529a8c796d9ae44a667f23a43fd52ba7fcd0a52241c072f64b933f",
+    "c1_contract": "advisor/contract-c1.json",
+    "c1_contract_sha256": "3fdfbbe6accad4a3ca6ca6849b73f930789bf8fa02169b5b5427773f08da7bbf",
+    "round19_lessons": "methods/round19-lessons.md",
+    "round19_lessons_sha256": "f120ef9657b0d301cbe15b0730e5d6d45544e4f2875407f646a48ed848f738a1",
+    "forward_c1_results": "forward/c1/output/results.json",
+    "forward_c1_results_sha256": "b366c2d50c6198a81a6603e48129177b87b5000ec44252b9f9d6c53f66a1451c",
+    "backward_c1_results": "backward/c1/output/results.json",
+    "backward_c1_results_sha256": "ad3b71d92b1907120093bdf05eec715bca6cfa35f9a13e81f0a04b8b5a926193",
+    "canonical_c1_comparison": "backward/c1/comparison/comparison.json",
+    "canonical_c1_comparison_sha256": "d8a2394dacaea4b0f115a0e04a753f33c536d8f3698d7d0e7c8adb507d99aae3"
+  },
+  "accepted_c1_basis": {
+    "graph_scope": "actual Round18/Round19 four-cube graph with active vertical links U=(1,1,0), V=(1,0,0), W=(0,0,0) and all other links fixed",
+    "static_action": "S = 3*x + y + z + w + t",
+    "observable": "O = (4*x^2 - 1)^3*(4*w^2 - 1)/81",
+    "normalized_integral": "F(kappa) = N(kappa) / Z(kappa), with N=int O exp(kappa*S) dmu and Z=int exp(kappa*S) dmu for the accepted common-V Haar measure",
+    "exact_c1_coefficients_to_recover": {
+      "N0": "0",
+      "N1": "0",
+      "N2": "1/324",
+      "N3": "13/1296",
+      "Z0": "1",
+      "Z1": "0",
+      "Z2": "13/8",
+      "Z3": "1/4"
+    },
+    "common_V_discriminator": {
+      "accepted_common_measure": "E[x*z*w*t] = 1/64",
+      "independent_V_resampling_control": "0"
+    },
+    "scope_warning": "This is a static kappa integral checkpoint. It does not match kappa to a physical energy scale, time generator, dense limit, continuum Yang-Mills or Clay mass gap. Physical-scale matching remains open/unmatched."
+  },
+  "goal": "Upgrade C1 from a point kappa=1/64 certificate to a source-bound continuous static-kappa theorem over a declared interval, with an independent sign-asymmetry range and explicit failure/boundary diagnostics.",
+  "primary_target": {
+    "statement": "Prove with exact rational arithmetic that for K=1/8 and every real kappa with |kappa| <= K, F(0)=0 and F(kappa) >= kappa^2/2048. The kappa=0 case must be handled by the exact zeros N0=N1=0, not by division by kappa.",
+    "suggested_route": "Derive exact Taylor coefficients of N and Z from the accepted C1 moment formula through at least degree 8. Bound the numerator remainder uniformly by a rigorous exp(7K) or sharper source-bound tail, prove Z(kappa)>0 and use the correct denominator direction, e.g. an exact upper bound Z(kappa) <= E when converting a numerator lower bound to F(kappa) >= C_N/E * kappa^2.",
+    "root_feasibility_hint_to_check_not_assume": "The degree-8 route appeared feasible for K=1/8: C_N = N2 - sum_{n=3..8}|N_n| K^(n-2) - E*7^9*K^7/9! > 0, and C_N/E > 1/2048 for a rational E >= exp(7K). Both implementations must independently derive or falsify this, not import it as a premise."
+  },
+  "secondary_target": {
+    "statement": "Prove a continuous sign-asymmetry theorem F(kappa) > F(-kappa) for a declared nonzero positive subrange. The required minimum target is 0 < kappa <= 1/64; extensions toward 1/8 are welcome only if certified.",
+    "suggested_route": "Use the exact cross-difference D(kappa)=N(kappa)*Z(-kappa)-N(-kappa)*Z(kappa), denominator positivity, and the leading odd coefficient evidence from C1. The leading term should be checked against 2*N3*kappa^3 with N3=13/1296, with all higher terms and tails bounded exactly over the declared range."
+  },
+  "boundary_diagnostics": {
+    "required": [
+      "Report whether the same degree-8 absolute-tail certificate proves K=1/7 and whether it fails at K=1/6; if it fails, record the exact negative or insufficient margin as a real boundary of that proof method, not as a theorem that positivity is false.",
+      "If claiming K>1/8 or K=1/6, supply a stronger independently checked certificate; otherwise leave it open rather than widening the accepted range.",
+      "Preserve the C1 point kappa=1/64 intervals as regression evidence only; they are not by themselves a continuous theorem."
+    ]
+  },
+  "required_outputs": {
+    "forward_owned_paths": "research/round19/forward/c2/",
+    "backward_owned_paths": "research/round19/backward/c2/",
+    "advisor_gate_path": "research/round19/advisor/c2-gate.json",
+    "forward": [
+      "derive the accepted C1 moment/coefficient model from source-bound graph data or accepted C1 artifacts, not from hard-coded final inequalities",
+      "produce exact N and Z Taylor coefficients, exact interval/range proof for |kappa|<=1/8, denominator positivity and the denominator-bound direction used in the lower bound",
+      "prove or limit the sign-asymmetry range using the cross-difference D(kappa)",
+      "include boundary diagnostics for K=1/7 and K=1/6 under the stated degree-8/tail method",
+      "produce normal and optimized deterministic outputs, source manifest, report and mutation controls"
+    ],
+    "backward": [
+      "independently reconstruct the coefficient and tail certificate, preferably by a distinct moment/fusion or interval-arithmetic route",
+      "compare the forward theorem, coefficients, declared range, denominator bounds, sign-asymmetry proof and boundary diagnostics against actual file hashes",
+      "include fail-closed source and manifest checks, normal and optimized comparison outputs, and genuine mutations for each admitted theorem component"
+    ]
+  },
+  "acceptance_criteria": [
+    "Both implementations bind to accepted C1 gate bytes and recover the C1 defining graph/action/observable or explicitly justify using the accepted source-bound C1 coefficient model.",
+    "Exact rational coefficient rows include at least N0,N1,N2,N3 and Z0,Z1,Z2,Z3 as listed, plus enough higher rows to support the declared tail certificate.",
+    "The primary positivity theorem is continuous over the whole declared interval; no finite kappa sample or C1 point interval is promoted to a range theorem.",
+    "Denominator positivity and the upper/lower direction used to divide the numerator bound are stated and mechanically checked.",
+    "The kappa=0 endpoint is handled exactly before any division by kappa^2 or kappa^3.",
+    "The sign-asymmetry theorem uses an exact cross-difference or equivalent proof and states its certified interval separately from the positivity interval.",
+    "K=1/7 and K=1/6 diagnostics are reported without overclaiming; a failure of the crude certificate is labeled as method insufficiency unless a theorem proves actual failure.",
+    "The independent comparison validates theorem content and file hashes and includes real mutations, not Boolean presence checks.",
+    "All reports explicitly mark static kappa as physically unmatched and make no continuum or Clay-mass-gap claim."
+  ],
+  "falsifying_controls": [
+    "delete or alter N2=1/324 or N3=13/1296 and require rejection",
+    "set N0 or N1 nonzero and require endpoint/division logic to reject",
+    "reuse the C1 kappa=1/64 interval as a continuous range proof and require rejection",
+    "replace the common-V measure with independent V resampling so E[x*z*w*t]=0 and require rejection for the primary C1-derived model",
+    "use the wrong denominator inequality direction, such as dividing by an unproved lower/upper bound in a way that increases the claimed lower bound, and require rejection",
+    "omit denominator positivity or allow an interval division whose denominator crosses zero and require rejection",
+    "underestimate the exponential/tail remainder, use numerical floating sampling in place of exact rational bounds, or silently round an outward bound inward and require rejection",
+    "divide by kappa^2 or kappa^3 at kappa=0 without a separate analytic endpoint argument and require rejection",
+    "remove the odd cross-difference term or flip the sign-asymmetry inequality while preserving point intervals and require rejection",
+    "claim K=1/6 from the crude degree-8 certificate when its exact margin is insufficient unless a stronger proof is supplied and independently checked",
+    "substitute Fibonacci index, E_star, alpha ratio or physical energy wording for static kappa and require rejection",
+    "claim physical scale matching, dense convergence, continuum Yang-Mills or a spectral/mass gap from this static integral and require rejection"
+  ],
+  "stop_condition": "Stop after C2 evidence and advisor gate. Then write the updated next-three roadmap from all six accepted/limited/rejected loops, keeping the eight completed stages separate from future plans and explicitly preserving the open physical-scale bridge and finite-convergence/dense-limit questions."
+}

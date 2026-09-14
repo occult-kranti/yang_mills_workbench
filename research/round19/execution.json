@@ -1,0 +1,308 @@
+{
+  "schema": "ym19-execution-v1",
+  "order": [
+    "a1",
+    "a2",
+    "b1",
+    "b2",
+    "c1",
+    "c2"
+  ],
+  "loops": {
+    "a1": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/a1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/a1/output",
+          "identical_files": [
+            "results.json",
+            "component_templates.json",
+            "controls.json",
+            "phase_counts.csv",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/a1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/a1/output",
+          "identical_files": [
+            "results.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/a1/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/a1/check.py",
+            "--evidence",
+            "{run_root}/a1/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "a2": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/a2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/a2/output",
+          "identical_files": [
+            "results.json",
+            "operator-theorem.json",
+            "representative-ledger.json",
+            "tail-fixtures.csv",
+            "controls.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/a2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/a2/output",
+          "identical_files": [
+            "results.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/a2/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/a2/check.py",
+            "--evidence",
+            "{run_root}/a2/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "b1": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/b1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/b1/output",
+          "identical_files": [
+            "results.json",
+            "graph.json",
+            "channels.json",
+            "cross-gram-coefficients.json",
+            "fixture-matrices.json",
+            "basis.csv",
+            "controls.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/b1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/b1/output",
+          "identical_files": [
+            "results.json",
+            "graph.json",
+            "channels.json",
+            "cross-gram-status.json",
+            "controls.json",
+            "manifest.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/b1/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/b1/check.py",
+            "--evidence",
+            "{run_root}/b1/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "b2": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/b2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/b2/output",
+          "identical_files": [
+            "results.json",
+            "block-envelopes.json",
+            "certificates.json",
+            "compressed-pvp-RR.json",
+            "block-certificate.json",
+            "pvp-linear.json",
+            "controls.json",
+            "row-envelopes.csv",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/b2/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/b2/output",
+          "identical_files": [
+            "results.json",
+            "block-certificate.json",
+            "pvp-linear.json",
+            "row-envelopes.json",
+            "source-manifest.json",
+            "manifest.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/b2/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/b2/check.py",
+            "--evidence",
+            "{run_root}/b2/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "c1": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/c1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/c1/output",
+          "identical_files": [
+            "coefficients.json",
+            "controls.json",
+            "freeze-W-regression.json",
+            "graph-reduction.json",
+            "intervals.json",
+            "moment-table.json",
+            "moments.json",
+            "refinement.csv",
+            "results.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/c1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/c1/output",
+          "identical_files": [
+            "coefficients.json",
+            "graph-reduction.json",
+            "intervals.json",
+            "manifest.json",
+            "moments.json",
+            "refinement.csv",
+            "results.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/c1/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/c1/check.py",
+            "--evidence",
+            "{run_root}/c1/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

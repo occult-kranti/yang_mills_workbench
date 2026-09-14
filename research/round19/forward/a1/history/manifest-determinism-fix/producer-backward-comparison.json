@@ -1,0 +1,85 @@
+{
+  "all_checks_passed": true,
+  "backward_results": "research/round19/backward/a1/output/results.json",
+  "checks": [
+    {
+      "backward": [
+        "bridge",
+        "bridge+right-end",
+        "left-end",
+        "left-end+bridge",
+        "left-end+bridge+right-end",
+        "right-end"
+      ],
+      "name": "component type set matches",
+      "passed": true,
+      "producer": [
+        "bridge",
+        "bridge+right-end",
+        "left-end",
+        "left-end+bridge",
+        "left-end+bridge+right-end",
+        "right-end"
+      ]
+    },
+    {
+      "mismatch_count": 0,
+      "mismatches": [],
+      "name": "phase n=2..12 x_phase=0..3 counts match",
+      "passed": true
+    },
+    {
+      "name": "producer signed cases all pass alpha/8",
+      "passed": true,
+      "signed_case_count": 54
+    },
+    {
+      "backward_status": "passed",
+      "name": "backward status accepts local theorem",
+      "passed": true
+    },
+    {
+      "backward_scale": {
+        "E_star": "1",
+        "alpha": "2",
+        "alpha_over_E_star": "2",
+        "fibonacci_labels": "organizational analogy only; absent from Hamiltonian",
+        "kappa": "absent",
+        "lambda_left_over_alpha_max": "1/2",
+        "lambda_right_over_alpha_max": "1/2",
+        "mu_bridge_over_alpha_max": "1/8"
+      },
+      "name": "scale register separates E_star and coupling ratios",
+      "passed": true,
+      "producer_scale": {
+        "E_star": "positive symbolic physical energy reference",
+        "alpha_min_over_E_star": "1",
+        "alpha_over_E_star": "2",
+        "kappa": "absent from the Hamiltonian contract",
+        "lambda_left_over_alpha_bound": "1/2",
+        "lambda_right_over_alpha_bound": "1/2",
+        "lattice_spacing_label": "recorded as absent for A1",
+        "mu_bridge_over_alpha_bound": "1/8"
+      }
+    },
+    {
+      "name": "literal restriction coefficient-jump control present",
+      "passed": true
+    }
+  ],
+  "hashes": {
+    "backward_check_sha256": "dad8c73d2c23b283f3ded54914ba3b2b8ab468e2601582878c6c4f72dac81205",
+    "backward_results_sha256": "d9f6cc1c6d66d848a2a7f972d0109e7ce63ee02fa08ba2bc4283c71304fb281d",
+    "producer_check_sha256": "64ecd3df12fe2c418e3bdcfacb9b946e91b1678b2b3d04140954c751c81c0251",
+    "producer_results_sha256": "e5c23225a83cc1f42ac757ba5a9b0bf9ba847c3d529722acb2c56774777a4882"
+  },
+  "open_before_gate": [
+    "advisor must adjudicate producer/backward comparison",
+    "do not select A2 until A1 gate",
+    "dense homogeneous and infinite-volume/continuum obligations remain open"
+  ],
+  "producer_results": "research/round19/forward/a1/output/results.json",
+  "schema": "ym19-forward-a1-producer-backward-comparison-v1",
+  "stale_backward_helper_note": "research/round19/backward/a1/compare.py expects the pre-contract producer schema; its forward/a1/backward-comparison-readonly output is therefore not used as the gate comparison.",
+  "status": "matched"
+}

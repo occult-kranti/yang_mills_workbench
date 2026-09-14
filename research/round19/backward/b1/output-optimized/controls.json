@@ -1,0 +1,64 @@
+{
+  "controls": [
+    {
+      "mutated_missing_mask": "0c605",
+      "name": "drop one six-edge below-cutoff channel",
+      "passed": true,
+      "rejection_reason": "declared P would omit an E_el=9 alpha/2 physical channel below the strict 6 alpha cutoff"
+    },
+    {
+      "first_missing": "01155",
+      "mutated_dimension": 12,
+      "name": "face-only Round18-style projector rejected for Round19 cutoff",
+      "passed": true,
+      "required_dimension": 48
+    },
+    {
+      "name": "include threshold E_el=6 alpha channel rejected by strict inequality",
+      "passed": true,
+      "threshold_energy_over_alpha": "6",
+      "threshold_mask": "0cc0f"
+    },
+    {
+      "actual_face_count": 11,
+      "name": "outer-boundary-only face ledger rejected",
+      "outer_boundary_face_count": 10,
+      "passed": true,
+      "rejection_reason": "the shared internal plaquette is an actual face term in V and must retain signed incidence"
+    },
+    {
+      "name": "PV2P without PVP subtraction cannot be exact WstarW",
+      "passed": true,
+      "witness": "V Omega lies in P for the face-character part, so an unsubtracted PV2P vacuum diagonal is spurious in the 12-channel subcase and remains an invalid identity for the 48-channel projector"
+    },
+    {
+      "name": "conservative row or norm bound cannot be relabeled exact Gram",
+      "passed": true,
+      "witness": "a scalar upper bound has no 48 by 48 channel-entry ledger and no PVP subtraction provenance"
+    },
+    {
+      "accepted_scale_fields": {
+        "E_star_positive": true,
+        "alpha_over_E_star": "2",
+        "lambda_f_over_alpha": "declared separately",
+        "strict_cutoff_over_E_star": "12"
+      },
+      "name": "bad physical scale rejected",
+      "passed": true,
+      "rejected": [
+        "E_star=0",
+        "alpha=0",
+        "kappa",
+        "tolerance",
+        "volume",
+        "Fibonacci index",
+        "strict_cutoff_over_E_star != 12 at alpha/E_star=2"
+      ]
+    },
+    {
+      "name": "Ritz or sampled matrix gap rejected as full complement threshold",
+      "passed": true,
+      "witness": "full threshold statement follows only after the spin-network channel-completeness argument, not from a finite sample"
+    }
+  ]
+}

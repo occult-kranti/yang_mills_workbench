@@ -1,0 +1,275 @@
+{
+  "controls": [
+    {
+      "name": "reject_old_12_channel_face_only_projector",
+      "old_dimension": 12,
+      "passed": true,
+      "required_dimension": 48
+    },
+    {
+      "name": "reject_constant_3alpha_block_on_PminusOmega",
+      "passed": true,
+      "six_cycle_H0_over_alpha": "9/2"
+    },
+    {
+      "name": "face_six_PVP_terms_are_nonzero_and_must_not_be_omitted",
+      "passed": true,
+      "witness": {
+        "i": 1,
+        "j": 12,
+        "terms": {
+          "2": "-1/4"
+        }
+      }
+    },
+    {
+      "name": "six_six_PVP_terms_are_nonzero_and_must_not_be_omitted",
+      "passed": true,
+      "witness": {
+        "i": 14,
+        "j": 19,
+        "terms": {
+          "4": "-1/4"
+        }
+      }
+    },
+    {
+      "name": "PV2P_or_norm_bound_not_accepted_as_exact_WstarW",
+      "passed": true
+    },
+    {
+      "name": "Round18_3_over_8_benchmark_is_rederived_not_assumed",
+      "passed": true
+    },
+    {
+      "name": "finite_Ritz_or_sample_gap_not_used",
+      "passed": true,
+      "reason": "all coefficient-box bounds use row-sum interval inequalities over the continuous box"
+    },
+    {
+      "name": "positive_E_star_checked_directly",
+      "passed": true,
+      "scale": {
+        "E_star": "positive symbolic physical energy reference",
+        "alpha_over_E_star": "2",
+        "strict_cutoff_over_E_star": "12"
+      }
+    },
+    {
+      "name": "E1_lower_and_E0_upper_kept_separate",
+      "passed": true
+    },
+    {
+      "box_faces": 11,
+      "name": "coefficient_box_extreme_deletion_rejected",
+      "passed": true,
+      "reason": "certificate bounds every face by the same r and records all 11 face coefficients in PVP/W rows"
+    },
+    {
+      "control": {
+        "E1_lower": {
+          "certified_positive": true,
+          "decimal_interval_outward": {
+            "digits": 15,
+            "lower": "0.593750000000000",
+            "upper": "0.593750000000000"
+          },
+          "expression": "(17/8 + 19/16 - sqrt(289/64))/2",
+          "radicand": "289/64",
+          "rational_lower_bound_from_sqrt_interval": "19/32",
+          "rational_upper_bound_from_sqrt_interval": "19/32"
+        },
+        "certified_positive": true,
+        "determinant": "1653/1024",
+        "r": "7/16"
+      },
+      "name": "seven_over_sixteen_positive_with_same_envelope",
+      "passed": true
+    },
+    {
+      "control": {
+        "E1_lower": {
+          "certified_positive": false,
+          "decimal_interval_outward": {
+            "digits": 15,
+            "lower": "-0.072875655532296",
+            "upper": "-0.072875655532295"
+          },
+          "expression": "(2 + 1/2 - sqrt(7))/2",
+          "radicand": "7",
+          "rational_lower_bound_from_sqrt_interval": "-3643782776614764762540393841/50000000000000000000000000000",
+          "rational_upper_bound_from_sqrt_interval": "-145751311064590590501615753639/2000000000000000000000000000000"
+        },
+        "certified_positive": false,
+        "determinant": "-3/16",
+        "r": "1/2",
+        "reason": "same row-bound Schur determinant is negative, so this certificate cannot prove positivity at r=1/2"
+      },
+      "name": "one_half_insufficient_with_same_envelope",
+      "passed": true
+    }
+  ],
+  "parameter_envelope": {
+    "a_r_over_alpha": "3 - 2 r",
+    "certified_positive_range": "0 <= r < (30 - 2 sqrt(87)) / 23",
+    "d_r_over_alpha": "6 - 11 r",
+    "determinant_condition": "18 - 45 r + 69 r^2 / 4 > 0",
+    "r_1_over_2_insufficient_control": {
+      "E1_lower": {
+        "certified_positive": false,
+        "decimal_interval_outward": {
+          "digits": 15,
+          "lower": "-0.072875655532296",
+          "upper": "-0.072875655532295"
+        },
+        "expression": "(2 + 1/2 - sqrt(7))/2",
+        "radicand": "7",
+        "rational_lower_bound_from_sqrt_interval": "-3643782776614764762540393841/50000000000000000000000000000",
+        "rational_upper_bound_from_sqrt_interval": "-145751311064590590501615753639/2000000000000000000000000000000"
+      },
+      "certified_positive": false,
+      "determinant": "-3/16",
+      "r": "1/2",
+      "reason": "same row-bound Schur determinant is negative, so this certificate cannot prove positivity at r=1/2"
+    },
+    "r_7_over_16_positive_control": {
+      "E1_lower": {
+        "certified_positive": true,
+        "decimal_interval_outward": {
+          "digits": 15,
+          "lower": "0.593750000000000",
+          "upper": "0.593750000000000"
+        },
+        "expression": "(17/8 + 19/16 - sqrt(289/64))/2",
+        "radicand": "289/64",
+        "rational_lower_bound_from_sqrt_interval": "19/32",
+        "rational_upper_bound_from_sqrt_interval": "19/32"
+      },
+      "certified_positive": true,
+      "determinant": "1653/1024",
+      "r": "7/16"
+    },
+    "range_upper_decimal_interval_outward": {
+      "digits": 15,
+      "lower": "0.493271386687929",
+      "upper": "0.493271386687930"
+    },
+    "range_upper_rational_lower_bound": "5672620946911184954445524457679/11500000000000000000000000000000",
+    "range_upper_rational_upper_bound": "70907761836389811930569055721/143750000000000000000000000000",
+    "row_bound_formula_verified_from_exact_rows": true,
+    "schur_lower_R_r_over_alpha": "(9 - 13 r - sqrt(100 r^2 - 54 r + 9))/2",
+    "w_r_over_alpha_squared": "19 r^2 / 4"
+  },
+  "primary_box": {
+    "E0_upper_over_alpha": "0",
+    "H0_R_levels_over_alpha": {
+      "face_cycles": "3",
+      "six_cycles": "9/2"
+    },
+    "PminusOmega_block_lower_a_over_alpha": "11/4",
+    "PminusOmega_block_row_radius_max_over_alpha": "1/4",
+    "Q_lower_without_cross_over_alpha": "37/8",
+    "coefficient_box": "|lambda_f| <= (1/8) alpha for all 11 faces",
+    "cross_WstarW_row_radius_max_over_alpha_squared": "19/256",
+    "gap_lower_over_alpha": {
+      "certified_positive": true,
+      "decimal_interval_outward": {
+        "digits": 15,
+        "lower": "2.711218790511668",
+        "upper": "2.711218790511669"
+      },
+      "expression": "(11/4 + 37/8 - sqrt(61/16))/2",
+      "radicand": "61/16",
+      "rational_lower_bound_from_sqrt_interval": "271121879051166820073378465803/100000000000000000000000000000",
+      "rational_upper_bound_from_sqrt_interval": "5422437581023336401467569316061/2000000000000000000000000000000"
+    },
+    "gram_row_radius_histogram": {
+      "17/256": 1,
+      "19/256": 2,
+      "19/512": 8,
+      "25/512": 4,
+      "3/64": 8,
+      "37/512": 8,
+      "47/1024": 8,
+      "51/1024": 8
+    },
+    "pvp_row_radius_histogram": {
+      "1/16": 4,
+      "1/4": 1,
+      "1/8": 26,
+      "3/16": 8,
+      "5/32": 8
+    },
+    "r": "1/8",
+    "schur_lower_E1_over_alpha": {
+      "certified_positive": true,
+      "decimal_interval_outward": {
+        "digits": 15,
+        "lower": "2.711218790511668",
+        "upper": "2.711218790511669"
+      },
+      "expression": "(11/4 + 37/8 - sqrt(61/16))/2",
+      "radicand": "61/16",
+      "rational_lower_bound_from_sqrt_interval": "271121879051166820073378465803/100000000000000000000000000000",
+      "rational_upper_bound_from_sqrt_interval": "5422437581023336401467569316061/2000000000000000000000000000000"
+    },
+    "used_exact_B1_Gram": true
+  },
+  "round18_3_over_8_benchmark": {
+    "E0_upper_over_alpha": "0",
+    "H0_R_levels_over_alpha": {
+      "face_cycles": "3",
+      "six_cycles": "9/2"
+    },
+    "PminusOmega_block_lower_a_over_alpha": "9/4",
+    "PminusOmega_block_row_radius_max_over_alpha": "3/4",
+    "Q_lower_without_cross_over_alpha": "15/8",
+    "admitted_as_round19_theorem": true,
+    "coefficient_box": "|lambda_f| <= (3/8) alpha for all 11 faces",
+    "cross_WstarW_row_radius_max_over_alpha_squared": "171/256",
+    "gap_lower_over_alpha": {
+      "certified_positive": true,
+      "decimal_interval_outward": {
+        "digits": 15,
+        "lower": "1.223974508437578",
+        "upper": "1.223974508437579"
+      },
+      "expression": "(9/4 + 15/8 - sqrt(45/16))/2",
+      "radicand": "45/16",
+      "rational_lower_bound_from_sqrt_interval": "2447949016875157727693119748451/2000000000000000000000000000000",
+      "rational_upper_bound_from_sqrt_interval": "611987254218789431923279937113/500000000000000000000000000000"
+    },
+    "gram_row_radius_histogram": {
+      "153/256": 1,
+      "171/256": 2,
+      "171/512": 8,
+      "225/512": 4,
+      "27/64": 8,
+      "333/512": 8,
+      "423/1024": 8,
+      "459/1024": 8
+    },
+    "historical_Rstar_3_over_8": "0.11876245",
+    "pvp_row_radius_histogram": {
+      "15/32": 8,
+      "3/16": 4,
+      "3/4": 1,
+      "3/8": 26,
+      "9/16": 8
+    },
+    "r": "3/8",
+    "schur_lower_E1_over_alpha": {
+      "certified_positive": true,
+      "decimal_interval_outward": {
+        "digits": 15,
+        "lower": "1.223974508437578",
+        "upper": "1.223974508437579"
+      },
+      "expression": "(9/4 + 15/8 - sqrt(45/16))/2",
+      "radicand": "45/16",
+      "rational_lower_bound_from_sqrt_interval": "2447949016875157727693119748451/2000000000000000000000000000000",
+      "rational_upper_bound_from_sqrt_interval": "611987254218789431923279937113/500000000000000000000000000000"
+    },
+    "used_exact_B1_Gram": true
+  }
+}

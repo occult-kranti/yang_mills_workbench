@@ -1,0 +1,260 @@
+{
+  "admission_failures": [],
+  "checks": [
+    {
+      "name": "actual signed graph incidence matches by coordinate-normalized edges/faces",
+      "passed": true
+    },
+    {
+      "expected_count": 48,
+      "name": "strict-cutoff basis mask set matches independent 48-channel P",
+      "passed": true,
+      "producer_count": 48
+    },
+    {
+      "name": "threshold witness and multiplicity audit match 99 assignments / 107 physical channels",
+      "passed": true,
+      "producer_assignment_count": 99,
+      "producer_dist": {
+        "1": 91,
+        "2": 8
+      },
+      "producer_physical_count": 107
+    },
+    {
+      "name": "scale checkpoint is alpha/E_star=2 and strict_cutoff/E_star=12",
+      "passed": true,
+      "producer_scale": {
+        "E_star": "positive symbolic physical energy reference",
+        "alpha_over_E_star": "2",
+        "fibonacci_labels": "organizing analogy only",
+        "kappa": "absent",
+        "strict_cutoff_over_E_star": "12"
+      }
+    },
+    {
+      "name": "full ordered matrix entries have matching transposes before upper-triangle comparison",
+      "passed": true,
+      "transpose_failures": []
+    },
+    {
+      "expected_entries": 222,
+      "name": "full cross-Gram commutative polynomial matches independent exact epsilon contraction",
+      "passed": true,
+      "producer_entries": 222
+    },
+    {
+      "name": "forward ordered quadratic coefficient count is 867",
+      "passed": true,
+      "producer_value": 867
+    },
+    {
+      "failures": [],
+      "name": "source manifest binds actual producer source and output bytes",
+      "passed": true,
+      "source_manifest_sha256": "029e921f28a8f6ba3eb65282d0ad0ccf859bc2c0a02102db9a6b6aa237480439"
+    },
+    {
+      "detected_failures": [
+        "basis_mask_set"
+      ],
+      "name": "mutation rejects omit_below_cutoff_channel",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "basis_mask_set"
+      ],
+      "name": "mutation rejects include_threshold_in_basis",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "graph_signed_incidence"
+      ],
+      "name": "mutation rejects drop_signed_face_incidence",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_polynomial"
+      ],
+      "name": "mutation rejects alter_one_cross_gram_coefficient",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_transpose_symmetry"
+      ],
+      "name": "mutation rejects antisymmetric_matrix_triangle_perturbation",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_polynomial"
+      ],
+      "name": "mutation rejects missing_PVP_subtraction_spurious_vacuum",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "mutation rejects zero_scale",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "mutation rejects wrong_cutoff_scale",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_polynomial",
+        "cross_gram_ordered_coefficient_count"
+      ],
+      "name": "mutation rejects bound_as_exact_gram",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "threshold_multiplicity"
+      ],
+      "name": "mutation rejects threshold_assignment_count_misreported_as_physical",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_source_entry:check.py"
+      ],
+      "name": "mutation rejects manifest_missing_check_hash",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_output_entry:results.json"
+      ],
+      "name": "mutation rejects manifest_missing_required_output_entry",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_output_hash:results.json"
+      ],
+      "name": "mutation rejects manifest_wrong_required_output_hash",
+      "passed": true
+    }
+  ],
+  "checks_count": 21,
+  "independent_cross_gram_sha256": "0f0ee60cb89847ca01a8e6a9f2360c6fd2f395ed0fb8500f8fb6f9f32c016781",
+  "independent_results_sha256": "3be3908c17add132c593457de8af65f0009428e6d09df10e853cbd7906bf84a5",
+  "mutation_controls": [
+    {
+      "detected_failures": [
+        "basis_mask_set"
+      ],
+      "name": "omit_below_cutoff_channel",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "basis_mask_set"
+      ],
+      "name": "include_threshold_in_basis",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "graph_signed_incidence"
+      ],
+      "name": "drop_signed_face_incidence",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_polynomial"
+      ],
+      "name": "alter_one_cross_gram_coefficient",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_transpose_symmetry"
+      ],
+      "name": "antisymmetric_matrix_triangle_perturbation",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_polynomial"
+      ],
+      "name": "missing_PVP_subtraction_spurious_vacuum",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "zero_scale",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "physical_scale"
+      ],
+      "name": "wrong_cutoff_scale",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "cross_gram_polynomial",
+        "cross_gram_ordered_coefficient_count"
+      ],
+      "name": "bound_as_exact_gram",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "threshold_multiplicity"
+      ],
+      "name": "threshold_assignment_count_misreported_as_physical",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_source_entry:check.py"
+      ],
+      "name": "manifest_missing_check_hash",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_missing_output_entry:results.json"
+      ],
+      "name": "manifest_missing_required_output_entry",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "source_manifest_output_hash:results.json"
+      ],
+      "name": "manifest_wrong_required_output_hash",
+      "passed": true
+    }
+  ],
+  "normalized_counts": {
+    "basis_masks": 48,
+    "cross_matrix_pairs": 222,
+    "ordered_quadratic_coefficients": 867,
+    "producer_cross_matrix_pairs": 222
+  },
+  "producer_cross_gram_sha256": "387344ba4108afcf32e21a89a0aff023abc3f8134f1767008a9acd0b959bec33",
+  "producer_evidence": "/workspace/scratch/544697acf6a6/yang_mills_workbench/research/round19/forward/b1/output",
+  "producer_results_sha256": "792f2d43ab72de2779a4d4fb6505bb221323497da561e482b2033ac16c6bbde4",
+  "producer_source": "/workspace/scratch/544697acf6a6/yang_mills_workbench/research/round19/forward/b1",
+  "producer_source_manifest_sha256": "029e921f28a8f6ba3eb65282d0ad0ccf859bc2c0a02102db9a6b6aa237480439",
+  "schema": "ym19-backward-b1-comparison-v2",
+  "status": "accepted"
+}

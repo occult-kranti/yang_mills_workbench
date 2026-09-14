@@ -1,0 +1,87 @@
+{
+  "checks": {
+    "backward_replay": "advisor replay reproduced current saved backward A2 output byte-for-byte",
+    "comparison_replay": "advisor replay reproduced current saved independent comparison byte-for-byte",
+    "corrected_domain_statement": "bounded self-adjoint perturbation preserves D(H_ref) as the operator domain and leaves the form domain unchanged",
+    "forward_replay": "advisor replay reproduced current saved forward A2 outputs byte-for-byte",
+    "gate_completeness_hash_check": "all current a2-gate files were validated against disk after refresh",
+    "independent_comparison_checks": 14,
+    "independent_comparison_status": "accepted",
+    "omitted_weight": "107/135",
+    "selected_weight": "28/135",
+    "stale_history_preserved": [
+      "backward/a2/history/accepted-before-domain-equality-review.json",
+      "backward/a2/history/domain-equality-stale-forward-rejected.json"
+    ],
+    "tail_rows": 9,
+    "total_weight": "1"
+  },
+  "contract": "advisor/contract-a2.json",
+  "depends_on": [
+    "advisor/a1-gate.json"
+  ],
+  "evidence_classification": {
+    "json_limit": "The operator-theorem JSON records premises and corrected theorem text; it is not itself a formal proof of infinite-dimensional domain closure or spectral isolation.",
+    "normal_optimized_counted_once": true,
+    "python_exact_verification": "Python exactly verifies dyadic coefficient/tail arithmetic, representative zero-mean witnesses, provenance/source manifests and admission/mutation controls.",
+    "reviewed_written_argument": "Closed-form construction, form core/domain closure, codimension-one spectral projection, gauge invariance and non-vacuity are reviewed mathematical arguments in the project record; they are not machine-formalized proofs."
+  },
+  "files": {
+    "advisor/a1-gate.json": "2f47b6c4dd4f478662c9d82ee7971454f7a77d05ebb7dd483e0bdf2f2281fc78",
+    "advisor/a2-decision-snapshot-v2.md": "e4ec7ba43323d2de94da98d180a2d886d56e239db49aa3a916cd515e98b2b887",
+    "advisor/a2-decision-snapshot.md": "2fe5ffa9d9cb7779fd09707bf1172422ff83388e02a40fbb4db9bb69c028e67f",
+    "advisor/a2-gate-history-before-manifest-v5-refresh-c15c6e6c0593.json": "c15c6e6c05935cf8d3d6e52ede090ebb89e87fbffcdc45fdde4513f7baa4bbc4",
+    "advisor/a2-source-bound-inventory.json": "2722ae9d88c2eee6bd301041a8b472aa25bdeed571fba13025276db9d99b2724",
+    "advisor/contract-a2.json": "ddc4cb6ae18458ae21b0b18afdec346386f5dfcf0e1c1a1b6974a5a072244a8b",
+    "backward/a2/check.py": "79599cdfbb8d8526c69695ca3953e7cad1f0f274ff2c051224816fa47b16e179",
+    "backward/a2/compare.py": "e4b48741220221b0035d1d10b91c2dcc3ffa475f8a39073e992b6911d913f78c",
+    "backward/a2/comparison/comparison.json": "f657d610651118b23ef3ed2ea0ad387b936f7979ba77e0950d1779d3c1fe9f71",
+    "backward/a2/history/accepted-before-domain-equality-review.json": "a71ee7600c0843d23a6938e240976286820125baf4aade55a9316076fbdc73eb",
+    "backward/a2/history/domain-equality-stale-forward-rejected.json": "a12e117ef0d73a60f5b4db94a7a075bb598a5384d28071fa6034c26fe827468f",
+    "backward/a2/manifest.json": "0d5e10a8ea1f87ac8315e41db45cfd5d58eae942198d2c1d76a107628b84f901",
+    "backward/a2/output-optimized/results.json": "b22e91b4ee5b16e78e002275504e150d834a2ee2d9dc893efa6be038aeb663ab",
+    "backward/a2/output/results.json": "b22e91b4ee5b16e78e002275504e150d834a2ee2d9dc893efa6be038aeb663ab",
+    "backward/a2/report.md": "32b6b6343a01ca5621aa4937314af41b5d894778965c3bed68b6ac6fe114c63c",
+    "forward/a2/check.py": "e6d8617a0593d13a711cb63447e1d2d3e32a3c9337efdbc95fe1a2ffac22323e",
+    "forward/a2/optimized-comparison.json": "0b556fd92341bacceb9c76f194a1231ca2b0d4f5905f63e5af15dc8ea194a4e7",
+    "forward/a2/output-optimized/controls.json": "4f046cc074991ac7d55ec67877fff091895373346d2d9aafd8b4744626ce3f84",
+    "forward/a2/output-optimized/operator-theorem.json": "1b81610bf32d27ff45a84f5f92eddf3a41c5397438a3e1682fe433cace55c012",
+    "forward/a2/output-optimized/representative-ledger.json": "f52e35cec7f7d07a203be7fb81b025c772bca6c9656deb89be73d6f648caf1c0",
+    "forward/a2/output-optimized/results.json": "43f45abfdc365e1c1f423bfa64b93a4ff3f8386acaed49c139a05521a2e269b9",
+    "forward/a2/output-optimized/source-manifest.json": "a51d5f4a1e980f4f3a02772cdbf3c1879b1fbcb460cdec87412e5e6fbf9bd38f",
+    "forward/a2/output-optimized/tail-fixtures.csv": "20c27f56c42a2410d7f34e3434368bd5d3835d3f4853585eacb1cc3a3d28a04a",
+    "forward/a2/output/controls.json": "4f046cc074991ac7d55ec67877fff091895373346d2d9aafd8b4744626ce3f84",
+    "forward/a2/output/operator-theorem.json": "1b81610bf32d27ff45a84f5f92eddf3a41c5397438a3e1682fe433cace55c012",
+    "forward/a2/output/representative-ledger.json": "f52e35cec7f7d07a203be7fb81b025c772bca6c9656deb89be73d6f648caf1c0",
+    "forward/a2/output/results.json": "43f45abfdc365e1c1f423bfa64b93a4ff3f8386acaed49c139a05521a2e269b9",
+    "forward/a2/output/source-manifest.json": "a51d5f4a1e980f4f3a02772cdbf3c1879b1fbcb460cdec87412e5e6fbf9bd38f",
+    "forward/a2/output/tail-fixtures.csv": "20c27f56c42a2410d7f34e3434368bd5d3835d3f4853585eacb1cc3a3d28a04a",
+    "forward/a2/report.md": "6fc6b0c4ee95d11e5e1ab8f9b6249ace7b9792728ee93bd919510ce440bc51fb",
+    "methods/paired-physics-research.md": "8ba4bbb8cbc7dee2c6a8ab7e643863a7737e06eb6a8becb8eb16e9151e2b7b80",
+    "methods/scale-and-exceptions.md": "a96d1ab5b367ab81f9e9f2767d5532aea6339150b7ed24cb798f70e6dd5bbdb4"
+  },
+  "loop": "a2",
+  "mathematical_result": {
+    "accepted_gap": "For tau=1/64, crude gap >= 7alpha/64; exact-ledger gap >= 973alpha/8640. With alpha/E_star=2, exact gap/E_star >= 973/4320.",
+    "core_gap": "delta=alpha/8 on the closed product form domain above Omega_ref.",
+    "operator": "H_ref is the closed nonnegative reference form/operator; bounded self-adjoint V gives H=H_ref+V self-adjoint on exactly D(H_ref), with form domain unchanged.",
+    "perturbation_bound": "||V|| <= beta <= alpha|tau|; exact omitted coefficient weight is 107/135.",
+    "reference": "Incomplete infinite tensor product stabilized by the A1 complete-strip/free reference vector Omega_ref.",
+    "spectral_statement": "The spectral projection below delta-beta is nonzero and rank one by the reviewed codimension-one form argument, yielding an isolated ground eigenvalue in the declared representation when beta<delta.",
+    "zero_mean": "<Omega_ref,V Omega_ref>=0 termwise by exhaustive free-Haar witness classes."
+  },
+  "prior_gate_snapshot": "advisor/a2-gate-history-before-manifest-v5-refresh-c15c6e6c0593.json",
+  "refresh_reason": "Reverse manifest v5 corrected stale backward/a2/report.md and backward/a2/manifest.json bindings; mathematical result and comparison status unchanged.",
+  "remaining_open": [
+    "finite clipped-restriction convergence to the A2 product representation",
+    "homogeneous dense nondecaying stability",
+    "dense limiting spectral passage",
+    "explicit dense theorem constants and continuum scaling",
+    "continuum Yang-Mills existence/mass gap",
+    "any physical role for double-Fibonacci geometry"
+  ],
+  "schema": "ym19-advisor-loop-gate-v1",
+  "scope": "Goal A Loop 2 only: direct incomplete product-representation construction for a summable omitted-face perturbation of the accepted A1 complete-strip/free reference. This is not finite clipped-restriction convergence, homogeneous dense stability, continuum Yang-Mills or a mass-gap theorem.",
+  "source_bound_inventory": "advisor/a2-source-bound-inventory.json",
+  "status": "accepted"
+}

@@ -1,0 +1,63 @@
+{
+  "acceptance_tests": [
+    "The graph is the actual two-cube graph, not an outer-boundary simplification, and every face/link used in V has a signed incidence record.",
+    "The strict cutoff E_el < 6*alpha is enforced exactly. A channel with E_el = 6*alpha is exhibited and excluded, or its absence is proved and the gate is limited/rejected accordingly.",
+    "All physical channels below cutoff are enumerated without duplicates, including nonplanar cycles and vertex intertwiner multiplicities.",
+    "If complete proof supports the anticipated classification, vacuum plus all four-edge and six-edge fundamental simple cycles are included; no unsupported selected examples may stand in for completeness.",
+    "P is proved to reduce H0 before W^*W is used as a complement object.",
+    "The exact full cross Gram P V^2 P - (P V P)^2 is computed for the declared P and V, or the result is explicitly limited with the original exact-Gram obligation still open and a concrete obstruction recorded.",
+    "Normal and optimized executions are deterministic and counted once.",
+    "Independent comparison reconstructs graph enumeration, scale fields, threshold exclusion and Gram entries rather than trusting producer pass booleans."
+  ],
+  "depends_on": [
+    "advisor/a1-gate.json",
+    "advisor/a2-gate.json"
+  ],
+  "falsifying_controls": [
+    "Drop one nonplanar six-edge simple cycle or one allowed intertwiner and require the independent comparison to fail.",
+    "Replace the actual two-cube graph by the outer boundary-only graph and require graph-incidence checks to fail.",
+    "Include a threshold E_el = 6*alpha channel in P and require strict-cutoff checks to fail.",
+    "Present PV^2P without subtracting (PVP)^2 as the exact cross Gram and require rejection.",
+    "Present a conservative norm upper bound as if it were the exact cross Gram and require rejection or limited status.",
+    "Use kappa, numerical tolerance, volume, Fibonacci index or E_star=0 as the energy scale and require rejection.",
+    "Promote a Ritz matrix gap or sampled basis gap to the full complement threshold without channel completeness and require rejection."
+  ],
+  "goal": "Goal B loop 1: complete strict-cutoff low-energy projector and full cross Gram on the actual two-cube SU(2) graph",
+  "non_claims": [
+    "B1 does not prove a continuous finite spectral domain, homogeneous dense stability or continuum mass gap.",
+    "B1 does not discharge the original exact cross-Gram obligation if it returns only a conservative substitute.",
+    "B1 does not import A2's product-representation summability as a finite two-cube dense spectral result."
+  ],
+  "physical_contract": {
+    "energy_scale": "freeze E_star>0 and report alpha/E_star and all lambda_f/alpha separately; do not normalize by kappa, tolerance, volume, Fibonacci index or static Euclidean coefficients.",
+    "gauge_sector": "physical SU(2) gauge-invariant spin-network sector with vertex intertwiners counted explicitly.",
+    "graph": "actual two-cube graph with internal/shared faces and all independent links/faces declared by signed incidence; the outer boundary-only graph is an invalid substitute.",
+    "hamiltonian": "H = alpha * sum_e C_e - sum_f lambda_f x_f on the actual two-cube graph; C_e=j_e(j_e+1) and x_f=ReTr(U_f)/2 in the established Round18/Round19 convention.",
+    "potential": "V = - sum_f lambda_f x_f over the declared face set; the cross-block object is W^*W = P V^2 P - (P V P)^2 after proving P reduces H0.",
+    "strict_cutoff": "P is the complete physical electric-energy projector for E_el < 6*alpha above the vacuum. Threshold channels at E_el = 6*alpha are excluded by strict inequality."
+  },
+  "required_outputs": {
+    "advisor_gate_path": "research/round19/advisor/b1-gate.json",
+    "backward": [
+      "independently reconstruct the low-energy channel enumeration from the desired strict-cutoff statement rather than importing the producer's list",
+      "independently count nonplanar cycles and intertwiners and compare against the forward list for duplicates and omissions",
+      "independently verify the threshold channel at E_el = 6*alpha is excluded from P",
+      "recompute or independently check the full cross Gram W^*W; if only a conservative upper bound is supplied, certify that it is labeled limited and that the original exact-Gram obligation remains open",
+      "run mutation controls for omitted nonplanar cycles, outer-boundary substitution, threshold inclusion, missing P subtraction and conservative-bound-as-identity claims"
+    ],
+    "backward_owned_paths": "research/round19/backward/b1/",
+    "forward": [
+      "declare the actual two-cube signed graph incidence, faces and orientation conventions used by every calculation",
+      "enumerate every gauge-invariant physical channel with E_el < 6*alpha, including nonplanar simple cycles and all vertex intertwiner multiplicities",
+      "prove P reduces H0 and give the exact complement threshold statement",
+      "exhibit an actual physical channel at E_el = 6*alpha that is omitted by the strict cutoff, or prove that the anticipated threshold witness is absent and downgrade the target",
+      "compute the full exact cross Gram W^*W = P V^2 P - (P V P)^2 for the declared P and V, with symbolic/rational dependence on the face couplings whenever feasible",
+      "produce source manifests, exact output files, ordinary/optimized deterministic runs and wrong-model controls"
+    ],
+    "forward_owned_paths": "research/round19/forward/b1/"
+  },
+  "schema": "ym19-b1-contract-v1",
+  "status": "frozen",
+  "stop_condition": "Stop B1 after either a complete strict-cutoff enumeration with full exact cross Gram and controls, or a precise limited/rejected obstruction naming the first missing channel/Gram computation barrier. Do not choose or execute B2 until the B1 gate records the actual evidence.",
+  "target_statement": "If the full cutoff proof supports it, B1 should classify P as the vacuum plus all physical fundamental simple-cycle channels below 6*alpha, including all four-edge and six-edge cycles, with nonplanar cycles and intertwiner multiplicities counted. If that classification is incomplete or false, B1 must return a limited/rejected result with the first missing or extra channel identified."
+}

@@ -1,0 +1,288 @@
+{
+  "schema": "ym19-exception-ledger-v1",
+  "purpose": "Record failed premises, tested workarounds and the equations valid in each declared case. A workaround does not close its parent target automatically.",
+  "entries": [
+    {
+      "id": "boundary-clipping",
+      "loop": "A1",
+      "status": "accepted-repair",
+      "failure": "Selecting only complete three-face strips makes an old face coefficient depend on the containing box.",
+      "workaround": "Fix one infinite face assignment, take literal restrictions, and classify every clipped component at all four x phases.",
+      "equations": {
+        "proper_clipped_component": "Delta/alpha >= 3/4 - sum_f |lambda_f|/alpha",
+        "complete_LMR_component": "Delta/alpha >= 3/4 - max(|lambda_L|,|lambda_R|)/alpha - |mu|/alpha",
+        "common_conclusion": "Delta >= alpha/8 under the A1 bounds"
+      },
+      "evidence": [
+        "advisor/a1-gate.json",
+        "forward/a1/report.md",
+        "backward/a1/comparison/comparison.json"
+      ],
+      "limit": "Local boundary consistency does not establish finite-volume spectral convergence."
+    },
+    {
+      "id": "zero-mean-summable-exception",
+      "loop": "A2",
+      "status": "accepted-narrow-exception",
+      "failure": "A dense homogeneous perturbation cannot be treated as a globally norm-summable sum by the proposed bound.",
+      "workaround": "Declare a decaying omitted-face assignment in a direct incomplete product representation; prove a free-Haar witness for each omitted face.",
+      "equations": {
+        "generic_bounded_case": "Delta >= delta - 2 beta",
+        "zero_reference_mean_case": "Delta >= delta - beta, with beta < delta and <Omega_ref,V Omega_ref>=0",
+        "declared_dyadic_case": "delta=alpha/8; beta <= alpha |tau| (107/135)",
+        "tau_1_over_64": "Delta >= 973 alpha/8640"
+      },
+      "evidence": [
+        "advisor/a2-gate.json",
+        "forward/a2/report.md",
+        "backward/a2/comparison/comparison.json"
+      ],
+      "limit": "The direct representation is not proved to be the limit of clipped finite restrictions; homogeneous dense stability remains open."
+    },
+    {
+      "id": "bounded-perturbation-domain",
+      "loop": "A2",
+      "status": "corrected-and-regated",
+      "failure": "An earlier report said the bounded perturbation might change the operator domain.",
+      "workaround": "Use the bounded self-adjoint perturbation statement with exact operator-domain equality.",
+      "equations": {
+        "operator": "H=H_ref+V on D(H)=D(H_ref)",
+        "forms": "Q(H)=Q(H_ref)"
+      },
+      "evidence": [
+        "advisor/a2-decision-snapshot-v2.md",
+        "forward/a2/history/domain-equality-correction.md"
+      ],
+      "limit": "Python premise flags are not a formal proof of infinite-dimensional domain or spectral statements."
+    },
+    {
+      "id": "enlarged-gram-sparsity",
+      "loop": "B1",
+      "status": "accepted-with-declared-scope",
+      "failure": "The older 12-channel face-only Gram does not cover the new strict E_el<6 alpha projector.",
+      "workaround": "Rebuild the projector independently and eliminate Wilson-character moment candidates by link-center parity before exact Haar contraction.",
+      "equations": {
+        "parity_zero": "<chi_A chi_B chi_f chi_g>=0 unless mask(A) XOR mask(B) XOR mask(f) XOR mask(g)=0",
+        "required_exact_object": "W*W=PV^2P-(PVP)^2"
+      },
+      "evidence": [
+        "advisor/contract-b1.json",
+        "advisor/b1-advisor-watch.md",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "Full exact 48-channel Gram completed with two distinct Haar contractions. This finite graph calculation does not establish a volume-uniform or continuum gap."
+    },
+    {
+      "id": "threshold-intertwiner-multiplicity",
+      "loop": "B1",
+      "status": "accepted-with-declared-scope",
+      "failure": "The threshold support/label count was named as a physical channel count, omitting extra invariant states at degree-four vertices.",
+      "workaround": "Count the product of vertex invariant multiplicities for each admitted edge-label assignment.",
+      "equations": {
+        "physical_dimension": "dim H_E = sum_{admitted labels at E} product_v dim Inv(tensor_{e incident v} V_{j_e})",
+        "observed_threshold_audit": "99 assignments = 91 with multiplicity 1 + 8 with multiplicity 2; physical dimension = 107"
+      },
+      "evidence": [
+        "advisor/contract-b1.json",
+        "forward/b1/check.py",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "The threshold E=6 alpha is excluded from P by the strict cutoff; its multiplicity correction does not enlarge the accepted below-threshold 48-dimensional projector."
+    },
+    {
+      "id": "projector-dependent-cross-gram",
+      "loop": "B1",
+      "status": "reviewed-operator-identity",
+      "failure": "The enlarged projector changes the complement Gram, so its face principal block need not equal the older face-only complement Gram.",
+      "workaround": "Retain the PV^2P principal-block regression and explicitly subtract transitions into newly retained channels.",
+      "equations": {
+        "nested_projectors": "P_new=P_old+R, with P_old R=0",
+        "correct_regression": "P_old W_new*W_new P_old = W_old*W_old - P_old V R V P_old",
+        "ordering": "P_old W_new*W_new P_old <= W_old*W_old"
+      },
+      "evidence": [
+        "advisor/b1-forward-review.md",
+        "advisor/contract-b1.json",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "The operator identity requires the same V and graph; an altered face set is a different model."
+    },
+    {
+      "id": "matrix-versus-symmetrized-comparison",
+      "loop": "B1",
+      "status": "accepted-with-declared-scope",
+      "failure": "A comparison combined matrix triangles while also doubling already combined off-diagonal face monomials; on these data the factors canceled but an antisymmetric matrix error could be hidden.",
+      "workaround": "Combine ordered face-pair terms within each ordered matrix entry, verify transpose equality, then compare a single canonical matrix triangle.",
+      "equations": {
+        "entry_polynomial": "G_ij(lambda)=sum_{f,g} c_ijfg lambda_f lambda_g",
+        "required_matrix_check": "G_ij(lambda)=G_ji(lambda), checked before restricting to i<=j",
+        "rejecting_control": "delta G_ij=+c; delta G_ji=-c must fail even though the symmetrized quadratic form is unchanged"
+      },
+      "evidence": [
+        "backward/b1/comparison/comparison.json",
+        "backward/b1/history/comparison-before-normalization-sourcebinding-fix.json",
+        "advisor/b1-gate.json"
+      ],
+      "limit": "Agreement of symmetrized forms alone cannot certify the complete producer matrix."
+    },
+    {
+      "id": "enlarged-projector-magnetic-block",
+      "loop": "B2",
+      "status": "accepted-with-declared-scope",
+      "failure": "The old face-only compressed magnetic form vanished on vacuum-perpendicular states; the enlarged projector has nonzero magnetic couplings.",
+      "workaround": "Use all compressed coefficients and the exact complement Gram to bound both operator blocks and their cross term.",
+      "equations": {
+        "compressed_block": "RHR/alpha >= 3-2r",
+        "complement": "QHQ/alpha >= 6-11r",
+        "cross_norm": "||QVR||^2/alpha^2 <= 19r^2/4",
+        "codimension_one_lower_bound": "E1/alpha >= (9-13r-sqrt(100r^2-54r+9))/2"
+      },
+      "evidence": [
+        "advisor/contract-b2.json",
+        "forward/b2/report.md",
+        "backward/b2/report.md",
+        "advisor/b2-gate.json",
+        "backward/b2/comparison/comparison.json"
+      ],
+      "limit": "These are bounds for the full operator on one finite graph; no growing-volume or continuum conclusion follows."
+    },
+    {
+      "id": "spectral-certificate-boundary",
+      "loop": "B2",
+      "status": "accepted-with-declared-scope",
+      "failure": "At r=1/2 the scalar determinant is negative, so this method no longer certifies a positive lower bound.",
+      "workaround": "State the certified parameter range and retain a fixed smaller closed box for a common positive floor.",
+      "equations": {
+        "determinant": "18-45r+69r^2/4",
+        "positive_range": "0 <= r < (30-2sqrt(87))/23",
+        "fixed_closed_box": "r <= 7/16 implies gap >= 19alpha/32",
+        "common_physical_floor": "alpha >= alpha_min > 0 and r <= 7/16 imply gap/E_star >= 19alpha_min/(32E_star)"
+      },
+      "evidence": [
+        "advisor/contract-b2.json",
+        "forward/b2/report.md",
+        "backward/b2/report.md",
+        "advisor/b2-gate.json",
+        "backward/b2/comparison/comparison.json"
+      ],
+      "limit": "Failure at r=1/2 is not a proof that the actual gap closes. The bound approaches zero at its open parameter boundary, so it gives no uniform positive floor over that entire open range."
+    },
+    {
+      "id": "independent-source-provenance",
+      "loop": "B2",
+      "status": "accepted-repair",
+      "failure": "A comparator required the producer to report the reverse implementation's B1 source hashes, even though the producer used the accepted forward B1 files.",
+      "workaround": "Validate each implementation's actual source and input paths against the accepted gate, then compare their mathematical objects under the declared coordinate mapping.",
+      "equations": {
+        "mathematical_agreement": "G_forward = T* G_reverse T after the declared basis/face mapping",
+        "provenance_rule": "Each claimed input hash must equal its own gate-bound file hash; independent source hashes need not be equal."
+      },
+      "evidence": [
+        "advisor/b1-gate.json",
+        "forward/b2/backward-comparison/comparison.json",
+        "advisor/b2-gate.json",
+        "backward/b2/comparison/comparison.json"
+      ],
+      "limit": "Different hashes are not evidence of agreement; independent mathematical reconstruction and correct per-source provenance are both required."
+    },
+    {
+      "id": "shared-middle-link-dependence",
+      "loop": "C1",
+      "status": "accepted-with-declared-scope",
+      "failure": "Treating the two branches as if each had its own independently sampled middle link changes the joint measure.",
+      "workaround": "Condition both branches on the same V and integrate the resulting product before taking the outer Haar expectation.",
+      "equations": {
+        "joint_moment": "E[x z w t]=1/64",
+        "independent_middle_copies": "E[x w] E[z t]=0",
+        "outer_weight": "dmu(V) exp(kappa*y) K_kappa(y) Z_U(V)"
+      },
+      "evidence": [
+        "advisor/contract-c1.json",
+        "backward/c1/report.md",
+        "advisor/c1-gate.json",
+        "backward/c1/comparison/comparison.json"
+      ],
+      "limit": "This is dependence in the declared static three-link Haar integral, not a physical energy-scale bridge."
+    },
+    {
+      "id": "constant-face-cancellation",
+      "loop": "C1",
+      "status": "accepted-repair",
+      "failure": "Different unnormalized actions were compared by a tautological regression flag, obscuring why the normalized result agrees.",
+      "workaround": "Derive the frozen W=I action and verify numerator and partition coefficient convolution by the same exp(kappa) factor before canceling it analytically.",
+      "equations": {
+        "frozen_action": "S_frozen=3x+2y+w+1=S_old+1",
+        "numerator_and_partition": "N_frozen=exp(kappa) N_old; Z_frozen=exp(kappa) Z_old",
+        "quotient": "N_frozen/Z_frozen=N_old/Z_old"
+      },
+      "evidence": [
+        "advisor/contract-c1.json",
+        "backward/c1/check.py",
+        "advisor/c1-gate.json",
+        "backward/c1/comparison/comparison.json"
+      ],
+      "limit": "The cancellation requires the same configuration-independent factor in numerator and denominator; it does not permit dropping a V-dependent partition weight."
+    },
+    {
+      "id": "haar-preserving-dagger-control",
+      "loop": "C1",
+      "status": "reviewed-measure-preserving-identity",
+      "failure": "An altered signed word can differ pointwise while a consistent global dagger substitution leaves the integrated expectation unchanged.",
+      "workaround": "Use exact noncommuting fixtures to check signed face words, and treat consistent Haar-preserving substitutions as equality controls rather than forcing a mismatch.",
+      "equations": {
+        "change_of_variables": "integral F(U,V,W) dmu = integral F(T(U,V,W)) dmu for Haar-preserving T",
+        "word_contract": "The declared action and observable must both follow the same substitution."
+      },
+      "evidence": [
+        "advisor/contract-c1.json",
+        "advisor/c1-gate.json",
+        "backward/c1/comparison/comparison.json"
+      ],
+      "limit": "A measure-preserving substitution is not the same operation as changing one term while leaving the rest of the integrand fixed. This entry records the analytic change-of-variables exception; it does not claim a forced integrated dagger mismatch."
+    },
+    {
+      "id": "taylor-remainder-domain",
+      "loop": "C1",
+      "status": "accepted-repair",
+      "failure": "The draft justification M<1 implies exp(M)<2 is false as a general statement, although the declared M=7/64 is small enough.",
+      "workaround": "Use an explicit rational exponential bound on its valid domain and check a strictly positive denominator before interval division; both a factor-two and a tighter geometric enclosure are retained.",
+      "equations": {
+        "safe_small_M_case": "0<=M<1/2 implies exp(M)<=1/(1-M)<2",
+        "tail_case": "|R_n| <= 2 M^(n+1)/(n+1)! on that declared domain",
+        "division_requirement": "Z_partial - R_Z > 0",
+        "alternative_geometric_bound": "R_n <= M^(n+1)/[(n+1)!(1-M)] for 0<=M<1; the C1 implementation restricts M<1/2"
+      },
+      "evidence": [
+        "backward/c1/check.py",
+        "advisor/c1-gate.json",
+        "backward/c1/comparison/comparison.json"
+      ],
+      "limit": "Extending the coupling range requires a newly justified remainder bound; the fixed small-coupling proof cannot be extrapolated silently."
+    },
+    {
+      "id": "conditional-kernel-factorial",
+      "loop": "C1",
+      "status": "accepted-repair",
+      "failure": "The first nonconstant conditional-kernel terms were displayed with twice their correct Taylor coefficient because the m=1 factorial denominator was omitted in metadata.",
+      "workaround": "Derive the conditional series coefficients with both factorials and compare the resulting outer partition expansion.",
+      "equations": {
+        "W_kernel": "K_kappa(y)=sum_m [kappa^2(1+y)/2]^m/[m!(m+1)!]",
+        "first_W_term": "K_kappa(y)=1+kappa^2(1+y)/4+O(kappa^4)",
+        "U_kernel": "Z_U(y)=1+kappa^2(5+3y)/4+O(kappa^4)",
+        "outer_partition_check": "[kappa^2] Z=13/8; dropping Z_U gives 3/8"
+      },
+      "evidence": [
+        "forward/c1/check.py",
+        "backward/c1/check.py",
+        "advisor/c1-gate.json",
+        "backward/c1/comparison/comparison.json"
+      ],
+      "limit": "The correction concerns the conditional decomposition; the independently derived primary joint moment coefficients must still be compared in full."
+    }
+  ],
+  "geometry": {
+    "role": "organizes paired derivation and reconstruction",
+    "physical_hypothesis": "untested",
+    "admission_rule": "No Fibonacci-dependent Hamiltonian coefficient is inferred from the diagram."
+  }
+}

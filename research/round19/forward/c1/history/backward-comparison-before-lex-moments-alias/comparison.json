@@ -1,0 +1,526 @@
+{
+  "admission_failures": [
+    "freeze_W_identity_regression",
+    "intervals",
+    "moments",
+    "negative_kappa_fixture",
+    "primary_normalized_interval"
+  ],
+  "checks": [
+    {
+      "graph_counts": {
+        "active_links": 3,
+        "affected_faces": 7,
+        "constant_faces": 13,
+        "edges": 33,
+        "faces": 20,
+        "fixed_links": 30,
+        "vertices": 18
+      },
+      "name": "graph counts and active coordinates match contract",
+      "passed": true
+    },
+    {
+      "affected_count": 7,
+      "constant_count": 13,
+      "name": "signed affected face words and constant ledger match independent reconstruction",
+      "passed": true
+    },
+    {
+      "name": "S=3*x+y+z+w+t is derived and observable unchanged",
+      "passed": true
+    },
+    {
+      "moment_count": 6054,
+      "name": "character-fusion and conditional-polynomial moment table matches",
+      "passed": false
+    },
+    {
+      "name": "Taylor coefficients and interval ladder match",
+      "passed": false,
+      "primary_interval": {
+        "N": 8,
+        "lower": "13325994408253817/16816281566993287151031",
+        "meets_target": true,
+        "numerator_partial": "13325994615786653/16809595537167828910080",
+        "partition_partial": "13840560960488131373/13835058055282163712",
+        "tail_bound": "5764801/466933209365773025280",
+        "upper": "13325994823319489/16816281566992872085359",
+        "width": "15827362222920875013479698816/641241101452134297757442177940463603076769"
+      }
+    },
+    {
+      "discriminator": {
+        "exponents": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "independent_V_resampling_value": "0",
+        "value": "1/64"
+      },
+      "name": "common-V discriminator and independent-V failure are exact",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "t_correct_Tr_VWdagger_over_2": "0",
+        "t_sign_flip_detected": true,
+        "t_wrong_Tr_VW_over_2": "1/2",
+        "unit_quaternions": {
+          "U": [
+            "1/2",
+            "1/2",
+            "1/2",
+            "1/2"
+          ],
+          "V": [
+            "1/2",
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ],
+          "W": [
+            "1/2",
+            "1/2",
+            "-1/2",
+            "-1/2"
+          ]
+        },
+        "w_correct_Tr_UVdagger_over_2": "0",
+        "w_sign_flip_detected": true,
+        "w_wrong_Tr_UV_over_2": "1/2"
+      },
+      "name": "numeric quaternion signed-word fixture detects active sign flips",
+      "passed": true
+    },
+    {
+      "name": "freeze-W identity regression is present",
+      "passed": false
+    },
+    {
+      "name": "static kappa is marked unmatched to physical scale",
+      "passed": true,
+      "scale_exception": {
+        "classification": "static checkpoint only; not E_star; physical scale matching open/unmatched; Fibonacci labels are not physical matching"
+      }
+    },
+    {
+      "name": "source manifest binds source, gates and required outputs",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "graph_counts",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects wrong_graph_counts",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "active_link_coordinates",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects wrong_active_link_U",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "affected_face_words",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects omit_affected_face",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "affected_face_words",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects alter_noncommuting_signed_VW_word",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "constant_face_ledger",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects omit_constant_face_ledger",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "derived_S",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects hardcode_wrong_S",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "observable",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects alter_observable",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "common_V_discriminator",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects independent_V_claimed_primary",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "signed_quaternion_fixture"
+      ],
+      "name": "mutation rejects numeric_quaternion_sign_flip_hidden",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects drop_moment_divisor_effect",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "degree_ladder",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects truncate_degree_6_as_final",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects negative_kappa_evenness_forced",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "mutation rejects delete_freeze_regression",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "static_physical_scale_exception"
+      ],
+      "name": "mutation rejects kappa_as_physical_scale",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "static_physical_scale_exception"
+      ],
+      "name": "mutation rejects fibonacci_as_physical_match",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "source_manifest_missing_source:check.py"
+      ],
+      "name": "mutation rejects manifest_missing_check_hash",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "source_manifest_missing_output:results.json"
+      ],
+      "name": "mutation rejects manifest_missing_results_hash",
+      "passed": true
+    }
+  ],
+  "checks_count": 27,
+  "independent_results_sha256": "ad3b71d92b1907120093bdf05eec715bca6cfa35f9a13e81f0a04b8b5a926193",
+  "mutation_controls": [
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "graph_counts",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "wrong_graph_counts",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "active_link_coordinates",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "wrong_active_link_U",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "affected_face_words",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "omit_affected_face",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "affected_face_words",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "alter_noncommuting_signed_VW_word",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "constant_face_ledger",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "omit_constant_face_ledger",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "derived_S",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "hardcode_wrong_S",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "observable",
+        "primary_normalized_interval"
+      ],
+      "name": "alter_observable",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "common_V_discriminator",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "independent_V_claimed_primary",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "signed_quaternion_fixture"
+      ],
+      "name": "numeric_quaternion_sign_flip_hidden",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "drop_moment_divisor_effect",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "degree_ladder",
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "truncate_degree_6_as_final",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "negative_kappa_evenness_forced",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval"
+      ],
+      "name": "delete_freeze_regression",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "static_physical_scale_exception"
+      ],
+      "name": "kappa_as_physical_scale",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "static_physical_scale_exception"
+      ],
+      "name": "fibonacci_as_physical_match",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "source_manifest_missing_source:check.py"
+      ],
+      "name": "manifest_missing_check_hash",
+      "passed": true
+    },
+    {
+      "detected_failures": [
+        "freeze_W_identity_regression",
+        "intervals",
+        "moments",
+        "negative_kappa_fixture",
+        "primary_normalized_interval",
+        "source_manifest_missing_output:results.json"
+      ],
+      "name": "manifest_missing_results_hash",
+      "passed": true
+    }
+  ],
+  "producer_evidence": "/workspace/scratch/544697acf6a6/yang_mills_workbench/research/round19/forward/c1/output",
+  "producer_results_sha256": "3b2868629b396be1291a1ab69c1a6c8c3f8c0fe8a81a56599be4ed00ec1b1168",
+  "producer_source": "/workspace/scratch/544697acf6a6/yang_mills_workbench/research/round19/forward/c1",
+  "schema": "ym19-backward-c1-comparison-v1",
+  "status": "rejected"
+}
