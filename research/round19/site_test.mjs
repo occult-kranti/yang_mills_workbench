@@ -109,8 +109,12 @@ assert(b2.includes('not a physical failure'));
 assert(!b2.includes('Clay mass gap result'));
 const c1 = ctx.ResearchObservatory.render('paired-c1');
 assert(c1.includes('contract-c1.json'));
-assert(c1.includes('Static κ') || c1.includes('static'));
-assert(c1.includes('no C1 advisor gate is accepted'));
+assert(c1.includes('c1-gate.json'));
+assert(c1.includes('6054'));
+assert(c1.includes('S=3x+y+z+w+t') || c1.includes('S = 3x + y + z + w + t'));
+assert(c1.includes('7.9244597e-7') || c1.includes('7.924459'));
+assert(c1.includes('physical matching remains open') || c1.includes('physical-scale matching remains open'));
+assert(c1.includes('physical energy/time-scale matching') || c1.includes('physical matching remains open')); 
 
 const review = ctx.ResearchObservatory.render('paired-review');
 assert(review.includes('Frozen contracts and controls'));
@@ -131,10 +135,10 @@ assert(ctx.ResearchObservatory.render('__proto__').includes('Research page not f
 
 assert.equal(JSON.stringify(data.loops.map(x=>x.id)), JSON.stringify(['A1','A2','B1','B2','C1','C2']));
 const acceptedLoopIds = data.loops.filter(x=>x.state === 'accepted').map(x=>x.id);
-assert.equal(JSON.stringify(acceptedLoopIds), JSON.stringify(['A1','A2','B1','B2']));
-assert.equal(data.meta.accepted_loop_count, 4);
-assert(data.meta.summary.includes('4 of six Round19 loop gates are accepted'));
-assert.equal(data.loops.find(x=>x.id === 'C1')?.state, 'running');
+assert.equal(JSON.stringify(acceptedLoopIds), JSON.stringify(['A1','A2','B1','B2','C1']));
+assert.equal(data.meta.accepted_loop_count, 5);
+assert(data.meta.summary.includes('5 of six Round19 loop gates are accepted'));
+assert.equal(data.loops.find(x=>x.id === 'C2')?.state, data.evidence.some(x => x.key === 'contract-c2') ? 'running' : 'pending');
 assert(data.evidence.length >= 4);
 assert(data.evidence.every(x => ['pending','running','accepted','limited','rejected'].includes(x.state)));
 assert(data.exception_ledger.entries.length >= 10);
@@ -144,6 +148,10 @@ assert.equal(data.evidence.find(x => x.key === 'gate-b2')?.state, 'accepted');
 assert.equal(data.evidence.find(x => x.key === 'gate-b2')?.hashes_ok, true);
 assert.equal(data.evidence.find(x => x.key === 'gate-b2')?.inventory_complete, true);
 assert.equal(data.evidence.find(x => x.key === 'validation-b2')?.state, 'accepted');
+assert.equal(data.evidence.find(x => x.key === 'gate-c1')?.state, 'accepted');
+assert.equal(data.evidence.find(x => x.key === 'gate-c1')?.hashes_ok, true);
+assert.equal(data.evidence.find(x => x.key === 'gate-c1')?.inventory_complete, true);
+if (data.evidence.some(x => x.key === 'validation-c1')) assert.equal(data.evidence.find(x => x.key === 'validation-c1')?.state, 'accepted');
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('missing required accepted-gate inventory item'));
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('mathematical_result'));
 assert(fs.readFileSync(new URL('round19/build_site.py', new URL('../', import.meta.url)), 'utf8').includes('position=(u,side)'));
@@ -192,6 +200,7 @@ overviewCtx.location.hash = '#research/paired-review';
 for (const fn of overviewEvents.hashchange ?? []) fn();
 assert(overviewMain.innerHTML.includes('Exception ledger'));
 assert(overviewMain.innerHTML.includes('validation-b2.json'));
+assert(overviewMain.innerHTML.includes('c1-gate.json'));
 assert(overviewMain.innerHTML.includes('Static κ; physical matching open') || overviewMain.innerHTML.includes('projector-dependent-cross-gram'));
 
 overviewCtx.location.hash = '#research/review18-home';

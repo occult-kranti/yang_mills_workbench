@@ -8,7 +8,7 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current branch milestone — Round19:** four of six sequential research loops are accepted. Goal A gives boundary-consistent clipped clusters and a direct product representation for a summable perturbation. Goal B now adds the complete 48-channel projector, exact cross Gram on the actual two-cube graph, and an accepted finite two-cube continuous signed-box spectral certificate using that enlarged projector. Opposed Fibonacci-style spirals organize forward derivation and reverse reconstruction under a declared scale contract; the geometry's physical relevance remains untested. C1 is now running under a separate static-integral contract. Static κ remains a separate coefficient for Euclidean integrals, with no accepted Hamiltonian/time matching.
+**Current branch milestone — Round19:** five of six sequential research loops are accepted. Goal A gives boundary-consistent clipped clusters and a direct product representation for a summable perturbation. Goal B adds the complete 48-channel projector, exact cross Gram on the actual two-cube graph, and an accepted finite two-cube continuous signed-box spectral certificate using that enlarged projector. C1 now accepts a finite static U-V-W chain integral and common-V discriminator on the actual four-cube graph. Opposed Fibonacci-style spirals organize forward derivation and reverse reconstruction under a declared scale contract; the geometry's physical relevance remains untested. Static κ remains a separate coefficient for Euclidean integrals, with physical-scale matching open and no accepted Hamiltonian/time matching.
 
 [Round19 evidence and reproduction](research/round19/README.md) · [standalone paired review](research/round19/overview.html) · [research branch](https://github.com/occult-kranti/yang_mills_workbench/tree/research/round19-paired).
 
@@ -62,7 +62,7 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Paired forward derivation and reverse reconstruction | `research/round19/` | Current branch: accepted A1/A2/B1/B2; C1 running under static-integral contract with physical matching open |
+| Paired forward derivation and reverse reconstruction | `research/round19/` | Current branch: accepted A1/A2/B1/B2/C1; C2 running under continuous static-κ contract |
 | Six-loop dressed, spectral and conditional study | `research/round18/` | Deployed inhomogeneous family, complete complement, signed finite gap box, sufficient Gram coordinates and six-weight two-link integral |
 | Previous local, spectral and conditional study | `research/round17/` | Preserved sparse physical theorem, finite adjoint repair, complete four-cube tensor and matched common-variable experiment |
 | Shared-face subproblem, two loops and three roles | `research/round16/` | Previous eleven-face Haar contractions, exact changed-action comparison, physical energy-scale audit and independent checks |

@@ -238,6 +238,71 @@
           ]
         }
       ]
+    },
+    "c1": {
+      "tasks": [
+        {
+          "name": "forward",
+          "script": "forward/c1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "forward/c1/output",
+          "identical_files": [
+            "coefficients.json",
+            "controls.json",
+            "freeze-W-regression.json",
+            "graph-reduction.json",
+            "intervals.json",
+            "moment-table.json",
+            "moments.json",
+            "refinement.csv",
+            "results.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "backward",
+          "script": "backward/c1/check.py",
+          "args": [
+            "--output",
+            "{output}"
+          ],
+          "accepted_output": "backward/c1/output",
+          "identical_files": [
+            "coefficients.json",
+            "graph-reduction.json",
+            "intervals.json",
+            "manifest.json",
+            "moments.json",
+            "refinement.csv",
+            "results.json",
+            "source-manifest.json"
+          ]
+        },
+        {
+          "name": "comparison",
+          "script": "backward/c1/compare.py",
+          "args": [
+            "--producer",
+            "{round_root}/forward/c1/check.py",
+            "--evidence",
+            "{run_root}/c1/forward",
+            "--output",
+            "{output}"
+          ],
+          "semantic_gates": [
+            [
+              "comparison.json",
+              "status",
+              [
+                "accepted"
+              ]
+            ]
+          ]
+        }
+      ]
     }
   }
 }

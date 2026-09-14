@@ -64,3 +64,10 @@ B2 is frozen in `advisor/contract-b2.json`. It targets a continuous signed box `
 ## 2026-09-13 B2 gate and C1 contract
 
 B2 accepted after final forward/reverse comparison: finite two-cube continuous coefficient-box certificate with primary r=1/8, rederived r=3/8 benchmark, 7/16 positive control and 1/2 insufficient control. Advisor gate: `advisor/b2-gate.json`. C1 frozen as a static U-V-W chain integral contract with physical scale matching explicitly open: `advisor/contract-c1.json`.
+
+## 2026-09-13 C1 accepted and C2 frozen
+
+C1 is accepted in `advisor/c1-gate.json` after forward/reverse exact coefficient and interval agreement, canonical comparison acceptance and wrapper replay. Accepted result: the actual U-V-W static chain has `S=3x+y+z+w+t`, observable `(4x^2-1)^3(4w^2-1)/81`, exact common-V discriminator `E[x z w t]=1/64` versus independent-V resampling `0`, and disjoint positive/negative `kappa=1/64` interval fixtures. The gate is a static mathematical checkpoint only; physical scale matching remains open/unmatched.
+
+C2 is frozen in `advisor/contract-c2.json`. It upgrades the C1 point certificate to a continuous exact static-kappa theorem: primary target `F(kappa)>=kappa^2/2048` for `|kappa|<=1/8` if the rational coefficient/tail proof succeeds, plus a separate continuous sign-asymmetry certificate over a declared positive subrange. Boundary diagnostics must record the degree-8/tail method's behavior at `K=1/7` and `K=1/6` without overclaiming method failure as falsehood of the underlying integral.
+

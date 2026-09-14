@@ -247,6 +247,12 @@ def refresh_meta_summary(content: dict[str, Any]) -> None:
             summary += " B2 has source-bound forward/reverse comparison evidence under advisor review, but no B2 loop gate is accepted yet."
     if running:
         summary += " Current running loop: " + str(running[0].get("id")) + "."
+    if any(loop.get("id") == "C1" and safe_state(loop.get("state")) == "running" for loop in loops):
+        c1_keys = {item.get("key") for item in content.get("evidence", []) if isinstance(item, dict)}
+        if "forward-c1-results" in c1_keys:
+            summary += " C1 has source-bound static-integral evidence under advisor review; physical scale matching remains open/unmatched."
+    if any(loop.get("id") == "C2" and safe_state(loop.get("state")) == "pending" for loop in loops):
+        summary += " C2 remains pending until a valid C1 gate and actual C2 contract."
     summary += " Parent dense/homogeneous stability, finite-restriction convergence, continuum construction and physical Fibonacci significance remain open."
     meta["summary"] = summary
 
@@ -380,6 +386,10 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
         ("contract-b1", "Frozen B1 contract", "research/round19/advisor/contract-b1.json", "accepted", "Advisor-frozen contract for the strict-cutoff two-cube B1 loop."),
         ("b2-preliminary-review", "B2 preliminary advisor review", "research/round19/advisor/b2-preliminary-review.md", "limited", "Preliminary mathematical review only; it is not a B2 gate and does not start C1."),
         ("b2-preliminary-review-manifest", "B2 preliminary review manifest", "research/round19/advisor/b2-preliminary-review-manifest.json", "limited", "SHA inventory for the provisional B2 review; gate status is taken only from b2-gate.json."),
+        ("c1-advisor-watch", "C1 advisor watch", "research/round19/advisor/c1-advisor-watch.md", "limited", "Advisor watch notes for C1; gate status is taken only from c1-gate.json."),
+        ("c1-advisor-watch-manifest", "C1 advisor watch manifest", "research/round19/advisor/c1-advisor-watch-manifest.json", "limited", "SHA inventory for C1 watch notes."),
+        ("c1-preliminary-audit", "C1 preliminary advisor audit", "research/round19/advisor/c1-preliminary-audit.md", "limited", "Preliminary C1 audit only; it is not a C1 gate and does not freeze C2."),
+        ("c1-preliminary-audit-manifest", "C1 preliminary audit manifest", "research/round19/advisor/c1-preliminary-audit-manifest.json", "limited", "SHA inventory for the preliminary C1 audit; gate status is taken only from c1-gate.json."),
     ]
     for key, title, repo_path, state, summary in optional_advisor:
         if (ROOT / repo_path).exists():
@@ -619,6 +629,95 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
                 if any(item.get("key") == key for item in content.get("evidence", [])) and key not in keys:
                     keys.append(key)
 
+    c1 = loops.get("C1")
+    c1_forward_results = ROUND / "forward" / "c1" / "output" / "results.json"
+    if c1_forward_results.exists():
+        c1_data = read_json(c1_forward_results)
+        graph_counts = c1_data.get("graph_counts", {}) if isinstance(c1_data.get("graph_counts"), dict) else {}
+        moment_summary = c1_data.get("moment_summary", {}) if isinstance(c1_data.get("moment_summary"), dict) else {}
+        attach_file_metadata(
+            content,
+            "forward-c1-results",
+            "Forward C1 static-integral results",
+            "research/round19/forward/c1/output/results.json",
+            "running",
+            f"Forward C1 output reports status {c1_data.get('status', 'unknown')}, {moment_summary.get('moment_count', 'unknown')} monomials, graph counts {graph_counts.get('vertices', '?')}V/{graph_counts.get('edges', '?')}E/{graph_counts.get('faces', '?')}F, and static kappa {c1_data.get('kappa', 'unrecorded')}; this is source evidence awaiting the C1 advisor gate.",
+        )
+        for repo_path, key, title, summary in [
+            ("research/round19/forward/c1/check.py", "forward-c1-source", "Forward C1 checker", "Source for the exact static three-link C1 integral."),
+            ("research/round19/forward/c1/report.md", "forward-c1-report", "Forward C1 report", "Written forward C1 derivation for the static integral."),
+            ("research/round19/forward/c1/output/source-manifest.json", "forward-c1-source-manifest", "Forward C1 source manifest", "Source and output hash manifest for the forward C1 run."),
+            ("research/round19/forward/c1/optimized-comparison.json", "forward-c1-optimized-comparison", "Forward C1 normal/optimized comparison", "Deterministic normal and optimized C1 output comparison."),
+            ("research/round19/forward/c1/output/freeze-W-regression.json", "forward-c1-freeze-w-regression", "Forward C1 freeze-W regression", "Exact constant-cancellation regression for the frozen-W control."),
+            ("research/round19/forward/c1/output/intervals.json", "forward-c1-intervals", "Forward C1 interval certificate", "Static kappa interval enclosures for the C1 observable."),
+            ("research/round19/forward/c1/output/graph-reduction.json", "forward-c1-graph-reduction", "Forward C1 graph reduction", "Graph reduction and affected/constant face ledger for the C1 static integral."),
+        ]:
+            if (ROOT / repo_path).exists():
+                attach_file_metadata(content, key, title, repo_path, "running", summary)
+        if c1:
+            keys = c1.setdefault("evidence_keys", [])
+            for key in ["contract-c1", "c1-advisor-watch", "c1-advisor-watch-manifest", "c1-preliminary-audit", "c1-preliminary-audit-manifest", "forward-c1-source", "forward-c1-results", "forward-c1-report", "forward-c1-source-manifest", "forward-c1-optimized-comparison", "forward-c1-freeze-w-regression", "forward-c1-intervals", "forward-c1-graph-reduction"]:
+                if any(item.get("key") == key for item in content.get("evidence", [])) and key not in keys:
+                    keys.append(key)
+            c1["state"] = "running"
+            c1["math"] = [
+                "S = 3x + y + z + w + t",
+                "graph: 18 vertices, 33 edges, 20 faces; 30 fixed links, 7 affected faces, 13 constant faces",
+                "moment table: 6054 monomials; N/Z coefficients through degree 8 agree between routes",
+                "common-V discriminator: E[x z w t] = 1/64; independent V resampling gives 0",
+                "κ = 1/64: normalized F ≈ 7.9244597e-7 with certified width < 1e-12",
+                "±κ intervals are disjoint; static physical-scale matching remains open/unmatched",
+            ]
+            c1["result"] = "C1 source evidence reports matching forward/reverse static-integral data, including 6054 monomials, the common-V discriminator 1/64 versus resampled 0, and certified κ=1/64 intervals. C1 is not accepted until advisor/c1-gate.json exists and passes validation."
+            c1["review"] = "The preliminary C1 audit is not a gate. Static κ remains a mathematical coupling for Euclidean integrals and is not a Hamiltonian time match, physical energy scale, regulator, or Fibonacci-scale substitute."
+            c1["next"] = "Await the C1 advisor gate and validation-c1 replay. Freeze C2 only from a valid C1 decision and actual C2 contract."
+
+    c1_comparison = ROUND / "forward" / "c1" / "backward-comparison" / "comparison.json"
+    if not c1_comparison.exists():
+        alternate_c1_comparison = ROUND / "backward" / "c1" / "provisional-forward-comparison" / "comparison.json"
+        c1_comparison = alternate_c1_comparison if alternate_c1_comparison.exists() else c1_comparison
+    if c1_comparison.exists():
+        data = read_json(c1_comparison)
+        checks = data.get("checks_count")
+        state = "running"
+        summary = f"Independent C1 comparison reports status {data.get('status')} across {checks} checks; this is not an advisor gate." if checks else "Independent C1 comparison is recorded; this is not an advisor gate."
+        repo_path = str(c1_comparison.relative_to(ROOT)).replace("\\", "/")
+        attach_file_metadata(content, "backward-c1-comparison", "Backward C1 comparison", repo_path, state, summary)
+        for repo_path, key, title, item_summary in [
+            ("research/round19/backward/c1/check.py", "backward-c1-source", "Backward C1 checker", "Independent reverse/skeptic checker for the C1 static integral."),
+            ("research/round19/backward/c1/compare.py", "backward-c1-compare-source", "Backward C1 comparison source", "Independent C1 comparison source with mutation controls."),
+            ("research/round19/backward/c1/report.md", "backward-c1-report", "Backward C1 report", "Written reverse/skeptic C1 reconstruction."),
+            ("research/round19/backward/c1/manifest.json", "backward-c1-manifest", "Backward C1 manifest", "C1 reverse/skeptic manifest; C2 is not frozen by this file."),
+            ("research/round19/backward/c1/output/results.json", "backward-c1-results", "Backward C1 results", "Independent reverse/skeptic C1 static-integral results."),
+            ("research/round19/backward/c1/output/source-manifest.json", "backward-c1-source-manifest", "Backward C1 source manifest", "Source and output hash manifest for the backward C1 run."),
+        ]:
+            if (ROOT / repo_path).exists():
+                attach_file_metadata(content, key, title, repo_path, state, item_summary)
+        if c1:
+            keys = c1.setdefault("evidence_keys", [])
+            for key in ["backward-c1-source", "backward-c1-compare-source", "backward-c1-results", "backward-c1-source-manifest", "backward-c1-comparison", "backward-c1-report", "backward-c1-manifest"]:
+                if any(item.get("key") == key for item in content.get("evidence", [])) and key not in keys:
+                    keys.append(key)
+
+    c1_validation = ROUND / "validation-c1.json"
+    if c1_validation.exists():
+        validation_data = read_json(c1_validation)
+        ordinary = validation_data.get("ordinary", {}) if isinstance(validation_data.get("ordinary"), dict) else {}
+        optimized = validation_data.get("optimized", {}) if isinstance(validation_data.get("optimized"), dict) else {}
+        gate_hashes = validation_data.get("gate_sha256", {}) if isinstance(validation_data.get("gate_sha256"), dict) else {}
+        attach_file_metadata(
+            content,
+            "validation-c1",
+            "C1 reproduction validation",
+            "research/round19/validation-c1.json",
+            "accepted" if ordinary.get("status") == "passed" and optimized.get("status") == "passed" else "limited",
+            f"Fresh ordinary and optimized C1 replay status: {ordinary.get('status', 'unknown')} / {optimized.get('status', 'unknown')}; gate hash {gate_hashes.get('c1', 'unrecorded')}.",
+        )
+        if c1:
+            keys = c1.setdefault("evidence_keys", [])
+            if "validation-c1" not in keys:
+                keys.append("validation-c1")
+
     for loop_id in LOOP_IDS:
         lower = loop_id.lower()
         gate_path = ADVISOR / f"{lower}-gate.json"
@@ -693,6 +792,15 @@ def merge_advisor_files(content: dict[str, Any]) -> None:
                 if key.startswith(accepted_prefixes) or f"/forward/{lower}/" in repo_path or f"/backward/{lower}/" in repo_path:
                     if item.get("state") in {"running", "limited", "rejected"}:
                         item["state"] = "accepted"
+                    summary_text = str(item.get("summary", ""))
+                    if "awaiting the " in summary_text and " advisor gate" in summary_text:
+                        item["summary"] = summary_text.replace(
+                            f"; this is source evidence awaiting the {loop_id} advisor gate",
+                            f"; this source evidence is bound to the accepted {loop_id} advisor gate",
+                        ).replace(
+                            f" awaiting the {loop_id} advisor gate",
+                            f" bound to the accepted {loop_id} advisor gate",
+                        )
 
     refresh_meta_summary(content)
 
