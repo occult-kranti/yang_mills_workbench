@@ -1,0 +1,269 @@
+{
+  "claim": "The full selected magnetic evolution is approximated by the unique leading-memory return equation with cubic fixed-time and uniform absolute quadratic coupling errors.",
+  "decided_at": "2026-09-14T17:41:14.365329+00:00",
+  "equations": [
+    "Htilde=[[A_lambda,B_lambda*],[B_lambda,C0]], D(Htilde)=D(H_E); H>=Htilde>=18alpha lambda I",
+    "Ttilde(t)=exp(-tA/hbar)+hbar^-2 integral_(0<=u<=s<=t) exp(-(t-s)A/hbar) K2(s-u) Ttilde(u) du ds",
+    "K2(s)=B_lambda* exp(-s C0/hbar) B_lambda",
+    "||T-Ttilde||<=250lambda^3 exp(-18lambda sigma) I_k(sigma)/k^2; sigma=alpha t/hbar; k=3-18lambda",
+    "I_k(sigma)=sigma(1+exp(-k sigma))-(2/k)(1-exp(-k sigma)); I_k/k^2<=min(sigma^3/6,sigma/k^2)",
+    "sup_t ||T-Ttilde||<=125lambda^2/[9e(3-18lambda)^2]<=312500lambda^2/(178929e)",
+    "forward rational relaxation: sup_t ||T-Ttilde||<=312500lambda^2/477144"
+  ],
+  "expected_results": {
+    "forward": {
+      "actual_channels": {
+        "energy_count": 7,
+        "first_moment": [
+          [
+            "57/4",
+            "3/4"
+          ],
+          [
+            "3/4",
+            "285/8"
+          ]
+        ],
+        "instantaneous": [
+          [
+            "19/4",
+            "1/4"
+          ],
+          [
+            "1/4",
+            "19/4"
+          ]
+        ],
+        "two_channel_autonomy_inferred": false
+      },
+      "blocks": {
+        "cubic_H_power_difference": [
+          [
+            "1/400000",
+            "-1/24000000"
+          ],
+          [
+            "-1/24000000",
+            "19/18000000"
+          ]
+        ],
+        "lambda_fixture": "1/100",
+        "missing_return_fourth_derivative": [
+          [
+            "229/14400000000",
+            "-17/4320000000"
+          ],
+          [
+            "-17/4320000000",
+            "409/32400000000"
+          ]
+        ],
+        "scope": "finite block algebra only; not actual SU2 spectral truncation",
+        "tested_derivative_orders": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "both_generators_lower_bound": "18*alpha*lambda",
+      "direction": "forward",
+      "error_controls": {
+        "F_d_interval": [
+          "12122037212802803111360143261859/325103598100807680000000000000000000",
+          "1260691870131491945373896298354498931/33810774202483998720000000000000000000000"
+        ],
+        "beta_at_cap": "9/50",
+        "d_at_cap": "141/50",
+        "lambda_bound": "1/100",
+        "physical_sigma_fixture": "21/20",
+        "sigma_fixture": "1/16",
+        "uniform_rational_coefficient": "78125/119286"
+      },
+      "fixed_sigma_error_order": "lambda^3",
+      "ground_normalized_uniform_error_proved": false,
+      "loop": "t1",
+      "next_missing_premise": "actual ground-energy/eigenvector control for normalized long-time comparison",
+      "passed": true,
+      "physical_clock_fitted": false,
+      "projected_error": "250*lambda^3*exp(-18*lambda*sigma)*F_(3-18lambda)(sigma)",
+      "schema": "ym23-producer-results-v1",
+      "self_adjoint_domain": "D(H_E)=J D(A) direct-sum Q D(H_E)",
+      "status": "proved_full_selected_leading_memory_evolution",
+      "target_verdict": "accepted_scoped",
+      "uniform_absolute_error_order": "lambda^2",
+      "uniform_rational_coefficient": "78125/119286",
+      "unique_full_memory_return": true
+    },
+    "reverse": {
+      "actual_Q2_weights": {
+        "energies": 7,
+        "first_moments": [
+          "57/4",
+          "285/8"
+        ],
+        "initial_diagonal": "19/4",
+        "offdiagonal": "1/4"
+      },
+      "certificate": {
+        "cubic_constant": "125/3",
+        "energy_floor": "18alpha lambda",
+        "integral_coefficients": [
+          {
+            "coefficient": "1/6",
+            "degree": 3
+          },
+          {
+            "coefficient": "-1/12",
+            "degree": 4
+          },
+          {
+            "coefficient": "1/40",
+            "degree": 5
+          },
+          {
+            "coefficient": "-1/180",
+            "degree": 6
+          },
+          {
+            "coefficient": "1/1008",
+            "degree": 7
+          },
+          {
+            "coefficient": "-1/6720",
+            "degree": 8
+          },
+          {
+            "coefficient": "1/51840",
+            "degree": 9
+          },
+          {
+            "coefficient": "-1/453600",
+            "degree": 10
+          },
+          {
+            "coefficient": "1/4435200",
+            "degree": 11
+          }
+        ],
+        "k_min": "141/50",
+        "uniform_lambda2_factor_without_e": "312500/178929"
+      },
+      "comparison": {
+        "all_selected_Hilbert_space": true,
+        "continuum_proved": false,
+        "decaying_error": "250lambda^3 exp(-18lambda sigma) I_(3-18lambda)(sigma)/(3-18lambda)^2",
+        "energy_floor": "18alpha lambda",
+        "fixed_time_cubic_error": "(250/9)lambda^3 I_3(sigma)",
+        "ground_gap_above_interacting_ground_proved": false,
+        "physical_clock_calibrated": false,
+        "relative_late_time_error_proved": false,
+        "uniform_absolute_error": "312500lambda^2/(178929e)"
+      },
+      "definition": "Htilde=[[A_lambda,B*],[B,C0]], Ttilde=J*exp(-tHtilde/hbar)J",
+      "direction": "reverse",
+      "fixtures": [
+        {
+          "algebra_fixture_only": true,
+          "cubic_bound": "0",
+          "fourth_missing_return_frobenius_squared": "0",
+          "lambda": "0",
+          "projected_error_upper": "1/4926027062988281250000",
+          "sigma": "1/20"
+        },
+        {
+          "algebra_fixture_only": true,
+          "cubic_bound": "1/192000000",
+          "fourth_missing_return_frobenius_squared": "1889/2560000000000000000",
+          "lambda": "1/100",
+          "projected_error_upper": "205190519016737995510015690625189983543815484771208434207117/547532591503755231992217600000000000000000000000000000000000000000000",
+          "sigma": "1/20"
+        },
+        {
+          "algebra_fixture_only": true,
+          "cubic_bound": "1/192000000000",
+          "fourth_missing_return_frobenius_squared": "1889/256000000000000000000000000",
+          "lambda": "1/1000",
+          "projected_error_upper": "2063474282748133111486246360245905742717704007910150148057379224502215947/5476729756867805438552309760000000000000000000000000000000000000000000000000000000000",
+          "sigma": "1/20"
+        }
+      ],
+      "loop": "t1",
+      "novelty": "project error certificate; scientific priority unverified",
+      "passed": true,
+      "schema": "ym23-reverse-t1-v1",
+      "status": "checks_passed_full_space_evolution_certified",
+      "target_verdict": "full_space_leading_memory_evolution_and_error_certified",
+      "volterra_return": "full Ttilde"
+    }
+  },
+  "files": {
+    "research/round22/advisor/p2-gate.json": "4946fd428777ee887b875f0b2f36294e6daeaea98bc1fcc034d588fb3cd49411",
+    "research/round22/advisor/q1-gate.json": "f1abbd962acda5d6ceebc5ca7446ae896bf707932145eade9b1b2ed1c3a480f1",
+    "research/round22/advisor/q2-gate.json": "7b56055bd2b400cc4e5c0b110507a7504569a86a44a89e04f76e12498327ab48",
+    "research/round22/forward/q1/report.md": "fbc94aa0fbd72749403550471aad4bd8f733cfcac8a79ff46065785e94675d33",
+    "research/round22/forward/q2/output/results.json": "dded68ac14e5b2c63eee0e438dee72ed2e74a62c84ccaa9b956380a3dca1cc73",
+    "research/round22/forward/q2/report.md": "63fe4d00fcabbf43f0c4dd20edcb3e78ad15a435ae50d8974566f4e88448dd6f",
+    "research/round22/forward/q2/source-notes.md": "b8fcbe484a05ad6baef4fde329b849d580bd1a22320ffc7ee464b342ee63f49c",
+    "research/round22/reverse/q1/report.md": "a9e8e3444520d95f4579dcfdb94b3c4c732481c5c323ffa9054b871cb5237fd1",
+    "research/round22/reverse/q2/report.md": "5b722e3888b8c0a44a0c2c0ddfb02848defe42b188ad7cb4da1e269369901cec",
+    "research/round23/advisor/s2-decision.md": "b6eedc0892c09473719617572e14ef745420a4a811298d05c3f4cf17aef011d7",
+    "research/round23/advisor/s2-gate.json": "f53e8c10e76d97f338b712d452288c4b3f28af8cf9017a216a5ef133a4306b73",
+    "research/round23/advisor/t1-decision.json": "101261672f4e5a6043d377270f2a0b623e017d4d4343979e556951c0b7034140",
+    "research/round23/advisor/t1-decision.md": "6930c152527741088391a6a2e7b716bd7644ecd9119b2c701c47330856acd61b",
+    "research/round23/contracts/t1.json": "2e3cc33531ce062d5cd50344eaaccbad1e623c1505618da9faa55a5f367f6407",
+    "research/round23/forward/t1/check.py": "7b6c195c301667e647a7c2e3d2674eab010c2031be6fdefe0f2b500961b17b33",
+    "research/round23/forward/t1/output/controls.json": "e77f9cd9df2e8aaa7b09f92528a8a898048ee10ed6f5d338d797f1eaa5cfe556",
+    "research/round23/forward/t1/output/results.json": "a1803aabadb124fade59ec9194c9c5f16fb5baacf146fc26213e56182edb22f4",
+    "research/round23/forward/t1/output/source-manifest.json": "d13e61b56a57283b599bd227d406ad64893081b5a64a295d53ddafda7228853e",
+    "research/round23/forward/t1/report.md": "c6138e93e4159529147ddf2e67e7613a63bd4010e239060dd271294803d553a7",
+    "research/round23/forward/t1/source-notes.md": "450b7302e5aacecbbd48be21fa802c45ee72dc0c93d26aa803ecb8f9c663da8f",
+    "research/round23/forward/t1/submission.json": "c8b270e9a4757c9910ddcf6d6bb6d7ae7238db91e4f6c7d7555b3431059bab47",
+    "research/round23/methods/team-protocol.md": "3ba911c51535419d79780ed4c10d69098bba91b9932e9e00feeb9e3b35fed473",
+    "research/round23/methods/v1/AGENTS.md": "d98db4fd7a40d1576a2597da5d6bddc553bbdf563c55f132a18cb1403e99a93f",
+    "research/round23/methods/v1/SKILL.md": "7f3dee79abe00bbb145050dccbf7723015a10e4664febad44f2b7aa2b35d7e73",
+    "research/round23/methods/v1/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+    "research/round23/methods/v1/paired-physics-research.md": "a70afeca92f0b1cdece4902bbec2990a1f13f8290d15b587d7812b29d1c9239f",
+    "research/round23/methods/v1/projected-memory-and-boundary-response.md": "d9e27c0cd5093becfc0b79198728936eeb7ec14b135696661ee3d4a87db3bd3d",
+    "research/round23/reverse/t1/check.py": "b90f73ab2f5e2dd158e12f3df194c93cbd71a55ab34799122eb5201f55c640a7",
+    "research/round23/reverse/t1/output/controls.json": "5d64ea105fb56b66114199eaa205bd8b25f31e961c6179af748ae5a854b9fe0e",
+    "research/round23/reverse/t1/output/results.json": "81c40cc43121f99daafb328d2afede489709b247f2a62aac4bac576b721c4726",
+    "research/round23/reverse/t1/output/source-manifest.json": "a767b319bfe43b5d2125c1010aa827783dfdb4370913847d351570b8ec0d473d",
+    "research/round23/reverse/t1/report.md": "81d343824b1aaae7c154294eb8927531c1413c0292a99e63d9c35be382fb5194",
+    "research/round23/reverse/t1/submission.json": "ea98d0dc61058cd13e271b96cfe7e0b499a5186103298897fe84761d59bf5fc4",
+    "research/round23/skeptic/check_t1_preparation.py": "0f6d0658e68e0b2be642df5cd30cb4291a917bce836d4d8f658101c7859f3667",
+    "research/round23/skeptic/s2-review.json": "77cfa440ddd01a532379707e2c8544b83f7f8e41d001501f134ef4749bffd84e",
+    "research/round23/skeptic/t1-independent-preparation-checks.json": "b5166a2250fe149b35e7738ae71f0618b7234d964965d51a3549c493ee00fc97",
+    "research/round23/skeptic/t1-preparation-manifest.json": "867d21bcef98d0f3f21cf5719b336ed749591232812820d17ce6561e7f6fb5b2",
+    "research/round23/skeptic/t1-preparation.md": "31a736912911d119c30a5b5366e23f98bf1335eba60a933af5c26e112f9099ab",
+    "research/round23/skeptic/t1-replay-summary.json": "7770f4634597450f8ea019a639fc50f744c7182cf82d23a7f11bb9d1cd785030",
+    "research/round23/skeptic/t1-review.json": "36ed4f4a25095df4eb6457388db26110921bc637399f928426377664c7a2b753",
+    "research/round23/skeptic/t1.md": "3a3c0ba8cfe81d8e6634e0c9a660e35f07927e4a22d04264a370fbd5630d8972"
+  },
+  "independence": {
+    "forward": "Independent domain, Young lower-form, Volterra and projected error derivation.",
+    "reverse": "Independent scalar determinant, reconstruction, basic/refined errors and exact controlled exponential fixture.",
+    "shared": "Frozen actual model and Htilde candidate from root/reverse planning.",
+    "skeptic": "Independent preparation, proof/code/source review and four fresh normal/O replays; post-freeze actual rank-two nonautonomy clarification."
+  },
+  "limits": [
+    "actual ground-centered uniform comparison",
+    "relative late-time error",
+    "practical finite truncation certificate",
+    "physical calibration",
+    "homogeneous numerical gap",
+    "4D continuum construction",
+    "Uniform absolute unshifted heat accuracy is not relative accuracy or a measured energy scale.",
+    "No real-time or time-dependent coupling result is proved in T1.",
+    "Scientific priority unverified."
+  ],
+  "loop": "t1",
+  "next_missing_premise": "Actual isolated ground energies/projectors and their perturbation estimates for a separately centered uniform heat comparison.",
+  "schema": "ym23-gate-v1",
+  "scope": "Actual Q2 18-vertex,33-edge,20-face finite physical graph; full selected/complementary Hilbert spaces; fixed a,E_star,alpha/E_star,hbar>0; constant0<=lambda<=1/100; all heat times t>=0 in the original energy convention.",
+  "status": "accepted",
+  "target_verdict": "Full-space Euclidean approximation and scoped errors accepted. Ground-centered and relative late-time comparison remain unproved here."
+}

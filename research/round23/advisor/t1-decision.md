@@ -1,0 +1,11 @@
+# T1 advisor decision
+
+Accept the full-selected-space leading-memory evolution and its quantified errors on the actual Q2 finite physical magnetic graph. The shared augmented-operator definition is disclosed; both directions independently derive its properties. Three research loops are now reviewed.
+
+The bounded block perturbation preserves the actual electric domain, and the actual scalar lower-form estimate proves H and Htilde at least18 alpha lambda in the frozen interval. This is an absolute energy floor, not an excitation gap. The full-return Volterra solution is unique by the iterated simplex bound. Projected Duhamel contains two complementary leakage factors, giving the cubic fixed-time error. The refined decay estimate proves uniform absolute quadratic error; the forward rational constant and reverse e-dependent constant are both valid relaxations.
+
+Root checked the lower form, strong-integral uniqueness, complementary leakage and projected convolution. The skeptic independently prepared, reviewed both full proofs and codes, and performed four fresh byte-exact normal/optimized replays with complete source verification. The actual rank-two second-moment nonautonomy argument in the review is a skeptic post-freeze clarification, not a producer derivation or extra loop.
+
+Uniform absolute error uses decay in the original energy origin. It does not imply ground-centered heat accuracy, relative decay accuracy or calibrated real-time dynamics. This model remains finite in graph volume and infinite in Hilbert dimension; the formula is not a completed finite numerical solver. Physical calibration, the full homogeneous gap and four-dimensional continuum construction remain open. Scientific priority is unverified.
+
+Select T2 from this limitation: construct both actual isolated ground energies and projections and compare their separately centered compressed heat evolutions uniformly in physical time. Prove the required spectral separation and energy/eigenvector errors, retaining the full graph and all Hilbert sectors. The target is an absolute centered norm certificate, not an assumed relative ratio. U1 remains the actual canonical endpoint question. V and W remain unselected until all six S/T/U reviews.
