@@ -47,6 +47,9 @@ def main():
         run('round23_'+label,[py,'-B',*mode,'research/round23/reproduce.py','--output',str(out/('round23-'+label)),*(['--optimized'] if optimized else [])])
         run('admission_'+label,[py,'-B',*mode,'research/round24/test_admission.py','--output',str(out/('admission-'+label+'.json'))])
         run('skill_test_'+label,[py,'-B',*mode,'research/round24/skill-tests/separated-shift/check.py'])
+        run('residual_exception_'+label,[py,'-B',*mode,'research/round24/skill-tests/residual-exception/portable/check.py','--output',str(out/('residual-exception-'+label))])
+        for name in ('results.json','controls.json'):
+            require((out/('residual-exception-'+label)/name).read_bytes()==(ROOT/'research/round24/skill-tests/residual-exception/portable/output'/name).read_bytes(),'portable method-test replay drift')
         reproduced=json.loads((out/('round24-'+label)/'reproduction.json').read_text())
         require([row['loop'] for row in reproduced['loops']]==LOOPS,'missing or duplicated replay')
         historical=json.loads((out/('round23-'+label)/'reproduction.json').read_text())

@@ -16,6 +16,9 @@ The common physical bookkeeping is fixed positive lattice spacing `a`, reference
 | `R`, `N_degree` | Dimensionless electric-energy and integer spin-degree cutoffs | Different gauge-compatible regulators with different input/time certificates. A finite-rank full-space approximation has error one at time zero. |
 | `epsilon`, `epsilon_R` | Dimensionless true and Ritz ground energies | The respective heat operators require their own ground centering. An error in the centering exponent is not uniformly harmless at arbitrarily late time. |
 | Residual and projection errors | Calculated dimensionless diagnostics | They must include all omitted physical channels. A small matrix has no authority to declare its subspace invariant. |
+| `k` or `d`, factor collar `F_d` | Nonnegative integer spatial regulator and finite factor set | Y1 completes every reference strip and retains the original face coefficients. Its two face-selection conventions remain separate; finite spatial support is not finite spin dimension. |
+| `R_true(sigma,f)` | Dimensionless relative approximation error | Z1 divides by the true evolved norm for the same retained vector. A different denominator defines a different quantity. Its positive finite-time denominator need not have a positive all-time lower bound. |
+| True/Ritz ground overlap floor | Dimensionless input restriction | A proved floor can prevent a vanishing denominator. Adding an arbitrary constant to the denominator would instead change the requested comparison. |
 
 ## Permitted exceptions and repairs
 
@@ -24,5 +27,7 @@ V uses three spectral outcomes on an infinite-dimensional space: finite outcomes
 W retains the actual residual and proves a convergent vacuum response at fixed `G`. A separate separated-shift method test proves norm convergence when its *actual* source has a suitable band and uniformly separated participating gaps. That valid exception does not supply those hypotheses for S.
 
 X separates retained-input finite windows from full-input delayed windows and computes the actual small sector's leakage. A time or input restriction is a changed approximation question, explicitly labeled; it is not a modification of the physical action.
+
+Y retains a fixed complete-factor spatial region as q approaches one, with its full spin spaces, original coefficients and physical time. Its all-tail error controls the local observable, not the entire propagator in operator norm. Z's exact retained-ground mismatch proves an actual relative obstruction; the zero-coupling equality and a separately tested bounded-leakage example remain valid exceptions.
 
 No time-dependent coupling is introduced in this round. Such a future proposal would require a changed Hamiltonian, its work/energy budget and new scale-matching obligations. The physical calibration and four-dimensional continuum construction remain open.

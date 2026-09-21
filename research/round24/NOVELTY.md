@@ -7,6 +7,7 @@ This round separates **new results in this workbench** from **new results in the
 * Nachtergaele–Sims, [arXiv:1410.8174v1](https://arxiv.org/html/1410.8174v1): strong operator evolution with unbounded onsite generators. This is an inherited mathematical framework, not a workbench invention.
 * Ekert et al., [quant-ph/0203016](https://arxiv.org/abs/quant-ph/0203016): controlled-unitary interferometry for state functionals. The V readout applies this established primitive to the specific U observable; it does not invent interferometric estimation.
 * Tong et al., [arXiv:2110.06942v2](https://arxiv.org/html/2110.06942v2): rigorous state and Hamiltonian truncation with assumptions on local quantum-number growth. Any truncation certificate here must distinguish its target, norm, finite graph and constants from this stronger existing literature. No priority claim follows from a new cutoff symbol.
+* Burgarth, Facchi, Gramegna and Yuasa, [arXiv:2111.08961v2](https://arxiv.org/abs/2111.08961): an existing averaging/strong-coupling framework. The inspected Theorem 3 assumes bounded operators and finitely many distinct reference energies. It does not directly prove this workbench's infinite pure-point strong limit or its canonical endpoint statement; those obligations require their own argument.
 
 Detailed reading limits are in `advisor/primary-reading.json` and the producer reports. A located source is not automatically a fully checked theorem application. Historical Newton/Tesla sources were reviewed in the inherited project studies; the modern proof arguments remain separate.
 
@@ -22,7 +23,7 @@ Detailed reading limits are in `advisor/primary-reading.json` and the producer r
 
 Each loop page and gate gives its final category, supported equation, strongest limitation and next premise. No fitted variable, historical analogy, arbitrary constant or scalar upper-bound failure is promoted into a new physical law.
 
-## Reviewed contributions through X2
+## Reviewed contributions through Y1/Z1
 
 | Loops | Contribution in this workbench | Known ingredient and actual limit |
 |---|---|---|
@@ -32,5 +33,7 @@ Each loop page and gate gives its final category, supported equation, strongest 
 | W2 | Exact residual retention at every step; vacuum-column graph convergence and fixed finite-volume strong convergence to spectral diagonal blocks. | Averaging and spectral decomposition are standard. Actual equal-energy blocks, full-source norm closure, infinite-volume all-sector closure and later-diagonal induction remain unproved. |
 | X1 | Two distinct rigorous truncation bounds and an explicitly assembled common 21-state physical sector with actual spin-one leakage. | Gauge-compatible Peter-Weyl/Galerkin truncation is established. The larger certified cutoffs were not assembled; the kinetic/full-input and degree/retained-input results cannot be interchanged. |
 | X2 | Complete 210-channel residual with norm factor `195/4`; certified true ground enclosure and a computed 21-state heat approximation with full-space error below `0.000085` for all admitted couplings and `sigma>=5`. | Variational, Temple and spectral projection methods are standard. The exact electric moment `295` and sharper variational improvement were forward-origin refinements separately reviewed. The finite graph's small error does not imply a continuum or homogeneous mass gap. |
+| Y1 | Actual complete-factor collars and a full omitted-word tail uniform at the canonical endpoint; a fixed 98-link forward region retains a signal greater than `z/250` in liminf. | Connected-support localization and state norm transfer are known methods. The independent constructions use different retained-face conventions; finite spatial support still retains infinite spin spaces. |
+| Z1 | Actual retained witnesses refute unrestricted all-time relative accuracy, despite a small absolute error. The exact-energy witness diverges; a computable Ritz-bright witness has true-relative error tending to one. | Spectral projection and denominator arguments are standard. Strict energy displacement and the actual vacuum row supply the model-specific ground-overlap fact. Generic nonzero leakage alone is insufficient, and zero coupling is an exact exception. |
 
 The parameters in these certificates are defined in [PARAMETERS.md](PARAMETERS.md). They expose approximation errors and missing hypotheses; they do not fill a physical gap by inserting an arbitrary constant. Later loop contributions are added only after their reviews.
