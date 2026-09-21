@@ -1,0 +1,13 @@
+# Single-agent method exercises and release review
+
+The user required one agent. No fresh agent or independent skill benchmark was run. The following serial exercises check whether the updated guidance distinguishes valid exceptions from convenient assumptions.
+
+1. **Hermetic correspondence:** Newton's translation contains above/below analogy. The requested mathematical translation is a map with a generator defect. Without one the answer remains historical interpretation. P1's nonclosable section is a concrete rejected shortcut; AA's complete basis and exterior selection rule supply the kind of additional proof required.
+2. **Two frequency fits:** f_l=chi c sqrt(l(l+1))/(2pi R) has a one-dimensional parameter direction (chi,R)→(t chi,t R) that leaves every mode unchanged. More same-family frequencies cannot identify both. The page therefore labels chi as assumed and fixes R.
+3. **Loaded resonance:** for white-driven displacement power, differentiating (omega_0²-omega²)²+4gamma²omega² gives the nonzero maximum at omega²=omega_0²-2gamma². The eigenvalue and measured peak differ. A different driver/readout invalidates that special peak formula; the page names these assumptions.
+4. **Reachable-space exception:** L inside P_E is enough only when Abar L⊂L is proved. AA1 correctly stopped short of full closure; AA2 enumerated the twenty outside faces and used distinct charged factors. Nonzero instantaneous leakage persists. The updated skills retain this distinction and do not universalize AA's special geometry.
+5. **Numerical display:** subtracting a near-unit double from one loses the tiny real correction. The endpoint explorer evaluates the correction directly; finite-q authoritative centers remain exact fractions. The total certificate refers to those centers, not rounded displays.
+
+Source review is selected, with depth and failures in sources.json. Schumann's original paper remains unread beyond metadata; NASA's downloaded primary manuscript supplies the inspected modern formula. The skills contain concise references and links rather than copies of full third-party papers. Their UI descriptions still match their purpose; no metadata regeneration was needed.
+
+Presentation review: all-round coverage is generated from eleven early study inventories and every explicit loop gate for Rounds14–25. The count 76 is historical numbered physics loops, not all research or a proof-completion percentage. Earlier numerical samples and refinements are grouped as named studies. Live historical routes remain accessible. The new current pages disclose single authorship, impractical time, canonical-model scope and open continuum obligations.

@@ -1,6 +1,6 @@
 # Yang–Mills Workbench
 
-**Current checkpoint: Round24, all 10 new loops reviewed.** Five goal pairs are complete: eight loops are accepted within scope and two retain precise limitations. Separate forward and reverse researchers, an independent model-agent skeptic and a root advisor use the Newton/Tesla methods. Read the [current handoff](research/round24/HANDOFF.md), [research record](research/round24/README.md), [roadmap](research/round24/advisor/roadmap.json), [reviewed contributions](research/round24/NOVELTY.md), [parameter definitions](research/round24/PARAMETERS.md), and [prospective agent brief](research/round24/advisor/next-agent-brief.md). The [historical handoff](research/round23/HANDOFF.md) and all earlier gates remain unchanged.
+**Current checkpoint: Round25, goal AA complete in two single-agent loops.** AA1 computes the physical sixteen-state cube shell; AA2 proves the observable-reachable component reduces the regional averaged operator, evaluates the full canonical endpoint and certifies finite-q arithmetic. Read the [all-round bullet ledger](https://occult-kranti.github.io/yang_mills_workbench/#research/all-results), [Newton/Tesla and resonance study](https://occult-kranti.github.io/yang_mills_workbench/#research/resonance-methods), [use guide and next three goals](research/round25/USE_AND_NEXT_GOALS.md), [handoff](research/round25/HANDOFF.md) and [contributions](research/round25/NOVELTY.md). Review is serial and correlated, not independent. Round24's ten-loop record and all historical gates remain unchanged.
 
 A reproducible research workbench for nonabelian gauge theory: explicit finite-model proofs, exact arithmetic certificates, numerical experiments, skeptical audits and a navigable Physics Observatory.
 
@@ -10,7 +10,7 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 **Repository:** [occult-kranti/yang_mills_workbench](https://github.com/occult-kranti/yang_mills_workbench)
 
-Round24 proves an actual phase-removed canonical endpoint scalar limit, with a certified disk but unevaluated energy-block matrices. On the fixed T graph, for every 0<=lambda<=0.01, the evaluated 21-state heat has all-time true-relative vacuum error below 0.00028 and normalized retained radius-0.01 error below 0.00044. These certificates preserve the earlier unrestricted-input obstruction. [Equations, assumptions and limits](research/round24/NOVELTY.md).
+Round24 established an actual phase-removed canonical endpoint scalar limit, with a certified disk and unevaluated energy-block matrices. Round25 now evaluates the component reached by the specified observable, with an exact formula and a finite-q enclosure; it does not enumerate every state in the larger energy shell. On the fixed T graph, for every 0<=lambda<=0.01, the evaluated 21-state heat has all-time true-relative vacuum error below 0.00028 and normalized retained radius-0.01 error below 0.00044. These certificates preserve the earlier unrestricted-input obstruction. [Equations, assumptions and limits](research/round24/NOVELTY.md).
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
@@ -20,7 +20,7 @@ The four-dimensional Yang–Mills existence and mass-gap problem remains open. T
 
 The new C2 replay repairs a missing interpreter-cache dependency through a separate reviewed portable inventory. The original failed admission command and historical evidence remain preserved; the repair adds zero research loops.
 
-[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Current roadmap](research/round24/advisor/roadmap.json) · [Model boundaries](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) · [Evidence review](https://occult-kranti.github.io/yang_mills_workbench/#research/round22-review).
+[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Current roadmap](research/round25/advisor/roadmap.json) · [Model boundaries](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) · [Evidence review](https://occult-kranti.github.io/yang_mills_workbench/#research/round22-review).
 
 **Round20 history:** The ten-loop study established separate finite-factor, literal-box local-state and local-dynamics limits in the summable model, a conditional static/dynamic identification audit, and exact ground-state return along the canonical profile. Its historical C2 admission defect is documented by the Round21 repair. [Round20 research record](https://occult-kranti.github.io/yang_mills_workbench/#research/review20-home) · [Round20 guide](research/round20/README.md).
 
@@ -76,7 +76,8 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Current V–Z paired continuation | `research/round24/` | Ten reviewed loops: readout, actual residual, full-graph certificates, canonical endpoint scalar limit and useful all-time relative accuracy on specified inputs |
+| Current AA continuation | `research/round25/` | Two same-author loops, exact canonical endpoint, full history ledger and source-grounded resonance methods |
+| V–Z paired continuation | `research/round24/` | Ten reviewed loops: readout, actual residual, full-graph certificates, canonical endpoint scalar limit and useful all-time relative accuracy on specified inputs |
 | S–U checkpoint | `research/round23/` | Six preserved loops including the canonical full-system endpoint lower bound; T2/U1/U2 retain their same-author attribution |
 | Historical N–R paired continuation | `research/round22/` | Local windows, homogeneous certificate limits, physical maps, magnetic memory and boundary response; see each immutable admission |
 | Previous five-goal paired research study | `research/round21/` | Ten reviewed loops: eight supported and two supported with limits. Local stability, physical observables, mobility identification and profile dynamics |
