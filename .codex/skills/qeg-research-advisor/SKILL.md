@@ -93,3 +93,7 @@ For local rotor stability, finite trial improvements and common-variable conditi
 For a user-requested team of three and sequential loops, use `references/two-loop-team.md`. Count the coordinator as the advisor–skeptic, execute the first evidence gate before selecting the second target, and distinguish the published collaboration ledger from a continuously running swarm.
 
 For dressed cluster extensions, full spectral complements and the next surrounding-link integration, read [the Round18 continuation contract](references/dressed-complement-conditional.md). It records the actual zero-mean premise, boundary consistency, complete omitted channels and induced joint trace measure.
+
+## Project-wide Newton and Tesla methods
+
+For all subsequent workbench planning, derivation, skeptical review and presentation, apply [the Newton/Tesla project method](references/newton-tesla-project-method.md) together with the two installed personal skills. Preserve historical source categories and test any proposed bridge. The U pair provides a full-system small-window endpoint witness in the canonical model, not a continuum or homogeneous result.

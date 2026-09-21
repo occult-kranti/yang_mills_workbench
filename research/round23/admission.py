@@ -67,7 +67,7 @@ def payload(result, loop, direction, expected):
     if 'passed' in result:
         require(type(result['passed']) is bool and result['passed'], 'passed must be true Boolean')
     require(type(expected) is dict and bool(expected), 'no reviewed semantic expectations')
-    # Expectations are selected by the advisor after independent skeptical review.
+    # Expectations follow the disclosed review mode, including explicit solo review.
     # Match exact JSON types as well as values: true must never stand for one.
     for key, value in expected.items():
         require(key in result and type(result[key]) is type(value)
@@ -130,6 +130,32 @@ def gate(loop):
                 for child in value:
                     control_flags(child)
         control_flags(controls)
+        if loop in ('u1', 'u2'):
+            require(result.get('execution_mode') == 'single-agent-correlated-formulations'
+                    and result.get('independent_agent_review') is False
+                    and controls.get('independent_agent_review') is False,
+                    'U evidence must disclose correlated single-agent execution')
+            required_controls = {
+                'u1': {'forward': ('all_links_free','unique_face_parity','haar_normalization',
+                        'wrong_normalized_trace_rejected','missing_face_changes_coefficient',
+                        'identity_zero_variance','compression_autonomy_not_assumed'),
+                       'reverse': ('moment_contraction','rank_operator_cubic_identity',
+                        'wrong_normalized_trace_rejected','vacuum_mean_not_vacuum_annihilation',
+                        'missing_face_changes_coefficient','compression_autonomy_not_assumed',
+                        'fixed_clock_checked','identity_zero_variance')},
+                'u2': {'forward': ('connected_word_identity','support_growth_required',
+                        'profile_uniform_bound','exact_positive_margin','state_square_root_enclosures',
+                        'finite_q_positive','outside_series_disk_rejected','large_window_certificate_only',
+                        'no_two_state_autonomy','first_order_bound_to_u1'),
+                       'reverse': ('all_order_domination_argument','exact_positive_margin',
+                        'complete_factor_incidence','single_link_budget_rejected',
+                        'support_growth_required','first_order_bound_to_u1','state_error_retained',
+                        'no_two_state_autonomy','magnitude_lower_bound_not_upper_failure',
+                        'large_window_certificate_only')}}
+            require(all(controls.get(k) is True for k in required_controls[loop][direction]),
+                    'missing or unsuccessful U discriminating control')
+            require(result.get('endpoint_proved') is (loop == 'u2')
+                    and result.get('continuum_proved') is False, 'U claim scope drift')
         if loop == 't2':
             amendment = prefix+'methods/t2-solo-override.md'
             require(amendment in inputs and amendment in files, 'missing T2 solo amendment')
@@ -151,8 +177,8 @@ def gate(loop):
     require(required <= files.keys(), 'incomplete required gate inventory')
     check_hashes(contract['dependencies'])
     require(type(g.get('independence')) is dict, 'missing independence disclosure')
-    if loop == 't2':
+    if loop in ('t2', 'u1', 'u2'):
         require(g['independence'].get('independent_agents') is False
                 and g['independence'].get('mode') == 'single-agent-correlated-formulations',
-                'T2 gate cannot claim independent agents')
+                'solo gate cannot claim independent agents')
     return g
