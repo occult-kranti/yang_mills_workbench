@@ -1,0 +1,7 @@
+# V1 advisor decision
+
+Accepted within scope after the independently frozen forward and reverse submissions and `skeptic/v1-review.md`. The exact three-outcome PVM and conditional eight-setting coherent quadrature readout are valid on the full Hilbert space. General self-adjoint observable error costs at most 8δ+4δ² in the difference of two connected correlators, uniformly in time. Contractions permit 8δ. The Wilson-multiplication distance ≥1/2 is admitted only in the full local Haar operator norm. The forward report's undeveloped extension to a gauge-quotient-only norm is excluded from the accepted claim.
+
+No circuit synthesis, sampled confidence, physical state preparation or Wilson witness is completed. V1's finite algebra controls are not a simulation of the interacting theory. Reverse's executed Gaussian-rational calculation independently checks the complex ancilla signal and sequential-measurement failure; forward's stipulated imaginary control alone is not a circuit check.
+
+Select V2 from the skeptic's remaining objection: derive an explicit finite-sample confidence and implementation-error budget for one endpoint measurement, including physical time uncertainty justified using the actual W/H commutator. Keep true infinite-system control and state preparation as assumptions if no construction is supplied. A resource count can be impractical and must be reported as such. No all-times stochastic guarantee or arbitrary-observable clock bound is implied.

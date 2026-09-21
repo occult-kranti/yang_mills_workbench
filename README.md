@@ -1,24 +1,26 @@
 # Yang–Mills Workbench
 
-**Current checkpoint: Round23 through U2 (6/10 loops).** The requested U1/U2 pair is complete under single-agent self-review. U2 establishes a scoped canonical endpoint lower bound. V/W are planned and unstarted. Newton and Tesla research skills now guide the project; read the [method and historical source guide](research/methods/newton-tesla/README.md). Read the [current handoff](research/round23/HANDOFF.md), [roadmap](research/round23/advisor/current-roadmap.json), and [Round23 results](research/round23/README.md). The Round22 release below remains a preserved historical milestone.
+**Current checkpoint: Round24, all 10 new loops reviewed.** Five goal pairs are complete: eight loops are accepted within scope and two retain precise limitations. Separate forward and reverse researchers, an independent model-agent skeptic and a root advisor use the Newton/Tesla methods. Read the [current handoff](research/round24/HANDOFF.md), [research record](research/round24/README.md), [roadmap](research/round24/advisor/roadmap.json), [reviewed contributions](research/round24/NOVELTY.md), [parameter definitions](research/round24/PARAMETERS.md), and [prospective agent brief](research/round24/advisor/next-agent-brief.md). The [historical handoff](research/round23/HANDOFF.md) and all earlier gates remain unchanged.
 
 A reproducible research workbench for nonabelian gauge theory: explicit finite-model proofs, exact arithmetic certificates, numerical experiments, skeptical audits and a navigable Physics Observatory.
 
 **Research website:** [Open Yang–Mills Workbench on GitHub Pages](https://occult-kranti.github.io/yang_mills_workbench/#research)
 
-**Scrolling research journey:** [Round22 research journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) follows the N–R feedback cycle, separates accepted equations from frozen proposals and evaluates N1's local real-time comparison bound. Its sufficient fixed-support window is `0 ≤ gamma < 3`; actual endpoint behavior remains open. Authored current assets are `dist/research-round22.js` and `.css`, with source-bound data generated from the admitted gates. The original M2 calculator remains in the [Round21 journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey21). Presentation and release checks add zero research loops.
+**Scrolling research journey:** [Round22 research journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) follows the N–R feedback cycle, separates accepted equations from frozen proposals and evaluates N1's local real-time comparison bound. Its sufficient fixed-support window is `0 ≤ gamma < 3`; the later U2 result supplies a scoped endpoint counterexample. Authored current assets are `dist/research-round22.js` and `.css`, with source-bound data generated from the admitted gates. The original M2 calculator remains in the [Round21 journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey21). Presentation and release checks add zero research loops.
 
 **Repository:** [occult-kranti/yang_mills_workbench](https://github.com/occult-kranti/yang_mills_workbench)
 
+Round24 proves an actual phase-removed canonical endpoint scalar limit, with a certified disk but unevaluated energy-block matrices. On the fixed T graph, for every 0<=lambda<=0.01, the evaluated 21-state heat has all-time true-relative vacuum error below 0.00028 and normalized retained radius-0.01 error below 0.00044. These certificates preserve the earlier unrestricted-input obstruction. [Equations, assumptions and limits](research/round24/NOVELTY.md).
+
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
-**Current study — Round22:** N1/N2 sharpen sufficient correlation windows and derive the exact growing-support certificate boundary. O1/O2 prove local rotation bounds and delimit the specified repeated-step certificate; the numerical homogeneous gap target remains open. P1 rejects an identity-evaluated section and P2 constructs an actual Haar isometry with its induced mixed electric generator. Q1/Q2 compute actual magnetic leakage, exact projected memory and controlled leading spectral matrices. R1 proves the initial interacting inverse and its actual crossing-boundary defect. R2 proves boundary-complete initial vacuum-response tails and finite-volume graph convergence, with explicit source-sector and support-weight limitations. All ten loops are reviewed: eight accepted and two limited outcomes; the numerical homogeneous stability target remains unclosed. [Evidence and reproduction](research/round22/README.md).
+**Round22 history:** N1/N2 sharpen sufficient correlation windows and derive the exact growing-support certificate boundary. O1/O2 prove local rotation bounds and delimit the specified repeated-step certificate; the numerical homogeneous gap target remains open. P1 rejects an identity-evaluated section and P2 constructs an actual Haar isometry with its induced mixed electric generator. Q1/Q2 compute actual magnetic leakage, exact projected memory and controlled leading spectral matrices. R1 proves the initial interacting inverse and its actual crossing-boundary defect. R2 proves boundary-complete initial vacuum-response tails and finite-volume graph convergence, with explicit source-sector and support-weight limitations. All ten loops are reviewed: eight accepted and two limited outcomes; the numerical homogeneous stability target remains unclosed. [Evidence and reproduction](research/round22/README.md).
 
 **Round21 history:** Ten loops remain preserved: eight supported and two with the numerical homogeneous target still insufficient. The study gives qualitative stability/local dressing, physical observable identification, conditional dynamic inverses, finite-slope limitations and profile dynamics convergence. Its M2 sufficient window `gamma < 3/2` is a historical bound sharpened under N1's specified hypotheses. [Historical overview](https://occult-kranti.github.io/yang_mills_workbench/#research/round21-home). Scientific priority remains unverified.
 
 The new C2 replay repairs a missing interpreter-cache dependency through a separate reviewed portable inventory. The original failed admission command and historical evidence remain preserved; the repair adds zero research loops.
 
-[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Current roadmap](https://occult-kranti.github.io/yang_mills_workbench/#research/round22-roadmap) · [Model boundaries](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) · [Evidence review](https://occult-kranti.github.io/yang_mills_workbench/#research/round22-review).
+[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Current roadmap](research/round24/advisor/roadmap.json) · [Model boundaries](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) · [Evidence review](https://occult-kranti.github.io/yang_mills_workbench/#research/round22-review).
 
 **Round20 history:** The ten-loop study established separate finite-factor, literal-box local-state and local-dynamics limits in the summable model, a conditional static/dynamic identification audit, and exact ground-state return along the canonical profile. Its historical C2 admission defect is documented by the Round21 repair. [Round20 research record](https://occult-kranti.github.io/yang_mills_workbench/#research/review20-home) · [Round20 guide](research/round20/README.md).
 
@@ -74,7 +76,9 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Current N–R paired continuation | `research/round22/` | Local windows, homogeneous certificate limits, physical maps, magnetic memory and boundary response; see each immutable admission |
+| Current V–Z paired continuation | `research/round24/` | Ten reviewed loops: readout, actual residual, full-graph certificates, canonical endpoint scalar limit and useful all-time relative accuracy on specified inputs |
+| S–U checkpoint | `research/round23/` | Six preserved loops including the canonical full-system endpoint lower bound; T2/U1/U2 retain their same-author attribution |
+| Historical N–R paired continuation | `research/round22/` | Local windows, homogeneous certificate limits, physical maps, magnetic memory and boundary response; see each immutable admission |
 | Previous five-goal paired research study | `research/round21/` | Ten reviewed loops: eight supported and two supported with limits. Local stability, physical observables, mobility identification and profile dynamics |
 | Earlier adaptive five-goal research study | `research/round20/` | Ten-loop finite-limit, dynamics, scale and decay investigation with source-bound gates |
 | Paired forward derivation and reverse reconstruction | `research/round19/` | Six accepted loops, including the repaired continuous static-κ certificate |
@@ -131,7 +135,7 @@ The third trace retains relative orientation lost by two separate loop traces. A
 
 ## Reproduce the studies
 
-The [Round22 guide](research/round22/README.md) records the current contracts, paired proofs, rejection controls, skeptical checkpoints and release procedure. Run from the repository root, always using fresh absolute output paths outside the repository checkout:
+The [Round24 guide](research/round24/README.md) records the current ten-loop cycle, its contracts, paired proofs, rejection controls and release procedure. Its [handoff](research/round24/HANDOFF.md) plans three further goals without executing them. The [Round22 guide](research/round22/README.md) preserves the historical reproduction commands below. Run from the repository root, always using fresh absolute output paths outside the repository checkout:
 
 ```bash
 python3 -B research/round22/reproduce.py --output /absolute/new/round22-normal
@@ -284,15 +288,16 @@ Interface checks use a Node VM and a DOM stand-in. They test routes, events, esc
 `dist/` is the local site source; `docs/` is the generated GitHub Pages tree. The build rewrites only known local asset URLs for the project prefix, preserves external source links, omits server code and marks live metadata refresh as local-only.
 
 ```bash
-python3 -B research/round22/build_claim_map.py
-python3 -B research/round22/build_site.py
+python3 -B research/round24/build_site.py
 npm run build
+npm run test:round24
+npm run test:round23
+npm run test:round22
 npm run test:ui
 npm run test:journey
-npm run test:round22
 ```
 
-Publication follows the [reviewed release protocol](research/round22/release/protocol.md): audit all ten gates, pin an independently reviewed inventory, verify a clean detached commit and its exact tree, then publish that tested tree through a reviewed pull request. A green build alone is not scientific admission. Record the research commit, merge, Pages deployment and live browser checks separately; do not force-push over unrelated work.
+Publication follows the [current Round24 release procedure](research/round24/release/README.md): require all ten gates and bound presentation claims, replay new and historical evidence from a clean detached commit, regenerate the exact site tree, then publish that tested tree through the reviewed pull request. A green build alone is not scientific admission. The [Round22 protocol](research/round22/release/protocol.md) remains historical documentation. Record the tested tree, merge, Pages deployment and any browser audit separately; do not force-push over unrelated work.
 
 GitHub Pages is configured to deploy from branch **main**, folder **/docs**, with `.nojekyll`. The published address is [https://occult-kranti.github.io/yang_mills_workbench/](https://occult-kranti.github.io/yang_mills_workbench/). Check repository Settings → Pages and the Pages deployment status after pushing. If publishing a fork, pass its project prefix to `python scripts/build_pages.py --base /your_repository/` and update these links.
 

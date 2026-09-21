@@ -1,0 +1,210 @@
+{
+  "loops": [
+    {
+      "equations": [
+        "P±=(W²±W)/2; P0=I−W²",
+        "|ΔC(A)−ΔC(W)| ≤ 8δ+4δ²",
+        "||W_F−M_f|| ≥ 1/2 (full local Haar norm)"
+      ],
+      "feedback": "The review separates complex coherent readout from sequential projective outcomes, and excludes an unproved quotient-norm extension. V2 was selected to quantify finite sampling and clock errors.",
+      "limits": [
+        "Coherent full-evolution control and state preparation are assumptions.",
+        "No separate Wilson observable witness or physical-quotient distance theorem.",
+        "Known measurement methods applied to this model; scientific priority unverified."
+      ],
+      "loop": "v1",
+      "model": "Canonical summable full-link SU(2); fixed U1 observable",
+      "statement": "The rank observable has exact outcomes −1,0,+1. Observable error transfers uniformly through full dynamics. The chosen full-local-norm Wilson approximation route is obstructed.",
+      "title": "Three outcomes with a uniform error budget",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "equations": [
+        "||[H_q,W]|| ≤ α(9/2+η/4)",
+        "P(any of 18 sample errors > r) ≤ 36 exp(−Nr²/2)",
+        "Common offsets: B=8(r+s+g)+(9+η/4)θ",
+        "Checked examples: 3.24 × 10²² total preparations"
+      ],
+      "feedback": "Computed ancilla density-matrix controls replace the earlier scalar illustration. Common-time offsets and per-shot jitter retain different constants and preparation norms.",
+      "limits": [
+        "One preselected q/time; no simultaneous continuum confidence.",
+        "Control/preparation accuracy assumed; no laboratory implementation.",
+        "These sufficient counts are neither optimal nor necessary lower bounds."
+      ],
+      "loop": "v2",
+      "model": "Same canonical model; one preselected endpoint measurement",
+      "statement": "Actual commutator control and concentration bounds give a conditional 99% confidence certificate in two fully specified error models. The sufficient checked resource count is impractical.",
+      "title": "Finite confidence, with explicit resource costs",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "equations": [
+        "0<|τ|≤5/1664 and 0<Θ≤1/16",
+        "h[v]=14τ²=24||v||²",
+        "h[w]/||w||² ≤ 24",
+        "||RΘ(A)|| ≥ (311/1664)||w|| > 0, τ ≠ 0"
+      ],
+      "feedback": "The forward direction proves a short-filter and conditional spectral-mass result. The stronger exact-moment bound comes from reverse reconstruction and passed independent skeptical review.",
+      "limits": [
+        "Indexed source, not the sum of all cubic terms.",
+        "Initial G only; no later-diagonal or homogeneous gap conclusion.",
+        "A vacuum column gives a full-operator lower bound, not all-sector upper control.",
+        "No claim that every other inverse is impossible.",
+        "At τ=0 the source and residual vanish exactly."
+      ],
+      "loop": "w1",
+      "model": "Homogeneous S initial diagonal and indexed cubic source; full 24-link blocks",
+      "statement": "An exact source-energy identity gives a volume-uniform positive lower bound on the actual retained filter residual. This blocks silently dropping that residual in the chosen short-filter regime.",
+      "title": "The actual short-filter residual stays cubic",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "equations": [
+        "A_n=RΘⁿ(A); [K_n,G]=−A+A_n",
+        "||A_n Ω|| ≤ ρⁿ ||w||, ρ<1",
+        "A_n → Σ_E P_E A P_E strongly (fixed finite volume)"
+      ],
+      "feedback": "W1 showed the residual cannot be dropped. W2 keeps it at every step and distinguishes vector, strong-operator and weighted-norm conclusions.",
+      "limits": [
+        "Actual equal-energy blocks remain uncomputed.",
+        "Column convergence is not full-source norm convergence.",
+        "The fixed-G iteration does not update scalar/diagonal terms or prove later-stage induction.",
+        "Failure of a positive weighted bound is not physical divergence."
+      ],
+      "loop": "w2",
+      "model": "Homogeneous S model at its fixed initial generator G",
+      "statement": "Repeated filtering has an exact all-step identity. Its actual vacuum response converges in graph norm. In each finite volume, the full source converges strongly to its spectral diagonal blocks; the all-sector weighted closure remains open.",
+      "title": "What repeated filtering actually converges to",
+      "verdict": "limited"
+    },
+    {
+      "equations": [
+        "A₀₀=20λ; A₀p=−λ/2; A_pq=(3+20λ)δ_pq",
+        "ε_R=20λ+(3−√(9+20λ²))/2",
+        "||I−P_R||=1; full-input norm approximation requires a positive starting time",
+        "⟨χ₁,p,Lφ_p⟩=−λ/2"
+      ],
+      "feedback": "The kinetic/full-input and degree/retained-input certificates remain separate. X2 was selected to turn the manageable actual sector into a full-graph ground/heat certificate.",
+      "limits": [
+        "R=1024 and N=20 matrices were not assembled.",
+        "The 21-state space is not invariant under the full Hamiltonian.",
+        "Separate true and finite ground energies; approximate centering can fail at arbitrarily long time.",
+        "Fixed graph; no continuum or homogeneous gap conclusion."
+      ],
+      "loop": "x1",
+      "model": "T finite physical graph:18 vertices, 33 links, 20 faces",
+      "statement": "Gauge-compatible cutoffs have rigorous heat-error bounds in specified input classes and time windows. Both directions explicitly construct the same actual 21-state sector and detect a physical channel leaving it. Larger certified cutoff examples remain unassembled.",
+      "title": "An actual 21-state gauge sector, with its leakage",
+      "verdict": "limited"
+    },
+    {
+      "equations": [
+        "||(Σ_p W_p)^2−5||²=195/4; 20 spin-one +190 face-pair channels",
+        "At λ=0.01: 0.19983332325 ≤ ε ≤ 0.19983333365",
+        "||G−G_R|| < 8.32 ×10⁻⁵",
+        "Evaluated heat error < 0.000085 for 0≤λ≤0.01 and σ≥5"
+      ],
+      "feedback": "The full residual closes the practical gap in X1. Its exact electric moment and sharper two-vector variational bound originated in forward work and passed independent skeptical review. The two directions preserve their distinct time and arithmetic certificates.",
+      "limits": [
+        "Fixed finite graph and absolute late-time norm; no early-time full-input or relative claim.",
+        "The 210 channels decompose this residual, not the entire omitted Hilbert space.",
+        "True and Ritz ground energies differ for λ>0; each heat operator uses its own ground centering.",
+        "No growing-volume efficiency, homogeneous numerical gap, physical calibration or continuum construction."
+      ],
+      "loop": "x2",
+      "model": "T finite physical graph; actual 21-state Ritz sector and its complete omitted residual",
+      "statement": "A complete Haar residual and full-spectrum separation certify the true ground energy, its projection and useful late-time heat accuracy from an actually computed small sector.",
+      "title": "A small computation certifies the full graph",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "equations": [
+        "sup_|t|≤Tq ||βqᵗ(W)−βq,kᵗ(W)|| ≤ Dk(15z)",
+        "Dk(x)=[(8/3)_(k+1)/(k+1)!] x^(k+1)/(1−x)^(k+4)",
+        "Forward depth1: 35 factors,98 links,20 retained faces; liminf signal >z/250",
+        "Reverse depth2: 135 factors,297 links,125 retained faces; full operator tail <3.4×10⁻¹⁴ at z=10⁻⁶"
+      ],
+      "feedback": "The two directions use different face-retention rules and state bounds; the review keeps their counts distinct. Y2 was selected to test a genuine phase-removed scalar limit through full reference-energy blocks.",
+      "limits": [
+        "Finite spatial support retains infinite-dimensional spin spaces.",
+        "No finite-spin evolution, circuit or numerical trajectory is computed.",
+        "The regional ground is not assumed to equal the restriction of the full ground.",
+        "No full-propagator norm limit, global q=1 Hamiltonian, homogeneous gap or continuum conclusion."
+      ],
+      "loop": "y1",
+      "model": "Canonical M/N/U full-factor family; two explicitly distinct retained-face conventions",
+      "statement": "Complete-factor spatial collars match all local connected words through their depth. The full omitted tail and both stationary-state errors are controlled at the original growing physical time.",
+      "title": "A fixed spatial collar retains the endpoint signal",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "loop": "y2",
+      "verdict": "accepted_within_scope",
+      "title": "The endpoint correlation has an actual scalar limit",
+      "model": "Canonical M/N/U family at the original growing physical time; full finite-region reference-energy blocks",
+      "statement": "The phase-removed stationary endpoint correlation converges to an actual scalar. Whole energy blocks characterize it and a uniform spatial tail transfers the regional limits. A sharper certified disk is obtained without assembling those blocks.",
+      "equations": [
+        "Fixed η∈(0,1), 0<z=Cη≤10⁻⁶; T_q=C(ℏ/α)(1−q)⁻³",
+        "F_infinity(z)=lim_(q→1) exp(i E T_q/ℏ) C_q(T_q), E=9α/2",
+        "F_infinity(z)=lim_k ⟨ψ_k,exp[−i(8z/7) P_(k,9/2) A_k P_(k,9/2)]ψ_k⟩",
+        "|F_infinity(z)−1−i z/84| ≤ D_2(15z)+(1/2)(8z/7)²(129/24)²",
+        "At z=10⁻⁶ the disk radius is below 1.89×10⁻¹¹"
+      ],
+      "feedback": "Y1 supplied the uniform spatial tail. Both directions prove strong averaging, adjoint and state transfer at the unchanged clock. The sharper disk is a forward-origin refinement independently checked by the skeptic; reverse’s broader connected-word disk remains valid.",
+      "limits": [
+        "Actual whole energy blocks, their dimensions and numerical trajectories are unevaluated.",
+        "The excited-energy separation is positive but uncomputed; no useful finite-q or joint spatial/q rate is supplied.",
+        "Strong averaging is not a global operator-norm theorem; the known resonant pair is not assumed closed.",
+        "No global q=1 Hamiltonian, homogeneous numerical gap, continuum construction or verified scientific priority."
+      ]
+    },
+    {
+      "equations": [
+        "u=(L−ε)Ω ∈ ran P; Gu=0, G_Ru≠0",
+        "R_true(σ,u) ≥ κ exp[(3−μ)σ]−1 →∞",
+        "v=(L−μ)Ω: R_true(σ,v)→1",
+        "At λ=0.01,σ=6: forward certified R_true(σ,u)>6.9"
+      ],
+      "feedback": "The strict actual energy displacement and vacuum row establish different retained ground-overlap kernels. Nonzero leakage alone is insufficient, as the separate method-test exception demonstrates. Z2 targets a checkable input class and all-time vacuum accuracy.",
+      "limits": [
+        "The divergent witness uses exact unknown ε; an interval does not prepare it exactly.",
+        "The computable witness proves a unit limit for the true denominator, not its own divergence.",
+        "At λ=0 every retained input evolves exactly; positive-coupling late-time quantifiers differ.",
+        "Absolute X2 accuracy remains valid; physical heat does not diverge."
+      ],
+      "loop": "z1",
+      "model": "Actual T21 retained inputs; each heat has its own ground energy; true-output vector norm is denominator",
+      "statement": "For every positive admitted coupling, one fixed actual retained input has unbounded relative error over time. A separately computable Ritz-bright input has relative error tending to one.",
+      "title": "An actual obstruction to uniform relative accuracy",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "loop": "z2",
+      "verdict": "accepted_within_scope",
+      "title": "Useful relative accuracy for specified inputs, at every heat time",
+      "model": "Actual finite T graph and its 21-state Ritz heat, each with its own ground centering; true-output denominator",
+      "statement": "The complete retained-to-omitted map gives a genuine early-time bound. Joining it to an independent spectral bound certifies useful all-time relative accuracy for the vacuum and explicit preparation classes over the continuous coupling interval.",
+      "equations": [
+        "(QLP)* (QLP)|_faces = (λ²/4)(19I+J); ||QLP||=√39 λ/2",
+        "(E(σ)−E_R(σ))x = −∫₀^σ E(σ−s)[QLP+(μ−ε)P]E_R(s)x ds",
+        "For 0≤λ≤0.01 and every σ≥0: R_true(σ,Ω)<0.00028",
+        "Normalized retained ||x−Ω||≤0.01: R_true(σ,x)<0.00044",
+        "Reverse unnormalized retained radius-0.01 ball: R_true(σ,x)<0.000720"
+      ],
+      "feedback": "Z1 showed that a denominator premise is essential. Both directions independently recover the complete map. Forward uses sharper input-specific late tails; reverse admits a broader preparation ball and keeps its different constants. Joining times and input floors are proof/input choices, not changes to the action.",
+      "limits": [
+        "These are sufficient upper certificates, not measured errors, optimal costs or unrestricted input guarantees.",
+        "The one-percent forward ball requires normalized retained inputs and phase alignment; the comparison uses the same prepared input on both sides.",
+        "An ideal-input comparison needs an additional preparation bias; unretained components and uncertain physical inputs need separate budgets.",
+        "Exact time-zero and zero-coupling physical identities remain; scalar evaluation error is separately controlled. No real-time, growing-volume or continuum theorem."
+      ]
+    }
+  ],
+  "open_goals": [
+    "Assemble actual canonical whole-energy blocks and certify their scalar evaluation and finite-q rate",
+    "Resolve the homogeneous actual spectral-diagonal source and all-sector weighted inverse closure",
+    "Extend finite-graph certificates to an enriched retained space and assess volume-dependent costs",
+    "Construct a Wilson-multiplication endpoint witness, physical calibration and the four-dimensional continuum theory"
+  ],
+  "summary": "Ten reviewed loops connect operational readout, an actual filter obstruction, limited iteration closure, complete finite-graph residual certificates, a canonical endpoint scalar limit and useful all-time relative heat accuracy on specified inputs. Eight are accepted within scope; W2 and X1 retain their stated parent limitations."
+}
