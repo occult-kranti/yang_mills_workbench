@@ -1,0 +1,13 @@
+# Contributions and prior-method boundary
+
+Scientific priority is unverified. These are project-specific derivations and certificates, using established Haar integration, spin-network constraints, spectral projection and averaging methods. Newton's or Tesla's historical authority is not a proof premise.
+
+- **AA1:** complete sixteen-state physical electric shell on the free cube, every flip matrix element, exact adjacency spectrum and the actual U-state spectral weights. The two-state approximation is disproved even within the averaged cube. Its gate remains limited because exterior embedding was not yet proved there.
+- **AA2:** a complete exterior-face/charge argument proves that this component reduces every complete-factor regional averaged block containing the cube. This replaces whole-block enumeration for the particular observable by a proved reachability exclusion. The larger energy eigenspaces are not claimed to have sixteen states.
+- **AA2:** the previously implicit full canonical endpoint becomes an explicit combination of two cosine/sine frequencies and a zero-mode weight. The exact first-order disk improves to z²/3528 on 0<z<=1e-6.
+- **AA2:** a participating-frequency bound >=1/8 evaluates the source-specific averaging primitive without guessing a global excited-energy gap. The complete finite-q certificate separates full stationary-state change, spatial tail, averaging and scalar arithmetic. A degree-eight exact rational example has total radius below 1.201e-18 at its declared parameters and original time 2e30 hbar/alpha.
+- **Synthesis:** 111 source-linked study/loop entries across recorded Rounds3–25, including all 76 numbered physics-loop gates. Missing Round1/2 packages are disclosed. Historical limited/failed verdicts and later repairs remain visible.
+- **Methods:** primary-source distinctions between Tesla's terrestrial patent, Schumann cavity modes, forced spectral peaks, Newton's Hermetic/alchemical material and Tesla-related Vedantic correspondence. The relevant modern-method map is dated and explicitly incomplete.
+- **Reuse:** Newton and Tesla personal skills gain prospective source and inference guidance. AB/AC are refined, and AD is selected from AA's observable/scale bottleneck. They are planned only.
+
+AA1/AA2 use one agent under the user's instruction. Exact enumeration and alternative formulations are correlated checks; they are not independent observations or human peer review. The static/finite/homogeneous/canonical models remain distinct. No physical clock calibration, numerical homogeneous stability interval or four-dimensional continuum mass gap is established.
