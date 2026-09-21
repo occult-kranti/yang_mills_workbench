@@ -1,6 +1,6 @@
 # Yang–Mills Workbench
 
-**Current checkpoint: Round23 through T2 (4/10 loops).** The active loop is complete under the user-requested single-agent workflow. U1 has not started. Read the [current handoff](research/round23/HANDOFF.md), [roadmap](research/round23/advisor/current-roadmap.json), and [Round23 results](research/round23/README.md). The Round22 release below remains a preserved historical milestone.
+**Current checkpoint: Round23 through U2 (6/10 loops).** The requested U1/U2 pair is complete under single-agent self-review. U2 establishes a scoped canonical endpoint lower bound. V/W are planned and unstarted. Newton and Tesla research skills now guide the project; read the [method and historical source guide](research/methods/newton-tesla/README.md). Read the [current handoff](research/round23/HANDOFF.md), [roadmap](research/round23/advisor/current-roadmap.json), and [Round23 results](research/round23/README.md). The Round22 release below remains a preserved historical milestone.
 
 A reproducible research workbench for nonabelian gauge theory: explicit finite-model proofs, exact arithmetic certificates, numerical experiments, skeptical audits and a navigable Physics Observatory.
 
