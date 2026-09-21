@@ -10,10 +10,14 @@ def require(ok,message):
     if not ok: raise ValueError(message)
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def read(path): return json.loads(path.read_text())
+def external_output(path):
+    out=path.absolute()
+    require(not out.exists() and not out.resolve().is_relative_to(ROOT.resolve()),'choose fresh output outside checkout')
+    return out
 def source(name):
     p=ROOT/name
     require(not Path(name).is_absolute() and '..' not in Path(name).parts,'unsafe source path')
-    require(p.is_file() and not p.is_symlink() and p.resolve().is_relative_to(ROOT),'missing or linked source: '+name)
+    require(p.is_file() and not any(x.is_symlink() for x in [p,*p.parents] if x!=ROOT and ROOT in x.parents) and p.resolve().is_relative_to(ROOT.resolve()),'missing or linked source: '+name)
     return p
 def payload(loop,direction,folder,expected=None):
     result=read(folder/'results.json'); controls=read(folder/'controls.json')
@@ -62,7 +66,7 @@ def replay(loop,out,optimized=False):
     return {'loop':loop,'verdict':g['verdict'],'gate_sha256':digest(source(f'{ROUND}/advisor/{loop}-gate.json'))}
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--loops',nargs='+');p.add_argument('--optimized',action='store_true');a=p.parse_args()
-    out=a.output.absolute();require(not out.exists() and not out.is_relative_to(ROOT),'choose fresh output outside checkout')
+    out=external_output(a.output)
     loops=a.loops or [l for l in LOOPS if (ROOT/f'{ROUND}/advisor/{l}-gate.json').exists()]
     require(loops and len(loops)==len(set(loops)),'invalid loop selection');out.mkdir(parents=True)
     rows=[replay(l,out,a.optimized) for l in loops]

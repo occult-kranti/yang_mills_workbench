@@ -19,6 +19,11 @@ def prose(text):
 
 def main():
     summary=read(ROOT/f'{ROUND}/advisor/contributions.json')
+    require([item['loop'] for item in summary['loops']]==list(LOOPS),'final site requires each of the ten reviewed loops exactly once')
+    review=read(ROOT/f'{ROUND}/advisor/presentation-review.json')
+    require(review.get('reviewed') is True and review.get('reviewer')=='root advisor','missing presentation review')
+    require(f'{ROUND}/advisor/contributions.json' in review['files'],'unbound presentation claims')
+    for name,expected in review['files'].items():require(digest(ROOT/name)==expected,'presentation changed after review: '+name)
     rows=[]
     for item in summary['loops']:
         loop=item['loop'];g=gate(loop)

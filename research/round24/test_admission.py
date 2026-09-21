@@ -49,6 +49,15 @@ def main():
         def false_results():
             n=f'{a.ROUND}/forward/v1/output/results.json';d=a.read(root/n);d['claims'].append('invented result');dump(n,d);rebind()
         rejected('coherently_rebound_output_requires_actual_replay',false_results,replay=True)
+        directory=root/'regular';directory.mkdir();(directory/'value').write_text('source')
+        (root/'linked').symlink_to(directory,target_is_directory=True)
+        try:a.source('linked/value')
+        except ValueError:tests['symlinked_source_parent_rejected']=True
+        else:raise RuntimeError('symlinked source parent admitted')
+        alias=Path(tmp)/'outside-alias';alias.symlink_to(root,target_is_directory=True)
+        try:a.external_output(alias/'new-output')
+        except ValueError:tests['output_alias_into_checkout_rejected']=True
+        else:raise RuntimeError('output alias into checkout admitted')
         a.ROOT=original
     args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps({'status':'passed','controls':tests,'research_loops_added':0},indent=2,sort_keys=True)+'\n')
     print(json.dumps({'status':'passed','admission_controls':len(tests)}))

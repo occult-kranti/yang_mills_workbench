@@ -1,0 +1,9 @@
+# X2 advisor decision
+
+Accept the frozen useful finite-graph ground and late-heat target. Both directions compute the full physical Ritz residual, including all 20 spin-one and 190 face-pair channels. Its norm is fixed by the exact Haar identity `||S^2-5||^2=195/4`; a spin-one-only estimate loses a factor of 39 in squared norm. The actual full excited spectrum, smooth domain and min-max isolation justify the energy and projection estimates. The independent skeptic verified these premises and replayed both producers in both interpreter modes.
+
+At lambda=0.01 the forward exact residual energy moment gives the sharper outward true ground-energy enclosure `[0.19983332325,0.19983333365]`. That moment and its shared-edge singlet/triplet refinement are forward-origin results separately reviewed, not independently duplicated results. Reverse obtains a compatible coarser upper endpoint. Both prove that true and Ritz ground energies differ strictly for positive coupling.
+
+The ground-projector error is below `8.32e-5`. The forward full-space centered heat certificate is below `0.000103` at the coupling cap for every sigma>=4. Reverse's separately evaluated spectral representation is below `0.000085` for every lambda in [0,0.01] and sigma>=5, including its uniform scalar evaluator. Each operator uses its own true ground energy. These are absolute finite-graph certificates, with no early-time full-space, relative, real-time, volume-uniform or continuum implication.
+
+V/W/X now each have two reviewed loops. The next selection record must use these six admitted gates before freezing Y/Z. The actionable unresolved issues include practical canonical endpoint dynamics, relative accuracy of the finite-graph approximation, residual-enriched finite sectors, and S's distinct all-sector inverse. The last two goal pairs will be selected explicitly from these limitations; no extra W or X loop is counted.
