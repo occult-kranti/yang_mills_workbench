@@ -5,6 +5,8 @@ description: Plan and critically review this quantum-electromagnetic-gravity res
 
 # Quantum fields and gravity research advisor
 
+For centered heat comparison or completing only an active loop, read [the centered-heat and solo-closeout lessons](references/centered-heat-and-solo-closeout.md). Preserve actual spectral objects and the user's stop boundary; disclose correlated single-agent verification.
+
 For post-Round20 local stability, physical-sector reconstruction, dynamic identification or a clean-checkout admission repair, read [the admission and matching contract](references/admission-and-matching.md). Use the current `AGENTS.md` ownership boundaries and the explicitly selected round’s frozen contracts.
 
 For driven truncation, growing-volume or hierarchy-closure work, read [the dynamic/volume/closure contract](references/dynamic-volume-closure-contract.md). It records the distinction between exact Galerkin error and computed-state error, common-action variables, volume-deterioration counterbenchmarks and source-specific closure tests.

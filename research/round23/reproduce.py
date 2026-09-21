@@ -42,7 +42,9 @@ def main():
     args = parser.parse_args()
     output = unlinked(args.output.absolute())
     require(not output.exists() and ROOT not in output.parents, 'choose a fresh external output directory')
-    loops = args.loops or list(LOOPS)
+    # Default to committed reviewed gates, not all ten future loop names.
+    ledger = read(source('research/round23/advisor/progress-ledger.json'))
+    loops = args.loops if args.loops is not None else [row['loop'] for row in ledger['completed_loops']]
     require(bool(loops) and len(loops) == len(set(loops)), 'empty or duplicate loop list')
     gates = {loop:gate(loop) for loop in loops}
     hashes = {loop:digest(source(f'research/round23/advisor/{loop}-gate.json')) for loop in loops}

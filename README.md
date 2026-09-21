@@ -1,5 +1,7 @@
 # Yang–Mills Workbench
 
+**Current checkpoint: Round23 through T2 (4/10 loops).** The active loop is complete under the user-requested single-agent workflow. U1 has not started. Read the [current handoff](research/round23/HANDOFF.md), [roadmap](research/round23/advisor/current-roadmap.json), and [Round23 results](research/round23/README.md). The Round22 release below remains a preserved historical milestone.
+
 A reproducible research workbench for nonabelian gauge theory: explicit finite-model proofs, exact arithmetic certificates, numerical experiments, skeptical audits and a navigable Physics Observatory.
 
 **Research website:** [Open Yang–Mills Workbench on GitHub Pages](https://occult-kranti.github.io/yang_mills_workbench/#research)

@@ -130,7 +130,29 @@ def gate(loop):
                 for child in value:
                     control_flags(child)
         control_flags(controls)
+        if loop == 't2':
+            amendment = prefix+'methods/t2-solo-override.md'
+            require(amendment in inputs and amendment in files, 'missing T2 solo amendment')
+            require(result.get('execution_mode') == 'single-agent-correlated-formulations'
+                    and result.get('independent_agent_review') is False,
+                    'T2 must disclose single-agent execution')
+            require(controls.get('independent_agent_review') is False,
+                    'T2 controls must disclose single-agent execution')
+            required_controls = {
+                'forward': ('different_grounds_enclosed', 'different_ground_weights_enclosed',
+                    'lambda_zero_exact', 'time_zero_identity', 'infinity_projection_checked',
+                    'partial_shift_rejected', 'common_shift_preserved', 'clock_mismatch_rejected'),
+                'reverse': ('whole_interval_margin_proved', 'ground_ground_cancellation_checked',
+                    'common_ground_assumption_rejected', 'missing_centering_rejected',
+                    'missing_initial_projection_rejected', 'missing_leakage_budget_rejected',
+                    'relative_ratio_inference_rejected', 'spectral_derivative_identities_checked')}
+            require(all(controls.get(k) is True for k in required_controls[direction]),
+                    'missing or unsuccessful T2 discriminating control')
     require(required <= files.keys(), 'incomplete required gate inventory')
     check_hashes(contract['dependencies'])
     require(type(g.get('independence')) is dict, 'missing independence disclosure')
+    if loop == 't2':
+        require(g['independence'].get('independent_agents') is False
+                and g['independence'].get('mode') == 'single-agent-correlated-formulations',
+                'T2 gate cannot claim independent agents')
     return g

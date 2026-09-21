@@ -31,3 +31,7 @@ For projected dynamics and boundary-complete responses, read `.codex/skills/qeg-
 ## Lessons admitted during Round23 S
 
 For generated local sources and filtered commutators, read `.codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md`. Keep an indexed source distinct from a summed remainder, retain the resonant filter residual, and count all ordered connected words before claiming a weighted bound. Attribute a direction-only refinement after independent review. An actual initial-operator limit does not establish later-diagonal induction. Freeze updated instruction snapshots only for subsequently selected contracts.
+
+## T2 solo closeout and current stop
+
+The user explicitly requested no subagents and completion of the active T2 loop only. The T2 execution amendment preserves its mathematical contract and discloses same-author derivation, correlated checks and self-review. Do not claim independent review for T2. Round23 has four completed investigations; U1 is planned but neither frozen nor started. Read `research/round23/HANDOFF.md` and `advisor/current-roadmap.json` before any continuation. Only a new user instruction should resume execution.
