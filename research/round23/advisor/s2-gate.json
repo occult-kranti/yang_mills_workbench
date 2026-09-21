@@ -1,0 +1,373 @@
+{
+  "claim": "A compact-time regulated full-source commutator map preserves the actual graph domain and has complete connected weight2 bounds; its sinc residual is retained exactly.",
+  "decided_at": "2026-09-14T17:30:03.250294+00:00",
+  "equations": [
+    "L_Theta(A)=-(i/2) integral_-Theta^Theta sign(s)(1-|s|/Theta) exp(isG) A exp(-isG) ds",
+    "[L_Theta,G]=-A+R_Theta; R_Theta=(2Theta)^-1 integral_-Theta^Theta exp(isG) A exp(-isG) ds",
+    "||L_Theta||<=Theta||A||/2; ||R_Theta||<=||A||; multipliers (1-sinc(Theta omega))/omega and sinc(Theta omega)",
+    "forward: ||L||_w<=32Theta r_*(1-x)^(-8/3), ||R||_w<=64r_*(1-x)^(-8/3), x=192MTheta<=105/416",
+    "reverse: ||L||_w<=8Theta r_* F(z), ||R||_w<=16r_* F(z), F(z)=(4-z)/(1-z)^2, z=208MTheta<=35/128",
+    "forward-only: ||(G_Lambda+1)^-1 f-(G+1)^-1 f||_F<=sqrt(kappa)/g sqrt(M sum_omitted ||Q_b(G+1)^-1 f||^2) ->0"
+  ],
+  "expected_results": {
+    "forward": {
+      "coefficient_controls": {
+        "filter_simplex_coefficients": [
+          {
+            "generator_factor": "1/32",
+            "n": 0,
+            "residual_factor": "1"
+          },
+          {
+            "generator_factor": "1/1536",
+            "n": 1,
+            "residual_factor": "1/32"
+          },
+          {
+            "generator_factor": "1/98304",
+            "n": 2,
+            "residual_factor": "1/1536"
+          },
+          {
+            "generator_factor": "1/7864320",
+            "n": 3,
+            "residual_factor": "1/98304"
+          },
+          {
+            "generator_factor": "1/754974720",
+            "n": 4,
+            "residual_factor": "1/7864320"
+          },
+          {
+            "generator_factor": "1/84557168640",
+            "n": 5,
+            "residual_factor": "1/754974720"
+          },
+          {
+            "generator_factor": "1/10823317585920",
+            "n": 6,
+            "residual_factor": "1/84557168640"
+          }
+        ],
+        "outside_radius_term_ratio_fixture": "136/63",
+        "p": "8/3",
+        "rational_envelope": "71991296/30080231",
+        "weight": "2^support_size",
+        "x_max": "105/416"
+      },
+      "connected_weight": "2^support_size",
+      "direction": "forward",
+      "frequency_controls": {
+        "matrix_scope": "rational algebra fixture, not actual SU2 spectral data",
+        "max_matrix_sinc_tail_upper": "59049/9000377169167188291364061184000",
+        "polynomial_order": 14,
+        "resonance_generator_multiplier": "0",
+        "retained_resonance_multiplier": "1",
+        "sinc_one_interval": [
+          "94166534455013794453916275199/94227868743147981738344448000",
+          "6557004127171520535415098074656769/6561274956322880264404400603136000"
+        ],
+        "theta_fixture": "1/16"
+      },
+      "full_source_identity": "[L_Theta,G]=-A+R_Theta",
+      "graph_domain_preserved": true,
+      "homogeneous_gap_proved": false,
+      "infinite_R2_identification": "proved_by_absolute_form_tail_strong_resolvent_and_local_Dyson_limits",
+      "loop": "s2",
+      "next_missing_premise": "actual source low-frequency control and a regulator-removal certificate",
+      "passed": true,
+      "residual_multiplier": "sinc(omega*Theta)",
+      "resonance_retained": true,
+      "schema": "ym23-producer-results-v1",
+      "source_operator": "actual S1 generated source tensor exterior identity",
+      "status": "proved_regulated_identity_connected_certificate",
+      "support_controls": {
+        "retained_repetitions": true,
+        "root_sums_depth0_to3": [
+          "48",
+          "2656",
+          "117952",
+          "3463552"
+        ],
+        "seed_reset_lost_extensions": 62,
+        "word_counts_depth0_to3": [
+          5,
+          17,
+          69,
+          307
+        ]
+      },
+      "target_verdict": "accepted_regulated_only",
+      "unregulated_inverse_proved": false
+    },
+    "reverse": {
+      "bohr_L": "(1-sinc(Theta*omega))/omega, continuous value0",
+      "bohr_residual": "sinc(Theta*omega), value1 at frequency0",
+      "certificate": {
+        "F_z_max": "6784/961",
+        "L_weighted_uniform_coefficient": "54272/961",
+        "R_weighted_uniform_coefficient": "108544/961",
+        "all_time_series_certified": false,
+        "bad_all_time_ratio_n20": "128037/40000",
+        "tail_checks": [
+          {
+            "N": 0,
+            "tail": "0",
+            "z": "0"
+          },
+          {
+            "N": 1,
+            "tail": "0",
+            "z": "0"
+          },
+          {
+            "N": 4,
+            "tail": "0",
+            "z": "0"
+          },
+          {
+            "N": 12,
+            "tail": "0",
+            "z": "0"
+          },
+          {
+            "N": 0,
+            "tail": "232/3267",
+            "z": "1/100"
+          },
+          {
+            "N": 1,
+            "tail": "331/326700",
+            "z": "1/100"
+          },
+          {
+            "N": 4,
+            "tail": "157/81675000000",
+            "z": "1/100"
+          },
+          {
+            "N": 12,
+            "tail": "71/163350000000000000000000000",
+            "z": "1/100"
+          },
+          {
+            "N": 0,
+            "tail": "2940/961",
+            "z": "35/128"
+          },
+          {
+            "N": 1,
+            "tail": "140875/123008",
+            "z": "35/128"
+          },
+          {
+            "N": 4,
+            "tail": "682784375/16122904576",
+            "z": "35/128"
+          },
+          {
+            "N": 12,
+            "tail": "6741544913572998046875/2323555425299317273785270272",
+            "z": "35/128"
+          }
+        ],
+        "z_max": "35/128"
+      },
+      "coefficients": [
+        {
+          "average_coefficient": "1",
+          "k": 0,
+          "triangular_coefficient": "1/6"
+        },
+        {
+          "average_coefficient": "-1/6",
+          "k": 1,
+          "triangular_coefficient": "-1/120"
+        },
+        {
+          "average_coefficient": "1/120",
+          "k": 2,
+          "triangular_coefficient": "1/5040"
+        },
+        {
+          "average_coefficient": "-1/5040",
+          "k": 3,
+          "triangular_coefficient": "-1/362880"
+        },
+        {
+          "average_coefficient": "1/362880",
+          "k": 4,
+          "triangular_coefficient": "1/39916800"
+        },
+        {
+          "average_coefficient": "-1/39916800",
+          "k": 5,
+          "triangular_coefficient": "-1/6227020800"
+        },
+        {
+          "average_coefficient": "1/6227020800",
+          "k": 6,
+          "triangular_coefficient": "1/1307674368000"
+        },
+        {
+          "average_coefficient": "-1/1307674368000",
+          "k": 7,
+          "triangular_coefficient": "-1/355687428096000"
+        }
+      ],
+      "comparison": {
+        "actual_SU2_residual_lower_bound": false,
+        "all_stage_gap_proved": false,
+        "domain_preservation": true,
+        "exponential_domain_preservation": true,
+        "infinite_G_identification_proved": false,
+        "radius_z_max": "35/128",
+        "regulator_removed": false,
+        "source_extended_by_identity": true,
+        "weight": "2^|Y|",
+        "weighted_L_bound": "8*r_star*Theta*(4-z)/(1-z)^2",
+        "weighted_R_bound": "16*r_star*(4-z)/(1-z)^2"
+      },
+      "direction": "reverse",
+      "identity": "[L_Theta,G]=-A+R_Theta(A)",
+      "loop": "s2",
+      "novelty": "direct project derivation, scientific priority unverified",
+      "passed": true,
+      "residual": "(2Theta)^(-1) integral[-Theta,Theta] alpha_s(A) ds",
+      "schema": "ym23-reverse-s2-v1",
+      "source": "actual S1 cubic same-anchor source; nonzero for nonzero tau; not entire BCH residual",
+      "spectral_checks": [
+        {
+          "L_interval": [
+            "-29759111388161519626307917821608940259717199/45718923739059394916964920767416806580997324800",
+            "-799924914113781647555156831044848314181198309119999/1228924670105916535368017070228163760897208090624000000"
+          ],
+          "Theta": "1/16",
+          "omega": "-1",
+          "residual_interval": [
+            "45689164627671233397338612849595197640737607601/45718923739059394916964920767416806580997324800",
+            "1228124745191802753720461913397118912583026892314880001/1228924670105916535368017070228163760897208090624000000"
+          ]
+        },
+        {
+          "L_interval": [
+            "0",
+            "0"
+          ],
+          "Theta": "1/16",
+          "omega": "0",
+          "residual_interval": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "L_interval": [
+            "799924914113781647555156831044848314181198309119999/1228924670105916535368017070228163760897208090624000000",
+            "29759111388161519626307917821608940259717199/45718923739059394916964920767416806580997324800"
+          ],
+          "Theta": "1/16",
+          "omega": "1",
+          "residual_interval": [
+            "45689164627671233397338612849595197640737607601/45718923739059394916964920767416806580997324800",
+            "1228124745191802753720461913397118912583026892314880001/1228924670105916535368017070228163760897208090624000000"
+          ]
+        }
+      ],
+      "status": "checks_passed_regulated_target_accepted_unregularized_limited",
+      "support": {
+        "counts": [
+          {
+            "exact_words": 13,
+            "n": 1,
+            "word_upper": 13
+          },
+          {
+            "exact_words": 253,
+            "n": 2,
+            "word_upper": 338
+          },
+          {
+            "exact_words": 6421,
+            "n": 3,
+            "word_upper": 13182
+          }
+        ],
+        "n1_crossing_rooted_words": 84,
+        "n1_exact_weight_sum": 10816,
+        "n1_rooted_words": 88,
+        "n1_upper_weight_sum": 11648
+      },
+      "target_verdict": "regulated_full_source_identity_and_connected_weighted_certificate_proved"
+    }
+  },
+  "files": {
+    "research/round22/advisor/r2-gate.json": "52887cfdf7a6330ffbdbe66e31def67cbb5494763d4268431af0e8383ded6d0b",
+    "research/round22/forward/o1/report.md": "0284e19cc90061a1ff9cade5a58f8169ab4a7b06c2e53b605853530d6d828e72",
+    "research/round22/forward/r2/report.md": "0232e8de2246b0a8ab3909c90b02c9e2d46294c0ece352664fb1f5496b6dc422",
+    "research/round22/reverse/r2/report.md": "cc697160a2f9db33825fccfa8da44c3e32b39a9f1c5b804ae5628da854a6edf2",
+    "research/round23/advisor/s1-decision.json": "cae7391ee2edc7eec8f990e1afb3a0abf9fb2ceddcd7e2d7c2ba08fd3b3b99e3",
+    "research/round23/advisor/s1-decision.md": "ac26df373e7933fd1e1f2927665d015c8d9d69dd9c7706ed17b6654989ce5f3b",
+    "research/round23/advisor/s1-gate.json": "d54f6b372775ffb4f9ea1b8f5e426a3cc64474d34f5e4d34a1914cce3f42d7f6",
+    "research/round23/advisor/s2-decision.json": "398774eebeee56d4f7e081b5ce81480d423b920ea9f8fc77e5faab02d737aeea",
+    "research/round23/advisor/s2-decision.md": "b6eedc0892c09473719617572e14ef745420a4a811298d05c3f4cf17aef011d7",
+    "research/round23/contracts/s2.json": "a339228a20375c197f01901e34806fd827cc22fd1e930b740475c15262cd21c2",
+    "research/round23/forward/s1/report.md": "6cf8b76b884084b36ea9de8ff7a555847b87de09572adaf1dc3d0b7ae884c348",
+    "research/round23/forward/s1/source-notes.md": "2d0c4bc81a763d23452846f3e29f5d197b97d3c251d28de0494fa2d528d90cee",
+    "research/round23/forward/s2/check.py": "1e71abf3dffeef9171c2388c1114612a5015d0a346b72063041e7e47f41406b7",
+    "research/round23/forward/s2/output/controls.json": "08fc2dfb258eededcb1299ac92bc5ac1196050cc38715bd84e1dd0ac371699ac",
+    "research/round23/forward/s2/output/results.json": "a4dcd0957abf363c401ab064de62ee0333126af02b70e0675bf740c41be46be0",
+    "research/round23/forward/s2/output/source-manifest.json": "218fff17970afac5e3425631c71e8d0d32fd5e88b77fa020d8052d8ff5cb0c2c",
+    "research/round23/forward/s2/report.md": "fac5da43eafd8c03aa2ea7b42995781578dc6fd68aefa49c21c738ff41dcd3e0",
+    "research/round23/forward/s2/source-notes.md": "5bcc9585c8f43870cf9bd6c644156d627626cf2ec638304605bf8d3508e4c80b",
+    "research/round23/forward/s2/submission.json": "d1270363b45649b3f04f95f6ef817624353e7d30b3129a483cbe580ee6f0d092",
+    "research/round23/methods/team-protocol.md": "3ba911c51535419d79780ed4c10d69098bba91b9932e9e00feeb9e3b35fed473",
+    "research/round23/methods/v1/AGENTS.md": "d98db4fd7a40d1576a2597da5d6bddc553bbdf563c55f132a18cb1403e99a93f",
+    "research/round23/methods/v1/SKILL.md": "7f3dee79abe00bbb145050dccbf7723015a10e4664febad44f2b7aa2b35d7e73",
+    "research/round23/methods/v1/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+    "research/round23/methods/v1/paired-physics-research.md": "a70afeca92f0b1cdece4902bbec2990a1f13f8290d15b587d7812b29d1c9239f",
+    "research/round23/methods/v1/projected-memory-and-boundary-response.md": "d9e27c0cd5093becfc0b79198728936eeb7ec14b135696661ee3d4a87db3bd3d",
+    "research/round23/reverse/s1/report.md": "ee24573266a2c1577718a062887c7bdac561bdb7ff8f9cf7d983671975002c92",
+    "research/round23/reverse/s2/check.py": "050400972980d425f37d5ed1ac24c40dfbce9df906ce5936907aceb11e087016",
+    "research/round23/reverse/s2/output/controls.json": "89b918f52c88572b08785f20d428ef674be71622d48ec8a61b461e3f506290d7",
+    "research/round23/reverse/s2/output/results.json": "c55fd2196af9c4589fb2070e8059a2f1d94ea2356b198c6ff33c6d1e60814652",
+    "research/round23/reverse/s2/output/source-manifest.json": "20db98696e6588bd2b526b96d5a730f0ba95c43da354cdce80b755fde0a8dbf4",
+    "research/round23/reverse/s2/report.md": "14c67a55a3984fa0419d61a659236d8f98f3b75e2539c05a1efc91e4411f5f1a",
+    "research/round23/reverse/s2/submission.json": "a47c73f6919b99107f1802c74e40dee4e05265ffca1c8df6ac3380a9bdac7e08",
+    "research/round23/skeptic/check_s2_preparation.py": "ca7b7a18baf937de87fbb0c1a91ed19c5ac6f27ab5ed39353f37caa125b09fa8",
+    "research/round23/skeptic/s1-review.json": "93c5e137693f6090914ae2a209355c053022c33bbee7940010b477d8ab499a40",
+    "research/round23/skeptic/s1.md": "46669bab02a1338834c0739f2bad6ababf1012535d108b472f2846537053a413",
+    "research/round23/skeptic/s2-independent-preparation-checks.json": "29f17688dda7e767b0f5e83cfa9857e52a5a591143176b5dc22e7a69406c91b1",
+    "research/round23/skeptic/s2-preparation-manifest.json": "5cd804324ba2a2c6558cc8e5d38f4891a50f81ce573ce671805c56bd82ef9031",
+    "research/round23/skeptic/s2-preparation-replay.json": "55cd444bcb377ac8cdf9bbbe59dfaaa573845c39b372f8da7dfa2e8d5e069abe",
+    "research/round23/skeptic/s2-preparation.md": "828f598d9ee6b0fe841c668f88dff40c4ec6baec209f6c08b09879d54f831815",
+    "research/round23/skeptic/s2-replay-summary.json": "48941f025ffcb501604a525b3e5ca02063dc86d26ca11e24481b61a0204eca92",
+    "research/round23/skeptic/s2-review.json": "77cfa440ddd01a532379707e2c8544b83f7f8e41d001501f134ef4749bffd84e",
+    "research/round23/skeptic/s2.md": "aa0f18ee43549b0a64844966cc31f2492f1d42d2bd7117d5d0f24be9512e84c6"
+  },
+  "independence": {
+    "forward": "Independent filter/domain and Pochhammer count; additional infinite-operator identification.",
+    "reverse": "Independent reconstruction and rational connected-word majorant.",
+    "shared": "Frozen contract, actual S1 source and inherited initial model.",
+    "skeptic": "Independent preparation before exchange, proof/code/source review and four fresh byte-exact normal/O replays."
+  },
+  "limits": [
+    "unregularized all-sector inverse",
+    "actual SU2 nonzero resonance block",
+    "all-time positive-weight bound",
+    "later-diagonal iteration",
+    "homogeneous numerical gap",
+    "physical calibration",
+    "4D continuum construction",
+    "The residual may be as large as the source; no actual nonzero SU2 resonance block is proved.",
+    "Theta is a dimensionless proof filter, not an action deformation or calibrated clock.",
+    "No bounded extensive Hilbert-space sum of translated generators; no global norm unitary limit.",
+    "Scientific priority unverified."
+  ],
+  "loop": "s2",
+  "next_missing_premise": "Actual low/zero-frequency residual control useful for iteration, plus all-stage diagonal and support estimates.",
+  "schema": "ym23-gate-v1",
+  "scope": "S1 homogeneous initial retained diagonal; fixed physical references; |tau|<=5/1664 and 0<Theta<=1/16. Single-local-source identification with actual R2 infinite G is forward-only.",
+  "status": "accepted",
+  "target_verdict": "Regulated target accepted. Residual removal, later-diagonal induction and original homogeneous gap remain open."
+}

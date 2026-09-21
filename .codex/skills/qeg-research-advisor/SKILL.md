@@ -5,6 +5,8 @@ description: Plan and critically review this quantum-electromagnetic-gravity res
 
 # Quantum fields and gravity research advisor
 
+For centered heat comparison or completing only an active loop, read [the centered-heat and solo-closeout lessons](references/centered-heat-and-solo-closeout.md). Preserve actual spectral objects and the user's stop boundary; disclose correlated single-agent verification.
+
 For post-Round20 local stability, physical-sector reconstruction, dynamic identification or a clean-checkout admission repair, read [the admission and matching contract](references/admission-and-matching.md). Use the current `AGENTS.md` ownership boundaries and the explicitly selected round’s frozen contracts.
 
 For driven truncation, growing-volume or hierarchy-closure work, read [the dynamic/volume/closure contract](references/dynamic-volume-closure-contract.md). It records the distinction between exact Galerkin error and computed-state error, common-action variables, volume-deterioration counterbenchmarks and source-specific closure tests.
@@ -22,6 +24,9 @@ For overlapping rotations or stability iterations, read [the generated-support a
 For physical reductions and dynamic matching, read [the Haar-map and induced-dynamics lessons](references/haar-maps-and-induced-dynamics.md). A pointwise section, an L2 map and a generator intertwiner are separate obligations; preserve actual observable completions and reserved data.
 
 For projected dynamics, initial-diagonal inverses or spatial response tails, read [the projected-memory and boundary-response lessons](references/projected-memory-and-boundary-response.md). Keep exact source sectors, unbounded domains, convergence topology and volume-weight certificates separate.
+
+
+For local-source commutator filters and their infinite-volume identification, read [the filtered-source and connected-limit lessons](references/filtered-sources-and-connected-limits.md). Retain the spectral residual and distinguish a local norm limit from a global generator claim.
 
 ## Establish the physical contract
 

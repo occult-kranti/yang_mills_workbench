@@ -1,0 +1,5 @@
+# T1 source reading
+
+Read Gerald Teschl, [Mathematical Methods in Quantum Mechanics, second edition](https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe2.pdf), Theorem6.4 and its proof, and Lemma6.5, printed page159. The bounded symmetric off-diagonal and multiplier blocks here have relative bound zero with respect to the already self-adjoint electric tensor operator. This establishes the precise unchanged domain; the model-specific positive lower bound is derived separately. No full-book review or source spectral-gap constant is claimed.
+
+Inherited Q2 supplies the actual Gauss-sector spaces, complementary gap, leakage norm and seven channel spectral weights. Its primary Burbano–Bauer decomposition reading remains inherited, not a new independent literature reconstruction. The present Volterra and projected Duhamel equations are derived directly, with the full return and actual complementary perturbation retained. The explicit constants and uniform absolute error are project derivations within this graph. Scientific priority remains unverified.
