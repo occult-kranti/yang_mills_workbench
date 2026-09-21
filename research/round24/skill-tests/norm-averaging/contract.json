@@ -1,0 +1,14 @@
+{
+  "schema": "norm-averaging-contract-v1",
+  "task": "Standalone unilateral-shift operator averaging method test",
+  "physics_roadmap_loops": 0,
+  "forbidden_inputs": ["Round24 producer solutions", "other method-test solutions"],
+  "model": "ell2(N0); K e_n=n e_n; S e_n=e_(n+1); A=S+S*; tau>0",
+  "target": "Uniform compact-slow-time operator norm convergence of both ordered relative propagator and adjoint; actual source and real scalar shifts retained",
+  "expected_bound": "min(2,2T,4*tau*(1+2T)) for T>=0",
+  "proof_obligations": ["self-adjoint common domain", "actual interaction source", "complete averaged energy blocks", "norm-small primitive", "integration by parts with actual product order", "adjoint and opposite interaction-product order", "scalar phase retention"],
+  "execution": "Python standard library exact rational algebra; normal and optimized external fresh-directory replay",
+  "expected_outputs": ["output/results.json", "output/controls.json"],
+  "admission": "Complete fixed source inventory, exact Boolean statuses, required control identities, recomputation and byte comparison; reject coherent evidence mutations and symlinks",
+  "limits": "Checker validates finite coefficient identities and evidence integrity; the report supplies the infinite-dimensional proof; same-agent reconstruction is not independent review"
+}

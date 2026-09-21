@@ -1,6 +1,6 @@
 # Yang–Mills Workbench
 
-**Current checkpoint: Round24, 8/10 new loops reviewed.** V/W/X are complete; Y1 and Z1 are reviewed, and their feedback-selected Y2/Z2 contracts are frozen. Separate forward and reverse researchers, an independent model-agent skeptic and a root advisor use the Newton/Tesla methods. Read the [current research record](research/round24/README.md), [roadmap](research/round24/advisor/roadmap.json), [reviewed contributions](research/round24/NOVELTY.md), [parameter definitions](research/round24/PARAMETERS.md), and [agent workflow](research/round24/advisor/team.md). The [historical handoff](research/round23/HANDOFF.md) and all earlier gates remain unchanged.
+**Current checkpoint: Round24, all 10 new loops reviewed.** Five goal pairs are complete: eight loops are accepted within scope and two retain precise limitations. Separate forward and reverse researchers, an independent model-agent skeptic and a root advisor use the Newton/Tesla methods. Read the [current handoff](research/round24/HANDOFF.md), [research record](research/round24/README.md), [roadmap](research/round24/advisor/roadmap.json), [reviewed contributions](research/round24/NOVELTY.md), [parameter definitions](research/round24/PARAMETERS.md), and [prospective agent brief](research/round24/advisor/next-agent-brief.md). The [historical handoff](research/round23/HANDOFF.md) and all earlier gates remain unchanged.
 
 A reproducible research workbench for nonabelian gauge theory: explicit finite-model proofs, exact arithmetic certificates, numerical experiments, skeptical audits and a navigable Physics Observatory.
 
@@ -9,6 +9,8 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 **Scrolling research journey:** [Round22 research journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) follows the N–R feedback cycle, separates accepted equations from frozen proposals and evaluates N1's local real-time comparison bound. Its sufficient fixed-support window is `0 ≤ gamma < 3`; the later U2 result supplies a scoped endpoint counterexample. Authored current assets are `dist/research-round22.js` and `.css`, with source-bound data generated from the admitted gates. The original M2 calculator remains in the [Round21 journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey21). Presentation and release checks add zero research loops.
 
 **Repository:** [occult-kranti/yang_mills_workbench](https://github.com/occult-kranti/yang_mills_workbench)
+
+Round24 proves an actual phase-removed canonical endpoint scalar limit, with a certified disk but unevaluated energy-block matrices. On the fixed T graph, for every 0<=lambda<=0.01, the evaluated 21-state heat has all-time true-relative vacuum error below 0.00028 and normalized retained radius-0.01 error below 0.00044. These certificates preserve the earlier unrestricted-input obstruction. [Equations, assumptions and limits](research/round24/NOVELTY.md).
 
 The four-dimensional Yang–Mills existence and mass-gap problem remains open. This project separates established mathematics, reviewed finite-model derivations, certified calculations, numerical evidence, failed claims and unproved continuum obligations. It does not claim a Millennium Prize solution or mathematical novelty for known one-plaquette results.
 
@@ -74,7 +76,7 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Current V–Z paired continuation | `research/round24/` | Measurement resources, actual filter residual, practical full-graph certificate, canonical spatial collars and relative-error obstruction; final two loops underway |
+| Current V–Z paired continuation | `research/round24/` | Ten reviewed loops: readout, actual residual, full-graph certificates, canonical endpoint scalar limit and useful all-time relative accuracy on specified inputs |
 | S–U checkpoint | `research/round23/` | Six preserved loops including the canonical full-system endpoint lower bound; T2/U1/U2 retain their same-author attribution |
 | Historical N–R paired continuation | `research/round22/` | Local windows, homogeneous certificate limits, physical maps, magnetic memory and boundary response; see each immutable admission |
 | Previous five-goal paired research study | `research/round21/` | Ten reviewed loops: eight supported and two supported with limits. Local stability, physical observables, mobility identification and profile dynamics |
@@ -133,7 +135,7 @@ The third trace retains relative orientation lost by two separate loop traces. A
 
 ## Reproduce the studies
 
-The [Round22 guide](research/round22/README.md) records the current contracts, paired proofs, rejection controls, skeptical checkpoints and release procedure. Run from the repository root, always using fresh absolute output paths outside the repository checkout:
+The [Round24 guide](research/round24/README.md) records the current ten-loop cycle, its contracts, paired proofs, rejection controls and release procedure. Its [handoff](research/round24/HANDOFF.md) plans three further goals without executing them. The [Round22 guide](research/round22/README.md) preserves the historical reproduction commands below. Run from the repository root, always using fresh absolute output paths outside the repository checkout:
 
 ```bash
 python3 -B research/round22/reproduce.py --output /absolute/new/round22-normal
@@ -286,15 +288,16 @@ Interface checks use a Node VM and a DOM stand-in. They test routes, events, esc
 `dist/` is the local site source; `docs/` is the generated GitHub Pages tree. The build rewrites only known local asset URLs for the project prefix, preserves external source links, omits server code and marks live metadata refresh as local-only.
 
 ```bash
-python3 -B research/round22/build_claim_map.py
-python3 -B research/round22/build_site.py
+python3 -B research/round24/build_site.py
 npm run build
+npm run test:round24
+npm run test:round23
+npm run test:round22
 npm run test:ui
 npm run test:journey
-npm run test:round22
 ```
 
-Publication follows the [reviewed release protocol](research/round22/release/protocol.md): audit all ten gates, pin an independently reviewed inventory, verify a clean detached commit and its exact tree, then publish that tested tree through a reviewed pull request. A green build alone is not scientific admission. Record the research commit, merge, Pages deployment and live browser checks separately; do not force-push over unrelated work.
+Publication follows the [current Round24 release procedure](research/round24/release/README.md): require all ten gates and bound presentation claims, replay new and historical evidence from a clean detached commit, regenerate the exact site tree, then publish that tested tree through the reviewed pull request. A green build alone is not scientific admission. The [Round22 protocol](research/round22/release/protocol.md) remains historical documentation. Record the tested tree, merge, Pages deployment and any browser audit separately; do not force-push over unrelated work.
 
 GitHub Pages is configured to deploy from branch **main**, folder **/docs**, with `.nojekyll`. The published address is [https://occult-kranti.github.io/yang_mills_workbench/](https://occult-kranti.github.io/yang_mills_workbench/). Check repository Settings → Pages and the Pages deployment status after pushing. If publishing a fork, pass its project prefix to `python scripts/build_pages.py --base /your_repository/` and update these links.
 
