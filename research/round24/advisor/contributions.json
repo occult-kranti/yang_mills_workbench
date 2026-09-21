@@ -36,6 +36,44 @@
       "statement": "Actual commutator control and concentration bounds give a conditional 99% confidence certificate in two fully specified error models. The sufficient checked resource count is impractical.",
       "title": "Finite confidence, with explicit resource costs",
       "verdict": "accepted_within_scope"
+    },
+    {
+      "equations": [
+        "h[v]=14\u03c4\u00b2=24||v||\u00b2",
+        "h[w]/||w||\u00b2 \u2264 24",
+        "||R\u0398(A)|| \u2265 (311/1664)||w|| > 0, \u03c4 \u2260 0"
+      ],
+      "feedback": "The forward direction proves a short-filter and conditional spectral-mass result. The stronger exact-moment bound comes from reverse reconstruction and passed independent skeptical review.",
+      "limits": [
+        "Indexed source, not the sum of all cubic terms.",
+        "Initial G only; no later-diagonal or homogeneous gap conclusion.",
+        "A vacuum column gives a full-operator lower bound, not all-sector upper control.",
+        "No claim that every other inverse is impossible."
+      ],
+      "loop": "w1",
+      "model": "Homogeneous S initial diagonal and indexed cubic source; full 24-link blocks",
+      "statement": "An exact source-energy identity gives a volume-uniform positive lower bound on the actual retained filter residual. This blocks silently dropping that residual in the chosen short-filter regime.",
+      "title": "The actual short-filter residual stays cubic",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "equations": [
+        "A_n=R\u0398\u207f(A); [K_n,G]=\u2212A+A_n",
+        "||A_n \u03a9|| \u2264 \u03c1\u207f ||w||, \u03c1<1",
+        "A_n \u2192 \u03a3_E P_E A P_E strongly (fixed finite volume)"
+      ],
+      "feedback": "W1 showed the residual cannot be dropped. W2 keeps it at every step and distinguishes vector, strong-operator and weighted-norm conclusions.",
+      "limits": [
+        "Actual equal-energy blocks remain uncomputed.",
+        "Column convergence is not full-source norm convergence.",
+        "The fixed-G iteration does not update scalar/diagonal terms or prove later-stage induction.",
+        "Failure of a positive weighted bound is not physical divergence."
+      ],
+      "loop": "w2",
+      "model": "Homogeneous S model at its fixed initial generator G",
+      "statement": "Repeated filtering has an exact all-step identity. Its actual vacuum response converges in graph norm. In each finite volume, the full source converges strongly to its spectral diagonal blocks; the all-sector weighted closure remains open.",
+      "title": "What repeated filtering actually converges to",
+      "verdict": "limited"
     }
   ],
   "open_goals": [
