@@ -1,0 +1,49 @@
+\section{Starting point, question, and evidence boundary}
+\label{sec:introduction}
+
+The initial motivation was to turn an exploratory Einstein--QED workbench into a program addressing precise nonabelian gauge questions. The surviving early calculations concern a regulated homogeneous Maxwell--Dirac mean field and reduced gravitational consistency, rather than a construction of either quantum gravity or continuum QED. Subsequent work asks what a finite $\mathrm{SU}(2)$ gauge system can establish exactly, which approximations can be certified, and what additional premises would be needed to connect such results to the four-dimensional Yang--Mills existence and mass-gap problem. The latter requires a nontrivial continuum quantum theory satisfying appropriate axioms and a positive physical mass gap; a finite lattice gap alone is insufficient \cite{jaffe_witten}.
+
+This paper is a research compendium and first manuscript, not a claim that the final target has been reached. It preserves failed claims because they determine the next mathematical question. The transition from a matrix with a positive gap to an infinite representation space requires a tail bound. The transition from a finite graph to an infinite lattice requires uniform estimates. The transition from a static probability measure to a Hamiltonian requires a justified state-space and generator map. Each of these transitions appears explicitly in the history.
+
+\subsection{Coverage and reproducible checkpoint}
+The source checkpoint is repository commit
+\repo{40960f39a3dcaa6b2735d47adaa0e3b40e6a0f02},
+with Git tree \repo{169b2db4e8017f5c4e783ba5f42e4f96522ad2b1}.
+The repository is
+\url{https://github.com/occult-kranti/yang_mills_workbench}.
+The historical ledger records 111 entries through Round25, comprising 35 named study entries and 76 explicitly numbered physics loops. Round26 adds ten loops. This gives 121 entries and 86 explicit loops across 24 recorded rounds, Rounds3--26. An entry is an audit unit, not necessarily a distinct discovery. There are no independently identifiable Round1/2 packages in this checkpoint; their contents cannot be reconstructed from a round number.
+
+The paper groups repeated refinements into mathematical contributions while Appendix~\ref{app:history} retains every recorded entry. The exact contracts, complete longer proofs, source files, archived outputs, and historical reviews remain in the pinned repository. A concise derivation here is not a replacement for a missing historical proof. Where only a numerical study or conditional argument is available, it is described at that level.
+
+\subsection{What the two stars mean}
+The marker \workstar\ accompanies a workbench contribution and its central newly derived or specialized equation. It means \emph{newly derived, computed, repaired, or implemented in this research record}. It does not mean a new law of nature, a historically first theorem, or a completed literature-priority search. Established ingredients---Haar integration, Schur complements, spectral projection, Duhamel formulas, Rayleigh--Ritz and residual bounds, and Lieb--Robinson estimates---remain established mathematics. Their use in a new calculation does not make the underlying method an invention.
+
+The appendix classifies contributions as exact identities, conditional bounds, certified arithmetic, numerical diagnostics, obstructions, and workflow artifacts. Proposed future goals are not starred results. Literature comparison identifies the nearest checked sources and remaining differences; scientific priority is unverified throughout this first draft.
+
+\subsection{Research design and attribution}
+The workflow pairs a forward calculation from frozen premises with a reverse reconstruction of the premises sufficient for a desired conclusion. An advisor chooses the next experiment from the first result and skeptical objection. Separate model agents wrote many forward, reverse, and skeptical records; these share the same project, inherited premises, and model infrastructure. This is not independent experimental replication. Round23 T2/U1/U2 and Round25 AA1/AA2 retain their same-author review attribution. Replays, software tests, admission repairs, and manuscript checks are not counted as new physics loops.
+
+Newton's analysis/synthesis motivates the question ``which assumptions are necessary to reconstruct this observable?'' Tesla's mechanism and loading approach motivates ``which omitted channel changes the proposed device or resonance?'' These are modern methodological adaptations of selected historical sources; the inspected Opticks discussion and Tesla patent are historical context, not mathematical authority \cite{newton_opticks,tesla1905patent}. They supply no premise in an operator proof. The double Fibonacci spiral was a way to organize investigation nodes; no tested physical significance or golden-ratio coupling has been established. No historical or esoteric analogy is inserted as a term in the gauge Hamiltonian.
+
+\section{Models, notation, and nontransfer rules}
+\label{sec:models}
+Keep a positive lattice spacing $a$, physical energy reference $E_\star$, $\alpha/E_\star$, and $\hbar$ fixed unless a stated construction changes them. A change of notation cannot serve as physical scale matching. Dimensionless eigenvalue inequalities become physical energy inequalities only after multiplication by their own energy unit.
+
+\begin{table}[htbp]\centering\small
+\caption{Distinct model families. Symbols reused in historical reports are local to the stated model.}
+\label{tab:models}
+\begin{tabularx}{\textwidth}{@{}p{.18\textwidth}X X@{}}\toprule
+Family & Generator or object & Scope and scale \\\midrule
+Early mean field & Finite-regulator Maxwell--Dirac variables and declared scalar/gravity reductions & Classical mean-field evolution; cutoff and closure assumptions remain. \\
+Static compact integrals & Normalized Haar density with specified Euclidean action coefficients & Coupling derivatives are static responses, not physical time evolution. \\
+Finite physical gauge graph & $H=\alpha L$, with $L=K+\lambda(20-S)$ in the latest graph & $18$ vertices, $33$ links, $20$ faces; all vertex Gauss constraints; dimensionless heat coordinate $\sigma=\alpha t/\hbar$. \\
+Homogeneous complete blocks & Initial interacting operator $G$; $M=7|\tau|$ & Energy unit $\delta=\alpha/8$; original $|\tau|\le5/1664$; stronger AE2 result uses $|\tau|\le1/7000$. \\
+Canonical summable profile & Declared $q$-dependent full-link family & Fixed spacing; $q\uparrow1$; physical observation time $T_q=(z/\eta)(\hbar/\alpha)(1-q)^{-3}$. \\
+\bottomrule\end{tabularx}
+\end{table}
+
+In finite-link gauge systems the ambient Hilbert space is a product of $L^2(\mathrm{SU}(2))$ spaces and the physical space is the invariant subspace under the independent vertex gauge actions. A finite number of links does not make this representation space finite-dimensional. A retained projector $P$ must be built from actual physical vectors; $Q=I-P$ denotes its full complement. On the latest graph, $P_{21}=\mathbf{1}_{[0,9/2)}(K)$ is the complete strict low-electric-energy sector. Its 293-state residual enrichment reduces $K$ but is not a complete ambient energy cutoff. The 293-coordinate representation has a nontrivial Gram matrix, so coordinate Euclidean norms cannot replace physical norms.
+
+For positive self-adjoint $L$ with ground energy $\epsilon$ we use centered heat $e^{-\sigma(L-\epsilon)}$. For $A=PLP$ with its own lowest eigenvalue $\mu$, the correct retained comparison is $e^{-\sigma(A-\mu)}P$. These two centers are generally different. Neither heat semigroup is a real-time unitary $e^{-itH/\hbar}$; an estimate for one is not silently transferred to the other.
+
+An observable is a full operator, together with its state and readout. Equality $B\Omega=C\Omega$ identifies a vacuum-created vector but does not imply $B=C$, equal operator norms, or transferable finite-parameter error constants. An exact identity, a norm estimate, and a numerical evaluation are separate results. These distinctions are repeatedly used below.

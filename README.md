@@ -6,6 +6,8 @@ A reproducible research workbench for nonabelian gauge theory: explicit finite-m
 
 **Research website:** [Open Yang–Mills Workbench on GitHub Pages](https://occult-kranti.github.io/yang_mills_workbench/#research)
 
+**Research drafts:** [Read Draft 01](https://occult-kranti.github.io/yang_mills_workbench/#research/drafts) — the 92-page manuscript, PDF reader, source ZIP, interactive calculators, figures and review records. [Browse editable LaTeX and audits](papers/README.md). The first draft covers the surviving Rounds 3–26 and planned next goals; author details and scientific priority remain unresolved.
+
 **Scrolling research journey:** [Round22 research journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) follows the N–R feedback cycle, separates accepted equations from frozen proposals and evaluates N1's local real-time comparison bound. Its sufficient fixed-support window is `0 ≤ gamma < 3`; the later U2 result supplies a scoped endpoint counterexample. Authored current assets are `dist/research-round22.js` and `.css`, with source-bound data generated from the admitted gates. The original M2 calculator remains in the [Round21 journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey21). Presentation and release checks add zero research loops.
 
 **Repository:** [occult-kranti/yang_mills_workbench](https://github.com/occult-kranti/yang_mills_workbench)
@@ -48,7 +50,7 @@ cd yang_mills_workbench
 python3 start.py
 ```
 
-Open **http://127.0.0.1:8001/#research**. The launcher opens a browser unless `--no-browser` is supplied. Keep the terminal running; press Ctrl+C to stop.
+Open **http://127.0.0.1:8001/#research**. The manuscript shelf is **http://127.0.0.1:8001/#research/drafts**. The launcher opens a browser unless `--no-browser` is supplied. Keep the terminal running; press Ctrl+C to stop.
 
 ```bash
 python3 start.py --no-browser --port 8002

@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{graphicx,booktabs,longtable,array,tabularx,multirow}
+\usepackage{microtype,xcolor,enumitem,xurl}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,breaklinks=true]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[section]{placeins}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Certified finite-model gauge calculations}
+\fancyhead[R]{\small First draft}\fancyfoot[C]{\thepage}
+\setlength{\parskip}{4pt}\setlength{\parindent}{0pt}
+\setlist{nosep,leftmargin=*}
+\setlength{\emergencystretch}{3em}
+\setcounter{tocdepth}{2}
+\newcommand{\workstar}{\textsuperscript{\textbf{**}}}
+\pdfstringdefDisableCommands{\def\workstar{**}}
+\hypersetup{pdftitle={Certified finite-model gauge calculations},pdfsubject={First research compendium draft through Round26},pdfkeywords={SU(2), lattice gauge theory, rigorous computation, locality, heat evolution}}
+\newcommand{\repo}[1]{{\small\path{#1}}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\dd}{\mathrm{d}}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Certified finite-model gauge calculations:\\spectral bounds, local corrections, Wilson readouts,\\and controlled heat evolution}
+\author{First manuscript draft for author review}
+\date{22 September 2026\\\small Research checkpoint: Round26}
+\begin{document}
+\maketitle
+\begin{abstract}
+We collect the derivations, computational certificates, counterexamples, and unresolved obligations of a gauge-theory research workbench. Its surviving record begins with regulated Maxwell--Dirac and gravitational consistency studies and develops into finite-graph and fixed-spacing $\mathrm{SU}(2)$ calculations. The main results include full-representation one-square spectral certificates, shared-link Haar contractions, conditional local stability, projected-memory and boundary-response formulas, canonical slow-time Wilson readouts, and controlled physical heat evolution. The latest cycle constructs a graph-preserving Gaussian correction with an explicit full-source residual, an explicitly enumerated 293-state physical compression on an 18-vertex graph, and an all-time evaluated heat approximation with true-output-relative error below $3.7\times10^{-5}$ on a specified preparation class. A restricted compact-time filter also gives per-source contraction with finite original support-cardinality-weighted norms. We explain the brief derivations, parameter domains, changes from earlier results, possible applications, and failure modes, and provide calculators, plots, a contribution catalog, and a skeptical audit. The record contains 121 study or loop entries across Rounds 3--26; separate Round1/2 packages are absent. The double-star marker identifies a contribution newly derived or implemented in this workbench, not established priority in the literature. The results concern explicitly different models and do not construct continuum Yang--Mills theory or establish its mass gap.
+\end{abstract}
+\vspace{3pt}
+\begin{center}\small\textbf{Draft status.} Author names and affiliations remain to be supplied. No arXiv submission has been made. Separate model-agent review is not external peer review or formal verification.\end{center}
+\clearpage
+\tableofcontents
+\clearpage
+\input{sections/introduction}
+\input{sources/related-work}
+\input{sections/early}
+\input{sections/middle}
+\input{sections/recent}
+\input{sections/synthesis}
+\input{sections/verification}
+\input{sections/roadmap}
+\clearpage
+\bibliographystyle{unsrtnat}
+\bibliography{sources/references}
+\clearpage
+\appendix
+\input{sections/contribution-appendix}
+\input{sections/history-appendix}
+\input{sections/reproduction}
+\end{document}

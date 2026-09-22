@@ -1,0 +1,156 @@
+{
+  "status": "passed",
+  "commit": "997bf13b6695521792812df499698ec9339867c6",
+  "tree": "169b2db4e8017f5c4e783ba5f42e4f96522ad2b1",
+  "baseline": "7ab3c276b576d13040b2069539f9e712861edb2f",
+  "new_research_loops": 10,
+  "current_producer_replays": 40,
+  "inherited_producer_replays": 4,
+  "generated_files_compared": 156,
+  "checks": [
+    {
+      "name": "round26-normal",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "research/round26/admission.py",
+        "--output",
+        "/workspace/scratch/2885e984ab79/round26-remote-verification/round26-normal"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "inherited-aa-normal",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "research/round25/admission.py",
+        "--output",
+        "/workspace/scratch/2885e984ab79/round26-remote-verification/aa-normal"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "admission-mutations-normal",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "research/round26/test_admission.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "round26-optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-O",
+        "research/round26/admission.py",
+        "--output",
+        "/workspace/scratch/2885e984ab79/round26-remote-verification/round26-optimized",
+        "--optimized"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "inherited-aa-optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-O",
+        "research/round25/admission.py",
+        "--output",
+        "/workspace/scratch/2885e984ab79/round26-remote-verification/aa-optimized",
+        "--optimized"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "admission-mutations-optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-O",
+        "research/round26/test_admission.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "new-data-rebuild",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "research/round26/build_site.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "pages-rebuild",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "scripts/build_pages.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "test_workbench",
+      "command": [
+        "node",
+        "tests/test_workbench.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "test_journey",
+      "command": [
+        "node",
+        "tests/test_journey.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "test_round22",
+      "command": [
+        "node",
+        "tests/test_round22.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "test_round23",
+      "command": [
+        "node",
+        "tests/test_round23.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "test_round24",
+      "command": [
+        "node",
+        "tests/test_round24.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "test_round25",
+      "command": [
+        "node",
+        "tests/test_round25.mjs"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "test_round26",
+      "command": [
+        "node",
+        "tests/test_round26.mjs"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "exact-tree source integrity, producer replay, rebuild and interface tests",
+  "browser_visual_review": "Local cloud-browser preview was blocked; live-page review recorded after publication.",
+  "review": "separate model-agent mathematical review; not external peer review or formal proof"
+}
