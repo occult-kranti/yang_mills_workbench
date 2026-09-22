@@ -1,0 +1,11 @@
+# AD1 independent skeptical review
+
+**Disposition: exact scalar endpoints accepted; scale-bridge parent remains limited.** No blocking defect was found. Both producers passed fresh normal and optimized replays and matched frozen results. Bindings and scope are in `ad1.json`.
+
+The contract left the elementary face plane unspecified. Forward fixed the yz face at (3,1,0); reverse fixed the xy face there. These are two independently evaluated instances of the same selection mechanism, not identical finite-q calculations. Forward uses the inherited eight-factor collar while reverse starts with twelve cube factors, so their counts and tail constants must remain attached to their respective observables and collars.
+
+Both actual Wilson multipliers have norm 2, variance 1, and reference energy `3alpha`. Their same-energy compression vanishes because internal face overlaps are 0, 1 or 4, while each exterior touching face creates a strictly positive excitation in distinct complete reference factors. The full spectral-support argument includes charged strip sides; an expectation bound alone would not suffice. This proves a reducing null component of the averaged operator without asserting instantaneous invariance or whole-shell completeness.
+
+The ordered scalar identity has the correct Heisenberg sign. The full stationary-state cost is `24d`, and both spatial costs include `||B||^2=4`. Forward's three-column-error factor is valid: replace the right vacuum column at cost `2b`, then use `B Omega=psi` for the remaining `b`; reverse's `4b` is conservative. Both limits use the original physical clock and preserve connected means. The demodulated endpoint is exactly one; the forward finite-q disk below `5e-18` is correctly scoped to its selected parameters and impractically large time.
+
+This null scalar cannot identify a slow rate. The inherited rank observable rejects importing its nonconstant formula onto this multiplier. Reverse additionally supplies a six-cycle Wilson curvature discriminator from the admitted complete component; that is a reverse-origin refinement checked here, not an independent duplicate. Recommend freezing one exact six-cycle observable and held-out dynamic data for AD2, with its own full error budget, before any scale-identification claim. No global operator limit, physical mass calibration or continuum result follows.

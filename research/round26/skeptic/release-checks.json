@@ -1,0 +1,76 @@
+{
+  "scope": "independent local release presentation and admission checks, zero physics loops",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "research/round26/test_admission.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"passed\", \"rejected_mutations\": 171, \"scope\": \"missing proofs, scope inflation, discarded review objections and feedback order\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "research/round26/test_admission.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"passed\", \"rejected_mutations\": 171, \"scope\": \"missing proofs, scope inflation, discarded review objections and feedback order\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "tests/test_round26.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\":\"passed\",\"integratedDataBundles\":2,\"scope\":\"actual search, status/kind/edge/reset/map/native-selection handlers; graph edge integrity; source protocol and text escaping; historical delegation; routes, gate hashes and script order when built\"}\n",
+      "stderr": ""
+    }
+  ],
+  "all_current_gates_validated": [
+    "ab1",
+    "ab2",
+    "ac1",
+    "ac2",
+    "ad1",
+    "ad2",
+    "ae1",
+    "ae2",
+    "af1",
+    "af2"
+  ],
+  "inventory_repairs": {
+    "ab1": {
+      "original_gate_unchanged": true,
+      "additional_files": 3,
+      "changes_research_claims": false
+    },
+    "ac1": {
+      "original_gate_unchanged": true,
+      "additional_files": 1,
+      "changes_research_claims": false
+    },
+    "ad1": {
+      "original_gate_unchanged": true,
+      "additional_files": 2,
+      "changes_research_claims": false
+    }
+  },
+  "historical_instructions_unchanged": {
+    "AGENTS.md": true,
+    ".codex/skills/qeg-research-advisor/references/newton-tesla-project-method.md": true
+  },
+  "historical_research_changes": [],
+  "prospective_method_snapshot_sets": 3,
+  "network": {
+    "nodes": 158,
+    "edges": 260
+  },
+  "browser_visual_review": "not performed by skeptic",
+  "remote_release": "not attested by this local review"
+}
