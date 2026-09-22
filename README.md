@@ -1,16 +1,27 @@
-# Yang–Mills Workbench
+# Yang–Mills Workbench · HNM Research
 
-**Current checkpoint: Round28, five adaptive goal pairs and ten reviewed investigations.** The cycle treats the complete original homogeneous remainder, conditional physical readouts, a complete larger-graph heat certificate, and actual homogeneous Wilson observables. Separate forward and reverse researchers, an independent skeptic and historical-method perspectives contributed as model agents. Read the [new findings](research/round28/advisor/findings.md), [full earlier inventory through AH2](research/round28/advisor/cumulative-findings.md), [evidence network](research/round28/network.json), [handoff](research/round28/HANDOFF.md) and [reproduction guide](research/round28/README.md). Each result retains its model and limits; scientific priority, all-stage homogeneous iteration and the continuum construction remain open. Ten completed investigations do not measure a percentage of Yang–Mills solved.
+**Human author: Hruday N M (BUNZEEY).** A reproducible research workbench for nonabelian gauge theory: scoped derivations, exact arithmetic certificates, numerical experiments and source-bound skeptical review, with disclosed AI assistance.
 
-A reproducible research workbench for nonabelian gauge theory: explicit finite-model proofs, exact arithmetic certificates, numerical experiments, skeptical audits and a navigable Physics Observatory.
+**Current edition: Round30 and the complete HNM Draft03.** This edition adds three adaptive investigations on same-state Wilson energy, spectral bounds and a finite Euclidean readout certificate. It extends the Hruday contribution, statement, equation and quantity aliases while preserving original attribution. Each result retains its model, assumptions and limits. See the [reviewed findings](research/round30/advisor/findings.json), [reproduction guide](research/round30/README.md) and [handoff](research/round30/HANDOFF.md).
 
-**Research website:** [Open Yang–Mills Workbench on GitHub Pages](https://occult-kranti.github.io/yang_mills_workbench/#research)
+- [Research home](https://occult-kranti.github.io/yang_mills_workbench/#research)
+- [Complete manuscript shelf](https://occult-kranti.github.io/yang_mills_workbench/#research/drafts) · [Draft03 PDF](papers/draft-03/main.pdf) · [LaTeX and research registry](papers/draft-03/)
+- [Priority-ranked findings](https://occult-kranti.github.io/yang_mills_workbench/#research/hnm-priorities) · [Full HNM catalog](https://occult-kranti.github.io/yang_mills_workbench/#research/hnm-findings)
+- [Research network](https://occult-kranti.github.io/yang_mills_workbench/#research/research-network) · [Next goals](https://occult-kranti.github.io/yang_mills_workbench/#research/round30-roadmap)
+- Preserved Round29 sharing drafts: [Substack post draft](research/round29/sharing/substack.md) · [Reddit post draft](research/round29/sharing/reddit.md)
+- [GitHub repository](https://github.com/occult-kranti/yang_mills_workbench)
 
-**Research drafts:** [Read the manuscript shelf](https://occult-kranti.github.io/yang_mills_workbench/#research/drafts). The preserved 92-page Draft01 covers Rounds 3–26, the Round27 addendum records its three investigations, and the [Round28 addendum](papers/round28-addendum/README.md) records this ten-investigation cycle with editable LaTeX and source audits. [Download the Round28 PDF](dist/ym-round28-addendum.pdf). The older [paper index](papers/README.md) remains a historical record. Author details and scientific priority remain unresolved.
+**Round30: three adaptive investigations.** AT1 supplies operator-domain membership and the first-energy identity in the actual AQ numerical-cap state itself. AT2 bounds its spectral-window weight and inverse-energy form while demonstrating that moments do not identify a spectrum. AT3 supplies a conditional readout method for 4097 Euclidean-time samples with a complete error budget; only abstract A/B benchmark data are computed. The actual AQ inverse response and its certified samples remain uncomputed. The [next roadmap](research/round30/advisor/roadmap.json) follows the completed three-loop cycle and is planning only.
+
+**Round29: ten reviewed investigations across five goal pairs.** For the stated SU(2) selected-strip model at fixed lattice spacing, [AQ1/AQ2](research/round29/advisor/aq2-gate.json) construct a locally normal stationary subsequential state at `|tau| <= 10^-8`, establish a physical energy gap of at least `alpha/16`, and prove same-state original Wilson variance greater than `1/5`. Separately, [AO2](research/round29/advisor/ao2-gate.json) proves the Wilson first-energy identity and operator-domain membership for the earlier conditional orthant state. The two limiting states have not been identified; their conditions and observable conclusions remain separate. The Round29 roadmap proposed AT as its bounded spectral-response continuation; Round30 executes that continuation while preserving the other open goals.
+
+**Naming and attribution.** Hruday / HNM labels identify project records, quantities, equations and scoped theorem/proposition statements. No new axioms are asserted. They do not establish scientific priority or rename established mathematics. The [canonical registry](papers/draft-03/registry/hnm-registry.json) maps the current names to the original labels and sources. Historical gates and frozen snapshots remain unchanged. The current literature review records overlap with Gauvin's arXiv:2503.15539v3 and keeps the Clay problem statement as the actual target.
+
+**The four-dimensional Yang–Mills existence and mass-gap problem remains open.** Reviewed fixed-lattice constructions, finite calculations, conditional bounds, counterexamples and source audits are useful research outputs; loop counts do not measure a percentage of a continuum proof completed.
+
+**Earlier manuscripts:** the preserved [92-page Draft01](dist/ym-draft-01.pdf) covers Rounds 3–26, followed by the [Round27 addendum](papers/round27-addendum/README.md) and [Round28 addendum](papers/round28-addendum/README.md). The complete [Draft02](papers/draft-02/main.pdf) is also preserved. Their original names and scope remain in those historical editions; Draft03 is the current authored edition.
 
 **Scrolling research journey:** [Round22 research journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) follows the N–R feedback cycle, separates accepted equations from frozen proposals and evaluates N1's local real-time comparison bound. Its sufficient fixed-support window is `0 ≤ gamma < 3`; the later U2 result supplies a scoped endpoint counterexample. Authored current assets are `dist/research-round22.js` and `.css`, with source-bound data generated from the admitted gates. The original M2 calculator remains in the [Round21 journey](https://occult-kranti.github.io/yang_mills_workbench/#research/journey21). Presentation and release checks add zero research loops.
-
-**Repository:** [occult-kranti/yang_mills_workbench](https://github.com/occult-kranti/yang_mills_workbench)
 
 Round24 established an actual phase-removed canonical endpoint scalar limit, with a certified disk and unevaluated energy-block matrices. Round25 evaluated the component reached by the specified observable, with an exact formula and a finite-q enclosure; it does not enumerate every state in the larger energy shell. In the preserved Round24 21-state calculation on the fixed T graph, for every 0<=lambda<=0.01, the evaluated 21-state heat has all-time true-relative vacuum error below 0.00028 and normalized retained radius-0.01 error below 0.00044. These certificates preserve the earlier unrestricted-input obstruction. [Equations, assumptions and limits](research/round24/NOVELTY.md).
 
@@ -22,13 +33,13 @@ The four-dimensional Yang–Mills existence and mass-gap problem remains open. T
 
 The new C2 replay repairs a missing interpreter-cache dependency through a separate reviewed portable inventory. The original failed admission command and historical evidence remain preserved; the repair adds zero research loops.
 
-[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Current roadmap](research/round28/advisor/roadmap.json) · [Model boundaries](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) · [Historical Round22 review](https://occult-kranti.github.io/yang_mills_workbench/#research/round22-review).
+[Current contributions and equations](https://occult-kranti.github.io/yang_mills_workbench/#research/contributions) · [Current roadmap](research/round30/advisor/roadmap.json) · [Model boundaries](https://occult-kranti.github.io/yang_mills_workbench/#research/journey) · [Historical Round22 review](https://occult-kranti.github.io/yang_mills_workbench/#research/round22-review).
 
 **Round20 history:** The ten-loop study established separate finite-factor, literal-box local-state and local-dynamics limits in the summable model, a conditional static/dynamic identification audit, and exact ground-state return along the canonical profile. Its historical C2 admission defect is documented by the Round21 repair. [Round20 research record](https://occult-kranti.github.io/yang_mills_workbench/#research/review20-home) · [Round20 guide](research/round20/README.md).
 
 **Round19:** all six loops are accepted within their stated model scopes. The A/B/C1 milestone was merged in [PR #1](https://github.com/occult-kranti/yang_mills_workbench/pull/1). C2 adds the continuous static bound F(kappa)>=kappa²/2048 for |kappa|<=1/8 and a separately certified sign asymmetry. [Round19 evidence and reproduction](research/round19/README.md) · [Historical paired review](https://occult-kranti.github.io/yang_mills_workbench/#research/review19-home).
 
-[Round18 history](https://occult-kranti.github.io/yang_mills_workbench/#research/review18-home) preserves the preceding six-loop study. Round13 preserves a qualitative homogeneous fixed-spacing stability result. Explicit stability constants for the selected-strip family and the matched continuum Yang–Mills target remain open. The double Fibonacci spiral organizes the work; its physical significance remains untested.
+[Round18 history](https://occult-kranti.github.io/yang_mills_workbench/#research/review18-home) preserves the preceding six-loop study. Round13 preserves a qualitative homogeneous fixed-spacing stability result. That historical source-theorem interval had unevaluated constants; Round29 develops separate numerical-cap certificates and a fixed-lattice state construction. Matching to the continuum Yang–Mills target remains open. The double Fibonacci spiral organizes the work; its physical significance remains untested.
 
 Round17 remains available with the earlier sparse theorem, adjoint trial repair and equal-action/different-observable experiment. [Previous six-loop dashboard](https://occult-kranti.github.io/yang_mills_workbench/#research/review17-home).
 
@@ -78,7 +89,9 @@ Begin at the [research home](https://occult-kranti.github.io/yang_mills_workbenc
 
 | Research layer | Location | Status and interpretation |
 |---|---|---|
-| Current five-pair continuation | `research/round28/` | Ten reviewed investigations with complete remainders, physical readouts, finite-graph heat bounds and actual homogeneous Wilson information |
+| Current three-loop continuation | `research/round30/` | Same-state moments, spectral bounds and conditional finite-data readout; three reviewed gates |
+| Previous HNM continuation | `research/round29/` | Complete physical dictionary, scale invariance, quantitative assumptions and boundary tests; consult each source-bound gate |
+| Previous five-pair continuation | `research/round28/` | Ten reviewed investigations with complete remainders, physical readouts, finite-graph heat bounds and actual homogeneous Wilson information |
 | Prior three-loop continuation | `research/round27/` | Historical-source survey, physical readout identification and one complete selected-source correction; further proof obligations explicit |
 | Prior AB–AF paired continuation | `research/round26/` | Ten reviewed loops, 158-node evidence network, boundary-complete filters, physical Wilson witnesses and certified all-time heat evaluation |
 | Prior AA continuation | `research/round25/` | Two same-author loops, exact canonical endpoint, full history ledger and source-grounded resonance methods |
@@ -141,7 +154,7 @@ The third trace retains relative orientation lost by two separate loop traces. A
 
 ## Reproduce the studies
 
-The [Round28 guide](research/round28/README.md) records the current ten-loop cycle, separate derivations, controls and exact-tree release procedure. Its [handoff](research/round28/HANDOFF.md) lists further goals as planning only. The [Round27 guide](research/round27/README.md), [Round26 guide](research/round26/README.md) and [Round24 guide](research/round24/README.md) preserve earlier cycles. The [Round22 guide](research/round22/README.md) preserves the historical commands below. Use fresh absolute output paths outside the repository checkout.
+The [Round30 guide](research/round30/README.md) records the current three-loop cycle and exact-tree release checks. The [Round29 guide](research/round29/README.md) and [Round28 guide](research/round28/README.md) record the preceding ten-loop cycles, separate derivations, controls and exact-tree release procedure. Its [handoff](research/round28/HANDOFF.md) lists further goals as planning only. The [Round27 guide](research/round27/README.md), [Round26 guide](research/round26/README.md) and [Round24 guide](research/round24/README.md) preserve earlier cycles. The [Round22 guide](research/round22/README.md) preserves the historical commands below. Use fresh absolute output paths outside the repository checkout.
 
 ```bash
 python3 -B research/round22/reproduce.py --output /absolute/new/round22-normal

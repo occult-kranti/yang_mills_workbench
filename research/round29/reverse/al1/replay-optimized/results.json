@@ -1,0 +1,111 @@
+{
+  "loop": "AL1",
+  "direction": "reverse",
+  "label": "HNM full-interaction matching audit",
+  "verdict": "candidate outside sufficient domain for every n>=1",
+  "units": "a0,hbar,E_star positive; numerical fixtures a0=E_star=1",
+  "counts": {
+    "endpoint": 2,
+    "bridge": 1,
+    "omitted": 21
+  },
+  "original_links_per_factor": 24,
+  "whole_star_sites": 4,
+  "boundary_mismatch": [
+    {
+      "base": [
+        3,
+        0,
+        0
+      ],
+      "axes": [
+        0,
+        1
+      ],
+      "kind": "omitted",
+      "support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "path": [
+    {
+      "n": 1,
+      "a": "1",
+      "g_squared": "1",
+      "alpha": "1/2",
+      "lambda": "2",
+      "r": "4",
+      "tau": "96",
+      "epsilon": "672"
+    },
+    {
+      "n": 2,
+      "a": "1/2",
+      "g_squared": "1/2",
+      "alpha": "1/2",
+      "lambda": "8",
+      "r": "16",
+      "tau": "384",
+      "epsilon": "2688"
+    },
+    {
+      "n": 3,
+      "a": "1/3",
+      "g_squared": "1/3",
+      "alpha": "1/2",
+      "lambda": "18",
+      "r": "36",
+      "tau": "864",
+      "epsilon": "6048"
+    },
+    {
+      "n": 8,
+      "a": "1/8",
+      "g_squared": "1/8",
+      "alpha": "1/2",
+      "lambda": "128",
+      "r": "256",
+      "tau": "6144",
+      "epsilon": "43008"
+    },
+    {
+      "n": 32,
+      "a": "1/32",
+      "g_squared": "1/32",
+      "alpha": "1/2",
+      "lambda": "2048",
+      "r": "4096",
+      "tau": "98304",
+      "epsilon": "688128"
+    }
+  ],
+  "controls": {
+    "omit_bridge_class": true,
+    "tau_incorrectly_equals_r": true,
+    "drop_incoming_stars": true,
+    "wrong_kinetic_coefficient": true,
+    "wrong_normalized_clock": true,
+    "zero_E_star_rejected": true,
+    "summable_profile_substitution": true,
+    "finite_boundary_substitution": true,
+    "raw_scalar_is_not_ground_energy": true
+  },
+  "symbolic_conditions": [
+    "g^4>=32",
+    "672/g^4<c1(S)",
+    "672*c2(S)/g^4<1/2"
+  ],
+  "physical_alpha": "1/(2 a0)",
+  "increment": "complete selected/omitted dictionary, bridge g^4>=32, local-budget and finite-boundary controls; R18-B2 g^4>=32/3 is inherited",
+  "scope": "Failure of a sufficient theorem application, not actual gap failure, no continuum theorem."
+}

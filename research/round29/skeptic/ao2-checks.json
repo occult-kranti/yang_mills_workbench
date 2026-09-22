@@ -1,0 +1,67 @@
+{
+  "loop": "AO2",
+  "checks": [
+    "monotone_(Fraction(-3, 1), 1)",
+    "zero_extension_1",
+    "monotone_(Fraction(-3, 1), 2)",
+    "zero_extension_2",
+    "monotone_(Fraction(0, 1), 1)",
+    "monotone_(Fraction(0, 1), 2)",
+    "monotone_(Fraction(1, 3), 1)",
+    "monotone_(Fraction(1, 3), 2)",
+    "monotone_(Fraction(2, 1), 1)",
+    "monotone_(Fraction(2, 1), 2)",
+    "monotone_(Fraction(13, 1), 1)",
+    "monotone_(Fraction(13, 1), 2)",
+    "escaping_second_2",
+    "uniform_first_tail_(2, Fraction(1, 1))",
+    "uniform_first_tail_(2, Fraction(3, 1))",
+    "uniform_first_tail_(2, Fraction(9, 1))",
+    "bounded_second_not_equality_2",
+    "escaping_second_4",
+    "uniform_first_tail_(4, Fraction(1, 1))",
+    "uniform_first_tail_(4, Fraction(3, 1))",
+    "uniform_first_tail_(4, Fraction(9, 1))",
+    "bounded_second_not_equality_4",
+    "escaping_second_16",
+    "uniform_first_tail_(16, Fraction(1, 1))",
+    "uniform_first_tail_(16, Fraction(3, 1))",
+    "uniform_first_tail_(16, Fraction(9, 1))",
+    "bounded_second_not_equality_16",
+    "escaping_second_128",
+    "uniform_first_tail_(128, Fraction(1, 1))",
+    "uniform_first_tail_(128, Fraction(3, 1))",
+    "uniform_first_tail_(128, Fraction(9, 1))",
+    "bounded_second_not_equality_128",
+    "actual_second_cap_finite"
+  ],
+  "checks_count": 33,
+  "replays": [
+    {
+      "direction": "forward",
+      "mode": "normal",
+      "results_sha256": "da7f4a0df8b0c89e37bfb7122a64cac00010be0c38c917c636bb43a8ca3a13db",
+      "stdout": "{\"checks\": 67, \"verdict\": \"actual_first_moment_equality_and_operator_domain\"}"
+    },
+    {
+      "direction": "forward",
+      "mode": "optimized",
+      "results_sha256": "da7f4a0df8b0c89e37bfb7122a64cac00010be0c38c917c636bb43a8ca3a13db",
+      "stdout": "{\"checks\": 67, \"verdict\": \"actual_first_moment_equality_and_operator_domain\"}"
+    },
+    {
+      "direction": "reverse",
+      "mode": "normal",
+      "results_sha256": "fd2fc3a4eb3f3d042d742f2a13c878b1bf9b78dfbbf90763bbbb9a71b8e4e9aa",
+      "stdout": "{\"loop\": \"AO2\", \"passed\": true, \"controls\": 7}"
+    },
+    {
+      "direction": "reverse",
+      "mode": "optimized",
+      "results_sha256": "fd2fc3a4eb3f3d042d742f2a13c878b1bf9b78dfbbf90763bbbb9a71b8e4e9aa",
+      "stdout": "{\"loop\": \"AO2\", \"passed\": true, \"controls\": 7}"
+    }
+  ],
+  "cutoff_clarification": "Extend both compact half-line tests by zero on E<0.",
+  "second_moment_equality": false
+}
