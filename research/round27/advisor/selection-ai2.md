@@ -1,0 +1,3 @@
+# AI2 feedback selection
+
+AI1 showed exact confounding for the endpoint/surrogate maps but finite-q centers retain more information. The skeptic prohibits differentiating the scalar error disks. Tesla recommends coherent q4/q5 first-moment probes rather than the more noise-sensitive curvature ratio, and identifies the changed support/collar obligation. The advisor selects actual finite-q scalar comparisons, with both a finite-time ratio attempt and a narrower pairwise hypothesis-discrimination fallback frozen in advance. Exact profiles, equal physical timestamps, collar grid and failures are retained. AG remains the main homogeneous proof bottleneck; loop3 is unselected.

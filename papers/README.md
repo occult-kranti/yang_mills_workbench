@@ -5,6 +5,19 @@
 Locally, run `python3 start.py --no-browser` from the repository root and open
 http://127.0.0.1:8001/#research/drafts.
 
+## Round27 addendum — 22 September 2026
+
+**Readout identification and a complete selected-source correction.**
+
+[Read the PDF](../dist/ym-round27-addendum.pdf) ·
+[Editable source, figures and build instructions](round27-addendum/README.md) ·
+[Three-loop evidence](../research/round27/README.md).
+
+The addendum records AI1, AI2 and AG1, their current research/source comparisons,
+and the panel's unresolved proof obligations. It leaves Draft01 unchanged.
+The one-step contraction is a selected-model result; no continuum solution or
+percentage of the final proof is claimed.
+
 ## Draft 01 — 22 September 2026
 
 **Certified finite-model gauge calculations: spectral bounds, local corrections,
