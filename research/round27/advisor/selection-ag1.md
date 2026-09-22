@@ -1,0 +1,5 @@
+# AG1 selected after AI2 review
+
+AI2 supplies a narrow actual finite-profile discrimination, with extreme clock requirements and no homogeneous matching map. Feynman proposes a useful canceled-ratio improvement as future AI3. Newton and Penrose prioritize the missing homogeneous nonlinear update; Jung concurs because sharper metrology does not close stability. The skeptic approves that focus subject to actual source, domain and norm obligations. The advisor selects AG1 as the final authorized loop.
+
+The selected cubic A is one inherited generated-source family, not the complete transformed Hamiltonian. E transport remains conditional unless independently bounded. The primary target is the full one-step nonlinear remainder in the original support norm, using spare auxiliary weight. An explicit predeclared narrower-coupling free-filter split tests whether the residual budget improves. Neither one-step smallness nor a family budget alone establishes the full iteration. All future steps remain planned.
