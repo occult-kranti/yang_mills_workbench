@@ -1,0 +1,1192 @@
+{
+  "bindings": {
+    "research/round28/advisor/ag2-preproduction-provenance.json": "d821ff4e69eb46f8d463afe22c53f0cb83beb40020b42cc817d19c1702737bd7",
+    "research/round28/advisor/repairs/ag2-source-restoration.json": "9da85887216babe8919cc08ddf7db815e2f7c63d52b0d9d6e74911752a19de59",
+    "research/round28/contracts/ag2.json": "c8a2147d33226fb37ffc790e668543f4f2fe46596e40c4c3381733aa4208833b",
+    "research/round28/skeptic/ag2-independent.json": "90c014903d199e941b6643406cfe1bccbc3a256f85e756d400d6467e91f584ae",
+    "research/round28/skeptic/ag2-post-review.json": "de2bd0030975aa366f7a13cdc0926ca20cbf44f1c113d97af914007a680d6416",
+    "research/round28/skeptic/ag2-provenance.json": "cfdff27ee5ab36958581f6916580538aede4afb789f39475871d7157ab20ba62",
+    "research/round28/skeptic/ag2_independent.py": "8eac20921449d631037bc5bed7174fbfc94ebd10d6b0ca15c4a0c0291ced81b5",
+    "research/round28/skeptic/ag2_post_review.py": "3fbd3f5d569adc7d301975b38b899bce2a77af779ec79c8acabf63f56d8956aa",
+    "research/round28/skeptic/ag2_provenance.py": "0810b3c00254cd0b632cec87d500b9127b3f0f700300c9d8b11317853900d86a"
+  },
+  "loop": "ag2",
+  "producers": {
+    "forward": {
+      "adoption_records": [
+        "research/round28/forward/ag2/adoption.json"
+      ],
+      "binding_field": "bindings",
+      "freeze": "research/round28/forward/ag2/freeze.json",
+      "instruction_manifests": [
+        "research/round28/forward/ag2/inputs/instruction-inventory.json"
+      ],
+      "rational_relations": [
+        {
+          "id": "zero-coupling",
+          "left": {
+            "pointer": "/endpoints/zero/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "0"
+          }
+        },
+        {
+          "id": "zero-complete-original-inventory",
+          "left": {
+            "pointer": "/endpoints/zero/E_direct_rho"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/zero/E2_rho"
+              },
+              {
+                "pointer": "/endpoints/zero/E3_same_rho"
+              },
+              {
+                "pointer": "/endpoints/zero/E3_other_rho"
+              },
+              {
+                "pointer": "/endpoints/zero/E_ge4_rho"
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-complete-transported-budget",
+          "left": {
+            "pointer": "/endpoints/zero/complete_K_two"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/zero/selected_R_two"
+              },
+              {
+                "pointer": "/endpoints/zero/selected_N_two"
+              },
+              {
+                "pointer": "/endpoints/zero/transported_E_two"
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-actual-E-transport",
+          "left": {
+            "pointer": "/endpoints/zero/transported_E_two"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "pointer": "/endpoints/zero/E_direct_rho"
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/zero/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/zero/reference_gap_lower"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "pointer": "/endpoints/zero/diagonal_relative_kappa"
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-triangle-upper-comparison",
+          "left": {
+            "pointer": "/endpoints/zero/E_direct_rho"
+          },
+          "op": "le",
+          "right": {
+            "pointer": "/endpoints/zero/E_triangle_rho"
+          }
+        },
+        {
+          "id": "zero-complete-budget",
+          "left": {
+            "pointer": "/endpoints/zero/complete_K_two"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "0"
+          }
+        },
+        {
+          "id": "narrow-coupling",
+          "left": {
+            "pointer": "/endpoints/narrow/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/10000"
+          }
+        },
+        {
+          "id": "narrow-complete-original-inventory",
+          "left": {
+            "pointer": "/endpoints/narrow/E_direct_rho"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/narrow/E2_rho"
+              },
+              {
+                "pointer": "/endpoints/narrow/E3_same_rho"
+              },
+              {
+                "pointer": "/endpoints/narrow/E3_other_rho"
+              },
+              {
+                "pointer": "/endpoints/narrow/E_ge4_rho"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-complete-transported-budget",
+          "left": {
+            "pointer": "/endpoints/narrow/complete_K_two"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/narrow/selected_R_two"
+              },
+              {
+                "pointer": "/endpoints/narrow/selected_N_two"
+              },
+              {
+                "pointer": "/endpoints/narrow/transported_E_two"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-actual-E-transport",
+          "left": {
+            "pointer": "/endpoints/narrow/transported_E_two"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "pointer": "/endpoints/narrow/E_direct_rho"
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/narrow/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/narrow/reference_gap_lower"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "pointer": "/endpoints/narrow/diagonal_relative_kappa"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-triangle-upper-comparison",
+          "left": {
+            "pointer": "/endpoints/narrow/E_direct_rho"
+          },
+          "op": "le",
+          "right": {
+            "pointer": "/endpoints/narrow/E_triangle_rho"
+          }
+        },
+        {
+          "id": "narrow-common-complete-budget",
+          "left": {
+            "pointer": "/endpoints/narrow/complete_K_two"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "7/100000"
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-positive",
+          "left": {
+            "pointer": "/endpoints/narrow/reference_gap_lower"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "199/200"
+          }
+        },
+        {
+          "id": "main-coupling",
+          "left": {
+            "pointer": "/endpoints/main/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/1000"
+          }
+        },
+        {
+          "id": "main-complete-original-inventory",
+          "left": {
+            "pointer": "/endpoints/main/E_direct_rho"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/main/E2_rho"
+              },
+              {
+                "pointer": "/endpoints/main/E3_same_rho"
+              },
+              {
+                "pointer": "/endpoints/main/E3_other_rho"
+              },
+              {
+                "pointer": "/endpoints/main/E_ge4_rho"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-complete-transported-budget",
+          "left": {
+            "pointer": "/endpoints/main/complete_K_two"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/main/selected_R_two"
+              },
+              {
+                "pointer": "/endpoints/main/selected_N_two"
+              },
+              {
+                "pointer": "/endpoints/main/transported_E_two"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-actual-E-transport",
+          "left": {
+            "pointer": "/endpoints/main/transported_E_two"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "pointer": "/endpoints/main/E_direct_rho"
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/main/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/main/reference_gap_lower"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "pointer": "/endpoints/main/diagonal_relative_kappa"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-triangle-upper-comparison",
+          "left": {
+            "pointer": "/endpoints/main/E_direct_rho"
+          },
+          "op": "le",
+          "right": {
+            "pointer": "/endpoints/main/E_triangle_rho"
+          }
+        },
+        {
+          "id": "main-common-complete-budget",
+          "left": {
+            "pointer": "/endpoints/main/complete_K_two"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "7/1000"
+          }
+        },
+        {
+          "id": "main-reference-only-gap-positive",
+          "left": {
+            "pointer": "/endpoints/main/reference_gap_lower"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "199/200"
+          }
+        }
+      ],
+      "required_snapshots": {
+        "research/round28/forward/ag2/inputs/.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+        "research/round28/forward/ag2/inputs/.codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md": "cb6cad300516325a05287e88253d0fb1795b2c9c26b57dffa6f61a92939bda1f",
+        "research/round28/forward/ag2/inputs/AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+        "research/round28/forward/ag2/inputs/instructions/newton-SKILL.md": "2fa3dab9b2420d157457ad3ccaeb0723fb1952871be3e6140dcd3d3c9346ccef",
+        "research/round28/forward/ag2/inputs/instructions/newton-hidden-causes.md": "0471e1411293e808f3f863ee8db19fbc2c2ad622045234307a19328568db8500",
+        "research/round28/forward/ag2/inputs/instructions/newton-research.md": "803ed9b8c517b881c8b217dc9ea47d011c7a070e142f5cb098fde8768990f4f2",
+        "research/round28/forward/ag2/inputs/instructions/newton-source-specific-inference.md": "4dfd9f67ac25e7a550c56124fbe4402d418c07f4480f80a01ad3574886a044df",
+        "research/round28/forward/ag2/inputs/instructions/paired-SKILL.md": "00a703f986c46ea75e9f69c75d9ef6a05c5445418eb28bdeac8fee5c52d0878d",
+        "research/round28/forward/ag2/inputs/instructions/paired-admission-matching.md": "5759836a5535ca38df772ab3765e2396cc191145522321c6630e9b1a81db0090",
+        "research/round28/forward/ag2/inputs/instructions/paired-filtered-sources.md": "3f4a4fd15b1cbf45cabdd405745e5549017655e5aeb1037d72927a481da583b8",
+        "research/round28/forward/ag2/inputs/instructions/paired-generated-support.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+        "research/round28/forward/ag2/inputs/instructions/paired-locality-norms.md": "ef5caec41f13c52bcb23650be70468a9c2e74b7174df3a3e38235bcc1051a6c8",
+        "research/round28/forward/ag2/inputs/instructions/paired-projected-memory.md": "d9e27c0cd5093becfc0b79198728936eeb7ec14b135696661ee3d4a87db3bd3d",
+        "research/round28/forward/ag2/inputs/instructions/paired-reconstruction.md": "38ee8d4c25fdf51c2a2607e2d45b15c12948754f932373f017ad5076494b7faa",
+        "research/round28/forward/ag2/inputs/instructions/paired-residual-topology.md": "95797f0b16c57bd72628b457be038da63fbbc81f07d09c8af2a72ee81e68d915",
+        "research/round28/forward/ag2/inputs/instructions/tesla-SKILL.md": "81f6d760b3aa45d32db4ae31a3a3c9bec5e1d662e42529b5ae21a220deeb07c3",
+        "research/round28/forward/ag2/inputs/instructions/tesla-research.md": "25d0934ee03c0bf56e95bc3f2482947c15aea763a9910e86349af148ad70e0b5",
+        "research/round28/forward/ag2/inputs/papers/round27-addendum/ag1.tex": "5cff33947f9acba714444094e7983bd4b51232beff73c7147e001ca3f0471a21",
+        "research/round28/forward/ag2/inputs/papers/round27-addendum/round27-addendum.tex": "09888b915ed9334e0cc77ea52e6ce3c395976ccaa3ac98ac426bc01155313baa",
+        "research/round28/forward/ag2/inputs/research/round22/forward/o1/report.md": "0284e19cc90061a1ff9cade5a58f8169ab4a7b06c2e53b605853530d6d828e72",
+        "research/round28/forward/ag2/inputs/research/round22/forward/o2/report.md": "f6b7af1a43e11e07286b6c44c18352a8755e6bdc1bf02582b5ce8090c99e42ad",
+        "research/round28/forward/ag2/inputs/research/round22/reverse/o1/report.md": "ccb9ee69905bbd1f2eca307c745ba45e38bf1ef644ab89deffe3f929348144fc",
+        "research/round28/forward/ag2/inputs/research/round23/forward/s1/report.md": "6cf8b76b884084b36ea9de8ff7a555847b87de09572adaf1dc3d0b7ae884c348",
+        "research/round28/forward/ag2/inputs/research/round23/reverse/s1/report.md": "ee24573266a2c1577718a062887c7bdac561bdb7ff8f9cf7d983671975002c92",
+        "research/round28/forward/ag2/inputs/research/round27/HANDOFF.md": "7ade15ff3c316de34bafcf6d2bc603143424357870f1038bfd19427e90fb748b",
+        "research/round28/forward/ag2/inputs/research/round27/advisor/ag1-gate.json": "aa6ee0aa346cf89834fd0e51092560db0f3e8f4bb8d8413f6f7396aa7fb69cc9",
+        "research/round28/forward/ag2/inputs/research/round27/forward/ag1/report.md": "c8df699a1edc11f0f38ad5d5bc7427247a8cba7b57c64bb6e8841a1470102450",
+        "research/round28/forward/ag2/inputs/research/round27/methods/historical-physics-panel/SKILL.md": "a2b366bc661794ee89c29233d0887868b60c0853c85ec136e0529b6f1d5e223a",
+        "research/round28/forward/ag2/inputs/research/round27/methods/historical-physics-panel/references/lenses-and-evidence.md": "4680aec5254c9f83b425c351e2f62c5d999e00758a51cae2865dcf124f01d8d8",
+        "research/round28/forward/ag2/inputs/research/round27/reverse/ag1/report.md": "03c77a999a83a0006f758f8e473a9efcc439e7ecf9031db65c7bd313eb97892b",
+        "research/round28/forward/ag2/inputs/research/round27/skeptic/ag1.md": "c56748b07699148983fc0afc5066d5b517c965cdfd218285640ccf8b31d12a58",
+        "research/round28/forward/ag2/inputs/research/round28/advisor/cycle.json": "e499a39bbc6adeb5e61a583284eb23622ffd8522da5f1dd729deb55e68f2daee",
+        "research/round28/forward/ag2/inputs/research/round28/advisor/selection-ag2.md": "b67243a6e18a428340c428893a84308461ffaf96d9a6aa1048530422003301aa",
+        "research/round28/forward/ag2/inputs/research/round28/contracts/ag2.json": "c8a2147d33226fb37ffc790e668543f4f2fe46596e40c4c3381733aa4208833b",
+        "research/round28/forward/ag2/inputs/research/round28/methods/prospective-guide.md": "9dc5afc0ba299a9fd2085f49f14778b3a3966878f63241649f7e149f1024d410"
+      },
+      "semantic_controls": [
+        {
+          "equals": "ag2-forward-exact-v1",
+          "id": "schema",
+          "pointer": "/schema"
+        },
+        {
+          "equals": {
+            "complete_E_inventory": true,
+            "complete_transport": true,
+            "continuum_Yang_Mills": false,
+            "full_mixing_contraction": false,
+            "homogeneous_full_gap": false,
+            "reference_only_gap": true
+          },
+          "id": "scope",
+          "pointer": "/scope"
+        },
+        {
+          "equals": "passed",
+          "id": "status",
+          "pointer": "/status"
+        },
+        {
+          "equals": "Original homogeneous O1 Hamiltonian; full E through actual admitted selected-source AG1 correction, fixed delta=alpha/8.",
+          "id": "model",
+          "pointer": "/model"
+        },
+        {
+          "equals": 320,
+          "id": "check_count",
+          "pointer": "/check_count"
+        },
+        {
+          "equals": "zero_budget_exact",
+          "id": "check-98",
+          "pointer": "/checks/98"
+        },
+        {
+          "equals": "same_anchor_has_no_omitted_mixing",
+          "id": "check-114",
+          "pointer": "/checks/114"
+        },
+        {
+          "equals": "scalar_double_count_control_discriminates",
+          "id": "check-115",
+          "pointer": "/checks/115"
+        },
+        {
+          "equals": "actual_fixture_quadratic_vacuum_nonzero",
+          "id": "check-116",
+          "pointer": "/checks/116"
+        },
+        {
+          "equals": "selected_cubic_fixture_nonzero",
+          "id": "check-118",
+          "pointer": "/checks/118"
+        },
+        {
+          "equals": "wrong_n1_A_coefficient_rejected",
+          "id": "check-119",
+          "pointer": "/checks/119"
+        },
+        {
+          "equals": "wrong_n2_phi_coefficient_rejected",
+          "id": "check-120",
+          "pointer": "/checks/120"
+        },
+        {
+          "equals": "wrong_n2_A_coefficient_rejected",
+          "id": "check-121",
+          "pointer": "/checks/121"
+        },
+        {
+          "equals": "omitted_cross_quadratic_discriminates",
+          "id": "check-146",
+          "pointer": "/checks/146"
+        },
+        {
+          "equals": "omitted_cross_cubic_discriminates",
+          "id": "check-148",
+          "pointer": "/checks/148"
+        },
+        {
+          "equals": "unsupported_quartic_E_discriminates",
+          "id": "check-157",
+          "pointer": "/checks/157"
+        },
+        {
+          "equals": "wrong_G_only_nonlinear_coefficient_discriminates",
+          "id": "check-158",
+          "pointer": "/checks/158"
+        },
+        {
+          "equals": "bounded_operator_domain_shortcut_control",
+          "id": "check-316",
+          "pointer": "/checks/316"
+        },
+        {
+          "equals": "differentiate_value_bound_shortcut_control",
+          "id": "check-317",
+          "pointer": "/checks/317"
+        },
+        {
+          "equals": "input_weight_cannot_be_reset",
+          "id": "check-318",
+          "pointer": "/checks/318"
+        },
+        {
+          "equals": "upper_bound_not_lower_denominator",
+          "id": "check-319",
+          "pointer": "/checks/319"
+        },
+        {
+          "equals": "not established: actual full input denominator absent",
+          "id": "zero-full-contraction-not-proved",
+          "pointer": "/endpoints/zero/full_mixing_contraction"
+        },
+        {
+          "equals": "not established: actual full input denominator absent",
+          "id": "narrow-full-contraction-not-proved",
+          "pointer": "/endpoints/narrow/full_mixing_contraction"
+        },
+        {
+          "equals": "not established: actual full input denominator absent",
+          "id": "main-full-contraction-not-proved",
+          "pointer": "/endpoints/main/full_mixing_contraction"
+        }
+      ],
+      "source_manifests": [
+        "research/round28/forward/ag2/inputs/source-inventory.json"
+      ]
+    },
+    "reverse": {
+      "adoption_records": [
+        "research/round28/reverse/ag2/inputs/adoption-record.json"
+      ],
+      "binding_field": "sources",
+      "freeze": "research/round28/reverse/ag2/freeze.json",
+      "instruction_manifests": [],
+      "rational_relations": [
+        {
+          "id": "zero-coupling",
+          "left": {
+            "pointer": "/endpoints/0/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "0"
+          }
+        },
+        {
+          "id": "zero-complete-original-inventory",
+          "left": {
+            "pointer": "/endpoints/0/E_direct_rho"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/0/E2_rho"
+              },
+              {
+                "pointer": "/endpoints/0/E3same_pinched_rho"
+              },
+              {
+                "pointer": "/endpoints/0/E3other_rho"
+              },
+              {
+                "pointer": "/endpoints/0/E4plus_rho"
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-complete-transported-budget",
+          "left": {
+            "pointer": "/endpoints/0/complete_K_2_upper"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/0/selected_R_2_upper"
+              },
+              {
+                "pointer": "/endpoints/0/nonlinear_N_2_upper"
+              },
+              {
+                "pointer": "/endpoints/0/transported_E_2_upper"
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-actual-E-transport",
+          "left": {
+            "pointer": "/endpoints/0/transported_E_2_upper"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "pointer": "/endpoints/0/E_direct_rho"
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/0/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/0/reference_only_gap_dimensionless_lower"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "sum": [
+                  {
+                    "product": [
+                      {
+                        "constant": "4"
+                      },
+                      {
+                        "pointer": "/endpoints/0/M"
+                      }
+                    ]
+                  },
+                  {
+                    "pointer": "/endpoints/0/centered_diagonal_relative_upper"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "zero-triangle-upper-comparison",
+          "left": {
+            "pointer": "/endpoints/0/E_direct_rho"
+          },
+          "op": "le",
+          "right": {
+            "pointer": "/endpoints/0/E_triangle_rho"
+          }
+        },
+        {
+          "id": "zero-complete-budget",
+          "left": {
+            "pointer": "/endpoints/0/complete_K_2_upper"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "0"
+          }
+        },
+        {
+          "id": "narrow-coupling",
+          "left": {
+            "pointer": "/endpoints/1/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/10000"
+          }
+        },
+        {
+          "id": "narrow-complete-original-inventory",
+          "left": {
+            "pointer": "/endpoints/1/E_direct_rho"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/1/E2_rho"
+              },
+              {
+                "pointer": "/endpoints/1/E3same_pinched_rho"
+              },
+              {
+                "pointer": "/endpoints/1/E3other_rho"
+              },
+              {
+                "pointer": "/endpoints/1/E4plus_rho"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-complete-transported-budget",
+          "left": {
+            "pointer": "/endpoints/1/complete_K_2_upper"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/1/selected_R_2_upper"
+              },
+              {
+                "pointer": "/endpoints/1/nonlinear_N_2_upper"
+              },
+              {
+                "pointer": "/endpoints/1/transported_E_2_upper"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-actual-E-transport",
+          "left": {
+            "pointer": "/endpoints/1/transported_E_2_upper"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "pointer": "/endpoints/1/E_direct_rho"
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/1/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/1/reference_only_gap_dimensionless_lower"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "sum": [
+                  {
+                    "product": [
+                      {
+                        "constant": "4"
+                      },
+                      {
+                        "pointer": "/endpoints/1/M"
+                      }
+                    ]
+                  },
+                  {
+                    "pointer": "/endpoints/1/centered_diagonal_relative_upper"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-triangle-upper-comparison",
+          "left": {
+            "pointer": "/endpoints/1/E_direct_rho"
+          },
+          "op": "le",
+          "right": {
+            "pointer": "/endpoints/1/E_triangle_rho"
+          }
+        },
+        {
+          "id": "narrow-common-complete-budget",
+          "left": {
+            "pointer": "/endpoints/1/complete_K_2_upper"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "7/100000"
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-positive",
+          "left": {
+            "pointer": "/endpoints/1/reference_only_gap_dimensionless_lower"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "199/200"
+          }
+        },
+        {
+          "id": "main-coupling",
+          "left": {
+            "pointer": "/endpoints/2/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/1000"
+          }
+        },
+        {
+          "id": "main-complete-original-inventory",
+          "left": {
+            "pointer": "/endpoints/2/E_direct_rho"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/2/E2_rho"
+              },
+              {
+                "pointer": "/endpoints/2/E3same_pinched_rho"
+              },
+              {
+                "pointer": "/endpoints/2/E3other_rho"
+              },
+              {
+                "pointer": "/endpoints/2/E4plus_rho"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-complete-transported-budget",
+          "left": {
+            "pointer": "/endpoints/2/complete_K_2_upper"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/2/selected_R_2_upper"
+              },
+              {
+                "pointer": "/endpoints/2/nonlinear_N_2_upper"
+              },
+              {
+                "pointer": "/endpoints/2/transported_E_2_upper"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-actual-E-transport",
+          "left": {
+            "pointer": "/endpoints/2/transported_E_2_upper"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "pointer": "/endpoints/2/E_direct_rho"
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/2/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/2/reference_only_gap_dimensionless_lower"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "sum": [
+                  {
+                    "product": [
+                      {
+                        "constant": "4"
+                      },
+                      {
+                        "pointer": "/endpoints/2/M"
+                      }
+                    ]
+                  },
+                  {
+                    "pointer": "/endpoints/2/centered_diagonal_relative_upper"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-triangle-upper-comparison",
+          "left": {
+            "pointer": "/endpoints/2/E_direct_rho"
+          },
+          "op": "le",
+          "right": {
+            "pointer": "/endpoints/2/E_triangle_rho"
+          }
+        },
+        {
+          "id": "main-common-complete-budget",
+          "left": {
+            "pointer": "/endpoints/2/complete_K_2_upper"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "7/1000"
+          }
+        },
+        {
+          "id": "main-reference-only-gap-positive",
+          "left": {
+            "pointer": "/endpoints/2/reference_only_gap_dimensionless_lower"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "199/200"
+          }
+        }
+      ],
+      "required_snapshots": {
+        "research/round28/reverse/ag2/inputs/.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+        "research/round28/reverse/ag2/inputs/.codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md": "cb6cad300516325a05287e88253d0fb1795b2c9c26b57dffa6f61a92939bda1f",
+        "research/round28/reverse/ag2/inputs/AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+        "research/round28/reverse/ag2/inputs/contract.json": "c8a2147d33226fb37ffc790e668543f4f2fe46596e40c4c3381733aa4208833b",
+        "research/round28/reverse/ag2/inputs/installed-methods/newton-analysis-synthesis/SKILL.md": "2fa3dab9b2420d157457ad3ccaeb0723fb1952871be3e6140dcd3d3c9346ccef",
+        "research/round28/reverse/ag2/inputs/installed-methods/paired-physics-research/SKILL.md": "00a703f986c46ea75e9f69c75d9ef6a05c5445418eb28bdeac8fee5c52d0878d",
+        "research/round28/reverse/ag2/inputs/installed-methods/tesla-mechanism-resonance/SKILL.md": "81f6d760b3aa45d32db4ae31a3a3c9bec5e1d662e42529b5ae21a220deeb07c3",
+        "research/round28/reverse/ag2/inputs/papers/round27-addendum/ag1.tex": "5cff33947f9acba714444094e7983bd4b51232beff73c7147e001ca3f0471a21",
+        "research/round28/reverse/ag2/inputs/papers/round27-addendum/round27-addendum.tex": "09888b915ed9334e0cc77ea52e6ce3c395976ccaa3ac98ac426bc01155313baa",
+        "research/round28/reverse/ag2/inputs/research/round22/forward/o1/report.md": "0284e19cc90061a1ff9cade5a58f8169ab4a7b06c2e53b605853530d6d828e72",
+        "research/round28/reverse/ag2/inputs/research/round22/forward/o2/report.md": "f6b7af1a43e11e07286b6c44c18352a8755e6bdc1bf02582b5ce8090c99e42ad",
+        "research/round28/reverse/ag2/inputs/research/round22/reverse/o1/report.md": "ccb9ee69905bbd1f2eca307c745ba45e38bf1ef644ab89deffe3f929348144fc",
+        "research/round28/reverse/ag2/inputs/research/round23/forward/s1/report.md": "6cf8b76b884084b36ea9de8ff7a555847b87de09572adaf1dc3d0b7ae884c348",
+        "research/round28/reverse/ag2/inputs/research/round23/reverse/s1/report.md": "ee24573266a2c1577718a062887c7bdac561bdb7ff8f9cf7d983671975002c92",
+        "research/round28/reverse/ag2/inputs/research/round27/HANDOFF.md": "7ade15ff3c316de34bafcf6d2bc603143424357870f1038bfd19427e90fb748b",
+        "research/round28/reverse/ag2/inputs/research/round27/advisor/ag1-gate.json": "aa6ee0aa346cf89834fd0e51092560db0f3e8f4bb8d8413f6f7396aa7fb69cc9",
+        "research/round28/reverse/ag2/inputs/research/round27/forward/ag1/report.md": "c8df699a1edc11f0f38ad5d5bc7427247a8cba7b57c64bb6e8841a1470102450",
+        "research/round28/reverse/ag2/inputs/research/round27/methods/historical-physics-panel/SKILL.md": "a2b366bc661794ee89c29233d0887868b60c0853c85ec136e0529b6f1d5e223a",
+        "research/round28/reverse/ag2/inputs/research/round27/methods/historical-physics-panel/references/lenses-and-evidence.md": "4680aec5254c9f83b425c351e2f62c5d999e00758a51cae2865dcf124f01d8d8",
+        "research/round28/reverse/ag2/inputs/research/round27/reverse/ag1/report.md": "03c77a999a83a0006f758f8e473a9efcc439e7ecf9031db65c7bd313eb97892b",
+        "research/round28/reverse/ag2/inputs/research/round27/skeptic/ag1.md": "c56748b07699148983fc0afc5066d5b517c965cdfd218285640ccf8b31d12a58",
+        "research/round28/reverse/ag2/inputs/research/round28/advisor/cycle.json": "e499a39bbc6adeb5e61a583284eb23622ffd8522da5f1dd729deb55e68f2daee",
+        "research/round28/reverse/ag2/inputs/research/round28/advisor/selection-ag2.md": "b67243a6e18a428340c428893a84308461ffaf96d9a6aa1048530422003301aa",
+        "research/round28/reverse/ag2/inputs/research/round28/methods/prospective-guide.md": "9dc5afc0ba299a9fd2085f49f14778b3a3966878f63241649f7e149f1024d410"
+      },
+      "semantic_controls": [
+        {
+          "equals": "ym28-ag2-reverse-v1",
+          "id": "schema",
+          "pointer": "/schema"
+        },
+        {
+          "equals": "Exact original E inventory and transport; reference-only form bound. No full mixing contraction or original Hamiltonian gap.",
+          "id": "scope",
+          "pointer": "/scope"
+        },
+        {
+          "equals": true,
+          "id": "passed",
+          "pointer": "/passed"
+        },
+        {
+          "equals": 680,
+          "id": "checks_count",
+          "pointer": "/checks_count"
+        },
+        {
+          "equals": "scalar double-counting control",
+          "id": "check-53",
+          "pointer": "/checks/53"
+        },
+        {
+          "equals": "wrong n1 coefficient rejected",
+          "id": "check-55",
+          "pointer": "/checks/55"
+        },
+        {
+          "equals": "wrong n2 coefficient rejected",
+          "id": "check-56",
+          "pointer": "/checks/56"
+        },
+        {
+          "equals": "zero coupling exactness -1/7",
+          "id": "check-67",
+          "pointer": "/checks/67"
+        },
+        {
+          "equals": "zero coupling exactness 0",
+          "id": "check-70",
+          "pointer": "/checks/70"
+        },
+        {
+          "equals": "zero coupling exactness 1/7",
+          "id": "check-73",
+          "pointer": "/checks/73"
+        },
+        {
+          "equals": "quartic-assignment countercontrol",
+          "id": "check-74",
+          "pointer": "/checks/74"
+        },
+        {
+          "equals": "omitted transported-E term degree 1",
+          "id": "check-76",
+          "pointer": "/checks/76"
+        },
+        {
+          "equals": "omitted transported-E term degree 2",
+          "id": "check-78",
+          "pointer": "/checks/78"
+        },
+        {
+          "equals": "omitted transported-E term degree 3",
+          "id": "check-80",
+          "pointer": "/checks/80"
+        },
+        {
+          "equals": "omitted transported-E term degree 4",
+          "id": "check-82",
+          "pointer": "/checks/82"
+        },
+        {
+          "equals": "omitted transported-E term degree 5",
+          "id": "check-84",
+          "pointer": "/checks/84"
+        },
+        {
+          "equals": "omitted transported-E term degree 6",
+          "id": "check-86",
+          "pointer": "/checks/86"
+        },
+        {
+          "equals": "omitted overlapping quadratic words rejected",
+          "id": "check-87",
+          "pointer": "/checks/87"
+        },
+        {
+          "equals": "omitted overlapping cubic words rejected",
+          "id": "check-88",
+          "pointer": "/checks/88"
+        },
+        {
+          "equals": "original E transport has nonzero zeroth term",
+          "id": "check-90",
+          "pointer": "/checks/90"
+        },
+        {
+          "equals": "original E transport has nonzero commutator",
+          "id": "check-91",
+          "pointer": "/checks/91"
+        },
+        {
+          "equals": "one-star denominator case",
+          "id": "check-641",
+          "pointer": "/checks/641"
+        },
+        {
+          "equals": "all-order tail exact identity 0",
+          "id": "check-648",
+          "pointer": "/checks/648"
+        },
+        {
+          "equals": "all-order tail exact identity 1/100",
+          "id": "check-649",
+          "pointer": "/checks/649"
+        },
+        {
+          "equals": "all-order tail exact identity 1/20",
+          "id": "check-650",
+          "pointer": "/checks/650"
+        },
+        {
+          "equals": "zero entire correction",
+          "id": "check-669",
+          "pointer": "/checks/669"
+        },
+        {
+          "equals": "finite-volume does not bound onsite generator",
+          "id": "check-679",
+          "pointer": "/checks/679"
+        },
+        {
+          "equals": "not established; no actual full input denominator",
+          "id": "zero-full-contraction-not-proved",
+          "pointer": "/endpoints/0/full_mixing_contraction"
+        },
+        {
+          "equals": "not established; no actual full input denominator",
+          "id": "narrow-full-contraction-not-proved",
+          "pointer": "/endpoints/1/full_mixing_contraction"
+        },
+        {
+          "equals": "not established; no actual full input denominator",
+          "id": "main-full-contraction-not-proved",
+          "pointer": "/endpoints/2/full_mixing_contraction"
+        }
+      ],
+      "source_manifests": [
+        "research/round28/reverse/ag2/inputs/source-inventory.json"
+      ]
+    }
+  },
+  "schema": "ym28-admission-v1",
+  "skeptic_checkers": [
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "inputs": [],
+      "output": "research/round28/skeptic/ag2-independent.json",
+      "output_mode": "file",
+      "script": "research/round28/skeptic/ag2_independent.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "inputs": [
+        "research/round28/contracts/ag2.json",
+        "research/round28/advisor/ag2-preproduction-provenance.json",
+        "research/round28/advisor/repairs/ag2-source-restoration.json"
+      ],
+      "output": "research/round28/skeptic/ag2-provenance.json",
+      "output_mode": "file",
+      "script": "research/round28/skeptic/ag2_provenance.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "inputs": [],
+      "output": "research/round28/skeptic/ag2-post-review.json",
+      "output_mode": "file",
+      "script": "research/round28/skeptic/ag2_post_review.py"
+    }
+  ],
+  "status": "advisor-approved admission specification; mathematical acceptance is recorded by the separate gate"
+}

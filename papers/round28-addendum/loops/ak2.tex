@@ -1,0 +1,206 @@
+% Included after research/round28/advisor/ak2-gate.json and final review.
+\section{AK2: physical Wilson form energy, a finite window and lower heat\workstar}
+\label{sec:ak2}
+For the same actual homogeneous state and original origin $xz$ Wilson observable, AK2 proves
+\begin{equation}
+ \chi\in D(H_{\rm phys}^{1/2}),\qquad
+ \mu_1:=\int E\,d\nu(E)\le\alpha,\qquad
+ \nu([\alpha/16,10\alpha])\ge\frac1{10},
+ \label{eq:ak2-targets}
+\end{equation}
+and, for every finite physical imaginary time,
+\begin{equation}
+ C(t)=\langle\chi,e^{-tH_{\rm phys}/\hbar}\chi\rangle
+ \ge\frac15e^{-5\alpha t/\hbar},\qquad0\le t<\infty.
+ \label{eq:ak2-lower-heat}
+\end{equation}
+Here $\chi=(\pi(W)-\omega(W)I)\Omega$ and $\nu$ is its actual physical energy spectral measure. The regime remains \emph{both} $|\tau|<\tau_*$ with unevaluated source constants and $|\tau|\le2^{-16}$, with the same fixed selected coefficients, positive scales and whole-star positive-orthant limit. The numerical cap alone certifies no chosen positive admissible coupling.
+
+The proof uses only the common AK1 consequence $v=\norm\chi^2\ge1/5$. Its producer floor $119/576$ and independent-skeptic refinement $131/576$ retain their attribution and are not needed to optimize this target. AJ1/AJ2 supply
+\begin{equation}
+ \nu(\mathbb R)=v,\qquad\nu(\{0\})=0,\qquad
+ \supp\nu\subset[\alpha/16,\infty),\qquad
+ C(t)\le v e^{-\alpha t/(16\hbar)}.
+ \label{eq:ak2-inherited}
+\end{equation}
+AK1's local reference-density energy is not a physical first moment of $\chi$. The new calculation supplies that missing premise from the actual original-link kinetic operator. It proves a form-domain statement and a first-moment upper bound, without asserting $\chi\in D(H_{\rm phys})$, a second moment, a threshold eigenatom or a measured mass.
+
+\subsection{Finite physical operator, complete support and multiplier domains}
+Retain the full $R=\{0,e_z\}$, all 48 original links and all 36 endpoint actions from AJ2/AK1. The four distinct signed Wilson links have owners $0,0,e_z,0$; all other 44 local links remain present even though their derivatives of $W$ vanish. Each finite volume contains every owned link, three selected faces per block and every complete retained 21-face star. For a coarse cube of side $n$, the original counts are $24n^3$ links, $8n^3+14n^2$ endpoints, $3n^3$ selected faces and $21(n-1)^3$ retained omitted faces. The original tail ownership and complete-star rule establish these formulas at every volume; the $n=2,3,4$ diagnostics are finite checks of that geometry.
+
+On the finite product Haar space, choose the standard half-Pauli left fields
+\begin{equation}
+ X_{e,a}f(U_e)=\left.\frac d{dt}f(e^{tT_a}U_e)\right|_{t=0},
+ \qquad T_a=-i\sigma_a/2,\qquad C_e=-\sum_{a=1}^3X_{e,a}^2.
+ \label{eq:ak2-casimir}
+\end{equation}
+Thus a fundamental matrix coefficient has Casimir eigenvalue $3/4$. Reversing the overall Lie-algebra basis convention, as in the forward derivation, leaves this Casimir and the squared-gradient identity unchanged; the signs within each inverse-link derivative still matter.
+
+Write the raw physical operator and reference scalar as
+\begin{align}
+ H^{\rm raw}_\Lambda
+ &=\alpha\sum_{e\ {\rm owned}}C_e
+ -\sum_{f\ {\rm selected}}\lambda_f W_f
+ -\frac{\alpha\tau}{24}\sum_{b+S\subset\Lambda}\sum_{f\in O_b}W_f,\\
+ B_\Lambda&=\sum_{b\in\Lambda}E_{{\rm strip},b},\qquad
+ \delta\widehat H_\Lambda=H^{\rm raw}_\Lambda-B_\Lambda,
+ \quad\delta=\alpha/8,\quad |O_b|=21.
+ \label{eq:ak2-raw}
+\end{align}
+The selected $\lambda_f$ include both endpoint and bridge coefficients. If $\widehat E_\Lambda$ is the actual normalized ground energy, then
+\begin{equation}
+ E^{\rm raw}_\Lambda=B_\Lambda+\delta\widehat E_\Lambda,
+ \qquad K_\Lambda=\delta(\widehat H_\Lambda-\widehat E_\Lambda)
+ =H^{\rm raw}_\Lambda-E^{\rm raw}_\Lambda\ge0.
+ \label{eq:ak2-centering}
+\end{equation}
+Both reference and true ground scalars are retained before cancellation. For the actual normalized ground $\Omega_\Lambda$, put
+\begin{equation}
+ m_\Lambda=\langle\Omega_\Lambda,W\Omega_\Lambda\rangle,
+ \qquad\chi_\Lambda=(W-m_\Lambda)\Omega_\Lambda,
+ \qquad K_\Lambda\Omega_\Lambda=0.
+\end{equation}
+
+The finite sum of link Casimirs is an elliptic product Laplacian with operator domain $H^2$ and form domain $H^1$ on the compact group product. Finite Peter--Weyl sums form a graph core. Every selected and omitted potential is smooth real bounded multiplication at each fixed volume, so bounded perturbation preserves these domains. A uniform bound on the entire extensive potential is not assumed. In particular the finite ground is in $H^2$.
+
+Smoothness, rather than bounded locality alone, supplies the multiplier regularity. Both $W$ and $W^2$ have bounded derivatives through order two. On the finite core, for $F=W$ or $W^2$ and $Q_\Lambda=\sum_eC_e$,
+\begin{equation}
+ Q_\Lambda(F\psi)=FQ_\Lambda\psi+(Q_\Lambda F)\psi
+             -2\sum_{e,a}(X_{e,a}F)X_{e,a}\psi.
+ \label{eq:ak2-leibniz}
+\end{equation}
+The first-derivative norm satisfies $\sum_{e,a}\norm{X_{e,a}\psi}^2=\langle\psi,Q_\Lambda\psi\rangle$ and is bounded by the graph norm using $x\le1+x^2$. A graph-approximating sequence and closedness therefore prove $F D(Q_\Lambda)\subset D(Q_\Lambda)$. The weak product rule similarly gives $H^1$ preservation. The same statements hold for $W-m_\Lambda$ and its square. These are the required finite-volume domains; no infinite-volume operator-domain conclusion is imported from them.
+
+\subsection{Four original derivatives and the exact finite form identity}
+On the common finite core, Haar integration by parts and the product rule give
+\begin{equation}
+ [C_e,W]\psi=(C_eW)\psi-2\sum_a(X_{e,a}W)X_{e,a}\psi,
+ \qquad[W,[C_e,W]]=2M_{\sum_a(X_{e,a}W)^2}.
+ \label{eq:ak2-double}
+\end{equation}
+The first commutator is a first-order operator, not an asserted bounded $L^2$ operator. The second has the displayed bounded multiplication extension; its domain identity extends to $H^2$ by the preceding argument. All selected and retained omitted magnetic terms commute with $W$ as multiplication operators, including overlapping plaquettes. Both scalars commute as well. Their cancellation does not replace the actual interacting ground by Haar.
+
+For a positive original link occurrence, varying $U$ by $e^{tT_a}U$ differentiates it as $T_aU$. For an inverse occurrence,
+\begin{equation}
+ (e^{tT_a}U)^{-1}=U^{-1}e^{-tT_a},\qquad
+ \left.\frac d{dt}(e^{tT_a}U)^{-1}\right|_{0}=-U^{-1}T_a.
+ \label{eq:ak2-inverse}
+\end{equation}
+Both occurrences have second derivative $-U^{\pm1}/4$. Fixed left/right factors and inversion are isometries of the bi-invariant metric. If the full holonomy is the unit quaternion $(w,\mathbf q)$, then $W=w$ and $|\mathbf q|^2=1-w^2$. The three half-Pauli fields give scalar-coordinate derivatives equal to components of $\mathbf q/2$, up to an orthogonal adjoint rotation and the required inverse sign. Thus \emph{each} of the four distinct original links gives
+\begin{equation}
+ \sum_a(X_{e,a}W)^2=\frac{1-W^2}{4},\qquad C_eW=\frac34W.
+\end{equation}
+Every other link derivative is zero. Retaining all four original kinetic terms yields
+\begin{equation}
+ \Gamma(W):=\sum_{e,a}(X_{e,a}W)^2=1-W^2,
+ \qquad[W,[K_\Lambda,W]]=2\alpha M_{1-W^2}.
+ \label{eq:ak2-gradient}
+\end{equation}
+The identity does not substitute a reduced one-plaquette kinetic operator.
+
+The previously proved domains make $WK_\Lambda W$, $W^2K_\Lambda$ and $K_\Lambda W^2$ well-defined at the ground vector. In $2WK_\Lambda W-W^2K_\Lambda-K_\Lambda W^2$, the last two ground expectations vanish. Centering $W$ leaves its form energy unchanged because $K_\Lambda\Omega_\Lambda=0$. Therefore, for the actual finite spectral measure $\nu_\Lambda$,
+\begin{align}
+ \mu_{1,\Lambda}
+ &=\langle\chi_\Lambda,K_\Lambda\chi_\Lambda\rangle
+ =\frac12\langle\Omega_\Lambda,[W,[K_\Lambda,W]]\Omega_\Lambda\rangle\\
+ &=\alpha\,\omega_\Lambda(1-W^2)\le\alpha.
+ \label{eq:ak2-finite-moment}
+\end{align}
+The forward proof independently obtains this by subtracting the weak ground equation tested against $f^2\Omega_\Lambda$ from the form at $f\Omega_\Lambda$, $f=W-m_\Lambda$. For each real derivative,
+\begin{equation}
+ |X(f\Omega_\Lambda)|^2-\operatorname{Re}
+  \bigl(\overline{X\Omega_\Lambda}\,X(f^2\Omega_\Lambda)\bigr)
+  =(Xf)^2|\Omega_\Lambda|^2.
+\end{equation}
+The potential and scalar terms cancel, and $H^1$ continuity extends the identity from the smooth core. Both routes give the same physical coefficient and factor one-half. The bound is uniform in volume and the declared coefficients, despite their effect on the unevaluated actual expectation.
+
+\subsection{Tested resolvents, scalar measure convergence and the limiting form}
+The source-qualified I1/AJ1 theorem gives centered finite-resolvent matrix-element convergence tested on fixed bounded-local vectors $A\Omega_\Lambda,B\Omega_\Lambda$. Its domain-qualified creation core is retained separately. The theorem does not assert common-concrete-space strong resolvent convergence or place every bounded-local vector in $D(G)$. Fixed physical energy is restored through
+\begin{equation}
+ (K_\Lambda-z)^{-1}=\delta^{-1}
+  (\widehat H_\Lambda-\widehat E_\Lambda-z/\delta)^{-1},
+ \qquad\operatorname{Im}z\ne0.
+ \label{eq:ak2-rescale}
+\end{equation}
+Local state convergence gives $m_\Lambda\to m=\omega(W)$ and $v_\Lambda=\omega_\Lambda(W^2)-m_\Lambda^2\to v$, with $v_\Lambda\le1$. First use the source theorem on the fixed $A=W-mI$. Replacing its finite cyclic vector by $\chi_\Lambda$ changes it by $(m_\Lambda-m)\Omega_\Lambda$. The resolvent norm $1/|\operatorname{Im}z|$ and both vector norms at most two bound the difference of quadratic resolvent tests by
+\begin{equation}
+ \frac{4|m_\Lambda-m|}{|\operatorname{Im}z|}\longrightarrow0.
+ \label{eq:ak2-moving-center}
+\end{equation}
+This justifies the moving ground-state mean. The resulting nonreal transforms converge to those of the actual spectral measure $\nu$ of $(H_{\rm phys},\chi)$; AJ1's reducing physical identification preserves this measure.
+
+The linear span of nonreal resolvent functions is dense in $C_0(\mathbb R)$. Conjugation stays in the span, products at distinct poles reduce by the resolvent identity, and repeated poles are uniform limits of difference quotients with poles away from the real line. Its uniform closure is therefore an algebra that separates points and vanishes nowhere. The locally compact Stone--Weierstrass theorem gives the claimed density. The uniform measure-mass bound extends convergence to every $C_0$ test. The reverse proof equivalently works on $[0,\infty)$.
+
+For $L>0$ and $E\ge0$ use the continuous compactly supported functions
+\begin{equation}
+ F_L(E)=E\min\{1,\max(0,2-E/L)\},\qquad F_L(E)=0\quad(E<0).
+\end{equation}
+They satisfy $0\le F_L\le E$ on the positive half-line and increase pointwise to $E$. The measure convergence and \eqref{eq:ak2-finite-moment} give $\int F_L\,d\nu\le\alpha$ for every $L$, and monotone convergence yields
+\begin{equation}
+ \mu_1=\int E\,d\nu(E)\le\alpha,
+ \qquad\norm{H_{\rm phys}^{1/2}\chi}^2=\mu_1<\infty.
+ \label{eq:ak2-limit-moment}
+\end{equation}
+This is the spectral characterization of the actual form domain. The independent skeptic instead uses $\min(E,L)=L-(L-|E|)_+$ on nonnegative energies: mass convergence and the $C_0$ test give the same monotone argument.
+
+Equation \eqref{eq:ak2-finite-moment} is an \emph{equality at finite volume}. Its bounded-local right side converges, but the limiting spectral first moment is only bounded above by this method. Uniform integrability has not been established. Neither equality of first moments, a second moment nor $\chi\in D(H_{\rm phys})$ is inferred. Scalar measure convergence replaces no missing common-Hilbert-space operator theorem.
+
+The independently frozen skeptic derivation also retains the more specific upper bound $\mu_1\le\alpha[1-\omega(W^2)]$, by passing the bounded-local right side through the same argument. It remains an inequality with an unevaluated interacting expectation. The common ceiling $\alpha$ suffices for the frozen window and heat targets below.
+
+\subsection{A bounded energy interval and all finite imaginary times}
+With $\supp\nu\subset[\alpha/16,\infty)$, $v\ge1/5$ and \eqref{eq:ak2-limit-moment}, the elementary tail inequality gives
+\begin{equation}
+ \nu((10\alpha,\infty))\le\frac{\mu_1}{10\alpha}\le\frac1{10},
+ \qquad
+ \nu([\alpha/16,10\alpha])\ge v-\frac1{10}\ge\frac1{10}.
+ \label{eq:ak2-window}
+\end{equation}
+The removed tail is open and the window's upper endpoint is included. Positive interval mass does not identify an eigenatom, the lowest overlapping energy or a sharp threshold.
+
+Normalize the positive measure by $v$ to obtain a probability measure with finite mean $\bar E=\mu_1/v\le5\alpha$. For $s=t/\hbar\ge0$, the convex tangent inequality
+\begin{equation}
+ e^{-sE}\ge e^{-s\bar E}\bigl[1-s(E-\bar E)\bigr]
+\end{equation}
+is integrable because the first moment is finite. Integrating proves Jensen's inequality here without a small-time expansion:
+\begin{equation}
+ C(t)\ge v e^{-t\mu_1/(\hbar v)}
+       \ge v e^{-5\alpha t/\hbar}
+       \ge\frac15e^{-5\alpha t/\hbar}.
+ \label{eq:ak2-jensen}
+\end{equation}
+It includes $t=0$, where $C(0)=v$. Together with \eqref{eq:ak2-inherited}, this gives two physical imaginary-time envelopes for every finite time. The variance, spectral mass and $C(t)$ are dimensionless; $\alpha$, $\mu_1$ and the window endpoints have energy units, and $\alpha t/\hbar$ is dimensionless. No real-time magnitude-decay or exact asymptotic mass is claimed.
+
+\subsection{Controls, preserved failures and the stopping boundary}
+At the explicitly labeled corner where \emph{all} selected and omitted couplings vanish, the Haar vacuum gives $\norm{W\Omega}^2=1/4$, excitation energy $3\alpha$ and first moment $3\alpha/4$. This checks the four-link normalization, without assigning those values to an arbitrary interacting state. Doubling the half-Pauli generator quadruples the gradient and Casimir budget. Omitting the double-commutator factor one-half gives the wrong moment. Scalar and units fixtures separately detect a missing actual ground subtraction, $\delta$ conversion or division by $\hbar$; simultaneous raw-operator and ground shifts cancel.
+
+Exact noncommuting quaternion derivatives, supplemented by signed group-displacement or Cayley-path tests, verify all four original occurrences and their inverse derivatives. Squaring an inverse derivative hides its wrong overall sign, so that blind gradient test is preserved beside signed first-derivative controls. The independent skeptic's first identity-link fixture has $\Gamma=0$ and is also blind to a kinetic rescaling; the later noncommuting fixture discriminates. Full endpoint gauge transformations preserve the actual word, while missing-head actions fail.
+
+Both producers give abstract bounded self-adjoint creating operators with vectors of divergent form energy. The skeptic additionally uses actual free original-link characters, with an auxiliary observable distinct from $W$. On the full 48-link region, let $\phi_n$ be the spin-$n/2$ character of the same four-link holonomy and let $\Omega_R^0$ be its free constant vacuum. Conditional Haar gives orthonormal $\phi_n$, with four-link energy $\alpha n(n+2)$. The gauge-invariant vector
+\begin{equation}
+ f_R=\sqrt3\sum_{k\ge1}2^{-k}\phi_{2^k}
+\end{equation}
+has norm one and is orthogonal to $\Omega_R^0$. Its first $N$ terms have squared norm $1-4^{-N}$ and form energy divided by $\alpha$ equal to $3N+6(1-2^{-N})$, which diverges. The bounded local physical self-adjoint operator
+\begin{equation}
+ A_R=|f_R\rangle\langle\Omega_R^0|
+       +|\Omega_R^0\rangle\langle f_R|
+ \quad\hbox{on }\mathcal K_R,
+ \qquad A=A_R\otimes I_{R^c}
+ \label{eq:ak2-local-counter}
+\end{equation}
+has norm one and creates the divergent-energy vector in the free product representation. It is extended by the exterior \emph{identity}, not a global vacuum projector. The example rejects automatic form regularity of bounded local observables; it does not undermine the separately proved smooth-Wilson argument.
+
+The three independent moment-loss diagnostics are abstract positive spectral measures. For example the reverse uses, in units of $\alpha$,
+\begin{equation}
+ \eta_n=(1-1/n)\delta_{1/16}+(1/n)\delta_{1/16+n/2}.
+\end{equation}
+Masses are one, bounded-test differences from $\delta_{1/16}$ are at most $2\norm f_\infty/n$, and every first moment is $9/16$, while the limiting first moment is $1/16$. This proves that bounded first moments and mass/resolvent convergence do not force moment equality. The forward and skeptic retain their different valid measures and exact prefixes.
+
+Noncentered observables with nonzero means retain vacuum mass and heat plateaus. By contrast, abstract mass $1/5$ at $20\alpha$ has the inherited lower support and variance floor but neither mass in the target window nor the proposed lower heat curve; its first moment exceeds $\alpha$. The skeptic uses $11\alpha$ for the same inference control and separately checks inclusion of $10\alpha$ in the closed window. These are alternative measures, not observed spectral atoms of the actual state. Hypothetical source constants below the numerical cap retain the strict symbolic coupling requirement.
+
+The forward first invocation stopped at a missing closing parenthesis before executing science. The original checker and SyntaxError are preserved, followed by corrected normal and optimized output agreement. Blind controls and replacements remain attributed; none is erased or counted as another investigation. Frozen sources and independent implementations support reproducibility, while the finite domain proof, original-link algebra, source-qualified measure limit and monotone convergence establish the result. The original I1 cluster-expansion theorem remains inherited; no full reproof, new primary retrieval or scientific-priority claim is made.
+
+The final post-review also preserves one unused stale label in a reverse centering diagnostic: its metadata says \texttt{abstract\_gap=1}, while the implemented positive level is $4$ in units of $\alpha$. The correctly implemented centered mass is $1/16$, first moment divided by $\alpha$ is $1/4$, and centered and raw heat values are $1/256$ and $65/256$. The reverse author's Newton-method comparison acknowledges the stale label; it is not reinterpreted as an intentional lower-bound certificate. No accepted target depends on it, and no frozen field is rewritten. That comparison shares authorship with reverse and is not another independent producer.
+
+The final skeptic authored its AK2 derivation before exchange, then read both complete producer reports and checkers and reproduced each complete output set under normal and optimized Python with byte equality. Its separately bound final specification audit found no blocking issue. The local character diagnostic in \eqref{eq:ak2-local-counter} is the additive post-review clarification of its own independently frozen control. Source reading remains differentiated: the skeptic's current manuscript coverage was differential text coverage against its previously read draft, while both producers recorded focused current readings. These activities are not visual PDF review or fresh audits of the full external cluster proof.
+
+This is investigation ten and the authorized scientific stop boundary. The fixed-lattice, fixed-observable result supplies \eqref{eq:ak2-targets}--\eqref{eq:ak2-lower-heat} in the same conditional homogeneous model. It supplies no numerical stability radius, infinite first-moment equality, second moment, infinite operator-domain assertion, eigenatom, exact mass, other-boundary identification, physical model matching or continuum Yang--Mills theorem. Further questions remain plans rather than extra scientific executions.

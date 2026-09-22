@@ -1,0 +1,40 @@
+--- research/round28/reverse/ah2/check.py
++++ research/round28/release/ah-portability/ah2/check.py
+@@ -12,8 +12,18 @@
+ import json
+ import math
+ 
+-HERE=Path(__file__).resolve().parent
+-ROOT=HERE.parents[3]
++ROOT = Path(__file__).resolve().parents[5]
++HERE = ROOT / 'research/round28/reverse/ah2'
++REPOSITORY_ORIGINS = {
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md": ".codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/finite-observations-and-operator-limits.md": ".codex/skills/qeg-research-advisor/references/finite-observations-and-operator-limits.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md": ".codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/haar-maps-and-induced-dynamics.md": ".codex/skills/qeg-research-advisor/references/haar-maps-and-induced-dynamics.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md": ".codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/newton-tesla-project-method.md": ".codex/skills/qeg-research-advisor/references/newton-tesla-project-method.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/projected-memory-and-boundary-response.md": ".codex/skills/qeg-research-advisor/references/projected-memory-and-boundary-response.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/stationarity-support-and-admission.md": ".codex/skills/qeg-research-advisor/references/stationarity-support-and-admission.md"
++}
+ CONTRACT="research/round28/contracts/ah2.json"
+ CONTRACT_SHA="a7d558a8517cf3b1577d93a282ab6f6c22c462f2d06107e1255cfce0ee3f3ef1"
+ CHECKS={}
+@@ -59,13 +69,15 @@
+         p=HERE/e["snapshot"];need("instruction_%02d"%n,sha(p)==e["sha256"])
+         bindings[str(p.relative_to(ROOT))]=e["sha256"]
+         origin=Path(e["origin"])
+-        if origin.is_relative_to(ROOT):
++        if e["origin"] in REPOSITORY_ORIGINS:
++            origin=ROOT/REPOSITORY_ORIGINS[e["origin"]]
+             need("repo_instruction_%02d"%n,sha(origin)==e["sha256"])
+             bindings[str(origin.relative_to(ROOT))]=e["sha256"]
+     for p in sorted((HERE/"inputs").rglob("*")):
+         if p.is_file():bindings[str(p.relative_to(ROOT))]=sha(p)
+     for name in ("check.py","preflight-pass.json"):
+         bindings[str((HERE/name).relative_to(ROOT))]=sha(HERE/name)
++    bindings[str(Path(__file__).resolve().relative_to(ROOT))]=sha(Path(__file__).resolve())
+     return bindings
+ 
+ 

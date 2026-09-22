@@ -1,0 +1,3 @@
+# Additive canonical input inventory
+
+Root preflight found that Validator.manifests discovers manifests within the producer inputs directory. The original inputs-manifest.json, inputs-freeze.json and input-preparation.md remain unchanged. Their exact manifest bytes were copied to inputs/source-inventory.json. The current input pack is frozen by inputs-current-freeze.json; this records all source snapshots, the canonical inventory, the original administrative history and this note. This is an administrative repair only: no AK1 mathematical derivation or checker execution has occurred. Runtime inputs will be the canonical owned snapshots.

@@ -1,0 +1,140 @@
+% Included after research/round28/advisor/ak1-gate.json.
+\section{AK1: a quantitative actual Wilson variance floor\workstar}
+\label{sec:ak1}
+For the same original origin $xz$ Wilson multiplier \eqref{eq:aj2-W} in the actual I1/AJ1/AJ2 homogeneous state, both independent producers prove
+\begin{equation}
+ \operatorname{Var}_{\omega}(W)\ge\frac{119}{576}>\frac15,
+ \qquad |\tau|<\tau_*,\quad |\tau|\le2^{-16}.
+ \label{eq:ak1-common}
+\end{equation}
+The independently frozen skeptic proof gives the stronger, separately attributed lower bound $131/576$ on the same regime. These are sufficient dimensionless signal bounds, not evaluated interacting variances or optimal constants. The additional numerical cap does not evaluate the positive source constants in $\tau_*=\min\{c_1(S),1/[2c_2(S)]\}/7$, or certify that any chosen positive numerical coupling lies below it. AJ2's qualitative positivity on the larger symbolic interval remains unchanged.
+
+Keep $|\lambda_L|,|\lambda_R|\le\alpha/2$ and $|\mu|\le\alpha/8$ fixed in their inherited ranges. Both bounds are uniform over those choices, with original spacing, $\alpha$, $E_*$ and $\hbar$ positive and fixed. The actual local density is generally mixed. The energy estimate used below concerns its normalized \emph{reference} energy, not the physical spectral first moment of a Wilson-excited vector.
+
+\subsection{Complete region, incident stars and the actual energy premise}
+The complete unreduced region remains $R=\{0,e_z\}$, with 48 original links, twenty selected-strip and twenty-eight free links, and all 36 endpoint groups. Its four oriented Wilson edges retain signs $+,+,-,-$ and owners $0,0,e_z,0$. Full endpoint transformations telescope to conjugation at the origin, so $W$ is bounded, self-adjoint and physical, with $\norm W=1$. Neither the four loop vertices nor a tensor product of constrained physical factors replaces this region.
+
+For the inherited $S=\{0,e_x,e_y,e_z\}$, each complete Hamiltonian group has all 21 omitted faces, norm $M=7|\tau|$, and is retained only when $b+S\subset\Lambda$. An incident anchor has $r=b+s$ for some $r\in R,s\in S$. Conversely every such anchor has a star meeting $R$. Hence
+\begin{equation}
+ \mathcal I_+(R)=(R-S)\cap\mathbb Z_+^3=\{0,e_z\},\qquad
+ \mathcal I_\Lambda(R)=\{b\in\mathcal I_+(R):b+S\subset\Lambda\}.
+ \label{eq:ak1-incidence}
+\end{equation}
+The group at zero meets both sites and is counted once. The two-factor observable cover contains no whole star, although ten individual omitted faces fit within it; a two-factor boundary Hamiltonian is not substituted for the actual environment.
+
+The independent reconstructions give the following boundary-complete counts. Charged faces are all faces in incident groups, with group multiplicity.
+\begin{center}\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule Coarse cuboid & Links & Endpoints & All stars & Incident stars & Charged faces \\
+\midrule
+$(2,2,2)$ & 192 & 120 & 1 & 1 & 21\\
+$(3,3,3)$ & 648 & 342 & 8 & 2 & 42\\
+$(4,4,4)$ & 1536 & 736 & 27 & 2 & 42\\
+\bottomrule
+\end{tabular}
+\end{center}
+For a cube with side count $n$, the global counts follow from $8n^3$ original tails, three links per tail, $14n^2$ added heads and $(n-1)^3$ retained stars. More generally \eqref{eq:ak1-incidence} proves at most two incident stars for every allowed containing cuboid; the finite table is not the argument for that universal bound.
+
+Retain the exact strip ground scalar and all free-link energies:
+\begin{equation}
+ h_b=\frac{H_{{\rm strip},b}-E_{{\rm strip},b}
+                    +\alpha\sum_{e\ {\rm free}}C_e}{\delta},
+ \qquad\delta=\alpha/8,\qquad h_b\ge I-P_b,
+ \label{eq:ak1-reference}
+\end{equation}
+where $P_b$ is the unique reference-vacuum projector. The strip gap is at least $\delta$, and a free rotor's gap $3\alpha/4$ equals $6\delta$. On the full two-factor space put $h_R=h_0+h_{e_z}$ and $P=P_0P_{e_z}=|\Omega_R^0\rangle\langle\Omega_R^0|$, with lifted commuting projectors. The closed form inequality is
+\begin{equation}
+ h_R\ge(I-P_0)+(I-P_{e_z})
+      =I-P+(I-P_0)(I-P_{e_z})\ge I-P.
+ \label{eq:ak1-projector}
+\end{equation}
+The four joint projection sectors prove the bounded-projector identity. Closure extends it from the finite tensor form core, without a representation cutoff or an assumption that the physical spaces tensorize.
+
+AJ1's domain-valid mixed reset replaces $R$ in a finite ground density by $P\otimes\operatorname{Tr}_R\rho_\Lambda$. Its exterior marginal is unchanged, its $R$ reference energy is zero, and its total form energy is finite. Bounded spectral truncations and monotone convergence justify the unbounded exterior energy cancellation. The variational principle cancels the finite ground scalar and all disjoint terms; each complete incident interaction changes expectation by at most $2M$. Therefore
+\begin{equation}
+ \operatorname{Tr}(\rho_{\Lambda,R}h_R)
+ \le2M|\mathcal I_\Lambda(R)|\le4M=28|\tau|.
+ \label{eq:ak1-reset}
+\end{equation}
+This is an application of the inherited whole-group estimate, not a global small-norm perturbation argument. Pass each bounded spectral truncation of $h_R$ through AJ1's actual local state limit, then increase the truncation. The actual normal density $\rho_R$ obeys the same bound. By \eqref{eq:ak1-projector}, its reference-vacuum deficit satisfies
+\begin{equation}
+ e:=1-\operatorname{Tr}(\rho_RP)
+ \le\operatorname{Tr}(\rho_Rh_R)\le28|\tau|
+ \le\frac7{16384}=:e_*.
+ \label{eq:ak1-deficit}
+\end{equation}
+Multiplying the reference energy by $\delta$ converts its units; it does not make it the spectral first moment of the centered physical Wilson vector. At $\tau=0$, zero deficit forces $\rho_R=P$. At nonzero admissible coupling it supplies an overlap bound, not purity.
+
+\subsection{A mixed-density trace estimate with its full normalization}
+For a unit vector $\psi$, the difference $|\psi\rangle\langle\psi|-P$ vanishes outside the span of $\psi$ and $\Omega_R^0$. In a basis formed from the reference vacuum and its orthogonal component it has trace zero and eigenvalues $\pm\sqrt{1-|\langle\Omega_R^0,\psi\rangle|^2}$. The coincident and orthogonal endpoints satisfy the same formula. Thus its trace norm is twice that square root.
+
+For an arbitrary positive trace-one density write its trace-class spectral decomposition $\rho=\sum_jp_j|\psi_j\rangle\langle\psi_j|$. Trace-norm convergence, the triangle inequality and weighted Cauchy--Schwarz give
+\begin{align}
+ \norm{\rho-P}_1
+ &\le2\sum_jp_j\sqrt{1-|\langle\Omega_R^0,\psi_j\rangle|^2}\\
+ &\le2\sqrt{\sum_jp_j(1-|\langle\Omega_R^0,\psi_j\rangle|^2)}
+ =2\sqrt{1-\operatorname{Tr}(\rho P)}.
+ \label{eq:ak1-trace}
+\end{align}
+Partial sums and monotone convergence justify the countable case. This is an upper bound for mixed densities; imposing the pure-projector equality would be false. The symbol $T=\norm{\rho_R-P}_1$ denotes the \emph{full} trace norm, not its half-distance convention. Exact arithmetic in \eqref{eq:ak1-deficit} gives
+\begin{equation}
+ T\le2\sqrt e,\qquad T^2\le\frac7{4096}<\frac1{576},
+ \qquad T\le\frac1{24},
+ \label{eq:ak1-trace-cap}
+\end{equation}
+since $7\cdot576=4032<4096$. No floating square root or evaluated source constant enters this cap.
+
+\subsection{Actual reference moments, unknown mean and attributed refinement}
+The reference vector can contain entanglement within each selected strip, but every original $z$ link is reference-free. Condition on all link variables except $u=U_z(0)$. The Wilson holonomy is $Au^{-1}$ with $A$ fixed in this conditional integral. Inversion and left translation preserve normalized Haar, and the remaining squared reference wavefunction is independent of $u$ and integrates to one. For a uniform unit quaternion, sign symmetry gives zero mean of its scalar coordinate, and its four equal second moments sum to one. Consequently
+\begin{equation}
+ \operatorname{Tr}(PW)=0,\qquad
+ \operatorname{Tr}(PW^2)=\frac14.
+ \label{eq:ak1-reference-moments}
+\end{equation}
+These are moments of the actual selected reference vector, uniform over its allowed coefficients. They are not an interacting conditional Haar law or an assumption of independent plaquette variables.
+
+Let $m=\omega(W)$ be the actual unknown real mean. Trace duality and $\norm W=\norm{W^2}=1$ give the common producer estimates
+\begin{equation}
+ |m|\le T,\qquad \omega(W^2)\ge\frac14-T,\qquad
+ v:=\operatorname{Var}_\omega(W)\ge\frac14-T-T^2.
+ \label{eq:ak1-moments}
+\end{equation}
+The polynomial $T+T^2$ is increasing on $T\ge0$, since its difference at $y\ge x$ is $(y-x)(1+y+x)\ge0$. Thus
+\begin{equation}
+ v\ge\frac14-\frac1{24}-\frac1{576}
+    =\frac{119}{576}=\frac15+\frac{19}{2880}.
+ \label{eq:ak1-producer-floor}
+\end{equation}
+The squared mean is essential. Before this rational relaxation, the common route gives the lower expression $1/4-2\sqrt{28|\tau|}-112|\tau|$.
+
+The independent skeptic had already frozen a sharper second-moment argument before exchange. Since $\operatorname{Tr}(\rho_R-P)=0$ and $0\le W^2\le I$,
+\begin{equation}
+ \abs{\operatorname{Tr}[(\rho_R-P)W^2]}
+ =\abs{\operatorname{Tr}[(\rho_R-P)(W^2-I/2)]}
+ \le\frac T2.
+ \label{eq:ak1-effect}
+\end{equation}
+The signed first-moment estimate still costs $T$. Therefore this separately attributed proof gives
+\begin{equation}
+ v\ge\frac14-\frac T2-T^2
+ \ge\frac{131}{576}=\frac15+\frac{79}{2880}.
+ \label{eq:ak1-skeptic-floor}
+\end{equation}
+The improvement is valid without another physical premise, but is not assigned retroactively to the two producers. Neither bound is sharpness or an actual variance measurement. At zero coupling the actual variance is exactly $1/4$.
+
+\subsection{Discriminating controls and admitted limits}
+The exact pure-projector fixtures reject removing the square root or the factor two from \eqref{eq:ak1-trace}; mixed matrices reject imposing its pure-state equality on $\rho_R$. For example the reverse density $\left(\begin{smallmatrix}17&6\\6&8\end{smallmatrix}\right)/25$ has determinant $4/25$, deficit $8/25$ and trace distance $4/5$. Both defective upper bounds fail. The skeptic's signed-observable and positive-effect controls distinguish $T$ from $T/2$; the effect saving cannot be copied to the mean of $W$.
+
+On the same original configuration space, $\sqrt{1+W}\,\Omega_R^0$ is a normalized alternative normal vector. Conditional reference moments give mean $1/4$, second moment $1/4$ and variance $3/16<1/5$. It exposes a discarded squared mean or an unjustified interacting Haar substitution. Its nonzero mean and \eqref{eq:ak1-trace} require reference-vacuum deficit at least $1/64>e_*$, so the added actual energy premise excludes it. It is not an interacting ground-state calculation.
+
+Likewise, normalize $\mathbf1_{\{|W|<1/4\}}\Omega_R^0$ by the square root of its reference probability $p$. Conditional Haar gives $p>0$, mean zero and positive variance at most $1/16$. The density $(2/\pi)\sqrt{1-w^2}$ and $\pi>2$ give $p\le1/2$, hence deficit and reference energy at least $1/2$. These normal states violate \eqref{eq:ak1-deficit}; they show why normality alone gives no uniform floor. The possibly infinite energy of a discontinuous indicator is not claimed finite.
+
+At the origin, counting only outgoing anchors or only individually touching faces is blind: all incident anchors lie in $R$ and all their group faces touch it. The retained incidence-only region $R'=\{(1,1,1),(1,1,2)\}$ resolves this. Its seven orthant anchors yield four and seven retained groups in cubes of sides three and four, versus one and two outgoing anchors. The inherited group budget charges 84 and 147 faces, versus 49 and 82 individually touching faces. These diagnostics reject substituting a different count into AJ1's whole-group estimate. They do not rule out a separately derived estimate for a finer decomposition into face interactions, and establish no translated-observable variance theorem.
+
+Scalar and scale controls retain $E_{{\rm strip},b}$ and $\delta=\alpha/8$. Full noncommuting original-link gauge transformations preserve $W$ while missing-head actions fail. Hypothetical positive source constants with $\tau_*<2^{-16}$ reject treating the cap as an evaluated stability radius; those controls do not assign the actual source constants.
+
+The advisor suggested the overlap route before production. Separate forward, reverse and independent skeptical derivations froze before exchange; the stronger effect estimate was in that independent freeze. This skeptic's new AK1 derivation is distinct from its earlier AJ2 reviewer-handoff closeout. The post-review read both full reports and checkers and replayed both complete output sets under normal and optimized Python with byte equality. Administrative input-path and inventory-selector histories, blind incidence controls and first successful scientific outputs remain preserved. They add no research loop or independent observation.
+
+The controlling AJ1/AJ2 proofs were read by all three workers. Forward and skeptic read the complete current-manuscript text; reverse recorded focused reading. The skeptic's text reading is not visual PDF review. The I1 stability theorem remains inherited, and no new external primary retrieval or scientific-priority comparison is claimed. Finite rational and geometry diagnostics audit this proof without replacing its analytic infinite-volume premises.
+
+AK1 proves the variance floors for the fixed original observable and specified conditional homogeneous state. It proves no physical excited-vector form or operator domain, first energy moment, commutator sum rule, finite spectral window, lower heat bound, numerical mass or AK2 theorem. Other translates, boundary states and models require their own estimates. No physical matching, continuum Yang--Mills construction, historical validation or defensible percentage of the Millennium problem follows.
