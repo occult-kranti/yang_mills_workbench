@@ -1,0 +1,92 @@
+\section{AT5: one certified datum at a declared nonzero interaction}
+\label{sec:at5}
+
+\textbf{Contribution \projecttag{HNM-C-AT5}.} After AT4's review, a new contract
+fixed $\tau=10^{-14}$, $s=1$, $L=10^9$ and the same absolute point-error target
+$10^{-6}$. The smaller coupling selects a different interacting Hamiltonian and
+its own AQ subsequential state. It does not repair AT4 retroactively or identify
+the states at the two couplings. The increased $L$ changes a proof resource.
+
+Apply \eqref{eq:certificate} at the new parameters, using outward rational
+enclosures $D^+$, $\pi^-$ and the logarithm's upper bound. Let $\mathcal E^+$ be
+the resulting complete model-comparison allowance and
+$f^-\le e^{-3}/4\le f^+$. Export the exact rational datum and radius
+\begin{equation}
+ d=\frac{f^-+f^+}{2},\qquad
+ r=\mathcal E^++\frac{f^+-f^-}{2},\qquad
+ |C_\tau(1)-d|\le r.
+ \label{eq:export}
+\end{equation}
+The evaluated forward datum is
+\begin{equation}
+ d=\frac{995741367357278859586848313}
+ {80000000000000000000000000000}
+ =0.0124467670919659857448356039125.
+ \label{eq:datum}
+\end{equation}
+Its exact rational radius satisfies
+\begin{equation}
+ r<8.086109564653\times10^{-7}<10^{-6}.
+ \label{eq:node-radius}
+\end{equation}
+A short, outward-rounded presentation of the actual interval is
+\begin{equation}
+ C_{10^{-14}}(1)\in
+ [\,0.0124459584810095,\;0.0124475757029225\,].
+ \label{eq:node-interval}
+\end{equation}
+The unrounded rational endpoints are in the
+\repo{research/round31/forward/at5/output/results.json}{frozen AT5 output}.
+This is an analytic enclosure for the actual interacting scalar, not a
+finite-box solver result. The exact free-reference value remains inside the
+interval, so the interaction-induced shift is unresolved.
+
+\begin{table}[htbp]
+\centering\small
+\caption{AT5 forward radius, with every source of error charged.}
+\label{tab:nodecost}
+\begin{tabular}{lr}
+\toprule
+Cost & Outward allowance, approximately\\
+\midrule
+Local state & $8.08290376865476\times10^{-7}$\\
+Mean-square centering & $6.53333333333333\times10^{-13}$\\
+Interior dynamics & $1.61612299552914\times10^{-12}$\\
+Whole Poisson tail & $3.18310143470609\times10^{-10}$\\
+Reference arithmetic & $2.5\times10^{-31}$\\
+\midrule
+Complete radius & $8.08610956465276\times10^{-7}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The independently implemented reverse calculation retains the more
+conservative tail $4s/(\pi L)$ and also passes. Both report interval width equal
+to twice their exported radius. The forward width is about
+$1.61722191293055\times10^{-6}$: it exceeds $10^{-6}$ while correctly satisfying
+the required \emph{point-error} tolerance. Radius and width must not be confused.
+
+The calculators accept exact rational inputs and enforce the zero selected
+triple, $|\tau|\le10^{-8}$, positive time/cutoff/scales and their frozen-design
+constraints. Binary floats, booleans, malformed/nonfinite values and model
+deformations are rejected. Admissible inputs with a broad radius return an
+explicit insufficient result. Both coupling signs receive the same absolute
+certificate; the exact $\tau=0$ branch uses its separate free identity. Keeping
+the old cutoff at the new coupling fails because of its tail; keeping the old
+coupling at the new cutoff fails because of its state term. Neither failure is
+concealed.
+
+Directed arithmetic uses integer square-root brackets, alternating Taylor
+enclosures with argument reduction and positive squaring, positive logarithm
+series with an explicit remainder, and Machin/arctangent bounds for $\pi$.
+Every admission decision is rational arithmetic, and the exponential midpoint's
+own error is included in \eqref{eq:export}. Separate normal and optimized
+producer runs reproduce their frozen outputs. The reviewer audited the APIs,
+domain mutations, radius sums and preservation of the free reference.
+
+Full derivations and reviewed implementation:
+\repo{research/round31/forward/at5/report.md}{AT5 forward},
+\repo{research/round31/reverse/at5/report.md}{AT5 reverse}, and
+\repo{research/round31/skeptic/at5.md}{independent model-agent review}.
+AT5 by itself certifies one node; it does not evaluate a time grid or an inverse
+response. The next section records the separately selected third investigation.

@@ -1,0 +1,43 @@
+# Modern-methods recommendation for Round31
+
+**Select the actual AQ sample-production bottleneck first.** AT3 is a conditional readout from certified observations, and its synthetic A/B controls supplied no actual AQ data. A new spectral-fitting method would not repair that missing input. This memo supplies source review and prospective options; it is not a frozen contract, an executed research loop, or an admitted theorem.
+
+Human project author and direction: **Hruday N M (BUNZEEY)**. Penrose and Feynman denote research lenses based on selected original texts. The advisor and this model agent share earlier project premises; this is not historical participation or external human peer review.
+
+## Checkpoint and first proposed investigation
+
+The read checkpoint is Round30's handoff and roadmap, AT1/AT2 forward derivation passages, AT3's forward scope and skeptical review, the AQ1 actual state construction, AQ2 model/physical completion and gate, and the AM2 finite-volume gap mechanism. The checked inherited dictionary remains complete 24-link factors, original tail-and-head gauge actions, a fixed repeated selected triple, centered whole-star boxes and fixed positive alpha, hbar, lattice spacing and E_star. No AO state is silently substituted.
+
+Proposed AT4 contract: freeze dimensionless Euclidean time **s=1**, the admitted numerical cap **|tau|=10^-8**, the selected coefficient subcase, the original centered xz Wilson, the chosen AQ thermodynamic-state provenance and an absolute sample target **10^-6**. Name all five errors: boundary/state, representation cutoff, solver, arithmetic, and any integration/filter remainder. Require either an actual rigorously enclosed value or a numerical obstruction to the specific available certificate, with a falsifying control. Failure of one positive upper budget is not a lower bound on the true error and does not establish impossibility of computation.
+
+The primary gap is local state/boundary accuracy. AQ's reset estimate implies closeness to the selected product reference but does not make this error decay with the distance to a boundary. AT1's seven-star estimate is useful input, not a new discovery in this memo. HTW's local-perturbation theorem includes infinite-dimensional sites and unbounded on-site terms, but its stated smallness and decay constants are existential. The inspected theorem cannot simply be evaluated at the AQ numerical cap. [HTW, Section 2](https://arxiv.org/pdf/2106.13780v3).
+
+Do not call agreement of several finite volumes an error certificate. Likewise, a gap in one GNS representation is not a quantitative comparison of every thermodynamic state. A finite graph/cutoff contract should retain this distinction even if the finite numerical solver converges rapidly.
+
+## Two adaptive options, unexecuted
+
+1. **If the cap-level error audit fails, prospectively select a small nonzero-interaction AQ subcase.** A useful candidate is the zero selected triple and an explicitly fixed, much smaller nonzero |tau|, still within AQ's admitted parameter family. Compare the actual centered correlation to a calculable pure-electric reference with a proved local state error and real-time Duhamel error. The positive Poisson kernel can transfer the real-time comparison to one Euclidean node because AQ1 supplies nonnegative GNS energy. An explicit whole-line filter tail is mandatory. Freeze tau and tolerances before evaluating them. This is an actual interacting AQ enclosure if the complete proof succeeds; the reference value alone is not an AQ sample.
+
+2. **Select the third question from that review.** If an actual node succeeds, choose one of: extend a rigorously controlled interval over a declared time window; improve the dependence on |tau| enough to return toward the cap; or supply one AR spatial boundary comparison. If the node fails, isolate the failing state or dynamical term with a damaging control. Do not automatically launch the 4097-node AT3 schedule, claim an evaluated inverse response, or replace the result with AU's separate finite-graph evaluator.
+
+The advisor retains the freedom to choose another target from the evidence. These are recommendations for adaptive selection, not three investigations already conducted.
+
+## Verified eligibility of the zero-selected subcase
+
+The original [I1 contract](../../../round21/contracts/i1.json) admits |lambda_L|,|lambda_R|<=alpha/2 and |mu|<=alpha/8. The inherited [A1 component report](../../../round19/forward/a1/report.md) explicitly includes signs and zero coefficients. The [AQ1](../../../round29/contracts/aq1.json) and [AQ2](../../../round29/contracts/aq2.json) contracts carry forward this coefficient box. Thus (lambda_L,mu,lambda_R)=(0,0,0) is allowed while the 21 omitted-class coefficients remain alpha*tau/24 with tau nonzero.
+
+This is a **nonuniform magnetic AQ model**: three selected xy phases have zero coefficient while the other 21 anchored face classes remain coupled. [AL1](../../../round29/forward/al1/report.md) requires equality of all selected and omitted coefficients to identify the uniform Kogut-Susskind Hamiltonian. Therefore the proposed subcase does not prove a uniform-model result. Reducing tau is changing an interaction coefficient, not rescaling physical time, and must be named as a new prospective parameter selection.
+
+Root and this lens discussed the following candidate mechanism before production: keep the free evolution's support in the original two complete factors; count all seven incident stars; restore the physical/alpha factor of 1/8 in their interaction norm; compare raw correlations before subtracting the actual squared mean; then use Poisson spectral filtering. This is a **shared proposed route**, not independent derivation. Producers must still justify strong-integral Duhamel identities for unbounded on-site operators, the spectral sign condition, both time directions and the entire filter tail. The pure-electric single-Wilson reference is a normalization check, not a spectral assertion about the interacting state.
+
+## Current primary comparisons and historical lenses
+
+The [2026 causal-bootstrap paper](https://arxiv.org/html/2605.20509v1) and [Mutzel-Tilloy certificate framework](https://arxiv.org/html/2606.09791v1) are close prior methods for bounds from Euclidean data. Neither generates the missing AQ data. Their positivity/duality methods retain their attribution. Statistical compatibility in a Monte Carlo covariance region is distinct from the deterministic per-sample AT3 contract. [Tsuji-Hashimoto's SVD work](https://arxiv.org/html/2605.15674v1) addresses inverse-Laplace conditioning; it supplies no state-production theorem here.
+
+[Li's August 2026 preprint](https://arxiv.org/html/2608.15576v1) organizes local errors by discarded interaction mass and common-gap paths. Its interaction-range cutoff differs from AQ's spatial-volume boundary, and its selected branch can retain state-selection dependence. Treat it as an inspected candidate framework until its full unbounded-site dictionary and constants are proved. [Wang-Foss-Feig-Hazzard](https://arxiv.org/abs/2009.12032v2) is an abstract-level finite-size lead only. The [2026 neural SU(2) paper](https://arxiv.org/html/2607.26131v1) uses dynamical matter in 2+1D and variational outputs; it does not close AQ's 3+1D certification gap.
+
+[Penrose's angular-momentum chapter](https://math.ucr.edu/home/baez/penrose/Penrose-AngularMomentum.pdf) motivates keeping the representation and probability dictionary explicit. Its model caveats and distinction between information and inferred geometry discourage importing a finite construction into an unlimited physical claim. [Feynman's Caltech address](https://calteches.library.caltech.edu/51/2/CargoCult.htm) motivates retaining invalidating alternatives and failed checks. His discussion of mystical experiences is historical testimony; it adds no field, energy source or consciousness parameter.
+
+The nearest known techniques for the prospective sample route are product-reference perturbation bounds, local Duhamel comparison and spectral/Poisson functional calculus. A successful contribution would be their explicitly quantified application to the same AQ Wilson/state family, with complete factor geometry and actual nonzero coupling. No scientific-priority claim is established. No new axiom, continuum theory, particle pole, all-state uniqueness or susceptibility follows from this recommendation.
+
+Exact source versions, dates, passages read, provenance and limitations are recorded in [sources.json](sources.json). No remote code or data were installed, no production simulation was run by this lens, and no credentials or publication operations were accessed.

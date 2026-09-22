@@ -1,0 +1,174 @@
+\section{AT4: a direct actual-state comparison and its failed precision target}
+\label{sec:at4}
+
+\textbf{Contribution \projecttag{HNM-C-AT4}.} The first contract fixed
+$\tau=10^{-8}$, $s=1$, $L=10^4$ and absolute point error $10^{-6}$. Its reviewed
+verdict is \emph{limited}: an actual-state interval is obtained, but it fails the
+specified precision. The following derivation records the sharper forward
+certificate; the reverse proof independently supplied a valid broader tail
+bound. The effect-bound refinement was separately checked after both reports
+froze and is not claimed as a duplicated independent discovery.
+
+\subsection{Local state error}
+At the zero selected triple the dimensionless on-site reference is
+$h_b=8\sum_{e\text{ owned by }b}C_e$. Its first positive full-space energy is
+$8(3/4)=6$. Therefore, with the Haar product projection $P_R$,
+\begin{equation}
+ h_R\ge6(I-P_R).
+ \label{eq:referencegap}
+\end{equation}
+Reset the finite interacting ground density on $R$ to $P_R$, preserving its
+exterior marginal. Each of the seven incident whole stars changes its
+expectation by at most $2(7|\tau|)$ in AQ normalized units. The variational
+principle and cancellation of unchanged exterior energy give
+\begin{equation}
+ \tr(\rho_{N,R}h_R)\le98|\tau|.
+ \label{eq:reset}
+\end{equation}
+Positive spectral truncations justify the cancellation for unbounded reference
+operators. The reset trial and finite ground have finite form energy because
+the finite interaction is bounded. Pass bounded truncations through the actual
+AQ local trace-norm limit, then take their monotone supremum. Thus
+\begin{equation}
+ 1-\tr(\rho_{\tau,R}P_R)\le\frac{49|\tau|}{3},\qquad
+ \norm{\rho_{\tau,R}-P_R}_1\le D:=2\sqrt{\frac{49|\tau|}{3}}.
+ \label{eq:D}
+\end{equation}
+The second inequality follows by pure-state trace distance, convexity and
+Cauchy--Schwarz. It is uniform for the AQ subsequential states under this
+construction; it does not identify them. No convergence-rate assertion is used.
+
+Trace duality gives $|m_\tau|\le D$. A trace-zero density difference of norm at
+most $D$ has expectation at most $D/2$ against an effect. Applying this to
+$0\le W^2\le I$ gives
+\begin{equation}
+ \abs{\omega_\tau(W^2)-\tfrac14}\le D/2,
+ \qquad v_\tau:=\norm{\chi_\tau}^2\le\tfrac14+D/2.
+ \label{eq:effect}
+\end{equation}
+The complex operator $W\alpha_t^0(W)$ below is not an effect; its error remains
+$D$, not $D/2$.
+
+\subsection{Dynamics and centering}
+In each finite box split $H_{N,\tau}^{\rm raw}/\alpha=A_N+B_N$, where $A_N$
+contains free evolution on $R$, all outside on-site terms and every outside
+interaction disjoint from $R$. Put all seven incident star groups into $B_N$.
+Each such star has norm at most $7|\tau|/8$ in the physical/alpha convention, so
+\begin{equation}
+ \norm{B_N}\le49|\tau|/8,\qquad
+ \norm{\alpha_t^\tau(W)-\alpha_t^0(W)}
+ \le k|t|,\quad k:=49|\tau|/4.
+ \label{eq:duhamel}
+\end{equation}
+To justify the estimate, differentiate the relative unitary
+$e^{it(A_N+B_N)}e^{-itA_N}$ on the common operator domain. The derivative
+contains only the bounded perturbation $B_N$; strong integration extends the
+identity to every vector and bounds the relative unitary's distance from $I$
+by $|t|\norm{B_N}$. Insert bounded $W$ only afterwards to obtain the factor two
+in the conjugation bound. This requires no norm derivative of arbitrary local
+bounded operators. AQ's already matched unbounded-on-site dynamics theorem
+\cite{ns,aq} passes the uniform finite-volume bound to the actual limiting
+dynamics. Replacing seven stars by the extensive magnetic norm would lose this
+volume uniformity.
+
+The free evolution preserves $R$ and
+$c_0(t)=\tfrac14e^{3it}$. Add and subtract the free evolution in the actual
+state, then its Haar expectation, keeping the actual mean subtraction:
+\begin{align}
+ c_\tau(t)&=\omega_\tau(W\alpha_t^\tau(W))-m_\tau^2,\\
+ |c_\tau(t)-c_0(t)|&\le k|t|+D+D^2,
+ \label{eq:rawcompare}\\
+ |c_\tau(t)-c_0(t)|&\le v_\tau+\tfrac14\le B:=\tfrac12+D/2.
+ \label{eq:tailbound}
+\end{align}
+The first bound charges dynamics, local state and centering separately; the
+second provides a bounded whole-tail allowance.
+
+\subsection{Poisson transfer and evaluated certificate}
+The established Fourier identity \cite{poisson}
+\begin{equation}
+ \int_{\mathbb R}\frac{s\,e^{itx}}{\pi(s^2+t^2)}\,dt=e^{-s|x|}
+ \quad(s>0)
+ \label{eq:poisson}
+\end{equation}
+becomes a heat identity only because the actual ground-centered GNS spectrum
+is nonnegative. The positive kernel has mass one and the spectral measure has
+finite mass, so spectral Fubini is legitimate. Split the integral at $|t|=L$.
+Use \eqref{eq:rawcompare} inside and \eqref{eq:tailbound} on the entire
+complement. The two elementary integrals are
+\begin{align}
+ \int_{-L}^L\frac{s|t|}{\pi(s^2+t^2)}\,dt
+ &=\frac{s}{\pi}\log(1+L^2/s^2),\\
+ \int_{|t|>L}\frac{s}{\pi(s^2+t^2)}\,dt
+ &=\frac2\pi\arctan(s/L)\le\frac{2s}{\pi L}.
+\end{align}
+Consequently the actual AQ correlation obeys
+\begin{equation}
+ \boxed{\abs{C_\tau(s)-\tfrac14e^{-3s}}\le
+ \mathcal E_\tau(s,L):=
+ D+D^2+\frac{ks}{\pi}\log(1+L^2/s^2)
+ +B\frac{2s}{\pi L}.}
+ \label{eq:certificate}
+\end{equation}
+Increasing $L$ reduces the tail but increases the logarithmic interior term;
+neither may be silently discarded. The formula is a model-specific sufficient
+error bound, not a new generic Poisson or Duhamel theorem.
+
+At the frozen AT4 parameters the outward-certified forward error allowance is
+approximately $0.000841518704386267$, with the components in
+Table~\ref{tab:capcost}. The actual interval is approximately
+$[0.0116052483875797,\,0.0132882857963523]$. The exact rational endpoints and
+arithmetic proof are in the
+\repo{research/round31/forward/at4/output/results.json}{frozen AT4 output}.
+Its midpoint radius exceeds $10^{-6}$, so it is not a node satisfying AT3's
+input contract. This is failure of this upper certificate; it is not a lower
+bound on the true interacting-minus-reference error.
+
+\begin{table}[htbp]
+\centering\small
+\caption{AT4 forward budget; decimals are readable summaries of outward rational bounds.}
+\label{tab:capcost}
+\begin{tabular}{lr}
+\toprule
+Cost & Certified allowance, approximately\\
+\midrule
+Local state $D$ & $8.08290376865476\times10^{-4}$\\
+Mean-square centering $D^2$ & $6.53333333333333\times10^{-7}$\\
+Interior dynamics & $7.18276887291769\times10^{-7}$\\
+Whole Poisson tail & $3.18567173001654\times10^{-5}$\\
+\midrule
+Total & $8.41518704386267\times10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Information and damaging controls}
+The inherited abstract measures
+$\eta_A=(\delta_2+\delta_4)/8$ and
+$\eta_B=\delta_1/32+3\delta_3/16+\delta_5/32$
+have common mass, first moment and second moment $(1/4,3/4,5/2)$.
+Writing $r=e^{-1}$, their nonzero-time difference is exactly
+\begin{equation}
+ C_B(1)-C_A(1)=\frac{r(1-r)^4}{32}>0.
+\end{equation}
+Every deterministic estimator using only those common moments returns the same
+number on both. The triangle inequality therefore gives a worst-case error of
+at least half their separation, strictly greater than $9/10000$ by directed
+exponential arithmetic. This information limit concerns an abstract admissible
+moment class, not multiple AQ realizations or nonuniqueness of the actual state.
+
+Centering controls distinguish two operations. If $\widehat m=m+d$, vector
+centering adds $d^2$ to the heat correlation, whereas subtracting
+$\widehat m^2$ from its raw scalar value adds $-2md-d^2$. For
+$m=1/4,d=1/100$, these offsets are $1/10000$ and $-51/10000$, respectively;
+no centering leaves the constant vacuum residue $1/16$. Positive energy moments
+cannot detect that zero-energy atom. Other exact controls retain all seven
+stars, reject a changed physical clock, distinguish nonzero selected vacua from
+Haar, retain positive Poisson tail mass, and show that a finite common prefix
+does not prove a thermodynamic convergence rate. These fixtures expose invalid
+inferences; they are not measured AQ data.
+
+Full derivations:
+\repo{research/round31/forward/at4/report.md}{AT4 forward},
+\repo{research/round31/reverse/at4/report.md}{AT4 reverse}, and
+\repo{research/round31/skeptic/at4.md}{independent model-agent review}.
