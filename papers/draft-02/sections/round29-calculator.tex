@@ -1,0 +1,19 @@
+\section{An exact arithmetic companion for HNM-C-AM2}
+\label{sec:r29-calculator}
+The manuscript includes \repo{calculators/hnm_round29.py}, a Python standard-library companion that evaluates the admitted majorant budgets using exact rational arithmetic. It preserves the physical conversions by $\alpha$, $\hbar$ and fixed $E_\star$. It checks scalar inequalities only: it does not examine an input Hamiltonian, establish the onsite hypotheses, select an infinite-volume state or measure an actual gap.
+
+At the inclusive cap $|\tau|=10^{-8}$, both signs give
+\begin{equation}
+ J\frac{148}{7}=\frac{37}{6250000},\qquad
+ 2J\,352=\frac{77}{390625}<1,\qquad J=28|\tau|.
+ \label{r29:calculator:budget}
+\end{equation}
+The first budget is less than the coefficient-ball radius $1/64$. For $\alpha=2$ in the declared energy unit, the conditional physical lower bound is $1/8$ in that unit. Outside the admitted cap the companion prints an explicit out-of-scope status even when these displayed scalar inequalities pass; it does not promote that arithmetic to a reviewed extension of the theorem. Decimal outputs are for display; the rational strings are the authoritative calculations.
+
+From the repository root:
+\begin{verbatim}
+python3 -B papers/draft-02/calculators/hnm_round29.py \
+  --tau=-1/100000000 --alpha 2 --hbar 1 \
+  --energy-reference 1
+\end{verbatim}
+This is an editorial/reproduction companion, not another physics investigation. The original producer and skeptic programs retain their separate source-bound proof checks and controls.

@@ -1,0 +1,171 @@
+% Admitted by research/round28/advisor/ai3-gate.json after final skeptical review.
+\section{HNM AI3: exact retained cancellation and full physical readout limits\workstar}
+AI3 calculates exact odd moments and proves an all-order retained cancellation lemma. The complete physical ratio intervals nevertheless overlap in all ten frozen cells. The direct scalar distinction at $u=10^{-18},k=5$ survives for both actual Wilson multipliers. These conclusions concern sufficient certificates in the canonical summable full-link SU(2) family, under its inherited transfer theorems. They do not prove equality of the candidates, a general identification impossibility or a homogeneous-model result.
+
+\subsection{Actual multipliers, complete factors and inherited transfer}
+Use the free unit cube based at $(3,1,0)$ and the closed six-link path
+\begin{equation*}
+ \begin{split}
+ X:\ &(3,1,0),(3,2,0),(3,2,1),(4,2,1),\\
+      &(4,2,0),(4,1,0),(3,1,0).
+ \end{split}
+\end{equation*}
+The two $yz$ faces $f_4,f_5$ are anchored at $(3,1,0)$ and $(4,1,0)$. Their symmetric differences with $X$ give simple six-cycles $Y_r=X\mathbin{\triangle}f_r$ and the actual multiplication observables
+\begin{equation}
+ B_r=\frac{\chi_X+\chi_{Y_r}}{\sqrt2},\qquad
+ \psi_r=B_r\Omega=\frac{e_X+e_{Y_r}}{\sqrt2},\qquad r=4,5.
+ \label{r28:eq:ai3-sources}
+\end{equation}
+An unmatched free-link center action gives zero means and orthogonality, so $\norm{\psi_r}=1$. Conditional Haar integration over exclusive paths gives $\langle B_r^4\rangle=5/2$. The exact multiplication norm is $J=2\sqrt2$, with its supremum approached on positive-measure neighborhoods of identity holonomies. Therefore $\norm{(B_r^2-I)\Omega}^2=3/2$: a normalized source does not authorize a norm-one multiplier or rank-source replacement.
+
+Each probe occupies eight links and their union occupies ten free factors. Independent cube enumeration reconstructs all sixteen six-cycles and the reached face-flip component at reference energy $E=9\alpha/2$. This component reduces the pinched average; it is not the full regional electric shell or an invariant subspace of the unaveraged dynamics. The twenty exterior touching faces are explicitly retained. Each shares one cube edge, has a free opposite edge and two distinct external complete-factor owners. The possible $3/4$ saving on the shared edge is canceled by the opposite free-edge cost; the side owners cost at least $1/8$ each. With disjoint and internal nonresonant cases, this verifies applicability of the inherited participating-frequency bound $1/8$ to both probes.
+
+The infinite-dimensional domains, strip gaps, pinching and strong averaging theorem remain inherited premises from Y2/AA2. AD2 supplies the correctly ordered scalar identity
+\begin{equation}
+ e^{iEt/\hbar}\langle\Omega,B_r\beta_q^t(B_r)\Omega\rangle
+ =\langle\psi_r,Z_q(s)B_r Z_q(s)^*\Omega\rangle.
+ \label{r28:eq:ai3-ordered-transfer}
+\end{equation}
+Both source and adjoint-vacuum evolution errors are charged. No finite matrix enumeration substitutes for these full-link transfer theorems.
+
+Starting from the common ten-factor seed, each collar adjoins every owner of every omitted face touching complete current factors. A ten-link strip is always included whole. A face is retained only when all its owners are included. The exact reconstructed counts are
+\begin{center}\small
+\begin{tabular}{@{}rrrr@{}}\toprule
+Depth $k$ & Complete factors & Complete links & Retained faces $N_k$\\\midrule
+0&10&10&2\\1&41&113&25\\2&149&329&143\\
+3&333&675&359\\4&610&1177&695\\5&993&1857&1171\\
+6&1497&2739&1808\\\bottomrule
+\end{tabular}
+\end{center}
+The depth-six extension was declared before production; it has 813 crossing faces. Complete links and owners, rather than counts alone, are exported. The old eight-link seed fails the second probe's support requirement.
+
+At order $n$, connected words visit at most $10+3n$ factors, each with at most forty incident faces. The interaction coefficient, commutator factor two and time simplex give $(10/3)_n x^n/n!$, where $x=10\alpha\tau|t|/\hbar$. All full and regional words through order $k$ agree. A complete positive tail, including repetitions and outward-return paths, is bounded at $x\le15z<1$ by
+\begin{equation}
+ D_k^{(10)}(15z)=\frac{(10/3)_{k+1}}{(k+1)!}
+ \frac{(15z)^{k+1}}{(1-15z)^{k+5}}.
+ \label{r28:eq:ai3-collar-tail}
+\end{equation}
+The integer denominator exponent conservatively rounds the positive Taylor remainder exponent $k+13/3$ upward. This is a spatial estimate for complete infinite-dimensional factors, not a representation cutoff.
+
+\subsection{Exact moments and a reflection proof at every retained order}
+The finite reached matrix $Q(q)$ places weights $q^4$ or $q^5$ on physical face flips. Its symmetric row sums give $\norm Q\le6$ and $\norm{Q'}\le30$ on $[0,1]$. Set
+\begin{align}
+ p(q)&=2+5q+5q^2+6q^3+3q^4,\qquad
+ v=\frac{z(1+q)^2(1+q^2)}{32p(q)},\notag\\
+ h_r&=\langle\psi_r,e^{ivQ(q)}\psi_r\rangle,\qquad
+ m_{n,r}=\langle\psi_r,Q(q)^n\psi_r\rangle,\qquad
+ \Delta_n=m_{n,5}-q m_{n,4}.
+ \label{r28:eq:ai3-moments}
+\end{align}
+Exact polynomial walks, separately checked against rational matrix propagation, give
+\begin{align}
+ \Delta_1&=0,\qquad \Delta_3=2q^{13}(1-q^2),\notag\\
+ \Delta_5&=q^{21}(1-q^2)(12+8q+12q^2),\notag\\
+ \Delta_7&=q^{29}(1-q^2)(54+72q+164q^2+72q^3+54q^4).
+ \label{r28:eq:ai3-exact-deltas}
+\end{align}
+Let $P_r$ denote the degree-eight exponential center. The alternating imaginary signs are retained:
+\begin{equation}
+ C_8:=\Impart P_5-q\Impart P_4
+ =-\frac{v^3\Delta_3}{3!}+\frac{v^5\Delta_5}{5!}
+ -\frac{v^7\Delta_7}{7!}.
+ \label{r28:eq:ai3-combination}
+\end{equation}
+In particular the cubic contribution is negative for $0<q<1$.
+
+Reflection $(x,y,z)\mapsto(7-x,y,z)$ fixes the unoriented cycle $X$, swaps $Y_4,Y_5$, and induces an involution on all sixteen cycles. Every unweighted face-flip adjacency is preserved, so its permutation $P$ obeys $PQ(1)=Q(1)P$. Fundamental SU(2) characters are unchanged by reversal. Thus $P\psi_4=\psi_5$ and $\Delta_n(1)=0$ for \emph{every} $n$. This is an all-order retained proof, not an extrapolation from finitely many moments. The reflection does not preserve all anchored weights at $q<1$ and supplies no full canonical $q=1$ Hamiltonian.
+
+At fixed normalized sources, the product rule gives
+\begin{equation}
+ |m'_{n,r}(q)|\le5n6^n,\qquad
+ |\Delta'_n(q)|\le(10n+1)6^n,\qquad
+ |\Delta_n(q)|\le(1-q)(10n+1)6^n.
+ \label{r28:eq:ai3-allorder-moments}
+\end{equation}
+The last inequality integrates the derivative from $q$ to one after the reflection proof. No physical error disk or parameter-dependent physical correlation is differentiated; $v(q)$ is substituted afterward. Since $(10n+1)/n!$ decreases for $n\ge9$, for $x=6|v|<1$ the whole retained tail obeys
+\begin{equation}
+ |\Impart h_5-q\Impart h_4-C_8|
+ \le T_\Delta:=\frac{(1-q)91x^9}{9!(1-x)},
+ \qquad |h_r-P_r|\le A:=\frac{x^9}{9!}.
+ \label{r28:eq:ai3-allorder-tail}
+\end{equation}
+Even powers are included conservatively in the first sum. Under the first hypothesis at $u=10^{-18}$, $A$ is about $1.334\times10^{-70}$ while $T_\Delta$ is about $1.214\times10^{-86}$. The new retained arithmetic estimate does not reduce physical uncertainty.
+
+\subsection{Physical errors, shared denominators and valid enclosures}
+The unchanged canonical quantities are
+\begin{align}
+ b(q)&=\frac{p(q)}{24(1-q)^3(1+q)^2(1+q^2)},\qquad
+ \tau_q=\frac{\eta}{8b(q)},\notag\\
+ \widehat d_q&=\frac{\tau_q\sqrt{b(q^2)/96}}{(1-\eta)/8},
+ \qquad M_k=\frac{N_k}{24},\notag\\
+ R_{\rm phys}&=48\widehat d_q+8D_k^{(10)}(15z)
+ +64\tau_qM_k(1+3zM_k).
+ \label{r28:eq:ai3-physical-radius}
+\end{align}
+The first term retains stationary connected-state replacement; the spatial factor is $J^2=8$; the averaging term bounds $(1+J)16\tau_qM_k(1+3zM_k)<64\tau_qM_k(1+3zM_k)$ and retains both evolution columns. Exact upward square-root enclosures differ between implementations but preserve the verdicts. Unsupplied preparation, measurement, phase and clock errors must be added separately.
+
+Write $a_r=\Impart P_r$ and $y_r=a_r+\delta_r+e_r$, with $|\delta_r|\le A$ and $|e_r|\le R_{\rm phys}$. Every frozen denominator interval
+\begin{equation}
+ I_4=[a_4-R_{\rm phys}-A,\ a_4+R_{\rm phys}+A]
+ \label{r28:eq:ai3-denominator}
+\end{equation}
+has positive lower endpoint. All-corner division of the corresponding $I_5$ by $I_4$ gives a valid direct ratio enclosure, including signed numerator cases. A second valid construction divides
+$C_8\pm[(1+q)R_{\rm phys}+T_\Delta]$ by $I_4$ and adds $q$. Its rectangular relaxation forgets the shared $e_4$ in numerator and denominator. Equal physical radii do not imply equal signed errors: $e_5=R_{\rm phys}$ and $e_4=-R_{\rm phys}$ attain the full $(1+q)R_{\rm phys}$ combination allowance.
+
+The reverse derivation additionally keeps that dependence in the enlarged box
+\begin{equation}
+ q+\frac{C_8+\delta_C+e_5-qe_4}{a_4+\delta_4+e_4},\qquad
+ |\delta_C|\le T_\Delta,\quad |\delta_4|\le A,\quad
+ |e_4|,|e_5|\le R_{\rm phys}.
+ \label{r28:eq:ai3-shared-corners}
+\end{equation}
+With positive denominator, each coordinate is linear-fractional and monotone or constant when the others are fixed, so its sixteen corners give exact extrema of this enlarged box. This is not a claim that all corners are physically attainable. Intersections of valid enclosures remain valid. Smaller width does not establish endpoint containment; no blanket containment between the direct and cancellation intervals is asserted, and no global optimality over all retained constraints is claimed. The final review finds smaller direct interval widths in all twenty hypotheses, but none of those direct intervals is wholly contained in its cancellation-centered counterpart. The forward post-freeze clarification explicitly preserves this distinction.
+
+The measured statistic $y_5/y_4$ contains no unknown $q$. A residual $y_5-q_cy_4$ is explicitly indexed by a proposed candidate $q_c$; the unknown true parameter cannot be supplied secretly as an instrument setting. The old cubic comparator, with center $vq^r$ and additional floor $36v^3$, is recalculated on the same grid with complete errors and denominator checks.
+
+\subsection{Ten insufficient ratio cells and a surviving scalar distinction}
+With $z=10^{-6}$, the two candidates are
+\begin{equation}
+ H_1:(q,\eta)=(1-u,1/2),\qquad
+ H_2:(q,\eta)=(1-2u,1/16).
+ \label{r28:eq:ai3-candidates}
+\end{equation}
+Both have $\eta(1-q)^3=u^3/2$ and the same original physical time
+\begin{equation}
+ t_u=2\cdot10^{-6}u^{-3}\frac{\hbar}{\alpha}
+ =\begin{cases}
+ 2\cdot10^{30}\hbar/\alpha,&u=10^{-12},\\
+ 2\cdot10^{48}\hbar/\alpha,&u=10^{-18},\\
+ 2\cdot10^{66}\hbar/\alpha,&u=10^{-24}.
+ \end{cases}
+ \label{r28:eq:ai3-clock}
+\end{equation}
+Positive $\alpha$, $\hbar$, $\alpha/E_*$ and spacing remain fixed. No independent clock adjustment for the candidates is permitted.
+
+For two ratio intervals $[l_i,u_i]$, the signed separation margin is $\max(l_1-u_2,l_2-u_1)$. Positive means certified disjointness. Every direct full-error margin below is negative; cancellation-centered, shared-corner and intersected enclosures also remain insufficient in all ten cells. Exact fractions determine signs; decimals only display scale.
+\begin{center}\small
+\begin{tabular}{@{}rrrl@{}}\toprule
+$u$ & $k$ & Direct ratio margin (approx.) & Full scalar tests $B_4,B_5$\\\midrule
+$10^{-12}$&3&$-3.811493484\cdot10^{-9}$&insufficient\\
+$10^{-12}$&4&$-1.044822364\cdot10^{-9}$&insufficient\\
+$10^{-12}$&5&$-1.044761496\cdot10^{-9}$&insufficient\\
+$10^{-18}$&3&$-2.766731990\cdot10^{-9}$&insufficient\\
+$10^{-18}$&4&$-6.086906259\cdot10^{-14}$&insufficient\\
+$10^{-18}$&5&$-1.313885034\cdot10^{-18}$&both disjoint\\
+$10^{-24}$&3&$-2.766731990\cdot10^{-9}$&insufficient\\
+$10^{-24}$&4&$-6.086901682\cdot10^{-14}$&insufficient\\
+$10^{-24}$&5&$-1.268122540\cdot10^{-18}$&insufficient\\
+$10^{-24}$&6&$-2.436389698\cdot10^{-23}$&insufficient\\\bottomrule
+\end{tabular}
+\end{center}
+Replacing the separate cubic linearizations by degree-eight centers removes the material old Taylor floor, approximately $2.0408163\times10^{-14}$ in the ratio comparison, and sharpens the last cells. Ordinary degree-eight arithmetic is already negligible on this grid. The further all-order $(1-q)$ factor improves that negligible arithmetic term; it does not cause a successful ratio discrimination or reduce the physical upper budgets. Overlap of sufficient intervals is not a lower bound on actual error, physical equality or an impossibility theorem.
+
+Component-only recalculations diagnose these bounds and are never substituted for the full radius. At $u=10^{-18},k=5$, the state-only ratio margin is approximately $-4.576149531\times10^{-20}$ and the spatial-only margin is $-2.681235390\times10^{-19}$. Either inherited component alone leaves this interval test insufficient. The two complete scalar radii are about $9.011406565\times10^{-27}$ and $4.761718639\times10^{-27}$, combining unequal state costs with the common spatial cost $3.774177199\times10^{-27}$.
+
+At $u=10^{-24},k=6$, the spatial-only ratio margin is approximately $-2.436285122\times10^{-23}$, while the state-only margin is positive, about $9.989542385\times10^{-25}$. Each spatial scalar budget is $7.548467626\times10^{-32}$; the state budgets are about $5.237229366\times10^{-36}$ and $9.875414398\times10^{-37}$. This isolates the spatial certificate as the relevant remaining bound at the predeclared depth; it does not measure the actual dominant error.
+
+The surviving direct scalar margins at $u=10^{-18},k=5$ are about $3.214524214\times10^{-26}$ for $B_4$ and $4.405000405\times10^{-26}$ for $B_5$. Equal additional absolute error on each compared scalar may be strictly below half the respective exact margin. These are pairwise mathematical allowances at time $2\times10^{48}\hbar/\alpha$, not instrument sensitivity. No ratio cell has a positive margin, so no new ratio tolerance is inferred.
+
+The common \emph{known} reference carrier in \eqref{r28:eq:ai3-ordered-transfer} can be removed consistently. A common unknown phase generally changes an imaginary-part ratio even though it preserves complex disk distances. Independently fitted phases can also change disk distances. Thus unspecified phase, timestamp, preparation and measurement errors are not canceled, and no timing-sensitivity theorem is claimed.
+
+The Tesla-method proposal supplied the candidate-indexed readout strategy and the advisor supplied the prospective reflection lemma. The directions and skeptic independently derived consequences of this shared context. Complete geometry, exact moment signs, finite-moment counterexamples, actual multiplier norms, omitted-vacuum-column controls, signed interval corners and phase rotations test the argument. These are mathematical controls rather than observations. No continuous inverse, realized apparatus, homogeneous matching map, nontrivial four-dimensional continuum construction or Yang--Mills mass-gap theorem follows; scientific priority remains unverified.

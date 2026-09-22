@@ -1,0 +1,1409 @@
+{
+  "status": "passed",
+  "count": 194,
+  "scope": "Checks corroborate declared formulas and implementation. Sampled diagnostics do not prove infinite-dimensional theorems or interval accuracy. Same-author checks are not independent review.",
+  "precision_decimal_digits": 70,
+  "versions": {
+    "python": "3.12.14",
+    "mpmath": "1.3.0"
+  },
+  "checks": [
+    {
+      "name": "exact input rejects True",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "exact input rejects False",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "exact input rejects nan",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "exact input rejects inf",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "exact input rejects 1.0",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "exact input rejects None",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "rational decimal is exact",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "rational input not binary float",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "sqrt enclosure 0",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "sqrt enclosure 2",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "sqrt enclosure 1/100000",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "sqrt enclosure 1234567/891011",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "Jacobi uncoupled ground",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Jacobi uncoupled gap=3alpha",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Jacobi units scale energies",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "5.79563461044909591520583634616818673963681996680904844133287e-70",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Jacobi N16/N32 gap comparison (not tail certificate)",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "3.25359335592668529030119773276726291152551858170507978559589e-33",
+        "tolerance": "1.0e-20"
+      }
+    },
+    {
+      "name": "finite Ritz first level min-max direction",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "outside certified coupling window has no inherited floor",
+      "passed": true,
+      "kind": "scope control",
+      "detail": null
+    },
+    {
+      "name": "Jacobi negative ratio",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "Jacobi zero alpha",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "Jacobi Boolean dimension",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "Jacobi too small dimension",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "static Bessel/integral mean k=-5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "positive variance k=-5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "static Haar identity n=0 k=-5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=1 k=-5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=2 k=-5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=3 k=-5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=4 k=-5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Bessel/integral mean k=-1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "positive variance k=-1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "static Haar identity n=0 k=-1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=1 k=-1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=2 k=-1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=3 k=-1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.13195988485333904593863991136097397258531639976739227369783e-72",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=4 k=-1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "3.39587965456001713781591973408292191775594919930217682109348e-72",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Bessel/integral mean k=0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "2.15904213877361115634658796570009989277900009110907034625593e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "positive variance k=0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "static Haar identity n=0 k=0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "6.47712641632083346903976389710029967833700027332721103876778e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=1 k=0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=2 k=0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.07952106938680557817329398285004994638950004555453517312796e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=3 k=0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=4 k=0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "4.31808427754722231269317593140019978555800018221814069251185e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Bessel/integral mean k=1/100000000",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "3.71085367601714417497069806604704669071390640659371465762737e-79",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "positive variance k=1/100000000",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "static Haar identity n=0 k=1/100000000",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.21446120306015627544495573070630618968818755124885206976896e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=1 k=1/100000000",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "6.00573581607192590285399639143244263789600898963662329744674e-72",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=2 k=1/100000000",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "4.14940911045553394110359874657987948143464080010024457171061e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=3 k=1/100000000",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "6.77482124120580924578660234372230651121828428552588814916103e-72",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=4 k=1/100000000",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "7.00001943430506742096745317004329262111941435789268901325163e-79",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Bessel/integral mean k=1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "positive variance k=1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "static Haar identity n=0 k=1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=1 k=1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=2 k=1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=3 k=1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.13195988485333904593863991136097397258531639976739227369783e-72",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=4 k=1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "3.39587965456001713781591973408292191775594919930217682109348e-72",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Bessel/integral mean k=5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "positive variance k=5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "static Haar identity n=0 k=5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=1 k=5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=2 k=5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=3 k=5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static Haar identity n=4 k=5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "2.15904213877361115634658796570009989277900009110907034625593e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 2",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 3",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.07952106938680557817329398285004994638950004555453517312796e-78",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 4",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 6",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 7",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "5.39760534693402789086646991425024973194750022777267586563981e-79",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Haar Catalan moment 8",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static odd reflection",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "static even variance",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "response first four exact coefficients",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "launch certificate is below 3e-24",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "launch actual diagnostic inside analytic bound",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "wrong point closure passes first identity",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "wrong point closure fails next identity",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "dropping variance changes origin slope",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "singular launch epsilon zero",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "series even degree",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "static NaN",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "tail-cube exact face sum L=1",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "tail-cube face count L=1",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "tail-cube exact face sum L=2",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "tail-cube face count L=2",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "tail-cube exact face sum L=3",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "tail-cube face count L=3",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "beta zero uses floor ell",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "critical support-time line not admitted as vanishing",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "beta=1 fails vanishing certificate at fixed time",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "finite budget differs from infinite budget",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "window q=1",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "window q=0",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "window eta=1",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "window negative gamma",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "window zero L",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "window Boolean L",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "AB2 exact rational residual budget",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AB2 target margin",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AE2 exact rational residual budget",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AE2 exact radius",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AE2 rooted envelope",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AE2 norm finiteness is not weighted contraction",
+      "passed": true,
+      "kind": "scope control",
+      "detail": null
+    },
+    {
+      "name": "gaussian zero-frequency residual remains one",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "gaussian zero-frequency inverse vanishes",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "gaussian commutator sign -2",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "gaussian commutator sign -1/10",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "gaussian commutator sign 1/10",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "gaussian commutator sign 2",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "triangle zero-frequency residual remains one",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "triangle zero-frequency inverse vanishes",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "triangle commutator sign -2",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "triangle commutator sign -1/10",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "triangle commutator sign 1/10",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "triangle commutator sign 2",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "triangle radius endpoint residual certificate fails",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "triangle radius endpoint inverse finiteness separate",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "409M=1 has no simultaneous open interval",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "original cap has disjoint certificate durations",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "zero source omits undefined ratio",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "filter negative duration",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "filter outside cap",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "filter negative M",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "Wilson exact quadratic bounds at admitted cap",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "Wilson linear remainder diagnostic",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "Wilson zero-clock single",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson zero-clock sum",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment single 0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment single 1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment single 2",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment single 3",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment single 4",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment single 5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment single 6",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment sum 0",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment sum 1",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment sum 2",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment sum 3",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "7.24454326306136989400729543271023342454602495851131055166609e-71",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment sum 4",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment sum 5",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "1.15912692208981918304116726923363734792736399336180968826657e-69",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "Wilson spectral moment sum 6",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": {
+        "difference": "0.0",
+        "tolerance": "1.0e-55"
+      }
+    },
+    {
+      "name": "single cosine fitted to second moment fails fourth",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "single phase fitted to sum mean fails variance",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "vacuum equality does not preserve full operator norms",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "vacuum fourth moment discriminates rank/sum",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "Wilson outside admitted clock range",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "AF1 rational exponential prefactor witness",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 early factor two has exact center margin",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AC2 true denominator",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AC2 early exact arithmetic",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AC2 late exact arithmetic",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AC2 all-time exact arithmetic",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF1 full relative target",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 full relative target",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field early_center",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field early_polynomial",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field export_rounding",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field early_total",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field late_projector",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field late_excited_tail",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field late_total",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field numerical_maximum",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF2 matches pinned exact field full_relative_total",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF1 matches pinned exact field center_heat",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF1 matches pinned exact field degree100_Taylor",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF1 matches pinned exact field export_rounding",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "AF1 matches pinned exact field full_relative",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "heat lambda=0 exact physical cancellation t=0",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "heat lambda=0 exact physical cancellation t=1",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "heat lambda=0 exact physical cancellation t=8",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "heat lambda=0 exact physical cancellation t=1000",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "heat t=0 exact physical cancellation",
+      "passed": true,
+      "kind": "boundary control",
+      "detail": null
+    },
+    {
+      "name": "late coarse bound at time zero is not exact error",
+      "passed": true,
+      "kind": "wrong-model control",
+      "detail": null
+    },
+    {
+      "name": "early increases and late decreases (sample diagnostic)",
+      "passed": true,
+      "kind": "high-precision diagnostic",
+      "detail": null
+    },
+    {
+      "name": "physical omission exceeds numerical budget",
+      "passed": true,
+      "kind": "scope control",
+      "detail": null
+    },
+    {
+      "name": "heat negative time",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "heat larger cap",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "heat larger preparation radius",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "network unique node accounting",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "network edges accounting",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "network round counts accounting",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "drawn network structural source has exact node count",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "drawn network structural source has exact edge count",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "drawn network structural source has no dangling edges",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "drawn network structural source has declared edge types",
+      "passed": true,
+      "kind": "exact arithmetic",
+      "detail": null
+    },
+    {
+      "name": "direct API import defaults to 70 decimal working digits",
+      "passed": true,
+      "kind": "precision control",
+      "detail": null
+    },
+    {
+      "name": "API refuses precision below documented range",
+      "passed": true,
+      "kind": "invalid-input rejection",
+      "detail": null
+    },
+    {
+      "name": "CLI rejects filter --M nan",
+      "passed": true,
+      "kind": "CLI rejection",
+      "detail": null
+    },
+    {
+      "name": "CLI rejects window --q 1",
+      "passed": true,
+      "kind": "CLI rejection",
+      "detail": null
+    },
+    {
+      "name": "CLI rejects jacobi --dimension 0",
+      "passed": true,
+      "kind": "CLI rejection",
+      "detail": null
+    },
+    {
+      "name": "CLI rejects heat --eta 1",
+      "passed": true,
+      "kind": "CLI rejection",
+      "detail": null
+    }
+  ],
+  "source_sha256": {
+    "ym_calculators.py": "726bbbd5c86c8e3f8f63704872e8206297bd3fc6a4e5f549b35f8d0b6fb5bf03",
+    "test_calculators.py": "cce6eeca484b2ba00af0bb55c59dea9807ca64d5a663912f0d167e3892c8840c",
+    "source_data/heat_scalar_inputs.json": "d905125c69f64d0e087910de3109e2ba2ae4ff25224f5f62c79c1106c62cc02c",
+    "source_data/network_audit.json": "6a944bb8615b131c34128aa4a0134e1906bc16746e255c1b571ab1e9b48e8881",
+    "source_data/network_structure.json": "45ffad8d4106fb23cbda7b862e82ab2d8e4877a3ce1b69704368c18dfd520e03",
+    "source_data/source_manifest.json": "763178df71c34fd3aad008f2b153a62127119a848462ca34fdd4f150809017cb"
+  }
+}

@@ -1,0 +1,1195 @@
+\section{Finite Haar constraints and connected lattice integrals}
+\label{sec:middle-static}
+
+Rounds 13--22 developed several distinct mathematical models. Throughout this
+section, \(x_p=\Tr(U_p)/2\) denotes a normalized fundamental Wilson trace,
+\(\chi_p=2x_p\) its ordinary character, and \(C_e\) the positive link Casimir
+with eigenvalues \(j(j+1)\). A finite physical Hamiltonian has the convention
+\[
+ H=\alpha\sum_e C_e-\sum_p\lambda_p x_p,\qquad \alpha>0.
+\]
+Here \(\alpha,\lambda_p\) have energy units. Euclidean coefficients
+\(\kappa_p\), introduced in densities proportional to
+\(\exp(\sum_p\kappa_p x_p)\), are dimensionless and do not define a physical
+clock. Every spectral statement below retains a fixed positive energy
+reference \(E_\star\). The symbol \workstar\ identifies a result derived or
+computed in the workbench; it does not assert priority over the literature.
+The audit ledger accounts for all 62 historical entries in this range,
+including four named Round13 studies and 58 numbered loops.
+
+\subsection{Compact moments, response, and complete interval coverage \workstar}
+\label{sec:middle-moments}
+
+The one-holonomy model uses normalized Haar pushforward
+\[
+ d\mu_\kappa(x)=Z_\kappa^{-1}e^{\kappa x}
+       \frac2\pi\sqrt{1-x^2}\,dx,\qquad -1\le x\le1.
+\]
+Writing \(m_n=\int x^n\,d\mu_\kappa\), integration of the derivative of
+\(x^ne^{\kappa x}(1-x^2)^{3/2}\) gives the familiar identity
+\begin{equation}
+ nm_{n-1}-(n+3)m_{n+1}+\kappa(m_n-m_{n+2})=0.
+ \label{eq:middle-moments}
+\end{equation}
+The first term is absent at \(n=0\). For nonzero \(\kappa\), normalization
+and \(m_1=u\) express every moment affinely in \(u\). At zero coupling one
+instead uses \(m_{2j}=C_j/4^j\), \(m_{2j+1}=0\), where \(C_j\) is a Catalan
+number. Positivity supplies
+\[
+ (m_{i+j})_{i,j=0}^{r}\succeq0,\qquad
+ (m_{i+j}-m_{i+j+2})_{i,j=0}^{r-1}\succeq0.
+\]
+The workbench implementation retains rational vectors whose quadratic forms
+are affine inequalities in \(u\), so rejected means have exact polynomial
+witnesses. Its 28 finite certificates include a level-six interval at
+\(\kappa=1\) of width approximately \(1.40631\,10^{-13}\); the analogous
+width at \(\kappa=5\) is approximately \(6.03663\,10^{-8}\).
+These are enclosure widths, not sampling errors.
+
+Completeness is a separate argument. All moment and support inequalities
+produce a probability measure on \([-1,1]\), using multiplication by \(x\)
+as a self-adjoint contraction on the polynomial completion. All recurrence
+identities extend to \(C^1\) tests and imply
+\[
+ D[(1-x^2)\mu]=[\kappa(1-x^2)-3x]\mu.
+\]
+The interior density is proportional to
+\(e^{\kappa x}\sqrt{1-x^2}\); the equation excludes endpoint atoms.
+Consequently the full hierarchy identifies the desired measure. Nested
+finite feasible intervals shrink to a point, without a proved rate.
+Successful finite computations additionally require vanishing optimization
+slack; the delivered level-six cap does not execute this limit.
+
+Differentiation with respect to the coupling gives \(u'=\operatorname{Var}(x)>0\).
+Combining this with \eqref{eq:middle-moments} yields
+\[
+ \kappa u'+3u=\kappa(1-u^2),\qquad u(0)=0,\quad u'(0)=\tfrac14.
+\]
+This is a static response equation. The regular solution is
+\(u=I_2(\kappa)/I_1(\kappa)\); singular modified-Bessel branches violate
+boundedness at the origin. Replacing \(3u\) by \(2u\) changes the prior to
+uniform measure on \([-1,1]\), rather than improving the Haar approximation.
+The project also derived a useful residual certificate: fix
+\(0<\kappa_0\le\kappa\) and a differentiable approximation \(p\ge0\)
+throughout \([\kappa_0,\kappa]\), with
+\(r=p'-(1-p^2-3p/\kappa)\),
+\begin{equation}
+ |p(\kappa)-u(\kappa)|
+ \le \left(\frac{\kappa_0}{\kappa}\right)^3
+       |p(\kappa_0)-u(\kappa_0)|
+ +\kappa^{-3}\int_{\kappa_0}^{\kappa}s^3|r(s)|\,ds.
+ \qquad\text{\workstar}
+ \label{eq:middle-response}
+\end{equation}
+It follows by an integrating factor, since the error damping contains
+\(3/\kappa+u+p\ge3/\kappa\). A certified launch error therefore does not
+bound a later floating trajectory unless the entire residual is enclosed.
+The point-mass proposal \(m_n=(1/3)^n\) at \(\kappa=9/8\) passes positivity
+and the first identity but has next-identity residual \(8/9\).
+This supplies an exact counterexample to a zero-variance closure.
+
+Rounds14--15 moved to the genuine two-holonomy density
+\(Z^{-1}e^{x+y+\eta z}dU\,dV\), with
+\(z=\Tr(UV)/2\). For \(C(\eta)=\operatorname{Cov}_\eta(x,y)\),
+differentiating the normalized quotient gives
+\[
+ C'(\eta)=\mathbb E_\eta[
+ (x-\mathbb E_\eta x)(y-\mathbb E_\eta y)(z-\mathbb E_\eta z)],
+ \qquad |C'|\le2.
+\]
+The last inequality uses \(|z-\mathbb Ez|\le2\), Cauchy--Schwarz, and
+\(\operatorname{Var}(x),\operatorname{Var}(y)\le1\).
+The first loop's small-\(\eta\) estimate did not resolve the chosen point
+\((1,1,1/4)\). Exact total-degree Taylor integration did.
+For any bounded insertion and action \(|S|\le M<N+2\), the standard tail
+\[
+ R_N(M)=\frac{M^{N+1}}{(N+1)!}\frac1{1-M/(N+2)}
+\]
+bounds numerator and partition separately. Jensen gives \(Z\ge1\) when
+the unweighted action mean vanishes; signed interval division retains all
+endpoint combinations. Point intervals \([L,U]\) extend across a cell of
+radius \(\rho\) as \([L-2\rho,U+2\rho]\). All eight initial midpoint
+intervals were positive, while all eight cell bounds failed. Refining only
+the failing cells produced 8, 16, then 21 cells, with a final minimum lower
+bound approximately \(0.0003346525\) over the whole closed interval
+\(\eta\in[1/8,1/4]\). Increasing already adequate point precision would not
+have removed the geometric transport loss.
+
+These results support certified static response calculations and provide
+countermodels to incomplete closures. Their next application requires
+shared-link identities for larger graphs, not an identification of \(\eta\)
+with time or energy. Sources:
+\repo{research/round13/moments/README.md},
+\repo{research/round13/response/response.md},
+\repo{research/round14/forward/loop2.md},
+\repo{research/round15/forward/A2/result.md}.
+
+\subsection{Closed-surface gluing and the first shared face \workstar}
+\label{sec:middle-gluing}
+
+On the closed cube there are eight vertices, twelve links and six faces.
+For \(\chi_n\), the spin-\(n/2\) character of dimension \(d_n=n+1\), write
+\(f_p=\sum_n a_{p,n}\chi_n\). Schur orthogonality forces equal labels on
+adjacent faces. Each edge contributes \(d_n^{-1}\), each surviving vertex
+index \(d_n\), giving the graph-specific application
+\begin{equation}
+ \int\prod_{p=1}^{6}f_p(U_p)\,dU
+       =\sum_{n\ge0}d_n^{-4}\prod_{p=1}^{6}a_{p,n},
+ \qquad
+ \mathbb E_0\prod_{p=1}^{6}x_p=2^{-10}.
+ \qquad\text{\workstar}
+ \label{eq:middle-cube}
+\end{equation}
+The identity is immediate for finite character polynomials; analytic
+weights require convergence or the retained Taylor remainder. If any one
+face weight equals one, only label zero survives and the other five class
+observables factorize. Thus five-face factorization coexists with a
+nonzero six-face moment. It would be incorrect to use this as evidence for
+independent face holonomies.
+
+For \(e^{\kappa x}\),
+\[
+ a_n(\kappa)=\sum_{j\ge0}
+ \frac{(n+1)\kappa^{n+2j}}
+ {2^{n+2j}j!(n+1+j)!}.
+\]
+An insertion of one \(x_p\) differentiates that face's coefficient before
+setting all couplings equal. It does not differentiate the common-coupling
+partition six times. At \(\kappa=1/4\), total degree18 first met the
+specified expectation precision; degree24 gave
+\(\mathbb E\prod_px_p\simeq0.001023116359923\) and a partition excess over
+the independent-face product exceeding \(2.4598180\,10^{-7}\).
+The exact fractions, including the failed coarse degrees, remain in the
+source certificate.
+
+Two adjacent cubes have twelve vertices, twenty links and eleven faces.
+Conditioning on their shared holonomy \(H\), each five-face disk contributes
+\(\sum_n d_n^{-4}(\prod_{\mathrm{disk}}a_{p,n})\chi_n(H)\).
+The actual integral is therefore
+\begin{equation}
+ \sum_{n,m,k}
+ \frac{\prod_{p\in L}a_{p,n}}{d_n^4}
+ \frac{\prod_{p\in R}a_{p,m}}{d_m^4}
+ a_{s,k}\,N_{nm}^{k},
+ \qquad
+ N_{nm}^{k}=\mathbf1_{\{|n-m|\le k\le n+m,\ n+m+k\ {\rm even}\}}.
+ \quad\text{\workstar}
+ \label{eq:middle-two-cube}
+\end{equation}
+The shared-edge incidence is three, so the old one-surface single-label
+rule is insufficient. Center parity makes the all-eleven distinct-trace
+Haar moment zero. With the shared trace squared, both fusion channels
+\(k=0,2\) contribute and
+\(\mathbb E_0[(\prod_{\mathrm{outer}\ 10}x_p)x_s^2]=2^{-19}\).
+Removing \(k=2\) halves the answer.
+
+Keeping the same all-eleven-trace observable, Round16 compared outer
+couplings \(1/8\) and shared coupling \(1/8\) against shared coupling zero.
+The degree24 difference is enclosed near \(2.4303274916\,10^{-7}\),
+with width about \(4.173\,10^{-22}\). The zero shared-action baseline is
+nonzero: its leading numerator at common outer coupling \(t\) is
+\(41t^5/(81\,2^{18})\). Deleting a coefficient is not deleting an insertion.
+These finite integrals expose graph dependence and supply later trial
+matrix elements; they provide no transfer Hamiltonian by themselves.
+Sources: \repo{research/round15/forward/B1/derivation.md},
+\repo{research/round15/forward/B2/derivation.md},
+\repo{research/round16/forward/loop1/derivation.md},
+\repo{research/round16/forward/loop2/derivation.md}.
+
+\subsection{Recoupling, sufficient coordinates, and surrounding weights \workstar}
+\label{sec:middle-conditional}
+
+The four-cube \(2\times2\times1\) complex has 18 vertices, 33 links and
+20 faces. Integrating its central link in the adjoint representation
+requires the complete invariant projector on \((\mathbb R^3)^{\otimes4}\).
+The three invariant tensors
+\(B_1=\delta_{ab}\delta_{cd}\),
+\(B_2=\delta_{ac}\delta_{bd}\),
+\(B_3=\delta_{ad}\delta_{bc}\)
+have Gram matrix with diagonal nine and off-diagonal three. The
+Clebsch--Gordan decomposition
+\(1\otimes1=0\oplus1\oplus2\) proves completeness, and Haar averaging gives
+\(P=B(B^TB)^{-1}B^T\). The inverse has diagonal \(2/15\) and
+off-diagonal \(-1/30\). For an explicitly realized tetrahedral boundary,
+the product of four normalized adjoint traces has expectation
+\(-1/405\); diagonal-only and one-channel substitutes instead give
+\(2/405\) and \(1/729\). The negative entries cannot be dropped.
+
+Writing the central quaternion as \(q\in S^3\), face traces as
+\(q\cdot a_i\), and the action as \(q\cdot b\), with
+\(b=\sum_i\kappa_i a_i\), the partition depends only on \(\norm b\).
+The joint observable also depends on the directions \(a_i\). Tetrahedral
+and commuting boundaries can have the same \(b\) but opposite-sign
+joint expectations. The complete Gram matrix of
+\((b,a_1,\ldots,a_4)\) is sufficient: equality of Grams defines an isometry
+between the spans, extends to an element of \(O(4)\), and preserves Haar
+sphere measure. This proof includes singular Grams and \(b=0\), without
+inverting a Gram matrix. Admissibility requires positive semidefiniteness,
+rank at most four, unit \(a_i\), and both action relations
+\[
+ G_{0i}=\sum_j\kappa_jG_{ji},\qquad
+ G_{00}=\sum_{i,j}\kappa_i\kappa_jG_{ij}.
+\]
+An exact computational realization uses
+\begin{equation}
+ M(k)=\frac{\sum_j(k_j-\delta_{ij})G_{ij}
+                     M(k-e_i-e_j)}{|k|+2},
+ \quad |k|>0\ {\rm even},\ k_i>0,
+ \qquad\text{\workstar}
+ \label{eq:middle-gram}
+\end{equation}
+with \(M(0)=1\) and odd moments zero. A term of zero multiplicity is
+omitted before its reduced multi-index is formed, so no negative
+exponent is evaluated. Gaussian integration by parts
+followed by radial separation derives this recurrence; its project
+contribution is the complete action/observable implementation and audit,
+not a new sphere-moment principle.
+
+Integrating one actual surrounding link changes the problem again.
+For \(x=\Tr U/2\), \(y=\Tr V/2\), and
+\(w=\Tr(UV^\dagger)/2\), character convolution gives
+\[
+ \mathbb E[x^ay^bw^c]
+ =2^{-a-b-c}\sum_n\frac{m(a,n)m(b,n)m(c,n)}{n+1},
+ \quad
+ m(a,n)=\binom a{(a-n)/2}-\binom a{(a-n)/2-1}.
+\]
+In particular \(\mathbb E[xyw]=1/16\) and
+\(\mathbb E[x^2y^2w^2]=1/48\).
+The actual six affected faces give \(S_2=3x+2y+w\), with
+\(O=(4x^2-1)^3(4w^2-1)/81\). Its normalized expectation at
+\(\kappa=1/64\) is enclosed near \(1.95552781\,10^{-6}\).
+The surrounding marginal is the semicircle measure multiplied by
+\(e^{2\kappa y}Z_U(y)\); averaging normalized inner expectations against
+bare Haar discards both weights.
+
+Unfreezing a third actual link gives
+\(S_3=3x+y+z+w+t\), where \(t=\Tr(VW^\dagger)/2\).
+The same \(V\) occurs in both branches:
+\(\mathbb E[xzwt]=1/64\), whereas resampling it independently gives zero.
+Round19 integrated all required monomials through degree16, retained the
+full Taylor tails, and obtained a continuous result for
+\(F(\kappa)=\mathbb E[Oe^{\kappa S_3}]/\mathbb E[e^{\kappa S_3}]\):
+\begin{equation}
+ F(0)=0,\qquad F(\kappa)\ge\kappa^2/2048
+ \quad(|\kappa|\le1/8),\qquad
+ F(\kappa)>F(-\kappa)\quad(0<\kappa\le1/64).
+ \quad\text{\workstar}
+ \label{eq:middle-static-sign}
+\end{equation}
+Here \(N_2=1/324\), \(N_3=13/1296\) for the numerator.
+Subtracting absolute higher-order coefficients and its complete tail
+bounds \(N/\kappa^2\); an upper partition bound gives the displayed
+direction of the quotient. The sign comparison uses
+\(N(\kappa)Z(-\kappa)-N(-\kappa)Z(\kappa)\), whose leading term is
+\(13\kappa^3/648\). This conditional three-link result still fixes thirty
+links. Full surrounding integration and physical dynamical matching remain
+separate tasks. Sources:
+\repo{research/round17/forward/c1/report.md},
+\repo{research/round18/forward/c1/report.md},
+\repo{research/round18/forward/c2/report.md},
+\repo{research/round19/forward/c1/report.md},
+\repo{research/round19/forward/c2/report.md}.
+
+\section{Physical spectral bounds and an explicit infinite-volume exception}
+\label{sec:middle-spectral}
+
+\subsection{Finite untruncated graph bounds and complete complements \workstar}
+\label{sec:middle-finite-gap}
+
+On a connected finite simple graph with Gauss law at every vertex and no
+external charges, a nonconstant spin network has no degree-one active
+vertex. Its support therefore contains a cycle. Every occupied link costs
+at least \(3\alpha/4\); a fundamental character on a shortest cycle
+attains the resulting energy. For graph girth \(g\),
+\(\delta_G=3\alpha g/4\) is the exact free physical gap. A forest has only
+the vacuum physical sector, not a numerical first excitation.
+
+Let \(L=\sum_p|\lambda_p|\). Bounded multiplication gives
+\(E_1(H)\ge\delta_G-L\), while the vacuum trial gives \(E_0(H)\le0\).
+For square graphs, the orthonormal trial vectors \(1,\chi_p\) have electric
+energies \(0,3\alpha\) and magnetic vacuum-to-face entries
+\(-\lambda_p/2\). The relevant third Haar moments vanish. Diagonalizing
+only this arrowhead yields a ground-energy \emph{upper} bound. Combining
+it with the independent full-space excited-energy bound gives
+\begin{equation}
+ \Delta(H)\ge
+ \frac{\delta+\sqrt{\delta^2+\sum_p\lambda_p^2}}2-L,
+ \qquad \delta=3\alpha.
+ \qquad\text{\workstar}
+ \label{eq:middle-arrow}
+\end{equation}
+This is not a Ritz-gap lower bound. On the six-face cube, it expands the
+common-magnitude sufficient range from
+\(r=|\lambda|/\alpha<1/2\) to \(r<12/23\), and gives
+\((\sqrt{21/2}-3)\alpha/2>0\) at \(r=1/2\).
+On the eleven-face two-cube graph it gives \(r<12/43\).
+At that latter boundary an actual shared-face adjoint state
+\(\chi_2(U_s)=4x_s^2-1\), of electric energy \(8\alpha\), repairs the
+zero margin. With
+\(v_0=1+\sum_p\chi_p/22\), \(v_\eta=v_0+\eta\chi_2(U_s)\),
+\[
+ \frac{\Delta}{\alpha}\ge
+ \frac{(6/473)\eta-(347/43)\eta^2}{45/44+\eta^2}>0
+ \quad(0<\eta<6/3817).
+ \qquad\text{\workstar}
+\]
+At \(\eta=3/3817\) the exact bound is \(1388/284767457\).
+This amplitude maximizes the quadratic numerator, not the quotient.
+
+The next improvement required a complete complement, rather than a larger
+trial space alone. Round18 classified every physical state below
+\(9\alpha/2\): only the vacuum and eleven fundamental faces occur.
+For their projector \(P\), \(QH_0Q\ge(9\alpha/2)Q\), attained by a
+six-link rectangle. The full cross Gram is
+\[
+ \begin{gathered}
+ (QVP)^*(QVP)=PV^2P-(PVP)^2,\qquad C_{00}=C_{0p}=0,\\
+ C_{pp}=\tfrac14\sum_q\lambda_q^2,\qquad
+ C_{pq}=\lambda_p\lambda_q/4\quad(p\ne q).
+ \end{gathered}
+\]
+Both terms in the subtraction matter: \(V\Omega\) already lies in \(P\).
+For \(|\lambda_p|\le r\alpha\),
+\(\norm{QVP}^2\le21\alpha^2r^2/4\).
+On the codimension-one space \(\Omega^\perp\), comparison with
+\[
+ \alpha\begin{pmatrix}3&-\sqrt{21}\,r/2\\
+ -\sqrt{21}\,r/2&9/2-11r\end{pmatrix}
+\]
+gives the full \(E_1\) lower bound. At \(r=3/8\), it proves
+\(\Delta/\alpha\ge(27-3\sqrt{70})/16>0\) for the entire signed box.
+
+Round19 raised the strict electric projector to \(E_{\rm el}<6\alpha\).
+Its complete dimension is 48: vacuum, eleven four-cycles and thirty-six
+six-cycles. At the excluded threshold \(6\alpha\), 99 support/label
+assignments represent 107 physical channels, because eight assignments
+have intertwiner multiplicity two. Counting supports alone would miss
+this distinction. The full 48-channel cross Gram gives
+\(\norm{QVR}^2\le19\alpha^2r^2/4\), with \(R=P-P_\Omega\), while
+\(RHR\ge\alpha(3-2r)\) and \(QHQ\ge\alpha(6-11r)\). Hence
+\begin{equation}
+ \frac{\Delta(H)}{\alpha}\ge
+ R(r)=\frac{9-13r-\sqrt{100r^2-54r+9}}2>0,
+ \quad
+ 0\le r<\frac{30-2\sqrt{87}}{23}.
+ \qquad\text{\workstar}
+ \label{eq:middle-48gap}
+\end{equation}
+In particular \(R(3/8)=(33-6\sqrt5)/16\) and \(R(7/16)=19/32\).
+The failed \(r=1/2\) estimate is a failure of this row-envelope
+certificate, not a proved gap closure.
+
+These calculations yield full untruncated finite-graph theorems because
+the omitted physical spectrum is bounded analytically. They do not give a
+dense volume-uniform threshold. Under the usual lattice normalization
+\(\alpha=g_H^2/(2a)\), \(\lambda=2/(g_H^2a)\), one has
+\(r=4/g_H^4\), so fixed small-\(r\) regimes do not follow a
+weak-bare-coupling path \(g_H\to0\) \cite{bauer2023basis}.
+Sources:
+\repo{research/round15/forward/C2/derivation.md},
+\repo{research/round17/forward/b2/report.md},
+\repo{research/round18/forward/b1/report.md},
+\repo{research/round19/forward/b1/report.md},
+\repo{research/round19/forward/b2/report.md}.
+
+\subsection{Dressed strips, literal boundaries, and summable perturbations \workstar}
+\label{sec:middle-strips}
+
+A different route obtains volume-uniform results by an explicit restriction
+of the interaction family. Pairwise link-disjoint nonzero plaquettes
+factorize the \emph{full} link Hilbert space into four-link blocks and free
+links. The four-link free gap before Gauss restriction is \(3\alpha/4\),
+not the physical loop energy \(3\alpha\). With
+\(\max|\lambda_p|/\alpha\le\rho<3/4\), min--max and zero vacuum mean give
+\(\Delta\ge\alpha(3/4-\rho)\). Each unique block ground is gauge invariant:
+its gauge action is a continuous one-dimensional representation of a finite
+product of \(SU(2)\), hence trivial. The physical restriction contains the
+same ground and inherits the lower bound without factorizing the physical
+Hilbert space.
+
+Three consecutive square faces form a ten-link strip. Dress its two
+link-disjoint ends first and add the middle bridge with coefficient \(\mu\).
+The bridge contains a free Haar link in this reference, so its mean is
+zero and its squared norm on the reference ground is \(1/4\).
+Thus
+\[
+ \Delta_{\rm strip}\ge
+ \alpha\!\left(\tfrac34-
+ \max(|\lambda_L|,|\lambda_R|)/\alpha\right)-|\mu|
+ \ge\alpha/8
+ \quad
+ \begin{cases}
+ |\lambda_L|,|\lambda_R|\le\alpha/2,\\
+ |\mu|\le\alpha/8 .
+ \end{cases}
+ \qquad\text{\workstar}
+\]
+The zero-mean premise saves one perturbation norm; a generic bounded
+perturbation would lose two.
+
+Complete strips anchored at \((4i,2j,z)\) are link-disjoint. Round18's
+finite-box rule initially classified incomplete boundary strips as
+remainder faces; a fixed face could consequently change coefficient when
+the box grew. Round19 replaced that rule by literal restrictions of a
+single infinite assignment. All possible clipped components
+\(L,M,R,LM,MR,LMR\) retain the same bound \(\alpha/8\), using the bare
+vacuum for proper clips and dressed ends for the complete strip.
+
+In the incomplete tensor product of complete-strip grounds and free Haar
+links, define
+\[
+ H_{\rm ref}=\sum_C(H_C-E_C)+\sum_{e\ {\rm free}}\alpha C_e,
+ \qquad H_{\rm ref}\ge\delta(1-P_\Omega),\quad\delta=\alpha/8.
+\]
+This is the closed nonnegative form sum on the finite-excitation core.
+Give every omitted face of anchor \((x,y,z)\) the coefficient
+\(\nu_f=\alpha\tau\,2^{-x-y-z}/24\).
+The exact geometric sums are
+\begin{equation}
+ \sum_{\rm all}w_f=1,\quad
+ \sum_{\rm selected}w_f=28/135,\quad
+ \sum_{\rm omitted}w_f=107/135,
+ \qquad
+ \norm V\le\beta=\alpha|\tau|\,107/135.
+ \qquad\text{\workstar}
+ \label{eq:middle-dyadic}
+\end{equation}
+Every omitted face has a free Haar link, so
+\(\langle\Omega,V\Omega\rangle=0\).
+On \(\Omega^\perp\), \(H_{\rm ref}+V\ge\delta-\beta\), whereas the
+vacuum trial energy is zero. If \(\beta<\delta\), a spectral subspace
+below \(\delta-\beta\) is nonempty and at most one-dimensional. This
+proves an isolated simple ground without invoking infinite-volume compact
+resolvent. At \(|\tau|=1/64\),
+\begin{equation}
+ \Delta\ge973\alpha/8640.
+ \qquad\text{\workstar}
+ \label{eq:middle-summable-gap}
+\end{equation}
+All actual face coefficients can be nonzero, but the omitted ones decay
+with position. This is a fully supported inhomogeneous exception.
+
+Round20 completed each finite retained perturbation to whole reference
+factors. If \(t_L\downarrow0\) is its exact omitted dyadic tail and
+\(\epsilon_L=\alpha|\tau|t_L\), the correct lift is
+\(H_L=K_L\otimes I+I\otimes H_{{\rm ref,out}}\).
+Standard bounded-perturbation identities \cite{teschl2014methods} give
+\[
+ \norm{(H-z)^{-1}-(H_L-z)^{-1}}
+ \le\epsilon_L/|\operatorname{Im}z|^2,\quad
+ |e-e_L|\le\epsilon_L,\quad
+ \norm{P-P_L}\le\min(1,\epsilon_L/g_L),
+\]
+where \(g_L=\delta-\norm{V_L}_{\rm budget}>0\).
+The projector bound follows by applying the complementary inverse of
+\(H_L-e\) to its residual on the true ground. A zero exterior generator
+would leave escaping free excitations at zero and fails norm-resolvent
+convergence even at zero perturbation.
+
+Aligned literal vertex boxes \(N=4m+3\) coincide with full factors after
+subtracting the explicit reference ground energy
+\(c_N=\sum_{C\subset\Lambda_N}E_C\). Other upper boundary phases admit
+local-state convergence: complete the support of both a fixed observable
+and an interior perturbation, compare their identical central ground
+states, then bound each omitted tail. This gives
+\[
+ |\omega_{\rm box}(A)-\omega_\infty(A)|
+ \le4\norm A\min(1,\epsilon_M/g_M)
+\]
+once the box contains that common completion. It does not establish
+arbitrary-phase global vector or norm-resolvent convergence.
+Sources: \repo{research/round18/forward/a1/report.md},
+\repo{research/round19/forward/a1/report.md},
+\repo{research/round19/forward/a2/report.md},
+\repo{research/round20/forward/d1/report.md},
+\repo{research/round20/forward/e2/report.md}.
+
+\subsection{Physical GNS space and a nonzero Wilson fluctuation \workstar}
+\label{sec:middle-gns}
+
+For the dyadic model the full bounded local-factor algebra is irreducible
+in the chosen incomplete product. Finite-factor vacuum projections
+converge strongly to \(P_\Omega\); an operator in the commutant is scalar
+on \(\Omega\), then on its dense local rank-one orbit. Every nonzero
+ground vector \(\Psi\) is consequently cyclic for that full algebra.
+The GNS null quotient maps isometrically by \([A]\mapsto A\Psi\).
+Its energy generator is \(H-e\), since this subtraction fixes the cyclic
+vacuum, even though scalar shifts cancel in observable conjugation.
+
+The physical algebra requires an additional argument. Let
+\(\mathcal H_{\rm inv}\) be the vectors invariant under every finite-support
+vertex gauge transformation, and \(\mathcal A_{\rm phys}\) the norm closure
+of bounded invariant local operators. For any invariant \(\xi\), approximate
+it by \(A_n\Psi\) using full-algebra cyclicity. Haar-average \(A_n\) over
+its finitely many endpoint groups. The weak operator average preserves
+local support and, on \(\Psi\), is a strong vector integral satisfying
+\(\norm{\mathcal E(A_n)\Psi-\xi}\le\norm{A_n\Psi-\xi}\).
+Therefore
+\begin{equation}
+ \overline{\mathcal A_{\rm phys}\Psi}=\mathcal H_{\rm inv},
+ \qquad
+ K_{\rm phys}=(H-e)|_{\mathcal H_{\rm inv}},
+ \qquad
+ \operatorname{spec}K_{\rm phys}\subset
+ \{0\}\cup[973\alpha/8640,\infty).
+ \qquad\text{\workstar}
+ \label{eq:middle-gns}
+\end{equation}
+The restriction is self-adjoint on \(D(H)\cap\mathcal H_{\rm inv}\);
+gauge-commuting spectral cutoffs prove density of that domain.
+
+This sector contains a nonvacuum vector. For the actual omitted origin
+\(xz\) Wilson multiplier \(W\), the reference mean is zero and variance
+\(1/4\). Two free Haar links per omitted face make distinct-face
+covariances vanish. The resulting residual and pure-state trace distance
+give, throughout \(|\tau|\le1/64\),
+\[
+ \begin{gathered}
+ d^2=\norm{P_\Psi-P_\Omega}^2
+ \le2817/64377572<1/22500,\\
+ \operatorname{Var}_\Psi W\ge\tfrac14-2d-4d^2
+ \ge5321/22500>\tfrac15 .
+ \end{gathered}
+ \qquad\text{\workstar}
+\]
+For \(\xi=(W-\omega(W))\Psi\), spectral calculus now gives the nonzero
+imaginary-time correlation
+\[
+ 0<\langle\xi,e^{-tK_{\rm phys}/\hbar}\xi\rangle
+ \le\operatorname{Var}_\Psi(W)e^{-973\alpha t/(8640\hbar)}
+ \quad(t\ge0).
+\]
+A lower spectral bound supplies this upper decay bound, not a lower
+exponential estimate. It also supplies no real-time magnitude decay.
+The result concerns the specified summable representation; equality to a
+homogeneous or continuum representation has not been proved.
+Sources: \repo{research/round20/forward/g2/report.md},
+\repo{research/round21/forward/j1/report.md},
+\repo{research/round21/forward/j2/report.md}.
+
+\section{Locality, profile limits, and stationary observations}
+\label{sec:middle-dynamics}
+
+The Round13 locality study applied the Lieb--Robinson interaction-picture
+method to full \(SU(2)\) links with unbounded onsite Casimirs. Common onsite
+unitaries preserve support; only bounded plaquette interactions enter
+the chain expansion. If \(q_{\rm inc}=2(d_s-1)\),
+\(J=\hbar^{-1}\int j(t)\,dt\) is the dimensionless integrated common
+magnetic envelope, and \(R\) is the shortest overlapping-plaquette chain
+from the observable support \(X\) to a removed boundary plaquette, then
+\begin{equation}
+ \norm{\tau_{\Lambda'}(A)-\tau_\Lambda(A)}
+ \le\norm A\min\left\{2,\frac{|X|}{4}
+                   \sum_{k\ge R}\frac{(8q_{\rm inc}J)^k}{k!}\right\}.
+ \qquad\text{\workstar}
+ \label{eq:middle-lr}
+\end{equation}
+There are at most \(|X|q_{\rm inc}(4q_{\rm inc})^{k-1}\) chains;
+each commutator costs two and ordered times give \(J^k/k!\).
+Unitary resummation is essential: unrestricted growing-support word
+counting would not give this chain bound. The factorial tail tends to zero
+at fixed \(J\) as the boundary recedes. This proves a fixed-spacing
+volume comparison, with no ground-state comparison or continuum velocity.
+The underlying strong-operator framework permits infinite-dimensional
+sites \cite{nachtergaele2014dynamics}.
+
+The summable model admits a separate direct Duhamel construction.
+Completing the local observable and interior perturbation to common
+factors gives all-phase finite-box dynamics convergence at fixed time,
+with error \(4\norm A\,|t|\epsilon_M/\hbar\).
+Strongly continuous implementing unitaries do not imply point-norm
+time continuity for every bounded local operator. On a free link the
+character shift \(\chi_n\mapsto\chi_{n+1}\) acquires phases with arbitrarily
+large frequency; at times tending to zero its norm difference is exactly
+two. This limitation was retained when identifying the GNS generator.
+
+\subsection{An exact spatial budget and its endpoint \workstar}
+\label{sec:middle-profile}
+
+Replace only the omitted weights by \(w_f(q)=q^{x+y+z}/24\), \(0<q<1\).
+Summing all orientations and subtracting selected strips gives
+\begin{equation}
+ \mathcal B(q)=
+ \frac{2+5q+5q^2+6q^3+3q^4}
+ {24(1-q)^3(1+q)^2(1+q^2)},\quad
+ \mathcal B(1/2)=107/135,\quad
+ (1-q)^3\mathcal B(q)\longrightarrow7/64.
+ \qquad\text{\workstar}
+ \label{eq:middle-profile}
+\end{equation}
+The same bounded perturbation proof gives
+\(\Delta\ge\alpha[1/8-|\tau|\mathcal B(q)]\).
+At \(\tau=1/64\) its sufficient boundary lies between \(0.764003\)
+and \(0.764004\). This is a boundary of the certificate, not a measured
+critical parameter.
+
+Fix \(0<\eta<1\) and follow the canonical constant-budget ray
+\(\tau_q=\eta/[8\mathcal B(q)]\).
+Each omitted face has two free reference links, and distinct squares
+share at most one link. Conditional Haar integration therefore gives
+\(\langle x_fx_g\rangle_\Omega=\delta_{fg}/4\), despite possible
+entanglement within strip factors. Hence
+\begin{equation}
+ \sigma_q^2:=\norm{V_q\Omega}^2
+ =\frac{\alpha^2\tau_q^2}{96}\mathcal B(q^2),\quad
+ \norm{V_q}=\alpha\eta/8,\quad
+ \frac{\sigma_q^2}{\alpha^2(1-q)^3}\longrightarrow\frac{\eta^2}{5376}.
+ \qquad\text{\workstar}
+ \label{eq:middle-variance}
+\end{equation}
+The norm equality follows by localizing finitely many links near identity
+and then controlling the remaining absolute tail; it does not use a
+delta function on an infinite identity configuration.
+With \(\bar g=\alpha(1-\eta)/8\), the excited threshold gives
+\[
+ \norm{P_q-P_\Omega}\le\sigma_q/\bar g,\qquad
+ -\sigma_q^2/\bar g\le e_q\le0.
+\]
+Thus the global ground projection returns to the selected-strip reference
+although the perturbation norm stays nonzero. Every fixed omitted
+coefficient tends to zero. This route cannot retain a nonzero homogeneous
+omitted coupling at fixed \(\alpha/E_\star\).
+
+For a bounded operator \(A\) on finitely many complete factors \(F\),
+only finitely many omitted faces meet all their links \(E(F)\).
+Writing their budget as \(D_F(q)\le|E(F)|/6\),
+\[
+ \norm{V_qA\Omega}
+ \le\norm A[\sigma_q+2\alpha\tau_qD_F(q)]\longrightarrow0.
+\]
+The local rank-one orbit is dense and \(\norm{V_q}\) is uniformly bounded,
+so \(V_q\to0\) strongly. The resolvent identity and strong Duhamel formula
+give strong-resolvent convergence and strong unitary convergence uniformly
+on compact time intervals. Neither norm-resolvent convergence nor its
+failure follows merely from the nonvanishing perturbation norm.
+
+\subsection{Stationarity improves the time window \workstar}
+\label{sec:middle-windows}
+
+Round21 first compared connected correlations using a vector residual,
+obtaining sufficient windows
+\(T_q=(\hbar/\alpha)C(1-q)^{-\gamma}\), \(\gamma<3/2\).
+Round22 exploited stationarity before estimating. For bounded complex
+local observables,
+\[
+ C_q^{A,B}(t)=
+ \omega_q(A^*\beta_q(t)(B))-\omega_q(A^*)\omega_q(B),
+ \qquad \beta_q(t)(B)=e^{-itH_q/\hbar}Be^{itH_q/\hbar}.
+\]
+Both scalar energy phases cancel in this Heisenberg expression.
+The bounded cocycle proves the strong integral identity
+\[
+ \beta_q(t)(B)-\beta_0(t)(B)
+ =-\frac{i}{\hbar}\int_0^t
+ \beta_q(t-s)([V_q,\beta_0(s)(B)])\,ds.
+\]
+No differentiation of an arbitrary bounded \(B\) on an unbounded domain
+is needed. Reference evolution stays on the same complete factors,
+so \(\norm{[V_q,\beta_0(s)(B)]}\le
+2\alpha\tau_q\norm B\,D_{F_B}(q)\) for every \(s\).
+Changing the state costs \(2d_q\) in the first expectation and \(4d_q\)
+in the two mean factors. Consequently
+\begin{equation}
+ |C_q^{A,B}(t)-C_0^{A,B}(t)|
+ \le\norm A\norm B
+ \left[6d_q+\frac{2\alpha\tau_q|t|}{\hbar}D_{F_B}(q)\right].
+ \qquad\text{\workstar}
+ \label{eq:middle-stationary}
+\end{equation}
+Since \(d_q=O((1-q)^{3/2})\) and \(\tau_q=O((1-q)^3)\), this includes
+every \(\gamma<3\), with sufficient rate
+\(O((1-q)^{\min(3/2,\,3-\gamma)})\).
+The old \(\gamma=3/2\) endpoint is covered. Failure of the new upper
+certificate at \(\gamma=3\) does not establish actual nonconvergence.
+
+For moving origin-anchored tail-block cubes of side \(L\), all outgoing
+links are retained: there are \(24L^3\) links and \(21L^3\) incident
+omitted faces. Downward closure in the positive orthant makes incidence
+equivalent to having the face anchor inside that tail rectangle. Thus
+\begin{equation}
+ D_L(q)=\mathcal B(q)(1-q^{4L})(1-q^{2L})(1-q^L).
+ \qquad\text{\workstar}
+ \label{eq:middle-moving}
+\end{equation}
+For \(L=\max(1,\lfloor\ell(1-q)^{-\beta}\rfloor)\),
+\(\ell>0\), \(\beta\ge0\), and time windows
+\(|t|\le (\hbar/\alpha)C(1-q)^{-\gamma}\) with \(C>0\), \(\gamma\ge0\),
+the nonnegative certificate in \eqref{eq:middle-stationary} vanishes
+exactly when
+\(\beta<1\) and \(\gamma<3(1-\beta)\).
+This necessity concerns that certificate only. At \(\beta=0\), its
+constant uses \(L_0=\max(1,\lfloor\ell\rfloor)\), not \(\ell\).
+Logarithmically shortened fixed-support \(\gamma=3\) windows also pass.
+Translated rectangles need new incoming-face counts. Actual long-time
+endpoint behavior remains open.
+Sources: \repo{research/round13/locality/locality.md},
+\repo{research/round20/forward/h2/report.md},
+\repo{research/round21/forward/m1/report.md},
+\repo{research/round21/forward/m2/report.md},
+\repo{research/round22/reverse/n1/report.md},
+\repo{research/round22/reverse/n2/report.md}.
+
+\section{Static information, clocks, and exact physical reduction}
+\label{sec:middle-inference}
+
+\subsection{Conditional dynamics and finite-rate identifiability \workstar}
+\label{sec:middle-clock}
+
+On the conditional three-link space with
+\(\rho_\kappa\propto e^{\kappa S_3}\), a separately specified reversible
+generator is
+\[
+ A_{\kappa,m}=-\rho_\kappa^{-1}
+       \operatorname{div}(\rho_\kappa m\nabla),\qquad H=cA_{\kappa,m},
+ \quad c>0.
+\]
+For smooth uniformly positive mobility \(m\), its closed form has domain
+\(H^1\), operator domain \(H^2\), and constant ground. This standard
+divergence-form construction preserves the same static law for every \(c\)
+and \(m\), demonstrating why static moments cannot fix a clock.
+The actual shared-middle gradient produces
+\[
+ \Gamma(S_3)=\tfrac14\{15+8y+2x+2z+2r
+ -(3x+w)^2-(y+w+t)^2-(z+t)^2\},\quad
+ r=\Tr(UW^\dagger)/2.
+\]
+The mixed term involving \(r-wt\) disappears under an incorrect resampling
+of \(V\). Independent optimization of \(U,W\) at fixed \(y\) proves
+\(\min S_3=-5\), \(\max S_3=7\).
+Bounded-density comparison with the Haar Casimir gap then gives
+\(\operatorname{gap}(cA_{\kappa,1})\ge(3c/4)e^{-12|\kappa|}
+\ge c/6\) for \(|\kappa|\le1/8\).
+This is a theorem for the declared conditional generator, not a derived
+lattice Hamiltonian.
+
+For \(m=1+\zeta x\), \(|\zeta|<1\), the measurable initial rate would be
+\(r_f=-\hbar C_f'(0+)=c\int m\Gamma(f)\rho_\kappa\).
+At known \(\kappa=0\), the pair \(x,x+x^2\) gives
+\[
+ r_x=3c/16,\quad r_{x+x^2}=c(5/16+\zeta/8),\quad
+ c=16r_x/3,\quad\zeta=8r_{x+x^2}/c-5/2.
+ \qquad\text{\workstar}
+\]
+The pair \(x,x^2\) is parity-blind to \(\zeta\).
+For known \(|\kappa|\le1/8\), choosing \(g=x+x^2/4\) proves
+a uniform determinant lower bound \(D\ge1/7168\). Indeed, if
+\(G(x)=(1-x^2)/4\) and \(X,X'\) are independent copies of the actual
+one-coordinate marginal, symmetrization gives, for \(g=x+ax^2\),
+\[
+ D=2a\,\mathbb E\{G(X)G(X')(X-X')^2[1+a(X+X')]\}>0
+ \quad(0<a<1/2).
+\]
+Comparison to Haar yields
+\(D\ge3a(1-2a)e^{-24|\kappa|}/128\); \(a=1/4\) and \(e^3<21\)
+give the stated rational floor.
+
+These inverses identify only their declared finite family. At Haar,
+\(p_3=x^3-3x/8=C_3^{(2)}(x)/32\) is invisible to both rates.
+Adding \(h=x^2+x^3\) identifies \(m=1+\zeta x+\xi p_3\) through
+\begin{equation}
+ \begin{pmatrix}r_x\\r_{x+x^2/4}\\r_{x^2+x^3}\end{pmatrix}
+ =
+ \begin{pmatrix}
+ 3/16&0&0\\25/128&1/32&0\\59/256&9/64&9/512
+ \end{pmatrix}
+ \begin{pmatrix}c\\c\zeta\\c\xi\end{pmatrix},
+ \qquad \det M=27/262144.
+ \qquad\text{\workstar}
+ \label{eq:middle-rates}
+\end{equation}
+The box \(|\zeta|,|\xi|\le1/4\) guarantees \(m\ge13/32\), hence
+gap at least \(13c/192\) on the stated \(\kappa\) range.
+The Gegenbauer polynomial itself is classical
+\cite{nistDLMFGegenbauer}; its blind and detecting roles here are the
+project calculation.
+
+More generally \(N\) initial rates impose \(N\) linear conditions on
+a polynomial with \(N+1\) coefficients. A nonzero null polynomial,
+normalized by its coefficient absolute sum, has sup norm at most one.
+It gives a whole positive interval of distinct mobilities with identical
+rates at fixed density and \(c\). The explicit
+\(p_5=x^5-5x^3/6+x/8=C_5^{(2)}(x)/192\) preserves all three rates above,
+but changes the \(x\)-correlation curvature to
+\[
+ C_x''(0+)=\frac{c^2}{\hbar^2}
+          \left(\frac9{64}+\frac{\epsilon^2}{1024}\right)
+ \quad\text{for }m=1+\epsilon p_5.
+ \qquad\text{\workstar}
+\]
+Thus the obstruction concerns finitely many initial slopes, not complete
+time curves. No physical rates were measured; the inversions were tested
+on synthetic exact inputs. Sources:
+\repo{research/round20/forward/f2/report.md},
+\repo{research/round21/forward/k2/report.md},
+\repo{research/round21/forward/l1/report.md},
+\repo{research/round21/forward/l2/report.md}.
+
+\subsection{A failed section and a valid maximal-tree map \workstar}
+\label{sec:middle-tree}
+
+Round22 tested physical matching on the actual 18-vertex, 33-link graph
+at zero magnetic coupling. Fixing thirty links to identity leaves the
+old \(U,V,W\) coordinates, but fixes thirteen genuine cycles in addition
+to tree gauge variables. It is not a Hilbert-space reduction.
+If \(Q_0\) is a face fixed to identity, then
+\(f_n=\chi_n(Q_0)/(n+1)\) satisfies
+\(\norm{f_n}_2=1/(n+1)\to0\), whereas its section equals one.
+The restriction is nonclosable. Three edge-disjoint such faces give an
+analogous sequence converging even in the electric graph norm.
+Moreover \(H_E x_0=3\alpha x_0\) before restriction, but the conditional
+generator annihilates its constant image. A scalar clock cannot repair
+this core defect.
+
+A designated slope fit for a physical square that restricts to \(x\)
+gives \(c=4\alpha\). A held-out square restricting to
+\(w=\Tr(UV^\dagger)/2\) has physical correlation
+\(e^{-3\alpha t/\hbar}/4\), while the fitted conditional prediction is
+\(e^{-6\alpha t/\hbar}/4\). The disagreement is strict at every
+finite positive time.
+
+The repair uses a genuine maximal tree
+\(T=\{0,\ldots,15,26\}\), root \((0,2,0)\), and all sixteen chord
+holonomies \(L_e=h_{s(e)}g_eh_{t(e)}^{-1}\).
+At fixed tree variables, left/right Haar invariance gives product Haar
+on the chords. Gauge-invariant functions become simultaneous-conjugation
+invariants on these sixteen variables, yielding a unitary \(J_{16}\).
+The three-chord isometry \(J_3\) embeds functions of \(L_{28},L_{27},L_{24}\);
+its adjoint integrates the other thirteen chords, rather than evaluating
+them at identity. These are the standard maximal-tree principles
+\cite{burbano2024gauge}, here realized on the complete signed graph.
+
+Every tree derivative must also be transported. If cutting tree edge \(q\)
+leaves subtree \(S_q\), the induced vector field is
+\[
+ D_{q,a}=\epsilon_q\left(
+ \sum_{s(e)\in S_q}\ell_{e,a}
+ -\sum_{t(e)\in S_q}\rho_{e,a}\right).
+\]
+Both endpoint occurrences remain when a chord lies inside \(S_q\).
+The full generator is
+\(-\alpha\sum_a(\sum_e\ell_{e,a}^2+\sum_qD_{q,a}^2)\).
+Its quadratic form is a sum of squared gradients, bounded above and below
+by positive multiples of the product Casimir form. On finite
+Peter--Weyl blocks these comparisons give equivalence of \(H^1\) forms
+and \(H^2\) operator domains and identify the closed operators.
+On the selected three chords the exact reduction is
+\begin{equation}
+ H_{\rm eff}/\alpha=
+ 3C_U+3C_V+C_W+C^\ell_{VW}+C^\rho_{VW}
+                  +C^\ell_{UVW}+2C^\rho_{UVW}.
+ \qquad\text{\workstar}
+ \label{eq:middle-effective}
+\end{equation}
+Here \(C^\ell_A=-\sum_a(\sum_{j\in A}\ell_{j,a})^2\), and similarly
+on the right. The image reduces \(H_E\) because its orthogonal projector
+is Haar integration over unused original chord links and commutes with
+each link heat semigroup. This proves exact electric semigroup
+intertwining, not merely a formal compression.
+
+The new \(x,y,z\) observables complete to physical loops of lengths
+six, eight, six, respectively, so their electric energies are
+\((9/2)\alpha,6\alpha,(9/2)\alpha\).
+They are different completions from the old section's training square.
+The prescribed \(x\)-slope now gives \(c=6\alpha\); its reserved
+curvature forces \(\zeta=0\). The held-out \(y\)-curve still differs:
+the physical exponent is \(6\alpha\), the conditional one \(9\alpha/2\).
+Thus exact Haar reduction succeeds while matching to the scalar-clock
+affine-mobility family fails. Sources:
+\repo{research/round22/reverse/p1/report.md},
+\repo{research/round22/reverse/p2/report.md}.
+
+\subsection{Magnetic leakage, projected memory, and exact channels \workstar}
+\label{sec:middle-memory}
+
+Keep this tree and add all twenty magnetic faces:
+\(H_\lambda=H_E+\alpha\lambda V\), \(V=\sum_{p=0}^{19}(1-x_p)\),
+\(\lambda\ge0\). This \(\lambda\) is dimensionless, unlike the physical
+\(\lambda_p\) used earlier. With \(P=J_3J_3^*\), only one face survives
+conditional averaging, so \(J_3^*VJ_3=20-\Tr(VW^\dagger)/2\).
+Three other faces share the same omitted chord. Their nonzero conditional
+cross moments give
+\begin{equation}
+ \begin{gathered}
+ B_\lambda^*B_\lambda=(\alpha\lambda)^2M_d,\qquad
+ B_\lambda=QH_\lambda J_3,\\
+ d=\tfrac{19}{4}+\tfrac12(r+x+z)
+   =4+\tfrac14\norm{u+w+e_0}^2\in[4,25/4].
+ \end{gathered}
+ \qquad\text{\workstar}
+ \label{eq:middle-leakage}
+\end{equation}
+Here \(r=\Tr(UW^\dagger)/2\), and \(u,w\) are unit quaternions.
+Hence every nonzero selected vector leaks at nonzero \(\lambda\);
+\(\norm{B_\lambda}=5\alpha\lambda/2\).
+Replacing \(d\) by its mean \(19/4\) loses the correlated face terms.
+Also \(H_\lambda1\) is nonconstant, with centered squared residual
+\(5(\alpha\lambda)^2\); the Haar reference is not an interacting ground.
+
+Set \(A_\lambda=J_3^*H_\lambda J_3\) and
+\(T_\lambda(t)=J_3^*e^{-tH_\lambda/\hbar}J_3\).
+Two bounded off-diagonal Duhamel insertions prove
+\[
+ \norm{T_\lambda(t)-e^{-tA_\lambda/\hbar}}
+ \le\min\{1,\tfrac{25}{8}(\alpha\lambda t/\hbar)^2\}.
+ \qquad\text{\workstar}
+\]
+The scaled difference tends strongly to \(M_d/2\) as \(t\downarrow0\);
+this is not an operator-norm Taylor expansion. It already disproves
+autonomy of the selected compression.
+
+The complement has the exact electric lower bound \(3\alpha\), by the
+physical girth argument and an omitted square attaining it. Thus
+\(C_\lambda=QH_\lambda Q\ge3\alpha\). Eliminating the complementary
+component gives the exact memory and resolvent relations
+\[
+ \hbar u'=-A_\lambda u+\hbar^{-1}
+       \int_0^tK_\lambda(t-s)u(s)\,ds,\quad
+ K_\lambda(s)=B_\lambda^*e^{-sC_\lambda/\hbar}B_\lambda,
+\]
+\[
+ J_3^*(H_\lambda+z)^{-1}J_3
+ =[A_\lambda+z-\Sigma_\lambda(z)]^{-1},\qquad
+ \Sigma_\lambda(z)=B_\lambda^*(C_\lambda+z)^{-1}B_\lambda,\quad z>0.
+\]
+The full return \(u(s)\) remains inside the memory integral.
+These block identities are established methods; the actual channel
+content and quantified errors are the project contribution.
+
+For the two orthonormal channels \(1,2x\), the leading kernel
+\((\alpha\lambda)^2B_1^*e^{-sC_0/\hbar}B_1\) has seven exact electric
+energies. The \(11\) weights at energies
+\(3,9/2,6,15/2,8,17/2,9\), in units of \(\alpha\), are
+\[
+ (1/8,\ 1/8,\ 3/8,\ 9/4,\ 9/8,\ 3/8,\ 3/8).
+ \qquad\text{\workstar}
+\]
+The \(00\) weight is \(19/4\) at energy three, and the off-diagonal
+weight is \(1/4\) at that same energy. To derive the table, intersect
+each face with the actual six-link \(x\) loop. A shared consecutive
+path of length \(m>0\) has spin-zero and spin-one components of squared
+norms \(1/16,3/16\), with energies
+\(3(10-2m)/4\) and that number plus \(2m\). Nine faces have disjoint
+edge support; the other counts for \(m=1,2,3\) are six, two, two.
+This is an exact finite spectral orbit in the full Hilbert space,
+not a representation cutoff.
+
+Since \(\norm V\le40\), bounded Duhamel and the resolvent identity give
+full selected-space errors
+\begin{equation}
+ \begin{split}
+ \norm{K_\lambda(s)-K_\lambda^{(2)}(s)}
+ &\le250\alpha^3\lambda^3(s/\hbar)e^{-3\alpha s/\hbar},\\
+ \norm{\Sigma_\lambda(z)-\Sigma_\lambda^{(2)}(z)}
+ &\le\frac{250\alpha^3\lambda^3}{(3\alpha+z)^2}.
+ \end{split}
+ \qquad\text{\workstar}
+ \label{eq:middle-memory-errors}
+\end{equation}
+These are uniform absolute kernel bounds in delay and uniform
+complementary self-energy bounds down to \(z=0\). They do not give uniform
+relative late-time accuracy or a bounded full resolvent at zero.
+Sources: \repo{research/round22/reverse/q1/report.md},
+\repo{research/round22/reverse/q2/report.md}.
+
+\section{Homogeneous stability: explicit progress and retained obstructions}
+\label{sec:middle-homogeneous}
+
+\subsection{A matched theorem dictionary and a controlled rotation \workstar}
+\label{sec:middle-rotation}
+
+The qualitative homogeneous stability route is independent of the summable
+construction. Yarotsky's product-vacuum theorem permits unbounded onsite
+operators and infinite-dimensional site spaces, but its range-dependent
+constants remain unevaluated \cite{yarotsky2004quasiparticles}.
+The Round13 outgoing-link blocking gives normalized perturbation
+\(\epsilon\le(4/3)\binom d2\lambda_{\max}/\alpha\).
+Boundary padding handles all-contained plaquettes; it does not silently
+identify every thermodynamic boundary limit. A sufficiently small,
+existential magnetic/electric ratio gives a fixed-spacing gap at least
+\(3\alpha/8\). A qubit, two-site algorithmic theorem cannot supply its
+missing constants \cite{bravyi2008polynomial}.
+
+The dressed-strip reference admits a sharper dictionary. Each coarse tail
+cell contains 24 links: ten strip links and fourteen free links.
+There are 24 anchored faces, of which three are selected and 21 omitted.
+Their full grouped support is
+\(G=\{0,e_x,e_y,e_z\}\). In energy unit \(\delta=\alpha/8\),
+\[
+ h_b\ge1-P_b,\qquad
+ \phi_b=-\frac{\tau}{3}\sum_{f\in O_b}x_f,\qquad
+ \norm{\phi_b}=7|\tau|.
+ \qquad\text{\workstar}
+\]
+All 21 omitted faces cross a coarse block boundary. Ignoring crossing
+faces would erase the entire homogeneous perturbation.
+The matched source theorem gives an existential interval
+\[
+ |\tau|<\tfrac17\min\{c_1(G),[2c_2(G)]^{-1}\},
+ \qquad \Delta>\alpha/16,
+\]
+including literal finite rectangles through clipped reference sites and
+padding. No numerical value of \(\tau\), including \(1/64\), is thereby
+certified.
+
+The full magnetic interaction is not purely form-bounded relative to
+the undressed vacuum energy. On an actual square,
+\(\psi_t=(1+t\chi_p)/\sqrt{1+t^2}\) has electric energy
+\(3\alpha t^2/(1+t^2)\) and magnetic expectation
+\(-\lambda t/(1+t^2)\); their absolute ratio diverges as \(t\to0\).
+The diagonal compression alone does obey the incidence bound
+\(|\langle W_{\rm diag}\rangle|\le
+(16\lambda_{\max}/3\alpha)\langle H_0\rangle\).
+The missing off-diagonal term cannot be discarded.
+
+On one four-site star, conditional Haar orthogonality gives
+\(\norm{\phi\Omega}^2=7\tau^2/12\).
+Let \(v=\phi\Omega\), \(u=(H_0|_Q)^{-1}v\), and
+\(S=|u\rangle\langle\Omega|-|\Omega\rangle\langle u|\).
+Then \([S,H_0]=-(|v\rangle\langle\Omega|+\mathrm{adjoint})\).
+The finite-rank range lies in \(D(H_0)\); the exponential preserves that
+domain. Integrating the bounded commutator gives the exact identity
+\[
+ e^S(H_0+\phi)e^{-S}=H_0+Q\phi Q+R,\qquad
+ \norm R\le(707/60)\tau^2.
+ \qquad\text{\workstar}
+\]
+This instantiates a standard unitary dressing method with the actual
+local variance. The remainder is part of the Hamiltonian.
+
+For simultaneous finite-volume rotations, every nonzero ordered
+commutator word adds a star meeting the previous union.
+\(|G-G|=13\), so there are at most \(13^nn!\) relative words of order
+\(n\), each supported on at most \(4+3n\) sites. Rooting at a fixed site
+adds a factor at most \(4+3n\).
+In the interaction norm
+\(\norm\Phi_w=\sup_x\sum_{Y\ni x}2^{|Y|}\norm{\Phi_Y}\),
+this yields a convergent all-order remainder majorant.
+The admitted common certificate is
+\begin{equation}
+ \norm R_w\le\frac{25460736}{25}\tau^2,\qquad
+ |\tau|\le5/1664,\qquad
+ |\langle D\rangle|\le28|\tau|\langle H_0\rangle.
+ \qquad\text{\workstar}
+ \label{eq:middle-global-rotation}
+\end{equation}
+The reverse derivation separately obtained the smaller valid constant
+\(1970176/5\); it is not substituted into the subsequently frozen common
+recurrence. Neither constant is a homogeneous gap threshold.
+
+\subsection{Generated supports, interacting inverses, and the remaining source \workstar}
+\label{sec:middle-inverse}
+
+For a residual term on an arbitrary generated support \(Y\), split
+\[
+ R_Y=c_YI+A_Y+Z_Y,\quad
+ A_Y=|Q_YR_Y\Omega_Y\rangle\langle\Omega_Y|+\mathrm{adjoint},
+ \quad Z_Y=Q_Y(R_Y-c_YI)Q_Y .
+\]
+The subtraction inside \(Z_Y\) is necessary when the scalar is \(c_YI\).
+The bare homological inverse has norm at most one, and the resulting
+diagonal update is bounded by \(2\norm{R_Y}\).
+For exponential cardinality weight \(\mu\), an explicit root/intersection
+sum gives
+\[
+ \norm{[\Phi,\Psi]}_{\mu-\ell}
+ \le\frac4{e\ell}\norm\Phi_\mu\norm\Psi_\mu,\qquad \ell>0.
+\]
+Spending \(\ell/n\) per nested commutator and
+\(n!\ge(n/e)^n\) bounds the factorial-divided order by
+\((4\norm S_\mu/\ell)^n\norm K_\mu\).
+If \(r>0\) bounds the residual, \(b\ge0\) bounds the retained diagonal
+interaction, and \(\ell>4r\), the reverse majorant is
+\begin{equation}
+ \begin{gathered}
+ r'\le\mathcal F(r,b;\ell):=
+       \frac{4r}{\ell-4r}(b+3r/2),\qquad b'\le b+2r,\\
+ \mathcal F(r,b;\ell)<r\ \Longleftrightarrow\ \ell>4b+10r .
+ \end{gathered}
+ \qquad\text{\workstar}
+ \label{eq:middle-recurrence}
+\end{equation}
+The equivalence refers to the displayed scalar majorant, not the actual
+residual; \(r=0\) is the separate exact zero-residual case. Any finite
+total loss has \(\ell_n\to0\), while this majorant
+retains \(b_n\ge448|\tau|>0\). Its positive scalar trajectory eventually
+leaves its convergence radius. This proves failure of that certificate,
+not of the true rotation algorithm or the physical gap.
+
+An equal-weight commutator counterexample also needs its exact support
+convention. In the reverse structured example, regrouping to the actual
+support gives the special homological value \(1/64\); retaining indexed
+unions instead gives \((9N+16)/(64(3N+1))\).
+The post-freeze gate explicitly records this distinction. It is not
+legitimate to improve an interaction norm by silently changing its
+decomposition.
+
+Round22 then replaced the bare inverse by the actual \emph{initial}
+diagonal operator. For finite \(Y\), let
+\(G_Y=H_Y+\sum_{b+G\subset Y}Q_b\phi_bQ_b\).
+Four-star incidence gives, with \(a=28|\tau|<1\),
+\[
+ (1-a)H_Y\le G_Y\le(1+a)H_Y,\qquad
+ \norm{(G_Y|_{Q_Y})^{-1}}\le(1-a)^{-1}.
+\]
+The inverse maps into \(D(H_Y)\), so its rank-two skew generator has a
+valid domain-preserving exponential. Interior cancellation is exact,
+but on the full finite volume
+\[
+ [S_Y,H_0+D]+A_Y
+ =\sum_{\substack{b+G\cap Y\ne\varnothing\\b+G\not\subset Y}}
+                          [S_Y,D_b].
+\]
+For the admitted actual \(SU(2)\) diagnostic source consisting of a free
+link character at the origin, the squared boundary residual on the
+product vacuum is exactly
+\begin{equation}
+ \norm{([S_Y,H_0+D]+A_Y)\Omega}^2=7\tau^2/432.
+ \qquad\text{\workstar}
+ \label{eq:middle-boundary}
+\end{equation}
+All 21 face contributions and their vanishing distinct-face cross
+moments are retained. This source is admissible but is not asserted to
+be an actually generated term of the earlier rotation.
+
+Finally, the infinite initial diagonal is constructed as a relative form
+sum on the same incomplete product. Let
+\(K=H_0^{-1/2}DH_0^{-1/2}\) on \(Q_\Omega\);
+\(\norm K\le a<1\). For a vacuum-exterior source \(v\perp\Omega\),
+\begin{equation}
+ u=H_0^{-1/2}(I+K)^{-1}H_0^{-1/2}v
+   =\sum_{n\ge0}H_0^{-1/2}(-K)^nH_0^{-1/2}v .
+ \qquad\text{\workstar}
+ \label{eq:middle-neumann}
+\end{equation}
+The form equation proves \(Gu=v\).
+Each coefficient lies in the \(n\)-collar \(Y^{(n)}\) with norm at most
+\(\norm v\,a^n\); direct finite-support action also gives an
+\(H_0\)-graph bound
+\(\norm{H_0u_n}\le\norm v\,|Y|(2n-1)^3a^n\) for \(n\ge1\).
+Polynomially weighted geometric tails prove Hilbert, half-energy,
+\(H_0\)-graph and \(G\)-graph convergence, including explicit
+finite-volume collar errors. This response regularity does not prove
+global equality \(D(G)=D(H_0)\).
+
+The exact global vacuum rank-two source is \(A_Y\otimes P_{\rm ext}\).
+Against the desired local source \(A_Y\otimes I\), the remaining operator
+is \(A_Y\otimes Q_{\rm ext}\), of norm one on the specified exterior
+character test. Moreover, the prescribed collar interaction certificate
+\(\sum_n e^{\mu(n+1)^3}a^n\) diverges for every fixed \(\mu>0\),
+\(0<a<1\), although the unweighted response converges.
+Thus full local-source cancellation and a useful weighted decomposition
+remain missing. These are the precise next requirements for an all-stage
+homogeneous stability proof; the later diagonal updates are not covered
+by the initial inverse.
+
+The domain and inverse comparisons use established form and
+Lie--Schwinger methods \cite{teschl2014methods,delvecchio2021unbounded}.
+Their complete source inductions and numerical stability thresholds
+were not imported. Sources:
+\repo{research/round21/forward/i1/report.md},
+\repo{research/round21/forward/i2/report.md},
+\repo{research/round22/advisor/o1-gate.json},
+\repo{research/round22/advisor/o2-gate.json},
+\repo{research/round22/reverse/r1/report.md},
+\repo{research/round22/reverse/r2/report.md}.

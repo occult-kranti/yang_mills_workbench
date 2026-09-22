@@ -1,0 +1,744 @@
+% Historical synthesis, initial Einstein--QED record through Round 12.
+% Owned by the early-history researcher.  No accepted repository files modified.
+\section{From semiclassical backreaction to a controlled finite gauge theory}
+\label{early:section}
+
+The early program asked how a quantum current, electromagnetic backreaction,
+and gravitational constraints could be calculated consistently.  The surviving
+record begins with Round 3.  It contains imported prescribed-background results
+and descriptions of earlier research fronts, but no independently identifiable
+Round 1 or Round 2 package.  We therefore do not reconstruct their missing
+contracts or assign them new results.  The present section accounts for all
+31 named studies in Rounds 3--12, using the Round 25 history inventory and the
+underlying mathematical reports.  These studies precede the explicit paired
+loop contracts introduced later.  Here \workstar\ marks a contribution to this
+workbench, including an implementation or an independently derived obstruction;
+it does not establish priority over the mathematical literature.
+
+\subsection{The original closure problem and its finite electromagnetic realization}
+\label{early:qed}
+
+\paragraph{Initial scope.}
+The organizing Einstein--QED action contained Einstein gravity, Maxwell and
+Dirac terms, possible scalar-dependent coefficients, and curvature counterterms.
+After integrating out the electron, the intended causal object was a
+closed-time-path functional
+\(\Gamma[g_+,A_+;g_-,A_-;\rho_0]\).  Varying one branch before identifying the
+branches defines state-dependent current and stress.  This is a specification
+of a problem, not its solution.  A local vacuum-persistence rate is not a causal
+current; an Euler--Heisenberg expansion cannot be added independently to the
+same full electron determinant.  The four contextual fronts---charged de Sitter
+discharge, magnetized pair creation, Cauchy-horizon dynamics, and field mixing---
+have different geometries and boundary data.  No theorem identifies their
+solutions.  Sources: \repo{evidence/qeg-research/round3/chapters/01_master_action.md}
+and \repo{evidence/qeg-research/round3/chapters/02_fronts.md}.
+
+\paragraph{Matched finite Maxwell--Dirac closure \workstar.}
+Self-consistent field/mode initial-value formulations and adiabatic
+regularization have established precedents \cite{kluger1993pair}.
+The executable reduction fixes a flat homogeneous geometry, a static magnetic
+field, finitely many Landau levels, and a finite positive momentum quadrature.
+This early reduction uses Heaviside--Lorentz natural units, $c=\hbar=1$;
+later gauge-graph comparisons restore their explicitly stated physical scales.
+With \(s=mt\), \(a=eA_z/m\), \(x=eE/m^2\), and \(b=|eB|/m^2\), set
+\(p_i=k_i-a\), \(M_i^2=1+2bn_i\), \(\omega_i^2=M_i^2+p_i^2\), and
+\(h_i=(M_i,0,p_i)\).  The positive weights are
+\(w_i=b(2-\delta_{n_i0})w_{k_i}/(4\pi^2)\).  A prime in this subsection means
+\(\dd/\dd s\).  Bloch evolution and three finite sums are
+\begin{align}
+ a'&=-x,& r_i'&=2h_i\times r_i,\notag\\
+ S&=\sum_iw_i(r_{iz}+p_i/\omega_i),&
+ C&=\sum_i\frac{w_iM_i^2}{4\omega_i^5},&
+ D&=\sum_i\frac{5w_iM_i^2p_i}{8\omega_i^7}.
+ \label{early:bloch}
+\end{align}
+The fixed magnetic matching coefficient and divided field equation are
+\begin{align}
+ \chi_b&=\frac{e^2}{12\pi^2}
+ \left[b-\log(2b)-\psi\left(1+\frac1{2b}\right)\right],\notag\\
+ Z&=1+\chi_b-e^2C,& Zx'&=F-e^2(S+Dx^2).
+ \qquad\text{\workstar}\label{early:matched}
+\end{align}
+The susceptibility comparison uses the constant-field, second-order
+electric-probe and all-orders magnetic-field setting of
+\cite{mages2010euler}; the evolving current is obtained from the retained modes.
+Here \(F\) is the prescribed source.  The mode subtraction is
+\(c_i=M_i^2x'/(4\omega_i^5)-5M_i^2p_ix^2/(8\omega_i^7)\), with matching
+restored once.  It follows by solving
+\(2h_i\times r_i^{(2)}=(r_i^{(1)})'\), with
+\(r_i^{(1)}=(0,-M_ix/(2\omega_i^3),0)\), and fixing the longitudinal
+component by \(|r_i|=1\); the companion energy subtraction
+\(M_i^2x^2/(8\omega_i^5)\) differentiates to \(xc_i\).
+The finite matching is the difference between the full-momentum magnetic
+Landau sum and the zero-field coefficient
+\(e^2\log(1+2bN)/(12\pi^2)\), followed by \(N\to\infty\).
+In particular \(S+Dx^2\) is a numerator, whereas the full
+renormalized matter current in these conventions is
+\(J=S-Cx'+Dx^2+(\chi_b/e^2)x'\).  Confusing the two changes the response.
+
+Define \(U=\sum_iw_i(h_i\cdot r_i+\omega_i)\).  Direct differentiation uses
+\(p_i'=x\), \(h_i\cdot(h_i\times r_i)=0\), and
+\(C'=-2Dx\) to give \(U'=xS\), \(Z'=2e^2Dx\), and therefore
+\begin{equation}
+ W=\tfrac12 Zx^2+e^2U,
+ \qquad W'=xF.\qquad\text{\workstar}
+ \label{early:work}
+\end{equation}
+This is an exact finite-model identity, not a continuum error estimate.
+For physical \(|r_i|\le1\), \(U\ge0\).  If \(Z(a)\ge z_*>0\) for all
+\(a\), then \(W\ge z_*x^2/2\) and, by applying the differential inequality
+first to \(\sqrt{W+\varepsilon}\) and then letting \(\varepsilon\downarrow0\),
+\begin{equation}
+ \sqrt{W(s)}\le\sqrt{W(0)}+
+ \frac{1}{\sqrt{2z_*}}\int_0^s|F(u)|\,\dd u.
+ \label{early:existence}
+\end{equation}
+The spins remain in compact balls, \(x\) is bounded on each finite interval,
+and \(a=a_0-\int x\) cannot diverge there.  Local Lipschitz continuity of the
+finite vector field proves global classical continuation for continuous
+drives, as assumed in the historical theorem.  An initially mixed
+mode satisfying \(|r_j|\le1-\delta\) also gives
+\(U\ge w_j\delta|k_j-a|\), hence bounds \(a\) for an integrable drive.
+That additional premise does not hold for every pure-vacuum production run.
+
+The historical source-off calculation reached \(x(50)\simeq-0.03757\) with
+4096 momentum nodes, Landau levels 0--8, and window \(K=40\).  The recorded
+2048-to-4096 history difference \(3.26\times10^{-9}\) and separate Landau
+endpoint difference \(5.06\times10^{-8}\) are refinement diagnostics.
+The advisor's \(10^{-18}\) absolute benchmark failed at approximately
+\(1.82\times10^{-18}\); it remains failed.  Independent spinor/Bloch and
+matching controls established a further methodological point: a consistently
+wrong prescription may conserve its own energy.  The separate massless
+lowest-Landau-level comparator obeys
+\(x''+\Omega_B^2x=F'\), \(\Omega_B^2=e^2b/(2\pi^2)\), in its own declared
+scaling; it is not obtained by dividing the massive variables by zero.
+Sources: \repo{evidence/qeg-research/round3/theory.md},
+\repo{evidence/qeg-research/round3/README.md}, and
+\repo{evidence/qeg-research/round5/theorem_advisor.md}.
+
+For the weak probe about a stationary vacuum, eliminating the transverse
+components of the linearized Bloch equation supplies the oscillator denominator
+\(4\omega_i^2-(\nu+i0)^2\).  The same zero-frequency subtraction gives
+\begin{equation}
+ \chi(b,\nu)=\chi_b+e^2\sum_i\frac{w_iM_i^2}{\omega_i^3}
+ \left[\frac1{4\omega_i^2-(\nu+i0)^2}-\frac1{4\omega_i^2}\right].
+ \qquad\text{\workstar}\label{early:weakresponse}
+\end{equation}
+This tests matching independently of the nonlinear work identity.
+In an instantaneous eigenbasis, the mode current also contains a coherence:
+\(r_{iz}+p_i/\omega_i=2p_if_i/\omega_i-M_iv_i^{\rm coh}/\omega_i\).
+Retaining the occupation \(f_i\) alone cannot reproduce that current.
+
+\paragraph{Causal tangent and the quantity a stability theorem controls \workstar.}
+Let \(v=\delta a\), \(u=\delta x\), \(q_i=-v\), \(\eta_i=\delta r_i\),
+and \(f=\delta F\), with grid and matching held fixed.  Differentiation gives
+\begin{align}
+ \delta S&=\sum_iw_i(\eta_{iz}+M_i^2q_i/\omega_i^3),\notag\\
+ \delta C&=-\sum_i\frac{5w_iM_i^2p_iq_i}{4\omega_i^7},&
+ \delta D&=\sum_i\frac{5w_iM_i^2(M_i^2-6p_i^2)q_i}{8\omega_i^9},\notag\\
+ v'&=-u,&
+ u'&=\frac{f-e^2(\delta S+\delta D x^2+2Dxu)+e^2\delta Cx'}{Z},\notag\\
+ \eta_i'&=2h_i\times\eta_i+2q_i e_z\times r_i.
+ \qquad\text{\workstar}\label{early:tangent}
+\end{align}
+The fundamental-matrix integral gives causal support and finite-time
+Gronwall bounds.  The first variation \(\delta W\), satisfying
+\((\delta W)'=uF+xf\), is signed and cannot be used as a positive norm.
+At a stationary pure vacuum, restrict to variations preserving the Bloch
+norm, so \(h_i\cdot\eta_i=0\), and define
+\(t_i=\partial_{p_i}(h_i/\omega_i)\) and
+\(\xi_i=\eta_i+q_it_i\).  Then
+\(Z_0u'=f-e^2\sum_iw_i\xi_{iz}\),
+\(\xi_i'=2h_i\times\xi_i+ut_i\), and
+\begin{equation}
+ E_2=Z_0u^2+e^2\sum_iw_i\omega_i|\xi_i|^2,
+ \qquad E_2'=2uf.\qquad\text{\workstar}
+ \label{early:secondvariation}
+\end{equation}
+Indeed \(h_i\cdot\xi_i=0\) and \(\omega_i\xi_i\cdot t_i=\xi_{iz}\)
+cancel the exchange terms.  This controls \(u,\xi\), not every raw tangent.
+For one mode with \(M=w=e^2=1\), \(p_0=0\), and \(Z_0=3/4\),
+\(u=1\), \(v=-s\), \(\xi=(0,-1/2,0)\),
+\(\eta=(0,-1/2,-s)\) solve the unforced tangent while \(E_2=1\).
+The secular raw tangent defeats a stronger stability claim.  Rounds 4 and 6
+also retained source-center and acceptance repairs rather than overwriting
+earlier failures.  Sources: \repo{evidence/qeg-research/round4/response_contract.md}
+and \repo{evidence/qeg-research/round6/extensions.md}.
+
+\paragraph{Finite-window positivity and its cofinal obstruction \workstar.}
+For continuous momentum in \([-K,K]\), write
+\begin{align}
+ C_{N,K}(a)&=\frac{b}{16\pi^2}\sum_{n=0}^Nd_n
+ [P_{M_n}(K-a)+P_{M_n}(K+a)],\notag\\
+ P_M(y)&=\frac{u-u^3/3}{M^2},\qquad u=\frac{y}{\sqrt{M^2+y^2}}.
+ \qquad\text{\workstar}\label{early:window}
+\end{align}
+Since \(P_M'=M^2/(M^2+y^2)^{5/2}\) is even and decreases with \(|y|\),
+\(C\) is even and strictly decreases for \(a>0\).  Its maximum is at zero.
+This statement is about an integral: a two-node Gauss rule with nodes
+\(\pm K/\sqrt3\) has, at a node, a lowest-level contribution
+\(e^2C_{\rm disc}\ge\alpha_{\rm em}bK/(4\pi)\), which can exceed the
+continuous bound \(\alpha_{\rm em}b/(3\pi)\).
+Independently, at \(b=10,K=20\), positivity of every quadrature weight and
+exactness on constants, together with
+\(\alpha_{\rm em}=e^2/(4\pi)<1/137\), suffice for the rational estimate
+\begin{equation}
+ e^2C_{\rm disc}<\frac{67743204500}{274510827927}<\frac14,
+ \qquad Z>\frac34,
+ \qquad\text{\workstar}\label{early:rationalz}
+\end{equation}
+uniformly in every finite Landau cutoff.  The estimate uses mass bounds for
+the first levels and the integral majorant for the decreasing tail.
+It verifies a premise of \eqref{early:existence}, without certifying a trajectory.
+
+At infinite momentum window the integral is elementary:
+\begin{equation}
+ C_{N,\infty}=\frac{b}{12\pi^2}
+ \left(1+2\sum_{n=1}^N\frac1{1+2bn}\right),\qquad
+ Z_{N,\infty}=1-\frac{e^2}{12\pi^2}
+ \left[\log(2b)+\psi\left(N+1+\frac1{2b}\right)\right].
+ \qquad\text{\workstar}\label{early:cofinal}
+\end{equation}
+The latter tends to \(-\infty\).  Positivity makes \(C_{N,K}(0)\) increase
+in both cutoffs: choose a finite \(N\) exceeding any prescribed threshold,
+then a finite \(K\) approximating that integral.  Every cofinal cutoff path
+eventually exceeds both.  Thus unchanged matching cannot retain a positive
+uniform coefficient margin.  This obstructs this divided-coefficient proof
+route, not continuum QED or every renormalization prescription.  A per-run
+reference choice \(\chi_{N,K}=z_{\rm ref}-1+e^2C_{N,K}(0)\) yields
+\(Z=z_{\rm ref}+e^2[C(0)-C(a)]\ge z_{\rm ref}\) for the continuous window;
+it changes the matching and does not inherit that inequality for arbitrary
+quadrature.  A scalar contribution uniformly bounded over the permitted
+field domain cannot cancel the cofinal divergence at fixed \(a\), or uniformly
+bounded \(a\).  Sources: \repo{evidence/qeg-research/round6/extensions.md} and
+\repo{evidence/qeg-research/round7/renormalization_map.md}.
+
+The same estimates give the coefficient-only tail
+\(e^2\sup_a|C_{\infty,K}-C_{N,K}|\le
+\alpha_{\rm em}K/[\pi\sqrt{1+2bN}]\), provided previously retained
+quadratures are unchanged.  This does not bound omitted dynamical modes.
+Whenever a finite cutoff has \(Z(0)<0\), continuity and
+\(Z(a)\to1+\chi_b>0\) produce singular coefficient surfaces at opposite
+values of \(a\); no argument here proves that a physical trajectory reaches
+one.
+
+\subsection{What gravitational and scalar extensions actually add}
+\label{early:gravity}
+
+\paragraph{An anisotropic current--stress interface \workstar.}
+For \(ds^2=-dt^2+a_\perp^2(dx^2+dy^2)+a_\parallel^2dz^2\), define
+\(h=\dot a_\perp/a_\perp\), \(k=\dot a_\parallel/a_\parallel\), and
+\(\theta=2h+k\).  Maxwell evolution gives
+\(\dot E+2hE=-j\), \(\dot B+2hB=0\), with field stresses
+\((\rho,p_\perp,p_\parallel)_{\rm EM}=(u,u,-u)\),
+\(u=(E^2+B^2)/2\).  The spatial Einstein equations
+\(\dot h=(\Lambda-\kappa p_\parallel-3h^2)/2\) and
+\(\dot k=\Lambda-\kappa p_\perp-h^2-k^2-hk-\dot h\) imply, by differentiation,
+\begin{align}
+ C_g&=h^2+2hk-\kappa\rho-\Lambda,&
+ Q&=\dot\rho+2h(\rho+p_\perp)+k(\rho+p_\parallel),\notag\\
+ \dot C_g&=-\theta C_g-\kappa Q,&
+ C_g(t)&=\frac{V(0)C_g(0)-\kappa\int_0^tV(s)Q(s)\,\dd s}{V(t)},
+ \quad V=a_\perp^2a_\parallel.
+ \qquad\text{\workstar}\label{early:constraint}
+\end{align}
+The coefficient is \(-\theta\) for these off-constraint equations, not the
+\(-2\theta\) initially suggested in review.  Running \(\kappa,\Lambda\)
+adds \(-\dot\kappa\rho-\dot\Lambda\).  Moreover
+\(\dot(k-h)+\theta(k-h)=\kappa(p_\parallel-p_\perp)\).
+The replacement \((\delta p_\perp,\delta p_\parallel)=(kf,-2hf)\) leaves
+the energy equation unchanged but changes the shear source by
+\(-\kappa\theta f\).  Exact mean-energy conservation therefore cannot identify
+both pressures.
+
+At a fixed comoving regulator the rescaled Dirac modes have
+\(H_n=m\beta+P\alpha_z+c_n\alpha_x\),
+\(P=(k_z-qA_z)/a_\parallel\), \(c_n=\sqrt{2n|qB_0|}/a_\perp\).
+Writing \(\mathcal D=|qB_0|/(4\pi^2V)\) and \(\mathcal S[X]\) for the
+occupied-mode trace and sum, variations of this same Hamiltonian give
+\begin{equation}
+ (\rho_m,j,p_\parallel,p_\perp)=\mathcal D
+ \big(\mathcal S[H],q\mathcal S[\alpha_z],
+ \mathcal S[P\alpha_z],\tfrac12\mathcal S[c_n\alpha_x]\big).
+ \qquad\text{\workstar}\label{early:pressures}
+\end{equation}
+Using \(\dot{\mathcal D}=-\theta\mathcal D\),
+\(\dot P=qE-kP\), and \(\dot c_n=-hc_n\) proves
+\(\dot\rho_m+2h(\rho_m+p_\perp)+k(\rho_m+p_\parallel)=Ej\).
+The two occupied columns at \(n\ge1\) already include the spin multiplicity.
+A rotation of \(P\sigma_3+m\sigma_1-sc_n\sigma_2\) to real transverse mass
+adds the connection
+\(s(m\dot c_n-c_n\dot m)/[2(m^2+c_n^2)]\) to \(P\); omitting it explains
+why the naive effective-mass replacement fails in the imported expanding
+background comparator.  These are bare regulated quantities, not renormalized
+Einstein sources.
+
+A finite counterterm \(-c\int\sqrt{-g}F^2/4\) changes the current by
+\(c(\dot E+2hE)\) and the stress by \(c(u,u,-u)\); its Ward exchange cancels
+only when both are changed.  The classical Ohmic and later scalar-gravity
+fixtures test this interface with their own matter.  They do not compute a
+common covariant quantum current and directional stress.  The archived physical
+electron scale estimate \(\kappa\rho_{\rm EM}/m_e^2\simeq2.40\times10^{-39}\)
+at \(E/E_c=1,B/B_c=100\) also rules out interpreting the fixture's visibly
+large gravitational response as an electron-coupling prediction.  Sources:
+\repo{evidence/qeg-research/round3/gravity.md},
+\repo{evidence/qeg-research/round3/evidence/prior_curved_sector_results.json},
+and \repo{evidence/qeg-research/round5/research_bridge.md}.
+The locally covariant Dirac analysis \cite{zahn2014dirac} provides a
+renormalization framework with explicit background qualifications; its direct
+free stress-conservation discussion does not supply the strong-field
+Bianchi-I mode sums required here.
+
+Two retained logical controls distinguish conservation from validity.
+A random energy equal to \(\bar E/p\) with probability \(p\), and zero
+otherwise, has the same mean as the eigenvalue \(\bar E\) but variance
+\(\bar E^2(p^{-1}-1)\).  Mean stress alone therefore does not determine
+stress noise.  Also exact local evolution
+\(e^{-i\eta\sigma_x}\otimes e^{-i\eta\sigma_x}|00\rangle\) stays separable,
+whereas normalizing its first-order truncation gives
+\begin{equation}
+ \operatorname{Var}(E)=\bar E^2(p^{-1}-1),\qquad
+ \mathcal C_{\rm truncated}=\frac{2\eta^2}{1+2\eta^2},\qquad
+ \mathcal C_{\rm exact}=0.\qquad\text{\workstar}
+ \label{early:logicalcontrols}
+\end{equation}
+The latter apparent witness is at the discarded order.
+These project counterexamples \workstar\ do not diagnose gravitational
+breakdown or a physical entanglement experiment.  For the inherited
+Cauchy-horizon profile \(\phi\sim|V|^\beta\), integrating
+\(|\partial_V\phi|^2\sim|V|^{2\beta-2}\) gives the familiar threshold
+\(\beta>1/2\), with logarithmic divergence at equality; it is an energy
+regularity test, not a solved backreacted horizon.
+
+\paragraph{Action-derived scalar completion \workstar.}
+A dynamical coefficient requires its own equation and energy.  Round 7 chose
+\(f(\phi)=1+g^2\phi^2\), scalar kinetic energy \(y^2/2\), and
+\(V(\phi)=\nu^2\phi^2/2\), with \(y=\phi'\).  Variation of
+\(-f(\phi)F^2/4\), with the finite-mode current unchanged, gives
+\begin{align}
+ Zx'&=F-e^2(S+Dx^2)-f_\phi yx,&
+ y'&=-\nu^2\phi+\tfrac12f_\phi(x^2-b^2),\notag\\
+ \widetilde W&=\tfrac12Zx^2+e^2U+\tfrac12y^2+
+ \tfrac12(\nu^2+g^2b^2)\phi^2,&
+ \widetilde W'&=xF.
+ \qquad\text{\workstar}\label{early:scalar}
+\end{align}
+The scalar and field exchange terms cancel directly.  Since \(f\ge1\), the
+finite \(Z>3/4\) certificate is retained, and the same continuation argument
+applies; the uncoupled zero-frequency scalar is handled as an affine solution.
+By contrast, merely prescribing \(\chi(s)\) in the old equations produces the
+unaccounted power \(\chi'x^2/2\).  The separate classical Bianchi-I model
+with \(f=e^{2c\varphi}\) closes its own scalar/Maxwell exchanges.  It supplies
+no identification with quantum stress.  Renormalization-scale running,
+cutoff changes, and a dynamical scalar are different operations.  Sources:
+\repo{evidence/qeg-research/round7/research_report.md} and
+\repo{evidence/qeg-research/round7/renormalization_map.md}.
+
+\subsection{Spectral logic before a nonabelian calculation}
+\label{early:spectral}
+
+\paragraph{False plateaux and conditional spectral bridges \workstar.}
+The move to pure Yang--Mills changes the theory and its target
+\cite{jaffe_witten}.  Its useful
+inheritance is explicit control of assumptions, not an abelian mass-gap result.
+For a nonzero finite positive spectral measure supported on \([0,\infty)\),
+\(C(t)=\int e^{-Et}\,\dd\mu(E)\), let
+\(E_*=\inf\operatorname{supp}\mu\).  Then
+\(C(t+h)\le e^{-hE_*}C(t)\); logarithmic convexity follows from H\"older.
+Consequently the effective mass
+\(m_h(t)=h^{-1}\log[C(t)/C(t+h)]\) decreases to \(E_*\) from above.
+For \(t>0\), differentiating gives
+\begin{equation}
+ -\partial_t\log C=\langle E\rangle_t,
+ \qquad \partial_t\langle E\rangle_t=-\operatorname{Var}_t(E).
+ \label{early:effective}
+\end{equation}
+Positive measure in every \([E_*,E_*+\varepsilon]\) fixes the asymptotic
+exponential rate; convexity then fixes the secant limit.  Thus an early plateau
+near 1 in the executed \(e^{-t}+10^{-12}e^{-0.1t}\) example is not a lower
+bound on the threshold 0.1.  A lighter orthogonal channel may be invisible
+even at infinite time.  The periodic massless free-field diagnostic explicitly
+excluded its zero mode; its lowest nonzero momentum is not the full gap.
+
+Two standard spectral-theorem arguments were made explicit.  First, if
+\(H_n\to H\) strongly in resolvent on a common Hilbert space and all
+\(\operatorname{spec}(H_n)\cap(0,m)=\varnothing\) for the same \(m>0\),
+then compactly supported continuous \(f\) in that interval satisfies
+\(f(H)=\lim f(H_n)=0\).  Positive but nonuniform gaps are insufficient:
+\(H_ne_k=\max(1/n,1/k)e_k\), \(k\ge1\), and \(H_ne_0=0\), converge in
+norm to a gapless diagonal operator.  Second, if a reconstructed positive
+Hamiltonian already exists and centered states \(\psi_O\) span densely in
+\(\Omega^\perp\), a common bound
+\(\langle\psi_O,e^{-tH}\psi_O\rangle\le A_Oe^{-mt}\) at all sufficiently
+large times implies
+\begin{equation}
+ e^{-(m-\varepsilon)t}\norm{P_H([0,m-\varepsilon])\psi_O}^2
+ \le A_Oe^{-mt}\quad\Longrightarrow\quad
+ H|_{\Omega^\perp}\ge m.
+ \label{early:densebridge}
+\end{equation}
+Density removes every lower channel.  These known implications do not construct
+the continuum Hilbert space or supply the common physical rate.  The Round 5
+and Round 8 planners replay finite reviewed implication libraries; they are
+not proof-assistant kernels.  The Round 8 delayed-source refinement met its
+declared adjacent-grid working scale, while 21 symbolic checks were blocked
+by an unavailable dependency and remain unexecuted in that audit.  Sources:
+\repo{research/round8/spectral-proof.md},
+\repo{research/round8/advisor-dossier.md}, and \repo{research/round8/README.md}.
+
+\paragraph{Finite Haar hierarchy, and what a single identity cannot certify \workstar.}
+For the finite Wilson measure \(\dd\mu_W=Z^{-1}e^{-S_W}\dd H\) with
+\(S_W=\beta_W\sum_p(1-\Tr U_p/2)\), left Haar differentiation yields
+\(\langle L_af-fL_aS_W\rangle=0\).  Conversely, on a finite product of
+connected compact groups, if every smooth insertion satisfies every such
+identity under a probability measure \(\nu\), substitute \(f=e^S\varphi\).
+Then \(\int L_a\varphi\,e^S\dd\nu=0\).  Integrating the generated flows
+shows \(e^S\nu\) is translation invariant; uniqueness of Haar measure gives
+\(\nu=Z^{-1}e^{-S}H\), without assuming absolute continuity in advance.
+
+For an independent link and an unnormalized staple \(A\), write
+\(UA=a_0I+i\boldsymbol a\cdot\boldsymbol\sigma\).  The generator
+\(\exp(it\sigma_a/2)\) gives \(L_aS_W=\beta_Wa_a/2\) and
+\(L_a^2S_W=\beta_Wa_0/4\), hence
+\begin{equation}
+ \left\langle\beta_W^2|\boldsymbol a|^2-3\beta_Wa_0\right\rangle=0.
+ \label{early:ward}
+\end{equation}
+The staple is not a unit quaternion.  The identity assumes the varied link
+occurs once in each incident plaquette.  On one SU(2) variable the wrong law
+\((\delta_I+\delta_{-I})/2\) passes this residual exactly but gives
+\(\langle L_a(u_0u_a)-u_0u_aL_aS\rangle=1/2\).
+The complete hierarchy characterizes the law; one measured residual does not.
+The six finite four-dimensional lattice chains at \(\beta_W=0,0.5,2.2\)
+tested the declared nonabelian sampler and local identities.  The
+\(\beta_W=2.2\) autocorrelation evidence was insufficient.  No chain supplied
+a continuum gap.  Sources: \repo{research/round9/advisor/advisor.md} and
+\repo{research/round9/lattice/RESULTS.md}.
+
+\paragraph{An exact auxiliary transfer operator and the missing norm \workstar.}
+For central convolution by \(e^{\beta\cos\theta}/Z_\beta\) on full
+\(L^2(SU(2))\), the class Haar measure is
+\((2/\pi)\sin^2\theta\,\dd\theta\).  With \(n=2j+1\), character integration
+gives \(c_j=I_{n-1}-I_{n+1}=2nI_n/\beta\); Schur orthogonality divides by
+\(n\), yielding the complete spectrum
+\begin{equation}
+ r_j=\frac{I_{2j+1}(\beta)}{I_1(\beta)},\quad
+ \operatorname{mult}(r_j)=(2j+1)^2,\quad
+ \Delta=-a_t^{-1}\log\frac{I_2(\beta)}{I_1(\beta)}.
+ \label{early:convolution}
+\end{equation}
+For \(\beta>0\), the positive integral representation identifies
+\(I_{n+1}/I_n\) with a mean of \(t\in(-1,1)\) tilted by \(e^{\beta t}\);
+pairing \(t,-t\) proves this mean is strictly between zero and one.  The
+constant is the unique stationary state.  At fixed spin,
+\(-\log r_j=2j(j+1)/\beta+O(\beta^{-2})\).  If
+\(\beta a_t\to c>0\), dominated convergence of square-summable Peter--Weyl
+coefficients gives \(T_\beta^{\lfloor t/a_t\rfloor}\to e^{-2t\mathcal C/c}\)
+strongly, with rotor gap \(3/(2c)\).  Other choices of the clock produce zero
+or infinite limiting gaps.  Independent endpoint gauge invariance of an open
+link forces constants, so this rotor is not the interacting gauge transfer
+operator.  Negative \(\beta\) supplies a pointwise positive kernel with a
+negative fundamental eigenvalue, refuting positivity by inspection alone.
+
+An additional exact counterexample isolates an operator-norm error.  On
+\(N\) uniformly weighted atoms let \(B\) average the first two coordinates
+and fix the rest, \(\Pi\) average all coordinates, and
+\(v=(1,-1,0,\ldots)/\sqrt2\).  Set
+\(P_0=(1-c)B+c\Pi\), \(P_1=P_0+\delta vv^T\), with
+\(0<\delta<1-c<1\).  Both are symmetric positive Markov matrices with
+strictly positive entries, yet for their density kernels \(K_i=NP_i\),
+\begin{equation}
+ \norm{P_1-P_0}_{2\to2}=\delta,
+ \qquad \norm{K_1-K_0}_{L^1(H\otimes H)}=\frac{2\delta}{N}.
+ \qquad\text{\workstar}\label{early:normcounter}
+\end{equation}
+Thus product-space \(L^1\) control cannot replace uniform row and column
+control in Schur's test.  For actual positive contractions sharing a vacuum,
+\(\norm{T|_{\Omega^\perp}}\le e^{-ma}\) and
+\(\norm{S-T}\le\varepsilon_a\) imply the conditional gap
+\(-a^{-1}\log(e^{-ma}+\varepsilon_a)\), when its argument is below one.
+Telescoping gives \(\norm{S^n-T^n}\le n\varepsilon_a\); fixed-time convergence
+needs \(\varepsilon_a=o(a)\) by this route.  Sources:
+\repo{research/round9/transfer/PROOF.md} and
+\repo{research/round9/advisor/advisor.md}.
+
+\subsection{Gauge reduction, infinite representation tails, and certified dynamics}
+\label{early:gauge}
+
+\paragraph{One-square certification \workstar.}
+For an open four-link square, all vertex Gauss laws reduce the physical space
+to class functions on SU(2).  Assume \(\alpha>0\), \(\lambda\ge0\).
+The known character and radial reductions give
+\begin{equation}
+ H_{nm}=[\alpha n(n+2)+\lambda]\delta_{nm}
+ -\tfrac\lambda2(\delta_{n,m+1}+\delta_{n,m-1}),\quad n,m\ge0,
+ \label{early:jacobi}
+\end{equation}
+The four link Casimirs contribute \(4j(j+1)=n(n+2)\), while
+\(2x\chi_{n/2}=\chi_{(n+1)/2}+\chi_{(n-1)/2}\), with the negative-index
+character absent, fixes the off-diagonal factor.
+Equivalently, the Hamiltonian is
+\(-\alpha\partial_\theta^2-\alpha+\lambda(1-\cos\theta)\)
+on Dirichlet functions \(u=\sqrt{2/\pi}\sin\theta f\) on \((0,\pi)\).
+The Mathieu representation is established prior work \cite{bauer2023basis}; the workbench's
+contribution is the explicit certified error contract.  Compact resolvent
+and uniqueness for the second-order Dirichlet equation imply a simple ground
+state and a positive gap for fixed \(\alpha>0\).  Retain \(n<N\), let
+\(A=P_NHP_N\), \(\tau=\alpha N(N+2)\), and choose a certified
+\(\mu_1(A)<R<\tau\).  The sole cross-boundary entry is \(-\lambda/2\).
+Young's inequality and tail positivity give
+\begin{equation}
+ B=A-\frac{(\lambda/2)^2}{\tau-R}|N-1\rangle\langle N-1|,
+ \qquad \mu_k(B)\le E_k(H)\le\mu_k(A),\quad k=0,1.
+ \qquad\text{\workstar}\label{early:onetail}
+\end{equation}
+Exact rational Sturm inertia, including zero and endpoint policies, encloses
+these eigenvalues.  After dropping the scalar \(\lambda I\), bounded
+multiplication proves \(|\delta(\kappa)-\delta(\kappa')|\le2|\kappa-\kappa'|\)
+for \(\delta=\Delta/\alpha\), \(\kappa=\lambda/\alpha\).  A certified interval
+cover then gave \(\Delta\ge0.999999\alpha\) on \(0\le\kappa\le10\).
+Point samples alone would not prove this.  A two-dimensional trial space
+localized in \(0<\theta<w\) gives
+\(\Delta\le4\pi^2\alpha/w^2+\lambda w^2/2-\alpha\), hence
+\(\Delta\le2\sqrt2\pi\sqrt{\alpha\lambda}-\alpha\to0\) at fixed
+\(\lambda>0\) as \(\alpha\downarrow0\), with the chosen
+\(w=(8\pi^2\alpha/\lambda)^{1/4}\le\pi\) once
+\(\alpha/\lambda\le\pi^2/8\).  This path is not a matched
+continuum trajectory.  Source: \repo{research/round10/advisor/advisor.md}.
+
+\paragraph{The interacting two-square quotient and its complete electric spectrum \workstar.}
+The canonical Hamiltonian framework is established \cite{kogut1975hamiltonian}.
+The seven-link, six-vertex open graph has physical space
+\(L^2(SU(2)^2)^{\mathrm{Ad,diag}}\).  Tree gauge leaves loops \(U,V\) based
+at the shared vertex.  This planar spatial patch with continuous time is a
+finite \(2+1\)-dimensional regulator; increasing its polynomial cutoff neither
+adds spatial cells nor produces the four-dimensional target.
+The complete orbit coordinates are
+\(x=\Tr U/2\), \(y=\Tr V/2\), \(z=\Tr(UV)/2\), with
+\begin{equation}
+ \Omega=\{ |x|,|y|\le1:\;1-x^2-y^2-z^2+2xyz\ge0\},
+ \qquad\dd\mu=\frac2{\pi^2}\dd x\,\dd y\,\dd z.
+ \qquad\text{\workstar}\label{early:quotient}
+\end{equation}
+To derive it, write the SU(2) quaternions as \((x,\boldsymbol a)\) and
+\((y,\boldsymbol b)\).  The three traces fix their Gram matrix, and two
+vector pairs with that Gram matrix differ by a proper rotation.  The scalar
+marginals are semicircular and the relative angle has uniform cosine;
+the Jacobian to \(z=xy-\boldsymbol a\cdot\boldsymbol b\) cancels both square
+roots.  This proves the measure as well as orbit classification, including
+central pairs.  The pair \((x,y)\) alone loses the relative orientation.
+
+The shared derivative acts as \(L_U-R_V\), so the kinetic operator is
+\(K=3(C_U+C_V)-\sum_a(L_U^a-R_V^a)^2\), rather than two independent rotors.
+In trace coordinates,
+\begin{equation}
+ K=-\operatorname{div}(A\nabla),\quad
+ A=\begin{pmatrix}
+ 1-x^2&(z-xy)/4&3(y-xz)/4\\
+ (z-xy)/4&1-y^2&3(x-yz)/4\\
+ 3(y-xz)/4&3(x-yz)/4&3(1-z^2)/2
+ \end{pmatrix}.
+ \qquad\text{\workstar}\label{early:operator}
+\end{equation}
+Its domain is inherited from invariant \(H^2(SU(2)^2)\), equivalently the
+closure of the polynomial core, not Dirichlet data on the quotient boundary.
+The checks \(Kz=9z/2\) and \(K(xy)=13xy/2-z/2\) detect the shared link.
+For a monomial \(x^ay^bz^c\), its degree-preserving coefficient is
+\begin{equation}
+ \epsilon_{abc}=a^2+b^2+\tfrac32c^2+\tfrac12ab+
+ \tfrac32c(a+b)+2a+2b+3c,
+ \qquad m_d=\tfrac58d^2+2d+\tfrac38(d\bmod2).
+ \qquad\text{\workstar}\label{early:shell}
+\end{equation}
+All other terms lower degree.  Symmetry makes each orthogonal polynomial
+shell reduce \(K\); the diagonal quotient coefficients are its eigenvalues.
+Density of polynomials proves completeness.  Writing
+\(j=(a+c)/2,k=(b+c)/2,\ell=(a+b)/2\) gives
+\(\epsilon=3j(j+1)+3k(k+1)+\ell(\ell+1)\), independently identifying the
+spin-network spectrum.  Its low electric levels agree with the independent
+two-plaquette construction in \cite{froland2025two}; this is a comparison of
+those levels, not an identification of all intermediate gauge-fixed formulas.
+At fixed \(d=a+b+c\), the minimum has \(c=0\) and
+\(a,b\) as equal as possible, giving \(m_d\).  Thus a degree cutoff \(D\)
+has dimension \(\binom{D+3}{3}\) and exact omitted threshold \(m_{D+1}\).
+Sources: \repo{research/round10/skeptic/coordinate-note.md} and
+\repo{research/round11/advisor/advisor.md}.
+
+\paragraph{Interacting gap enclosures and the cost of a global bound \workstar.}
+For \(H=\alpha K+\lambda_1(1-x)+\lambda_2(1-y)\), with
+\(\alpha>0\), \(\lambda_1,\lambda_2\ge0\), bounded perturbation and
+positivity improvement on the connected compact group give compact resolvent
+and a unique positive physical ground state.  With \(P=P_D\),
+\(M=-\lambda_1x-\lambda_2y\), and \(\tau=\alpha m_{D+1}\), the exact
+boundary form is finite:
+\begin{equation}
+ \begin{aligned}
+ CC^*&=PM(P_{D+1}-P_D)MP,\qquad
+ B=PHP-\frac{CC^*}{\tau-R},\\
+ \mu_k(B)&\le E_k(H)\le\mu_k(PHP),\qquad k=0,1.
+ \qquad\text{\workstar}
+ \end{aligned}\label{early:twotail}
+\end{equation}
+Here \(\mu_1(PHP)<R<\tau\).  Multiplication raises degree by at most one;
+Young's inequality then proves the same form comparison as
+\eqref{early:onetail}.  In raw monomials, inertia must be computed for
+\(H_{\rm form}-rG\), using the Haar Gram matrix \(G\).  Its entries are exact:
+if \(\mu_{2r}=\mathrm{Catalan}(r)/4^r\), \(\mu_{2r+1}=0\), and
+\(J(n,h)=\sum_{q=0}^h(-1)^q\binom hq\mu_{n+2q}\), then
+\begin{equation}
+ \langle x^ay^bz^c\rangle=
+ \sum_{h=0}^{\lfloor c/2\rfloor}\frac{\binom c{2h}}{2h+1}
+ J(a+c-2h,h)J(b+c-2h,h).
+ \label{early:moments}
+\end{equation}
+This follows from the same relative-angle integration.  The gap is
+2-Lipschitz in the \(\ell^1\) distance of \((\lambda_1/\alpha,\lambda_2/\alpha)\).
+Exact cover certificates gave a floor exceeding \(0.96\alpha\) on
+\([0,2]^2\), with recorded lower endpoint \(0.963936567779819\alpha\).
+At \((\alpha,\lambda_1,\lambda_2,\rho)=(1,2,3,1)\), the recorded full-space
+gap interval was \([3.362386061099721,3.362408390681595]\).
+
+An analytic estimate exposed the volume issue before larger computation.
+The SU(2) heat kernel at Casimir time 4 lies between \(3/4\) and \(5/4\):
+its nonconstant character sum is bounded by
+\(4e^{-3}+\sum_{n\ge2}(2/25)^n<1/4\).
+For the two-square kinetic operator, time \(4/3\) therefore gives kernel
+bounds \(9/16,25/16\).  Feynman--Kac bounds a positive ground state's ratio
+by \((25/9)e^{8(\lambda_1+\lambda_2)/(3\alpha)}\).  The ground-state transform
+and free physical Poincar\'e constant 3 give
+\begin{equation}
+ \Delta\ge\frac{243}{625}\alpha
+ e^{-16(\lambda_1+\lambda_2)/(3\alpha)}.
+ \qquad\text{\workstar}\label{early:globalgap}
+\end{equation}
+On any finite connected open hypercubic graph containing a square, the free
+physical gap is exactly \(3\alpha\): a nonzero spin support has no degree-one
+vertex, hence contains at least four edges, each costing at least \(3/4\);
+a fundamental square attains the bound.  Repeating the global heat comparison
+for \(E\) links gives
+\(\Delta_\Gamma\ge3\alpha(3/5)^{2E}e^{-16\sum_p\lambda_p/\alpha}\).
+Its deterioration is not a proof of gap closure.  For \(q\) disconnected
+copies, tensor eigenvectors give the exact same first gap as one copy while
+the global density-ratio bound decays exponentially in \(q\).
+
+There is also a direct measure obstruction.  For the one-square Hamiltonian,
+\begin{equation}
+ \frac{[4C+\kappa(1-x)]e^{\theta x}}{e^{\theta x}}
+ =\kappa-\theta^2+(3\theta-\kappa)x+\theta^2x^2.
+ \qquad\text{\workstar}\label{early:gibbs}
+\end{equation}
+It is constant only for \(\theta=\kappa=0\).  The square root of a nontrivial
+Wilson Gibbs density is thus not this Hamiltonian's ground state.  A
+Langevin Poincar\'e theorem for the former cannot silently bound the latter;
+the fixed-spacing strong-coupling results of \cite{shen2022strong} retain their
+own measure, normalization, and generator hypotheses.
+For a declared Hamiltonian convention,
+\(\alpha=g_H^2/(2a)\), \(\lambda=2/(g_H^2a)\), so
+\(\lambda/\alpha=4/g_H^4\); neither a fixed graph nor a compact coupling
+square follows a growing-volume weak-coupling continuum limit.  Sources:
+\repo{research/round11/advisor/advisor.md} and
+\repo{research/round12/volume/volume-bridge.md}.
+
+A possible replacement must control the actual ground state.  The conditional
+Bakry--\'Emery bound
+\(\operatorname{Ric}-2\operatorname{Hess}\log\phi_\Gamma\ge c_*g\), uniformly
+in volume, would give \(\Delta_\Gamma\ge\alpha c_*\) through the
+ground-state generator \(\Delta+2\nabla\log\phi_\Gamma\cdot\nabla\).
+No such bound was established.  Similarly, transferring
+\(A_j\ge m_*(I-P_j)\) to a continuum operator needs a common realization,
+strong convergence of rank-one vacuum projections, and a limiting semigroup
+strongly continuous at zero.  The example \(A_j=j(I-P)\) has
+\(e^{-tA_j}\to P\) for each \(t>0\), but no strongly continuous limit on
+the full space.  Lower-gap control alone can leave only a vacuum; nontriviality
+is a separate obligation.
+
+\paragraph{A full-Hilbert-space dynamical error bound \workstar.}
+The earlier driven one- and two-square histories were finite-Galerkin studies.
+Round 12 added the omitted representation error.  Let
+\(H(t)=\alpha(t)K_\rho+\lambda_1(t)(1-X)+\lambda_2(t)(1-Y)\),
+\(K_\rho=3(C_U+C_V)-\rho\sum(L_U-R_V)^2\), with fixed \(\rho>0\).
+Remove the common scalar phase.  The electric propagator preserves every
+degree shell and the remaining bounded interaction has norm at most
+\(w=|\lambda_1|+|\lambda_2|\), with shell bandwidth one.  Real locally
+integrable coefficients suffice for mild unitary evolution.
+For normalized initial support in \(P_{d_0}\), let \(\psi_D\) be exact
+Galerkin evolution and \(A(t)=\int_0^tw(s)\,\dd s\).  Duhamel in the finite
+tail block gives inductively
+\(\norm{(P_D-P_{n-1})\psi_D}\le A^{n-d_0}/(n-d_0)!\).
+The only full-equation defect is
+\(r_D=\Pi_{D+1}W\Pi_D\psi_D\).  One more integral yields
+\begin{equation}
+ \norm{\psi(t)-\psi_D(t)}\le
+ \min\left\{2,\frac{A(t)^{D-d_0+1}}{(D-d_0+1)!}\right\}.
+ \qquad\text{\workstar}\label{early:factorial}
+\end{equation}
+No exponential factor is needed because both block propagators are unitary.
+Equal action bounds do not identify different protocols.  For a computed
+path, add its preparation error and the integral of
+\(\norm{i\dot{\widetilde\psi}_D-H_D\widetilde\psi_D}\).
+Norm conservation alone does not bound that residual.  The boundary norm
+has the exact Gram expression
+\(\norm{r_D}^2=c^*[N-MG^{-1}M]c\), where \(M,N\) are the form matrices of
+\(P_DWP_D,P_DW^2P_D\).
+
+For a finite step of length \(h\), midpoint \(B=H_D(m)\),
+\(C=H_D'(m)\), and \(M_2=\sup\norm{H_D''}\), a Taylor comparison followed
+by two unitary Duhamel integrals gives
+\begin{equation}
+ \norm{U_D-e^{-ihB}}\le h^3M_2/24+h^3\norm{[B,C]}/12
+ +h^4\norm C^2/32.
+ \qquad\text{\workstar}\label{early:midpoint}
+\end{equation}
+The first term integrates the quadratic Taylor remainder.  The centered
+linear integral cancels its constant interaction-picture part, leaving the
+commutator term; the second Duhamel remainder is half the squared integrated
+linear norm.  Compressed \(X,Y\) need not commute.  Evaluating the exponential
+is a separate error: for a finite selfadjoint \(B\), its order-\(q\) Taylor
+remainder is at most \((h\norm B)^{q+1}/(q+1)!\).
+The archived exact rational two-step state used degree 3, Taylor order 100,
+\((\lambda_1,\lambda_2)=(1/20,1/10)\) then \((1/10,1/20)\), each for
+duration 1, and \(\alpha=\rho=1\).  With
+\(e=(114/5)^{101}/101!\), its total bound was
+\(27/80000+2e+e^2\), including the product error and the unnormalized
+computed state.  This certifies that declared protocol, not all historical
+drives.  Bounded-observable errors are at most \(2\norm O\) times a normalized
+state error; energy needs its own work identity and cannot use a fictitious
+global norm of \(H\).  Sources: \repo{research/round12/advisor/advisor.md} and
+\repo{research/round12/solver/output/exact_step_certificate.json}.
+
+\paragraph{Closure tests that retain the missing fluctuation \workstar.}
+For the one-square Euclidean measure proportional to
+\(e^{\kappa x}\sqrt{1-x^2}\,\dd x\), integration of
+\(\partial_x[(1-x^2)^{3/2}e^{\kappa x}f]\) gives, with \(m_n=\langle x^n\rangle\),
+\begin{equation}
+ n m_{n-1}-(n+3)m_{n+1}+\kappa(m_n-m_{n+2})=0,
+ \quad 3m_1=\kappa(1-m_1^2-v),
+ \quad v\ge\tfrac14e^{-2|\kappa|}>0.
+ \qquad\text{\workstar}\label{early:closure}
+\end{equation}
+The last inequality follows from domination of Haar density by
+\(e^{-2|\kappa|}\) and \(\operatorname{Var}(x)=\inf_c\langle(x-c)^2\rangle\).
+Discarding \(v\) while keeping the true mean leaves residual \(\kappa v\).
+At \(\kappa=0\), the next equation, not the first, enforces \(m_2=1/4\).
+Adding a fluctuation symbol does not compute its next moment.
+The same audit checked specific displayed formulas of
+\texttt{arXiv:2608.05415v1} \cite{chatterjee2026lattice}: directed versus unordered plaquette counting,
+a derivative prefactor, a missing source phase, and the rank impossibility
+\(\eta^Tg\eta=I_{N_c^2-1}\) when \(N_c^2-1>D\).
+These are local, version-specific tests and do not refute all closures.
+Source: \repo{research/round12/closure/closure-audit.md}.
+
+\paragraph{Change in understanding and the next obligations.}
+By Round 12 the reliable object had narrowed from an intended coupled
+Einstein--QED system to explicit finite models with named observables, domains,
+and error norms.  The abelian branch still required a common renormalized
+current and anisotropic stress for a specified state, followed by fluctuation
+and regulator control.  The nonabelian branch had genuine infinite-representation
+results on finite graphs, including interacting stationary and driven bounds.
+Its remaining tasks were connected-volume estimates for the actual physical
+Hamiltonian, scale matching, nontrivial continuum observables, reconstruction,
+and a spectral exclusion covering the whole physical sector.  Neither the
+formal proof planner nor the number of passed checks supplied those premises.
+The machine-readable early ledger preserves every historical entry, retained
+failure, source path, and contribution mapping; the present manuscript synthesis
+does not claim to rerun every historical calculation.

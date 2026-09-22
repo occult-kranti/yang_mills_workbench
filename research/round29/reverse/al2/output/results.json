@@ -1,0 +1,151 @@
+{
+  "loop": "AL2",
+  "direction": "reverse",
+  "verdict": "iff sufficient-domain membership derived; suppression is action deformation",
+  "formula": [
+    "0<=s<=g^4/32",
+    "s<c1(S)g^4/672",
+    "s<g^4/(1344c2(S))"
+  ],
+  "fixtures_use_synthetic_constants_only": true,
+  "fixtures": [
+    {
+      "eligible": true,
+      "r": "1/8",
+      "tau": "3",
+      "epsilon": "21",
+      "original_hypotheses": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "reduced_caps": [
+        true,
+        true,
+        true
+      ],
+      "label": "bridge equality"
+    },
+    {
+      "eligible": false,
+      "r": "1/168",
+      "tau": "1/7",
+      "epsilon": "1",
+      "original_hypotheses": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "reduced_caps": [
+        true,
+        false,
+        true
+      ],
+      "label": "first omitted strict boundary"
+    },
+    {
+      "eligible": false,
+      "r": "1/336",
+      "tau": "1/14",
+      "epsilon": "1/2",
+      "original_hypotheses": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "reduced_caps": [
+        true,
+        true,
+        false
+      ],
+      "label": "second omitted strict boundary"
+    },
+    {
+      "eligible": true,
+      "r": "0",
+      "tau": "0",
+      "epsilon": "0",
+      "original_hypotheses": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "reduced_caps": [
+        true,
+        true,
+        true
+      ],
+      "label": "zero"
+    },
+    {
+      "eligible": true,
+      "r": "1/6250",
+      "tau": "12/3125",
+      "epsilon": "84/3125",
+      "original_hypotheses": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "reduced_caps": [
+        true,
+        true,
+        true
+      ],
+      "label": "interior"
+    },
+    {
+      "eligible": false,
+      "r": "1/4",
+      "tau": "6",
+      "epsilon": "42",
+      "original_hypotheses": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "reduced_caps": [
+        false,
+        true,
+        true
+      ],
+      "label": "bridge violated"
+    }
+  ],
+  "common_rescaling": [
+    {
+      "q": "1/7",
+      "ratio": "2/3",
+      "physical_gap_scale": "1/7",
+      "physical_time_scale": "7"
+    },
+    {
+      "q": "1",
+      "ratio": "2/3",
+      "physical_gap_scale": "1",
+      "physical_time_scale": "1"
+    },
+    {
+      "q": "9",
+      "ratio": "2/3",
+      "physical_gap_scale": "9",
+      "physical_time_scale": "1/9"
+    }
+  ],
+  "controls": {
+    "magnetic_only_changes_ratio": true,
+    "first_strict_boundary_rejected": true,
+    "second_strict_boundary_rejected": true,
+    "scalar_does_not_change_gap": true,
+    "fixed_clock_rescaling_changes_u": true,
+    "omitting_bridge_false_accept": true
+  },
+  "invalid_rejections": 4,
+  "physical_scope": "Sufficient I1 eligibility only; no actual I1 constants evaluated, no continuum construction."
+}

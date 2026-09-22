@@ -1,0 +1,32 @@
+\section{Reproduction and manuscript build}
+\label{app:reproduction}
+
+The accompanying source bundle contains this manuscript's \LaTeX{} files, bibliography, vector figures, calculator code, machine-readable historical and contribution ledgers, and independent audit scripts. The standalone \repo{calculators.html} runs locally without a server. Use a fresh Python environment for the companion requirements; plot rendering dependencies are listed separately by the calculator guide.
+The companion was exercised with Python 3.12.14, mpmath 1.3.0, NumPy 2.3.5, and Matplotlib 3.10.8. Its default working precision is 70 decimal digits. Exact rational outputs use Python's standard-library fraction arithmetic; a 70-digit diagnostic is not thereby an interval enclosure.
+
+Representative commands, executed from the unpacked manuscript directory, are:
+\begin{verbatim}
+python3 -m pip install -r calculators/requirements.txt
+python3 calculators/ym_calculators.py jacobi --ratio 2 --dimension 24
+python3 calculators/ym_calculators.py static --kappa 1
+python3 calculators/ym_calculators.py filter --kind gaussian \
+  --M 35/1664 --duration 4
+python3 calculators/ym_calculators.py wilson --z 1/1000000
+python3 calculators/ym_calculators.py heat-certificates
+python3 calculators/test_calculators.py --output /tmp/ym-calculator-tests.json
+python3 audit/skeptic_checks.py --output /tmp/ym-skeptic-checks
+python3 audit/skeptic_early_checks.py --output /tmp/ym-early-checks
+python3 audit/skeptic_middle_checks.py --output /tmp/ym-middle-checks
+python3 audit/skeptic_recent_checks.py --output /tmp/ym-recent-checks
+node audit/test_web_calculators.cjs
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+
+The skeptic commands require fresh output directories; use new names on a second run. The heat companion computes certificate budgets; it is not a replacement for the original 293-coordinate solver. To obtain a certified vector, clone the workbench, check out the exact commit in Section~\ref{sec:introduction}, and use a fresh absolute output directory:
+\begin{verbatim}
+python3 -B research/round26/reverse/af2/check.py \
+  --sigma 7/2 --output /absolute/new/heat-at-seven-halves
+\end{verbatim}
+The optional \verb|--input-vector PATH| takes a JSON list of 293 real rational strings and checks exact normalization, original $P_{21}$ support, and the radius-$0.01$ condition. The reverse command interface does not accept arbitrary complex coordinates. Forward exports include complex demonstrations under a separate export-error allowance. The operator estimate is broader than the implemented input interface; those scopes must remain distinct.
+
+The workbench's original historical guides remain authoritative for their production commands and dependencies. Some early programs write outputs in place, so run them only in an isolated checkout. Never remove a bound source hash or reinterpret a missing test as a proved premise to make a replay pass. The new source bundle adds no research loop and changes no frozen historical record.

@@ -1,0 +1,124 @@
+% Included after research/round28/advisor/aj2-gate.json.
+\section{HNM AJ2: a nonzero Wilson fluctuation in the homogeneous state\workstar}
+\begin{quote}\small Draft02 attribution update. See Section~\ref{sec:editorial-front} for the primary-source comparison and its novelty limitation. HNM labels identify project records.\end{quote}
+\label{r28:sec:aj2}
+AJ2 proves that one specified original Wilson multiplication observable has strictly positive variance in the actual I1/AJ1 homogeneous state. Its centered vector is a nonzero physical vector orthogonal to the vacuum, so AJ1's positive spectral sector is now shown to be nonempty. For every finite physical imaginary time,
+\begin{equation}
+ 0<C(t)\le v\exp\!\left(-\frac{\alpha t}{16\hbar}\right),
+ \qquad0\le t<\infty,
+ \qquad v=\omega(W^2)-\omega(W)^2>0.
+ \label{r28:eq:aj2-correlation}
+\end{equation}
+The variance is not numerically evaluated. The proof uses the actual multiplier's Haar-null point levels and AJ1's normal local density, without assuming faithfulness or an interacting Haar law. The decay ceiling uses the inherited physical spectral exclusion; it identifies no mass or threshold eigenvalue.
+
+\subsection{The actual face, complete factors and all endpoint actions}
+Keep the same positive-orthant homogeneous omitted interaction \eqref{r28:eq:aj1-model}, fixed selected-strip reference, whole-star finite boundaries, and symbolic range \eqref{r28:eq:aj1-range}. Zero and either sign of $\tau$ are included; no chosen positive numerical coupling is certified. Every site still owns 24 original links, and every retained anchor carries all 21 omitted faces. AJ1 supplies the actual normal local densities, full physical bounded-local algebra, physical cyclic/fixed identification and closed centered restriction
+\begin{equation}
+ H_{\rm phys}=\frac\alpha8G_{\rm phys},\qquad
+ \ker H_{\rm phys}=\mathbb C\Omega,\qquad
+ \operatorname{spec}(H_{\rm phys})\subset\{0\}\cup[\Delta,\infty),
+ \quad\Delta=\alpha/16.
+ \label{r28:eq:aj2-inherited}
+\end{equation}
+These premises refer to the actual homogeneous state, not the dyadic state or a finite AH graph. The spacing, $\alpha$, $E_*$ and $\hbar$ retain their declared positive physical meanings.
+
+Let $o=(0,0,0)$, $x=(1,0,0)$ and $z=(0,0,1)$ denote original lattice vertices. The ordered omitted $xz$ face is $o\to x\to x+z\to z\to o$, with
+\begin{equation}
+ U_\partial=U_x(o)U_z(x)U_x(z)^{-1}U_z(o)^{-1},
+ \qquad W=\tfrac12\operatorname{Tr}U_\partial.
+ \label{r28:eq:aj2-W}
+\end{equation}
+Its four distinct stored positive links have respective coarse owners $o,o,z,o$ under the tail map $(a_x,a_y,a_z)\mapsto(\lfloor a_x/4\rfloor,\lfloor a_y/2\rfloor,a_z)$. Thus its minimal complete factor region is $R=\{o,z\}$, containing \textbf{48 original links}, twenty selected-strip links and twenty-eight free links. The 16 tails have coordinates $0\le i\le3$, $0\le j\le1$, $0\le k\le1$. Add four $x$ heads at $(4,j,k)$, eight $y$ heads at $(i,2,k)$ and eight $z$ heads at $(i,j,2)$ to obtain all \textbf{36 endpoint vertices}.
+
+The four loop vertices suffice to see this particular trace's cancellation, but are not the endpoint set for an arbitrary operator on the complete local factor. Under every original action $U_{(v,w)}\mapsto g_vU_{(v,w)}g_w^{-1}$, the ordered word telescopes to $g_oU_\partial g_o^{-1}$. Therefore $W$ is in the full bounded local physical algebra. It is a real self-adjoint multiplier, with $|W|\le1$. The two-site observable support is distinct from the four-site Hamiltonian anchor star; no two-site Hamiltonian with that whole star retained is inferred.
+
+\subsection{Conditional Haar integration proves every point level is null}
+Work on the original unreduced local multiplication space
+\begin{equation}
+ \mathcal K_R=L^2(X,\mu_H),\qquad
+ X=\mathrm{SU}(2)^{48},
+\end{equation}
+with normalized product Haar measure. Fix the other 47 original link variables. The reverse and skeptic integrate $U_x(o)$, for which $U_\partial=U_x(o)A$ with fixed $A\in\mathrm{SU}(2)$. Right translation preserves Haar. The forward instead integrates $U_z(o)$, giving $U_\partial=A U_z(o)^{-1}$; inversion and left translation give the same conclusion. These are independent original-link coordinates, not independent plaquette holonomies. The other 44 non-face links are normalized spectators.
+
+For a Haar unit quaternion, the half trace is its scalar coordinate $s=\cos\theta$. The normalized angular density $(2/\pi)\sin^2\theta\,d\theta$ on $0\le\theta\le\pi$ yields
+\begin{equation}
+ d\nu_H(s)=\frac2\pi\sqrt{1-s^2}\,
+             \mathbf1_{[-1,1]}(s)\,ds.
+ \label{r28:eq:aj2-haar-law}
+\end{equation}
+Its integral is one. Every singleton has measure zero, including zero and both endpoints; outside $[-1,1]$ the level is empty. Conditional integration and Fubini give, for every Borel set $B$ and every real $c$,
+\begin{equation}
+ \mu_H\{W\in B\}=\nu_H(B),\qquad
+ \mu_H\{W=c\}=0.
+ \label{r28:eq:aj2-null-levels}
+\end{equation}
+The original multiplication spectral projection is $E_W(B)=M_{\mathbf1_{\{W\in B\}}}$. It is zero exactly when $\nu_H(B)=0$, hence
+\begin{equation}
+ E_W(\{c\})=0,
+ \qquad\ker(W-cI)=\{0\}\quad(c\in\mathbb R).
+ \label{r28:eq:aj2-no-eigenlevel}
+\end{equation}
+Every interior open interval has positive Haar measure. Consequently the multiplier has spectrum $[-1,1]$, norm one and no point eigenprojection, including at its endpoints. These are original-operator statements. They do not say that the interacting state has the Haar probability law or assigns positive weight to every such interval.
+
+\subsection{Strict actual variance without faithfulness}
+AJ1 supplies a positive trace-class density $\rho_R$ of trace one for the actual restriction of $\omega$ to $B(\mathcal K_R)$. Put $m=\omega(W)\in\mathbb R$. Boundedness makes the moments finite, and
+\begin{equation}
+ v=\operatorname{Tr}[\rho_R(W-mI)^2]
+   =\norm{(W-mI)\rho_R^{1/2}}_{\rm HS}^2.
+ \label{r28:eq:aj2-variance}
+\end{equation}
+If $v=0$, the range of $\rho_R^{1/2}$ would lie in the zero kernel \eqref{r28:eq:aj2-no-eigenlevel}. This would force $\rho_R=0$, contradicting its trace. Thus $v>0$ for every actual state throughout the inherited symbolic interval, without narrowing that interval by a perturbative continuity estimate.
+
+An equivalent configuration argument writes $\rho_R=\sum_jp_j|\psi_j\rangle\langle\psi_j|$. Tonelli gives $r(q)=\sum_jp_j|\psi_j(q)|^2\ge0$ with $\int r\,d\mu_H=1$, and
+\begin{equation}
+ v=\int_X(W(q)-m)^2r(q)\,d\mu_H(q).
+\end{equation}
+Zero variance would concentrate all this integrable mass on a Haar-null level. This construction uses the density's spectral decomposition, not an assumed pointwise diagonal kernel. The density may be rank one or vanish on large subspaces. Neither faithfulness, global trace-class representability nor an interacting density bounded below is required. The actual Wilson distribution is absolutely continuous with respect to \eqref{r28:eq:aj2-haar-law}; converse absolute continuity and full support are not asserted.
+
+Since $W-mI$ is bounded local and invariant, its physical GNS class is nonzero:
+\begin{equation}
+ \chi=(\pi(W)-mI)\Omega\in\mathcal H_{\rm cyc},\qquad
+ \langle\Omega,\chi\rangle=0,\qquad\norm\chi^2=v>0.
+ \label{r28:eq:aj2-vector}
+\end{equation}
+It is precisely the image of $[W-mI]$ under AJ1's quotient isometry. The physical space therefore contains the vacuum and a nonzero orthogonal vector. No operator-domain assertion is needed for this nonvacuity statement.
+
+\subsection{A nonzero physical spectral measure and positive heat correlation}
+For the actual self-adjoint restriction \eqref{r28:eq:aj2-inherited}, define
+\begin{equation}
+ \nu_\chi(B)=\langle\chi,E_{H_{\rm phys}}(B)\chi\rangle.
+\end{equation}
+This positive finite measure has total mass $v$, no atom at zero by ground uniqueness and centering, and support in $[\Delta,\infty)$. In particular the actual positive-energy physical sector is nonempty. At every finite real $t\ge0$, bounded spectral calculus gives
+\begin{equation}
+ C(t)=\langle\chi,e^{-tH_{\rm phys}/\hbar}\chi\rangle
+     =\int_{[\Delta,\infty)}e^{-tE/\hbar}\,d\nu_\chi(E).
+ \label{r28:eq:aj2-spectral}
+\end{equation}
+Some finite interval $[\Delta,L]$ has positive measure, so its strictly positive integrand proves $C(t)>0$. On the entire support the integrand is at most $e^{-t\Delta/\hbar}$, proving \eqref{r28:eq:aj2-correlation}. Also $C(0)=v$, bounded dominated convergence gives continuity at zero, and the upper bound gives $C(t)\to0$ at large imaginary time. No universal lower decay estimate follows.
+
+The actual mean is retained. The uncentered correlation would be
+\begin{equation}
+ \langle\pi(W)\Omega,e^{-tH_{\rm phys}/\hbar}\pi(W)\Omega\rangle
+ =m^2+C(t).
+\end{equation}
+There is no assumption that the interacting $m$ vanishes. The frequency scale is $\alpha/(16\hbar)$; the dimensionless normalized threshold $1/2$ cannot be inserted as a physical frequency.
+
+The bounded semigroup is defined on every Hilbert vector, so neither $\chi\in D(H_{\rm phys})$ nor $\chi\in D(H_{\rm phys}^{1/2})$ is used or proved. Those would require respectively finite second or first energy moments. No derivative at zero is inferred from locality. The support lower bound need not be attained, carry an atom at $\alpha/16$, or equal the lowest overlapping energy. Real-time phase evolution gives no magnitude-decay theorem. AJ2 identifies a nonzero positive measure, not its energies, a normalizable excited eigenvector, a sharp asymptotic rate or a measured mass.
+
+\subsection{Reference diagnostics, countermodels and scope}
+The reference Haar moments
+\begin{equation}
+ \mathbb E_H W=0,\qquad\mathbb E_H W^2=1/4,
+ \qquad\mathbb E_H W^4=1/8
+\end{equation}
+check normalization and conditional integration. They are not assigned to the interacting state. A rank-one Haar density is normal but nonfaithful and still has positive variance. Another normalized normal vector, $2W$, instead has variance $1/2$. Thus normality does not fix the moment values.
+
+More strongly, the normal rank-one states supported in $|W|<\varepsilon$ have positive variance at most $\varepsilon^2$, while the band has positive Haar measure. Their variances can approach zero. A weak-star cluster subnet can have zero variance and must be singular by \eqref{r28:eq:aj2-variance}. This disproves a positive uniform variance floor over \emph{all normal states}; it is not a failure theorem for a possible future quantitative bound on the particular ground-state family. Nonconstancy alone also fails: a step multiplier has a positive-measure constant region and can have zero variance in a normal state supported there. Haar-null levels are the decisive premise.
+
+Other explicit countermodels separate a vacuum-only restricted gap from a nonzero excitation, an upper heat ceiling from a lower decay law, a support endpoint from a threshold atom, and centered heat from a vacuum plateau. A positive-energy atom has constant real-time correlation modulus. Bounded self-adjoint rank-two observables can create vectors with divergent form or operator energy moments; those abstract examples do not assert divergence for the actual Wilson vector.
+
+The exact checkers reconstruct all 48 links, 36 endpoints, coarse owners and the oriented four-link word. Rational quaternion transformations verify full head/tail covariance and charged or missing-head controls. They also check the conditional coefficient normalization and reference moments, with all attempted controls retained. These finite diagnostics do not prove the Haar-null or infinite-state claims by sampling; conditional integration, trace-class normality, the GNS quotient and the spectral theorem supply those arguments.
+
+The advisor supplied the observable and proposed the level-set route before the three independent derivations. I1/AJ1, the immutable seven-loop draft and network are inherited premises; no new external theorem or historical reading is claimed. The original independent skeptic froze its derivation before exchange and subsequently reviewed both producers and replayed their outputs. After a reviewer handoff, another model-agent reviewer read that preserved evidence and independently audited the final admission specification and source closure. The closeout did not replace the original derivation or producer replays, add another pre-exchange proof, or execute another research loop.
+
+This investigation proves qualitative nonvacuity and \eqref{r28:eq:aj2-correlation} in the actual specified homogeneous state. It supplies no numerical variance margin, evaluated stability radius, energy-moment result, global faithfulness, Wilson-only algebra completion, alternative boundary-state equality, physical model matching, lattice-spacing limit or continuum Yang--Mills construction. Scientific priority and a percentage of continuum-theorem completion are not established.
