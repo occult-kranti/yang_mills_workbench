@@ -1,0 +1,208 @@
+# Hruday same-state Wilson energy certificate — AT1 forward
+
+Human project author: **Hruday N M (BUNZEEY)**. AI-assisted independent forward derivation, before reading any current AT1 reverse or skeptic solution. HNM labels below are traceable project aliases; established identities and external authors retain their names. Scientific priority is unverified. This is a model-specific extension, with no new axiom.
+
+**Result.** In the actual AQ1 chosen subsequential centered-full-Z3 state at either sign of `|tau|<=10^-8`, let `H=H_num,phys`, `chi=(pi(W)-omega_num(W))Omega`, where W is the original xz plaquette. Then
+
+\[
+\chi\in D(H),\qquad
+\|H\chi\|^2\le B_2:=\alpha^2(36+98|\tau|)<37\alpha^2,
+\qquad
+\langle\chi,H\chi\rangle=\alpha\omega_{\rm num}(1-W^2).
+\tag{HNM-AT1-F01}
+\]
+
+This closes these obligations in AQ's own state without identifying it with AO's orthant state. Second-moment equality is not proved. The actual AQ gap and variance remain inherited hypotheses, not recomputed discoveries.
+
+## 1. Model, source, scales and proof dependencies
+
+Use exactly the AQ1 subsequence of whole-star centered boxes `Lambda_N=[-N,N]^3` and the same fixed repeated selected coefficient triple. Every factor owns all 24 positive links whose tail is `(4b_x+r,2b_y+s,b_z)`, `0<=r<4,0<=s<2`. Both tail and head gauge actions remain. Write
+
+\[
+H_N^{raw}=\alpha\sum_{e\;owned}C_e+V_{sel,N}
+-\frac{\alpha\tau}{24}\sum_{b+S\subset\Lambda_N}\sum_{f\in O_b}W_f,
+\quad S=\{0,e_x,e_y,e_z\},\quad |O_b|=21.
+\tag{HNM-AT1-F02}
+\]
+
+`C_e=-sum_a X_ea^2`, with generators `i sigma_a/2`. The selected potential is `-sum lambda_f W_f`, with per-factor absolute coefficient budget at most `9alpha/8`. With the actual selected-reference ground scalar `B_N=sum_b E_strip,b` and `delta=alpha/8`,
+
+\[
+\delta\widehat H_N=H_N^{raw}-B_N,\quad
+E_N^{raw}=B_N+\delta\widehat E_N,\quad
+K_N=H_N^{raw}-E_N^{raw}=\delta(\widehat H_N-\widehat E_N).
+\tag{HNM-AT1-F03}
+\]
+
+The normalized interaction per anchor obeys `||phi_b||<=7|tau|`. All these terms, including selected bridges and both ground scalars, are retained. Alpha, hbar, lattice spacing and the positive comparison E_star are fixed. Tau is an interaction coefficient. L below is a proof energy cutoff, not a modified Hamiltonian; no new free physical variable is introduced.
+
+AQ1 supplies local trace-norm convergence along its chosen subsequence, norm convergence of bounded-local dynamics uniformly on compact physical-time intervals, and the actual strongly continuous GNS time group. AQ2 identifies the full physical reducing sector and gives `H>=alpha/16` on its vacuum orthogonal complement. No AO state limit or old symbolic smallness interval is imported. AO1/AO2 are disclosed shared proof patterns only.
+
+The closest inspected primary comparison is Gauvin, arXiv:2503.15539v3 Supplement A.9-A.11 (saved pp.S6-S8): compactness, centered Fourier transfer, local Wilson first-energy control and spectral-envelope methods already occur there for another model. Nachtergaele-Sims arXiv:1410.8174 is the dynamics theorem already matched in AQ1. Here the specific contribution is the complete SU(2) seven-star commutator estimate and its first-moment/domain conclusion in the actual AQ state. This does not claim invention of spectral uniform integrability or establish priority. Live abstract/version pages were rechecked; reading depth is recorded in inputs/reading.json.
+
+Newton analysis/synthesis guides reconstructing the necessary local energy bound and deriving the limiting statement; Tesla energy accounting guides retaining every gradient channel and scalar. These are modern methodological uses, not claims that those historical people supplied or reviewed this proof. Historical/esoteric interpretations add no premise.
+
+## 2. Exact region and seven-star reset
+
+The original observable is
+
+\[
+W=\tfrac12\operatorname{Tr}[U_{0,x}U_{e_x,z}U_{e_z,x}^{-1}U_{0,z}^{-1}].
+\tag{HNM-AT1-F04}
+\]
+
+Its four stored links have owners `0,0,e_z,0`. Its complete-factor cover is `R={0,e_z}`, containing 48 distinct links. A single factor has eight tails and outgoing slabs of sizes 2,4,8, hence 22 distinct endpoints. For the two stacked factors the tail block has 16 vertices and outgoing slabs of sizes 4,8,8, hence 36 endpoints. These are the original shared endpoint actions; blockwise physical tensor factors are not substituted.
+
+Every incident anchor lies in the exact set
+
+\[
+R-S=\{0,-e_x,-e_y,-e_z,e_z,e_z-e_x,e_z-e_y\}.
+\tag{HNM-AT1-F05}
+\]
+
+All seven whole stars are retained once N>=2. In the positive orthant only `0,e_z` survive, giving the discriminating two-star control. The bulk proof must use seven.
+
+Reset the finite ground density on R to the actual selected-reference rank-one product P_R, preserving the exterior reduced density. The reset has zero reference energy on R and leaves exterior reference expectations unchanged. Each incident retained interaction changes by at most `2||phi_b||<=14|tau|`. Positivity and the finite full-ground variational principle give
+
+\[
+\omega_N(h_R)\le98|\tau|,\qquad h_R=h_0+h_{e_z}.
+\tag{HNM-AT1-F06}
+\]
+
+The mixed trial need not be gauge invariant because the AQ/AM full ground is the minimum used. All reference terms have finite expectation in the finite ground; replacing only finitely many factors by reference ground vectors keeps finite form energy. Nonnegative spectral truncations justify cancellation of unchanged exterior expectations. This reproduces the regional argument in the actual centered Hamiltonian; it is not a limit-state identification.
+
+Define `T_R=alpha sum_(e owned by R) C_e`, `Vsel_R=-sum selected lambda_f W_f`, and `B_R=sum_(b in R)E_strip,b`. Exactly,
+
+\[
+T_R=\delta h_R-Vsel_R+B_R.
+\tag{HNM-AT1-F07}
+\]
+
+The Haar trial has zero electric and selected Wilson means, so each `E_strip,b<=0`. The selected absolute budget on R is at most `9alpha/4`. Consequently
+
+\[
+\omega_N(T_R)\le\alpha\left(\frac94+\frac{49}{4}|\tau|\right).
+\tag{HNM-AT1-F08}
+\]
+
+Discarding the nonpositive B_R only after this exact reconstruction is valid. Setting it to zero in the identity is not. The selected-reference ground is generally not Haar: for one nonzero selected plaquette, the trial `1+tW` has energy numerator `3alpha t^2/4-lambda t/2`, negative at `t=lambda/(3alpha)`. At tau=0 reference energy is zero but actual electric energy need not be zero.
+
+## 3. Finite domains, inverse links and the full commutator
+
+For each finite box, its manifold is the compact product SU(2)^L. The elliptic Casimir sum has Sobolev operator domain H^2 and form domain H^1. The real smooth bounded magnetic multiplication is a bounded perturbation, preserving these domains. Finite ground vectors belong to H^2 (indeed elliptic regularity makes them smooth). Smooth multipliers W,W^2 and their centered versions preserve H^2/H^1 by the weak product rule and compactness. Thus `chi_N=(W-m_N)Omega_N` belongs to D(K_N), with `m_N=omega_N(W)`. This is a finite-volume domain result, not an assumed infinite-volume one.
+
+All magnetic multipliers and ground scalars commute with W. For any smooth u,
+
+\[
+[C_e,W]u=(C_eW)u-2\sum_a(X_{ea}W)X_{ea}u.
+\tag{HNM-AT1-F09}
+\]
+
+Each of the four stored link occurrences contributes `C_eW=3W/4`. To check both orientation and normalization, write its SU(2) holonomy as a quaternion `(w,v)`. Half-Pauli left multiplication gives scalar derivative `-v_a/2`, so its summed squared derivatives are `(1-w^2)/4`. For a positive occurrence `Q=LUR`, the basis is conjugated by L. For an inverse occurrence `Q=LU^{-1}R`, differentiating `(exp(tT_a)U)^-1` gives `-U^-1 T_a`; on Q this is right multiplication by `-Ad_(R^-1)T_a`. Adjoint rotations preserve the summed squares, and the inverse sign/side remain in the actual derivative. Also `T_a^2=-I/4` on either occurrence. Hence on all four distinct original links,
+
+\[
+\sum_{e,a}(X_{ea}W)^2=1-W^2,\qquad
+\sum_e C_eW=3W.
+\tag{HNM-AT1-F10}
+\]
+
+No other link derivative contributes. Define `Z_N=sum_(e in p,a)(X_ea W)X_ea Omega_N`. Ground centering and (F09) give the L^2 identity
+
+\[
+K_N\chi_N=3\alpha W\Omega_N-2\alpha Z_N.
+\tag{HNM-AT1-F11}
+\]
+
+The derivative cross term is generally nonzero. Pointwise Cauchy-Schwarz and positivity of the four-link electric form inside the complete R sum yield
+
+\[
+\|Z_N\|^2\le\int(1-W^2)\sum_{e\in p,a}|X_{ea}\Omega_N|^2
+\le\omega_N(T_R)/\alpha.
+\tag{HNM-AT1-F12}
+\]
+
+Using `||W Omega_N||<=1` and `||u+v||^2<=2||u||^2+2||v||^2` now gives
+
+\[
+\int E^2d\nu_N(E)=\|K_N\chi_N\|^2
+\le18\alpha^2+8\alpha\omega_N(T_R)
+\le\alpha^2(36+98|\tau|)=B_2.
+\tag{HNM-AT1-F13}
+\]
+
+At the exact cap, `B2/alpha^2=1800000049/50000000<37`. The estimate is volume uniform along the actual AQ boxes for both tau signs and all allowed selected coefficients. Its units are energy squared; the analogous frequency moment is divided by hbar^2.
+
+## 4. Finite first-energy identity
+
+Let `f_N=W-m_N`. Subtract the weak ground equation tested on `f_N^2 Omega_N` from the quadratic form evaluated on `f_N Omega_N`. The valid H^1 product identities give, for every X,
+
+`|X(f_N Omega_N)|^2-Re(conj(X Omega_N) X(f_N^2 Omega_N))=(Xf_N)^2|Omega_N|^2`.
+
+All potential and scalar terms cancel because they commute with f_N. Thus, in the actual ground rather than a Haar substitute,
+
+\[
+\int E\,d\nu_N(E)=\langle\chi_N,K_N\chi_N\rangle
+=\alpha\omega_N(1-W^2).
+\tag{HNM-AT1-F14}
+\]
+
+Equivalently the double commutator has bounded extension `2alpha(1-W^2)` and its ground expectation is twice this energy. The factor one half is essential. At the entirely free corner the exact variance is 1/4, Wilson excitation energy 3alpha, first moment 3alpha/4 and second moment 9alpha^2/4. That corner is a normalization fixture only.
+
+## 5. Actual AQ spectral-test convergence
+
+AQ provides local trace-norm state convergence and actual dynamics `T_t=lim_N exp(it K_N/hbar)(.)exp(-it K_N/hbar)` in norm on local observables uniformly on compact t intervals. Its GNS implementation is strongly continuous, with the actual physical self-adjoint generator H. Consequently, along the chosen AQ subsequence,
+
+\[
+c_N(t)=\omega_N(W\,T_t^N(W))-m_N^2
+\longrightarrow c(t)=\omega_{num}(W\,T_t(W))-m^2
+=\langle\chi,e^{itH/\hbar}\chi\rangle.
+\tag{HNM-AT1-F15}
+\]
+
+Here `m_N->m` and the masses `v_N=omega_N(W^2)-m_N^2->v`. To justify the dynamical expectations, first approximate both volume evolutions by one fixed finite-region evolution; its state error is bounded by local trace distance times `||W||^2`, uniformly in time. Then remove the approximation using AQ's norm volume estimate. No common finite/infinite Hilbert-space embedding is asserted. The centered correlations are bounded in magnitude by v_N<=1.
+
+For `f in C_c^infinity(R)`, choose the physical Fourier pair `f(E)=int fhat_hbar(t)exp(itE/hbar)dt`. Its transform is integrable. The bound above and dominated convergence imply `int f dnu_N -> int f dnu`, where nu is the actual H spectral measure of chi. Smooth compact functions are uniformly dense in C_0(R); all masses are at most one. A three-term uniform approximation therefore extends convergence to every C_0 test. This explicitly builds the compact-test convergence from AQ correlations rather than importing AO tested resolvents. The inherited AQ gap supports these centered measures on `[alpha/16,infinity)`; only nonnegativity is needed for the moment argument.
+
+Uncentering adds `m_N^2 delta_0` and changes the total mass and zero-atom statement, although it leaves positive moments unchanged. The computation therefore cannot silently substitute uncentered measures.
+
+## 6. The two limiting passages and domain conclusion
+
+For L>0 let theta(u)=1 for u<=1, 2-u for 1<u<2, and 0 for u>=2. On E>=0 define `F_L(E)=E theta(E/L)` and `Q_L(E)=E^2 theta(E/L)`, extending by zero on negative E. They are continuous compact tests and increase pointwise to E and E^2 as L increases. At fixed L, compact-test convergence and (F13) give `int Q_L dnu<=B2`. Monotone convergence yields
+
+\[
+\int E^2d\nu(E)\le B_2.
+\tag{HNM-AT1-F16}
+\]
+
+For nu_N and nu, the explicit tails obey
+
+\[
+\int_{E>L}E\,d\nu_N\le B_2/L,\qquad
+\nu_N((L,\infty))\le B_2/L^2,
+\tag{HNM-AT1-F17}
+\]
+
+and identically for nu. The first inequality is uniform integrability of the first moment. It is not uniform integrability of the second.
+
+The local bounded expectation in (F14) tends to `s=alpha omega_num(1-W^2)`. At each fixed L,
+
+`0<=int E dnu_N-int F_L dnu_N<=B2/L`.
+
+Take the AQ volume subsequence limit first, obtaining `0<=s-int F_L dnu<=B2/L`; then send L to infinity. This proves
+
+\[
+\int E\,d\nu(E)=\alpha\omega_{num}(1-W^2).
+\tag{HNM-AT1-F18}
+\]
+
+For the actual self-adjoint H, the spectral criterion `int E^2 dnu<infinity` is equivalent to chi in D(H), and its value equals `||H chi||^2`. Thus (F16) and (F18) prove (F01). No differentiation of the limiting correlation at zero or assumed strong convergence of finite unbounded vectors is used.
+
+## 7. Falsifying controls, limitations and reproduction
+
+The independent stdlib checker uses exact rationals and explicit sets. It reconstructs the 48 links, 36 endpoints, four original Wilson links, and seven incoming stars versus two orthant stars. Quaternion checks use positive and inverse occurrences with nontrivial stored-link holonomies. The `Q(W^2)=8W^2-2` diagnostic gives `[Q,W]W=5W^2-2`, distinguishing the missing-gradient surrogate `3W^2`.
+
+The spectral family `(1-1/n)delta_1+(1/n)delta_n` converges on bounded tests to delta_1, while its first moments tend to two and its second moments grow; it falsifies first-moment boundedness as a transfer argument. In contrast `(1-1/n^2)delta_1+(1/n^2)delta_n` has uniformly bounded second moments tending to two, but limiting second moment one. It confirms that the proved second-moment inequality cannot be promoted to equality without stronger tails. These abstract measure controls are not actual SU(2) measures. A two-state exact fixture demonstrates that the same gap/variance bounds do not identify a state; it licenses no AO-to-AQ transfer.
+
+Run `python -B research/round30/forward/at1/check.py --output /absolute/fresh/directory`. The normal and optimized interpreter results agree. Executed fixture checks support algebra and catch wrong models; the domain and limiting proof above supplies the infinite-volume theorem. Source snapshots and SHA-256 inventories bind the report, checker, actual inputs and outputs.
+
+No second-moment equality, AO/AQ state identification, continuum solution, particle pole, exact mass, dispersion, translation invariance, whole-sequence convergence or uniqueness of all thermodynamic states is claimed. The same-state numerical-cap result is at fixed lattice spacing and scales. Next investigation remains for advisor selection after independent skeptical review.

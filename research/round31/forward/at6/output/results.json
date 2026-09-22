@@ -1,0 +1,193 @@
+{
+  "actual_aq_certified_proxy_grid": true,
+  "actual_aq_enclosure": true,
+  "actual_aq_inverse_enclosure": true,
+  "actual_input_provenance_discharged": true,
+  "checks": [
+    {
+      "id": "continuous_window_monotonicity",
+      "passed": true,
+      "proof": "derivative s log(1+(L/s)^2) >= log(10)-2 >0 since L/s>=L/T>3"
+    },
+    {
+      "id": "zero_time_centered_variance",
+      "passed": true
+    },
+    {
+      "id": "entire_continuous_analytic_window",
+      "max_export_arithmetic": "3/2000000000000000000000000000000",
+      "passed": true,
+      "uniform_error": "277897811233733718277153070181309989448062198100468970986710012444378918515534549/327249234748936795673192019090000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "all_nodes_same_model_clock",
+      "passed": true
+    },
+    {
+      "id": "every_trapezoid_weight_used",
+      "passed": true
+    },
+    {
+      "id": "endpoint_halfweights_necessary",
+      "passed": true
+    },
+    {
+      "description": "exact rational datum is passed to evaluator, so node midpoint arithmetic is already charged to actual error, with zero additional evaluator bins",
+      "id": "arithmetic_and_actual_error_distinct",
+      "passed": true
+    },
+    {
+      "id": "provenance_and_all_rows_required",
+      "passed": true,
+      "rejected": [
+        "no_provenance",
+        "wrong_coupling",
+        "missing_node",
+        "changed_datum",
+        "deleted_actual_error",
+        "duplicate_index",
+        "floating_datum",
+        "full_endpoint_weight"
+      ]
+    },
+    {
+      "id": "historical_source_and_flags_unchanged",
+      "passed": true
+    },
+    {
+      "id": "primary_actual_inverse_width",
+      "passed": true
+    },
+    {
+      "id": "secondary_endpoint_tail_width",
+      "passed": true
+    },
+    {
+      "id": "free_inverse_retained",
+      "passed": true
+    },
+    {
+      "id": "rootN_rejected_for_correlated_errors",
+      "passed": true
+    },
+    {
+      "id": "deleting_infinite_tail_is_damaging",
+      "passed": true,
+      "scope": "abstract positive measure with support at the gap; not an AQ realization",
+      "tail_lower": "2683701023220094710571113/2000000000000000000000000000"
+    },
+    {
+      "id": "actual_endpoint_upper_not_free_endpoint",
+      "passed": true,
+      "scope": "abstract gap/moment-upper control consistent with uniform proxy errors, not an AQ realization"
+    },
+    {
+      "id": "wrong_quadrature_sign_rejected",
+      "passed": true
+    },
+    {
+      "description": "a zero-energy atom gives constant C, divergent inverse integral and violates centered positive-gap premise",
+      "id": "zero_energy_contamination_rejected",
+      "passed": true
+    },
+    {
+      "id": "original_cap_and_old_cutoff_insufficient",
+      "passed": true
+    },
+    {
+      "id": "physical_inverse_and_clock",
+      "passed": true
+    }
+  ],
+  "continuum_claim": false,
+  "contribution_alias": "HNM-AT6-F actual AQ finite-grid and inverse-energy enclosure",
+  "direction": "forward",
+  "endpoint_informed_actual_inverse_interval": {
+    "endpoint_actual_upper": "277897811233733718277153970116705549024250299378521468486710012444378918515534549/327249234748936795673192019090000000000000000000000000000000000000000000000000000000000",
+    "endpoint_tail_upper": "277897811233733718277153970116705549024250299378521468486710012444378918515534549/20453077171808549729574501193125000000000000000000000000000000000000000000000000000000",
+    "free_inverse_included": true,
+    "lower": "42585376089987669271345664867041/512000000000000000000000000000000",
+    "mass_tail_upper": "10567072778929122922873757469/7812500000000000000000000000000",
+    "selected_tail_upper": "277897811233733718277153970116705549024250299378521468486710012444378918515534549/20453077171808549729574501193125000000000000000000000000000000000000000000000000000000",
+    "target_width": "1/2500",
+    "target_width_passed": true,
+    "upper": "1708567163274410933784861083842027077770719182764809085898746719778069378918515534549/20453077171808549729574501193125000000000000000000000000000000000000000000000000000000",
+    "width": "7391414135722585412505260564769352033399250299378521468486710012444378918515534549/20453077171808549729574501193125000000000000000000000000000000000000000000000000000000"
+  },
+  "exact_interacting_trajectory": false,
+  "grid_sha256": "910c1bdbc35131adf0bca92fc367bd83ccd637f3aaf213163fa3c63596f23048",
+  "historical_evaluator_flags_preserved": true,
+  "historical_evaluator_output": {
+    "arithmetic_trap_width": "0",
+    "computed_AQ_samples": false,
+    "conditional_on_sample_contract": true,
+    "lower": "42585376089987669271345664867041/512000000000000000000000000000000",
+    "noise_allowance": "2/15625",
+    "quadrature_allowance": "47/512000",
+    "tail_upper": "10567072778929122922873757469/7812500000000000000000000000000",
+    "target_width_passed": true,
+    "trap_lower": "42697912089987669271345664867041/512000000000000000000000000000000",
+    "trap_upper": "42697912089987669271345664867041/512000000000000000000000000000000",
+    "upper": "5431996471453446033902389929566173/64000000000000000000000000000000000",
+    "width": "13284235864866622922873757469/7812500000000000000000000000000"
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AT6",
+  "max_node_error": "277897811233733718277153561055162112853255707888497605986710012444378918515534549/327249234748936795673192019090000000000000000000000000000000000000000000000000000000000",
+  "max_reference_arithmetic_radius": "3/2000000000000000000000000000000",
+  "measured_interacting_samples": false,
+  "node_count": 4097,
+  "parameters": {
+    "L": "1000000000",
+    "N": 4096,
+    "T": "128",
+    "clock": "s=alpha*t_E/hbar",
+    "contract_sha256": "7ce892e9fb5bf7a5da03777206129db31f9d757d0d4c227cc6077c51fbe55daf",
+    "h": "1/32",
+    "input_kind": "exact rational reference proxies with proved actual-AQ absolute error; not observations or simulations",
+    "model": "AQ centered full-Z3 zero-selected patterned family",
+    "selected": [
+      "0",
+      "0",
+      "0"
+    ],
+    "state": "same chosen AQ subsequential state at tau=+1e-14 throughout every node",
+    "tau": "1/100000000000000"
+  },
+  "physical_R_intervals": {
+    "definition": "R=I/alpha, alpha>0; inverse-energy units; not susceptibility",
+    "primary_lower": "(42585376089987669271345664867041/512000000000000000000000000000000)/alpha",
+    "primary_upper": "(5431996471453446033902389929566173/64000000000000000000000000000000000)/alpha",
+    "secondary_lower": "(42585376089987669271345664867041/512000000000000000000000000000000)/alpha",
+    "secondary_upper": "(1708567163274410933784861083842027077770719182764809085898746719778069378918515534549/20453077171808549729574501193125000000000000000000000000000000000000000000000000000000)/alpha"
+  },
+  "primary_actual_inverse_interval": {
+    "free_inverse_included": true,
+    "lower": "42585376089987669271345664867041/512000000000000000000000000000000",
+    "target_width": "1/500",
+    "upper": "5431996471453446033902389929566173/64000000000000000000000000000000000",
+    "width": "13284235864866622922873757469/7812500000000000000000000000000"
+  },
+  "resolved_interaction_shift": false,
+  "scientific_priority_verified": false,
+  "secondary_target_met": true,
+  "simulated_interacting_samples": false,
+  "state_uniqueness_claim": false,
+  "stop": "third and final authorized investigation; no further scientific loop",
+  "target_met": true,
+  "uniform_wilson_claim": false,
+  "window_certificate": {
+    "D": "80829037686547607031281/100000000000000000000000000000",
+    "costs": {
+      "Poisson_tail": "33333360276345895515869010427/818123086872341989182980047725000000",
+      "centering": "6533333333333333333333360933172240390112500961/10000000000000000000000000000000000000000000000000000000000",
+      "real_time_comparison": "172820120684069623762183025300727/1090830782496455985577306730300000000000000",
+      "state": "80829037686547607031281/100000000000000000000000000000"
+    },
+    "k": "49/400000000000000",
+    "pi_lower": "98174770424681038701957605727/31250000000000000000000000000",
+    "pi_upper": "785398163397448309615660845821/250000000000000000000000000000",
+    "uniform_positive_time_error": "277897811233733718277153070181309989448062198100468970986710012444378918515534549/327249234748936795673192019090000000000000000000000000000000000000000000000000000000000",
+    "zero_time_error": "4041458417660713684897383333360933172240390112500961/10000000000000000000000000000000000000000000000000000000000"
+  }
+}

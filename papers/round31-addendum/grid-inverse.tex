@@ -1,0 +1,225 @@
+\section{AT6: a complete actual-state grid and inverse-energy enclosure}
+\label{sec:at6}
+
+\textbf{Contribution \projecttag{HNM-C-AT6}.} The third contract retains
+AT5's same chosen actual state, selected triple $(0,0,0)$ and
+$\tau=10^{-14}$. It fixes
+\begin{equation}
+ T=128,\quad h=1/32,\quad N=4096,\quad s_j=jh,
+ \quad L=10^9,\quad\epsilon=10^{-6}.
+ \label{eq:grid-design}
+\end{equation}
+Thus the physical times are $t_{E,j}=j\hbar/(32\alpha)$ and the final time is
+$128\hbar/\alpha$. Neither the state, coupling nor clock changes across the
+nodes. The accepted result supplies the previously missing actual-model input
+premise only within this specified small-coupling family.
+
+\subsection{The entire window, including zero}
+For $s>0$, use the complete error $\mathcal E_\tau(s,L)$ in
+\eqref{eq:certificate}. Put $f(s)=s\log(1+(L/s)^2)$ and $y=L/s$.
+For every real $0<s\le T$, $y\ge L/T>3$, and
+\begin{equation}
+ f'(s)=\log(1+y^2)-\frac{2y^2}{1+y^2}
+ >\log 10-2>0.
+ \label{eq:monotone}
+\end{equation}
+The final inequality is checked by an exact lower enclosure $e^{-2}>1/10$.
+The other time-dependent cost is positive and linear, so the bound increases
+throughout the positive window. This is a continuous proof, not a conclusion
+from the finite grid.
+
+At zero, use the actual variance separately. Equation~\eqref{eq:effect} and
+$m_\tau^2\le D^2$ give
+\begin{equation}
+ |C_\tau(0)-1/4|\le D/2+D^2.
+ \label{eq:zero-node}
+\end{equation}
+The singular Poisson kernel is not evaluated at zero. Outward rational
+evaluation at $T$ gives a positive-time allowance $E_{\rm window}^+$ satisfying
+\begin{equation}
+ D^+/2+(D^+)^2<E_{\rm window}^+<8.491932\times10^{-7}<\epsilon.
+ \label{eq:window-error}
+\end{equation}
+The zero-time allowance is approximately $4.041458418\times10^{-7}$.
+State replacement, mean-square centering, dynamics and the complete Poisson
+tail are all retained. The reverse implementation keeps its conservative tail
+and proves the separate uniform bound below $9.714242\times10^{-7}$, also
+below $\epsilon$.
+
+\subsection{Every exported node has a paid actual error}
+The forward arithmetic uses $G=10^{30}$ and an outward rational enclosure
+$q_-\le e^{-3/32}\le q_+$. Starting from $p_0^-=p_0^+=1$, it computes
+\begin{equation}
+ p_{j+1}^-=\frac{\lfloor Gp_j^-q_-\rfloor}{G},\qquad
+ p_{j+1}^+=\frac{\lceil Gp_j^+q_+\rceil}{G}.
+ \label{eq:recurrence}
+\end{equation}
+Positive multiplication and induction enclose $e^{-3j/32}$ at every node.
+With $f_j^\pm=p_j^\pm/4$, define
+\begin{align}
+ d_j&=(f_j^-+f_j^+)/2,\qquad a_j=(f_j^+-f_j^-)/2,\\
+ b_0&=D^+/2+(D^+)^2,\qquad b_j=E_{\rm window}^+\quad(j>0),\\
+ |C_\tau(s_j)-d_j|&\le e_j:=b_j+a_j\le\epsilon.
+ \label{eq:node-errors}
+\end{align}
+The largest arithmetic half-width is exactly $3/(2\cdot10^{30})$; the complete
+maximum node error remains below $8.491932\times10^{-7}$. The first reference
+bin is exactly $[1/4,1/4]$, but its actual-state error is positive. The final
+reference bin is $[0,11/(4\cdot10^{30})]$, with exact datum
+$11/(8\cdot10^{30})$. Its zero lower endpoint does not declare the exponential
+to be zero. The reverse recurrence uses $G=10^{36}$ and pays its own complete
+arithmetic and analytic errors.
+
+All 4097 rows are exported with exact indices, times, reference bins, data and
+complete actual-error allowances. They are rational reference proxies whose
+distance from the actual interacting correlation has been proved. They are
+neither observations nor simulated interacting trajectories. The theorem and
+frozen source packet establish provenance; a metadata label on arbitrary data
+does not do so.
+
+\subsection{The same centered spectral measure and its two tails}
+Let $\eta$ be the spectral measure of $\chi_\tau$ in $x=E/\alpha$. The inherited
+same-state AQ/AT results give
+\begin{equation}
+ \supp\eta\subset[g,\infty),\quad g=1/16,\qquad
+ \eta(\mathbb R)\le M=63/250,\qquad
+ \int x\,d\eta\le U=94/125,
+ \label{eq:measure-bounds}
+\end{equation}
+and $\int x^2d\eta\le36+98|\tau|$. The gap and positive measure imply by Tonelli
+\begin{equation}
+ I:=\int_0^\infty C_\tau(s)\,ds
+ =\int x^{-1}d\eta(x)=\alpha\mathcal R,
+ \quad
+ \mathcal R:=\langle\chi_\tau,(H_\tau|_{\Omega_\tau^\perp})^{-1}
+ \chi_\tau\rangle.
+ \label{eq:inverse}
+\end{equation}
+The notation $\mathcal R$ distinguishes this inverse-energy form from the
+local support $R$. The spectral measure and centering remain the same in every
+step.
+
+The historical mass bound pays
+\begin{equation}
+ 0\le\int_T^\infty C_\tau(s)\,ds
+ \le D_{\rm mass}:=(M/g)e^{-gT}=\frac{504}{125}e^{-8}.
+ \label{eq:mass-tail}
+\end{equation}
+The prospectively shared endpoint candidate is also a standard spectral
+consequence: $x\ge g$ implies $e^{-Tx}/x\le e^{-Tx}/g$. Integrate this pointwise
+inequality against the same positive $\eta$ to obtain
+\begin{equation}
+ \int_T^\infty C_\tau(s)\,ds\le C_\tau(T)/g
+ =16C_\tau(T)\le16u_T,
+ \quad u_T:=\max(0,d_N+e_N).
+ \label{eq:endpoint-tail}
+\end{equation}
+The forward value $16u_T$ is approximately $1.358709054\times10^{-5}$,
+versus mass-tail allowance approximately $0.001352585316$.
+Use $D_{\rm new}=\min(D_{\rm mass}^+,16u_T)$, where the superscript denotes
+the certified rational upper evaluation. The tiny free endpoint alone is not
+an actual tail bound. A constant finite-window comparison error is never
+integrated to infinite time.
+
+\subsection{Quadrature sign, deterministic errors and evaluated intervals}
+The finite second moment justifies $C_\tau''(s)=\int x^2e^{-sx}d\eta(x)$,
+including the right derivative at zero. Positivity and Tonelli yield
+$\int_0^T C_\tau''(s)ds\le U$. On cell $[jh,(j+1)h]$, twice integrating by
+parts gives trapezoid minus integral as the integral of $C_\tau''$ against
+the nonnegative Peano kernel
+$(s-jh)((j+1)h-s)/2\le h^2/8$. Consequently
+\begin{equation}
+ 0\le\operatorname{Trap}(C_\tau)-\int_0^T C_\tau(s)ds
+ \le Q:=h^2U/8=47/512000.
+ \label{eq:quadrature}
+\end{equation}
+Every exported datum is used with the actual trapezoid weights:
+\begin{equation}
+ P=\frac1{32}\left(\frac{d_0}2+\sum_{j=1}^{4095}d_j+
+ \frac{d_{4096}}2\right),\qquad
+ |P-\operatorname{Trap}(C_\tau)|\le J:=T\epsilon=2/15625.
+ \label{eq:readout}
+\end{equation}
+The weights sum to $T$. Same-sign errors attain $T\epsilon$, so a statistical
+square-root reduction is invalid. No geometric closed sum replaces the
+exported-node readout.
+
+The unchanged historical AT3 evaluator receives every exact datum as the bin
+$[d_j,d_j]$. Its extra arithmetic-bin width is zero because $a_j$ is already
+charged in $e_j$. Its conditional and uncomputed-sample flags remain unchanged;
+the new wrapper discharges the error premise for this source-bound construction.
+It does not rewrite the historical result or turn the proxies into measured
+data. The two admitted inverse intervals are
+\begin{align}
+ I&\in[\max(0,P-Q-J),\ P+D_{\rm mass}^++J],
+ \label{eq:primary-inverse}\\
+ I&\in[\max(0,P-Q-J),\ P+D_{\rm new}+J].
+ \label{eq:secondary-inverse}
+\end{align}
+The quadrature allowance lowers the lower endpoint. Nonnegative clipping is
+justified by $I\ge0$ and is inactive here. Both deterministic costs and the
+actual endpoint error are paid even when correlated.
+
+\begin{table}[htbp]
+\centering\small
+\caption{AT6: short outward rational enclosures for $I=\alpha\mathcal R$.
+The displayed terminating decimals are exact widened endpoints.}
+\label{tab:inverse}
+\begin{tabular}{lll}
+\toprule
+Readout & Enclosing interval & Target met\\
+\midrule
+Forward, mass tail & $[0.083174562675757,\;0.084874944866461]$ & $<1/500$\\
+Forward, endpoint & $[0.083174562675757,\;0.083535946641292]$ & $<1/2500$\\
+Reverse, endpoint & $[0.083174562675757,\;0.083537902336706]$ & $<1/2500$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the forward output, the exact lower endpoint and trapezoid are
+\begin{align}
+ L_I&=\frac{42585376089987669271345664867041}
+ {512000000000000000000000000000000},\\
+ P&=\frac{42697912089987669271345664867041}
+ {512000000000000000000000000000000}.
+\end{align}
+The full rational upper endpoints and tail costs are exported in the
+\repo{research/round31/forward/at6/output/results.json}{forward results}
+and \repo{research/round31/reverse/at6/output/inverse-enclosures.json}{reverse inverse ledger}.
+Before the short decimal widening in Table~\ref{tab:inverse}, the exact forward
+widths are $Q+D_{\rm mass}^++2J<0.001700382190703$ and
+$Q+D_{\rm new}+2J<0.000361383965535$. The reverse endpoint width is below
+$0.000363339660948$. Thus both implementations pass both frozen targets.
+
+Divide the exact interval endpoints by positive $\alpha$ to obtain
+$\mathcal R$ in inverse-energy units. The physical Euclidean-time integral is
+$\hbar\mathcal R$. No susceptibility is identified. All four exact intervals
+contain $1/12$, so the interaction-induced inverse shift remains unresolved.
+
+\subsection{Controls and review}
+The producer controls retain zero-time centering, all nodes and endpoint
+half-weights, a fixed coupling and clock, every arithmetic cost, and actual
+source provenance. Missing or coherently erased error packets are rejected.
+A slow atom $(1/4)\delta_{1/16}$ demonstrates the need for an infinite tail
+within the declared gap/moment-upper class. A mixture
+$(1/4-\delta)\delta_3+\delta\delta_{1/16}$ with $\delta=\epsilon/2$ stays
+within the uniform proxy tolerance but defeats a free-endpoint-only tail.
+These are abstract controls, not AQ realizations. The skeptical control
+$(\delta_{1/16}+\delta_{95/16})/8$ additionally preserves the exact free mass
+and first moment while retaining a damaging slow tail.
+
+Reversing the quadrature sign excludes the known free inverse. A zero-energy
+atom gives a constant correlation and divergent inverse, so the centered-gap
+interface rejects it. The old coupling cap and old cutoff remain insufficient
+under their complete budgets. These failures are not lower bounds on actual
+errors.
+
+The independent model-agent review passes 12,373 exact checks, including all
+8,194 rows across the two implementations. Normal and optimized reviewer
+outputs agree; four fresh producer replays reproduce their declared files
+byte for byte. The producers retain 19 forward and 21 reverse grouped
+controls. These checks audit arithmetic and provenance; the continuous and
+infinite-volume arguments supply the mathematical claim. Full derivations are
+\repo{research/round31/forward/at6/report.md}{AT6 forward},
+\repo{research/round31/reverse/at6/report.md}{AT6 reverse}, and
+\repo{research/round31/skeptic/at6.md}{AT6 skeptical review}.
