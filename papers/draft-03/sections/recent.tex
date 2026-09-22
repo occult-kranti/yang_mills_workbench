@@ -1,0 +1,1465 @@
+\section{Full sources, endpoint observables, and certified heat: Rounds 23--26}
+\label{sec:recent}
+
+The twenty-eight investigations S1--AF2 develop three separate models.  The
+homogeneous initial-diagonal problem uses dimensionless generators with physical
+energy unit $\alpha/8$; the finite-graph problem uses $L=H/\alpha$ and heat time
+$\sigma=\alpha t/\hbar$; the canonical summable family uses its original real-time
+generator and a $q$-dependent interaction profile.  Throughout, lattice spacing
+$a$, $E_\star>0$, $\alpha/E_\star>0$, and $\hbar>0$ are fixed.  A source filter,
+collar depth, Galerkin projection, joining time, or input-overlap restriction is a
+proof or approximation parameter, not a new term in an action.
+
+The marker \workstar\ means a contribution newly derived or computed in this
+workbench; scientific priority is unverified.  S1/S2/T1, all ten Round 24 loops,
+and all ten Round 26 loops have separately authored model-agent derivations and
+skeptical reviews.  T2/U1/U2 and AA1/AA2 instead have same-author derivation,
+reverse reconstruction, and critical self-review.  These categories describe
+provenance, not external mathematical peer review or experimental independence.
+Historical limited verdicts remain limited even where later work answers a
+previously missing premise.  The detailed source-to-equation mapping is recorded
+in \repo{audit/recent-ledger.json} accompanying this manuscript.
+
+\subsection{An actual homogeneous source and its regulated inverses}
+\label{recent:homogeneous}
+
+\subsubsection{\workstar\ S1: a generated cubic source and the complete crossing defect}
+
+Use the complete 24-link onsite factors and four-site stars
+$Y=\{0,e_1,e_2,e_3\}$ of the homogeneous construction.  On one star let $H=H_{0,Y}$,
+$P_0=|\Omega_Y\rangle\langle\Omega_Y|$, $Q_0=I-P_0$, and $H\ge Q_0$.  With the
+actual 21-face potential $\phi_0$, set
+\begin{equation}
+ v=\phi_0\Omega_Y,\quad u=H_{Q_0}^{-1}v,\quad
+ a_0=\langle u,v\rangle,\quad b_0=\norm{u}^2,\quad
+ s_0^2=\norm{v}^2=\frac7{12}\tau^2 .
+ \label{recent:source-data}
+\end{equation}
+The Haar identity follows because each face has a free Haar link and distinct
+faces have an unmatched free link: the 21 diagonal half-trace moments are
+$1/4$ and every cross term vanishes.  Define
+$S=|u\rangle\langle\Omega_Y|-|\Omega_Y\rangle\langle u|$ and
+$A_0=|v\rangle\langle\Omega_Y|+\mathrm{adjoint}$.  The specified repeated-anchor
+term in the previous remainder is
+\begin{equation}
+ C=\frac12[S,[S,\phi_0]]-\frac16[S,[S,A_0]],\qquad
+ w=Q_0C\Omega_Y=-a_0u-\frac{b_0}{3}v. \qquad\text{\workstar}
+ \label{recent:cubic-source}
+\end{equation}
+The two double commutators have the same $Q_0$-column
+$-3a_0u-b_0v$; their coefficients give the displayed result.  In particular,
+$\langle u,w\rangle=-4a_0b_0/3<0$ for $\tau\ne0$, so this is an actual nonzero
+source, with $r:=\norm{w}\le4s_0^3/3$.  It is one indexed cubic term; other
+terms in a regrouped cubic coefficient could cancel it.  Its exact local split
+is $C=c_0I+A+Q_0(C-c_0I)Q_0$, where $c_0=\langle\Omega_Y,C\Omega_Y\rangle$
+and $A=|w\rangle\langle\Omega_Y|+\mathrm{adjoint}$.
+All relative ratios divided by $r$ below require $\tau\ne0$, hence $r>0$.
+At $\tau=0$ the generated source vanishes; the undivided bounds still apply.
+
+Write $M=7|\tau|\le35/1664$, $D_c=Q_c\phi_cQ_c$, and
+$G_\Lambda=H_{0,\Lambda}+\sum_cD_c$, retaining only complete stars in a containing
+finite cuboid.  The one-star operator $G_Y=H+D_0$ satisfies
+$(1-M)H\le G_Y\le(1+M)H$ as forms and
+$D(G_Y)=D(H)$ by bounded perturbation.  Therefore
+\begin{equation}
+ z=(G_Y|_{Q_0})^{-1}w,\quad
+ K_Y=|z\rangle\langle\Omega_Y|-\mathrm{adjoint},\quad
+ [K_Y,G_Y]=-A,\qquad \norm{K_Y}\le\frac{r}{1-M}.
+ \label{recent:interior-inverse}
+\end{equation}
+The inverse places $z$ in the operator domain.  Identity extension preserves
+$D(H_{0,\Lambda})$ because the local commutator with $H$ is bounded and exterior
+spectral projections commute with $K_Y$.  The graph-bounded exponential and its
+inverse preserve that domain as well.  The complete extended equation is
+\begin{equation}
+ [K_Y\otimes I,G_\Lambda]=-A\otimes I+F_Y,\qquad
+ F_Y=\sum_{c\text{ crossing }Y}[K_Y,D_c],\qquad
+ \norm{F_Y}\le\frac{6Mr}{1-M}. \qquad\text{\workstar}
+ \label{recent:crossing-defect}
+\end{equation}
+At the positive-octant origin there are three possible crossings, with anchors
+$e_1,e_2,e_3$, each on a seven-site union.  For the single-source decomposition,
+$\sum_c e^{7\mu}\norm{[K_Y,D_c]}\le6e^{7\mu}Mr/(1-M)$.  A translated interior
+star has twelve crossings.  The reverse-origin sharper rooted count is
+$12\cdot7=84$, giving a family bound $168e^{7\mu}Mr_\star/(1-M)$; the forward
+count 96 gives the valid weaker constant 192.  These are one-step interaction
+bounds, not an all-order inverse.
+
+An exterior mean-zero unit Haar character $\xi$ distinguishes the actual source
+from its vacuum-projected replacement:
+$(A\otimes I)(\Omega_Y\otimes\xi)=w\otimes\xi$ while
+$(A\otimes P_{\mathrm{ext}})(\Omega_Y\otimes\xi)=0$.  Also a bounded
+$D(G)$-preserving exact inverse must satisfy $P_EAP_E=0$ at every energy; a
+positive ground gap alone says nothing about all excited Bohr differences.
+This explains S1's limited gate and motivates a regulated full-source equation.
+Sources: \repo{research/round23/forward/s1/report.md},
+\repo{research/round23/reverse/s1/report.md}, and
+\repo{research/round23/skeptic/s1.md}.
+
+\subsubsection{\workstar\ S2 and W1--W2: retain the residual and name its topology}
+
+For $\alpha_s^G(A)=e^{isG}Ae^{-isG}$, S2 fixes $0<\Theta\le1/16$ and defines
+\begin{align}
+ \mathcal L_\Theta(A)&=-\frac i2\int_{-\Theta}^{\Theta}
+ \operatorname{sgn}(s)(1-|s|/\Theta)\alpha_s^G(A)\,ds,\notag\\
+ \mathcal R_\Theta(A)&=\frac1{2\Theta}\int_{-\Theta}^{\Theta}
+ \alpha_s^G(A)\,ds,\qquad
+ [\mathcal L_\Theta(A),G]=-A+\mathcal R_\Theta(A). \qquad\text{\workstar}
+ \label{recent:short-filter}
+\end{align}
+These are vectorwise strong integrals.  In weak pairings on $D(G)$, integration
+by parts uses the kernel derivative
+$2\delta_0-\Theta^{-1}\mathbf1_{[-\Theta,\Theta]}$.  The bounded weak
+commutator then proves $\mathcal L_\Theta(A)D(G)\subset D(G)$ by self-adjointness;
+domain preservation of an arbitrary initial $A$ is not assumed.  Its norm and
+graph bounds are $\Theta r/2$ and $\Theta r/2+2r$.  At Bohr frequency $\omega$,
+\begin{equation}
+ \ell_\Theta(\omega)=\frac{1-\operatorname{sinc}(\Theta\omega)}{\omega},
+ \qquad r_\Theta(\omega)=\operatorname{sinc}(\Theta\omega),
+ \qquad \ell_\Theta(0)=0, r_\Theta(0)=1.
+ \label{recent:sinc-multipliers}
+\end{equation}
+Thus every equal-energy block survives exactly; shortening $\Theta$ leaves more
+of the source.
+
+For the rooted norm
+$\norm{\Phi}_2=\sup_x\sum_{X\ni x}2^{|X|}\norm{\Phi_X}$, a surviving ordered
+commutator word starts on one star and adds at most three sites at each step.
+The forward rooted count, before simplex integration, is
+\begin{equation}
+ N_0\le64r_\star,\quad N_{n+1}\le64M(8+3n)N_n,
+ \quad N_n\le64r_\star(192M)^n(8/3)_n. \qquad\text{\workstar}
+ \label{recent:root-count}
+\end{equation}
+Here the insertion cost includes $2M$ from a commutator and $2^3$ from the
+support weight; incoming anchors and repetitions remain.  The simplex contributes
+$|s|^n/n!$, and the inverse and residual filter moments are respectively
+$\Theta^{n+1}/(n+2)!$ and $\Theta^n/(n+1)!$.  Consequently
+\begin{equation}
+ \norm{\mathcal L_\Theta(\{A_b\})}_2
+ \le32\Theta r_\star(1-192M\Theta)^{-8/3},\qquad
+ \norm{\mathcal R_\Theta(\{A_b\})}_2
+ \le64r_\star(1-192M\Theta)^{-8/3},
+ \label{recent:s2-weighted}
+\end{equation}
+with $192M\Theta\le105/416<1$.  Independently, reverse counts at most
+$13^nn!$ relative words and $4+3n$ rooted translates.  With $u=208M\Theta$,
+its orbital sum is $16r_\star(4-u)/(1-u)^2$; the inverse and residual bounds
+are $8\Theta r_\star(4-u)/(1-u)^2$ and $16r_\star(4-u)/(1-u)^2$.
+At $u=35/128$ the rational sum is $6784/961$.  The full tail after depth $N$ is
+\begin{equation}
+ \sum_{n>N}(4+3n)u^n
+ =\frac{u^{N+1}[(3N+7)-(3N+4)u]}{(1-u)^2}.
+ \label{recent:s2-tail}
+\end{equation}
+These alternative bounds concern indexed interaction decompositions, not a
+bounded extensive infinite sum.
+
+The forward-origin infinite-representation identification adds a separate
+form argument.  In the admitted product-reference representation, write
+$G\leftrightarrow h_0+d$, $\kappa=4M<1$, and
+$\sum_b\norm{Q_bu}^2\le4h_0[u]$.  Subtracting resolvent form equations for
+$u=(G+1)^{-1}f$ and $u_\Lambda=(G_\Lambda+1)^{-1}f$ gives
+\begin{equation}
+ \norm{u_\Lambda-u}_{\mathcal F}
+ \le\frac{\sqrt\kappa}{1-\kappa}
+ \left(M\sum_{b\text{ omitted}}\norm{Q_bu}^2\right)^{1/2}\longrightarrow0.
+ \label{recent:form-identification}
+\end{equation}
+Strong-resolvent convergence identifies the strong unitary limit.  Stabilization
+of every finite connected word plus the uniform summable tail improves the
+single-source short-time limit to operator norm.  It does not prove
+$D(G)=D(H_0)$ globally or a norm limit of global propagators.
+Sources: \repo{research/round23/forward/s2/report.md},
+\repo{research/round23/reverse/s2/report.md},
+\repo{research/round23/skeptic/s2.md}.
+
+W1 then evaluates the actual source's first form moment, a reverse-origin
+refinement separately reviewed.  The ground-transform identity and the
+half-trace gradient identity give
+\begin{equation}
+ h[F\Omega_Y]=8\sum_e\int |\nabla_eF|^2|\Omega_Y|^2,
+ \quad\sum_a|X_e^aW_f|^2=\frac{1-W_f^2}{4},\quad
+ h[v]=14\tau^2=24s_0^2. \qquad\text{\workstar}
+ \label{recent:source-moment}
+\end{equation}
+Free-link parity also cancels cross gradients.  In the spectral measure of $v$,
+$w=-f(H)v$ with decreasing positive $f(\lambda)=a_0/\lambda+b_0/3$.
+The covariance of $\lambda$ with $f(\lambda)^2$ is nonpositive, so
+$h[w]/r^2\le24$; Jensen's inequalities for the two inverse moments yield
+$r\ge s_0^3/432$.  Because $G\Omega=0$,
+$\mathcal R_\Theta(A)\Omega=\operatorname{sinc}(\Theta G)w$.
+Applying $\operatorname{sinc}x\ge1-x/2$ to this positive spectral measure and
+$G\le(1+4M)H_0$ gives the actual lower bound
+\begin{equation}
+ \norm{\mathcal R_\Theta(A)}
+ \ge[1-12\Theta(1+4M)]r\ge\frac{311}{1664}r>0.
+ \label{recent:residual-lower}
+\end{equation}
+This prevents deleting the short-filter cubic residual.  It does not establish
+an actual zero-frequency obstruction to every inverse.  The complementary
+forward result is the source-mass certificate
+$\norm{\mathcal R_\Theta(A)}\ge(5/6)r\sqrt{\nu([0,E])}$ when $\Theta E\le1$,
+and $\norm{\mathcal R_\Theta(A)}/r\to1$ as $\Theta\downarrow0$; neither is a
+full-operator upper estimate.  If a bounded exact inverse $K$ were already
+known, integration would instead give
+$\norm{\mathcal R_\Theta(A)}\le\norm K/\Theta$, a conditional criterion only.
+Sources: \repo{research/round24/reverse/w1/report.md},
+\repo{research/round24/forward/w1/report.md},
+\repo{research/round24/skeptic/w1-review.md}.
+
+W2 holds $G$ fixed and sets $A_n=\mathcal R_\Theta^n(A)$,
+$K_n=\sum_{j<n}\mathcal L_\Theta(A_j)$.  Telescoping preserves
+\begin{equation}
+ [K_n,G]=-A+A_n,\qquad
+ \norm{K_n}\le n\Theta r/2,\qquad
+ (A_n)_\omega=\operatorname{sinc}(\Theta\omega)^nA_\omega.
+ \label{recent:iterate-filter}
+\end{equation}
+On the actual vacuum column, $g=1-4M\ge381/416$ supplies a gap.  With the
+reverse bound $\rho=1-(\Theta g)^2/8<1$, a piecewise Taylor and
+$|\operatorname{sinc}x|\le1/|x|$ argument yields
+\begin{align}
+ \norm{A_n\Omega}&\le\rho^nr,\notag\\
+ \norm{K_n\Omega-G_Q^{-1}w}&\le\rho^nr/g,\qquad
+ \norm{G(K_n\Omega-G_Q^{-1}w)}\le\rho^nr. \qquad\text{\workstar}
+ \label{recent:column-convergence}
+\end{align}
+Forward independently obtains denominator 10 in $1-(\Theta g)^2/10$.
+These are graph-norm convergence of a column, uniform in the containing volumes
+and valid in the admitted infinite representation.  In each fixed finite volume,
+compact resolvent and dominated convergence in an energy eigenbasis additionally
+prove
+\begin{equation}
+ \mathcal R_\Theta^n(A)\xrightarrow{\mathrm{strong}}
+ \mathcal D_G(A):=\sum_EP_EAP_E.
+ \label{recent:pinching-limit}
+\end{equation}
+The value is not known to vanish.  Compact-resolvent doublets with splittings
+$1/(k+1)$ and unit swap sources show why strong convergence can coexist with
+residual norm one and an unbounded formal inverse.  In the actual model the old
+weighted majorants cover only $n\le3$ at the cap; failure at $n=4$ is failure of
+that estimate, not divergence of the dynamics.  W2 therefore does not close a
+changed-diagonal nonlinear iteration.
+Sources: \repo{research/round24/forward/w2/report.md},
+\repo{research/round24/reverse/w2/report.md},
+\repo{research/round24/skeptic/w2-review.md}.
+
+\subsubsection{\workstar\ AB1--AB2: the surviving block is controlled by its boundary}
+
+Pinching the complete identity \eqref{recent:crossing-defect} gives
+\begin{equation}
+ \mathcal D_G(A)=\mathcal D_G(F_Y),\qquad
+ \norm{\mathcal D_G(A)}\le\frac{6Mr}{1-M},\qquad
+ \frac{6M}{1-M}\le\frac{70}{543}. \qquad\text{\workstar}
+ \label{recent:ab-resonance}
+\end{equation}
+The diagonal map is contractive because its input and output blocks are
+orthogonal.  As $r=O(|\tau|^3)$, this is an actual uniform finite-volume quartic
+upper bound, not an evaluation of a nonzero resonant block.  On a spectral window
+$P=\mathbf1_{[E-\varepsilon,E+\varepsilon]}(G)$, reverse additionally obtains
+\begin{equation}
+ \norm{PAP}\le\frac{(2\varepsilon+6M)r}{1-M},
+ \label{recent:ab-window}
+\end{equation}
+because $\norm{(G-E)P}\le\varepsilon$.  If no crossing star is retained,
+$F_Y=0$ and the interior inverse is exact; otherwise zero versus nonzero crossed
+blocks remains unresolved.  Pinching need not preserve locality.
+
+For the Gaussian density $p_s(t)=e^{-t^2/(2s^2)}/(\sqrt{2\pi}s)$ and odd tail
+$h_s(t)=\operatorname{sgn}(t)\int_{|t|}^\infty p_s(u)\,du$, define
+$\mathcal R_s(A)=\int p_s(t)\alpha_t(A)dt$ and
+$\mathcal J_s(A)=-i\int h_s(t)\alpha_t(A)dt$.  Since
+$h_s'=\delta_0-p_s$, $\norm{h_s}_1=s\sqrt{2/\pi}$, and
+$\norm{p_s'}_1=\sqrt{2/\pi}/s$, weak integration by parts proves
+\begin{align}
+ [\mathcal J_s(A),G]&=-A+\mathcal R_s(A),\qquad
+ \mathcal J_s(A)D(G)\subset D(G),\notag\\
+ \mathcal R_s(A)&=\mathcal R_s(F_Y)+i\int p_s'(t)\alpha_t(K_Y)\,dt,\notag\\
+ \frac{\norm{\mathcal R_s(A)}}r
+ &\le\min\left\{1,\frac{6M+\sqrt{2/\pi}/s}{1-M}\right\}. \qquad\text{\workstar}
+ \label{recent:gaussian-contraction}
+\end{align}
+The residual and inverse spectral multipliers are
+$e^{-s^2\omega^2/2}$ and $(1-e^{-s^2\omega^2/2})/\omega$, retaining the
+zero-frequency block.  At $s=4$ the bound is $626/1629<0.385$; reverse's $s=2$
+gives $1042/1629<2/3$.  This advances W2 from a column contraction to a
+full-operator contraction on the fixed source and initial $G$.  The asymptotic
+boundary budget is an upper bound, not a positive residual lower bound.
+Gaussian time support is unbounded, so the old finite-radius connected series
+cannot establish its locality by direct integration.
+Sources: \repo{research/round26/forward/ab1/report.md},
+\repo{research/round26/reverse/ab1/report.md},
+\repo{research/round26/forward/ab2/report.md},
+\repo{research/round26/skeptic/ab1.md},
+\repo{research/round26/skeptic/ab2.md}.
+
+\subsubsection{\workstar\ AE1--AE2: locality, graph error, and the original weighted norm}
+
+AE1 uses an all-time interaction-picture commutator recurrence.  Each site lies
+in at most four stars and a four-site star meets at most sixteen possible stars.
+Removing internal unitaries in the commutator recurrence leaves chains, rather
+than the growing-union count in \eqref{recent:root-count}.  For the forward
+collar $C_R=\{x\in\mathbb N_0^3:|x|_1\le2R+1\}$, every chain of at most $R$
+steps is retained.  Duhamel and the chain exponential then give
+\begin{align}
+ \norm{\alpha_t^G(A)-\alpha_t^{G_R}(A)}
+ &\le r\sum_{m\ge R+1}\frac{(32M|t|)^m}{m!}
+ \le r2^{-R-1}e^{64M|t|},\notag\\
+ \norm{\mathcal R_s^G(A)-\mathcal R_s^{G_R}(A)}
+ &\le r2^{-R}e^{(64Ms)^2/2}. \qquad\text{\workstar}
+ \label{recent:gaussian-locality}
+\end{align}
+The last step integrates the entire Gaussian using
+$\mathbb E e^{v|T|}\le2e^{v^2s^2/2}$.  At the old cap and $s=4$, $R=64$ gives
+relative operator error below $2^{-42}$ but requires 374,660 complete factors.
+No local finite Hilbert dimension is assumed.
+
+The independent reverse construction uses $C_R=\{0,\ldots,R+1\}^3$ and
+$b_R=3R^2+9R+7$ crossing stars.  With $v=64M$, it bounds the residual and inverse
+errors by
+\begin{align}
+ \varepsilon_R&=4rMb_Rs(1+vs)e^{v^2s^2/2}2^{-R},\notag\\
+ \kappa_R&=4rMb_Rs^2e^{v^2s^2/2}2^{-R},\qquad
+ \norm{[\mathcal J_s-\mathcal J_{s,R},G]}\le2\varepsilon_R.
+ \label{recent:gaussian-graph}
+\end{align}
+The graph conclusion is an additional calculation of every crossing commutator;
+small operator-norm error by itself would not prove it.  At $s=2,R=40$, the
+bounds are $\varepsilon_R/r<2\cdot10^{-7}$ and $\kappa_R/r<10^{-7}$ on
+74,088 factors.  Telescoping collars produces exponential diameter decay, with
+polynomial translation multiplicities harmless.  It does not establish the
+old support-cardinality norm: a factor $e^{\mu O(R^3)}$ overwhelms this
+$2^{-R}$ upper majorant.  That failed majorant is not a divergence theorem.
+Sources: \repo{research/round26/forward/ae1/report.md},
+\repo{research/round26/reverse/ae1/report.md},
+\repo{research/round26/skeptic/ae1.md}.
+
+AE2 obtains a simultaneous statement in the original rooted weight by explicitly
+restricting $M\le10^{-3}$, equivalently $|\tau|\le1/7000$.  At the fixed proof
+duration $T=3$, use
+\begin{equation}
+ p_T(t)=\frac{(1-|t|/T)_+}{T},\quad
+ h_T(t)=\frac{\operatorname{sgn}(t)}2(1-|t|/T)_+^2,
+ \quad \widehat p_T(\omega)=\operatorname{sinc}^2(T\omega/2).
+ \label{recent:compact-kernel}
+\end{equation}
+Its derivative and moments are $h_T'=\delta_0-p_T$,
+$\norm{p_T'}_1=2/T$, $\norm{h_T}_1=T/3$.  For a translated interior source,
+all twelve crossings cost $24Mr_b/(1-M)$, so the boundary identity proves
+\begin{equation}
+ \norm{\mathcal R_T(A_b)}
+ \le\frac{24M+2/T}{1-M}r_b
+ \le\frac{2072}{2997}r_b<0.7r_b. \qquad\text{\workstar}
+ \label{recent:compact-contraction}
+\end{equation}
+Origin-only three-crossing constants cannot be used for this family.
+Integrating the same ordered words as S2 yields, with $c=192M$, $p=8/3$,
+\begin{align}
+ \norm{\mathcal R_T(\{A_b\})}_2
+ &\le128r_\star\sum_{n\ge0}\frac{(p)_n(cT)^n}{(n+2)!},\notag\\
+ \norm{\mathcal J_T(\{A_b\})}_2
+ &\le128Tr_\star\sum_{n\ge0}\frac{(p)_n(cT)^n}{(n+3)!}.
+ \label{recent:compact-weighted}
+\end{align}
+Here $cT\le72/125<1$, giving the common bound $64(125/53)^3r_\star$.
+Reverse's independent $208M$ count gives the smaller displayed sufficient
+budget $844000r_\star/2209<383r_\star$ at $208MT=78/125$.
+These prove finiteness, not weighted contraction: their positive residual
+series already begins at the initial $64r_\star$ budget.
+
+The same certificates require simultaneously
+$T>2/(1-25M)$ and $T<1/(192M)$, possible only if $409M<1$; the reverse radius
+requires $441M<1$.  At the old cap $M=35/1664$, the first lower bound is
+$3328/789$, while the upper bounds are $26/105$ and $8/35$.  This is a precise
+failure of those joint certificates at the old cap.  At their radius endpoint
+the inverse majorant is integrable but the residual majorant is not.  The next
+missing premise is weighted contraction for generated sources with all scalar,
+diagonal, and domain updates, not another application of the original-source
+factor 0.7.
+Sources: \repo{research/round26/forward/ae2/report.md},
+\repo{research/round26/reverse/ae2/report.md},
+\repo{research/round26/skeptic/ae2.md}.
+
+\subsection{A fixed physical graph: from memory to computed relative heat}
+\label{recent:finite-graph}
+
+The graph throughout this subsection has vertices
+$\{0,1,2\}\times\{0,1,2\}\times\{0,1\}$, 33 links, 20 square faces, and all
+18 vertex Gauss constraints.  Its full physical Hilbert space is
+$\mathcal H_{\rm phys}=L^2(\mathrm{SU}(2)^{33},d\mathrm{Haar})^{\mathrm{SU}(2)^{18}}$.
+Define
+\begin{equation}
+ \begin{aligned}
+ K&=\sum_e C_e,\qquad L=K+\lambda(20-S),\qquad
+ S=\sum_{p=1}^{20}W_p,\\
+ W_p&=\tfrac12\Tr U_{\partial p},\qquad
+ 0\le\lambda\le10^{-2},\qquad\sigma=\alpha t_{\rm phys}/\hbar.
+ \end{aligned}
+ \label{recent:graph-model}
+\end{equation}
+In heat estimates below, integration variables $t,s$ and joining times are dimensionless coordinates in the same units as $\sigma$; physical duration is $t_{\rm phys}=(\hbar/\alpha)\sigma$.
+The multiplication $20-S$ lies between zero and 40.  Gauge averaging commutes
+with the electric spectral projections; bounded perturbation preserves the
+self-adjoint electric domain and its smooth invariant core.  The electric
+resolvent is compact.  Its vacuum is unique and the physical electric gap is
+3: a nonempty invariant active-edge support has no degree-one vertex, hence
+contains a cycle, whose at least four spin-half edges cost $4(3/4)$.
+A fundamental square character attains 3.  These are full-space facts, not a
+finite-spin assumption.
+
+\subsubsection{\workstar\ T1--T2: a full-space memory model and separate ground centering}
+
+For the inherited infinite-rank isometry $J$ from the selected physical space,
+write the full Hamiltonian in retained/complementary blocks
+\begin{equation}
+ H_\lambda=\begin{pmatrix}A&B^*\\B&C\end{pmatrix},\qquad
+ \widetilde H_\lambda=\begin{pmatrix}A&B^*\\B&C_0\end{pmatrix},\quad
+ C-C_0=\alpha\lambda D,\quad 0\le D\le40Q,
+ \quad\norm B=\tfrac52\alpha\lambda.
+ \label{recent:t-blocks}
+\end{equation}
+The diagonals have their actual inherited electric domains,
+$A\ge19\alpha\lambda$ and $C_0\ge3\alpha$.
+The scalar Schur/Young inequality gives
+$\widetilde H_\lambda\ge18\alpha\lambda I$ throughout the stated interval;
+$H_\lambda\ge\widetilde H_\lambda$ as forms gives the same separate spectral
+floor for $H_\lambda$.  No order between their heat operators is inferred.
+Bounded perturbation establishes both on the full electric domain.
+
+Eliminating the complementary component shows that
+$\widetilde T(t)=J^*e^{-t\widetilde H_\lambda/\hbar}J$ satisfies
+\begin{align}
+ \widetilde T(t)&=e^{-tA/\hbar}+\hbar^{-2}
+ \int_{0\le u\le s\le t}e^{-(t-s)A/\hbar}
+ K_2(s-u)\widetilde T(u)\,du\,ds,\notag\\
+ K_2(v)&=B^*e^{-vC_0/\hbar}B. \qquad\text{\workstar}
+ \label{recent:memory-return}
+\end{align}
+The full returned $\widetilde T(u)$ retains repeated excursions.  Iterating a
+difference of two solutions bounds it by
+$M_T(\norm Bt/\hbar)^{2n}/(2n)!$, proving uniqueness at each finite window.
+The corresponding Schur complement has minus sign
+$A+z-B^*(C_0+z)^{-1}B$.  A one-return substitution loses a fourth-order
+$(B^*B)^2$ term.  The two earlier diagnostic channels cannot be made autonomous:
+their full second-derivative defect dominates
+$\alpha^2\lambda^2\left(\begin{smallmatrix}19/4&1/4\\1/4&19/4\end{smallmatrix}\right)>0$.
+This last actual-model clarification originated in the independent T1 review.
+
+Let $d=3-18\lambda$.  Duhamel for the purely complementary perturbation has
+one leakage factor on each side, each bounded by
+$(5\lambda/2)e^{-18\lambda\sigma}(1-e^{-d\sigma})/d$.  Thus
+\begin{align}
+ \norm{T(t)-\widetilde T(t)}
+ &\le250\lambda^3e^{-18\lambda\sigma}F_d(\sigma),\notag\\
+ F_d(\sigma)&=\frac{\sigma(1+e^{-d\sigma})-2(1-e^{-d\sigma})/d}{d^2}
+ \le\min\{\sigma^3/6,\sigma/d^2\},\notag\\
+ \sup_{t\ge0}\norm{T(t)-\widetilde T(t)}
+ &\le\frac{125\lambda^2}{9e(3-18\lambda)^2}
+ \le\frac{312500}{477144}\lambda^2.\qquad\text{\workstar}
+ \label{recent:t-unshifted}
+\end{align}
+This is cubic in coupling at fixed $\sigma$, but its uniform quadratic bound
+uses decay in the unshifted energy convention.
+
+T2 answers the centering objection rather than multiplying this estimate by
+uncontrolled ground exponentials.  Along
+$L_s=\widetilde H_\lambda/\alpha+s\lambda D$,
+min-max gives a simple ground $\epsilon_s\le40\lambda$ and excitation gap
+$g=3-85\lambda/2\ge103/40$.  The complementary ground inverse has denominator
+$d_0=3-40\lambda\ge13/5$, so its leakage is
+$\ell=(5\lambda/2)/d_0$.  Differentiation gives
+$\epsilon_s'=\lambda\langle\psi_s,D\psi_s\rangle$ and
+$\norm{G_s'}\le40\lambda\ell/g$.  In centered Duhamel the ground--ground term
+cancels exactly because
+$G_s(\lambda D-\epsilon_s'I)G_s=0$.  Two mixed, magnetic excited, and scalar
+excited terms cost respectively $80\lambda\ell/g$, $80\lambda\ell/g$, and
+$40\lambda\ell^2/g$.  Integration in $s$ proves
+\begin{align}
+ \sup_{t\ge0}\norm{J^*e^{-t(H_\lambda-e_\lambda)/\hbar}J
+ -J^*e^{-t(\widetilde H_\lambda-\widetilde e_\lambda)/\hbar}J}
+ &\le60\lambda^2,\notag\\
+ 0\le e_\lambda-\widetilde e_\lambda
+ &\le\tfrac{6250}{169}\alpha\lambda^3,\qquad
+ \norm{G_\lambda-\widetilde G_\lambda}
+ \le\tfrac{20000}{1339}\lambda^2.\qquad\text{\workstar}
+ \label{recent:t-centered}
+\end{align}
+The exact cap coefficient before rounding is $1042500/17407<60$.
+The excited remainder has initial complementary component $-QG_sJ$, which must
+remain in the bound $\norm{Q(e^{-u(L_s-\epsilon_s)}-G_s)J}
+\le\min\{2\ell,e^{-gu}\}$.  These results concern infinite-rank selected heat,
+not a finite algorithm or a relative-output theorem.  T2 is same-author
+self-review.  Sources: \repo{research/round23/forward/t1/report.md},
+\repo{research/round23/reverse/t1/report.md},
+\repo{research/round23/skeptic/t1.md},
+\repo{research/round23/forward/t2/report.md},
+\repo{research/round23/skeptic/t2.md}.
+
+\subsubsection{\workstar\ X1: two truncation theorems and an actually assembled sector}
+
+A zero-extended finite-rank heat operator has full-space error exactly one at
+$\sigma=0$.  X1 therefore separates two meaningful questions.  For the kinetic
+cutoff $P_R=\mathbf1_{[0,R)}(K)$, $R>3$, let $A_R=P_RLP_R$,
+$B_R=Q_RLP_R$, $b=20\lambda$, and $c=20\lambda$.
+Then $\norm{B_R}\le b$ and $Q_RLQ_R\ge R$.  Complementary variation of constants
+and its return give
+\begin{equation}
+ \norm{e^{-\sigma L}-e^{-\sigma A_R}P_R}
+ \le e^{-R\sigma}+\frac{2b}{R}+\frac{b^2\sigma}{R}.
+ \label{recent:x-cutoff}
+\end{equation}
+For actual ground energies $\epsilon,\mu_R$, Schur elimination and the full
+excited threshold 3 imply
+\begin{equation}
+ 0\le\mu_R-\epsilon\le\frac{b^2}{R-c},\qquad
+ \norm{G-G_R}\le D_R:=\frac{b}{R-c}\left(1+\frac b{3-c}\right).
+ \label{recent:x-cutoff-ground}
+\end{equation}
+For any $0<\sigma_0\le T$, separate ground centering consequently gives
+\begin{align}
+ \sup_{\sigma\ge\sigma_0}
+ \norm{e^{-\sigma(L-\epsilon)}-e^{-\sigma(A_R-\mu_R)}P_R}
+ &\le\min\{2,\max(F_R,D_R+2e^{-(3-c)T})\},\notag\\
+ F_R&=e^{cT}\left[e^{-R\sigma_0}+2b/R+b^2T/R+Tb^2/(R-c)\right].
+ \qquad\text{\workstar}
+ \label{recent:x-delayed}
+\end{align}
+Choosing $T$ first and then $R$ proves uniform operator-norm convergence on every
+positive delayed half-line.  The certified example $\lambda\le0.01$,
+$\sigma_0=1,T=4,R=1024$ has error below 0.002; that large matrix was not assembled.
+A Hermitian finite coefficient perturbation of norm $\zeta$ adds at most
+$4\zeta/(g-2\zeta)$ uniformly when both finite matrices use their own grounds
+and $2\zeta<g$.  Independent rounding of a ground exponent instead produces
+$e^{\sigma\delta}$ growth or loss of the limiting ground.
+
+The independent reverse projection retains all invariant Peter--Weyl blocks
+with degree $d=\sum_e2j_e\le N$.  A face multiplier raises degree by at most four.
+For initial degree $d_0\le N$, set $r=\lfloor(N-d_0)/4\rfloor+1$ and
+$z=20\lambda\sigma$.  Dyson words of order below $r$ agree exactly, including
+all intermediate states; therefore their uncentered difference is at most
+$2e^{-z}\sum_{n\ge r}z^n/n!\le2z^r/r!$.
+The true ground Neumann series has ratio $a=20\lambda/3$ and raises degree by at
+most four, giving omitted ground norm
+$t_N=a^{\lfloor N/4\rfloor+1}/(1-a)$ and energy error
+$\delta_N\le20\lambda t_N/(1-t_N)$.  The centered finite-window bound is
+\begin{equation}
+ \norm{(e^{-\sigma(L-\epsilon)}-e^{-\sigma(A_N-\mu_N)}P_N)P_{d_0}}
+ \le\min\{2,2e^z z^r/r!+\sigma\delta_N\}.\qquad\text{\workstar}
+ \label{recent:x-degree}
+\end{equation}
+For $d_0=0,N=20,0\le\sigma\le1$, it is below $10^{-6}$ at the cap, but that
+larger matrix also remained unassembled.  The cutoff, input, and time sets in
+\eqref{recent:x-delayed} and \eqref{recent:x-degree} are different.
+
+Both constructions identify the same actual rank-21 sector at $R=9/2$ or
+$N=4$: $\Omega=1$ and $\phi_p=2W_p$.  Gauge support completeness below this
+energy follows from the four-cycle argument; five-edge supports cannot occur
+on the bipartite graph.  Haar normalization and the absence of a zero parity
+mask among triples of faces give the complete matrix
+\begin{equation}
+ (A_{21})_{00}=c,\quad (A_{21})_{0p}=-\lambda/2,\quad
+ (A_{21})_{pq}=(3+c)\delta_{pq},\qquad
+ \mu=c-\frac{\sqrt{9+20\lambda^2}-3}{2}.\qquad\text{\workstar}
+ \label{recent:matrix21}
+\end{equation}
+There are nineteen dark face eigenvectors at $3+c$ and one bright excited
+root $c+(3+\sqrt{9+20\lambda^2})/2$.  The spin-one character
+$\chi_p=4W_p^2-1$ is omitted, normalized, and has energy 8, with
+$\langle\chi_p,L\phi_p\rangle=-\lambda/2$.  Thus the small matrix is a
+compression with genuine physical leakage.  X1's parent practical-truncation
+gate remains limited.  Sources: \repo{research/round24/forward/x1/report.md},
+\repo{research/round24/reverse/x1/report.md},
+\repo{research/round24/skeptic/x1-review.md}.
+
+\subsubsection{\workstar\ X2: complete residual, spectral data, and evaluated late heat}
+
+Write $D=\sqrt{9+20\lambda^2}$, $w=(D-3)/2$,
+$h=\lambda/[2(3+w)]$, $Z=1+20h^2$, and
+$f=(\Omega+h\sum_p\phi_p)/\sqrt Z$.  The full residual is
+\begin{equation}
+ F=S^2-5,\qquad (L-\mu)f=-\frac{2\lambda h}{\sqrt Z}F,
+ \qquad \rho^2=\frac{195\lambda^4}{4(3+w)D}.\qquad\text{\workstar}
+ \label{recent:residual21}
+\end{equation}
+To obtain its complete norm, use
+$\mathbb E W_p^4=1/8$ and
+$\mathbb E W_p^2W_q^2=1/16$ for distinct faces, even when they share an edge:
+integrating an exclusive link first makes each squared factor constant.
+No four distinct faces have zero combined center parity.  Hence
+\begin{equation}
+ \mathbb E S^2=5,\quad \mathbb E S^4=295/4,\quad
+ F=\tfrac14\sum_p\chi_p+2\sum_{p<q}W_pW_q,\quad
+ \norm F^2=195/4.
+ \label{recent:haar-residual}
+\end{equation}
+This accounts for 20 spin-one and 190 orthogonal pair channels, not the whole
+omitted Hilbert space.  Keeping only spin-one channels loses a factor 39 in the
+squared residual.  The forward-origin electric refinement resolves the 62
+shared-edge products into singlet/triplet norms $1/64,3/64$, whereas 128
+edge-disjoint products have energy 6.  Its complete weight table is
+\begin{center}
+\begin{tabular}{c|rrrr}
+Electric energy & $9/2$ & $6$ & $13/2$ & $8$\\\hline
+Squared weight in $F$ & $31/8$ & $32$ & $93/8$ & $5/4$
+\end{tabular}
+\end{center}
+The weights sum to $195/4$ and their first moment is 295.  The independent
+form identity $\langle F,KF\rangle=4\mathbb E S^4=295$ follows by integration
+by parts from $KS=3S$.  A link-center transformation sends every face to its
+negative, so the remaining odd potential moment vanishes.  Thus for
+$\xi=-F/\sqrt{195/4}$, $\langle\xi,L\xi\rangle=\nu=236/39+c$.
+
+The true ground $\epsilon$ is simple and every other eigenvalue is at least
+3, by min-max.  Taking the spectral expectation of
+$(L-\epsilon)(L-3)\ge0$ in $f$, and using the actual variational plane
+$\operatorname{span}\{f,\xi\}$, gives
+\begin{align}
+ \delta_-:=\frac{2\rho^2}{\nu-\mu+\sqrt{(\nu-\mu)^2+4\rho^2}}
+ &\le\mu-\epsilon\le\delta_+:=\frac{\rho^2}{3-\mu},\notag\\
+ \norm{G-|f\rangle\langle f|}&\le p:=\frac\rho{3-\mu}.
+ \qquad\text{\workstar}
+ \label{recent:temple21}
+\end{align}
+Reverse obtains the valid weaker lower displacement
+$\rho^2/(8+40\lambda-\mu+\rho)$ from complete kinetic support at energies at
+most 8.  At $\lambda=0.01$ the forward enclosure is
+$0.19983332325\le\epsilon\le0.19983333365$ and $p<8.32\cdot10^{-5}$.
+Neither trial plane is asserted invariant.
+
+Decomposing each heat operator into its own ground projection and excited
+remainder yields
+\begin{equation}
+ \norm{e^{-\sigma(L-\epsilon)}-e^{-\sigma(A_{21}-\mu)}P_{21}}
+ \le p+e^{-(3-\mu)\sigma}+e^{-(3+D)\sigma/2}.
+ \label{recent:late21}
+\end{equation}
+A continuous-coupling envelope and certified scalar evaluator make this less
+than $0.000085$ for every $\lambda\in[0,0.01]$, $\sigma\ge5$.  Forward's distinct
+cap-only example begins at $\sigma=4$ with bound $0.000103$.
+The actual finite representation is
+$G_R+e^{-D\sigma}(U-G_R)+e^{-(3+D)\sigma/2}(P_{21}-U)$, where $U$ projects
+onto the vacuum/symmetric-face plane.  The computed rational $\widehat G_R$ is
+exactly idempotent and the ground coefficient stays exactly one.  Positive
+gap rounding and scalar exponential errors are budgeted separately.  The
+reverse scalar algorithm uses the degree-160 positive Taylor enclosure for
+$e^x$ on $[0,96]$, reciprocates, and returns zero beyond 96.  Its uniform
+$e^{-x}$ error is below $3\cdot10^{-30}$, since the reciprocal width is bounded
+by $96(80!)^2/[161!(1-96/162)]$ and the omitted tail by $80!/96^{80}$.
+The combined representation allowance is below $3\cdot10^{-25}$.
+Sources: \repo{research/round24/forward/x2/report.md},
+\repo{research/round24/reverse/x2/report.md},
+\repo{research/round24/skeptic/x2-review.md}.
+
+\subsubsection{\workstar\ Z1--Z2: a relative obstruction and a preparation-based repair}
+
+Let $E=e^{-\sigma(L-\epsilon)}$ and
+$E_R=e^{-\sigma(A_{21}-\mu)}P_{21}$.  The relative quantity is
+$\norm{(E-E_R)x}/\norm{Ex}$ for the same nonzero retained input.  Heat injectivity
+makes the denominator positive at every finite time, but not uniformly in time.
+The exact vacuum row $L\Omega=c\Omega-\lambda S$ lies in $P_{21}$, and
+\eqref{recent:temple21} proves $\delta=\mu-\epsilon>0$ at positive coupling.
+For $u=(L-\epsilon)\Omega$ one has $Gu=0$ but
+$\langle f,u\rangle=\delta\langle f,\Omega\rangle>0$, whence
+\begin{equation}
+ \frac{\norm{(E-E_R)u}}{\norm{Eu}}
+ \ge\frac{\delta\langle f,\Omega\rangle}{\norm u}
+ e^{(3-\mu)\sigma}-1\longrightarrow\infty.\qquad\text{\workstar}
+ \label{recent:relative-obstruction}
+\end{equation}
+This is a fixed actual retained vector for each fixed $\lambda>0$, although
+preparing its exact ground-orthogonal coefficient requires unknown $\epsilon$.
+The computable $v=(A_{21}-\mu)\Omega$ is instead a bright Ritz eigenvector with
+true ground overlap $-\delta\langle\psi,\Omega\rangle\ne0$; its true-relative
+error tends to one, while its Ritz-output-relative error diverges.
+At the cap forward certifies the first error above 6.9 at $\sigma=6$, and the
+second within $10^{-4}$ of one at $\sigma=8$.  The mechanism is distinct ground
+overlap, not divergence of either correctly centered heat operator.  At
+$\lambda=0$ or $\sigma=0$ the retained physical error is exactly zero.
+Sources: \repo{research/round24/forward/z1/report.md},
+\repo{research/round24/reverse/z1/report.md},
+\repo{research/round24/skeptic/z1-review.md}.
+
+In the remaining heat estimates, integration coordinates $t,s$ and joining values $T$ are dimensionless heat coordinates, equal in units to $\sigma$; a duration $t$ corresponds to physical time $(\hbar/\alpha)t$.
+
+Z2 reconstructs the entire retained-to-omitted map, not just its ground column.
+With $\eta_{pq}=4W_pW_q$, the actual orthogonal residual channels give
+\begin{align}
+ B\Omega&=0,\quad
+ B\sum_pb_p\phi_p=-\frac\lambda2\left[
+ \sum_pb_p\chi_p+\sum_{p<q}(b_p+b_q)\eta_{pq}\right],\notag\\
+ (B^*B)|_{\mathrm{faces}}&=\frac{\lambda^2}{4}(19I+J_{20}),
+ \qquad\norm B=\frac{\sqrt{39}}2\lambda.\qquad\text{\workstar}
+ \label{recent:omitted-gram21}
+\end{align}
+This follows by expanding the squared norm on arbitrary complex coefficients.
+For the exact retained vacuum evolution,
+\begin{equation}
+ BE_R(s)\Omega=-\frac{\lambda^2}{D}(1-e^{-Ds})F,
+ \qquad\norm{BE_R(s)\Omega}=\beta(1-e^{-Ds}),\quad
+ \beta=\frac{\lambda^2\sqrt{195}}{2D}.
+ \label{recent:vacuum-loading21}
+\end{equation}
+The zero initial omitted column therefore does not remain zero.  In fact
+$Q(L-\epsilon)^2\Omega=\lambda^2F$.
+The exact centered Duhamel defect is $B+\delta P$, not $B$ alone.  Thus
+\begin{equation}
+ V(t)=\beta[t-(1-e^{-Dt})/D]+\delta_+t
+ \quad\text{bounds}\quad\norm{(E(t)-E_R(t))\Omega}.
+ \label{recent:early21}
+\end{equation}
+For $f_0=\langle f,\Omega\rangle$ and
+$q_0=\norm{(I-G_R)\Omega}$, an independent spectral bound is
+$J(t)=p+(q_0+p)e^{-(3-\mu)t}+q_0e^{-Dt}$, and the true denominator is at least
+$f_0-p$.  The increasing $V$ and decreasing $J$ can be joined:
+\begin{equation}
+ \sup_{t\ge0}\frac{\norm{(E(t)-E_R(t))\Omega}}{\norm{E(t)\Omega}}
+ \le\frac{\max\{V(T),J(T)\}}{f_0-p}.\qquad\text{\workstar}
+ \label{recent:join21}
+\end{equation}
+For normalized $x\in P_{21}$ with $\norm{x-\Omega}\le\eta$, add to the early
+bound $\eta[(\rho+\delta_+)t+\norm B(1-e^{-3t})/3]$, and use late bound
+$p+(q_0+\eta+p)e^{-(3-\mu)t}+(q_0+\eta)e^{-3t}$ with denominator
+$f_0-\eta-p$.  This preserves the same prepared input in both evolutions.
+The continuous envelopes
+$\rho,\beta\le\sqrt{195}\Lambda^2/6$, $g\ge3-20\Lambda$,
+$q_0\le\sqrt5\Lambda/3$, and $f_0\ge\sqrt{1-5\Lambda^2/9}$ cover every
+$0\le\lambda\le\Lambda\le0.01$, rather than a parameter grid.  They give
+\begin{center}
+\begin{tabular}{lcc}
+Input class & joining $\sigma$ & all-time relative bound\\\hline
+Vacuum & $3/2$ & $0.00028$\\
+Normalized $P_{21}$ ball, radius $0.01$ & $8/5$ & $0.00044$\\
+Normalized retained Ritz overlap $\ge0.99$ & $2$ & $0.002$
+\end{tabular}
+\end{center}
+Reverse's ball without a normalization requirement has the distinct bound
+$0.000720$ at join $29/10$; its vacuum bound is $0.000600$.  These are not
+averaged with the sharper normalized results.  Ritz overlap $a>p$ provides the
+checkable denominator floor $a-p$; uncertainty in overlap, coefficients, or
+preparation must be subtracted first.  Comparing to an ideal vacuum instead
+of the same prepared input adds the preparation bias separately.  Rational
+projectors and positive-gap scalar evaluation add negligible uniform numerical
+cost while preserving an exact ground coefficient.  Z1's excluded ground-null
+inputs remain excluded.
+Sources: \repo{research/round24/forward/z2/report.md},
+\repo{research/round24/reverse/z2/report.md},
+\repo{research/round24/skeptic/z2-review.md}.
+
+\subsubsection{\workstar\ AC1--AC2: a 293-state physical space and delayed new-channel loading}
+
+Adjoin every old residual channel to $P_{21}$ and close under $K$.  A shared-edge
+pair must be split into its spin-zero and spin-one common-edge parts.  In exact
+rational coordinates the basis and metric are
+\begin{center}
+\begin{tabular}{lrrr}
+Vector type & count & norm squared & electric energy\\\hline
+$\Omega$ &1&1&0\\
+$\phi_p=2W_p$&20&1&3\\
+$\chi_p=4W_p^2-1$&20&1&8\\
+$d_{pq}=4W_pW_q$, edge-disjoint&128&1&6\\
+$s_{pq}=8X_{pq,s}$, shared-edge singlet&62&1&$9/2$\\
+$t_{pq}=8X_{pq,t}$, shared-edge triplet&62&3&$13/2$
+\end{tabular}
+\end{center}
+Thus $P_{293}$ has rank $1+20+20+128+124=293$.  Orthogonality follows from
+pair center parity, distinct spin-one supports, and orthogonal common-edge
+Casimir projections.  This is a generated $K$-reducing subspace, not an entire
+electric shell; omitted intertwiners remain in $Q_{293}$.
+
+The forward-origin complete magnetic matrix follows from center parity and the
+exact old columns
+\begin{align}
+ S\Omega&=\tfrac12\sum_p\phi_p,\notag\\
+ S\phi_p&=\tfrac12\Omega+\tfrac12\chi_p
+ +\tfrac12\sum_{q\text{ edge-disjoint}}d_{pq}
+ +\tfrac14\sum_{q\text{ sharing}}(s_{pq}+t_{pq}).\qquad\text{\workstar}
+ \label{recent:matrix293}
+\end{align}
+All new vectors are even under simultaneous face-sign reversal and all old
+face vectors are odd, so same-parity magnetic entries vanish.  Metric
+self-adjointness fixes the reverse entries, notably $3/4$ from a triplet to
+each face, not $1/4$.  The assembled matrix has 1088 directed nonzero magnetic
+entries and diagonal Gram with 231 weights one and 62 weights three.
+Its complete omitted map satisfies
+\begin{equation}
+ B_+=Q_{293}LP_{293}=-\lambda Q_{293}SP_{293},\quad
+ B_+P_{21}=0,\quad\norm{B_+}\le20\lambda.
+ \label{recent:new-leakage}
+\end{equation}
+The bound covers all 272 new columns together, including unexpanded omitted
+intertwiners; it is not an evaluation of their full Gram.
+
+Because the old Ritz residual is now retained, its angle to the new Ritz
+ground is at most $p_{21}=\rho_{21}/(3-\mu_{21})$.  Since $B_+f_{21}=0$,
+\begin{equation}
+ \rho_+\le20\lambda p_{21},\qquad
+ \norm{G-G_+}\le\frac{\rho_+}{3-\mu_+},\qquad
+ 0\le\mu_+-\epsilon\le\frac{\rho_+^2}{3-\mu_+}.
+ \label{recent:ground293}
+\end{equation}
+At the coupling cap, conservative exact envelopes are
+$p_{21}\le1/12000$, $\rho_+\le1/60000$,
+$p_+\le1/168000$, and $\delta_+\le1/10080000000$.
+AC1 improves ground certification but its coarse all-time ball bound $0.0014$
+is worse than Z2's $0.00044$; increasing dimension alone does not guarantee a
+better error certificate.  Its parent accuracy gate was therefore limited.
+Sources: \repo{research/round26/forward/ac1/report.md},
+\repo{research/round26/reverse/ac1/report.md},
+\repo{research/round26/skeptic/ac1.md}.
+
+AC2 exploits the actual loading sequence.  Let $N=P_{293}-P_{21}$,
+$P_f=P_{21}-|\Omega\rangle\langle\Omega|$, $A_+=P_{293}LP_{293}$, and
+$C=NA_+P_{21}$.  Exact matrix identities give
+$NA_+N=D_N+cN$, $D_N\ge9/2$, $C\Omega=0$, and
+$\norm C=\sqrt{39}\lambda/2$ from \eqref{recent:omitted-gram21}.
+For original inputs $x\in P_{21}$, the new retained component
+$y(t)=Ne^{-t(A_+-\mu_+)}x$ obeys the full equation
+\begin{equation}
+ y'=-(D_N+c-\mu_+)y-CP_fe^{-t(A_+-\mu_+)}x,\qquad y(0)=0.
+ \label{recent:loading-equation}
+\end{equation}
+Its forcing uses the entire retained trajectory and therefore includes feedback.
+For $\norm x=1$, $\norm{x-\Omega}\le\eta=0.01$ and
+$0\le\lambda\le\Lambda\le0.01$, put
+\begin{equation}
+ g=3-20\Lambda,\quad p_{21}=\frac{7\Lambda^2}{3g},\quad
+ q_+=\frac{3\Lambda}{4}+\frac{3p_{21}}2,\quad b=q_++\eta,
+ \quad\overline C=\frac{25\Lambda}{8},\quad d=9/2.
+ \label{recent:loading-envelopes}
+\end{equation}
+The new ground/excited decomposition bounds the forcing by
+$q_++be^{-gt}$.  Convolution yields
+\begin{equation}
+ \norm{y(t)}\le\overline C\left[
+ q_+\frac{1-e^{-dt}}d+b\frac{e^{-gt}-e^{-dt}}{d-g}\right].
+ \label{recent:delayed-loading}
+\end{equation}
+Duhamel with the complete $B_+$ and its separate centering defect consequently
+has increasing envelope
+$\overline V(t)=\delta_+t+20\Lambda\overline C[q_+t/d+b/(gd)]$.
+The independent late envelope is
+$J(t)=p_++(2b+p_+)e^{-gt}$.  The true full output is bounded below using the old
+full-ground result,
+$D_\eta=1-5\Lambda^2/9-\eta-p_{21}>0$.
+At $\Lambda=0.01$, the join $t_0=13/5$ and $e^{-182/25}<1/1400$ give
+\begin{equation}
+ \begin{aligned}
+ D_\eta&=\frac{7127}{7200},\qquad
+ \overline V(t_0)=\frac{457097}{12600000000},\qquad
+ J(t_0)\le\frac{2441}{78400000},\\
+ \sup_{\sigma\ge0}\frac{\norm{(E-E_+)x}}{\norm{Ex}}
+ &\le\frac{457097}{12472250000}<0.000037.\qquad\text{\workstar}
+ \end{aligned}
+ \label{recent:ac-relative}
+\end{equation}
+All envelopes cover the continuous coupling interval.  Reverse independently
+uses face-block norms $\norm{NSP_f}=\sqrt{39}/2$ and
+$\norm{P_fS(I-P_f)P_{293}}=\sqrt{59}/2$ to obtain a delayed-leakage integral
+\begin{equation}
+ \int_0^t\norm{B_+E_+(s)x}\,ds\le\frac{130}{9}\lambda^2
+ \left[\eta\frac{1-e^{-3t}}3+\frac{4\lambda}{3}
+ \left(t-\frac{1-e^{-3t}}3\right)\right],
+ \label{recent:reverse-loading}
+\end{equation}
+leading to $0.000048$ for the ball and $0.000043$ for the vacuum.
+The sharper result is confined to original $P_{21}$ inputs: new retained
+preparations would not have $y(0)=0$.  At $\sigma=0$ and at $\lambda=0$ the
+physical retained error is exactly zero.  AC2 certifies the exact retained
+semigroup; numerical evaluation was still a separate task.
+Sources: \repo{research/round26/forward/ac2/report.md},
+\repo{research/round26/reverse/ac2/report.md},
+\repo{research/round26/skeptic/ac2.md}.
+
+\subsubsection{\workstar\ AF1--AF2: execute the heat and prevent secular centering error}
+
+AF1 fixes $\lambda=0.01$, $\sigma=1$, and input $\Omega$, and exports all 293
+coordinates.  Every norm uses the actual diagonal Gram $\Gamma$, with
+$\Tr\Gamma=417$.  A trial residual identifies the minimum only after the
+spectral separation $\lambda_2(A_+)\ge3$ and $\mu_+\le1/5$ are proved.
+For a rational trial vector $v$, define its Rayleigh quotient $a$ and residual
+$\rho_v^2=\norm{A_+v}_\Gamma^2/\norm v_\Gamma^2-a^2$.  Then
+\begin{equation}
+ a-\frac{\rho_v^2}{3-a}\le\mu_+\le a,\qquad
+ \norm{P_v-G_+}\le\frac{\rho_v}{3-a},\quad
+ P_vx=v\frac{\langle v,x\rangle_\Gamma}{\langle v,v\rangle_\Gamma}.
+ \label{recent:numerical-minimum}
+\end{equation}
+The first inequality is again the full retained spectral-measure argument,
+not a small residual near an unidentified eigenvalue.
+
+Forward uses an explicit one-step electric residual correction, a center radius
+below $10^{-11}$, and the degree-100 polynomial in $A_+-\widehat\mu$;
+reverse uses the old Ritz energy interval, center radius below $10^{-8}$,
+and degree 80.  Exact integer or rational Horner arithmetic has no accumulated
+floating roundoff.  Since $\norm{A_+-\widehat\mu}\le9$, their respective
+polynomial bounds are $2^{14}9^{101}/101!$ and $2\cdot9^{81}/81!$.
+Coordinate grids $10^{-50}$ and $10^{-30}$ cost at most
+$21/(2\cdot10^{50})$ and $11\cdot10^{-30}$ in the physical metric.  The separate
+center cost is $d_\mu/(1-d_\mu)$ at this time.
+Adding the independently retained physical omission and dividing by the true
+floor $7199/7200$ gives full relative point bounds $0.000015$ forward and
+$0.000014$ reverse.  Exact Gram comparisons put their exported-vector difference
+inside the sum of their independent numerical radii.
+Sources: \repo{research/round26/forward/af1/report.md},
+\repo{research/round26/reverse/af1/report.md},
+\repo{research/round26/skeptic/af1.md}.
+
+AF2 prevents the uncertain center from being exponentiated indefinitely.
+It fixes the same coupling and original normalized radius-0.01 $P_{21}$ class,
+and defines a piecewise approximation:
+\begin{equation}
+ \widehat E_+(\sigma)x=
+ \begin{cases}
+  P_n(\sigma(A_+-\widehat\mu))x,&0\le\sigma\le8,\\
+  P_vx,&\sigma>8,
+ \end{cases}
+ \qquad P_n(H)=\sum_{j=0}^n\frac{(-H)^j}{j!}.
+ \label{recent:piecewise-solver}
+\end{equation}
+Forward uses degree 256 with uniform Taylor error
+$2\cdot72^{257}/257!<10^{-25}$, center cost
+$8d_\mu/(1-8d_\mu)$, and complex export allowance $15\cdot10^{-40}$.
+Its corrected rational trial is certified by \eqref{recent:numerical-minimum},
+independently of the heuristic correction's convergence.  Reverse constructs
+$v=(I-A_+/9)^{64}\Omega$ exactly.  The excited-to-ground power ratio is at most
+$15/22$ and vacuum ground overlap squared is at least $14/15$; the final
+Rayleigh residual certifies the actual resulting vector.  It uses degree 240,
+Taylor bound $16\cdot72^{241}/241!$, and real export allowance
+$11\cdot10^{-30}$.
+
+The late branch has no uncertain ground exponent.  For every $\sigma>8$,
+\begin{equation}
+ \norm{e^{-\sigma(A_+-\mu_+)}-P_v}
+ \le\frac{\rho_v}{3-a}+e^{-(14/5)\sigma}.
+ \label{recent:late-solver}
+\end{equation}
+The full retained excited tail is below $1/(5\cdot10^9)$ in forward's rational
+certificate and below $10^{-9}$ in reverse's.  Each complete numerical
+allowance $e_{\rm num}$ is below $10^{-8}$.  Therefore
+\begin{equation}
+ \frac{\norm{\widehat E_+(\sigma)x-E(\sigma)x}}{\norm{E(\sigma)x}}
+ \le\frac{457097}{12472250000}
+   +\frac{e_{\rm num}}{7127/7200}<0.000037
+ \quad(\sigma\ge0).\qquad\text{\workstar}
+ \label{recent:computed-relative}
+\end{equation}
+The two terms are physical compression and retained computation errors.
+The sample exports include the exact normalized preparations
+$(159999\Omega+800\phi_0)/160001$ and, forward only,
+$(159999\Omega+800i\phi_{19})/160001$, whose squared vacuum distance is
+$4/160001<10^{-4}$.  Forward exports eighteen full complex vectors at
+$\sigma=0,1,13/5,8,9,1000$; reverse exports twelve real vectors, replacing the
+last time by $10^6$.  Continuous coverage comes from the two analytic branch
+bounds, not interpolation between these exports.  Outputs are not renormalized.
+The reverse command interface accepts exact rational times and 293 real rational
+coordinates, enforcing original support, normalization, and radius; the operator
+estimate covers complex vectors, but that does not make the real interface a
+complex interface.  Fixed-coupling computation is not continuous-coupling
+execution.  Time, coefficient, or preparation measurement uncertainty requires
+its own budget.
+
+The remaining finite-graph tasks are growing-graph control and additional
+observable/input classes with complete new omission certificates.  Neither the
+all-time heat result nor its small error implies real-time accuracy, a
+homogeneous numerical gap, physical scale matching, or a continuum construction.
+Sources: \repo{research/round26/forward/af2/report.md},
+\repo{research/round26/reverse/af2/report.md},
+\repo{research/round26/skeptic/af2.md}.
+
+\subsection{Canonical endpoint observables and an exact reached spectrum}
+\label{recent:canonical}
+
+Use the canonical summable full-link model, with complete selected-strip and
+free-link reference factors, unique reference ground $\Omega$, and
+\begin{align}
+ H_q&=H_0+V_q,\qquad
+ V_q=-\frac{\alpha\tau_q}{24}\sum_{f\text{ omitted}}q^{|a_f|_1}x_f,
+ \quad x_f=\tfrac12\Tr U_f,\notag\\
+ b(q)&=\frac{p(q)}{24(1-q)^3(1+q)^2(1+q^2)},\qquad
+ p(q)=2+5q+5q^2+6q^3+3q^4,\notag\\
+ \tau_q&=\frac{\eta}{8b(q)},\qquad0<q,\eta<1.
+ \label{recent:canonical-profile}
+\end{align}
+The perturbation is norm convergent with $\norm{V_q}=\alpha\eta/8$ and
+$D(H_q)=D(H_0)$.  The admitted stationary ground projection satisfies
+\begin{equation}
+ d_q=\norm{P_q-P_0}\le\widehat d_q:=\frac{\sigma_q}{\bar g},\quad
+ \sigma_q^2=\frac{\alpha^2\tau_q^2b(q^2)}{96},\quad
+ \bar g=\frac{\alpha(1-\eta)}8,
+ \qquad\widehat d_q=O((1-q)^{3/2}).
+ \label{recent:canonical-state}
+\end{equation}
+For the convention $\beta_q^t(B)=e^{-itH_q/\hbar}Be^{itH_q/\hbar}$, define
+$C_q^B(t)=\omega_q(B\beta_q^t(B))-\omega_q(B)^2$.
+All endpoint conclusions in this subsection are restricted to
+\begin{equation}
+ T_q=\frac z\eta\frac\hbar\alpha(1-q)^{-3},\qquad
+ 0<z\le10^{-6},\qquad
+ s_q=\alpha\tau_qT_q/\hbar\longrightarrow\frac{8z}{7},\quad s_q\le\frac{3z}{2}.
+ \label{recent:endpoint-clock}
+\end{equation}
+The variable $s_q$ is a proof coordinate at the original physical time $T_q$.
+The trigonometric formulas below have algebraic extensions, but no full
+stationary endpoint theorem beyond the displayed $z$ interval is asserted.
+
+\subsubsection{\workstar\ U1--U2: a first-order resonance becomes a full-system witness}
+
+Let $O=(3,1,0)$ and $D=(3,2,1)$, and take paths
+$X:O\to(3,2,0)\to D$, $Y:O\to(3,1,1)\to D$, and
+$Z:O\to(4,1,0)\to(4,2,0)\to(4,2,1)\to D$.
+Their eight links are free singleton factors.  The two real characters
+$\phi_X=\Tr(XZ^{-1})$, $\phi_Y=\Tr(YZ^{-1})$ are orthonormal and have energy
+$E=6(3\alpha/4)=9\alpha/2$.  Set
+$\psi_+=(\phi_X+\phi_Y)/\sqrt2$ and
+$W=(|\psi_+\rangle\langle\Omega_F|+\mathrm{adjoint})\otimes I_{F^c}$.
+It is a fixed gauge-invariant bounded local operator, with $W^3=W$,
+$\norm W=1$, and reference variance one.  It is not a Wilson multiplier.
+
+The yz face at $O$ has $x_{f_0}=\Tr(XY^{-1})/2$.
+Haar character convolution gives
+$\langle\phi_Y,x_{f_0}\phi_X\rangle=1/4$.  Every other face has an unmatched
+free-link center parity, and all diagonal terms vanish by the same selection
+rule.  The actual full-model matrix element is therefore
+\begin{equation}
+ \langle\psi_+,V_q\psi_+\rangle=-\frac{\alpha\tau_qq^4}{96}.
+ \qquad\text{\workstar}
+ \label{recent:u-resonance}
+\end{equation}
+It gives first-order phase-removed response $is_qq^4/96\to iz/84$.
+The vacuum subtraction uses $\langle\Omega,V_q\Omega\rangle=0$, not
+$V_q\Omega=0$.  A derivative alone did not establish an endpoint; U1's gate is
+limited and its two-state plane is not assumed invariant.
+
+U2 supplies the complete remainder.  Each complete reference factor owns at
+most ten links and meets at most forty omitted faces; one face reaches at most
+four factors.  Starting from eight factors, the ordered connected word count
+at depth $n$ is bounded by $\prod_{k=0}^{n-1}40(8+3k)$.  Combining coupling
+$\alpha\tau_q/24$, commutator factor two and simplex $|t|^n/n!$ gives
+\begin{equation}
+ \norm{\text{order }n}\le\frac{(8/3)_n}{n!}
+ \left(10\alpha\tau_q|t|/\hbar\right)^n.
+ \label{recent:u-connected}
+\end{equation}
+Strong bounded-generator Dyson evolution first justifies the expansion for each
+$q<1$; connected counting then supplies its useful uniform bound without
+assuming operator-norm continuity through the unbounded $H_0$.
+For $x=10\alpha\tau_q|t|/\hbar<1$,
+\begin{equation}
+ R(x)=(1-x)^{-8/3}-1-\tfrac83x
+ \le\widehat R(x):=\frac{44x^2}{9(1-x)^5}.
+ \label{recent:u-tail}
+\end{equation}
+Taylor's integral remainder proves this using the second derivative
+$(88/9)(1-x)^{-14/3}$; reverse's independent algebraic bound within the same
+author's reconstruction is $x^2(6-8x+3x^2)/(1-x)^3$.
+State replacement in the bounded connected expression costs $6\widehat d_q$,
+so
+\begin{align}
+ \left|e^{iEt/\hbar}C_q^W(t)-1-is_qq^4/96\right|
+ &\le6\widehat d_q+\widehat R(10s_q),\notag\\
+ \liminf_{q\uparrow1}|C_q^W(T_q)-C_0^W(T_q)|
+ &\ge\frac z{84}-\frac{44}{9}
+ \frac{(80z/7)^2}{(1-80z/7)^5}>\frac z{168}>0.
+ \qquad\text{\workstar}
+ \label{recent:u-endpoint}
+\end{align}
+The final strict inequality follows by monotonicity of $\widehat R(80z/7)/z$
+and exact arithmetic at $z=10^{-6}$.  This makes the earlier sufficient
+$\gamma<3$ time-window exponent sharp in the existence-of-one-observable sense;
+it does not decide every observable or compute the limiting trajectory.
+Both U loops use same-author self-review.
+Sources: \repo{research/round23/forward/u1/report.md},
+\repo{research/round23/reverse/u1/report.md},
+\repo{research/round23/forward/u2/report.md},
+\repo{research/round23/reverse/u2/report.md},
+\repo{research/round23/skeptic/u1.md},
+\repo{research/round23/skeptic/u2.md}.
+
+\subsubsection{\workstar\ V1--V2: finite outcomes are not a finite implementation}
+
+The exact spectral projections
+$P_\pm=(W^2\pm W)/2$, $P_0=I-W^2$ give outcomes $-1,0,+1$, with an
+infinite-dimensional local zero eigenspace.  For self-adjoint
+$\norm{A-W}\le\delta$, $\norm A\le1+\delta$, two applications of the product
+difference inequality, including the connected means, prove
+\begin{equation}
+ |C_q^A-C_q^W|\le4\delta+2\delta^2,\qquad
+ |(C_q^A-C_0^A)-(C_q^W-C_0^W)|\le8\delta+4\delta^2.
+ \label{recent:readout-transfer}
+\end{equation}
+This is uniform in time.  Choosing fixed $\delta=z/100000$ retains endpoint
+margin greater than $z/200$; for contractions the two-model cost improves to
+$8\delta$.  A binary first-moment POVM instead has outcome-square one and does
+not identify $\omega(W^2)$ with its outcome variance.
+
+Ordinary sequential projective measurements cannot generally recover the
+complex unordered correlation.  Set the self-adjoint unitary completions
+$R_\pm=W\pm P_0$.  Then
+\begin{equation}
+ \omega(W\beta^t(W))=\frac14\sum_{s,r\in\{+,-\}}
+ \omega(R_s\beta^t(R_r)).\qquad\text{\workstar}
+ \label{recent:coherent-readout}
+\end{equation}
+Four controlled-unitary products and two ancilla quadratures require eight
+binary settings, plus a separate mean measurement.  This applies the established
+interferometric primitive; it assumes coherent access to the actual full
+both-sign evolution and the intended stationary states.  The exact PVM and
+instrument identity do not construct those resources.
+
+A separate V1 obstruction concerns the full local Haar operator norm.
+For every multiplication operator $M_g$, a weakly-null orthonormal sequence
+in a positive-measure level set of $|g|$ gives
+$\norm{W-M_g}\ge\norm g_\infty$ because $W_F$ has finite rank.  The triangle
+inequality also gives $\norm{W-M_g}\ge1-\norm g_\infty$, hence
+\begin{equation}
+ \inf_g\norm{W_F-M_g}\ge\frac12.\qquad\text{\workstar}
+ \label{recent:multiplier-obstruction}
+\end{equation}
+The gate admits this in the full local Haar norm, not an unconstructed
+physical-quotient norm.  It blocks this norm-transfer route to Wilson observables,
+not the existence of a different Wilson witness.
+
+For V2, the actual eigenvectors defining $W$ prove domain preservation and
+\begin{equation}
+ \norm{[H_0,W]}=9\alpha/2,\qquad
+ \norm{[H_q,W]}\le\alpha(9/2+\eta/4).
+ \label{recent:clock-commutator}
+\end{equation}
+Graph closure extends the finite-factor commutator, and strong integration
+then gives a norm-Lipschitz physical-time bound for this particular observable.
+For one predeclared endpoint, eighteen independent bounded-output settings,
+$N$ trials per setting, and tolerance $r$, the exponential-moment argument and
+union bound give failure probability at most $36e^{-Nr^2/2}$.
+In forward's convention, full trace-norm preparation error $s$, complete-setting
+operator error $g$, and a common per-model time offset
+$|\Delta t|\le(\hbar/\alpha)\theta$ yield
+\begin{equation}
+ N\ge\frac2{r^2}\log\frac{36}{\kappa},\qquad
+ |\widehat D-(C_q^W(T_q)-C_0^W(T_q))|
+ \le8(r+s+g)+(9+\eta/4)\theta
+ \label{recent:readout-budget}
+\end{equation}
+with confidence at least $1-\kappa$.  Reverse permits per-shot timing jitter,
+uses half trace distance $\varepsilon_p$, and obtains instead
+$8(r+2\varepsilon_p+\varepsilon_i)
++2(9+\eta/4)\alpha h/\hbar$; the timing coefficients are not interchangeable.
+
+At $\eta=1/2,z=10^{-6},q=1-10^{-6}$, forward takes
+$r=s=g=\theta=10^{-10}$ and $N=1.8\cdot10^{21}$, giving $3.24\cdot10^{22}$
+preparations, a finite-$q$ true margin above $10^{-8}$, and confidence radius
+$3.3125\cdot10^{-9}$ at physical time $2\cdot10^{12}\hbar/\alpha$.
+Reverse's different example, $q=1-10^{-8}$, has radius $8.4225\cdot10^{-10}$
+and time $2\cdot10^{18}\hbar/\alpha$.  Neither is an implemented or efficient
+experiment, an optimal resource lower bound, or confidence over a continuum of
+times.  Sources: \repo{research/round24/forward/v1/report.md},
+\repo{research/round24/reverse/v1/report.md},
+\repo{research/round24/skeptic/v1-review.md},
+\repo{research/round24/forward/v2/report.md},
+\repo{research/round24/reverse/v2/report.md},
+\repo{research/round24/skeptic/v2-review.md}.
+
+\subsubsection{\workstar\ Y1--Y2: spatial collars and an actual scalar limit}
+
+Starting from the eight free factors, recursively include every complete owner
+of every omitted face meeting the current factors.  Complete selected strips
+must be included because reference evolution spreads an operator within its
+whole factor.  Forward retains all omitted faces internally supported on the
+new factor set; reverse retains those meeting the preceding set.  The conventions
+therefore agree on factors and links but not on their finite Hamiltonians:
+\begin{center}
+\begin{tabular}{crrrr}
+Depth & factors & links & forward faces & reverse faces\\\hline
+1&35&98&20&19\\
+2&135&297&129&125
+\end{tabular}
+\end{center}
+Both are unrenormalized subsets of the actual $q$ profile, retain all Gauss
+actions, and still have infinite-dimensional onsite Haar spaces.
+Every connected word of length at most $k$ lies in collar $k$; longer retained
+words cancel exactly when comparing the two expansions.  One full tail, not
+two, therefore suffices:
+\begin{equation}
+ \sup_{|t|\le T_q}\norm{\beta_q^t(W)-\beta_{q,k}^t(W)}
+ \le D_k(15z),\qquad
+ D_k(x)=\frac{(8/3)_{k+1}x^{k+1}}{(k+1)!(1-x)^{k+4}}.
+ \qquad\text{\workstar}
+ \label{recent:spatial-tail}
+\end{equation}
+The bound includes every boundary excursion and return.  Reverse independently
+uses the coefficientwise larger $(3)_n/n!$ and exact rational tail
+\begin{equation}
+ B_k(x)=\frac{x^{k+1}[(k+2)(k+3)-2(k+1)(k+3)x+(k+1)(k+2)x^2]}
+ {2(1-x)^3}.
+ \label{recent:reverse-spatial-tail}
+\end{equation}
+Each regional Hamiltonian has its own unique stationary ground.  Comparing both
+states and both connected means costs
+$6(d_q+d_{q,k})$, bounded by $12\widehat d_q$ in forward's route.
+Thus the forward 98-link region retains limiting difference greater than $z/250$;
+at $z=10^{-6}$ its spatial error is below $1.101\cdot10^{-9}$ and depth two
+below $2.568\cdot10^{-14}$.  Finite spatial support does not make these evaluated
+finite matrices.
+Sources: \repo{research/round24/forward/y1/report.md},
+\repo{research/round24/reverse/y1/report.md},
+\repo{research/round24/skeptic/y1-review.md}.
+
+For a fixed collar, its reference $K_k=H_{0,k}/\alpha$ is a finite sum of link
+Casimirs plus bounded strip potentials and scalar ground shifts.  Peter--Weyl
+projections below finite energy have finite rank; hence $K_k$ has compact
+resolvent even before gauge reduction.  Let
+$A_k=-\sum_{f\in O_k}x_f/24$ and retain the entire degenerate energy projections
+in $\overline A_k=\sum_EP_EA_kP_E$.  This is a bounded self-adjoint strong direct
+sum preserving $D(K_k)$; its vacuum block vanishes.
+
+The needed averaging argument can be proved directly.  For a self-adjoint
+pure-point $K$, bounded $A$, and $\ell>0$, put
+$Z_\ell(s)=e^{isK/\ell}e^{-is(K/\ell+A)}$ and
+$R_\ell(s)=\int_0^s(e^{iuK/\ell}Ae^{-iuK/\ell}-\overline A)du$.
+On a fixed energy block the nonresonant coefficient is
+\begin{equation}
+ P_FR_\ell(s)P_E=
+ \frac{\ell(e^{is(F-E)/\ell}-1)}{i(F-E)}P_FAP_E\quad(F\ne E).
+ \label{recent:averaging-primitive}
+\end{equation}
+Orthogonal output energies and density imply strong convergence of this
+primitive, uniformly on compact $s$ intervals and compact input sets.
+Integration by parts in Duhamel makes it act only on the compact averaged orbit
+and its bounded derivative, giving strong convergence of $Z_\ell$ and its
+adjoint to $e^{-is\overline A}$.  If
+$\Delta_E=\operatorname{dist}(E,\operatorname{spec}K\setminus\{E\})>0$,
+the same proof yields the fixed-block estimate
+\begin{equation}
+ \sup_{|s|\le S}\norm{(Z_\ell(s)-e^{-is\overline A})P_E}
+ \le\frac{2\ell M}{\Delta_E}(1+2SM),\qquad\norm A\le M.
+ \label{recent:averaging-block}
+\end{equation}
+This is not a bound over all excited energies.  Compact-resolvent doublets with
+vanishing splittings provide explicit counterexamples to a general
+operator-norm averaging inference.
+
+In the actual collar, $M_k=N_k/24$ and
+$\norm{A_{q,k}-A_k}\le(1-q)\sum_{f\in O_k}|a_f|_1/24$.
+At $\ell=\tau_q$ and the original $T_q$, the exact ordered scalar is
+\begin{equation}
+ e^{iEt/\hbar}\langle\Omega,W\beta_{q,k}^t(W)\Omega\rangle
+ =\langle\psi_+,Z_{q,k}WZ_{q,k}^*\Omega\rangle.
+ \label{recent:ordered-scalar}
+\end{equation}
+Both strong propagator limits are needed.  The averaged vacuum is fixed, so
+for the entire energy-$9/2$ block
+$B_k=P_{k,9/2}A_kP_{k,9/2}$ its regional limit is
+$f_k(z)=\langle\psi_k,e^{-i(8z/7)B_k}\psi_k\rangle$.
+The uniform spatial bound makes $f_k$ Cauchy, and choosing $k$ first and then
+$q\uparrow1$ proves
+\begin{equation}
+ e^{iET_q/\hbar}C_q^W(T_q)\longrightarrow F_\infty(z),\qquad
+ F_\infty(z)=\lim_{k\to\infty}f_k(z),\quad
+ |F_\infty-f_k|\le D_k(15z).\qquad\text{\workstar}
+ \label{recent:scalar-limit}
+\end{equation}
+No global $q=1$ generator or compact resolvent of the infinite reference is
+used.  At this gate the actual matrices and their excited separations remained
+unevaluated.  The forward-origin disk
+\begin{equation}
+ |F_\infty(z)-1-iz/84|
+ \le D_2(15z)+\tfrac12(8z/7)^2(129/24)^2
+ \label{recent:y-disk}
+\end{equation}
+has radius below $1.89\cdot10^{-11}$ at $z=10^{-6}$, by spectral Taylor
+remainder and the known first moment $-1/96$.  It encloses an actual scalar,
+not a computed trajectory.  This proof exceeds the finite-spectral bounded
+reference hypotheses of the related norm-averaging theorem, so its pure-point
+strong argument is essential.
+Sources: \repo{research/round24/forward/y2/report.md},
+\repo{research/round24/reverse/y2/report.md},
+\repo{research/round24/skeptic/y2-review.md}.
+
+\subsubsection{\workstar\ AA1--AA2: compute a reducing component, not the entire shell}
+
+The unit cube translated by $O=(3,1,0)$ has twelve free links.  On its physical
+energy-$9/2$ shell, quarter-energy arithmetic gives
+$3n_{1/2}+8n_1+15n_{3/2}=18$.  Besides six half-spin links, the only solution
+uses one half-spin and one spin-$3/2$ edge and is excluded by a gauge leaf.
+At each cube vertex zero or two half-spin edges are required, so six occupied
+edges form one simple six-cycle with a unique bivalent invariant intertwiner.
+The sixteen six-cycles therefore form a complete orthonormal physical cube
+shell.  Orthogonality follows from an unmatched edge-center sign.
+
+A face can connect two such cycles only when their symmetric difference is its
+four-edge boundary, replacing two adjacent edges by the other two.  The same
+Haar convolution as U1 makes every allowed matrix element $1/4$; thus the
+compressed potential is $-\mathsf A/96$, with $\mathsf A$ the exact sixteen-node
+flip adjacency.  Enumeration and exact polynomial multiplication give
+\begin{equation}
+ \begin{aligned}
+ \mathsf A(\mathsf A^2-4I)(\mathsf A^2-12I)&=0,\\
+ \operatorname{spec}\mathsf A&=\{0^{(8)},2^{(3)},(-2)^{(3)},
+  (2\sqrt3)^{(1)},(-2\sqrt3)^{(1)}\}.
+ \qquad\text{\workstar}
+ \end{aligned}
+ \label{recent:aa-spectrum}
+\end{equation}
+Twelve vertices have degree two and four degree six.  The original coherent
+source, reconstructed from its paths, has adjacency moments
+$1,1,4,8,32,80,320$ through order six.  Polynomial spectral projectors give
+weights $1/3$ at zero, $3/8$ and $1/8$ at $+2,-2$, and
+$1/12\pm1/(8\sqrt3)$ at $\pm2\sqrt3$.  AA1 correctly remained limited because
+cube-shell completeness alone did not exclude resonant exterior loading.
+
+AA2 proves that missing inclusion.  A face external to the cube but sharing
+cube edges shares exactly one, with twenty such actual faces.  Its opposite
+edge is free and the remaining two sides have distinct exterior reference
+owners.  The minimum $-3/4$ change of an occupied common edge is canceled by
+$+3/4$ on the opposite free edge.  A remaining free side costs $3/4$; a strip
+side creates an endpoint-charged vector orthogonal to its gauge-invariant
+strip ground and costs at least $1/8$.  Distinct ownership therefore gives a
+spectral support increment at least $1/4$, not merely a mean-energy inequality.
+Cube-disjoint faces excite the exterior by at least $1/8$.  For internal faces
+with $r$ occupied edges and $m$ spin-one fusion branches, the change is
+\begin{equation}
+ \Delta E=3-\tfrac32r+2m,
+ \label{recent:aa-selection}
+\end{equation}
+whose nonzero values have magnitude at least $1/2$.
+Consequently the sixteen-state space $\mathcal L$ times the unchanged exterior
+ground reduces every sufficiently large regional pinched operator.  It need
+not exhaust the whole energy shell, and the instantaneous interaction still
+leaks.  All participating nonzero frequencies from $\mathcal L$ or the vacuum
+are at least $1/8$ in magnitude, giving the evaluated primitive bound
+$16\tau_qM_k$ and averaging error
+$b_k=16\tau_qM_k(1+3zM_k)$.
+
+These facts promote the AA1 cube scalar to the actual full canonical endpoint:
+\begin{align}
+ F_\infty(z)&=\frac13+\frac12\cos(2\theta)
+ +\frac16\cos(2\sqrt3\theta)
+ +i\left[\frac14\sin(2\theta)
+ +\frac1{4\sqrt3}\sin(2\sqrt3\theta)\right],\notag\\
+ \theta&=z/84,\qquad0<z\le10^{-6},\qquad
+ |F_\infty-1-i\theta|\le2\theta^2=\frac{z^2}{3528}.
+ \qquad\text{\workstar}
+ \label{recent:aa-endpoint}
+\end{align}
+The complete second moment is four; it also gives
+$|F_\infty-e^{i\theta}|\le3\theta^2/2$ by centering the spectral variable at
+its mean one.  A two-state fit would lose the actual second and higher moments.
+
+For finite $q$, keep the exact weighted flip matrix $Q(q)$, whose entries are
+$q^4$ or $q^5$ and whose symmetric row norm is at most six.  Combining direct
+full stationary-state replacement, the collar tail, and the two averaging
+columns gives
+\begin{equation}
+ \left|e^{iET_q/\hbar}C_q^W(T_q)
+ -\langle\psi_+,e^{is_qQ(q)/96}\psi_+\rangle\right|
+ \le6\widehat d_q+D_k(15z)+32\tau_qM_k(1+3zM_k).
+ \label{recent:aa-finite-q}
+\end{equation}
+A degree-eight rational scalar Taylor center adds at most
+$(s_q/16)^9/9!$; comparison directly to the limiting formula separately adds
+$s_q(1-q^5)/16+|s_q-8z/7|/16$.
+At $\eta=1/2,z=10^{-6},q=1-10^{-12}$ and depth three with $N_3=332$, the state,
+spatial, averaging, and scalar errors are respectively below
+$6.547\cdot10^{-19}$, $5.455\cdot10^{-19}$, $2.530\cdot10^{-34}$, and
+$1.334\cdot10^{-70}$, totaling less than $1.201\cdot10^{-18}$ about an exact
+rational center.  The physical time is $2\cdot10^{30}\hbar/\alpha$.
+This is a mathematical certificate, not physical feasibility or clock
+calibration.  AA1/AA2 are same-author self-review.
+Sources: \repo{research/round25/solo/aa1/report.md},
+\repo{research/round25/solo/aa2/report.md},
+\repo{research/round25/advisor/aa1-gate.json},
+\repo{research/round25/advisor/aa2-gate.json}.
+
+\subsubsection{\workstar\ AD1--AD2: null and informative Wilson multipliers}
+
+AD1 tests actual elementary Wilson multiplication.  Forward chooses the yz face
+at $O$ and reverse the xy face there; their finite-$q$ collars and constants
+remain distinct.  Each $B=\Tr U_f$ has norm two, reference variance one, and
+created vector $\psi=B\Omega$ of energy $3\alpha$.  Its square creates an
+extra spin-one state: $B\psi=\Omega+\chi_{1,f}$.
+For internal cube faces the overlap counts are $r=0,1,4$, so
+\eqref{recent:aa-selection} has no zero branch.  The complete exterior charge
+argument excludes every external equal-energy image.  Therefore
+$\overline A_{q,k}\psi=0=\overline A_{q,k}\Omega$, with participating nonzero
+frequencies bounded below by $1/8$.  Applying the ordered scalar identity with
+the actual multiplier norm gives, in forward's eight-factor convention,
+\begin{align}
+ \left|e^{i3\alpha T_q/\hbar}C_q^B(T_q)-1\right|
+ &\le24\widehat d_q+4D_k(15z)+48\tau_qM_k(1+3zM_k),\notag\\
+ \lim_{q\uparrow1}e^{i3\alpha T_q/\hbar}C_q^B(T_q)&=1.
+ \qquad\text{\workstar}
+ \label{recent:null-wilson}
+\end{align}
+The right-column error costs $2b_k$ and the remaining created-vector error
+$b_k$; variance one does not make this multiplier norm one.
+Reverse's twelve-factor seed uses $(4)_n/n!$ and its own tail
+$(4)_{k+1}x^{k+1}/[(k+1)!(1-x)^{k+5}]$, with conservative averaging cost $4b_k$.
+The null phase-removed scalar carries no slow-rate information.  Nonzero
+variance therefore does not establish an informative probe, and AD1's scale
+bridge remains limited.  Its selected forward finite-$q$ example has radius
+below $5\cdot10^{-18}$ at the same impractical clock as AA2.
+Sources: \repo{research/round26/forward/ad1/report.md},
+\repo{research/round26/reverse/ad1/report.md},
+\repo{research/round26/skeptic/ad1.md}.
+
+AD2 freezes the actual original six-cycle multipliers
+$B_X=\chi_X=\Tr(XZ^{-1})$ and
+$B_\Sigma=(\chi_X+\chi_Y)/\sqrt2$.  Their exact multiplication norms are two
+and $2\sqrt2$; both have mean zero and variance one.  Their created vectors
+are respectively $\phi_X$ and $\psi_+$, but their fourth moments are two and
+$5/2$, versus one for the rank observable.  In particular the extra squared
+norms of $(B_X^2-I)\Omega$ and $(B_\Sigma^2-I)\Omega$ are one and $3/2$.
+Equality of a created vector therefore transfers only the scalar mechanism
+proved with the actual multiplier, not the entire operator or its error budget.
+
+The reducing component from AA2 applies to both sources.  Exact polynomial
+spectral projectors give for the single X source weights $2/3$ at zero,
+$1/8$ at each of $\pm2$, and $1/24$ at each of $\pm2\sqrt3$.
+Its moments are $1,0,2,0,16,0,160$.  Consequently, for the full stationary
+correlations on the original clock,
+\begin{align}
+ F_X(z)&=\frac23+\frac14\cos(2\theta)
+                   +\frac1{12}\cos(2\sqrt3\theta),\notag\\
+ F_\Sigma(z)&=F_\infty(z)\text{ of \eqref{recent:aa-endpoint}},
+ \qquad\theta=z/84,\quad0<z\le10^{-6},\notag\\
+ \theta^2-\tfrac23\theta^4&\le1-F_X(z)\le\theta^2,\qquad
+ |F_\Sigma(z)-1-i\theta|\le2\theta^2.\qquad\text{\workstar}
+ \label{recent:wilson-endpoints}
+\end{align}
+The positive lower quadratic witness follows from
+$1-\cos x\ge x^2/2-x^4/24$ and the complete second/fourth moments.  The coherent
+sum has a linear imaginary witness.  A constant fitted to X's zero slope fails
+its curvature; a single cosine fitted to second moment two predicts fourth
+moment four, whereas the actual fourth moment is sixteen.  A single phase fitted
+to the coherent mean one predicts second moment one, whereas the actual value
+is four.  These are discriminators of named reduced descriptions, not universal
+model-identification claims.
+
+For a source $\psi_j=B_j\Omega$ of norm one and $J_j=\norm{B_j}$, the complete
+finite-$q$ budget is
+\begin{equation}
+ \left|e^{iET_q/\hbar}C_q^{B_j}(T_q)
+ -\langle\psi_j,e^{is_qQ(q)/96}\psi_j\rangle\right|
+ \le6J_j^2\widehat d_q+J_j^2D_k(15z)+(1+J_j)b_k.
+ \label{recent:wilson-finite-q}
+\end{equation}
+The factor $1+J_j$ follows by first replacing the vacuum column and then using
+the normalized created source on the remaining column.  Use $J_X^2=4$,
+$J_\Sigma^2=8$, and $1+2\sqrt2<4$; rank-norm budgets would undercount state
+and spatial errors.  At the AA2 sample parameters, degree-eight exact rational
+centers have total radii below $5\cdot10^{-18}$ for X and $10^{-17}$ for the
+sum.  Their certified displacements exceed these radii, giving actual finite-$q$
+as well as limiting witnesses.  If comparing to the limiting trigonometric
+formulas, the coefficient/time correction after \eqref{recent:aa-finite-q}
+remains separate.
+
+The Wilson obstruction in V1 is thus resolved by new source-specific observables,
+not by falsely approximating the rank operator in the forbidden norm.  The
+remaining bridge is empirical or cross-model scale identification with frozen
+observables, generators, preparations, and held-out data.  The elementary null
+probe, multiple-frequency witnesses, and physical-time budgets establish none
+of that matching by themselves.  They also supply no global $q=1$ dynamics,
+homogeneous stability theorem, or four-dimensional continuum mass gap.
+Sources: \repo{research/round26/forward/ad2/report.md},
+\repo{research/round26/reverse/ad2/report.md},
+\repo{research/round26/skeptic/ad2.md}.

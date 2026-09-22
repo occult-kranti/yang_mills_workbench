@@ -1,0 +1,171 @@
+% Admitted by research/round28/advisor/ah2-gate.json after final skeptical review.
+\section{HNM AH2: complete delayed loading at the unchanged physical clock\workstar}
+AH2 sharpens the early omission estimate on the same 46-link graph and the same rank-561 physical compression. The two independent directions obtain the exact sufficient bound
+\begin{equation}
+ \sup_{\sigma\ge0}
+ \frac{\norm{E(\sigma)x-E_P(\sigma)x}}{\norm{E(\sigma)x}}
+ \le \frac{18126701281201}{212761890290715000}
+ \simeq 8.519712462\times10^{-5}<10^{-4}.
+ \label{r28:eq:ah2-result}
+\end{equation}
+It holds for every real $0\le\lambda\le1/100$ and every normalized complex $x\in\operatorname{ran}P_0$ with $\norm{x-\Omega}\le1/100$. Here both semigroups use their own actual ground energies. This improves AH1's common sufficient ceiling $11/5000$ without narrowing the preparation class, changing the graph or altering the clock. It evaluates no actual heat vector or observed approximation error.
+
+\subsection{Full physical domains and all three complementary sectors}
+Keep precisely \eqref{r28:eq:ah1-model}: the 24 original vertex Gauss actions on all 46 original links, all 29 faces, the invariant product-Haar Hilbert space, and $L=K+\lambda(29-S)$. Its operator domain is the invariant product $H^2$ space, its form domain is invariant $H^1$, and smooth invariant Peter--Weyl functions form a core. Bounded real gauge-invariant multiplication preserves these domains and compact resolvent; $0\le29-S\le58$ implies $L\ge K$. The electric vacuum remains unique with full physical gap three. Physical energy and heat time remain $H=\alpha L$ and $\sigma=\alpha t/\hbar$, with all declared reference scales fixed.
+
+Write $P=P_+$ for the admitted enriched projection and set
+\begin{equation}
+ F=P_0-|\Omega\rangle\langle\Omega|,\qquad
+ N=P-P_0,\qquad Q=I-P,\qquad A=PLP,\qquad B=QLP.
+ \label{r28:eq:ah2-sectors}
+\end{equation}
+The dimensions of $F$ and $N$ are 29 and 531. The full outside $Q$ is infinite dimensional. In particular, $NLP_0$ can be nonzero although $QLP_0=0$. Both finite projections reduce $K$ and preserve its operator and form domains. Their ranges consist of smooth physical functions, giving the full block domain $\operatorname{ran}P\oplus QD(K)$ and a legitimate strong-vector Duhamel argument below.
+
+The complete AH1 magnetic action is independently reconstructed from the actual basis, metric adjoints and all old columns: 2,124 nonzero entries and 312,597 structural zeros. The coordinate-dependent link-center transformation makes every new state even and every fundamental face odd. Hence $NSN=0$ on the whole new block. Its energies are $8$ for the 29 spin-one faces, $6$ for the 310 disjoint products, $9/2$ for the 96 shared singlets and $13/2$ for the 96 shared triplets; each triplet keeps metric weight three.
+
+Let $\epsilon,\mu$ be the actual full and retained ground energies, and $G,G_P$ their rank-one projections. The inherited full variational ordering and separate spectral isolation give
+\begin{equation}
+ 0\le\epsilon\le\mu\le\mu_0\le29\lambda<3,
+ \qquad E_1(L),E_1(A)\ge3.
+\end{equation}
+Consequently the complete new diagonal block, not a freely chosen damping term, is
+\begin{equation}
+ D_N=N(A-\mu)N=K_N+(29\lambda-\mu)N\ge dN,
+ \qquad d=9/2.
+ \label{r28:eq:ah2-damping}
+\end{equation}
+Summing every new row in the physical metric gives
+\begin{equation}
+ (NSF)^*(NSF)=7I_{29}+\tfrac14J_{29},\qquad
+ C=NAP_0=-\lambda NSF,\qquad C\Omega=0,
+ \qquad\norm C=\tfrac{\sqrt{57}}2\lambda.
+ \label{r28:eq:ah2-full-gram}
+\end{equation}
+For arbitrary complex $v$, the quadratic form is $7\norm v^2+|\sum_pv_p|^2/4$. Its bright eigenvalue is $57/4$ and its 28 dark eigenvalues are seven. All 531 new rows contribute positively to the bright quadratic form; deleting any row changes the exact Gram and its unique largest endpoint. This is an all-input norm proof, not an assumption that the trajectory remains in the bright mode. The complete outside identities are still
+\begin{equation}
+ B=-\lambda QSP=BN,\qquad BP_0=0,\qquad\norm B\le29\lambda.
+\end{equation}
+The spin-$3/2$ same-face witness has coefficient $-\lambda/2$ from the normalized spin-one input, so $B\ne0$ at positive coupling. The envelope covers all new inputs and all outside channels simultaneously; their exact outside Gram is not evaluated.
+
+\subsection{Stationary loading and the complete evolving face source}
+Put $\Lambda=\eta=1/100$ and retain the common AH1 spectral envelopes
+\begin{align}
+ g&=3-29\Lambda=271/100,&
+ r_0&=41\Lambda^2/12,& p_0&=r_0/g,\notag\\
+ r_P&=29\Lambda p_0,&p_P&=r_P/g,&\delta_P&=r_P^2/g.
+ \label{r28:eq:ah2-ground-budgets}
+\end{align}
+The two separate comparisons $\norm{G-G_0}\le p_0$ and $\norm{G_P-G_0}\le p_0$ are both needed. The first follows from the original Ritz vector's full spectral residual. The second uses the same residual because $Lf_0\in\operatorname{ran}P$, with independently established retained isolation. Then $BG_0=0$ bounds the enriched full residual by $r_P$, and the full spectral-angle and Temple estimates give
+\begin{equation}
+ \norm{G-G_P}\le p_P,\qquad0\le\mu-\epsilon\le\delta_P.
+\end{equation}
+These symbols denote envelopes, not evaluated projector distances or eigenvectors.
+
+Use the reviewed reverse-AH1 refinement $q_0=9\Lambda/10$, with that attribution. It follows from the original Ritz parameter and $\sqrt{29}<27/5$. Define
+\begin{equation}
+ q=q_0+p_0=\frac{14839}{1626000},\qquad
+ b=q+\eta=\frac{31099}{1626000}.
+\end{equation}
+The operator inequality $\norm{FG_P}\le\norm{FG_0}+\norm{G_P-G_0}\le q$ bounds the actual stationary face component. Both full and retained excited components of every allowed $x$ have norm at most $b$. Therefore the complete retained evolution satisfies
+\begin{equation}
+ u(\sigma)=e^{-\sigma(A-\mu)}x,
+ \qquad\norm{Fu(\sigma)}\le q+b e^{-g\sigma}.
+ \label{r28:eq:ah2-face-source}
+\end{equation}
+This spectral decomposition already includes every return through $N$. The nondecaying $q$ term cannot be discarded: at positive coupling a retained ground with no face component would, by the positive new block and the vacuum-to-face equation, have to be the vacuum, which fails the ground equation. The reverse and skeptic checks also give positive actual-model stationary-face lower witnesses.
+
+For $y=Nu$, the exact coupled equation and its variation-of-constants identity are
+\begin{align}
+ y'&=-D_Ny-CFu,\qquad y(0)=0,\notag\\
+ y(\sigma)&=-\int_0^\sigma e^{-(\sigma-s)D_N}CFu(s)\,ds.
+ \label{r28:eq:ah2-loading}
+\end{align}
+No term is removed from the old-sector equation, including its return term $-C^*Nu$. With $\bar C=19\Lambda/5>\Lambda\sqrt{57}/2$, equations \eqref{r28:eq:ah2-damping}--\eqref{r28:eq:ah2-face-source} imply
+\begin{equation}
+ \norm{Nu(\sigma)}\le Y(\sigma)
+ =\bar C\left[\frac qd(1-e^{-d\sigma})+
+ \frac b{d-g}(e^{-g\sigma}-e^{-d\sigma})\right].
+ \label{r28:eq:ah2-Y}
+\end{equation}
+Both terms are nonnegative convolutions. They account for stationary and excited loading of all 531 new states. The source is the full $u$, not a prescribed free face trajectory.
+
+\subsection{Actual centers, true denominator and a fixed all-time join}
+Define $E(\sigma)=e^{-\sigma(L-\epsilon)}$ and $E_P(\sigma)=e^{-\sigma(A-\mu)}P$. Since $u(s)$ stays in a finite smooth full-domain space and $Lu(s)$ is continuous, strong vector differentiation and integration give
+\begin{equation}
+ (E(\sigma)-E_P(\sigma))x
+ =-\int_0^\sigma E(\sigma-s)
+ [B+(\mu-\epsilon)P]u(s)\,ds.
+ \label{r28:eq:ah2-duhamel}
+\end{equation}
+The plus sign of the center defect inside the integrand is essential. The full contraction $E(\sigma-s)$ retains outside propagation and every return path. This is not an unbounded operator-norm differentiation argument.
+
+Using $Bu=BNu$, $\norm u\le1$ and $\bar B=29\Lambda$ yields the increasing early error envelope
+\begin{align}
+ V(\sigma)={}&\delta_P\sigma+\bar B\bar C
+ \left\{\frac qd\left[\sigma-\frac{1-e^{-d\sigma}}d\right]\right.\notag\\
+ &\left.\hspace{15mm}+\frac b{d-g}
+ \left[\frac{1-e^{-g\sigma}}g-\frac{1-e^{-d\sigma}}d\right]\right\}.
+ \label{r28:eq:ah2-V}
+\end{align}
+The leakage part is $\bar B\int_0^\sigma Y(s)\,ds$, so monotonicity and $V(0)=0$ follow from nonnegative kernels. Integrating the transient convolution over the whole half-line gives $1/(gd)$. Thus a simpler increasing majorant is
+\begin{equation}
+ V(\sigma)\le\bar V(\sigma)
+ =\delta_P\sigma+\bar B\bar C
+ \left(\frac{q\sigma}d+\frac b{gd}\right).
+ \label{r28:eq:ah2-affine}
+\end{equation}
+Its positive intercept is conservative slack; the exact error at zero time is zero.
+
+The original Ritz overlap, full projector comparison and complete complex preparation ball give the genuine output floor
+\begin{equation}
+ \norm{E(\sigma)x}\ge\norm{Gx}\ge
+ D=1-29\Lambda^2/72-\eta-p_0
+ =\frac{193136341}{195120000}>0.
+ \label{r28:eq:ah2-true-D}
+\end{equation}
+This is the full output, not the retained norm or an arbitrary regularizer. Separately the full and retained spectral tails imply
+\begin{equation}
+ \norm{(E(\sigma)-E_P(\sigma))x}\le
+ J(\sigma)=p_P+(2b+p_P)e^{-g\sigma},
+ \label{r28:eq:ah2-J}
+\end{equation}
+where the extra decaying $p_P$ is harmless slack. At the predeclared join $\sigma=3$, positive rational Taylor sums prove $e^{3g}>3000$. The increasing early bound controls $[0,3]$ and the decreasing late bound controls $[3,\infty)$:
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}\toprule
+Certificate endpoint & Exact bound\\\midrule
+$\bar V(3)$ & $18126701281201/214947118800000000$\\
+$J(3)$ & $\le34696603/1321938000000$\\
+True output floor $D$ & $193136341/195120000$\\\bottomrule
+\end{tabular}
+\end{center}
+The early endpoint dominates. Dividing it by $D$ proves \eqref{r28:eq:ah2-result}. All inequalities use simultaneous cap constants and positive gaps, so they cover the full real coupling interval and all nonnegative real times. The join changes no physical evolution parameter and was not optimized.
+
+The independently frozen skeptic uses the slightly sharper rational choice $\bar C=151\Lambda/40$, giving the separately attributed sufficient fraction
+\begin{equation}
+ \frac{4501862190047}{53190472572678750}
+ \simeq8.463662706\times10^{-5}<10^{-4}.
+\end{equation}
+Its stationary-loading, excited-loading and center-defect absolute contributions at the join are respectively about $6.6605\times10^{-5}$, $1.7170\times10^{-5}$ and $1.4798\times10^{-9}$. These are conservative proof budgets, not measured error components; neither certificate is claimed optimal.
+
+\subsection{Exact fixtures, discriminating controls and limits}
+The 27 prescribed records combine $\lambda\in\{0,1/200,1/100\}$, $\sigma\in\{0,1,3\}$ and three preparations. In addition to $\Omega$, the two nonvacuum states are
+\begin{equation}
+ \sqrt{39999/40000}\,\Omega+\tfrac1{200}\phi_0,
+ \qquad
+ \sqrt{39999/40000}\,\Omega+\tfrac{i}{200}\phi_0.
+\end{equation}
+They have exact physical norm one and vacuum distance slightly larger than their face amplitude $0.005$, but below the theorem radius $0.01$. Every record uses the full theorem radius. Rational Taylor and reciprocal enclosures verify scalar certificate functions in \eqref{r28:eq:ah2-Y}--\eqref{r28:eq:ah2-J}; no finite matrix exponential or heat vector is computed. Analytic monotonicity and spectral estimates, not these fixtures, establish continuous and all-time coverage.
+
+Controls check every row's Gram contribution, the triplet metric, the distinction between $N$ and $Q$, the nonzero outside spin-$3/2$ channel, stationary loading, actual centers and the fixed clock. Feedback deletion changes the actual second derivative by $C^*CFx$. For either allowed nonzero face preparation its squared norm is $(1/200)^2\lambda^4(869/16)>0$ at positive coupling. The producers preserve their initial nondiscriminating candidates---zero coupling in one direction and vacuum-only second derivative in the other---beside the successful replacements; these are control repairs, not new investigations. A polynomial vanishing at all fixture times explicitly refutes a sampling-only all-time inference.
+
+The forward control also proves $\epsilon<\mu$ at positive coupling using the connected nonpositive-off-diagonal retained matrix, positive retained ground coordinates and its nonzero outside spin-$3/2$ coefficient. For $x=\Omega$ this gives
+\begin{equation}
+ \left.\frac d{d\sigma}
+ [\norm{E(\sigma)x}^2-\norm{E_P(\sigma)x}^2]\right|_{\sigma=0}
+ =2(\epsilon-\mu)<0.
+\end{equation}
+Thus the exact retained norm can exceed the true output norm and cannot replace \eqref{r28:eq:ah2-true-D}. This supplies no evaluated enriched ground or quantitative new gap. At zero time, or zero coupling for every time, the exact two heats agree on allowed inputs. Independently rounded centers cannot be exponentiated indefinitely while preserving the theorem.
+
+Both initial freeze inventories omitted the two nested AH1 freeze snapshots. The completed records add exactly those already existing snapshots and the preserved initial draft record. Their reports, checkers, outputs and all initially bound bytes are unchanged; the source inventories and final review verify this disclosed metadata repair. AH2 inherits the reviewed AH1 construction and reverse-origin vacuum-angle refinement; each new checker parses frozen data and independently reconstructs the needed blocks without executing an older checker. No new external primary reading is claimed.
+
+This is one analytic, fixed-graph, same-clock refinement for exact independently centered heat and the whole declared initial ball. It supplies no numerical evaluator, exact outside Gram, arbitrary-full-input or real-time relative theorem, rounded-center robustness, graph-size uniformity, model identification, thermodynamic construction or continuum Yang--Mills result. The remaining early bound is dominated by stationary loading. A smaller sufficient fraction is not an observed improvement in an actual computed trajectory.
