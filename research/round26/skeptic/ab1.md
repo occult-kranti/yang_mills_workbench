@@ -1,0 +1,11 @@
+# AB1 independent skeptical review
+
+**Disposition: accept the scoped finite-cuboid result; parent inverse goal remains limited.** No blocking error was found. Both independently frozen producers were inspected, replayed in fresh external directories in ordinary and optimized Python, and matched their frozen results byte for byte. Exact source, report, checker and result hashes are in `ab1.json`.
+
+The actual identity-extended source obeys `D_G(A)=D_G(F)` and `||D_G(A)|| <=6Mr/(1-M)`, with cap ratio `70/543`. The factor is correct: `||K||=||k||`, each crossing commutator costs at most `2M||k||`, and exactly three possible crossing stars meet the origin source. All seven complete factors in each union are retained. The inherited local inverse has the stated negative commutator sign and its bounded local H0 commutator supplies graph preservation after identity extension. Finite-volume compactness supports pinching the complete spectral decomposition; no finite spin matrix replaces that argument.
+
+The no-crossing cuboid exception gives exact block exclusion. The reverse report also proves the useful actual-window estimate `||PAP|| <=(2 epsilon+6M)r/(1-M)` directly from the bounded spectral restriction of G. Both signs of tau and the exact zero-source exception are respected.
+
+This is an upper bound on every actual resonant block, not an evaluation of a nonzero one or a proof that every block vanishes when crossings exist. It is a new consequence of the inherited S1 boundary identity; the inverse and crossing defect themselves were already known. Pinching may be nonlocal, so the single-source weighted bound on F cannot be transferred to `D_G(F)`. Neither strong filtered convergence nor this upper bound proves full-source norm decay, a bounded exact inverse, an infinite-volume spectral diagonal, later-diagonal contraction, or a continuum mass gap.
+
+Recommend AB2 retain F explicitly while constructing a finite-resolution inverse or a one-step local conjugation with its entire scalar, diagonal and BCH remainder. Any contraction must identify its norm and full indexed support count. Independent agent review is not external peer review; scientific priority remains unverified.

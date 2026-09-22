@@ -1,0 +1,76 @@
+{
+  "accepted": "Independently computed and enclosed actual 293-coordinate vacuum heat vector at lambda=0.01,sigma=1, with certified retained minimum, actual coordinate metric, exported rounding and complete full-Hilbert relative error below 0.000014 using the reverse certificate.",
+  "authorship": "Separate skeptical model agent after freeze; not external peer review.",
+  "blocking_issues": [],
+  "limitations": [
+    "This is a single frozen point/input computation, not an all-time or continuous-coupling evaluated trajectory.",
+    "Forward and reverse use different conservative physical envelopes and retained centers; their error budgets cannot be recombined without a new proof.",
+    "The computed retained minimum is not the exact full-Hilbert ground energy.",
+    "No graph-size solver, real-time certificate, homogeneous result, empirical mass calibration or continuum construction."
+  ],
+  "loop": "af1",
+  "next_loop_recommendation": "Extend to a frozen bounded heat-time/preparation domain with certified evaluator error and retained-center control, or compute a sharper full-space ground-energy enclosure using the executed trial vector and complete residual. Select one concrete target after this review; do not promote the present point export to uniform evaluated dynamics.",
+  "replay": {
+    "deterministic": true,
+    "directions": [
+      "forward",
+      "reverse"
+    ],
+    "directory": "/tmp/ym26-skeptic-af1-_6ee34g4",
+    "export_difference_norm_squared": "1157052714864603357303761376285731005932472129949116483504726874086771724780000861/2500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "independent_export_disks_overlap_in_Gram_norm": true,
+    "matches_frozen_outputs": true,
+    "modes": [
+      "normal",
+      "optimized"
+    ],
+    "outputs": {
+      "forward": {
+        "normal_O_and_frozen_equal": true,
+        "sha256": "9f62b2405d5ad94bf14873cc334477f62942aa16581f6d36fa6d30aafc8915cf"
+      },
+      "reverse": {
+        "normal_O_and_frozen_equal": true,
+        "sha256": "820b9f86df36d49a122328b3ae556aac84abf66e974da17e4d595ee925219ad7"
+      }
+    },
+    "retained_minimum_intervals_nested": true
+  },
+  "review_notes": [
+    "Exact integer Horner recurrence expands to the stated degree100 Taylor polynomial; reverse iterates exact Taylor vector terms.",
+    "Forward norm bound9 and exponential remainder prefactor are conservative. Reverse uses C>=-0.2 to sharpen the remainder prefactor, valid in the actual metric.",
+    "Triplet weights sum with the others to417, giving the stated coordinate export bounds; Euclidean coordinate norm would undercount.",
+    "Different total physical thresholds despite a much tighter forward retained-center estimate are consistent because physical omission envelopes differ.",
+    "Zero-time/coupling behavior is proved as an exact target identity; reverse also executes the corresponding polynomial branches."
+  ],
+  "schema": "ym26-skeptic-review-v1",
+  "sha256": {
+    "research/round26/advisor/ab2-gate.json": "b3100921187690185c9a8f1608960edb4d582311c11dd302d6c99f88798ae828",
+    "research/round26/advisor/ac2-gate.json": "146d53230c5852005b9999f9b2351e4fa171d9007e793188026d0c9c6dfc2d2e",
+    "research/round26/advisor/ad2-gate.json": "9f95a65aa9f1f494d2467ff5a6b09806961f962d65cabdf8c61dee6c3c8361f5",
+    "research/round26/contracts/af1.json": "94b018ad9f81f043a84a194908cd213c2bd8b2f89b897cec6fdacbb1027f5444",
+    "research/round26/forward/ac1/output/results.json": "e1b1e981be831499923751f153ec41778bf8905aa3dd6e0984bb12ce7ab029e2",
+    "research/round26/forward/ac1/report.md": "50e71a78885267b345427778dd4d14c6c9b13959ee3bffb914d6d596dd7e617b",
+    "research/round26/forward/ac2/report.md": "729bbb7df3962cc097e7c595955332a9d5638ba64aca0dbf2243fc031cb34b92",
+    "research/round26/forward/af1/check.py": "1288a3dc2b9f5a8913c84721eb6d887922c48456886460c3d285cfa4b5aaa386",
+    "research/round26/forward/af1/output/results.json": "9f62b2405d5ad94bf14873cc334477f62942aa16581f6d36fa6d30aafc8915cf",
+    "research/round26/forward/af1/report.md": "33280a26a21188215f9783a34f71014ab133b077e8ec804c8574d21545a989c4",
+    "research/round26/inputs/AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+    "research/round26/inputs/previous-roadmap.json": "4e3099037dfd7ef0a9866aecba35ae8f01d8d2f505757cf4b6268ef6e5fde1e4",
+    "research/round26/reverse/ac2/report.md": "8433f35e6b415fc945bd254f2b7cb087a7f3b31930a319cc7ae875b2c1ef9745",
+    "research/round26/reverse/af1/check.py": "e9b3802b7a5ac512096384348d15ee0c4a557b077f8d1baa2081bd38d9fc7bff",
+    "research/round26/reverse/af1/output/results.json": "820b9f86df36d49a122328b3ae556aac84abf66e974da17e4d595ee925219ad7",
+    "research/round26/reverse/af1/report.md": "ad47f802e78347f36d562b7449885f1354853424560c4d96a3a29bed03552844",
+    "research/round26/skeptic/ac2.json": "76dc663f1bbf420b2992d4980323b310686d7c28aee36fa917e9a32582aa5b41"
+  },
+  "supported_claims": [
+    "Every physical sparse entry is verified in the diagonal Gram; all 293 coordinates are used in exact Horner or rational Taylor evaluation.",
+    "A>=K and vacuum trial mu<=0.2 identify the minimum with second eigenvalue >=3 before the Temple residual bound is applied.",
+    "Forward residual-corrected rational trial gives a rigorous narrower retained minimum interval nested inside the independent reverse interval.",
+    "Both Taylor remainders and actual Gram export-rounding errors are rigorously bounded, and own-ground center uncertainty is charged separately.",
+    "The two exported vectors agree within the sum of their retained-vector disk radii in exact squared Gram norm.",
+    "Forward full-relative point certificate <0.000015 and reverse <0.000014 include all physical leakage, true/retained centering, own-center numerical error, polynomial error and coordinate export.",
+    "Original time hbar/alpha and true full-output denominator >=7199/7200 are preserved."
+  ],
+  "verdict": "accepted_within_scope"
+}
