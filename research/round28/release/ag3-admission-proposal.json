@@ -1,0 +1,1382 @@
+{
+  "bindings": {
+    "research/round28/contracts/ag3.json": "e705bd6762e39c272ecf4409aaf566152f4e61f0b756e215494d28938aeea85d",
+    "research/round28/reverse/ag3/post-freeze-passive-comparison.json": "f3354d632621b54cf8f098296f9b7c263c46a2c48e1a12d46e68f54a52f51471",
+    "research/round28/reverse/ag3/post-freeze-passive-comparison.md": "88775330bd44f2da0138ecdaed4612d7a30250a484508cb276fde7d026e4679c",
+    "research/round28/skeptic/ag3-independent-freeze.json": "8be9e00d81423eb3b60ebec194906a3dee3f5e59d924974cdeb227b57acccd0a",
+    "research/round28/skeptic/ag3-independent.json": "5189927e6f2a9764035dc117b568a7028bf1baf5f436d4c02425b34a145e44f6",
+    "research/round28/skeptic/ag3-inputs/source-inventory.json": "c0042ea924dcff76896c6ab1dd579ef765904826fb28aa81f7c3b4945fae893a",
+    "research/round28/skeptic/ag3-passive-comparator-freeze.json": "10cfdcb5b34aac84a9ba4ab435a1e2f32640b035d3e0dfe6e01175748ce03d66",
+    "research/round28/skeptic/ag3-passive-comparator.json": "67301a1ee5ffb5149fc17eb3bbea1ad30e1d47e50e28c7f7f31755d034ce71d5",
+    "research/round28/skeptic/ag3-post-review.json": "768e6068ee7b24504826061e520226a73697175559b572d6982ddc65b241ed8d",
+    "research/round28/skeptic/ag3_independent.py": "a06a80193f227f7894bff704252ec516f4f4fdbfdb3c0be87fe90c88f5683cfd",
+    "research/round28/skeptic/ag3_passive_comparator.py": "a2faa77c05dff7b62d270fa15a0408e6c41fcf7ac5d00aeab196d8e2b106bc80",
+    "research/round28/skeptic/ag3_post_review.py": "058453bcde5bf7957e556d5ecd1ecc5e7291b70ef039aa0b2917870f58a57c1c"
+  },
+  "loop": "ag3",
+  "producers": {
+    "forward": {
+      "adoption_records": [
+        "research/round28/forward/ag3/inputs/preproduction.json"
+      ],
+      "binding_field": "bindings",
+      "freeze": "research/round28/forward/ag3/freeze.json",
+      "instruction_manifests": [
+        "research/round28/forward/ag3/inputs/instruction-inventory.json"
+      ],
+      "rational_relations": [
+        {
+          "id": "main-coupling",
+          "left": {
+            "pointer": "/endpoints/main/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/1000"
+          }
+        },
+        {
+          "id": "main-exact-factor",
+          "left": {
+            "pointer": "/endpoints/main/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "3060/3623"
+          }
+        },
+        {
+          "id": "main-theta",
+          "left": {
+            "pointer": "/endpoints/main/theta"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "constant": "288/31"
+              },
+              {
+                "pointer": "/endpoints/main/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-positive-denominator",
+          "left": {
+            "pointer": "/endpoints/main/theta"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "1"
+          }
+        },
+        {
+          "id": "main-complete-D-and-B-factor",
+          "left": {
+            "pointer": "/endpoints/main/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "product": [
+                  {
+                    "constant": "288/31"
+                  },
+                  {
+                    "sum": [
+                      {
+                        "pointer": "/endpoints/main/d_ceiling"
+                      },
+                      {
+                        "pointer": "/endpoints/main/r_ceiling"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/main/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-residual-cap-retains-r",
+          "left": {
+            "pointer": "/endpoints/main/remainder"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "pointer": "/endpoints/main/ratio"
+              },
+              {
+                "pointer": "/endpoints/main/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/main/reference_gap"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "pointer": "/endpoints/main/reference_relative_kappa_cap"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-reference-only-gap-threshold",
+          "left": {
+            "pointer": "/endpoints/main/reference_gap"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "9927/10000"
+          }
+        },
+        {
+          "id": "main-both-scalar-contributions",
+          "left": {
+            "pointer": "/endpoints/main/total_scalar_density_cap"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/main/new_scalar_density_cap"
+              },
+              {
+                "pointer": "/endpoints/main/old_scalar_density_cap"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-passive-ceiling-comparison",
+          "left": {
+            "pointer": "/endpoints/main/ratio"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "81/256"
+          }
+        },
+        {
+          "id": "narrow-coupling",
+          "left": {
+            "pointer": "/endpoints/narrow/M"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/10000"
+          }
+        },
+        {
+          "id": "narrow-exact-factor",
+          "left": {
+            "pointer": "/endpoints/narrow/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "5949/96812"
+          }
+        },
+        {
+          "id": "narrow-theta",
+          "left": {
+            "pointer": "/endpoints/narrow/theta"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "constant": "288/31"
+              },
+              {
+                "pointer": "/endpoints/narrow/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-positive-denominator",
+          "left": {
+            "pointer": "/endpoints/narrow/theta"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "1"
+          }
+        },
+        {
+          "id": "narrow-complete-D-and-B-factor",
+          "left": {
+            "pointer": "/endpoints/narrow/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "product": [
+                  {
+                    "constant": "288/31"
+                  },
+                  {
+                    "sum": [
+                      {
+                        "pointer": "/endpoints/narrow/d_ceiling"
+                      },
+                      {
+                        "pointer": "/endpoints/narrow/r_ceiling"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/narrow/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-residual-cap-retains-r",
+          "left": {
+            "pointer": "/endpoints/narrow/remainder"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "pointer": "/endpoints/narrow/ratio"
+              },
+              {
+                "pointer": "/endpoints/narrow/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/narrow/reference_gap"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "pointer": "/endpoints/narrow/reference_relative_kappa_cap"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-threshold",
+          "left": {
+            "pointer": "/endpoints/narrow/reference_gap"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "1999/2000"
+          }
+        },
+        {
+          "id": "narrow-both-scalar-contributions",
+          "left": {
+            "pointer": "/endpoints/narrow/total_scalar_density_cap"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/narrow/new_scalar_density_cap"
+              },
+              {
+                "pointer": "/endpoints/narrow/old_scalar_density_cap"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-passive-ceiling-comparison",
+          "left": {
+            "pointer": "/endpoints/narrow/ratio"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "81/256"
+          }
+        }
+      ],
+      "required_snapshots": {
+        "research/round28/forward/ag3/inputs/.codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md": "3f4a4fd15b1cbf45cabdd405745e5549017655e5aeb1037d72927a481da583b8",
+        "research/round28/forward/ag3/inputs/.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+        "research/round28/forward/ag3/inputs/AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+        "research/round28/forward/ag3/inputs/instructions/newton-SKILL.md": "2fa3dab9b2420d157457ad3ccaeb0723fb1952871be3e6140dcd3d3c9346ccef",
+        "research/round28/forward/ag3/inputs/instructions/newton-hidden-causes.md": "0471e1411293e808f3f863ee8db19fbc2c2ad622045234307a19328568db8500",
+        "research/round28/forward/ag3/inputs/instructions/newton-research.md": "803ed9b8c517b881c8b217dc9ea47d011c7a070e142f5cb098fde8768990f4f2",
+        "research/round28/forward/ag3/inputs/instructions/newton-source-specific-inference.md": "4dfd9f67ac25e7a550c56124fbe4402d418c07f4480f80a01ad3574886a044df",
+        "research/round28/forward/ag3/inputs/instructions/paired-SKILL.md": "00a703f986c46ea75e9f69c75d9ef6a05c5445418eb28bdeac8fee5c52d0878d",
+        "research/round28/forward/ag3/inputs/instructions/paired-admission-matching.md": "5759836a5535ca38df772ab3765e2396cc191145522321c6630e9b1a81db0090",
+        "research/round28/forward/ag3/inputs/instructions/paired-filtered-sources.md": "3f4a4fd15b1cbf45cabdd405745e5549017655e5aeb1037d72927a481da583b8",
+        "research/round28/forward/ag3/inputs/instructions/paired-generated-support.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+        "research/round28/forward/ag3/inputs/instructions/paired-locality-norms.md": "ef5caec41f13c52bcb23650be70468a9c2e74b7174df3a3e38235bcc1051a6c8",
+        "research/round28/forward/ag3/inputs/instructions/paired-projected-memory.md": "d9e27c0cd5093becfc0b79198728936eeb7ec14b135696661ee3d4a87db3bd3d",
+        "research/round28/forward/ag3/inputs/instructions/paired-reconstruction.md": "38ee8d4c25fdf51c2a2607e2d45b15c12948754f932373f017ad5076494b7faa",
+        "research/round28/forward/ag3/inputs/instructions/paired-residual-topology.md": "95797f0b16c57bd72628b457be038da63fbbc81f07d09c8af2a72ee81e68d915",
+        "research/round28/forward/ag3/inputs/instructions/tesla-SKILL.md": "81f6d760b3aa45d32db4ae31a3a3c9bec5e1d662e42529b5ae21a220deeb07c3",
+        "research/round28/forward/ag3/inputs/instructions/tesla-research.md": "25d0934ee03c0bf56e95bc3f2482947c15aea763a9910e86349af148ad70e0b5",
+        "research/round28/forward/ag3/inputs/research/round22/forward/o2/report.md": "f6b7af1a43e11e07286b6c44c18352a8755e6bdc1bf02582b5ce8090c99e42ad",
+        "research/round28/forward/ag3/inputs/research/round22/reverse/o2/report.md": "f7cbb1b86627c6bbbd78146ffdafa8bddeefb90b8eaa41e32056afec012e294f",
+        "research/round28/forward/ag3/inputs/research/round27/forward/ag1/report.md": "c8df699a1edc11f0f38ad5d5bc7427247a8cba7b57c64bb6e8841a1470102450",
+        "research/round28/forward/ag3/inputs/research/round27/methods/historical-physics-panel/SKILL.md": "a2b366bc661794ee89c29233d0887868b60c0853c85ec136e0529b6f1d5e223a",
+        "research/round28/forward/ag3/inputs/research/round27/methods/historical-physics-panel/references/lenses-and-evidence.md": "4680aec5254c9f83b425c351e2f62c5d999e00758a51cae2865dcf124f01d8d8",
+        "research/round28/forward/ag3/inputs/research/round28/advisor/ag2-admission.json": "1e0b0d6efb549b5a80f43a5e06ecabf57520cfa77559a38ac930cc7dc0ccff1b",
+        "research/round28/forward/ag3/inputs/research/round28/advisor/ag2-gate.json": "879e73fc26fed59040fe2853d28ffaa642c8e74467edc86284ebf88039fd5d3c",
+        "research/round28/forward/ag3/inputs/research/round28/advisor/ag2-reading.md": "b59c3f2e5bd3032159da7719f657e48347378a99b6dc147aa627f73427acb8c4",
+        "research/round28/forward/ag3/inputs/research/round28/advisor/cycle.json": "e499a39bbc6adeb5e61a583284eb23622ffd8522da5f1dd729deb55e68f2daee",
+        "research/round28/forward/ag3/inputs/research/round28/advisor/selection-ag3.md": "0b638c70ec1a010ed9f08f91779e49bc24f2fa838c5cd6e281ee9dd224e1a739",
+        "research/round28/forward/ag3/inputs/research/round28/contracts/ag3.json": "e705bd6762e39c272ecf4409aaf566152f4e61f0b756e215494d28938aeea85d",
+        "research/round28/forward/ag3/inputs/research/round28/experts/feynman/ag2-comparison.md": "a409e91dde0f668a066b44ccf0e1c44dc4788d80bbddd56bd25402c690f9bdc0",
+        "research/round28/forward/ag3/inputs/research/round28/experts/newton/ag2-comparison.md": "78f0a49ed01ffe193b7b3804af570a618d33c7ee8aae6c322007cd6d5780b5cf",
+        "research/round28/forward/ag3/inputs/research/round28/forward/ag2/report.md": "5fe9c6e404838945455a2dc0fb5b03d12d6b685db3147eeb6f607e0607f283b2",
+        "research/round28/forward/ag3/inputs/research/round28/methods/prospective-guide.md": "9dc5afc0ba299a9fd2085f49f14778b3a3966878f63241649f7e149f1024d410",
+        "research/round28/forward/ag3/inputs/research/round28/reverse/ag2/report.md": "a65de31a483640c5131b2afee906b0486cd455d665f3417ec7e015a872ca0456",
+        "research/round28/forward/ag3/inputs/research/round28/skeptic/ag2.json": "223279f77431cb0ad583c62977e64ce665e8fbf96feb5abc674117e99211fdff",
+        "research/round28/forward/ag3/inputs/research/round28/skeptic/ag2.md": "1d42d4066b168286cb2c1123289207b3c4f5016a5fecd248fc5135f9d63b3fff",
+        "research/round28/forward/ag3/inputs/research/round28/skeptic/ag3-precontract.md": "87110e2c06617f538d57448e6885bed4d3b89278eb33f1953be290ab09d4c521"
+      },
+      "semantic_controls": [
+        {
+          "equals": "ag3-forward-exact-v1",
+          "id": "schema",
+          "pointer": "/schema"
+        },
+        {
+          "equals": {
+            "all_stage_convergence": false,
+            "all_stage_iteration": false,
+            "continuum_Yang_Mills": false,
+            "cross_weight_reduction": true,
+            "full_hamiltonian_gap": false,
+            "full_homogeneous_gap": false,
+            "full_indexed_mixing_correction": true,
+            "full_source_correction": true,
+            "reference_only_gap": true,
+            "same_weight_contraction": false,
+            "weight_changing_bound": true
+          },
+          "id": "scope",
+          "pointer": "/scope"
+        },
+        {
+          "equals": "passed",
+          "id": "status",
+          "pointer": "/status"
+        },
+        {
+          "equals": 159,
+          "id": "check_count",
+          "pointer": "/check_count"
+        },
+        {
+          "equals": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "id": "input_weight",
+          "pointer": "/input_weight"
+        },
+        {
+          "equals": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "id": "output_weight",
+          "pointer": "/output_weight"
+        },
+        {
+          "equals": "main_zero_r_no_division",
+          "id": "check-66",
+          "pointer": "/checks/66"
+        },
+        {
+          "equals": "narrow_zero_r_no_division",
+          "id": "check-76",
+          "pointer": "/checks/76"
+        },
+        {
+          "equals": "passive_support4_embedding_exact",
+          "id": "check-87",
+          "pointer": "/checks/87"
+        },
+        {
+          "equals": "main_weaker_than_passive_budget",
+          "id": "check-88",
+          "pointer": "/checks/88"
+        },
+        {
+          "equals": "narrow_stronger_than_passive_budget",
+          "id": "check-89",
+          "pointer": "/checks/89"
+        },
+        {
+          "equals": "two_upper_budgets_do_not_prove_contraction",
+          "id": "check-92",
+          "pointer": "/checks/92"
+        },
+        {
+          "equals": "retained_D_commutator_nonzero",
+          "id": "check-99",
+          "pointer": "/checks/99"
+        },
+        {
+          "equals": "zero_source_update_exact",
+          "id": "check-115",
+          "pointer": "/checks/115"
+        },
+        {
+          "equals": "new_scalar_nonzero_fixture",
+          "id": "check-123",
+          "pointer": "/checks/123"
+        },
+        {
+          "equals": "dropped_new_scalar_rejected",
+          "id": "check-125",
+          "pointer": "/checks/125"
+        },
+        {
+          "equals": "wrong_BCH_B_half_coefficient_rejected",
+          "id": "check-127",
+          "pointer": "/checks/127"
+        },
+        {
+          "equals": "omitted_retained_D_rejected",
+          "id": "check-128",
+          "pointer": "/checks/128"
+        },
+        {
+          "equals": "old_scalar_drop_rejected",
+          "id": "check-129",
+          "pointer": "/checks/129"
+        },
+        {
+          "equals": "overlap_cross_retained_D_nonzero",
+          "id": "check-131",
+          "pointer": "/checks/131"
+        },
+        {
+          "equals": "excited_exterior_actual_source_nonzero",
+          "id": "check-136",
+          "pointer": "/checks/136"
+        },
+        {
+          "equals": "weight_reset_discriminant_4",
+          "id": "check-151",
+          "pointer": "/checks/151"
+        },
+        {
+          "equals": "weight_reset_discriminant_8",
+          "id": "check-152",
+          "pointer": "/checks/152"
+        },
+        {
+          "equals": "weight_reset_discriminant_16",
+          "id": "check-153",
+          "pointer": "/checks/153"
+        },
+        {
+          "equals": "no_fixed_weight_contraction_inferred",
+          "id": "check-154",
+          "pointer": "/checks/154"
+        },
+        {
+          "equals": "remaining_positive_weight_is_not_new_input_two",
+          "id": "check-155",
+          "pointer": "/checks/155"
+        },
+        {
+          "equals": "no_star_full_zero_update",
+          "id": "check-157",
+          "pointer": "/checks/157"
+        },
+        {
+          "equals": false,
+          "id": "main-actual_lower_weight_input_contraction",
+          "pointer": "/endpoints/main/actual_lower_weight_input_contraction"
+        },
+        {
+          "equals": false,
+          "id": "main-beats_passive_upper_budget",
+          "pointer": "/endpoints/main/beats_passive_upper_budget"
+        },
+        {
+          "equals": "All coefficients multiply actual indexed input r; displayed absolute budgets use its upper cap.",
+          "id": "main-interpretation",
+          "pointer": "/endpoints/main/interpretation"
+        },
+        {
+          "equals": false,
+          "id": "narrow-actual_lower_weight_input_contraction",
+          "pointer": "/endpoints/narrow/actual_lower_weight_input_contraction"
+        },
+        {
+          "equals": true,
+          "id": "narrow-beats_passive_upper_budget",
+          "pointer": "/endpoints/narrow/beats_passive_upper_budget"
+        },
+        {
+          "equals": "All coefficients multiply actual indexed input r; displayed absolute budgets use its upper cap.",
+          "id": "narrow-interpretation",
+          "pointer": "/endpoints/narrow/interpretation"
+        }
+      ],
+      "source_manifests": [
+        "research/round28/forward/ag3/inputs/source-inventory.json"
+      ]
+    },
+    "reverse": {
+      "adoption_records": [],
+      "binding_field": "sources",
+      "freeze": "research/round28/reverse/ag3/freeze.json",
+      "instruction_manifests": [],
+      "rational_relations": [
+        {
+          "id": "main-coupling",
+          "left": {
+            "pointer": "/endpoints/main/M_endpoint"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/1000"
+          }
+        },
+        {
+          "id": "main-exact-factor",
+          "left": {
+            "pointer": "/endpoints/main/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "3060/3623"
+          }
+        },
+        {
+          "id": "main-theta",
+          "left": {
+            "pointer": "/endpoints/main/theta"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "constant": "288/31"
+              },
+              {
+                "pointer": "/endpoints/main/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-positive-denominator",
+          "left": {
+            "pointer": "/endpoints/main/theta"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "1"
+          }
+        },
+        {
+          "id": "main-complete-D-and-B-factor",
+          "left": {
+            "pointer": "/endpoints/main/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "product": [
+                  {
+                    "constant": "288/31"
+                  },
+                  {
+                    "sum": [
+                      {
+                        "pointer": "/endpoints/main/d_ceiling"
+                      },
+                      {
+                        "pointer": "/endpoints/main/r_ceiling"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/main/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-residual-cap-retains-r",
+          "left": {
+            "pointer": "/endpoints/main/remainder"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "pointer": "/endpoints/main/ratio"
+              },
+              {
+                "pointer": "/endpoints/main/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/main/reference_gap"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "pointer": "/endpoints/main/complete_relative_diagonal_upper"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-reference-only-gap-threshold",
+          "left": {
+            "pointer": "/endpoints/main/reference_gap"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "9927/10000"
+          }
+        },
+        {
+          "id": "main-both-scalar-contributions",
+          "left": {
+            "pointer": "/endpoints/main/complete_scalar_density_upper"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/main/new_scalar_density_upper"
+              },
+              {
+                "pointer": "/endpoints/main/old_scalar_density_upper"
+              }
+            ]
+          }
+        },
+        {
+          "id": "main-passive-ceiling-comparison",
+          "left": {
+            "pointer": "/endpoints/main/ratio"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "81/256"
+          }
+        },
+        {
+          "id": "narrow-coupling",
+          "left": {
+            "pointer": "/endpoints/narrow/M_endpoint"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "1/10000"
+          }
+        },
+        {
+          "id": "narrow-exact-factor",
+          "left": {
+            "pointer": "/endpoints/narrow/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "5949/96812"
+          }
+        },
+        {
+          "id": "narrow-theta",
+          "left": {
+            "pointer": "/endpoints/narrow/theta"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "constant": "288/31"
+              },
+              {
+                "pointer": "/endpoints/narrow/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-positive-denominator",
+          "left": {
+            "pointer": "/endpoints/narrow/theta"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "1"
+          }
+        },
+        {
+          "id": "narrow-complete-D-and-B-factor",
+          "left": {
+            "pointer": "/endpoints/narrow/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "quotient": [
+              {
+                "product": [
+                  {
+                    "constant": "288/31"
+                  },
+                  {
+                    "sum": [
+                      {
+                        "pointer": "/endpoints/narrow/d_ceiling"
+                      },
+                      {
+                        "pointer": "/endpoints/narrow/r_ceiling"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "difference": [
+                  {
+                    "constant": "1"
+                  },
+                  {
+                    "pointer": "/endpoints/narrow/theta"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-residual-cap-retains-r",
+          "left": {
+            "pointer": "/endpoints/narrow/remainder"
+          },
+          "op": "eq",
+          "right": {
+            "product": [
+              {
+                "pointer": "/endpoints/narrow/ratio"
+              },
+              {
+                "pointer": "/endpoints/narrow/r_ceiling"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-identity",
+          "left": {
+            "pointer": "/endpoints/narrow/reference_gap"
+          },
+          "op": "eq",
+          "right": {
+            "difference": [
+              {
+                "constant": "1"
+              },
+              {
+                "pointer": "/endpoints/narrow/complete_relative_diagonal_upper"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-reference-only-gap-threshold",
+          "left": {
+            "pointer": "/endpoints/narrow/reference_gap"
+          },
+          "op": "gt",
+          "right": {
+            "constant": "1999/2000"
+          }
+        },
+        {
+          "id": "narrow-both-scalar-contributions",
+          "left": {
+            "pointer": "/endpoints/narrow/complete_scalar_density_upper"
+          },
+          "op": "eq",
+          "right": {
+            "sum": [
+              {
+                "pointer": "/endpoints/narrow/new_scalar_density_upper"
+              },
+              {
+                "pointer": "/endpoints/narrow/old_scalar_density_upper"
+              }
+            ]
+          }
+        },
+        {
+          "id": "narrow-passive-ceiling-comparison",
+          "left": {
+            "pointer": "/endpoints/narrow/ratio"
+          },
+          "op": "lt",
+          "right": {
+            "constant": "81/256"
+          }
+        },
+        {
+          "id": "zero-ratio",
+          "left": {
+            "pointer": "/endpoints/zero/ratio"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "0"
+          }
+        },
+        {
+          "id": "zero-remainder",
+          "left": {
+            "pointer": "/endpoints/zero/remainder"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "0"
+          }
+        },
+        {
+          "id": "zero-scalar_density",
+          "left": {
+            "pointer": "/endpoints/zero/scalar_density"
+          },
+          "op": "eq",
+          "right": {
+            "constant": "0"
+          }
+        }
+      ],
+      "required_snapshots": {
+        "research/round28/reverse/ag3/inputs/.codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md": "3f4a4fd15b1cbf45cabdd405745e5549017655e5aeb1037d72927a481da583b8",
+        "research/round28/reverse/ag3/inputs/.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+        "research/round28/reverse/ag3/inputs/AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+        "research/round28/reverse/ag3/inputs/research/round22/forward/o2/report.md": "f6b7af1a43e11e07286b6c44c18352a8755e6bdc1bf02582b5ce8090c99e42ad",
+        "research/round28/reverse/ag3/inputs/research/round22/reverse/o2/report.md": "f7cbb1b86627c6bbbd78146ffdafa8bddeefb90b8eaa41e32056afec012e294f",
+        "research/round28/reverse/ag3/inputs/research/round27/forward/ag1/report.md": "c8df699a1edc11f0f38ad5d5bc7427247a8cba7b57c64bb6e8841a1470102450",
+        "research/round28/reverse/ag3/inputs/research/round27/methods/historical-physics-panel/SKILL.md": "a2b366bc661794ee89c29233d0887868b60c0853c85ec136e0529b6f1d5e223a",
+        "research/round28/reverse/ag3/inputs/research/round27/methods/historical-physics-panel/references/lenses-and-evidence.md": "4680aec5254c9f83b425c351e2f62c5d999e00758a51cae2865dcf124f01d8d8",
+        "research/round28/reverse/ag3/inputs/research/round28/advisor/ag2-admission.json": "1e0b0d6efb549b5a80f43a5e06ecabf57520cfa77559a38ac930cc7dc0ccff1b",
+        "research/round28/reverse/ag3/inputs/research/round28/advisor/ag2-gate.json": "879e73fc26fed59040fe2853d28ffaa642c8e74467edc86284ebf88039fd5d3c",
+        "research/round28/reverse/ag3/inputs/research/round28/advisor/ag2-reading.md": "b59c3f2e5bd3032159da7719f657e48347378a99b6dc147aa627f73427acb8c4",
+        "research/round28/reverse/ag3/inputs/research/round28/advisor/cycle.json": "e499a39bbc6adeb5e61a583284eb23622ffd8522da5f1dd729deb55e68f2daee",
+        "research/round28/reverse/ag3/inputs/research/round28/advisor/selection-ag3.md": "0b638c70ec1a010ed9f08f91779e49bc24f2fa838c5cd6e281ee9dd224e1a739",
+        "research/round28/reverse/ag3/inputs/research/round28/contracts/ag3.json": "e705bd6762e39c272ecf4409aaf566152f4e61f0b756e215494d28938aeea85d",
+        "research/round28/reverse/ag3/inputs/research/round28/experts/feynman/ag2-comparison.md": "a409e91dde0f668a066b44ccf0e1c44dc4788d80bbddd56bd25402c690f9bdc0",
+        "research/round28/reverse/ag3/inputs/research/round28/experts/newton/ag2-comparison.md": "78f0a49ed01ffe193b7b3804af570a618d33c7ee8aae6c322007cd6d5780b5cf",
+        "research/round28/reverse/ag3/inputs/research/round28/forward/ag2/report.md": "5fe9c6e404838945455a2dc0fb5b03d12d6b685db3147eeb6f607e0607f283b2",
+        "research/round28/reverse/ag3/inputs/research/round28/methods/prospective-guide.md": "9dc5afc0ba299a9fd2085f49f14778b3a3966878f63241649f7e149f1024d410",
+        "research/round28/reverse/ag3/inputs/research/round28/reverse/ag2/inputs/installed-methods/newton-analysis-synthesis/SKILL.md": "2fa3dab9b2420d157457ad3ccaeb0723fb1952871be3e6140dcd3d3c9346ccef",
+        "research/round28/reverse/ag3/inputs/research/round28/reverse/ag2/inputs/installed-methods/paired-physics-research/SKILL.md": "00a703f986c46ea75e9f69c75d9ef6a05c5445418eb28bdeac8fee5c52d0878d",
+        "research/round28/reverse/ag3/inputs/research/round28/reverse/ag2/inputs/installed-methods/tesla-mechanism-resonance/SKILL.md": "81f6d760b3aa45d32db4ae31a3a3c9bec5e1d662e42529b5ae21a220deeb07c3",
+        "research/round28/reverse/ag3/inputs/research/round28/reverse/ag2/report.md": "a65de31a483640c5131b2afee906b0486cd455d665f3417ec7e015a872ca0456",
+        "research/round28/reverse/ag3/inputs/research/round28/skeptic/ag2.json": "223279f77431cb0ad583c62977e64ce665e8fbf96feb5abc674117e99211fdff",
+        "research/round28/reverse/ag3/inputs/research/round28/skeptic/ag2.md": "1d42d4066b168286cb2c1123289207b3c4f5016a5fecd248fc5135f9d63b3fff",
+        "research/round28/reverse/ag3/inputs/research/round28/skeptic/ag3-precontract.md": "87110e2c06617f538d57448e6885bed4d3b89278eb33f1953be290ab09d4c521"
+      },
+      "semantic_controls": [
+        {
+          "equals": "ym28-ag3-reverse-v1",
+          "id": "schema",
+          "pointer": "/schema"
+        },
+        {
+          "equals": {
+            "actual_input_denominator": "r=||B||_2; upper caps enter coefficient only",
+            "all_stage_iteration": false,
+            "full_hamiltonian_gap": false,
+            "input_weight": "2",
+            "output_weight": "3/2",
+            "reference_only_gap": true,
+            "same_weight_contraction": false,
+            "scalar_density": "old plus new scalar energy per site",
+            "source": "actual complete AG2 indexed local mixing B"
+          },
+          "id": "scope",
+          "pointer": "/scope"
+        },
+        {
+          "equals": "One complete bare-reference correction with changed support weight; every scalar and diagonal retained.",
+          "id": "scope_note",
+          "pointer": "/scope_note"
+        },
+        {
+          "equals": true,
+          "id": "passed",
+          "pointer": "/passed"
+        },
+        {
+          "equals": 959,
+          "id": "check_count",
+          "pointer": "/check_count"
+        },
+        {
+          "equals": "retained D commutator is nonzero",
+          "id": "check-55",
+          "pointer": "/checks/55"
+        },
+        {
+          "equals": "omitted D coefficient 1 rejected",
+          "id": "check-58",
+          "pointer": "/checks/58"
+        },
+        {
+          "equals": "omitted D coefficient 2 rejected",
+          "id": "check-60",
+          "pointer": "/checks/60"
+        },
+        {
+          "equals": "wrong full B coefficient 2 rejected",
+          "id": "check-61",
+          "pointer": "/checks/61"
+        },
+        {
+          "equals": "omitted D coefficient 3 rejected",
+          "id": "check-63",
+          "pointer": "/checks/63"
+        },
+        {
+          "equals": "wrong full B coefficient 3 rejected",
+          "id": "check-64",
+          "pointer": "/checks/64"
+        },
+        {
+          "equals": "omitted D coefficient 4 rejected",
+          "id": "check-66",
+          "pointer": "/checks/66"
+        },
+        {
+          "equals": "wrong full B coefficient 4 rejected",
+          "id": "check-67",
+          "pointer": "/checks/67"
+        },
+        {
+          "equals": "omitted D coefficient 5 rejected",
+          "id": "check-69",
+          "pointer": "/checks/69"
+        },
+        {
+          "equals": "wrong full B coefficient 5 rejected",
+          "id": "check-70",
+          "pointer": "/checks/70"
+        },
+        {
+          "equals": "omitted D coefficient 6 rejected",
+          "id": "check-72",
+          "pointer": "/checks/72"
+        },
+        {
+          "equals": "wrong full B coefficient 6 rejected",
+          "id": "check-73",
+          "pointer": "/checks/73"
+        },
+        {
+          "equals": "old scalar survives zeroth coefficient",
+          "id": "check-74",
+          "pointer": "/checks/74"
+        },
+        {
+          "equals": "new nonzero scalar",
+          "id": "check-81",
+          "pointer": "/checks/81"
+        },
+        {
+          "equals": "dropped scalar rejected",
+          "id": "check-84",
+          "pointer": "/checks/84"
+        },
+        {
+          "equals": "zero operator handled without ratio -1/100",
+          "id": "check-88",
+          "pointer": "/checks/88"
+        },
+        {
+          "equals": "zero operator handled without ratio 0",
+          "id": "check-90",
+          "pointer": "/checks/90"
+        },
+        {
+          "equals": "zero operator handled without ratio 1/100",
+          "id": "check-92",
+          "pointer": "/checks/92"
+        },
+        {
+          "equals": "incoming root cannot be omitted",
+          "id": "check-95",
+          "pointer": "/checks/95"
+        },
+        {
+          "equals": "old root cannot be omitted",
+          "id": "check-96",
+          "pointer": "/checks/96"
+        },
+        {
+          "equals": "reset-weight inflation n4",
+          "id": "check-895",
+          "pointer": "/checks/895"
+        },
+        {
+          "equals": "reset-weight inflation n8",
+          "id": "check-896",
+          "pointer": "/checks/896"
+        },
+        {
+          "equals": "reset-weight inflation n16",
+          "id": "check-897",
+          "pointer": "/checks/897"
+        },
+        {
+          "equals": "reset-weight inflation n32",
+          "id": "check-898",
+          "pointer": "/checks/898"
+        },
+        {
+          "equals": "same-weight factors unbounded in n",
+          "id": "check-903",
+          "pointer": "/checks/903"
+        },
+        {
+          "equals": "no-star cuboid has empty retained source family",
+          "id": "check-912",
+          "pointer": "/checks/912"
+        },
+        {
+          "equals": "no-star correction sum is zero before division",
+          "id": "check-913",
+          "pointer": "/checks/913"
+        },
+        {
+          "equals": "radius positive zero",
+          "id": "check-924",
+          "pointer": "/checks/924"
+        },
+        {
+          "equals": "positive denominator zero",
+          "id": "check-925",
+          "pointer": "/checks/925"
+        },
+        {
+          "equals": "weight-changing factor below17/20 zero",
+          "id": "check-926",
+          "pointer": "/checks/926"
+        },
+        {
+          "equals": "new reference gap above99/100 zero",
+          "id": "check-927",
+          "pointer": "/checks/927"
+        },
+        {
+          "equals": "actual multiplicative input zero 0",
+          "id": "check-928",
+          "pointer": "/checks/928"
+        },
+        {
+          "equals": "zero-r case no quotient zero 0",
+          "id": "check-929",
+          "pointer": "/checks/929"
+        },
+        {
+          "equals": "actual multiplicative input zero 1/100",
+          "id": "check-930",
+          "pointer": "/checks/930"
+        },
+        {
+          "equals": "zero-r case no quotient zero 1/100",
+          "id": "check-931",
+          "pointer": "/checks/931"
+        },
+        {
+          "equals": "actual multiplicative input zero 1/2",
+          "id": "check-932",
+          "pointer": "/checks/932"
+        },
+        {
+          "equals": "zero-r case no quotient zero 1/2",
+          "id": "check-933",
+          "pointer": "/checks/933"
+        },
+        {
+          "equals": "actual multiplicative input zero 1",
+          "id": "check-934",
+          "pointer": "/checks/934"
+        },
+        {
+          "equals": "zero-r case no quotient zero 1",
+          "id": "check-935",
+          "pointer": "/checks/935"
+        },
+        {
+          "equals": "zero-r case no quotient narrow 0",
+          "id": "check-941",
+          "pointer": "/checks/941"
+        },
+        {
+          "equals": "zero-r case no quotient main 0",
+          "id": "check-950",
+          "pointer": "/checks/950"
+        },
+        {
+          "equals": "zero-coupling entire correction",
+          "id": "check-958",
+          "pointer": "/checks/958"
+        },
+        {
+          "equals": false,
+          "id": "main-all_stage_convergence",
+          "pointer": "/endpoints/main/all_stage_convergence"
+        },
+        {
+          "equals": false,
+          "id": "main-same_weight_contraction",
+          "pointer": "/endpoints/main/same_weight_contraction"
+        },
+        {
+          "equals": "||R_next||_(3/2) <= coefficient * actual ||B||_2; coefficient upper only",
+          "id": "main-exact_statement",
+          "pointer": "/endpoints/main/exact_statement"
+        },
+        {
+          "equals": false,
+          "id": "narrow-all_stage_convergence",
+          "pointer": "/endpoints/narrow/all_stage_convergence"
+        },
+        {
+          "equals": false,
+          "id": "narrow-same_weight_contraction",
+          "pointer": "/endpoints/narrow/same_weight_contraction"
+        },
+        {
+          "equals": "||R_next||_(3/2) <= coefficient * actual ||B||_2; coefficient upper only",
+          "id": "narrow-exact_statement",
+          "pointer": "/endpoints/narrow/exact_statement"
+        }
+      ],
+      "source_manifests": [
+        "research/round28/reverse/ag3/inputs/source-inventory.json"
+      ]
+    }
+  },
+  "schema": "ym28-admission-v1",
+  "skeptic_checkers": [
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "inputs": [
+        "research/round28/skeptic/ag3-inputs/source-inventory.json"
+      ],
+      "output": "research/round28/skeptic/ag3-independent.json",
+      "output_mode": "file",
+      "script": "research/round28/skeptic/ag3_independent.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "inputs": [],
+      "output": "research/round28/skeptic/ag3-passive-comparator.json",
+      "output_mode": "file",
+      "script": "research/round28/skeptic/ag3_passive_comparator.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "inputs": [
+        "research/round28/forward/ag3/check.py",
+        "research/round28/forward/ag3/freeze.json",
+        "research/round28/forward/ag3/output/results.json",
+        "research/round28/forward/ag3/report.md",
+        "research/round28/reverse/ag3/check.py",
+        "research/round28/reverse/ag3/freeze.json",
+        "research/round28/reverse/ag3/output/results.json",
+        "research/round28/reverse/ag3/post-freeze-passive-comparison.json",
+        "research/round28/reverse/ag3/post-freeze-passive-comparison.md",
+        "research/round28/reverse/ag3/report.md",
+        "research/round28/skeptic/ag3-forward-replay/results.json",
+        "research/round28/skeptic/ag3-independent-derivation.md",
+        "research/round28/skeptic/ag3-independent-freeze.json",
+        "research/round28/skeptic/ag3-independent.json",
+        "research/round28/skeptic/ag3-inputs/source-inventory.json",
+        "research/round28/skeptic/ag3-passive-comparator-freeze.json",
+        "research/round28/skeptic/ag3-passive-comparator.json",
+        "research/round28/skeptic/ag3-reverse-replay/results.json",
+        "research/round28/skeptic/ag3_independent.py",
+        "research/round28/skeptic/ag3_passive_comparator.py"
+      ],
+      "output": "research/round28/skeptic/ag3-post-review.json",
+      "output_mode": "file",
+      "script": "research/round28/skeptic/ag3_post_review.py"
+    }
+  ],
+  "status": "proposal awaiting advisor/skeptic admission",
+  "supplemental_evidence": [
+    {
+      "path": "research/round28/skeptic/ag3-passive-comparator.json",
+      "rational_relations": [
+        {
+          "id": "main-is-weaker-than-passive",
+          "left": {
+            "pointer": "/main_factor"
+          },
+          "op": "gt",
+          "right": {
+            "pointer": "/passive_factor"
+          }
+        },
+        {
+          "id": "narrow-only-beats-universal-ceiling",
+          "left": {
+            "pointer": "/narrow_factor"
+          },
+          "op": "lt",
+          "right": {
+            "pointer": "/passive_factor"
+          }
+        }
+      ],
+      "scope_pointer": "/scope",
+      "semantic_controls": [
+        {
+          "equals": "ym28-ag3-passive-comparison-v1",
+          "id": "schema",
+          "pointer": "/schema"
+        },
+        {
+          "equals": 9,
+          "id": "checks",
+          "pointer": "/checks"
+        },
+        {
+          "equals": "Doing no correction already gives ||B||_(3/2)<=81/256 ||B||_2. Main AG3 ceiling is weaker; narrow improves this universal upper ceiling. Neither compares corrected output with actual uncorrected ||B||_(3/2) without further source information. A single-term class witness has ratio(3/4)^m, arbitrarily small; it is not an evaluation of actual AG2 B.",
+          "id": "interpretation",
+          "pointer": "/interpretation"
+        },
+        {
+          "equals": "3060/3623",
+          "id": "main_factor",
+          "pointer": "/main_factor"
+        },
+        {
+          "equals": "5949/96812",
+          "id": "narrow_factor",
+          "pointer": "/narrow_factor"
+        },
+        {
+          "equals": "81/256",
+          "id": "passive_factor",
+          "pointer": "/passive_factor"
+        }
+      ]
+    },
+    {
+      "path": "research/round28/reverse/ag3/post-freeze-passive-comparison.json",
+      "scope_pointer": "/meaning",
+      "semantic_controls": [
+        {
+          "equals": "ym28-ag3-passive-comparison-v1",
+          "id": "schema",
+          "pointer": "/schema"
+        },
+        {
+          "equals": "Main active upper certificate alone is weaker than the passive embedding bound; narrow active coefficient is stronger. Neither compares same-weight norms or evaluates actual output norms.",
+          "id": "meaning",
+          "pointer": "/meaning"
+        },
+        {
+          "equals": 0,
+          "id": "research_loop_increment",
+          "pointer": "/research_loop_increment"
+        },
+        {
+          "equals": {
+            "main": {
+              "active_budget_stronger_than_passive": false,
+              "active_coefficient": "3060/3623",
+              "difference_active_minus_passive": "489897/927488",
+              "passive_coefficient": "81/256"
+            },
+            "narrow": {
+              "active_budget_stronger_than_passive": true,
+              "active_coefficient": "5949/96812",
+              "difference_active_minus_passive": "-1579707/6195968",
+              "passive_coefficient": "81/256"
+            }
+          },
+          "id": "comparison",
+          "pointer": "/comparison"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+--- research/round28/reverse/ah1/check.py
++++ research/round28/release/ah-portability/ah1/check.py
+@@ -13,8 +13,18 @@
+ from fractions import Fraction as F
+ from pathlib import Path
+ 
+-HERE = Path(__file__).resolve().parent
+-ROOT = HERE.parents[3]
++ROOT = Path(__file__).resolve().parents[5]
++HERE = ROOT / 'research/round28/reverse/ah1'
++REPOSITORY_ORIGINS = {
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md": ".codex/skills/qeg-research-advisor/references/filtered-sources-and-connected-limits.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/finite-observations-and-operator-limits.md": ".codex/skills/qeg-research-advisor/references/finite-observations-and-operator-limits.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md": ".codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/haar-maps-and-induced-dynamics.md": ".codex/skills/qeg-research-advisor/references/haar-maps-and-induced-dynamics.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md": ".codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/newton-tesla-project-method.md": ".codex/skills/qeg-research-advisor/references/newton-tesla-project-method.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/projected-memory-and-boundary-response.md": ".codex/skills/qeg-research-advisor/references/projected-memory-and-boundary-response.md",
++    "/workspace/scratch/9daefcf0521b/yang_mills_workbench/.codex/skills/qeg-research-advisor/references/stationarity-support-and-admission.md": ".codex/skills/qeg-research-advisor/references/stationarity-support-and-admission.md"
++}
+ CONTRACT = "research/round28/contracts/ah1.json"
+ CONTRACT_SHA = "9c6f5bc1a71fcd49b93a1212e1b1837a82bc588b27b695fd600cbec46be17053"
+ CHECKS = {}
+@@ -69,13 +79,15 @@
+         bindings[str(snap.relative_to(ROOT))] = e["sha256"]
+         original = Path(e["origin"])
+         # External skill origins are provenance, not portable runtime imports.
+-        if original.is_relative_to(ROOT):
++        if e["origin"] in REPOSITORY_ORIGINS:
++            original = ROOT / REPOSITORY_ORIGINS[e["origin"]]
+             require("repo_instruction_original_%02d" % i, sha(original) == e["sha256"])
+             bindings[str(original.relative_to(ROOT))] = e["sha256"]
+     for p in sorted((HERE / "inputs").rglob("*")):
+         if p.is_file():
+             bindings[str(p.relative_to(ROOT))] = sha(p)
+     bindings[str((HERE / "check.py").relative_to(ROOT))] = sha(HERE / "check.py")
++    bindings[str(Path(__file__).resolve().relative_to(ROOT))] = sha(Path(__file__).resolve())
+     return bindings
+ 
+ 

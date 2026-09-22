@@ -1,0 +1,115 @@
+\section{AG2: the complete original remainder and its reference\workstar}
+The first admitted investigation reconstructs the original homogeneous remainder that was conditional in AG1 and transports every class through the actual AG1 correction. On $0\le M\le10^{-3}$ the resulting indexed weight-two interaction obeys $\norm K_2<7/1000$; on $0\le M\le10^{-4}$ it obeys $\norm K_2<7/100000$. The centered reference alone has normalized gap greater than $0.995$. The full corrected Hamiltonian retains a mixing operator, so this is not its gap theorem.
+
+\subsection{Domain-preserving transformation and a four-part inventory}
+Keep the homogeneous complete 24-link coarse factors and all 21 omitted faces on each retained complete star $Z_b=b+\{0,e_1,e_2,e_3\}$. The onsite reference is $H_0=\sum_xh_x$, with $h_x\ge I-P_x$ and product vacuum $\Omega$. Write
+\begin{align}
+v_b&=\phi_b\Omega_b,\quad u_b=(H_{0,Z_b}|_{Q_b})^{-1}v_b,\quad
+L_b=|u_b\rangle\langle\Omega_b|-\mathrm{adjoint},\nonumber\\
+A_{1,b}&=|v_b\rangle\langle\Omega_b|+\mathrm{adjoint},\quad
+D_b=Q_b\phi_bQ_b,\quad X=\sum_bL_b,\quad G=H_0+D.
+\label{ag2:linear}
+\end{align}
+Here $\Phi=\sum_b\phi_b$, $A_1=\sum_bA_{1,b}$, $D=\sum_bD_b$, $M=7|\tau|$ and $\norm{\phi_b}\le M$. Exact Haar orthogonality gives $\norm{v_b}^2=M^2/84$. Rational upper bounds are $\norm{L_b}\le s$ and $\norm{A_{1,b}}\le\sigma$, where $s=\sigma=4M/35$. They are not evaluated norm equalities.
+
+The actual vectors $u_b,\Omega_b$ lie in the local reference domain, and $[L_b,H_0]=-A_{1,b}$ has a bounded extension. Strong commutation with exterior energy and graph-norm control justify $e^{\pm X}D(H_0)=D(H_0)$ in finite cuboids. Integrating the first bounded commutator before expanding the remaining bounded terms gives
+\begin{equation}
+\overline H=e^X(H_0+\Phi)e^{-X}=G+R_{O1},\qquad
+R_{O1}=\sum_{n\ge1}\left(\frac{\ad_X^n\Phi}{n!}-\frac{\ad_X^nA_1}{(n+1)!}\right).
+\label{ag2:original}
+\end{equation}
+This does not postulate an operator-norm BCH series for unbounded $H_0$.
+
+Pair the two terms at each ordered anchor history, retaining repetitions and the complete star union. At a same-anchor depth-two history define
+\begin{equation}
+C_b=\tfrac12\ad_{L_b}^2\phi_b-\tfrac16\ad_{L_b}^2A_{1,b},\qquad
+A_{3,b}=P_bC_bQ_b+Q_bC_bP_b.
+\label{ag2:cubic}
+\end{equation}
+This $A_3=\sum_bA_{3,b}$ is precisely the earlier selected cubic source. It is distinct from $A_1$, the total cubic coefficient and the full remainder. The complete missing interaction is
+\begin{align}
+E&=R_{O1}-A_3=E_2+E_{3,\rm same}+E_{3,\rm other}+E_{\ge4},\nonumber\\
+E_2&=[X,D]+\tfrac12[X,A_1],\qquad
+E_{3,\rm same}=\sum_b(C_b-A_{3,b}).
+\label{ag2:inventory}
+\end{align}
+$E_{3,\rm other}$ contains every other ordered depth-two history; $E_{\ge4}$ contains all depths at least three with their original factorials. The first three support maxima are seven, four and ten sites; the tail has arbitrary finite connected supports. These labels specify lowest algebraic degrees $2,3,3,4$, not nonvanishing of every class.
+
+The same-anchor subtraction is an orthogonal block compression:
+$C_b-A_{3,b}=P_bC_bP_b+Q_bC_bQ_b$, of norm at most $\norm{C_b}$. Its centered split is $c_bI+Q_b(C_b-c_bI)Q_b$; using $c_bI+Q_bC_bQ_b$ would count $c_bQ_b$ twice. In each fixed nonempty cuboid the actual vacuum expectation has a nonzero quadratic term
+$\langle\Omega,E\Omega\rangle=-a_\Lambda\tau^2+O_\Lambda(|\tau|^3)$ with $a_\Lambda>0$. Thus $E$ cannot be a quartic-only operator-norm error in that volume. This neither computes its quadratic mixing nor proves a uniform lower coefficient.
+
+\subsection{Complete low-order geometry and the all-order tail}
+For the declared indexed norm $\norm B_a=\sup_x\sum_{Y\ni x}a^{|Y|}\norm{B_Y}$, let $Q_n(a)$ count ordered relative histories with the size of their complete union as root multiplicity. The exact first polynomials are
+\begin{align}
+Q_0(a)&=4a^4,\qquad Q_1(a)=4a^4+84a^7,\nonumber\\
+Q_2(a)&=4a^4+252a^7+216a^9+1920a^{10}.
+\label{ag2:geometry}
+\end{align}
+An incoming anchor meeting a union $Y$ is exactly $y-z$ for $y\in Y$, $z\in Z_0$. Enumerating those finite sets gives depth-two history counts $(1,36,24,192)$ at sizes $(4,7,9,10)$. Finite boundaries delete histories; no interactions outside the original boundary are introduced.
+
+Finite enumeration is not the infinite-tail proof. At depth $n$ every connected union has at most $4+3n$ sites. Counting both root locations, repeated anchors and incoming overlaps gives
+\begin{equation}
+N_{n+1}(a)\le8sa^3(8+3n)N_n(a),\qquad
+N_n(a)\le4a^4b(24sa^3)^n(8/3)_n
+\label{ag2:recurrence}
+\end{equation}
+for a seed-norm bound $b$. With $x=24sa^3$, the factorwise comparison
+$(8/3)_n/n!\le(n+1)(n+2)/2$ supplies the generating function $(1-x)^{-3}$. A complete positive majorant is
+\begin{align}
+e_2(a)&=2s(M+\sigma/2)Q_1(a),\quad u_3=4s^2(M/2+\sigma/6),\nonumber\\
+e_{3,\rm same}(a)&=4a^4u_3,\quad e_{3,\rm other}(a)=[Q_2(a)-4a^4]u_3,\nonumber\\
+e_{\ge4}(a)&=4a^4(M+\sigma/4)[(1-x)^{-3}-1-3x-6x^2],\nonumber\\
+\norm E_a&\le e(a):=e_2(a)+e_{3,\rm same}(a)+e_{3,\rm other}(a)+e_{\ge4}(a).
+\label{ag2:majorant}
+\end{align}
+At $a=\rho=9/4$, $x=(2187/70)M\le2187/70000<1$ on the main interval. Nonnegative power-series coefficients and monotonicity justify continuous interval bounds from exact rational endpoint evaluations. The same-anchor compression is counted once; its selected mixing norm is not added to an already complete cubic budget.
+
+\subsection{Transporting every original term}
+Let $S$ be the admitted AG1 generator, distinct from $X$, with $[S,G]=-A_3+R_{A_3}$. The complete corrected operator is
+\begin{align}
+e^S\overline He^{-S}&=G+K,\qquad
+K=R_{A_3}+N+e^{\ad_S}E,\nonumber\\
+N&=\sum_{n\ge1}\frac{\ad_S^n(nA_3+R_{A_3})}{(n+1)!}.
+\label{ag2:transport}
+\end{align}
+Graph-domain preservation applies to the actual $S$; finite-volume $E$ is bounded and need not separately regularize arbitrary domain vectors. With $r_{\rm bd}=M^3/567$, $A_{3,\rho}^{\rm bd}=4\rho^4r_{\rm bd}$ and $F=(1-72\rho^3M)^{-3}$, take
+\begin{equation}
+\theta=18A_{3,\rho}^{\rm bd}F<1,\qquad
+n_2=\frac{\theta}{1-\theta}A_{3,\rho}^{\rm bd}(1+F/2),\qquad
+\norm K_2\le k(M):=r_2+n_2+\frac{e(\rho)}{1-\theta}.
+\label{ag2:k}
+\end{equation}
+Here $r_2=64r_{\rm bd}(1-576M)^{-3}$ is valid on the main interval. Only on the inherited narrow interval may it be replaced by
+$64r_{\rm bd}[4/9+(1-576M)^{-3}-1]$. The geometric transport factor follows by allocating the $\rho$-to-two weight loss over every nested commutator. The entire margin is spent; the resulting source does not regain a stronger norm by renaming its weight. The reviewed conservative bounds are $k(M)<0.007$ on the main interval and $k(M)<0.00007$ on the narrow interval.
+
+\subsection{The centered reference bound and its exact limitation}
+For every generated self-adjoint $K_Y$, including transported $E$, retain its full support and split
+\begin{align}
+c_Y&=\langle\Omega_Y,K_Y\Omega_Y\rangle,\quad
+B_Y=P_YK_YQ_Y+Q_YK_YP_Y,\nonumber\\
+Z_Y&=Q_Y(K_Y-c_YI)Q_Y,\qquad K_Y=c_YI+B_Y+Z_Y.
+\label{ag2:split}
+\end{align}
+The separate norm costs are one, one and two times $\norm{K_Y}$. Every assigned support has at least four sites, including scalar terms. Double counting over sites and $1/(|Y|2^{|Y|})\le1/64$ give
+\begin{equation}
+\frac{|C_\Lambda|}{|\Lambda|}\le\frac{k(M)}{64},\quad
+\norm B_2\le k(M),\quad \norm Z_2\le2k(M),\qquad C_\Lambda=\sum_Yc_Y.
+\label{ag2:density}
+\end{equation}
+Because $Z_Y$ annihilates its local vacuum and $Q_Y\le\sum_{x\in Y}(I-P_x)$,
+\begin{equation}
+|\langle\psi,(D+Z)\psi\rangle|
+\le\left(4M+\frac{k(M)}8\right)\langle\psi,H_0\psi\rangle.
+\label{ag2:form}
+\end{equation}
+The factor $k/8=2\cdot2^{-4}k$ retains the four-site support minimum. Thus the centered reference, self-adjoint on $D(H_0)$ in each finite cuboid, satisfies
+\begin{equation}
+G_{\rm ref}=H_0+D+Z\ge
+\left(1-4M-\frac{k(M)}8\right)H_0
+\ge\left(1-4M-\frac{k(M)}8\right)(I-P_\Omega).
+\label{ag2:reference}
+\end{equation}
+The main interval therefore has a reference-only normalized gap greater than $0.995$; physical energies multiply by $\delta=\alpha/8$. Adding $C_\Lambda I$ shifts this reference ground energy. The actual corrected Hamiltonian is instead $C_\Lambda I+G_{\rm ref}+B$, with $B$ still present. No gap for it, contraction of its complete mixing, next correction or continuum theory follows from \eqref{ag2:reference}. The scalar is a reference expectation sum, not its interacting ground energy.
+
+The implementations retain positive and negative coupling, zero and empty cases, exact low-order geometry, complete positive tails, wrong factorials, missing quadratic/cross histories, scalar double counting and omitted transport controls. Finite rational matrix fixtures diagnose algebra rather than simulate the full physical Hilbert space. Producer and skeptic constants differ because their sufficient positive majorants differ. The common admitted conclusions are the complete inventory, transport, stated interaction budgets and reference-only bound; scientific priority remains unverified.

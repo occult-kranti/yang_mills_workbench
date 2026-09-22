@@ -1,0 +1,11 @@
+# AC1 independent skeptical review
+
+**Disposition: scoped construction accepted; parent accuracy target limited.** No blocking defect was found. Both frozen producers replayed normally and under optimization into fresh external directories, matching all frozen bytes. SHA-256 bindings and exact scope are in `ac1.json`.
+
+Both reports independently identify the 293 actual physical vectors and the shared-edge singlet/triplet norms. A cyclic K-reducing subspace need not contain every intertwiner in its ambient energy shell. The reports make that distinction correctly: omitted intertwiners stay in Q, and the full multiplication bound covers every omitted column together. The norm `20lambda` is conservative but rigorous; it is neither the exact new leakage nor an inferred improvement from dimension alone.
+
+The full sparse magnetic matrix and resulting ground/relative bounds originate in the forward submission and are accepted after this skeptical review, not represented as independently duplicated by reverse. The odd/even center symmetry and all old columns determine every retained entry. The rational triplet metric is essential: the reverse coefficient is `3/4`, not `1/4`. As an additional exact check, the skeptic recovered the inherited complete omitted Gram (diagonal 5, off-diagonal 1/4) from the 272 added matrix rows and verified an orthonormal Schur row bound at most `51/4<20`.
+
+The new ground residual is correctly bounded by the old Ritz angle because `B f21=0`; its improved projection and energy certificates use the full physical gap. The early/late heat comparison keeps both ground shifts, all new leakage and a positive true-output denominator. Its cap bounds, `0.0014` for the same 0.01 preparation ball and `0.00059` for the vacuum, are valid but worse than Z2's sharper old-space bounds. No evaluated enlarged exponential or all-input relative theorem is supplied.
+
+Recommend AC2 exploit old-input leakage cancellation and the exact compression for a sharper common-clock estimate, with full new leakage and the true denominator retained. A larger retained space by itself cannot certify better accuracy. No scale matching, graph-size uniformity or continuum conclusion follows. This is separate model-agent review, not external peer review.

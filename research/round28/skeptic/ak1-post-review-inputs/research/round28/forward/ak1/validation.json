@@ -1,0 +1,55 @@
+{
+  "schema": "ym28-producer-validation-v1",
+  "loop": "ak1",
+  "direction": "forward",
+  "passed": true,
+  "check_count": 69,
+  "normal_optimized_byte_equality": true,
+  "first_success_byte_equality": true,
+  "checker_sha256": "c7a04b729e5e425b920cf6edf070e4236b6899d17e4afae0643976a7f67394f5",
+  "outputs": {
+    "results.json": "b624405598dadf6380bd04cbbf45b96cdfa7e09474a3d3979c4c21412a7bf1f4"
+  },
+  "runs": [
+    {
+      "role": "normal",
+      "command": [
+        "python",
+        "-B",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/forward/ak1/check.py",
+        "--output",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/forward/ak1/output"
+      ],
+      "exit_code": 0
+    },
+    {
+      "role": "optimized",
+      "command": [
+        "python",
+        "-B",
+        "-O",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/forward/ak1/check.py",
+        "--output",
+        "/workspace/scratch/9daefcf0521b/ak1-forward-final-optimized"
+      ],
+      "exit_code": 0
+    },
+    {
+      "role": "first-success",
+      "command": [
+        "python",
+        "-B",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/forward/ak1/check.py",
+        "--output",
+        "/workspace/scratch/9daefcf0521b/ak1-forward-development-first"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "failed_scientific_runs": [],
+  "blind_controls": [
+    "outgoing-only incidence at origin",
+    "individual-touching-face count at origin"
+  ],
+  "blind_controls_resolved_by": "prescribed interior incidence-only region; original blind fixtures retained"
+}

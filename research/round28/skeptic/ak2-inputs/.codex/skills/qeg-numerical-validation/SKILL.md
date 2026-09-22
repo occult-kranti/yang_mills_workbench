@@ -1,0 +1,114 @@
+---
+name: qeg-numerical-validation
+description: Verify the project's Maxwell–Dirac and tangent-response computations using exact identities, independent formulations and separate numerical limits. Use when writing or reviewing quantum-field solver code and result claims.
+---
+
+For finite mobility inverses and strong-limit tests, use the advisor's [finite-observation and operator-limit lessons](../qeg-research-advisor/references/finite-observations-and-operator-limits.md). Test a held-out dynamic quantity; distinguish a failed sufficient estimate from failure of the actual limit.
+
+## Nonabelian finite-model gates
+
+For local stability, physical-sector or dynamic-calibration work after Round20, read the advisor's [admission and matching contract](../qeg-research-advisor/references/admission-and-matching.md). New evidence inventories must reproduce from a Git tree, excluding interpreter caches while preserving failed historical gates. Test parameter identifiability and the actual divergence term of a variable mobility; shared static moments do not fix dynamics.
+
+For round13 and later work, read the advisor's [exception and moment contract](../qeg-research-advisor/references/exceptions-locality-moments.md). Retain exact dual witnesses, feasible inner points, zero-coupling handling, generator/list equivalence, pre-conversion Boolean rejection, explicit existential thresholds and post-replay frozen-rule mutation tests. Separate a rigorous launch bound from sampled trajectory agreement.
+
+For driven error certificates, independently reconstruct the absolute integrated drive and factorial order D−d₀+1. Bind the actual protocol, duration, initial degree, norm, cap and coefficient domain. Test signed cancellation, zero terminal leakage with nonzero accumulated error, nonzero initial degree, zero drive/time, an insufficient cutoff and certificate-field mutations. Equal A(T) does not imply equal states. Rational action enclosures and exact truncation bounds do not certify floating state evolution or coefficient conditioning; require separate evidence before reporting total error. Do not infer unbounded-energy accuracy from an L² state bound.
+
+For growing-volume claims, check graph assumptions and distinguish failure of the estimate from closing of the actual gap. Use a tensor counterbenchmark where the exact gap stays fixed. Never identify a Gibbs density with a Hamiltonian ground-state density without testing Hφ/φ. For source formula audits, independently calculate action derivatives and source phases from matrices; assertions about hand-entered fixture constants only verify transcription. Check color-Lorentz rank before contracting full-color identities. Preserve zero-coupling cases in which the first moment identity is blind to a false closure.
+
+For coupled plaquettes, independently compute link derivatives before checking the quotient operator. Exact generalized eigenvalue counts use H-rG, including zero pivots and repeated levels. Reject Boolean substitutions in integer inertia counts or semantic status, nonpositive requested precision, and approximate-zero pivot rules. Verify that rational division remains rational. Bind the stationary collection's outer schema as well as individual certificates. Execute reviewed source bytes for a frozen replay; hashing a file after importing another version does not establish that the imported implementation was checked. Run proof mutations in an isolated copy. Compare finite dynamics against an independent raw-monomial implementation with the correct Haar norm, and report representation differences separately from time-integration errors.
+
+For exact spectral certificates, reconstruct rational matrices from the declared Hamiltonian. Bind physical scope, representation dimension, precision and semantic status as well as eigenvalue endpoints. Test exact-eigenvalue endpoints, zero pivots, zero offdiagonal, rational scaling and insufficient absolute precision. Independently check Sturm counts with a different exact congruence/inertia algorithm. Floating Mathieu and radial-grid comparisons are independent numerical oracles, not exact certificates.
+
+Continuous-range certificates must verify all point-parameter matches, exact interval endpoints, coverage without holes, the stated Lipschitz constant and the final minimum margin. A missing center or wrong alpha cannot pass. Hash both theorem source and arithmetic evidence before admitting a proof-planner seed.
+
+The provenance verifier must require the complete expected set of input hashes. Looping over whichever hashes happen to be present lets an empty or incomplete manifest pass. Validate digest syntax and input paths, reject escaped or substituted symlink inputs, then hash the actual bytes.
+
+For a time-dependent coupling, integrate its Hamiltonian work rate separately from endpoint energy. Every independent evolution method must enforce its own promised work and norm checks; recording a residual without including it in acceptance is a defect. Stationary representation-tail certificates do not imply a certified time-dependent truncation bound.
+
+For the Yang–Mills branch, use the advisor's `references/yang-mills-contract.md`. Audit quaternion arithmetic against independent complex matrices, local increments against full plaquette sums, and Lie derivatives against global-action perturbations. Include extent-two periodic geometry, rectangular geometry, gauge transformations, center seams, omitted daggers and coupling-factor mutations. Reject extent-one geometry unless repeated-link derivatives are explicitly implemented.
+
+Report stochastic consistency separately from deterministic correctness and equilibrium. Preserve seeds, starts, warmup, raw histories, block uncertainty, predeclared thresholds and insufficient outcomes. Check derived statistics for finiteness even when every input is finite. Acceptance gates must survive `python -O`; ordinary assert statements are not sufficient for production validation.
+
+For SU(2) spectra, independently check Haar integration including its sine-squared measure and representation-dimension factor. Use scaled Bessel evaluation and stable logarithms, with explicit beta-zero projection and negative-beta domain controls. Physical energy requires a time scale. For transfer-stability experiments use independent diagonal saturation fixtures and prove the shared-vacuum premise before comparing spectral gaps.
+
+# Numerical validation for this research project
+
+Use the current advisor-approved equation contract. The [response contract](references/response-contract.md) supplies the tangent system, preparation and identities; do not infer its equations from a chart.
+
+## High-value checks
+
+- Freeze the source hash before the run and record it in the output. Check that the delivered file, data and report refer to the same source.
+- Initialize unevaluated diagnostic arrays to NaN, or use an equivalent completeness check. Refuse a pass if a promised diagnostic was never populated.
+- Compute the subtracted mode integrand before summation when cancellation warrants it. Preserve any historical legacy comparison as a distinct source.
+- Distinguish the effective Maxwell numerator from full matter current. For fixed matching, the tangent physical current uses the derivative of the electric response, not the response amplitude itself.
+- Integrate external work and its perturbation alongside the state. Test the exact discrete current/energy identities and raw norm/tangent orthogonality without clipping or forced normalization.
+- Check the physical preparation: amplitude perturbations of a smooth source start with zero state perturbation; a pure gauge shift moves the canonical nodes and potential together.
+
+## Convergence and falsification
+
+Hold the physical problem fixed while varying each numerical axis. A larger momentum window with unchanged central spacing does not replace quadrature refinement. A response derivative may converge much more slowly than the base field. Centered finite differences need a truncation-dominated second-order interval before roundoff or solver error plateaus.
+
+Use independent complex spinors or another nonshared formulation to challenge production Bloch dynamics. Match their regulator and preparation before interpreting disagreement. Test deliberately missing polarization/coherence terms against a declared nondegenerate case. A wrong-model test must actually produce a distinguishable defect.
+
+Report field, current and energy discrepancies separately. A global physical norm remains meaningful through a zero crossing. A zero-amplitude experiment has an absolute response but no well-defined relative gain based on its zero background; numerical residue is not a physical denominator.
+
+Passing these checks validates the specified finite model. Tangent sensitivity is not by itself a full quantum correlation or semiclassical-validity calculation. Common covariant directional pressures are still needed before coupling the metric.
+
+## Required regressions after the source and coefficient audit
+
+- Center finite differences at the actual base source, including every nonzero auxiliary probe. Gauge, translated and legacy comparators must use that same source history or explicitly report the comparison unavailable. Check causal sample counts; absent observations cannot pass. Post-drive work constancy begins only after all applied sources stop.
+- Mathematical acceptance must survive optimized Python. Use explicit failed-gate exceptions and inspect semantic result fields, output freshness and before/after source hashes; `assert` or process exit alone is insufficient. Reject unknown model modes, empty or duplicate nonpositive finite-difference steps and nonfinite/incomplete outputs.
+- Bind the bytes of external proof and contract references, not only their path strings. Keep declared model assumptions distinct from conjectural assumptions. A planner trace remains conditional even when it retains no conjecture.
+- Derive prefactors independently of the production test; reusing the same wrong factor on both sides is not verification. Check inclusive cutoffs, special-function indices and natural versus base-ten logarithms against hand-derived identities.
+- An exact primitive can be a poor floating-point algorithm. Test saturated endpoint subtraction with held-out large-potential and tiny-window inputs. Use documented adaptive precision or explicit domain rejection; a fixed precision fallback is not universally stable. State precision explicitly in the independent reference and distinguish high precision from interval bounds.
+- Label asymptotic plot rows and omitted argument shifts. An enormous formal logarithmic cutoff is not an exact critical integer, a physical instability or an instruction to allocate that many modes.
+
+Record reviewed line/function scope separately from executed branch coverage. Preserve initial failing evidence and final corrected hashes. After the concrete held-out defects and required gates are resolved, stop optional scans.
+
+## Scalar and geometry regressions
+
+A comparator marked unavailable must fail a gate that requires comparison. Register dynamically loaded dataclass modules in sys.modules before execution, and surface import errors. Confirm that every defined analytic fixture is actually executed and included in acceptance.
+
+Do not reject a valid invariant subspace merely because it is nondiscriminating. Test zero scalar, zero mass and zero-frequency affine limits separately from a nonzero exchange fixture. Never clip a negative constraint radicand or an exponential diagnostic to manufacture a regular result.
+
+A flux-reduced system sharing the gravitational RHS is a useful consistency check, not a wholly independent implementation. Add independent symbolic equations or another state representation. An omitted-force control must show both a resolved constraint/work defect and agreement with its independently integrated prediction.
+
+A tiny difference across finite-difference steps may be a solver-error floor; do not claim a demonstrated convergence order without a truncation-dominated interval. Keep fixed-grid refinement distinct from physical regulator changes.
+
+## Acceptance defects found in review 8
+
+Match every supported physical coefficient in a reference comparator. If the archived solver cannot represent a custom matching coefficient, report unavailable with the reason; never compare different physical equations as though they shared a contract. An unavailable required comparator is not a passing gate.
+
+Validate derived diagnostics as well as integrated states for finiteness. Finite state components can overflow when squared, and multiplication by zero after overflow can create NaN. Reject nonfinite energies, work defects and constraints explicitly. Reject empty case collections before reducing gates with all(); semantic status must follow evaluated gates and required analytic fixtures, not be initialized to passed.
+
+Keep base-trajectory node refinement separate from tangent-response node refinement. Agreement as the perturbation amplitude changes does not establish response quadrature convergence. Describe normalization by max(1, reference) as a mixed absolute/relative scale, not a purely relative error.
+
+For spectral diagnostics, test lower-energy tiny overlaps and exactly absent channels, excluded zero modes, fixed-volume mesh refinement versus increasing volume, and log-domain underflow. Compare against a genuinely independent high-precision or matrix reference. A finite positive spectral matrix is only a finite necessary test; it does not establish reflection positivity for a quantum field theory.
+
+## Compact certificate and admission checks
+
+Validate public input types before memoization: cached integer calls must not allow a Boolean to bypass the domain gate. Compare nested certificate metadata with exact types; Python equality alone accepts True as1. Retain signed numerator and normalization errors when enclosing covariance. A tiny exact interval need not contain a rounded floating comparator.
+
+A serialized passed status is not proof authority. At proof-library construction, rerun independent arithmetic or validate an internally issued immutable replay record, bind all actual sources, and revalidate the complete in-memory declarations: allowed hypotheses, gate names, open premises, statements and rules. A frozen rule tuple does not prevent an unproved primitive from being inserted into the allowed starting facts. Test forged pass objects and rule injection after a valid replay. Preserve the original failed cases and verify repairs under optimized Python.
+
+## Complete covers and closed-surface insertions
+
+For adaptive interval coverage, independently replay each failed-cell transition and the final union, including capped runs that remain insufficient. Checking every certificate present does not verify completeness: require the declared fixture names, parameter values and collection envelope, including zero-coupling references. Retain the action and original closed target while refining. A very accurate midpoint cannot compensate for an unaccounted transport radius.
+
+For a closed-surface Wilson certificate, differentiate each face coefficient separately before identifying equal couplings. A high common-coupling derivative is a different insertion. Include the normalization and comparison model's tails when rejecting factorization. Proper distinct-face moments do not prove repeated-index trial norms; derive the needed stronger Haar identities first.
+
+## Shared-link and cache checks
+
+Validate nested tuple elements before a private cache lookup: cache options that distinguish top-level argument types do not distinguish Boolean coordinates inside an otherwise identical tuple. Exercise warm-cache Boolean-zero and Boolean-one aliases, negative indices and immutable return values. Apply finite materialization caps consistently to public graph/mask constructors while retaining separately documented lazy generators and arbitrary-size exact count formulas.
+
+For common-action reductions, an observable cache must include its boundary geometry, not only the action vector. Test different realized boundary assignments with equal action and normalization. Preserve the explicit zero-action-vector branch even when every individual coefficient is nonzero. A signed observable's negative expectation is not negative probability. A nonzero-coupling weighted tensor is not the unweighted Haar projector.
+
+A source hash does not protect cached mutable return values. Return defensive copies or immutable coefficient data, and test that caller mutation leaves later integrals unchanged. Validate semantic types before cache lookup. For a shared-link moment, compare the full Haar projector including signed terms with a genuinely independent contraction; dropping negative terms or choosing one independent pairing can produce a plausible wrong rational result. Treat center parity, exact amplitude, nonzero-coupling coefficients and normalization tails as separate gates. Keep an omitted-action comparator on the same observable and do not presume its baseline is zero.
+
+For Round18 and its continuation, use the advisor's [dressed/complement/conditional contract](../qeg-research-advisor/references/dressed-complement-conditional.md). Independently reconstruct the actual untouched links, all low-energy physical supports and complete repeated moments. An alleged finite overshoot needs an actual computed counterexample. For two-link character moments, compare with conditional angular integration and retain the representation-dimension divisor; independent traces are a discriminating wrong measure. A larger positive principal matrix is not an admissible S3 Gram if its rank exceeds four. Validate all nested semantic types before caching and keep cached data immutable.
+
+Test certificate admission after mutating the required-premise dictionary or target in memory; unchanged source hashes are insufficient. Bind and revalidate an immutable canonical declaration snapshot. A source/evidence comparator must also work after packaging outputs under the source directory: exclude only the declared evidence roots while still rejecting undeclared source files, and execute that actual relocated layout before freezing acceptance.
+
+Validate a public interval-division helper independently of its higher-level certificate: exact endpoint types, canonical encodings, positive denominator, declared width and ordering all matter. Internally generated valid intervals do not prove the public helper rejects malformed inputs. Label a repaired helper boundary separately from unaffected scientific coefficients or bounds.
+
+A source inventory must reject symlinks at role roots and intermediate components, not only descendants returned by a recursive listing. Check the supplied gate path before resolving away its lexical identity. A byte-identical external target is still a different admitted path; verify the standalone reproducer boundary as well as the stricter proof wrapper.

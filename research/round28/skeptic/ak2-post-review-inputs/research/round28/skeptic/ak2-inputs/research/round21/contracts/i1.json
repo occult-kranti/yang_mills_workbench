@@ -1,0 +1,38 @@
+{
+  "schema": "ym21-contract-v1",
+  "loop": "i1",
+  "status": "frozen",
+  "goal": "Audit the proposed 4x2x1 tail-cell blocking and the exact local-stability theorem dictionary.",
+  "model": {
+    "gauge_group": "SU(2)",
+    "spatial_lattice": "positive orthant, fixed spacing; any extension to full integer lattice must be explicit",
+    "selected_xy": "even y and x mod4 in {0,1,2}",
+    "selected_coefficients": "inherited |lambda_L|,|lambda_R|<=alpha/2 and |mu|<=alpha/8",
+    "omitted_coefficient": "alpha*tau/24, nonzero homogeneous omitted coupling",
+    "scale": "alpha/E_star fixed positive; delta=alpha/8",
+    "proposed_block": "tail vertices 4x2x1; ownership by link tail",
+    "proposed_claims_are_unverified": [
+      "one complete ten-link strip plus fourteen free links",
+      "21 omitted anchored faces per block",
+      "normalized local anchor budget <=7|tau|"
+    ]
+  },
+  "required_checks": [
+    "prove unique link ownership and complete reference factors in blocks",
+    "enumerate each elementary face support in coarse blocks; derive complete translation/phase classes",
+    "derive fixed finite interaction range and anchor budget without silently counting only contained faces",
+    "state actual finite-boundary prescription and compare to literal boxes",
+    "map each used source theorem assumption; distinguish existential constants from evaluated numbers",
+    "provide exact rational/geometry checker and wrong-model controls",
+    "preserve homogeneous target and do not substitute summable deformation or assume its representation"
+  ],
+  "sources": [
+    "https://arxiv.org/pdf/math-ph/0411042",
+    "research/round13/advisor/weak-coupling-stability.md",
+    "research/round19/forward/a1/report.md",
+    "research/round19/forward/a2/report.md",
+    "research/round20/advisor/post-ten-roadmap.md"
+  ],
+  "acceptance": "Accept verified dictionary or scoped obstruction; no numerical interval without actual constants. Freeze both directions before comparison. I2 must be selected after I1 decision.",
+  "new_parameters": "Local perturbation norm is a derived dimensionless bound, not a new interaction."
+}

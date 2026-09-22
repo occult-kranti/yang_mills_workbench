@@ -1,0 +1,789 @@
+{
+  "algebra": {
+    "fixture_quadratic_vacuum_coefficient": {
+      "denominator": 3,
+      "numerator": -4
+    },
+    "fixture_same_cubic_scalar": {
+      "denominator": 3,
+      "numerator": 8
+    },
+    "role": "Exact finite algebra controls; not physical SU(2) approximation or cutoff evidence."
+  },
+  "analytic_controls": {
+    "derivative_counterexample": "sin(nt)/n ->0 uniformly but derivatives at0 equal1; no dynamics-derivative inference used.",
+    "domain_counterexample": "v_j=1/j is in l2, H v not in l2; finite prefix corroborates the explicit series proof."
+  },
+  "bindings": {
+    "instructions": {
+      "newton-SKILL.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6ab167744cd481919333118f9f25a3dc/SKILL.md",
+        "sha256": "2fa3dab9b2420d157457ad3ccaeb0723fb1952871be3e6140dcd3d3c9346ccef"
+      },
+      "newton-hidden-causes.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6ab167744cd481919333118f9f25a3dc/references/hidden-causes-and-reachable-spectra.md",
+        "sha256": "0471e1411293e808f3f863ee8db19fbc2c2ad622045234307a19328568db8500"
+      },
+      "newton-research.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6ab167744cd481919333118f9f25a3dc/references/research.md",
+        "sha256": "803ed9b8c517b881c8b217dc9ea47d011c7a070e142f5cb098fde8768990f4f2"
+      },
+      "newton-source-specific-inference.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6ab167744cd481919333118f9f25a3dc/references/source-specific-inference.md",
+        "sha256": "4dfd9f67ac25e7a550c56124fbe4402d418c07f4480f80a01ad3574886a044df"
+      },
+      "paired-SKILL.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/SKILL.md",
+        "sha256": "00a703f986c46ea75e9f69c75d9ef6a05c5445418eb28bdeac8fee5c52d0878d"
+      },
+      "paired-admission-matching.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/references/admission-and-matching.md",
+        "sha256": "5759836a5535ca38df772ab3765e2396cc191145522321c6630e9b1a81db0090"
+      },
+      "paired-filtered-sources.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/references/filtered-sources-and-connected-limits.md",
+        "sha256": "3f4a4fd15b1cbf45cabdd405745e5549017655e5aeb1037d72927a481da583b8"
+      },
+      "paired-generated-support.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/references/generated-support-and-iteration.md",
+        "sha256": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f"
+      },
+      "paired-locality-norms.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/references/locality-norms-and-computed-heat.md",
+        "sha256": "ef5caec41f13c52bcb23650be70468a9c2e74b7174df3a3e38235bcc1051a6c8"
+      },
+      "paired-projected-memory.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/references/projected-memory-and-boundary-response.md",
+        "sha256": "d9e27c0cd5093becfc0b79198728936eeb7ec14b135696661ee3d4a87db3bd3d"
+      },
+      "paired-reconstruction.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/references/reconstruction-lessons.md",
+        "sha256": "38ee8d4c25fdf51c2a2607e2d45b15c12948754f932373f017ad5076494b7faa"
+      },
+      "paired-residual-topology.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6aa703b7e6f48191a700951cb36ce6a2/references/actual-residual-and-iteration-topology.md",
+        "sha256": "95797f0b16c57bd72628b457be038da63fbbc81f07d09c8af2a72ee81e68d915"
+      },
+      "tesla-SKILL.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6ab167e59d648191af3a345b31efd208/SKILL.md",
+        "sha256": "81f6d760b3aa45d32db4ae31a3a3c9bec5e1d662e42529b5ae21a220deeb07c3"
+      },
+      "tesla-research.md": {
+        "origin": "/root/.codex/skills/remote-skills/skill-6ab167e59d648191af3a345b31efd208/references/research.md",
+        "sha256": "25d0934ee03c0bf56e95bc3f2482947c15aea763a9910e86349af148ad70e0b5"
+      }
+    },
+    "producer": {
+      "adoption.json": "354cc4291965daf8d8f1bd5b129724b636969c1bf7a21e8979b208412cff5fe3",
+      "check.py": "a11f048d8d7e52e7bfb78c7094d6b8555e9061e93e90ca26b02b196c056e9758",
+      "inputs/instruction-inventory.json": "a3c69a776cbeeccb121ce821ecf5a37c7bc6d91edc4d725441c5717162c0f1ab",
+      "inputs/source-inventory.json": "7bff60994bb2efb93bb2b115a28c0576040eb73bd5f0995108632a79a14f97d0",
+      "report.md": "5fe9c6e404838945455a2dc0fb5b03d12d6b685db3147eeb6f607e0607f283b2"
+    },
+    "sources": {
+      ".codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md": "60602182bacb4b5f23fc33091f8873607c23d2205c756855f21a03667032607f",
+      ".codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md": "cb6cad300516325a05287e88253d0fb1795b2c9c26b57dffa6f61a92939bda1f",
+      "AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+      "papers/round27-addendum/ag1.tex": "5cff33947f9acba714444094e7983bd4b51232beff73c7147e001ca3f0471a21",
+      "papers/round27-addendum/round27-addendum.tex": "09888b915ed9334e0cc77ea52e6ce3c395976ccaa3ac98ac426bc01155313baa",
+      "research/round22/forward/o1/report.md": "0284e19cc90061a1ff9cade5a58f8169ab4a7b06c2e53b605853530d6d828e72",
+      "research/round22/forward/o2/report.md": "f6b7af1a43e11e07286b6c44c18352a8755e6bdc1bf02582b5ce8090c99e42ad",
+      "research/round22/reverse/o1/report.md": "ccb9ee69905bbd1f2eca307c745ba45e38bf1ef644ab89deffe3f929348144fc",
+      "research/round23/forward/s1/report.md": "6cf8b76b884084b36ea9de8ff7a555847b87de09572adaf1dc3d0b7ae884c348",
+      "research/round23/reverse/s1/report.md": "ee24573266a2c1577718a062887c7bdac561bdb7ff8f9cf7d983671975002c92",
+      "research/round27/HANDOFF.md": "7ade15ff3c316de34bafcf6d2bc603143424357870f1038bfd19427e90fb748b",
+      "research/round27/advisor/ag1-gate.json": "aa6ee0aa346cf89834fd0e51092560db0f3e8f4bb8d8413f6f7396aa7fb69cc9",
+      "research/round27/forward/ag1/report.md": "c8df699a1edc11f0f38ad5d5bc7427247a8cba7b57c64bb6e8841a1470102450",
+      "research/round27/methods/historical-physics-panel/SKILL.md": "a2b366bc661794ee89c29233d0887868b60c0853c85ec136e0529b6f1d5e223a",
+      "research/round27/methods/historical-physics-panel/references/lenses-and-evidence.md": "4680aec5254c9f83b425c351e2f62c5d999e00758a51cae2865dcf124f01d8d8",
+      "research/round27/reverse/ag1/report.md": "03c77a999a83a0006f758f8e473a9efcc439e7ecf9031db65c7bd313eb97892b",
+      "research/round27/skeptic/ag1.md": "c56748b07699148983fc0afc5066d5b517c965cdfd218285640ccf8b31d12a58",
+      "research/round28/advisor/cycle.json": "e499a39bbc6adeb5e61a583284eb23622ffd8522da5f1dd729deb55e68f2daee",
+      "research/round28/advisor/selection-ag2.md": "b67243a6e18a428340c428893a84308461ffaf96d9a6aa1048530422003301aa",
+      "research/round28/contracts/ag2.json": "c8a2147d33226fb37ffc790e668543f4f2fe46596e40c4c3381733aa4208833b",
+      "research/round28/methods/prospective-guide.md": "9dc5afc0ba299a9fd2085f49f14778b3a3966878f63241649f7e149f1024d410"
+    }
+  },
+  "check_count": 320,
+  "checks": [
+    "all_contract_sources_required",
+    "contract_bound_as_source",
+    "live_source:.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md",
+    "snapshot_source:.codex/skills/qeg-research-advisor/references/generated-support-and-iteration.md",
+    "live_source:.codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md",
+    "snapshot_source:.codex/skills/qeg-research-advisor/references/locality-and-computed-observables.md",
+    "live_source:AGENTS.md",
+    "snapshot_source:AGENTS.md",
+    "live_source:papers/round27-addendum/ag1.tex",
+    "snapshot_source:papers/round27-addendum/ag1.tex",
+    "live_source:papers/round27-addendum/round27-addendum.tex",
+    "snapshot_source:papers/round27-addendum/round27-addendum.tex",
+    "live_source:research/round22/forward/o1/report.md",
+    "snapshot_source:research/round22/forward/o1/report.md",
+    "live_source:research/round22/forward/o2/report.md",
+    "snapshot_source:research/round22/forward/o2/report.md",
+    "live_source:research/round22/reverse/o1/report.md",
+    "snapshot_source:research/round22/reverse/o1/report.md",
+    "live_source:research/round23/forward/s1/report.md",
+    "snapshot_source:research/round23/forward/s1/report.md",
+    "live_source:research/round23/reverse/s1/report.md",
+    "snapshot_source:research/round23/reverse/s1/report.md",
+    "live_source:research/round27/HANDOFF.md",
+    "snapshot_source:research/round27/HANDOFF.md",
+    "live_source:research/round27/advisor/ag1-gate.json",
+    "snapshot_source:research/round27/advisor/ag1-gate.json",
+    "live_source:research/round27/forward/ag1/report.md",
+    "snapshot_source:research/round27/forward/ag1/report.md",
+    "live_source:research/round27/methods/historical-physics-panel/SKILL.md",
+    "snapshot_source:research/round27/methods/historical-physics-panel/SKILL.md",
+    "live_source:research/round27/methods/historical-physics-panel/references/lenses-and-evidence.md",
+    "snapshot_source:research/round27/methods/historical-physics-panel/references/lenses-and-evidence.md",
+    "live_source:research/round27/reverse/ag1/report.md",
+    "snapshot_source:research/round27/reverse/ag1/report.md",
+    "live_source:research/round27/skeptic/ag1.md",
+    "snapshot_source:research/round27/skeptic/ag1.md",
+    "live_source:research/round28/advisor/cycle.json",
+    "snapshot_source:research/round28/advisor/cycle.json",
+    "live_source:research/round28/advisor/selection-ag2.md",
+    "snapshot_source:research/round28/advisor/selection-ag2.md",
+    "live_source:research/round28/contracts/ag2.json",
+    "snapshot_source:research/round28/contracts/ag2.json",
+    "live_source:research/round28/methods/prospective-guide.md",
+    "snapshot_source:research/round28/methods/prospective-guide.md",
+    "instruction:newton-SKILL.md",
+    "instruction:newton-hidden-causes.md",
+    "instruction:newton-research.md",
+    "instruction:newton-source-specific-inference.md",
+    "instruction:paired-SKILL.md",
+    "instruction:paired-admission-matching.md",
+    "instruction:paired-filtered-sources.md",
+    "instruction:paired-generated-support.md",
+    "instruction:paired-locality-norms.md",
+    "instruction:paired-projected-memory.md",
+    "instruction:paired-reconstruction.md",
+    "instruction:paired-residual-topology.md",
+    "instruction:tesla-SKILL.md",
+    "instruction:tesla-research.md",
+    "complete_relative_difference_set_13",
+    "depth_one_same_and_twelve_cross",
+    "one_depth_two_all_equal_word",
+    "depth_two_support_at_most_10",
+    "depth_two_nontrivial_cross_words",
+    "complete_boundary_(1, 1, 1)_depth0_weight2",
+    "complete_boundary_(1, 1, 1)_depth0_weight9/4",
+    "complete_boundary_(1, 1, 1)_depth1_weight2",
+    "complete_boundary_(1, 1, 1)_depth1_weight9/4",
+    "complete_boundary_(1, 1, 1)_depth2_weight2",
+    "complete_boundary_(1, 1, 1)_depth2_weight9/4",
+    "complete_boundary_(2, 2, 2)_depth0_weight2",
+    "complete_boundary_(2, 2, 2)_depth0_weight9/4",
+    "complete_boundary_(2, 2, 2)_depth1_weight2",
+    "complete_boundary_(2, 2, 2)_depth1_weight9/4",
+    "complete_boundary_(2, 2, 2)_depth2_weight2",
+    "complete_boundary_(2, 2, 2)_depth2_weight9/4",
+    "complete_boundary_(3, 3, 3)_depth0_weight2",
+    "complete_boundary_(3, 3, 3)_depth0_weight9/4",
+    "complete_boundary_(3, 3, 3)_depth1_weight2",
+    "complete_boundary_(3, 3, 3)_depth1_weight9/4",
+    "complete_boundary_(3, 3, 3)_depth2_weight2",
+    "complete_boundary_(3, 3, 3)_depth2_weight9/4",
+    "empty_boundary_has_no_source",
+    "one_star_boundary",
+    "interior_four_incoming_roots",
+    "interior_twelve_crossings",
+    "O1_complete_tail_radius_0",
+    "AG1_transport_radius_0",
+    "nonnegative_inventory_0",
+    "direct_inventory_no_larger_than_triangle_at_0",
+    "O1_complete_tail_radius_1/1000",
+    "AG1_transport_radius_1/1000",
+    "nonnegative_inventory_1/1000",
+    "direct_inventory_no_larger_than_triangle_at_1/1000",
+    "O1_complete_tail_radius_1/10000",
+    "AG1_transport_radius_1/10000",
+    "narrow_filter_scope_1/10000",
+    "nonnegative_inventory_1/10000",
+    "direct_inventory_no_larger_than_triangle_at_1/10000",
+    "zero_budget_exact",
+    "main_reference_positive",
+    "narrow_reference_positive",
+    "main_displayed_E_bound",
+    "main_displayed_K_bound",
+    "main_displayed_scalar_bound",
+    "main_displayed_reference_gap",
+    "narrow_displayed_E_bound",
+    "narrow_displayed_K_bound",
+    "narrow_displayed_scalar_bound",
+    "narrow_displayed_reference_gap",
+    "O1_first_commutator_sign",
+    "O1_generator_skew",
+    "retained_D_quadratic_identity",
+    "same_anchor_compression_identity",
+    "same_anchor_scalar_centered_diagonal",
+    "same_anchor_has_no_omitted_mixing",
+    "scalar_double_count_control_discriminates",
+    "actual_fixture_quadratic_vacuum_nonzero",
+    "quadratic_mixing_need_not_vanish",
+    "selected_cubic_fixture_nonzero",
+    "wrong_n1_A_coefficient_rejected",
+    "wrong_n2_phi_coefficient_rejected",
+    "wrong_n2_A_coefficient_rejected",
+    "independent_O1_exponential_sign-1_degree0",
+    "independent_O1_exponential_sign-1_degree1",
+    "independent_O1_exponential_sign-1_degree2",
+    "independent_O1_exponential_sign-1_degree3",
+    "independent_O1_exponential_sign-1_degree4",
+    "independent_O1_exponential_sign-1_degree5",
+    "independent_O1_exponential_sign-1_degree6",
+    "cubic_parity_sign-1",
+    "independent_O1_exponential_sign0_degree0",
+    "independent_O1_exponential_sign0_degree1",
+    "independent_O1_exponential_sign0_degree2",
+    "independent_O1_exponential_sign0_degree3",
+    "independent_O1_exponential_sign0_degree4",
+    "independent_O1_exponential_sign0_degree5",
+    "independent_O1_exponential_sign0_degree6",
+    "cubic_parity_sign0",
+    "independent_O1_exponential_sign1_degree0",
+    "independent_O1_exponential_sign1_degree1",
+    "independent_O1_exponential_sign1_degree2",
+    "independent_O1_exponential_sign1_degree3",
+    "independent_O1_exponential_sign1_degree4",
+    "independent_O1_exponential_sign1_degree5",
+    "independent_O1_exponential_sign1_degree6",
+    "cubic_parity_sign1",
+    "omitted_cross_quadratic_discriminates",
+    "all_ordered_cubic_words_exact",
+    "omitted_cross_cubic_discriminates",
+    "complete_AG1_plus_E_identity_degree0",
+    "complete_AG1_plus_E_identity_degree1",
+    "complete_AG1_plus_E_identity_degree2",
+    "complete_AG1_plus_E_identity_degree3",
+    "complete_AG1_plus_E_identity_degree4",
+    "complete_AG1_plus_E_identity_degree5",
+    "complete_AG1_plus_E_identity_degree6",
+    "missing_E_transport_discriminates",
+    "unsupported_quartic_E_discriminates",
+    "wrong_G_only_nonlinear_coefficient_discriminates",
+    "all_order_tail_coefficient_illustration_1",
+    "all_order_tail_coefficient_illustration_2",
+    "all_order_tail_coefficient_illustration_3",
+    "all_order_tail_coefficient_illustration_4",
+    "all_order_tail_coefficient_illustration_5",
+    "all_order_tail_coefficient_illustration_6",
+    "all_order_tail_coefficient_illustration_7",
+    "all_order_tail_coefficient_illustration_8",
+    "all_order_tail_coefficient_illustration_9",
+    "all_order_tail_coefficient_illustration_10",
+    "all_order_tail_coefficient_illustration_11",
+    "all_order_tail_coefficient_illustration_12",
+    "all_order_tail_coefficient_illustration_13",
+    "all_order_tail_coefficient_illustration_14",
+    "all_order_tail_coefficient_illustration_15",
+    "all_order_tail_coefficient_illustration_16",
+    "all_order_tail_coefficient_illustration_17",
+    "all_order_tail_coefficient_illustration_18",
+    "all_order_tail_coefficient_illustration_19",
+    "all_order_tail_coefficient_illustration_20",
+    "all_order_tail_coefficient_illustration_21",
+    "all_order_tail_coefficient_illustration_22",
+    "all_order_tail_coefficient_illustration_23",
+    "all_order_tail_coefficient_illustration_24",
+    "all_order_tail_coefficient_illustration_25",
+    "all_order_tail_coefficient_illustration_26",
+    "all_order_tail_coefficient_illustration_27",
+    "all_order_tail_coefficient_illustration_28",
+    "all_order_tail_coefficient_illustration_29",
+    "all_order_tail_coefficient_illustration_30",
+    "all_order_tail_coefficient_illustration_31",
+    "all_order_tail_coefficient_illustration_32",
+    "exact_first_binomial_coefficient",
+    "exact_second_binomial_coefficient",
+    "O1_general_weight_matches_inherited_weight2",
+    "scalar_support_density_cost_4",
+    "diagonal_relative_support_cost_4",
+    "scalar_support_density_cost_5",
+    "diagonal_relative_support_cost_5",
+    "scalar_support_density_cost_6",
+    "diagonal_relative_support_cost_6",
+    "scalar_support_density_cost_7",
+    "diagonal_relative_support_cost_7",
+    "scalar_support_density_cost_8",
+    "diagonal_relative_support_cost_8",
+    "scalar_support_density_cost_9",
+    "diagonal_relative_support_cost_9",
+    "scalar_support_density_cost_10",
+    "diagonal_relative_support_cost_10",
+    "scalar_support_density_cost_11",
+    "diagonal_relative_support_cost_11",
+    "scalar_support_density_cost_12",
+    "diagonal_relative_support_cost_12",
+    "scalar_support_density_cost_13",
+    "diagonal_relative_support_cost_13",
+    "scalar_support_density_cost_14",
+    "diagonal_relative_support_cost_14",
+    "scalar_support_density_cost_15",
+    "diagonal_relative_support_cost_15",
+    "scalar_support_density_cost_16",
+    "diagonal_relative_support_cost_16",
+    "scalar_support_density_cost_17",
+    "diagonal_relative_support_cost_17",
+    "scalar_support_density_cost_18",
+    "diagonal_relative_support_cost_18",
+    "scalar_support_density_cost_19",
+    "diagonal_relative_support_cost_19",
+    "scalar_support_density_cost_20",
+    "diagonal_relative_support_cost_20",
+    "scalar_support_density_cost_21",
+    "diagonal_relative_support_cost_21",
+    "scalar_support_density_cost_22",
+    "diagonal_relative_support_cost_22",
+    "scalar_support_density_cost_23",
+    "diagonal_relative_support_cost_23",
+    "scalar_support_density_cost_24",
+    "diagonal_relative_support_cost_24",
+    "scalar_support_density_cost_25",
+    "diagonal_relative_support_cost_25",
+    "scalar_support_density_cost_26",
+    "diagonal_relative_support_cost_26",
+    "scalar_support_density_cost_27",
+    "diagonal_relative_support_cost_27",
+    "scalar_support_density_cost_28",
+    "diagonal_relative_support_cost_28",
+    "scalar_support_density_cost_29",
+    "diagonal_relative_support_cost_29",
+    "scalar_support_density_cost_30",
+    "diagonal_relative_support_cost_30",
+    "scalar_support_density_cost_31",
+    "diagonal_relative_support_cost_31",
+    "scalar_support_density_cost_32",
+    "diagonal_relative_support_cost_32",
+    "scalar_support_density_cost_33",
+    "diagonal_relative_support_cost_33",
+    "scalar_support_density_cost_34",
+    "diagonal_relative_support_cost_34",
+    "scalar_support_density_cost_35",
+    "diagonal_relative_support_cost_35",
+    "scalar_support_density_cost_36",
+    "diagonal_relative_support_cost_36",
+    "scalar_support_density_cost_37",
+    "diagonal_relative_support_cost_37",
+    "scalar_support_density_cost_38",
+    "diagonal_relative_support_cost_38",
+    "scalar_support_density_cost_39",
+    "diagonal_relative_support_cost_39",
+    "scalar_support_density_cost_40",
+    "diagonal_relative_support_cost_40",
+    "scalar_support_density_cost_41",
+    "diagonal_relative_support_cost_41",
+    "scalar_support_density_cost_42",
+    "diagonal_relative_support_cost_42",
+    "scalar_support_density_cost_43",
+    "diagonal_relative_support_cost_43",
+    "scalar_support_density_cost_44",
+    "diagonal_relative_support_cost_44",
+    "scalar_support_density_cost_45",
+    "diagonal_relative_support_cost_45",
+    "scalar_support_density_cost_46",
+    "diagonal_relative_support_cost_46",
+    "scalar_support_density_cost_47",
+    "diagonal_relative_support_cost_47",
+    "scalar_support_density_cost_48",
+    "diagonal_relative_support_cost_48",
+    "scalar_support_density_cost_49",
+    "diagonal_relative_support_cost_49",
+    "scalar_support_density_cost_50",
+    "diagonal_relative_support_cost_50",
+    "scalar_support_density_cost_51",
+    "diagonal_relative_support_cost_51",
+    "scalar_support_density_cost_52",
+    "diagonal_relative_support_cost_52",
+    "scalar_support_density_cost_53",
+    "diagonal_relative_support_cost_53",
+    "scalar_support_density_cost_54",
+    "diagonal_relative_support_cost_54",
+    "scalar_support_density_cost_55",
+    "diagonal_relative_support_cost_55",
+    "scalar_support_density_cost_56",
+    "diagonal_relative_support_cost_56",
+    "scalar_support_density_cost_57",
+    "diagonal_relative_support_cost_57",
+    "scalar_support_density_cost_58",
+    "diagonal_relative_support_cost_58",
+    "scalar_support_density_cost_59",
+    "diagonal_relative_support_cost_59",
+    "scalar_support_density_cost_60",
+    "diagonal_relative_support_cost_60",
+    "scalar_support_density_cost_61",
+    "diagonal_relative_support_cost_61",
+    "scalar_support_density_cost_62",
+    "diagonal_relative_support_cost_62",
+    "scalar_support_density_cost_63",
+    "diagonal_relative_support_cost_63",
+    "scalar_support_density_cost_64",
+    "diagonal_relative_support_cost_64",
+    "bounded_operator_domain_shortcut_control",
+    "differentiate_value_bound_shortcut_control",
+    "input_weight_cannot_be_reset",
+    "upper_bound_not_lower_denominator"
+  ],
+  "endpoints": {
+    "main": {
+      "E2_rho": {
+        "denominator": 627200000000,
+        "numerator": 3731903361
+      },
+      "E3_other_rho": {
+        "denominator": 6272000000000000,
+        "numerator": 1152690746031
+      },
+      "E3_same_rho": {
+        "denominator": 85750000000000,
+        "numerator": 238383
+      },
+      "E_direct_rho": {
+        "denominator": 39916168081510016000000000000,
+        "numerator": 246187768176993256184091123
+      },
+      "E_ge4_rho": {
+        "denominator": 427851426623685484000000000000,
+        "numerator": 14432663995298033154370929
+      },
+      "E_triangle_rho": {
+        "denominator": 139706588285285056000000000,
+        "numerator": 1512615826879564248280557
+      },
+      "M": {
+        "denominator": 1000,
+        "numerator": 1
+      },
+      "Q1_rho": {
+        "denominator": 4096,
+        "numerator": 100862253
+      },
+      "Q2_rho": {
+        "denominator": 32768,
+        "numerator": 222081392871
+      },
+      "centered_diagonal_increment_two": {
+        "denominator": 104710944149073321957434823446405889842006592000000000000,
+        "numerator": 1291635719932683361574258916242666822004715356887311639
+      },
+      "complete_K_two": {
+        "denominator": 209421888298146643914869646892811779684013184000000000000,
+        "numerator": 1291635719932683361574258916242666822004715356887311639
+      },
+      "complete_mixing_two": {
+        "denominator": 209421888298146643914869646892811779684013184000000000000,
+        "numerator": 1291635719932683361574258916242666822004715356887311639
+      },
+      "diagonal_relative_kappa": {
+        "denominator": 1675375106385173151318957175142494237472105472000000000000,
+        "numerator": 7993136145473375966850087616812643771893137244887311639
+      },
+      "full_R_rho_upper": {
+        "denominator": 698532941426425280000,
+        "numerator": 7563079008100570671
+      },
+      "full_diagonal_two": {
+        "denominator": 104710944149073321957434823446405889842006592000000000000,
+        "numerator": 7993136145473375966850087616812643771893137244887311639
+      },
+      "full_mixing_contraction": "not established: actual full input denominator absent",
+      "narrow_free_filter": false,
+      "reference_gap_lower": {
+        "denominator": 1675375106385173151318957175142494237472105472000000000000,
+        "numerator": 1667381970239699775352107087525681593700212334755112688361
+      },
+      "scalar_density": {
+        "denominator": 13403000851081385210551657401139953899776843776000000000000,
+        "numerator": 1291635719932683361574258916242666822004715356887311639
+      },
+      "selected_A3_rho_upper": {
+        "denominator": 448000000000,
+        "numerator": 81
+      },
+      "selected_N_two": {
+        "denominator": 1740285862420099845508000000000,
+        "numerator": 15292496292229431
+      },
+      "selected_R_two": {
+        "denominator": 675306072,
+        "numerator": 1
+      },
+      "tau_absolute": {
+        "denominator": 7000,
+        "numerator": 1
+      },
+      "theta": {
+        "denominator": 20858372633,
+        "numerator": 11664
+      },
+      "transported_E_two": {
+        "denominator": 832585842343412128316965504000000000000,
+        "numerator": 5135076206322344435015804289961436859
+      },
+      "x_O1": {
+        "denominator": 70000,
+        "numerator": 2187
+      }
+    },
+    "narrow": {
+      "E2_rho": {
+        "denominator": 62720000000000,
+        "numerator": 3731903361
+      },
+      "E3_other_rho": {
+        "denominator": 6272000000000000000,
+        "numerator": 1152690746031
+      },
+      "E3_same_rho": {
+        "denominator": 85750000000000000,
+        "numerator": 238383
+      },
+      "E_direct_rho": {
+        "denominator": 2131195141753957510784000000000000000,
+        "numerator": 127206834114932366552568052785027
+      },
+      "E_ge4_rho": {
+        "denominator": 466198937258678205484000000000000000,
+        "numerator": 1506216712316006594033845929
+      },
+      "E_triangle_rho": {
+        "denominator": 152228224410996965056000000000000,
+        "numerator": 15560025681970270659158290557
+      },
+      "M": {
+        "denominator": 10000,
+        "numerator": 1
+      },
+      "Q1_rho": {
+        "denominator": 4096,
+        "numerator": 100862253
+      },
+      "Q2_rho": {
+        "denominator": 32768,
+        "numerator": 222081392871
+      },
+      "centered_diagonal_increment_two": {
+        "denominator": 121865641084227052831194565325230133575867772473913664000000000000000,
+        "numerator": 14547839477297317169693281656241823649735749737263619491514335563
+      },
+      "complete_K_two": {
+        "denominator": 243731282168454105662389130650460267151735544947827328000000000000000,
+        "numerator": 14547839477297317169693281656241823649735749737263619491514335563
+      },
+      "complete_mixing_two": {
+        "denominator": 243731282168454105662389130650460267151735544947827328000000000000000,
+        "numerator": 14547839477297317169693281656241823649735749737263619491514335563
+      },
+      "diagonal_relative_kappa": {
+        "denominator": 1949850257347632845299113045203682137213884359582618624000000000000000,
+        "numerator": 794487942416350455289338499737714678535289493570311069091514335563
+      },
+      "full_R_rho_upper": {
+        "denominator": 7611411220549848252800000,
+        "numerator": 778001282722343200671
+      },
+      "full_diagonal_two": {
+        "denominator": 121865641084227052831194565325230133575867772473913664000000000000000,
+        "numerator": 794487942416350455289338499737714678535289493570311069091514335563
+      },
+      "full_mixing_contraction": "not established: actual full input denominator absent",
+      "narrow_free_filter": true,
+      "reference_gap_lower": {
+        "denominator": 1949850257347632845299113045203682137213884359582618624000000000000000,
+        "numerator": 1949055769405216494843823706703944422535349070089048312930908485664437
+      },
+      "scalar_density": {
+        "denominator": 15598802058781062762392904361629457097711074876660948992000000000000000,
+        "numerator": 14547839477297317169693281656241823649735749737263619491514335563
+      },
+      "selected_A3_rho_upper": {
+        "denominator": 448000000000000,
+        "numerator": 81
+      },
+      "selected_N_two": {
+        "denominator": 30747980622052109221254753861508000000000000,
+        "numerator": 38504529228299293431
+      },
+      "selected_R_two": {
+        "denominator": 203658008067773437500,
+        "numerator": 14694791
+      },
+      "tau_absolute": {
+        "denominator": 70000,
+        "numerator": 1
+      },
+      "theta": {
+        "denominator": 2772543084524633,
+        "numerator": 11664
+      },
+      "transported_E_two": {
+        "denominator": 844118621716795938117774349743622528000000000000000,
+        "numerator": 50383775461375413859327827064292426120005010013
+      },
+      "x_O1": {
+        "denominator": 700000,
+        "numerator": 2187
+      }
+    },
+    "zero": {
+      "E2_rho": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "E3_other_rho": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "E3_same_rho": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "E_direct_rho": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "E_ge4_rho": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "E_triangle_rho": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "M": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "Q1_rho": {
+        "denominator": 4096,
+        "numerator": 100862253
+      },
+      "Q2_rho": {
+        "denominator": 32768,
+        "numerator": 222081392871
+      },
+      "centered_diagonal_increment_two": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "complete_K_two": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "complete_mixing_two": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "diagonal_relative_kappa": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "full_R_rho_upper": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "full_diagonal_two": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "full_mixing_contraction": "not established: actual full input denominator absent",
+      "narrow_free_filter": false,
+      "reference_gap_lower": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "scalar_density": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "selected_A3_rho_upper": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "selected_N_two": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "selected_R_two": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "tau_absolute": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "theta": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "transported_E_two": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "x_O1": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    }
+  },
+  "geometry": {
+    "boundary_controls": [
+      {
+        "anchors": 0,
+        "max_star_incidence": 0,
+        "shape": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "anchors": 1,
+        "max_star_incidence": 1,
+        "shape": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "anchors": 8,
+        "max_star_incidence": 4,
+        "shape": [
+          3,
+          3,
+          3
+        ]
+      }
+    ],
+    "relative_words_by_union_size": {
+      "0": {
+        "4": 1
+      },
+      "1": {
+        "4": 1,
+        "7": 12
+      },
+      "2": {
+        "10": 192,
+        "4": 1,
+        "7": 36,
+        "9": 24
+      }
+    }
+  },
+  "model": "Original homogeneous O1 Hamiltonian; full E through actual admitted selected-source AG1 correction, fixed delta=alpha/8.",
+  "schema": "ag2-forward-exact-v1",
+  "scope": {
+    "complete_E_inventory": true,
+    "complete_transport": true,
+    "continuum_Yang_Mills": false,
+    "full_mixing_contraction": false,
+    "homogeneous_full_gap": false,
+    "reference_only_gap": true
+  },
+  "status": "passed"
+}

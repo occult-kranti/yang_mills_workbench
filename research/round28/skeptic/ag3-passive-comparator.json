@@ -1,0 +1,35 @@
+{
+  "attribution": "Advisor raised passive reweighting after skeptic independent freeze; skeptic additionally identifies missing lower comparison to the actual lower-weight input norm.",
+  "check_names": [
+    "passive_minimum_support_factor",
+    "main_correction_ceiling_weaker_than_passive",
+    "narrow_correction_ceiling_improves_universal_passive_ceiling",
+    "passive_embedding_bound_size_4",
+    "passive_embedding_bound_size_16",
+    "no_actual_output_norm_comparison_size_16",
+    "passive_embedding_bound_size_64",
+    "no_actual_output_norm_comparison_size_64",
+    "no_positive_universal_lower_ratio"
+  ],
+  "checks": 9,
+  "interpretation": "Doing no correction already gives ||B||_(3/2)<=81/256 ||B||_2. Main AG3 ceiling is weaker; narrow improves this universal upper ceiling. Neither compares corrected output with actual uncorrected ||B||_(3/2) without further source information. A single-term class witness has ratio(3/4)^m, arbitrarily small; it is not an evaluation of actual AG2 B.",
+  "main_factor": "3060/3623",
+  "narrow_factor": "5949/96812",
+  "passive_factor": "81/256",
+  "schema": "ym28-ag3-passive-comparison-v1",
+  "scope": "Additive interpretation control in AG3; no frozen scientific bytes changed and no new research loop.",
+  "single_term_class_examples": [
+    {
+      "actual_norm_ratio_for_single_term": "81/256",
+      "assigned_support_size": 4
+    },
+    {
+      "actual_norm_ratio_for_single_term": "43046721/4294967296",
+      "assigned_support_size": 16
+    },
+    {
+      "actual_norm_ratio_for_single_term": "3433683820292512484657849089281/340282366920938463463374607431768211456",
+      "assigned_support_size": 64
+    }
+  ]
+}

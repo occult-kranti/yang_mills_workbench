@@ -1,0 +1,117 @@
+{
+  "all_fresh_normal_optimized_exact_outputs_equal": true,
+  "exchange_open": true,
+  "independent_freeze": {
+    "all_72_frozen_bindings_unchanged": true,
+    "path": "research/round28/skeptic/ak1-independent-freeze.json",
+    "sha256": "1296a0116c3f756bcad564dca5f9553d5eee397dfd11a507c0ea05886aa87bc0"
+  },
+  "loop": "ak1",
+  "new_research_loops": 0,
+  "producer_freezes": {
+    "forward": {
+      "actual_owned_set_equals_frozen_set": true,
+      "owned_file_count": 85,
+      "path": "research/round28/forward/ak1/freeze.json",
+      "repository_relative_files": true,
+      "sha256": "75fb5ec51c63e3264350be3236fa9dd3067c3a425381fb978bda126dc9e40ecd"
+    },
+    "reverse": {
+      "actual_owned_set_equals_frozen_set": true,
+      "owned_file_count": 65,
+      "path": "research/round28/reverse/ak1/freeze.json",
+      "repository_relative_files": true,
+      "sha256": "c6810b72b2fef46cbab574d32ad205f4daccdc1c1267dc49774366df0ddbd588"
+    }
+  },
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/forward/ak1/check.py",
+        "--output",
+        "/workspace/scratch/9daefcf0521b/ak1-post-forward-normal"
+      ],
+      "cwd": "/workspace/scratch/9daefcf0521b",
+      "direction": "forward",
+      "exact_output_set_and_bytes_equal": true,
+      "exit_code": 0,
+      "files": {
+        "results.json": "b624405598dadf6380bd04cbbf45b96cdfa7e09474a3d3979c4c21412a7bf1f4"
+      },
+      "fresh_absolute_directory": true,
+      "frozen_files": {
+        "results.json": "b624405598dadf6380bd04cbbf45b96cdfa7e09474a3d3979c4c21412a7bf1f4"
+      },
+      "mode": "normal"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-O",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/forward/ak1/check.py",
+        "--output",
+        "/workspace/scratch/9daefcf0521b/ak1-post-forward-optimized"
+      ],
+      "cwd": "/workspace/scratch/9daefcf0521b",
+      "direction": "forward",
+      "exact_output_set_and_bytes_equal": true,
+      "exit_code": 0,
+      "files": {
+        "results.json": "b624405598dadf6380bd04cbbf45b96cdfa7e09474a3d3979c4c21412a7bf1f4"
+      },
+      "fresh_absolute_directory": true,
+      "frozen_files": {
+        "results.json": "b624405598dadf6380bd04cbbf45b96cdfa7e09474a3d3979c4c21412a7bf1f4"
+      },
+      "mode": "optimized"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/reverse/ak1/check.py",
+        "--output",
+        "/workspace/scratch/9daefcf0521b/ak1-post-reverse-normal"
+      ],
+      "cwd": "/workspace/scratch/9daefcf0521b",
+      "direction": "reverse",
+      "exact_output_set_and_bytes_equal": true,
+      "exit_code": 0,
+      "files": {
+        "results.json": "49dcdc958e278d2753600e4a8c4bb6e7d4768f3e623bf0b2eb37e2fa34826251"
+      },
+      "fresh_absolute_directory": true,
+      "frozen_files": {
+        "results.json": "49dcdc958e278d2753600e4a8c4bb6e7d4768f3e623bf0b2eb37e2fa34826251"
+      },
+      "mode": "normal"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-O",
+        "/workspace/scratch/9daefcf0521b/yang_mills_workbench/research/round28/reverse/ak1/check.py",
+        "--output",
+        "/workspace/scratch/9daefcf0521b/ak1-post-reverse-optimized"
+      ],
+      "cwd": "/workspace/scratch/9daefcf0521b",
+      "direction": "reverse",
+      "exact_output_set_and_bytes_equal": true,
+      "exit_code": 0,
+      "files": {
+        "results.json": "49dcdc958e278d2753600e4a8c4bb6e7d4768f3e623bf0b2eb37e2fa34826251"
+      },
+      "fresh_absolute_directory": true,
+      "frozen_files": {
+        "results.json": "49dcdc958e278d2753600e4a8c4bb6e7d4768f3e623bf0b2eb37e2fa34826251"
+      },
+      "mode": "optimized"
+    }
+  ],
+  "schema": "ym28-ak1-post-review-producer-replay-v1",
+  "sequence": 9
+}
