@@ -1,0 +1,140 @@
+{
+  "schema": "hnm-round32-expert-recommendation-v1",
+  "lens": "jung",
+  "status": "round32_loop1_advisory",
+  "date": "2026-09-23",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "scope_note": "Prospective planning input; no contract frozen, no loop executed, no calculation run by this lens. Model family throughout: fixed-spacing SU(2) Kogut-Susskind patterned family on Z^3 (24-link factors, selected triple, 21 omitted anchored face classes with coefficient alpha*tau/24 grouped into whole-star interactions, delta=alpha/8), unless a goal explicitly names a finite graph.",
+  "goal_pairs": [
+    {
+      "id": "R32-J1-FG-SIGN",
+      "rank": 1,
+      "title": "Exact finite-graph sign certificate for the interaction shift, labelled non-AQ (advisor route a)",
+      "model": "finite_graph_exact: the 48-link Wilson cover R={0,e_z} of the patterned family (two complete 24-link factors), selected triple (0,0,0), the seven incident whole-star interactions phi_b with omitted coefficient alpha*tau/24, electric Casimirs on every link, representation cutoff j<=j_max with a certified tail, a declared boundary completion (open links vs star-complete), tau frozen on a moderate grid such as {+-1e-3,+-1e-2,+-1e-1} (dimensionless coupling; alpha, hbar, spacing fixed).",
+      "observable": "Delta_G(tau)=m_G(tau)=<Omega_G(tau),W Omega_G(tau)> (finite-graph Wilson mean, exactly 0 at tau=0) with certified sign and enclosure; secondarily I_G(tau)-I_G(0) for the finite-graph inverse-energy form; exact rational or interval linear algebra decides.",
+      "control": "(i) tau->-tau sign flip: first-order shift must flip, a symmetric response flags an even-order or arithmetic artifact; (ii) j_max->j_max+1 with certified tail: sign persists; (iii) two boundary completions: a completion-dependent sign identifies no bulk effect; (iv) exact Fraction admission with python-flint Arb replay; (v) tau=0 replay returns exactly 0.",
+      "expected_outcome_types": [
+        "sign_certified_finite_graph",
+        "limited_sign_unresolved",
+        "insufficient"
+      ],
+      "direction": "paired",
+      "why": "Executable now with exact arithmetic and the only route that can show a sign at moderate tau; but it is a different, finite model, so its gate must carry model_class=finite_graph_exact, transfer_status=not_transferred_to_AQ and the sentence 'not an AQ-state result' (rule R8)."
+    },
+    {
+      "id": "R32-J2-NULL-REPLAY",
+      "rank": 2,
+      "title": "tau=0 replay and resolving-power ratio for the AT6 pipeline (reference_unresolved label)",
+      "model": "The admitted AT6 zero-selected AQ subfamily pipeline (selected (0,0,0), tau=+1e-14, L=1e9, s in [0,128], 4097 nodes) replayed with tau=0 exactly, and the same budget evaluated prospectively at the cap tau=1e-8.",
+      "observable": "rho_j = (certified width at node j) / (prospective first-order shift bound c_1|tau|, with |m|<=D as placeholder until G3 supplies c_1); and the byte-level difference between the tau=0 and tau=1e-14 certified intervals.",
+      "control": "If the tau=0 replay reproduces the interacting interval up to the D terms, the pipeline carries no interaction information by construction; rho>1 at every node labels the certificate reference_unresolved; the label and its definition are frozen before the replay.",
+      "expected_outcome_types": [
+        "statement_only",
+        "limited"
+      ],
+      "direction": "single+skeptic",
+      "why": "Cheap, exact, and it makes the Besant-Leadbeater failure mode (agreement with a reference built into the readout) impossible to commit silently; it also fixes the vocabulary the later shift loops need."
+    },
+    {
+      "id": "R32-J3-C1-EXACT",
+      "rank": 3,
+      "title": "First-order Wilson-mean coefficient c_1 with an explicit second-order remainder (advisor route b, derivation half)",
+      "model": "Finite-volume full Hamiltonian of the patterned family at selected (0,0,0); AM2 creation expansion e^{-C}Omega_0 with anchored norm ||c||_a<=R=1/64, J<=28|tau|, majorant G(t)=16e^{8t}(1+10t); local observable W on the cover R; passage to the AQ subsequential state via local trace-norm convergence stated as a separate obligation.",
+      "observable": "omega_tau^{(V)}(W)=c_1 tau + r_2(tau) with c_1 an exact rational and |r_2(tau)|<=c_2 tau^2 with explicit c_2, uniformly in volume; likewise omega_tau(W^2)-1/4.",
+      "control": "Sign flip tau->-tau (c_1 tau changes sign); consistency with G1's finite-graph m_G(tau) at the smallest grid tau (consistency, not proof); normalization <psi,psi> and the annihilation adjoint bounded in the same anchored norm; a failed remainder constant is recorded as insufficient, not as a lower bound.",
+      "expected_outcome_types": [
+        "derivation_statement",
+        "limited",
+        "insufficient"
+      ],
+      "direction": "paired",
+      "why": "It is the advisor's own derivation target for both the cap and the shift goals; its falsifiable content is the sign of c_1, which G1 can check on the finite graph."
+    },
+    {
+      "id": "R32-J4-CAP-NEGOTIATED",
+      "rank": 4,
+      "title": "Cap-level target with a pre-registered sufficiency floor",
+      "model": "AQ state at the original cap tau=+1e-8, selected (0,0,0), original centered xz Wilson, one frozen s* (proposal s*=1), L free.",
+      "observable": "Certified radius of C_tau(s*) against a frozen absolute target (proposal 2e-6, or a Euclidean-side argument replacing the real-time Duhamel term).",
+      "control": "The prospective floor min_L E(s*) ~ 1.2e-6 to 1.3e-6 from HNM-AT6-F06 is written into the contract before evaluation; an outcome above the frozen target is insufficient by construction and is recorded with its dominating term; no tau change inside the loop.",
+      "expected_outcome_types": [
+        "insufficient",
+        "limited"
+      ],
+      "direction": "single+skeptic",
+      "why": "Honest negotiation of the target per advisor observation 2, instead of a second silent coupling change (the AT5 precedent is retained as a model change, not a refinement)."
+    },
+    {
+      "id": "R32-J5-DICTIONARY",
+      "rank": 5,
+      "title": "Statement-only dictionary between the two-plaquette hardware SU(2) model and the patterned cover",
+      "model": "Kavaki-Lewis two-plaquette Kogut-Susskind SU(2), j in {0,1/2}, x=2/g^4, versus the patterned family's cover R with the AL1 dictionary tau=96/g^4 at uniform coefficients; every parameter classified (coordinate, regulator, coupling, state preparation, measured, model deformation) with units.",
+      "observable": "None; a dictionary and a parameter table, plus the statement of which terms the patterned family omits or selects relative to the uniform two-plaquette Hamiltonian.",
+      "control": "Consistency of the two dictionaries at uniform coefficients; explicit failure statement if the patterned cover cannot be mapped to a two-plaquette graph.",
+      "expected_outcome_types": [
+        "statement_only"
+      ],
+      "direction": "statement-only",
+      "why": "The only external numbers with stated uncertainties (95% confidence intervals on ibm_lagos) exist for such tiny graphs; the dictionary decides whether they can ever serve as a calibration control for G1. Hardware numbers are never validation of an AQ certificate."
+    }
+  ],
+  "strategy_changes": [
+    "R1 Freeze before any outcome: model id, observable formula with centering convention, s* or whole grid, five-term error structure (state/boundary, dynamics/cutoff L, truncation j_max, quadrature, arithmetic), target, outcome taxonomy, and claim_exclusions containing 'free reference inside the enclosure implies no interaction claim'; hash all of it in the contract and freeze.json.",
+    "R2 Outcome taxonomy retained in gates: accepted_within_scope | limited | insufficient, with sub-labels reference_unresolved (interval contains the matched free value) and sign_certified_finite_graph (non-AQ); every limited/insufficient record names the dominating term and its numerical share.",
+    "R3 Insufficient outcomes record the failing term and the smallest change of a frozen parameter that would pass, as a planning note only; a changed parameter is a new loop with a new contract and is named as a model change.",
+    "R4 No post-hoc s*: whole grids are reported; no node of maximal separation is chosen afterwards; declared pilot runs at reduced size are excluded from the counted result.",
+    "R5 Mandatory discriminating controls for any claimed shift: centering identities with perturbed m_hat and the s=0 endpoint check; two boundary families or completions; monotone j_max and L sequences with certified tails; exact Fraction vs Arb/mpmath.iv replay and -O byte-identical replay; tau=0 null replay; tau->-tau sign flip.",
+    "R6 Independence: a claimed shift needs paired producers with unread current work or a single producer with a skeptic replay from the contract alone; shared premises declared; same-author passes never called independent (the AIR shared-judge confound, restated).",
+    "R7 Deterministic blinding: the comparison to the reference and the threshold live in the frozen contract and are computed by check.py; producers commit code before the first full-size evaluation (adapted from the muon g-2 lattice freeze-then-unblind practice).",
+    "R8 Finite-graph sign certificates carry model_class=finite_graph_exact, explicit graph and completion, j_max, tau, statement with sign and enclosure, transfer_status=not_transferred_to_AQ, claim_exclusions [AQ thermodynamic state, infinite volume, uniform Hamiltonian, continuum], check-id prefix FG-, the gate sentence 'This certificate concerns the finite graph G; it is not an AQ-state result', and a website model badge.",
+    "Assessment of advisor observation 3: agreed that O(tau)-error methods are structurally reference-inside; route (b) needs both exact c_1 and an explicit c_2 remainder paid in the anchored norm including normalization and the adjoint, with the AQ passage as a separate obligation; the (+tau,-tau) pair is a built-in control for both routes and should be frozen as such; route (a) is honest only as a labelled finite-graph certificate or as a consistency check on c_1."
+  ],
+  "skill_updates": [
+    {
+      "file": ".codex/skills/historical-physics-panel/references/lenses-and-evidence.md",
+      "location": "Table row 'Jung/Pauli', column 'Required countercheck' (append)",
+      "proposed_text": "Freeze the observable, the readout time and the acceptance threshold before any outcome is seen; report every batch and every insufficient outcome with its dominating error term; a maximum selected among candidates after inspection is not a prior-fixed observable (documented cautionary case: the 1952 astrological experiment in Jung's Synchronicity, pilot batch folded into the total, maxima chosen among fifty aspects, probability recomputed three times)."
+    },
+    {
+      "file": ".codex/skills/historical-physics-panel/references/lenses-and-evidence.md",
+      "location": "New paragraph after the Clay paragraph",
+      "proposed_text": "A certificate whose enclosure contains the matched free reference is reference-unresolved; agreement with a reference that is built into the readout is not evidence (documented cautionary case: Besant and Leadbeater's number-weights, defined as count/18 and then 'checked' against the atomic-weight table). Require a null replay of the same pipeline at zero interaction and a resolving-power ratio before any interaction claim."
+    },
+    {
+      "file": ".codex/skills/historical-physics-panel/references/lenses-and-evidence.md",
+      "location": "New paragraph after the reference-unresolved paragraph",
+      "proposed_text": "An exact finite-graph certificate is a statement about that finite graph. It must carry model_class=finite_graph_exact and transfer_status=not_transferred, and its gate must say 'not an AQ-state result' (or the name of the actual target state). Kepler's Harmonices Mundi records where the harmonic idea failed (the periodic times) and labels Fludd's harmonies symbolism rather than mathematics; the modern rule is a label the validator can test."
+    },
+    {
+      "file": ".codex/skills/historical-physics-panel/references/lenses-and-evidence.md",
+      "location": "Government-report paragraph (append one sentence)",
+      "proposed_text": "The 1995 AIR evaluation of remote viewing itself records that the same viewers, judge and targets made independent effects impossible to identify; treat shared premises and correlated authorship in this workbench the same way."
+    },
+    {
+      "file": ".codex/skills/historical-physics-panel/references/lenses-and-evidence.md",
+      "location": "'Primary routes' paragraph (append)",
+      "proposed_text": "Fetch tools truncate long pages; an archive.org OCR or a long PDF counts as read only when the passage was located in the downloaded raw text, and quotations returned only by a tool summary are not quotations."
+    }
+  ],
+  "tools": [
+    "python-flint (Arb balls, exact fmpq) and mpmath.iv as independent replays of every exact Fraction certificate; never for admission.",
+    "A contract-hash step: check.py refuses to run unless the contract's frozen (model, observable, s*, target, taxonomy) hash matches freeze.json; the reference comparison and threshold are computed inside check.py.",
+    "A tau=0 replay wrapper for the AT6 pipeline producing a byte-level interval diff (goal G2).",
+    "Optional SDP preview (cvxpy with an open-source solver) for positivity/loop-equation bounds on a finite graph, labelled preview only, as an independent cross-check of an exact linear-algebra sign certificate.",
+    "Local source workflow: curl the raw OCR/HTML/PDF, extract text streams in Python, grep the passage; record offsets and page running heads in the ledger."
+  ],
+  "disagreements": [
+    "With the framing that route (a) resolves roadmap goal 'shift': a finite-graph sign certificate resolves a shift in a finite model only; the AQ goal stays open unless a comparison bound smaller than |Delta_G| is proved.",
+    "With advisor observation 1's optimism about an O(tau) state bound from AM2 without cost: the non-unitary e^{-C}, the normalization and the adjoint each cost weight in the anchored norm, so the first loop on that route should be a derivation statement (G3), not a datum.",
+    "With any use of 2024-2026 hardware numbers as comparison targets for the AQ family: none measures a Wilson-loop or plaquette expectation in a 3+1D Kogut-Susskind SU(2) model comparable to ours; two-plaquette numbers are calibration controls at most, after G5.",
+    "Ranking: the skeptic may prefer G2 (cheapest, labels first) above G1; this lens ranks G1 first because it is the only executable route to a sign, provided R8 is enforced."
+  ],
+  "open_questions_for_skeptic": [
+    "Is the tau->-tau sign-flip control sufficient to exclude an arithmetic artifact at second order, or must the (+tau,-tau) difference itself be certified with a separate error budget?",
+    "How should two 'boundary completions' of the 48-link cover be defined so that they are genuinely different models (open links vs star-complete vs embedded in a larger exact graph), and which one is closest to the AQ centered-box state?",
+    "Is the tau=0 replay a valid null control given that D=2 sqrt(49|tau|/3) is defined with |tau| (so the tau=0 interval collapses the state term), or should the null control keep D fixed and set only the interaction to zero?",
+    "Does a declared reduced-size pilot contaminate the freeze if the same code path is used for the counted run; what must be logged to prove the pilot data were excluded?",
+    "What evidence shows that a threshold was fixed before outcomes were seen (git commit ordering, freeze.json timestamps, hash of the contract inside the producer inputs), and is that evidence testable by reproduce.py?",
+    "For G3, which anchored-norm bookkeeping of the annihilation adjoint is acceptable, and does the AQ passage require more than local trace-norm convergence for the second-order remainder?"
+  ]
+}
