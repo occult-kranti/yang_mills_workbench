@@ -5,7 +5,7 @@ Publication is authorized by the 2026-09-23 user request: execute the ten-invest
 After the tenth skeptical review and gate, regenerate the research network, site data and GitHub Pages files, build the addendum PDF, inspect the rendered pages and the desktop/mobile browser renders. Commit those reviewed sources, then run from a clean checkout:
 
 ```sh
-python -B research/round32/verify_release.py --baseline 1a686cd3f0f4c2ec8d41c11d8c8d6d3f7f9e3c0a --expected-tree <committed-tree-id> --receipt /absolute/fresh/external-receipt.json
+python -B research/round32/verify_release.py --baseline 1a686cdf9808aca9b5811dbf23e78bd2be1201f9 --expected-tree <committed-tree-id> --receipt /absolute/fresh/external-receipt.json
 ```
 
 (Use the full baseline SHA of the Round31 merge commit as recorded in `git log`.) The verifier archives the committed tree, validates all ten evidence admissions, rejects coherent evidence mutations, replays every producer in normal and optimized Python, replays the skeptic programs listed in `skeptic/programs.json`, verifies Round31 integrity, rebuilds network/site/Pages deterministically and verifies the final visual/source inventories. Hashes and fixtures establish provenance and executed controls; they do not replace the mathematical reports or constitute formal verification.
