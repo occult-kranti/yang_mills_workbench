@@ -1,0 +1,66 @@
+{
+  "schema": "hnm-round32-findings-v1",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "requested": 10,
+  "completed": 1,
+  "loops": [
+    {
+      "id": "av1",
+      "sequence": 1,
+      "subround": 1,
+      "title": "Hruday first-order local state lemma for the zero-selected AQ subfamily",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, 21 omitted anchored faces per factor grouped into whole stars phi_b=-(tau/3) sum W_f in normalized units delta=alpha/8), at either sign of tau with |tau|<=10^-8 (the cap values bound every smaller |tau| because each bound is increasing in |tau|), the unique untruncated ground state of every centered whole-star box Lambda_N, N>=2, has reduced density on the complete cover R={0,e_z} of the original xz Wilson loop satisfying ||rho_{N,R}-P_R||_1<=D uniformly in N. The bound follows from the product-ordering split psi=psi_out+delta, (P_R x 1)psi=psi_out, ||delta||<=eps||psi_out|| (straddling supports and the two-creation term included) by two independently proved inequalities: the explicit-density bound 2eps(1+eps)/(1+eps^2) (forward) and the fidelity bound 2eps/sqrt(1+eps^2) (reverse). Tier (ii), with the exact first-order face coefficient |tau|/144 and the self-consistent AM2 remainder t<=t_1/(1-352J): D_ii=585079838465912592144137406066050/42981220507576537932303142777593983768257 (~1.3612e-8; exact rational, certified by both inequalities), and the reverse's labelled 82-face refinement D_ii<=113902305553947264976096174312887/10^40 (~1.1390e-8; directed rational upper bound via the fidelity inequality); both meet 4/10^7 and 10^-6 at both signs. Tier (i), crude majorant t<=J_0G(R)=37/6250000: D_i=36133347268157653748322/1525878906463907516326874161 (~2.3680e-5; exact, forward) and D_i<=236800700911401877571290493559933441/10^40 (~2.3680e-5; directed, reverse), failing both targets and retained. Both tiers scale linearly (D(tau)/D(tau/100) in [99,101]). Consequences: |omega(W)|<=D, |omega(W^2)-1/4|<=D/2, with m^2<=D^2 charged. The on-site cutoff is removed for the ground vector itself in each fixed box (uniform-gap argument), and the bound passes by local trace-norm convergence to every subsequential limit of AQ1's centered whole-star construction, including AQ1's chosen state: uniform local closeness, not uniqueness, whole-sequence convergence or a rate in N. No Euclidean node certificate, interaction-induced shift or its sign, first-order coefficient, uniform Wilson, weak-coupling or continuum claim follows.",
+      "summary": "A volume-uniform local state bound linear in tau replaces the square-root reset bound: at the original cap the exact-first-order tier gives trace distance about 1.36e-8 on the Wilson cover, for every AQ1 subsequential limit.",
+      "limitations": [
+        "Only the AM2/AQ1 zero-selected patterned family, the cover R={0,e_z} and fixed spacing; nothing transfers to nonzero selected triples (non-Haar P_R), uniform Wilson theory, weak coupling or the continuum",
+        "Upper certificates only: no lower bound on ||rho_R-P_R||_1; value and sign of omega(W), the first-order coefficient 1/144 and any first-order vanishing are not claimed (AW1)",
+        "Uniform local closeness of all AQ1 subsequential limits (pairwise within 2D on R), not uniqueness, whole-sequence convergence or a rate in N",
+        "Inherited without re-proof: AM2 fixed point, multilinear majorant, cutoff-uniform and untruncated gap 1/2 (AM2 section 6); AQ1 trace-norm compactness and diagonal extraction; the I1 dictionary",
+        "Product-ordering split and normalization-trap location are shared panel premises; independence limited to the inequality, constants, enumeration, cutoff and passage steps; all agents are correlated model agents",
+        "Sign-blind: the tau=-10^-8 evaluation replays the same |tau| formula",
+        "Tier (i) fails 4/10^7 and 10^-6 and is retained as a limited-tier value; AT4 square-root bound not used",
+        "D_ii(rev)~1.1390e-8 rests on the fidelity inequality and the labelled 82-face refinement; D_ii(fwd)~1.3612e-8 is certified by both inequalities",
+        "Forward check.py implements 22 of 25 contract controls as exception-raising mutations; no_priority_or_continuum_claim, first_order_face_enumeration and av2_feasibility_threshold are positive exact checks; the forward sentence \"Every control is a damaging mutation that must raise an explicit exception.\" is not admitted",
+        "Reverse exports no six-name error ledger; the skeptic mapping in av1.md (N2) supplies it",
+        "Reverse remark \"no parity argument removes a first-order mean\" is not admitted (AW1 exclusion)",
+        "Forward attribution of a \"2(E_{0,L}-E_0)/gap form\" to the contract is incorrect wording; the Eckart inequality itself is correct",
+        "Both producers disclose undeclared protocol/code-style reads (tools README and freeze.py, AM2 and AT5 check.py); none carries premise weight",
+        "Scientific priority unverified"
+      ],
+      "model": "AM2/AQ1 zero-selected patterned family; both signs |tau|<=10^-8; centered whole-star boxes N>=2; cover R={0,e_z}; Haar product reference; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/av1-gate.json",
+      "contribution_id": "HNM-C-AV1",
+      "dependencies": [
+        "r29-am2",
+        "r29-aq1",
+        "r29-aq2",
+        "r31-at4"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Order the AM2 commuting nilpotent creation product so that creations meeting the cover R act last; split psi=psi_out+delta with delta orthogonal to psi_out.",
+        "Forward: write the reduced density on R explicitly and bound the trace distance by 2eps(1+eps)/(1+eps^2); reverse: compute the vacuum overlap 1/(1+e^2) and apply the pure-state-mixture inequality.",
+        "Evaluate the crude AM2 tier and the exact first-order tier (49 omitted faces per factor derived from the I1 table, face energy 24, self-consistent remainder) as exact rationals at both signs of tau=10^-8.",
+        "Remove the on-site spectral cutoff for the ground vector and pass the volume-uniform bound to every AQ1 subsequential limit by local trace-norm convergence.",
+        "Verify the linear tau-scaling against the square-root reset bound and the AV2 feasibility threshold 4/10^7."
+      ],
+      "applications": [
+        "Supplies the state term for the cap-level window certificate (AV2) and the expansion for the first-order Wilson mean (AW).",
+        "Gives uniform local closeness of all AQ-type subsequential states on the cover (AY)."
+      ],
+      "evidence": [
+        "research/round32/advisor/av1-gate.json",
+        "research/round32/forward/av1/report.md",
+        "research/round32/reverse/av1/report.md",
+        "research/round32/skeptic/av1.md",
+        "research/round32/skeptic/av1-independent-derivation.md"
+      ]
+    }
+  ],
+  "scope_statement": "Round32 in progress; fixed-lattice families only; the four-dimensional continuum Yang-Mills problem remains open.",
+  "summary": "Round32 in progress."
+}

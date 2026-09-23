@@ -46,6 +46,7 @@ def main():
         inherited.update(name for name in gate['bindings'] if not name.startswith('research/round32/'))
         contract = load(ROOT / f"research/round32/contracts/{row['id'].lower()}.json")
         inherited.update(name for name in contract['shared_premises'] if not name.startswith('research/round32/'))
+        inherited.update(name for name in contract.get('forward_additional_premises', []) if not name.startswith('research/round32/'))
     expected_reasons = {
         'removed-control': 'Removed or changed reviewed controls',
         'expanded-claim': 'Changed claim: continuum_claim',
