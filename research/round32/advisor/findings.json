@@ -2,7 +2,7 @@
   "schema": "hnm-round32-findings-v1",
   "human_author": "Hruday N M (BUNZEEY)",
   "requested": 10,
-  "completed": 1,
+  "completed": 2,
   "loops": [
     {
       "id": "av1",
@@ -58,6 +58,64 @@
         "research/round32/reverse/av1/report.md",
         "research/round32/skeptic/av1.md",
         "research/round32/skeptic/av1-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "av2",
+      "sequence": 2,
+      "subround": 1,
+      "title": "Hruday window-kernel certificate for the centered Wilson correlation at the original cap",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, whole stars phi_b=-(tau/3) sum W_f; original xz Wilson loop W with complete cover R={0,e_z} and seven incident stars; physical clock s=alpha*t_E/hbar, theta=alpha*t/hbar, G=H/alpha), at the original cap tau=+10^-8 and, as a replay of the same |tau| formula at the mirrored coupling, tau=-10^-8, every AQ1 subsequential state of the centered whole-star construction (each chosen state separately; no uniqueness, whole-sequence convergence or rate in N) has centered Euclidean Wilson correlation C(s)=<chi,e^{-sG}chi>, chi=(pi(W)-omega(W))Omega, satisfying at the single preregistered node s=1: |C(1)-d|<=r with the exact rational datum d=497870683678639429793424156500617766317/(4*10^40) (~0.012446767091965986, the midpoint of the directed enclosure of e^{-3}/4) and r<=R=1831967503411879425147166810021607/10^40 (~1.83196750341e-7, a directed upper bound of both producers' exact radii, which differ by 2.52e-41 and exceed the analytic bound by less than 10^-40), so C(1) in [497863355808625782275723567833377679889/(4*10^40), 99575602309730615462224949033571570549/(8*10^39)] ~ [0.0124465838952156, 0.0124469502887164], meeting the unchanged 10^-6 target (margin 5.4586). The bound is E=M_0(D+D^2)+k M_1=2(D+D^2)+49|tau|s/pi plus the arithmetic half-width 1/(4*10^40): the frozen C^2 window g(x)=e^{-sx} (x>=0), e^{sx}(1-2sx+2s^2x^2) (x<0) has ghat=4s^3/(pi(s-i theta)^3(s+i theta)) in L^1 with M_0=||ghat||_1=2, M_1=4s/pi, M_2=2s^2, proved by half-line transforms (forward) and by residues (reverse); the window lemma C(s)=int ghat c uses L^1 inversion, Fubini and AQ1 nonnegativity only (no AQ2 gap); the seven-star relative-unitary Duhamel slope k=49|tau|/4 holds for every real theta uniformly in the box; the state term uses the AV1-admitted forward tier-(ii) bound D=585079838465912592144137406066050/42981220507576537932303142777593983768257 (~1.3612e-8) by trace duality with no D/2 effect refinement, and m^2<=D^2 is charged. The free reference e^{-3}/4 lies inside the interval (reference_unresolved): no interaction shift, sign or coefficient of C(s) is claimed. Retained failures at unchanged tau and s: the AT4 Poisson certificate at L=10^4 (radius ~8.4152e-4) and the Poisson floor, at least 1.2650882233e-6 for every cutoff L even with D->0 (at least 1.2787e-6 with the admitted D), whose truncated absolute first moment (s/pi)log(1+L^2/s^2) diverges against the window's finite 4s/pi, both insufficient; the tier-(i) window radius ~4.7518e-5 is a retained limited-tier value and the C^1 window (radius ~1.7330e-7) is a preview only. The analytic formula crosses 10^-6 at s* in [6.236863446, 6.236863447] (~6.2368634460); only s=1 is certified. No grid or [0,128] claim, resolved interaction shift, uniform Wilson, weak-coupling, continuum, uniqueness or rate claim follows.",
+      "summary": "A C^2 window kernel replaces the Poisson cutoff and certifies the centered Wilson Euclidean node at the original cap: radius about 1.83e-7 at s=1 against the unchanged 10^-6 target, with the free reference inside.",
+      "limitations": [
+        "Only the AM2/AQ1 zero-selected patterned family, the cover R={0,e_z}, fixed spacing and the single node s=1 at tau=+-10^-8; nothing transfers to nonzero selected triples (non-Haar P_R), uniform Wilson theory, weak coupling or the continuum",
+        "Upper certificate only: the free value e^{-3}/4 lies inside the interval (reference_unresolved); no interaction shift, sign or coefficient of C(s) is claimed, and AV2 is not evidence for or against first-order vanishing (AW1)",
+        "Each AQ1 subsequential state separately; no uniqueness, whole-sequence convergence or rate in N",
+        "Sign-blind: the tau=-10^-8 value is a replay of the same |tau| formula at the mirrored coupling, not a second confirmation",
+        "Inherited without re-proof: AQ1 construction, G>=0, GNS implementation and local norm dynamics on compact theta intervals; AT4 F10-F12 (restated); AV1's D and its passage to AQ limits; the I1 dictionary; Fourier inversion and Fubini are cited, not machine-checked",
+        "The window, transform and constants are frozen shared premises; the forward read the skeptic's triage and loop-2 response (moment integrals) and the reverse read skeptic/av1.md (radius formula); independence is limited to the derivation routes (half-line transforms, residues, skeptic annihilator-jump plus Wallis and Leibniz), the code and the controls",
+        "The crossover s* is that of the analytic formula, not a node certificate; no grid or [0,128] claim; at s* the free value (<1.9e-9) is about 500 times smaller than the radius",
+        "The two producers' exact radii differ by 2.52e-41 (forward: 49|tau|/pi_lo with its Machin pi_lo; reverse: 49|tau|/floor_{10^-40}(pi) rounded up to 10^-40); both are valid directed bounds; the admitted headline is the common outward bound R=1831967503411879425147166810021607/10^40",
+        "Pre-registration mirror: contract controls list 24 ids but preregistration.controls_required.ids lists 23 (missing c1_window_preview_only); both producers executed the missing id as damaging mutations and iterate the 24-id list; non-blocking clerical defect; the frozen contract is not amended; freeze_contract.py now enforces equality (commit 2e1bfc8, after this freeze)",
+        "Tier (i) window radius ~4.7518e-5 retained as a limited-tier value; the contract preview 3.6-4.7e-5 is slightly low; the forward exports only a labelled lower value 2D_i+49|tau|/pi_hi",
+        "Forward sentence \"The centered shift is expected to be O(tau^2) (triage (c)3)\" is not admitted (AW1 obligation)",
+        "Forward reverse_premise_isolation control mutates the contract-declared lists only; the actual isolation is enforced by the reverse checker, freeze.py and replay_loop.py (27 files, verified)",
+        "Forward sign-convention control reads the free atom through the inversion identity g(+-3); the reverse evaluates it through its residue engine",
+        "Reverse reference constants 3 and 1/4 come from its calculator and are validated against the contract model string; target and D are read from the hash-checked snapshot in both",
+        "Both producers disclose undeclared protocol/code-style reads (tools README and freeze.py, AT5 check.py, their own direction's AV1 check.py); none carries premise weight",
+        "Scientific priority unverified"
+      ],
+      "model": "Same actual chosen AQ subsequential state as AT4 at tau=+10^-8 (and -10^-8 as a replay); selected triple (0,0,0); original xz Wilson; s=1; C^2 window; AV1 forward tier-(ii) state bound; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/av2-gate.json",
+      "contribution_id": "HNM-C-AV2",
+      "dependencies": [
+        "r32-av1",
+        "r31-at4",
+        "r31-at5",
+        "r29-aq1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Prove the window lemma: a C^2 window equal to e^{-sx} on the nonnegative spectral support has an L^1 transform; Fourier inversion and Fubini give C(s)=int ghat c and C_0(s)=g(3)/4.",
+        "Derive ghat=4s^3/(pi(s-i theta)^3(s+i theta)) and the moments M_0=2, M_1=4s/pi, M_2=2s^2 (forward: half-line transforms; reverse: residues).",
+        "Combine the seven-star Duhamel slope k=49|tau|/4, the AV1 linear state bound and the mean-square term into |C(s)-C_0(s)|<=2(D+D^2)+49|tau|s/pi.",
+        "Evaluate at tau=+10^-8, s=1 with directed pi and exp enclosures; retain the Poisson failures and the crossover s* about 6.24; report the free reference inside."
+      ],
+      "applications": [
+        "Supplies the first certified actual-state Euclidean node at the original coupling cap.",
+        "Provides a reusable exact calculator for the proved domain and the kernel template for the uniform model (AX2)."
+      ],
+      "evidence": [
+        "research/round32/advisor/av2-gate.json",
+        "research/round32/forward/av2/report.md",
+        "research/round32/reverse/av2/report.md",
+        "research/round32/skeptic/av2.md",
+        "research/round32/skeptic/av2-independent-derivation.md",
+        "research/round32/forward/av2/calculator.py"
       ]
     }
   ],
