@@ -1,0 +1,534 @@
+\section{AV1: a local state bound linear in the coupling}
+\label{sec:av1}
+
+\textbf{Contribution \projecttag{HNM-C-AV1}.} The AV1 contract, recorded under
+the title ``Hruday first-order local state lemma for the zero-selected AQ
+subfamily'', was frozen before production at the unchanged cap
+$\tau=\pm10^{-8}$. It preregistered the target $D_{\rm ii}\le4/10^7$ for the
+exact-first-order tier. That is the value AV2 needs, since
+$2(D+D^2)+49\cdot10^{-8}/\pi\le10^{-6}$ requires $D\le4.22\times10^{-7}$; the
+contract kept $10^{-6}$ as a secondary comparison. Two routes were assigned.
+The forward producer derives the reduced density explicitly. The reverse
+producer, under premise isolation, bounds only the vacuum overlap. The
+product-ordering split and the location of the normalization trap are shared
+panel premises. Independence is claimed only for the inequality, the
+constants, the enumeration, the cutoff step and the passage step.
+
+\subsection{Reviewed scope}
+The \repo{research/round32/advisor/av1-gate.json}{AV1 gate} records the
+verdict \recid{accepted_within_scope}. Its accepted statement, quoted verbatim
+below in the gate's ASCII notation, is the scope of every claim in this
+section.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0) with Haar product reference, 21 omitted anchored faces per
+factor grouped into whole stars phi\_b=-(tau/3) sum W\_f in normalized units
+delta=alpha/8), at either sign of tau with |tau|<=10\textasciicircum{}-8 (the
+cap values bound every smaller |tau| because each bound is increasing in
+|tau|), the unique untruncated ground state of every centered whole-star box
+Lambda\_N, N>=2, has reduced density on the complete cover R=\{0,e\_z\} of the
+original xz Wilson loop satisfying ||rho\_\{N,R\}-P\_R||\_1<=D uniformly in N.
+The bound follows from the product-ordering split psi=psi\_out+delta, (P\_R x
+1)psi=psi\_out, ||delta||<=eps||psi\_out|| (straddling supports and the
+two-creation term included) by two independently proved inequalities: the
+explicit-density bound 2eps(1+eps)/(1+eps\textasciicircum{}2) (forward) and
+the fidelity bound 2eps/sqrt(1+eps\textasciicircum{}2) (reverse). Tier (ii),
+with the exact first-order face coefficient |tau|/144 and the self-consistent
+AM2 remainder t<=t\_1/(1-352J):
+D\_ii=585079838465912592144137406066050/42981220507576537932303142777593983768257
+(\textasciitilde{}1.3612e-8; exact rational, certified by both inequalities),
+and the reverse\textquotesingle{}s labelled 82-face refinement
+D\_ii<=113902305553947264976096174312887/10\textasciicircum{}40
+(\textasciitilde{}1.1390e-8; directed rational upper bound via the fidelity
+inequality); both meet 4/10\textasciicircum{}7 and 10\textasciicircum{}-6 at
+both signs. Tier (i), crude majorant t<=J\_0G(R)=37/6250000:
+D\_i=36133347268157653748322/1525878906463907516326874161
+(\textasciitilde{}2.3680e-5; exact, forward) and
+D\_i<=236800700911401877571290493559933441/10\textasciicircum{}40
+(\textasciitilde{}2.3680e-5; directed, reverse), failing both targets and
+retained. Both tiers scale linearly (D(tau)/D(tau/100) in [99,101]).
+Consequences: |omega(W)|<=D, |omega(W\textasciicircum{}2)-1/4|<=D/2, with
+m\textasciicircum{}2<=D\textasciicircum{}2 charged. The on-site cutoff is
+removed for the ground vector itself in each fixed box (uniform-gap argument),
+and the bound passes by local trace-norm convergence to every subsequential
+limit of AQ1\textquotesingle{}s centered whole-star construction, including AQ1\textquotesingle{}s chosen state:
+uniform local closeness, not uniqueness, whole-sequence convergence or a rate
+in N. No Euclidean node certificate, interaction-induced shift or its sign,
+first-order coefficient, uniform Wilson, weak-coupling or continuum claim
+follows.
+\end{gatequote}
+The rest of this section derives that statement. The limitations recorded by
+the gate close the section (Section~\ref{sec:av1-limits}).
+
+\subsection{Product ordering and the exact split}
+\label{sec:av1-split}
+Fix a centered whole-star box $\Lambda_N$, $N\ge2$, and let $\psi=e^{-C}\Omega_0$
+be the AM2 ground vector of \eqref{eq:dict-fixed}. Because the creations
+commute and square to zero, $e^{-C}$ factorizes, and the factors whose supports
+meet $R$ can be placed last:
+\begin{equation}
+ e^{-C}=\prod_I(1-\hat c_I),\qquad
+ \psi=\prod_{I\cap R\ne\varnothing}(1-\hat c_I)\,\psi_{\rm out},\qquad
+ \psi_{\rm out}=\prod_{I\cap R=\varnothing}(1-\hat c_I)\,\Omega_0
+ =\Omega_R\otimes\varphi_{\rm out}.
+ \label{eq:av1-order}
+\end{equation}
+The factorization of $\psi_{\rm out}$ holds because every creation disjoint
+from $R$ acts as the identity on $\mathcal H_R$. In the remaining product, any
+two creations with overlapping supports multiply to zero. Pairwise disjoint
+supports that each meet the two-site set $R$ number at most two: one contains
+$0$ but not $e_z$, the other $e_z$ but not $0$. Hence
+\begin{equation}
+ \delta:=\psi-\psi_{\rm out}
+ =-\sum_{I\cap R\ne\varnothing}\hat c_I\,\psi_{\rm out}
+ +\sum_{\substack{I\ni0,\ J\ni e_z\\ I\cap J=\varnothing}}\hat c_I\hat c_J\,\psi_{\rm out}.
+ \label{eq:av1-delta}
+\end{equation}
+The second sum is the two-creation term. In the reverse form, with $C_R$ the
+sum of creations meeting $R$, $C_R^3=0$ and
+$\delta=-C_R\psi_{\rm out}+\tfrac12C_R^2\psi_{\rm out}$.
+
+Every term of $\delta$ contains a creation that is excited at some $x\in R$,
+and $P_xQ_x=0$. Therefore
+\begin{equation}
+ (P_R\otimes1)\psi=\psi_{\rm out},\qquad
+ \langle\psi_{\rm out},\delta\rangle=0,\qquad
+ \norm{\psi}^2=\norm{\psi_{\rm out}}^2+\norm{\delta}^2 .
+ \label{eq:av1-orth}
+\end{equation}
+For a creation meeting $R$,
+$\hat c_I\psi_{\rm out}=c_I\otimes\Omega_{R\setminus I}\otimes
+(\langle\Omega_{I\setminus R}|\otimes1)\varphi_{\rm out}$, and the partial
+vacuum bra is a contraction. The sum includes \emph{straddling} supports,
+which meet both $R$ and its complement. With $t=\norm{c}_a$ and
+$\norm{\psi_{\rm out}}=\norm{\varphi_{\rm out}}$,
+\begin{equation}
+ e:=\frac{\norm{\delta}}{\norm{\psi_{\rm out}}}\le\varepsilon
+ :=\sum_{I\cap R\ne\varnothing}\norm{c_I}
+ +\sum_{\substack{I\ni0,\ J\ni e_z\\ I\cap J=\varnothing}}\norm{c_I}\norm{c_J}
+ \le2t+t^2 .
+ \label{eq:av1-eps}
+\end{equation}
+The anchored maximum enters only at the two sites of $R$. A per-site maximum
+summed over the volume would be extensive; it is a rejected control.
+
+\subsection{Two inequalities}
+\label{sec:av1-inequalities}
+\paragraph{Forward: explicit reduced density.}
+Put $n=\norm{\psi_{\rm out}}$, $d=\norm{\delta}$,
+$\xi=(1_R\otimes\langle\varphi_{\rm out}|)\delta$ and
+$\sigma=\tr_{\rm out}|\delta\rangle\langle\delta|$. Direct partial traces and
+\eqref{eq:av1-orth} give, exactly,
+\begin{equation}
+ \rho_{N,R}=\frac{n^2P_R+|\Omega_R\rangle\langle\xi|+|\xi\rangle\langle\Omega_R|+\sigma}{n^2+d^2},
+ \qquad \langle\Omega_R,\xi\rangle=0,\quad P_R\sigma=0,\quad \tr\sigma=d^2 .
+ \label{eq:av1-density}
+\end{equation}
+Cauchy--Schwarz gives $\norm{\xi}\le nd$, and on $\mathrm{span}\{\Omega_R,\xi\}$
+the cross operator has trace norm $2\norm{\xi}$. Hence
+\begin{equation}
+ \norm{\rho_{N,R}-P_R}_1\le\frac{2nd+2d^2}{n^2+d^2}=\frac{2e(1+e)}{1+e^2}
+ \le f(\varepsilon):=\frac{2\varepsilon(1+\varepsilon)}{1+\varepsilon^2}.
+ \label{eq:av1-forward}
+\end{equation}
+The function $f$ increases on $[0,1+\sqrt2]$, and $f(\varepsilon)\ge2$ once
+$\varepsilon\ge1$, so the last step holds for every $\varepsilon$.
+
+\paragraph{Reverse: vacuum overlap and fidelity.}
+By \eqref{eq:av1-orth}, $\tr(\rho_{N,R}P_R)=n^2/(n^2+d^2)=1/(1+e^2)$ exactly.
+The pure-state mixture inequality admitted in AT4,
+$\norm{\rho-|\Omega\rangle\langle\Omega|}_1\le2\sqrt{1-\langle\Omega,\rho\,\Omega\rangle}$,
+then gives
+\begin{equation}
+ \norm{\rho_{N,R}-P_R}_1\le\frac{2e}{\sqrt{1+e^2}}
+ \le g(\varepsilon):=\frac{2\varepsilon}{\sqrt{1+\varepsilon^2}}\le f(\varepsilon).
+ \label{eq:av1-reverse}
+\end{equation}
+The last inequality is $(1+\varepsilon)^2\ge1+\varepsilon^2$. Before comparing
+the producers, the skeptic re-derived $g$ by a third route, purification plus
+partial-trace contractivity. Neither inequality estimates a norm of an outside
+product. The volume-dependent $n$ and $\varphi_{\rm out}$ cancel in every
+ratio, and $\varepsilon$ depends only on anchored sums at the two sites of
+$R$, which AM2 bounds independently of $N$ and of the on-site cutoff.
+
+\subsection{The normalization trap}
+\label{sec:av1-trap}
+Both $\langle\psi,A\psi\rangle$ and $\norm{\psi}^2=n^2(1+e^2)$ contain every
+creation in the box, and $n^2$ grows with the volume. Two shortcuts fail. The
+first keeps only creations meeting $R$ in the numerator and normalizes by
+$1+O(t^2)$ or by the full norm. This gives a volume-dependent value.
+Normalizing by the vacuum coefficient instead gives the global vacuum overlap,
+which decays with the volume. The second shortcut drops the outside creations
+everywhere. The value is then volume independent but wrong, because straddling
+creations contract their outside legs against $\varphi_{\rm out}$. The only
+legitimate cancellation is inside the ratio $e$.
+
+Exact three-site fixtures exhibit both failures. In the forward fixture, qubit
+sites $r,o,o'$ with $R=\{r\}$ carry creations $a$ on $\{r,o\}$ (straddling),
+$b$ on $\{o\}$ and $g$ on $\{o'\}$. Then
+\begin{equation}
+ \rho_r=\frac{1}{1+a^2+b^2}\begin{pmatrix}1+b^2&ab\\ ab&a^2\end{pmatrix},
+ \qquad
+ \langle\psi,P_r\psi\rangle=(1+g^2)(1+b^2).
+ \label{eq:av1-fixture}
+\end{equation}
+The decoupled creation $g$ cancels from $\rho_r$ but not from the unnormalized
+weight. At $a=\tfrac13$, $b=\tfrac12$ that weight runs through
+$\tfrac54,\tfrac{29}{20},\tfrac52$ for $g=0,\tfrac25,1$, while
+$\rho_r=\tfrac1{49}\bigl(\begin{smallmatrix}45&6\\6&4\end{smallmatrix}\bigr)$.
+The outside creation $b$ does not cancel: the off-diagonal vanishes when $b=0$.
+The straddling creation enters $e$ at first order but the off-diagonal only at
+second order. In the reverse producer's own fixture, naive restriction gives
+$e^2=\tfrac12$ instead of the actual $\tfrac58$. There the outside creation
+\emph{increases} the excitation of $R$, so naive restriction is neither exact
+nor a bound. With $k$ decoupled outside sites the local overlap stays
+$\tfrac8{13}$, while the unnormalized weight is $2^k$ and the global vacuum
+overlap is $\tfrac4{13}2^{1-k}$. The excitedness premise
+$c_I\in\bigotimes_{x\in I}Q_x\mathcal H_x$ is also necessary: a creation with
+a vacuum component gives $\langle\psi_{\rm out},\delta\rangle=-\tfrac5{16}\ne0$,
+and the split \eqref{eq:av1-orth} fails.
+
+\subsection{Derived face counts and the first-order collection}
+\label{sec:av1-counts}
+The first-order collection is the $k=0$ term of \eqref{eq:dict-fixed},
+$c^{(1)}_M=H_M^{-1}P_MV\Omega_0$. Five facts hold for every omitted face $f$.
+First, $\langle\Omega_0,W_f\Omega_0\rangle=0$. Second, $W_f\Omega_0$ carries
+spin $\tfrac12$ on the four distinct links of $f$ and lies in the sector of
+its owner set $M_f$, with $|M_f|\ge2$. Third, it is an eigenvector of $H_0$
+with eigenvalue $24$ in normalized units, that is $3$ in units of $\alpha$.
+Fourth, $\norm{W_f\Omega_0}^2=\tfrac14$. Fifth, distinct faces share at most
+one link, so their vectors are orthogonal. Hence
+\begin{equation}
+ c^{(1)}_M=-\frac{\tau}{72}\sum_{f:\,M_f=M}W_f\Omega_0,\qquad
+ \norm{c^{(1)}_M}=\frac{|\tau|\sqrt{n_M}}{144},
+ \label{eq:av1-first}
+\end{equation}
+where $n_M$ counts the faces with owner set $M$. The amplitude is
+$(\tau/3)/24$ in normalized units and $(\tau/24)/3$ in units of $\alpha$.
+Mixing them would give $\tau/576$ or $\tau/9$; both are rejected controls.
+
+The counts are derived from the I1 table (Table~\ref{tab:dict-classes}) by
+translation covariance. A face of class $k$ anchored at $b$ has owner set
+$b+K_k$, so it contains the factor $u$ exactly when $b=u-d$ for some
+$d\in K_k$. Therefore
+\begin{equation}
+ \#\{f:\ u\in M_f\}=\sum_{d\in S}\#\{k:\ d\in K_k\}=21+4+8+16=49 .
+ \label{eq:av1-49}
+\end{equation}
+Here $0$ lies in all 21 omitted classes. The offset $e_x$ lies in four: the
+two $xy$ classes with $r=3$ and the two $xz$ classes with $r=3$. The offset
+$e_y$ lies in eight: the four $xy$ classes with $q=1$ and the four $yz$
+classes with $q=1$. The offset $e_z$ lies in all sixteen $xz$ and $yz$
+classes. An owner set determines its anchor, its lexicographic minimum, and
+its class shape. The 49 faces therefore fall into the 15 owner sets of
+Table~\ref{tab:av1-owners}.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Owner sets containing a factor $u=0$, derived from the I1 table.}
+\label{tab:av1-owners}
+\begin{tabular}{llcc}
+\toprule
+Shape & Owner sets containing $0$ & $n_M$ each & Faces\\
+\midrule
+$\{0,e_x\}$ & $\{0,e_x\}$, $\{-e_x,0\}$ & 1 & 2\\
+$\{0,e_y\}$ & $\{0,e_y\}$, $\{-e_y,0\}$ & 3 & 6\\
+$\{0,e_z\}$ & $\{0,e_z\}$, $\{-e_z,0\}$ & 10 & 20\\
+$\{0,e_x,e_y\}$ & three translates & 1 & 3\\
+$\{0,e_x,e_z\}$ & three translates & 2 & 6\\
+$\{0,e_y,e_z\}$ & three translates & 4 & 12\\
+\midrule
+Total & 15 & & 49\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The faces meeting $R$ number $49+49-16=82$. The 16 faces whose owner sets
+contain both $0$ and $e_z$ are the classes containing $e_z$, anchored at $0$.
+Ten faces lie inside $R$, all with owner set $\{0,e_z\}$: the six $xz$ classes
+with $r\le2$ and the four $yz$ classes with $q=0$, anchored at $0$. The
+original $W$ is one of them. The other 72 faces meeting $R$ have straddling
+owner sets; of the 27 owner sets meeting $R$, 26 straddle. In a finite box
+only whole stars are retained, so every count is at most its bulk value. The
+explicit boxes $\Lambda_2$ and $\Lambda_3$ hold 64 and 216 stars (1344 and 4536
+faces), with the maximum 49 reached at every bulk site. The product
+$4\cdot21=84$ is used only as a labelled bound. Both producers derived the
+counts before comparing them with the contract's candidates. A brute-force
+fine-lattice enumeration reproduced them without the class table, and
+source-mutation replays confirm that editing the table or copying a count
+aborts the run.
+
+With orthogonality inside each owner set, the first-order anchored norm and
+the first-order sum over the cover obey
+\begin{equation}
+ \norm{c^{(1)}}_a\le\frac{|\tau|}{144}\bigl(11+2\sqrt3+3\sqrt2+2\sqrt{10}\bigr)
+ \le\frac{49|\tau|}{144}=:t_1,
+ \qquad
+ a_1:=\sum_{M\cap R\ne\varnothing}\norm{c^{(1)}_M}\le\frac{82|\tau|}{144}.
+ \label{eq:av1-t1}
+\end{equation}
+The admitted tier-(ii) values use the triangle forms $t_1$ and $82|\tau|/144$.
+The anchored norm remains an $\ell^1$ sum over owner sets; replacing it by
+$\sqrt{49}$ or $\sqrt{82}$ is the rejected root-$n$ misuse.
+
+\subsection{Two tiers at the cap}
+\label{sec:av1-tiers}
+\paragraph{Tier (i): crude majorant.}
+The fixed point gives $t\le J\,G(t)\le J\,G(R_a)\le28|\tau|\cdot\tfrac{148}{7}=592|\tau|$,
+and only this $t$ enters $\varepsilon_{\rm i}=2t+t^2$. At the cap,
+$t_{\rm i}=37/6250000$ and $\varepsilon_{\rm i}=462501369/39062500000000$.
+
+\paragraph{Tier (ii): exact first order with a self-consistent remainder.}
+Since $G$ is convex and increasing and $t\le R_a$,
+\begin{equation}
+ \norm{c-c^{(1)}}_a\le J\bigl(G(t)-16\bigr)\le J\,t\,G'(R_a)\le352\,J\,t,
+ \qquad
+ t\le t_1+352\,J\,t\ \Longrightarrow\ t\le T:=\frac{t_1}{1-352J}.
+ \label{eq:av1-selfconsistent}
+\end{equation}
+The remainder $\varrho:=352\,J\,T=T-t_1$ is charged at its positive majorant
+value and is never set to zero. Two tier mixtures are rejected: combining
+$c^{(1)}$ with the crude $t$, and using $t_1$ without
+\eqref{eq:av1-selfconsistent}. The forward producer uses the contract's global
+form $\varepsilon_{\rm fwd}=2T+T^2$. The reverse producer bounds the
+first-order sum over $R$ directly by the 82 faces and charges the remainder at
+both sites, $\varepsilon_{\rm rev}=a_1+2\varrho+T^2$. Since $2T=2t_1+2\varrho$
+and $a_1<2t_1$, $\varepsilon_{\rm rev}<\varepsilon_{\rm fwd}$, with ratio
+$\varepsilon_{\rm fwd}/\varepsilon_{\rm rev}\approx1.19510$. The forward form
+double-counts the 16 faces that contain both sites.
+
+At $\tau=\pm10^{-8}$ the inputs are $J_0=7/25000000$, $352J_0=77/781250$,
+$t_1=49/14400000000$, $T=49/14398580736$,
+$\varrho=3773/11248891200000000\approx3.35\times10^{-13}$ and
+$a_1=41/7200000000$. They give
+\begin{equation}
+ \varepsilon_{\rm fwd}=\frac{1411060914529}{207319127211110301696},\qquad
+ \varepsilon_{\rm rev}=\frac{461213409663624001}{80984034066839961600000000}
+ \approx5.6951153\times10^{-9}.
+ \label{eq:av1-epsvalues}
+\end{equation}
+The resulting bounds follow. The forward values are exact rationals, the
+reverse values directed rational upper bounds, and the decimals readable
+summaries:
+\begin{align}
+ D_{\rm i}^{\rm fwd}&=\frac{36133347268157653748322}{1525878906463907516326874161}
+ \approx2.36803504623\times10^{-5},\label{eq:av1-Di}\\
+ D_{\rm i}^{\rm rev}&\le\frac{236800700911401877571290493559933441}{10^{40}}
+ \approx2.3680070\times10^{-5},\\
+ D_{\rm ii}^{\rm fwd}&=\frac{585079838465912592144137406066050}{42981220507576537932303142777593983768257}
+ \approx1.36124528703\times10^{-8},\label{eq:av1-Dii}\\
+ D_{\rm ii}^{\rm rev}&\le\frac{113902305553947264976096174312887}{10^{40}}
+ \approx1.1390231\times10^{-8}.\label{eq:av1-Diirev}
+\end{align}
+Every value is the same at both signs, because only $|\tau|$ enters.
+Table~\ref{tab:av1-tiers} compares them with the targets.
+
+\begin{table}[htbp]
+\centering\small
+\caption{AV1 state bounds at $\tau=\pm10^{-8}$ against the preregistered target
+$4/10^7$ and the secondary comparison $10^{-6}$.}
+\label{tab:av1-tiers}
+\begin{tabular}{lrcc}
+\toprule
+Bound on $\norm{\rho_R-P_R}_1$ & Approximate value & $\le4/10^7$ & $\le10^{-6}$\\
+\midrule
+Round31 reset, $2\sqrt{49|\tau|/3}$ & $8.08290376865\times10^{-4}$ & no & no\\
+Tier (i), forward exact & $2.36803504623\times10^{-5}$ & no & no\\
+Tier (i), reverse directed & $2.3680070\times10^{-5}$ & no & no\\
+Tier (ii), forward exact (both inequalities) & $1.36124528703\times10^{-8}$ & yes & yes\\
+Tier (ii), reverse directed (fidelity) & $1.1390231\times10^{-8}$ & yes & yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tier (i) fails both targets. It is retained as a limited-tier value and is not
+retuned. Iterating the fixed-point bound once (forward) or four times
+(reverse) lowers it only to about $1.79\times10^{-5}$. Tier (ii) meets the
+target with margins $29.38$ (forward) and $35.12$ (reverse). The two tier-(ii)
+numbers have different backing. $D_{\rm ii}^{\rm fwd}$ is certified by both
+inequalities, because $g(\varepsilon_{\rm fwd})\le f(\varepsilon_{\rm fwd})$.
+$D_{\rm ii}^{\rm rev}$ needs the fidelity inequality: the forward formula
+evaluated at $\varepsilon_{\rm rev}$ exceeds it. Both are valid upper bounds
+on the same quantity. The gate binds $D_{\rm ii}^{\rm fwd}$ as the state
+premise for AV2.
+
+\subsection{From the cutoff box to the AQ state}
+\label{sec:av1-passage}
+\paragraph{Cutoff-vector removal.}
+AM2 removed the on-site cutoff for the eigenvalues and the gap only; a reduced
+density needs the ground vector. Fix $N$ and let
+$Q_L=\bigotimes_{x\in\Lambda_N}1_{[0,L]}(h_x)$. This is a finite-rank
+projection that commutes with $H_0$ and increases strongly to $I$. Let
+$\psi_L$ be the normalized ground vector of $Q_LHQ_L$. AM2 applies in each
+cutoff space with rank-independent constants. For $L\ge24$,
+$Q_LW_f\Omega_0=W_f\Omega_0$ and $c^{(1)}_L=c^{(1)}$; for smaller $L$ each
+face vector is kept or annihilated, so the counts only decrease. Hence
+$\norm{\rho_{L,R}-P_R}_1\le D$ for every $L$. Monotone convergence of
+$\langle Q_L\psi,H_0Q_L\psi\rangle$ and boundedness of $V$ in the fixed box
+give $E_0\le E_{0,L}\to E_0$. The untruncated gap $E_1-E_0\ge\tfrac12$ (AM2
+\S6) then gives the Eckart-type bound
+\begin{equation}
+ 1-|\langle\psi,\psi_L\rangle|^2\le\frac{E_{0,L}-E_0}{E_1-E_0}
+ \le2\,(E_{0,L}-E_0)\longrightarrow0 .
+ \label{eq:av1-eckart}
+\end{equation}
+The pure-state trace distance is $2\sqrt{1-|\langle\psi,\psi_L\rangle|^2}$,
+and partial trace is trace-norm contractive, so $\rho_{L,R}\to\rho_{N,R}$. The
+closed trace-norm ball keeps $\norm{\rho_{N,R}-P_R}_1\le D$ for the untruncated
+finite-volume ground state. The reverse route reaches the same conclusion from
+a Rayleigh quotient with the uniform cutoff gap $\tfrac12$. The gap is
+essential, because eigenvalue convergence alone does not control vectors. In
+$\mathrm{diag}(0,0,1)$ the cutoff ``ground'' $e_2$ has the exact ground energy
+yet is orthogonal to $e_1$; the alternating family $\mathrm{diag}(0,1/n)$,
+$\mathrm{diag}(1/n,0)$ has converging eigenvalues and alternating ground
+vectors.
+
+\paragraph{Passage to the AQ state.}
+AQ1 extracts subsequences $N_k$ along which every local density converges in
+trace norm. For any such subsequence with limit density $\rho_R$,
+\begin{equation}
+ \norm{\rho_R-P_R}_1\le\norm{\rho_R-\rho_{N_k,R}}_1+D\longrightarrow D .
+ \label{eq:av1-passage}
+\end{equation}
+The quantifier is \emph{every} subsequential limit of AQ1's centered
+whole-star construction at either sign, AQ1's chosen state included. Two such
+limits lie within $2D$ of each other on $R$, and the checker exhibits two
+distinct limits inside the same ball. This is uniform local closeness, not
+uniqueness, whole-sequence convergence or a rate in $N$. Trace-norm
+convergence is needed: a weak-* limit can lose mass, as
+$(1-D/2)|e_0\rangle\langle e_0|+(D/2)|e_n\rangle\langle e_n|$ shows, and
+AQ1's energy tightness excludes that loss.
+
+\subsection{Consequences, scaling and AV2 feasibility}
+\label{sec:av1-consequences}
+Trace duality with $\norm{W}\le1$ bounds the mean. For the second moment, a
+trace-zero difference has expectation at most half its trace norm against an
+effect, and $0\le W^2\le I$. Hence
+\begin{equation}
+ |\omega_\tau(W)|\le D,\qquad
+ \bigl|\omega_\tau(W^2)-\tfrac14\bigr|\le\tfrac D2,\qquad
+ m_\tau^2\le D^2 .
+ \label{eq:av1-consequences}
+\end{equation}
+At tier (ii) these bounds are about $1.3612\times10^{-8}$ and
+$6.806\times10^{-9}$. The mean-square charge $m_\tau^2\le D^2$ is kept in
+every later budget. Neither the value nor the sign of $\omega_\tau(W)$ is
+claimed. A candidate first-order mean $|\tau|/144\approx6.94\times10^{-11}$ is
+consistent with the bound but is neither implied nor claimed; it belongs to
+AW1.
+
+Every bound is increasing in $|\tau|$, so the cap values bound every smaller
+coupling. The preregistered scaling test compares the cap with $10^{-10}$:
+\begin{equation}
+ \frac{D(10^{-8})}{D(10^{-10})}\approx
+ \begin{cases}
+ 100.0098 & \text{tier (ii), forward},\\
+ 100.0117 & \text{tier (ii), reverse},\\
+ 100.0015 & \text{tier (i), forward},\\
+ 100.0003 & \text{tier (i), reverse},
+ \end{cases}
+ \qquad
+ \frac{2\sqrt{49\cdot10^{-8}/3}}{2\sqrt{49\cdot10^{-10}/3}}=10 .
+ \label{eq:av1-scaling}
+\end{equation}
+All tier ratios lie in $[99,101]$, so the bounds are linear in $\tau$. The
+Round31 bound has ratio exactly 10, and relabelling it as linear is a rejected
+control. At the cap, tier (ii) is about $5.9\times10^{4}$ times smaller than
+the Round31 reset bound.
+
+With a directed Machin bracket for $\pi$, the AV2 feasibility function
+$F(D)=2(D+D^2)+49\cdot10^{-8}/\pi$ satisfies
+$F(D_{\rm ii}^{\rm fwd})\le1.8320\times10^{-7}$,
+$F(D_{\rm ii}^{\rm rev})\le1.7876\times10^{-7}$ and
+$F(4/10^7)\le9.5597\times10^{-7}$. It meets $10^{-6}$ at $4.22\times10^{-7}$
+and fails at $4.23\times10^{-7}$ and at $D_{\rm i}$. This is arithmetic on the
+contract statement only; AV1 does not prove the window lemma.
+
+\subsection{Error ledger, controls and replays}
+\label{sec:av1-evidence}
+The forward producer exports the preregistered error terms at tier (ii).
+\begin{itemize}
+\item \recid{am2_remainder}: $\varrho\approx3.35\times10^{-13}$; not
+applicable to tier (i), which bounds the whole collection directly.
+\item \recid{two_creation}: $T^2\approx1.16\times10^{-17}$, inside
+$\varepsilon$.
+\item \recid{straddling}: inside the $2t$ term; at first order the 72
+straddling faces contribute at most $|\tau|/2$ to the sum over $R$.
+\item \recid{density}: the $\sigma$ and $d^2P_R$ part of $D$,
+$2\varepsilon^2/(1+\varepsilon^2)\approx9.3\times10^{-17}$.
+\item \recid{onsite_cutoff_vector}: no numeric cost; it is an exact
+per-box limit.
+\item \recid{arithmetic}: no numeric cost; every bound is an exact
+rational, and the only enclosures are directed upward
+($e^{1/8}<8/7$, $e^{8t}\le1/(1-8t)$, integer square-root brackets).
+\end{itemize}
+The reverse producer exports no six-name ledger. The skeptic's mapping
+supplies it: \recid{am2_remainder} is $2\varrho$, \recid{density} is not
+applicable to the fidelity route, and \recid{arithmetic} is outward rounding
+of at most $10^{-40}$ on $D$.
+
+The contract listed 25 controls. The reverse checker, with 54 exact checks,
+implements all 25 as damaging mutations that must raise explicit exceptions.
+The forward checker, with 43 checks, implements 22 of them as mutations. The
+other three are positive exact checks that match their prospective semantics:
+\recid{no_priority_or_continuum_claim},
+\recid{first_order_face_enumeration} and
+\recid{av2_feasibility_threshold}. The forward report's sentence claiming
+that every control is a mutation is therefore not admitted. The skeptic's
+pre-comparison package (71 exact checks) was hash-recorded before either
+producer was opened. The post-comparison review adds 39 checks, including 12
+source-mutation replays. Both producers reproduce their frozen outputs byte
+for byte under normal and optimized Python. The reverse input inventory is
+exactly \texttt{AGENTS.md}, the contract and its shared premises, as enforced
+by the freezing tool.
+
+\subsection{Limitations recorded by the gate}
+\label{sec:av1-limits}
+The AV1 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the AM2/AQ1 zero-selected patterned family, the cover R=\{0,e\_z\}
+and fixed spacing; nothing transfers to nonzero selected triples (non-Haar
+P\_R), uniform Wilson theory, weak coupling or the continuum
+\item Upper certificates only: no lower bound on ||rho\_R-P\_R||\_1; value and
+sign of omega(W), the first-order coefficient 1/144 and any first-order
+vanishing are not claimed (AW1)
+\item Uniform local closeness of all AQ1 subsequential limits (pairwise within
+2D on R), not uniqueness, whole-sequence convergence or a rate in N
+\item Inherited without re-proof: AM2 fixed point, multilinear majorant,
+cutoff-uniform and untruncated gap 1/2 (AM2 section 6); AQ1 trace-norm
+compactness and diagonal extraction; the I1 dictionary
+\item Product-ordering split and normalization-trap location are shared panel
+premises; independence limited to the inequality, constants, enumeration,
+cutoff and passage steps; all agents are correlated model agents
+\item Sign-blind: the tau=-10\textasciicircum{}-8 evaluation replays the same
+|tau| formula
+\item Tier (i) fails 4/10\textasciicircum{}7 and 10\textasciicircum{}-6 and is
+retained as a limited-tier value; AT4 square-root bound not used
+\item D\_ii(rev)\textasciitilde{}1.1390e-8 rests on the fidelity inequality
+and the labelled 82-face refinement; D\_ii(fwd)\textasciitilde{}1.3612e-8 is
+certified by both inequalities
+\item Forward check.py implements 22 of 25 contract controls as
+exception-raising mutations; no\_priority\_or\_continuum\_claim,
+first\_order\_face\_enumeration and av2\_feasibility\_threshold are positive
+exact checks; the forward sentence "Every control is a damaging mutation that
+must raise an explicit exception." is not admitted
+\item Reverse exports no six-name error ledger; the skeptic mapping in av1.md
+(N2) supplies it
+\item Reverse remark "no parity argument removes a first-order mean" is not
+admitted (AW1 exclusion)
+\item Forward attribution of a "2(E\_\{0,L\}-E\_0)/gap form" to the contract
+is incorrect wording; the Eckart inequality itself is correct
+\item Both producers disclose undeclared protocol/code-style reads (tools
+README and freeze.py, AM2 and AT5 check.py); none carries premise weight
+\item Scientific priority unverified
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round32/forward/av1/report.md}{AV1 forward},
+\repo{research/round32/reverse/av1/report.md}{AV1 reverse},
+\repo{research/round32/skeptic/av1.md}{independent model-agent review} and the
+\repo{research/round32/contracts/av1.json}{frozen contract}. AV1 by itself
+certifies no Euclidean datum; Section~\ref{sec:av2} uses its forward tier-(ii)
+value.

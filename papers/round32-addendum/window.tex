@@ -1,0 +1,464 @@
+\section{AV2: a window certificate at the original cap}
+\label{sec:av2}
+
+\textbf{Contribution \projecttag{HNM-C-AV2}.} After the AV1 review, the AV2
+contract fixed $\tau=+10^{-8}$, $s=1$ and the unchanged absolute point-error
+target $10^{-6}$, with $\tau=-10^{-8}$ as a control. Its recorded title is
+``Hruday window-kernel certificate for the centered Wilson correlation at the
+original cap''. The contract binds the AV1 forward tier-(ii) value
+\eqref{eq:av1-Dii} as the state premise and forbids tier (i) and the Round31
+square-root bound. It freezes the $C^2$ window, its Fourier sign convention
+and its constants as shared panel premises, and it registers the $C^1$ window
+as a preview-only control. The forward producer proves the constants by
+half-line transforms. The reverse producer, under premise isolation, proves
+them by residues.
+
+\subsection{Reviewed scope}
+The \repo{research/round32/advisor/av2-gate.json}{AV2 gate} records the
+verdict \recid{accepted_within_scope}. Its sub-label is
+\recid{reference_unresolved}, and its accepted statement, quoted verbatim
+below, is the scope of every claim in this section.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0) with Haar product reference, whole stars phi\_b=-(tau/3) sum
+W\_f; original xz Wilson loop W with complete cover R=\{0,e\_z\} and seven
+incident stars; physical clock s=alpha*t\_E/hbar, theta=alpha*t/hbar,
+G=H/alpha), at the original cap tau=+10\textasciicircum{}-8 and, as a replay
+of the same |tau| formula at the mirrored coupling,
+tau=-10\textasciicircum{}-8, every AQ1 subsequential state of the centered
+whole-star construction (each chosen state separately; no uniqueness,
+whole-sequence convergence or rate in N) has centered Euclidean Wilson
+correlation C(s)=<chi,e\textasciicircum{}\{-sG\}chi>,
+chi=(pi(W)-omega(W))Omega, satisfying at the single preregistered node s=1:
+|C(1)-d|<=r with the exact rational datum
+d=497870683678639429793424156500617766317/(4*10\textasciicircum{}40)
+(\textasciitilde{}0.012446767091965986, the midpoint of the directed enclosure
+of e\textasciicircum{}\{-3\}/4) and
+r<=R=1831967503411879425147166810021607/10\textasciicircum{}40
+(\textasciitilde{}1.83196750341e-7, a directed upper bound of both producers\textquotesingle{}
+exact radii, which differ by 2.52e-41 and exceed the analytic bound by less
+than 10\textasciicircum{}-40), so C(1) in
+[497863355808625782275723567833377679889/(4*10\textasciicircum{}40),
+99575602309730615462224949033571570549/(8*10\textasciicircum{}39)]
+\textasciitilde{} [0.0124465838952156, 0.0124469502887164], meeting the
+unchanged 10\textasciicircum{}-6 target (margin 5.4586). The bound is
+E=M\_0(D+D\textasciicircum{}2)+k M\_1=2(D+D\textasciicircum{}2)+49|tau|s/pi
+plus the arithmetic half-width 1/(4*10\textasciicircum{}40): the frozen
+C\textasciicircum{}2 window g(x)=e\textasciicircum{}\{-sx\} (x>=0),
+e\textasciicircum{}\{sx\}(1-2sx+2s\textasciicircum{}2x\textasciicircum{}2)
+(x<0) has ghat=4s\textasciicircum{}3/(pi(s-i theta)\textasciicircum{}3(s+i
+theta)) in L\textasciicircum{}1 with M\_0=||ghat||\_1=2, M\_1=4s/pi,
+M\_2=2s\textasciicircum{}2, proved by half-line transforms (forward) and by
+residues (reverse); the window lemma C(s)=int ghat c uses L\textasciicircum{}1
+inversion, Fubini and AQ1 nonnegativity only (no AQ2 gap); the seven-star
+relative-unitary Duhamel slope k=49|tau|/4 holds for every real theta
+uniformly in the box; the state term uses the AV1-admitted forward tier-(ii)
+bound
+D=585079838465912592144137406066050/42981220507576537932303142777593983768257
+(\textasciitilde{}1.3612e-8) by trace duality with no D/2 effect refinement,
+and m\textasciicircum{}2<=D\textasciicircum{}2 is charged. The free reference
+e\textasciicircum{}\{-3\}/4 lies inside the interval (reference\_unresolved):
+no interaction shift, sign or coefficient of C(s) is claimed. Retained
+failures at unchanged tau and s: the AT4 Poisson certificate at
+L=10\textasciicircum{}4 (radius \textasciitilde{}8.4152e-4) and the Poisson
+floor, at least 1.2650882233e-6 for every cutoff L even with D->0 (at least
+1.2787e-6 with the admitted D), whose truncated absolute first moment
+(s/pi)log(1+L\textasciicircum{}2/s\textasciicircum{}2) diverges against the
+window\textquotesingle{}s finite 4s/pi, both insufficient; the tier-(i) window radius
+\textasciitilde{}4.7518e-5 is a retained limited-tier value and the
+C\textasciicircum{}1 window (radius \textasciitilde{}1.7330e-7) is a preview
+only. The analytic formula crosses 10\textasciicircum{}-6 at s* in
+[6.236863446, 6.236863447] (\textasciitilde{}6.2368634460); only s=1 is
+certified. No grid or [0,128] claim, resolved interaction shift, uniform
+Wilson, weak-coupling, continuum, uniqueness or rate claim follows.
+\end{gatequote}
+
+\subsection{Spectral set-up}
+\label{sec:av2-spectral}
+Let $\eta$ be the spectral measure of $G_\tau$ in the vector $\chi_\tau$ of
+\eqref{eq:dict-observable}. AQ1 gives $G_\tau\ge0$, so $\eta$ is a positive
+measure on $[0,\infty)$ with finite mass
+$\eta([0,\infty))=\norm{\chi_\tau}^2=\omega_\tau(W^2)-m_\tau^2\le1$, and
+\begin{equation}
+ c_\tau(\theta)=\int_{[0,\infty)}e^{i\theta x}\,d\eta(x),\qquad
+ C_\tau(s)=\int_{[0,\infty)}e^{-sx}\,d\eta(x).
+ \label{eq:av2-spectral}
+\end{equation}
+Only this nonnegativity enters. The AQ2 gap, which would restrict
+$\supp\eta$ to $\{0\}\cup[1/16,\infty)$, is not used. The free reference has
+$\eta_0=\tfrac14\delta_3$ and the functions \eqref{eq:dict-reference}.
+
+\subsection{The window and its transform}
+\label{sec:av2-window}
+With the frozen convention
+$\hat g(\theta)=(2\pi)^{-1}\int_{\mathbb R}g(x)e^{-i\theta x}\,dx$ and $s>0$,
+the window and its transform are
+\begin{equation}
+ g(x)=\begin{cases}e^{-sx},&x\ge0,\\ e^{sx}\bigl(1-2sx+2s^2x^2\bigr),&x<0,\end{cases}
+ \qquad
+ \hat g(\theta)=\frac{4s^3}{\pi(s-i\theta)^3(s+i\theta)},
+ \qquad
+ |\hat g(\theta)|=\frac{4s^3}{\pi}\,(s^2+\theta^2)^{-2}.
+ \label{eq:av2-window}
+\end{equation}
+For $y=-x>0$ the left branch is $e^{-sy}(1+2sy+2s^2y^2)>0$. So $g$ is positive
+and continuous, lies in $L^1\cap C_0$ with $\norm{g}_1=8/s$, and is $C^2$ at
+the origin: both sides give the value, first and second derivatives
+$(1,-s,s^2)$. The third derivative jumps by $-8s^3$. That jump fixes the
+$\theta^{-4}$ decay $(2\pi)^{-1}\,8s^3/\theta^4=4s^3/(\pi\theta^4)$. As a
+check, $\hat g(0)=4/(\pi s)=\norm{g}_1/(2\pi)$.
+
+\paragraph{Forward route: half-line transforms.}
+Put $a=s-i\theta$ and $b=s+i\theta$, so $a+b=2s$ and $ab=s^2+\theta^2$. Laplace
+transforms of the two branches give
+\begin{equation}
+ 2\pi\hat g(\theta)=\frac1b+\frac1a+\frac{2s}{a^2}+\frac{4s^2}{a^3}
+ =\frac{8s^3}{a^3b},
+ \label{eq:av2-halfline}
+\end{equation}
+because $(2s-a)(a^2+2sa+4s^2)=8s^3-a^3$. For a general left polynomial
+$1+c_1y+c_2y^2$ the same calculation gives
+\begin{equation}
+ 2\pi\hat g(\theta)\,a^3b=(2s-c_1)\,a^2+(2sc_1-2c_2)\,a+4sc_2 .
+ \label{eq:av2-family}
+\end{equation}
+$C^1$ matching ($c_1=2s$) removes the $\theta^{-2}$ term, and $C^2$ matching
+($c_2=2s^2$) removes the $\theta^{-3}$ term. The Poisson kernel is the kinked
+member $c_1=c_2=0$, with $\hat g=s/(\pi(s^2+\theta^2))$. Its $\theta^{-2}$
+tail is exactly why its absolute first moment diverges. The $C^1$ window is
+$c_1=2s$, $c_2=0$, with $\hat g=2s^2/(\pi a^2b)$.
+
+\paragraph{Reverse route: residues.}
+The reverse producer starts from the target. The only dynamical input is a
+real-time bound linear in $|\theta|$, so $C(s)$ must be written as
+$\int K(\theta)c(\theta)\,d\theta$ with $\int K(\theta)e^{i\theta x}d\theta=e^{-sx}$
+on $x\ge0$. Values on $x<0$ are unconstrained. Exactness on $x\ge0$ requires
+exactly one simple pole at $\theta=is$ in the upper half-plane. Placing every
+other pole at $\theta=-is$ gives the family
+\begin{equation}
+ K_n(\theta)=\frac{(2s)^n}{2\pi\,(s+i\theta)(s-i\theta)^n},\qquad
+ |K_n(\theta)|\sim|\theta|^{-(n+1)},
+ \label{eq:av2-residue}
+\end{equation}
+whose normalization comes from the residue at $is$. Finite $M_0$, $M_1$ and
+$M_2$ force $n=3$: $n=1$ is Poisson and $n=2$ the $C^1$ window. The residue at
+the triple pole reproduces $e^{sx}(1-2sx+2s^2x^2)$ on $x\le0$, and only then
+was the result compared with the frozen window. The skeptic added two further
+routes: the annihilator identity
+$(\tfrac{d}{dx}+s)(\tfrac{d}{dx}-s)^3g=-8s^3\delta_0$ with Wallis integrals,
+and a Leibniz expansion of the lower residues.
+
+\paragraph{Constants.}
+All four routes give
+\begin{equation}
+ M_0=\norm{\hat g}_1=2,\qquad
+ M_1=\int_{\mathbb R}|\theta|\,|\hat g(\theta)|\,d\theta=\frac{4s}{\pi},\qquad
+ M_2=\int_{\mathbb R}\theta^2|\hat g(\theta)|\,d\theta=2s^2 .
+ \label{eq:av2-constants}
+\end{equation}
+The forward producer reads them from exact antiderivatives, each a rational
+function of $\theta$ plus $B\arctan(\theta/s)$, whose rational parts vanish at
+$\pm\infty$.
+The reverse producer uses the residue at $is$ for $M_0$ and $M_2$. For $M_1$
+it uses a keyhole contour,
+$\int_0^\infty\theta(s^2+\theta^2)^{-2}d\theta
+=-\sum_{\pm is}\mathrm{Res}\bigl[z\log z/(z^2+s^2)^2\bigr]=1/(2s^2)$. Note
+that $\int\hat g=g(0)=1$ while $\norm{\hat g}_1=2$. The transform is complex,
+not a positive mass-one kernel, and charging the state term with mass one
+would under-charge it by half; that mutation is a rejected control.
+
+\subsection{Window lemma}
+\label{sec:av2-lemma}
+$L^1$ inversion gives $g(x)=\int\hat g(\theta)e^{i\theta x}\,d\theta$ for
+almost every $x$. Both sides are continuous, so equality holds at every real
+$x$. Since
+$\int\!\!\int|\hat g(\theta)|\,d\theta\,d\eta(x)=M_0\,\eta([0,\infty))<\infty$,
+Fubini gives
+\begin{equation}
+ C_\tau(s)=\int_{[0,\infty)}g\,d\eta=\int_{\mathbb R}\hat g(\theta)\,c_\tau(\theta)\,d\theta,
+ \qquad
+ C_0(s)=\int_{\mathbb R}\hat g(\theta)\,\tfrac14e^{3i\theta}\,d\theta
+ =\tfrac14g(3)=\tfrac14e^{-3s}.
+ \label{eq:av2-lemma}
+\end{equation}
+Both hypotheses matter, and each is executed as a damaging control. A spectral
+atom at $x=-1$ would be read as $g(-1)=e^{-s}(1+2s+2s^2)$, which is $5/e$ at
+$s=1$, instead of the heat value $e$; the window under-reads every negative
+atom. The mirrored convention $\theta\to-\theta$ evaluates
+$g(-3)/4=25e^{-3}/4$ on the free atom. A window matched to $e^{-sx}$ only above
+an assumed gap is rejected, because only $G_\tau\ge0$ is used. Fourier
+inversion and Fubini's theorem are cited, not machine-checked; the checkers
+verify the transform algebra, the modulus, the antiderivatives and inversion
+at $x=0$ exactly.
+
+\subsection{Real-time comparison}
+\label{sec:av2-duhamel}
+The comparison restates AT4 with its domain argument. In each centered box
+$\Lambda_N$, $N\ge2$, split $G_N=A_N+B_N$, where $B_N=\sum_{b\in R-S}V_b$
+takes all seven incident stars whole. Then
+$\norm{B_N}\le7\cdot7|\tau|/8=49|\tau|/8$, and $A_N$ contains the free
+evolution on $R$ and everything disjoint from $R$. On the common domain the
+relative unitary $U(\theta)=e^{i\theta G_N}e^{-i\theta A_N}$ has the bounded,
+strongly continuous derivative $ie^{i\theta G_N}B_Ne^{-i\theta A_N}$.
+Vectorwise integration gives $\norm{U(\theta)-I}\le|\theta|\norm{B_N}$. Only
+then is the bounded $W$ inserted:
+\begin{equation}
+ \norm{\alpha^N_\theta(W)-\alpha^0_\theta(W)}\le2|\theta|\norm{B_N}\le k|\theta|,
+ \qquad k=\frac{49|\tau|}{4}.
+ \label{eq:av2-slope}
+\end{equation}
+The factor two is necessary. The exact fixture $U=\mathrm{diag}(u,\bar u)$
+with $u=(3+4i)/5$ and $X=\sigma_x$ gives
+$\norm{UXU^*-X}^2/\norm{U-I}^2=16/5$. The slope is local: an extensive star
+norm would grow like $(2N)^3$ and is rejected. AQ1's local norm convergence of
+the dynamics on compact intervals passes \eqref{eq:av2-slope} to the actual AQ
+evolution at every real $\theta$. Adding and subtracting the free evolution in
+the actual state, and then the local reference state, gives
+\begin{equation}
+ |c_\tau(\theta)-c_0(\theta)|
+ \le k|\theta|+D+m_\tau^2\le k|\theta|+D+D^2\qquad(\theta\in\mathbb R).
+ \label{eq:av2-compare}
+\end{equation}
+The state term uses full trace duality. The operator $W\alpha^0_\theta(W)$
+has free expectation $\tfrac14e^{3i\theta}$, which is not real at
+$\theta=\pi/6$. It is therefore not an effect, and the $D/2$ refinement of
+AT4 is not applied; exact $2\times2$ fixtures show that the refinement fails
+for such operators.
+
+\subsection{Certificate at the cap}
+\label{sec:av2-certificate}
+Subtract the two halves of \eqref{eq:av2-lemma} and integrate
+\eqref{eq:av2-compare} against $|\hat g|$ over the whole real line:
+\begin{equation}
+ \boxed{\;\bigl|C_\tau(s)-C_0(s)\bigr|\le M_0(D+D^2)+kM_1
+ =2(D+D^2)+\frac{49|\tau|s}{\pi}=:E(s).\;}
+ \label{eq:av2-bound}
+\end{equation}
+There is no real-time cutoff and no tail. Enclose $e^{-3}/4$ outward as
+$[f^-,f^+]$ and export $d=(f^-+f^+)/2$ and $r=E^+(1)+(f^+-f^-)/2$, where
+$E^+$ uses a lower bound $\pi^-$ in the dynamics term. Then
+$|C_\tau(1)-d|\le|d-e^{-3}/4|+|e^{-3}/4-C_\tau(1)|\le r$. At $\tau=+10^{-8}$,
+$s=1$ and $k=49/400000000$, the preregistered terms are those of
+Table~\ref{tab:av2-radius}. The state term is exactly
+\begin{equation}
+ M_0D=\frac{1170159676931825184288274812132100}{42981220507576537932303142777593983768257}.
+ \label{eq:av2-state}
+\end{equation}
+The dynamics term is about 85\% of the radius.
+
+\begin{table}[htbp]
+\centering\small
+\caption{AV2 radius at $\tau=+10^{-8}$, $s=1$. Decimals are rounded up; exact
+rationals are in the frozen outputs.}
+\label{tab:av2-radius}
+\begin{tabular}{llr}
+\toprule
+Preregistered term & Formula & Outward allowance\\
+\midrule
+\recid{state} & $M_0D$ & $2.72249057406\times10^{-8}$\\
+\recid{mean_square} & $M_0D^2$ & $3.70597746291\times10^{-16}$\\
+\recid{kernel_dynamics} & $kM_1=49|\tau|/\pi^-$ & $1.55971844231\times10^{-7}$\\
+\recid{arithmetic} & $(f^+-f^-)/2$ & $2.5\times10^{-41}$\\
+\midrule
+Complete radius & common outward bound $R$ & $1.83196750342\times10^{-7}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The exported datum, the admitted radius and the certified interval are
+\begin{align}
+ d&=\frac{497870683678639429793424156500617766317}{4\cdot10^{40}}
+ \approx0.012446767091965986,\label{eq:av2-datum}\\
+ r&\le R=\frac{1831967503411879425147166810021607}{10^{40}}
+ \approx1.832\times10^{-7}<10^{-6},\label{eq:av2-radius}\\
+ C_{10^{-8}}(1)&\ge\frac{497863355808625782275723567833377679889}{4\cdot10^{40}}
+ >0.0124465838952156,\label{eq:av2-lower}\\
+ C_{10^{-8}}(1)&\le\frac{99575602309730615462224949033571570549}{8\cdot10^{39}}
+ <0.0124469502887164.\label{eq:av2-upper}
+\end{align}
+The short decimals widen the exact endpoints outward. The target margin is
+$10^{-6}/R\approx5.4586$. The numerator of $d$ is $e^{-3}\cdot10^{40}$ rounded
+to the nearest integer, $m$ say. Both producers enclose $e^{-3}$ in
+$[m-1,m+1]/10^{40}$, which gives the arithmetic half-width $1/(4\cdot10^{40})$.
+The two producers' exact radii differ by $2.52\times10^{-41}$, because they
+round the dynamics term differently. The forward producer divides by its
+Machin lower bound for $\pi$; the reverse producer rounds $49|\tau|/\pi^-$ up
+to the $10^{-40}$ grid. Both are valid directed bounds, each exceeding the
+analytic $E(1)$ by less than $10^{-40}$. The gate therefore quotes the common
+outward bound $R$, which also equals the skeptic's pre-comparison radius digit
+for digit.
+
+At $\tau=-10^{-8}$ the same $|\tau|$ formula gives the identical datum and
+radius. This is a replay at the mirrored coupling, not a second confirmation,
+and it is not evidence for the planned link-flip lemma.
+
+\paragraph{The reference is unresolved.}
+The exact free enclosure $[f^-,f^+]$, of width $5\cdot10^{-41}$, lies inside
+$[d-r,d+r]$. The datum is the free midpoint, and the interaction enters only
+through the radius. Centering the interval on the computable free value does
+not make the interacting correlation equal to it. No interaction-induced
+shift, sign or coefficient of $C_\tau(s)$ is claimed, and AV2 is evidence
+neither for nor against first-order vanishing. For scale, the radius is about
+2600 times the size $|\tau|/144$ of the candidate first-order Wilson mean.
+
+\subsection{Retained failures and the crossover}
+\label{sec:av2-failures}
+Table~\ref{tab:av2-failures} lists the certificates evaluated at unchanged
+$\tau=10^{-8}$ and $s=1$ alongside the admitted one. The AT4 Poisson
+certificate at $L=10^4$ is reproduced to $10^{-15}$ and remains insufficient.
+With $D\to0$ and the tail $s/(\pi L)$, the Poisson dynamics-plus-tail cost
+obeys, for every $L>0$,
+\begin{equation}
+ \frac{ks}{\pi}\log\Bigl(1+\frac{L^2}{s^2}\Bigr)+\frac{s}{\pi L}
+ \ge\frac s\pi\Bigl[2k\log\frac Ls+\frac1L\Bigr]
+ \ge\frac{2ks}{\pi}\Bigl(1+\log\frac1{2ks}\Bigr)
+ \ge1.2650882233\times10^{-6},
+ \label{eq:av2-floor}
+\end{equation}
+with the minimum near $L=1/(2k)\approx4.08\times10^6$. The value at
+$L=4081633$ is at most $1.265088224\times10^{-6}$. With the admitted $D$
+added, no cutoff brings the Poisson certificate below $1.2787\times10^{-6}$.
+No choice of $L$ meets $10^{-6}$ at $s=1$. This proves the Round31 planning
+observation of Section~\ref{sec:checkpoint} and retains it as an insufficient
+outcome.
+
+The reason is the kernel's first moment:
+\begin{equation}
+ \int_{-L}^{L}|\theta|\,\frac{s}{\pi(s^2+\theta^2)}\,d\theta
+ =\frac s\pi\log\Bigl(1+\frac{L^2}{s^2}\Bigr)\xrightarrow[L\to\infty]{}\infty,
+ \qquad
+ \int_{-L}^{L}|\theta|\,|\hat g(\theta)|\,d\theta
+ =\frac{4s}{\pi}\,\frac{L^2}{s^2+L^2}\ \uparrow\ \frac{4s}{\pi}.
+ \label{eq:av2-moments}
+\end{equation}
+At $s=1$ the Poisson partial moment already exceeds $4/\pi$ at $L=8$, since
+$\log65>4$. At $L=10^{32}$ the Poisson dynamics term alone exceeds
+$5.7\times10^{-6}$. The window removes both the cutoff and its tail.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Certificates at $\tau=10^{-8}$, $s=1$, target $10^{-6}$. Only the last
+row is admitted as a certificate.}
+\label{tab:av2-failures}
+\begin{tabular}{llll}
+\toprule
+Kernel & State bound & Radius or lower bound & Outcome\\
+\midrule
+Poisson, $L=10^4$ (AT4) & Round31 reset & $\approx8.4152\times10^{-4}$ & insufficient\\
+Poisson, $L=10^4$ & AV1 tier (ii) & $\approx3.2563\times10^{-5}$ & insufficient\\
+Poisson, every $L$ & $D\to0$ & $\ge1.2650882233\times10^{-6}$ & insufficient\\
+Poisson, every $L$ & AV1 tier (ii) & $\ge1.2787\times10^{-6}$ & insufficient\\
+$C^2$ window & AV1 tier (i) & $\approx4.7518\times10^{-5}$ & limited tier\\
+$C^1$ window & AV1 tier (ii) & $\approx1.7330\times10^{-7}$ & preview only\\
+$C^2$ window & AV1 tier (ii) & $\le1.832\times10^{-7}$ & certified\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The $C^1$ window has $M_0=4/\pi$, $M_1=4s/\pi$ and $M_2=\infty$. Its preview
+radius is \emph{smaller} than the admitted one, so the rejection of a kernel
+switch after $D$ was known guards a real post-hoc gain. It is not vacuous. The
+frozen $C^2$ window also keeps the finite $M_2=2s^2$ that a later
+second-order refinement would need; that refinement is excluded here.
+
+The bound \eqref{eq:av2-bound} is linear in $s$ and crosses $10^{-6}$ at
+\begin{equation}
+ s^*=\frac{\pi\bigl(10^{-6}-2(D+D^2)\bigr)}{49|\tau|}\in[6.236863446,\ 6.236863447].
+ \label{eq:av2-crossover}
+\end{equation}
+This describes the analytic formula, not evaluated nodes. The preregistration
+forbids post-hoc node selection, so only $s=1$ is certified; there is no grid
+and no $[0,128]$ claim at the cap. At $s^*$ the free value, below
+$1.9\times10^{-9}$, is about 500 times smaller than the radius.
+
+\subsection{Pre-registration defect, controls and replays}
+\label{sec:av2-evidence}
+The gate records one clerical defect. The frozen contract lists 24 control ids,
+but its pre-registration mirror lists 23; \recid{c1_window_preview_only} is
+missing. Both producers iterate the full 24-id list and execute the missing
+control as damaging mutations. The skeptic recorded the defect before
+production, and the Jung/Pauli research assistant found it separately in its
+audit. The frozen contract is not amended. The contract-freezing tool
+now refuses a contract whose mirror differs from its control list (commit
+\texttt{2e1bfc8}, made after this contract froze).
+
+Each producer's checker runs 50 exact checks. The forward checker records 68
+rejected mutations and the reverse checker 80, and each of the 24 controls has
+at least one. The skeptic's pre-comparison package (69 checks) was
+hash-recorded before either producer's commit. The post-comparison review adds
+63 exact checks, including 24 source-edit mutations and two unmutated
+baselines. All four producer replays, forward and reverse under normal and
+optimized Python, reproduce the frozen outputs byte for byte. Each producer
+also exports a reusable calculator in the AT5 style. It accepts exact inputs
+only and computes $D$ from the AV1 tier-(ii) formula rather than taking it as
+an input. It admits only the $C^2$ window. At $\tau=0$ its radius reduces to
+the arithmetic term alone. In the skeptic's probe each calculator rejected 20
+malformed or out-of-domain calls.
+
+\subsection{Limitations recorded by the gate}
+\label{sec:av2-limits}
+The AV2 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the AM2/AQ1 zero-selected patterned family, the cover R=\{0,e\_z\},
+fixed spacing and the single node s=1 at tau=+-10\textasciicircum{}-8; nothing
+transfers to nonzero selected triples (non-Haar P\_R), uniform Wilson theory,
+weak coupling or the continuum
+\item Upper certificate only: the free value e\textasciicircum{}\{-3\}/4 lies
+inside the interval (reference\_unresolved); no interaction shift, sign or
+coefficient of C(s) is claimed, and AV2 is not evidence for or against
+first-order vanishing (AW1)
+\item Each AQ1 subsequential state separately; no uniqueness, whole-sequence
+convergence or rate in N
+\item Sign-blind: the tau=-10\textasciicircum{}-8 value is a replay of the
+same |tau| formula at the mirrored coupling, not a second confirmation
+\item Inherited without re-proof: AQ1 construction, G>=0, GNS implementation
+and local norm dynamics on compact theta intervals; AT4 F10-F12 (restated);
+AV1\textquotesingle{}s D and its passage to AQ limits; the I1 dictionary; Fourier inversion and
+Fubini are cited, not machine-checked
+\item The window, transform and constants are frozen shared premises; the
+forward read the skeptic\textquotesingle{}s triage and loop-2 response (moment integrals) and
+the reverse read skeptic/av1.md (radius formula); independence is limited to
+the derivation routes (half-line transforms, residues, skeptic
+annihilator-jump plus Wallis and Leibniz), the code and the controls
+\item The crossover s* is that of the analytic formula, not a node
+certificate; no grid or [0,128] claim; at s* the free value (<1.9e-9) is about
+500 times smaller than the radius
+\item The two producers\textquotesingle{} exact radii differ by 2.52e-41 (forward:
+49|tau|/pi\_lo with its Machin pi\_lo; reverse:
+49|tau|/floor\_\{10\textasciicircum{}-40\}(pi) rounded up to
+10\textasciicircum{}-40); both are valid directed bounds; the admitted
+headline is the common outward bound
+R=1831967503411879425147166810021607/10\textasciicircum{}40
+\item Pre-registration mirror: contract controls list 24 ids but
+preregistration.controls\_required.ids lists 23 (missing
+c1\_window\_preview\_only); both producers executed the missing id as damaging
+mutations and iterate the 24-id list; non-blocking clerical defect; the frozen
+contract is not amended; freeze\_contract.py now enforces equality (commit
+2e1bfc8, after this freeze)
+\item Tier (i) window radius \textasciitilde{}4.7518e-5 retained as a
+limited-tier value; the contract preview 3.6-4.7e-5 is slightly low; the
+forward exports only a labelled lower value 2D\_i+49|tau|/pi\_hi
+\item Forward sentence "The centered shift is expected to be
+O(tau\textasciicircum{}2) (triage (c)3)" is not admitted (AW1 obligation)
+\item Forward reverse\_premise\_isolation control mutates the
+contract-declared lists only; the actual isolation is enforced by the reverse
+checker, freeze.py and replay\_loop.py (27 files, verified)
+\item Forward sign-convention control reads the free atom through the
+inversion identity g(+-3); the reverse evaluates it through its residue engine
+\item Reverse reference constants 3 and 1/4 come from its calculator and are
+validated against the contract model string; target and D are read from the
+hash-checked snapshot in both
+\item Both producers disclose undeclared protocol/code-style reads (tools
+README and freeze.py, AT5 check.py, their own direction\textquotesingle{}s AV1 check.py); none
+carries premise weight
+\item Scientific priority unverified
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round32/forward/av2/report.md}{AV2 forward},
+\repo{research/round32/reverse/av2/report.md}{AV2 reverse},
+\repo{research/round32/skeptic/av2.md}{independent model-agent review} and the
+\repo{research/round32/contracts/av2.json}{frozen contract}. Sub-round~1 is
+complete; the next section will record AW1 once its gate exists.

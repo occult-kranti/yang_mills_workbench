@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\input{layout}
+% Edition-local helpers (layout.tex is shared and left unchanged).
+% gatequote: a reviewed gate record quoted verbatim in its own ASCII notation.
+\newenvironment{gatequote}{\begin{quote}\footnotesize\ttfamily\frenchspacing\raggedright}{\end{quote}}
+% recid: a record identifier (control id, sub-label, error-term name) printed verbatim.
+\newcommand{\recid}[1]{\texttt{\detokenize{#1}}}
+\title{Linear local state bounds, window certificates\\
+and first-order Wilson effects at the original coupling cap}
+\author{Hruday N M (BUNZEEY)}
+\date{23 September 2026\\\small Round32 scientific addendum: AV1--AZ2}
+\begin{document}
+\maketitle
+\begin{abstract}
+This interim edition covers sub-round~1 (AV1, AV2) of a ten-investigation
+cycle; later sections are added only as their reviewed gates land. The model is
+the zero-selected, nonuniform AQ family of SU(2) Kogut--Susskind form at fixed
+lattice spacing, with its infinite-volume subsequential states and physical
+energy generator, at the original coupling cap $|\tau|\le10^{-8}$. AV1 replaces
+the Round31 square-root local state bound by one linear in $\tau$. Ordering the
+commuting creation-operator expansion of each finite-volume ground vector so
+that creations meeting the 48-link Wilson cover act last makes the
+volume-dependent outside normalization cancel exactly. Two separately proved
+inequalities then bound the trace distance between the reduced density on the
+cover and its Haar reference, uniformly in the volume, after removal of the
+on-site cutoff and for every AQ subsequential limit. The exact-first-order tier
+gives $D\approx1.3612\times10^{-8}$ at both signs, about $5.9\times10^{4}$
+times below the Round31 bound; the crude tier, $D\approx2.368\times10^{-5}$,
+misses its preregistered target and is retained. AV2 replaces the Poisson
+kernel by a frozen $C^2$ window that equals $e^{-sx}$ on the nonnegative
+spectrum and whose Fourier transform has finite first moment $4s/\pi$, so no
+real-time cutoff or tail remains. At the unchanged cap and $s=1$ the centered
+Euclidean Wilson correlation lies within $1.832\times10^{-7}$ of an exact
+rational datum. This meets the $10^{-6}$ point-error target that Round31 missed
+at this coupling. The Poisson route remains insufficient at every cutoff. The
+free value $e^{-3}/4$ lies inside the certified interval, so no
+interaction-induced shift is resolved. These are analytic upper certificates
+for one patterned fixed-spacing model and one observable. They establish
+neither uniform Wilson theory nor a continuum Yang--Mills construction.
+\end{abstract}
+
+\section*{Status and reading guide}
+This is a separate scientific addendum; Draft03 and the Round31 addendum are
+unchanged. The Round32 cycle consists of ten prospectively contracted
+investigations in five sub-rounds of two. An expert panel of three
+methodological lenses (Newton/Tesla, Jung/Pauli and Penrose/Feynman), an
+advisor and a skeptic fixed the goals, directions and pre-registration rules in
+three deliberation loops before any production. After each sub-round one
+research assistant per lens tests assumptions and plans the next pair;
+assistant work counts as zero investigations. The present edition records
+sub-round~1. AV1 and AV2 are both accepted within their stated model scope, AV2
+with the sub-label \recid{reference_unresolved}. Sections for sub-rounds~2--5,
+the source comparison, the remaining limits and the contribution ledger are
+added only after their gates exist.
+
+Section~\ref{sec:model} fixes the model dictionary, the Round31 checkpoint and
+the frozen plan. Section~\ref{sec:av1} derives the linear state bound and
+Section~\ref{sec:av2} the window certificate. Each opens with its gate's
+accepted statement, quoted verbatim in the gate's ASCII notation as the
+reviewed scope, and closes with the limitations the gate recorded.
+
+The human project author is Hruday N M (BUNZEEY). The advisor, the skeptic,
+the three lenses, the research assistants and the forward and reverse
+producers are separate model-agent roles with shared mathematical ancestry.
+Their agreement is correlated model-agent work, not external human peer review
+or independent physical observation. Historical figures supply documented
+methodological lenses; none participated in or endorsed this work, and no
+historical, occult or mystical text supplied a premise. HNM contribution
+aliases identify project records; scientific priority is unverified.
+
+The AM2 creation-expansion gap and the AQ construction follow strategies
+present in Gauvin
+\href{https://arxiv.org/abs/2503.15539v2}{arXiv:2503.15539} from v2
+(2026-09-11; absent from v1 of 2025-03), which itself credits the
+creation-operator method to Bravyi, DiVincenzo and Loss (2008); the SU(2)
+selected-reference application and its explicit constants are this project's
+record; scientific priority is unverified and no independence is claimed.
+That sentence is fixed by the skeptic's
+\repo{research/round32/skeptic/gauvin-diff-record.md}{version-diff record}
+and adopted in the
+\repo{research/round32/advisor/deliberation-3.md}{plan freeze}.
+
+\input{model}
+\input{state-lemma}
+\input{window}
+% Sub-rounds 2--5 and the closing sections are added as their gates land.
+% \input{shift}
+% \input{uniform}
+% \input{state}
+% \input{continuum}
+% \input{history}
+% \input{limits}
+\appendix
+% \input{contributions}
+% \input{references}
+\end{document}
