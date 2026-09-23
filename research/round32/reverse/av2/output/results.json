@@ -1,0 +1,1053 @@
+{
+  "attribution": {
+    "duhamel_and_trace_duality": "established; AT4 F10-F12 project aliases",
+    "fourier_residues": "standard L^1 Fourier inversion and residue calculus (Jordan-type arc bounds, keyhole contour)",
+    "scientific_priority": "unverified"
+  },
+  "c1_window_preview": {
+    "M0": "4/pi",
+    "M1": "4*s/pi",
+    "M2": "infinity",
+    "certified": false,
+    "label": "preview_only_not_a_certificate",
+    "radius_preview": "1.733037577e-7",
+    "radius_preview_upper": "43325939440313527687214900681229/250000000000000000000000000000000000000",
+    "rule": "the frozen kernel is the C^2 window; a switch to the C^1 window after D is known is rejected",
+    "window": "g(x)=e^{-sx} (x>=0), e^{sx}(1-2sx) (x<0)"
+  },
+  "calculator_py_sha256": "90dbb8c34b534eaf8115b069da080291fe3a18aed5507704199eda385eaac741",
+  "certificate": {
+    "+": {
+      "costs": {
+        "arithmetic": "1/40000000000000000000000000000000000000000",
+        "kernel_dynamics": "1559718442300574290535060881050641/10000000000000000000000000000000000000000",
+        "mean_square": "684636834758596744169557031800397663098710698461298774673925205000/1847385316320917945047274832173127333764347246310990311556405519576330785480818049",
+        "state": "1170159676931825184288274812132100/42981220507576537932303142777593983768257"
+      },
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "interval": {
+        "lower": "114968181631888982671953648550432156833051207985173785603919444283897198245540898638555318690132937519147464381711719981/9236926581604589725236374160865636668821736231554951557782027597881653927404090245000000000000000000000000000000000000000",
+        "upper": "459886263927019051476600865097303878964852495369069550322535023036766884087403100937147417476409919650931013013430975609/36947706326418358900945496643462546675286944926219806231128110391526615709616360980000000000000000000000000000000000000000"
+      },
+      "radius": "2707479892624157757254179115050326529532685674881581371449180235618221047901276585228543175633914868231097316819137/14779082530567343560378198657385018670114777970487922492451244156610646283846544392000000000000000000000000000000000000000",
+      "radius_preview": "1.831967503e-7",
+      "target_met": true,
+      "tau": "1/100000000"
+    },
+    "-": {
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "radius": "2707479892624157757254179115050326529532685674881581371449180235618221047901276585228543175633914868231097316819137/14779082530567343560378198657385018670114777970487922492451244156610646283846544392000000000000000000000000000000000000000",
+      "role": "replay at the mirrored coupling",
+      "tau": "-1/100000000"
+    }
+  },
+  "check_py_sha256": "2be9631c7c843487588387cd8fed0bfb70dd6f89e7457d7f0d3e5dffeb329a83",
+  "checks": [
+    {
+      "contract_sha256": "686458cab7a4e6e65b63f0c6418d51496f66f1aada4897115ff14e8bbfad5687",
+      "id": "contract_snapshot_bound",
+      "passed": true,
+      "source": "inputs/research/round32/contracts/av2.json"
+    },
+    {
+      "calculator_py_sha256": "90dbb8c34b534eaf8115b069da080291fe3a18aed5507704199eda385eaac741",
+      "check_py_sha256": "2be9631c7c843487588387cd8fed0bfb70dd6f89e7457d7f0d3e5dffeb329a83",
+      "id": "check_py_hash_recorded_before_evaluation",
+      "passed": true
+    },
+    {
+      "id": "no_interpreter_cache_in_closure",
+      "passed": true
+    },
+    {
+      "ansatz": "K_n(theta)=N_n/((s+i theta)(s-i theta)^n): one simple upper pole at theta=is (exactness on x>=0), one lower pole of order n at theta=-is",
+      "family": {
+        "1": {
+          "coef_times_pi": "1",
+          "moments": {
+            "M0_finite": true,
+            "M1_finite": false,
+            "M2_finite": false,
+            "M3_finite": false
+          },
+          "residues": [
+            {
+              "half_plane": "upper",
+              "order": 1,
+              "pole": "(1)*i",
+              "residue_without_coef_over_pi": "e^{-1 x}[((-1/2)*i)]"
+            },
+            {
+              "half_plane": "lower",
+              "order": 1,
+              "pole": "(-1)*i",
+              "residue_without_coef_over_pi": "e^{1 x}[((1/2)*i)]"
+            }
+          ],
+          "x_neg": "e^{1x}[(1)]",
+          "x_nonneg": "e^{-1x}[(1)]"
+        },
+        "2": {
+          "coef_times_pi": "2",
+          "moments": {
+            "modulus": "odd total order 3: |K| = coef (s^2+theta^2)^(-3/2) is not rational; residues do not apply"
+          },
+          "residues": [
+            {
+              "half_plane": "upper",
+              "order": 1,
+              "pole": "(1)*i",
+              "residue_without_coef_over_pi": "e^{-1 x}[((-1/4)*i)]"
+            },
+            {
+              "half_plane": "lower",
+              "order": 2,
+              "pole": "(-1)*i",
+              "residue_without_coef_over_pi": "e^{1 x}[((1/4)*i)+((-1/2)*i)x]"
+            }
+          ],
+          "x_neg": "e^{1x}[(1)+(-2)x]",
+          "x_nonneg": "e^{-1x}[(1)]"
+        },
+        "3": {
+          "coef_times_pi": "4",
+          "moments": {
+            "M0_finite": true,
+            "M1_finite": true,
+            "M2_finite": true,
+            "M3_finite": false
+          },
+          "residues": [
+            {
+              "half_plane": "upper",
+              "order": 1,
+              "pole": "(1)*i",
+              "residue_without_coef_over_pi": "e^{-1 x}[((-1/8)*i)]"
+            },
+            {
+              "half_plane": "lower",
+              "order": 3,
+              "pole": "(-1)*i",
+              "residue_without_coef_over_pi": "e^{1 x}[((1/8)*i)+((-1/4)*i)x+((1/4)*i)x^2]"
+            }
+          ],
+          "x_neg": "e^{1x}[(1)+(-2)x+(2)x^2]",
+          "x_nonneg": "e^{-1x}[(1)]"
+        }
+      },
+      "id": "residue_kernel_family_reconstructed",
+      "minimal_order_for_finite_M0_M1_M2": 3,
+      "n1": "Poisson kernel s/(pi(s^2+theta^2)), g=e^{-s|x|}",
+      "n2": "C^1 window",
+      "n3": "C^2 window (frozen)",
+      "passed": true
+    },
+    {
+      "derivatives_at_0_minus": [
+        "1",
+        "-1",
+        "1",
+        "7"
+      ],
+      "derivatives_at_0_plus": [
+        "1",
+        "-1",
+        "1",
+        "-1"
+      ],
+      "g_L1_norm": "8",
+      "ghat_at_0_times_pi": "4",
+      "id": "window_regularity_C2_and_L1",
+      "passed": true,
+      "statement": "g in C^2 (the first jump is in g'''), g>0, ||g||_1=8/s, g->0 at +-infinity; ghat(0)=||g||_1/(2pi)=4/(pi s)",
+      "third_derivative_jump": "-8"
+    },
+    {
+      "id": "contract_semantics_match_derivation",
+      "note": "the contract window, transform and constants are compared only after the residue derivation",
+      "passed": true,
+      "transform_from_contract": {
+        "M0": 2,
+        "M1_coef": 4,
+        "M2_coef": 2,
+        "coef": 4,
+        "coef_power": 3,
+        "lower_order": 3,
+        "mod_coef": 4,
+        "mod_exponent": 2,
+        "mod_power": 3
+      },
+      "transform_from_residues": {
+        "M0": 2,
+        "M1_coef": 4,
+        "M2_coef": 2,
+        "coef": 4,
+        "coef_power": 3,
+        "lower_order": 3,
+        "mod_coef": 4,
+        "mod_exponent": 2,
+        "mod_power": 3
+      },
+      "window_from_contract": {
+        "0": 1,
+        "1": -2,
+        "2": 2
+      },
+      "window_from_residues": {
+        "0": 1,
+        "1": -2,
+        "2": 2
+      }
+    },
+    {
+      "ghat": "4s^3/(pi(s-i theta)^3(s+i theta))",
+      "id": "ghat_residue_form_and_modulus",
+      "modulus": "(4s^3/pi)(s^2+theta^2)^-2",
+      "modulus_identity_rational_points": [
+        "0",
+        "1",
+        "-3/7",
+        "5",
+        "-11/2"
+      ],
+      "passed": true,
+      "residues": [
+        {
+          "half_plane": "upper",
+          "order": 1,
+          "pole": "(1)*i",
+          "residue_without_coef_over_pi": "e^{-1 x}[((-1/8)*i)]"
+        },
+        {
+          "half_plane": "lower",
+          "order": 3,
+          "pole": "(-1)*i",
+          "residue_without_coef_over_pi": "e^{1 x}[((1/8)*i)+((-1/4)*i)x+((1/4)*i)x^2]"
+        }
+      ],
+      "uniqueness": "K_3 is L^1 and its inverse transform is g in L^1; the L^1 inversion theorem gives K_3 = (2pi)^-1 int g e^{-i theta x}dx (both continuous)",
+      "x_neg": "e^{1x}[(1)+(-2)x+(2)x^2]",
+      "x_nonneg": "e^{-1x}[(1)]"
+    },
+    {
+      "M0": "2",
+      "M0_route": "2 i (4s^3) Res_{theta=is}(theta-is)^-2(theta+is)^-2 = 2",
+      "M1": "4/pi",
+      "M1_keyhole_poles": [
+        {
+          "pole": "(1)*i",
+          "residue_log_free": "-1/4"
+        },
+        {
+          "pole": "(-1)*i",
+          "residue_log_free": "-1/4"
+        }
+      ],
+      "M1_route": "keyhole: int_0^inf theta R = -sum Res[theta R log theta] (log symbol cancels pole by pole) = 1/(2s^2)",
+      "M1_substitution_crosscheck": "1/2",
+      "M2": "2",
+      "M2_route": "2 i (4s^3) Res_{theta=is} theta^2 (theta-is)^-2(theta+is)^-2 = 2s^2",
+      "contract_values": {
+        "M0": 2,
+        "M1_coef": 4,
+        "M2_coef": 2,
+        "coef": 4,
+        "coef_power": 3,
+        "lower_order": 3,
+        "mod_coef": 4,
+        "mod_exponent": 2,
+        "mod_power": 3
+      },
+      "id": "constants_by_residues",
+      "passed": true,
+      "signed_integral_of_ghat": "1"
+    },
+    {
+      "id": "constants_scaling_in_s",
+      "passed": true,
+      "values": {
+        "1": {
+          "M0": "2",
+          "M1_times_pi": "4",
+          "M2": "2"
+        },
+        "1/3": {
+          "M0": "2",
+          "M1_times_pi": "4/3",
+          "M2": "2/9"
+        },
+        "2": {
+          "M0": "2",
+          "M1_times_pi": "8",
+          "M2": "8"
+        },
+        "7": {
+          "M0": "2",
+          "M1_times_pi": "28",
+          "M2": "98"
+        }
+      }
+    },
+    {
+      "id": "window_lemma_free_atom",
+      "passed": true,
+      "readout": "1/4*e^{-3}",
+      "statement": "int ghat c_0 = g(3)/4 = e^{-3s}/4 = C_0(s); c_0(theta)=e^{3i theta}/4"
+    },
+    {
+      "id": "fubini_and_support_premises",
+      "passed": true,
+      "statement": "|ghat(theta) e^{i theta x}| integrates to M_0 * eta(R) = 2||chi||^2 < inf; eta supported in [0,inf) by AQ1 H_num>=0 only (no AQ2 gap)"
+    },
+    {
+      "cover": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "endpoints": 36,
+      "id": "wilson_cover_and_incident_stars",
+      "incident_anchors": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "links": 48,
+      "owners": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "B_N_norm": "49/800000000",
+      "boxes": {
+        "1": {
+          "incident_retained": 4,
+          "retained_stars": 8
+        },
+        "2": {
+          "incident_retained": 7,
+          "retained_stars": 64
+        },
+        "3": {
+          "incident_retained": 7,
+          "retained_stars": 216
+        }
+      },
+      "id": "seven_star_duhamel_slope",
+      "k": "49/400000000",
+      "passed": true,
+      "statement": "relative unitary K=e^{i theta G_N}e^{-i theta A_N}: ||K-I||<=|theta| ||B_N||; ||K X K*-X||<=2||K-I|| ||X||"
+    },
+    {
+      "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+      "consequences": "|m|=|omega(W)|<=D, m^2<=D^2",
+      "formula": {
+        "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+        "J": "7/25000000",
+        "T": "49/14398580736",
+        "eps": "1411060914529/207319127211110301696",
+        "t1": "49/14400000000"
+      },
+      "gate_decision": "Bind the forward tier-(ii) value as the admitted state bound for AV2",
+      "id": "av1_state_bound_bound_and_reproduced",
+      "passed": true,
+      "preview": "1.361245287e-8"
+    },
+    {
+      "contract_preview": "about 1.83e-7; acceptance preview 1.7-2.0e-7",
+      "costs": {
+        "arithmetic": "1/40000000000000000000000000000000000000000",
+        "kernel_dynamics": "1559718442300574290535060881050641/10000000000000000000000000000000000000000",
+        "mean_square": "684636834758596744169557031800397663098710698461298774673925205000/1847385316320917945047274832173127333764347246310990311556405519576330785480818049",
+        "state": "1170159676931825184288274812132100/42981220507576537932303142777593983768257"
+      },
+      "costs_preview": {
+        "arithmetic": "2.500000000e-41",
+        "kernel_dynamics": "1.559718442e-7",
+        "mean_square": "3.705977462e-16",
+        "state": "2.722490574e-8"
+      },
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "id": "radius_plus_tau_itemized",
+      "interval": {
+        "lower": "114968181631888982671953648550432156833051207985173785603919444283897198245540898638555318690132937519147464381711719981/9236926581604589725236374160865636668821736231554951557782027597881653927404090245000000000000000000000000000000000000000",
+        "upper": "459886263927019051476600865097303878964852495369069550322535023036766884087403100937147417476409919650931013013430975609/36947706326418358900945496643462546675286944926219806231128110391526615709616360980000000000000000000000000000000000000000"
+      },
+      "passed": true,
+      "radius": "2707479892624157757254179115050326529532685674881581371449180235618221047901276585228543175633914868231097316819137/14779082530567343560378198657385018670114777970487922492451244156610646283846544392000000000000000000000000000000000000000",
+      "radius_preview": "1.831967503e-7",
+      "s": "1",
+      "target": "1/1000000",
+      "target_met": true,
+      "tau": "1/100000000"
+    },
+    {
+      "id": "radius_minus_tau_replay",
+      "passed": true,
+      "radius": "2707479892624157757254179115050326529532685674881581371449180235618221047901276585228543175633914868231097316819137/14779082530567343560378198657385018670114777970487922492451244156610646283846544392000000000000000000000000000000000000000",
+      "statement": "same |tau| formula: a replay at the mirrored coupling, not a second confirmation",
+      "tau": "-1/100000000"
+    },
+    {
+      "free_interval": {
+        "lower": "124467670919659857448356039125154441579/10000000000000000000000000000000000000000",
+        "upper": "248935341839319714896712078250308883159/20000000000000000000000000000000000000000"
+      },
+      "id": "free_reference_inside_reference_unresolved",
+      "passed": true,
+      "statement": "e^{-3}/4 lies inside the enclosure: no interaction shift, sign or coefficient is claimed"
+    },
+    {
+      "calculator_enclosure": {
+        "lower": "124467670919659857448356039125154441579/10000000000000000000000000000000000000000",
+        "upper": "248935341839319714896712078250308883159/20000000000000000000000000000000000000000"
+      },
+      "checker_enclosure": {
+        "lower": "124467670919659857448356039125154441579/10000000000000000000000000000000000000000",
+        "upper": "248935341839319714896712078250308883159/20000000000000000000000000000000000000000"
+      },
+      "exact_datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "id": "arithmetic_enclosure_e_minus_3",
+      "method": "calculator: reciprocal of the positive Taylor series with geometric tail; checker: alternating series; both halve and square outward",
+      "passed": true
+    },
+    {
+      "D_at4_upper": "404145188432738035156404146351370219/500000000000000000000000000000000000000",
+      "contract_stated": "0.000841519",
+      "costs": {
+        "bulk_dynamics": "7.182768872e-7",
+        "mean_square": "6.533333333e-7",
+        "state": "8.082903768e-4",
+        "tail": "3.185671730e-5"
+      },
+      "id": "retained_at4_poisson_L1e4",
+      "outcome": "insufficient (retained)",
+      "passed": true,
+      "radius": "210379676096566647472560766956442854908371063337251060164188516978800107961/250000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "radius_preview": "8.415187043e-4"
+    },
+    {
+      "costs": {
+        "bulk_dynamics": "7.182768872e-7",
+        "mean_square": "1.852988731e-16",
+        "state": "1.361245287e-8",
+        "tail": "3.183098905e-5"
+      },
+      "id": "retained_poisson_with_admitted_D_L1e4",
+      "passed": true,
+      "radius_preview": "3.256287839e-5",
+      "statement": "even with the AV1 tier-(ii) D the Poisson tail alone exceeds 10^-6 at L=10^4"
+    },
+    {
+      "L_star_bracket": [
+        4081632,
+        4081633
+      ],
+      "contract_stated": [
+        "1.2651e-6",
+        "L~4.08e6"
+      ],
+      "floor_lower": "6325441020977072771816363914781321/5000000000000000000000000000000000000000",
+      "floor_preview": [
+        "1.265088204e-6",
+        "1.265088223e-6"
+      ],
+      "floor_upper": "2530176446603933811073988058303659/2000000000000000000000000000000000000000",
+      "id": "retained_poisson_floor_optimized",
+      "passed": true,
+      "statement": "u(L)=2kL^3-L^2-1 has one positive root; F decreases before and increases after it; the lower bound holds for every L>0 with D->0",
+      "with_admitted_D_lower": "1.278700657e-6"
+    },
+    {
+      "id": "poisson_first_moment_divergent_window_finite",
+      "passed": true,
+      "poisson_kink": "g=e^{-s|x|}: g'(0+)-g'(0-)=-2s, so |ghat|~theta^-2",
+      "poisson_truncated_first_moment": "(s/pi) log(1+L^2/s^2) -> infinity",
+      "window_M1_times_pi": "4",
+      "window_decay": "|ghat|~theta^-4 (g''' jumps by -8s^3)",
+      "window_truncated_first_moment_times_pi": {
+        "1": "400/101",
+        "2": "40000/10001",
+        "4": "400000000/100000001",
+        "8": "40000000000000000/10000000000000001"
+      }
+    },
+    {
+      "contract_range": [
+        "6.1",
+        "6.3"
+      ],
+      "id": "crossover_s_star_enclosed",
+      "passed": true,
+      "rule": "E(s)=2(D+D^2)+49|tau|s/pi is linear in s; no grid claim beyond s*, no [0,128] claim at the cap",
+      "s_star_bracket": [
+        "3118431723/500000000",
+        "6236863447/1000000000"
+      ],
+      "s_star_preview": "6.2368634e0",
+      "witness_above": {
+        "analytic_radius_lower": "1.000000000e-6",
+        "s": "779607931/125000000"
+      },
+      "witness_below": {
+        "radius": "9.999999998e-7",
+        "s": "1247372689/200000000"
+      }
+    },
+    {
+      "D_i": "36133347268157653748322/1525878906463907516326874161",
+      "id": "tier_i_preview_retained_limited",
+      "note": "contract preview 3.6-4.7e-5; the exact tier-(i) value here is ~4.752e-5 (rounded preview)",
+      "outcome": "limited (retained)",
+      "passed": true,
+      "radius_preview": "4.751779428e-5"
+    },
+    {
+      "M0": "4/pi (substitution: (2s^2/pi) int (s^2+theta^2)^-3/2 = 4/pi)",
+      "M1": "4s/pi (substitution)",
+      "M2": "infinity (theta^2|ghat_1| ~ 1/|theta|)",
+      "id": "c1_window_preview_values",
+      "label": "preview_only_not_a_certificate",
+      "negative_atom": "3*e^{-1}",
+      "passed": true,
+      "radius_preview": "1.733037577e-7",
+      "residue_route_refused": "odd total order 3: |K| = coef (s^2+theta^2)^(-3/2) is not rational; residues do not apply",
+      "sign_mutation": "7/4*e^{-3}",
+      "window_neg": "e^{sx}((1)+(-2)x)"
+    },
+    {
+      "domain": "zero selected triple; |tau|<=10^-8; s>0; positive physical scales and target; tier ii forward; C2 window",
+      "id": "calculator_domain_and_exact_inputs",
+      "passed": true,
+      "physical_time_alpha5_hbar7": "7/5",
+      "rejected_cases": {
+        "E_star_zero": "E_star must be strictly positive",
+        "alpha_zero": "alpha must be strictly positive",
+        "fixed_design_changed_s": "changed AV2 fixed design (tau=+10^-8, s=1, target=10^-6)",
+        "fixed_design_changed_target": "changed AV2 fixed design (tau=+10^-8, s=1, target=10^-6)",
+        "fixed_design_changed_tau": "changed AV2 fixed design (tau=+10^-8, s=1, target=10^-6)",
+        "fixed_design_not_boolean": "fixed_design must be a Boolean",
+        "hbar_negative": "hbar must be strictly positive",
+        "kernel_c1": "C^1 window is preview-only; a kernel switch after D is known is rejected",
+        "kernel_poisson": "kernel 'poisson' is not the frozen C^2 window",
+        "lattice_spacing_zero": "lattice_spacing must be strictly positive",
+        "negative_cap_exceeded": "coupling exceeds the admitted cap |tau| <= 10^-8",
+        "nonzero_selected": "proved domain requires the selected triple to be exactly zero",
+        "positive_cap_exceeded": "coupling exceeds the admitted cap |tau| <= 10^-8",
+        "s_negative": "s must be strictly positive",
+        "s_zero": "s must be strictly positive",
+        "selected_float": "selected: exact rational input required; bool/float rejected",
+        "selected_malformed": "selected: expected integer, exact decimal or numerator/denominator text",
+        "selected_wrong_length": "selected must contain exactly three coefficients",
+        "state_tier_at4_sqrt": "state tier 'at4_sqrt' is not the AV1-admitted tier (ii) forward bound",
+        "state_tier_i": "state tier 'i' is not the AV1-admitted tier (ii) forward bound",
+        "state_tier_ii_reverse": "state tier 'ii_reverse' is not the AV1-admitted tier (ii) forward bound",
+        "target_float": "target: exact rational input required; bool/float rejected",
+        "target_zero": "target must be strictly positive",
+        "tau_bad_separator": "tau: expected integer, exact decimal or numerator/denominator text",
+        "tau_bool": "tau: exact rational input required; bool/float rejected",
+        "tau_empty": "tau: expected integer, exact decimal or numerator/denominator text",
+        "tau_float": "tau: exact rational input required; bool/float rejected",
+        "tau_infinity": "tau: expected integer, exact decimal or numerator/denominator text",
+        "tau_nan": "tau: expected integer, exact decimal or numerator/denominator text",
+        "tau_object": "tau: expected integer, exact decimal or numerator/denominator text",
+        "tau_zero_denominator": "tau: expected integer, exact decimal or numerator/denominator text"
+      }
+    },
+    {
+      "complete_anchors": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "id": "missing_incoming_stars",
+      "kind": "damaging_mutation_control",
+      "outgoing_only_slope": "7/200000000",
+      "passed": true,
+      "rejected_mutations": {
+        "origin_star_only": "star set [(0, 0, 0)] is not the seven incident anchors R-S",
+        "outgoing_anchors_only": "star set [(0, 0, 0), (0, 0, 1)] is not the seven incident anchors R-S"
+      }
+    },
+    {
+      "endpoints": 36,
+      "id": "full_original_wilson_cover",
+      "kind": "damaging_mutation_control",
+      "links": 48,
+      "passed": true,
+      "rejected_mutations": {
+        "extra_factor": "cover [(0, 0, -1), (0, 0, 0), (0, 0, 1)] is not the complete cover R={0,e_z} of the original xz Wilson",
+        "four_displayed_links": "the complete cover has 48 links, not 4",
+        "origin_factor_only": "cover [(0, 0, 0)] is not the complete cover R={0,e_z} of the original xz Wilson"
+      }
+    },
+    {
+      "free_exponent_for_scales": [
+        "3",
+        "3",
+        "3"
+      ],
+      "id": "wrong_delta_alpha_hbar_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "energy_3_with_normalized_clock": "the clock s=alpha t_E/hbar pairs with G=H/alpha energies, not delta units",
+        "exponent_24_with_alpha_clock": "free Wilson energy 24 is not 3 in alpha units",
+        "normalized_star_norm_in_alpha_clock": "star norm 7|tau| is not 7|tau|/8 in G=H/alpha units",
+        "slope_98_tau_eightfold": "slope 49/50000000 differs from 2*7*(7|tau|/8)=49/400000000"
+      },
+      "statement": "s=alpha t_E/hbar; free energy 3 alpha; u=s/8 with exponent 24 forbidden"
+    },
+    {
+      "exact_control": {
+        "scalar": "-51/10000",
+        "uncentered_residue": "1/16",
+        "vector": "1/10000"
+      },
+      "id": "vector_versus_scalar_centering",
+      "kind": "damaging_mutation_control",
+      "note": "g(0)=1: an uncentered readout keeps m^2",
+      "passed": true,
+      "rejected_mutations": {
+        "scalar_subtraction": "the certified readout uses the vector-centered chi=(W-m)Omega, not scalar centering",
+        "uncentered": "the certified readout uses the vector-centered chi=(W-m)Omega, not uncentered centering"
+      },
+      "window_readout_of_vacuum_atom": "1/16*e^{0}"
+    },
+    {
+      "id": "first_order_mean_charged",
+      "kind": "damaging_mutation_control",
+      "mean_square_term": "684636834758596744169557031800397663098710698461298774673925205000/1847385316320917945047274832173127333764347246310990311556405519576330785480818049",
+      "passed": true,
+      "rejected_mutations": {
+        "mean_square_dropped": "itemized terms must be state, mean_square, kernel_dynamics and arithmetic; got ['arithmetic', 'kernel_dynamics', 'state']",
+        "zero_mean_assumed": "mean-square term is not M_0*D^2 (m^2<=D^2 charged)"
+      },
+      "statement": "|m|<=D by trace duality; m^2<=D^2 is charged at M_0"
+    },
+    {
+      "at4_sqrt_ratio": [
+        "1.00081e1",
+        "1.00081e1"
+      ],
+      "id": "tau_scaling_exponent",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "at4_square_root_state_bound_labelled_linear": "E(tau)/E(tau/100) in [1.00081e1,1.00081e1] is not linear scaling [99,101]"
+      },
+      "window_ratio": [
+        "1.0000145e2",
+        "1.0000145e2"
+      ]
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "at5_coupling_as_cap_node": "coupling 1/100000000000000 is a model change, not the frozen cap",
+        "crossover_node_as_frozen_node": "Euclidean node s=6 is not the frozen s=1",
+        "finite_box_provenance": "state provenance finite_volume_box is not the AQ1 centered whole-star subsequence",
+        "finite_graph_model": "model id finite_graph is not AQ_patterned_zero_selected",
+        "nonzero_selected_triple": "nonzero selected triple is a different model (P_R not Haar)"
+      }
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "damaging_mutation_control",
+      "note": "each tampered copy is rehashed coherently; semantic comparison with the gate, the selection record and the residue derivation still rejects it",
+      "passed": true,
+      "rejected_mutations": {
+        "byte_change_without_rehash": "contract bytes do not match the bound hash",
+        "control_removed": "controls list lost a new-control id",
+        "l1_norm_one": "contract transform or constants differ from the residue derivation: {'coef': 4, 'coef_power': 3, 'lower_order': 3, 'mod_coef': 4, 'mod_power': 3, 'mod_exponent': 2, 'M0': 1, 'M1_coef': 4, 'M2_coef': 2}",
+        "slope_two_stars": "contract Duhamel slope differs from the seven-star derivation",
+        "state_bound_tier_i": "contract state bound differs from the AV1 gate-bound tier (ii) value",
+        "target_relaxed_1e-3": "contract target differs from the unchanged 10^-6 of the selection record",
+        "tau_1e-14": "contract tau differs from the AV1-admitted cap",
+        "window_c1": "contract window differs from the residue-reconstructed C^2 window"
+      }
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "at4_poisson_relabelled_accepted": "recorded outcome accepted_within_scope differs from the evidence-derived insufficient",
+        "lemma_failure_relabelled_limited": "recorded outcome limited differs from the evidence-derived insufficient",
+        "poisson_floor_relabelled_limited": "recorded outcome limited differs from the evidence-derived insufficient",
+        "tier_i_relabelled_accepted": "recorded outcome accepted_within_scope differs from the evidence-derived limited"
+      },
+      "retained": {
+        "at4_poisson_L1e4": "insufficient",
+        "poisson_floor": "insufficient",
+        "tier_i_window": "limited"
+      }
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "kind": "damaging_mutation_control",
+      "note": "every Boolean is decided on Fraction or Gaussian-rational values; decimal strings are previews",
+      "passed": true,
+      "rejected_mutations": {
+        "bool_parse": "non-exact numeric input rejected: True",
+        "float_radius_admission": "admission requires exact rationals, not floating values",
+        "float_tau_to_calculator": "tau: exact rational input required; bool/float rejected",
+        "nan_string": "malformed rational input rejected: 'NaN'",
+        "zero_denominator": "malformed rational input rejected: '1/0'"
+      }
+    },
+    {
+      "id": "root_n_misuse",
+      "kind": "damaging_mutation_control",
+      "linear_radius_preview": "1.831967503e-7",
+      "passed": true,
+      "rejected_mutations": {
+        "root_sum_square_of_terms": "worst-case bounds of one integral add linearly; root-sum-square is rejected",
+        "seven_stars_in_quadrature": "incident star norms add by the triangle inequality, not in quadrature"
+      },
+      "rss_radius_preview": "1.583300719e-7"
+    },
+    {
+      "id": "no_priority_or_continuum_claim",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "continuum_claim_true": "claim flag continuum_claim must be false in AV2",
+        "grid_claim_true": "claim flag grid_claim must be false in AV2",
+        "node_flag_flipped": "euclidean_node_certified must equal (radius<=10^-6)",
+        "priority_claim_true": "claim flag scientific_priority_verified must be false in AV2",
+        "resolved_shift_true": "claim flag resolved_interaction_shift must be false in AV2",
+        "uniform_wilson_true": "claim flag uniform_wilson_claim must be false in AV2"
+      }
+    },
+    {
+      "id": "kernel_identity_on_support",
+      "identity": "int ghat(theta) e^{i theta x} dtheta = e^{-sx} for every x>=0 (upper residue at theta=is)",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "normalization_doubled": "kernel does not reproduce e^{-sx} on the nonnegative support: gives e^{-1x}[(2)]",
+        "poles_at_plus_minus_2is": "kernel does not reproduce e^{-sx} on the nonnegative support: gives e^{-2x}[(1)]",
+        "poles_swapped_theta_to_minus_theta": "kernel does not reproduce e^{-sx} on the nonnegative support: gives e^{-1x}[(1)+(2)x+(2)x^2]",
+        "real_axis_pole": "pole on the real axis: kernel not integrable"
+      }
+    },
+    {
+      "heat_value_claimed": "e^{s}",
+      "id": "kernel_negative_atom_misread",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "negative_atom_as_heat_value": "window readout at x=-1 is 5*e^{-1}, not the claimed 1*e^{1}",
+        "negative_support_admitted": "spectral atom at -1<0: the window identity holds only on the nonnegative support (AQ1 H>=0)"
+      },
+      "statement": "an atom at x=-1 returns g(-1)=e^{-s}(1+2s+2s^2), not e^{s}; nonnegativity (AQ1) is essential",
+      "window_value_at_minus_1": "5*e^{-1}"
+    },
+    {
+      "M0": "2",
+      "M1": "4/pi",
+      "id": "kernel_l1_and_first_moment",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "first_moment_without_pi": "M1 claimed 4*pi^0 differs from the residue-derived 4*pi^-1",
+        "one_sided_first_moment": "M1 claimed 2*pi^-1 differs from the residue-derived 4*pi^-1",
+        "probability_kernel_mass_one": "M0 claimed 1*pi^0 differs from the residue-derived 2*pi^0",
+        "signed_integral_as_l1_norm": "M0 claimed 1*pi^0 differs from the residue-derived 2*pi^0"
+      },
+      "signed_integral": "1"
+    },
+    {
+      "id": "poisson_kink_divergence",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "poisson_first_moment_finite": "moment 1 diverges: |theta|^1 |K| decays like |theta|^-1",
+        "poisson_moment_bounded_by_1e6": "Poisson truncated first moment at L=10^682190 is >= 1.00000e6 > claimed bound 1.00000e6",
+        "poisson_moment_bounded_by_window_M1": "Poisson truncated first moment at L=10^2 is >= 2.93174e0 > claimed bound 1.27323e0"
+      },
+      "window_first_moment_finite": true
+    },
+    {
+      "M1_times_pi_over_s": {
+        "1": "4",
+        "1/3": "4",
+        "2": "4",
+        "7": "4"
+      },
+      "free_exponent": "-3s (linear in s)",
+      "id": "window_linear_in_s",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "M1_independent_of_s": "M1 at s=2 claimed 4*pi^-1 differs from the residue-derived 8*pi^-1",
+        "M1_quadratic_in_s": "M1 at s=7 claimed 98*pi^-1 differs from the residue-derived 28*pi^-1"
+      }
+    },
+    {
+      "id": "local_not_extensive_duhamel",
+      "kind": "damaging_mutation_control",
+      "local_slope": "49/400000000",
+      "passed": true,
+      "rejected_mutations": {
+        "extensive_box_2": "the Duhamel slope must be local (seven incident stars), not the extensive total norm of box N=2",
+        "extensive_box_3": "the Duhamel slope must be local (seven incident stars), not the extensive total norm of box N=3"
+      },
+      "retained_stars_by_box": {
+        "1": 8,
+        "2": 64,
+        "3": 216
+      }
+    },
+    {
+      "id": "tau_zero_null_replay",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "poisson_tail_preview": "3.183098861e-5",
+      "poisson_tail_tau0": "12732395447351626861510701069801149/400000000000000000000000000000000000000",
+      "rejected_mutations": {
+        "poisson_tail_dropped": "the Poisson comparison at tau=0 keeps its itemized tail s/(pi L)",
+        "window_bypass_branch": "the window null replay must use the unchanged formula, not a bypass branch",
+        "window_with_poisson_tail_floor": "window radius at tau=0 must equal the arithmetic term alone"
+      },
+      "window_arithmetic_tau0": "1/40000000000000000000000000000000000000000",
+      "window_radius_tau0": "1/40000000000000000000000000000000000000000"
+    },
+    {
+      "correct_readout": "1/4*e^{-3}",
+      "id": "window_fourier_sign_convention",
+      "kind": "damaging_mutation_control",
+      "mutated_readout": "25/4*e^{-3}",
+      "passed": true,
+      "rejected_mutations": {
+        "theta_to_minus_theta_free_atom": "window readout at x=3 is 25*e^{-3}, not the claimed 1/4*e^{-3}",
+        "theta_to_minus_theta_kernel": "kernel does not reproduce e^{-sx} on the nonnegative support: gives e^{-1x}[(1)+(2)x+(2)x^2]"
+      }
+    },
+    {
+      "fixture": {
+        "X": "diag(1,(-7+24i)/25)",
+        "abs_trace_squared": "16/625",
+        "half_trace_norm_squared": "1/100",
+        "rho_minus_P": "diag(-1/10,1/10)"
+      },
+      "id": "state_term_not_effect",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "half_D_in_radius": "state term 1.361245287e-8 is not M_0*D",
+        "half_D_on_complex_operator": "the D/2 effect refinement needs 0<=A<=I; W alpha^0_theta(W) is a complex non-effect"
+      },
+      "statement": "AT4 F12: W alpha^0_theta(W) is not an effect"
+    },
+    {
+      "bound_D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+      "gate_decision_value": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+      "id": "av1_tier_bound",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "at4_square_root_bound": "D=8.082903768e-4 is not the AV1 gate-bound tier (ii) forward value",
+        "halved_D": "D=6.806226435e-9 is not the AV1 gate-bound tier (ii) forward value",
+        "reverse_82_face_refinement_switch": "D=1.139023055e-8 is not the AV1 gate-bound tier (ii) forward value",
+        "tier_i_value": "D=2.368035046e-5 is not the AV1 gate-bound tier (ii) forward value",
+        "unadmitted_provenance": "state bound provenance av1_tier_i is not the AV1-admitted tier (ii) forward value"
+      }
+    },
+    {
+      "id": "reverse_premise_isolation",
+      "inventory_size": 27,
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "deliberation_added": "forbidden premise in reverse inputs: research/round32/advisor/deliberation-1.md",
+        "forward_av2_added": "forbidden premise in reverse inputs: research/round32/forward/av2/report.md",
+        "premise_missing": "reverse inputs inventory differs from AGENTS.md + contract + shared_premises",
+        "skeptic_triage_added": "forward-only premise in reverse inputs: research/round32/skeptic/triage.md"
+      }
+    },
+    {
+      "id": "c1_window_preview_only",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "preview_label": "preview_only_not_a_certificate",
+      "preview_radius": "1.733037577e-7",
+      "rejected_mutations": {
+        "c1_residue_modulus": "odd total order 3: |K| = coef (s^2+theta^2)^(-3/2) is not rational; residues do not apply",
+        "calculator_c1_certificate": "C^1 window is preview-only; a kernel switch after D is known is rejected",
+        "kernel_switch_after_D_known": "kernel C1_window is not the frozen C2_window; a kernel switch after D is known is rejected"
+      }
+    }
+  ],
+  "claim_exclusions": [
+    "resolved interaction shift (free value inside)",
+    "full [0,128] grid at the cap",
+    "uniform Wilson magnetic theory",
+    "AQ uniqueness or a rate in N",
+    "continuum construction",
+    "scientific priority",
+    "the second-order Dyson refinement",
+    "any shift of C(s)"
+  ],
+  "constants": {
+    "M0": "2",
+    "M1": "4s/pi",
+    "M2": "2s^2",
+    "at_s_1": {
+      "M0": "2",
+      "M1_times_pi": "4",
+      "M2": "2"
+    }
+  },
+  "continuum_claim": false,
+  "contract_snapshot_sha256": "686458cab7a4e6e65b63f0c6418d51496f66f1aada4897115ff14e8bbfad5687",
+  "contribution_alias": "HNM-AV2-R reverse residue window-kernel certificate",
+  "crossover": {
+    "preview": "6.2368634e0",
+    "s_star_bracket": [
+      "3118431723/500000000",
+      "6236863447/1000000000"
+    ]
+  },
+  "direction": "reverse",
+  "duhamel_slope": {
+    "k": "49/400000000",
+    "preview": "1.225000000e-7",
+    "stars": 7
+  },
+  "euclidean_node_certified": true,
+  "grid_claim": false,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AV2",
+  "model": "Same actual chosen centered-box subsequential AQ state as AT4 at tau=+10^-8 (and -10^-8 as a control), selected triple (0,0,0), original xz Wilson, physical clock s=alpha*t_E/hbar, s=1, complete cover R={0,e_z} with seven incident stars, Haar product reference C_0(s)=e^{-3s}/4. The AV1 state bound D is the state premise.",
+  "outcome_note": "proposed for the reverse half only; admission requires the forward route, exchange and the skeptical review",
+  "producer_outcome": "accepted_within_scope",
+  "resolved_interaction_shift": false,
+  "retained_failures": {
+    "at4_poisson_L1e4_preview": "8.415187043e-4",
+    "at4_poisson_L1e4_radius": "210379676096566647472560766956442854908371063337251060164188516978800107961/250000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "poisson_floor_L_star_bracket": [
+      4081632,
+      4081633
+    ],
+    "poisson_floor_lower": "6325441020977072771816363914781321/5000000000000000000000000000000000000000",
+    "poisson_floor_preview": "1.265088204e-6",
+    "tier_i_window_radius_preview": "4.751779428e-5"
+  },
+  "route": "residues: simple pole at theta=is, triple pole at theta=-is",
+  "scientific_priority_verified": false,
+  "state_bound": {
+    "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+    "preview": "1.361245287e-8",
+    "source": "research/round32/advisor/av1-gate.json decision (tier ii forward)"
+  },
+  "sub_label": "reference_unresolved",
+  "target": {
+    "comparator": "<=",
+    "quantity": "radius",
+    "read_from": "contract preregistration.target",
+    "value": "1/1000000"
+  },
+  "uniform_wilson_claim": false,
+  "window": {
+    "g": "g(x)=e^{-sx} for x>=0; g(x)=e^{sx}(1-2sx+2s^2x^2) for x<0",
+    "g_L1_norm": "8/s",
+    "ghat": "ghat(theta)=4s^3/(pi(s-i theta)^3(s+i theta))",
+    "modulus": "(4s^3/pi)(s^2+theta^2)^-2",
+    "regularity": "C^2, g''' jumps by -8s^3"
+  }
+}
