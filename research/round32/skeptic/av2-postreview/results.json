@@ -1,0 +1,745 @@
+{
+  "calculator_probes": {
+    "forward_rejections": [
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "ValueError",
+      "TypeError"
+    ],
+    "reverse_rejections": [
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "DomainError",
+      "TypeError"
+    ]
+  },
+  "checks": [
+    {
+      "contract_sha256": "686458cab7a4e6e65b63f0c6418d51496f66f1aada4897115ff14e8bbfad5687",
+      "id": "contract_hash",
+      "passed": true
+    },
+    {
+      "files": [
+        "research/round32/skeptic/av2-contract-review.md",
+        "research/round32/skeptic/av2-independent-derivation.md",
+        "research/round32/skeptic/av2-independent/results.json",
+        "research/round32/skeptic/av2_check.py"
+      ],
+      "id": "pre_comparison_package_unchanged",
+      "passed": true
+    },
+    {
+      "id": "frozen_design_read_from_contract",
+      "passed": true,
+      "s": "1",
+      "target": "1/1000000",
+      "tau": "1/100000000"
+    },
+    {
+      "controls": 24,
+      "defined_in": [
+        "required item 10",
+        "new_control_semantics.c1_window_preview_only"
+      ],
+      "id": "preregistration_mirror_discrepancy_located",
+      "mirrored_ids": 23,
+      "missing_from_mirror": [
+        "c1_window_preview_only"
+      ],
+      "passed": true,
+      "position_in_controls": 24
+    },
+    {
+      "id": "both_producers_50_checks_all_passed",
+      "passed": true
+    },
+    {
+      "forward_mutations": 68,
+      "id": "all_24_controls_are_damaging_mutations_in_both",
+      "passed": true,
+      "reverse_mutations": 80
+    },
+    {
+      "forward": [
+        "calculator_C1_certificate",
+        "calculator_poisson_certificate",
+        "kernel_switch_to_C1"
+      ],
+      "id": "missing_mirror_id_executed_by_both_anyway",
+      "passed": true,
+      "reverse": [
+        "c1_residue_modulus",
+        "calculator_c1_certificate",
+        "kernel_switch_after_D_known"
+      ]
+    },
+    {
+      "forward": "iterates contract controls; never reads controls_required",
+      "id": "both_checkers_iterate_the_24_id_controls_list",
+      "passed": true,
+      "reverse": "iterates contract controls; requires controls_required.ids to be a subset of controls"
+    },
+    {
+      "forward_reference": "parsed from the contract model string and cross-checked with preregistration.observable",
+      "id": "checkers_read_target_reference_D_from_hash_checked_snapshot",
+      "passed": true,
+      "reverse_reference": "calculator constants 3 and 1/4 validated against the contract model string"
+    },
+    {
+      "id": "no_target_or_D_literal_in_either_checker",
+      "note": "the reverse calculator carries the gate-bound D at the cap only as an equality cross-check of its formula",
+      "passed": true
+    },
+    {
+      "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+      "id": "D_equals_av1_formula_gate_contract_and_both_producers",
+      "passed": true,
+      "preview": "1.3612452870e-8"
+    },
+    {
+      "id": "duhamel_slope_both",
+      "k": "49/400000000",
+      "passed": true
+    },
+    {
+      "E_lower": "2126449735102534058611494634936692759974094157761140613495391989871772939313553496898474296677097060301348035730230682576587655742990603579825100/11607464276206904349555250770664454516056247001614709157404683512737128946387313720887647992601445090669855462413618724271610059330496963674994473960017",
+      "E_upper": "2658062168878167573264368293670865949967617697201425766869239987339716161568218924143558958078925381414311608208604308803459697270668711375792700/14509330345258630436944063463330568145070308752018386446755854390921410721137813070880073728933098320055485886930211827591934685061741310511046722245509",
+      "id": "analytic_radius_enclosed_skeptic",
+      "passed": true,
+      "preview": "1.8319675034e-7"
+    },
+    {
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "datum_numerator_over_4e40": "497870683678639429793424156500617766317",
+      "distance_to_free_value_at_most": "1.019e-43",
+      "id": "datum_identical_and_rederived",
+      "passed": true,
+      "statement": "d=m/(4*10^40), m=round(e^{-3}*10^40); the directed e^{-3} bracket is [(m-1),(m+1)]/10^40 in both producers"
+    },
+    {
+      "id": "free_brackets_identical_and_contain_skeptic_enclosure",
+      "passed": true
+    },
+    {
+      "arithmetic": "1/40000000000000000000000000000000000000000",
+      "id": "itemized_costs_exact_and_directed_forward",
+      "kernel_dynamics": "1225000000000000000000000000000000/7853981633974483096156608458198757210489",
+      "mean_square": "684636834758596744169557031800397663098710698461298774673925205000/1847385316320917945047274832173127333764347246310990311556405519576330785480818049",
+      "passed": true,
+      "state": "1170159676931825184288274812132100/42981220507576537932303142777593983768257"
+    },
+    {
+      "id": "radius_valid_and_not_inflated_forward",
+      "margin": "5.45861e0",
+      "overshoot_over_exact_E_at_most": "2.500e-41",
+      "passed": true,
+      "radius": "106322486755126702930574731746834652508027159869513170257920494383837652589751563551019738262394162495435063905480741367947596664953595264560100037003315961/580373213810345217477762538533222725802522421544634086066468687530860986542061949654717903866598143810582404001480132638440000000000000000000000000000000000000000"
+    },
+    {
+      "arithmetic": "1/40000000000000000000000000000000000000000",
+      "id": "itemized_costs_exact_and_directed_reverse",
+      "kernel_dynamics": "1559718442300574290535060881050641/10000000000000000000000000000000000000000",
+      "mean_square": "684636834758596744169557031800397663098710698461298774673925205000/1847385316320917945047274832173127333764347246310990311556405519576330785480818049",
+      "passed": true,
+      "state": "1170159676931825184288274812132100/42981220507576537932303142777593983768257"
+    },
+    {
+      "id": "radius_valid_and_not_inflated_reverse",
+      "margin": "5.45861e0",
+      "overshoot_over_exact_E_at_most": "5.020e-41",
+      "passed": true,
+      "radius": "2707479892624157757254179115050326529532685674881581371449180235618221047901276585228543175633914868231097316819137/14779082530567343560378198657385018670114777970487922492451244156610646283846544392000000000000000000000000000000000000000"
+    },
+    {
+      "forward": "49|tau|/pi_lo exactly, pi_lo from Machin with each arctan rounded to 10^-40 before scaling (pi-pi_lo<2e-39)",
+      "forward_pi_lower": "7853981633974483096156608458198757210489/2500000000000000000000000000000000000000",
+      "id": "kernel_term_rounding_choices_identified",
+      "passed": true,
+      "reverse": "49|tau|/floor_{10^-40}(pi) rounded up to the 10^-40 grid",
+      "reverse_pi_lower": "31415926535897932384626433832795028841971/10000000000000000000000000000000000000000"
+    },
+    {
+      "both_previews": "1.8319675034e-7",
+      "difference_preview": "2.520e-41",
+      "id": "cross_producer_radius_agreement_and_mirrored_replays",
+      "note": "identical datum; radii differ only by the pi rounding choice; -tau is a replay of the same |tau| formula",
+      "passed": true,
+      "radius_reverse_minus_forward": "1979686519699651457242890990044705373449/78539816339744830961566084581987572104890000000000000000000000000000000000000000"
+    },
+    {
+      "forward_minus_pre": "2.500e-41",
+      "id": "agreement_with_pre_comparison_radius",
+      "passed": true,
+      "pre_radius_preview": "1.8319675034e-7",
+      "reverse_minus_pre": "5.020e-41"
+    },
+    {
+      "R40": "1831967503411879425147166810021607/10000000000000000000000000000000000000000",
+      "id": "common_outward_radius_at_1e-40",
+      "passed": true,
+      "preview": "1.83196750341e-7"
+    },
+    {
+      "id": "interval_exact_and_free_value_inside_forward",
+      "lower_preview": "1.244658389521564e-2",
+      "passed": true,
+      "upper_preview": "1.244695028871632e-2"
+    },
+    {
+      "id": "interval_exact_and_free_value_inside_reverse",
+      "lower_preview": "1.244658389521564e-2",
+      "passed": true,
+      "upper_preview": "1.244695028871632e-2"
+    },
+    {
+      "id": "reference_unresolved_both",
+      "passed": true
+    },
+    {
+      "id": "tau_scaling_linear_window_radius",
+      "passed": true,
+      "ratio": [
+        "1.0000145e2",
+        "1.0000145e2"
+      ],
+      "sqrt_D_ratio_upper": "1.00081e1"
+    },
+    {
+      "forward": [
+        "6.236863446033e0",
+        "6.236863446033e0"
+      ],
+      "id": "crossover_enclosures_contain_skeptic_s_star",
+      "passed": true,
+      "reverse": [
+        "3118431723/500000000",
+        "6236863447/1000000000"
+      ],
+      "s_star": [
+        "6.236863446033e0",
+        "6.236863446033e0"
+      ],
+      "scope": "crossover of the analytic formula only; s=1 is the only certified node; no grid or [0,128] claim"
+    },
+    {
+      "at4_report": "0.000841518704386267",
+      "id": "retained_at4_poisson_L1e4_both",
+      "passed": true,
+      "skeptic": [
+        "8.415187043862665e-4",
+        "8.415187043862665e-4"
+      ]
+    },
+    {
+      "forward": [
+        "1.265088223301e-6",
+        "1.265088223301e-6"
+      ],
+      "id": "retained_poisson_floor_all_L_both",
+      "passed": true,
+      "reverse": [
+        "1.265088204195e-6",
+        "1.265088223301e-6"
+      ],
+      "skeptic_floor": [
+        "1.265088223301e-6",
+        "1.265088223301e-6"
+      ],
+      "statement": "for every L>0: (k/pi)log(1+L^2)+1/(pi L) >= (2k/pi)(1+log(1/(2k))) (log(1+L^2)>=2log L, minimized at L=1/(2k))",
+      "with_admitted_D_lower": "1.2787006e-6"
+    },
+    {
+      "id": "poisson_first_moment_divergence",
+      "passed": true,
+      "statement": "(1/pi)log(1+L^2)>=(2/pi)log L: already above 4/pi at L=10; above 10^6 at L=10^682190",
+      "window_M1": "4s/pi finite"
+    },
+    {
+      "exact_tier_i_radius_preview": "4.751779428e-5",
+      "forward_note": "the forward exports the lower value 2D_i+49|tau|/pi_hi (omits 2D_i^2); labelled; both exceed 10^-6",
+      "id": "tier_i_window_retained_limited_both",
+      "passed": true
+    },
+    {
+      "c1_radius": "1.733037577e-7",
+      "c2_radius": "1.831967503e-7",
+      "id": "c1_preview_values_and_labels_both",
+      "note": "the C^1 preview radius is smaller than the frozen C^2 radius, so rejecting a post-hoc kernel switch is not vacuous",
+      "passed": true
+    },
+    {
+      "id": "lower_pole_residues_leibniz_route",
+      "passed": true,
+      "polynomials": {
+        "1": {
+          "1": [
+            "1"
+          ],
+          "2": [
+            "1",
+            "-2"
+          ],
+          "3": [
+            "1",
+            "-2",
+            "2"
+          ]
+        },
+        "1/3": {
+          "1": [
+            "1"
+          ],
+          "2": [
+            "1",
+            "-2/3"
+          ],
+          "3": [
+            "1",
+            "-2/3",
+            "2/9"
+          ]
+        },
+        "2": {
+          "1": [
+            "1"
+          ],
+          "2": [
+            "1",
+            "-4"
+          ],
+          "3": [
+            "1",
+            "-4",
+            "8"
+          ]
+        },
+        "7": {
+          "1": [
+            "1"
+          ],
+          "2": [
+            "1",
+            "-14"
+          ],
+          "3": [
+            "1",
+            "-14",
+            "98"
+          ]
+        }
+      },
+      "reverse_triple_pole_residue_s1": "e^{1 x}[((1/8)*i)+((-1/4)*i)x+((1/4)*i)x^2]",
+      "reverse_upper_pole_residue_s1": "e^{-1 x}[((-1/8)*i)]",
+      "upper_pole": "Res_{theta=is}=e^{-sx}/(i(2s)^n), so 2 pi i N_n Res=e^{-sx} with 2 pi N_n=(2s)^n; at s=1, n=3: 1/(8i)=-i/8"
+    },
+    {
+      "id": "constants_identical_across_three_routes",
+      "passed": true,
+      "routes": [
+        "forward half-line transforms",
+        "reverse residues",
+        "skeptic annihilator-jump plus Wallis (pre-comparison)"
+      ]
+    },
+    {
+      "id": "claim_flags_forward",
+      "passed": true
+    },
+    {
+      "id": "claim_flags_reverse",
+      "passed": true
+    },
+    {
+      "D_below_cap": "AV1 tier-(ii) formula at |tau| (equal in both)",
+      "forward_rejected": 20,
+      "id": "calculators_domain_exact_inputs_and_fixed_design",
+      "passed": true,
+      "reverse_rejected": 20,
+      "supplied_D_rejected": [
+        "TypeError",
+        "TypeError"
+      ],
+      "tau_zero_radius_equals_arithmetic": true
+    },
+    {
+      "id": "mutation_harness_unmutated_copies_reproduce_frozen_results",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_calc_state_term_halved_D_over_2",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_calc_mean_square_dropped",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_calc_pi_direction_flipped",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_calc_duhamel_factor_two_dropped",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_calc_c2_left_coefficient_changed",
+      "last_error_line": "AdmissionError: failed check kernel_negative_atom_misread",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_calc_av1_coefficient_doubled",
+      "last_error_line": "AdmissionError: failed check av1_state_bound_recomputed",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_sign_convention_flipped",
+      "last_error_line": "AdmissionError: reference differs from e^{-3s}/4: wrong Fourier sign convention",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_grid_claim_true",
+      "last_error_line": "AdmissionError: forbidden claim flag set: grid_claim",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_poisson_floor_halved",
+      "last_error_line": "AdmissionError: failed check retained_poisson_floor",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_c1_M0_in_radius",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_contract_target_relaxed",
+      "last_error_line": "AdmissionError: contract snapshot bytes differ from the frozen AV2 contract",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_forward_undeclared_input_reverse_report",
+      "last_error_line": "AdmissionError: failed check reverse_premise_isolation",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_calc_state_term_halved_D_over_2",
+      "last_error_line": "Rejected: state term 1.361245287e-8 is not M_0*D",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_calc_mean_square_dropped",
+      "last_error_line": "Rejected: mean-square term is not M_0*D^2 (m^2<=D^2 charged)",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_calc_M0_signed_integral_one",
+      "last_error_line": "Rejected: state term 1.361245287e-8 is not M_0*D",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_calc_duhamel_factor_two_dropped",
+      "last_error_line": "Rejected: kernel-dynamics term below k*M_1 with directed pi",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_calc_av1_coefficient_doubled",
+      "last_error_line": "ProducerError: check failed: av1_state_bound_bound_and_reproduced",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_calc_c1_kernel_admitted",
+      "last_error_line": "ProducerError: invalid calculator case accepted: kernel_c1",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_free_atom_read_mirrored",
+      "last_error_line": "ProducerError: check failed: window_lemma_free_atom",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_residue_window_coefficient_edited",
+      "last_error_line": "Rejected: contract window differs from the residue-reconstructed C^2 window",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_grid_claim_true",
+      "last_error_line": "Rejected: claim flag grid_claim must be false in AV2",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_poisson_floor_halved",
+      "last_error_line": "ProducerError: check failed: retained_poisson_floor_optimized",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_contract_target_relaxed",
+      "last_error_line": "ProducerError: contract snapshot hash mismatch",
+      "passed": true
+    },
+    {
+      "id": "mutation_rejected_reverse_skeptic_triage_added_to_inputs",
+      "last_error_line": "Rejected: forward-only premise in reverse inputs: research/round32/skeptic/triage.md",
+      "passed": true
+    }
+  ],
+  "checks_count": 63,
+  "contract_sha256": "686458cab7a4e6e65b63f0c6418d51496f66f1aada4897115ff14e8bbfad5687",
+  "exact": {
+    "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+    "E_analytic_skeptic": [
+      "2126449735102534058611494634936692759974094157761140613495391989871772939313553496898474296677097060301348035730230682576587655742990603579825100/11607464276206904349555250770664454516056247001614709157404683512737128946387313720887647992601445090669855462413618724271610059330496963674994473960017",
+      "2658062168878167573264368293670865949967617697201425766869239987339716161568218924143558958078925381414311608208604308803459697270668711375792700/14509330345258630436944063463330568145070308752018386446755854390921410721137813070880073728933098320055485886930211827591934685061741310511046722245509"
+    ],
+    "at4_L1e4_radius_skeptic": [
+      "132185448977914801739270786676922745887151232207906460156501565700590187975222978120212984799082861029144633431617732031616578033551613946622841636336588028084743130049176102258240706732249677991851079208777/157079632679489661923132169163975144209858469968755291048747229615390825000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "607469894199976110934148835831446442496099412720158364689804989433003913805308012944165485461391267729679470953986691769336602202986814890107400330714859835901472835238232397815138031293462990070237640957/721873311946184108102629453878562243611481939194647477246081018453082812500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "c1_preview_radius_upper_skeptic": "2514521471432715160938260588291328452590409057619308629104758152342984985714002110025000000000000000000000000000000000000000000000000000000000000/14509330345258630436944063463330568145070308752018386446755854390921410721137813070880073728933098320055485886930211827591934685061741310511046722245509",
+    "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+    "free_value_skeptic": [
+      "248935341839319714896712078250308883158497960942116077838138638030303/20000000000000000000000000000000000000000000000000000000000000000000000",
+      "497870683678639429793424156500617766316995921884232155676277276060607/40000000000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "interval_common_outward": [
+      "497863355808625782275723567833377679889/40000000000000000000000000000000000000000",
+      "99575602309730615462224949033571570549/8000000000000000000000000000000000000000"
+    ],
+    "k": "49/400000000",
+    "pi_skeptic": [
+      "7853981633974483096156608458198757210492923498437764552437361480769541/2500000000000000000000000000000000000000000000000000000000000000000000",
+      "6283185307179586476925286766559005768394338798750211641949889184615633/2000000000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "poisson_floor_all_L_lower_skeptic": "7948783736936825243961724553302898077108969866271091175879576229505819203/6283185307179586476925286766559005768394338798750211641949889184615633000000000",
+    "radius_common_outward_1e-40": "1831967503411879425147166810021607/10000000000000000000000000000000000000000",
+    "radius_forward": "106322486755126702930574731746834652508027159869513170257920494383837652589751563551019738262394162495435063905480741367947596664953595264560100037003315961/580373213810345217477762538533222725802522421544634086066468687530860986542061949654717903866598143810582404001480132638440000000000000000000000000000000000000000",
+    "radius_reverse": "2707479892624157757254179115050326529532685674881581371449180235618221047901276585228543175633914868231097316819137/14779082530567343560378198657385018670114777970487922492451244156610646283846544392000000000000000000000000000000000000000",
+    "radius_reverse_minus_forward": "1979686519699651457242890990044705373449/78539816339744830961566084581987572104890000000000000000000000000000000000000000",
+    "s_star_skeptic": [
+      "14114315188873587346362606839071783178964016431547923811543211165062699771783596256761514770854172938641174278721607518788474987791072599135254022245509/2263047012493124482682911669412080983861325376730963131656596761481005212214002110025000000000000000000000000000000000000000000000000000000000000000000",
+      "11291452151098869877090085471257426543171213145238339049234568932050160176844961912009173695924348030368507426683388041695022403587506360095169373960017/1810437609994499586146329335529664787089060301384770505325277409184804169771201688020000000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "tier_i_window_radius_lower_skeptic": "695146403687030964101098427974793444406778603994053756208829867242398492150796093008001473058358101592010184012836963916/14629180796773222066172862775597262876793741606913093862136521691250161359559787251361773128601212049998710017971063569746993"
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AV2",
+  "mirror_discrepancy": {
+    "controls": 24,
+    "forward_executed": [
+      "calculator_C1_certificate",
+      "calculator_poisson_certificate",
+      "kernel_switch_to_C1"
+    ],
+    "missing_from_mirror": "c1_window_preview_only",
+    "preregistration_controls_required_ids": 23,
+    "reverse_executed": [
+      "c1_residue_modulus",
+      "calculator_c1_certificate",
+      "kernel_switch_after_D_known"
+    ]
+  },
+  "mutation_receipts": [
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "mutation": "calc_state_term_halved_D_over_2",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "mutation": "calc_mean_square_dropped",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "mutation": "calc_pi_direction_flipped",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "mutation": "calc_duhamel_factor_two_dropped",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check kernel_negative_atom_misread",
+      "mutation": "calc_c2_left_coefficient_changed",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check av1_state_bound_recomputed",
+      "mutation": "calc_av1_coefficient_doubled",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: reference differs from e^{-3s}/4: wrong Fourier sign convention",
+      "mutation": "sign_convention_flipped",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: forbidden claim flag set: grid_claim",
+      "mutation": "grid_claim_true",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check retained_poisson_floor",
+      "mutation": "poisson_floor_halved",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check radius_itemized_tau_plus",
+      "mutation": "c1_M0_in_radius",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: contract snapshot bytes differ from the frozen AV2 contract",
+      "mutation": "contract_target_relaxed",
+      "rejected": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check reverse_premise_isolation",
+      "mutation": "undeclared_input_reverse_report",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: state term 1.361245287e-8 is not M_0*D",
+      "mutation": "calc_state_term_halved_D_over_2",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: mean-square term is not M_0*D^2 (m^2<=D^2 charged)",
+      "mutation": "calc_mean_square_dropped",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: state term 1.361245287e-8 is not M_0*D",
+      "mutation": "calc_M0_signed_integral_one",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: kernel-dynamics term below k*M_1 with directed pi",
+      "mutation": "calc_duhamel_factor_two_dropped",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: check failed: av1_state_bound_bound_and_reproduced",
+      "mutation": "calc_av1_coefficient_doubled",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: invalid calculator case accepted: kernel_c1",
+      "mutation": "calc_c1_kernel_admitted",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: check failed: window_lemma_free_atom",
+      "mutation": "free_atom_read_mirrored",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: contract window differs from the residue-reconstructed C^2 window",
+      "mutation": "residue_window_coefficient_edited",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: claim flag grid_claim must be false in AV2",
+      "mutation": "grid_claim_true",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: check failed: retained_poisson_floor_optimized",
+      "mutation": "poisson_floor_halved",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: contract snapshot hash mismatch",
+      "mutation": "contract_target_relaxed",
+      "rejected": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: forward-only premise in reverse inputs: research/round32/skeptic/triage.md",
+      "mutation": "skeptic_triage_added_to_inputs",
+      "rejected": true
+    }
+  ],
+  "passed": true,
+  "previews": {
+    "at4_radius": "8.41518704386e-4",
+    "c1_preview_radius": "1.733037577e-7",
+    "datum": "1.244676709196598e-2",
+    "difference": "2.520e-41",
+    "interval": [
+      "1.244658389521564e-2",
+      "1.244695028871632e-2"
+    ],
+    "margin_target_over_radius": "5.45861e0",
+    "note": "decimal previews only; every Boolean above was decided on exact rationals",
+    "poisson_floor": "1.26508822330e-6",
+    "radius_common_outward": "1.83196750341e-7",
+    "radius_forward": "1.83196750341e-7",
+    "radius_reverse": "1.83196750341e-7",
+    "s_star": "6.23686344603e0",
+    "tier_i_window_radius": "4.751779428e-5"
+  },
+  "reviewer": "model-agent skeptic with correlated ancestry; not human peer review or formal verification",
+  "schema": "hnm-r32-skeptic-postcomparison-v1",
+  "stage": "post_comparison"
+}
