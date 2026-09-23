@@ -1,0 +1,512 @@
+{
+  "title": "Round32 sub-round 1, modern (Penrose/Feynman) lens, assistant-1 cross-check tools",
+  "status": "assistant_coder_preview_zero_loops",
+  "generated_at": "2026-09-23T22:28:26.448940+00:00",
+  "run_command": "python3 -B <script>.py",
+  "libraries": {
+    "python-flint": "0.9.0",
+    "mpmath_dps": 50,
+    "arb_prec_bits": 256
+  },
+  "counts_zero_research_loops": true,
+  "never_imported_by_admission_check_py": true,
+  "read_first": [
+    "research/round32/experts/modern/loop3-signoff.md (section 3, S1-S3 specs)",
+    "research/round32/experts/modern/loop2-response.md (link-flip set E, K_2 counting)",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/forward/av1/output/results.json",
+    "research/round32/reverse/av1/output/results.json",
+    "research/round32/contracts/av2.json",
+    "research/round32/tools/arb_crosscheck.py (extended, not duplicated, by S1)"
+  ],
+  "S1_flint_harness": {
+    "tool": "S1 flint_harness",
+    "precision_bits": 256,
+    "provenance": {
+      "flint_version": "0.9.0",
+      "expected": "0.9.0"
+    },
+    "rayleigh_self_test": {
+      "matrix": [
+        [
+          4,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "trial_vector": [
+        "1",
+        "745281/1000000",
+        "12029/40000",
+        "40147/500000"
+      ],
+      "rayleigh_exact": "2613584522773/550775473674",
+      "rayleigh_preview": 4.7452812401736715,
+      "residual_bound_exact": "900746589973651190341446315783321411201449969347555347/803469022129495137770981046170581301261101496891396417650688",
+      "residual_bound_preview": 1.1210719581774713e-06,
+      "arb_eigenvalues_preview": [
+        4.745281240174139,
+        3.177282919112892,
+        1.8227170808871083,
+        0.2547187598258609
+      ],
+      "min_gap_to_some_eigenvalue": "64402027059107057932660013653564731276045787047322287645663465274603821900041/137693868418500000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "perturbation_bound_holds": true,
+      "passed": true
+    },
+    "av1_self_test": {
+      "t": "49/14398580736",
+      "eps_2t_plus_t2": "1411060914529/207319127211110301696",
+      "eps_matches_forward_contract_field": true,
+      "forward": {
+        "D_ii": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+        "D_ii_preview": 1.3612452870266384e-08,
+        "direct_form_2eps(1+eps)/(1+eps^2)_exact": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+        "exact_equality": true,
+        "arb_ball_bounds": [
+          "6806226435133191792690895772887404946427693270702191003959126408980327098997091/500000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "13612452870266383585381791545774809892855386541404382007918252817960654197995983/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "arb_ball_contains_D_ii": true
+      },
+      "reverse": {
+        "D_ii": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+        "D_ii_preview": 1.1390230555394726e-08,
+        "literal_check": {
+          "description": "S1 spec, literal: reverse D_ii >= 2eps/sqrt(1+eps^2) at the SAME base eps=2t+t^2 used for forward.",
+          "fidelity_form_base_eps_arb_ball_bounds": [
+            "13612452777616948589252617906461075772177564963967198027914810016695799777639667/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "13612452777616948589252617906461075772177564963967198027914810016695799777640953/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ],
+          "reverse_ge_fidelity_form_base_eps": false,
+          "passed": false
+        },
+        "internal_consistency_check": {
+          "description": "AV1 reverse/output/results.json tiers.tier_ii.+ reports its own (sharper, 82-face-refinement) epsilon, not 2t+t^2; verify D_ii >= 2*eps_rev/sqrt(1+eps_rev^2) at reverse's own epsilon (a directed-rounding sanity check of the admitted value).",
+          "eps_reverse_own": "461213409663624001/80984034066839961600000000",
+          "eps_reverse_own_preview": 5.695115277697363e-09,
+          "fidelity_form_own_eps_arb_ball_bounds": [
+            "5695115277697363248804808715644345915255813593343680087018732767425228808683581/500000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "11390230555394726497609617431288691830511627186687360174037465534850457617368449/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ],
+          "reverse_ge_fidelity_form_own_eps": true,
+          "passed": true
+        },
+        "note": "The literal base-eps check legitimately fails: AV1 reverse D_ii is a sharper bound (its own smaller eps from the 82-face-meeting-R restricted first-order sum, reverse tiers.tier_ii.+.epsilon), not the fidelity formula evaluated at the forward/base eps=2t+t^2. The internal-consistency check confirms reverse's own admitted D_ii is a valid directed-rounded upper bound of its own fidelity formula. Neither check is admission arithmetic; both are Arb previews."
+      },
+      "fidelity_le_direct_general_lemma_note": "reverse/av1/output/results.json check \"fidelity_form_not_weaker_than_direct_form\" states 2eps/sqrt(1+eps^2) <= 2eps(1+eps)/(1+eps^2) for the SAME eps; consistent with df_hi >= ff_hi observed here.",
+      "passed": true
+    },
+    "passed": true
+  },
+  "S2_flip_parity_k2": {
+    "tool": "S2 flip_parity_k2",
+    "part_a_exhaustive_parity_6cubed": {
+      "box": 6,
+      "plaquettes_checked": 648,
+      "failures": [],
+      "failure_count": 0,
+      "odd_count_histogram": {
+        "3": 324,
+        "1": 324
+      },
+      "passed": true
+    },
+    "part_a_exhaustive_parity_9cubed_bonus": {
+      "box": 9,
+      "plaquettes_checked": 2187,
+      "failures": [],
+      "failure_count": 0,
+      "odd_count_histogram": {
+        "3": 1215,
+        "1": 972
+      },
+      "passed": true
+    },
+    "part_a_su2_numerical_fixture": {
+      "lattice": 4,
+      "seed": 20320923,
+      "plaquettes_checked": 81,
+      "all_traces_flip_sign": true,
+      "casimir_invariant_unchanged": "True",
+      "casimir_max_deviation": 0.0,
+      "sample": [
+        {
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "orientation": "xy",
+          "links_in_E": 3,
+          "trace_before": "(0.9223674606232205-5.551115123125783e-17j)",
+          "trace_after": "(-0.9223674606232205+5.551115123125783e-17j)",
+          "sign_flipped": true
+        },
+        {
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "orientation": "xz",
+          "links_in_E": 3,
+          "trace_before": "(-1.6602392238120207-1.5612511283791264e-17j)",
+          "trace_after": "(1.6602392238120207+1.5612511283791264e-17j)",
+          "sign_flipped": true
+        },
+        {
+          "base": [
+            0,
+            0,
+            0
+          ],
+          "orientation": "yz",
+          "links_in_E": 3,
+          "trace_before": "(-1.8493203501451974+0j)",
+          "trace_after": "(1.8493203501451974+0j)",
+          "sign_flipped": true
+        }
+      ],
+      "passed": true
+    },
+    "part_b_face_count_and_cover_report": {
+      "box": {
+        "x": [
+          -12,
+          16
+        ],
+        "y": [
+          -6,
+          8
+        ],
+        "z": [
+          -3,
+          5
+        ]
+      },
+      "faces_per_site": 49,
+      "owner_sets_per_site": 15,
+      "owner_set_multiplicities_sorted": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        10,
+        10
+      ],
+      "faces_meeting_R": 82,
+      "faces_inside_R": 10,
+      "faces_straddling": 72,
+      "straddling_one_outside_site": 42,
+      "straddling_two_outside_site": 30,
+      "W": {
+        "orientation": "xz",
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "owner_set": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "faces_sharing_a_link_with_W_within_meeting_R": 10,
+      "faces_sharing_a_link_with_W_in_box": 10,
+      "expected": {
+        "faces_per_site": 49,
+        "owner_sets_per_site": 15,
+        "faces_meeting_R": 82,
+        "faces_inside_R": 10,
+        "faces_straddling": 72,
+        "straddling_one_outside_site": 42,
+        "straddling_two_outside_site": 30
+      },
+      "matches_expected": true
+    },
+    "part_b_second_order_multiplier_structure": {
+      "faces_with_owner_set_exactly_R": 10,
+      "note": "Only these (owner_set == R = {0,e_z} exactly) are supported exactly on R; every other face meeting R has at least one link anchored outside R and so contributes to the straddling/pair terms (b)-(f) of loop2-response.md section 2, never to the single-face direct overlap with W Omega_R that the flip-parity lemma sets to zero at first order."
+    },
+    "part_b_k2_tier_check": {
+      "crude_AM2_majorant_only": {
+        "t_over_abs_tau_preview": 448.04,
+        "K2_preview": 16500000.0,
+        "below_cap": false,
+        "margin_ratio_preview": 0.04181818181818182,
+        "expected_fail": true,
+        "fails_as_expected": true
+      },
+      "skeptic_84_face_bound": {
+        "t_over_abs_tau_preview": 0.5834,
+        "K2_preview": 18800.0,
+        "below_cap": true,
+        "margin_ratio_preview": 36.702127659574465
+      },
+      "enumerated_49_face_triangle": {
+        "t_over_abs_tau_preview": 0.3403,
+        "K2_preview": 11000.0,
+        "below_cap": true,
+        "margin_ratio_preview": 62.72727272727273
+      },
+      "cap": 690000.0,
+      "passed": true
+    },
+    "passed": true
+  },
+  "S3_window_budget_crosscheck": {
+    "tool": "S3 window_budget_crosscheck",
+    "mpmath_dps": 50,
+    "arb_prec_bits": 256,
+    "fourier_numeric_vs_closed_form": {
+      "window": "C2",
+      "s": "1",
+      "rows": [
+        {
+          "theta": "0",
+          "ghat_numeric": "(1.2732395447351626861510701069801148962756771659237 + 0.0j)",
+          "ghat_closed_form": "(1.2732395447351626861510701069801148962756771659237 + 0.0j)",
+          "abs_diff": "0.0",
+          "passed": true
+        },
+        {
+          "theta": "0.7",
+          "ghat_numeric": "(0.19630053783021835280321605761148633098654040755195 + 0.53886422149471704691078917775702130074736582465241j)",
+          "ghat_closed_form": "(0.19630053783021835280321605761148633098654040755195 + 0.53886422149471704691078917775702130074736582465241j)",
+          "abs_diff": "3.3409559e-52",
+          "passed": true
+        },
+        {
+          "theta": "3",
+          "ghat_numeric": "(-0.010185916357881301489208560855840918809581201361295 + 0.00763943726841097611690642064188068893388277171037j)",
+          "ghat_closed_form": "(-0.010185916357881301489208560855840919170205417327389 + 0.0076394372684109761169064206418806893776540629955419j)",
+          "abs_diff": "5.7182408e-37",
+          "passed": true
+        },
+        {
+          "theta": "-2.3",
+          "ghat_numeric": "(-0.021949037196095033559808195658551115249909075667244 - 0.023535098158983019667859603736441755279622785392444j)",
+          "ghat_closed_form": "(-0.021949037196095033559808195658551115249909075894675 - 0.02353509815898301966785960373644175527962278534161j)",
+          "abs_diff": "2.330435e-46",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    "arb_closed_form_cross_check": {
+      "rows": [
+        {
+          "theta": "0",
+          "arb_ball": [
+            1.2732395447351628,
+            1.2732395447351628
+          ],
+          "mpmath_abs_ghat": "1.2732395447351626862",
+          "contained": true
+        },
+        {
+          "theta": "0.7",
+          "arb_ball": [
+            0.5735054928765203,
+            0.5735054928765203
+          ],
+          "mpmath_abs_ghat": "0.57350549287652028564",
+          "contained": true
+        },
+        {
+          "theta": "3",
+          "arb_ball": [
+            0.012732395447351627,
+            0.012732395447351627
+          ],
+          "mpmath_abs_ghat": "0.012732395447351626862",
+          "contained": true
+        },
+        {
+          "theta": "-2.3",
+          "arb_ball": [
+            0.03218168856956591,
+            0.03218168856956591
+          ],
+          "mpmath_abs_ghat": "0.032181688569565911676",
+          "contained": true
+        }
+      ],
+      "passed": true
+    },
+    "moments": {
+      "checks": {
+        "C2_M0": {
+          "computed": "2.0",
+          "expected": "2.0",
+          "passed": true
+        },
+        "C2_M1": {
+          "computed": "1.27323954473516",
+          "expected": "1.27323954473516",
+          "passed": true
+        },
+        "C2_M2": {
+          "computed": "2.0",
+          "expected": "2.0",
+          "passed": true
+        },
+        "C1_M0": {
+          "computed": "1.27323954473516",
+          "expected": "1.27323954473516",
+          "passed": true
+        },
+        "C1_M1": {
+          "computed": "1.27323954473516",
+          "expected": "1.27323954473516",
+          "passed": true
+        },
+        "C1_M2_divergence": {
+          "partial_integrals_over_[-L,L]": [
+            [
+              10,
+              "2.550535325"
+            ],
+            [
+              100,
+              "5.472883134"
+            ],
+            [
+              1000,
+              "8.404530997"
+            ],
+            [
+              10000,
+              "11.33627245"
+            ],
+            [
+              100000,
+              "14.26801483"
+            ]
+          ],
+          "growth_ratio_last_over_first": 5.594125551847473,
+          "diverges_as_expected": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    "negative_atom_control": {
+      "g_C2(-1)": "1.83939720585721",
+      "expected_5_over_e": "1.83939720585721",
+      "g_C1(-1)": "1.10363832351433",
+      "expected_3_over_e": "1.10363832351433",
+      "passed": true
+    },
+    "window_radius_E": {
+      "D_admitted_forward_tier_ii": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+      "tau": "1/100000000",
+      "k_duhamel_slope": "49/400000000",
+      "M0_C2": 2,
+      "M1_C2_at_s1_preview": 1.2732395447351628,
+      "E_arb_ball": [
+        1.8319675034118793e-07,
+        1.8319675034118793e-07
+      ],
+      "E_preview": 1.8319675034118793e-07,
+      "av1_own_preview": 1.8319675e-07,
+      "matches_av1_preview": true,
+      "meets_1e-6_target": true,
+      "passed": true
+    },
+    "crossover_s_star": {
+      "s_star_arb_ball": [
+        6.236863446033457,
+        6.236863446033457
+      ],
+      "s_star_preview": 6.236863446033457,
+      "expected_band_from_av2_contract": [
+        6.0,
+        6.4
+      ],
+      "in_expected_band": true,
+      "passed": true
+    },
+    "poisson_retained_failure_control": {
+      "note": "order-of-magnitude cross-check of an AT4/AT5 retained control, not a re-derivation; the log-divergent first moment is the property under test. AT4 (research/round31) predates AV2's admitted seven-star Duhamel slope k=49|tau|/4 and used its own round31 slope constant, which this tool does not import; the L=1e4 figure below is reported for information only (its ratio to AT4's reported figure is far from 1, consistent with a different k, not a defect in the log-divergence or floor-optimization shape) and does not gate pass/fail. The D->0 optimized-floor figure, which is independent of any state bound, matches closely and does gate pass/fail.",
+      "first_moment_grows_with_L_log_divergence": [
+        [
+          10,
+          "1.469038486"
+        ],
+        [
+          100,
+          "2.931774225"
+        ],
+        [
+          1000,
+          "4.397613912"
+        ],
+        [
+          10000,
+          "5.863484794"
+        ],
+        [
+          100000,
+          "7.329355989"
+        ],
+        [
+          1000000,
+          "8.795227187"
+        ]
+      ],
+      "radius_at_L=1e4_computed_with_this_tools_k": "3.256287796e-5",
+      "radius_at_L=1e4_at4_reported_different_k_informational_only": "0.000841519",
+      "ratio_to_reported_informational_only": 0.0386953567994794,
+      "optimized_floor_scan_best_L": 4148619.3286181907,
+      "optimized_floor_scan_value": "1.278710953e-6",
+      "optimized_floor_reported": "0.0000012651",
+      "ratio_floor_to_reported": 1.0107587962086815,
+      "passed": true
+    },
+    "passed": true
+  },
+  "overall_passed": true,
+  "planning_notes": {
+    "what_AZ2_finite_graph_spec_needs_from_these_tools": "AZ2 (loop2-response.md section 6) is a finite-graph exact-Ritz-vector calculation (Round11 two-square patch, D=6/8 cutoffs) whose own admission stays Fraction-only, but whose feasibility and eyeball sanity are exactly what S1 give for free: exact_matrix_from_rows/rayleigh_bounds already implement AZ2's own \"exact Rayleigh quotient + directed rational sqrt residual bound\" pattern on a general flint.fmpq_mat, so AZ2's producer can reuse rayleigh_bounds(K_plus_potential, ritz_vector) verbatim instead of re-deriving the sin(theta) bound machinery, and arb_eig_preview gives AZ2 its own required \"Arb cross-check: independent python-flint fmpq_mat rebuild ... acb_mat.eig balls\" line item directly, labelled preview, never admission. S1's self-test on a 4x4 symmetric matrix is a template AZ2 can pattern its own bigger (D=6 -> 84x84, D=8 -> 165x165) matrices on before committing to exact rational inverse iteration.",
+    "how_AW1_should_use_S2": "AW1 needs three things S2 already gives as reusable, independently-reproduced building blocks: (i) the flip-parity lemma itself is now exhaustively checked on two box sizes (6^3: 648 plaquettes, 9^3: 2187 plaquettes, zero failures) plus a random-SU(2) numeric fixture confirming both the sign flip and Casimir invariance -- AW1's own proof can cite this as an independent numerical sanity check alongside its own algebraic argument, not as a substitute for it (S2 is a preview, not an admitted proof). (ii) S2's from-scratch re-derivation of the I1 24-class table independently reproduces every one of AV1's frozen face/owner-set numbers (49, 15, 82, 10, 72=42+30) by brute force from the translation rule alone (not by importing AV1's output), which is exactly the second, independent source AW1's contract will need for its own enumeration control. (iii) the second_order_multiplier_structure output isolates the 10 owner-set-exactly-R faces as the only candidates whose single-face creation could overlap W Omega_R without a straddling partner -- AW1's parity argument needs exactly this set to show the mod-2 obstruction kills that overlap, leaving only the straddling/pair/density terms (b)-(f) it must still itemize and bound.",
+    "what_the_arb_harness_can_certify_versus_preview": "Arb (python-flint 0.9, ball arithmetic) and mpmath interval arithmetic can rigorously CERTIFY containment: given an exact rational enclosure already produced by admitted Fraction arithmetic, Arb at high enough precision (256 bits used throughout here) proves that enclosure brackets the true value of a transcendental (pi, exp, sqrt, the window Fourier transforms, eigenvalues of a fixed-size symmetric matrix) to far more digits than the workbench needs, and a failed containment is real evidence of a defect. What Arb CANNOT do here is decide admission itself: acb_mat.eig on a matrix built from floating- point-derived entries, or a numerical Fourier quadrature (S3's ghat_numeric), is a preview/comparison exactly as research/round32/tools/arb_crosscheck.py already states -- it has no claim on which rational bound the project adopts, no role in a check.py, and no floating-point value from mpmath or numpy (S2's SU(2) fixture, S3's quadrature moments) ever substitutes for the exact rational admission arithmetic that alone decides a gate."
+  }
+}
