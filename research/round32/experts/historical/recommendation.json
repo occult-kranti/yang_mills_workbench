@@ -1,0 +1,114 @@
+{
+  "schema": "hnm-round32-lens-recommendation-v1",
+  "lens": "historical (Newton analysis/synthesis, Tesla mechanism/resonance)",
+  "status": "round32_loop1_advisory",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "prepared": "2026-09-23",
+  "model_family": "Fixed-spacing SU(2) Kogut-Susskind on Z^3 with 24-link coarse factors, zero selected triple unless stated, 21 omitted anchored face classes per factor with coefficient alpha*tau/24 grouped into whole stars (I1.5), |tau|<=1e-8, AQ subsequential thermodynamic state, physical clock s=alpha t_E/hbar.",
+  "parameter_classification": [
+    {"name": "tau", "class": "coupling", "units": "dimensionless (relative to alpha)", "note": "both signs; changing it is a model change, not a tolerance"},
+    {"name": "alpha, hbar, E_star, lattice spacing", "class": "fixed physical scales", "units": "energy, action, energy, length"},
+    {"name": "selected triple (lambda_L, mu, lambda_R)", "class": "coupling / model deformation when changed", "units": "energy (alpha)"},
+    {"name": "s, theta", "class": "coordinate (Euclidean / real dimensionless time)", "units": "dimensionless (alpha t/hbar)"},
+    {"name": "L", "class": "regulator (real-time integration window)", "units": "dimensionless time"},
+    {"name": "theta_w (polymer size weight base), R=1/64 (ball radius)", "class": "regulator (proof parameters)", "units": "dimensionless"},
+    {"name": "representation cutoff j_max (AZ only)", "class": "regulator", "units": "dimensionless"},
+    {"name": "omega_tau(W), omega_tau(W^2), C(s)", "class": "measured (certified enclosures)", "units": "dimensionless"},
+    {"name": "finite plaquette graph (AZ)", "class": "model deformation", "units": "n/a; a different finite model"}
+  ],
+  "goal_pairs": [
+    {
+      "id": "AV",
+      "title": "Second-order local state expansion with explicit constants from the AM2 creation fixed point",
+      "model": "AM2 finite complete-factor volumes, zero selected triple, both signs of tau, |tau|<=1e-8; passage to the AQ state by local trace-norm convergence.",
+      "observable": "omega_tau(X) for X in B(H_R), R={0,e_z}; specifically omega_tau(W) and omega_tau(W^2)-1/4; deliverables: exact rational c_1 (candidate 2368) and K_2 in |omega_tau(X)-omega_0(X)-tau x_1(X)| <= K_2 tau^2 ||X||, with x_1(W)=1/144 and x_1(W^2)=0.",
+      "control": "tau=0 exactness; sign flip tau->-tau; a toy fixture where sign-changing weights break the monotonicity Z_{a u a'}<=Z; a deliberately non-star-connected coefficient collection must be rejected; weighted-norm fixed point must close for theta_w in {2,3,4} and be reported failing at theta_w=8.",
+      "expected_outcome_types": ["accepted_within_scope (explicit c_1, K_2)", "limited (O(tau) proved, K_2 only with overcounted constant)", "insufficient (KP step fails to close)"],
+      "direction": "paired",
+      "why": "Removes the square-root bottleneck (34x at leading order) and is the premise of AW and AX; the six unproved steps A1-A6 are enumerated in memo 5.1."
+    },
+    {
+      "id": "AW",
+      "title": "Cap-level Euclidean node by the vanishing-first-order plus second-order Duhamel route",
+      "model": "AQ zero-selected subfamily, tau=+1e-8, s=1, original centered xz Wilson, original physical clock; second Duhamel step over the 40 stars meeting R^+ (20 sites).",
+      "observable": "C(1)=<chi,e^{-H/alpha}chi> with absolute target 1e-6 (preview budget 2.0e-7 at L*=3.4e6 under crude constants).",
+      "control": "An observable with nonvanishing first-order dynamical term (e.g. W times an adjacent face operator) must recover the 1.27e-6 first-order floor; missing stars and wrong clock rejected; s=0 handled separately by the variance; full Poisson tail retained; both signs of tau.",
+      "expected_outcome_types": ["accepted_within_scope (node within 1e-6)", "limited (O(tau) fallback, state-dominated ~3e-5)", "insufficient"],
+      "direction": "paired",
+      "why": "Observation 2's floor is a first-order artifact; the first-order terms vanish identically by SU(2) Peter-Weyl orthogonality, so the cap target needs no renegotiation if AV supplies K_2."
+    },
+    {
+      "id": "AX",
+      "title": "Sign of the Wilson mean omega_tau(W)=tau/144+O(tau^2): a resolved interaction-induced effect",
+      "model": "Same AQ family; tau chosen as the largest |tau|<=1e-8 for which the proved K_2 satisfies K_2|tau|<1/144 (crude constants: |tau|<=4e-11).",
+      "observable": "Enclosure [tau/144-K_2 tau^2, tau/144+K_2 tau^2] for omega_tau(W), excluding the free value 0, at +tau and -tau.",
+      "control": "Mirror symmetry of the two enclosures to O(tau^2); the correlation enclosures at +/-tau must coincide to O(tau^2); removing W's own face class from phi_0 must set the first-order coefficient to zero; the Haar integrals verified exactly (sympy), Monte Carlo as preview only.",
+      "expected_outcome_types": ["accepted_within_scope (sign certified at the declared tau)", "limited (sign certified only below the cap)", "insufficient (K_2 too large at every tau in scope)"],
+      "direction": "single+skeptic",
+      "why": "The correlation shift is second order (~1e-16 at the cap) and unresolvable; the mean is the only first-order effect and directly meets roadmap goal 2's 'exclude the matched free reference'."
+    },
+    {
+      "id": "AY",
+      "title": "Uniform magnetic Hamiltonian: exact incidence, non-Haar reference to second order, AM2 re-check",
+      "model": "Selected triple set to the uniform value alpha*tau/24 for the three selected xy faces per factor (inside the admitted box), omitted classes unchanged.",
+      "observable": "Derivation deliverables: incidence count (6 selected faces meet R; reset budget 102|tau|, epsilon_R<=17|tau|), the on-site reference ground state and the W-excitation energy to second order in tau, and whether the first-order vanishing identities for W-observables persist.",
+      "control": "tau=0 reduces to Haar; the AL1 dictionary tau=96/g^4 reproduced; a deliberately dropped selected face changes the incidence count and must be detected.",
+      "expected_outcome_types": ["statement accepted (derivation with exact constants)", "limited"],
+      "direction": "statement-only",
+      "why": "Roadmap goal 3 requires the reference and budgets to be re-derived before any transfer; AM2 already includes selected potentials in h_x, so the gap part is a re-check, not new proof."
+    },
+    {
+      "id": "AZ",
+      "title": "Exact finite-graph second-order coefficients at moderate tau (a different finite model)",
+      "model": "A finite plaquette graph (two xz plaquettes sharing a link, then a single cube) with representation cutoff j_max and a certified tail, at tau in [1e-3, 1]; exact rational/interval linear algebra with Arb cross-check.",
+      "observable": "d<W>/dtau at tau=0 (must equal 1/144 in the matched normalization), the second-order coefficients of <W> and of the centered correlation, and their comparison with the AV constant K_2.",
+      "control": "Cutoff convergence with certified tail; tau->-tau symmetry checks; the free-graph limit reproduces e^{-3s}/4; labelled as a finite model, never as AQ data.",
+      "expected_outcome_types": ["accepted_within_scope (finite-model coefficients certified)", "limited"],
+      "direction": "single+skeptic",
+      "why": "Observation 3 route (a): measures what the second-order constants actually are in a computable model, guiding the sharpening of K_2 by >=250x needed at the cap."
+    }
+  ],
+  "strategy_changes": [
+    "Re-target roadmap goal 2 from the correlation shift (second order, unresolvable at the cap) to the Wilson mean (first order, coefficient 1/144).",
+    "Before charging any first-order Duhamel or state budget, compute the first-order coefficient exactly; if it vanishes by representation theory, freeze a second-order contract instead of renegotiating the target.",
+    "Treat the AM2 creation expansion as a polymer expansion with nonnegative sector weights; handle normalization by the monotonicity Z_{a u a'} <= Z rather than by any adjoint or inverse of e^{-C}.",
+    "Prefer the creation route over the spectral-flow route for explicit constants (2368 vs ~2.9e6); keep the spectral flow as an independent cross-check only.",
+    "Keep the failed AT4 cap certificate and the first-order floor 1.265e-6 visible as retained outcomes in every AW report."
+  ],
+  "skill_updates": [
+    "newton-analysis-synthesis/references/research.md: add N32-1 (General Scholium hypothesis paragraph) and N32-2 (Keynes MS. 28 commentary) with the reading depth recorded in sources.json; add the rule 'compute the first-order coefficient exactly before charging a first-order budget'.",
+    "tesla-mechanism-resonance/references/research.md: add US787412, US1119732, Colorado Springs Notes p.60 and the 1891 AIEE lecture as read passages; add the 'leakage = loss of summability; weight the norm' rule and the +/-tau mirror control.",
+    "historical-physics-panel/references/lenses-and-evidence.md: add 'a patent's numerical resonance condition is a design proposal; the project's L is an integration resource' and 'nonnegative polymer weights license monotone normalization bounds'.",
+    "Freeze the updated snapshots prospectively in research/round32/methods/ only for contracts selected after this loop."
+  ],
+  "tools": [
+    "Exact Fraction arithmetic for every admission decision (unchanged).",
+    "sympy: exact SU(2) Peter-Weyl / Clebsch-Gordan Haar integrals replacing the Monte Carlo preview.",
+    "python-flint (Arb) and mpmath.iv: interval cross-checks of exponentials, logarithms, the L-optimization and the AZ finite-graph eigenproblem.",
+    "numpy/scipy: previews only (Monte Carlo, L scans).",
+    "matplotlib: experiment-setup images of R (2 sites), R^+ (20 sites, 7 stars), the 40 stars meeting R^+ and R^{++} (74 sites), and budget-versus-L curves for first- and second-order growth laws."
+  ],
+  "disagreements": [
+    "With the brief's framing of observation 2 (sharper real-time comparison OR Euclidean argument OR renegotiated target): the first-order real-time term vanishes exactly, so the second-order Duhamel is the sharper comparison and no renegotiation is needed if AV's K_2 is proved; the Euclidean-side second-order route was examined and set aside (imaginary-time evolution of the excitation cloud costs e^{27 s}).",
+    "With roadmap goal 2 as stated: an interacting enclosure of the correlation excluding the free reference is not attainable at the cap by any O(tau^2)-error method; the mean is the honest target.",
+    "With any reliance on Yarotsky/HTW/spectral-flow constants for the cap: their constants are existential or (BMNS) about 1.5e4/gamma; the model-specific creation route is the only one with usable explicit constants.",
+    "Occult and alchemical sources: none yields a model, observable and control beyond workflow analogy; they stay in the interpretation column."
+  ],
+  "open_questions_for_skeptic": [
+    "Is the sector decomposition (E2)-(E3) exact when creations with overlapping supports vanish but psi_M sums over all partitions of M into connected supports? (A1-A2)",
+    "Does the Kotecky-Preiss step (A3) with weight theta^{|I|} and 13|I| incompatible sites bound sum_{connected M contains u} ||psi_M|| in the form used, and what is its exact constant?",
+    "Does star-connectivity of the fixed-point coefficients survive the cutoff-removal limit, and does the cutoff ground state's local density converge (A4)?",
+    "Are the two relative-unitary Duhamel steps valid for R^+-supported operators with the 40-star B' and unbounded on-site terms, in the form AT4 section 4 used for R and the 7-star B?",
+    "Is the first-order coefficient 1/144 correct with I1.5's sign (phi_b = -(tau/3) sum W_f, V_b = phi_b/8) and the energy 3 of W Omega_0, and does it hold for both orientations of the face operator?",
+    "Does any intermediate free energy equal 3 for some face configuration not considered (the list {0,2,4,4.5,6,6.5,8} assumes faces sharing at most one link with W)?",
+    "Is |R^+|=20 and the count of 40 stars meeting R^+ correct for every centered box N>=3, and which N is the minimum for all 40 stars to be retained?"
+  ],
+  "coder_tests_after_subround_1": [
+    "Exact character-identity verification (sympy) for x_1(W)=1/144, x_1(W^2)=0, T_1(theta)=0.",
+    "Weighted-norm AM2 checker run for theta_w in {2,3,4,6,7,8} in exact rationals.",
+    "Toy polymer-ratio fixture on 3-4 sites with a sign-changing-weight control.",
+    "Exact-rational L-optimization of the second-order budget with sensitivity to K_2 in {1e6,1e8,1e10}.",
+    "Two-plaquette and single-cube finite graphs with j_max<=3/2: first- and second-order coefficients of <W> versus tau.",
+    "Numerical first moment of the NSY-I weight for the spectral-flow constant."
+  ]
+}
