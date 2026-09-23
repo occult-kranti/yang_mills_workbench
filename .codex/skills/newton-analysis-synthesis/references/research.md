@@ -43,3 +43,7 @@ For local-to-global physics ask whether a small mechanism survives omitted facto
 Example: a nonzero resonant matrix element predicts a first-order term. Synthesis must control all bulk-connected higher terms and state replacement. Until then, endpoint nonconvergence is unproved. This is our modern application, not Newton's theorem.
 
 Use the [Newton Project introduction](https://www.newtonproject.ox.ac.uk/texts/introduction) and [Chymistry catalogue](https://newton.dlib.indiana.edu/) for expansion. Reading leads: complete Principia definitions/laws/limit arguments; De analysi and De quadratura; optical correspondence; Index Chemicus; General Scholium, chronology and theological manuscripts. These remain leads unless a dated note identifies inspected passages. Search niche articles for manuscript locators, then return to primary sources. Never claim exhaustive coverage of every book or private thought.
+
+## Round32 rule (frozen 2026-09-23 before the AV contracts)
+
+Compute the first-order coefficient of the target observable exactly from the frozen Hamiltonian's representation content before charging a first-order error budget; if it vanishes, freeze a second-order contract rather than renegotiate the target. A local trace-norm bound alone identifies neither the state nor a remainder's sign; a failed certificate is retained data, not a lower bound. These are modern abstractions from documented practice (General Scholium, 1729, p. 392), not an endorsement.
