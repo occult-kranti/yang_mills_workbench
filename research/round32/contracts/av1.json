@@ -1,0 +1,202 @@
+{
+  "id": "AV1",
+  "round": 32,
+  "subround": 1,
+  "sequence": 1,
+  "status": "draft",
+  "title": "Hruday first-order local state lemma for the zero-selected AQ subfamily",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round32/advisor/deliberation-3.md",
+  "selection_reason": "Every cap-level, shift, uniform and state-identification goal in Round32 needs a local state comparison linear in tau instead of the square-root reset bound. The AM2 creation expansion gives the finite-volume ground vector explicitly; the panel converged on two genuinely different routes to a volume-uniform bound on ||rho_R-P_R||_1.",
+  "model": "AM2/AQ1 zero-selected patterned family: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0), 21 omitted anchored faces per factor with coefficient alpha*tau/24 grouped into whole stars phi_b=-(tau/3) sum_f W_f (I1.5, normalized units delta=alpha/8), both signs of tau with |tau|<=10^-8, centered whole-star boxes Lambda_N, complete cover R={0,e_z} of the original xz Wilson W, Haar product reference P_R with local reference gap six (normalized). Passage to the AQ1 chosen subsequential state by local trace-norm convergence. Fixed positive alpha, hbar, E_star, lattice spacing.",
+  "parameters": {
+    "tau_cap": "1/100000000",
+    "signs": [
+      "+",
+      "-"
+    ],
+    "selected_coefficients_over_alpha": [
+      "0",
+      "0",
+      "0"
+    ],
+    "cover": "R={0,e_z}: 48 links, 36 original endpoints, seven incident anchors R-S",
+    "am2_constants": {
+      "anchored_radius_R": "1/64",
+      "per_site_sum_J": "<=28|tau|",
+      "J0": "7/25000000",
+      "majorant_G": "16*exp(8t)*(1+10t)",
+      "G_at_R_upper": "148/7",
+      "G_prime_at_R_upper": "352",
+      "nested_order_termination": 8
+    },
+    "normalized_face_energy": "24 (four j=1/2 links, Casimir 3/4, onsite factor 8); alpha units 3",
+    "reference_moments": {
+      "omega_0(W)": "0",
+      "omega_0(W^2)": "1/4"
+    },
+    "evaluation_points": [
+      "tau=+1/10^8",
+      "tau=-1/10^8",
+      "tau=+1/10^10 (scaling control only)"
+    ]
+  },
+  "shared_premises": [
+    "research/round32/advisor/selection-av1.md",
+    "research/round32/advisor/plan.json",
+    "research/round32/advisor/deliberation-1.md",
+    "research/round32/skeptic/triage.md",
+    "research/round32/skeptic/prospective-controls.json",
+    "research/round32/experts/historical/loop2-response.md",
+    "research/round32/experts/jung/loop2-response.md",
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/forward/aq2/report.md",
+    "research/round31/forward/at4/report.md",
+    "research/round31/reverse/at4/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/methods/paired-physics-research/SKILL.md",
+    "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round32/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round32/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round32/methods/historical-physics-panel/SKILL.md"
+  ],
+  "required": [
+    "1. State exactly the AM2 objects used: commuting nilpotent creators c_I (I nonempty finite sets of coarse factors), the fixed point c with ||c||_a<=1/64, psi=e^{-C}Omega_0 as the unique finite-volume ground vector for every centered whole-star box, and the AM2 constants as exact rationals. No Yarotsky/HTW constant may be used.",
+    "2. Forward route (product ordering, reduced density): using e^{-C}=prod_I(1-c_I) with the factors meeting R placed last, decompose psi=psi_out+delta with psi_out=Omega_R (x) phi_out, prove delta orthogonal to psi_out, bound ||delta||<=eps||psi_out|| with eps<=2||c||_a+||c||_a^2 (count the two-creation term I ni 0, J ni e_z, I cap J empty), write the reduced density rho_{N,R} explicitly including the cross terms |Omega_R><xi| and Tr_out|delta><delta|, and prove ||rho_{N,R}-P_R||_1<=2eps(1+eps)/(1+eps^2) uniformly in N. Reverse route (fidelity/vacuum overlap): prove Tr(rho_{N,R}P_R)=||(P_R (x) 1)psi||^2/||psi||^2 with (P_R (x) 1)delta=0, then apply the pure-state-mixture inequality ||rho-P||_1<=2 sqrt(1-Tr(rho P)) already admitted in AT4 (HNM-AT4-F08) to obtain an explicit bound in eps. Each producer must find the normalization trap (outside creations appear in numerator and denominator) and the straddling-support terms on its own and say so.",
+    "3. Tier (i): evaluate the bound with the admitted crude anchored norm ||c||_a<=J*G(R) (and, if derived, the iterated fixed-point improvement) as exact rationals at both signs of tau=10^-8.",
+    "4. Tier (ii): derive the exact first-order coefficient collection c^(1)=H_0^{-1}P_perp V Omega_0 from the frozen interaction (I1.5 sign convention, V=sum_b phi_b in normalized units): enumerate every omitted face owning a link of factor 0 or e_z with its owner set, show each W_f Omega_0 is an H_0 eigenvector at normalized energy 24, compute ||c^(1)||_a exactly, bound the remainder ||c-c^(1)||_a from the AM2 fixed-point inequality (charging J*(G(t)-16) or a proved sharper bound, never zero), and evaluate eps and the trace-distance bound D as exact rationals at both signs of tau=10^-8. State whether D<10^-6.",
+    "5. Cutoff removal for the ground vector: prove that the reduced density of the untruncated finite-volume ground state satisfies the same bound (simple isolated eigenvalue, monotone form convergence, strong resolvent convergence of the Riesz projection or an equivalent argument). AM2 removed the cutoff for eigenvalues only.",
+    "6. Passage to the AQ state: from the volume-uniform bound and AQ1's local trace-norm convergence, conclude ||rho_R-P_R||_1<=D for the chosen subsequential state, and state the quantifier: every subsequential limit of the construction, not a unique state.",
+    "7. Consequences with exact rationals: |omega_tau(W)|<=D and |omega_tau(W^2)-1/4|<=D/2 (trace-zero effect refinement as in AT4 F09), at both signs; a scaling control at tau=10^-10 exhibiting factor 100 for tier (ii) and factor 100 for tier (i) (both linear), against the square-root reset bound's factor 10.",
+    "8. Executable exact checker check.py --output <absolute fresh dir> writing results.json with a checks list, claim flags continuum_claim:false, uniform_wilson_claim:false, resolved_interaction_shift:false, scientific_priority_verified:false, euclidean_node_certified:false, and every constant as a rational string; small finite fixtures (three-site creation algebra) for the normalization, adjoint and straddling controls; normal and -O byte-identical replay.",
+    "9. Freeze protocol: snapshot every declared premise, freeze with research/round32/tools/freeze.py, do not read the counterpart's current AV1 work before both freezes; disclose the shared skeptic sketch and the historical route split as shared premises."
+  ],
+  "controls": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "deleted_normalization",
+    "outside_creations_do_not_cancel_naively",
+    "omitted_adjoint_terms",
+    "straddling_supports_counted",
+    "anchored_norm_restricted_to_cover",
+    "am2_fixed_point_constants",
+    "first_order_face_enumeration",
+    "cutoff_vector_removal",
+    "aq_passage_trace_norm_only",
+    "sign_convention_fixture"
+  ],
+  "claim_exclusions": [
+    "cap-level Euclidean certificate (AV2)",
+    "interaction-induced shift or its sign (AW)",
+    "uniform Wilson magnetic theory (AX)",
+    "AQ uniqueness, whole-sequence convergence or a rate in N (AY)",
+    "continuum construction (AZ)",
+    "Yarotsky/HTW constant evaluation",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "preregistration": {
+    "schema": "hnm-r32-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness"
+    ],
+    "claim_exclusions": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "producer_code_committed_before_first_full_size_evaluation": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "observable": {
+      "id": "rho_R trace distance; omega(W); omega(W^2)",
+      "centering": "none",
+      "reference_value_exact": "0 and 1/4",
+      "reference_route": "haar"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "state_boundary",
+      "first_order_mean_m2",
+      "truncation_jmax_or_L",
+      "arithmetic"
+    ],
+    "target": {
+      "quantity": "trace-distance bound D at the cap, tier (ii)",
+      "value": "1/1000000",
+      "comparator": "<="
+    },
+    "controls_required": {
+      "universal": "all 12 ids",
+      "goal_group": "cap: state ids",
+      "extra": [
+        "sign_convention_fixture"
+      ]
+    },
+    "direction": "paired"
+  },
+  "acceptance": {
+    "accepted_within_scope": "Both tiers proved with exact rational constants, ground-vector cutoff removal and AQ passage complete, tier (ii) D<10^-6 at the cap, all controls executed.",
+    "limited": "Tier (i) proved and volume-uniform but tier (ii) incomplete, or cutoff-vector removal proved only conditionally; report the dominating term.",
+    "insufficient": "The decomposition or its uniformity fails; report the failing step. A failed upper certificate is not a lower bound."
+  },
+  "stop": "Investigation 1 of 10. AV2 is selected only after the AV1 skeptical review."
+}

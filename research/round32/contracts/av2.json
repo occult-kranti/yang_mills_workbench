@@ -1,0 +1,194 @@
+{
+  "id": "AV2",
+  "round": 32,
+  "subround": 1,
+  "sequence": 2,
+  "status": "draft",
+  "title": "Hruday window-kernel certificate for the centered Wilson correlation at the original cap",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round32/advisor/av1-gate.json",
+  "selection_reason": "The Poisson kernel's absolute first moment diverges and forces the 1.2651e-6 floor at s=1, tau=10^-8. A C^2 window equal to e^{-sx} on the nonnegative spectral support has an L^1 transform with finite first moment, removing the cutoff and its tail. Combined with the AV1 linear state bound it targets the original cap and the unchanged 10^-6 point-error target.",
+  "model": "Same actual chosen centered-box subsequential AQ state as AT4 at tau=+10^-8 (and -10^-8 as a control), selected triple (0,0,0), original xz Wilson, physical clock s=alpha*t_E/hbar, s=1, complete cover R={0,e_z} with seven incident stars, Haar product reference C_0(s)=e^{-3s}/4. The AV1 state bound D is the state premise.",
+  "parameters": {
+    "tau": "1/100000000",
+    "control_tau": "-1/100000000",
+    "s": "1",
+    "selected_coefficients_over_alpha": [
+      "0",
+      "0",
+      "0"
+    ],
+    "window": "g(x)=e^{-sx} for x>=0; g(x)=e^{sx}(1-2sx+2s^2x^2) for x<0",
+    "window_transform": "ghat(theta)=4s^3/(pi(s-i theta)^3(s+i theta)), |ghat|=(4s^3/pi)(s^2+theta^2)^-2, ||ghat||_1=2, int|theta||ghat|=4s/pi, int theta^2|ghat|=2s^2",
+    "duhamel_slope": "k=49|tau|/4 in G=H/alpha units from ||B_N||<=49|tau|/8 (seven stars)",
+    "absolute_target": "1/1000000",
+    "state_bound": "D from research/round32/advisor/av1-gate.json (tier ii if admitted, else tier i)",
+    "retained_insufficient_controls": [
+      "AT4 Poisson certificate at L=10^4 (radius ~0.000841519)",
+      "optimized Poisson floor ~1.2651e-6 at L~4.08e6 with D->0"
+    ]
+  },
+  "shared_premises": [
+    "research/round32/advisor/plan.json",
+    "research/round32/advisor/deliberation-1.md",
+    "research/round32/skeptic/triage.md",
+    "research/round32/skeptic/prospective-controls.json",
+    "research/round32/experts/historical/loop2-response.md",
+    "research/round32/experts/jung/loop2-response.md",
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/forward/aq2/report.md",
+    "research/round31/forward/at4/report.md",
+    "research/round31/reverse/at4/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/methods/paired-physics-research/SKILL.md",
+    "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round32/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round32/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round32/methods/historical-physics-panel/SKILL.md",
+    "research/round32/advisor/selection-av2.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/contracts/av1.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/reverse/av1/report.md",
+    "research/round32/skeptic/av1.md",
+    "research/round31/forward/at5/report.md",
+    "research/round31/forward/at5/calculator.py"
+  ],
+  "required": [
+    "1. Window lemma: for the actual centered vector chi=(pi(W)-omega(W))Omega with nonnegative GNS generator (AQ1) and finite spectral mass, prove C(s)=<chi,e^{-sG}chi>=int ghat(theta)c(theta)dtheta for the frozen C^2 window, justifying g in L^1, ghat in L^1, pointwise Fourier inversion and Fubini; prove the same identity for the free reference and C_0(s)=g(3)/4=e^{-3s}/4.",
+    "2. Prove ghat, |ghat|, ||ghat||_1=2, int|theta||ghat|=4s/pi and int theta^2|ghat|=2s^2 exactly (forward: direct transform of the two half-lines; reverse: a different route, e.g. differentiation under the transform or residues), with directed pi bounds in the checker.",
+    "3. Real-time comparison: |c(theta)-c_0(theta)|<=k|theta|+D_state+m^2 for all real theta with the admitted seven-star relative-unitary Duhamel argument (AT4 F11/F12), the AV1 state bound in the state term (the complex operator W alpha^0_theta(W) is not an effect; no D/2 refinement), and the first-order mean m^2 charged explicitly (m^2<=D^2, or the AW-type first-order value if admitted). Therefore |C(s)-C_0(s)|<=2(D+m^2)+49|tau|s/pi.",
+    "4. Evaluate at tau=+10^-8, s=1 the exact rational datum (free reference midpoint) and the complete point-error radius: state, mean-square, kernel-dynamics and arithmetic terms itemized; test the unchanged 10^-6 target; report both signs of tau; report the s at which the certificate crosses 10^-6 (about 6.1) and reject any [0,128] grid claim at the cap.",
+    "5. Retain the insufficient controls: the AT4 Poisson radius at L=10^4 and the optimized Poisson floor, both at unchanged parameters; show the Poisson kernel's divergent first moment and the window's finite one on the same footing.",
+    "6. Free-reference inclusion: state that e^{-3}/4 lies inside the interval; no interaction shift is resolved by this certificate (reference_unresolved sub-label).",
+    "7. Controls as fixtures: negative spectral atom misread by the window (nonnegativity essential), wrong clock, missing stars, vector versus scalar centering, changed model relabelled (tau=10^-14 or s=1/2 under the cap label rejected), tau scaling of the state term.",
+    "8. Reusable exact calculator API in the AT5 style (exact inputs only; floats rejected; fixed_design mode) restricted to the proved domain: zero selected triple, |tau|<=10^-8, s>0, physical scales positive, with D supplied from the admitted AV1 formula (tier ii or tier i as admitted).",
+    "9. Freeze protocol as in AV1; disclose the skeptic's kernel proposal and the advisor's symbolic verification as shared premises."
+  ],
+  "controls": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "kernel_identity_on_support",
+    "kernel_negative_atom_misread",
+    "kernel_l1_and_first_moment",
+    "poisson_kink_divergence",
+    "window_linear_in_s",
+    "local_not_extensive_duhamel",
+    "tau_zero_null_replay"
+  ],
+  "claim_exclusions": [
+    "resolved interaction shift (free value inside)",
+    "full [0,128] grid at the cap",
+    "uniform Wilson magnetic theory",
+    "AQ uniqueness or a rate in N",
+    "continuum construction",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "preregistration": {
+    "schema": "hnm-r32-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness"
+    ],
+    "claim_exclusions": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "producer_code_committed_before_first_full_size_evaluation": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "AQ1_centered_whole_star_subsequence",
+    "observable": {
+      "id": "C(s)",
+      "centering": "vector",
+      "reference_value_exact": "exp(-3)/4 enclosed",
+      "reference_route": "haar"
+    },
+    "nodes": {
+      "s_values": [
+        "1"
+      ],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "state_boundary",
+      "first_order_mean_m2",
+      "dynamics_or_kernel",
+      "arithmetic"
+    ],
+    "target": {
+      "quantity": "radius",
+      "value": "1/1000000",
+      "comparator": "<="
+    },
+    "controls_required": {
+      "universal": "all 12 ids",
+      "goal_group": "cap: kernel ids",
+      "extra": [
+        "tau_zero_null_replay"
+      ]
+    },
+    "direction": "paired"
+  },
+  "acceptance": {
+    "accepted_within_scope": "Window lemma and constants proved; complete radius at tau=+10^-8, s=1 at most 10^-6 with all terms itemized; both signs; insufficient controls retained.",
+    "limited": "Lemma proved but the radius exceeds 10^-6 because only the tier (i) state bound is admitted; report the dominating term.",
+    "insufficient": "Lemma or constants fail review."
+  },
+  "stop": "Investigation 2 of 10; sub-round 1 ends after its review and the assistants' tests."
+}
