@@ -1,0 +1,1683 @@
+{
+  "D_i": {
+    "+": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+    "-": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+    "preview": "2.368007009e-5"
+  },
+  "D_ii": {
+    "+": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+    "-": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+    "preview": "1.139023055e-8"
+  },
+  "at4_square_root_bound_upper": {
+    "preview": "8.082903768e-4",
+    "value": "404145188432738035156404146351370219/500000000000000000000000000000000000000"
+  },
+  "attribution": {
+    "creation_expansion": "established commuting-creation (Schrieffer-Wolff type) expansions; Bravyi-DiVincenzo-Loss 2008 as credited in the AM2 lineage; the AM2 snapshots read here cite Gauvin arXiv:2503.15539v3 Supplement A.6-A.8 and Yarotsky",
+    "fidelity_inequalities": "standard: pure-state trace distance 2sqrt(1-|<u,v>|^2), convexity and concavity (HNM-AT4-F08 is its project alias)",
+    "scientific_priority": "unverified"
+  },
+  "check_py_sha256": "e7a0611fd2ab33359e84de41a1eb0dd0eb1256fb1c08f98d3da973de0cdd1cd9",
+  "checks": [
+    {
+      "contract_sha256": "c7018519188b953e48e56715a72c90491389e42243ef691cb59dc5b038e91e40",
+      "id": "contract_snapshot_bound",
+      "passed": true,
+      "source": "inputs/research/round32/contracts/av1.json"
+    },
+    {
+      "check_py_sha256": "e7a0611fd2ab33359e84de41a1eb0dd0eb1256fb1c08f98d3da973de0cdd1cd9",
+      "id": "check_py_hash_recorded_before_evaluation",
+      "passed": true
+    },
+    {
+      "id": "no_interpreter_cache_in_closure",
+      "passed": true
+    },
+    {
+      "casimir_half": "3/4",
+      "clebsch_gordan_half_half": [
+        "0",
+        "1"
+      ],
+      "haar_W": "0",
+      "haar_W2": "1/4",
+      "id": "su2_casimir_and_haar_moments",
+      "passed": true
+    },
+    {
+      "alpha_units_energy": "3",
+      "id": "face_vector_energy_24_norm_half",
+      "norm": "1/2",
+      "normalized_energy": "24",
+      "passed": true,
+      "statement": "W_f Omega_0 is j=1/2 on each of its four links: H_0 eigenvalue 8*4*3/4=24, norm^2=E_Haar[W^2]=1/4"
+    },
+    {
+      "consequence": "a link of f outside g appears once in W_f W_g; its Haar integral vanishes, so W_f Omega_0 are orthogonal",
+      "faces_examined": 144,
+      "id": "distinct_faces_share_at_most_one_link",
+      "max_shared_links": 1,
+      "passed": true
+    },
+    {
+      "classes": 24,
+      "id": "i1_table_reproduced_from_fine_lattice",
+      "omitted": 21,
+      "passed": true
+    },
+    {
+      "derived": {
+        "faces_inside_R": 10,
+        "faces_meeting_R": 82,
+        "faces_per_factor": 49,
+        "owner_sets_per_factor": 15
+      },
+      "id": "translation_covariant_face_counts",
+      "incident_anchors": 7,
+      "labelled_bound_84": 84,
+      "owner_set_anchor": "componentwise minimum (unique star per owner set)",
+      "owner_set_face_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        10,
+        10
+      ],
+      "passed": true,
+      "rule": "faces owning a link of u are anchored at u-v, v in the class support"
+    },
+    {
+      "candidates_from_contract": {
+        "faces_inside_R": 10,
+        "faces_meeting_R": 82,
+        "faces_per_factor": 49,
+        "owner_sets_per_factor": 15
+      },
+      "id": "derived_counts_reproduce_contract_candidates",
+      "note": "candidates are compared, never used; every value used below is the derived one",
+      "passed": true
+    },
+    {
+      "N1_incident_stars_retained": 4,
+      "boxes": {
+        "N=2": {
+          "boundary_sites_below_bulk": 98,
+          "bulk_sites": 27,
+          "faces": 1344,
+          "faces_inside_R": 10,
+          "faces_meeting_R": 82,
+          "max_faces_per_site": 49,
+          "owner_sets_at_origin": 15,
+          "sites": 125,
+          "stars": 64
+        },
+        "N=3": {
+          "boundary_sites_below_bulk": 218,
+          "bulk_sites": 125,
+          "faces": 4536,
+          "faces_inside_R": 10,
+          "faces_meeting_R": 82,
+          "max_faces_per_site": 49,
+          "owner_sets_at_origin": 15,
+          "sites": 343,
+          "stars": 216
+        }
+      },
+      "id": "box_enumeration_every_site",
+      "note": "max over every site equals the bulk count; boundary counts are smaller; N=1 loses incident stars",
+      "passed": true
+    },
+    {
+      "id": "owner_set_orthogonal_norms",
+      "meeting_R_preview": "4.3486104e1",
+      "meeting_R_sum_sqrt_n_upper": "434861040226461224141149096203701354617789/10000000000000000000000000000000000000000",
+      "note": "faces with one owner set are orthogonal with norm 1/2: ||c1_M||=(|tau|/144)sqrt(n_M); anchored norm stays l1 over owner sets",
+      "passed": true,
+      "site_sum_preview": "2.5031297e1",
+      "site_sum_sqrt_n_bounds": [
+        "125156488112968991987288729722531380185167/5000000000000000000000000000000000000000",
+        "250312976225937983974577459445062760370341/10000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "endpoints": 36,
+      "id": "wilson_cover_48_links_36_endpoints_7_anchors",
+      "incident_anchors": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "links": 48,
+      "passed": true,
+      "shared_endpoints": 8
+    },
+    {
+      "id": "original_wilson_face_is_an_omitted_first_order_face",
+      "passed": true,
+      "statement": "W itself is one of the ten omitted faces with owner set R, so the first-order vector has a component along W Omega_0; no parity argument removes a first-order mean (its value is not claimed)"
+    },
+    {
+      "G_R_enclosure": [
+        "16770597105389029489069306971595941782601/800000000000000000000000000000000000000",
+        "41926492763472573722673267429036373404489/2000000000000000000000000000000000000000"
+      ],
+      "G_R_upper": "148/7",
+      "G_prime_R_enclosure": [
+        "34900972354458250558333422616564527493521/100000000000000000000000000000000000000",
+        "87252430886145626395833556541508128436369/250000000000000000000000000000000000000"
+      ],
+      "G_prime_R_upper": "352",
+      "J0": "7/25000000",
+      "J_per_tau": "28",
+      "L_k_num": [
+        "16",
+        "288",
+        "3584",
+        "38912",
+        "393216",
+        "3801088",
+        "35651584",
+        "327155712",
+        "2952790016"
+      ],
+      "R": "1/64",
+      "contraction": "77/390625",
+      "exp_one_eighth": [
+        "453259381226730526731602891124214642773/400000000000000000000000000000000000000",
+        "1133148453066826316829007227811793875797/1000000000000000000000000000000000000000"
+      ],
+      "id": "am2_fixed_point_constants_certified",
+      "passed": true,
+      "self_map": "37/6250000",
+      "star_norm_per_tau": "7"
+    },
+    {
+      "id": "aq1_boxes_are_am2_family",
+      "nonzero_triple_trial_energy_alpha_one": "-1/120000",
+      "passed": true,
+      "statement": "Lambda_N=[-N,N]^3 retains exactly the stars b+S inside Lambda_N, the AM2 V for that finite complete-factor set; at the zero triple h_b=8 sum C_e has the constant Haar vacuum (gap 6>=1)"
+    },
+    {
+      "e_squared": "978853/1411200",
+      "epsilon": "527/210",
+      "fixture": "fixtures.B_all_supports",
+      "id": "product_ordering_split_and_vacuum_overlap_identity",
+      "identities": [
+        "(P_R x 1)psi=psi_out",
+        "<psi_out,delta>=0",
+        "C_R^3=0",
+        "delta=-C_R psi_out+C_R^2 psi_out/2",
+        "Tr(rho_R P_R)=1/(1+e^2)",
+        "e<=eps",
+        "rho_R has both cross terms",
+        "||rho_R-P_R||_1<=2sqrt(1-F)<=2eps/sqrt(1+eps^2)"
+      ],
+      "local_vacuum_overlap": "1411200/2390053",
+      "passed": true
+    },
+    {
+      "actual": {
+        "F": "8/13",
+        "e2": "5/8",
+        "trace_norm": [
+          "5541295266277808581/4611686018427387904",
+          "2770647633138904291/2305843009213693952"
+        ]
+      },
+      "conclusion": "dropping the outside creation (support {2}) changes the R-marginal; the naive e^2 and trace distance are smaller than the actual ones, so naive restriction is neither exact nor a bound",
+      "id": "three_site_counterexample_naive_restriction",
+      "naive": {
+        "F": "2/3",
+        "e2": "1/2",
+        "trace_norm": [
+          "1086984818777731851/1152921504606846976",
+          "4347939275110927405/4611686018427387904"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "conclusion": "outside creations multiply numerator and denominator by (1+a^2)^k; only the normalized ratio is volume independent, while the global vacuum overlap decays",
+      "id": "normalization_trap_volume_dependence",
+      "passed": true,
+      "scaled": [
+        {
+          "global_vacuum_overlap": "4/13",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 1,
+          "unnormalized_overlap_norm_sq_psi_out": "2"
+        },
+        {
+          "global_vacuum_overlap": "2/13",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 2,
+          "unnormalized_overlap_norm_sq_psi_out": "4"
+        },
+        {
+          "global_vacuum_overlap": "1/13",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 3,
+          "unnormalized_overlap_norm_sq_psi_out": "8"
+        },
+        {
+          "global_vacuum_overlap": "1/26",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 4,
+          "unnormalized_overlap_norm_sq_psi_out": "16"
+        }
+      ]
+    },
+    {
+      "D_i_minus": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+      "D_i_plus": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+      "id": "tier_i_values_both_signs",
+      "iterated_D": "1.792148537e-5",
+      "passed": true,
+      "preview": "2.368007009e-5"
+    },
+    {
+      "D_ii_minus": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+      "D_ii_plus": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+      "id": "tier_ii_values_both_signs",
+      "passed": true,
+      "preview": "1.139023055e-8"
+    },
+    {
+      "directed_remainder": "1.138998662e-8",
+      "id": "tier_ii_sharper_variants_consistent",
+      "owner_set_orthogonal": "6.040422044e-9",
+      "passed": true
+    },
+    {
+      "id": "fidelity_form_not_weaker_than_direct_form",
+      "passed": true,
+      "statement": "2eps/sqrt(1+eps^2) <= 2eps(1+eps)/(1+eps^2) since (1+eps)^2>=1+eps^2 (contract item 2 form; no forward work read)"
+    },
+    {
+      "D_ii": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+      "id": "tier_ii_target_met_both_signs",
+      "margin_factor_preview": "3.51178e1",
+      "passed": true,
+      "source": "contract preregistration.target",
+      "target": "1/2500000"
+    },
+    {
+      "id": "secondary_comparison_1e-6",
+      "passed": true,
+      "secondary": "1/1000000",
+      "tier_i_meets_secondary": false
+    },
+    {
+      "id": "tier_i_target_not_met_retained",
+      "note": "tier (i) alone would be limited",
+      "passed": true
+    },
+    {
+      "id": "zero_coupling_free_limit",
+      "passed": true
+    },
+    {
+      "at4_D_upper_preview": "8.082903768e-4",
+      "at4_bracket": [
+        "4041451884327380351564041463513702189/404145188432738035156404146351370219",
+        "2020725942163690175782020731756851095/202072594216369017578202073175685109"
+      ],
+      "at4_square_root_ratio_squared": "100",
+      "id": "tau_scaling_ratio_linear_vs_square_root",
+      "passed": true,
+      "scaling": {
+        "tier_i": {
+          "formula_ratio_bracket": [
+            "236800700911401877571290493559933440/2368000070092783402023486099947331",
+            "236800700911401877571290493559933441/2368000070092783402023486099947330"
+          ],
+          "preview": "1.00000293032e2",
+          "ratio_of_rational_upper_bounds": "78933566970467292523763497853311147/789333356697594467341162033315777"
+        },
+        "tier_ii": {
+          "formula_ratio_bracket": [
+            "16271757936278180710870882044698/162698604346354290501572234445",
+            "113902305553947264976096174312887/1138890230424480033511005641114"
+          ],
+          "preview": "1.00011662679e2",
+          "ratio_of_rational_upper_bounds": "37967435184649088325365391437629/379630076808160011170335213705"
+        },
+        "tier_ii_owner_set_orthogonal": {
+          "formula_ratio_bracket": [
+            "60404220447101742630500224241484/603974352289218657376736669339",
+            "60404220447101742630500224241485/603974352289218657376736669338"
+          ],
+          "preview": "1.00011234281e2",
+          "ratio_of_rational_upper_bounds": "60404220447101742630500224241485/603974352289218657376736669339"
+        }
+      }
+    },
+    {
+      "consequences": {
+        "tier_i+": {
+          "abs_omega_W_upper": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+          "omega_W2_interval": [
+            "4999763199299088598122428709506440066559/20000000000000000000000000000000000000000",
+            "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+          ],
+          "variance_interval": [
+            "624970398510521775962023438412176008391/2500000000000000000000000000000000000000",
+            "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+          ]
+        },
+        "tier_i-": {
+          "abs_omega_W_upper": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+          "omega_W2_interval": [
+            "4999763199299088598122428709506440066559/20000000000000000000000000000000000000000",
+            "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+          ],
+          "variance_interval": [
+            "624970398510521775962023438412176008391/2500000000000000000000000000000000000000",
+            "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+          ]
+        },
+        "tier_ii+": {
+          "abs_omega_W_upper": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+          "omega_W2_interval": [
+            "4999999886097694446052735023903825687113/20000000000000000000000000000000000000000",
+            "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+          ],
+          "variance_interval": [
+            "1249999971524422962826423230737658156587/5000000000000000000000000000000000000000",
+            "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+          ]
+        },
+        "tier_ii-": {
+          "abs_omega_W_upper": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+          "omega_W2_interval": [
+            "4999999886097694446052735023903825687113/20000000000000000000000000000000000000000",
+            "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+          ],
+          "variance_interval": [
+            "1249999971524422962826423230737658156587/5000000000000000000000000000000000000000",
+            "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+          ]
+        }
+      },
+      "id": "consequences_mean_and_second_moment",
+      "passed": true,
+      "statement": "|omega(W)|<=D by trace duality; |omega(W^2)-1/4|<=D/2 by the trace-zero effect bound; value/sign of omega(W) not claimed"
+    },
+    {
+      "id": "cutoff_vector_gap_inequality_fixture",
+      "passed": true,
+      "rows": [
+        {
+          "infidelity": "40/49",
+          "rayleigh_minus_E_over_gap": "60/49",
+          "w": [
+            "1",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "infidelity": "45/49",
+          "rayleigh_minus_E_over_gap": "225/49",
+          "w": [
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "infidelity": "146/147",
+          "rayleigh_minus_E_over_gap": "751/147",
+          "w": [
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "infidelity": "325/686",
+          "rayleigh_minus_E_over_gap": "165/343",
+          "w": [
+            "1",
+            "-2",
+            "3"
+          ]
+        }
+      ],
+      "statement": "on each cutoff, 1-|<psi_n,w_n>|^2 <= 2(<w_n,H w_n>-E) with w_n=Q_n psi/||Q_n psi||; the right side tends to 0"
+    },
+    {
+      "complete_anchor_count": 7,
+      "complete_faces_meeting_R": 82,
+      "id": "missing_incoming_stars",
+      "kind": "damaging_mutation_control",
+      "outgoing_only_faces_meeting_R": 42,
+      "outgoing_only_faces_per_factor": 21,
+      "passed": true,
+      "rejected_mutations": {
+        "outgoing_face_count_21_as_derived": "faces per factor: count is hard-coded, copied or not derived from the I1 table at every site",
+        "outgoing_star_anchors_only": "incident anchors 2 differ from the complete R-S (7); incoming stars missing"
+      }
+    },
+    {
+      "cover": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "endpoints": 36,
+      "id": "full_original_wilson_cover",
+      "kind": "damaging_mutation_control",
+      "links": 48,
+      "passed": true,
+      "rejected_mutations": {
+        "cover_origin_factor_only": "cover misses an owner of a link of the original xz Wilson loop",
+        "cover_with_extra_factor": "cover is not the complete factor cover R={0,e_z} of W"
+      }
+    },
+    {
+      "correct_per_face": "1/14400000000",
+      "id": "wrong_delta_alpha_hbar_clock",
+      "kind": "damaging_mutation_control",
+      "note": "static ground-state bound: hbar and E_star do not enter; 24 delta = 3 alpha",
+      "passed": true,
+      "physical_scale_invariance": [
+        "1/14400000000",
+        "1/14400000000",
+        "1/14400000000"
+      ],
+      "rejected_mutations": {
+        "alpha_coupling_over_delta_energy": "mixed normalization: coupling in alpha units divided by an energy in delta units",
+        "delta_coupling_over_alpha_energy": "mixed normalization: coupling in delta units divided by an energy in alpha units",
+        "energy_3_labelled_normalized": "face energy 3 labelled delta units is the wrong clock/normalization (24 delta = 3 alpha)",
+        "exponent_24_labelled_alpha_units": "face energy 24 labelled alpha units is the wrong clock/normalization (24 delta = 3 alpha)"
+      },
+      "wrong_factors": [
+        "1/8",
+        "8"
+      ]
+    },
+    {
+      "at4_style_exact_control": {
+        "scalar_subtraction_shift": "-51/10000",
+        "uncentered_residue": "1/16",
+        "vector_centering_shift": "1/10000"
+      },
+      "id": "vector_versus_scalar_centering",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "variance_lower_without_mean_square": "variance lower bound 2.49999994304e-1 omits the mean-square charge m^2<=D^2",
+        "variance_lower_without_mean_square_tier_i": "variance lower bound 2.49988159964e-1 omits the mean-square charge m^2<=D^2"
+      },
+      "statement": "vector centering adds d^2, scalar subtraction gives -2md-d^2; the AV1 variance bound charges m^2<=D^2"
+    },
+    {
+      "fixture_D": "497518595104994567832636876869285949849/2500000000000000000000000000000000000000",
+      "fixture_mean_abs": "20/101",
+      "id": "first_order_mean_charged",
+      "kind": "damaging_mutation_control",
+      "model_statement": "the original W face is inside the first-order vector (owner set R); D_ii is linear in tau and charges it; its coefficient is excluded from claims",
+      "passed": true,
+      "rejected_mutations": {
+        "second_order_only_budget": "mean budget 1/100 is below the actual first-order mean 20/101",
+        "zero_first_order_mean_budget": "mean budget 0 is below the actual first-order mean 20/101"
+      }
+    },
+    {
+      "at4_ratio": "10 (exact square root)",
+      "id": "tau_scaling_exponent",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "square_root_bound_labelled_linear": "D(tau)/D(tau/100) in [9.99999e0,1.00000e1] is not linear scaling [99,101]"
+      },
+      "tier_ratios": {
+        "tier_i": "1.00000293032e2",
+        "tier_ii": "1.00011662679e2",
+        "tier_ii_owner_set_orthogonal": "1.00011234281e2"
+      }
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "damaging_mutation_control",
+      "note": "beyond the cap the certificate is silent; that is not a gap failure",
+      "passed": true,
+      "rejected_mutations": {
+        "coupling_above_cap": "coupling outside the AM2/AQ cap: not certified here (not a gap failure)",
+        "negative_coupling_above_cap": "coupling outside the AM2/AQ cap: not certified here (not a gap failure)",
+        "nonzero_selected_triple": "nonzero selected triple: the Haar product is not the onsite ground (a changed model, not a relabelling)"
+      }
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "damaging_mutation_control",
+      "note": "each tampered copy is rehashed coherently; semantic recomputation still rejects it",
+      "passed": true,
+      "rejected_mutations": {
+        "G_prime_288": "G'(R) upper constant is not a certified upper bound",
+        "byte_change_without_rehash": "contract bytes do not match the bound hash",
+        "control_removed": "controls list differs from the preregistered control ids",
+        "reference_second_moment_1_3": "contract reference moments differ from the Haar moments",
+        "target_relaxed_to_1e-3": "contract target violates the AV2 feasibility relation",
+        "tau_cap_1e-7": "contract tau cap differs from the admitted AM2 cap"
+      }
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "conditional_cutoff_relabelled_accepted": "recorded outcome accepted_within_scope differs from the evidence-derived outcome limited",
+        "over_target_relabelled_accepted": "recorded outcome accepted_within_scope differs from the evidence-derived outcome limited",
+        "split_failure_relabelled_limited": "recorded outcome limited differs from the evidence-derived outcome insufficient",
+        "tier_i_only_relabelled_accepted": "recorded outcome accepted_within_scope differs from the evidence-derived outcome limited"
+      },
+      "retained_outcomes": {
+        "conditional_cutoff": "limited",
+        "over_target": "limited",
+        "split_failure": "insufficient",
+        "tier_i_only": "limited"
+      }
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "kind": "damaging_mutation_control",
+      "note": "every Boolean is decided on Fraction values; decimal strings are previews",
+      "passed": true,
+      "rejected_mutations": {
+        "bool_tau": "non-exact numeric input rejected: True",
+        "float_bound_admission": "admission requires exact rationals, not floating values",
+        "float_tau": "non-exact numeric input rejected: 1e-08",
+        "nan_string": "malformed rational input rejected: 'NaN'",
+        "zero_denominator": "malformed rational input rejected: '1/0'"
+      }
+    },
+    {
+      "exact_anchored_first_order_over_coefficient": [
+        "125156488112968991987288729722531380185167/5000000000000000000000000000000000000000",
+        "250312976225937983974577459445062760370341/10000000000000000000000000000000000000000"
+      ],
+      "id": "root_n_misuse",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "sqrt_of_faces_meeting_R_per_site": "claimed first-order anchored norm 9.0553851e0|tau|/144 is below the exact global value (>= 2.5031297e1|tau|/144)",
+        "sqrt_of_total_49_across_owner_sets": "claimed first-order anchored norm 7.0000000e0|tau|/144 is below the exact global value (>= 2.5031297e1|tau|/144)"
+      },
+      "rule": "sqrt(n) only within one owner set (orthogonal equal-norm faces); the anchored norm is l1 over owner sets"
+    },
+    {
+      "id": "no_priority_or_continuum_claim",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "continuum_claim_true": "claim flag continuum_claim must be false in AV1",
+        "priority_claim_true": "claim flag scientific_priority_verified must be false in AV1",
+        "uniform_wilson_claim_true": "claim flag uniform_wilson_claim must be false in AV1"
+      }
+    },
+    {
+      "actual_overlap": "8/13",
+      "global_vacuum": "4/13",
+      "id": "deleted_normalization",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "unnormalized_projection_overlap": "claimed local vacuum overlap 2 lies outside [0,1]: normalization deleted",
+        "vacuum_coefficient_normalization": "claimed local vacuum overlap 4/13 violates Tr(rho_R P_R)=1/(1+e^2)=8/13"
+      },
+      "scaled": [
+        {
+          "global_vacuum_overlap": "4/13",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 1,
+          "unnormalized_overlap_norm_sq_psi_out": "2"
+        },
+        {
+          "global_vacuum_overlap": "2/13",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 2,
+          "unnormalized_overlap_norm_sq_psi_out": "4"
+        },
+        {
+          "global_vacuum_overlap": "1/13",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 3,
+          "unnormalized_overlap_norm_sq_psi_out": "8"
+        },
+        {
+          "global_vacuum_overlap": "1/26",
+          "local_vacuum_overlap": "8/13",
+          "outside_sites": 4,
+          "unnormalized_overlap_norm_sq_psi_out": "16"
+        }
+      ],
+      "unnormalized": "2"
+    },
+    {
+      "actual": {
+        "F": "8/13",
+        "e2": "5/8"
+      },
+      "id": "outside_creations_do_not_cancel_naively",
+      "kind": "damaging_mutation_control",
+      "naive": {
+        "F": "2/3",
+        "e2": "1/2"
+      },
+      "passed": true,
+      "rejected_mutations": {
+        "marginal_of_restricted_vector": "claimed local vacuum overlap 2/3 violates Tr(rho_R P_R)=1/(1+e^2)=8/13",
+        "restricted_e_as_exact_budget": "budget 7.07106e-1 does not bound the actual R-excitation ratio e=6.25000e-1^(1/2)"
+      }
+    },
+    {
+      "id": "omitted_adjoint_terms",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "adjoint_cross_term_dropped": "reduced density is not Hermitian: an adjoint cross term was omitted",
+        "both_cross_terms_dropped": "reduced density differs from Tr_out|psi><psi|: cross terms or excited block omitted",
+        "excited_block_dropped": "reduced density differs from Tr_out|psi><psi|: cross terms or excited block omitted"
+      },
+      "xi": [
+        "0",
+        "-3/2",
+        "-5/12",
+        "-47/280"
+      ]
+    },
+    {
+      "fixture": "fixtures.C_straddling_only",
+      "fixture_e2": "361/1800",
+      "fixture_inside_only_budget": "0",
+      "id": "straddling_supports_counted",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "fixture_budget_inside_cover_only": "budget 0 does not bound the actual R-excitation ratio e=2.00555e-1^(1/2)",
+        "model_faces_inside_R_as_meeting_count": "faces meeting R: count is hard-coded, copied or not derived from the I1 table at every site"
+      },
+      "straddling_faces_meeting_R": 72
+    },
+    {
+      "id": "anchored_norm_restricted_to_cover",
+      "kind": "damaging_mutation_control",
+      "note": "the remainder bound needs the global anchored norm of every support, not only supports inside R",
+      "passed": true,
+      "rejected_mutations": {
+        "fixture_anchored_norm_restricted_to_cover": "budget 0 does not bound the actual R-excitation ratio e=2.00555e-1^(1/2)",
+        "model_first_order_norm_from_faces_inside_R": "claimed first-order anchored norm 1.0000000e1|tau|/144 is below the exact global value (>= 2.5031297e1|tau|/144)"
+      }
+    },
+    {
+      "id": "am2_fixed_point_constants",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "G_at_zero_16": "G(R) upper constant is not a certified upper bound",
+        "G_prime_at_zero_288": "G'(R) upper constant is not a certified upper bound",
+        "J0_one_star_7": "J0 is not 28 times the admitted tau cap",
+        "radius_1_32": "anchored radius differs from the admitted AM2 radius 1/64"
+      }
+    },
+    {
+      "faces_per_factor": 49,
+      "id": "first_order_face_enumeration",
+      "kind": "damaging_mutation_control",
+      "owner_sets": 15,
+      "passed": true,
+      "per_face_coefficient": "|tau|/144",
+      "rejected_mutations": {
+        "labelled_bound_84_as_count": "faces per factor: count is hard-coded, copied or not derived from the I1 table at every site",
+        "one_link_energy_6": "face energy 6 is not the H_0 eigenvalue 24",
+        "six_owner_classes_as_sets": "owner-set count differs from the derived 15",
+        "unit_norm_face": "face vector norm^2 1 is not E_Haar[W^2]=1/4"
+      }
+    },
+    {
+      "gapless_counterexample": [
+        {
+          "eigenvalues": [
+            "0",
+            "1"
+          ],
+          "ground": [
+            "0",
+            "1"
+          ],
+          "n": 1
+        },
+        {
+          "eigenvalues": [
+            "0",
+            "1/2"
+          ],
+          "ground": [
+            "1",
+            "0"
+          ],
+          "n": 2
+        },
+        {
+          "eigenvalues": [
+            "0",
+            "1/3"
+          ],
+          "ground": [
+            "0",
+            "1"
+          ],
+          "n": 3
+        },
+        {
+          "eigenvalues": [
+            "0",
+            "1/4"
+          ],
+          "ground": [
+            "1",
+            "0"
+          ],
+          "n": 4
+        }
+      ],
+      "id": "cutoff_vector_removal",
+      "kind": "damaging_mutation_control",
+      "note": "eigenvalues {0,1/n} converge while the ground vectors alternate; the AM2 uniform cutoff gap 1/2 is what moves the vector",
+      "passed": true,
+      "rejected_mutations": {
+        "eigenvalue_convergence_only": "cutoff removal by eigenvalues_only: eigenvalue convergence does not move the ground vector",
+        "no_uniform_gap": "no uniform cutoff gap: vector convergence is not implied"
+      }
+    },
+    {
+      "id": "aq_passage_trace_norm_only",
+      "kind": "damaging_mutation_control",
+      "mass_escape_weak_limit_trace": "19/20",
+      "passed": true,
+      "rejected_mutations": {
+        "rate_in_N_claimed": "passage claims beyond the bound: rate_in_N",
+        "uniqueness_claimed": "passage claims beyond the bound: uniqueness",
+        "weak_star_on_finite_rank": "passage by weak_star_on_finite_rank is not the admitted local trace-norm convergence",
+        "whole_sequence_claimed": "passage quantifier must be every subsequential limit"
+      }
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "exact_a1_with_crude_remainder": "tier mixing: term rho is tier (i) inside tier (ii)",
+        "exact_first_order_inside_tier_i": "tier (i) t must come from the AM2 majorant",
+        "refined_t_without_self_consistency": "tier (ii) t must come from the self-consistent inequality t<=t1/(1-352J)"
+      }
+    },
+    {
+      "all_site_count": 49,
+      "id": "face_count_all_sites",
+      "kind": "damaging_mutation_control",
+      "orthant_restricted_count": 37,
+      "passed": true,
+      "rejected_mutations": {
+        "contract_copied_count": "faces per factor: count is hard-coded, copied or not derived from the I1 table at every site",
+        "hard_coded_integer": "faces per factor: count is hard-coded, copied or not derived from the I1 table at every site",
+        "orthant_corner_count_as_derived": "faces per factor: count is hard-coded, copied or not derived from the I1 table at every site",
+        "scope_sites_0_and_e_z": "anchored norm maximum restricted to sites_0_and_e_z; the fixed point needs every site"
+      }
+    },
+    {
+      "id": "reverse_premise_isolation",
+      "inventory_size": 19,
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "deliberation_added": "forbidden premise in reverse inputs: research/round32/advisor/deliberation-1.md",
+        "forward_at4_reverse_added": "forward-only premise in reverse inputs: research/round31/reverse/at4/report.md",
+        "premise_missing": "reverse inputs inventory differs from AGENTS.md + contract + shared_premises",
+        "skeptic_triage_added": "forbidden premise in reverse inputs: research/round32/skeptic/triage.md"
+      }
+    },
+    {
+      "D_ii": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+      "id": "av2_feasibility_threshold",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "pi_lower": "31415926535897932384626433832795028841971/10000000000000000000000000000000000000000",
+      "rejected_mutations": {
+        "just_above_stated_4.22e-7": "D=4.23000e-7 violates the AV2 window relation 2(D+D^2)+49e-8/pi<=1e-6",
+        "secondary_1e-6_as_threshold": "D=1.00000e-6 violates the AV2 window relation 2(D+D^2)+49e-8/pi<=1e-6",
+        "tier_i_value": "D=2.36800e-5 violates the AV2 window relation 2(D+D^2)+49e-8/pi<=1e-6"
+      },
+      "stated_threshold": "211/500000000",
+      "stated_threshold_feasible": true,
+      "target": "1/2500000"
+    }
+  ],
+  "claim_exclusions": [
+    "cap-level Euclidean certificate (AV2)",
+    "interaction-induced shift or its sign (AW)",
+    "uniform Wilson magnetic theory (AX)",
+    "AQ uniqueness, whole-sequence convergence or a rate in N (AY)",
+    "continuum construction (AZ)",
+    "Yarotsky/HTW constant evaluation",
+    "scientific priority",
+    "the value or sign of omega(W) beyond |omega(W)|<=D",
+    "the first-order coefficient 1/144",
+    "vanishing of first-order C(s) or omega(W^2) (AW1)"
+  ],
+  "consequences": {
+    "tier_i+": {
+      "abs_omega_W_upper": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+      "omega_W2_interval": [
+        "4999763199299088598122428709506440066559/20000000000000000000000000000000000000000",
+        "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+      ],
+      "variance_interval": [
+        "624970398510521775962023438412176008391/2500000000000000000000000000000000000000",
+        "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+      ]
+    },
+    "tier_i-": {
+      "abs_omega_W_upper": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+      "omega_W2_interval": [
+        "4999763199299088598122428709506440066559/20000000000000000000000000000000000000000",
+        "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+      ],
+      "variance_interval": [
+        "624970398510521775962023438412176008391/2500000000000000000000000000000000000000",
+        "5000236800700911401877571290493559933441/20000000000000000000000000000000000000000"
+      ]
+    },
+    "tier_ii+": {
+      "abs_omega_W_upper": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+      "omega_W2_interval": [
+        "4999999886097694446052735023903825687113/20000000000000000000000000000000000000000",
+        "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+      ],
+      "variance_interval": [
+        "1249999971524422962826423230737658156587/5000000000000000000000000000000000000000",
+        "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+      ]
+    },
+    "tier_ii-": {
+      "abs_omega_W_upper": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+      "omega_W2_interval": [
+        "4999999886097694446052735023903825687113/20000000000000000000000000000000000000000",
+        "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+      ],
+      "variance_interval": [
+        "1249999971524422962826423230737658156587/5000000000000000000000000000000000000000",
+        "5000000113902305553947264976096174312887/20000000000000000000000000000000000000000"
+      ]
+    }
+  },
+  "constants": {
+    "G_R_upper": "148/7",
+    "G_prime_R_upper": "352",
+    "J0": "7/25000000",
+    "J_per_tau": "28",
+    "anchored_radius_R": "1/64",
+    "casimir_half": "3/4",
+    "coupling_per_face_normalized_per_tau": "1/3",
+    "exp_one_eighth_enclosure": [
+      "453259381226730526731602891124214642773/400000000000000000000000000000000000000",
+      "1133148453066826316829007227811793875797/1000000000000000000000000000000000000000"
+    ],
+    "face_energy_alpha_units": "3",
+    "face_energy_normalized": "24",
+    "face_vector_norm": "1/2",
+    "factor_352J_at_cap": "77/781250",
+    "per_face_first_order_coefficient_per_tau": "1/144",
+    "pi_enclosure": [
+      "31415926535897932384626433832795028841971/10000000000000000000000000000000000000000",
+      "7853981633974483096156608458198757210493/2500000000000000000000000000000000000000"
+    ],
+    "reference_gap_normalized": "6",
+    "tau_cap": "1/100000000"
+  },
+  "continuum_claim": false,
+  "contract_snapshot_sha256": "c7018519188b953e48e56715a72c90491389e42243ef691cb59dc5b038e91e40",
+  "contribution_alias": "HNM-AV1-R reverse fidelity local state lemma",
+  "direction": "reverse",
+  "euclidean_node_certified": false,
+  "face_enumeration": {
+    "boxes": {
+      "N=2": {
+        "boundary_sites_below_bulk": 98,
+        "bulk_sites": 27,
+        "faces": 1344,
+        "faces_inside_R": 10,
+        "faces_meeting_R": 82,
+        "max_faces_per_site": 49,
+        "owner_sets_at_origin": 15,
+        "sites": 125,
+        "stars": 64
+      },
+      "N=3": {
+        "boundary_sites_below_bulk": 218,
+        "bulk_sites": 125,
+        "faces": 4536,
+        "faces_inside_R": 10,
+        "faces_meeting_R": 82,
+        "max_faces_per_site": 49,
+        "owner_sets_at_origin": 15,
+        "sites": 343,
+        "stars": 216
+      }
+    },
+    "candidates_from_contract": {
+      "faces_inside_R": 10,
+      "faces_meeting_R": 82,
+      "faces_per_factor": 49,
+      "owner_sets_per_factor": 15
+    },
+    "derived": {
+      "faces_inside_R": 10,
+      "faces_meeting_R": 82,
+      "faces_per_factor": 49,
+      "owner_sets_per_factor": 15
+    },
+    "incident_anchors": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        1
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "labelled_bound_84": 84,
+    "owner_set_face_counts_at_origin": {
+      "-1,0,0;-1,0,1;0,0,0": 2,
+      "-1,0,0;-1,1,0;0,0,0": 1,
+      "-1,0,0;0,0,0": 1,
+      "0,-1,0;0,-1,1;0,0,0": 4,
+      "0,-1,0;0,0,0": 3,
+      "0,-1,0;0,0,0;1,-1,0": 1,
+      "0,0,-1;0,0,0": 10,
+      "0,0,-1;0,0,0;0,1,-1": 4,
+      "0,0,-1;0,0,0;1,0,-1": 2,
+      "0,0,0;0,0,1": 10,
+      "0,0,0;0,0,1;0,1,0": 4,
+      "0,0,0;0,0,1;1,0,0": 2,
+      "0,0,0;0,1,0": 3,
+      "0,0,0;0,1,0;1,0,0": 1,
+      "0,0,0;1,0,0": 1
+    }
+  },
+  "first_order_parity_claim": false,
+  "fixtures": {
+    "A_counterexample": {
+      "amplitudes": {
+        "{0,2}": "1/2",
+        "{0}": "1/2",
+        "{2}": "-1"
+      },
+      "cover_bits": [
+        0,
+        1
+      ],
+      "e_squared": "5/8",
+      "effect_values": {
+        "P_R": "-5/13",
+        "site0_plus_x": "-6/13"
+      },
+      "epsilon": "1",
+      "lambda_min_bracket": [
+        "-2770647633138904291/4611686018427387904",
+        "-5541295266277808581/9223372036854775808"
+      ],
+      "local_vacuum_overlap": "8/13",
+      "name": "A_counterexample",
+      "norm_sq_delta": "5/4",
+      "norm_sq_psi": "13/4",
+      "norm_sq_psi_out": "2",
+      "reduced_density": [
+        [
+          "8/13",
+          "-6/13",
+          "0",
+          "0"
+        ],
+        [
+          "-6/13",
+          "5/13",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "sites": 3,
+      "trace_norm_bracket": [
+        "5541295266277808581/4611686018427387904",
+        "2770647633138904291/2305843009213693952"
+      ],
+      "trace_norm_preview": "1.2015768e0"
+    },
+    "A_naive": {
+      "amplitudes": {
+        "{0,2}": "1/2",
+        "{0}": "1/2"
+      },
+      "cover_bits": [
+        0,
+        1
+      ],
+      "e_squared": "1/2",
+      "effect_values": {
+        "P_R": "-1/3",
+        "site0_plus_x": "-1/3"
+      },
+      "epsilon": "1",
+      "lambda_min_bracket": [
+        "-4347939275110927405/9223372036854775808",
+        "-1086984818777731851/2305843009213693952"
+      ],
+      "local_vacuum_overlap": "2/3",
+      "name": "A_naive_restriction",
+      "norm_sq_delta": "1/2",
+      "norm_sq_psi": "3/2",
+      "norm_sq_psi_out": "1",
+      "reduced_density": [
+        [
+          "2/3",
+          "-1/3",
+          "0",
+          "0"
+        ],
+        [
+          "-1/3",
+          "1/3",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "sites": 3,
+      "trace_norm_bracket": [
+        "1086984818777731851/1152921504606846976",
+        "4347939275110927405/4611686018427387904"
+      ],
+      "trace_norm_preview": "9.4280904e-1"
+    },
+    "B_all_supports": {
+      "amplitudes": {
+        "{0,1,2}": "1/7",
+        "{0,1}": "1/5",
+        "{0,2}": "1/2",
+        "{0}": "1/2",
+        "{1,2}": "-1/4",
+        "{1}": "1/3",
+        "{2}": "-1"
+      },
+      "cover_bits": [
+        0,
+        1
+      ],
+      "e_squared": "978853/1411200",
+      "effect_values": {
+        "P_R": "-978853/2390053",
+        "site0_plus_x": "-1042650/2390053"
+      },
+      "epsilon": "527/210",
+      "lambda_min_bracket": [
+        "-2865549511204812105/4611686018427387904",
+        "-5731099022409624209/9223372036854775808"
+      ],
+      "local_vacuum_overlap": "1411200/2390053",
+      "name": "B_all_seven_supports",
+      "norm_sq_delta": "978853/705600",
+      "norm_sq_psi": "2390053/705600",
+      "norm_sq_psi_out": "2",
+      "reduced_density": [
+        [
+          "1411200/2390053",
+          "-1058400/2390053",
+          "-294000/2390053",
+          "-118440/2390053"
+        ],
+        [
+          "-1058400/2390053",
+          "882000/2390053",
+          "176400/2390053",
+          "106680/2390053"
+        ],
+        [
+          "-294000/2390053",
+          "176400/2390053",
+          "83300/2390053",
+          "15750/2390053"
+        ],
+        [
+          "-118440/2390053",
+          "106680/2390053",
+          "15750/2390053",
+          "13553/2390053"
+        ]
+      ],
+      "sites": 3,
+      "trace_norm_bracket": [
+        "5731099022409624209/4611686018427387904",
+        "2865549511204812105/2305843009213693952"
+      ],
+      "trace_norm_preview": "1.2427340e0"
+    },
+    "C_straddling_only": {
+      "amplitudes": {
+        "{0,1,2}": "1/5",
+        "{0,2}": "1/2",
+        "{1,2}": "1/3",
+        "{2}": "1"
+      },
+      "cover_bits": [
+        0,
+        1
+      ],
+      "e_squared": "361/1800",
+      "effect_values": {
+        "P_R": "-361/2161",
+        "site0_plus_x": "510/2161"
+      },
+      "epsilon": "6/5",
+      "lambda_min_bracket": [
+        "-1439846213156691105/4611686018427387904",
+        "-2879692426313382209/9223372036854775808"
+      ],
+      "local_vacuum_overlap": "1800/2161",
+      "name": "C_straddling_only",
+      "norm_sq_delta": "361/900",
+      "norm_sq_psi": "2161/900",
+      "norm_sq_psi_out": "2",
+      "reduced_density": [
+        [
+          "1800/2161",
+          "450/2161",
+          "300/2161",
+          "180/2161"
+        ],
+        [
+          "450/2161",
+          "225/2161",
+          "150/2161",
+          "90/2161"
+        ],
+        [
+          "300/2161",
+          "150/2161",
+          "100/2161",
+          "60/2161"
+        ],
+        [
+          "180/2161",
+          "90/2161",
+          "60/2161",
+          "36/2161"
+        ]
+      ],
+      "sites": 3,
+      "trace_norm_bracket": [
+        "2879692426313382209/4611686018427387904",
+        "1439846213156691105/2305843009213693952"
+      ],
+      "trace_norm_preview": "6.2443375e-1"
+    },
+    "normalization_scaling": [
+      {
+        "global_vacuum_overlap": "4/13",
+        "local_vacuum_overlap": "8/13",
+        "outside_sites": 1,
+        "unnormalized_overlap_norm_sq_psi_out": "2"
+      },
+      {
+        "global_vacuum_overlap": "2/13",
+        "local_vacuum_overlap": "8/13",
+        "outside_sites": 2,
+        "unnormalized_overlap_norm_sq_psi_out": "4"
+      },
+      {
+        "global_vacuum_overlap": "1/13",
+        "local_vacuum_overlap": "8/13",
+        "outside_sites": 3,
+        "unnormalized_overlap_norm_sq_psi_out": "8"
+      },
+      {
+        "global_vacuum_overlap": "1/26",
+        "local_vacuum_overlap": "8/13",
+        "outside_sites": 4,
+        "unnormalized_overlap_norm_sq_psi_out": "16"
+      }
+    ]
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AV1",
+  "model": "AM2/AQ1 zero-selected patterned family: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0), 21 omitted anchored faces per factor with coefficient alpha*tau/24 grouped into whole stars phi_b=-(tau/3) sum_f W_f (I1.5, normalized units delta=alpha/8), both signs of tau with |tau|<=10^-8, centered whole-star boxes Lambda_N, complete cover R={0,e_z} of the original xz Wilson W, Haar product reference P_R with local reference gap six (normalized). Passage to the AQ1 chosen subsequential state by local trace-norm convergence. Fixed positive alpha, hbar, E_star, lattice spacing.",
+  "outcome_note": "proposed for review; admission requires the forward route, exchange and the skeptical review",
+  "producer_outcome": "accepted_within_scope",
+  "reference_values": {
+    "omega_0(W)": "0",
+    "omega_0(W^2)": "1/4"
+  },
+  "resolved_interaction_shift": false,
+  "route": "vacuum overlap / fidelity",
+  "scaling": {
+    "tier_i": {
+      "formula_ratio_bracket": [
+        "236800700911401877571290493559933440/2368000070092783402023486099947331",
+        "236800700911401877571290493559933441/2368000070092783402023486099947330"
+      ],
+      "preview": "1.00000293032e2",
+      "ratio_of_rational_upper_bounds": "78933566970467292523763497853311147/789333356697594467341162033315777"
+    },
+    "tier_ii": {
+      "formula_ratio_bracket": [
+        "16271757936278180710870882044698/162698604346354290501572234445",
+        "113902305553947264976096174312887/1138890230424480033511005641114"
+      ],
+      "preview": "1.00011662679e2",
+      "ratio_of_rational_upper_bounds": "37967435184649088325365391437629/379630076808160011170335213705"
+    },
+    "tier_ii_owner_set_orthogonal": {
+      "formula_ratio_bracket": [
+        "60404220447101742630500224241484/603974352289218657376736669339",
+        "60404220447101742630500224241485/603974352289218657376736669338"
+      ],
+      "preview": "1.00011234281e2",
+      "ratio_of_rational_upper_bounds": "60404220447101742630500224241485/603974352289218657376736669339"
+    }
+  },
+  "scientific_priority_verified": false,
+  "secondary_comparison": {
+    "read_from": "contract required item 9",
+    "value": "1/1000000"
+  },
+  "secondary_target_met_tier_ii": true,
+  "sub_label": "uniform_local_closeness_not_uniqueness",
+  "target": {
+    "comparator": "<=",
+    "quantity": "D_ii",
+    "read_from": "contract preregistration.target",
+    "value": "1/2500000"
+  },
+  "tier_i_target_met": false,
+  "tier_ii_target_met": true,
+  "tiers": {
+    "tier_i": {
+      "+": {
+        "D_formula_lower": "92500273793516358426285349046849/3906250000000000000000000000000000000",
+        "D_upper": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+        "D_upper_preview": "2.368007009e-5",
+        "J_upper": "7/25000000",
+        "epsilon": "462501369/39062500000000",
+        "epsilon_preview": "1.184003504e-5",
+        "t_iterates": [
+          "37/6250000"
+        ],
+        "t_upper": "37/6250000",
+        "tau": "1/100000000",
+        "tier": "i",
+        "variant": "crude_J0_G(R)"
+      },
+      "-": {
+        "D_formula_lower": "92500273793516358426285349046849/3906250000000000000000000000000000000",
+        "D_upper": "236800700911401877571290493559933441/10000000000000000000000000000000000000000",
+        "D_upper_preview": "2.368007009e-5",
+        "J_upper": "7/25000000",
+        "epsilon": "462501369/39062500000000",
+        "epsilon_preview": "1.184003504e-5",
+        "t_iterates": [
+          "37/6250000"
+        ],
+        "t_upper": "37/6250000",
+        "tau": "-1/100000000",
+        "tier": "i",
+        "variant": "crude_J0_G(R)"
+      },
+      "scaling_point": {
+        "D_formula_lower": "236800007009278340202348609994733/1000000000000000000000000000000000000000",
+        "D_upper": "2368000070092783402023486099947331/10000000000000000000000000000000000000000",
+        "D_upper_preview": "2.368000070e-7",
+        "J_upper": "7/2500000000",
+        "epsilon": "46250001369/390625000000000000",
+        "epsilon_preview": "1.184000035e-7",
+        "t_iterates": [
+          "37/625000000"
+        ],
+        "t_upper": "37/625000000",
+        "tau": "1/10000000000",
+        "tier": "i",
+        "variant": "crude_J0_G(R)"
+      }
+    },
+    "tier_i_iterated": {
+      "+": {
+        "D_formula_lower": "44803713430469029183967636015611787/2500000000000000000000000000000000000000",
+        "D_upper": "179214853721876116735870544062447149/10000000000000000000000000000000000000000",
+        "D_upper_preview": "1.792148537e-5",
+        "J_upper": "7/25000000",
+        "epsilon": "56004641790334730301690812404568729173763197693117322356820949766820572041/6250000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "epsilon_preview": "8.960742686e-6",
+        "t_iterates": [
+          "37/6250000",
+          "11201193515963146053843653114414561/2500000000000000000000000000000000000000",
+          "4480361315770884565525815668009871/1000000000000000000000000000000000000000",
+          "44803613064088154442122860304734891/10000000000000000000000000000000000000000",
+          "11200903266020151112160548075786429/2500000000000000000000000000000000000000"
+        ],
+        "t_upper": "11200903266020151112160548075786429/2500000000000000000000000000000000000000",
+        "tau": "1/100000000",
+        "tier": "i",
+        "variant": "iterated_4"
+      },
+      "-": {
+        "D_formula_lower": "44803713430469029183967636015611787/2500000000000000000000000000000000000000",
+        "D_upper": "179214853721876116735870544062447149/10000000000000000000000000000000000000000",
+        "D_upper_preview": "1.792148537e-5",
+        "J_upper": "7/25000000",
+        "epsilon": "56004641790334730301690812404568729173763197693117322356820949766820572041/6250000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "epsilon_preview": "8.960742686e-6",
+        "t_iterates": [
+          "37/6250000",
+          "11201193515963146053843653114414561/2500000000000000000000000000000000000000",
+          "4480361315770884565525815668009871/1000000000000000000000000000000000000000",
+          "44803613064088154442122860304734891/10000000000000000000000000000000000000000",
+          "11200903266020151112160548075786429/2500000000000000000000000000000000000000"
+        ],
+        "t_upper": "11200903266020151112160548075786429/2500000000000000000000000000000000000000",
+        "tau": "-1/100000000",
+        "tier": "i",
+        "variant": "iterated_4"
+      },
+      "scaling_point": {
+        "D_formula_lower": "358400297042245134469069698673647/2000000000000000000000000000000000000000",
+        "D_upper": "448000371302806418086337123342059/2500000000000000000000000000000000000000",
+        "D_upper_preview": "1.792001485e-7",
+        "J_upper": "7/2500000000",
+        "epsilon": "8960007426056164327972968891325598154561643646907207931463409951077743529/100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "epsilon_preview": "8.960007426e-8",
+        "t_iterates": [
+          "37/625000000",
+          "89600095477795169770863039182417/2000000000000000000000000000000000000000",
+          "44800036126768567194011544510467/1000000000000000000000000000000000000000",
+          "448000361267592031679511263304237/10000000000000000000000000000000000000000",
+          "448000361267592031603999715054477/10000000000000000000000000000000000000000"
+        ],
+        "t_upper": "448000361267592031603999715054477/10000000000000000000000000000000000000000",
+        "tau": "1/10000000000",
+        "tier": "i",
+        "variant": "iterated_4"
+      }
+    },
+    "tier_ii": {
+      "+": {
+        "D_formula_lower": "56951152776973632488048087156443/5000000000000000000000000000000000000000",
+        "D_upper": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+        "D_upper_preview": "1.139023055e-8",
+        "J_upper": "7/25000000",
+        "T_self_consistent": "49/14398580736",
+        "a1_first_order_meeting_R": "41/7200000000",
+        "epsilon": "461213409663624001/80984034066839961600000000",
+        "epsilon_preview": "5.695115277e-9",
+        "factor_352J": "77/781250",
+        "per_face_coefficient": "1/14400000000",
+        "remainder_anchored_upper": "3773/11248891200000000",
+        "t1_first_order_anchored": "49/14400000000",
+        "tau": "1/100000000",
+        "tier": "ii",
+        "two_creation_term": "2401/207319127211110301696",
+        "variant": "per_face+contract_352"
+      },
+      "-": {
+        "D_formula_lower": "56951152776973632488048087156443/5000000000000000000000000000000000000000",
+        "D_upper": "113902305553947264976096174312887/10000000000000000000000000000000000000000",
+        "D_upper_preview": "1.139023055e-8",
+        "J_upper": "7/25000000",
+        "T_self_consistent": "49/14398580736",
+        "a1_first_order_meeting_R": "41/7200000000",
+        "epsilon": "461213409663624001/80984034066839961600000000",
+        "epsilon_preview": "5.695115277e-9",
+        "factor_352J": "77/781250",
+        "per_face_coefficient": "1/14400000000",
+        "remainder_anchored_upper": "3773/11248891200000000",
+        "t1_first_order_anchored": "49/14400000000",
+        "tau": "-1/100000000",
+        "tier": "ii",
+        "two_creation_term": "2401/207319127211110301696",
+        "variant": "per_face+contract_352"
+      },
+      "scaling_point": {
+        "D_formula_lower": "569445115212240016755502820557/5000000000000000000000000000000000000000",
+        "D_upper": "227778046084896006702201128223/2000000000000000000000000000000000000000",
+        "D_upper_preview": "1.138890230e-10",
+        "J_upper": "7/2500000000",
+        "T_self_consistent": "49/1439998580736",
+        "a1_first_order_meeting_R": "41/720000000000",
+        "epsilon": "1153124085263228698969/20249960083219670999040000000000",
+        "epsilon_preview": "5.694451152e-11",
+        "factor_352J": "77/78125000",
+        "per_face_coefficient": "1/1440000000000",
+        "remainder_anchored_upper": "3773/112499889120000000000",
+        "t1_first_order_anchored": "49/1440000000000",
+        "tau": "1/10000000000",
+        "tier": "ii",
+        "two_creation_term": "2401/2073595912521694310301696",
+        "variant": "per_face+contract_352"
+      }
+    },
+    "tier_ii_directed_remainder": {
+      "+": {
+        "D_formula_lower": "11389986620264610561903999437069/1000000000000000000000000000000000000000",
+        "D_upper": "113899866202646105619039994370691/10000000000000000000000000000000000000000",
+        "D_upper_preview": "1.138998662e-8",
+        "J_upper": "7/25000000",
+        "T_self_consistent": "49/14398580736",
+        "a1_first_order_meeting_R": "41/7200000000",
+        "epsilon": "1407481482660462332188695519309982088147764553/247143658651245000000000000000000000000000000000000000",
+        "epsilon_preview": "5.694993310e-9",
+        "factor_352J": "77/781250",
+        "per_face_coefficient": "1/14400000000",
+        "remainder_anchored_upper": "2744270533407771720605469697/10000000000000000000000000000000000000000",
+        "t1_first_order_anchored": "49/14400000000",
+        "tau": "1/100000000",
+        "tier": "ii",
+        "two_creation_term": "2401/207319127211110301696",
+        "variant": "per_face+directed_G"
+      },
+      "-": {
+        "D_formula_lower": "11389986620264610561903999437069/1000000000000000000000000000000000000000",
+        "D_upper": "113899866202646105619039994370691/10000000000000000000000000000000000000000",
+        "D_upper_preview": "1.138998662e-8",
+        "J_upper": "7/25000000",
+        "T_self_consistent": "49/14398580736",
+        "a1_first_order_meeting_R": "41/7200000000",
+        "epsilon": "1407481482660462332188695519309982088147764553/247143658651245000000000000000000000000000000000000000",
+        "epsilon_preview": "5.694993310e-9",
+        "factor_352J": "77/781250",
+        "per_face_coefficient": "1/14400000000",
+        "remainder_anchored_upper": "2744270533407771720605469697/10000000000000000000000000000000000000000",
+        "t1_first_order_anchored": "49/14400000000",
+        "tau": "-1/100000000",
+        "tier": "ii",
+        "two_creation_term": "2401/207319127211110301696",
+        "variant": "per_face+directed_G"
+      },
+      "scaling_point": {
+        "D_formula_lower": "1138889986513128755765390680337/10000000000000000000000000000000000000000",
+        "D_upper": "569444993256564377882695340169/5000000000000000000000000000000000000000",
+        "D_upper_preview": "1.138889986e-10",
+        "J_upper": "7/2500000000",
+        "T_self_consistent": "49/1439998580736",
+        "a1_first_order_meeting_R": "41/720000000000",
+        "epsilon": "35190546823226084535003662993749850699864842781/617979738867787811250000000000000000000000000000000000000",
+        "epsilon_preview": "5.694449932e-11",
+        "factor_352J": "77/78125000",
+        "per_face_coefficient": "1/1440000000000",
+        "remainder_anchored_upper": "68600067626751235144469/2500000000000000000000000000000000000000",
+        "t1_first_order_anchored": "49/1440000000000",
+        "tau": "1/10000000000",
+        "tier": "ii",
+        "two_creation_term": "2401/2073595912521694310301696",
+        "variant": "per_face+directed_G"
+      }
+    },
+    "tier_ii_owner_set_orthogonal": {
+      "+": {
+        "D_formula_lower": "15101055111775435657625056060371/2500000000000000000000000000000000000000",
+        "D_upper": "12080844089420348526100044848297/2000000000000000000000000000000000000000",
+        "D_upper_preview": "6.040422044e-9",
+        "J_upper": "7/25000000",
+        "T_self_consistent": "83437658741979327991525819815020920123447/47995269120000000000000000000000000000000000000000",
+        "a1_first_order_meeting_R": "434861040226461224141149096203701354617789/144000000000000000000000000000000000000000000000000",
+        "epsilon": "6957194590533686789860260970211650246124798514500694151536456279665835795056175037719161809/2303545857901225574400000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "epsilon_preview": "3.020211022e-9",
+        "factor_352J": "77/781250",
+        "per_face_coefficient": "1/14400000000",
+        "remainder_anchored_upper": "6424699723132408255347488125756610849505419/37496304000000000000000000000000000000000000000000000000",
+        "t1_first_order_anchored": "83437658741979327991525819815020920123447/48000000000000000000000000000000000000000000000000",
+        "tau": "1/100000000",
+        "tier": "ii",
+        "two_creation_term": "6961842896342999374586839670546928554279402102333256279665835795056175037719161809/2303545857901225574400000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "variant": "owner_set_orthogonal+contract_352"
+      },
+      "-": {
+        "D_formula_lower": "15101055111775435657625056060371/2500000000000000000000000000000000000000",
+        "D_upper": "12080844089420348526100044848297/2000000000000000000000000000000000000000",
+        "D_upper_preview": "6.040422044e-9",
+        "J_upper": "7/25000000",
+        "T_self_consistent": "83437658741979327991525819815020920123447/47995269120000000000000000000000000000000000000000",
+        "a1_first_order_meeting_R": "434861040226461224141149096203701354617789/144000000000000000000000000000000000000000000000000",
+        "epsilon": "6957194590533686789860260970211650246124798514500694151536456279665835795056175037719161809/2303545857901225574400000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "epsilon_preview": "3.020211022e-9",
+        "factor_352J": "77/781250",
+        "per_face_coefficient": "1/14400000000",
+        "remainder_anchored_upper": "6424699723132408255347488125756610849505419/37496304000000000000000000000000000000000000000000000000",
+        "t1_first_order_anchored": "83437658741979327991525819815020920123447/48000000000000000000000000000000000000000000000000",
+        "tau": "-1/100000000",
+        "tier": "ii",
+        "two_creation_term": "6961842896342999374586839670546928554279402102333256279665835795056175037719161809/2303545857901225574400000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "variant": "owner_set_orthogonal+contract_352"
+      },
+      "scaling_point": {
+        "D_formula_lower": "301987176144609328688368334669/5000000000000000000000000000000000000000",
+        "D_upper": "603974352289218657376736669339/10000000000000000000000000000000000000000",
+        "D_upper_preview": "6.039743522e-11",
+        "J_upper": "7/2500000000",
+        "T_self_consistent": "83437658741979327991525819815020920123447/4799995269120000000000000000000000000000000000000000",
+        "a1_first_order_meeting_R": "434861040226461224141149096203701354617789/14400000000000000000000000000000000000000000000000000",
+        "epsilon": "695777082319367573760299092168992223200645443791797416622825288279665835795056175037719161809/23039954583574381225574400000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "epsilon_preview": "3.019871761e-11",
+        "factor_352J": "77/78125000",
+        "per_face_coefficient": "1/1440000000000",
+        "remainder_anchored_upper": "6424699723132408255347488125756610849505419/374999630400000000000000000000000000000000000000000000000000",
+        "t1_first_order_anchored": "83437658741979327991525819815020920123447/4800000000000000000000000000000000000000000000000000",
+        "tau": "1/10000000000",
+        "tier": "ii",
+        "two_creation_term": "6961842896342999374586839670546928554279402102333256279665835795056175037719161809/23039954583574381225574400000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "variant": "owner_set_orthogonal+contract_352"
+      }
+    }
+  },
+  "uniform_wilson_claim": false
+}
