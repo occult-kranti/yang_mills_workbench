@@ -5,6 +5,8 @@ description: Plan and critically review this quantum-electromagnetic-gravity res
 
 # Quantum fields and gravity research advisor
 
+For linear local state bounds from the creation expansion and window kernels replacing the Poisson cutoff, read [the Round32 state-lemma and window lessons](references/round32-state-lemma-and-window.md). Never mix constant tiers; derive face counts; isolate the reverse producer's premises.
+
 For centered heat comparison or completing only an active loop, read [the centered-heat and solo-closeout lessons](references/centered-heat-and-solo-closeout.md). Preserve actual spectral objects and the user's stop boundary; disclose correlated single-agent verification.
 
 For post-Round20 local stability, physical-sector reconstruction, dynamic identification or a clean-checkout admission repair, read [the admission and matching contract](references/admission-and-matching.md). Use the current `AGENTS.md` ownership boundaries and the explicitly selected round’s frozen contracts.
