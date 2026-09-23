@@ -35,6 +35,9 @@ def main():
     for key in ('required', 'controls', 'claim_exclusions'):
         if not c[key]:
             raise SystemExit('empty ' + key)
+    ids = c['preregistration'].get('controls_required', {}).get('ids')
+    if ids != c['controls']:
+        raise SystemExit('preregistration.controls_required.ids must equal controls (audit rule from sub-round 1)')
     c['status'] = 'frozen_before_production'
     c['frozen_at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
     path.write_text(json.dumps(c, indent=2) + '\n')
