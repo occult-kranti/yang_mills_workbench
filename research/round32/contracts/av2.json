@@ -30,11 +30,6 @@
   },
   "shared_premises": [
     "research/round32/advisor/plan.json",
-    "research/round32/advisor/deliberation-1.md",
-    "research/round32/skeptic/triage.md",
-    "research/round32/skeptic/prospective-controls.json",
-    "research/round32/experts/historical/loop2-response.md",
-    "research/round32/experts/jung/loop2-response.md",
     "research/round29/forward/am2/report.md",
     "research/round29/reverse/am2/report.md",
     "research/round29/skeptic/am2.md",
@@ -42,7 +37,6 @@
     "research/round29/forward/aq1/report.md",
     "research/round29/forward/aq2/report.md",
     "research/round31/forward/at4/report.md",
-    "research/round31/reverse/at4/report.md",
     "research/round21/forward/i1/report.md",
     "research/round32/methods/paired-physics-research/SKILL.md",
     "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
@@ -56,18 +50,19 @@
     "research/round32/reverse/av1/report.md",
     "research/round32/skeptic/av1.md",
     "research/round31/forward/at5/report.md",
-    "research/round31/forward/at5/calculator.py"
+    "research/round31/forward/at5/calculator.py",
+    "research/round31/reverse/at4/report.md"
   ],
   "required": [
-    "1. Window lemma: for the actual centered vector chi=(pi(W)-omega(W))Omega with nonnegative GNS generator (AQ1) and finite spectral mass, prove C(s)=<chi,e^{-sG}chi>=int ghat(theta)c(theta)dtheta for the frozen C^2 window, justifying g in L^1, ghat in L^1, pointwise Fourier inversion and Fubini; prove the same identity for the free reference and C_0(s)=g(3)/4=e^{-3s}/4.",
-    "2. Prove ghat, |ghat|, ||ghat||_1=2, int|theta||ghat|=4s/pi and int theta^2|ghat|=2s^2 exactly (forward: direct transform of the two half-lines; reverse: a different route, e.g. differentiation under the transform or residues), with directed pi bounds in the checker.",
-    "3. Real-time comparison: |c(theta)-c_0(theta)|<=k|theta|+D_state+m^2 for all real theta with the admitted seven-star relative-unitary Duhamel argument (AT4 F11/F12), the AV1 state bound in the state term (the complex operator W alpha^0_theta(W) is not an effect; no D/2 refinement), and the first-order mean m^2 charged explicitly (m^2<=D^2, or the AW-type first-order value if admitted). Therefore |C(s)-C_0(s)|<=2(D+m^2)+49|tau|s/pi.",
-    "4. Evaluate at tau=+10^-8, s=1 the exact rational datum (free reference midpoint) and the complete point-error radius: state, mean-square, kernel-dynamics and arithmetic terms itemized; test the unchanged 10^-6 target; report both signs of tau; report the s at which the certificate crosses 10^-6 (about 6.1) and reject any [0,128] grid claim at the cap.",
-    "5. Retain the insufficient controls: the AT4 Poisson radius at L=10^4 and the optimized Poisson floor, both at unchanged parameters; show the Poisson kernel's divergent first moment and the window's finite one on the same footing.",
-    "6. Free-reference inclusion: state that e^{-3}/4 lies inside the interval; no interaction shift is resolved by this certificate (reference_unresolved sub-label).",
-    "7. Controls as fixtures: negative spectral atom misread by the window (nonnegativity essential), wrong clock, missing stars, vector versus scalar centering, changed model relabelled (tau=10^-14 or s=1/2 under the cap label rejected), tau scaling of the state term.",
-    "8. Reusable exact calculator API in the AT5 style (exact inputs only; floats rejected; fixed_design mode) restricted to the proved domain: zero selected triple, |tau|<=10^-8, s>0, physical scales positive, with D supplied from the admitted AV1 formula (tier ii or tier i as admitted).",
-    "9. Freeze protocol as in AV1; disclose the skeptic's kernel proposal and the advisor's symbolic verification as shared premises."
+    "1. Window lemma. Freeze the conventions c(theta)=<chi,e^{i theta G}chi> and ghat(theta)=(2pi)^-1 int g(x)e^{-i theta x}dx. Prove g in L^1 cap C_0, ghat in L^1, pointwise inversion on the nonnegative spectral support using AQ1 nonnegativity only (not the AQ2 gap), and Fubini with the finite centered spectral measure. Conclude C(s)=int ghat(theta)c(theta)dtheta and C_0(s)=g(3)/4=e^{-3s}/4.",
+    "2. Constants. Prove ghat(theta)=4s^3/(pi(s-i theta)^3(s+i theta)), |ghat|=(4s^3/pi)(s^2+theta^2)^-2, M_0=||ghat||_1=2, M_1=int|theta||ghat|=4s/pi and M_2=int theta^2|ghat|=2s^2. Forward: half-line transforms. Reverse: residues. The reverse checker computes these values from its own derivation and compares them with the contract; pi is enclosed with directed rounding.",
+    "3. Real-time comparison. Prove |c(theta)-c_0(theta)|<=k|theta|+D+m^2 for all real theta with the admitted seven-star relative-unitary Duhamel argument (AT4 F10-F12), k=49|tau|/4 in G=H/alpha units, D the AV1-admitted tier value, m^2<=D^2; the D/2 effect refinement is not applied to W alpha^0_theta(W).",
+    "4. Radius. E=M_0(D+D^2)+k M_1 at tau=+10^-8 and -10^-8, s=1, itemized as state, mean-square, kernel-dynamics and arithmetic terms, with a directed enclosure of e^{-3}/4 as the exact rational datum, and a Boolean against the unchanged 10^-6.",
+    "5. Retained failures. Keep the AT4 L=10^4 Poisson radius and the optimized Poisson floor 1.2651e-6 at unchanged tau and s, and exhibit the divergent Poisson first moment against the window's finite one.",
+    "6. Crossover. Report the s* where E=10^-6 (about 6.1-6.3); no grid claim beyond it and no [0,128] claim at the cap.",
+    "7. No resolved shift. e^{-3}/4 lies inside the interval; the result carries the sub-label reference_unresolved.",
+    "8. Calculator. An AT5-style exact calculator (exact inputs only; floats rejected; fixed_design mode) restricted to the proved domain: zero selected triple, |tau|<=10^-8, s>0, positive physical scales, D from the admitted AV1 tier only (control av1_tier_bound).",
+    "9. Freeze protocol with research/round32/tools/freeze.py; byte-identical normal and -O replays; claim flags continuum_claim:false, uniform_wilson_claim:false, resolved_interaction_shift:false, scientific_priority_verified:false, euclidean_node_certified:<bool>, grid_claim:false."
   ],
   "controls": [
     "missing_incoming_stars",
@@ -88,7 +83,11 @@
     "poisson_kink_divergence",
     "window_linear_in_s",
     "local_not_extensive_duhamel",
-    "tau_zero_null_replay"
+    "tau_zero_null_replay",
+    "window_fourier_sign_convention",
+    "state_term_not_effect",
+    "av1_tier_bound",
+    "reverse_premise_isolation"
   ],
   "claim_exclusions": [
     "resolved interaction shift (free value inside)",
@@ -96,7 +95,9 @@
     "uniform Wilson magnetic theory",
     "AQ uniqueness or a rate in N",
     "continuum construction",
-    "scientific priority"
+    "scientific priority",
+    "the second-order Dyson refinement",
+    "any shift of C(s)"
   ],
   "producers": [
     "forward",
@@ -131,7 +132,7 @@
     "hash_binding": {
       "contract_sha256_in_producer_inputs": true,
       "check_py_reads_target_and_reference_from_contract": true,
-      "producer_code_committed_before_first_full_size_evaluation": true
+      "check_py_sha256_recorded_before_full_size_evaluation": true
     },
     "model_id": "AQ_patterned_zero_selected",
     "selected_triple_alpha_units": [
@@ -166,9 +167,9 @@
       }
     },
     "error_terms_itemized": [
-      "state_boundary",
-      "first_order_mean_m2",
-      "dynamics_or_kernel",
+      "state",
+      "mean_square",
+      "kernel_dynamics",
       "arithmetic"
     ],
     "target": {
@@ -177,18 +178,52 @@
       "comparator": "<="
     },
     "controls_required": {
-      "universal": "all 12 ids",
-      "goal_group": "cap: kernel ids",
-      "extra": [
-        "tau_zero_null_replay"
+      "ids": [
+        "missing_incoming_stars",
+        "full_original_wilson_cover",
+        "wrong_delta_alpha_hbar_clock",
+        "vector_versus_scalar_centering",
+        "first_order_mean_charged",
+        "tau_scaling_exponent",
+        "changed_model_relabelled",
+        "coherent_evidence_tampering",
+        "insufficient_verdict_retained",
+        "exact_arithmetic_admission",
+        "root_n_misuse",
+        "no_priority_or_continuum_claim",
+        "kernel_identity_on_support",
+        "kernel_negative_atom_misread",
+        "kernel_l1_and_first_moment",
+        "poisson_kink_divergence",
+        "window_linear_in_s",
+        "local_not_extensive_duhamel",
+        "tau_zero_null_replay",
+        "window_fourier_sign_convention",
+        "state_term_not_effect",
+        "av1_tier_bound",
+        "reverse_premise_isolation"
       ]
     },
     "direction": "paired"
   },
   "acceptance": {
-    "accepted_within_scope": "Window lemma and constants proved; complete radius at tau=+10^-8, s=1 at most 10^-6 with all terms itemized; both signs; insufficient controls retained.",
-    "limited": "Lemma proved but the radius exceeds 10^-6 because only the tier (i) state bound is admitted; report the dominating term.",
-    "insufficient": "Lemma or constants fail review."
+    "accepted_within_scope": "Lemma and constants proved by both routes; E<=10^-6 at tau=+10^-8, s=1 with the admitted tier-(ii) D (preview 1.7-2.0e-7); both signs; insufficient controls retained.",
+    "limited": "Only tier (i) is admitted (preview 3.6-4.7e-5), or only one route's constants survive.",
+    "insufficient": "The lemma or the constants fail; the Poisson floor stands."
   },
-  "stop": "Investigation 2 of 10; sub-round 1 ends after its review and the assistants' tests."
+  "stop": "Investigation 2 of 10; sub-round 1 ends after its review and the assistants' tests.",
+  "forward_additional_premises": [
+    "research/round32/skeptic/triage.md",
+    "research/round32/skeptic/loop2-response.md",
+    "research/round32/advisor/deliberation-1.md"
+  ],
+  "reverse_premise_isolation": true,
+  "premise_note": "The window g and its transform are frozen in this contract as a shared panel premise. The forward producer proves the constants by half-line transforms; the reverse producer by residues (simple pole at theta=is, triple pole at theta=-is) and must not read the skeptic's derivation files listed in forward_additional_premises before both freezes.",
+  "new_control_semantics": {
+    "window_fourier_sign_convention": "the mutation theta->-theta returns g(-3)/4=25e^{-3}/4 on the free atom and must be rejected",
+    "state_term_not_effect": "the D/2 effect refinement applied to W alpha^0_theta(W) is rejected (AT4 F12)",
+    "av1_tier_bound": "the D used equals the AV1 gate's admitted tier; an unadmitted tier is rejected",
+    "tau_zero_null_replay": "at tau=0 the window radius equals the arithmetic term alone; the Poisson comparison at tau=0 keeps the itemized tail s/(pi L)",
+    "reverse_premise_isolation": "the reverse inputs/ inventory equals AGENTS.md, the contract and shared_premises"
+  }
 }

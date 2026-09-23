@@ -110,6 +110,15 @@ def validate(root=ROOT, complete=False):
                 require(snapshot.read_bytes() == original.read_bytes(),
                         'Missing or changed declared premise snapshot: ' + premise)
                 require(snapshot_name in freeze['sources'], 'Unbound premise snapshot')
+            if side == 'reverse' and contract.get('reverse_premise_isolation'):
+                allowed = {'AGENTS.md', str(REL / f'contracts/{loop}.json')} | set(contract.get('shared_premises', []))
+                actual_inputs = {q.relative_to(p / 'inputs').as_posix() for q in (p / 'inputs').rglob('*') if q.is_file()}
+                require(actual_inputs == allowed, 'Reverse premise isolation violated: ' + str(sorted(actual_inputs ^ allowed)[:6]))
+            if side == 'forward':
+                for premise in contract.get('forward_additional_premises', []):
+                    snapshot_name = str(REL / side / loop / 'inputs' / premise)
+                    require(local(root, snapshot_name).read_bytes() == local(root, premise).read_bytes(),
+                            'Missing or changed forward additional premise snapshot: ' + premise)
             result = load(p / 'output/results.json')
             checks = result['checks']
             require(all(isinstance(x, dict) and x.get('passed') is True

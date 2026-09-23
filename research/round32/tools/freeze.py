@@ -76,6 +76,8 @@ def inventory(directory, skip=()):
 def snapshot(p, loop):
     contract_path, contract = contract_for(loop)
     names = ['AGENTS.md', contract_path.relative_to(ROOT).as_posix()] + list(contract.get('shared_premises', []))
+    if p.parent.name == 'forward':
+        names += list(contract.get('forward_additional_premises', []))
     copied = []
     for name in dict.fromkeys(names):
         src = ROOT / name
@@ -102,6 +104,12 @@ def replay(p, optimized):
 def check_snapshots(p, loop):
     contract_path, contract = contract_for(loop)
     names = ['AGENTS.md', contract_path.relative_to(ROOT).as_posix()] + list(contract.get('shared_premises', []))
+    if p.parent.name == 'forward':
+        names += list(contract.get('forward_additional_premises', []))
+    if p.parent.name == 'reverse' and contract.get('reverse_premise_isolation'):
+        actual = {q.relative_to(p / 'inputs').as_posix() for q in (p / 'inputs').rglob('*') if q.is_file()}
+        if actual != set(names):
+            fail('reverse premise isolation violated: ' + json.dumps(sorted(actual ^ set(names))[:6]))
     for name in dict.fromkeys(names):
         snap = p / 'inputs' / name
         if not snap.is_file() or snap.read_bytes() != (ROOT / name).read_bytes():
