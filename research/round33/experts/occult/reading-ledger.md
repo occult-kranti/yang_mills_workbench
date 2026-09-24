@@ -18,3 +18,9 @@ Sentences the panel asked for, stated plainly:
 - Row 3's absence of readable content is not evidence of anything about the PURSUE programme, one way or the other.
 
 **Round33 loop-1 tally.** Of the three rows above, two were actually fetched and read (rows 1-2; both tool-mediated, neither raw-text downloads) and one is an access failure recorded as a lead only (row 3). Zero of the three became a physical premise, a Hamiltonian term, a coupling value or a gate field.
+
+## Sub-round 1 addendum — accessed 2026-09-24
+
+Reader: Jung/Pauli lens agent, writing `experts/jung/update-1.md` after BA1/BA2 admission, before BB1/BB2 freeze. No search for new occult, mystical, parapsychological, government-record or pre-registration-methodology material was run this sub-round: the task was a vocabulary and gate-field audit of the admitted BA1/BA2 gates and the modern lens's BB targets proposal against this lens's own loop-1/loop-2 templates, which needed no new source reading. Nothing is appended to `../jung/sources.json` this sub-round; rows 1-3 above and their tally stand unchanged.
+
+**No occult proposition became a physical premise.**
