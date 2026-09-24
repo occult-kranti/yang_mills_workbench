@@ -1,0 +1,908 @@
+{
+  "aw2_rule": {
+    "forward": {
+      "K2_times_tau": "81104877995836618199905135109761286809699489/2417693653551180146693075902472407901798400000000",
+      "feasible": true,
+      "margin_ge_2": true,
+      "ratio_to_1_288_preview": "1.035051138e2",
+      "sign_margin_exact": "16789539260772084352035249322725054873600000000/81104877995836618199905135109761286809699489",
+      "sign_margin_floor_1e-9": "207010227691/1000000000",
+      "sign_margin_preview": "2.070102276e2",
+      "tau_AW2": "1/100000000"
+    },
+    "reverse": {
+      "K2_times_tau": "335942915356298769555715666601290415707014310237805041914404419632200046154878741653786750596559055288284056326721/10014695866864799309384575318738766070826555083756956708084121600000000000000000000000000000000000000000000000000000000",
+      "feasible": true,
+      "margin_ge_2": true,
+      "ratio_to_1_288_preview": "1.035093998e2",
+      "sign_margin_exact": "69546499075449995204059550824574764380739965859423310472806400000000000000000000000000000000000000000000000000000000/335942915356298769555715666601290415707014310237805041914404419632200046154878741653786750596559055288284056326721",
+      "sign_margin_floor_1e-9": "51754699903/250000000",
+      "sign_margin_preview": "2.070187996e2",
+      "tau_AW2": "1/100000000"
+    },
+    "skeptic": {
+      "K2_times_tau": "207638693805632844612385445095759947457/6189295753091021175534274310329364228603904",
+      "feasible": true,
+      "margin_ge_2": true,
+      "ratio_to_1_288_preview": "1.035000262e2",
+      "sign_margin_exact": "42981220507576535941210238266176140476416/207638693805632844612385445095759947457",
+      "sign_margin_floor_1e-9": "41400010489/200000000",
+      "sign_margin_preview": "2.070000524e2",
+      "tau_AW2": "1/100000000"
+    }
+  },
+  "checks": [
+    {
+      "contract_sha256": "c24bf7eb6a1c24034427c810a9c26c4c86d1f9c1d31b0fe36ea4cf2a796814ef",
+      "id": "contract_hash",
+      "passed": true
+    },
+    {
+      "files": [
+        "research/round32/skeptic/aw1-contract-review.md",
+        "research/round32/skeptic/aw1-independent-derivation.md",
+        "research/round32/skeptic/aw1-independent/results.json",
+        "research/round32/skeptic/aw1_check.py"
+      ],
+      "id": "pre_comparison_package_unchanged",
+      "passed": true
+    },
+    {
+      "id": "frozen_design_read_from_contract",
+      "passed": true,
+      "reference": [
+        "0",
+        "1/4"
+      ],
+      "rule_grid_start": "10^-8",
+      "sign_margin": "1/(144 K_2^+ tau) >= 2",
+      "target": "1/288",
+      "tau_cap": "1/100000000"
+    },
+    {
+      "id": "contract_30_controls_mirror_equal",
+      "passed": true
+    },
+    {
+      "forward": 41,
+      "id": "producer_check_counts_all_passed",
+      "passed": true,
+      "reverse": 57
+    },
+    {
+      "forward_files": 39,
+      "id": "closures_bound_to_contract_and_checkers",
+      "passed": true,
+      "reverse_files": 35
+    },
+    {
+      "c1_per_face": "-1/72",
+      "contract_display_literal_with_AV1_c1": "-1/144",
+      "id": "first_order_coefficient_three_routes",
+      "labels": "one-plaquette fixture is a finite graph; transfers_to_aq false",
+      "omega1": "1/144",
+      "one_plaquette_energy": [
+        "0",
+        "0",
+        "-1/6912",
+        "0",
+        "5/1146617856",
+        "0"
+      ],
+      "one_plaquette_series": [
+        "0",
+        "1/144",
+        "0",
+        "-5/11943936",
+        "0",
+        "289/6604518850560"
+      ],
+      "passed": true,
+      "rayleigh_ritz_mean": "1/144"
+    },
+    {
+      "forward_energy_units": "normalized (8x alpha)",
+      "id": "first_order_signed_values_and_fixtures_match_both",
+      "minus": "-1/14400000000",
+      "passed": true,
+      "plus": "1/14400000000",
+      "reverse_energy_units": "alpha"
+    },
+    {
+      "defect": "contract item 3 writes omega=2<W Omega_0,c^(1)>; with the AV1-admitted c^(1)=L_0=-(tau/72)sum W_f Omega_0 this is -tau/144; the derived value is +tau/144 (c^(1) read as the vector correction psi^(1)=-L_0)",
+      "id": "contract_item3_display_defect_recorded_by_both",
+      "passed": true
+    },
+    {
+      "id": "haar_moments_equal_in_all_three_packages",
+      "moments": {
+        "0": "1",
+        "1": "0",
+        "2": "1/4",
+        "3": "0",
+        "4": "1/8",
+        "5": "0",
+        "6": "5/64",
+        "7": "0",
+        "8": "7/128"
+      },
+      "passed": true
+    },
+    {
+      "id": "forward_first_order_terms_zero_mean_nonzero",
+      "passed": true
+    },
+    {
+      "id": "i1_table_equals_geometry",
+      "passed": true
+    },
+    {
+      "counts": {
+        "both_R": 16,
+        "ez_not_zero": 33,
+        "faces_per_factor": 49,
+        "inside_R": 10,
+        "meet_R": 82,
+        "owner_sets": 15,
+        "straddling": 72,
+        "straddling_one_outside": 42,
+        "straddling_two_outside": 30,
+        "strictly_containing_R": 6,
+        "zero_not_ez": 33
+      },
+      "id": "enumeration_pins_equal_in_both",
+      "multiplicities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4,
+        10,
+        10
+      ],
+      "passed": true
+    },
+    {
+      "E_W2_Wf": "0 for all 82 incl f=W",
+      "E_W_Wf": "1/4 for f=W only",
+      "id": "wrong_face_and_W2Wf_parity_82",
+      "passed": true
+    },
+    {
+      "energies": {
+        "0": [
+          0,
+          16,
+          32,
+          48,
+          64
+        ],
+        "6": [
+          36,
+          52
+        ],
+        "8": [
+          48
+        ]
+      },
+      "id": "multiplet_no_energy_24_component_lambda2",
+      "note": "P_24 V W Omega_0 = 0; the f=W component is (1/4)Omega_0 (energy 0) plus spin one (energy 64)",
+      "odd_set_sizes": {
+        "0": 1,
+        "6": 10,
+        "8": 1333
+      },
+      "passed": true
+    },
+    {
+      "id": "invariant_multiplet_splitting_sizes",
+      "note": "g^h is never a single face, so <W_g Omega_0, V W_h Omega_0>=0 on span{W_g Omega_0}",
+      "passed": true,
+      "symmetric_difference_sizes": [
+        0,
+        6,
+        8
+      ]
+    },
+    {
+      "K2": {
+        "forward": "81104877995836618199905135109761286809699489/24176936535511801466930759024724079017984",
+        "minimal_accepted": "4834027274105036564650889598399220550617136650475647312246561/1441057713956344215090916098637824000000000000000000000000",
+        "reverse": "335942915356298769555715666601290415707014310237805041914404419632200046154878741653786750596559055288284056326721/100146958668647993093845753187387660708265550837569567080841216000000000000000000000000000000000000000000000000",
+        "skeptic": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984"
+      },
+      "K2_preview": {
+        "forward": "3.35463832966e3",
+        "minimal_accepted": "3.35449942586e3",
+        "reverse": "3.35449942586e3",
+        "skeptic": "3.35480322946e3"
+      },
+      "forward_unpinned_variant_equals_skeptic": true,
+      "id": "k2_exact_tier_recomputed_term_by_term",
+      "inputs": {
+        "J": "7/25000000",
+        "T": "49/14398580736",
+        "a": "1/14400000000",
+        "eps_2T_T2": "1411060914529/207319127211110301696",
+        "eps_82_face": "180161487949673694520081/31634388307359360000000000000000",
+        "rho": "3773/11248891200000000",
+        "s0_33_face": "12891241/5624445600000000",
+        "s_str_6_face": "4690811/11248891200000000",
+        "t1": "49/14400000000"
+      },
+      "passed": true
+    },
+    {
+      "id": "k2_each_itemization_dominates_minimal_accepted",
+      "minimal_accepted": "rho + T(6a+rho) + (33a+rho)^2 + min(eps)^2 + a min(eps)^2",
+      "ordering": "skeptic > forward > reverse > minimal_accepted",
+      "passed": true,
+      "valid_upper_bounds": {
+        "forward": true,
+        "reverse": true,
+        "skeptic": true
+      }
+    },
+    {
+      "forward_minus_reverse": "1.3890379e-1",
+      "id": "k2_differences_explained",
+      "passed": true,
+      "per_term_over_tau2": {
+        "forward": {
+          "am2_remainder": "3.354108358e3",
+          "density": "4.632471765e-1",
+          "normalization_order": "3.216994281e-11",
+          "straddling": "1.419105269e-2",
+          "two_creation": "5.253273523e-2"
+        },
+        "minimal_accepted": {
+          "am2_remainder": "3.354108358e3",
+          "density": "3.243433795e-1",
+          "normalization_order": "2.252384580e-11",
+          "straddling": "1.419105269e-2",
+          "two_creation": "5.253273523e-2"
+        },
+        "reverse": {
+          "am2_remainder": "3.354108358e3",
+          "density": "3.243433795e-1",
+          "normalization_order": "1.847172944e-9",
+          "straddling": "1.419105269e-2",
+          "two_creation": "5.253273523e-2"
+        },
+        "skeptic": {
+          "am2_remainder": "3.354108358e3",
+          "density": "4.632471765e-1",
+          "normalization_order": "3.216994281e-11",
+          "straddling": "1.158117937e-1",
+          "two_creation": "1.158117937e-1"
+        }
+      },
+      "skeptic_minus_forward": "1.6489979e-1",
+      "sources": {
+        "common": "am2_remainder rho=352JT identical (99.98% of every value)",
+        "forward_vs_reverse": "density eps=2T+T^2 vs eps=82a+2rho+(33a+rho)^2 (82 faces meeting R); normalization a*eps^2 vs (eps+eps^2)eps^2",
+        "skeptic_vs_forward": "straddling t*t vs T(6a+rho) (6 faces strictly containing R); two-creation t^2 vs (33a+rho)^2"
+      }
+    },
+    {
+      "ceilings": {
+        "forward_1e-40": "16773191648310646769409221622408620244788161/5000000000000000000000000000000000000000",
+        "reverse_1e-40": "33544994258669290845093439980837832702606211/10000000000000000000000000000000000000000",
+        "skeptic_1e-12": "3354803229461691/1000000000000"
+      },
+      "id": "k2_directed_ceilings",
+      "passed": true,
+      "rounding_grid": "forward and reverse 10^-40, skeptic 10^-12; no grid was preregistered; rounding is outward and changes no decision"
+    },
+    {
+      "id": "k2_monotone_in_tau_and_quadratic",
+      "passed": true,
+      "scaling": {
+        "forward": {
+          "monotone": true,
+          "quadratic": true,
+          "ratio_tau_over_100": "1.0000976e4"
+        },
+        "reverse": {
+          "monotone": true,
+          "quadratic": true,
+          "ratio_tau_over_100": "1.0000976e4"
+        },
+        "skeptic": {
+          "monotone": true,
+          "quadratic": true,
+          "ratio_tau_over_100": "1.0000976e4"
+        }
+      }
+    },
+    {
+      "id": "minus_tau_ledgers_are_replays",
+      "note": "the -tau K_2 is the same |tau| formula; not evidence for the flip lemma",
+      "passed": true
+    },
+    {
+      "K2_crude": {
+        "forward_and_skeptic": "1937877026146766159414097129/244140625000000000000",
+        "reverse": "1848107412764512772541657452411636431629453921/232830643653869628906250000000000000000"
+      },
+      "id": "crude_tier_recomputed_and_fails",
+      "margin_at_cap": {
+        "forward_and_skeptic": "8.74885e-2",
+        "reverse": "8.74883e-2"
+      },
+      "passed": true,
+      "previews": {
+        "forward_and_skeptic": "7.93754429909e6",
+        "reverse": "7.93756089731e6"
+      },
+      "rule_value_information_only": "10^-10",
+      "t_crude": "37/6250000"
+    },
+    {
+      "forward": "3.35456714969e3",
+      "id": "omega_W2_supplementary_constants",
+      "note": "forward charges 2 rho and all 72 straddling faces (conservative by about 2); both valid, neither a target",
+      "passed": true,
+      "reverse": "1.67733079877e3"
+    },
+    {
+      "av1_compatibility": "D_ii >= tau/144 + K_2^+(skeptic) tau^2 at the cap",
+      "id": "aw2_rule_every_valid_exact_tier_value",
+      "passed": true,
+      "reverse_margin_103": "the reverse headline margin ~103.5 is 1/(288 K_2^+ tau), the ratio to the 1/288 threshold; the contract sign margin 1/(144 K_2^+ tau) is ~207.02",
+      "robustness": "every exact-tier K_2^+ <= 10^8/288 (~347222.2) gives 10^-8",
+      "rule": {
+        "forward": {
+          "K2_times_tau": "81104877995836618199905135109761286809699489/2417693653551180146693075902472407901798400000000",
+          "feasible": true,
+          "margin_ge_2": true,
+          "ratio_to_1_288_preview": "1.035051138e2",
+          "sign_margin_exact": "16789539260772084352035249322725054873600000000/81104877995836618199905135109761286809699489",
+          "sign_margin_floor_1e-9": "207010227691/1000000000",
+          "sign_margin_preview": "2.070102276e2",
+          "tau_AW2": "1/100000000"
+        },
+        "reverse": {
+          "K2_times_tau": "335942915356298769555715666601290415707014310237805041914404419632200046154878741653786750596559055288284056326721/10014695866864799309384575318738766070826555083756956708084121600000000000000000000000000000000000000000000000000000000",
+          "feasible": true,
+          "margin_ge_2": true,
+          "ratio_to_1_288_preview": "1.035093998e2",
+          "sign_margin_exact": "69546499075449995204059550824574764380739965859423310472806400000000000000000000000000000000000000000000000000000000/335942915356298769555715666601290415707014310237805041914404419632200046154878741653786750596559055288284056326721",
+          "sign_margin_floor_1e-9": "51754699903/250000000",
+          "sign_margin_preview": "2.070187996e2",
+          "tau_AW2": "1/100000000"
+        },
+        "skeptic": {
+          "K2_times_tau": "207638693805632844612385445095759947457/6189295753091021175534274310329364228603904",
+          "feasible": true,
+          "margin_ge_2": true,
+          "ratio_to_1_288_preview": "1.035000262e2",
+          "sign_margin_exact": "42981220507576535941210238266176140476416/207638693805632844612385445095759947457",
+          "sign_margin_floor_1e-9": "41400010489/200000000",
+          "sign_margin_preview": "2.070000524e2",
+          "tau_AW2": "1/100000000"
+        }
+      }
+    },
+    {
+      "E_minus_one_link_even_plaquettes": 4,
+      "anti_cyclic_minus_cyclic": "coboundary of g=p_x p_y+p_y p_z+p_z p_x mod 2 (center gauge transformation)",
+      "id": "flip_set_odd_two_rules_center_gauge",
+      "one_coordinate_rules_odd": 2,
+      "passed": true,
+      "plaquettes_checked": 6069
+    },
+    {
+      "E_star_odd_on_omitted_even_on_selected": true,
+      "both_coboundaries_equal_selected_indicator": true,
+      "cube_condition": "every unit cube has 0 or 2 selected faces, so the selected indicator is a Z_2 cocycle, hence a coboundary on any box",
+      "forward_E2": "{(p,x): p_x mod 4 in {0,1,2}, p_y mod 4 in {1,2}}",
+      "forward_and_reverse_E2_differ_by_a_cocycle": true,
+      "id": "modified_flip_set_combinatorics_correct",
+      "passed": true,
+      "reverse_E2": "{(p,x): p_y odd, p_x mod 4 in {0,1,2}} u {(p,y): p_y odd, b(p_x mod 8)=1}, b=(0,1,0,1,1,0,1,0)"
+    },
+    {
+      "id": "compression_faces_share_one_link",
+      "passed": true
+    },
+    {
+      "U_E": "H(tau,kappa) -> H(-tau,-kappa)",
+      "U_Estar": "H(tau,kappa) -> H(-tau,kappa)",
+      "id": "modified_flip_set_compression_fixture",
+      "label": "exact 3x3 compression onto span{Omega_0, 2W Omega_0, 2W_g Omega_0}, alpha units, kappa a selected-face coupling; finite algebra fixture, not a proof at nonzero triples (strip operator form, reference and uniqueness there are not reviewed)",
+      "passed": true
+    },
+    {
+      "assessment": "the remark does not contradict the contract or the U_E control; it shows the selection sentence is too strong if read as a statement about omega(W) itself; nothing is admitted at nonzero triples",
+      "id": "selection_wording_versus_signoff_wording",
+      "passed": true,
+      "selection_note": "\"antisymmetry in tau holds only at the zero selected triple\" (unqualified)",
+      "skeptic_loop3": "\"This gives antisymmetry in tau only when kappa=0\" (a statement about U_E)"
+    },
+    {
+      "forward_false": [
+        "continuum_claim",
+        "uniform_wilson_claim",
+        "resolved_interaction_shift",
+        "scientific_priority_verified",
+        "third_order_remainder_claim",
+        "omega_W_enclosure_admitted",
+        "sign_of_omega_W_admitted",
+        "euclidean_node_certified",
+        "uniqueness_claimed",
+        "rate_in_N_claimed",
+        "whole_sequence_convergence_claimed"
+      ],
+      "id": "claim_flags_both",
+      "passed": true,
+      "reverse_false": [
+        "continuum_claim",
+        "uniform_wilson_claim",
+        "resolved_interaction_shift",
+        "scientific_priority_verified",
+        "third_order_remainder_claim"
+      ],
+      "true": [
+        "first_order_parity_claim",
+        "flip_lemma_claim"
+      ]
+    },
+    {
+      "forward_rejections": 68,
+      "id": "all_30_controls_damaging_mutations_both",
+      "passed": true,
+      "reverse_rejections": 107
+    },
+    {
+      "id": "target_and_reference_read_from_hash_checked_snapshot",
+      "passed": true
+    },
+    {
+      "id": "mutation_harness_unmutated_copies_reproduce_frozen_results",
+      "passed": true
+    },
+    {
+      "id": "term_validator_accepts_unmutated_outputs",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_first_order_sign_flipped",
+      "last_error_line": "AdmissionError: first-order coefficient differs from the derived tau/144",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_flip_rule_x_links_keyed_to_z",
+      "last_error_line": "AdmissionError: even intersection with E (factor faces) at ((0, 1, 0), (0, 1))",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_density_term_dropped",
+      "last_error_line": "AdmissionError: itemized terms incomplete: am2_remainder,two_creation,straddling,normalization_order",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_overlap_multiplier_4_unlabelled",
+      "last_error_line": "AdmissionError: failed check k2_exact_tier",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_haar_E_W4_changed",
+      "last_error_line": "AdmissionError: failed check haar_parity_exact",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_aw2_grid_start_shifted",
+      "last_error_line": "AdmissionError: failed check aw2_coupling_rule_prefrozen",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_third_order_flag_true",
+      "last_error_line": "AdmissionError: claim flag must be false: third_order_remainder_claim",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_crude_constant_as_headline",
+      "last_error_line": "AdmissionError: failed check k2_exact_tier",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_tau_antisymmetry_allowed_at_nonzero_kappa",
+      "last_error_line": "AdmissionError: damaging mutation accepted: tau_antisymmetry_claimed_at_nonzero_triple",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_contract_target_relaxed_no_rehash",
+      "last_error_line": "AdmissionError: contract snapshot bytes differ from the frozen AW1 contract",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_contract_reference_1_3_rehashed",
+      "last_error_line": "AdmissionError: item 1 E[W^2] differs from the reference",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_undeclared_input_reverse_report",
+      "last_error_line": "AdmissionError: failed check reverse_premise_isolation",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_first_order_sign_flipped",
+      "last_error_line": "ProducerError: psi^(1) amplitude tau/72 in both unit systems",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_flip_rule_x_links_keyed_to_z",
+      "last_error_line": "Rejected: contract flip set meets 16 plaquettes evenly: U_E would not flip every W_f",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_density_term_dropped",
+      "last_error_line": "Rejected: itemized ledger incomplete or padded: am2_remainder,normalization,straddling,two_creation",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_overlap_multiplier_4_unlabelled",
+      "last_error_line": "Rejected: exact overlap multiplier is 2||W Omega_R||=1, got 4",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_haar_E_W4_changed",
+      "last_error_line": "ProducerError: Haar moment routes disagree at n=4",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_aw2_grid_start_shifted",
+      "last_error_line": "ProducerError: check failed: feasibility_and_frozen_aw2_rule",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_third_order_flag_true",
+      "last_error_line": "Rejected: claim flag third_order_remainder_claim must be false in AW1",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_crude_constant_as_headline",
+      "last_error_line": "ProducerError: check failed: k2_exact_tier_itemized_uniform",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_tau_antisymmetry_allowed_at_nonzero_kappa",
+      "last_error_line": "ProducerError: damaging mutation accepted by certify_tau_antisymmetry_claim",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_contract_target_relaxed_no_rehash",
+      "last_error_line": "Rejected: contract bytes do not match the bound hash",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_contract_target_1_144_rehashed",
+      "last_error_line": "Rejected: AW2 threshold is not half the derived first-order coefficient",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_contract_reference_1_3_rehashed",
+      "last_error_line": "Rejected: reference values differ from the Haar moments 0 and 1/4",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_skeptic_triage_added_to_inputs",
+      "last_error_line": "Rejected: forbidden premise in reverse inputs: research/round32/skeptic/triage.md",
+      "passed": true
+    },
+    {
+      "finding": "forward records the tampered 1/144 target; it has no semantic check that the threshold is half the first-order coefficient (the reverse has one); the rehash needs a check.py edit, which freeze.json binds",
+      "id": "forward_reads_target_from_snapshot_rehashed_tamper_recorded",
+      "passed": true
+    },
+    {
+      "id": "silent_edit_caught_by_review_forward_density_undercount_quarter",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "forward density below the minimal accepted itemization"
+    },
+    {
+      "id": "silent_edit_caught_by_review_forward_two_creation_undercount_ninth",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "forward two_creation below the minimal accepted itemization"
+    },
+    {
+      "id": "silent_edit_caught_by_review_reverse_density_pinned_to_49_faces",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "reverse density below the minimal accepted itemization"
+    },
+    {
+      "id": "silent_edit_caught_by_review_reverse_two_creation_undercount_ninth",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "reverse two_creation below the minimal accepted itemization"
+    }
+  ],
+  "checks_count": 65,
+  "contract_sha256": "c24bf7eb6a1c24034427c810a9c26c4c86d1f9c1d31b0fe36ea4cf2a796814ef",
+  "exact": {
+    "D_ii_av1": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+    "K2_crude_tier": {
+      "forward_and_skeptic": "1937877026146766159414097129/244140625000000000000",
+      "reverse": "1848107412764512772541657452411636431629453921/232830643653869628906250000000000000000"
+    },
+    "K2_exact_tier": {
+      "forward": "81104877995836618199905135109761286809699489/24176936535511801466930759024724079017984",
+      "minimal_accepted": "4834027274105036564650889598399220550617136650475647312246561/1441057713956344215090916098637824000000000000000000000000",
+      "reverse": "335942915356298769555715666601290415707014310237805041914404419632200046154878741653786750596559055288284056326721/100146958668647993093845753187387660708265550837569567080841216000000000000000000000000000000000000000000000000",
+      "skeptic": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984"
+    },
+    "K2_exact_tier_terms": {
+      "forward": {
+        "am2_remainder": "3773/11248891200000000",
+        "density": "1991092904511417843291841/42981220507576535941210238266176140476416",
+        "normalization_order": "1991092904511417843291841/618929575309102117553427431032936422860390400000000",
+        "straddling": "229849739/161968068133679923200000000",
+        "two_creation": "166184094520081/31634388307359360000000000000000"
+      },
+      "minimal_accepted": {
+        "am2_remainder": "3773/11248891200000000",
+        "density": "32458161740240419840923214704314125168912246561/1000734523580794593813136179609600000000000000000000000000000000",
+        "normalization_order": "32458161740240419840923214704314125168912246561/14410577139563442150909160986378240000000000000000000000000000000000000000",
+        "straddling": "229849739/161968068133679923200000000",
+        "two_creation": "166184094520081/31634388307359360000000000000000"
+      },
+      "reverse": {
+        "am2_remainder": "3773/11248891200000000",
+        "density": "32458161740240419840923214704314125168912246561/1000734523580794593813136179609600000000000000000000000000000000",
+        "normalization_order": "184988752528315454117041695025250274568912880570686727069159818956156053786750596559055288284056326721/1001469586686479930938457531873876607082655508375695670808412160000000000000000000000000000000000000000000000000000000000000000",
+        "straddling": "229849739/161968068133679923200000000",
+        "two_creation": "166184094520081/31634388307359360000000000000000"
+      },
+      "skeptic": {
+        "am2_remainder": "3773/11248891200000000",
+        "density": "1991092904511417843291841/42981220507576535941210238266176140476416",
+        "normalization_order": "1991092904511417843291841/618929575309102117553427431032936422860390400000000",
+        "straddling": "2401/207319127211110301696",
+        "two_creation": "2401/207319127211110301696"
+      }
+    },
+    "K2_recommended_binding": {
+      "outward_ceiling_1e-12": "3354803229461691/1000000000000",
+      "sign_margin_exact": "42981220507576535941210238266176140476416/207638693805632844612385445095759947457",
+      "sign_margin_floor_1e-9": "41400010489/200000000",
+      "source": "skeptic headline = forward labelled variant unpinned_t_bounds (exact tier)",
+      "tau_AW2": "1/100000000",
+      "value": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984"
+    },
+    "contract_display_literal": "-1/144",
+    "first_order_at_cap": [
+      "1/14400000000",
+      "-1/14400000000"
+    ],
+    "first_order_coefficient": "1/144",
+    "omega_W2_constants": {
+      "forward": "2933418586596161169576768425066756462209/874455169831879393335169235558596608",
+      "reverse": "223808378373589529514444629866909754125168912246561/133431269810772612508418157281280000000000000000"
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AW1",
+  "mutation_receipts": [
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: first-order coefficient differs from the derived tau/144",
+      "mutation": "first_order_sign_flipped",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: even intersection with E (factor faces) at ((0, 1, 0), (0, 1))",
+      "mutation": "flip_rule_x_links_keyed_to_z",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: itemized terms incomplete: am2_remainder,two_creation,straddling,normalization_order",
+      "mutation": "density_term_dropped",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check k2_exact_tier",
+      "mutation": "overlap_multiplier_4_unlabelled",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check haar_parity_exact",
+      "mutation": "haar_E_W4_changed",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check aw2_coupling_rule_prefrozen",
+      "mutation": "aw2_grid_start_shifted",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: claim flag must be false: third_order_remainder_claim",
+      "mutation": "third_order_flag_true",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check k2_exact_tier",
+      "mutation": "crude_constant_as_headline",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: damaging mutation accepted: tau_antisymmetry_claimed_at_nonzero_triple",
+      "mutation": "tau_antisymmetry_allowed_at_nonzero_kappa",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: contract snapshot bytes differ from the frozen AW1 contract",
+      "mutation": "contract_target_relaxed_no_rehash",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: item 1 E[W^2] differs from the reference",
+      "mutation": "contract_reference_1_3_rehashed",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "last_error_line": "AdmissionError: failed check reverse_premise_isolation",
+      "mutation": "undeclared_input_reverse_report",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: psi^(1) amplitude tau/72 in both unit systems",
+      "mutation": "first_order_sign_flipped",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: contract flip set meets 16 plaquettes evenly: U_E would not flip every W_f",
+      "mutation": "flip_rule_x_links_keyed_to_z",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: itemized ledger incomplete or padded: am2_remainder,normalization,straddling,two_creation",
+      "mutation": "density_term_dropped",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: exact overlap multiplier is 2||W Omega_R||=1, got 4",
+      "mutation": "overlap_multiplier_4_unlabelled",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: Haar moment routes disagree at n=4",
+      "mutation": "haar_E_W4_changed",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: check failed: feasibility_and_frozen_aw2_rule",
+      "mutation": "aw2_grid_start_shifted",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: claim flag third_order_remainder_claim must be false in AW1",
+      "mutation": "third_order_flag_true",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: check failed: k2_exact_tier_itemized_uniform",
+      "mutation": "crude_constant_as_headline",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "ProducerError: damaging mutation accepted by certify_tau_antisymmetry_claim",
+      "mutation": "tau_antisymmetry_allowed_at_nonzero_kappa",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: contract bytes do not match the bound hash",
+      "mutation": "contract_target_relaxed_no_rehash",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: AW2 threshold is not half the derived first-order coefficient",
+      "mutation": "contract_target_1_144_rehashed",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: reference values differ from the Haar moments 0 and 1/4",
+      "mutation": "contract_reference_1_3_rehashed",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "last_error_line": "Rejected: forbidden premise in reverse inputs: research/round32/skeptic/triage.md",
+      "mutation": "skeptic_triage_added_to_inputs",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "mutation": "contract_target_1_144_rehashed",
+      "note": "reads-from-contract demonstration, not a rejection",
+      "producer_aborted": false,
+      "recorded_target": "1/144"
+    },
+    {
+      "caught_by_skeptic_term_validator": true,
+      "direction": "forward",
+      "mutation": "density_undercount_quarter",
+      "producer_aborted": false,
+      "reason": "forward density below the minimal accepted itemization"
+    },
+    {
+      "caught_by_skeptic_term_validator": true,
+      "direction": "forward",
+      "mutation": "two_creation_undercount_ninth",
+      "producer_aborted": false,
+      "reason": "forward two_creation below the minimal accepted itemization"
+    },
+    {
+      "caught_by_skeptic_term_validator": true,
+      "direction": "reverse",
+      "mutation": "density_pinned_to_49_faces",
+      "producer_aborted": false,
+      "reason": "reverse density below the minimal accepted itemization"
+    },
+    {
+      "caught_by_skeptic_term_validator": true,
+      "direction": "reverse",
+      "mutation": "two_creation_undercount_ninth",
+      "producer_aborted": false,
+      "reason": "reverse two_creation below the minimal accepted itemization"
+    }
+  ],
+  "passed": true,
+  "previews": {
+    "K2_crude_tier": {
+      "forward_and_skeptic": "7.93754429909e6",
+      "reverse": "7.93756089731e6"
+    },
+    "K2_exact_tier": {
+      "forward": "3.35463832966e3",
+      "minimal_accepted": "3.35449942586e3",
+      "reverse": "3.35449942586e3",
+      "skeptic": "3.35480322946e3"
+    },
+    "first_order_at_cap": "6.94444444444e-11",
+    "note": "decimal previews only; every Boolean above was decided on exact rationals",
+    "remainder_at_cap_skeptic": "3.35480322946e-13",
+    "sign_margin": {
+      "forward": "2.070102276e2",
+      "reverse": "2.070187996e2",
+      "skeptic": "2.070000524e2"
+    }
+  },
+  "reviewer": "model-agent skeptic with correlated ancestry; not human peer review or formal verification",
+  "schema": "hnm-r32-skeptic-postcomparison-v1",
+  "stage": "post_comparison"
+}
