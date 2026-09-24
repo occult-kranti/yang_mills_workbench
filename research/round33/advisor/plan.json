@@ -1,0 +1,144 @@
+{
+  "schema": "hnm-round33-plan-v1",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "status": "plan_v1_pending_loop2_signoff",
+  "authorization": "2026-09-24 user instruction after the Round32 merge: continue with the next three rounds (sub-rounds of two investigations with the advisor, the skeptic and the expert panel, one research assistant per lens after each), then apply the admitted solutions and new equations to their related problems; publish and merge.",
+  "deliberation": [
+    {
+      "loop": 1,
+      "path": "research/round33/advisor/deliberation-1.md",
+      "summary": "Lens memos, skeptic triage and advisor synthesis: rate 37888|tau| for coefficient decay by two routes, marginal locality as the main risk, mechanical dynamics bound, consequences restate, center-symmetry and observable transfers."
+    }
+  ],
+  "subrounds": [
+    {
+      "id": 1,
+      "goal_id": "locality",
+      "title": "Locality of the fixed point and of the dynamics",
+      "loops": [
+        "BA1",
+        "BA2"
+      ],
+      "loop_titles": {
+        "BA1": "Boundary decay of the AM2 creation coefficients (paired: weighted norm / analyticity)",
+        "BA2": "Boundary comparison of the Heisenberg dynamics on compact windows (paired)"
+      },
+      "selection_note_path": "research/round33/advisor/selection-ba1.md",
+      "panel_update_path": "research/round33/advisor/panel-update-1.md"
+    },
+    {
+      "id": 2,
+      "goal_id": "convergence",
+      "title": "Whole-sequence convergence of the named constructions",
+      "loops": [
+        "BB1",
+        "BB2"
+      ],
+      "loop_titles": {
+        "BB1": "Marginal locality: from coefficient decay to the reduced density (paired: polymer / iterated split)",
+        "BB2": "Whole-sequence convergence, common limit and coarse translation invariance"
+      },
+      "selection_note_path": "research/round33/advisor/selection-bb1.md",
+      "panel_update_path": "research/round33/advisor/panel-update-2.md"
+    },
+    {
+      "id": 3,
+      "goal_id": "consequences",
+      "title": "Certificates for the limit and the uniform model",
+      "loops": [
+        "BC1",
+        "BC2"
+      ],
+      "loop_titles": {
+        "BC1": "Node and sign certificates restated for the limit; updated obligations (single+skeptic)",
+        "BC2": "Route-B uniform model: convergence and its node (single+skeptic)"
+      },
+      "selection_note_path": "research/round33/advisor/selection-bc1.md",
+      "panel_update_path": "research/round33/advisor/panel-update-3.md"
+    },
+    {
+      "id": 4,
+      "goal_id": "applications",
+      "title": "Applications of the admitted equations to related problems",
+      "loops": [
+        "BD1",
+        "BD2"
+      ],
+      "loop_titles": {
+        "BD1": "Center-symmetry transfer of the parity theorem and link-flip lemma across gauge groups (paired)",
+        "BD2": "New observables and dimensions in SU(2) with the finite graphs (single+skeptic)"
+      },
+      "selection_note_path": "research/round33/advisor/selection-bd1.md",
+      "panel_update_path": "research/round33/advisor/panel-update-4.md"
+    }
+  ],
+  "direction_rules": "Paired forward/reverse for derivation-bearing loops with genuinely different routes named in the contract; single direction plus an independent skeptic replay from the contract alone for formula-instantiating certificates; statement plus skeptic for statements. Same-author passes are never independent review.",
+  "assistants": "After each sub-round one research assistant/coder per lens (historical, jung, modern) runs the tests named in the lens updates; outputs live under research/round33/experts/<lens>/assistant-<subround>/ and count zero research loops.",
+  "goal_change_rule": "After each sub-round's panel update the advisor may reorder, replace or retitle the next pair; the change is recorded in the next selection note and this plan's history field.",
+  "contract_rules": [
+    "Round32 closing-panel rules R1-R10 (freezer enforces R1-R5, R8; gate recorder enforces R6, R7; R9 at integration; R10 by the tier vocabulary below)",
+    "every contract names its metric, weights, window and clock in parameters",
+    "the (rate, constant) pair of a decay target is frozen before production with a margin of at least 2",
+    "scaling brackets are declared per constant",
+    "the global Lipschitz constant is never a decay factor"
+  ],
+  "vocabulary": {
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness",
+      "boundary_decay_rate_only",
+      "convergence_of_named_constructions",
+      "common_limit_of_named_constructions",
+      "dynamics_on_compact_windows",
+      "certificate_restated_for_limit",
+      "transfer_to_named_model",
+      "obstruction_recorded"
+    ],
+    "tier_names_allowed": [
+      "crude_majorant",
+      "exact_first_order",
+      "weighted_norm",
+      "analytic_disc",
+      "polymer_kp",
+      "iterated_split",
+      "polynomial_lieb_robinson",
+      "exponential_lieb_robinson",
+      "first_order_distance_from_product"
+    ],
+    "gate_fields": {
+      "uniqueness_of_ground_state_claimed": "always false",
+      "whole_sequence_claimed": "true only with a non-empty whole_sequence_scope naming the construction",
+      "rate_in_N_claimed": "separate from rate_in_a_claimed",
+      "rate_in_a_claimed": "always false",
+      "translation_invariance_claimed": "true only with a scope naming coarse translations and the construction",
+      "continuum_claim": "always false"
+    },
+    "forbidden": [
+      "the infinite-volume ground state",
+      "uniqueness of the infinite-volume ground state",
+      "boundary independent (unqualified)",
+      "rate (without in N or in a)",
+      "the thermodynamic limit (except as the limit of the named construction after admission)",
+      "predicts",
+      "confirms"
+    ],
+    "required": [
+      "convergence of the named constructions",
+      "rate in N"
+    ]
+  },
+  "history": [
+    {
+      "date": "2026-09-24",
+      "event": "plan v1 after deliberation loop 1",
+      "changes": [
+        "four sub-rounds: locality, convergence, consequences, applications",
+        "rate 37888|tau| adopted as the candidate per-step factor",
+        "Dobrushin/HTW loop not scheduled (Jung dissent recorded)"
+      ]
+    }
+  ]
+}
