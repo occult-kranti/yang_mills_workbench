@@ -3,7 +3,7 @@
   "human_author": "Hruday N M (BUNZEEY)",
   "status": "planned_not_executed",
   "summary": "Ranked, unexecuted next goals after Round32 (AV1-AZ2). Every goal is a fixed-lattice, fixed-coupling question with a named missing premise; none is a fraction of the continuum problem. Goals 1-4 come from the AY2 obligations table; goal 5 from the AZ1 statement (to be confirmed at its gate).",
-  "ranking_basis": "Ranked by how much of the missing premise is already available in admitted constants (AM2, AQ1, AY1) and by the smallest exact certificate that would change a gate field from false to true within scope.",
+  "ranking_basis": "Advisor decision after the closing lens updates (experts/*/update-5.md): uniqueness keeps rank 1 because its Dobrushin/HTW-type threshold is the best-defined discriminating target with every constant admitted (Jung and modern lenses); dynamics is rank 2 with a fully named route (the historical lens's preference for rank 1 is recorded as a dissent); whole-sequence convergence depends on the dynamics or uniqueness output; the continuum statement moves above the second-order constant, which runs only as a triggered dependency because a smaller constant changes no gate field.",
   "goals": [
     {
       "id": "uniqueness",
@@ -12,7 +12,7 @@
       "status": "planned_not_executed",
       "target": "Prove that any two subsequential limits of the named families agree on R (not only within 2D), by an HTW-type local stability or a Dobrushin-type uniqueness condition with evaluated constants at |tau|<=10^-8.",
       "missing_premise": "The Yarotsky constants c_1(S), c_2(S) cited in I1 are existential; no evaluated two-state estimate exists. AY2 records the falsifying scenario the present bounds cannot exclude.",
-      "proposed_first_loop_test": "Evaluate a Dobrushin-type interdependence matrix for the AM2 fixed point with J=28|tau| and the 21-face stars on a small centered box and check whether its norm is below one at the cap; if it is, derive a two-state estimate on R.",
+      "proposed_first_loop_test": "Evaluate the model's own existential Yarotsky/HTW-type constants (I1 section 5) or a Dobrushin-type interdependence matrix for the AM2 fixed point with J=28|tau| and the 21-face stars on a small centered box, in exact arithmetic (python-flint fmpq_mat/arb_mat as a labelled preview), and check whether the uniqueness condition holds at the cap; if it does, derive a two-state estimate on R.",
       "limitations": [
         "A failed Dobrushin condition is not evidence of non-uniqueness.",
         "Uniqueness on R is not translation invariance."
@@ -25,7 +25,7 @@
       "status": "planned_not_executed",
       "target": "Compare the Heisenberg dynamics of A in B(H_R) between the centered and padded families on a compact time window by a Lieb-Robinson/Duhamel argument with the AQ1 Nachtergaele-Sims constants (F(r)=(1+r)^-4, C<=224, ||Phi||_F<=2268|tau|, ||Phi'||_F<=1323|tau|) over the 28N(5N+1) extra boundary faces at distance N-1.",
       "missing_premise": "No dynamics is constructed for the padded family (AY2 obligation rows 5 and 6); an O(N^-2)-type Duhamel bound is expected but unproved.",
-      "proposed_first_loop_test": "Apply Nachtergaele-Sims Theorem 4.1 to the padded owner-set interaction and bound the boundary contribution on [0, T] with T=1 in the common clock; exact constants only.",
+      "proposed_first_loop_test": "Apply Nachtergaele-Sims Theorem 4.1 to the padded owner-set interaction with the AQ1 constants (F(r)=(1+r)^-4, C<=224, ||Phi||_F<=2268|tau|, ||Phi'||_F<=1323|tau|) and bound the boundary contribution to the Heisenberg dynamics of A in B(H_R) on [0, T] with T=1 in the common clock; an mpmath Lieb-Robinson constant evaluator is a labelled preview only.",
       "limitations": [
         "A dynamics comparison is not a statement about the infinite-volume dynamics beyond R."
       ]
@@ -43,30 +43,37 @@
       ]
     },
     {
-      "id": "second_order",
-      "rank": 4,
-      "title": "Sharper R-local second-order constant",
-      "status": "planned_not_executed",
-      "target": "Reduce K_2' (about 13418) by replacing the per-site AM2 remainder 4 rho with an R-local remainder that tracks which creations can reach R at second order.",
-      "missing_premise": "AY1 shows 99.99% of K_2' is the per-site AM2 remainder, which face restriction cannot reduce; a second-order expansion of the fixed point itself (not its majorant) on R is missing.",
-      "proposed_first_loop_test": "Compute the exact second-order coefficient c^(2) restricted to R on a small box and compare with the majorant.",
-      "limitations": [
-        "A smaller constant does not change any gate field."
-      ]
-    },
-    {
       "id": "continuum",
-      "rank": 5,
+      "rank": 4,
       "title": "One uniform-in-a estimate along a named trajectory",
       "status": "planned_not_executed",
       "target": "Identify a single estimate that could be uniform along a trajectory (a_n, g_n) with g_n -> 0 and state exactly which premise of the strong-coupling contraction it would replace.",
       "missing_premise": "The AM2 contraction needs tau=96/g^4<=10^-8, violated on every g->0 path; the AL1 bridge condition g^4>=32 also fails (AZ1 statement).",
       "proposed_first_loop_test": "Statement loop only: no candidate uniform-in-a estimate is known to this programme; record any audited external construction as a lead.",
       "limitations": [
-        "No number in this repository is a fraction of the continuum problem."
+        "No number in this repository is a fraction of the continuum problem.",
+        "Its observable must be frozen first (Jung lens closing recommendation): no candidate uniform-in-a estimate is known, so the first loop is a statement of the missing premise, never a certificate."
+      ]
+    },
+    {
+      "id": "second_order",
+      "rank": 5,
+      "title": "Sharper R-local second-order constant",
+      "status": "planned_not_executed_triggered_only",
+      "target": "Reduce K_2' (about 13418) by replacing the per-site AM2 remainder 4 rho with an R-local remainder that tracks which creations can reach R at second order.",
+      "missing_premise": "AY1 shows 99.99% of K_2' is the per-site AM2 remainder, which face restriction cannot reduce; a second-order expansion of the fixed point itself (not its majorant) on R is missing.",
+      "proposed_first_loop_test": "Compute the exact second-order coefficient c^(2) restricted to R on a small box and compare with the majorant.",
+      "limitations": [
+        "A smaller constant does not change any gate field.",
+        "Run only as a triggered dependency of goal 1 or 3 (historical lens closing recommendation): a smaller constant changes no gate field on its own."
       ]
     }
   ],
   "methods_decision": "Continue with paired producers for new derivations, single+skeptic for replays of admitted formulas on a changed model, statement+skeptic for statements; every contract carries the pre-registration block with both vocabulary extensions.",
-  "stop_boundary": "Round32 scientific production stopped after AZ2 (investigation 10 of 10). This roadmap is planned only; nothing here is executed or admitted."
+  "stop_boundary": "Round32 scientific production stopped after AZ2 (investigation 10 of 10). This roadmap is planned only; nothing here is executed or admitted.",
+  "closing_lens_updates": [
+    "research/round32/experts/historical/update-5.md",
+    "research/round32/experts/jung/update-5.md",
+    "research/round32/experts/modern/update-5.md"
+  ]
 }
