@@ -1,0 +1,368 @@
+{
+  "status": "preview_and_crosscheck_only_zero_research_loops",
+  "round": "round33",
+  "subround": 1,
+  "lens": "modern (Penrose/Feynman)",
+  "role": "research assistant/coder, assistant-1",
+  "human_project_author": "Hruday N M (BUNZEEY)",
+  "ai_assistance": "AI-assisted (Claude, an AI model); correlated model-agent work, not independent human review",
+  "source_task": "research/round33/experts/modern/loop2-response.md section 3, items 1-3",
+  "generated_at": "2026-09-24T23:24:05.822664+00:00",
+  "libraries": {
+    "python-flint": "0.9.0",
+    "mpmath": "1.3.0"
+  },
+  "precision_bits": 256,
+  "all_passed": true,
+  "files": {
+    "weighted_contraction_arb.py": {
+      "task": "BA1 item 1: Arb/mpmath enclosures of the weighted contraction inequalities and the two analytic-disc K values; cross-read of the ba1-gate.json and both producers' output/results.json headlines",
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "e18_enclosure_below_admitted_bound",
+          "passed": true,
+          "arb_upper": "32802406699160188889432677841684388865264294494181495070902630405338594822967/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+          "arb_upper_preview": 1.1331484530668263,
+          "mpmath_iv_upper": "65604813398320377778865355683368777730528588988362990141805260810677189645933/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+          "mpmath_iv_upper_preview": 1.1331484530668263,
+          "admitted_bound": "8/7",
+          "admitted_bound_preview": 1.1428571428571428,
+          "slack_arb_preview": 0.009708689790316541,
+          "note": "BA1 forward+reverse check.py record 'directed upward enclosure e^{1/8} at most 8/7'; both independent libraries confirm 8/7 is a valid (non-tight) upper bound"
+        },
+        {
+          "id": "G_and_Gprime_reproduce_admitted_exactly_from_8_over_7",
+          "passed": true,
+          "G_R": "148/7",
+          "Gprime_R": "352",
+          "formula": "G(R)=(37/2)e^{1/8}<=(37/2)(8/7)=148/7; G'(R)=308e^{1/8}<=308(8/7)=352"
+        },
+        {
+          "id": "G_and_Gprime_arb_ball_below_admitted",
+          "passed": true,
+          "G_R_arb_preview": 20.963246381736287,
+          "G_R_mp_preview": 20.963246381736287,
+          "Gprime_R_arb_preview": 349.0097235445825,
+          "Gprime_R_mp_preview": 349.0097235445825,
+          "admitted_G_R_preview": 21.142857142857142,
+          "admitted_Gprime_R_preview": 352.0,
+          "note": "independent Arb/mpmath e^{1/8} ball is tighter than 8/7, so G(R)/G'(R) computed from it are strictly below the admitted rational bounds -- containment confirmed with margin to spare"
+        },
+        {
+          "id": "weighted_contraction_headline_w_64",
+          "passed": true,
+          "w": "64",
+          "w_preview": 64.0,
+          "selfmap_reproduced_exactly": "148/390625",
+          "lipschitz_reproduced_exactly": "2464/390625",
+          "selfmap_arb_preview": 0.00037566137516071424,
+          "selfmap_mp_preview": 0.00037566137516071424,
+          "lipschitz_arb_preview": 0.006254254245918919,
+          "lipschitz_mp_preview": 0.006254254245918919,
+          "admitted_selfmap": "148/390625",
+          "admitted_lipschitz": "2464/390625",
+          "statement": "self-map J_0 w G(R) <= R and Lipschitz J_0 w G'(R) < 1",
+          "selfmap_at_most_R": true
+        },
+        {
+          "id": "weighted_contraction_floor_w_390625/148",
+          "passed": true,
+          "w": "390625/148",
+          "w_preview": 2639.358108108108,
+          "selfmap_reproduced_exactly": "1/64",
+          "lipschitz_reproduced_exactly": "77/296",
+          "selfmap_arb_preview": 0.015492264006773017,
+          "selfmap_mp_preview": 0.015492264006773017,
+          "lipschitz_arb_preview": 0.25792526022086965,
+          "lipschitz_mp_preview": 0.25792526022086965,
+          "admitted_selfmap": "1/64",
+          "admitted_lipschitz": "77/296",
+          "statement": "self-map J_0 w G(R) <= R and Lipschitz J_0 w G'(R) < 1",
+          "selfmap_at_most_R": true
+        },
+        {
+          "id": "analytic_disc_K_headline",
+          "passed": true,
+          "rho": "1/1562500",
+          "rho_preview": 6.4e-07,
+          "K_reproduced_exactly": "49/111790368",
+          "K_arb_preview": 4.3829677502170766e-07,
+          "K_mp_preview": 4.3829677502170766e-07,
+          "admitted_K": "49/111790368",
+          "admitted_K_preview": 4.3832041057419186e-07,
+          "formula": "T(rho)=49 rho/144 / (1-28 rho G'(R)); K=2 T(rho)"
+        },
+        {
+          "id": "analytic_disc_K_floor",
+          "passed": true,
+          "rho": "1/37888",
+          "rho_preview": 2.6393581081081083e-05,
+          "K_reproduced_exactly": "49/2018304",
+          "K_arb_preview": 2.420551094500535e-05,
+          "K_mp_preview": 2.420551094500535e-05,
+          "admitted_K": "49/2018304",
+          "admitted_K_preview": 2.427780948756976e-05,
+          "formula": "T(rho)=49 rho/144 / (1-28 rho G'(R)); K=2 T(rho)"
+        },
+        {
+          "id": "gate_and_producer_headlines_cross_read",
+          "passed": true,
+          "ba1_gate_verdict": "accepted_within_scope",
+          "reverse_headline_K": "49/111790368",
+          "reverse_floor_K": "49/2018304",
+          "forward_headline_K_weighted_norm": "2734375/12204185915601",
+          "forward_floor_K_weighted_norm": "708203125/43148545682688",
+          "note": "the reverse analytic_disc K values (reproduced above via Arb/mpmath) are the headline/floor admitted numbers; the forward weighted_norm route gives smaller, separately-certified K values for the same pairs -- both routes and both numbers are named verbatim in the gate's decision text"
+        },
+        {
+          "id": "weighted_norm_route_headline_self_consistency",
+          "passed": true,
+          "w": "64",
+          "T_reproduced_exactly": "49/223580736",
+          "T_arb_preview": 2.1914838751085383e-07,
+          "forward_T_w_field": "49/223580736",
+          "admitted_forward_K": "2734375/12204185915601",
+          "admitted_forward_K_preview": 2.2405222428679664e-07,
+          "note": "T(rho)=w t1/(1-J w G'(R)) reproduces the forward producer's own published T_w field exactly (the forward report's 'tier rule' identity, reverse report.md line 142); T_w is one step short of the forward's fully telescoped K_pair, so containment against admitted_forward_K has margin"
+        },
+        {
+          "id": "weighted_norm_route_floor_self_consistency",
+          "passed": true,
+          "w": "390625/148",
+          "T_reproduced_exactly": "49/4036608",
+          "T_arb_preview": 1.2102755472502675e-05,
+          "forward_T_w_field": "49/4036608",
+          "admitted_forward_K": "708203125/43148545682688",
+          "admitted_forward_K_preview": 1.6413140090701697e-05,
+          "note": "T(rho)=w t1/(1-J w G'(R)) reproduces the forward producer's own published T_w field exactly (the forward report's 'tier rule' identity, reverse report.md line 142); T_w is one step short of the forward's fully telescoped K_pair, so containment against admitted_forward_K has margin"
+        }
+      ]
+    },
+    "ba2_directed_reconciliation.py": {
+      "task": "BA2 item 2: reproduce the forward/reverse dynamics-comparison coefficients, enclose the modern loop-1 preview with Arb, confirm the 0.67% gap attribution and the tau/100 ratios",
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "forward_closed_form_reproduced",
+          "passed": true,
+          "formula": "254016 tau^2/(1-338688|tau|)",
+          "computed": "3969/155720800000000",
+          "computed_preview": 2.5487924541872378e-11,
+          "admitted": "3969/155720800000000",
+          "admitted_preview": 2.5487924541872378e-11
+        },
+        {
+          "id": "reverse_closed_form_reproduced",
+          "passed": true,
+          "formula": "148176 tau^2 U^2 E_up(592704|tau|U), E_up(y)=1+y/3+y^2/(12(1-y/5))",
+          "computed": "452554889222515527/30481402343750000000000000000",
+          "computed_preview": 1.4846918265730932e-11,
+          "admitted": "452554889222515527/30481402343750000000000000000",
+          "admitted_preview": 1.4846918265730932e-11
+        },
+        {
+          "id": "modern_loop1_form_enclosed",
+          "passed": true,
+          "x": "3969/390625",
+          "x_preview": 0.01016064,
+          "formula": "3969 tau^2 theta^2 e^{127008|tau||theta|} = 254016 tau^2 e^x",
+          "M_arb_ball": [
+            "46427222063271022941290281902562434329327393013929322143882189620189448770002243/1809251394333065553493296640760748560207343510400633813116524750123642650624000000000000000",
+            "232136110316355114706451409512812171646636965069646610719410948100947243850027091/9046256971665327767466483203803742801036717552003169065582623750618213253120000000000000000"
+          ],
+          "M_arb_preview": [
+            2.5661012178125326e-11,
+            2.5661012178125326e-11
+          ],
+          "M_mpmath_ball": [
+            "232136110316355114706451409512812171646636965069646610719410948100947243850019153/9046256971665327767466483203803742801036717552003169065582623750618213253120000000000000000",
+            "116068055158177557353225704756406085823318482534823305359705474050473621925011561/4523128485832663883733241601901871400518358776001584532791311875309106626560000000000000000"
+          ],
+          "M_mpmath_preview": [
+            2.5661012178125326e-11,
+            2.5661012178125326e-11
+          ],
+          "loop2_response_quoted_preview": 2.5661e-11,
+          "note": "rigorous enclosure agrees with the modern loop2-response.md hand-evaluation '3969*(10^-8)^2*64*exp(127008*10^-8*8) ~ 2.5661e-11' to its quoted digits"
+        },
+        {
+          "id": "directed_gap_identity_e_x_times_1_minus_x_over_3",
+          "passed": true,
+          "identity": "M/K_cmp^fwd = e^x (1-x/3) exactly, since both share the common prefactor 254016 tau^2 and differ only in the remainder-bounding step (e^x vs 1/(1-x/3))",
+          "ratio_ball_arb": [
+            "2276922449442622294418013268484676342816302942190566007717009849271730005676418897/2261564242916331941866620800950935700259179388000792266395655937654553313280000000",
+            "11384612247213111472090066342423381714081514710952830038585049246358650028382873089/11307821214581659709333104004754678501295896940003961331978279688272766566400000000"
+          ],
+          "ratio_preview_arb": [
+            1.0067909662855676,
+            1.0067909662855676
+          ],
+          "ratio_ball_mpmath_preview": [
+            1.0067909662855676,
+            1.0067909662855676
+          ],
+          "ratio_via_direct_quotient_preview": [
+            1.0067909662855676,
+            1.0067909662855676
+          ],
+          "gap_percent_preview": [
+            0.6790966285567746,
+            0.6790966285567746
+          ],
+          "skeptic_quoted_ratio": 1.0067939,
+          "skeptic_quoted_gap_percent": [
+            "+0.679% (relative to skeptic/forward)",
+            "0.675% (relative to modern)"
+          ],
+          "note": "independently derived, exact algebraic identity (not copied from the skeptic file); its Arb-evaluated numeric value reproduces the BA2 skeptic's recorded ~0.67% gap attribution (research/round33/skeptic/ba2-independent-derivation.md section 9) to 4 significant figures"
+        },
+        {
+          "id": "tau_over_100_ratios",
+          "passed": true,
+          "forward_ratio_exact": "1953058850/194651",
+          "forward_ratio_preview": 10033.644060395272,
+          "reverse_ratio_exact": "38176688920663121234473000000/3810205403940325763421973",
+          "reverse_ratio_preview": 10019.588151647331,
+          "bracket": [
+            "9500",
+            "10500"
+          ],
+          "note": "both are quadratic-in-tau closed forms (E_up is rational), so the tau/100 ratio is exact Fraction arithmetic with no Arb enclosure needed; both fall inside the contract's [9500,10500]"
+        },
+        {
+          "id": "reverse_E_up_dominates_E_at_working_point",
+          "passed": true,
+          "y": "9261/1562500",
+          "y_preview": 0.00592704,
+          "E_up_exact": "48866741088707/48770243750000",
+          "E_up_preview": 1.0019786109579778,
+          "E_arb_ball_preview": [
+            1.0019786109572903,
+            1.0019786109572903
+          ],
+          "E_mpmath_ball_preview": [
+            1.0019786109572903,
+            1.0019786109572903
+          ],
+          "gap_preview": 6.875902273126665e-13,
+          "note": "reverse report.md line 164 quotes 'the directed exact-exponential enclosure of E (1.00197861095729...) lies below E_up, by about 7e-13'; both independent libraries confirm E_up(y) is a valid (and very tight) upper bound of the true E(y) at this y"
+        },
+        {
+          "id": "gate_and_producer_results_cross_read",
+          "passed": true,
+          "ba2_gate_verdict": "accepted_within_scope",
+          "forward_checks_count": 44,
+          "reverse_checks_count": 59,
+          "note": "the admitted forward and reverse K_cmp values used above appear verbatim in the gate's decision text; both producers' results.json are read only for their check counts here"
+        }
+      ]
+    },
+    "bb1_previews.py": {
+      "task": "BB1 item 3: preview (labelled, not evidence) the BB1 marginal-locality constants on both proposed routes at q=1/64 from the gated BA1 constants, and check the worst-case C and the proposed 4e-6 target margin",
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "ba1_inputs_reproduced",
+          "passed": true,
+          "t_bar": "49/14398580736",
+          "t_bar_preview": 3.4031131886136476e-09,
+          "T_star": "49/4036608",
+          "T_star_preview": 1.213890474378488e-05,
+          "K_rev": "49/111790368",
+          "K_rev_preview": 4.3832041057419186e-07,
+          "K_fwd": "2734375/12204185915601",
+          "K_fwd_preview": 2.2405222428679664e-07,
+          "note": "t_bar and T_star are both BA1's own T(rho) tier-rule identity (weighted_contraction_arb.py in this same folder derives and cross-checks that identity against BA1's admitted T_w field); K_rev/K_fwd are the admitted BA1 headline pair, read from output/results.json, not a check.py"
+        },
+        {
+          "id": "eta_str_reproduced",
+          "passed": true,
+          "formula": "32 T_star/(1-32 T_star)",
+          "computed": "49/126095",
+          "computed_preview": 0.00038859589991672945,
+          "admitted": "49/126095",
+          "admitted_preview": 0.00038859589991672945
+        },
+        {
+          "id": "C_split_reproduced_both_inputs",
+          "passed": true,
+          "formula": "C_split = 2(dbar_0+dbar_ez)(1+2 t_bar)(1+eta_str)",
+          "reverse_input_preview": 1.7539629722922323e-06,
+          "reverse_input_admitted_preview": 1.7539629722922323e-06,
+          "forward_input_preview": 4.5528293603825597e-07,
+          "forward_input_admitted_preview": 4.5528293603825597e-07
+        },
+        {
+          "id": "polymer_inputs_reproduced",
+          "passed": true,
+          "four_T_KP": "49/504576",
+          "four_T_KP_preview": 9.711123795027904e-05,
+          "a_preview": 0.001,
+          "x_far": "390625/18944",
+          "x_far_preview": 20.619985219594593,
+          "S_exact": "99977074261152768/51346528044814241",
+          "S_preview": 1.9471048592398446,
+          "admitted_S": "99977074261152768/51346528044814241",
+          "admitted_S_preview": 1.9471048592398446,
+          "note": "S(x)=sum_{d>=1}(24d^2+8d+2)x^-d has a closed rational form (geometric-derivative sums), so it is reproduced exactly in Fraction arithmetic -- no Arb needed for this quantity"
+        },
+        {
+          "id": "eta_far_enclosed",
+          "passed": true,
+          "formula": "eta_far = e^{2a} * 4 T_KP * S(q W_c) / (1-4 T_KP), a=1/1000",
+          "eta_far_arb_ball": [
+            "277532616456545693243343102328602782846902415616280717202449485510635675980183396149176017167/1464685671724343703603546264574301977630751262431679814190023864335935561085423227302625436237824",
+            "277532616456545693243343102328602782846902415616280717202449485510635675980202532386046315939/1464685671724343703603546264574301977630751262431679814190023864335935561085423227302625436237824"
+          ],
+          "eta_far_arb_preview": [
+            0.00018948271415109317,
+            0.00018948271415109317
+          ],
+          "eta_far_mpmath_preview": [
+            0.00018948271415109317,
+            0.00018948271415109317
+          ],
+          "proposal_quoted_preview": 0.0001895
+        },
+        {
+          "id": "C_poly_enclosed_both_inputs",
+          "passed": true,
+          "formula": "C_poly = 2(dbar_0+dbar_ez)(1+t_bar)(1+eta_far)",
+          "reverse_input_ball_preview": [
+            1.7536138648287677e-06,
+            1.7536138648287677e-06
+          ],
+          "forward_input_ball_preview": [
+            4.5519231686700214e-07,
+            4.5519231686700214e-07
+          ],
+          "proposal_quoted_reverse_preview": 1.753614e-06,
+          "proposal_quoted_forward_preview": 4.55192e-07
+        },
+        {
+          "id": "worst_case_C_and_target_margins",
+          "passed": true,
+          "worst_case_C_is": "C_split, reverse BA1 input",
+          "worst_C_preview": 1.7539629722922323e-06,
+          "target_proposed": "4e-6",
+          "margin_proposed_preview": 2.2805498537819475,
+          "target_rejected": "2e-6",
+          "margin_rejected_preview": 1.1402749268909738,
+          "note": "bb-targets-proposal.md section 7 recommends freezing 4e-6 (margin ~2.28) and explicitly declines to freeze 2e-6 ('margin of only about 1.14. Do not freeze it') though even that smaller target is not technically violated by this preview -- both figures are reproduced"
+        },
+        {
+          "id": "c_site_and_nested_C_prime",
+          "passed": true,
+          "formula": "C' = C_split/(1-q) [BB2 item 1, nested_telescoping]; c_site = C'/2",
+          "C_prime_preview": 1.7818036543921089e-06,
+          "admitted_C_prime_preview": 1.7818036543921089e-06,
+          "c_site_preview": 8.909018271960544e-07,
+          "proposal_quoted_C_prime": 1.781804e-06,
+          "proposal_quoted_c_site": 8.909018e-07
+        }
+      ]
+    }
+  },
+  "interpretation": "Every check here is a comparison of independently (Arb ball / mpmath interval / exact Fraction) computed values against numbers already admitted (BA1, BA2 gates) or already published as an advisory preview (bb-targets-proposal.md); nothing here is evidence, a contract, a premise, a gate, or a research loop. No BB1 contract or check.py exists yet in this sub-round."
+}
