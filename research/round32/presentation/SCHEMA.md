@@ -24,7 +24,8 @@ Top-level fields:
   id, title, url, provenance, date, reading_depth, use, limits, passages[]).
 - `panel`: {deliberation:[{loop:1..3, path, summary}], updates:[{subround, lens, path}]}.
 - `calculators`: list of recorded exact results the site may display as recorded values:
-  {loop_id, title, gate_path, gate_sha256, source, result_path, record:{...}, preview_only:true}.
+  {loop_id, title, gate_path, gate_sha256, source, result_path, formula_id, record:{...}, preview_only:true}.
+  `advisor/calculators.json` entries may name `record_keys` (top-level fields of the bound result record) to select the displayed subset; the whole record stays bound by its gate.
   The renderer shows recorded rationals verbatim and labels any floating preview as such.
 - `figures`: list of {path (dist-relative), title, caption, source_path} for experiment-setup images.
 - `addendum`: {path, url, title, sha256}; `previous_draft`: {path:"papers/draft-03/main.pdf", url:"ym-draft-03.pdf", title, sha256}; `round31_addendum`: {path, url, title, sha256}.

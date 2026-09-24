@@ -314,6 +314,12 @@ def build(root=ROOT, allow_incomplete=False, allow_missing_addendum=False):
                     'calculator result unbound ' + loop_id)
             bind(source)
             record = read(result_path)
+            record_keys = entry.get('record_keys')
+            if record_keys is not None:
+                require(isinstance(record_keys, list) and record_keys and
+                        all(nonempty(k) and k in record for k in record_keys),
+                        'calculator record_keys must name existing top-level fields ' + loop_id)
+                record = {k: record[k] for k in record_keys}
             require(bool(record), 'empty calculator record ' + loop_id)
             calculators.append({
                 'loop_id': loop_id, 'title': entry['title'], 'gate_path': loop['gate_path'],
