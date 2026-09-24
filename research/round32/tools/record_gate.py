@@ -34,6 +34,8 @@ def main():
     ap.add_argument('--model', required=True)
     ap.add_argument('--decision', required=True)
     ap.add_argument('--producers', nargs='+', default=('forward', 'reverse'))
+    ap.add_argument('--review-fields', nargs='*', default=(),
+                    help='keys copied verbatim from the skeptic review JSON (e.g. sub_label gate_fields)')
     a = ap.parse_args()
     loop = a.loop.lower()
     review = json.loads((ROOT / ROUND / 'skeptic' / (loop + '.json')).read_text())
@@ -73,6 +75,10 @@ def main():
         'completed_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'bindings': bindings,
     }
+    for key in a.review_fields:
+        if key not in review:
+            raise SystemExit('review field missing ' + key)
+        gate[key] = review[key]
     out = ROOT / ROUND / 'advisor' / f'{loop}-gate.json'
     out.write_text(json.dumps(gate, indent=2) + '\n')
     print(json.dumps({'status': 'gated', 'loop': loop, 'bindings': len(bindings)}))
