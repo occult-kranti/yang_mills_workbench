@@ -1,0 +1,1348 @@
+{
+  "round": 32,
+  "subround": 5,
+  "lens": "modern (Penrose/Feynman)",
+  "assistant": 5,
+  "status": "assistant/coder cross-check tools. ZERO research loops. numpy/scipy and python-flint (Arb) are cross-check/reused-by-import libraries only; the Round11 two_plaquette module and assistant-1 flint_harness.py are reused by import (never modified); nothing here is imported by any check.py, and nothing here decides admission.",
+  "human_project_author": "Hruday N M (BUNZEEY)",
+  "generated_at": "2026-09-24T06:28:46.572729+00:00",
+  "files": {
+    "finite_graph_two_face_replay.py": {
+      "tool": "A5-1 finite_graph_two_face_replay",
+      "labels": {
+        "zero_research_loops": true,
+        "model_is_finite_graph": true,
+        "transfers_to_aq": false,
+        "fg_coefficients_fitted": false,
+        "toy_illustrative_matrix_elements": false,
+        "D7_fallback_needed": false,
+        "D7_fallback_reason": "D=10 completed well within budget; see timings below",
+        "reused_by_import_only": [
+          "two_plaquette.py (Round11)",
+          "flint_harness.py (assistant-1, shared tool)"
+        ]
+      },
+      "rs_chain_D10": {
+        "D": 10,
+        "dimension": 286,
+        "row0_of_K_all_zero_live": true,
+        "e1_source_zero_by_haar_odd_moment": {
+          "two_face": true,
+          "one_face": true
+        },
+        "a1_derivative_at_zero": {
+          "two_face": "1/6",
+          "one_face": "1/6"
+        },
+        "E2_second_order_energy": {
+          "two_face": "-1/6",
+          "one_face": "-1/12"
+        },
+        "a2_second_order_W1": {
+          "two_face": "0",
+          "one_face": "0"
+        },
+        "E3_third_order_energy": {
+          "two_face": "0",
+          "one_face": "0"
+        },
+        "a3_third_order_W1": {
+          "two_face": "-187/33696",
+          "one_face": "-5/864"
+        },
+        "gauge_orthogonality_holds_live": {
+          "two_face": true,
+          "one_face": true
+        },
+        "timings": {
+          "order1_solve_seconds": 3.0635783672332764,
+          "order2_solve_seconds": 3.074950695037842,
+          "order3_solve_seconds": 3.5287370681762695
+        }
+      },
+      "wilson_previews_tau_pm_1_100_D10": {
+        "plus": {
+          "D": 10,
+          "dimension": 286,
+          "tau_FG": "1/100",
+          "tau_FG_preview": 0.01,
+          "preview_only": true,
+          "exact_bracket_used": false,
+          "inertia_used": false,
+          "tail_lower_used": false,
+          "certifies_full_graph": false,
+          "caveat": "PREVIEW ONLY (scipy floating eigh + one Arb inverse-iteration refinement step at 256 bits). Not an exact_bracket/inertia-based enclosure, and tail_lower is not used. Per the skeptic's retained correction of the modern update-4/assistant-4 claims (research/round32/skeptic/az2.md and az2-independent-derivation.md): an exact_bracket-style bracket, if one were built here instead, would enclose only the D-truncated matrix's own Ritz value, not the AZ2 gate's certified full-graph value, and it would not use tail_lower either -- this preview makes no stronger claim than that in the first place.",
+          "scipy_eigh_seconds": 0.02075052261352539,
+          "floating_E0": -1.6666638918667423e-05,
+          "floating_W1_preview": 0.0016666611170769602,
+          "arb_refine_seconds": 1.857743501663208,
+          "arb_W1_ball_mid": 0.0016666611170769602,
+          "arb_W1_ball_rad": 2.954775747189429e-63,
+          "arb_W1_bracket": [
+            "4166652792692400560019229255725750777164842014781689072905331410499336781117637/2500000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "16666611170769602240076917022903003108659368059126756291621384737512290913050327/10000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        },
+        "minus": {
+          "D": 10,
+          "dimension": 286,
+          "tau_FG": "-1/100",
+          "tau_FG_preview": -0.01,
+          "preview_only": true,
+          "exact_bracket_used": false,
+          "inertia_used": false,
+          "tail_lower_used": false,
+          "certifies_full_graph": false,
+          "caveat": "PREVIEW ONLY (scipy floating eigh + one Arb inverse-iteration refinement step at 256 bits). Not an exact_bracket/inertia-based enclosure, and tail_lower is not used. Per the skeptic's retained correction of the modern update-4/assistant-4 claims (research/round32/skeptic/az2.md and az2-independent-derivation.md): an exact_bracket-style bracket, if one were built here instead, would enclose only the D-truncated matrix's own Ritz value, not the AZ2 gate's certified full-graph value, and it would not use tail_lower either -- this preview makes no stronger claim than that in the first place.",
+          "scipy_eigh_seconds": 0.056211233139038086,
+          "floating_E0": -1.6666638918667423e-05,
+          "floating_W1_preview": -0.0016666611170769602,
+          "arb_refine_seconds": 1.823765516281128,
+          "arb_W1_ball_mid": -0.0016666611170769602,
+          "arb_W1_ball_rad": 2.954775747189429e-63,
+          "arb_W1_bracket": [
+            "-16666611170769602240076917022903003108659368059126756291621384737512290913050327/10000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "-4166652792692400560019229255725750777164842014781689072905331410499336781117637/2500000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ]
+        }
+      },
+      "inertia_timing_probe_D10": {
+        "D": 10,
+        "dimension": 286,
+        "inertia_result_neg_zero_pos": [
+          0,
+          1,
+          285
+        ],
+        "elapsed_seconds": 34.06645941734314,
+        "note": "A single inertia() call, not a full exact_bracket refinement loop (which calls inertia repeatedly). Reported to budget runtime for any future exact_bracket-based work at D=10, not used itself as a bracket."
+      },
+      "comparison_with_admitted_az2_and_skeptic_one_face": {
+        "admitted_a1_two_face": "1/6",
+        "admitted_a1_one_face_skeptic": "1/6",
+        "admitted_a3_two_face": "-187/33696",
+        "admitted_a3_one_face_skeptic": "-5/864",
+        "admitted_E2_two_face": "-1/6",
+        "admitted_E2_one_face_skeptic": "-1/12",
+        "my_a1": {
+          "two_face": "1/6",
+          "one_face": "1/6"
+        },
+        "my_a3": {
+          "two_face": "-187/33696",
+          "one_face": "-5/864"
+        },
+        "my_E2": {
+          "two_face": "-1/6",
+          "one_face": "-1/12"
+        },
+        "checks": {
+          "a1_two_face_matches_1_6": true,
+          "a1_one_face_matches_1_6": true,
+          "a2_two_face_matches_0": true,
+          "a2_one_face_matches_0": true,
+          "a3_two_face_matches_admitted": true,
+          "a3_one_face_matches_skeptic": true,
+          "E2_two_face_matches_admitted": true,
+          "E2_one_face_matches_skeptic": true,
+          "E3_two_face_matches_admitted_zero": true,
+          "E3_one_face_zero": true
+        },
+        "all_exact_match": true
+      },
+      "wilson_preview_inside_gate_D8_enclosure": {
+        "tau_FG=+1/100": true,
+        "tau_FG=-1/100": true,
+        "gate_D8_enclosure_plus_1_100": [
+          "416665279269240056001922924866860135632819/250000000000000000000000000000000000000000000",
+          "416665279269240056001922926278290019745987/250000000000000000000000000000000000000000000"
+        ],
+        "gate_D8_enclosure_minus_1_100": [
+          "-416665279269240056001922926278290019745987/250000000000000000000000000000000000000000000",
+          "-416665279269240056001922924866860135632819/250000000000000000000000000000000000000000000"
+        ],
+        "note": "Containment is checked against the gate's D=8 FULL-GRAPH certified enclosure as a sanity comparison only; this preview is itself a D=10 TRUNCATED-matrix preview, not a certificate, so containment here is informative, not a proof that it must hold."
+      },
+      "elapsed_seconds_total": 59.174938917160034,
+      "passed": true
+    },
+    "calculator_records_vs_gates.py": {
+      "tool": "A5-2 calculator_records_vs_gates",
+      "labels": {
+        "zero_research_loops": true,
+        "consistency_and_crosscheck_not_admission": true
+      },
+      "n_calculator_entries": 3,
+      "n_figure_entries": 6,
+      "calculator_checks": [
+        {
+          "loop_id": "av2",
+          "source": "research/round32/forward/av2/calculator.py",
+          "result_path": "research/round32/forward/av2/output/results.json",
+          "record_keys": [
+            "headline"
+          ],
+          "gate_path": "research/round32/advisor/av2-gate.json",
+          "skeptic_path": "research/round32/skeptic/av2.json",
+          "skeptic_admitted_values_present": true,
+          "source_sha256_live": "99a9fc81f156ab207d91cae55fa8c736f3dd5848619c11521f0bd8b4cd133ed9",
+          "result_sha256_live": "ebfe372add68845123c710830af154f55420fba998a5eb7a6fe75f8dc16a94fc",
+          "source_in_gate_bindings": true,
+          "result_in_gate_bindings": true,
+          "source_sha256_matches_binding": true,
+          "result_sha256_matches_binding": true,
+          "n_values_checked": 22,
+          "n_values_found_verbatim": 8,
+          "n_values_found_verbatim_or_numeric_tolerant": 21,
+          "n_values_unmatched": 1,
+          "all_record_key_values_found_verbatim": false,
+          "all_record_key_values_found_verbatim_or_numeric_tolerant": false,
+          "value_report": [
+            {
+              "record_key": "headline",
+              "value": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "4s/pi",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2s^2",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "106322486755126702930574731746834652508027159869513170257920494383837652589751563551019738262394162495435063905480741367947596664953595264560100037003315961/580373213810345217477762538533222725802522421544634086066468687530860986542061949654717903866598143810582404001480132638440000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446767091965985744835603912",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446767091965985744835603912",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446767091965985744835603913",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1805915974056597173193435435544343580137399239773839247776614898082885047362958701337143572008441790038420115565899434409440358640538035840354965724670252742419/145093303452586304369440634633305681450630605386158521516617171882715246635515487413679475966649535952645601000370033159610000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "497863355808625782275723567833377679889/40000000000000000000000000000000000000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "3611938270599949473089801445820433994927306506707548008723487716660153932378507154237838163755145974239335666195704349560248664877741025275974491549377508800799/290186606905172608738881269266611362901261210772317043033234343765430493271030974827358951933299071905291202000740066319220000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "99575602309730615462224949033571570549/8000000000000000000000000000000000000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446583895215644",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "0",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446950288716327",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "0",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "49/400000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1.83196750342e-7",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1.83196750341e-7",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1/1000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "True",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": false,
+              "numeric_tolerant_match_token_in_gate_text": null,
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": false
+            },
+            {
+              "record_key": "headline",
+              "value": "2.50000000000e-41",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1979686519699651457242890990044705373449/78539816339744830961566084581987572104890000000000000000000000000000000000000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1.55971844231e-7",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "0",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "3.70597746291e-16",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "0",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2.72249057406e-8",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "0",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "106322486755126702930574731746834652508027159869513170257920494383837652589751563551019738262394162495435063905480741367947596664953595264560100037003315961/290186606905172608738881269266611362901261210772317043033234343765430493271030974827358951933299071905291202000740066319220000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "0",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            }
+          ],
+          "unmatched_values": [
+            {
+              "record_key": "headline",
+              "value": "True",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": false,
+              "numeric_tolerant_match_token_in_gate_text": null,
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": false
+            }
+          ],
+          "benign_unmatched_values": [
+            {
+              "record_key": "headline",
+              "value": "True",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": false,
+              "numeric_tolerant_match_token_in_gate_text": null,
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": false
+            }
+          ],
+          "concerning_unmatched_values": [],
+          "bindings_ok": true,
+          "entry_passed": true
+        },
+        {
+          "loop_id": "aw2",
+          "source": "research/round32/forward/aw2/calculator.py",
+          "result_path": "research/round32/forward/aw2/output/results.json",
+          "record_keys": [
+            "headline"
+          ],
+          "gate_path": "research/round32/advisor/aw2-gate.json",
+          "skeptic_path": "research/round32/skeptic/aw2.json",
+          "skeptic_admitted_values_present": true,
+          "source_sha256_live": "6ad3e2ed6406f8bfb045b14d02569ba84cf3557ce8dcad92caf4cf4949fc7f33",
+          "result_sha256_live": "ec09f259e0956eb347a792098b5a9af32e4563ca3cba25b38cfc189b1136abe0",
+          "source_in_gate_bindings": true,
+          "result_in_gate_bindings": true,
+          "source_sha256_matches_binding": true,
+          "result_sha256_matches_binding": true,
+          "n_values_checked": 17,
+          "n_values_found_verbatim": 13,
+          "n_values_found_verbatim_or_numeric_tolerant": 17,
+          "n_values_unmatched": 0,
+          "all_record_key_values_found_verbatim": false,
+          "all_record_key_values_found_verbatim_or_numeric_tolerant": true,
+          "value_report": [
+            {
+              "record_key": "headline",
+              "value": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "3.35480322947e3",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "3354.80322946",
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "-43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "-42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "-6.97799247674e-11",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "-6.91089641214e-11",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "6.91089641214e-11",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "6.97799247674e-11",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "42773581813770903096597852821080380528959/207638693805632844612385445095759947457",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2.06000052445e2",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "206.00005",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "41200010489/200000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "+tau/144",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": false,
+              "numeric_tolerant_match_token_in_gate_text": null,
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": true,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "42981220507576535941210238266176140476416/207638693805632844612385445095759947457",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2.07000052445e2",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "207.00005",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "41400010489/200000000",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1/100000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            }
+          ],
+          "unmatched_values": [],
+          "benign_unmatched_values": [],
+          "concerning_unmatched_values": [],
+          "bindings_ok": true,
+          "entry_passed": true
+        },
+        {
+          "loop_id": "ax2",
+          "source": "research/round32/forward/ax2/calculator.py",
+          "result_path": "research/round32/forward/ax2/output/results.json",
+          "record_keys": [
+            "headline",
+            "label"
+          ],
+          "gate_path": "research/round32/advisor/ax2-gate.json",
+          "skeptic_path": "research/round32/skeptic/ax2.json",
+          "skeptic_admitted_values_present": true,
+          "source_sha256_live": "f368a3e7e73afc52a14422dd253efbc50fa5d7b59c55b3be569f48043f031f5d",
+          "result_sha256_live": "ba8d36d7900d622df5bc85cca9268bddf1c70d31ca176b23ed79abc1ab6fd3a7",
+          "source_in_gate_bindings": true,
+          "result_in_gate_bindings": true,
+          "source_sha256_matches_binding": true,
+          "result_sha256_matches_binding": true,
+          "n_values_checked": 25,
+          "n_values_found_verbatim": 17,
+          "n_values_found_verbatim_or_numeric_tolerant": 24,
+          "n_values_unmatched": 1,
+          "all_record_key_values_found_verbatim": false,
+          "all_record_key_values_found_verbatim_or_numeric_tolerant": false,
+          "value_report": [
+            {
+              "record_key": "headline",
+              "value": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "4s/pi",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2s^2",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": false,
+              "numeric_tolerant_match_token_in_gate_text": null,
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": false
+            },
+            {
+              "record_key": "headline",
+              "value": "564481480395336266704143368796795360918943311909025800451682749726483954025058979293352972126403995350933865545354650733917300153317912710422304367667/2951847682144555656725854863673552837337193684620226597661053652409019590621814186029356692006132716508416892174706680000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446767091965985744835603912",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446767091965985744835603912",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446767091965985744835603913",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "9185099027283132774641054641651710360271692993911210326959914564533758219450458841003549662138547697233770816954909507936717641496489345627414736088026193/737961920536138914181463715918388209334298421155056649415263413102254897655453546507339173001533179127104223043676670000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "18370762536046660885548813426672217515904304931134329679720280811817242922854942740986392677249221798462892567775364370524169200293132009167539894480420053/1475923841072277828362927431836776418668596842310113298830526826204509795310907093014678346003066358254208446087353340000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446575862085186",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "0.012446958321846786",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "51/400000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "5.22930e0",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "4",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "4",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1.91229880800e-7",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1/1000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "True",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2.50000000000e-41",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "1.62338041954e-7",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "4.17369163892e-16",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "2.88918384286e-8",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            },
+            {
+              "record_key": "headline",
+              "value": "564481480395336266704143368796795360918943311909025800451682749726483954025058979293352972126403995350933865545354650733917300153317912710422304367667/1475923841072277828362927431836776418668596842310113298830526826204509795310907093014678346003066358254208446087353340000000000000000000000000000000000000000",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": true,
+              "numeric_tolerant_match_token_in_gate_text": "1",
+              "numeric_tolerant_match_in_skeptic_admitted_values": true,
+              "numeric_tolerant_match_token_in_skeptic": "1",
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": true
+            },
+            {
+              "record_key": "label",
+              "value": "uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9)",
+              "found_verbatim_in_gate_accepted_or_decision": true,
+              "found_verbatim_in_skeptic_admitted_values": true,
+              "found_verbatim_anywhere": true
+            }
+          ],
+          "unmatched_values": [
+            {
+              "record_key": "headline",
+              "value": "2s^2",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": false,
+              "numeric_tolerant_match_token_in_gate_text": null,
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": false
+            }
+          ],
+          "benign_unmatched_values": [
+            {
+              "record_key": "headline",
+              "value": "2s^2",
+              "found_verbatim_in_gate_accepted_or_decision": false,
+              "found_verbatim_in_skeptic_admitted_values": false,
+              "found_verbatim_anywhere": false,
+              "numeric_tolerant_match_in_gate_text": false,
+              "numeric_tolerant_match_token_in_gate_text": null,
+              "numeric_tolerant_match_in_skeptic_admitted_values": false,
+              "numeric_tolerant_match_token_in_skeptic": null,
+              "unsigned_form_found_verbatim": false,
+              "found_any_tier": false
+            }
+          ],
+          "concerning_unmatched_values": [],
+          "bindings_ok": true,
+          "entry_passed": true
+        }
+      ],
+      "figure_checks": [
+        {
+          "path": "r32-coarse-factor.png",
+          "source_path": "research/round32/figures/make_figures.py",
+          "dist_file_exists": true,
+          "sha256_recorded_in_figures_json": false,
+          "sha256_matches": null,
+          "entry_passed": true
+        },
+        {
+          "path": "r32-wilson-cover-stars.png",
+          "source_path": "research/round32/figures/make_figures.py",
+          "dist_file_exists": true,
+          "sha256_recorded_in_figures_json": false,
+          "sha256_matches": null,
+          "entry_passed": true
+        },
+        {
+          "path": "r32-window-vs-poisson.png",
+          "source_path": "research/round32/figures/make_figures.py",
+          "dist_file_exists": true,
+          "sha256_recorded_in_figures_json": false,
+          "sha256_matches": null,
+          "entry_passed": true
+        },
+        {
+          "path": "r32-error-budget.png",
+          "source_path": "research/round32/figures/make_figures.py",
+          "dist_file_exists": true,
+          "sha256_recorded_in_figures_json": false,
+          "sha256_matches": null,
+          "entry_passed": true
+        },
+        {
+          "path": "r32-link-flip-set.png",
+          "source_path": "research/round32/figures/make_figures.py",
+          "dist_file_exists": true,
+          "sha256_recorded_in_figures_json": false,
+          "sha256_matches": null,
+          "entry_passed": true
+        },
+        {
+          "path": "r32-two-plaquette-graph.png",
+          "source_path": "research/round32/figures/make_figures.py",
+          "dist_file_exists": true,
+          "sha256_recorded_in_figures_json": false,
+          "sha256_matches": null,
+          "entry_passed": true
+        }
+      ],
+      "all_calculator_entries_passed": true,
+      "all_figure_entries_passed": true,
+      "note_figures_sha256": "None of the six figures.json entries records a sha256 field, so sha256 verification is not applicable to any of them (per instruction: \"if recorded\"); only file existence under dist/ is checked, and all six exist.",
+      "passed": true
+    },
+    "claim_flag_sweep.py": {
+      "tool": "A5-3 claim_flag_sweep",
+      "labels": {
+        "zero_research_loops": true,
+        "consistency_and_crosscheck_not_admission": true
+      },
+      "n_producer_files_scanned": 15,
+      "per_file_top_level_booleans": [
+        {
+          "direction": "forward",
+          "loop": "av1",
+          "path": "research/round32/forward/av1/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": false,
+            "first_order_parity_claim": false,
+            "rate_in_N_claimed": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "tier_ii_target_met": true,
+            "uniform_wilson_claim": false,
+            "uniqueness_claimed": false,
+            "whole_sequence_convergence_claimed": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "av2",
+          "path": "research/round32/forward/av2/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": true,
+            "grid_claim": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "uniform_wilson_claim": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "aw1",
+          "path": "research/round32/forward/aw1/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": false,
+            "first_order_parity_claim": true,
+            "flip_lemma_claim": true,
+            "omega_W_enclosure_admitted": false,
+            "rate_in_N_claimed": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "sign_of_omega_W_admitted": false,
+            "third_order_remainder_claim": false,
+            "uniform_wilson_claim": false,
+            "uniqueness_claimed": false,
+            "whole_sequence_convergence_claimed": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "aw2",
+          "path": "research/round32/forward/aw2/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "correlation_shift_resolved": false,
+            "dynamical_correction_claim": false,
+            "mass_shift_claim": false,
+            "rate_in_N_claim": false,
+            "resolved_interaction_shift": true,
+            "scientific_priority_verified": false,
+            "sign_certified_below_cap": false,
+            "single_direction_independent_replay_required": true,
+            "static_not_dynamic": true,
+            "susceptibility_claim": false,
+            "third_order_remainder_claim": false,
+            "uniform_wilson_claim": false,
+            "uniqueness_claim": false,
+            "whole_sequence_convergence_claim": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "ax1",
+          "path": "research/round32/forward/ax1/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": false,
+            "k2_uniform_claimed": false,
+            "rate_in_N_claimed": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "tier_ii_target_met": true,
+            "uniform_wilson_claim": true,
+            "uniqueness_claimed": false,
+            "weak_coupling_claim": false,
+            "whole_sequence_convergence_claimed": false,
+            "wilson_mean_sign_certified": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "ax2",
+          "path": "research/round32/forward/ax2/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": true,
+            "grid_claim": false,
+            "independent_review_claimed": false,
+            "k2_uniform_claimed": false,
+            "mirror_is_second_confirmation": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "single_direction_independent_replay_required": true,
+            "state_uniqueness_claim": false,
+            "uniform_wilson_claim": true,
+            "weak_coupling_claim": false,
+            "wilson_mean_sign_certified": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "ay1",
+          "path": "research/round32/forward/ay1/output/results.json",
+          "booleans": {
+            "boundary_independence_of_dynamics_claimed": false,
+            "continuum_claim": false,
+            "rate_claimed": false,
+            "rate_in_N_claimed": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "translation_invariance_claimed": false,
+            "uniform_wilson_claim": false,
+            "uniqueness_claimed": false,
+            "weak_coupling_claim": false,
+            "whole_sequence_claimed": false,
+            "whole_sequence_convergence_claimed": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "ay2",
+          "path": "research/round32/forward/ay2/output/results.json",
+          "booleans": {
+            "boundary_independence_of_dynamics_claimed": false,
+            "continuum_claim": false,
+            "rate_claimed": false,
+            "rate_in_N_claimed": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "translation_invariance_claimed": false,
+            "uniform_wilson_claim": false,
+            "uniqueness_claimed": false,
+            "weak_coupling_claim": false,
+            "whole_sequence_claimed": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "az1",
+          "path": "research/round32/forward/az1/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "loop_count_fraction_claimed": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "uniform_in_N_claimed": true,
+            "uniform_in_a_claimed": false,
+            "uniform_wilson_claim": false,
+            "weak_coupling_claim": false
+          }
+        },
+        {
+          "direction": "forward",
+          "loop": "az2",
+          "path": "research/round32/forward/az2/output/results.json",
+          "booleans": {
+            "aq_K2_statement_from_graph": false,
+            "continuum_claim": false,
+            "fg_coefficients_fitted": false,
+            "model_is_finite_graph": true,
+            "resolved_interaction_shift": false,
+            "roadmap_goal_2_resolved": false,
+            "scientific_priority_verified": false,
+            "transfers_to_aq": false,
+            "uniform_wilson_claim": false,
+            "weak_coupling_claim": false
+          }
+        },
+        {
+          "direction": "reverse",
+          "loop": "av1",
+          "path": "research/round32/reverse/av1/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": false,
+            "first_order_parity_claim": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "secondary_target_met_tier_ii": true,
+            "tier_i_target_met": false,
+            "tier_ii_target_met": true,
+            "uniform_wilson_claim": false
+          }
+        },
+        {
+          "direction": "reverse",
+          "loop": "av2",
+          "path": "research/round32/reverse/av2/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": true,
+            "grid_claim": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "uniform_wilson_claim": false
+          }
+        },
+        {
+          "direction": "reverse",
+          "loop": "aw1",
+          "path": "research/round32/reverse/aw1/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "first_order_parity_claim": true,
+            "flip_lemma_claim": true,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "third_order_remainder_claim": false,
+            "uniform_wilson_claim": false
+          }
+        },
+        {
+          "direction": "reverse",
+          "loop": "ax1",
+          "path": "research/round32/reverse/ax1/output/results.json",
+          "booleans": {
+            "continuum_claim": false,
+            "euclidean_node_certified": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "tier_i_target_met": false,
+            "tier_ii_target_met": true,
+            "uniform_wilson_claim": true,
+            "weak_coupling_claim": false
+          }
+        },
+        {
+          "direction": "reverse",
+          "loop": "ay1",
+          "path": "research/round32/reverse/ay1/output/results.json",
+          "booleans": {
+            "boundary_independence_of_dynamics_claimed": false,
+            "continuum_claim": false,
+            "rate_claimed": false,
+            "resolved_interaction_shift": false,
+            "scientific_priority_verified": false,
+            "translation_invariance_claimed": false,
+            "uniform_wilson_claim": false,
+            "uniqueness_claimed": false,
+            "whole_sequence_claimed": false
+          }
+        }
+      ],
+      "rule1_must_be_false_wherever_present": {
+        "fields": [
+          "continuum_claim",
+          "scientific_priority_verified",
+          "resolved_interaction_shift",
+          "weak_coupling_claim",
+          "uniqueness_claimed",
+          "whole_sequence_claimed",
+          "rate_claimed",
+          "translation_invariance_claimed",
+          "boundary_independence_of_dynamics_claimed",
+          "uniform_in_a_claimed",
+          "loop_count_fraction_claimed",
+          "transfers_to_aq",
+          "fg_coefficients_fitted"
+        ],
+        "violations_undocumented": [],
+        "documented_true_exceptions": [
+          {
+            "field": "resolved_interaction_shift",
+            "direction": "forward",
+            "loop": "aw2",
+            "path": "research/round32/forward/aw2/output/results.json",
+            "documentation": "AW2 contract (`contracts/aw2.json`): 'resolved_interaction_shift:true only if the exclusion holds at the cap'; AW2 gate: 'resolved_interaction_shift refers to omega(W) only'; sub-label static_not_dynamic."
+          }
+        ],
+        "rule1_ok_modulo_documented_exceptions": true
+      },
+      "rule2_uniform_wilson_claim": {
+        "expected_true_ax1": [
+          {
+            "direction": "forward",
+            "loop": "ax1",
+            "path": "research/round32/forward/ax1/output/results.json"
+          },
+          {
+            "direction": "forward",
+            "loop": "ax2",
+            "path": "research/round32/forward/ax2/output/results.json"
+          },
+          {
+            "direction": "reverse",
+            "loop": "ax1",
+            "path": "research/round32/reverse/ax1/output/results.json"
+          }
+        ],
+        "unexpected_true": [],
+        "unexpected_false_ax1": [],
+        "true_but_beyond_instructions_AX1_only": [
+          {
+            "direction": "forward",
+            "loop": "ax2",
+            "path": "research/round32/forward/ax2/output/results.json"
+          }
+        ]
+      },
+      "rule2_ok": true,
+      "rule3_uniform_in_N_claimed": {
+        "az1_true_with_scope": {
+          "value": true,
+          "scope_string": "volume-uniform at fixed a, strong bare coupling",
+          "is_true_with_nonempty_scope": true
+        },
+        "others_present_elsewhere": []
+      },
+      "rule3_ok": true,
+      "rule4_model_is_finite_graph": {
+        "az2_true": true,
+        "others_present_elsewhere": []
+      },
+      "rule4_ok": true,
+      "rule5_euclidean_node_certified": {
+        "true_loops": [
+          {
+            "direction": "forward",
+            "loop": "av2",
+            "path": "research/round32/forward/av2/output/results.json"
+          },
+          {
+            "direction": "forward",
+            "loop": "ax2",
+            "path": "research/round32/forward/ax2/output/results.json"
+          },
+          {
+            "direction": "reverse",
+            "loop": "av2",
+            "path": "research/round32/reverse/av2/output/results.json"
+          }
+        ],
+        "unexpected_true_loops": []
+      },
+      "rule5_ok": true,
+      "discrepancies_summary": [
+        "resolved_interaction_shift is true in forward/aw2 (documented AW2 contract/gate exception, scope 'omega(W) only', sub-label static_not_dynamic) -- contradicts a LITERAL reading of 'false wherever present' but is not a defect.",
+        "uniform_wilson_claim is true not only for AX1 but also for forward/ax2 (both share the 'uniform fixed-spacing Kogut-Susskind model' label; AX2's own report states the flag means only the model label, exactly as AX1's does) -- contradicts a LITERAL reading of 'true only for AX1' but is not a defect."
+      ],
+      "passed": true
+    }
+  },
+  "all_passed": true
+}
