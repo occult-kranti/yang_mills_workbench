@@ -81,8 +81,8 @@ def main() -> None:
     info = subprocess.check_output(["pdfinfo", str(pdf)], text=True)
     (tmp / "pdfinfo.txt").write_text(info)
     receipt = {
-        "schema": "hnm-round31-addendum-build-v1",
-        "gate_requirement": "AT4, AT5 and AT6 reviewed verdicts must exist before manuscript build",
+        "schema": "hnm-round32-addendum-build-v1",
+        "gate_requirement": "All ten Round32 reviewed verdicts (AV1-AZ2) and their bindings must exist before manuscript build",
         "source_date_epoch": env["SOURCE_DATE_EPOCH"],
         "scientific_and_authoring_sources": inventory,
         "pdf_sha256": sha(pdf),

@@ -138,7 +138,7 @@ Leadbeater's occult chemistry \cite{jungsync,besant}.
 
 \paragraph{The plan record.}
 \sourcepath{plan.json} carries the status \recid{frozen_after_loop3}. Its
-\sourcepath{history} field holds six dated entries: the change from plan~v1
+\sourcepath{history} field held six dated entries at the AZ2 gate: the change from plan~v1
 to~v2 (23 September), the four panel updates, and one entry for a vocabulary
 extension. Its \sourcepath{preregistration_vocabulary_extensions} field holds
 two entries, both dated 24 September. The first followed the Jung
@@ -188,7 +188,7 @@ AX2 & S & 09-24 01:30:56 & 09-24 02:11:13 & accepted & RU\\
 AY1 & P & 09-24 02:11:14 & 09-24 03:06:48 & accepted & UL\\
 AY2 & T & 09-24 03:09:12 & 09-24 04:00:01 & accepted & UL; SD\\
 AZ1 & T & 09-24 04:29:40 & 09-24 05:18:19 & accepted & none\\
-AZ2 & S & 09-24 04:29:40 & --- & \multicolumn{2}{l}{in production}\\
+AZ2 & S & 09-24 04:29:40 & 09-24 06:06:38 & accepted & SF; SD\\
 \bottomrule
 \end{tabular}
 
@@ -196,18 +196,22 @@ AZ2 & S & 09-24 04:29:40 & --- & \multicolumn{2}{l}{in production}\\
 \begin{minipage}{0.94\linewidth}\footnotesize\raggedright
 ``accepted'' is the verdict \recid{accepted_within_scope}. Sub-labels:
 RU = \recid{reference_unresolved}; SD = \recid{static_not_dynamic};
-UL = \recid{uniform_local_closeness_not_uniqueness}. For AY2, UL is the
-primary sub-label and SD the secondary one. $^\dagger$The label is named by
+UL = \recid{uniform_local_closeness_not_uniqueness};
+SF = \recid{sign_certified_finite_graph}. For AY2, UL is the
+primary sub-label and SD the secondary one; for AZ2, SF is the primary
+sub-label and SD the secondary one. $^\dagger$The label is named by
 the skeptic's review and the producer packets; the gate states the same
 restriction in words but names no label.
 \end{minipage}
 \end{table}
 
-\paragraph{The eight gated investigations.}
-They ran from 21:23 on 23 September to 04:00 on 24 September. Each took
-between 38 and 62 minutes from contract freeze to gate, and every verdict is
-\recid{accepted_within_scope}. For each of them the skeptic wrote a contract
-review from the frozen text as part of its pre-comparison package. Each
+\paragraph{The ten gated investigations.}
+They ran from 21:23 on 23 September to 06:06 on 24 September, and every
+verdict is \recid{accepted_within_scope}. Nine of them took between 38 and
+62 minutes from contract freeze to gate. AZ2, frozen together with AZ1 and
+gated after it, took 97 minutes. For each of them the skeptic wrote a
+contract review from the frozen text as part of its pre-comparison
+package. Each
 successor contract names its predecessor's
 gate in \sourcepath{selected_after}, with three exceptions:
 \begin{itemize}
@@ -221,28 +225,36 @@ premises, because the plan is a living record and premise snapshots must stay
 byte-identical to their sources.
 
 \paragraph{AZ1 and AZ2.}
-Both contracts were frozen after panel update~4, 0.03~s apart. AZ1 has since
-been gated; its table row is filled from its gate, and Section~\ref{sec:az1}
-records it. AZ2 is in production and no gate exists for it, so this edition
-states no result of it. The completion record below is left open on purpose.
-% TODO(AZ gates): replace the boxed sentence with the recorded completed_at,
-% verdict and sub-labels of advisor/az1-gate.json and advisor/az2-gate.json,
-% and fill the AZ2 table row above (the AZ1 row is filled).
+Both contracts were frozen after panel update~4, 0.03~s apart, and both
+packages were developed in parallel. In both loops the skeptic's
+pre-comparison package was committed before the producer's: \texttt{649db92}
+before \texttt{8359876} for AZ1, and \texttt{4bae265} before \texttt{dc817d8}
+for AZ2. The AZ1 gate was completed at 05:18:19 with the verdict
+\recid{accepted_within_scope} and no sub-label (Section~\ref{sec:az1}). The
+AZ2 gate was completed at 06:06:38 with the verdict
+\recid{accepted_within_scope}, the sub-label
+\recid{sign_certified_finite_graph} and the secondary sub-label
+\recid{static_not_dynamic} (Section~\ref{sec:az2}). The gate resolved a contract wording defect, the
+unfixed face coupling of the finite graph, by naming the two-face model that
+the producer had computed and disclosed.
 
-\medskip
-\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small
-\textbf{[To be completed when the AZ1 and AZ2 gates land.]} The AZ1 gate was
-completed at \ldots\ UTC with verdict \ldots\ and sub-label(s) \ldots; the
-AZ2 gate was completed at \ldots\ UTC with verdict \ldots\ and sub-label(s)
-\ldots; the two table rows above are updated to match.}}
+\paragraph{Closing statement.}
+The Round32 cycle consists of exactly ten gated investigations, AV1 to AZ2,
+in five sub-rounds of two, and all ten are accepted within their stated model
+scope. Five are paired, three are single-direction with an independent
+skeptic replay and two are statement loops with a skeptic review. As its
+contract and gate state, scientific production stopped after AZ2. Nothing
+after the AZ2 gate, including this manuscript, the closing panel update, the
+site data and the release checks, adds a research loop or changes an
+admission.
 
 \subsection{Sub-round updates, assistants and lens reviews}
 \label{sec:history-updates}
 After each sub-round, each lens reviewed the gates and wrote an update, one
 assistant per lens ran the tests that lens had requested, and the advisor
 wrote a panel update \cite{r32panel,r32lenses}. The assistant packages count
-zero research loops, and nothing in them decides an admission. Each update
-kept the goals of the remaining sub-rounds.
+zero research loops, and nothing in them decides an admission. Each of the
+first four updates kept the goals of the remaining sub-rounds.
 
 \paragraph{Panel update~1 (23 September, after AV1 and AV2).}
 The Newton/Tesla assistant reproduced the exact Haar moments by two routes,
@@ -286,6 +298,16 @@ $K_2^+$: it is about four times larger, and the panel update records the
 expectation as a category error. The historical lens withdrew its AY1 dissent.
 The AZ1 and AZ2 contracts gained the requirements that the panel update
 lists.
+
+% PANEL-UPDATE-5: the advisor may extend this paragraph after writing
+% research/round32/advisor/panel-update-5.md; keep it free of admitted values.
+\paragraph{Panel update~5 (24 September, after AZ1 and AZ2).}
+After the AZ2 gate the cycle closed with a fifth panel update. The closing
+lens updates and the assistant-5 packages, one per lens, are recorded in
+\repo{research/round32/advisor/panel-update-5.md}{panel update~5}, which the
+advisor writes after this manuscript pass. As for the earlier updates, the
+assistant work counts zero investigations and decides no admission; no
+further investigation follows it in Round32.
 
 \paragraph{Web checks.}
 The historical and modern lens updates record dated web searches after every
