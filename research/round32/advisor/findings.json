@@ -2,7 +2,7 @@
   "schema": "hnm-round32-findings-v1",
   "human_author": "Hruday N M (BUNZEEY)",
   "requested": 10,
-  "completed": 4,
+  "completed": 5,
   "loops": [
     {
       "id": "av1",
@@ -222,6 +222,64 @@
         "research/round32/skeptic/aw2.md",
         "research/round32/skeptic/aw2-independent-derivation.md",
         "research/round32/forward/aw2/calculator.py"
+      ]
+    },
+    {
+      "id": "ax1",
+      "sequence": 5,
+      "subround": 3,
+      "title": "Hruday route-B re-derivation for the uniform Kogut-Susskind SU(2) Hamiltonian at fixed spacing",
+      "accepted": "For the uniform Kogut-Susskind SU(2) Hamiltonian on Z^3 at fixed spacing and strong bare coupling (every elementary face has nu=alpha*tau/24; AL1 dictionary tau=96/g^4, so g^4=9.6x10^9 at the cap; never weak coupling or continuum; tau<0 has no real g and is the U_E image of +|tau|), both signs |tau|<=10^-8 (the uniform triple tau/24 lies in the admitted box), centered whole-star boxes Lambda_N (N>=2), the original xz Wilson loop W with cover R={0,e_z}, clock theta=alpha*t/hbar, G=H/alpha: (1) Route B, Haar reference: h_b=8 sum_e C_e>=6Q_b is tau-independent; whole stars phi_b (21 omitted faces, norm 7|tau|) plus one single-factor group psi_b=-(tau/3) sum of the three selected xy faces (support {b}, ||psi_b||<=|tau|); every face charged once; J'=29|tau|; support 4 and termination order 8 unchanged. (2) J' exceeds AM2's J_0=7/25000000 at the cap; with the re-frozen J_0'=29/10^8 (R1) the exact inequalities J_0'G(R)<1073/175000000<1/64 and 2J_0'G'(R)<319/1562500<1 hold, so every finite complete-factor route-B volume has a unique gauge-invariant ground and full-space gap >=1/2 normalized (alpha/16 physical), with a nonzero physical excited sector. (3) AQ1/AQ2 re-instantiation: reset omega(h_R)<=102|tau|; with the Haar gap six epsilon_R<=17|tau| and 2sqrt(17|tau|)<=1/500 (square-root control only; gap one fails), so the variance floor 61999/250000 holds; C_F=58|tau||F| and ||Phi'||_F<=81J'=2349|tau|; compactness, stationarity, GNS, nonnegativity, gauge averaging, the gap alpha/16, cutoff-vector removal and AQ passage re-apply verbatim. (4) Itemized incidence: exactly 7 whole stars (anchors R-S) and 2 single-factor groups meet R, charging 153 faces, 88 meeting R (82 omitted + 6 selected, the 6 selected being the two single groups) and 16 inside R, none twice; ||B_N||<=51|tau|/8, k'=51|tau|/4 in G units. (5) Exact first-order count 52 faces per factor (49+3) and 88 for R; 96 (4x24) and 168 (7x24) are bounds only. (6) State lemma at both signs: tier (ii) with t_1'=52|tau|/144, T'=t_1'/(1-352J')=13/3599632512, rho'=352J'T' gives the bound value D'_ii=2425369125199104794263242601250/167893028420061547330293754713793182097 (~1.44459e-8; 2eps(1+eps)/(1+eps^2) with eps=2T'+T'^2; certified by both inequalities; equal to the skeptic pre-comparison and the reverse two-site variant), meeting 4/10^7 (margin ~27.7) and 10^-6; the reverse's labelled R-refinement D'_ii=30934916107401289/2530733246376451200000000 (~1.22237e-8; 2eps with eps=88|tau|/144+2rho'+T'^2, fidelity inequality) is also valid and differs by eps_fwd-eps_rev=16|tau|/144; tier (i) D'_i~2.4526e-5 fails and is retained; |omega(W)|<=D', |omega(W^2)-1/4|<=D'/2, m^2<=D'^2, passing to every AQ1 subsequential limit as uniform local closeness (not uniqueness, whole-sequence convergence or a rate in N). (7) Transfer, proved: every face coefficient is -(tau/3) (kappa tied to tau), h_b and its cutoffs commute with U_E, and E meets every plaquette, selected faces included, oddly; so U_E H_N(tau) U_E^*=H_N(-tau) in every box and cutoff, omega_{N,-tau}(W)=-omega_{N,tau}(W), omega_N(W^2), C_N, c_N even, and S(-tau)=S(tau) o alpha_E as whole sets; the AW1 link grading applies verbatim to selected faces and only f=W contributes at first order, so omega(W)^{(1)}=+tau/144 (+-1/14400000000) is unchanged. No Euclidean node, K_2 or uniform omega(W^2) constant (not transferred), uniform Wilson-mean sign certificate, weak-coupling, continuum, uniqueness, rate or priority statement is admitted; uniform_wilson_claim:true means only that the model is the uniform fixed-spacing Kogut-Susskind model as labelled.",
+      "summary": "The uniform Kogut-Susskind SU(2) Hamiltonian at fixed spacing re-instantiates the whole admitted chain with a Haar reference (route B): re-frozen contraction constant, unique ground and gap, itemized incidence on the Wilson cover, exact-tier state bound about 1.44e-8 at the cap, and the flip antisymmetry and +tau/144 mean transferred.",
+      "limitations": [
+        "Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling (g^4>=9.6x10^9, |tau|<=10^-8), centered whole-star-plus-single-group boxes N>=2 and the cover R={0,e_z}; never weak coupling or continuum; the box boundary is not identified with AL1's all-contained-plaquette boundary; tau<0 is the U_E mirror, not a real-g coupling",
+        "Upper certificates only: no lower bound on ||rho_R-P_R||_1; no value or sign of omega(W) beyond |omega(W)|<=D' and the finite-box first-order coefficient; AQ statements are uniform local closeness of every subsequential limit, not uniqueness, whole-sequence convergence or a rate in N",
+        "Inherited without re-proof, re-applied with the new constants: AM2 fixed point, multilinear majorant (the |X|<=4 monotonicity covering single-site groups is the only new step), exclusion and cutoff removal; AV1 product split, anchored-norm tier, cutoff-vector removal and AQ passage; AQ1 compactness and Nachtergaele-Sims dynamics; AQ2 gauge averaging and Fourier gap; AT4 reset and relative-unitary arguments; I1 dictionary; Kato, Peter-Weyl and Nachtergaele-Sims cited, not machine-checked",
+        "D'_ii binding: the forward exact rational (~1.44459e-8, both inequalities); the reverse ~1.22237e-8 is a valid labelled R-refinement (88 faces meeting R) whose headline rests on the fidelity inequality (its density form is also below target)",
+        "Tier (i) D'_i~2.4526e-5 fails 4/10^7 and 10^-6 and is retained as a limited-tier value",
+        "Not transferred: K_2 (route-B T', rho', single-site first-order creations and new pins, e.g. 36 single-site faces per site of R), the uniform omega(W^2) constant, the AW2 enclosure and every uniform-in-N tau^2 constant",
+        "Contract d_prime_note mis-rounded (4.19x10^-7 infeasible; threshold [41883,41884]/10^11); contract candidates 96/168 are bounds, exact counts 52/88",
+        "Reverse independence limited: the contract and selection-ax1.md state route B, J'=29|tau| and the J_0 issue; independence covers proof route, enumeration and code only; all agents are correlated model agents and the skeptic's triage seeded route B",
+        "Pre-registration vocabulary: the symbolic selected triple ['tau/24','tau/24','tau/24'] in the frozen AX1 preregistration is covered by the plan.json vocabulary extension recorded after the freeze (2026-09-24T00:45:54Z, contract unamended); the gate should record it as an accepted extension",
+        "N5: neither producer checker pins the pair term T'^2 (dropping it runs silently in both) and the forward does not pin its density form; caught only by the skeptic value validator and cross-producer comparison; AX2 must bind D'_ii from the gate",
+        "N6: the forward's exported density_part_of_D=2eps^2/(1+eps^2) is an upper bound on D-2eps=2eps^2(1-eps)/(1+eps^2) (excess ~7.5e-25), not an identity; D is exact",
+        "N7: the forward's '94 in total' counts 93 rejections in the 28 control checks plus 1 (E_minus_one_link) in flip_set_odd_all_classes",
+        "N8: the reverse rejects 100|tau| as a miscount; 2*7*7+2=100|tau| is also a valid labelled refinement (single groups inside R, Haar mean 0); the admitted budget is 102|tau|",
+        "N9: checklist classification of the variance floor differs (reverse verbatim, forward new constant); the substance is the same: the Haar gap six is load-bearing",
+        "N11: producer isolation rests on disclosure and content: the closures froze 74 s apart and the forward report was last written after the reverse freeze.json; no reverse-specific construct appears in the forward; scratch audited by names and times only (private folders as disclosed; no AX1 file in the shared scratchpad root after the freeze); disclosed protocol/style reads (tools README, freeze.py, forward/av1/check.py, reverse/av1/check.py) and incidental name exposures (the forward's /tmp listing, the reverse's git status) carry no premise weight",
+        "Fixtures (qubit termination, quaternion holonomies, 3x3 compressions, the route-A kappa=30 compression, the one-plaquette mean) are finite algebras, transfers_to_aq false",
+        "Scientific priority unverified"
+      ],
+      "model": "Uniform Kogut-Susskind SU(2) on Z^3 at fixed spacing and strong bare coupling (every face coefficient alpha*tau/24; tau=96/g^4; g^4=9.6x10^9 at the cap); route B with the Haar reference and single-factor selected groups; both signs |tau|<=10^-8; centered whole-star boxes; cover R={0,e_z}; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/ax1-gate.json",
+      "contribution_id": "HNM-C-AX1",
+      "dependencies": [
+        "r32-av1",
+        "r32-aw1",
+        "r29-am2",
+        "r29-al1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Set every face coefficient to alpha*tau/24 (tau=96/g^4) and check the admitted coefficient box; move the three selected xy faces per factor into a single-factor interaction group with norm at most |tau| (route B).",
+        "Re-freeze the per-site sum J_0'=29/10^8 and verify the AM2 contraction as exact rationals; conclude the unique finite-volume ground and gap.",
+        "Tabulate every face meeting the cover (seven stars, two selected groups, 88 faces) with no double counting; derive the reset budget and the seven-star-plus-two-group Duhamel slope k'=51|tau|/4.",
+        "Derive the exact per-factor owner-set count 52 and the route-B state-lemma tiers; prove the flip identity and the parity transfer for the uniform model."
+      ],
+      "applications": [
+        "Extends the Round32 state lemma to uniform Wilson magnetic theory at fixed spacing.",
+        "Supplies the constants for the uniform-model Euclidean certificate (AX2) and the continuum-trajectory statement (AZ1)."
+      ],
+      "evidence": [
+        "research/round32/advisor/ax1-gate.json",
+        "research/round32/forward/ax1/report.md",
+        "research/round32/reverse/ax1/report.md",
+        "research/round32/skeptic/ax1.md",
+        "research/round32/skeptic/ax1-independent-derivation.md"
       ]
     }
   ],
