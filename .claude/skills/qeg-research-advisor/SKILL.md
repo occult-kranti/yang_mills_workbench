@@ -5,8 +5,6 @@ description: Plan and critically review this quantum-electromagnetic-gravity res
 
 # Quantum fields and gravity research advisor
 
-For linear local state bounds from the creation expansion and window kernels replacing the Poisson cutoff, read [the Round32 state-lemma and window lessons](references/round32-state-lemma-and-window.md). Never mix constant tiers; derive face counts; isolate the reverse producer's premises.
-
 For centered heat comparison or completing only an active loop, read [the centered-heat and solo-closeout lessons](references/centered-heat-and-solo-closeout.md). Preserve actual spectral objects and the user's stop boundary; disclose correlated single-agent verification.
 
 For post-Round20 local stability, physical-sector reconstruction, dynamic identification or a clean-checkout admission repair, read [the admission and matching contract](references/admission-and-matching.md). Use the current `AGENTS.md` ownership boundaries and the explicitly selected round’s frozen contracts.
@@ -99,3 +97,5 @@ For dressed cluster extensions, full spectral complements and the next surroundi
 ## Project-wide Newton and Tesla methods
 
 For all subsequent workbench planning, derivation, skeptical review and presentation, apply [the Newton/Tesla project method](references/newton-tesla-project-method.md) together with the two installed personal skills. Preserve historical source categories and test any proposed bridge. The U pair provides a full-system small-window endpoint witness in the canonical model, not a continuum or homogeneous result.
+
+For linear local state bounds from the creation expansion and window kernels replacing the Poisson cutoff, read [the Round32 state-lemma and window lessons](references/round32-state-lemma-and-window.md). Never mix constant tiers; derive face counts; isolate the reverse producer's premises.
