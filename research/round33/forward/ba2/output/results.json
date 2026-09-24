@@ -1,0 +1,1167 @@
+{
+  "ai_assistance": "AI-assisted forward production (Claude model agent); correlated model-agent work, not independent human review",
+  "check_count": 44,
+  "check_py_sha256_recorded_before_evaluation": "2b36f3e9e6db17613637f84778ce69b2a861b5b7eebf4e048a935de66f549f71",
+  "checks": [
+    {
+      "cauchy_target_read_from_contract": "1/4000000000 /(N-1)",
+      "comparison_target_read_from_contract": "3/50000000000 (5N+1) N^-3",
+      "contract_path": "research/round33/contracts/ba2.json",
+      "contract_sha256": "275ba3b002529b7295d0f8b91dc1cc7a96451e3c7f936ee698a932fdca54fcff",
+      "controls_read_from_contract": 35,
+      "hash_binding": {
+        "admitted_gate_sha256_pinned_in_check_py": true,
+        "check_py_reads_target_and_reference_from_contract": true,
+        "check_py_sha256_recorded_before_full_size_evaluation": true,
+        "contract_sha256_in_producer_inputs": true
+      },
+      "id": "contract_snapshot_sha256",
+      "passed": true,
+      "reference_read_from_contract": "0",
+      "scaling_brackets_read_from_contract": {
+        "cauchy": [
+          "9500",
+          "10500"
+        ],
+        "comparison": [
+          "9500",
+          "10500"
+        ],
+        "duhamel_quadratic_control": [
+          "9900",
+          "10100"
+        ]
+      },
+      "tau_read_from_contract": "1/100000000",
+      "window_read_from_contract": "|theta|<=8, u=theta/8"
+    },
+    {
+      "gate_sha256": {
+        "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+        "research/round29/advisor/aq1-gate.json": "b4a93fd49413857af83c969de1e7b2c8a698ea8099aa9e3aea8e8c7fab0a225e",
+        "research/round32/advisor/av1-gate.json": "55e03f2d9c297d41106d983cec45eaa642ca18123544f416916f94414de305a0",
+        "research/round32/advisor/ay1-gate.json": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+        "research/round32/advisor/ay2-gate.json": "e4faa98884d26d67dd422b382eafb2c52bf88ee679998bc8249003cba88187a6"
+      },
+      "id": "pinned_gates_and_source_excerpt",
+      "note": "pins are compared before any value is read from these files",
+      "ns_excerpt_sha256": "6a28f4cd6aa2c55286fa839d83c00356ff0709f8b02027ee5b39050df1d6c921",
+      "ns_pdf_sha256": "501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba",
+      "passed": true
+    },
+    {
+      "aq1": {
+        "C_upper": "224",
+        "F": "(1+r)^-4",
+        "J_per_abs_tau": 28,
+        "Phi_F_upper_per_abs_tau": "2268",
+        "clock": "u=delta t/hbar, delta=alpha/8",
+        "norm_F_upper": 7,
+        "star_norm_per_abs_tau": 7
+      },
+      "ay1_gate_extra_faces": "28N(5N+1)",
+      "ay1_reverse_owner_set_Phi_prime_per_abs_tau": "1323",
+      "ay2_rows": [
+        "O5 boundary independence of dynamics on compact time windows",
+        "O6 dynamics of the padded family itself"
+      ],
+      "id": "premise_constants_parsed",
+      "passed": true,
+      "read_from": "hash-bound snapshots (AQ1 report equations, AM2 report, AY1 reverse report, AY1/AY2 gates, I1 report); no constant typed in"
+    },
+    {
+      "id": "lieb_robinson_form_quoted",
+      "named": {
+        "C": "convolution constant (41), at most 224",
+        "F": "(1+r)^-4",
+        "||Phi||_F": "(48), at most 2268|tau| (whole star)"
+      },
+      "passed": true,
+      "quoted_items": [
+        "40",
+        "41",
+        "44",
+        "46",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "77",
+        "thm3.1_statement",
+        "thm3.1_tail",
+        "thm4.1_statement",
+        "thm4.1_tail"
+      ],
+      "rejected_mutations": [
+        "velocity_factor_2_dropped",
+        "prefactor_1_over_C_dropped",
+        "min_replaced_by_max",
+        "limit_paraphrased",
+        "quotation_taken_from_aq1_report",
+        "excerpt_bytes_changed"
+      ],
+      "source": "research/round33/sources/nachtergaele-sims-1410.8174v1.md",
+      "source_sha256": "6a28f4cd6aa2c55286fa839d83c00356ff0709f8b02027ee5b39050df1d6c921"
+    },
+    {
+      "C_upper": 224,
+      "argument": "4r^2+2<=6(r+1)^2 and sum over k from 2 of k^-2<=1 give ||F||<=7; (1+d)/(1+d/2)<=2 gives C<=32||F||<=224 (AQ1 section 3, re-verified)",
+      "exponential_instance": "not executed (optional, no frozen target); any such instance must carry its own C_{F_mu} and e^{2mu}81J",
+      "id": "lieb_robinson_F_declared",
+      "norm_F_partial_sum_r_lt_300": "2.44395353141e0",
+      "norm_F_upper": 7,
+      "passed": true,
+      "rejected_mutations": [
+        "F_cubic_violates_uniform_integrability",
+        "exponential_instance_with_AQ1_Phi_norm",
+        "C_not_from_convolution_split"
+      ],
+      "shell_counts_r_le_15": [
+        1,
+        6,
+        18,
+        38,
+        66,
+        102,
+        146,
+        198,
+        258,
+        326,
+        402,
+        486,
+        578,
+        678,
+        786,
+        902
+      ]
+    },
+    {
+      "id": "face_count_all_sites",
+      "note": "the extra F2 faces meet none of the 82 faces meeting R: every one of their owners lies on the outer layer",
+      "passed": true,
+      "pins": {
+        "inside_R": 10,
+        "meet_R": 82,
+        "owner_sets": 15,
+        "per_factor": 49
+      },
+      "rejected_mutations": [
+        "site_0_only_count",
+        "typed_literal_84"
+      ],
+      "site0_only_meeting_count": 49
+    },
+    {
+      "S_b_exact_preview": {
+        "2": "7.42838268741e0",
+        "3": "3.93815950815e0",
+        "4": "2.47617965277e0"
+      },
+      "all_size_argument": "face (b,K) is extra iff b in Lambda_N, b_j<N for e_j in K and b_i=N for some direction i not in K; count per one-direction class 2N(4N+1) (14 classes), per two-direction class 4N^2 (7 classes); total 28N(5N+1); every owner y has y_i=N, so max_i |y_i| = N, d(e_z,y) at least N-1 and d(0,y) at least N",
+      "enumeration": {
+        "2": {
+          "F1": 1344,
+          "F1_subset_F2": true,
+          "F2": 1960,
+          "S_b_all_size_bound": "231",
+          "S_b_exact": "616396498531/82978560000",
+          "class_formula": true,
+          "extra": 616,
+          "formula": 616,
+          "incidence_formula": 1344,
+          "incidences": 1344,
+          "max_owners": 3,
+          "min_l1_from_0": 2,
+          "min_l1_from_e_z": 1,
+          "outer_layer": true
+        },
+        "3": {
+          "F1": 4536,
+          "F1_subset_F2": true,
+          "F2": 5880,
+          "S_b_all_size_bound": "896/9",
+          "S_b_exact": "193769295466351853/49203008426880000",
+          "class_formula": true,
+          "extra": 1344,
+          "formula": 1344,
+          "incidence_formula": 2940,
+          "incidences": 2940,
+          "max_owners": 3,
+          "min_l1_from_0": 3,
+          "min_l1_from_e_z": 2,
+          "outer_layer": true
+        },
+        "4": {
+          "F1": 10752,
+          "F1_subset_F2": true,
+          "F2": 13104,
+          "S_b_all_size_bound": "441/8",
+          "S_b_exact": "6959486763925913858573/2810574247360239360000",
+          "class_formula": true,
+          "extra": 2352,
+          "formula": 2352,
+          "incidence_formula": 5152,
+          "incidences": 5152,
+          "max_owners": 3,
+          "min_l1_from_0": 4,
+          "min_l1_from_e_z": 3,
+          "outer_layer": true
+        }
+      },
+      "fine_units": {
+        "2": {
+          "min_fine_tail_distance": 1,
+          "min_fine_vertex_distance_to_R_endpoints": 0,
+          "shared_links_with_R_cover": 0
+        },
+        "3": {
+          "min_fine_tail_distance": 2,
+          "min_fine_vertex_distance_to_R_endpoints": 1,
+          "shared_links_with_R_cover": 0
+        }
+      },
+      "fine_units_note": "coarse l1 N-1 from e_z is N-1 fine steps along z between link tails; plaquette corners may come within N-2 fine steps of the 36 endpoints of R; no link is shared; no fine distance enters any constant",
+      "id": "extra_face_count_and_distance",
+      "passed": true,
+      "rejected_mutations": [
+        "padding_sites_counted_as_faces",
+        "all_F2_faces_charged",
+        "distance_N_minus_2_claimed",
+        "owner_layer_inside",
+        "padding_onsite_charged"
+      ]
+    },
+    {
+      "analytic_step": "e^{iu(H x 1 + 1 x K)} = e^{iuH} x e^{iuK} for self-adjoint H, K on separate tensor factors (closure of the sum on the algebraic tensor product of domains; Reed-Simon VIII.33 as cited by the source); cited, not machine-checked",
+      "fixture": "exact Gaussian-rational unitaries V=Cayley(H), W=Cayley(K): (V x W)(A x 1)(V x W)* = (V A V*) x 1",
+      "id": "padding_onsite_terms_factor_out",
+      "padding_sites": "|B_+ minus Lambda_N| = 3(2N+1)^2 (75 at N=2, 147 at N=3), onsite terms only",
+      "passed": true,
+      "rejected_mutations": [
+        "padding_onsite_left_in_duhamel_source"
+      ]
+    },
+    {
+      "J_per_abs_tau": 28,
+      "Phi_F_admitted_per_abs_tau": "2268",
+      "faces_per_site": 49,
+      "id": "missing_incoming_stars",
+      "incident_stars_per_site": 4,
+      "labelled_observation": "the exact (48) supremum for the whole-star interaction is 567|tau| (pairs at l1 distance 2 inside one star, 81 x 7); the admitted 81J=2268|tau| is used in every constant; the sharper value is not used",
+      "passed": true,
+      "rejected_mutations": [
+        "outgoing_star_only_J_7",
+        "outgoing_faces_only_21_per_site",
+        "two_anchor_orthant_count"
+      ]
+    },
+    {
+      "K_cmp": "3969/155720800000000",
+      "K_cmp_closed_form": "254016 tau^2/(1-338688|tau|)",
+      "K_cmp_preview": "2.54879245418e-11",
+      "Lambda_U1": "567/12457664",
+      "Lambda_U1_preview": "4.55141509676e-5",
+      "b_N_all_size_preview": {
+        "10": "1.29988415163e-12",
+        "2": "3.50458962450e-11",
+        "3": "1.51039552840e-11",
+        "4": "8.36322524030e-12",
+        "5": "5.30148830470e-12",
+        "6": "3.65798917036e-12",
+        "7": "2.67511744462e-12",
+        "8": "2.04102520745e-12",
+        "9": "1.60829153487e-12"
+      },
+      "b_N_formula": "b(N) = (|tau|/3) Lambda(U) S_b(N), Lambda(U) = int_0^U (2/C)(e^{vr}-1)dr <= 2||Phi||_F U^2/(1-vU/3), v=2||Phi||_F C, S_b(N) = sum over the 28N(5N+1) extra faces of sum_{x in R, y in M_f} F(d(x,y)) <= 168(5N+1)N^-3",
+      "id": "comparison_bound_all_N",
+      "inner_family": "F1",
+      "interaction": "whole-star Phi",
+      "labelled_refinement_enumerated_sum": {
+        "2": {
+          "b_N": "616396498531/546941280256000000000000",
+          "preview": "1.12698843693e-12",
+          "ratio_to_all_size_bound_preview": "3.21575e-2"
+        },
+        "3": {
+          "b_N": "193769295466351853/324314575011237888000000000000",
+          "preview": "5.97473287963e-13",
+          "ratio_to_all_size_bound_preview": "3.95574e-2"
+        },
+        "4": {
+          "b_N": "6959486763925913858573/18525497153791930638336000000000000",
+          "preview": "3.75670715131e-13",
+          "ratio_to_all_size_bound_preview": "4.49193e-2"
+        }
+      },
+      "margin_preview": "2.35405e0",
+      "minus_tau": "replay of the same |tau| formula, not a second confirmation",
+      "passed": true,
+      "statement": "||T^{F2,N}_theta(A)-T^{F1,N}_theta(A)|| <= b(N)||A|| <= K_cmp (5N+1) N^-3 ||A|| for |theta|<=8, N at least 2, both signs",
+      "target": "3/50000000000",
+      "target_met": true,
+      "tier": "polynomial_lieb_robinson"
+    },
+    {
+      "F1": "sup over M greater than N of ||T^{F1,M}_theta(A)-T^{F1,N}_theta(A)|| <= K_c1/(N-1) ||A||; hence ||T_theta(A)-T^{F1,N}_theta(A)|| <= K_c1/(N-1)||A||",
+      "F1_met": true,
+      "F2": "sup over M greater than N of ||T^{F2,M}_theta(A)-T^{F2,N}_theta(A)|| <= (K_c1 + (11/8) K_cmp)/(N-1) ||A|| = K_c2/(N-1)||A||; and ||T_theta(A)-T^{F2,N}_theta(A)|| <= K_c1/(N-1)||A||",
+      "F2_met": true,
+      "K_c1": "9261/155720800000000",
+      "K_c1_closed_form": "592704 tau^2/(1-338688|tau|)",
+      "K_c1_preview": "5.94718239310e-11",
+      "K_c2": "117747/1245766400000000",
+      "K_c2_closed_form": "941976 tau^2/(1-338688|tau|)",
+      "K_c2_preview": "9.45177201761e-11",
+      "id": "within_family_cauchy_and_limits",
+      "inner_family": "F1 (on Lambda_N with the onsite terms of the larger box, or on Lambda_M)",
+      "interaction": "whole-star Phi",
+      "margin_F1_preview": "4.20367e0",
+      "margin_F2_preview": "2.64500e0",
+      "passed": true,
+      "tail_lemma": "every owner of a face whose anchor star is not inside Lambda_N has ||y||_inf at least N; at most 49 faces per site; the sum of F(d(0,y)) over ||y||_inf at least N is <= sum over r from N of (4r^2+2)(1+r)^-4 <= 4/N and the same from e_z <= 4/(N-1); S_c(N) <= 392/(N-1)",
+      "target": "1/4000000000",
+      "tier": "polynomial_lieb_robinson"
+    },
+    {
+      "audit": {
+        "2_to_3": {
+          "F1M_minus_F2N": 2576,
+          "F1N_subset_F1M_subset_F2M": true,
+          "F1_new": 3192,
+          "F2M_minus_F1N": 4536,
+          "F2N_subset_F1M": true,
+          "all_in_E_N": true,
+          "new_F1_meet_shell": true,
+          "owners_linf_ge_N": true
+        },
+        "2_to_4": {
+          "F1M_minus_F2N": 8792,
+          "F1N_subset_F1M_subset_F2M": true,
+          "F1_new": 9408,
+          "F2M_minus_F1N": 11760,
+          "F2N_subset_F1M": true,
+          "all_in_E_N": true,
+          "new_F1_meet_shell": true,
+          "owners_linf_ge_N": true
+        },
+        "3_to_4": {
+          "F1M_minus_F2N": 4872,
+          "F1N_subset_F1M_subset_F2M": true,
+          "F1_new": 6216,
+          "F2M_minus_F1N": 8568,
+          "F2N_subset_F1M": true,
+          "all_in_E_N": true,
+          "new_F1_meet_shell": true,
+          "owners_linf_ge_N": true
+        }
+      },
+      "cauchy_source": "F1(M) minus F1(N): new whole stars (the F1 interaction terms), each meeting Lambda_M minus Lambda_N; split face by face (21 faces per star, each charged once, every owner with ||y||_inf at least N); F2(M) minus F1(N) and F1(M) minus F2(N) lie in E_N (audit)",
+      "comparison_source": "F2(N) minus F1(N): 28N(5N+1) extra faces, each meeting the outer layer max_i y_i = N",
+      "id": "boundary_source_new_terms_only",
+      "new_stars_2_to_3": 152,
+      "note": "the onsite terms of the larger box are placed in the inner Hamiltonian, where they factor out (interaction picture, NS (78)-(79))",
+      "passed": true,
+      "rejected_mutations": [
+        "old_face_meeting_R_charged",
+        "new_star_dropped",
+        "old_star_at_0_charged_in_cauchy"
+      ]
+    },
+    {
+      "F2_new_faces_2_to_3": 3920,
+      "J_per_abs_tau": 28,
+      "clipped_groups_gaining_2_to_3": 61,
+      "faces_gained_in_those_groups": 665,
+      "id": "f2_regrouping_charged_once",
+      "note": "every Cauchy and comparison source in this route is a set of faces, each charged once with norm |tau|/3",
+      "passed": true,
+      "per_site_face_sum_per_abs_tau": "49/3",
+      "rejected_mutations": [
+        "regrouped_group_charged_whole",
+        "face_charged_twice"
+      ]
+    },
+    {
+      "id": "duhamel_inner_family_constants",
+      "note": "the owner-set Phi' (1323|tau|) is named only; F2 on Lambda_N is its native restriction, but no forward constant uses it",
+      "passed": true,
+      "records": {
+        "cauchy_F1": "F1 inner, whole-star Phi, 2268|tau|",
+        "cauchy_F2": "F1 inner (Lambda_N with onsite padding of Lambda_M) plus the comparison, whole-star Phi, 2268|tau|",
+        "comparison": "F1 inner, whole-star Phi, 2268|tau|",
+        "distance_F2_to_limit": "F1 inner on Lambda_M, whole-star Phi, 2268|tau|"
+      },
+      "rejected_mutations": [
+        "F1_inner_with_owner_set_1323_unstated",
+        "F1_inner_relabelled_owner_set",
+        "inner_family_unnamed"
+      ],
+      "swapped_constant_preview": "1.48469327881e-11"
+    },
+    {
+      "first_order": "vanishes exactly: with the onsite evolution alone T^0_r(A) stays in B(H_R) and every extra face acts on links owned outside R, so [W_f, T^0_r(A)]=0; the LR factor e^{vr}-1 is itself O(|tau|)",
+      "id": "duhamel_tau_order_quadratic",
+      "linear_trap_ratio": "100",
+      "passed": true,
+      "ratios_exact": {
+        "c1": "1953058850/194651",
+        "c2": "1953058850/194651",
+        "cmp": "1953058850/194651"
+      },
+      "ratios_preview": {
+        "c1": "1.003364406e4",
+        "c2": "1.003364406e4",
+        "cmp": "1.003364406e4"
+      },
+      "rejected_mutations": [
+        "quadratic_bound_labelled_linear",
+        "trivial_commutator_bound_linear_in_tau"
+      ]
+    },
+    {
+      "brackets": {
+        "cauchy_coefficient": [
+          "9500",
+          "10500"
+        ],
+        "comparison_coefficient": [
+          "9500",
+          "10500"
+        ]
+      },
+      "id": "tau_scaling_exponent",
+      "monotone_in_abs_tau": true,
+      "note": "same exact formula at tau and tau/100, no intermediate rounding",
+      "passed": true,
+      "ratios": {
+        "c1": {
+          "exact": "1953058850/194651",
+          "preview": "1.003364406e4"
+        },
+        "c2": {
+          "exact": "1953058850/194651",
+          "preview": "1.003364406e4"
+        },
+        "cmp": {
+          "exact": "1953058850/194651",
+          "preview": "1.003364406e4"
+        }
+      },
+      "rejected_mutations": [
+        "linear_order_bound",
+        "cubic_order_bound",
+        "bracket_chosen_after_evaluation"
+      ]
+    },
+    {
+      "cauchy_decay": "1/(N-1)",
+      "comparison_decay": "(5N+1) N^-3, order N^-2",
+      "exponential_contradicted_at_N": [
+        9,
+        10,
+        11
+      ],
+      "harmonic_partial_sums_preview": [
+        "5.00000e-1",
+        "1.08333e0",
+        "1.71785e0",
+        "2.38072e0",
+        "3.05849e0",
+        "3.74389e0",
+        "4.43314e0",
+        "5.12434e0",
+        "5.81651e0",
+        "6.50917e0"
+      ],
+      "id": "lieb_robinson_polynomial_tail",
+      "note": "the O(1/N) rate is that of the method with the polynomial F; no lower bound on the actual dynamics difference is claimed",
+      "passed": true,
+      "rejected_mutations": [
+        "N_to_N_plus_1_bound_as_cauchy",
+        "harmonic_step_sum_diverges",
+        "exponential_rate_with_AQ1_constants"
+      ],
+      "tail_lower_bound_times_N_preview": {
+        "10": "2.71411e-2",
+        "2": "3.62967e-2",
+        "20": "2.59214e-2",
+        "30": "2.55124e-2",
+        "5": "2.95413e-2"
+      }
+    },
+    {
+      "claims": {
+        "F1 finite-box evolutions": [
+          "whole_sequence",
+          "cauchy_bound"
+        ],
+        "F1 limit states": [
+          "subsequence",
+          "trace_norm_compactness"
+        ],
+        "F2 finite-box evolutions": [
+          "whole_sequence",
+          "cauchy_bound"
+        ],
+        "F2 limit states": [
+          "subsequence",
+          "trace_norm_compactness"
+        ]
+      },
+      "fixture": "a_N=(-1)^N/7: both parity subsequences converge, |a_{N+1}-a_N|=2/7, no Cauchy bound, no whole-sequence limit",
+      "id": "subsequence_versus_whole_sequence",
+      "passed": true,
+      "rejected_mutations": [
+        "state_whole_sequence_claimed",
+        "alternating_sequence_parity_limits",
+        "unlabelled_limit"
+      ]
+    },
+    {
+      "id": "f2_limit_dynamics_equals_f1",
+      "o6_rerun": {
+        "gns_unitaries": "U_u pi(A)Omega = pi(T_u(A))Omega well defined and unitary by stationarity",
+        "nonnegative_generator": "finite F2 centered energies nonnegative (simple ground, AY1 via AM2); correlations pass along N_k; negative-energy Fourier tests pass by dominated convergence (F2 converges to T on every compact window, qualitative)",
+        "physical_sector": "F2 finite ground states gauge invariant; T preserves A_phys; the physical cyclic space reduces U and H",
+        "stationarity": "omega2(T_u(A))=omega2(A): F2 finite ground invariance along F2 subsequence N_k, local trace-norm convergence on Lambda_n, and ||T_u(A)-T^{F2,n}_u(A)|| tends to 0 (this loop, whole sequence); extended to all u by the group property",
+        "strong_continuity": "finite F2 evolution strong-* continuous, normal local density, uniform approximation on |u|<=1; continuity at 0 of a unitary group gives strong continuity everywhere"
+      },
+      "passed": true,
+      "rejected_mutations": [
+        "identified_by_local_terms_only",
+        "F1_subsequence_used_for_F2_states",
+        "stationarity_assumed"
+      ],
+      "statement": "for every A in B(H_R) and |theta|<=8: ||T^{F2,N}_theta(A)-T_theta(A)|| <= K_c1/(N-1)||A||, so the F2 evolutions converge as a whole sequence to the AQ1 limit dynamics T_theta; for every local A and every compact window the same holds qualitatively; T extends to the quasi-local algebra (NS Theorem 4.1)"
+    },
+    {
+      "fixtures": {
+        "stationary_excited_state": "H=diag(0,1), invariant excited vector e_1, sigma_x correlation frequency E0-E1=-1",
+        "strong_not_norm": "U(t)e_j=e^{ijt}e_j, Ae_j=e_{2j}: ||U(pi/n)AU(pi/n)*-A||=2 on e_n; <=|t| on the fixed e_1"
+      },
+      "id": "o6_limit_state_properties_rerun",
+      "passed": true,
+      "rejected_mutations": [
+        "stationarity_without_ground_property",
+        "norm_time_continuity_claimed"
+      ]
+    },
+    {
+      "fixture": "one automorphism group (U=diag(1,(3+4i)/5)), two invariant vector states e_0, e_1: sigma_x correlations (3+4i)/5 versus (3-4i)/5",
+      "id": "algebraic_not_gns_dynamics",
+      "meaning": "algebraic Heisenberg dynamics of the named constructions on a compact window; states and correlations need a common state (BB2)",
+      "passed": true,
+      "rejected_mutations": [
+        "gns_dynamics_equality_claimed",
+        "correlations_of_different_states_equal",
+        "gns_level_label"
+      ]
+    },
+    {
+      "growth_U2_over_U1_preview": "4.0136399e0",
+      "id": "time_window_named_common_clock",
+      "note": "the bound grows like U^2/(1-vU/3) (exactly (2/(Cv))(e^{vU}-1-vU)); nothing is claimed outside the window",
+      "passed": true,
+      "rejected_mutations": [
+        "uniform_in_time_claimed",
+        "u_window_labelled_theta"
+      ],
+      "window": "|theta|<=8, theta=alpha t/hbar, U=Theta/8=1"
+    },
+    {
+      "conversion": "e^{itK/hbar}=e^{i(delta t/hbar)H_hat}=e^{i(theta/8)H_hat}",
+      "fixture": "alpha=5, hbar=7, t=56/5: theta=8, u=1 (non-unit constants)",
+      "id": "wrong_delta_alpha_hbar_clock",
+      "passed": true,
+      "rejected_mutations": [
+        "eightfold_u_labelled_theta",
+        "hbar_dropped",
+        "delta_equals_alpha"
+      ]
+    },
+    {
+      "id": "unbounded_onsite_interaction_picture",
+      "passed": true,
+      "placement": "F1 on Lambda_N is (44) with H_x=h_x (unbounded, self-adjoint, compact resolvent) and Phi(b+S)=phi_b; every Duhamel pair has identical onsite parts (larger-box onsite terms and F2 padding sit in the inner Hamiltonian and factor out); the source is a bounded sum of faces",
+      "rejected_mutations": [
+        "onsite_in_bounded_interaction",
+        "onsite_of_larger_box_in_duhamel_source"
+      ],
+      "wrong_placement_velocity_preview": {
+        "10": "4.03200000000e3",
+        "100": "4.43520000000e4",
+        "1000": "4.47552000000e5"
+      }
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "passed": true,
+      "records": {
+        "cauchy_F1": {
+          "inner_family": "F1",
+          "interaction": "whole-star Phi",
+          "phi_F_per_abs_tau": "2268",
+          "tier": "polynomial_lieb_robinson"
+        },
+        "cauchy_F2": {
+          "inner_family": "F1",
+          "interaction": "whole-star Phi",
+          "phi_F_per_abs_tau": "2268",
+          "tier": "polynomial_lieb_robinson"
+        },
+        "comparison": {
+          "inner_family": "F1",
+          "interaction": "whole-star Phi",
+          "phi_F_per_abs_tau": "2268",
+          "tier": "polynomial_lieb_robinson"
+        },
+        "distance_F2_to_limit": {
+          "inner_family": "F1",
+          "interaction": "whole-star Phi",
+          "phi_F_per_abs_tau": "2268",
+          "tier": "polynomial_lieb_robinson"
+        }
+      },
+      "rejected_mutations": [
+        "exponential_label_on_polynomial_constants",
+        "tier_missing",
+        "mixed_interaction_constants"
+      ]
+    },
+    {
+      "faces_summed": 616,
+      "id": "root_n_misuse",
+      "linear_sum_preview": "1.12698843693e-12",
+      "note": "the comparison and Cauchy sums add face by face; no square-root combination or division by sqrt(N) or sqrt(#faces)",
+      "passed": true,
+      "rejected_mutations": [
+        "division_by_isqrt_of_616_faces",
+        "division_by_sqrt_N_at_N_4"
+      ]
+    },
+    {
+      "id": "cross_coupling_comparison_rejected",
+      "note": "at different couplings the source contains every face (82 meet R), X and Y are not disjoint, (51) does not apply and the first-order term survives",
+      "passed": true,
+      "rejected_mutations": [
+        "opposite_signs_compared",
+        "different_couplings_compared"
+      ]
+    },
+    {
+      "W_link_owners": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "endpoints": 36,
+      "endpoints_per_factor": 22,
+      "id": "full_original_wilson_cover",
+      "links": 48,
+      "passed": true,
+      "rejected_mutations": [
+        "four_drawn_links_as_cover",
+        "single_factor_cover"
+      ],
+      "shared_endpoints": 8
+    },
+    {
+      "id": "topology_named",
+      "passed": true,
+      "rejected_mutations": [
+        "strong_relabelled_norm",
+        "norm_time_continuity_claimed"
+      ],
+      "topology": {
+        "dynamics": "operator norm on B(H_R), uniformly for |theta| at most 8",
+        "states": "local trace norm (subsequential limits, not compared here)"
+      }
+    },
+    {
+      "families": {
+        "F1": "AQ1 centered whole-star boxes Lambda_N=[-N,N]^3, N at least 2",
+        "F2": "I1 section 6 all-contained-face boxes with padding on the same Lambda_N, N at least 2"
+      },
+      "id": "two_families_named",
+      "passed": true,
+      "rejected_mutations": [
+        "one_family_only",
+        "third_family_literal_boxes",
+        "orthant_boxes"
+      ]
+    },
+    {
+      "coarse_step": "(4a,2a,a) in fine units",
+      "id": "decay_rate_in_N_not_a",
+      "note": "N counts coarse steps; no physical length scale is read",
+      "passed": true,
+      "rejected_mutations": [
+        "conversion_to_fm",
+        "rate_in_a"
+      ]
+    },
+    {
+      "id": "uniform_in_N_not_in_a",
+      "passed": true,
+      "qualifiers": [
+        "in n at fixed spacing",
+        "for |theta|",
+        "for t in compact sets",
+        "on compact",
+        "for |u|",
+        "in |theta|",
+        "uniform integrability"
+      ],
+      "rejected_mutations": [
+        "uniform_in_a_claimed",
+        "unqualified_uniform_rate"
+      ]
+    },
+    {
+      "id": "placeholder_span_rejected",
+      "passed": true,
+      "rejected_mutations": [
+        "whitespace_placeholder",
+        "vertical_bar_placeholder",
+        "eg_placeholder"
+      ],
+      "scanned": [
+        "report.md",
+        "exported statements",
+        "contract strings"
+      ]
+    },
+    {
+      "forbidden_count": 20,
+      "id": "negation_aware_phrase_scan",
+      "note": "same rule as research/round33/tools/phrase_scan.py (round list copied, contract list read from the contract)",
+      "passed": true,
+      "rejected_mutations": [
+        "affirmative_thermodynamic_limit",
+        "affirmative_AQ_state",
+        "affirmative_mass_gap"
+      ],
+      "template_removed_as_one_literal": true
+    },
+    {
+      "clock": "s=alpha*t_E/hbar (Euclidean), theta=alpha*t/hbar (real time); normalized u=theta/8 only internally with the conversion shown",
+      "declared": [
+        "boundary_source",
+        "metric",
+        "targets",
+        "weights",
+        "window"
+      ],
+      "id": "parameters_declare_metric_weights_window",
+      "note": "N_0 appears inside the targets (N at least 2) and d_X is the named l1 metric; there are no separate N_0 or d_X fields (wording note W2)",
+      "passed": true,
+      "rejected_mutations": [
+        "window_field_absent",
+        "metric_field_absent"
+      ]
+    },
+    {
+      "id": "changed_model_relabelled",
+      "model": {
+        "dimension": 3,
+        "families": [
+          "F1",
+          "F2"
+        ],
+        "finite_graph": false,
+        "group": "SU(2)",
+        "metric": "coarse l1",
+        "model_id": "AQ_patterned_zero_selected",
+        "tau": "1/100000000",
+        "triple": [
+          "0",
+          "0",
+          "0"
+        ],
+        "weights": "(1+r)^-4",
+        "window": "|theta|<=8"
+      },
+      "passed": true,
+      "rejected_mutations": [
+        "tau_changed",
+        "nonzero_triple",
+        "fine_site_metric",
+        "exponential_weights_relabelled",
+        "window_changed",
+        "uniform_route_B_model",
+        "other_group",
+        "two_dimensional",
+        "finite_graph"
+      ]
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "note": "every admission Boolean is a Fraction comparison; previews are truncated strings never parsed by an admission check",
+      "passed": true,
+      "rejected_mutations": [
+        "float_input",
+        "bool_input",
+        "nan_input",
+        "zero_denominator",
+        "preview_decimal_read_as_admission_value"
+      ]
+    },
+    {
+      "id": "error_ledger_itemized",
+      "ledger_terms": [
+        "arithmetic",
+        "duhamel_boundary_sum",
+        "inner_family_constants",
+        "interaction_picture_onsite",
+        "lieb_robinson_tail"
+      ],
+      "passed": true,
+      "rule": "an entry may be not_applicable only with a stated reason"
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "passed": true,
+      "rejected_mutations": [
+        "missed_comparison_relabelled_accepted",
+        "miscounted_source_relabelled_limited",
+        "tau_retuned"
+      ],
+      "retained_labelled_weaker_bound": {
+        "coefficient": "9261/77860400000000",
+        "dominating_term": "the 1/N polynomial tail of all faces outside Lambda_N",
+        "misses_comparison_target_at_every_N_ge_2": true,
+        "preview": "1.18943647862e-10",
+        "route": "triangle through the common limit, 2 K_c1/(N-1)"
+      },
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "historical_or_occult_numeric_premise": false,
+      "id": "no_priority_or_continuum_claim",
+      "passed": true,
+      "rejected_mutations": [
+        "continuum_true",
+        "priority_true",
+        "weak_coupling_true"
+      ]
+    },
+    {
+      "admitted_basis": {
+        "dynamics_limit_identified_claimed": true,
+        "rate_in_N_claimed": true,
+        "whole_sequence_claimed": true
+      },
+      "gate_fields": {
+        "common_limit_claimed": false,
+        "continuum_claim": false,
+        "dynamics_level": "algebraic_heisenberg_compact_window",
+        "dynamics_limit_identified_claimed": true,
+        "gns_dynamics_equality_claimed": false,
+        "rate_in_N_claimed": true,
+        "rate_in_a_claimed": false,
+        "scientific_priority_verified": false,
+        "state_convergence_claimed": false,
+        "translation_invariance_claimed": false,
+        "true_values_rule": "a field shown true is exported true only if its target is admitted; otherwise false with the reason",
+        "uniform_in_time_claimed": false,
+        "uniqueness_of_ground_state_claimed": false,
+        "weak_coupling_claim": false,
+        "whole_sequence_claimed": true,
+        "whole_sequence_scope": "finite-box Heisenberg evolutions of F1 and F2 of A in B(H_R), in norm, uniformly for |theta| at most 8; dynamics only, no state"
+      },
+      "id": "gate_fields_topic_specific",
+      "note": "common_limit_claimed is read as a common limit state (false); the dynamics identification is dynamics_limit_identified_claimed",
+      "passed": true,
+      "rejected_mutations": [
+        "field_missing",
+        "rate_in_a_true",
+        "common_limit_true",
+        "state_convergence_true"
+      ]
+    },
+    {
+      "id": "mandatory_sentence_verbatim_once",
+      "occurrences_in_report": 1,
+      "passed": true,
+      "template_sha256": "be11818929a4239bb2b005893445a0c7592a87299253e535239c75501bef8d03"
+    },
+    {
+      "forward_inventory_files": 29,
+      "id": "reverse_premise_isolation",
+      "limitation": "the forward checker verifies the declared inventories only; the reverse agent's actual reads are checked by freeze.py and the skeptic",
+      "passed": true,
+      "rejected_mutations": [
+        "declaration_false",
+        "reverse_reads_deliberation",
+        "reverse_reads_forward_ba2",
+        "reverse_reads_lens_memo"
+      ],
+      "reverse_premise_count": 29
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "passed": true,
+      "rejected_mutations": [
+        "control_boolean_flipped_hash_rebound",
+        "ns_excerpt_snapshot_removed_hash_rebound",
+        "K_cmp_halved_hash_rebound",
+        "K_c2_replaced_by_K_c1_hash_rebound",
+        "gns_equality_flag_hash_rebound",
+        "common_limit_field_hash_rebound",
+        "one_family_hash_rebound",
+        "extra_face_count_hash_rebound"
+      ]
+    }
+  ],
+  "clock": "s=alpha*t_E/hbar (Euclidean), theta=alpha*t/hbar (real time); normalized u=theta/8 only internally with the conversion shown",
+  "common_limit_claimed": false,
+  "continuum_claim": false,
+  "contract_controls_covered": [
+    "algebraic_not_gns_dynamics",
+    "boundary_source_new_terms_only",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "cross_coupling_comparison_rejected",
+    "decay_rate_in_N_not_a",
+    "duhamel_inner_family_constants",
+    "duhamel_tau_order_quadratic",
+    "exact_arithmetic_admission",
+    "extra_face_count_and_distance",
+    "f2_limit_dynamics_equals_f1",
+    "f2_regrouping_charged_once",
+    "face_count_all_sites",
+    "full_original_wilson_cover",
+    "gate_fields_topic_specific",
+    "insufficient_verdict_retained",
+    "lieb_robinson_F_declared",
+    "lieb_robinson_form_quoted",
+    "lieb_robinson_polynomial_tail",
+    "missing_incoming_stars",
+    "negation_aware_phrase_scan",
+    "no_priority_or_continuum_claim",
+    "parameters_declare_metric_weights_window",
+    "placeholder_span_rejected",
+    "reverse_premise_isolation",
+    "root_n_misuse",
+    "subsequence_versus_whole_sequence",
+    "tau_scaling_exponent",
+    "tier_mixing_rejected",
+    "time_window_named_common_clock",
+    "topology_named",
+    "two_families_named",
+    "unbounded_onsite_interaction_picture",
+    "uniform_in_N_not_in_a",
+    "wrong_delta_alpha_hbar_clock"
+  ],
+  "contract_sha256": "275ba3b002529b7295d0f8b91dc1cc7a96451e3c7f936ee698a932fdca54fcff",
+  "contribution_alias": "HNM-BA2-F forward Duhamel/Lieb-Robinson comparison of the F1 and F2 Heisenberg dynamics on compact windows, within-family Cauchy estimates and identification of the F2 limit dynamics",
+  "controls_with_damaging_mutations": 35,
+  "direction": "forward",
+  "dynamics_level": "algebraic_heisenberg_compact_window",
+  "dynamics_limit_identified_claimed": true,
+  "dynamics_limit_statement": "The F1 and F2 finite-box evolutions of every A in B(H_R) converge as whole sequences in norm, uniformly for |theta| at most 8, and the F2 limit equals the AQ1 limit dynamics T_theta; limit states remain subsequential and are not identified.",
+  "error_terms_itemized": {
+    "arithmetic": {
+      "reason": "exact Fractions; the only transcendental step e^x-1-x is replaced by the directed rational upper bound x^2/(2(1-x/3)), x<=1016064|tau|",
+      "status": "not_applicable",
+      "value": "0"
+    },
+    "duhamel_boundary_sum": {
+      "Lambda_U1": "567/12457664",
+      "Lambda_U1_preview": "4.55141509676e-5",
+      "value": "face norm |tau|/3 times Lambda(U) times the F-sum, faces added linearly, each charged once"
+    },
+    "inner_family_constants": {
+      "value": "F1 inner: C <= 224, ||Phi||_F <= 2268|tau|, v=2||Phi||_F C=1016064|tau|; monotone substitution of upper bounds"
+    },
+    "interaction_picture_onsite": {
+      "reason": "the unbounded onsite terms are identical in both Hamiltonians of every Duhamel pair (padding and larger-box onsite terms sit in the inner Hamiltonian and factor out); (51) itself handles them through its interaction picture (54),(57)",
+      "status": "not_applicable",
+      "value": "0"
+    },
+    "lieb_robinson_tail": {
+      "cauchy": "S_c(N) <= 49(4/N+4/(N-1)) <= 392/(N-1) (shells 4r^2+2 <= 4(1+r)^2, sum over k from m+1 of k^-2 <= 1/m)",
+      "comparison": "S_b(N) <= 168(5N+1)N^-3 (at most 3 owners per extra face, each at l1 distance at least N-1 from e_z and at least N from 0, F(N-1)+F(N) <= 2N^-4)"
+    }
+  },
+  "exclusions": {
+    "additional": [
+      "no identification of limit states",
+      "no statement outside |theta| at most 8 with the frozen targets",
+      "no exponential-tier constant",
+      "no fine-lattice or physical length reading of N"
+    ],
+    "contract": [
+      "equality of GNS dynamics or of correlation functions of different states",
+      "uniform-in-time statements",
+      "exponential decay in N with the polynomial Lieb-Robinson function",
+      "uniqueness of every infinite-volume ground state",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "scientific priority"
+    ],
+    "preregistration": [
+      "uniqueness of every infinite-volume ground state",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "equality of GNS dynamics or of correlation functions of different states",
+      "scientific priority"
+    ]
+  },
+  "families": {
+    "F1": "AQ1 centered whole-star boxes Lambda_N=[-N,N]^3, N at least 2",
+    "F2": "I1 section 6 all-contained-face boxes with padding on the same Lambda_N, N at least 2"
+  },
+  "gate_fields": {
+    "common_limit_claimed": false,
+    "continuum_claim": false,
+    "dynamics_level": "algebraic_heisenberg_compact_window",
+    "dynamics_limit_identified_claimed": true,
+    "gns_dynamics_equality_claimed": false,
+    "rate_in_N_claimed": true,
+    "rate_in_a_claimed": false,
+    "scientific_priority_verified": false,
+    "state_convergence_claimed": false,
+    "translation_invariance_claimed": false,
+    "true_values_rule": "a field shown true is exported true only if its target is admitted; otherwise false with the reason",
+    "uniform_in_time_claimed": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false,
+    "whole_sequence_claimed": true,
+    "whole_sequence_scope": "finite-box Heisenberg evolutions of F1 and F2 of A in B(H_R), in norm, uniformly for |theta| at most 8; dynamics only, no state"
+  },
+  "gns_dynamics_equality_claimed": false,
+  "headline": {
+    "cauchy_F1": {
+      "K_c1": "9261/155720800000000",
+      "K_c1_preview": "5.94718239310e-11",
+      "inner_family": "F1",
+      "interaction": "whole-star Phi",
+      "margin_preview": "4.20367e0",
+      "route": "forward Duhamel over the faces outside Lambda_N",
+      "scaling_ratio": "1953058850/194651",
+      "scaling_ratio_preview": "1.003364406e4",
+      "statement": "sup over M greater than N of ||T^{F1,M}-T^{F1,N}|| <= K_c1/(N-1)",
+      "target": "1/4000000000",
+      "target_met": true,
+      "tier": "polynomial_lieb_robinson"
+    },
+    "cauchy_F2": {
+      "K_c2": "117747/1245766400000000",
+      "K_c2_preview": "9.45177201761e-11",
+      "inner_family": "F1",
+      "interaction": "whole-star Phi",
+      "margin_preview": "2.64500e0",
+      "route": "forward Duhamel against the F1 box evolution on Lambda_N plus the comparison",
+      "scaling_ratio": "1953058850/194651",
+      "scaling_ratio_preview": "1.003364406e4",
+      "statement": "sup over M greater than N of ||T^{F2,M}-T^{F2,N}|| <= K_c2/(N-1), K_c2 = K_c1 + (11/8) K_cmp",
+      "target": "1/4000000000",
+      "target_met": true,
+      "tier": "polynomial_lieb_robinson"
+    },
+    "comparison": {
+      "K_cmp": "3969/155720800000000",
+      "K_cmp_preview": "2.54879245418e-11",
+      "inner_family": "F1",
+      "interaction": "whole-star Phi",
+      "margin_preview": "2.35405e0",
+      "route": "forward Duhamel over the extra F2 faces",
+      "scaling_ratio": "1953058850/194651",
+      "scaling_ratio_preview": "1.003364406e4",
+      "statement": "b(N) <= K_cmp (5N+1) N^-3, |theta|<=8, N at least 2",
+      "target": "3/50000000000",
+      "target_met": true,
+      "tier": "polynomial_lieb_robinson"
+    },
+    "distance_to_limit": {
+      "F1": "K_c1/(N-1)",
+      "F2": "K_c1/(N-1)",
+      "K_c1": "9261/155720800000000"
+    },
+    "extra_faces": {
+      "N2": 616,
+      "N3": 1344,
+      "N4": 2352,
+      "count": "28N(5N+1)",
+      "min_l1_from_0": "N",
+      "min_l1_from_e_z": "N-1",
+      "owners": "outer layer max_i |b_i| = N"
+    },
+    "f2_limit_dynamics": "whole sequence, equals T_theta (AQ1); O6 rerun for every subsequential F2 limit state",
+    "padding": "onsite terms on B_+ minus Lambda_N factor out exactly; never charged"
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "label": "dynamics_on_compact_windows",
+  "loop": "BA2",
+  "mandatory_sentence": "For the zero-selected patterned family at the same coupling |tau|<=10^-8 and every A in B(H_R) with ||A||<=1 on the fixed cover R, the finite-box Heisenberg evolutions T^{F1,N}_theta and T^{F2,N}_theta of the named construction families F1 and F2 on the same centered coarse cube Lambda_N satisfy ||T^{F2,N}_theta(A)-T^{F1,N}_theta(A)|| <= b(N) for |theta|<=8 in the common clock theta=alpha t/hbar; this is an algebraic comparison of the dynamics of the named constructions on a compact time window at a rate in N, not equality of GNS dynamics or of correlation functions of different states, not a uniform-in-time statement, and not a statement uniform in the lattice spacing a.",
+  "meaning": "The forward route proves an algebraic comparison of the finite-box Heisenberg dynamics of the named constructions F1 and F2 on the compact window |theta| at most 8, uniformly for |theta| at most 8, at a rate in N at fixed spacing; it does not assert equality of GNS dynamics or of correlation functions of different states.",
+  "model": {
+    "dimension": 3,
+    "families": [
+      "F1",
+      "F2"
+    ],
+    "finite_graph": false,
+    "group": "SU(2)",
+    "metric": "coarse l1",
+    "model_id": "AQ_patterned_zero_selected",
+    "tau": "1/100000000",
+    "triple": [
+      "0",
+      "0",
+      "0"
+    ],
+    "weights": "(1+r)^-4",
+    "window": "|theta|<=8"
+  },
+  "ns_excerpt_sha256": "6a28f4cd6aa2c55286fa839d83c00356ff0709f8b02027ee5b39050df1d6c921",
+  "pinned_gate_sha256": {
+    "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+    "research/round29/advisor/aq1-gate.json": "b4a93fd49413857af83c969de1e7b2c8a698ea8099aa9e3aea8e8c7fab0a225e",
+    "research/round32/advisor/av1-gate.json": "55e03f2d9c297d41106d983cec45eaa642ca18123544f416916f94414de305a0",
+    "research/round32/advisor/ay1-gate.json": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+    "research/round32/advisor/ay2-gate.json": "e4faa98884d26d67dd422b382eafb2c52bf88ee679998bc8249003cba88187a6"
+  },
+  "proposed_forward_verdict": "accepted_within_scope (forward half; the contract acceptance also requires the reverse route and skeptical review); sub-label dynamics_on_compact_windows",
+  "rate_in_N_claimed": true,
+  "rate_in_a_claimed": false,
+  "rejected_mutation_total": 116,
+  "routes_executed": [
+    "forward: Duhamel over the 28N(5N+1) extra F2 faces with the inner F1 evolution and the whole-star NS constants (comparison)",
+    "forward: Duhamel over the faces outside Lambda_N with the inner F1 evolution (F1 Cauchy, sup over all M)",
+    "forward: F2 Cauchy by one F1-inner Duhamel plus the comparison; F2 distance to T by an F1-inner Duhamel on Lambda_M",
+    "forward: identification of the F2 limit dynamics with T_theta and rerun of AQ1 sections 4-5 for F2 limit states"
+  ],
+  "routes_not_executed": [
+    "reverse route (inner F2, owner-set constants; outside this producer)",
+    "exponential_lieb_robinson tier (optional)",
+    "skeptic post-comparison"
+  ],
+  "scientific_priority_verified": false,
+  "state_convergence_claimed": false,
+  "tau_values": {
+    "+": "1/100000000",
+    "-": "-1/100000000"
+  },
+  "topology": {
+    "dynamics": "operator norm on B(H_R), uniformly for |theta| at most 8",
+    "states": "local trace norm (subsequential limits, not compared here)"
+  },
+  "translation_invariance_claimed": false,
+  "true_values_rule": "a field shown true is exported true only if its target is admitted; otherwise false with the reason",
+  "uniform_in_time_claimed": false,
+  "uniqueness_of_ground_state_claimed": false,
+  "weak_coupling_claim": false,
+  "whole_sequence_claimed": true,
+  "whole_sequence_scope": "finite-box Heisenberg evolutions of F1 and F2 of A in B(H_R), in norm, uniformly for |theta| at most 8; dynamics only, no state",
+  "window": "|theta|<=8 in theta=alpha t/hbar (normalized u=theta/8<=1 internally); compact window only, no uniform-in-time claim"
+}
