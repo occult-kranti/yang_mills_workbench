@@ -1,0 +1,72 @@
+{
+  "schema": "hnm-round33-lens-sources-v1",
+  "lens": "historical (Newton analysis/synthesis, Tesla mechanism/resonance)",
+  "loop": "deliberation loop 1",
+  "prepared": "2026-09-24",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "note": "No source below becomes a premise of any Round33 contract. Each entry is a source actually opened and read this loop (WebFetch through the proxy); a search-result title or snippet not opened is not recorded, matching this lens's practice in every Round32 update. Reading depth is abstract/summary-of-result unless stated otherwise; no full-text derivation was verified line by line for any entry.",
+  "sources": [
+    {
+      "id": "H33-1",
+      "title": "Local stability of ground states in locally gapped and weakly interacting quantum spin systems",
+      "author": "Joscha Henheik, Stefan Teufel, Tom Wessel",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8766402/",
+      "version_date": "2022-01-18 (Letters in Mathematical Physics)",
+      "section": "Abstract and statement of the main theorem (the paper's own Theorem 3), read via WebFetch summary, not the full proof",
+      "reading_depth": "abstract_plus_theorem_statement",
+      "provenance": "peer-reviewed journal article, open-access PMC copy",
+      "claim": "For a weakly interacting spin system with a uniform on-site gap g and finite interaction range R, a localized perturbation P supported in a region X changes the ground state's local expectations only by an amount decaying exponentially in the distance from X: tr((rho_P-rho)A) <= c1||A|| e^{-c2 dist(Y,X)}, with c1, c2 existential constants depending only on R and g, no numeric threshold given.",
+      "relevance": "This is the closest published match to the 'boundary-influence decay' shape the advisor's brief proposes (an LPPL/HTW-type local-stability bound), and a plausible target FORM for BA1's pre-registration; it is for quantum spin systems with bounded on-site terms only, not lattice gauge theories with unbounded Casimir on-site terms, and its constants are existential, which is exactly the gap this project's AM2/AV1 explicit-constant method is suited to close for this specific model, as it already did for Yarotsky's existential constants.",
+      "unresolved": "Whether the paper's proof technique (not read past the abstract/theorem statement) is adaptable to unbounded on-site terms and the coarse-factor SU(2) geometry used here, or whether an independent in-house argument (extending AV1's product-ordering split shell by shell) is the more direct route, is not determined by this reading."
+    },
+    {
+      "id": "H33-2",
+      "title": "Cluster expansion for ground states of local Hamiltonians",
+      "author": "Alvise Bastianello, Spyros Sotiriadis",
+      "url": "https://arxiv.org/abs/1601.02532",
+      "version_date": "submitted 2016-01-11; published Nuclear Physics B 909 (2016) p.1020",
+      "section": "Abstract, read via WebFetch summary",
+      "reading_depth": "abstract",
+      "provenance": "peer-reviewed journal article (published version), preprint host",
+      "claim": "Develops a cluster-expansion technique for ground states of general local Hamiltonians, deriving functional equations for cluster amplitudes and diagrammatic rules, and extends the locality statements to unitary time evolution (equilibration, work statistics).",
+      "relevance": "A general precedent for treating a ground state as a cluster/polymer expansion (the same conceptual move this lens's own Round32 memo Section 5.1 sketched, unused in the admitted AV1 proof, which used the simpler product-ordering split instead); potentially informative for BA1 if the simpler split does not suffice, but not itself read at derivation depth and not lattice-gauge-specific.",
+      "unresolved": "No explicit numeric convergence radius, boundary-condition-independence statement, or finite-volume convergence rate was found in the abstract; the paper's actual constants and hypotheses were not read."
+    },
+    {
+      "id": "H33-3",
+      "title": "Dynamics and equilibrium states of infinite systems of lattice bosons",
+      "author": "Andreas Deuchert, Jonas Lampart, Marius Lemm",
+      "url": "https://arxiv.org/pdf/2505.13170",
+      "version_date": "arXiv:2505.13170, v3 read (dated 2025-06 by the fetch)",
+      "section": "Abstract and stated main results, read via WebFetch summary of the PDF text",
+      "reading_depth": "abstract",
+      "provenance": "preprint (arXiv), not confirmed peer-reviewed in this pass",
+      "claim": "Proves Lieb-Robinson bounds of the exponential form exp(-mu(|r|-v t)) for infinite systems of lattice bosons with unbounded interactions, under uniform bounds on moments of the local particle-number operator, extending prior finite-volume unbounded-interaction Lieb-Robinson results (including Nachtergaele-Sims-type work) to the infinite-volume dynamics.",
+      "relevance": "A 2025 candidate upgrade path for the dynamics sub-round (BB): if its hypotheses translate to this project's compact-manifold Casimir on-site operators, it would give an EXPONENTIAL rather than the polynomial F(r)=(1+r)^-4 decay Nachtergaele-Sims (already used by AQ1) supplies, which would sharpen any boundary-shell bound; not adopted as a premise here.",
+      "unresolved": "The WebFetch summary's claim that the paper 'demonstrates applicability to lattice gauge theories' and 'incorporat[es] unbounded interaction terms through careful moment estimates... relevant for gauge-theoretic Hamiltonians' reads as the summarizing model's own inference, not a quoted statement from the paper; this is NOT treated as established and is recorded as an open question, not a claim, pending an actual read of the paper's hypotheses (uniform bounds on moments of a LOCAL PARTICLE NUMBER operator) against this project's Casimir/holonomy on-site operators, which are not literally boson number operators. The primary route for BB1 remains the already-in-house Nachtergaele-Sims citation via AQ1; this paper is a lead only."
+    },
+    {
+      "id": "H33-4",
+      "title": "Quantum Simulation of Gauge Theories for Particle and Nuclear Physics",
+      "author": "Zohreh Davoudi",
+      "url": "https://arxiv.org/abs/2605.20417",
+      "version_date": "submitted 2026-05-19; Contribution to Proceedings of the 42nd International Symposium on Lattice Field Theory (LATTICE2025)",
+      "section": "Abstract, read via WebFetch summary",
+      "reading_depth": "abstract",
+      "provenance": "conference proceedings contribution (preprint), 16 pages",
+      "claim": "Surveys quantum-computational approaches to lattice field theory, framing quantum simulation as offering polynomially efficient algorithms where classical lattice methods (e.g. dense-matter sign problems) are limited.",
+      "relevance": "Direct evidence that quantum simulation of lattice gauge theories is an active, funded (DOE-supported per the earlier related search) research programme in 2025-2026, supporting the brief's 'patents or government programmes on quantum simulation of lattice gauge theories' search item; relevant background for the applications-stage discussion of what an SU(2) Kogut-Susskind result could mean for that programme, but named no specific SU(2)/SU(3) Hamiltonian formulation or funding agency in the portion read.",
+      "unresolved": "Whether the full paper discusses SU(2) or SU(3) specifically, Hamiltonian (Kogut-Susskind) formulations, or names a specific government program by number, was not determined from the abstract alone; not pursued further this loop given scope."
+    }
+  ],
+  "access_failures": [
+    {
+      "id": "H33-AF1",
+      "title": "Different faces of confinement",
+      "url": "https://arxiv.org/pdf/2109.07600",
+      "attempted": "2026-09-24",
+      "reason": "WebFetch returned only raw PDF binary/image-stream artifacts (JPEG/DCTDecode markers); no readable text was extracted, so no claim from this source is recorded. Sought for center-symmetry/N-ality background relevant to the SU(N)/SU(3) gauge-group-transfer application; not retried given the U(1)/Z(N) center-symmetry facts needed (Z(SU(N)) = Z_N; Z_N has an element of order 2 iff N is even; Z(U(1))=U(1); Z(Z2)=Z2) are standard group theory, independently verifiable, and did not require this source."
+    }
+  ],
+  "closing": "No occult, alchemical or theological source was read this loop; the frozen Round32 Newton and Tesla rules (research.md, both skills) were consulted but not re-quoted as new readings, matching prior practice of not re-listing an already-recorded source as newly read. No source above, or any prior one, changes any premise, contract or admitted constant of this programme."
+}
