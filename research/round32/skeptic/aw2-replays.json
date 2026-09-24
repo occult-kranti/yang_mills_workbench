@@ -1,0 +1,119 @@
+{
+ "arb_preview_regenerated": {
+  "byte_identical_to_stored_preview": true,
+  "command": "python3 -B research/round32/forward/aw2/arb_preview.py --output <external>/arb-preview.json",
+  "libraries": {
+   "mpmath": "1.3.0",
+   "python-flint": "0.9.0"
+  },
+  "status": "labelled preview only; not admission arithmetic"
+ },
+ "closures": {
+  "forward": {
+   "closure_files": 35,
+   "declared_premises": 28,
+   "freeze_json_sha256": "35daabfd475b22804ac769942a9ff49b490c128f5a0ef84bcf024ec308451b4b",
+   "inputs": 28,
+   "inventory_equals_declared": true,
+   "reverse_isolation_enforced": false
+  }
+ },
+ "freeze_verify": [
+  {
+   "command": "python3 -B research/round32/tools/freeze.py verify research/round32/forward/aw2",
+   "stdout": {
+    "direction": "forward",
+    "loop": "aw2",
+    "status": "verified"
+   }
+  }
+ ],
+ "frozen_outputs": {
+  "forward": {
+   "results.json": "ec09f259e0956eb347a792098b5a9af32e4563ca3cba25b38cfc189b1136abe0",
+   "source-manifest.json": "cd82ab330a7daba011622cb40ea16220f10e4cf51da17576439981eee6b7a37a"
+  }
+ },
+ "human_author": "Hruday N M (BUNZEEY)",
+ "loop": "AW2",
+ "producer_replays": [
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "research/round32/forward/aw2/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "ec09f259e0956eb347a792098b5a9af32e4563ca3cba25b38cfc189b1136abe0",
+    "source-manifest.json": "cd82ab330a7daba011622cb40ea16220f10e4cf51da17576439981eee6b7a37a"
+   },
+   "stdout": "{\"checks\": \"37\", \"direction\": \"forward\", \"enclosure_plus\": {\"lower\": \"6.91089641214e-11\", \"upper\": \"6.97799247674e-11\"}, \"exclusion_margin\": \"2.06000052445e2\", \"loop\": \"AW2\", \"sign_margin\": \"2.07000052445e2\", \"tau_AW2\": \"1/100000000\", \"verdict\": \"accepted_within_scope (forward, single direction; admission requires the skeptic independent replay)\"}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "-O",
+    "research/round32/forward/aw2/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "ec09f259e0956eb347a792098b5a9af32e4563ca3cba25b38cfc189b1136abe0",
+    "source-manifest.json": "cd82ab330a7daba011622cb40ea16220f10e4cf51da17576439981eee6b7a37a"
+   },
+   "stdout": "{\"checks\": \"37\", \"direction\": \"forward\", \"enclosure_plus\": {\"lower\": \"6.91089641214e-11\", \"upper\": \"6.97799247674e-11\"}, \"exclusion_margin\": \"2.06000052445e2\", \"loop\": \"AW2\", \"sign_margin\": \"2.07000052445e2\", \"tau_AW2\": \"1/100000000\", \"verdict\": \"accepted_within_scope (forward, single direction; admission requires the skeptic independent replay)\"}"
+  }
+ ],
+ "producers": [
+  "forward"
+ ],
+ "python": "3.11.15",
+ "result": "both forward replays (normal and -O) reproduce the frozen output/ byte for byte (results.json ec09f259..., source-manifest.json cd82ab33...); freeze.json closure verifies (35 files); tools/freeze.py verify reports verified; inputs equal AGENTS.md + contracts/aw2.json + the 26 shared_premises (28 files), each byte-identical to its repository source; no reverse/aw2 package exists (single direction, as the contract declares)",
+ "reused_tool": "research/round32/skeptic/replay_loop.py",
+ "reused_tool_sha256": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66",
+ "reviewer": "model-agent skeptic with correlated ancestry; not human peer review",
+ "schema": "hnm-r32-skeptic-replays-v1",
+ "single_direction": {
+  "admission_basis": "the single forward producer plus the skeptic pre-comparison independent replay",
+  "contract_producers": [
+   "forward"
+  ],
+  "direction": "single+skeptic",
+  "reverse_package_present": false,
+  "reverse_premise_isolation": "not applicable (single producer)"
+ },
+ "skeptic_postreview": {
+  "checker": "research/round32/skeptic/aw2_postreview_check.py",
+  "checker_sha256": "be274afe5528799629d1617a38d7f47371e5cf7a26e8c4bf12a7461abec18c4a",
+  "checks": 73,
+  "command": "python3 -B [-O] research/round32/skeptic/aw2_postreview_check.py --output <fresh-external-dir>",
+  "must_abort_mutations_aborted": 33,
+  "normal_and_O_byte_identical": true,
+  "preview_non_dependence_demonstrations": 1,
+  "results_sha256": "27fa8ac63d59b86627d10208f217d169afc11444250d1983f841b2699a60c34f",
+  "silent_edits_caught_by_review": 1,
+  "source_mutation_runs": 37
+ },
+ "skeptic_pre_comparison": {
+  "checker": "research/round32/skeptic/aw2_check.py",
+  "checker_sha256": "9e855f68a1272111106dde8fd5704e78d549d36e32fd415fbd39bd7137b4cdb0",
+  "checks": 75,
+  "command": "python3 -B [-O] research/round32/skeptic/aw2_check.py --output <fresh-external-dir>",
+  "normal_and_O_byte_identical_on_replay": true,
+  "results_sha256": "ecff2cfc196008527b9198c436394ce1657afb8c19b9166dcbc8f6b543bc4e6f",
+  "unchanged_since_freeze": true
+ },
+ "tool": "research/round32/skeptic/replay_declared.py",
+ "tool_note": "replay_loop.py always replays forward and reverse and fails on AW2 (no reverse/aw2/freeze.json); it is imported unchanged (its sha256 e627df04... is recorded in the AV1, AV2 and AW1 skeptic bindings) by replay_declared.py, which replays the directions the contract declares and refuses an undeclared direction package; replay_declared.py aw1 reproduces all four AW1 replays",
+ "tool_output_identical_under_normal_and_O": true,
+ "tool_sha256": "9707c7794f97ebef237f9f0958dba9d15833615b61dd6c8a6464e516e7cae06a"
+}
