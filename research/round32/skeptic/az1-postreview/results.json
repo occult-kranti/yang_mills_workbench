@@ -1,0 +1,758 @@
+{
+  "al1_gate_sha256": "e415203cc6b6ebca6cea5fcd1230a7eb0e20b7ab2d2e6c99dc8aa2dd3052a75b",
+  "ax1_gate_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+  "bound_values": {
+    "bridge_g4": "32",
+    "g4_at_cap": "9600000000",
+    "g4_neighbours": {
+      "declared_bridge": [
+        "9600000000/294499921",
+        "12500000/395307"
+      ],
+      "rehearsal_bridge": [
+        "6250000/194481",
+        "1000000000000/31414372081"
+      ],
+      "rehearsal_cap": [
+        "1000000000000/81",
+        "3906250000"
+      ]
+    },
+    "gap_example_producer": "g^2=10^6, a=1/10 fm: 312500 fm^-1",
+    "identities": [
+      "alpha/16=g^2/(32a)",
+      "tau=96/g^4",
+      "alpha*lambda*a^2=1",
+      "r=4/g^4",
+      "alpha*tau/24=lambda",
+      "(alpha/8)*(tau/3)=lambda",
+      "7*tau=672/g^4",
+      "tau/144=2/(3g^4)",
+      "(alpha/8)/2=g^2/(32a)",
+      "a*alpha/16=g^2/32",
+      "tau*g^4=96"
+    ],
+    "lattice_units_floor_bracket_skeptic": [
+      "24494897427831780981972840747058913919659/8000000000000000000000000000000000000",
+      "1224744871391589049098642037352945695983/400000000000000000000000000000000000"
+    ],
+    "lattice_units_floor_lower_producer": "19595917942265424785578272597647131/6400000000000000000000000000000",
+    "n_star": {
+      "declared_g0_4_9600000000": {
+        "bridge": 132,
+        "cap": 2
+      },
+      "rehearsal_g0_1000": {
+        "bridge": 421,
+        "cap": 4
+      }
+    },
+    "tau_cap": "1/100000000",
+    "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling"
+  },
+  "checker_sha256": "1f1fe9686367670116fa11f53be60e99ff0a9686516b18e5f7fb9e38bb83d5a6",
+  "checks": [
+    {
+      "al1_gate_sha256": "e415203cc6b6ebca6cea5fcd1230a7eb0e20b7ab2d2e6c99dc8aa2dd3052a75b",
+      "ax1_gate_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+      "contract_sha256": "91c828a7aa6ef9bd4d3dbf762363b7558faa6922c23e1aff476cd098d4177078",
+      "freeze_tool_sha256": "85a5462e649e3f10073c4125ac05f9a468b28b47d5de23e12ca50d0351b0bcd4",
+      "id": "contract_gates_and_tools_pinned",
+      "passed": true,
+      "replay_loop_sha256": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66"
+    },
+    {
+      "closure_files": 33,
+      "freeze_json_sha256": "a7a910a7b19451ca1c84834f3400e782cbbc483a5725881a65709c670a7b4e9f",
+      "id": "forward_closure_frozen",
+      "passed": true
+    },
+    {
+      "id": "inventory_29_declared_identical",
+      "inputs": 29,
+      "passed": true,
+      "reverse_package_present": false,
+      "skeptic_inputs": [
+        "research/round29/skeptic/am2.md",
+        "research/round32/skeptic/ax1.md"
+      ]
+    },
+    {
+      "id": "source_manifest_and_check_sha",
+      "manifest_sources": 31,
+      "passed": true
+    },
+    {
+      "closure": {
+        "closure_files": 33,
+        "declared_premises": 29,
+        "inputs": 29,
+        "inventory_equals_declared": true,
+        "reverse_isolation_enforced": false
+      },
+      "freeze_verify": {
+        "direction": "forward",
+        "loop": "az1",
+        "status": "verified"
+      },
+      "id": "producer_replays_byte_identical",
+      "method": "replay_declared.py steps with the unchanged replay_loop.verify_freeze (replay_declared.py refuses direction statement+skeptic; replay_loop.py always replays a reverse package)",
+      "passed": true,
+      "replays": [
+        {
+          "byte_identical_to_frozen_output": true,
+          "mode": "normal",
+          "outputs": {
+            "results.json": "185cca20e0eaab251c649eeeb403cdf12a19562af253f2818dd9c8e9a6d908ea",
+            "source-manifest.json": "6e3979415ae1e2b4d9ab1ae6afe0e9c63118025dc8589e9ae538becd05e5eb21"
+          },
+          "stdout_sha256": "c8662d8622a728a63371759d7928544c1ef9cf1e7c25cafae54a2bf86e992d9c"
+        },
+        {
+          "byte_identical_to_frozen_output": true,
+          "mode": "optimized",
+          "outputs": {
+            "results.json": "185cca20e0eaab251c649eeeb403cdf12a19562af253f2818dd9c8e9a6d908ea",
+            "source-manifest.json": "6e3979415ae1e2b4d9ab1ae6afe0e9c63118025dc8589e9ae538becd05e5eb21"
+          },
+          "stdout_sha256": "c8662d8622a728a63371759d7928544c1ef9cf1e7c25cafae54a2bf86e992d9c"
+        }
+      ]
+    },
+    {
+      "files": 4,
+      "freeze_sha256": "88603b8b6a78012f835d243e69bcb592f604f6afc2fa611cd127cb9eefededfa",
+      "id": "pre_comparison_package_unchanged",
+      "passed": true
+    },
+    {
+      "id": "pre_comparison_replay_byte_identical",
+      "passed": true,
+      "results_sha256": "980c9bc3ccdfee3daf585f7ad262321ca103a0d781fedce569348f03391ad0b8"
+    },
+    {
+      "discriminator": "alpha=g^2/a gives alpha*lambda*a^2=2",
+      "id": "eleven_identities_rational_function",
+      "identities": [
+        "alpha/16=g^2/(32a)",
+        "tau=96/g^4",
+        "alpha*lambda*a^2=1",
+        "r=4/g^4",
+        "alpha*tau/24=lambda",
+        "(alpha/8)*(tau/3)=lambda",
+        "7*tau=672/g^4",
+        "tau/144=2/(3g^4)",
+        "(alpha/8)/2=g^2/(32a)",
+        "a*alpha/16=g^2/32",
+        "tau*g^4=96"
+      ],
+      "method": "explicit pairs of rational functions in (G=g^2, a) from the pre-comparison RF class; num1*den2-num2*den1 is the zero polynomial for each",
+      "new_in_producer": [
+        "tau/144=2/(3g^4)",
+        "a*alpha/16=g^2/32",
+        "tau*g^4=96"
+      ],
+      "passed": true,
+      "pre_comparison_identities": 9,
+      "shared_with_pre": [
+        "(alpha/8)*(tau/3)=lambda",
+        "(alpha/8)/2=g^2/(32a)",
+        "7*tau=672/g^4",
+        "alpha*lambda*a^2=1",
+        "alpha*tau/24=lambda",
+        "alpha/16=g^2/(32a)",
+        "r=4/g^4",
+        "tau=96/g^4"
+      ],
+      "skeptic_only": [
+        "g^4=4 alpha/lambda (inverse map)"
+      ]
+    },
+    {
+      "degrees_in_G_and_a": {
+        "alpha": [
+          1,
+          -1
+        ],
+        "gap": [
+          1,
+          -1
+        ],
+        "lambda": [
+          -1,
+          -1
+        ],
+        "lattice_gap": [
+          1,
+          0
+        ],
+        "r": [
+          -2,
+          0
+        ],
+        "tau": [
+          -2,
+          0
+        ]
+      },
+      "id": "rescaling_invariances_and_exponents",
+      "passed": true,
+      "producer_exponents_in_g_and_a": {
+        "alpha": {
+          "a": -1,
+          "g": 2
+        },
+        "gap alpha/16": {
+          "a": -1,
+          "g": 2
+        },
+        "lambda": {
+          "a": -1,
+          "g": -2
+        },
+        "lattice gap a*alpha/16": {
+          "a": 0,
+          "g": 2
+        },
+        "tau": {
+          "a": 0,
+          "g": -4
+        }
+      },
+      "producer_rescaling": {
+        "alpha(c*a)=alpha(a)/c": true,
+        "gap(c*a)=gap(a)/c": true,
+        "lambda(c*a)=lambda(a)/c": true,
+        "r(c*alpha,c*lambda)=r": true,
+        "tau(c*a)=tau(a)": true
+      },
+      "reading": "tau and r have degree 0 in a (a->c a leaves them fixed for every c>0); alpha, lambda and the gap have degree -1; common rescaling of (alpha, lambda) is a->a/s at fixed g; g-exponents are twice the G-degrees"
+    },
+    {
+      "g4_at_cap": "9600000000",
+      "id": "cap_bridge_and_crossovers_equal_predictions",
+      "n_star": {
+        "cap_declared_bridge": 132,
+        "cap_declared_cap": 2,
+        "panel_rehearsal_bridge": 421,
+        "panel_rehearsal_cap": 4
+      },
+      "passed": true,
+      "prediction": "pre-comparison: declared 2 and 132, g_0=1000: 4 and 421 (exact)",
+      "tau_at_crossings": [
+        "1/6250000",
+        "1185921/390625",
+        "6/244140625",
+        "94243116243/31250000000"
+      ]
+    },
+    {
+      "exclusion": [
+        9,
+        27
+      ],
+      "id": "labelled_extra_crossovers",
+      "note": "labelled, not admitted; the skeptic pre-comparison printed the self-map crossovers 8 and 23",
+      "passed": true,
+      "selfmap": [
+        8,
+        23
+      ],
+      "slower_toy": [
+        105,
+        31250000001
+      ]
+    },
+    {
+      "exact": "1250 sqrt 6 = sqrt(9.6x10^9)/32",
+      "id": "lattice_units_floor_directed",
+      "passed": true,
+      "producer": "19595917942265424785578272597647131/6400000000000000000000000000000",
+      "relation": "producer lower end (10^-30 sqrt bracket) <= 1250 sqrt 6 and within 10^-30 of it; > 3061.86",
+      "skeptic_bracket": [
+        "24494897427831780981972840747058913919659/8000000000000000000000000000000000000",
+        "1224744871391589049098642037352945695983/400000000000000000000000000000000000"
+      ]
+    },
+    {
+      "along_rehearsal_toy": "Delta_n/E_star >= 312500/n for n=1,2,3; none certified from n=4",
+      "cap_example_over_E_star": "19595917942265424785578272597647131/640000000000000000000000000000",
+      "id": "gap_examples",
+      "passed": true,
+      "producer_example": "g^2=10^6 (g_0=1000, n=1), a=1/10 fm: Delta>=312500 fm^-1 = 312500 E_star (E_star=hbar c/fm), preview 6.1664681e7 MeV",
+      "reading": "different declared examples; both are g^2/(32a) exactly",
+      "skeptic_example": "g^2=10^5, a=1/10 fm: Delta>=31250 fm^-1, 493317451/80 MeV"
+    },
+    {
+      "id": "report_decimals_truncations",
+      "pairs": 12,
+      "passed": true,
+      "rule": "each report preview is the truncation toward zero of the exact (or directed-bracketed) value"
+    },
+    {
+      "id": "al1_path_and_bridge_retained",
+      "note": "tau_n=96n^2>3 (bridge tau<=3) for every n>=1",
+      "passed": true
+    },
+    {
+      "finding": "modern update-4 section 3 writes 12345679012+34/81; the remainder is 28/81; no index is affected (g_3^4 >= the cap either way)",
+      "id": "panel_arithmetic_slip_P1",
+      "missed_by_skeptic_pre_comparison": true,
+      "passed": true
+    },
+    {
+      "flags_false": [
+        "uniform_wilson_claim",
+        "resolved_interaction_shift",
+        "scientific_priority_verified"
+      ],
+      "gate_fields": {
+        "continuum_claim": false,
+        "loop_count_fraction_claimed": false,
+        "uniform_in_N_claimed": true,
+        "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling",
+        "uniform_in_a_claimed": false,
+        "weak_coupling_claim": false
+      },
+      "id": "gate_fields_and_flags",
+      "passed": true,
+      "selected_coefficient": "tau/24 (uniform model; the preregistered zero triple is D6)"
+    },
+    {
+      "id": "own_validator_accepts_frozen_packet",
+      "passed": true
+    },
+    {
+      "after_producer_exclusion": {
+        "fraction of the problem": 0,
+        "the continuum limit exists": 0
+      },
+      "after_removing_the_template_once": {
+        "fraction of the problem": 1,
+        "the continuum limit exists": 1
+      },
+      "finding": "the producer scan removes the template (its single occurrence) AND every inline code span and fenced block (strip_code), which is broader than D1 states; in this report the only forbidden-phrase text inside code spans is the verbatim contract claim-exclusion list of section 5.3, so the extra exclusion hides no assertion",
+      "id": "mandatory_sentence_and_exclusion_analysis",
+      "passed": true,
+      "raw_counts": {
+        "fraction of the problem": 1,
+        "the continuum limit exists": 2
+      },
+      "template_occurrences": 1
+    },
+    {
+      "id": "forbidden_phrases_and_fractions_scan",
+      "occurrences_outside_template": [
+        {
+          "context": "verbatim claim-exclusion list (code span)",
+          "line": 174,
+          "phrase": "the continuum limit exists"
+        },
+        {
+          "context": "negated sentence",
+          "line": 156,
+          "phrase": "fraction of the problem"
+        },
+        {
+          "context": "verbatim claim-exclusion list (code span)",
+          "line": 174,
+          "phrase": "fraction of the problem"
+        }
+      ],
+      "passed": true,
+      "rule": "this review keeps code spans and removes the template once; every remaining forbidden-claim match (continuum-limit phrase; fraction of the [continuum] problem, percentages, n/m of the problem) must be negated or inside the verbatim exclusion list"
+    },
+    {
+      "a_sense_asserted": 0,
+      "code_span_a_sense_lines": {
+        "174": "verbatim claim-exclusion list",
+        "211": "quoted rejected mutations"
+      },
+      "finding": "no sentence shares the two senses without \"volume-uniform\"; the a-sense is never asserted; four negated \"uniform along a_n->0\" sentences carry no g_n->0 scope in the sentence itself (line 87 is scoped by the preceding sentence; lines 81 and 218 say the other AX1 constants are not uniform along a_n->0, which at fixed g is false for D'_ii, a function of tau alone; line 185 is the definition of the a-sense); wording level, non-blocking",
+      "id": "two_senses_of_uniform_and_scope",
+      "passed": true,
+      "shared_sentences": 0,
+      "unscoped_along_a_n": [
+        {
+          "line": 81,
+          "sentence": "The AX1 gate also admits other volume-uniform constants at fixed `a` (the state bound `D'_ii`, the reset budget `102 abs(tau)`), and none of them is uniform alo"
+        },
+        {
+          "line": 87,
+          "sentence": "From that index on, `tau_n=96/g_n^4>10^-8`, the AM2/AX1 contraction is no longer available as admitted, and the family supplies no gap estimate at the spacing `"
+        },
+        {
+          "line": 185,
+          "sentence": "The a-sense is never claimed: no estimate is uniform in a, and none is uniform along a_n->0."
+        },
+        {
+          "line": 218,
+          "sentence": "Read with item 2 as \"exactly one necessary estimate\"; none of them is uniform along a_n->0."
+        }
+      ]
+    },
+    {
+      "id": "not_found_sentence_discloses_lead",
+      "passed": true,
+      "placement": "the disclosure opens the paragraph that follows the not-found sentence, inside section 3.4",
+      "reading": "the skeptic contract review asked for the disclosure in the same sentence or the next one; satisfied"
+    },
+    {
+      "checks": 42,
+      "control_rejections": 107,
+      "id": "producer_controls_21_damaging",
+      "note": "every contract control carries damaging mutations; the source-edit runs below show each one is live",
+      "passed": true,
+      "total_rejections": 121
+    },
+    {
+      "defects": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "id": "producer_contract_defects_verified",
+      "passed": true,
+      "reconciliation": {
+        "D1": "skeptic readings 3 and 4",
+        "D2": "skeptic reading 6",
+        "D3": "skeptic reading 7",
+        "D4": "skeptic reading 13",
+        "D5": "skeptic reading 7 (eventual violation), bridge form new",
+        "D6": "skeptic reading 1 (different reading, same model)",
+        "D7": "skeptic reading 11",
+        "D8": "skeptic reading 14",
+        "D9": "new (skeptic did not flag state_provenance)"
+      }
+    },
+    {
+      "id": "unmutated_copy_reproduces",
+      "passed": true
+    },
+    {
+      "control_weakenings": 21,
+      "id": "must_abort_source_edits",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "damaging mutation accepted: outgoing_stars_only (2 anchors, per-site sum 8|tau|)",
+          "edit": "ctl_missing_incoming_stars"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: single_factor_cover_0",
+          "edit": "ctl_full_original_wilson_cover"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: normalized_gap_read_in_alpha_units (alpha/2)",
+          "edit": "ctl_wrong_delta_alpha_hbar_clock"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: vector_centering_imposed_on_a_statement",
+          "edit": "ctl_vector_versus_scalar_centering"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: first_order_mean_set_to_zero",
+          "edit": "ctl_first_order_mean_charged"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: tau_read_as_96_over_g2",
+          "edit": "ctl_tau_scaling_exponent"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: patterned_zero_selected_model",
+          "edit": "ctl_changed_model_relabelled"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: control_boolean_flipped_hash_rebound",
+          "edit": "ctl_coherent_evidence_tampering"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: missing_citation_relabelled_accepted",
+          "edit": "ctl_insufficient_verdict_retained"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: nan_input",
+          "edit": "ctl_exact_arithmetic_admission"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: square_root_index_11",
+          "edit": "ctl_root_n_misuse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_true",
+          "edit": "ctl_no_priority_or_continuum_claim"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: trajectory_claimed_derived",
+          "edit": "ctl_trajectory_named"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: bridge_obstruction_dropped",
+          "edit": "ctl_bridge_obstruction_retained"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: no_estimate_identified",
+          "edit": "ctl_one_uniform_estimate_identified"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: E_star_zero",
+          "edit": "ctl_e_star_fixed_no_plateau"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: investigation_index_as_fraction_field",
+          "edit": "ctl_loop_count_not_fraction"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: weak_coupling_label",
+          "edit": "ctl_uniform_label_strong_coupling"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: unqualified_uniform_sentence",
+          "edit": "ctl_uniform_in_N_not_in_a"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: alpha_without_factor_two (alpha=g^2/a)",
+          "edit": "ctl_dictionary_arithmetic_exact"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: cap_boundary_n1_counted_as_crossover",
+          "edit": "ctl_toy_trajectory_crossover_exact"
+        },
+        {
+          "aborted_with": "dictionary identity fails: tau*g^4=95",
+          "edit": "val_identity_tau_g4_95"
+        },
+        {
+          "aborted_with": "crossover bracket",
+          "edit": "val_crossover_root_plus_two"
+        },
+        {
+          "aborted_with": "failed check gap_physical_units_example",
+          "edit": "val_example_spacing_one_fifth"
+        },
+        {
+          "aborted_with": "report does not carry the exact value",
+          "edit": "val_sqrt_scale_10_2"
+        },
+        {
+          "aborted_with": "failed check gate_fields_exported",
+          "edit": "val_continuum_flag_true"
+        },
+        {
+          "aborted_with": "scope string",
+          "edit": "val_scope_string_edit"
+        },
+        {
+          "aborted_with": "failed check contract_wording_defects_recorded",
+          "edit": "val_p1_detection_disabled"
+        },
+        {
+          "aborted_with": "contract snapshot bytes differ from the frozen AZ1 contract",
+          "edit": "inp_contract_byte_edit"
+        },
+        {
+          "aborted_with": "failed check ax1_gate_fields_and_verdict",
+          "edit": "inp_ax1_gate_gap_alpha_over_8"
+        },
+        {
+          "aborted_with": "failed check gate_bindings_match_snapshots",
+          "edit": "inp_al1_gate_bridge_31"
+        },
+        {
+          "aborted_with": "failed check toy_trajectory_crossover_exact",
+          "edit": "inp_modern_update4_421_to_420"
+        },
+        {
+          "aborted_with": "failed check premise_inventory_bound",
+          "edit": "inp_undeclared_skeptic_az1_input"
+        },
+        {
+          "aborted_with": "failed check premise_inventory_bound",
+          "edit": "inp_premise_snapshot_removed"
+        },
+        {
+          "aborted_with": "exactly three requirement rows",
+          "edit": "rep_R3_row_removed"
+        },
+        {
+          "aborted_with": "mandatory sentence (contract template) missing from the report",
+          "edit": "rep_template_negation_removed"
+        },
+        {
+          "aborted_with": "forbidden phrasing in the report: the continuum limit exists",
+          "edit": "rep_continuum_phrase_appended"
+        },
+        {
+          "aborted_with": "uniform qualifier rule violated",
+          "edit": "rep_uniform_in_a_appended"
+        },
+        {
+          "aborted_with": "crossover index missing from the report: 132",
+          "edit": "rep_bridge_index_132_to_131"
+        },
+        {
+          "aborted_with": "map lacks rows for root_n_misuse",
+          "edit": "rep_map_row_removed"
+        },
+        {
+          "aborted_with": "required statement missing: unaudited",
+          "edit": "rep_lead_paragraph_removed"
+        }
+      ],
+      "total": 41
+    },
+    {
+      "id": "silent_edits_accounted",
+      "note": "report edits leave results.json unchanged (the source manifest binds report.md); the AX1 gate edit changes the recorded gate hash",
+      "passed": true,
+      "rows": [
+        {
+          "account": "the producer scan tests the literal phrase \"fraction of the problem\" only; this review's pattern scan rejects it",
+          "caught_by_this_review": true,
+          "edit": "rep_percentage_of_the_problem_appended",
+          "producer_output_identical": true
+        },
+        {
+          "account": "the literal \"fraction of the problem\" misses \"fraction of the continuum problem\"; this review's pattern scan rejects it",
+          "caught_by_this_review": true,
+          "edit": "rep_fraction_of_the_continuum_problem_appended",
+          "producer_output_identical": true
+        },
+        {
+          "account": "wording level: at fixed g the AX1 bounds hold at every a_n; this review lists the unscoped sentence",
+          "caught_by_this_review": true,
+          "edit": "rep_unscoped_along_a_n_appended",
+          "producer_output_identical": true
+        },
+        {
+          "account": "the AX1 gate is not pinned in check.py (no gate binds it); caught by replay_loop.verify_freeze (snapshot versus source) and by this review's validator (pinned AX1 gate sha256 in results)",
+          "caught_by_this_review": true,
+          "edit": "inp_ax1_gate_unparsed_field",
+          "producer_output_identical": false
+        }
+      ]
+    },
+    {
+      "id": "own_validator_rejects_damaged_packets",
+      "passed": true,
+      "rows": [
+        {
+          "packet": "identity_dropped",
+          "rejected_for": "identity list differs or an identity fails"
+        },
+        {
+          "packet": "identity_altered",
+          "rejected_for": "identity list differs or an identity fails"
+        },
+        {
+          "packet": "cap_decade",
+          "rejected_for": "cap or bridge coupling differs"
+        },
+        {
+          "packet": "bridge_131",
+          "rejected_for": "crossover indices differ"
+        },
+        {
+          "packet": "cap_index_1",
+          "rejected_for": "crossover indices differ"
+        },
+        {
+          "packet": "rehearsal_bridge_420",
+          "rejected_for": "crossover indices differ"
+        },
+        {
+          "packet": "floor_above_1250_sqrt6",
+          "rejected_for": "lattice-units floor is not a directed lower bound of 1250 sqrt 6"
+        },
+        {
+          "packet": "gap_example_doubled",
+          "rejected_for": "gap example differs from g^2/(32a) or lies outside the admitted regime"
+        },
+        {
+          "packet": "uniform_in_a_claimed",
+          "rejected_for": "gate field claimed: uniform_in_a_claimed"
+        },
+        {
+          "packet": "scope_string_changed",
+          "rejected_for": "uniform_in_N field or scope string"
+        },
+        {
+          "packet": "continuum_claim",
+          "rejected_for": "gate field claimed: continuum_claim"
+        },
+        {
+          "packet": "second_estimate",
+          "rejected_for": "the one estimate is not the cited volume-uniform gap"
+        },
+        {
+          "packet": "requirement_supplied",
+          "rejected_for": "requirements table"
+        },
+        {
+          "packet": "lead_imported",
+          "rejected_for": "lead imported or audited"
+        },
+        {
+          "packet": "trajectory_derived",
+          "rejected_for": "trajectory not a hypothesis"
+        },
+        {
+          "packet": "sentence_edited",
+          "rejected_for": "mandatory sentence differs from the contract template"
+        },
+        {
+          "packet": "ax1_gate_hash",
+          "rejected_for": "contract or gate hash differs"
+        },
+        {
+          "packet": "verdict_limited",
+          "rejected_for": "verdict or controls"
+        }
+      ]
+    }
+  ],
+  "contract_sha256": "91c828a7aa6ef9bd4d3dbf762363b7558faa6922c23e1aff476cd098d4177078",
+  "counts": {
+    "control_weakenings": 21,
+    "damaged_packets": 18,
+    "must_abort_edits": 41,
+    "producer_checks": 42,
+    "producer_control_rejections": 107,
+    "producer_total_rejections": 121,
+    "review_checks": 28,
+    "silent_edits": 4,
+    "source_mutation_runs": 46
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AZ1",
+  "pre_comparison_freeze_sha256": "88603b8b6a78012f835d243e69bcb592f604f6afc2fa611cd127cb9eefededfa",
+  "previews": {
+    "g2_at_cap": "9.79795897113e+04",
+    "g4_declared_n131_n132": [
+      "3.25976318343e+01",
+      "3.16209933039e+01"
+    ],
+    "g4_rehearsal_n420_n421": [
+      "3.21368154216e+01",
+      "3.18325636884e+01"
+    ],
+    "gap_example_MeV": "6.16646813750e+07",
+    "label": "floating previews only; no Boolean reads them",
+    "lattice_floor": "3.06186217848e+03"
+  },
+  "producer_frozen": {
+    "check.py": "d69eb05ff420dfbed2cb543c020fa9156d35c662e1f6df2cfe4f26b50afb5c4a",
+    "freeze.json": "a7a910a7b19451ca1c84834f3400e782cbbc483a5725881a65709c670a7b4e9f",
+    "output/results.json": "185cca20e0eaab251c649eeeb403cdf12a19562af253f2818dd9c8e9a6d908ea",
+    "output/source-manifest.json": "6e3979415ae1e2b4d9ab1ae6afe0e9c63118025dc8589e9ae538becd05e5eb21",
+    "report.md": "0270e36dfd179b7622b40d89fede50db46c874e1be5c8c28bb1ef0b7d4829878"
+  },
+  "reviewer": "model-agent skeptic with correlated ancestry; not human peer review or formal verification",
+  "stage": "post_comparison"
+}
