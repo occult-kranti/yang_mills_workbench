@@ -1,0 +1,270 @@
+{
+  "id": "BA1",
+  "round": 33,
+  "subround": 1,
+  "sequence": 1,
+  "status": "draft",
+  "title": "Hruday boundary decay of the AM2 creation coefficients for the named constructions",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round33/advisor/plan.json",
+  "selection_reason": "Deliberation loop 1: the AM2 contraction survives in a weighted norm (and extends to a complex coupling disc), so a change of the box boundary reaches supports meeting the cover only through chains of stars, each costing the ball ratio 37888|tau|. This is the first of two steps towards whole-sequence convergence of the named constructions (roadmap goals 1 and 3); the reduced density is BB1.",
+  "model": "Zero-selected patterned family (AM2/AQ1): SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0), Haar product reference, 21 omitted faces per anchor with normalized coefficient -(tau/3) per face (delta=alpha/8), both signs |tau|<=10^-8; the AM2 creation expansion with J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t); construction families F1 (AQ1 centered whole-star boxes Lambda_N=[-N,N]^3 in coarse coordinates) and F2 (I1 section 6 all-contained-face boxes with padding on the same Lambda_N), N>=2; cover R={0,e_z}.",
+  "parameters": {
+    "metric": "coarse l-infinity metric on factor sites; every whole star phi_b has support b+S with l-infinity diameter d_X=1 (to be verified by enumeration; an l1 reading with diameter 2 is a labelled alternative, never mixed)",
+    "weights": "forward: anchored norm ||c||_{a,w}=max_u sum_{I containing u} w^{n(I)} ||c_I|| with n(I) the least number of connected stars covering I (equivalently the coarse l-infinity diameter weight), loss paid once per interaction; difference weight measured by distance from the boundary source, growing towards R's complement, never from R; reverse: complex coupling z with |z|<=tau_star, tau_star=1/37888 in the J=28|z| parametrization",
+    "rate_constant_pair": {
+      "headline": {
+        "q": "1/64",
+        "K_target": "1/2000000",
+        "tier": "exact_first_order (AV1-type exact first-order coefficients plus self-consistent remainder)"
+      },
+      "rate_floor": {
+        "q": "148/390625",
+        "K_target": "1/16",
+        "note": "q_min = 37888|tau| at the cap; the analytic route's natural pair (preview K=(1/32)/(1-q))"
+      },
+      "crude_tier_reported": "crude_majorant (preview K about 2.9e-4 at q=1/64), reported, not a target"
+    },
+    "comparisons": [
+      "F1 on Lambda_N versus F1 on Lambda_{N+1}",
+      "F2 on Lambda_N versus F2 on Lambda_{N+1}",
+      "F1 versus F2 on the same Lambda_N (exponent N-1)",
+      "any two boxes of the named constructions containing Lambda_N (general volumes via the union)"
+    ],
+    "cutoff": "on-site cutoff L>=24 uniform, then removed as in AV1 (cutoff-uniform constants)",
+    "window": "not applicable (static coefficients)"
+  },
+  "required": [
+    "1. Name the metric, the weights, the loss per interaction and the difference weight exactly as in parameters; prove (itemized, not by analogy) that the AM2 multilinear estimate HNM-AM2.5 survives in the weighted anchored norm with an explicit loss factor per interaction, and that the ball self-map and Lipschitz inequalities hold in that norm at J=28|tau|, |tau|<=10^-8 for every weight up to the stated maximum (forward), or that the AM2 contraction holds for complex couplings |z|<=tau_star with the coefficient map analytic in z (reverse).",
+    "2. Prove the order-versus-distance lemma: a creation coefficient on a support meeting R depends on an interaction term whose support lies at coarse distance at least d from R only at order at least ceil(d/diam) in the coupling, with the diameter convention named; enumerate the stars and supports on Lambda_2 and Lambda_3 to confirm the diameter and the incidence, and give an all-size argument.",
+    "3. Identify exactly the boundary source for each comparison in parameters.comparisons: the interaction terms present in one box and not the other (for F1 versus F2 on the same box: the 28N(5N+1) extra faces, regrouped at their anchors and charged face by face exactly once) and their exact coarse distance from R (derived by enumeration plus an all-size argument).",
+    "4. Prove the coefficient-difference bound sum_{I containing u, I meeting R} ||c_I^{box1}-c_I^{box2}|| <= K q^(N-1) for u in R with the frozen headline pair (q=1/64, K<=1/2000000 at the exact first-order tier) and the floor pair (q=148/390625, K<=1/16), both signs of tau, for every comparison; report the crude-majorant tier separately; never use the global Lipschitz constant 2J_0G'(R) as a decay factor.",
+    "5. State plainly that coefficient decay is not decay of the reduced density on R (the normalization couples all supports; that is BB1), and export the gate fields; quote the mandatory sentence template once as one unbroken span.",
+    "6. Declare and check the tau -> tau/100 scaling of each headline constant against its bracket in preregistration.scaling_brackets_per_constant; exact finite fixtures for the traps (a weight growing from R that fails; a global Lipschitz bound that does not decay; a per-creation loss charge that fails); every control executed as a damaging mutation."
+  ],
+  "controls": [
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "no_priority_or_continuum_claim",
+    "changed_model_relabelled",
+    "insufficient_verdict_retained",
+    "tau_scaling_exponent",
+    "wrong_delta_alpha_hbar_clock",
+    "missing_incoming_stars",
+    "root_n_misuse",
+    "tier_mixing_rejected",
+    "reverse_premise_isolation",
+    "face_count_all_sites",
+    "uniform_in_N_not_in_a",
+    "placeholder_span_rejected",
+    "negation_aware_phrase_scan",
+    "parameters_declare_metric_weights_window",
+    "global_lipschitz_not_decay",
+    "weighted_norm_contraction_rechecked",
+    "loss_per_interaction_not_per_creation",
+    "diameter_subadditivity_through_interaction",
+    "coarse_metric_named",
+    "weight_direction_toward_source",
+    "cardinality_weight_rate_labelled",
+    "boundary_distance_exact",
+    "boundary_source_new_terms_only",
+    "f2_regrouping_charged_once",
+    "rate_constant_pair_prefrozen",
+    "q_min_not_crossed",
+    "analytic_route_disc_radius",
+    "untruncated_coefficients_not_asserted",
+    "decay_rate_in_N_not_a",
+    "coefficient_decay_not_marginal_decay",
+    "two_families_named",
+    "subsequence_versus_whole_sequence"
+  ],
+  "claim_exclusions": [
+    "decay of the reduced density or of any state (BB1/BB2)",
+    "whole-sequence convergence of any state",
+    "uniqueness of every infinite-volume ground state",
+    "any estimate uniform in the lattice spacing a",
+    "statements about untruncated creation coefficients beyond the AM2 cutoff-removal chain",
+    "continuum or weak coupling",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "direction_note": "Forward: weighted anchored norm with loss per interaction and a boundary-distance difference weight. Reverse: complex-coupling analyticity of the AM2 fixed point on |z|<=tau_star plus the order-versus-distance count and Cauchy's estimate. The routes share the AM2 majorant but differ in the decay mechanism; independence is limited to route, enumeration and code.",
+  "reverse_premise_isolation": true,
+  "acceptance": {
+    "accepted_within_scope": "Both routes prove the coefficient-difference bound for every comparison with the frozen pairs met (margin at least 2) at both signs.",
+    "limited": "Only the floor pair, only one comparison, or only the crude tier is proved; or the diameter convention fails and only the l1 alternative closes.",
+    "insufficient": "The weighted contraction fails at the cap, or the bound is derived from the global Lipschitz constant."
+  },
+  "stop": "Investigation 1 of 8.",
+  "shared_premises": [
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/advisor/aq1-gate.json",
+    "research/round29/forward/aq2/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/reverse/av1/report.md",
+    "research/round32/advisor/ay1-gate.json",
+    "research/round32/forward/ay1/report.md",
+    "research/round32/reverse/ay1/report.md",
+    "research/round32/advisor/ay2-gate.json",
+    "research/round32/forward/ay2/report.md",
+    "research/round33/methods/paired-physics-research/SKILL.md",
+    "research/round33/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round33/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round33/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round33/methods/historical-physics-panel/SKILL.md",
+    "research/round33/methods/qeg-research-advisor/references/round32-state-lemma-and-window.md",
+    "research/round33/advisor/selection-ba1.md"
+  ],
+  "preregistration": {
+    "schema": "hnm-r33-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar (Euclidean), theta=alpha*t/hbar (real time); normalized u=theta/8 only internally with the conversion shown",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "boundary_decay_rate_only",
+      "convergence_of_named_constructions",
+      "common_limit_of_named_constructions",
+      "dynamics_on_compact_windows",
+      "uniform_local_closeness_not_uniqueness",
+      "static_not_dynamic"
+    ],
+    "tier_names_allowed": [
+      "crude_majorant",
+      "exact_first_order",
+      "weighted_norm",
+      "analytic_disc"
+    ],
+    "claim_exclusions": [
+      "uniqueness of every infinite-volume ground state",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "equality of GNS dynamics or of correlation functions of different states",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true,
+      "admitted_gate_sha256_pinned_in_check_py": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "AM2 finite-box fixed points of the named construction families F1 and F2 (no state provenance: coefficients only)",
+    "observable": {
+      "id": "sum over supports meeting R of ||c_I^{box1}-c_I^{box2}|| (anchored norm at u in R)",
+      "centering": "none",
+      "reference_value_exact": "0",
+      "reference_route": "n/a (coefficient difference)"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "weighted_contraction_loss",
+      "boundary_source_terms",
+      "order_versus_distance_count",
+      "exact_first_order_remainder",
+      "cutoff_removal",
+      "arithmetic"
+    ],
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "target": {
+      "quantity": "K at q=1/64 (exact first-order tier) and K at q=148/390625",
+      "value": "1/2000000 and 1/16",
+      "comparator": "<=",
+      "note": "blind discriminating threshold for a new estimate; previews from deliberation (2.2004e-7 and about 0.0313) give margins of about 2.27 and 2"
+    },
+    "direction": "paired",
+    "controls_required": {
+      "ids": [
+        "coherent_evidence_tampering",
+        "exact_arithmetic_admission",
+        "no_priority_or_continuum_claim",
+        "changed_model_relabelled",
+        "insufficient_verdict_retained",
+        "tau_scaling_exponent",
+        "wrong_delta_alpha_hbar_clock",
+        "missing_incoming_stars",
+        "root_n_misuse",
+        "tier_mixing_rejected",
+        "reverse_premise_isolation",
+        "face_count_all_sites",
+        "uniform_in_N_not_in_a",
+        "placeholder_span_rejected",
+        "negation_aware_phrase_scan",
+        "parameters_declare_metric_weights_window",
+        "global_lipschitz_not_decay",
+        "weighted_norm_contraction_rechecked",
+        "loss_per_interaction_not_per_creation",
+        "diameter_subadditivity_through_interaction",
+        "coarse_metric_named",
+        "weight_direction_toward_source",
+        "cardinality_weight_rate_labelled",
+        "boundary_distance_exact",
+        "boundary_source_new_terms_only",
+        "f2_regrouping_charged_once",
+        "rate_constant_pair_prefrozen",
+        "q_min_not_crossed",
+        "analytic_route_disc_radius",
+        "untruncated_coefficients_not_asserted",
+        "decay_rate_in_N_not_a",
+        "coefficient_decay_not_marginal_decay",
+        "two_families_named",
+        "subsequence_versus_whole_sequence"
+      ]
+    },
+    "mandatory_sentence_template": "For the zero-selected patterned family at the same coupling |tau|<=10^-8, and for the named construction families F1 (centered whole-star boxes) and F2 (all-contained-face boxes with padding) on centered coarse cubes, the AM2 creation coefficients on supports meeting the cover R differ between two boxes of the named constructions by at most K q^(N-1) in the anchored norm, where N is the smaller box size; this is decay of the coefficients of the named constructions at a rate in N, not decay of the reduced density, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+    "gate_fields_required": {
+      "uniqueness_of_ground_state_claimed": false,
+      "whole_sequence_claimed": false,
+      "state_decay_claimed": false,
+      "rate_in_N_claimed": true,
+      "rate_in_a_claimed": false,
+      "continuum_claim": false,
+      "scientific_priority_verified": false
+    },
+    "forbidden_phrasings": [
+      "the infinite-volume ground state",
+      "uniqueness of the infinite-volume ground state",
+      "the thermodynamic limit",
+      "the AQ state"
+    ],
+    "scaling_brackets_per_constant": {
+      "K_exact_first_order_at_q_1_64": "[100,102.5] (deliberation preview 101.03)",
+      "K_floor_pair": "[99,101]",
+      "q_min": "exactly 100 (linear in |tau|)"
+    }
+  }
+}
