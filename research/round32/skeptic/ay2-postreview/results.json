@@ -1,0 +1,576 @@
+{
+  "ay1_gate_sha256": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+  "bound_values": {
+    "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+    "K2_plus": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+    "K2_prime": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+    "K2_prime_tau2": "966771578474926086618624139557778885954947547760216752246561/720528856978172107545458049318912000000000000000000000000000000000000000",
+    "falsifier_separation_lower_producer": "483384822465884568383225451154749885198587818932560615906528253439/180132214244543026886364512329728000000000000000000000000000000000000000000000",
+    "plus_minus_tau_separation_lower_producer": "315493271189404369878663368737136921794795815043212654249128159/360264428489086053772729024659456000000000000000000000000000000000000000",
+    "relative_width_upper_producer": "966771578474926086618624139607815612133987277450873561227041/158230021383939647982640996438347350340375381295486435500687360",
+    "sqrt10_bracket_producer": [
+      "197642353760523708249930846527/62500000000000000000000000000",
+      "3162277660168379331998893544433/1000000000000000000000000000000"
+    ],
+    "sqrt10_bracket_skeptic": [
+      "6324555320336758663997787088865437067439/2000000000000000000000000000000000000000",
+      "7905694150420948329997233861081796334299/2500000000000000000000000000000000000000"
+    ],
+    "target": "1/100",
+    "tier_label": "first_order_distance_from_product",
+    "tier_lower_producer": "315493271189404369878663368737136921794795815043212654249128159/720528856978172107545458049318912000000000000000000000000000000000000000",
+    "tier_lower_skeptic": "123239559058361081983852878412972198415914793719936897926499081872887/281456584757098479509944550515200000000000000000000000000000000000000000000000",
+    "tier_upper_producer": "317426814346354222051900617016352553019063789598114401371582241/720528856978172107545458049318912000000000000000000000000000000000000000",
+    "tier_upper_skeptic": "619974246770223089945118392610008565852855028054286523715368951086693/1407282923785492397549722752576000000000000000000000000000000000000000000000000",
+    "two_D": "1170159676931825184288274812132100/42981220507576537932303142777593983768257",
+    "two_K2_prime_tau2": "966771578474926086618624139557778885954947547760216752246561/360264428489086053772729024659456000000000000000000000000000000000000000"
+  },
+  "checker_sha256": "9bd1891b51adbc40065373c1ad2dd4b12b4ce5486667bc02fd283c5468baea45",
+  "checks": [
+    {
+      "ay1_gate_sha256": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+      "contract_sha256": "8e55e8e9d54b26520ab0fa10c1c6a967a616aabb4dc8c47988ff687d14d96b38",
+      "id": "contract_gate_and_tool_pinned",
+      "passed": true,
+      "replay_loop_sha256": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66"
+    },
+    {
+      "closure_files": 27,
+      "freeze_json_sha256": "f2fccf3aa126c2b1a961331fcc2ea13524a1efb03209c7ca6b891b9305488eac",
+      "id": "forward_closure_frozen",
+      "passed": true
+    },
+    {
+      "id": "inventory_23_declared_identical",
+      "inputs": 23,
+      "passed": true,
+      "reverse_package_present": false,
+      "skeptic_inputs": [
+        "research/round29/skeptic/am2.md",
+        "research/round32/skeptic/ay1.md"
+      ]
+    },
+    {
+      "id": "source_manifest_and_check_sha",
+      "manifest_sources": 25,
+      "passed": true
+    },
+    {
+      "closure": {
+        "closure_files": 27,
+        "declared_premises": 23,
+        "inputs": 23,
+        "inventory_equals_declared": true,
+        "reverse_isolation_enforced": false
+      },
+      "freeze_verify": {
+        "direction": "forward",
+        "loop": "ay2",
+        "status": "verified"
+      },
+      "id": "producer_replays_byte_identical",
+      "method": "replay_declared.py steps with the unchanged replay_loop.verify_freeze (replay_declared.py refuses direction statement+skeptic; replay_loop.py always replays a reverse package)",
+      "passed": true,
+      "replays": [
+        {
+          "byte_identical_to_frozen_output": true,
+          "mode": "normal",
+          "outputs": {
+            "results.json": "a2d55af6a0f87e8525cd7dfbe00fb1b3dbd9ffc467a3ebd9b295f38076723ec5",
+            "source-manifest.json": "a5b1286811f34767dce1de9a734661629c24edba9c14a03fb48394b4bcd8e80f"
+          },
+          "stdout": "{\"checks\": 42, \"direction\": \"forward\", \"loop\": \"AY2\", \"relative_width_preview\": \"6.10991245541e-3\", \"target_met\": true, \"tier_lower_preview\": \"4.37863477824e-10\", \"tier_upper_preview\": \"4.40546983333e-10\"}"
+        },
+        {
+          "byte_identical_to_frozen_output": true,
+          "mode": "optimized",
+          "outputs": {
+            "results.json": "a2d55af6a0f87e8525cd7dfbe00fb1b3dbd9ffc467a3ebd9b295f38076723ec5",
+            "source-manifest.json": "a5b1286811f34767dce1de9a734661629c24edba9c14a03fb48394b4bcd8e80f"
+          },
+          "stdout": "{\"checks\": 42, \"direction\": \"forward\", \"loop\": \"AY2\", \"relative_width_preview\": \"6.10991245541e-3\", \"target_met\": true, \"tier_lower_preview\": \"4.37863477824e-10\", \"tier_upper_preview\": \"4.40546983333e-10\"}"
+        }
+      ]
+    },
+    {
+      "files": 4,
+      "freeze_sha256": "7a22def1565fd20e8cae90ecbd209608a4c8e597276faa0cdfe71a6b2dfae1c7",
+      "id": "pre_comparison_package_unchanged",
+      "passed": true
+    },
+    {
+      "id": "pre_comparison_replay_byte_identical",
+      "passed": true,
+      "results_sha256": "2d7d3886f96bdc1aeb5fa5c1ac69e984bd8676fd21ab46d47c371c8a22b5d83a"
+    },
+    {
+      "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+      "K2_plus": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+      "K2_prime": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+      "id": "ay1_constants_equal_everywhere",
+      "passed": true,
+      "sources": [
+        "AY1 gate text",
+        "producer headline",
+        "skeptic pre-comparison results",
+        "own recomputation (tier-(ii) items)"
+      ]
+    },
+    {
+      "each_piece": "rank two (|W_f Omega_R><Omega_R| plus its adjoint), eigenvalues +-|tau|/144",
+      "eigenvalues": "+-sqrt(10)tau/144",
+      "id": "rho1_trace_norm_agrees",
+      "passed": true,
+      "skeptic_wording_correction": "the skeptic's pre-comparison note 'ten rank-one pieces' is corrected to rank-two pieces; values unaffected",
+      "trace_norm": "sqrt(10)|tau|/72 (producer: rank-two spectrum; skeptic: explicit Haar Gram matrix and characteristic polynomial)"
+    },
+    {
+      "id": "sqrt10_brackets_nested_directed",
+      "passed": true,
+      "producer_bracket": [
+        "197642353760523708249930846527/62500000000000000000000000000",
+        "3162277660168379331998893544433/1000000000000000000000000000000"
+      ],
+      "producer_width": "10^-30",
+      "skeptic_bracket": [
+        "6324555320336758663997787088865437067439/2000000000000000000000000000000000000000",
+        "7905694150420948329997233861081796334299/2500000000000000000000000000000000000000"
+      ],
+      "skeptic_width": "10^-40"
+    },
+    {
+      "ay1_recorded_observation": "[4.3786e-10, 4.4055e-10] contains both",
+      "both_directed": true,
+      "bound_on_difference": "10^-30 |tau|/72",
+      "id": "tier_ends_compared",
+      "max_difference": "1437067439/14400000000000000000000000000000000000000000000000",
+      "passed": true,
+      "producer": [
+        "315493271189404369878663368737136921794795815043212654249128159/720528856978172107545458049318912000000000000000000000000000000000000000",
+        "317426814346354222051900617016352553019063789598114401371582241/720528856978172107545458049318912000000000000000000000000000000000000000"
+      ],
+      "producer_contains_skeptic": true,
+      "recommended_binding": "the producer rationals (frozen certificate, 10^-30 bracket); the skeptic rationals are the tighter independent enclosure (10^-40)",
+      "skeptic": [
+        "123239559058361081983852878412972198415914793719936897926499081872887/281456584757098479509944550515200000000000000000000000000000000000000000000000",
+        "619974246770223089945118392610008565852855028054286523715368951086693/1407282923785492397549722752576000000000000000000000000000000000000000000000000"
+      ]
+    },
+    {
+      "definition": "producer (U-L)/(sqrt10_lo |tau|/72) includes the bracket slack and is an upper bound of the ideal 144 K_2prime |tau|/sqrt(10)",
+      "id": "relative_width_and_target",
+      "margin_preview": "1.63668466e+00",
+      "passed": true,
+      "producer": "966771578474926086618624139607815612133987277450873561227041/158230021383939647982640996438347350340375381295486435500687360",
+      "skeptic_upper": "377645147841768002585400054514757377326151385843834668846312890625/61808602103101424993219139233743477896620472552890366297672697381756",
+      "target": "1/100"
+    },
+    {
+      "each_within": "D of P_R (upper tier end below D)",
+      "id": "plus_minus_tau_separation",
+      "passed": true,
+      "preview": "8.75726955649e-10",
+      "producer": "315493271189404369878663368737136921794795815043212654249128159/360264428489086053772729024659456000000000000000000000000000000000000000",
+      "skeptic": "123239559058361081983852878412972198415914793719936897926499081872887/140728292378549239754972275257600000000000000000000000000000000000000000000000"
+    },
+    {
+      "ball_upper_preview": "1.34175150939e-12",
+      "id": "falsifying_witness_rebuilt",
+      "method": "Gram and W matrix elements by explicit SU(2) Haar integration; norm-one test operator (|w'><Omega|+h.c.)/2",
+      "nu": "35806318951975837470093982256801456599113392326395147852955879757/106745015848618090006734525825024000000000000000000000000000000000000000000000",
+      "omega_W_deviation_preview": "-3.34901102196e-30",
+      "passed": true,
+      "ratio_own_to_2K2tau2": "9.999990000e-01",
+      "reset_budget": "98|tau| delta units",
+      "reset_energy_delta_units_preview": "1.15741820919e-18",
+      "separation_lower_own": "53456588587543147546579296323282800612981086261877497760498030530433909964213458578427722596352000000000000000000000000000000000000000000000/19920451763149872753116477514055408585430394283035287194573462519769132913388483359998105759855655974003170296537274843871476040144972967911678586310343",
+      "separation_lower_producer": "483384822465884568383225451154749885198587818932560615906528253439/180132214244543026886364512329728000000000000000000000000000000000000000000000"
+    },
+    {
+      "energy_delta_units_preview": "1.15743621221e-18",
+      "id": "pre_comparison_fixture_energy_retroactive",
+      "note": "the pre-comparison fixture did not test the reset energy; it satisfies it (and exceeds the producer separation)",
+      "passed": true
+    },
+    {
+      "dynamics_row": "the O5 constants column names the AQ1 Nachtergaele-Sims constants (F(r)=(1+r)^-4, C<=224, ||Phi||_F<=2268|tau|) and ||Phi'||_F<=1323|tau|; the route text repeats the contract wording \"with the AM2 constants\" (J<=28|tau| is common to AM2 and AQ1)",
+      "id": "obligations_six_rows",
+      "map_to_skeptic_rows": {
+        "O1": "uniqueness",
+        "O2": "whole_sequence_convergence",
+        "O3": "translation_invariance",
+        "O4": "rate_in_N",
+        "O5": "boundary_independence_of_dynamics",
+        "O6": "padded_family_dynamics"
+      },
+      "names": [
+        "uniqueness of the limit",
+        "whole-sequence convergence",
+        "translation invariance",
+        "a rate in N",
+        "boundary independence of dynamics on compact time windows",
+        "dynamics of the padded family itself"
+      ],
+      "passed": true
+    },
+    {
+      "id": "forbidden_phrase_scan_report",
+      "offending_lines": [],
+      "passed": true,
+      "rule": "code spans removed; no \"the thermodynamic limit\", \"the limit state\", \"converges as N\", \"uniform in a\"; \"the AQ state\" only in the negated verbatim exclusion; every line with \"uniq\" contains \"not\""
+    },
+    {
+      "ay1_contract_template_quoted_in_report": false,
+      "finding": "the AY2 preregistration carries no template; the producer filled the Jung form; the AY1-contract template (verbatim in the AY1 gate) is not quoted; the gate should bind the template with the constants filled",
+      "form": "Jung loop-2 form (the AY1 forward section 6 sentence), constants 2D and 2K_2prime tau^2 exact",
+      "id": "mandatory_sentence",
+      "passed": true
+    },
+    {
+      "closeness_order": [
+        1,
+        2
+      ],
+      "gate_fields": {
+        "boundary_independence_of_dynamics_claimed": false,
+        "rate_claimed": false,
+        "rate_in_N_claimed": false,
+        "translation_invariance_claimed": false,
+        "uniqueness_claimed": false,
+        "whole_sequence_claimed": false
+      },
+      "id": "gate_fields_flags_labels",
+      "passed": true
+    },
+    {
+      "checks": 42,
+      "control_rejections": 85,
+      "id": "controls_21_damaging",
+      "passed": true,
+      "total_rejections": 114
+    },
+    {
+      "defects": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6"
+      ],
+      "id": "producer_contract_defects_verified",
+      "passed": true
+    },
+    {
+      "id": "report_decimals_truncations",
+      "pairs": 11,
+      "passed": true,
+      "rule": "each report preview is the truncation of the exact value to its last digit"
+    },
+    {
+      "id": "unmutated_copy_reproduces",
+      "passed": true
+    },
+    {
+      "control_weakenings": 21,
+      "id": "must_abort_source_edits",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "damaging mutation accepted: outgoing_stars_only_42_faces_meeting_R",
+          "edit": "ctl_missing_incoming_stars"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: single_factor_cover_0",
+          "edit": "ctl_full_original_wilson_cover"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: tau_over_576_mixed_units",
+          "edit": "ctl_wrong_delta_alpha_hbar_clock"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: vector_centering_imposed_on_the_static_density",
+          "edit": "ctl_vector_versus_scalar_centering"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: first_order_density_set_to_zero",
+          "edit": "ctl_first_order_mean_charged"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: first_order_term_labelled_second_order",
+          "edit": "ctl_tau_scaling_exponent"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: tau_above_the_cap",
+          "edit": "ctl_changed_model_relabelled"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: control_boolean_flipped_hash_rebound",
+          "edit": "ctl_coherent_evidence_tampering"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: missing_obligation_relabelled_accepted",
+          "edit": "ctl_insufficient_verdict_retained"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: float_sqrt10_input",
+          "edit": "ctl_exact_arithmetic_admission"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: sqrt10_as_statistical_root_N",
+          "edit": "ctl_root_n_misuse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_true",
+          "edit": "ctl_no_priority_or_continuum_claim"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: weak_star_for_states",
+          "edit": "ctl_topology_named"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: one_family_only",
+          "edit": "ctl_two_families_named"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: whole_sequence_inferred_from_uniform_bounds",
+          "edit": "ctl_subsequence_versus_whole_sequence"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: equality_from_closeness",
+          "edit": "ctl_local_closeness_not_uniqueness"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: opposite_signs_first_order_densities_differ",
+          "edit": "ctl_common_clock"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: W_only_K2plus_as_trace_norm_remainder",
+          "edit": "ctl_tier_mixing_rejected"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: uniform_in_a_claimed",
+          "edit": "ctl_not_uniform_in_a"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: tier_relabelled_dynamical",
+          "edit": "ctl_lower_bound_is_static_not_dynamic"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: padded_family_dynamics_row_removed",
+          "edit": "ctl_obligations_table_complete"
+        },
+        {
+          "aborted_with": "lower end is not a lower bound of sqrt(10)|tau|/72 - K_2prime tau^2",
+          "edit": "val_tier_lower_half_remainder"
+        },
+        {
+          "aborted_with": "lower end is not a lower bound of sqrt(10)|tau|/72 - K_2prime tau^2",
+          "edit": "val_sqrt10_upper_in_lower_end"
+        },
+        {
+          "aborted_with": "K_2' differs from the AY1 gate value",
+          "edit": "val_am2_item_halved"
+        },
+        {
+          "aborted_with": "witness outside the AY1 ball ||rho - P_R - rho^(1)_R||_1 <= K_2' tau^2",
+          "edit": "val_witness_nu_doubled"
+        },
+        {
+          "aborted_with": "only the diagonal pair survives the parity rule here",
+          "edit": "val_parity_rule_disabled"
+        },
+        {
+          "aborted_with": "failed check first_order_density_rank_two",
+          "edit": "val_first_order_coefficient_1_144"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_true",
+          "edit": "val_continuum_flag_true"
+        },
+        {
+          "aborted_with": "preregistered gate fields exported unchanged",
+          "edit": "val_uniqueness_claimed_true"
+        },
+        {
+          "aborted_with": "failed check plus_minus_tau_separation",
+          "edit": "val_separation_with_sqrt10_upper"
+        },
+        {
+          "aborted_with": "contract snapshot bytes differ from the frozen AY2 contract",
+          "edit": "inp_contract_byte_edit_without_rehash"
+        },
+        {
+          "aborted_with": "failed check contract_snapshot_sha256",
+          "edit": "inp_contract_target_1_1000_rehash"
+        },
+        {
+          "aborted_with": "failed check ay1_gate_constants_parsed_exact",
+          "edit": "inp_ay1_gate_K2_digit"
+        },
+        {
+          "aborted_with": "failed check premise_inventory_bound",
+          "edit": "inp_undeclared_skeptic_ay2_input"
+        },
+        {
+          "aborted_with": "failed check premise_inventory_bound",
+          "edit": "inp_premise_snapshot_removed"
+        },
+        {
+          "aborted_with": "every obligation stays unproved",
+          "edit": "rep_O1_marked_proved"
+        },
+        {
+          "aborted_with": "the obligations table must have exactly six rows",
+          "edit": "rep_O6_row_removed"
+        },
+        {
+          "aborted_with": "mandatory sentence (filled template) missing from the report",
+          "edit": "rep_sentence_negation_removed"
+        },
+        {
+          "aborted_with": "forbidden phrasing in the report",
+          "edit": "rep_the_AQ_state_appended"
+        },
+        {
+          "aborted_with": "\"unique\" without \"not\" in the report",
+          "edit": "rep_unique_without_not_appended"
+        },
+        {
+          "aborted_with": "map lacks rows for root_n_misuse",
+          "edit": "rep_map_row_removed"
+        },
+        {
+          "aborted_with": "report does not carry the exact value",
+          "edit": "rep_exact_tier_lower_removed"
+        }
+      ],
+      "total": 42
+    },
+    {
+      "id": "silent_edits_accounted",
+      "note": "a source edit always changes the recorded check.py sha256, which freeze.json and the source manifest bind",
+      "passed": true,
+      "rows": [
+        {
+          "account": "gate hash not pinned in check.py; caught by the snapshot-versus-source comparison (replay_loop.verify_freeze) and by this review's validator (pinned AY1 gate sha256 in results)",
+          "caught_by_this_validator": true,
+          "edit": "inp_ay1_gate_unparsed_field",
+          "output_identical_except_check_py_sha256": false
+        },
+        {
+          "account": "readout-blind: Tr(rho^(1)_R W_g)=+tau/144 for every g in F_R, so no exported value depends on which of the ten faces is W",
+          "caught_by_this_validator": false,
+          "edit": "val_wilson_face_moved_within_F_R",
+          "output_identical_except_check_py_sha256": true
+        },
+        {
+          "account": "constraint holds with a margin of about 10^12 and exports no value; this review rebuilds the witness and re-checks the reset energy",
+          "caught_by_this_validator": false,
+          "edit": "val_witness_energy_check_removed",
+          "output_identical_except_check_py_sha256": true
+        }
+      ]
+    },
+    {
+      "id": "own_validator_accepts_frozen_packet",
+      "passed": true
+    },
+    {
+      "id": "own_validator_rejects_damaged_packets",
+      "passed": true,
+      "rows": [
+        {
+          "packet": "tier_lower_raised",
+          "rejected_for": "tier ends are not directed bounds"
+        },
+        {
+          "packet": "tier_upper_lowered",
+          "rejected_for": "tier ends are not directed bounds"
+        },
+        {
+          "packet": "K2_prime_quartered",
+          "rejected_for": "headline K2_prime differs from the AY1 gate"
+        },
+        {
+          "packet": "sqrt10_bracket_swapped",
+          "rejected_for": "sqrt(10) enclosure not directed"
+        },
+        {
+          "packet": "relative_width_halved",
+          "rejected_for": "relative width or target"
+        },
+        {
+          "packet": "separation_doubled",
+          "rejected_for": "+-tau separation differs from sqrt(10)|tau|/36 - 2K_2prime tau^2 (directed)"
+        },
+        {
+          "packet": "falsifier_beyond_2K2",
+          "rejected_for": "falsifier separation differs"
+        },
+        {
+          "packet": "obligation_row_dropped",
+          "rejected_for": "obligations table incomplete or a row proved"
+        },
+        {
+          "packet": "uniqueness_claimed",
+          "rejected_for": "gate field claimed: uniqueness_claimed"
+        },
+        {
+          "packet": "rate_in_N_claimed",
+          "rejected_for": "gate field claimed: rate_in_N_claimed"
+        },
+        {
+          "packet": "resolved_interaction_shift",
+          "rejected_for": "claim flag set: resolved_interaction_shift"
+        },
+        {
+          "packet": "closeness_order_1_only",
+          "rejected_for": "closeness order or topology"
+        },
+        {
+          "packet": "tier_relabelled_dynamical",
+          "rejected_for": "tier label is not static"
+        },
+        {
+          "packet": "gate_hash_changed",
+          "rejected_for": "contract or AY1 gate hash differs"
+        }
+      ]
+    }
+  ],
+  "contract_sha256": "8e55e8e9d54b26520ab0fa10c1c6a967a616aabb4dc8c47988ff687d14d96b38",
+  "counts": {
+    "damaged_packets": 14,
+    "must_abort_edits": 42,
+    "producer_checks": 42,
+    "producer_control_rejections": 85,
+    "producer_total_rejections": 114,
+    "review_checks": 27,
+    "silent_edits": 3
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AY2",
+  "pre_comparison_freeze_sha256": "7a22def1565fd20e8cae90ecbd209608a4c8e597276faa0cdfe71a6b2dfae1c7",
+  "previews": {
+    "falsifier": "2.68350014179e-12",
+    "label": "floating previews only; no Boolean reads them",
+    "margin": "1.6366847e+00",
+    "own_falsifier": "2.68350282529e-12",
+    "relative_width": "6.10991245542e-03",
+    "separation": "8.75726955649e-10",
+    "tier": [
+      "4.37863477825e-10",
+      "4.40546983333e-10"
+    ]
+  },
+  "producer_frozen": {
+    "check.py": "2aab3349e4d2c72611f9e9bd8f6a626f1d90d4b188d510aab6b6a7cfe3025345",
+    "freeze.json": "f2fccf3aa126c2b1a961331fcc2ea13524a1efb03209c7ca6b891b9305488eac",
+    "output/results.json": "a2d55af6a0f87e8525cd7dfbe00fb1b3dbd9ffc467a3ebd9b295f38076723ec5",
+    "output/source-manifest.json": "a5b1286811f34767dce1de9a734661629c24edba9c14a03fb48394b4bcd8e80f",
+    "report.md": "527ce2f2700764d76f98efd245fd5f5fa95444f97ca81e323aaff48fac781e6b"
+  },
+  "reviewer": "model-agent skeptic with correlated ancestry; not human peer review or formal verification",
+  "stage": "post_comparison"
+}

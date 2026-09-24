@@ -1,0 +1,152 @@
+{
+ "closures": {
+  "forward": {
+   "closure_files": 27,
+   "declared_premises": 23,
+   "freeze_json_sha256": "f2fccf3aa126c2b1a961331fcc2ea13524a1efb03209c7ca6b891b9305488eac",
+   "inputs": 23,
+   "inventory_equals_declared": true,
+   "reverse_isolation_enforced": false
+  }
+ },
+ "freeze_verify": [
+  {
+   "command": "python3 -B research/round32/tools/freeze.py verify research/round32/forward/ay2",
+   "stdout": {
+    "direction": "forward",
+    "loop": "ay2",
+    "status": "verified"
+   }
+  }
+ ],
+ "frozen_outputs": {
+  "forward": {
+   "results.json": "a2d55af6a0f87e8525cd7dfbe00fb1b3dbd9ffc467a3ebd9b295f38076723ec5",
+   "source-manifest.json": "a5b1286811f34767dce1de9a734661629c24edba9c14a03fb48394b4bcd8e80f"
+  }
+ },
+ "human_author": "Hruday N M (BUNZEEY)",
+ "loop": "AY2",
+ "not_edited": "replay_loop.py (e627df04...) and replay_declared.py (9707c779...) are bound by earlier Round32 skeptic reviews and gates, so neither was edited",
+ "producer_replays": [
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "research/round32/forward/ay2/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "a2d55af6a0f87e8525cd7dfbe00fb1b3dbd9ffc467a3ebd9b295f38076723ec5",
+    "source-manifest.json": "a5b1286811f34767dce1de9a734661629c24edba9c14a03fb48394b4bcd8e80f"
+   },
+   "stdout": "{\"checks\": 42, \"direction\": \"forward\", \"loop\": \"AY2\", \"relative_width_preview\": \"6.10991245541e-3\", \"target_met\": true, \"tier_lower_preview\": \"4.37863477824e-10\", \"tier_upper_preview\": \"4.40546983333e-10\"}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "-O",
+    "research/round32/forward/ay2/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "a2d55af6a0f87e8525cd7dfbe00fb1b3dbd9ffc467a3ebd9b295f38076723ec5",
+    "source-manifest.json": "a5b1286811f34767dce1de9a734661629c24edba9c14a03fb48394b4bcd8e80f"
+   },
+   "stdout": "{\"checks\": 42, \"direction\": \"forward\", \"loop\": \"AY2\", \"relative_width_preview\": \"6.10991245541e-3\", \"target_met\": true, \"tier_lower_preview\": \"4.37863477824e-10\", \"tier_upper_preview\": \"4.40546983333e-10\"}"
+  }
+ ],
+ "producers": [
+  "forward"
+ ],
+ "python": "3.11.15",
+ "result": "both forward replays (normal and -O) reproduce the frozen output/ byte for byte (results.json a2d55af6..., source-manifest.json a5b12868...); the freeze.json closure verifies file by file (27 listed files plus freeze.json); tools/freeze.py verify reports verified; inputs equal AGENTS.md + contracts/ay2.json + the 21 shared_premises (23 files), each byte-identical to its repository source; the only skeptic inputs are the declared shared premises skeptic/ay1.md and round29 skeptic/am2.md; no skeptic/ay2* input; no reverse/ay2 package exists (statement+skeptic, single producer, as the contract declares)",
+ "reused_tool": "research/round32/skeptic/replay_loop.py",
+ "reused_tool_sha256": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66",
+ "reviewer": "model-agent skeptic with correlated ancestry; not human peer review",
+ "schema": "hnm-r32-skeptic-replays-v1",
+ "scratch_audit": {
+  "forward_private": "/tmp/claude-0/ay2-forward-private (prelim.py 03:23:19Z, devrun.py 03:29:47Z, sentence.py 03:30:09Z, scan.py 03:36:37Z, dev1-dev3, devA, devB, audit/ and audit.py 03:38:22-03:38:26Z, run1 03:38:57Z), as disclosed (scan.py is not named individually in the report; it falls under the disclosed development scripts)",
+  "method": "directory and file names with mtimes only; no file inside another agent private folder was opened",
+  "shared_scratchpad_root_after_ay2_freeze": "gq.py, accepted.tex, limits.tex, template.tex (03:19:03Z), verify_gq.py, a nested scratchpad folder and __pycache__ (03:27:35Z), names only: manuscript work for the Round32 addendum (commit 5aa6a8a at 03:33:51Z); no AY2 computation by name",
+  "skeptic_private": "/tmp/claude-0/skeptic-ay2-private"
+ },
+ "single_direction": {
+  "admission_basis": "the single forward producer plus the skeptic pre-comparison independent derivation and replay",
+  "contract_producers": [
+   "forward"
+  ],
+  "direction": "statement+skeptic",
+  "reverse_package_present": false,
+  "reverse_premise_isolation": "not applicable (single producer)",
+  "single_direction_independent_replay": true
+ },
+ "skeptic_postreview": {
+  "checker": "research/round32/skeptic/ay2_postreview_check.py",
+  "checker_sha256": "9bd1891b51adbc40065373c1ad2dd4b12b4ce5486667bc02fd283c5468baea45",
+  "checks": 27,
+  "command": "python3 -B [-O] research/round32/skeptic/ay2_postreview_check.py --output <fresh-external-dir>",
+  "must_abort_mutations_aborted_at_intended_check": 42,
+  "normal_and_O_byte_identical": true,
+  "of_which_control_validator_weakenings": 21,
+  "own_validator_damaged_packets_rejected": 14,
+  "results_sha256": "21f1ef16267265710e13a7411928e3a752105affcaf6b0b74856afbb20a2865e",
+  "silent_edits": {
+   "caught_by_this_validator": 1,
+   "constraint_with_margin_rechecked_here": 1,
+   "readout_blind_by_value": 1
+  },
+  "source_mutation_runs": 46,
+  "unmutated_copy_reproduces_frozen_outputs": true
+ },
+ "skeptic_pre_comparison": {
+  "checker": "research/round32/skeptic/ay2_check.py",
+  "checker_sha256": "405eab69959662a2333345f7af9fb1c10835c699aee74e4f2793904affb65575",
+  "checks": 82,
+  "command": "python3 -B [-O] research/round32/skeptic/ay2_check.py --output <fresh-external-dir>",
+  "committed": "f640111 at 2026-09-24T03:40:16Z, after the forward commit ce6bca8 (03:39:41Z)",
+  "freeze": "research/round32/skeptic/ay2-independent-freeze.json",
+  "freeze_sha256": "7a22def1565fd20e8cae90ecbd209608a4c8e597276faa0cdfe71a6b2dfae1c7",
+  "normal_and_O_byte_identical_on_replay": true,
+  "results_sha256": "2d7d3886f96bdc1aeb5fa5c1ac69e984bd8676fd21ab46d47c371c8a22b5d83a",
+  "unchanged_since_freeze": true
+ },
+ "timeline_utc": {
+  "contract_frozen": "2026-09-24T03:09:12Z (commit 0798fd2 at 03:09:22Z, which also snapshot the 23 producer inputs)",
+  "forward_check_py_last_written": "2026-09-24T03:38:22Z",
+  "forward_commit": "2026-09-24T03:39:41Z (ce6bca8)",
+  "forward_freeze_json_written": "2026-09-24T03:39:03Z",
+  "forward_output_written": "2026-09-24T03:38:57Z",
+  "forward_report_last_written": "2026-09-24T03:38:56Z",
+  "forward_scratch_first_file": "2026-09-24T03:23:19Z (prelim.py)",
+  "note": "working-tree mtimes and commit times; the two packages were developed concurrently after the contract freeze and the skeptic commit follows the producer commit (the reverse of AX2); the skeptic checker, predictions and exact values were final at 03:34:06Z, before the forward check.py (03:38:22Z) and report (03:38:56Z) were last written; isolation rests on disclosure, file-name-only exposure and content, not on commit order: the producer declares no skeptic/ay2* read and its closure holds none; the skeptic opened no forward/ay2 file before its package was frozen (names only via find on inputs/ and via git status)",
+  "skeptic_checker_and_predictions_final": "2026-09-24T03:34:06Z (private replay rn: results sha256 fe7ed26c..., identical to the 03:38:38Z replay)",
+  "skeptic_disclosure_edits": "2026-09-24T03:39:05Z and 03:39:43Z: after git status showed the names (only) of forward/ay2 check.py and report.md, then freeze.json and output/, the incidental_exposure string and the matching disclosure lines were extended; the final results (2d7d3886...) differ from the 03:34:06Z results (fe7ed26c...) only in checker_sha256 and incidental_exposure",
+  "skeptic_first_freeze": "2026-09-24T03:38:40Z",
+  "skeptic_pre_comparison_commit": "2026-09-24T03:40:16Z (f640111), after the forward commit",
+  "skeptic_scratch_first_file": "2026-09-24T03:19:16Z (explore.py)"
+ },
+ "tool_sha256": "9bd1891b51adbc40065373c1ad2dd4b12b4ce5486667bc02fd283c5468baea45",
+ "tool_used": "research/round32/skeptic/ay2_postreview_check.py (function producer_replays: the replay_declared.py steps for the declared forward direction, calling the unchanged replay_loop.verify_freeze before and after, two fresh external replay directories, byte-for-byte comparison with output/, and tools/freeze.py verify)",
+ "tools_attempted_unchanged": [
+  {
+   "command": "python3 -B research/round32/skeptic/replay_loop.py ay2",
+   "exit_code": 1,
+   "outcome": "verified the forward closure and replayed the forward package under normal and -O without a mismatch, then stopped with FileNotFoundError on research/round32/reverse/ay2/freeze.json: replay_loop.py always replays both directions and a statement+skeptic loop has no reverse package; no receipt is printed on failure"
+  },
+  {
+   "command": "python3 -B research/round32/skeptic/replay_declared.py ay2",
+   "exit_code": 1,
+   "outcome": "ReplayError 'single-direction contract without a declared independent skeptic replay': replay_declared.py accepts a single producer only with direction 'single+skeptic', and the AY2 contract declares 'statement+skeptic' (with single_direction_independent_replay true)"
+  }
+ ]
+}
