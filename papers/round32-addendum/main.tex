@@ -12,31 +12,41 @@ and first-order Wilson effects at the original coupling cap}
 \begin{document}
 \maketitle
 \begin{abstract}
-This interim edition covers sub-round~1 (AV1, AV2) of a ten-investigation
-cycle; later sections are added only as their reviewed gates land. The model is
-the zero-selected, nonuniform AQ family of SU(2) Kogut--Susskind form at fixed
-lattice spacing, with its infinite-volume subsequential states and physical
-energy generator, at the original coupling cap $|\tau|\le10^{-8}$. AV1 replaces
-the Round31 square-root local state bound by one linear in $\tau$. Ordering the
-commuting creation-operator expansion of each finite-volume ground vector so
-that creations meeting the 48-link Wilson cover act last makes the
-volume-dependent outside normalization cancel exactly. Two separately proved
-inequalities then bound the trace distance between the reduced density on the
-cover and its Haar reference, uniformly in the volume, after removal of the
-on-site cutoff and for every AQ subsequential limit. The exact-first-order tier
-gives $D\approx1.3612\times10^{-8}$ at both signs, about $5.9\times10^{4}$
-times below the Round31 bound; the crude tier, $D\approx2.368\times10^{-5}$,
-misses its preregistered target and is retained. AV2 replaces the Poisson
-kernel by a frozen $C^2$ window that equals $e^{-sx}$ on the nonnegative
-spectrum and whose Fourier transform has finite first moment $4s/\pi$, so no
-real-time cutoff or tail remains. At the unchanged cap and $s=1$ the centered
-Euclidean Wilson correlation lies within $1.832\times10^{-7}$ of an exact
-rational datum. This meets the $10^{-6}$ point-error target that Round31 missed
-at this coupling. The Poisson route remains insufficient at every cutoff. The
-free value $e^{-3}/4$ lies inside the certified interval, so no
-interaction-induced shift is resolved. These are analytic upper certificates
-for one patterned fixed-spacing model and one observable. They establish
-neither uniform Wilson theory nor a continuum Yang--Mills construction.
+This interim edition covers sub-rounds~1 and~2 (AV1, AV2, AW1, AW2) of a
+ten-investigation cycle; later sections are added only as their reviewed gates
+land. The model is the zero-selected, nonuniform AQ family of SU(2)
+Kogut--Susskind form at fixed lattice spacing, with its infinite-volume
+subsequential states and physical energy generator, at the original coupling
+cap $|\tau|\le10^{-8}$. AV1 replaces the Round31 square-root local state bound
+by one linear in $\tau$. Ordering the commuting creation-operator expansion of
+each finite-volume ground vector so that creations meeting the 48-link Wilson
+cover act last makes the volume-dependent outside normalization cancel
+exactly. At the exact-first-order tier the trace distance between the reduced
+density on the cover and its Haar reference is then at most
+$D\approx1.3612\times10^{-8}$ at both signs, uniformly in the volume, after
+removal of the on-site cutoff and for every AQ subsequential limit; the crude
+tier misses its target and is retained. AV2
+replaces the Poisson kernel by a frozen $C^2$ window with finite first moment,
+so no real-time cutoff or tail remains. At the unchanged cap and $s=1$ the
+centered Euclidean Wilson correlation lies within $1.832\times10^{-7}$ of an
+exact rational datum, meeting the $10^{-6}$ target that Round31 missed at this
+coupling; the Poisson route remains insufficient at every cutoff. The free
+value $e^{-3}/4$ lies inside the interval, so no shift of the correlation is
+resolved. AW1 proves that SU(2) Peter--Weyl parity removes every first-order
+term of that correlation in each finite box, and turns to the uncentered
+Wilson mean. A link-flip lemma makes the mean odd in $\tau$; its first-order
+coefficient is
+$+\tau/144$ and its remainder is at most $K_2^+\tau^2$, $K_2^+\approx3354.80$,
+uniformly in the volume, the cutoff and every AQ limit. A rule frozen before
+that constant was known fixes the AW2 coupling at the cap. AW2, one producer
+with an independent replay by the skeptic, encloses the mean at
+$\tau=10^{-8}$ in about $[6.911,\,6.978]\times10^{-11}$ for every AQ
+subsequential limit, mirrored at $-10^{-8}$, so zero is strictly excluded with
+exclusion margin about 206. This is a static equal-time effect, not a
+dynamical correction, mass shift, susceptibility or correlation shift. These
+are analytic certificates for one patterned fixed-spacing model and one
+plaquette. They establish neither uniform Wilson theory nor a continuum
+Yang--Mills construction.
 \end{abstract}
 
 \section*{Status and reading guide}
@@ -48,14 +58,26 @@ advisor and a skeptic fixed the goals, directions and pre-registration rules in
 three deliberation loops before any production. After each sub-round one
 research assistant per lens tests assumptions and plans the next pair;
 assistant work counts as zero investigations. The present edition records
-sub-round~1. AV1 and AV2 are both accepted within their stated model scope, AV2
-with the sub-label \recid{reference_unresolved}. Sections for sub-rounds~2--5,
-the source comparison, the remaining limits and the contribution ledger are
-added only after their gates exist.
+sub-rounds~1 and~2: four investigations, all accepted within their stated
+model scope. AV2 carries the sub-label \recid{reference_unresolved}. AW1 and
+AW2 carry \recid{static_not_dynamic}: the Wilson mean they treat is an
+equal-time quantity, not a dynamical correction. AW2
+is a single-direction certificate, admitted on its one producer plus the
+skeptic's independent pre-comparison replay. Its sign certificate is a static
+equal-time statement about the Wilson mean at $\tau=\pm10^{-8}$, for every
+state in the whole set of AQ1 subsequential limits at the zero selected
+triple. The sub-label \recid{sign_certified_below_cap} does not apply, because
+the rule-fixed coupling is the cap itself. The Arb/mpmath preview can veto a
+run but supplies no admitted value. Sections for sub-rounds~3--5, the source
+comparison, the remaining limits and the contribution ledger are added only
+after their gates exist.
 
 Section~\ref{sec:model} fixes the model dictionary, the Round31 checkpoint and
 the frozen plan. Section~\ref{sec:av1} derives the linear state bound and
-Section~\ref{sec:av2} the window certificate. Each opens with its gate's
+Section~\ref{sec:av2} the window certificate. Section~\ref{sec:aw1} proves the
+parity theorem, the link-flip lemma and the first-order Wilson mean with its
+second-order remainder, and Section~\ref{sec:aw2} instantiates the
+sign-certified enclosure. Each opens with its gate's
 accepted statement, quoted verbatim in the gate's ASCII notation as the
 reviewed scope, and closes with the limitations the gate recorded.
 
@@ -83,7 +105,7 @@ and adopted in the
 \input{model}
 \input{state-lemma}
 \input{window}
-% Sub-rounds 2--5 and the closing sections are added as their gates land.
+% Sub-rounds 3--5 and the closing sections are added as their gates land.
 \input{shift}
 % \input{uniform}
 % \input{state}

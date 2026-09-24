@@ -860,6 +860,550 @@ Full derivations and reviewed implementations:
 \repo{research/round32/contracts/aw1.json}{frozen contract}. The gate selects
 AW2 next.
 
-\subsection{AW2: sign-certified enclosure}
+\section{AW2: a sign-certified Wilson mean at the original cap}
 \label{sec:aw2}
-To be completed from the AW2 gate.
+
+\textbf{Contribution \projecttag{HNM-C-AW2}.} The AW2 contract, recorded under
+the title ``Hruday sign-certified enclosure of the Wilson mean at the
+AW1-frozen coupling'', was frozen after the AW1 gate and before production.
+It keeps the model of Sections~\ref{sec:av1}--\ref{sec:aw1}: the zero selected
+triple with its Haar product reference, whole stars under I1.5, the original
+$xz$ plaquette $W$ with cover $R=\{0,e_z\}$, and fixed positive $\alpha$,
+$\hbar$, $E_\star$ and spacing. The observable is the uncentered equal-time
+mean $\omega_\tau(W)$. Its free Haar reference is $\mathbb E[W]=0$, which the
+checker reads from the contract. AW2 instantiates a formula that AW1 already
+admitted, so it runs in one direction (\recid{single+skeptic}). There is one
+forward producer, and the skeptic wrote an independent replay from the
+contract alone and committed it before the producer's package. The contract
+makes that replay a condition of admission. The producer received
+\texttt{AGENTS.md}, the contract and its 26 shared premises, 28 files in all.
+No reverse package exists, so reverse premise isolation is not applicable, and
+the packet says so.
+
+\subsection{Reviewed scope}
+The \repo{research/round32/advisor/aw2-gate.json}{AW2 gate} records the
+verdict \recid{accepted_within_scope} with the sub-label
+\recid{static_not_dynamic}. The accepted statement, quoted verbatim below in
+the gate's ASCII notation, is the scope of every claim in this section. In it,
+\texttt{D} is the common denominator of the endpoints, written $Q$ below
+because $D$ denotes AV1's state bound; \texttt{S} is the set $\mathcal S$ of
+AQ1 subsequential limits; and \texttt{o} denotes composition.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0) with Haar product reference, whole stars phi\_b=-(tau/3) sum
+W\_f under I1.5 in normalized units delta=alpha/8 with V\_b=phi\_b/8 in alpha
+units; original xz Wilson loop W with complete cover R=\{0,e\_z\}; fixed
+positive alpha, hbar, E\_star and spacing), with
+tau\_AW2=10\textasciicircum{}-8 (the cap) evaluated inside check.py by the
+frozen AW1 decade-grid rule (largest 10\textasciicircum{}-k, k>=8, with
+K\_2\textasciicircum{}+ tau<=1/288, half the first-order coefficient) from
+K\_2\textasciicircum{}+=81108864767825329926713064490531229475390625/\allowbreak
+24176936535511801466930759024724079017984
+(\textasciitilde{}3354.80322946, outward
+3354803229461691/10\textasciicircum{}12) read from the hash-verified AW1 gate,
+never from a literal coupling: for every state in the whole set of AQ1
+subsequential limits at tau=+10\textasciicircum{}-8, and in every centered
+whole-star box N>=2 at every on-site cutoff (uniform in the box; passed to the
+limits by local trace-norm convergence on R, ||W||<=1, closed interval), the
+static equal-time Wilson mean omega\_tau(W) lies in
+[tau/144-K\_2\textasciicircum{}+ tau\textasciicircum{}2,
+tau/144+K\_2\textasciicircum{}+ tau\textasciicircum{}2] =
+[42773581813770903096597852821080380528959/D,
+43188859201382168785822623711271900423873/D],
+D=618929575309102117553427431032936422860390400000000, contained in
+[6.91089641214e-11, 6.97799247674e-11] (decimals widened outward); at
+tau=-10\textasciicircum{}-8 the enclosure is the mirror
+[-43188859201382168785822623711271900423873/D,
+-42773581813770903096597852821080380528959/D] (contained in
+[-6.97799247674e-11, -6.91089641214e-11]), by the AW1 remainder bound at both
+signs and the AW1 flip lemma at the zero triple (S(-tau)=S(tau) o alpha\_E as
+whole sets; a replay, not a second confirmation). The free Haar reference 0 is
+strictly excluded at both signs and sign(omega\_tau(W))=sign(tau): exclusion
+margin (|tau|/144-K\_2\textasciicircum{}+
+tau\textasciicircum{}2)/(K\_2\textasciicircum{}+
+tau\textasciicircum{}2)=\allowbreak
+42773581813770903096597852821080380528959/\allowbreak
+207638693805632844612385445095759947457
+(\textasciitilde{}206.00005 >= 2, the contract target; directed floor
+41200010489/200000000) and sign margin 1/(144 K\_2\textasciicircum{}+
+|tau|)=\allowbreak
+42981220507576535941210238266176140476416/\allowbreak
+207638693805632844612385445095759947457
+(\textasciitilde{}207.00005; directed floor 41400010489/200000000). Sub-label
+static\_not\_dynamic; sign\_certified\_below\_cap does not apply (tau\_AW2 is
+the cap); resolved\_interaction\_shift refers to omega(W) only. The crude tier
+(t\_c=592|tau|, K\_2=1937877026146766159414097129/244140625000000000000
+\textasciitilde{}7.9375e6) gives an enclosure \textasciitilde{}[-7.2431e-10,
+8.6320e-10] containing 0 (sign margin \textasciitilde{}0.0875) and is retained
+as a failed limited-tier control. No dynamical correction, mass shift,
+mass-gap or susceptibility statement, no centered-correlation shift (AV2
+reference\_unresolved stands), no AQ uniqueness, whole-sequence convergence or
+rate in N, no third-order remainder, no statement at nonzero selected triples,
+and no uniform Wilson, weak-coupling, continuum or priority claim follows.
+Admission rests on the single forward producer plus the
+skeptic\textquotesingle{}s independent pre-comparison replay from the
+contract.
+\end{gatequote}
+The rest of this section instantiates that statement. The limitations
+recorded by the gate close the section (Section~\ref{sec:aw2-limits}).
+
+\subsection{The admitted premise}
+\label{sec:aw2-premise}
+AW2 proves nothing new about the ground state. Its mathematical premises are
+items (3) and (4) of the AW1 gate (Sections~\ref{sec:aw1-mean}
+and~\ref{sec:aw1-k2}), with the flip lemma of item (2) for the mirror: at the
+zero triple and for $|\tau|\le10^{-8}$,
+\begin{equation}
+ \omega_\tau(W)=\frac{\tau}{144}+r(\tau),\qquad |r(\tau)|\le K_2^+\tau^2 ,
+ \label{eq:aw2-premise}
+\end{equation}
+at both signs, uniformly in the box $\Lambda_N$ ($N\ge2$), in the on-site
+cutoff and in every AQ1 subsequential limit, with the gate-bound constant
+$K_2^+\approx3354.80323$ of \eqref{eq:aw1-K2}. The checker hard-codes the
+SHA-256 of the AW1 gate snapshot, verifies it before parsing, and reads
+$K_2^+$ from the gate's decision text. It then checks exact equality with the
+gate's accepted text, the contract parameter and the skeptic's AW1 review. The
+forward AW1 report's preview $3354.80322946$ of its labelled
+\recid{unpinned_t_bounds} variant is a truncation of the same number, and the
+outward ceiling $3354803229461691/10^{12}$ exceeds it by less than
+$10^{-12}$.
+
+As a consistency replay, not a source, the itemization named by the gate
+reproduces the constant exactly. With $J=28|\tau|$,
+$T=(49|\tau|/144)/(1-352J)$, $\varrho=352JT$ and $\varepsilon=2T+T^2$ at
+$\tau=10^{-8}$,
+\begin{equation}
+ K_2^+\tau^2=\varrho+T\cdot T+T^2+\varepsilon^2+\frac{|\tau|}{144}\,\varepsilon^2 .
+ \label{eq:aw2-itemization}
+\end{equation}
+The five terms are the AM2 remainder and the straddling, two-creation,
+density and normalization charges of the skeptic column of
+Table~\ref{tab:aw1-k2}. The same $T$ reproduces AV1's $D_{\rm ii}$ exactly,
+and the AM2 term is $99.979\%$ of the total. AW2 binds the gate value rather
+than recomputing it, as the AW1 gate advised after four silent term
+undercounts ran to completion in the AW1 producer checkers
+(Section~\ref{sec:aw1-evidence}). A recomputed or reduced constant, including
+the forward AW1 headline value, is a rejected mutation.
+
+\subsection{The coupling from the frozen rule}
+\label{sec:aw2-rule}
+The rule was frozen in the AW1 contract before any constant was known
+(Section~\ref{sec:aw1-rule}). The AW2 checker parses it from the AW1 contract
+snapshot, whose hash is a binding of the AW1 gate, and evaluates it on the
+parsed constant:
+\begin{equation}
+ \tau_{\rm AW2}=\max\bigl\{10^{-k}:\ k\ge8,\ K_2^+\,10^{-k}\le\tfrac1{288}\bigr\}.
+ \label{eq:aw2-rule}
+\end{equation}
+The checker also requires the threshold to be half the first-order
+coefficient $1/144$. That tie answers AW1 review finding~N7
+(Section~\ref{sec:aw1-evidence}). The grid starts at the cap, and at its first
+element, exactly,
+\begin{equation}
+ \begin{aligned}
+ K_2^+\cdot10^{-8}
+ &=\frac{207638693805632844612385445095759947457}{6189295753091021175534274310329364228603904}
+ \le\frac1{288},\\
+ \frac1{288}-K_2^+\cdot10^{-8}
+ &=\frac{21282971559982635125992733687992310290751}{6189295753091021175534274310329364228603904}>0 .
+ \end{aligned}
+ \label{eq:aw2-rule-step}
+\end{equation}
+The first line is about $3.35480\times10^{-5}$. No larger grid element
+exists, so the rule returns
+\begin{equation}
+ \tau_{\rm AW2}=10^{-8},\qquad\text{the original cap.}
+ \label{eq:aw2-tau}
+\end{equation}
+
+The contract and the AW1 gate both state this value. The checker uses those
+texts only as cross-checks of the rule's output and never reads either as the
+coupling. Seven non-rule couplings
+are rejected: a literal coupling, the contract text used as the coupling,
+$10^{-9}$ (not the largest decade), the off-grid value $5\cdot10^{-9}$, the
+forward AW1 headline constant fed to the rule, the crude constant fed to the
+rule, and a threshold that is not half the coefficient. The skeptic confirmed
+that the rule really evaluates the constant: $1000K_2^+$ returns $10^{-9}$ and
+the crude constant returns $10^{-10}$. The ratio
+$(1/288)/(K_2^+\tau)\approx103.50003$ measures the rule's slack. It is not a
+margin of the enclosure, and any exact-tier constant up to
+$10^8/288\approx3.47\times10^5$ would also return the cap.
+
+One gap is recorded as review finding~N3. A literal coupling that happens to
+equal the rule value runs to completion, and only the recorded checker hash
+changes. The skeptic's data-flow review of the source rejects that edit, and
+the hash of \texttt{check.py} in the freeze inventory protects the admitted
+source. This is the AW2 analogue of AW1 finding~N7.
+
+\subsection{The enclosure at both signs}
+\label{sec:aw2-enclosure}
+Write
+\begin{equation}
+ I(\tau)=\Bigl[\frac{\tau}{144}-K_2^+\tau^2,\ \frac{\tau}{144}+K_2^+\tau^2\Bigr],
+ \qquad I(-\tau)=-I(\tau).
+ \label{eq:aw2-interval}
+\end{equation}
+By \eqref{eq:aw2-premise}, $\omega_\tau(W)\in I(\tau)$ for every state in the
+whole set $\mathcal S(\tau)$ of AQ1 subsequential limits, and in every
+centered whole-star box $N\ge2$ at every on-site cutoff. At
+$\tau=\tau_{\rm AW2}$ the first-order value is
+$\tau/144=1/14400000000\approx6.9444\times10^{-11}$. With the common
+denominator
+\begin{equation}
+ Q=618929575309102117553427431032936422860390400000000
+ \label{eq:aw2-Q}
+\end{equation}
+the half-width is
+$K_2^+\tau^2=207638693805632844612385445095759947457/Q\approx3.35480\times10^{-13}$,
+and the admitted enclosure is
+\begin{equation}
+ \boxed{\;
+ \begin{aligned}
+ \omega_{10^{-8}}(W)&\ge\frac{42773581813770903096597852821080380528959}{Q}>6.91089641214\times10^{-11},\\
+ \omega_{10^{-8}}(W)&\le\frac{43188859201382168785822623711271900423873}{Q}<6.97799247674\times10^{-11}.
+ \end{aligned}\;}
+ \label{eq:aw2-enclosure}
+\end{equation}
+The short decimals widen the exact endpoints outward: the lower one is rounded
+down and the upper one up, at 12 significant digits. The checker re-parses
+each decimal exactly and verifies its direction and that it lies within one
+unit of its last digit.
+
+\paragraph{Passage to the AQ limits.}
+The interval does not depend on $N$. The checker verifies that the inputs of
+the formula are identical in the boxes $N=2$ and $N=3$: 82 retained faces meet
+$R$, four incoming stars act at each site of $R$, and each factor has 49
+omitted faces. It rejects the box $N=1$, which drops incoming stars. Along any
+subsequence on which the local densities converge in trace norm on $R$,
+\begin{equation}
+ |\omega(W)-\omega_{N_k}(W)|\le\norm{W}\,\norm{\rho_R-\rho_{N_k,R}}_1\to0,
+ \qquad\norm{W}\le1 ,
+ \label{eq:aw2-passage}
+\end{equation}
+and $I(\tau)$ is closed, so every state in $\mathcal S(\tau)$ inherits the
+enclosure. No uniqueness of the AQ state, whole-sequence convergence or rate
+in $N$ is used or claimed. The set $\mathcal S(\tau)$ may contain many states,
+and each of them obeys the enclosure.
+
+\paragraph{The mirror at $\tau=-10^{-8}$.}
+The AW1 bound holds at both signs, so \eqref{eq:aw2-premise} at
+$\tau=-10^{-8}$ gives
+\begin{equation}
+ \omega_{-10^{-8}}(W)\in I(-10^{-8})=-I(10^{-8})
+ \subset\bigl[-6.97799247674\times10^{-11},\ -6.91089641214\times10^{-11}\bigr].
+ \label{eq:aw2-mirror}
+\end{equation}
+The same interval is also the image of $I(10^{-8})$ under the AW1 flip lemma
+at the zero triple. There $\omega_{N,-\tau}(W)=-\omega_{N,\tau}(W)$ in every
+box and cutoff, and $\mathcal S(-\tau)=\mathcal S(\tau)\circ\alpha_E$ as whole
+sets \eqref{eq:aw1-covariance}--\eqref{eq:aw1-aq-sets}. Both routes apply the
+same $|\tau|$ formula to the same constant, so the minus-sign enclosure is a
+replay, not a second confirmation. The packet records it as a replay. A
+sign-blind enclosure and a mirror counted as independent confirmation are both
+rejected mutations. Individual states at $\pm\tau$ are paired only along a
+common subsequence.
+
+\subsection{Strict exclusion and the two margins}
+\label{sec:aw2-margins}
+The lower endpoint of $I(10^{-8})$ is strictly positive, and the upper
+endpoint of $I(-10^{-8})$ is strictly negative. The free Haar reference $0$ is
+therefore strictly excluded at both signs, and
+$\mathrm{sign}\,\omega_\tau(W)=\mathrm{sign}\,\tau$ for every state in
+$\mathcal S(\pm10^{-8})$ and in every box. The contract measures the exclusion
+by two margins:
+\begin{equation}
+ \mu_{\rm sign}=\frac{|\tau|/144}{K_2^+\tau^2}=\frac{1}{144K_2^+|\tau|},\qquad
+ \mu_{\rm excl}=\frac{|\tau|/144-K_2^+\tau^2}{K_2^+\tau^2}=\mu_{\rm sign}-1 .
+ \label{eq:aw2-margin-def}
+\end{equation}
+The sign margin compares the first-order value with the half-width. The
+exclusion margin, written $m$ in the gate, compares the distance from $0$ to
+the enclosure with the half-width; it is the preregistered target quantity.
+At $|\tau|=10^{-8}$, exactly,
+\begin{equation}
+ \begin{aligned}
+ \mu_{\rm excl}&=\frac{42773581813770903096597852821080380528959}{207638693805632844612385445095759947457}
+ \approx206.00005\ \ge\frac{41200010489}{200000000}\ge2,\\
+ \mu_{\rm sign}&=\frac{42981220507576535941210238266176140476416}{207638693805632844612385445095759947457}
+ \approx207.00005\ \ge\frac{41400010489}{200000000}.
+ \end{aligned}
+ \label{eq:aw2-margins}
+\end{equation}
+The rational floors are directed on the $10^{-9}$ grid, at $206.000052445$ and
+$207.000052445$. The sign margin is the value \eqref{eq:aw1-rule} that AW1
+recorded for the rule. The checker reads the target $2$ and the reference $0$
+from the hash-checked contract snapshot. In the skeptic's source-edit test,
+with the target raised to 300 and the contract pin rehashed, the producer
+fails exactly at its margin check. The lower
+endpoint is $1-1/\mu_{\rm sign}$ times the first-order value, about $99.52\%$
+of it.
+
+The target does not follow from the rule. The rule
+$K_2^+|\tau|\le1/288$ is $\mu_{\rm sign}\ge2$, which gives only
+$\mu_{\rm excl}\ge1$. The target $\mu_{\rm excl}\ge2$ is
+$\mu_{\rm sign}\ge3$, that is, $K_2^+|\tau|\le1/432$. At the rule's boundary
+the exclusion margin would be exactly $1$, inside the contract's limited band
+$[1,2)$. The skeptic's contract review noted the gap before production, and
+both codes test the target on its own. The skeptic's pre-comparison
+checklist names three wrong denominators: the ratio
+$(|\tau|/144-K_2^+\tau^2)/(|\tau|/144)\approx0.99517$ to the first-order value,
+which would wrongly fail the target; the rule ratio of about $103.5$; and the
+sign margin reported as the exclusion margin. A source edit that measures the
+margin against the first-order term aborts the producer checker.
+
+Three further checks leave the decision unchanged. Replacing $K_2^+$ by its
+outward ceiling widens each endpoint by less than $10^{-28}$. Under
+$\tau\to\tau/100$ the first-order term scales exactly by $100$ and the
+half-width by $10^4$, the exponents 1 and 2 of the two terms. Both enclosures
+lie inside AV1's bound $|\omega_\tau(W)|\le D_{\rm ii}\approx1.3612\times10^{-8}$
+\eqref{eq:av1-consequences}, which is about $195.08$ times the upper endpoint.
+
+\subsection{The crude tier fails and is retained}
+\label{sec:aw2-crude}
+The crude tier of AW1 replaces $T$ by $t_{\rm c}=592|\tau|$ and gives the
+constant \eqref{eq:aw1-K2crude}, which the checker reproduces exactly from the
+gate's $t_{\rm c}$. The constant, the enclosure at the cap and its sign margin
+are
+\begin{equation}
+ \begin{aligned}
+ K_2^{\rm crude}&=\frac{1937877026146766159414097129}{244140625000000000000}
+ \approx7.9375443\times10^{6},\\
+ I_{\rm crude}(10^{-8})
+ &=\bigl[-15915014329070895434726874161,\ 18966772141570895434726874161\bigr]/c\\
+ &\approx\bigl[-7.2431\times10^{-10},\ 8.6320\times10^{-10}\bigr],\\
+ c&=21972656250000000000000000000000000000,\\
+ \mu_{\rm sign}^{\rm crude}
+ &=\frac{1525878906250000000000000000}{17440893235320895434726874161}\approx0.0875<1 .
+ \end{aligned}
+ \label{eq:aw2-crude}
+\end{equation}
+The enclosure contains $0$, and the exclusion margin is about $-0.9125$. The
+crude tier therefore fails at the cap. It is retained as a limited-tier control and is never mixed into the
+exact tier: labelling the crude constant exact, inserting a crude term into
+the exact sum and certifying with the crude tier are rejected mutations. Fed
+to the rule, the crude constant would return $10^{-10}$. That value is
+recorded as information only and is never substituted under the cap label.
+Table~\ref{tab:aw2-tiers} sets the two tiers side by side.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Wilson-mean enclosures at $\tau=10^{-8}$: the gate-bound exact tier
+and the crude tier with $t_{\rm c}=592|\tau|$. Decimals are outward previews of
+exact rationals in the frozen output; only the first row is admitted.}
+\label{tab:aw2-tiers}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Tier & Constant & Enclosure of $\omega_{10^{-8}}(W)$ & $\mu_{\rm sign}$ & Outcome\\
+\midrule
+exact & $K_2^+\approx3354.80323$ &
+$[6.91089641214,\,6.97799247674]\times10^{-11}$ & $\approx207.00005$ &
+accepted\\
+crude & $K_2^{\rm crude}\approx7.9375443\times10^{6}$ &
+$\approx[-7.2431,\,8.6320]\times10^{-10}$ & $\approx0.0875$ &
+fails; retained\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Exact scope}
+\label{sec:aw2-scope}
+\paragraph{What is claimed.}
+AW2 certifies a static equal-time effect. For every state in the whole set
+$\mathcal S(\pm10^{-8})$ of AQ1 subsequential limits at the zero selected
+triple, and in every centered whole-star box $N\ge2$ at every on-site cutoff,
+the uncentered Wilson mean lies in $I(\pm10^{-8})$. That interval excludes the
+free reference $0$ and has the sign of $\tau$. The sub-label is
+\recid{static_not_dynamic}. The flag \recid{resolved_interaction_shift} is
+true only because the exclusion holds at the cap, and it refers to
+$\omega(W)$ alone. The sub-label \recid{sign_certified_below_cap} is false. It
+would apply only if the rule had returned a coupling below the cap, and
+$\tau_{\rm AW2}$ is the cap itself. Admission rests on the single forward
+producer plus the skeptic's independent pre-comparison replay from the
+contract. The two share model-agent ancestry, and $K_2^+$ is the skeptic's own
+AW1 itemization. Their exact agreement is therefore a replay of one admitted
+formula, not independent physical confirmation. The Arb/mpmath preview is a
+labelled comparison that can veto a run but supplies no admitted value
+(Section~\ref{sec:aw2-evidence}).
+
+The \repo{research/round32/advisor/panel-update-2.md}{panel update} after
+sub-round~2 records roadmap goal~2 as met in the re-targeted form of
+Section~\ref{sec:aw1-retarget}. That is a planning record and admits nothing
+beyond the gate.
+
+\paragraph{What is not claimed.}
+\begin{itemize}
+\item No dynamical correction, mass shift, mass-gap or susceptibility
+statement. The mean is an equal-time expectation in the stationary state.
+\item No shift of the centered correlation $C_\tau(s)$ or $c_\tau(\theta)$.
+AV2's \recid{reference_unresolved} stands; by AW1 the first-order term of that
+shift vanishes in each finite box, and its second-order constant is not
+uniform in $N$.
+\item No uniqueness of the AQ state, whole-sequence convergence or rate in
+$N$, and no pairing of individual states at $\pm\tau$ without a common
+subsequence.
+\item No third-order remainder and no sign of $r(\tau)$.
+\item Nothing at nonzero selected triples, and no transfer from a finite graph.
+\item No uniform Wilson, weak-coupling or continuum statement.
+\item No priority. The forward report describes the result as a first for this
+model family. The review reads that as first in this workbench's admitted
+record, not as a priority claim, and the gate does not adopt the wording.
+Scientific priority is unverified.
+\end{itemize}
+
+\subsection{Controls, replays and review}
+\label{sec:aw2-evidence}
+The forward checker runs 37 exact checks. It implements all 23 contract
+controls as damaging mutations raised through explicit exceptions rather than
+assertions, so every control stays active under optimized Python. It rejects
+116 mutations in all, 92 of them under the contract control ids. Its imports
+are standard-library only and every admission value is an exact rational;
+float, Boolean, NaN and division-by-zero inputs are rejected. The first-order
+chain is re-verified, not assumed. This covers the Haar moments
+$1,0,\tfrac14,0,\tfrac18,0,\tfrac5{64},0,\tfrac7{128}$ by Clebsch--Gordan and
+by the free-link $S^3$ route, the face sum over all 82 faces meeting $R$ and
+the sign chain of Section~\ref{sec:aw1-mean}. The rejected alternatives
+include $\tau/72$, $\tau/288$, $\tau/1152$ and $\tau/18$; the literal contract
+display, which gives $-\tau/144$; another face with owner set $R$ paired with
+$W$; and an unlabelled overlap factor~4. The checks of contract item~4 that
+have no id of their own are covered as well.
+\begin{itemize}
+\item \emph{Sign convention.} The frozen I1.5 string is verified against the
+contract and the I1 snapshot. A flipped $\phi_b$ string is rejected, and so is
+a coherent flip in both the derivation and the fixture, which gives
+$-\tau/144$. The one-plaquette fixture of \eqref{eq:aw1-plaquette}, a finite
+graph with \recid{transfers_to_aq} false, reproduces the AW1 series at
+truncations 8 and 10. Its $j\le\tfrac12$ ground has $\det=-b^2<0$, which
+forces $E_0<0$ and $\mathrm{sign}\langle W\rangle=\mathrm{sign}\,\tau$. Its
+exact brackets lie inside $[6.94444444439,\,6.94444444446]\times10^{-11}$ and
+the mirror interval.
+\item \emph{Boundary and state.} The formula inputs are identical at $N=2$ and
+$N=3$, and $N=1$ is rejected.
+\item \emph{Centring.} An exact $3\times3$ fixture separates vector from scalar
+centring. No $\hat m$ enters the $\omega(W)$ path, and the calculator has no
+such argument.
+\item \emph{Coherent tampering.} Ten mutations with rebound hashes are
+rejected. Among them are a removed snapshot, a halved $K_2^+$, a changed
+$\tau_{\rm AW2}$, and a contract target or gate constant edited with its hash
+rebound, which fails against the hard-coded pins.
+\end{itemize}
+The producer also exports a reusable exact calculator. It accepts exact inputs
+only and restricts the domain to the zero triple and $0<|\tau|\le10^{-8}$. It
+reads $K_2^+$, the coefficient $1/144$, the cap and the rule only from the
+hash-verified snapshots, and it takes no $K$ or $\hat m$ argument; the checker
+records 13 domain rejections. Its fixed-design mode enforces
+$|\tau|=\tau_{\rm AW2}$. Below the cap, its reusable mode attaches
+\recid{sign_certified_below_cap} to any coupling whose enclosure excludes $0$,
+with $\mu_{\rm sign}=207.00005\cdot10^{-8}/|\tau|$. Review finding~N6 records
+those values as corollaries of the AW1 bound, not AW2 admissions. Any reuse
+needs its own contract.
+
+\paragraph{The Arb/mpmath preview.}
+A separate preview script recomputes the endpoints and margins with
+python-flint 0.9.0 (Arb) and mpmath 1.3.0 at 256 bits. It stores ball bounds
+in \texttt{arb-preview.json}, labelled as a preview and not used for
+admission. The checker reads only that stored file and verifies that every
+exact endpoint and margin lies inside both previews. A missing or
+inconsistent preview aborts the run, so the preview can veto an admission but
+cannot supply one. When the skeptic replaced every stored ball by the exact
+point value, the only output field that changed was the preview's hash.
+Neither library is imported by the checker or the calculator, and an added
+\texttt{mpmath} import aborts. Regenerating the preview reproduces the stored
+file byte for byte. Finding~N2 asked the gate to call the preview a labelled
+comparison, veto only, and the gate does.
+
+\paragraph{Independent replay and review.}
+The skeptic's pre-comparison package holds a derivation, a contract review and
+a checker with 75 exact checks covering all 23 controls. It was hash-frozen
+and committed (\texttt{86edd4d}, 00:17:03Z) before the forward commit
+(\texttt{4ef9352}, 00:23:47Z). The two agree exactly on every exported
+rational: $K_2^+$, $\tau_{\rm AW2}$, both enclosures, both margins, the rule
+arithmetic, the crude tier, the first-order values, the one-plaquette series,
+the counts 49, 82, 10, 16 and 21, and the Haar moments. The only difference is
+display precision. The producer prints 12 significant digits and the skeptic
+16, and the skeptic's outward decimals nest inside the producer's. No
+admission Boolean reads a decimal. The post-comparison review adds 73 exact
+checks. All 33 of its must-abort source edits abort. One silent edit, the
+rule-valued literal of Section~\ref{sec:aw2-rule}, is caught only by the
+static review, and two preview demonstrations support finding~N2. Four edits
+weaken the producer's own validators: non-strict exclusion, and disabled
+incoming-star, below-cap and claim-flag checks. Each lets a damaging mutation
+through, and the run then aborts with ``damaging mutation accepted''. The
+controls are therefore live.
+
+\paragraph{Replays and isolation.}
+The skeptic's replay tool always replays both directions, so it fails on
+AW2.
+It is not edited, because its hash is bound in the AV1, AV2 and AW1 reviews.
+A wrapper imports it unchanged and replays only the declared direction. The
+forward closure holds 35 files, and its 28 input snapshots equal their
+repository sources byte for byte. Normal and optimized replays reproduce the
+frozen outputs byte for byte, and the freezing tool reports the closure
+verified. One isolation finding, N1, stands. The forward files carry times
+from 00:10Z to 00:23Z, and the package was committed after the skeptic's
+pre-comparison commit; both worked on a shared filesystem. The forward closure
+contains no \texttt{skeptic/aw2} file, the producer declares no such read, and
+no forward AW2 scratch file is in the shared scratchpad root. The codes differ
+in structure: 12- against 16-digit decimals, boxes $N=2,3$ against $N=2,7$,
+and different check ids. Reads cannot be determined, so isolation is verified
+for repository inputs only. Exact agreement is expected in any case, since
+both apply one admitted formula to one gate constant. The producer also
+disclosed reads of the tools documentation, the freezing tool and the AV2 and
+AW1 forward checkers for protocol and code style, and hash-only checks of the
+repository contract and gate (N8); none carries premise weight. The producer's
+flag \recid{correlation_shift_resolved} and the skeptic's
+\recid{centered_correlation_shift_resolved} are both false and mean the same
+(N4).
+
+\subsection{Limitations recorded by the gate}
+\label{sec:aw2-limits}
+The AW2 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Single direction: one forward producer instantiates the admitted AW1
+formula; admission rests on that producer plus the skeptic\textquotesingle{}s
+pre-comparison replay from the contract (correlated model-agent ancestry;
+K\_2\textasciicircum{}+ is the skeptic\textquotesingle{}s own AW1
+itemization); exact agreement is a replay of one admitted formula, not
+independent physical confirmation
+\item Only the AM2/AQ1 zero-selected patterned family, the cover R=\{0,e\_z\},
+fixed spacing and tau=+-10\textasciicircum{}-8; nothing transfers to nonzero
+selected triples, uniform Wilson theory, weak coupling or the continuum;
+calculator values below the cap are corollaries of the AW1 bound, not AW2
+admissions
+\item Inherited without re-proof: the AW1 first-order coefficient +tau/144,
+remainder bound |r|<=K\_2\textasciicircum{}+ tau\textasciicircum{}2 (uniform
+in N, cutoff and every AQ1 limit) and flip lemma; AV1 product split,
+anchored-norm tier, cutoff removal and AQ passage; AM2 fixed point, majorant,
+gaps and ground uniqueness; AQ1 construction; I1 dictionary
+\item K\_2\textasciicircum{}+ is an absolute second-order bound with no sign
+of r(tau) and no third-order remainder; the AM2 majorant 352JT is 99.98\% of
+it, so the enclosure is conservative
+\item Static equal-time mean in the AQ states only;
+resolved\_interaction\_shift refers to omega(W) alone; no dynamical, mass-gap,
+susceptibility or centered-correlation statement (AV2 reference\_unresolved
+stands)
+\item Whole-set statement: no uniqueness of the AQ state, whole-sequence
+convergence or rate in N; the -tau pairing of individual states holds only
+along a common subsequence; the -tau enclosure is a replay
+\item Fixtures (one plaquette, 3x3 centring, synthetic two-limit sequences)
+are finite exact audits (transfers\_to\_aq false); the Arb/mpmath preview is a
+labelled comparison that check.py reads as a veto only and that supplies no
+admitted value
+\item The rule K\_2\textasciicircum{}+ tau<=1/288 guarantees only m>=1; the
+target m>=2 is tested separately; literal-coupling protection for a literal
+equal to the rule value rests on source review and the check.py hash in
+freeze.json
+\item Read isolation verified for repository inputs only: the forward package
+was written after the skeptic pre-comparison commit on a shared filesystem;
+its closure excludes skeptic/aw2*, but reads cannot be determined
+\item Scientific priority unverified
+\end{itemize}
+\end{gatequote}
+Full derivation and reviewed implementation:
+\repo{research/round32/forward/aw2/report.md}{AW2 forward},
+\repo{research/round32/skeptic/aw2-independent-derivation.md}{independent
+pre-comparison replay},
+\repo{research/round32/skeptic/aw2.md}{independent model-agent review} and the
+\repo{research/round32/contracts/aw2.json}{frozen contract}. Sub-round~2 is
+complete; the gate selects AX1 next.
