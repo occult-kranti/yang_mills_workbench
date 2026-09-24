@@ -143,13 +143,28 @@ def match(pattern, text, label):
 
 
 # ---------------------------------------------------------------------------
-# Contract loaders.
+# Contract loaders. The repository is a live, concurrently-advancing workbench:
+# a contract this task called "draft" may freeze (draft -> frozen_before_production)
+# while this audit is being written or re-run. `load_contract_any_status` records
+# whichever status is actually on disk rather than assuming one, which is also the
+# more useful behaviour for a script meant to be re-run "the moment a contract
+# freezes, before production" (update-1.md section 5, item 3) -- freezing a
+# contract does not by itself validate its pre-registration fields.
 # ---------------------------------------------------------------------------
 def load_contract(cid, path, expected_status):
     c = load_json(path)
     require(c.get('id') == cid, 'contract id mismatch for ' + str(path))
     require(c.get('status') == expected_status,
             '%s: expected status %r, found %r' % (cid, expected_status, c.get('status')))
+    require(c.get('round') == 32, 'contract not round 32: ' + str(path))
+    return c
+
+
+def load_contract_any_status(cid, path, allowed_statuses=('draft', 'frozen_before_production')):
+    c = load_json(path)
+    require(c.get('id') == cid, 'contract id mismatch for ' + str(path))
+    require(c.get('status') in allowed_statuses,
+            '%s: status %r is neither draft nor frozen_before_production' % (cid, c.get('status')))
     require(c.get('round') == 32, 'contract not round 32: ' + str(path))
     return c
 
@@ -163,7 +178,9 @@ def aw2_contract():
 
 
 def draft_contract(cid):
-    return load_contract(cid, DRAFT_CONTRACT_PATHS[cid], 'draft')
+    """Loads one of AX1/AX2/AY1/AY2/AZ1/AZ2 at whatever status it currently has
+    (see `load_contract_any_status`'s docstring above)."""
+    return load_contract_any_status(cid, DRAFT_CONTRACT_PATHS[cid])
 
 
 # ---------------------------------------------------------------------------

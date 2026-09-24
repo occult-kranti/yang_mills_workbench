@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Jung/Pauli lens, Round32 sub-round 2, assistant-2 script 3 of 3: structural
-pre-registration audit of AW1, AW2 (frozen) and AX1/AX2/AY1/AY2/AZ1/AZ2 (drafts).
+pre-registration audit of AW1, AW2 (frozen_before_production) and
+AX1/AX2/AY1/AY2/AZ1/AZ2 (each read at whatever status is currently on disk -- this
+is a live, concurrently-advancing repository, and a contract this task's brief
+called "draft" can freeze while this script is being written or re-run; see the
+`observed contract statuses` finding for what was actually seen at run time).
 
 Pre-registration audit only (`update-1.md` section 5, item 3; the calling task).
 Counts zero research loops; not a producer, contract, gate or skeptical review, and
@@ -214,8 +218,12 @@ def field_by_name(fields, name):
     raise KeyError(name)
 
 
-def audit_one_contract(cid, contract, expected_status):
-    K.require(contract.get('status') == expected_status, '%s: unexpected status' % cid)
+def audit_one_contract(cid, contract, expected_status=None):
+    if expected_status is not None:
+        K.require(contract.get('status') == expected_status, '%s: unexpected status' % cid)
+    else:
+        K.require(contract.get('status') in ('draft', 'frozen_before_production'),
+                  '%s: status is neither draft nor frozen_before_production' % cid)
     pre = contract['preregistration']
     fields = audit_preregistration_block(pre)
     cr = controls_required_equals_contract_controls(contract)
@@ -288,11 +296,17 @@ def run():
                         'allowed, controls_required.ids == controls byte-for-byte, sub_labels_allowed the closed '
                         'five-label list, error_terms_itemized/error_terms_rule present as registered.')
 
-    # --- AX1, AX2, AY1, AY2, AZ1, AZ2 (draft) -------------------------------
+    # --- AX1, AX2, AY1, AY2, AZ1, AZ2 --------------------------------------
+    # Read at whatever status is currently on disk: this is a live, concurrently
+    # -advancing repository, and a contract this task's brief called "draft" can
+    # freeze while this audit runs (observed live: AX1 froze mid-audit -- see the
+    # status-drift finding below).
     draft_entries = {}
+    observed_statuses = {}
     for cid in K.DRAFT_IDS:
         c = K.draft_contract(cid)
-        entry = audit_one_contract(cid, c, 'draft')
+        observed_statuses[cid] = c.get('status')
+        entry = audit_one_contract(cid, c)  # accepts whichever of draft / frozen_before_production is on disk
         draft_entries[cid] = entry
         items.append({'item': '%s_structural_preregistration_audit' % cid.lower(), 'passed': entry['passed'],
                       'detail': entry})
@@ -300,6 +314,15 @@ def run():
         if not cr['equal']:
             findings.append('%s: controls_required.ids != controls (an AV2-style mirror gap): only_in_controls=%s, '
                             'only_in_ids=%s.' % (cid, cr['only_in_controls'], cr['only_in_ids']))
+
+    already_frozen = [cid for cid in K.DRAFT_IDS if observed_statuses[cid] == 'frozen_before_production']
+    findings.append('Observed contract statuses at audit time: %s.%s'
+                    % (observed_statuses,
+                       (' %s already moved draft -> frozen_before_production while this audit was being run/'
+                        're-run; any structural finding below that still applies to it should be recorded in its '
+                        'advisor gate (repair by record, not by silent edit of the frozen contract, per AGENTS.md '
+                        'and the AW1 item-3 sign-shorthand and AV2 mirror-gap precedents), not silently patched.'
+                        % already_frozen) if already_frozen else ''))
 
     # Cross-cutting findings across the six drafts (the reason for running this
     # audit before AX1..AZ2 leave `status: draft`): three distinct schema/
@@ -394,7 +417,8 @@ def run():
     result = {
         'id': 'preregistration_audit_2',
         'role': 'pre-registration audit; zero research loops',
-        'contracts_audited': ['AW1 (frozen)', 'AW2 (frozen)'] + ['%s (draft)' % c for c in K.DRAFT_IDS],
+        'contracts_audited': ['AW1 (frozen_before_production)', 'AW2 (frozen_before_production)']
+                             + ['%s (%s)' % (c, observed_statuses[c]) for c in K.DRAFT_IDS],
         'items': items,
         'deferred': deferred,
         'findings': findings,

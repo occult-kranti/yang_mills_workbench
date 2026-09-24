@@ -115,9 +115,9 @@
   },
   "preregistration_audit_2": {
     "contracts_audited": [
-      "AW1 (frozen)",
-      "AW2 (frozen)",
-      "AX1 (draft)",
+      "AW1 (frozen_before_production)",
+      "AW2 (frozen_before_production)",
+      "AX1 (frozen_before_production)",
       "AX2 (draft)",
       "AY1 (draft)",
       "AY2 (draft)",
@@ -133,6 +133,7 @@
     ],
     "findings": [
       "AW1 and AW2 (frozen): no AV2-style mirror gap; every preregistration field present and allowed, controls_required.ids == controls byte-for-byte, sub_labels_allowed the closed five-label list, error_terms_itemized/error_terms_rule present as registered.",
+      "Observed contract statuses at audit time: {'AX1': 'frozen_before_production', 'AX2': 'draft', 'AY1': 'draft', 'AY2': 'draft', 'AZ1': 'draft', 'AZ2': 'draft'}. ['AX1'] already moved draft -> frozen_before_production while this audit was being run/re-run; any structural finding below that still applies to it should be recorded in its advisor gate (repair by record, not by silent edit of the frozen contract, per AGENTS.md and the AW1 item-3 sign-shorthand and AV2 mirror-gap precedents), not silently patched.",
       "Symbolic (tau-proportional) selected triple: ['AX1', 'AX2']'s preregistration.selected_triple_alpha_units is ['tau/24','tau/24','tau/24'] -- each entry is a formula in tau, not an exact-rational constant like AV1/AW1's ['0','0','0']. This fails the closed schema's strict rational-only parse (`common2.rat`), which was designed for a fixed numeric triple. It is a legitimate model need (route B's uniform coefficient nu=alpha*tau/24 scales with tau by construction, per ax1.json's own model text), not an authoring error, but the schema has not been extended to accept a formula-valued triple. Flag for sign-off before AX1/AX2 leave draft: either register an explicit 'formula-valued triple' variant of the schema (naming which formulas are allowed) or record the triple as informational text elsewhere and keep selected_triple_alpha_units numeric (e.g. by fixing tau first and reporting the resulting numeric triple at the cap).",
       "Undeclared direction value 'statement+skeptic': ['AY2', 'AZ1'] use direction='statement+skeptic' (both at the contract's top level and inside preregistration), but the closed ALLOWED_DIRECTION vocabulary this audit inherits from assistant-1's sub-round-1 script (itself matching the lens's own loop1 `recommendation.json`, whose R32-J5-DICTIONARY goal pair used direction='statement-only') contains 'statement-only', not 'statement+skeptic'. Both drafts are internally consistent (top-level and preregistration agree with each other), so this looks like a deliberate, consistent new convention for the newly-introduced 'statement loop' investigation type -- named consistently with 'single+skeptic' -- rather than a typo. This task's reading list does not include loop2-response.md / loop3-signoff.md section 2 verbatim, so whether this is a signed-off vocabulary amendment cannot be confirmed here. Flag for sign-off before AY2/AZ1 leave draft: either amend the closed direction vocabulary explicitly (the same way a sixth sub-label would need a Jung-lens sign-off note, per assistant-1's README planning note 2) to admit 'statement+skeptic', or rename these two contracts' direction back to 'statement-only'.",
       "Same two statement loops (['AY2', 'AZ1']) also set observable.reference_route='n/a', which is not in the closed ALLOWED_REFERENCE_ROUTE vocabulary {haar, selected_strip, own_finite_graph}. This is the same root cause as the direction finding above: a 'statement loop' with no numerical certificate has no reference to route, and the template's observable schema was not given an explicit accommodation for that case (contrast AZ2, a genuine finite-graph loop, which correctly uses the pre-anticipated 'own_finite_graph' value rather than 'n/a'). Bundle the fix with the direction finding above.",
@@ -1031,7 +1032,7 @@
             "passed": false
           },
           "passed": false,
-          "status": "draft",
+          "status": "frozen_before_production",
           "sub_labels_closed_vocabulary": true
         },
         "item": "ax1_structural_preregistration_audit",
