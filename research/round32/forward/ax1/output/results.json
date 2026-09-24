@@ -1,0 +1,5997 @@
+{
+  "aw1_transfer": [
+    {
+      "aw1_statement": "per-link grading Pi_e commutes with Casimirs, gauge actions, cutoffs; fixes Omega_0",
+      "needs": "none",
+      "transfer": "verbatim"
+    },
+    {
+      "aw1_statement": "E meets every plaquette in 1 or 3 links",
+      "needs": "none",
+      "transfer": "verbatim (selected classes enumerated)"
+    },
+    {
+      "aw1_statement": "U_E H_N(tau,kappa) U_E^*=H_N(-tau,-kappa)",
+      "needs": "none",
+      "transfer": "becomes U_E H_N(tau) U_E^*=H_N(-tau) (kappa tied to tau)"
+    },
+    {
+      "aw1_statement": "cutoff compressions Q_L -> Q_L'",
+      "needs": "none",
+      "transfer": "verbatim and simpler: route-B on-site is kappa independent, Q_L'=Q_L"
+    },
+    {
+      "aw1_statement": "finite-box ground covariance and omega_{N,-tau}(W)=-omega_{N,tau}(W); evenness of omega(W^2), C_N, c_N",
+      "needs": "unique ground at both signs: route-B AM2 with J_0'",
+      "transfer": "transfers"
+    },
+    {
+      "aw1_statement": "AQ passage S(-tau)=S(tau) o alpha_E (whole sets)",
+      "needs": "route-B AQ1 constants C_F=58|tau||F|, ||Phi'||_F<=2349|tau|",
+      "transfer": "transfers"
+    },
+    {
+      "aw1_statement": "parity theorem: first-order vanishing for omega(W^2), c_N, C_N (finite boxes, Kato)",
+      "needs": "route-B box gap (J_0')",
+      "transfer": "transfers (all plaquettes incl. selected)"
+    },
+    {
+      "aw1_statement": "omega_tau(W)=+tau/144+r(tau), only f=W",
+      "needs": "none for the coefficient",
+      "transfer": "transfers (selected faces orthogonal to W Omega_0, single-factor owner sets)"
+    },
+    {
+      "aw1_statement": "|r(tau)|<=K_2^+ tau^2 uniformly in N",
+      "needs": "route-B T', rho', eps' and pins (36 single-site faces per R site, 88 faces meeting R); not computed here",
+      "transfer": "not transferred"
+    },
+    {
+      "aw1_statement": "omega(W^2) uniform constant",
+      "needs": "route-B constants; c^(1)_{0}, c^(1)_{e_z} no longer vanish",
+      "transfer": "not transferred"
+    }
+  ],
+  "check_count": 52,
+  "check_py_sha256_recorded_before_evaluation": "621e236a485bc7a5c742b9a2ba45b6e35839e1110c1f0310b36a0401e0ce5035",
+  "checks": [
+    {
+      "J0_prime_read_from_contract": "29/100000000",
+      "contract_path": "research/round32/contracts/ax1.json",
+      "contract_sha256": "bc834eec4f5377041cea9db42a8674cf1f3de0a43b7fef3696a461a011da7d8d",
+      "id": "contract_snapshot_sha256",
+      "passed": true,
+      "reference_values_read_from_contract": "0 and 1/4",
+      "target_read_from_contract": "1/2500000"
+    },
+    {
+      "box": [
+        "|lambda_L|,|lambda_R|<=alpha/2",
+        "|mu|<=alpha/8"
+      ],
+      "bridge_condition_g4_ge_32": true,
+      "dictionary": "alpha=g^2/(2a), lambda=2/(g^2 a), lambda/alpha=4/g^4, tau=24 lambda/alpha=96/g^4",
+      "g4_at_cap": "9600000000",
+      "id": "dictionary_and_box",
+      "negative_tau_note": "tau=96/g^4>0 for real g; tau=-10^-8 is the U_E mirror (item 9), not a real-g dictionary point",
+      "passed": true,
+      "selected_over_alpha_at_cap": "1/2400000000",
+      "tau_box_limit": "3"
+    },
+    {
+      "box_margin_bridge": "300000000",
+      "id": "uniform_triple_in_box",
+      "passed": true,
+      "rejected_mutations": [
+        "tau_4_outside_bridge_box",
+        "nonuniform_triple_zero_bridge",
+        "zero_selected_triple_is_not_uniform",
+        "normalized_tau_over_3_read_as_alpha_units"
+      ],
+      "uniform_triple_over_alpha": [
+        "1/2400000000",
+        "1/2400000000",
+        "1/2400000000"
+      ]
+    },
+    {
+      "anchored_classes": 24,
+      "id": "anchored_classes_match_fine_geometry",
+      "omitted_classes": 21,
+      "omitted_union_support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "passed": true,
+      "selected_classes": 3,
+      "selected_labels": [
+        "xy r=0 s=0",
+        "xy r=1 s=0",
+        "xy r=2 s=0"
+      ]
+    },
+    {
+      "J_prime_over_abs_tau": "29",
+      "groups_per_site": {
+        "single_factor": 1,
+        "stars": 4
+      },
+      "id": "route_b_grouping_and_norms",
+      "max_support_sites": 4,
+      "nested_termination_order": 8,
+      "norm_argument": "||W_f||<=1 for W_f=(1/2)Tr U_f; three selected faces times tau/3 give ||psi_b||<=|tau| (equality at the identity configuration)",
+      "passed": true,
+      "single_group_norm_over_abs_tau": "1",
+      "star_norm_over_abs_tau": "7"
+    },
+    {
+      "groups_seen": 300,
+      "id": "brute_force_group_partition",
+      "passed": true,
+      "plaquettes_enumerated": 3600,
+      "rule": "anchor=owner(base point); selected xy faces (y even, x mod 4 in {0,1,2}) -> single-factor group; all others -> whole star"
+    },
+    {
+      "G_R_upper": "148/7",
+      "G_prime_R_upper": "352",
+      "J0_prime": "29/100000000",
+      "contract_source_sha256": "bc834eec4f5377041cea9db42a8674cf1f3de0a43b7fef3696a461a011da7d8d",
+      "derivation": "G(t)=16e^{8t}(1+10t), G'(t)=16e^{8t}(18+80t); e^{1/8}<8/7; G(1/64)<16(8/7)(1+10/64)=148/7, G'(1/64)<16(8/7)(18+80/64)=352; J_0'G(R)<(29/10^8)(148/7)=1073/175000000; 2J_0'G'(R)<2(29/10^8)352=319/1562500",
+      "exclusion": "319/1562500",
+      "exclusion_tau_limit": "1/20416",
+      "exp_one_eighth_upper": "53823253862885575661009/47498854821020880076800",
+      "id": "am2_contraction_refrozen",
+      "lipschitz": "319/3125000",
+      "passed": true,
+      "self_map": "1073/175000000",
+      "self_map_bound": "1/64",
+      "self_map_tau_limit": "7/274688",
+      "slack_over_cap": "2.54834e3"
+    },
+    {
+      "four_site_order8_vacuum_coefficient": 40320,
+      "four_site_order9_zero": true,
+      "id": "nested_termination_fixtures",
+      "majorant": "2^p(2p)^k(1+k(p+1)/p) is increasing in p; p=4 gives 16*8^k(1+5k/4) and covers |X|=1 groups",
+      "one_site_order2_vacuum_coefficient": -2,
+      "one_site_order3_zero": true,
+      "passed": true
+    },
+    {
+      "excited_sector": "Omega_0 and 2W_g Omega_0 (g selected) are orthonormal gauge-invariant vectors (E[W]=0, E[W^2]=1/4), so H_phys has dimension>=2 and meets psi-perp",
+      "first_positive_casimir": "3/4",
+      "gauge": "Omega_b constant, C_e commutes with left/right translations, W_f gauge invariant (exact quaternion fixture on 6 faces incl. W and selected)",
+      "id": "onsite_theorem_gauge_and_excited_sector",
+      "onsite": "h_b=8 sum_e C_e on 24 Haar links; spec C_e={j(j+1)}; kernel = constants (Haar vacuum Omega_b); next eigenvalue 8*3/4=6; h_b>=6Q_b>=Q_b",
+      "onsite_gap": "6",
+      "passed": true
+    },
+    {
+      "gap_physical": "alpha/16",
+      "id": "uniform_finite_volume_theorem",
+      "inputs": [
+        "h_b>=Q_b",
+        "support<=4",
+        "J'<=J_0'=29/10^8",
+        "J_0'G(R)<1/64",
+        "2J_0'G'(R)<1"
+      ],
+      "passed": true,
+      "statement": "for every nonempty finite complete-factor volume with route-B retention (whole stars b+S inside, all single-factor groups), both signs |tau|<=10^-8: unique ground psi=e^{-C}Omega_0, full-space gap>=1/2 normalized (alpha/16 physical), gauge-invariant ground, nonzero physical excited sector; cutoff removal as AM2 section 6 (Casimir on-site, compact resolvent)"
+    },
+    {
+      "B_N_over_abs_tau": "51/8",
+      "argument": "a star b+S meets R iff b in R-S (seven anchors, all retained for N>=2); a single-factor group {b} meets R iff b in R",
+      "box_counts": {
+        "1": [
+          4,
+          2
+        ],
+        "2": [
+          7,
+          2
+        ],
+        "3": [
+          7,
+          2
+        ],
+        "4": [
+          7,
+          2
+        ]
+      },
+      "faces_in_groups_meeting_R": 153,
+      "faces_meeting_R_in_table": 88,
+      "id": "incidence_all_sizes",
+      "incident_anchors": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "k_prime_over_abs_tau": "51/4",
+      "passed": true
+    },
+    {
+      "C_F_per_site_over_abs_tau": "58",
+      "Phi_F_norm_over_abs_tau": "2349",
+      "eps_R_over_abs_tau": "17",
+      "gap_one_route_squared_at_cap": "51/12500000",
+      "id": "aq_reinstantiation_checklist",
+      "passed": true,
+      "reset_over_abs_tau": "102",
+      "sqrt_control_preview": "8.24621125124e-4",
+      "sqrt_control_squared_at_cap": "17/25000000",
+      "table": [
+        {
+          "constant": "2(4*7+1)|tau||F|=58|tau||F| (was 56)",
+          "status": "new constant",
+          "step": "AQ1 reset energy on a finite region F"
+        },
+        {
+          "constant": "uses C_F only",
+          "status": "verbatim re-application",
+          "step": "AQ1 trace-norm compactness and diagonal extraction"
+        },
+        {
+          "constant": "||F||<=7, convolution<=224 unchanged; ||Phi'||_F<=81 J'=2349|tau| (was 2268)",
+          "status": "new constant",
+          "step": "Nachtergaele-Sims placement"
+        },
+        {
+          "constant": "none",
+          "status": "verbatim re-application",
+          "step": "AQ1 stationarity"
+        },
+        {
+          "constant": "none",
+          "status": "verbatim re-application",
+          "step": "AQ1 GNS strong continuity"
+        },
+        {
+          "constant": "none",
+          "status": "verbatim re-application",
+          "step": "AQ1 nonnegativity of H_num"
+        },
+        {
+          "constant": "gauge invariance of route-B H",
+          "status": "verbatim re-application",
+          "step": "AQ2 endpoint group, Haar projection, physical space"
+        },
+        {
+          "constant": "J_0'=29/10^8",
+          "status": "verbatim re-application with the re-frozen AM2 gap",
+          "step": "AQ2 physical gap alpha/16 (full GNS)"
+        },
+        {
+          "constant": "omega(h_R)<=2(7*7+2*1)|tau|=102|tau| (was 98)",
+          "status": "new constant",
+          "step": "reset on the cover R (AQ2 HNM-AQ2.8)"
+        },
+        {
+          "constant": "epsilon_R<=17|tau|, D_sqrt=2 sqrt(17|tau|) (square-root control only)",
+          "status": "new constant",
+          "step": "reset with the Haar reference gap six (AT4 F08)"
+        },
+        {
+          "constant": "2 sqrt(17|tau|)<=1/500, floor 61999/250000; gap-one route fails 1/500",
+          "status": "new constant (gap six required)",
+          "step": "Wilson variance floor (AQ2 HNM-AQ2.10)"
+        },
+        {
+          "constant": "Haar P_R",
+          "status": "verbatim re-application",
+          "step": "reference moments Tr(P_R W)=0, Tr(P_R W^2)=1/4"
+        },
+        {
+          "constant": "||B_N||<=51|tau|/8, k'=51|tau|/4",
+          "status": "new constant",
+          "step": "AT4 seven-star relative-unitary slope"
+        },
+        {
+          "constant": "selected face vectors also at energy 24; L>=24 keeps c^(1)",
+          "status": "verbatim re-application",
+          "step": "AV1 cutoff-vector removal"
+        },
+        {
+          "constant": "local trace-norm convergence",
+          "status": "verbatim re-application",
+          "step": "AV1 passage to AQ subsequential limits"
+        }
+      ],
+      "variance_floor": "61999/250000"
+    },
+    {
+      "candidate_bounds": {
+        "R": 168,
+        "per_factor": 96,
+        "status": "labelled upper bounds (4x24, 7x24), not exact counts"
+      },
+      "faces_containing_R": 16,
+      "faces_inside_R": 16,
+      "faces_meeting_R": 88,
+      "faces_per_factor": 52,
+      "id": "per_factor_face_count_derived",
+      "multiplicities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        10,
+        10
+      ],
+      "offset_class_counts": {
+        "0": 24,
+        "e_x": 4,
+        "e_y": 8,
+        "e_z": 16
+      },
+      "omitted_only_cross_reference": [
+        49,
+        15,
+        82,
+        10
+      ],
+      "owner_sets_at_origin": [
+        [
+          [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          2
+        ],
+        [
+          [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          1
+        ],
+        [
+          [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          1
+        ],
+        [
+          [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          4
+        ],
+        [
+          [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          3
+        ],
+        [
+          [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ],
+          1
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          10
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ],
+          4
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          2
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          3
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          10
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          4
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          2
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          3
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          1
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          1
+        ]
+      ],
+      "owner_sets_meeting_R": 29,
+      "owner_sets_per_factor": 16,
+      "passed": true
+    },
+    {
+      "boxes": [
+        1,
+        2,
+        3
+      ],
+      "brute_force_faces_at_origin": 52,
+      "brute_force_faces_meeting_R": 88,
+      "id": "boundary_counts_at_most_bulk",
+      "passed": true
+    },
+    {
+      "faces_checked": 88,
+      "first_order_coefficient_per_face": "-tau/72 (normalized -(tau/3)/24 = alpha units -(tau/24)/3)",
+      "id": "face_vectors_energy_norm_orthogonality",
+      "max_shared_links": 1,
+      "norm_WfOmega0": "1/2",
+      "normalized_energy": "24",
+      "passed": true
+    },
+    {
+      "D_i_minus": "23002790096235779074916932482/937890625141038667264537458466241",
+      "D_i_plus": "23002790096235779074916932482/937890625141038667264537458466241",
+      "D_i_preview": "2.45260902280e-5",
+      "id": "state_lemma_tier_i",
+      "meets_target": false,
+      "passed": true,
+      "retained": true,
+      "t_i": "1073/175000000"
+    },
+    {
+      "D_ii_minus": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "D_ii_plus": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "D_ii_preview": "1.44459192142e-8",
+      "T": "13/3599632512",
+      "eps": "93590445481/12957354221447430144",
+      "id": "state_lemma_tier_ii",
+      "margin_preview": "2.76894e1",
+      "meets_target": true,
+      "passed": true,
+      "remainder": "4147/11248851600000000",
+      "t1_over_abs_tau": "13/36",
+      "target": "1/2500000"
+    },
+    {
+      "bound96_D": "13495866406962926701045634/506043319649587578441076493302465",
+      "bound96_preview": "2.66693895224e-8",
+      "contract_candidate_range": [
+        "1/50000000",
+        "3/100000000"
+      ],
+      "grouped_preview": "7.43502245446e-9",
+      "grouped_sqrt_sum_upper": "26763348430167/1000000000000",
+      "id": "state_lemma_variants",
+      "iterated_tier_i_preview": "1.85622638308e-5",
+      "note": "the contract candidate 2-3x10^-8 corresponds to the labelled 96-bound; the derived 52-face count gives about 1.44x10^-8",
+      "passed": true,
+      "sharper_preview": "1.44456511348e-8"
+    },
+    {
+      "F_at_D_ii_upper_preview": "1.9122988e-7",
+      "contract_note_threshold": "419/1000000000",
+      "finding": "the contract note D<=4.19x10^-7 is rounded upward: F(4.19x10^-7)>10^-6; the exact threshold lies in [4.188,4.189]x10^-7; the target 4/10^7 is below it",
+      "id": "ax2_feasibility_arithmetic",
+      "note": "arithmetic of the contract statement only; the AX2 window certificate is not proved here",
+      "passed": true,
+      "threshold_bracket": [
+        "1047/2500000000",
+        "4189/10000000000"
+      ]
+    },
+    {
+      "id": "tau_scaling_exponent",
+      "passed": true,
+      "ratio_tier_i_preview": "1.00001517e2",
+      "ratio_tier_ii_preview": "1.00010107e2",
+      "rejected_mutations": [
+        "sqrt_relabelled_linear",
+        "linear_read_as_sqrt"
+      ],
+      "sqrt_control_ratio": "10 exactly"
+    },
+    {
+      "anchored_faces_checked": 648,
+      "fine_region_plaquettes": 3600,
+      "flip_set": "E={(p,x):p_y even} u {(p,y):p_z even} u {(p,z):p_x even}",
+      "id": "flip_set_odd_all_classes",
+      "parity_classes": 24,
+      "passed": true,
+      "quaternion_flip_fixture": true,
+      "rejected_mutations": [
+        "E_minus_one_link"
+      ],
+      "selected_classes_included": true,
+      "wilson_face_flip_links": 3
+    },
+    {
+      "compression_H_tau_kappa": [
+        [
+          "0",
+          "-1/42",
+          "-1/27"
+        ],
+        [
+          "-1/42",
+          "24",
+          "0"
+        ],
+        [
+          "-1/27",
+          "0",
+          "24"
+        ]
+      ],
+      "flip_identity": "U_E H_N(tau) U_E^* = H_N(-tau) for the uniform model: every face coefficient is -(tau/3) (normalized), every W_f is E-odd, the on-site Casimir sum and its cutoffs commute with U_E",
+      "id": "uniform_flip_identity",
+      "passed": true,
+      "shared_link_W_and_selected": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "tau_fixture": "1/7"
+    },
+    {
+      "id": "uniform_kappa_tied_to_tau",
+      "passed": true,
+      "rejected_mutations": [
+        "kappa_offset_from_tau",
+        "kappa_fixed_nonzero",
+        "kappa_affine_not_odd"
+      ],
+      "semantics": "a fixture with selected coefficients not equal to nu breaks the uniform flip identity; the uniform model's antisymmetry is accepted only with kappa tied to tau"
+    },
+    {
+      "compression_rayleigh_schrodinger": "1/144",
+      "contributing_faces": [
+        "xz r=0 s=0"
+      ],
+      "id": "first_order_coefficient_uniform",
+      "omega_W_first_order_over_tau": "1/144",
+      "passed": true,
+      "selected_faces_meeting_R": 6,
+      "selected_faces_sharing_a_link_with_W": 2,
+      "values": {
+        "+": "1/14400000000",
+        "-": "-1/14400000000"
+      }
+    },
+    {
+      "E_W2_Wg": 0,
+      "energies_of_Wg_W_Omega0": [
+        "36",
+        "48",
+        "52"
+      ],
+      "id": "parity_rule_selected_faces",
+      "passed": true,
+      "statement": "the Z_2 centre grading applies verbatim to selected faces (single spin-1/2 face characters)",
+      "symmetric_difference_sizes": [
+        0,
+        6,
+        8
+      ]
+    },
+    {
+      "id": "aw1_quantifier_transfer",
+      "passed": true,
+      "table": [
+        {
+          "aw1_statement": "per-link grading Pi_e commutes with Casimirs, gauge actions, cutoffs; fixes Omega_0",
+          "needs": "none",
+          "transfer": "verbatim"
+        },
+        {
+          "aw1_statement": "E meets every plaquette in 1 or 3 links",
+          "needs": "none",
+          "transfer": "verbatim (selected classes enumerated)"
+        },
+        {
+          "aw1_statement": "U_E H_N(tau,kappa) U_E^*=H_N(-tau,-kappa)",
+          "needs": "none",
+          "transfer": "becomes U_E H_N(tau) U_E^*=H_N(-tau) (kappa tied to tau)"
+        },
+        {
+          "aw1_statement": "cutoff compressions Q_L -> Q_L'",
+          "needs": "none",
+          "transfer": "verbatim and simpler: route-B on-site is kappa independent, Q_L'=Q_L"
+        },
+        {
+          "aw1_statement": "finite-box ground covariance and omega_{N,-tau}(W)=-omega_{N,tau}(W); evenness of omega(W^2), C_N, c_N",
+          "needs": "unique ground at both signs: route-B AM2 with J_0'",
+          "transfer": "transfers"
+        },
+        {
+          "aw1_statement": "AQ passage S(-tau)=S(tau) o alpha_E (whole sets)",
+          "needs": "route-B AQ1 constants C_F=58|tau||F|, ||Phi'||_F<=2349|tau|",
+          "transfer": "transfers"
+        },
+        {
+          "aw1_statement": "parity theorem: first-order vanishing for omega(W^2), c_N, C_N (finite boxes, Kato)",
+          "needs": "route-B box gap (J_0')",
+          "transfer": "transfers (all plaquettes incl. selected)"
+        },
+        {
+          "aw1_statement": "omega_tau(W)=+tau/144+r(tau), only f=W",
+          "needs": "none for the coefficient",
+          "transfer": "transfers (selected faces orthogonal to W Omega_0, single-factor owner sets)"
+        },
+        {
+          "aw1_statement": "|r(tau)|<=K_2^+ tau^2 uniformly in N",
+          "needs": "route-B T', rho', eps' and pins (36 single-site faces per R site, 88 faces meeting R); not computed here",
+          "transfer": "not transferred"
+        },
+        {
+          "aw1_statement": "omega(W^2) uniform constant",
+          "needs": "route-B constants; c^(1)_{0}, c^(1)_{e_z} no longer vanish",
+          "transfer": "not transferred"
+        }
+      ]
+    },
+    {
+      "id": "reference_route_declared",
+      "passed": true,
+      "rejected": [
+        "route_mix_route",
+        "route_mix_reference_route",
+        "route_mix_reset_over_abs_tau",
+        "route_mix_J_over_abs_tau",
+        "route_mix_onsite",
+        "route_mix_j0"
+      ],
+      "rejected_mutations": [
+        "route_mix_route",
+        "route_mix_reference_route",
+        "route_mix_reset_over_abs_tau",
+        "route_mix_J_over_abs_tau",
+        "route_mix_onsite",
+        "route_mix_j0"
+      ],
+      "route_packet": {
+        "J_over_abs_tau": "29",
+        "j0": "R1",
+        "onsite": "h_b=8 sum_e C_e",
+        "onsite_gap": "6",
+        "reference_route": "haar",
+        "reset_over_abs_tau": "102",
+        "route": "B"
+      }
+    },
+    {
+      "at4_trial_energy_uniform_cap": "-1/69120000000000000000",
+      "fixture": "finite compression onto {Omega_0,2W Omega_0,2W_g Omega_0}, route-A on-site H_0-(kappa/3)W_g with kappa=30 (outside the box; algebra only), transfers_to_route_A_value:false",
+      "id": "selected_reference_not_haar",
+      "passed": true,
+      "rejected_mutations": [
+        "route_A_reference_claimed_haar_correlation"
+      ],
+      "route_A_fixture_frequency_alpha_units": "25/8",
+      "route_A_fixture_ground_energy": "-1",
+      "route_A_fixture_mass": "25/104",
+      "route_B_reference": "mass 1/4, frequency 3: c_0(theta)=e^{3i theta}/4",
+      "sign_argument": "for every kappa!=0 the 2x2 block [[0,-kappa/6],[-kappa/6,24]] has determinant -kappa^2/36<0, so the reference ground is not Haar"
+    },
+    {
+      "J_prime": "29",
+      "id": "per_site_sum_recomputed",
+      "passed": true,
+      "rejected_mutations": [
+        "selected_groups_dropped_28",
+        "outgoing_star_only_8",
+        "selected_in_stars_and_singles_33",
+        "selected_merged_into_stars_32"
+      ]
+    },
+    {
+      "eps_R": "17",
+      "id": "reset_budget_recomputed",
+      "passed": true,
+      "rejected_mutations": [
+        "selected_groups_missing_98",
+        "single_groups_at_all_seven_anchors_112",
+        "orthant_two_stars",
+        "gap_one_read_as_17"
+      ],
+      "reset": "102"
+    },
+    {
+      "id": "selected_incidence_count",
+      "passed": true,
+      "rejected_mutations": [
+        "selected_groups_forgotten",
+        "faces_counted_as_groups",
+        "singles_at_star_anchors"
+      ],
+      "selected_faces": 6,
+      "singles": 2
+    },
+    {
+      "derived": 52,
+      "id": "first_order_faces_uniform",
+      "labelled_bounds": [
+        96,
+        168
+      ],
+      "passed": true,
+      "rejected_mutations": [
+        "omitted_only_49",
+        "labelled_bound_96_as_exact",
+        "selected_at_all_four_anchors_61"
+      ]
+    },
+    {
+      "forbidden": [
+        "weak coupling",
+        "weak-coupling",
+        "weak bare coupling",
+        "continuum"
+      ],
+      "id": "uniform_label_strong_coupling",
+      "passed": true,
+      "rejected_mutations": [
+        "weak_coupling_label",
+        "continuum_label",
+        "fixed_spacing_missing",
+        "verdict_continuum"
+      ],
+      "scanned_fields": [
+        "label.*",
+        "proposed_forward_verdict"
+      ]
+    },
+    {
+      "J0_old": "7/25000000",
+      "J0_prime": "29/100000000",
+      "J_cap": "29/100000000",
+      "id": "am2_gap_reuse_justified",
+      "old_J0_fails": true,
+      "passed": true,
+      "rejected_mutations": [
+        "old_J0_7_over_25000000",
+        "support_five_grouping",
+        "degenerate_reference_gap_zero",
+        "J0_too_large_contraction_fails"
+      ]
+    },
+    {
+      "R2_cap": "7/725000000",
+      "id": "j0_resolution_declared",
+      "j0_packet": {
+        "J0_prime": "29/100000000",
+        "contract_sha256": "bc834eec4f5377041cea9db42a8674cf1f3de0a43b7fef3696a461a011da7d8d",
+        "exclusion": "319/1562500",
+        "resolution": "R1",
+        "self_map": "1073/175000000",
+        "tau_cap": "1/100000000"
+      },
+      "passed": true,
+      "rejected_mutations": [
+        "old_J0_at_cap",
+        "resolution_missing",
+        "R2_changed_coupling_under_cap_label"
+      ],
+      "semantics": "the contract's R1 re-freeze J_0'=29/10^8 with its two exact inequalities is present; using the old J_0=7/25000000 at tau=10^-8 is rejected"
+    },
+    {
+      "coefficient_all_24_classes": "-(tau/3) W_f in delta=alpha/8 units",
+      "id": "uniform_sign_convention",
+      "passed": true,
+      "rejected_mutations": [
+        "selected_opposite_sign",
+        "selected_alpha_units_tau_over_24",
+        "selected_zero_patterned"
+      ],
+      "semantics": "the selected faces enter with the same sign and magnitude nu=alpha*tau/24 as the omitted faces under I1.5; a mixed convention is rejected"
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "passed": true,
+      "rejected_mutations": [
+        "exact_c1_with_crude_t",
+        "t_equals_t1",
+        "remainder_zero"
+      ]
+    },
+    {
+      "finding": "the shared premises (selection-ax1.md) and the contract itself state route B and J_0'; the reverse cannot find them independently (item 8)",
+      "forward_additional_disclosed": [
+        "research/round32/skeptic/triage.md",
+        "research/round32/skeptic/loop2-response.md",
+        "research/round32/experts/modern/loop2-response.md"
+      ],
+      "forward_inventory_files": 41,
+      "id": "reverse_premise_isolation",
+      "passed": true,
+      "rejected_mutations": [
+        "declaration_false",
+        "reverse_reads_triage",
+        "reverse_reads_forward_ax1"
+      ],
+      "reverse_premise_count": 38
+    },
+    {
+      "groups_at_origin": [
+        [
+          "star",
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          "star",
+          [
+            -1,
+            0,
+            0
+          ]
+        ],
+        [
+          "star",
+          [
+            0,
+            -1,
+            0
+          ]
+        ],
+        [
+          "star",
+          [
+            0,
+            0,
+            -1
+          ]
+        ],
+        [
+          "single",
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "id": "route_b_no_double_count",
+      "passed": true,
+      "rejected_mutations": [
+        "selected_in_star_and_single",
+        "selected_faces_dropped"
+      ],
+      "semantics": "charging a selected face both in a star group and in a single-factor group is rejected; the per-site sum stays 29|tau|"
+    },
+    {
+      "groups_tabulated": 9,
+      "id": "incidence_table_itemized",
+      "passed": true,
+      "rejected_mutations": [
+        "totals_without_table",
+        "single_group_missing_from_table",
+        "group_listed_twice"
+      ],
+      "semantics": "the incidence counts are derived from an itemized face table; asserted totals without the table are rejected"
+    },
+    {
+      "endpoints": 36,
+      "id": "full_original_wilson_cover",
+      "links": 48,
+      "passed": true,
+      "rejected_mutations": [
+        "four_drawn_links"
+      ],
+      "selected_faces_inside_cover": 6,
+      "shared_endpoints": 8,
+      "wilson_link_owners": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "groups_meeting_R": 9,
+      "id": "missing_incoming_stars",
+      "incident_anchors": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "orthant_count": 2,
+      "passed": true,
+      "rejected_mutations": [
+        "orthant_two_anchors",
+        "outgoing_only_J_8",
+        "group_count_without_selected"
+      ]
+    },
+    {
+      "first_order_coefficient": "-1/72",
+      "id": "wrong_delta_alpha_hbar_clock",
+      "k_prime_alpha_units": "51/4",
+      "nonunit_fixture": {
+        "alpha": "5",
+        "hbar": "7",
+        "t_E": "3/2"
+      },
+      "passed": true,
+      "rejected_mutations": [
+        "mixed_units_576",
+        "mixed_units_9",
+        "eightfold_clock",
+        "k_prime_mixed_clock"
+      ]
+    },
+    {
+      "id": "vector_versus_scalar_centering",
+      "passed": true,
+      "rejected_mutations": [
+        "scalar_as_vector"
+      ],
+      "scalar_residue": "-51/10000",
+      "uncentered_residue": "1/16",
+      "vector_residue": "1/10000"
+    },
+    {
+      "first_order_mean": "1/14400000000",
+      "id": "first_order_mean_charged",
+      "m2_upper_tier_ii": "5882415393469070866330734174011480976357107452112866501562500/28188068992059594431748372762296641664164416454372424016348151084161001317409",
+      "note": "|omega(W)|<=D' and |omega(W^2)-1/4|<=D'/2 are the consequences; the first-order mean tau/144 is nonzero and compatible",
+      "passed": true,
+      "rejected_mutations": [
+        "zero_mean_assumed",
+        "m2_dropped"
+      ]
+    },
+    {
+      "id": "changed_model_relabelled",
+      "packet_model": {
+        "model_id": "AQ_uniform_routeB",
+        "reference_route": "haar",
+        "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+        "tau": "1/100000000",
+        "triple_alpha_units": [
+          "tau/24",
+          "tau/24",
+          "tau/24"
+        ]
+      },
+      "passed": true,
+      "rejected": [
+        "relabel_tau_0",
+        "relabel_tau_1",
+        "relabel_triple_alpha_units_2",
+        "relabel_reference_route_3",
+        "relabel_model_id_4",
+        "relabel_state_provenance_5"
+      ],
+      "rejected_mutations": [
+        "relabel_tau_0",
+        "relabel_tau_1",
+        "relabel_triple_alpha_units_2",
+        "relabel_reference_route_3",
+        "relabel_model_id_4",
+        "relabel_state_provenance_5"
+      ]
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "passed": true,
+      "rejected_mutations": [
+        "retune_tier_i_to_smaller_tau",
+        "tier_i_reported_pass_at_cap"
+      ],
+      "retained_failures": [
+        "tier (i) D_i fails 4/10^7 and 10^-6",
+        "gap-one reset route fails AQ2 1/500",
+        "R2 cap not selected"
+      ]
+    },
+    {
+      "decimals": "previews only, truncated from exact rationals",
+      "id": "exact_arithmetic_admission",
+      "imports": [
+        "import argparse",
+        "import hashlib",
+        "import json",
+        "import re",
+        "from fractions import Fraction as Q",
+        "from math import factorial, isqrt",
+        "from pathlib import Path"
+      ],
+      "passed": true,
+      "rejected_mutations": [
+        "float_input",
+        "bool_input",
+        "nan_input",
+        "zero_denominator"
+      ]
+    },
+    {
+      "B_linear": "51/8",
+      "B_rss_squared": "345/64",
+      "id": "root_n_misuse",
+      "passed": true,
+      "rejected_mutations": [
+        "rss_group_norms",
+        "divide_sqrt_N",
+        "divide_64"
+      ]
+    },
+    {
+      "historical_or_occult_numeric_premise": false,
+      "id": "no_priority_or_continuum_claim",
+      "passed": true,
+      "rejected_mutations": [
+        "continuum_true",
+        "weak_coupling_true",
+        "priority_true",
+        "shift_true",
+        "euclidean_node_true",
+        "uniform_claim_without_fixed_spacing"
+      ]
+    },
+    {
+      "id": "error_ledger_itemized",
+      "passed": true,
+      "terms": [
+        "am2_remainder",
+        "arithmetic",
+        "density",
+        "onsite_cutoff_vector",
+        "straddling",
+        "two_creation"
+      ]
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "passed": true,
+      "rejected_mutations": [
+        "control_boolean_flipped_hash_rebound",
+        "snapshot_removed_hash_rebound",
+        "D_ii_halved_hash_rebound",
+        "j0_self_map_halved_hash_rebound",
+        "single_groups_removed_hash_rebound",
+        "continuum_flag_hash_rebound"
+      ]
+    }
+  ],
+  "consequences": {
+    "+": {
+      "abs_omega_W_upper_tier_ii": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "m2_upper_tier_ii": "5882415393469070866330734174011480976357107452112866501562500/28188068992059594431748372762296641664164416454372424016348151084161001317409",
+      "omega_W2_minus_quarter_upper_tier_ii": "1212684562599552397131621300625/167893028420061547330293754713793182097"
+    },
+    "-": {
+      "abs_omega_W_upper_tier_ii": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "m2_upper_tier_ii": "5882415393469070866330734174011480976357107452112866501562500/28188068992059594431748372762296641664164416454372424016348151084161001317409",
+      "omega_W2_minus_quarter_upper_tier_ii": "1212684562599552397131621300625/167893028420061547330293754713793182097"
+    }
+  },
+  "constants": {
+    "B_N_over_abs_tau": "51/8",
+    "C_F_per_site_over_abs_tau": "58",
+    "G_R_upper": "148/7",
+    "G_prime_R_upper": "352",
+    "J_prime_over_abs_tau": "29",
+    "Phi_F_over_abs_tau": "2349",
+    "R": "1/64",
+    "eps_R_over_abs_tau": "17",
+    "face_energy_normalized": "24",
+    "first_order_coefficient_per_face": "-tau/72",
+    "k_prime_over_abs_tau": "51/4",
+    "norm_WfOmega0": "1/2",
+    "onsite_gap": "6",
+    "reset_over_abs_tau": "102",
+    "single_group_norm_over_abs_tau": "1",
+    "star_norm_over_abs_tau": "7",
+    "t1_grouped_upper_over_abs_tau": "8921116143389/48000000000000",
+    "t1_labelled_bound_96_over_abs_tau": "2/3",
+    "t1_over_abs_tau": "13/36"
+  },
+  "continuum_claim": false,
+  "contract_controls_covered": [
+    "am2_gap_reuse_justified",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "first_order_faces_uniform",
+    "first_order_mean_charged",
+    "full_original_wilson_cover",
+    "incidence_table_itemized",
+    "insufficient_verdict_retained",
+    "j0_resolution_declared",
+    "missing_incoming_stars",
+    "no_priority_or_continuum_claim",
+    "per_site_sum_recomputed",
+    "reference_route_declared",
+    "reset_budget_recomputed",
+    "reverse_premise_isolation",
+    "root_n_misuse",
+    "route_b_no_double_count",
+    "selected_incidence_count",
+    "selected_reference_not_haar",
+    "tau_scaling_exponent",
+    "tier_mixing_rejected",
+    "uniform_kappa_tied_to_tau",
+    "uniform_label_strong_coupling",
+    "uniform_sign_convention",
+    "uniform_triple_in_box",
+    "vector_versus_scalar_centering",
+    "wrong_delta_alpha_hbar_clock"
+  ],
+  "contract_sha256": "bc834eec4f5377041cea9db42a8674cf1f3de0a43b7fef3696a461a011da7d8d",
+  "contribution_alias": "HNM-AX1-F forward route-B re-derivation for the uniform Kogut-Susskind SU(2) Hamiltonian at fixed spacing",
+  "controls_with_damaging_mutations": 28,
+  "dictionary": {
+    "alpha": "g^2/(2a)",
+    "g4_at_cap": "9600000000",
+    "lambda": "2/(g^2 a)",
+    "negative_tau": "U_E mirror, no real g",
+    "selected_over_alpha_at_cap": "1/2400000000",
+    "tau": "96/g^4"
+  },
+  "direction": "forward",
+  "error_terms_itemized": {
+    "am2_remainder": {
+      "form": "352 J' T'",
+      "tier_i": "not_applicable: tier (i) bounds the full c by J'G(R) directly",
+      "tier_ii_plus": "4147/11248851600000000"
+    },
+    "arithmetic": "not_applicable as a numeric cost: exact Fractions; directed enclosures exp(1/8)<8/7, e^{8t}<=1/(1-8t), sqrt upper brackets, Machin pi",
+    "density": {
+      "tier_i_plus": "282077334529074916932482/937890625141038667264537458466241",
+      "tier_ii_plus": "17518342970664066642722/167893028420061547330293754713793182097"
+    },
+    "onsite_cutoff_vector": "not_applicable as a numeric cost: exact limit in each fixed box (AV1 section 7 verbatim; selected face vectors lie at energy 24, kept for L>=24)",
+    "straddling": {
+      "first_order_straddling_faces": 72,
+      "status": "counted inside the 2t term of eps (all supports meeting R)"
+    },
+    "two_creation": {
+      "note": "includes the single-site pair c_{0} x c_{e_z}, first-order nonzero in route B",
+      "tier_i_plus": "1151329/30625000000000000",
+      "tier_ii_plus": "169/12957354221447430144"
+    }
+  },
+  "euclidean_node_certified": false,
+  "exclusions": {
+    "contract": [
+      "weak coupling or continuum",
+      "a uniform-model Euclidean datum (AX2)",
+      "a uniform Wilson-mean sign certificate",
+      "AQ uniqueness or a rate in N",
+      "scientific priority"
+    ],
+    "preregistration": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ]
+  },
+  "face_enumeration": {
+    "derived_from": "explicit 24-class anchored table by translation covariance; fine-lattice brute force",
+    "faces_containing_R": 16,
+    "faces_inside_R": 16,
+    "faces_meeting_R": 88,
+    "faces_per_factor": 52,
+    "labelled_bounds": {
+      "R": 168,
+      "per_factor": 96
+    },
+    "multiplicities": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      10,
+      10
+    ],
+    "owner_sets_meeting_R": 29,
+    "owner_sets_per_factor": 16
+  },
+  "headline": {
+    "B_N_over_abs_tau": "51/8",
+    "D_i_minus": "23002790096235779074916932482/937890625141038667264537458466241",
+    "D_i_plus": "23002790096235779074916932482/937890625141038667264537458466241",
+    "D_i_preview": "2.45260902280e-5",
+    "D_ii_bound96_preview": "2.66693895224e-8",
+    "D_ii_grouped_preview": "7.43502245446e-9",
+    "D_ii_minus": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+    "D_ii_plus": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+    "D_ii_preview": "1.44459192142e-8",
+    "J0_prime": "29/100000000",
+    "J_prime_over_abs_tau": "29",
+    "eps_R_over_abs_tau": "17",
+    "exclusion_rational": "319/1562500",
+    "faces_meeting_R_uniform": 88,
+    "faces_per_factor_uniform": 52,
+    "k_prime_over_abs_tau": "51/4",
+    "omega_W_first_order": {
+      "+": "1/14400000000",
+      "-": "-1/14400000000"
+    },
+    "reset_over_abs_tau": "102",
+    "selected_faces_inside_R": 6,
+    "self_map_rational": "1073/175000000",
+    "single_factor_groups_meeting_R": 2,
+    "stars_meeting_R": 7
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "incidence_table": [
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "anchor": [
+        -1,
+        0,
+        0
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            -4,
+            1,
+            0
+          ],
+          "class": "xy r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            1,
+            0
+          ],
+          "class": "xy r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            1,
+            0
+          ],
+          "class": "xy r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            0,
+            0
+          ],
+          "class": "xy r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            1,
+            0
+          ],
+          "class": "xy r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            0,
+            0
+          ],
+          "class": "xz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            1,
+            0
+          ],
+          "class": "xz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            0,
+            0
+          ],
+          "class": "xz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            1,
+            0
+          ],
+          "class": "xz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            0,
+            0
+          ],
+          "class": "xz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            1,
+            0
+          ],
+          "class": "xz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            0,
+            0
+          ],
+          "class": "xz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            1,
+            0
+          ],
+          "class": "xz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            0,
+            0
+          ],
+          "class": "yz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            0,
+            0
+          ],
+          "class": "yz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            0,
+            0
+          ],
+          "class": "yz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            0,
+            0
+          ],
+          "class": "yz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            1,
+            0
+          ],
+          "class": "yz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            1,
+            0
+          ],
+          "class": "yz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            1,
+            0
+          ],
+          "class": "yz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            1,
+            0
+          ],
+          "class": "yz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 4,
+      "faces_total": 21,
+      "group": "star",
+      "norm_over_abs_tau": "7",
+      "support": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          -1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "anchor": [
+        -1,
+        0,
+        1
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            -4,
+            1,
+            1
+          ],
+          "class": "xy r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            1,
+            1
+          ],
+          "class": "xy r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            1,
+            1
+          ],
+          "class": "xy r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            0,
+            1
+          ],
+          "class": "xy r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            1,
+            1
+          ],
+          "class": "xy r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            0,
+            1
+          ],
+          "class": "xz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            1,
+            1
+          ],
+          "class": "xz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            0,
+            1
+          ],
+          "class": "xz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            1,
+            1
+          ],
+          "class": "xz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            0,
+            1
+          ],
+          "class": "xz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            1,
+            1
+          ],
+          "class": "xz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            0,
+            1
+          ],
+          "class": "xz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            1,
+            1
+          ],
+          "class": "xz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            0,
+            1
+          ],
+          "class": "yz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            0,
+            1
+          ],
+          "class": "yz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            0,
+            1
+          ],
+          "class": "yz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            0,
+            1
+          ],
+          "class": "yz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -4,
+            1,
+            1
+          ],
+          "class": "yz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ],
+            [
+              -1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -3,
+            1,
+            1
+          ],
+          "class": "yz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ],
+            [
+              -1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -2,
+            1,
+            1
+          ],
+          "class": "yz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ],
+            [
+              -1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            -1,
+            1,
+            1
+          ],
+          "class": "yz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              2
+            ],
+            [
+              -1,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 4,
+      "faces_total": 21,
+      "group": "star",
+      "norm_over_abs_tau": "7",
+      "support": [
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          2
+        ],
+        [
+          -1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "anchor": [
+        0,
+        -1,
+        0
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            0,
+            -1,
+            0
+          ],
+          "class": "xy r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -1,
+            0
+          ],
+          "class": "xy r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -1,
+            0
+          ],
+          "class": "xy r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -2,
+            0
+          ],
+          "class": "xy r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -1,
+            0
+          ],
+          "class": "xy r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -2,
+            0
+          ],
+          "class": "xz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -1,
+            0
+          ],
+          "class": "xz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -2,
+            0
+          ],
+          "class": "xz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -1,
+            0
+          ],
+          "class": "xz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -2,
+            0
+          ],
+          "class": "xz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -1,
+            0
+          ],
+          "class": "xz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -2,
+            0
+          ],
+          "class": "xz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -1,
+            0
+          ],
+          "class": "xz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -2,
+            0
+          ],
+          "class": "yz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -2,
+            0
+          ],
+          "class": "yz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -2,
+            0
+          ],
+          "class": "yz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -2,
+            0
+          ],
+          "class": "yz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -1,
+            0
+          ],
+          "class": "yz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -1,
+            0
+          ],
+          "class": "yz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -1,
+            0
+          ],
+          "class": "yz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -1,
+            0
+          ],
+          "class": "yz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 8,
+      "faces_total": 21,
+      "group": "star",
+      "norm_over_abs_tau": "7",
+      "support": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "anchor": [
+        0,
+        -1,
+        1
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            0,
+            -1,
+            1
+          ],
+          "class": "xy r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -1,
+            1
+          ],
+          "class": "xy r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -1,
+            1
+          ],
+          "class": "xy r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -2,
+            1
+          ],
+          "class": "xy r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -1,
+            1
+          ],
+          "class": "xy r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -2,
+            1
+          ],
+          "class": "xz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -1,
+            1
+          ],
+          "class": "xz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -2,
+            1
+          ],
+          "class": "xz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -1,
+            1
+          ],
+          "class": "xz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -2,
+            1
+          ],
+          "class": "xz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -1,
+            1
+          ],
+          "class": "xz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -2,
+            1
+          ],
+          "class": "xz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ],
+            [
+              1,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -1,
+            1
+          ],
+          "class": "xz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ],
+            [
+              1,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -2,
+            1
+          ],
+          "class": "yz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -2,
+            1
+          ],
+          "class": "yz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -2,
+            1
+          ],
+          "class": "yz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -2,
+            1
+          ],
+          "class": "yz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            -1,
+            1
+          ],
+          "class": "yz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            -1,
+            1
+          ],
+          "class": "yz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            -1,
+            1
+          ],
+          "class": "yz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            -1,
+            1
+          ],
+          "class": "yz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              -1,
+              2
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 8,
+      "faces_total": 21,
+      "group": "star",
+      "norm_over_abs_tau": "7",
+      "support": [
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          -1,
+          2
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          -1,
+          1
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "anchor": [
+        0,
+        0,
+        -1
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            0,
+            1,
+            -1
+          ],
+          "class": "xy r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            -1
+          ],
+          "class": "xy r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            -1
+          ],
+          "class": "xy r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            -1
+          ],
+          "class": "xy r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            -1
+          ],
+          "class": "xy r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": false,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              -1
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            0,
+            -1
+          ],
+          "class": "xz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            1,
+            -1
+          ],
+          "class": "xz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            -1
+          ],
+          "class": "xz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            -1
+          ],
+          "class": "xz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            -1
+          ],
+          "class": "xz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            -1
+          ],
+          "class": "xz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            -1
+          ],
+          "class": "xz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            -1
+          ],
+          "class": "xz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            0,
+            -1
+          ],
+          "class": "yz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            -1
+          ],
+          "class": "yz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            -1
+          ],
+          "class": "yz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            -1
+          ],
+          "class": "yz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            1,
+            -1
+          ],
+          "class": "yz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            -1
+          ],
+          "class": "yz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            -1
+          ],
+          "class": "yz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            -1
+          ],
+          "class": "yz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 16,
+      "faces_total": 21,
+      "group": "star",
+      "norm_over_abs_tau": "7",
+      "support": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          1,
+          0,
+          -1
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "anchor": [
+        0,
+        0,
+        0
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            0,
+            1,
+            0
+          ],
+          "class": "xy r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            0
+          ],
+          "class": "xy r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            0
+          ],
+          "class": "xy r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            0
+          ],
+          "class": "xy r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            0
+          ],
+          "class": "xy r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            0,
+            0
+          ],
+          "class": "xz r=0 s=0",
+          "inside_R": true,
+          "is_wilson_W": true,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            1,
+            0
+          ],
+          "class": "xz r=0 s=1",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            0
+          ],
+          "class": "xz r=1 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            0
+          ],
+          "class": "xz r=1 s=1",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            0
+          ],
+          "class": "xz r=2 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            0
+          ],
+          "class": "xz r=2 s=1",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            0
+          ],
+          "class": "xz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            0
+          ],
+          "class": "xz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            0,
+            0
+          ],
+          "class": "yz r=0 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            0
+          ],
+          "class": "yz r=1 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            0
+          ],
+          "class": "yz r=2 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            0
+          ],
+          "class": "yz r=3 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            1,
+            0
+          ],
+          "class": "yz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            0
+          ],
+          "class": "yz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            0
+          ],
+          "class": "yz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            0
+          ],
+          "class": "yz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 21,
+      "faces_total": 21,
+      "group": "star",
+      "norm_over_abs_tau": "7",
+      "support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "anchor": [
+        0,
+        0,
+        1
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            0,
+            1,
+            1
+          ],
+          "class": "xy r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            1
+          ],
+          "class": "xy r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            1
+          ],
+          "class": "xy r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            1
+          ],
+          "class": "xy r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            1
+          ],
+          "class": "xy r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            0,
+            1
+          ],
+          "class": "xz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            1,
+            1
+          ],
+          "class": "xz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            1
+          ],
+          "class": "xz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            1
+          ],
+          "class": "xz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            1
+          ],
+          "class": "xz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            1
+          ],
+          "class": "xz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            1
+          ],
+          "class": "xz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            1
+          ],
+          "class": "xz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            0,
+            1
+          ],
+          "class": "yz r=0 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            1
+          ],
+          "class": "yz r=1 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            1
+          ],
+          "class": "yz r=2 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            0,
+            1
+          ],
+          "class": "yz r=3 s=0",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            0,
+            1,
+            1
+          ],
+          "class": "yz r=0 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            1,
+            1
+          ],
+          "class": "yz r=1 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            1,
+            1
+          ],
+          "class": "yz r=2 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            3,
+            1,
+            1
+          ],
+          "class": "yz r=3 s=1",
+          "inside_R": false,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 21,
+      "faces_total": 21,
+      "group": "star",
+      "norm_over_abs_tau": "7",
+      "support": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "anchor": [
+        0,
+        0,
+        0
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            0,
+            0,
+            0
+          ],
+          "class": "xy r=0 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            0
+          ],
+          "class": "xy r=1 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            0
+          ],
+          "class": "xy r=2 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 3,
+      "faces_total": 3,
+      "group": "single",
+      "norm_over_abs_tau": "1",
+      "support": [
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "R_sites_met": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "anchor": [
+        0,
+        0,
+        1
+      ],
+      "faces": [
+        {
+          "base_fine": [
+            0,
+            0,
+            1
+          ],
+          "class": "xy r=0 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            1,
+            0,
+            1
+          ],
+          "class": "xy r=1 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "base_fine": [
+            2,
+            0,
+            1
+          ],
+          "class": "xy r=2 s=0",
+          "inside_R": true,
+          "is_wilson_W": false,
+          "meets_R": true,
+          "owner_set": [
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      ],
+      "faces_meeting_R": 3,
+      "faces_total": 3,
+      "group": "single",
+      "norm_over_abs_tau": "1",
+      "support": [
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "incidence_totals": {
+    "B_N_over_abs_tau": "51/8",
+    "selected_faces_inside_R": 6,
+    "single_factor_groups": 2,
+    "stars": 7
+  },
+  "j0_resolution": {
+    "J0_prime": "29/100000000",
+    "contract_sha256": "bc834eec4f5377041cea9db42a8674cf1f3de0a43b7fef3696a461a011da7d8d",
+    "exclusion": "319/1562500",
+    "resolution": "R1",
+    "self_map": "1073/175000000",
+    "tau_cap": "1/100000000"
+  },
+  "k2_uniform_claimed": false,
+  "label": {
+    "model_label": "uniform Kogut-Susskind SU(2) at fixed spacing, strong bare coupling",
+    "regime": "strong bare coupling: g^4=96/tau, g^4=9.6x10^9 at |tau|=10^-8 (g^4>=9.6x10^9 for |tau|<=10^-8)",
+    "route": "route B: Haar product reference, selected xy faces as single-factor groups"
+  },
+  "loop": "AX1",
+  "model": {
+    "model_id": "AQ_uniform_routeB",
+    "reference_route": "haar",
+    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "tau": "1/100000000",
+    "triple_alpha_units": [
+      "tau/24",
+      "tau/24",
+      "tau/24"
+    ]
+  },
+  "proposed_forward_verdict": "forward half: accepted_within_scope proposed for the uniform Kogut-Susskind SU(2) model at fixed spacing, strong bare coupling, route B; the gate needs the reverse route and skeptical review",
+  "rate_in_N_claimed": false,
+  "reinstantiation_checklist": [
+    {
+      "constant": "2(4*7+1)|tau||F|=58|tau||F| (was 56)",
+      "status": "new constant",
+      "step": "AQ1 reset energy on a finite region F"
+    },
+    {
+      "constant": "uses C_F only",
+      "status": "verbatim re-application",
+      "step": "AQ1 trace-norm compactness and diagonal extraction"
+    },
+    {
+      "constant": "||F||<=7, convolution<=224 unchanged; ||Phi'||_F<=81 J'=2349|tau| (was 2268)",
+      "status": "new constant",
+      "step": "Nachtergaele-Sims placement"
+    },
+    {
+      "constant": "none",
+      "status": "verbatim re-application",
+      "step": "AQ1 stationarity"
+    },
+    {
+      "constant": "none",
+      "status": "verbatim re-application",
+      "step": "AQ1 GNS strong continuity"
+    },
+    {
+      "constant": "none",
+      "status": "verbatim re-application",
+      "step": "AQ1 nonnegativity of H_num"
+    },
+    {
+      "constant": "gauge invariance of route-B H",
+      "status": "verbatim re-application",
+      "step": "AQ2 endpoint group, Haar projection, physical space"
+    },
+    {
+      "constant": "J_0'=29/10^8",
+      "status": "verbatim re-application with the re-frozen AM2 gap",
+      "step": "AQ2 physical gap alpha/16 (full GNS)"
+    },
+    {
+      "constant": "omega(h_R)<=2(7*7+2*1)|tau|=102|tau| (was 98)",
+      "status": "new constant",
+      "step": "reset on the cover R (AQ2 HNM-AQ2.8)"
+    },
+    {
+      "constant": "epsilon_R<=17|tau|, D_sqrt=2 sqrt(17|tau|) (square-root control only)",
+      "status": "new constant",
+      "step": "reset with the Haar reference gap six (AT4 F08)"
+    },
+    {
+      "constant": "2 sqrt(17|tau|)<=1/500, floor 61999/250000; gap-one route fails 1/500",
+      "status": "new constant (gap six required)",
+      "step": "Wilson variance floor (AQ2 HNM-AQ2.10)"
+    },
+    {
+      "constant": "Haar P_R",
+      "status": "verbatim re-application",
+      "step": "reference moments Tr(P_R W)=0, Tr(P_R W^2)=1/4"
+    },
+    {
+      "constant": "||B_N||<=51|tau|/8, k'=51|tau|/4",
+      "status": "new constant",
+      "step": "AT4 seven-star relative-unitary slope"
+    },
+    {
+      "constant": "selected face vectors also at energy 24; L>=24 keeps c^(1)",
+      "status": "verbatim re-application",
+      "step": "AV1 cutoff-vector removal"
+    },
+    {
+      "constant": "local trace-norm convergence",
+      "status": "verbatim re-application",
+      "step": "AV1 passage to AQ subsequential limits"
+    }
+  ],
+  "rejected_mutation_total": 94,
+  "resolved_interaction_shift": false,
+  "routes_executed": [
+    "forward route B: product ordering with the enlarged creation set and explicit reduced density"
+  ],
+  "routes_not_executed": [
+    "reverse producer route (outside this producer)"
+  ],
+  "scaling_tau_over_100": {
+    "i": {
+      "D": "23002441025945235452645031116932482/93789062500001410378111476322515558466241",
+      "D_decimal_preview": "2.45257180451e-7",
+      "D_over_2": "11501220512972617726322515558466241/93789062500001410378111476322515558466241",
+      "J": "29/10000000000",
+      "density_part_of_D": "2820756222952645031116932482/93789062500001410378111476322515558466241",
+      "eps": "37555001151329/306250000000000000000",
+      "form": "one-step t<=J'*G(R)",
+      "t": "1073/17500000000",
+      "tau": "1/10000000000",
+      "tier": "i",
+      "two_creation_term_t2": "1151329/306250000000000000000"
+    },
+    "ii": {
+      "D": "84944664770183782568655582901250/588077848045394097206079466627077918398977",
+      "D_decimal_preview": "1.44444591906e-10",
+      "D_over_2": "42472332385091891284327791450625/588077848045394097206079466627077918398977",
+      "J": "29/10000000000",
+      "density_part_of_D": "6134898717796688409602/588077848045394097206079466627077918398977",
+      "eps": "55384558849/766862339696893771776",
+      "form": "scaling",
+      "remainder": "319/8653837320000000000",
+      "remainder_form": "contract",
+      "t": "1/27692279424",
+      "t1": "13/360000000000",
+      "tau": "1/10000000000",
+      "tier": "ii",
+      "two_creation_term_t2": "1/766862339696893771776"
+    }
+  },
+  "scientific_priority_verified": false,
+  "targets": {
+    "target_D_ii": "1/2500000",
+    "tier_i_meets_1e-6": false,
+    "tier_i_meets_target": false,
+    "tier_ii_meets_1e-6": true,
+    "tier_ii_meets_target": true
+  },
+  "tau_values": {
+    "+": "1/100000000",
+    "-": "-1/100000000"
+  },
+  "tier_ii_target_met": true,
+  "tiers": {
+    "+": {
+      "i": {
+        "D": "23002790096235779074916932482/937890625141038667264537458466241",
+        "D_decimal_preview": "2.45260902280e-5",
+        "D_over_2": "11501395048117889537458466241/937890625141038667264537458466241",
+        "J": "29/100000000",
+        "density_part_of_D": "282077334529074916932482/937890625141038667264537458466241",
+        "eps": "375551151329/30625000000000000",
+        "form": "one-step t<=J'*G(R)",
+        "t": "1073/175000000",
+        "tau": "1/100000000",
+        "tier": "i",
+        "two_creation_term_t2": "1151329/30625000000000000"
+      },
+      "i_iterated": {
+        "D": "32789362514268856998891499790121626481651036330882/1766452778229811457780492286942268423048215825518165441",
+        "D_decimal_preview": "1.85622638308e-5",
+        "D_over_2": "16394681257134428499445749895060813240825518165441/1766452778229811457780492286942268423048215825518165441",
+        "J": "29/100000000",
+        "density_part_of_D": "304316750162512872634536846096431651036330882/1766452778229811457780492286942268423048215825518165441",
+        "eps": "12335249291411034807521/1329079673337025000000000000",
+        "form": "iterated t<=J'*16*(1+10*t_i)/(1-8*t_i)",
+        "t": "169177039/36456545000000",
+        "tau": "1/100000000",
+        "tier": "i",
+        "two_creation_term_t2": "28620870524807521/1329079673337025000000000000"
+      },
+      "ii": {
+        "D": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+        "D_decimal_preview": "1.44459192142e-8",
+        "D_over_2": "1212684562599552397131621300625/167893028420061547330293754713793182097",
+        "J": "29/100000000",
+        "density_part_of_D": "17518342970664066642722/167893028420061547330293754713793182097",
+        "eps": "93590445481/12957354221447430144",
+        "form": "triangle t_1=52|tau|/144",
+        "remainder": "4147/11248851600000000",
+        "remainder_form": "contract",
+        "t": "13/3599632512",
+        "t1": "13/3600000000",
+        "tau": "1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "169/12957354221447430144"
+      },
+      "ii_bound96": {
+        "D": "13495866406962926701045634/506043319649587578441076493302465",
+        "D_decimal_preview": "2.66693895224e-8",
+        "D_over_2": "6747933203481463350522817/506043319649587578441076493302465",
+        "J": "29/100000000",
+        "density_part_of_D": "179963254275536258/506043319649587578441076493302465",
+        "eps": "299969377/22495406634457344",
+        "form": "labelled bound t_1=96|tau|/144",
+        "remainder": "319/468702150000000",
+        "remainder_form": "contract",
+        "t": "1/149984688",
+        "t1": "1/150000000",
+        "tau": "1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "1/22495406634457344"
+      },
+      "ii_grouped": {
+        "D": "3945207897286702761306989386169730553025025984790707967245830442348342042226082/530624879944885857632032838868804365907371597861658759176871807622915221174171021113041",
+        "D_decimal_preview": "7.43502245446e-9",
+        "D_over_2": "1972603948643351380653494693084865276512512992395353983622915221174171021113041/530624879944885857632032838868804365907371597861658759176871807622915221174171021113041",
+        "J": "29/100000000",
+        "density_part_of_D": "14666354542880064920742743195723317518353743615245830442348342042226082/530624879944885857632032838868804365907371597861658759176871807622915221174171021113041",
+        "eps": "85633972647775908612283824808405321/23035296393684320256000000000000000000000000",
+        "form": "grouped sum sqrt(n_M) (directed)",
+        "remainder": "2845836049741091/14998468800000000000000000000",
+        "remainder_form": "contract",
+        "t": "8921116143389/4799510016000000000000",
+        "t1": "8921116143389/4800000000000000000000",
+        "tau": "1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "79586313243835824808405321/23035296393684320256000000000000000000000000"
+      },
+      "ii_sharper": {
+        "D": "6855261688021340224850288268597805019742992885993200415042/474555395533260031258967498134682310007119404271496442996600207521",
+        "D_decimal_preview": "1.44456511348e-8",
+        "D_over_2": "3427630844010670112425144134298902509871496442996600207521/474555395533260031258967498134682310007119404271496442996600207521",
+        "J": "29/100000000",
+        "density_part_of_D": "49514358676269364620014238808542992885993200415042/474555395533260031258967498134682310007119404271496442996600207521",
+        "eps": "4975658683846258591758289/688879812110400000000000000000000",
+        "form": "triangle, remainder G(t)-16<=288t/(1-8t)",
+        "remainder": "2639/8748840000000000",
+        "remainder_form": "sharper",
+        "t": "94787017/26246520000000000",
+        "t1": "13/3600000000",
+        "tau": "1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "8984578591758289/688879812110400000000000000000000"
+      }
+    },
+    "-": {
+      "i": {
+        "D": "23002790096235779074916932482/937890625141038667264537458466241",
+        "D_decimal_preview": "2.45260902280e-5",
+        "D_over_2": "11501395048117889537458466241/937890625141038667264537458466241",
+        "J": "29/100000000",
+        "density_part_of_D": "282077334529074916932482/937890625141038667264537458466241",
+        "eps": "375551151329/30625000000000000",
+        "form": "one-step t<=J'*G(R)",
+        "t": "1073/175000000",
+        "tau": "-1/100000000",
+        "tier": "i",
+        "two_creation_term_t2": "1151329/30625000000000000"
+      },
+      "i_iterated": {
+        "D": "32789362514268856998891499790121626481651036330882/1766452778229811457780492286942268423048215825518165441",
+        "D_decimal_preview": "1.85622638308e-5",
+        "D_over_2": "16394681257134428499445749895060813240825518165441/1766452778229811457780492286942268423048215825518165441",
+        "J": "29/100000000",
+        "density_part_of_D": "304316750162512872634536846096431651036330882/1766452778229811457780492286942268423048215825518165441",
+        "eps": "12335249291411034807521/1329079673337025000000000000",
+        "form": "iterated t<=J'*16*(1+10*t_i)/(1-8*t_i)",
+        "t": "169177039/36456545000000",
+        "tau": "-1/100000000",
+        "tier": "i",
+        "two_creation_term_t2": "28620870524807521/1329079673337025000000000000"
+      },
+      "ii": {
+        "D": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+        "D_decimal_preview": "1.44459192142e-8",
+        "D_over_2": "1212684562599552397131621300625/167893028420061547330293754713793182097",
+        "J": "29/100000000",
+        "density_part_of_D": "17518342970664066642722/167893028420061547330293754713793182097",
+        "eps": "93590445481/12957354221447430144",
+        "form": "triangle t_1=52|tau|/144",
+        "remainder": "4147/11248851600000000",
+        "remainder_form": "contract",
+        "t": "13/3599632512",
+        "t1": "13/3600000000",
+        "tau": "-1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "169/12957354221447430144"
+      },
+      "ii_bound96": {
+        "D": "13495866406962926701045634/506043319649587578441076493302465",
+        "D_decimal_preview": "2.66693895224e-8",
+        "D_over_2": "6747933203481463350522817/506043319649587578441076493302465",
+        "J": "29/100000000",
+        "density_part_of_D": "179963254275536258/506043319649587578441076493302465",
+        "eps": "299969377/22495406634457344",
+        "form": "labelled bound t_1=96|tau|/144",
+        "remainder": "319/468702150000000",
+        "remainder_form": "contract",
+        "t": "1/149984688",
+        "t1": "1/150000000",
+        "tau": "-1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "1/22495406634457344"
+      },
+      "ii_grouped": {
+        "D": "3945207897286702761306989386169730553025025984790707967245830442348342042226082/530624879944885857632032838868804365907371597861658759176871807622915221174171021113041",
+        "D_decimal_preview": "7.43502245446e-9",
+        "D_over_2": "1972603948643351380653494693084865276512512992395353983622915221174171021113041/530624879944885857632032838868804365907371597861658759176871807622915221174171021113041",
+        "J": "29/100000000",
+        "density_part_of_D": "14666354542880064920742743195723317518353743615245830442348342042226082/530624879944885857632032838868804365907371597861658759176871807622915221174171021113041",
+        "eps": "85633972647775908612283824808405321/23035296393684320256000000000000000000000000",
+        "form": "grouped sum sqrt(n_M) (directed)",
+        "remainder": "2845836049741091/14998468800000000000000000000",
+        "remainder_form": "contract",
+        "t": "8921116143389/4799510016000000000000",
+        "t1": "8921116143389/4800000000000000000000",
+        "tau": "-1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "79586313243835824808405321/23035296393684320256000000000000000000000000"
+      },
+      "ii_sharper": {
+        "D": "6855261688021340224850288268597805019742992885993200415042/474555395533260031258967498134682310007119404271496442996600207521",
+        "D_decimal_preview": "1.44456511348e-8",
+        "D_over_2": "3427630844010670112425144134298902509871496442996600207521/474555395533260031258967498134682310007119404271496442996600207521",
+        "J": "29/100000000",
+        "density_part_of_D": "49514358676269364620014238808542992885993200415042/474555395533260031258967498134682310007119404271496442996600207521",
+        "eps": "4975658683846258591758289/688879812110400000000000000000000",
+        "form": "triangle, remainder G(t)-16<=288t/(1-8t)",
+        "remainder": "2639/8748840000000000",
+        "remainder_form": "sharper",
+        "t": "94787017/26246520000000000",
+        "t1": "13/3600000000",
+        "tau": "-1/100000000",
+        "tier": "ii",
+        "two_creation_term_t2": "8984578591758289/688879812110400000000000000000000"
+      }
+    }
+  },
+  "uniform_wilson_claim": true,
+  "uniqueness_claimed": false,
+  "weak_coupling_claim": false,
+  "whole_sequence_convergence_claimed": false,
+  "wilson_mean_sign_certified": false
+}
