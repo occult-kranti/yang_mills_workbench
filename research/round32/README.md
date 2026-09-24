@@ -12,7 +12,7 @@ The cycle starts from merged Round31 commit `1a686cdf9808aca9b5811dbf23e78bd2be1
 | 2 | AW2 | Sign-certified Wilson mean at the cap: about [6.91e-11, 6.98e-11], zero excluded, exclusion margin about 206 | Static equal-time effect; not dynamical; centered shift unresolved |
 | 3 | AX1 | Uniform Kogut-Susskind SU(2) at fixed spacing (route B): re-frozen contraction constant, itemized incidence, 52 faces per factor, exact-tier state bound about 1.44e-8; flip antisymmetry and +tau/144 transferred | Strong bare coupling g^4=9.6e9; never weak coupling or continuum |
 | 3 | AX2 | Uniform-model Euclidean node at the cap: radius about 1.91e-7 (<10^-6), free reference inside | reference_unresolved; strong bare coupling; only s=1 |
-| 4 | AY1 | (in production) | |
+| 4 | AY1 | (in skeptical review) | |
 | 4 | AY2 | (planned) | |
 | 5 | AZ1/AZ2 | (planned) | |
 

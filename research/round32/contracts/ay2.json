@@ -7,10 +7,18 @@
   "title": "Hruday statement on state identification: what the closeness lemma does and does not establish",
   "human_author": "Hruday N M (BUNZEEY)",
   "selected_after": "<preceding gate>",
-  "selection_reason": "After AY1 the honest state of knowledge on roadmap goal 4 is a statement with an explicit constant and an explicit list of unproved obligations (uniqueness, whole-sequence convergence, translation invariance, a rate in N, boundary independence of dynamics).",
-  "model": "Same family and constants as AY1.",
+  "selection_reason": "After AY1 the honest state of knowledge on roadmap goal 4 is a statement with explicit constants (2D for any two subsequential limits of either family, the common first-order density rho^(1)_R, the R-local trace-norm constant K_2' and the second-order difference bound 2K_2' tau^2) and an explicit list of unproved obligations (uniqueness, whole-sequence convergence, translation invariance, a rate in N, boundary independence of dynamics). AY1 also produced two facts the panel did not anticipate: the R-local trace-norm K_2' exceeds the single-observable K_2^+ (about 4.0 times), and the first-order density gives a certified two-sided distance of every subsequential limit from the Haar product on R. AY2 records both with exact constants and labels.",
+  "model": "Same families, cover R={0,e_z}, clock and constants as AY1 (zero-selected patterned family at both signs |tau|<=10^-8).",
   "parameters": {
-    "deliverable": "statement with exact constants and an obligations table; a small exact checker verifying the constants and the mandatory sentence fields"
+    "deliverable": "statement with exact constants and an obligations table; a small exact checker verifying the constants, the two-sided first-order distance tier and the mandatory sentence fields",
+    "constants_from_ay1": {
+      "D": "AV1 forward tier (ii), bound by the AY1 gate",
+      "two_D": "2D <= 1/1250000 (AY1 target), any two subsequential limits at the same tau",
+      "rho1_R": "(tau/72) sum over the 10 faces with owner set exactly R of (|W_f Omega_R><Omega_R| + h.c.); trace norm sqrt(10)|tau|/72; Tr(rho1_R W)=+tau/144",
+      "K2_prime": "R-local trace-norm second-order constant from the AW1 remainder items restricted to faces meeting R, bound by the AY1 gate (about 1.34e4, larger than K_2^+ about 3.35e3)",
+      "second_order_difference": "2 K_2' tau^2 for any two limits after subtracting the common rho1_R"
+    },
+    "first_order_distance_tier": "||rho_R - P_R||_1 in [ sqrt(10)|tau|/72 - K_2' tau^2 , sqrt(10)|tau|/72 + K_2' tau^2 ] for every subsequential limit of either family, with sqrt(10) enclosed by exact rationals (directed rounding); recorded as the labelled tier first_order_distance_from_product, never as an interaction-shift or dynamical claim"
   },
   "shared_premises": [
     "research/round29/forward/am2/report.md",
@@ -36,7 +44,12 @@
     "research/round32/skeptic/ay1.md"
   ],
   "required": [
-    "1. State precisely, with the AY1 constants, what is proved for the set of AQ-type subsequential states; 2. list every unproved obligation with the missing premise and a candidate route (HTW-type local stability with evaluated constants; a Lieb-Robinson locality argument for dynamics; translation covariance of the construction); 3. give the falsifying scenario (two limits differing at second order) and why the present bounds cannot exclude it; 4. exact checker of the constants and the gate fields; skeptic review."
+    "1. State precisely, with the AY1 gate constants (2D, rho^(1)_R, K_2', 2K_2' tau^2), what is proved for the set of subsequential limits of both named families: uniform local closeness on R in trace norm at fixed tau, a common first-order density, and a second-order difference bound. Use the mandatory sentence template with the constants filled in; say 'a chosen subsequential'; never 'the AQ state', 'the thermodynamic limit', or 'unique' without 'not'.",
+    "2. List every unproved obligation in an obligations table with the missing premise and a candidate route: uniqueness of the limit (HTW-type local stability with evaluated constants, or a Dobrushin-type uniqueness condition at the cap); whole-sequence convergence (a Cauchy estimate in N, missing); translation invariance (translation covariance of the construction plus uniqueness, missing); a rate in N (missing); boundary independence of dynamics on compact time windows (a Lieb-Robinson locality argument with the AM2 constants; the dynamics topology is named in AY1 but no dynamics is constructed for the padded family); dynamics of the padded family itself.",
+    "3. Give the falsifying scenario: two limits differing at second order on R by up to 2K_2' tau^2 (about 2.7e-12 at the cap), and explain why the present bounds cannot exclude it; record that 2D alone is not a boundary comparison (the +tau and -tau limits differ on R by at least 8.7e-10 while both lie within 2D of the product), so the comparison content is the matching first-order term.",
+    "4. Certify the two-sided first-order distance tier with exact arithmetic: for every subsequential limit of either family, sqrt(10)|tau|/72 - K_2' tau^2 <= ||rho_R - P_R||_1 <= sqrt(10)|tau|/72 + K_2' tau^2 at |tau|=10^-8, with sqrt(10) enclosed by exact rationals and the AY1 gate values of K_2' read from the snapshotted gate; label it first_order_distance_from_product and state that it is a static property of the state on R (never an interaction-shift, Euclidean-node or dynamical claim). The lower bound shows that no subsequential limit of either family coincides with the Haar product on R; it does not identify the limit.",
+    "5. Record the K_2' versus K_2^+ comparison correctly: K_2' is a trace-norm constant over all of B(H_R) while K_2^+ bounds the single observable W; the AM2 remainder term dominates both, so face restriction cannot make K_2' smaller than K_2^+. State the labelled variants only as previews. Correct the AY1 contract wording 'not the whole-box K_2^+' (K_2^+ is volume-uniform and W-specific) in the statement.",
+    "6. Exact checker of every constant and of the gate fields; export uniqueness_claimed:false, whole_sequence_claimed:false, rate_claimed:false, rate_in_N_claimed:false, translation_invariance_claimed:false, boundary_independence_of_dynamics_claimed:false, states_compared, region, topology, closeness_order; implement every control as a damaging mutation where possible; skeptic review with independent derivation and replays."
   ],
   "controls": [
     "missing_incoming_stars",
@@ -52,12 +65,21 @@
     "root_n_misuse",
     "no_priority_or_continuum_claim",
     "topology_named",
+    "two_families_named",
     "subsequence_versus_whole_sequence",
-    "local_closeness_not_uniqueness"
+    "local_closeness_not_uniqueness",
+    "common_clock",
+    "tier_mixing_rejected",
+    "not_uniform_in_a",
+    "lower_bound_is_static_not_dynamic",
+    "obligations_table_complete"
   ],
   "claim_exclusions": [
     "uniqueness",
-    "rate in N",
+    "whole-sequence convergence or a rate in N",
+    "translation invariance",
+    "boundary independence of dynamics",
+    "interaction shift or dynamical claim from the static tier",
     "continuum",
     "scientific priority"
   ],
@@ -110,12 +132,12 @@
       "is_model_change_vs_previous_loop": false,
       "rule_if_chosen_later": null
     },
-    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "state_provenance": "subsequential limits of both AY1 families (AQ1 centered whole-star boxes; I1 all-contained-face boxes with padding) via finite-volume uniform bounds",
     "observable": {
-      "id": "statement",
+      "id": "||rho_R-P_R||_1 two-sided tier and the obligations statement",
       "centering": "none",
-      "reference_value_exact": "n/a",
-      "reference_route": "n/a"
+      "reference_value_exact": "P_R",
+      "reference_route": "haar"
     },
     "nodes": {
       "s_values": [],
@@ -126,12 +148,15 @@
       }
     },
     "error_terms_itemized": [
-      "not_applicable: statement loop (reason: no new numerical certificate)"
+      "first_order_term: sqrt(10)|tau|/72 with sqrt(10) enclosed by exact rationals (directed rounding)",
+      "second_order_remainder: K_2' tau^2 from the AY1 gate (single state versus product) and 2K_2' tau^2 (two limits)",
+      "no other terms: statement loop; no new numerical certificate beyond the two-sided tier"
     ],
     "target": {
-      "quantity": "obligations table complete",
-      "value": "1",
-      "comparator": ">="
+      "quantity": "||rho_R - P_R||_1 two-sided tier width relative to its centre",
+      "value": "1/100",
+      "comparator": "<=",
+      "note": "2 K_2' tau^2 / (sqrt(10)|tau|/72) at |tau|=10^-8 is about 6e-3; the obligations table must also be complete (six rows)."
     },
     "controls_required": {
       "ids": [
@@ -148,8 +173,14 @@
         "root_n_misuse",
         "no_priority_or_continuum_claim",
         "topology_named",
+        "two_families_named",
         "subsequence_versus_whole_sequence",
-        "local_closeness_not_uniqueness"
+        "local_closeness_not_uniqueness",
+        "common_clock",
+        "tier_mixing_rejected",
+        "not_uniform_in_a",
+        "lower_bound_is_static_not_dynamic",
+        "obligations_table_complete"
       ]
     },
     "direction": "statement+skeptic",
@@ -158,14 +189,17 @@
       "uniqueness_claimed": false,
       "whole_sequence_claimed": false,
       "rate_claimed": false,
-      "translation_invariance_claimed": false
+      "translation_invariance_claimed": false,
+      "boundary_independence_of_dynamics_claimed": false
     }
   },
   "acceptance": {
-    "accepted_within_scope": "Statement, constants and obligations table verified by the skeptic.",
-    "limited": "An obligation is missing or a constant is not exact.",
-    "insufficient": "The statement overclaims."
+    "accepted_within_scope": "Statement, constants, the two-sided tier and the obligations table verified by the skeptic with exact arithmetic.",
+    "limited": "An obligation is missing, a constant is not exact, or the two-sided tier is not certified.",
+    "insufficient": "The statement overclaims (uniqueness, whole sequence, rate, translation invariance, dynamics)."
   },
   "stop": "Investigation 8 of 10.",
-  "single_direction_independent_replay": true
+  "single_direction_independent_replay": true,
+  "direction_note": "statement+skeptic as planned: one forward producer (statement, obligations table, exact checker) and the skeptic's independent derivation and replays (single_direction_independent_replay). Both AY1 producers reached the same constants by different routes, so a second producer for the statement would add no independence.",
+  "reverse_premise_isolation": false
 }
