@@ -1,0 +1,659 @@
+{
+  "round": 32,
+  "subround": 3,
+  "lens": "modern (Penrose/Feynman)",
+  "assistant": 3,
+  "status": "assistant/coder cross-check tools. ZERO research loops. python-flint (Arb) and the Round11 two_plaquette module are cross-check/reused-by-import libraries only; nothing here is imported by any check.py, and nothing here decides admission.",
+  "human_project_author": "Hruday N M (BUNZEEY)",
+  "generated_at": "2026-09-24T01:53:35.410674Z",
+  "files": {
+    "ax2_budget_actual.py": {
+      "tool": "A3-1 ax2_budget_actual",
+      "formula": "E'(s) = 2(D'+D'^2) + 51|tau|*s/pi  (AV2 window lemma, AX1 route-B k'=51|tau|/4)",
+      "parameters": {
+        "tau": "1/100000000",
+        "s": "1",
+        "k_prime": "51/400000000",
+        "target": "1/1000000"
+      },
+      "pi_bracket": {
+        "lower": "7853981633974483096156608458198757210489/2500000000000000000000000000000000000000",
+        "upper": "3926990816987241548078304229099378605247/1250000000000000000000000000000000000000"
+      },
+      "D_prime_sources": {
+        "admitted_forward_tier_ii": {
+          "source": "research/round32/forward/ax1/output/results.json headline.D_ii_plus",
+          "string": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+          "found_verbatim_in_ax1_gate_json": true,
+          "matches_tiers_plus_ii_D": true,
+          "decimal_preview": 1.4445919214292387e-08
+        },
+        "reverse_refinement": {
+          "source": "research/round32/reverse/ax1/output/results.json D_prime_ii.+",
+          "string": "30934916107401289/2530733246376451200000000",
+          "found_verbatim_in_ax1_gate_json": true,
+          "decimal_preview": 1.2223696887727876e-08,
+          "label": "labelled comparison only; the AX2 contract av1_tier_bound control rejects substituting this value for the admitted forward D_ii_plus"
+        },
+        "ax1_target": {
+          "source": "research/round32/forward/ax1/output/results.json targets.target_D_ii",
+          "string": "1/2500000",
+          "decimal_preview": 4e-07,
+          "label": "AX1's own (looser) preregistered target D_ii<=4/10^7, ~30x looser than the admitted exact tier; update-2.md section 2/4 flags this as the thing NOT to use for AX2's budget"
+        }
+      },
+      "runs": {
+        "admitted_forward_tier_ii": {
+          "label": "admitted_forward_tier_ii (decides pass/fail)",
+          "D_prime": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+          "D_prime_preview": 1.4445919214292387e-08,
+          "costs": {
+            "state": "4850738250398209588526485202500/167893028420061547330293754713793182097",
+            "mean_square": "11764830786938141732661468348022961952714214904225733003125000/28188068992059594431748372762296641664164416454372424016348151084161001317409",
+            "kernel_dynamics": "425000000000000000000000000000000/2617993877991494365385536152732919070163"
+          },
+          "E_upper": "14112037009883406667603584219919882178068781457378359557632778947191575514880421594692200765001567128136102500/73796192053613891418146371591838820933429842115505664941526341310225489765545354650733917300153317912710422304367667",
+          "E_upper_preview": 1.9122988079968718e-07,
+          "E_lower": "21168055514825110001405376329879823267105208198934282378988395923855240512005138143902699264960553670761072500/110694288080420837127219557387758231400215233345738646398368882897243976252478443017236807010270847246776035959845023",
+          "E_lower_preview": 1.9122988079968718e-07,
+          "target": "1/1000000",
+          "passed_strict_lt_1e6": true,
+          "passed_contract_le_1e6": true,
+          "margin_ratio_target_over_E": 5.229308284971936,
+          "margin_at_least_2": true
+        },
+        "reverse_refinement_labelled_comparison": {
+          "label": "reverse_refinement (labelled comparison only)",
+          "D_prime": "30934916107401289/2530733246376451200000000",
+          "D_prime_preview": 1.2223696887727876e-08,
+          "costs": {
+            "state": "30934916107401289/1265366623188225600000000",
+            "mean_square": "956969034571955718548484878861521/3202305382157545825407452952990720000000000000000",
+            "kernel_dynamics": "425000000000000000000000000000000/2617993877991494365385536152732919070163"
+          },
+          "E_upper": "521979116249408337325340629015318335066709774601269971403884120840097314586632641/2794538628649222587638868528709659196024826959347190613141855684122629120000000000000000",
+          "E_upper_preview": 1.8678543602802653e-07,
+          "E_lower": "2348906023122337517964032830568932507800389705759774460991473644672123119837000687/12575423828921501644374908379193466382119727080517751623701869210934307840000000000000000",
+          "E_lower_preview": 1.8678543602802653e-07,
+          "target": "1/1000000",
+          "passed_strict_lt_1e6": true,
+          "passed_contract_le_1e6": true,
+          "margin_ratio_target_over_E": 5.3537364650312105,
+          "margin_at_least_2": true
+        },
+        "ax1_target_labelled_comparison": {
+          "label": "ax1_own_target_4e-7 (labelled comparison only)",
+          "D_prime": "1/2500000",
+          "D_prime_preview": 4e-07,
+          "costs": {
+            "state": "1/1250000",
+            "mean_square": "1/3125000000000",
+            "kernel_dynamics": "425000000000000000000000000000000/2617993877991494365385536152732919070163"
+          },
+          "E_upper": "7873112312972613904958205767368450408326570163/8181230868723419891829800477290372094259375000000000",
+          "E_upper_preview": 9.623383619537333e-07,
+          "E_lower": "11809668469458920857437308651052675612496105247/12271846303085129837744700715935558141396875000000000",
+          "E_lower_preview": 9.623383619537333e-07,
+          "target": "1/1000000",
+          "passed_strict_lt_1e6": true,
+          "passed_contract_le_1e6": true,
+          "margin_ratio_target_over_E": 1.0391355468463361,
+          "margin_at_least_2": false
+        }
+      },
+      "crossover_s_star": {
+        "s_star_bracket": [
+          "71664084365355812384035845795895011462630937651235585590841526573802339810563758056041716535151750784574319804367667/11979929321625327633493058423976072707269876993108280206947964210768425559898825000000000000000000000000000000000000",
+          "107496126548033718576053768693842517194014840636466784329802433289541374080321542373334107745310293576014963459845023/17969893982437991450239587635964109060904815489662420310421946316152638339848237500000000000000000000000000000000000"
+        ],
+        "s_star_bracket_preview": [
+          5.982012284162048,
+          5.982012284162048
+        ],
+        "D_prime_only_part_2(D+D^2)": "814405146697217015691001227150895873802300745759246983281191422767500/28188068992059594431748372762296641664164416454372424016348151084161001317409",
+        "note": "E_plus(s*-)=E_minus(s*+)=target exactly (AV2 forward report.md section 7 convention: pi_lo for the certified-larger function E^+, pi_hi for E^-)."
+      },
+      "arb_crosscheck": {
+        "precision_bits": 256,
+        "arb_ball_bounds": [
+          "2390373509996089737683226624654540910377671080314664647919566601066700322036471/12500000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "2390373509996089737683226624654540910377671080314664647919566601066700322036677/12500000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "fraction_bracket": [
+          "21168055514825110001405376329879823267105208198934282378988395923855240512005138143902699264960553670761072500/110694288080420837127219557387758231400215233345738646398368882897243976252478443017236807010270847246776035959845023",
+          "14112037009883406667603584219919882178068781457378359557632778947191575514880421594692200765001567128136102500/73796192053613891418146371591838820933429842115505664941526341310225489765545354650733917300153317912710422304367667"
+        ],
+        "fraction_bracket_contains_arb_ball": true
+      },
+      "update2_section6_item1": {
+        "instruction": "Re-run the AX2 window arithmetic with AX1's actual admitted D_ii (both tiers), not the 4e-7 target, and flag if the margin against 1e-6 falls below 2.",
+        "admitted_tier_ii_margin_ratio": 5.229308284971936,
+        "flag_margin_below_2": false,
+        "reverse_tier_margin_ratio": 5.3537364650312105,
+        "target_tier_margin_ratio": 1.0391355468463361,
+        "finding": "With the admitted forward D_ii (~1.4446e-8), E' ~1.912e-7, margin ratio ~5.23x over 1e-6 -- comfortably above the flag threshold of 2, and far looser than the ~4% margin update-2.md section 4 warned about when the AX1 *target* (4e-7) was used instead of the actual admitted exact tier. The warning in update-2.md was about a hypothetical/precautionary substitution; the actual admitted D' clears with wide margin."
+      },
+      "contract_comparator_note": "contracts/ax2.json preregistration.target.comparator is \"<=\" (E'<=1e-6 accepted); this task brief asked for strict E'<1e-6. Both comparators agree here (E'~1.911e-7 clears either way); this script reports both booleans explicitly per run so the distinction is never silently collapsed.",
+      "passed": true
+    },
+    "kappa_tied_fixture.py": {
+      "tool": "A3-2 kappa_tied_fixture",
+      "finite_graph_model_id": "FG(one-plaquette, character-basis j<=1, toy-two-face-fixture)",
+      "labels": {
+        "transfers_to_aq": false,
+        "model_is_finite_graph": true,
+        "toy_illustrative_matrix_elements": true,
+        "basis": [
+          "j=0",
+          "j=1/2",
+          "j=1"
+        ],
+        "H0_diagonal_Casimir": [
+          "0",
+          "3/4",
+          "2"
+        ],
+        "UE_diagonal": [
+          "1",
+          "-1",
+          "1"
+        ]
+      },
+      "claim_1_structural_sign_flip_(nu,kappa)_to_(-nu,-kappa)": {
+        "samples": [
+          {
+            "nu": "0",
+            "kappa": "0",
+            "matches_H(-nu,-kappa)": true
+          },
+          {
+            "nu": "1/100000000",
+            "kappa": "1/40000000",
+            "matches_H(-nu,-kappa)": true
+          },
+          {
+            "nu": "-3/7",
+            "kappa": "5/11",
+            "matches_H(-nu,-kappa)": true
+          },
+          {
+            "nu": "1/24",
+            "kappa": "0",
+            "matches_H(-nu,-kappa)": true
+          },
+          {
+            "nu": "0",
+            "kappa": "9/5",
+            "matches_H(-nu,-kappa)": true
+          },
+          {
+            "nu": "1/100000000",
+            "kappa": "1/100000000",
+            "matches_H(-nu,-kappa)": true
+          }
+        ],
+        "h0_even_under_UE": true,
+        "t_omitted_odd_under_UE": true,
+        "t_selected_odd_under_UE": true,
+        "UE_is_involution": true,
+        "all_matrices_symmetric_selfadjoint": true,
+        "passed": true
+      },
+      "claim_2_first_order_antisymmetry_dependence_on_kappa_tie": {
+        "a_coefficient_domega_dnu": "-8/3",
+        "a_preview": -2.6666666666666665,
+        "b_coefficient_domega_dkappa": "-16/3",
+        "b_preview": -5.333333333333333,
+        "closed_form_detail": {
+          "psi1_per_nu": [
+            "0",
+            "-4/3",
+            "0"
+          ],
+          "psi1_per_kappa": [
+            "0",
+            "-8/3",
+            "0"
+          ]
+        },
+        "two_independent_methods_agree": true,
+        "case_A_tied_kappa_eq_ratio_times_nu": {
+          "rows": [
+            {
+              "ratio_c": "1",
+              "tau": "1/100000000",
+              "nu": "1/2400000000",
+              "kappa": "1/2400000000",
+              "W1_plus_tau": "-1/300000000",
+              "W1_minus_tau": "-1/300000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "1",
+              "tau": "1/200000000",
+              "nu": "1/4800000000",
+              "kappa": "1/4800000000",
+              "W1_plus_tau": "-1/600000000",
+              "W1_minus_tau": "-1/600000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "1",
+              "tau": "-1/100000000",
+              "nu": "-1/2400000000",
+              "kappa": "-1/2400000000",
+              "W1_plus_tau": "1/300000000",
+              "W1_minus_tau": "1/300000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "5/2",
+              "tau": "1/100000000",
+              "nu": "1/2400000000",
+              "kappa": "1/960000000",
+              "W1_plus_tau": "-1/150000000",
+              "W1_minus_tau": "-1/150000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "5/2",
+              "tau": "1/200000000",
+              "nu": "1/4800000000",
+              "kappa": "1/1920000000",
+              "W1_plus_tau": "-1/300000000",
+              "W1_minus_tau": "-1/300000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "5/2",
+              "tau": "-1/100000000",
+              "nu": "-1/2400000000",
+              "kappa": "-1/960000000",
+              "W1_plus_tau": "1/150000000",
+              "W1_minus_tau": "1/150000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "-3/4",
+              "tau": "1/100000000",
+              "nu": "1/2400000000",
+              "kappa": "-1/3200000000",
+              "W1_plus_tau": "1/1800000000",
+              "W1_minus_tau": "1/1800000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "-3/4",
+              "tau": "1/200000000",
+              "nu": "1/4800000000",
+              "kappa": "-1/6400000000",
+              "W1_plus_tau": "1/3600000000",
+              "W1_minus_tau": "1/3600000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "-3/4",
+              "tau": "-1/100000000",
+              "nu": "-1/2400000000",
+              "kappa": "1/3200000000",
+              "W1_plus_tau": "-1/1800000000",
+              "W1_minus_tau": "-1/1800000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "7",
+              "tau": "1/100000000",
+              "nu": "1/2400000000",
+              "kappa": "7/2400000000",
+              "W1_plus_tau": "-1/60000000",
+              "W1_minus_tau": "-1/60000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "7",
+              "tau": "1/200000000",
+              "nu": "1/4800000000",
+              "kappa": "7/4800000000",
+              "W1_plus_tau": "-1/120000000",
+              "W1_minus_tau": "-1/120000000",
+              "antisymmetric": true
+            },
+            {
+              "ratio_c": "7",
+              "tau": "-1/100000000",
+              "nu": "-1/2400000000",
+              "kappa": "-7/2400000000",
+              "W1_plus_tau": "1/60000000",
+              "W1_minus_tau": "1/60000000",
+              "antisymmetric": true
+            }
+          ],
+          "all_antisymmetric": true
+        },
+        "case_B_kappa_fixed_independent_of_tau": {
+          "rows": [
+            {
+              "kappa0": "1/50",
+              "tau": "1/100000000",
+              "nu": "1/2400000000",
+              "W1_tau_plus_W1_minus_tau": "-16/75",
+              "predicted_2*b*kappa0": "-16/75",
+              "antisymmetry_expected": false,
+              "antisymmetry_holds": false,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "1/50",
+              "tau": "1/200000000",
+              "nu": "1/4800000000",
+              "W1_tau_plus_W1_minus_tau": "-16/75",
+              "predicted_2*b*kappa0": "-16/75",
+              "antisymmetry_expected": false,
+              "antisymmetry_holds": false,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "1/50",
+              "tau": "-1/100000000",
+              "nu": "-1/2400000000",
+              "W1_tau_plus_W1_minus_tau": "-16/75",
+              "predicted_2*b*kappa0": "-16/75",
+              "antisymmetry_expected": false,
+              "antisymmetry_holds": false,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "-7/3",
+              "tau": "1/100000000",
+              "nu": "1/2400000000",
+              "W1_tau_plus_W1_minus_tau": "224/9",
+              "predicted_2*b*kappa0": "224/9",
+              "antisymmetry_expected": false,
+              "antisymmetry_holds": false,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "-7/3",
+              "tau": "1/200000000",
+              "nu": "1/4800000000",
+              "W1_tau_plus_W1_minus_tau": "224/9",
+              "predicted_2*b*kappa0": "224/9",
+              "antisymmetry_expected": false,
+              "antisymmetry_holds": false,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "-7/3",
+              "tau": "-1/100000000",
+              "nu": "-1/2400000000",
+              "W1_tau_plus_W1_minus_tau": "224/9",
+              "predicted_2*b*kappa0": "224/9",
+              "antisymmetry_expected": false,
+              "antisymmetry_holds": false,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "0",
+              "tau": "1/100000000",
+              "nu": "1/2400000000",
+              "W1_tau_plus_W1_minus_tau": "0",
+              "predicted_2*b*kappa0": "0",
+              "antisymmetry_expected": true,
+              "antisymmetry_holds": true,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "0",
+              "tau": "1/200000000",
+              "nu": "1/4800000000",
+              "W1_tau_plus_W1_minus_tau": "0",
+              "predicted_2*b*kappa0": "0",
+              "antisymmetry_expected": true,
+              "antisymmetry_holds": true,
+              "behaves_as_theory_predicts": true
+            },
+            {
+              "kappa0": "0",
+              "tau": "-1/100000000",
+              "nu": "-1/2400000000",
+              "W1_tau_plus_W1_minus_tau": "0",
+              "predicted_2*b*kappa0": "0",
+              "antisymmetry_expected": true,
+              "antisymmetry_holds": true,
+              "behaves_as_theory_predicts": true
+            }
+          ],
+          "all_behave_as_predicted": true,
+          "note": "A nonzero fixed kappa0 is EXPECTED and REQUIRED to break antisymmetry (reproducing the AW1 flip-lemma statement \"at kappa!=0 no antisymmetry follows\"); kappa0=0 is expected and required to recover it. `all_behave_as_predicted` is the pass condition, not universal antisymmetry."
+        },
+        "passed": true
+      },
+      "passed": true
+    },
+    "uniform_counts_from_scratch.py": {
+      "tool": "A3-3 uniform_counts_from_scratch",
+      "class_table_size": 24,
+      "class_table_role_split": {
+        "selected": 3,
+        "omitted": 21
+      },
+      "method1_closed_form": {
+        "single_site": {
+          "owned_at_site_selected": 3,
+          "owned_at_site_omitted": 21,
+          "neighbor_contribution_by_direction": {
+            "(1, 0, 0)": {
+              "omitted": 4,
+              "selected": 0
+            },
+            "(0, 1, 0)": {
+              "omitted": 8,
+              "selected": 0
+            },
+            "(0, 0, 1)": {
+              "omitted": 16,
+              "selected": 0
+            }
+          },
+          "neighbor_total_omitted": 28,
+          "neighbor_total_selected": 0,
+          "faces_per_site_omitted": 49,
+          "faces_per_site_selected": 3,
+          "faces_per_site_total": 52
+        },
+        "R_cover": {
+          "touch_sA": {
+            "omitted": 49,
+            "selected": 3
+          },
+          "touch_sB": {
+            "omitted": 49,
+            "selected": 3
+          },
+          "both_sA_and_sB_omitted": 16,
+          "both_sA_and_sB_selected": 0,
+          "meeting_R_omitted": 82,
+          "meeting_R_selected": 6,
+          "meeting_R_total": 88,
+          "inside_R_omitted": 10,
+          "inside_R_selected": 6,
+          "inside_R_total": 16
+        }
+      },
+      "method2_brute_force": {
+        "single_site_r6": {
+          "box_radius": 6,
+          "meeting_omitted": 49,
+          "meeting_selected": 3,
+          "meeting_total": 52,
+          "inside_omitted": 0,
+          "inside_selected": 3,
+          "inside_total": 3
+        },
+        "single_site_r9_widened": {
+          "box_radius": 9,
+          "meeting_omitted": 49,
+          "meeting_selected": 3,
+          "meeting_total": 52,
+          "inside_omitted": 0,
+          "inside_selected": 3,
+          "inside_total": 3
+        },
+        "R_r6": {
+          "box_radius": 6,
+          "meeting_omitted": 82,
+          "meeting_selected": 6,
+          "meeting_total": 88,
+          "inside_omitted": 10,
+          "inside_selected": 6,
+          "inside_total": 16
+        }
+      },
+      "actual": {
+        "faces_per_site_omitted": 49,
+        "faces_per_site_selected": 3,
+        "faces_per_site_total": 52,
+        "meeting_R_omitted": 82,
+        "meeting_R_selected": 6,
+        "meeting_R_total": 88,
+        "inside_R_omitted": 10,
+        "inside_R_selected": 6,
+        "inside_R_total": 16
+      },
+      "expected_from_ax1_gate": {
+        "faces_per_site_omitted": 49,
+        "faces_per_site_selected": 3,
+        "faces_per_site_total": 52,
+        "meeting_R_omitted": 82,
+        "meeting_R_selected": 6,
+        "meeting_R_total": 88,
+        "inside_R_omitted": 10,
+        "inside_R_selected": 6,
+        "inside_R_total": 16
+      },
+      "matches_expected": {
+        "faces_per_site_omitted": true,
+        "faces_per_site_selected": true,
+        "faces_per_site_total": true,
+        "meeting_R_omitted": true,
+        "meeting_R_selected": true,
+        "meeting_R_total": true,
+        "inside_R_omitted": true,
+        "inside_R_selected": true,
+        "inside_R_total": true
+      },
+      "method1_and_method2_agree_single_site": true,
+      "method1_and_method2_agree_R": true,
+      "widening_box_r6_to_r9_changes_nothing": true,
+      "passed": true
+    },
+    "az2_dictionary_calc.py": {
+      "tool": "A3-4 az2_dictionary_calc",
+      "assumptions": {
+        "A1_alpha_equals_1_both_sides": true,
+        "A2_AW1_parity_theorem_only_f_equals_W_survives_at_first_order": true,
+        "A3_tau_FG_defined_as_tau_over_24": true,
+        "A4_free_gap_identification_FG_3_equals_Z3_plaquette_energy_3": true
+      },
+      "fg_side": {
+        "convention": "H_FG(tau_FG) = K - tau_FG * x  (Round11 advisor.md / az2_spec_check.md section 3, primary/asymmetric variant)",
+        "facts_confirmed_live": {
+          "K_times_one": {
+            "0": "0"
+          },
+          "K_x_equals_3x": true,
+          "K_on_x_raw": {
+            "(1, 0, 0)": "3"
+          },
+          "x_squared_moment": "1/4",
+          "x_squared_preview": 0.25,
+          "x_mean_is_zero": true,
+          "own_free_reference": true,
+          "free_gap_exact": "3",
+          "free_gap_equals_3": true,
+          "tail_lower_D6": "45",
+          "tail_lower_D8": "69"
+        },
+        "derivative_closed_form": {
+          "value": "1/6",
+          "preview": 0.16666666666666666,
+          "gap_K_eigenvalue_on_x_shell": "3",
+          "psi1_coefficient_on_x": "1/3",
+          "x_squared_moment": "1/4",
+          "formula": "2 * (1/gap) * <x,x>"
+        },
+        "derivative_regularized_solve": {
+          "value": "1/6",
+          "preview": 0.16666666666666666,
+          "degree": 6,
+          "dimension": 84,
+          "K_reg_symmetric": true,
+          "v0_G_v0": "1",
+          "MX_v0_nonzero_count": 20,
+          "v0_MX_v1": "1/12"
+        },
+        "two_independent_methods_agree": true,
+        "arb_crosscheck_of_regularized_solve": {
+          "precision_bits": 256,
+          "method": "flint.arb_mat.solve (ball arithmetic)",
+          "derivative_arb_ball_bounds": [
+            "16666666666666666666666666666666666666666666666666666666666666666666666666619887/100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "3333333333333333333333333333333333333333333333333333333333333333333333333342027/20000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          ],
+          "derivative_arb_ball_preview": 0.16666666666666666,
+          "exact_fraction_value": "1/6",
+          "arb_ball_contains_exact_fraction": true
+        }
+      },
+      "z3_side": {
+        "convention": "V_b = -(tau/24) * sum_{f=1}^{24} W_f  (alpha units, route-B uniform per-block potential; \"plaquette energy 3\" read as the declared free/reference electric scale)",
+        "owned_faces_per_block_confirmed_independently": 24,
+        "admitted_first_order_coefficient": {
+          "source": "research/round32/forward/aw1/output/results.json checks[29].first_order_mean_per_tau",
+          "string": "1/144",
+          "headline_field": "+tau/144",
+          "referenced_as_unchanged_in_ax1_gate_transfer_item": true
+        }
+      },
+      "dictionary": {
+        "A3_dictionary_factor_tau_over_tau_FG": "24",
+        "tau_FG_equals_tau_over_24": true,
+        "dxdtau_converted_via_dictionary": "1/144",
+        "dxdtau_converted_preview": 0.006944444444444444,
+        "z3_admitted_dxdtau": "1/144",
+        "z3_admitted_dxdtau_preview": 0.006944444444444444,
+        "matches_under_A1_A4": true,
+        "contrast_naive_dictionary_tau_FG_equals_tau": {
+          "converted": "1/6",
+          "matches": false,
+          "note": "Without A2/A3 (i.e. naively setting tau_FG=tau instead of tau/24), the FG derivative does NOT reproduce the admitted 1/144; the match above is therefore a genuine (if assumption-dependent) consequence of the stated dictionary, not an algebraic tautology of the two numbers involved."
+        }
+      },
+      "labels": {
+        "finite_graph_model_id": "FG(two-plaquette, D=6, tau_FG, I1.5-style, gauge-invariant)",
+        "complete_residual_all_channels": true,
+        "certified_representation_tail": true,
+        "own_free_reference": true,
+        "no_transfer_to_aq": true,
+        "fg_coefficients_not_fitted": true,
+        "consistency_map_not_proof": true
+      },
+      "passed": true
+    }
+  },
+  "all_passed": true,
+  "planning_notes_for_subrounds_4_5": [
+    {
+      "for": "sub-round 4 (AY1/AY2, state/density)",
+      "note": "ax2_budget_actual.py's live-read-never-retyped pattern (reading D_ii_plus, D_prime_ii and target_D_ii directly out of forward/ax1 and reverse/ax1 output, then cross-checking the string appears verbatim in advisor/ax1-gate.json) is directly reusable by AY1's own check.py to bind AW1's admitted rho^(1)_R and 2*K_2'*tau^2 constant without transcription risk, exactly as update-2.md section 2 asks ('AY1 should read its first-order density rho^(1)_R ... directly off AW1's admitted c^(1) ... and its bound K_2^+, rather than re-deriving a generic AV1-only form'). kappa_tied_fixture.py's two-method (closed-form vs. generic linear-solve) cross-check caught a genuine sign bug in this sub-round's own first draft; AY1's own density-perturbation-theory producer should budget for the same kind of independent second derivation of any first-order correction it computes, not a formula transcribed once and trusted."
+    },
+    {
+      "for": "sub-round 5 (AZ1/AZ2, continuum/finite graph)",
+      "note": "az2_dictionary_calc.py turns az2_spec_check.md section 3's proposed normalization dictionary into an executable, fully exact calculation: tau_FG:=tau/24 (via AW1's parity theorem, assumptions A2/A3) and the gap identification free_gap()==3== 'plaquette energy 3' (assumption A4) together convert the finite-graph's own exact first-order coefficient d<x>/d(tau_FG)|_0=1/6 (proved two independent ways -- a closed-form eigenvector argument since Kx=3x exactly, AND az2_spec_check.md's own proposed regularized-singular-solve method at D=6, now actually executed in exact Fraction arithmetic rather than only floating-sanity-checked) into 1/144, matching AW1's admitted Z^3 coefficient exactly. AZ2's own producer should decide independently whether A2-A4 are the dictionary it wants to freeze in its contract, or a different one -- this match is a labelled consistency observation under stated assumptions, not a proof the two conventions are the same physics, and az2.json's own preregistration should say explicitly which dictionary it binds to before production, per the contract's own 'consistency, not proof' wording."
+    },
+    {
+      "for": "both sub-rounds 4-5 (general)",
+      "note": "uniform_counts_from_scratch.py's two structurally different methods (closed-form inclusion-exclusion on the 24-class table vs. an independent owner-block/class-row brute force, neither reusing assistant-1's fine-lattice scan) agree on every one of 49/3/52, 82/6/88 and 10/6/16, and are unchanged when the brute-force box widens from radius 6 to 9 -- the kind of double-independent combinatorial check AY1/AZ2 should budget time for on their OWN new counts (AY1's density term will need its own face/owner-set bookkeeping; AZ2's controls list in az2_spec_check.md section 8 already flags several Z^3-only controls, e.g. missing_incoming_stars, that are not_applicable to the finite graph and must be marked so with a stated reason, not silently dropped -- exactly the discipline this sub-round's scripts try to model)."
+    }
+  ]
+}
