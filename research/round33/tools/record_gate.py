@@ -14,6 +14,7 @@ import argparse
 import datetime
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -41,6 +42,22 @@ def main():
     review = json.loads((ROOT / ROUND / 'skeptic' / (loop + '.json')).read_text())
     if review.get('blocking_issues'):
         raise SystemExit('skeptic review has blocking issues; repair before gating')
+    # Round32 closing-panel rules R7 and R6 at gate time.
+    sys.path.insert(0, str(ROOT / ROUND / 'tools'))
+    import phrase_scan
+    contract_path = ROOT / ROUND / 'contracts' / (loop + '.json')
+    contract_data = json.loads(contract_path.read_text())
+    forbidden, template = phrase_scan.contract_terms(contract_data)
+    if template:
+        spans = [phrase_scan.normalize(review['supported_statement']), phrase_scan.normalize(a.decision)]
+        if not any(phrase_scan.normalize(template) in span for span in spans):
+            raise SystemExit('R7: the mandatory sentence template must appear as one unbroken span in the '
+                             'supported statement or the decision')
+    for label, text in (('supported_statement', review['supported_statement']), ('decision', a.decision),
+                        ('limitations', ' '.join(review['limitations']))):
+        bad = phrase_scan.affirmative(phrase_scan.scan(text, forbidden, template))
+        if bad:
+            raise SystemExit('R6: affirmative forbidden phrase in ' + label + ': ' + json.dumps(bad[:3]))
     bindings = {}
     names = set()
     names.add(str(ROUND / 'contracts' / (loop + '.json')))
