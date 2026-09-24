@@ -15,7 +15,7 @@ The cycle starts from merged Round31 commit `1a686cdf9808aca9b5811dbf23e78bd2be1
 | 4 | AY1 | accepted_within_scope (uniform_local_closeness_not_uniqueness) | 2D ≈ 2.72e-8 for any two subsequential limits of both families on R; common rho^(1)_R; R-local K_2' ≈ 13418 (about 4 × K_2^+) |
 | 4 | AY2 | accepted_within_scope (uniform_local_closeness_not_uniqueness; static_not_dynamic) | Statement with six unproved obligations, falsifying scenario at second order, and the certified static two-sided distance ‖ρ_R−P_R‖₁ ∈ [4.3786e-10, 4.4055e-10] of every limit from the Haar product |
 | 5 | AZ1 | accepted_within_scope | Dictionary identities exact; one volume-uniform estimate at fixed a (gap g²/(32a)); none uniform in a; toy-trajectory crossovers n*=2/132 (and 4/421); no fraction of the continuum problem |
-| 5 | AZ2 | (in production) | |
+| 5 | AZ2 | accepted_within_scope (sign_certified_finite_graph; static_not_dynamic) | Two-face two-plaquette graph, D∈{6,8}: derivative exactly 1/6 (↔ 1/144 under τ_FG=τ/24, consistency only), second-order coefficient exactly 0, ⟨W₁⟩ enclosed at six grid points with certified tails; never a transfer |
 
 The authoritative reviewed statements are in `advisor/findings.json` and the per-loop gates; `advisor/admission-spec.json` fixes the trusted reviewed semantics and required check ids. A `limited` or `insufficient` verdict is a retained outcome. Loop counts are not a fraction of the four-dimensional Yang–Mills problem, which remains open.
 
