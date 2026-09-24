@@ -65,7 +65,7 @@ Each round is an adaptive cycle of "loops" (investigations) selected one at a ti
 
 ### Current state
 
-Round31 (AT4–AT6) is the latest merged cycle; `research/round31/HANDOFF.md` and `research/round31/advisor/roadmap.json` hold the ranked, unexecuted next goals (cap-level precision, interaction shift, uniform Hamiltonian, state identification, continuum trajectory). Start any continuation from those two files and `AGENTS.md`.
+Round32 (AV1–AZ2, five sub-rounds of two investigations, all accepted within scope) is the latest cycle; `research/round32/HANDOFF.md` and `research/round32/advisor/roadmap.json` hold the ranked, unexecuted next goals (uniqueness of the local restriction, boundary independence of dynamics, whole-sequence convergence, a sharper R-local second-order constant, one uniform-in-a estimate). Every Round32 gate binds the root `AGENTS.md` by hash, so that file is not edited during or after the round; the Round32 lessons live in `.codex/skills/qeg-research-advisor/references/round32-state-lemma-and-window.md` (mirrored under `.claude/`) and in the handoff. Start any continuation from those files.
 
 ## Foreign agent configuration
 
