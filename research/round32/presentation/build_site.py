@@ -124,8 +124,10 @@ def build(root=ROOT, allow_incomplete=False, allow_missing_addendum=False):
         producers = row.get('producers')
         require(producers in PRODUCER_SETS, 'invalid producers ' + loop_id)
         require(gate.get('producers') == producers, 'findings/gate producers mismatch ' + loop_id)
-        expected_direction = 'paired' if producers == ['forward', 'reverse'] else 'single+skeptic'
-        require(row.get('direction') == expected_direction, 'invalid direction ' + loop_id)
+        allowed_directions = {'paired'} if producers == ['forward', 'reverse'] else {'single+skeptic', 'statement+skeptic', 'statement-only'}
+        require(row.get('direction') in allowed_directions, 'invalid direction ' + loop_id)
+        contract_direction = read(ROUND + '/contracts/' + loop_id + '.json').get('direction') if (root / ROUND / 'contracts' / (loop_id + '.json')).is_file() else None
+        require(contract_direction in (None, row.get('direction')), 'findings/contract direction mismatch ' + loop_id)
         source_bindings = gate.get('bindings')
         reviewer = gate.get('reviewer_path')
         require(isinstance(source_bindings, dict) and bool(source_bindings),
@@ -146,7 +148,7 @@ def build(root=ROOT, allow_incomplete=False, allow_missing_addendum=False):
             'verdict': gate['verdict'], 'summary': row['summary'], 'limitations': limitations,
             'model': row['model'], 'contribution_id': row['contribution_id'],
             'derivation_steps': steps, 'applications': applications,
-            'producers': producers, 'direction': expected_direction,
+            'producers': producers, 'direction': row.get('direction'),
             'gate_path': expected_gate, 'gate_sha256': bindings[expected_gate],
             'reviewer_path': reviewer, 'sources': list(dict.fromkeys(reader_sources)),
             'all_sources': [expected_gate] + sorted(source_bindings),
@@ -253,11 +255,20 @@ def build(root=ROOT, allow_incomplete=False, allow_missing_addendum=False):
         subround_number = entry.get('subround')
         require(type(subround_number) is int and 1 <= subround_number <= SUBROUND_COUNT,
                 'invalid panel update subround')
-        require(nonempty(entry.get('lens')), 'missing panel update lens')
         path = entry.get('path')
         require(nonempty(path), 'missing panel update path')
         bind(path)
-        updates.append({'subround': subround_number, 'lens': entry['lens'], 'path': path})
+        lenses = entry.get('lenses', [entry['lens']] if nonempty(entry.get('lens')) else [])
+        require(isinstance(lenses, list) and lenses and all(nonempty(x) for x in lenses),
+                'missing panel update lens')
+        assistants = entry.get('assistants', [])
+        require(isinstance(assistants, list) and all(nonempty(x) for x in assistants),
+                'invalid panel update assistants')
+        for name in [*lenses, *assistants]:
+            bind(name)
+        updates.append({'subround': subround_number, 'lens': ', '.join(Path(x).parent.name if Path(x).name.startswith('update') else Path(x).parent.parent.name for x in lenses),
+                        'lenses': lenses, 'assistants': assistants, 'path': path,
+                        'goal_changes': entry.get('goal_changes', '')})
 
     plan = read(ROUND + '/advisor/plan.json')
     plan_subrounds = plan.get('subrounds')

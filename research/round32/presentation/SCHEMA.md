@@ -16,13 +16,13 @@ Top-level fields:
 - `subrounds`: list of {id:1..5, title, goal_id, loops:[loop ids], selection_note_path, panel_update_path}.
 - `loops`: list (in sequence order) of {id, sequence, subround, title, stage:"reviewed", verdict,
   accepted, summary, model, limitations[], contribution_id, derivation_steps[], applications[],
-  producers:["forward","reverse"]|["forward"], direction:"paired"|"single+skeptic",
+  producers:["forward","reverse"]|["forward"], direction:"paired"|"single+skeptic"|"statement+skeptic"|"statement-only" (must equal the frozen contract direction),
   gate_path, gate_sha256, reviewer_path, sources[], all_sources[]}.
 - `roadmap`: contents of `advisor/roadmap.json` with a `goals` list.
 - `network`: contents of `research/round32/network.json`.
 - `survey`: flattened expert source records (area = experts/<lens> directory name, ledger path,
   id, title, url, provenance, date, reading_depth, use, limits, passages[]).
-- `panel`: {deliberation:[{loop:1..3, path, summary}], updates:[{subround, lens, path}]}.
+- `panel` (updates carry {subround, lens (label), lenses[], assistants[], path, goal_changes}): {deliberation:[{loop:1..3, path, summary}], updates:[{subround, lens, path}]}.
 - `calculators`: list of recorded exact results the site may display as recorded values:
   {loop_id, title, gate_path, gate_sha256, source, result_path, formula_id, record:{...}, preview_only:true}.
   `advisor/calculators.json` entries may name `record_keys` (top-level fields of the bound result record) to select the displayed subset; the whole record stays bound by its gate.
