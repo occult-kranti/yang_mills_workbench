@@ -8,8 +8,8 @@ The cycle starts from merged Round31 commit `1a686cdf9808aca9b5811dbf23e78bd2be1
 |---|---|---|---|
 | 1 | AV1 | Volume-uniform local state bound linear in tau; exact tier about 1.36e-8 at the cap | Zero-selected patterned family and cover R only; closeness, not uniqueness |
 | 1 | AV2 | Window-kernel certificate of the centered Wilson node at tau=10^-8, s=1: radius about 1.83e-7 (<10^-6) | Free reference inside (reference_unresolved); only s=1 |
-| 2 | AW1 | (in production) | |
-| 2 | AW2 | (planned) | |
+| 2 | AW1 | Parity theorem, link-flip antisymmetry, first-order Wilson mean +tau/144, exact-tier second-order constant about 3354.8; AW2 coupling fixed at the cap | Static equal-time effect; finite-box parity; no third-order remainder |
+| 2 | AW2 | (in production) | |
 | 3 | AX1/AX2 | (planned) | |
 | 4 | AY1/AY2 | (planned) | |
 | 5 | AZ1/AZ2 | (planned) | |
