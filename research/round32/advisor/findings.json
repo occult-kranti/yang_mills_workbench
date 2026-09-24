@@ -2,7 +2,7 @@
   "schema": "hnm-round32-findings-v1",
   "human_author": "Hruday N M (BUNZEEY)",
   "requested": 10,
-  "completed": 2,
+  "completed": 3,
   "loops": [
     {
       "id": "av1",
@@ -116,6 +116,64 @@
         "research/round32/skeptic/av2.md",
         "research/round32/skeptic/av2-independent-derivation.md",
         "research/round32/forward/av2/calculator.py"
+      ]
+    },
+    {
+      "id": "aw1",
+      "sequence": 3,
+      "subround": 2,
+      "title": "Hruday parity theorem, link-flip antisymmetry and the first-order Wilson mean with an itemized second-order remainder",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, whole stars phi_b=-(tau/3) sum W_f in normalized units delta=alpha/8; original xz Wilson loop W with complete cover R={0,e_z}; clock s=alpha*t_E/hbar, G=H/alpha), at both signs of tau with |tau|<=10^-8: (1) Parity theorem, finite boxes only: in every open centered whole-star box Lambda_N, N>=2, and every on-site cutoff, the first-order tau-derivatives at tau=0 of omega_N(W^2), of the real-time correlation c_N(theta)=<chi,e^{i theta(G-E)}chi> (every real theta) and of C_N(s)=<chi,e^{-s(G-E)}chi> (every s>=0) vanish, the state, Duhamel, energy and vector-centring terms separately, by the per-link Z_2 centre grading (SU(2) Peter-Weyl multiplicities): E[W]=E[W^3]=0, E[W^2]=1/4, E[W^4]=1/8, E[W^2 W_f]=0 for every omitted f including f=W, P_24 V W Omega_0=0 (only the identity component (1/4)Omega_0 at energy 0 for f=W), and zero first-order splitting of the gauge-invariant energy-24 multiplet span{W_g Omega_0} (not claimed on the non-invariant eigenspace); hence C_N(s)=e^{-3s}/4+O_N(tau^2) with the tau^2 constant explicitly unbounded (not uniform in N; for AQ limits only evenness of C(s), no AQ second-order statement), and omega(W^2)=1/4+O(tau^2) with supplementary uniform constants (not targets; the free value lies inside, no shift resolved). (2) Flip lemma: E={(p,x):p_y even} u {(p,y):p_z even} u {(p,z):p_x even} meets every plaquette of Z^3 in 1 or 3 links; U_E (central -1 on every link of E) commutes with every Casimir and every original endpoint gauge action, fixes Omega_0 and maps every W_f to -W_f, so U_E H_N(tau,kappa) U_E^*=H_N(-tau,-kappa) in every open centered whole-star box, including on-site cutoff compressions (Q_L -> cutoff of h_b(-kappa)); at kappa=0 omega_{N,-tau}(W)=-omega_{N,tau}(W) and omega_N(W^2), C_N, c_N are even in tau; for AQ limits S(-tau)=S(tau)o alpha_E as whole sets of subsequential limits (pointwise only along a common subsequence); odd periodic sides and frozen or gauge-fixed links excluded; no tau-antisymmetry via U_E at kappa!=0; oddness gives no O(tau^3) remainder. (3) omega_tau(W)=+tau/144+r(tau) under I1.5 (AV1 creation convention c^(1)=L_0=-(tau/72) sum W_f Omega_0, omega=-2Re<W Omega_0,c^(1)>+O(tau^2)); only f=W contributes; first-order values +-1/14400000000 at tau=+-10^-8. (4) |r(tau)|<=K_2^+ tau^2 uniformly in N, cutoff and every AQ1 subsequential limit at the exact tier (t<=T=(49|tau|/144)/(1-352J), rho=352JT, J=28|tau|): the bound value is K_2^+=81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984 (~3354.80322946, outward 3354803229461691/10^12; the skeptic itemization, identical to the forward's labelled unpinned_t_bounds variant, dominating the forward 3354.63832966 and reverse 3354.49942587 exact-tier values, all three valid). (5) K_2^+ tau<=1/288 at tau=10^-8, so the frozen decade-grid rule gives tau_AW2=10^-8 (the cap) with sign margin 1/(144 K_2^+ tau)~207.00005 (directed floor 41400010489/200000000). The crude tier (t_c=592|tau|, K_2~7.9375e6, margin 0.0875) fails at the cap and is retained as a limited-tier value. No enclosure or sign of omega(W), no dynamical or mass-gap statement, no third-order remainder, uniqueness, whole-sequence convergence, rate in N, uniform Wilson, weak-coupling, continuum or priority claim is admitted.",
+      "summary": "SU(2) parity makes every first-order shift of the centered correlation vanish; an exact link-sign flip makes the Wilson mean odd in tau; the first-order Wilson mean is +tau/144 with an itemized second-order constant about 3354.8 at the exact tier, so a sign certificate is feasible at the original cap.",
+      "limitations": [
+        "Only the AM2/AQ1 zero-selected patterned family, the cover R={0,e_z}, fixed spacing and |tau|<=10^-8; nothing transfers to nonzero selected triples, uniform Wilson theory, weak coupling or the continuum",
+        "Parity theorem for C(s) and c(theta) is a finite-volume Taylor statement (Kato analyticity per box); the tau^2 constant is explicitly unbounded; AQ limits inherit only the set-level evenness",
+        "Flip lemma needs open boxes and kappa=0 for antisymmetry; the kappa!=0 identity rests on the inherited strip-operator form; AQ statements are about whole sets of subsequential limits",
+        "K_2^+ is an absolute second-order upper bound with no sign of r(tau) and no third-order remainder; the AM2 generic majorant 352JT is 99.98% of it; the -tau ledger is a replay",
+        "No enclosure or sign of omega(W) is admitted (AW2); static equal-time mean, not a dynamical or mass-gap correction",
+        "Inherited without re-proof: AM2 fixed point, majorant, gaps and ground uniqueness; AV1 product split, anchored-norm tier, cutoff removal and AQ passage; AQ1 construction and dynamics; I1 dictionary; Kato and Peter-Weyl cited, not machine-checked",
+        "Fixtures (one plaquette, qubit/four-site creation algebras, kappa compressions, 3x3 compression) are finite graphs or algebras, transfers_to_aq false",
+        "Independence limited to routes and code: shared premises state the mechanism (loop-3 sign-offs, selection-aw1.md, skeptic/av2.md); the forward read the skeptic triage and loop-2 notes as declared premises",
+        "N1: both producers used the shared scratchpad root (files matching the forward's K_2/K_W2 formulas, E'' remark and one-plaquette fixture, and the reverse's alpha-unit fixture and four-site creation fixture, 23:14-23:20Z) without disclosing scratch reads; the forward's k2.py overwrote the skeptic's pre-comparison scratch k2.py; reads cannot be determined; isolation is verified for repository inputs only",
+        "N4: the reverse's headline 'margin ~103.5' is the ratio to 1/288; the contract sign margin is 1/(144 K_2^+ tau) ~207.02",
+        "N5: forward K_W2 ~3354.57 is conservative (2 rho, all 72 straddling faces) against reverse 1677.33 and skeptic 1677.52; supplementary, not a target",
+        "N6: reverse wording that U_E commutes with every on-site spectral cutoff and fixes P_R holds at kappa=0; at kappa!=0 these map to the -kappa objects (forward states Q_L')",
+        "N7: the forward records a coherently rehashed 1/144 target instead of rejecting it (no semantic tie to half the coefficient; the reverse rejects); protected by the check.py hash in freeze.json",
+        "N8: neither producer checker pins individual K_2 term values; four silent undercounts ran to completion and were caught only by the skeptic term validator; AW2 should bind K_2^+ from the gate",
+        "N9: the modern loop-3 sign-off sentence that the direct remainder is O(tau^3) is used by neither producer and is not admitted",
+        "Undeclared disclosed reads: forward tools README, freeze.py, AV1 forward check.py and two assistant scripts (named, not imported; the modern K_2 script holds only loop-2 tiers); reverse portions of reverse/av1/check.py and the line count of reverse/av2/check.py; the reverse's partial reads of the AV2 forward report and skeptic/av2.md are of declared shared premises",
+        "Scientific priority unverified"
+      ],
+      "model": "Same zero-selected patterned AQ subfamily as AV1 (selected triple (0,0,0), whole stars under I1.5, both signs |tau|<=10^-8, centered whole-star boxes, cover R={0,e_z}, Haar reference); the AV1-admitted expansion and constants; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/aw1-gate.json",
+      "contribution_id": "HNM-C-AW1",
+      "dependencies": [
+        "r32-av1",
+        "r29-am2",
+        "r29-aq1",
+        "r29-aq2"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Grade each link by the SU(2) center: a first-order Haar integral with an odd number of j=1/2 factors on some link vanishes; apply to the state, Duhamel and energy terms of C(s), of the real-time correlation and of omega(W^2).",
+        "Define the link set E and enumerate all plaquette orientations: every plaquette meets E oddly, so the central sign flip U_E maps H(tau,kappa) to H(-tau,-kappa); at the zero triple the Wilson mean is odd and the correlations even in tau.",
+        "Evaluate the first-order Wilson mean from the AV1 expansion under I1.5: only the Wilson face contributes, giving +tau/144.",
+        "Itemize the second-order remainder (AM2 remainder, two-creation, straddling, density, normalization, overlap multiplier 1) at the exact and crude tiers; evaluate the frozen AW2 coupling rule."
+      ],
+      "applications": [
+        "Re-targets roadmap goal 2 to the static Wilson mean and fixes the AW2 coupling before its constant is seen.",
+        "Supplies the exact tau-parity controls for every later loop."
+      ],
+      "evidence": [
+        "research/round32/advisor/aw1-gate.json",
+        "research/round32/forward/aw1/report.md",
+        "research/round32/reverse/aw1/report.md",
+        "research/round32/skeptic/aw1.md",
+        "research/round32/skeptic/aw1-independent-derivation.md"
       ]
     }
   ],
