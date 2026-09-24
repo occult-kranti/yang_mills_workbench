@@ -1,0 +1,311 @@
+{
+  "schema": "hnm-r32-assistant-tests-v1",
+  "round": 32,
+  "subround": 2,
+  "lens": "historical (Newton/Tesla)",
+  "assistant": 2,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "zero_research_loops": true,
+  "role": "tests and planning only; not a producer, skeptic or advisor artifact",
+  "source_task": "research/round32/experts/historical/update-1.md section 5",
+  "read_before_writing": [
+    "research/round32/experts/historical/update-1.md",
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/forward/aw1/output/results.json",
+    "research/round32/forward/aw1/report.md",
+    "research/round32/reverse/aw1/output/results.json",
+    "research/round32/skeptic/aw1.md",
+    "research/round32/skeptic/aw1.json",
+    "research/round32/skeptic/aw1-independent/results.json",
+    "research/round32/contracts/aw2.json",
+    "research/round32/forward/aw2/output/results.json (AW2 frozen; review pending, treated as provisional)",
+    "research/round32/experts/historical/assistant-1/README.md",
+    "research/round32/experts/historical/assistant-1/haar_parity_exact.py",
+    "research/round32/experts/historical/assistant-1/am2_tiers_exact.py"
+  ],
+  "scripts": {
+    "flip_full_enumeration.py": {
+      "sha256": "cf992dc799fe56b02b833802307adfabeb33f2f2151f3be852124250f18e278f",
+      "overall_pass": true,
+      "result": {
+        "script": "flip_full_enumeration.py",
+        "zero_research_loops": true,
+        "arithmetic": "exact integers only (link-membership combinatorics); no floats",
+        "flip_set": "E={(p,x):p_y even} u {(p,y):p_z even} u {(p,z):p_x even}",
+        "block": "8x8x8 fine lattice, base points p in {0,...,7}^3, all 3 orientations",
+        "total_plaquettes_checked": 1536,
+        "even_intersection_count": 0,
+        "odd_intersection_count": 1536,
+        "count_split": {
+          "links_in_E_1": 768,
+          "links_in_E_3": 768
+        },
+        "histogram": {
+          "1": 768,
+          "3": 768
+        },
+        "translation_covariance": {
+          "pass": true,
+          "num_orientation_parity_classes_found": 24,
+          "expected_classes": 24,
+          "all_classes_odd": true
+        },
+        "damaging_mutation_control": {
+          "name": "E_minus_one_link (drop (0,0,0,x) from E)",
+          "target_face": "W itself: p=(0,0,0), orientation xz",
+          "count_before": 3,
+          "count_after": 2,
+          "rejected": true,
+          "reason": "removing one link from E must turn some odd intersection even; a flip set that survives this mutation unmodified would be a bug"
+        },
+        "overall_pass": true
+      }
+    },
+    "k2_reassembly.py": {
+      "sha256": "3eae9b118ef054b738da1254dbf9483787354d26c9ea54f013eed2548697a321",
+      "overall_pass": true,
+      "result": {
+        "script": "k2_reassembly.py",
+        "zero_research_loops": true,
+        "arithmetic": "fractions.Fraction only; decimal previews for readability only",
+        "tau": "1/100000000",
+        "reassembled_terms": {
+          "J": "7/25000000",
+          "t1": "49/14400000000",
+          "T": "49/14398580736",
+          "am2_remainder_352JT": "3773/11248891200000000",
+          "straddling_T_6a_plus_rho": "229849739/161968068133679923200000000",
+          "two_creation_33a_plus_rho_sq": "166184094520081/31634388307359360000000000000000",
+          "eps_F_2T_plus_Tsq": "1411060914529/207319127211110301696",
+          "eps_R_82a_plus_2rho_plus_two_creation": "180161487949673694520081/31634388307359360000000000000000",
+          "eps_min": "180161487949673694520081/31634388307359360000000000000000",
+          "density_eps_min_sq": "32458161740240419840923214704314125168912246561/1000734523580794593813136179609600000000000000000000000000000000",
+          "normalization_order_a_eps_min_sq": "32458161740240419840923214704314125168912246561/14410577139563442150909160986378240000000000000000000000000000000000000000",
+          "overlap_multiplier": "1 (already folded into am2_remainder/straddling/two_creation, per AV1 F12: 2||W Omega_R||=1)",
+          "K2_min_raw_at_tau": "4834027274105036564650889598399220550617136650475647312246561/14410577139563442150909160986378240000000000000000000000000000000000000000",
+          "K2_min_coefficient": "4834027274105036564650889598399220550617136650475647312246561/1441057713956344215090916098637824000000000000000000000000",
+          "K2_min_coefficient_preview": 3354.4994258651045
+        },
+        "reads_ok": true,
+        "exported_am2_remainder_terms": {
+          "forward_am2_remainder": "3773/11248891200000000",
+          "reverse_am2_remainder": "3773/11248891200000000",
+          "skeptic_independent_am2_remainder": "3773/11248891200000000"
+        },
+        "am2_remainder_common_value_confirmed": true,
+        "exported_K2_dominates_minimal": {
+          "forward_K2_exact_plus": {
+            "value_preview": 3354.6383296621293,
+            "dominates_minimal": true
+          },
+          "reverse_K2_exact_rational": {
+            "value_preview": 3354.499425866929,
+            "dominates_minimal": true
+          },
+          "skeptic_K2_exact_tier_bound": {
+            "value_preview": 3354.8032294616905,
+            "dominates_minimal": true
+          },
+          "gate_bound_literal": {
+            "value_preview": 3354.8032294616905,
+            "dominates_minimal": true
+          }
+        },
+        "domination_ok": true,
+        "skeptic_minimal_accepted_echo_matches_bit_for_bit": true,
+        "gate_literal_equals_skeptic_admitted_bit_for_bit": true,
+        "ordering_note": "skeptic/gate >= forward >= reverse >= K2_min, matching skeptic/aw1.md's own stated ordering",
+        "overall_pass": true
+      }
+    },
+    "tau_aw2_rule.py": {
+      "sha256": "aced17e4556eeef1f5835bafa0f74620623ee4cb614bc4c2c372d90a8a7e04a8",
+      "overall_pass": true,
+      "result": {
+        "script": "tau_aw2_rule.py",
+        "zero_research_loops": true,
+        "arithmetic": "fractions.Fraction only; no floats in any comparison",
+        "K2_plus_from_gate": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+        "K2_plus_from_aw2_contract": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+        "gate_and_contract_K2_plus_agree": true,
+        "target": "1/288",
+        "decade_grid_scanned": "{10^-8, 10^-9, ..., 10^-40}",
+        "first_three_grid_rows": [
+          {
+            "k": 8,
+            "tau": "1/100000000",
+            "K2_tau": "207638693805632844612385445095759947457/6189295753091021175534274310329364228603904",
+            "K2_tau_preview": 3.354803229461691e-05,
+            "feasible": true
+          },
+          {
+            "k": 9,
+            "tau": "1/1000000000",
+            "K2_tau": "207638693805632844612385445095759947457/61892957530910211755342743103293642286039040",
+            "K2_tau_preview": 3.3548032294616908e-06,
+            "feasible": true
+          },
+          {
+            "k": 10,
+            "tau": "1/10000000000",
+            "K2_tau": "207638693805632844612385445095759947457/618929575309102117553427431032936422860390400",
+            "K2_tau_preview": 3.354803229461691e-07,
+            "feasible": true
+          }
+        ],
+        "tau_AW2_computed": "1/100000000",
+        "tau_AW2_expected": "1/100000000",
+        "rule_gives_cap": true,
+        "tau_AW2_exported_by_forward_aw2": "1/100000000",
+        "matches_exported": true,
+        "off_grid_mutation_rejected": true,
+        "overall_pass": true
+      }
+    },
+    "sign_margin_replay.py": {
+      "sha256": "99b8b501ff4cf8710055ff82cb1ef6451ca4c50dc6af8c0cefccb7424b8eabc7",
+      "overall_pass": true,
+      "result": {
+        "script": "sign_margin_replay.py",
+        "zero_research_loops": true,
+        "arithmetic": "fractions.Fraction only; no floats in any comparison",
+        "K2_plus": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+        "tau_plus": "1/100000000",
+        "tau_minus": "-1/100000000",
+        "enclosure_plus": {
+          "lower": "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+          "upper": "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+          "lower_preview": 6.910896412149827e-11,
+          "upper_preview": 6.977992476739061e-11
+        },
+        "enclosure_minus": {
+          "lower": "-43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+          "upper": "-42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+          "lower_preview": -6.977992476739061e-11,
+          "upper_preview": -6.910896412149827e-11
+        },
+        "exclusion_margin": "42773581813770903096597852821080380528959/207638693805632844612385445095759947457",
+        "exclusion_margin_preview": 206.00005244595954,
+        "sign_margin": "42981220507576535941210238266176140476416/207638693805632844612385445095759947457",
+        "sign_margin_preview": 207.00005244595954,
+        "margins_sign_independent": true,
+        "both_margins_exceed_2": true,
+        "excludes_zero_at_both_signs": true,
+        "matches_exported_aw2_producer_bit_for_bit": {
+          "enclosure_plus_lower": true,
+          "enclosure_plus_upper": true,
+          "enclosure_minus_lower": true,
+          "enclosure_minus_upper": true,
+          "exclusion_margin": true,
+          "sign_margin": true
+        },
+        "overall_pass": true
+      }
+    },
+    "wrong_face_replay.py": {
+      "sha256": "246d155601ccafe349b3db23b639065baab2e6098764a762cb2edc2a54d1ae8e",
+      "overall_pass": true,
+      "result": {
+        "script": "wrong_face_replay.py",
+        "zero_research_loops": true,
+        "arithmetic": "fractions.Fraction only; no floats in any comparison",
+        "model": "I1.5: phi_b=-(tau/3) sum W_f, V_b=phi_b/8, energy(W_f Omega_0)=3 (alpha units)",
+        "haar_moments": {
+          "E_W": "0",
+          "E_W2": "1/4",
+          "E_W3": "0",
+          "moments_ok": true
+        },
+        "per_face_coefficient_c1_over_tau": "-1/72",
+        "faces_checked": 10,
+        "faces_owner_set": "R={0,e_z} (6 xz classes r=0,1,2 s=0,1 + 4 yz classes r=0,1,2,3 s=0)",
+        "max_links_shared_by_two_distinct_faces": 1,
+        "distinctness_ok": true,
+        "per_face_rows": [
+          {
+            "face": "xz_r0_s0",
+            "is_W_itself": true,
+            "E_W_Wf": "1/4",
+            "contribution_over_tau": "1/144",
+            "nonzero": true
+          },
+          {
+            "face": "xz_r0_s1",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "xz_r1_s0",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "xz_r1_s1",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "xz_r2_s0",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "xz_r2_s1",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "yz_r0_s0",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "yz_r1_s0",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "yz_r2_s0",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          },
+          {
+            "face": "yz_r3_s0",
+            "is_W_itself": false,
+            "E_W_Wf": "0",
+            "contribution_over_tau": "0",
+            "nonzero": false
+          }
+        ],
+        "nonzero_faces": [
+          "xz_r0_s0"
+        ],
+        "only_W_nonzero": true,
+        "W_first_order_contribution_over_tau": "1/144",
+        "W_value_is_1_over_144": true,
+        "sum_of_all_10_over_tau": "1/144",
+        "sum_equals_1_over_144": true,
+        "damaging_mutation_wrong_face_claim_rejected": true,
+        "overall_pass": true
+      }
+    }
+  },
+  "overall_pass": true,
+  "replay": "every script run with python3 -B <script>.py and python3 -B -O <script>.py; identical overall_pass=true both ways (assert statements dropped under -O do not gate any pass/fail decision, which is computed from plain booleans)"
+}
