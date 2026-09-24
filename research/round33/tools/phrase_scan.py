@@ -19,7 +19,8 @@ ROUND_FORBIDDEN = [
     'the continuum limit exists', 'fraction of the problem', 'confirms the Z^3 value', 'predicts',
     'solves the mass gap', 'solved the mass gap', 'proves the mass gap',
     'unique ground state', 'the unique ground state', 'a unique limit', 'the unique limit',
-    'unique infinite-volume', 'uniqueness of the ground state',
+    'unique infinite-volume', 'uniqueness of the ground state', 'uniquely determines the ground state',
+    'the thermodynamic limit', 'correlation length',
 ]
 NEGATION = re.compile(r"\b(not|never|no|nor|neither|without|excludes?|excluded|exclusion|forbidden|"
                       r"cannot|does not|is not|are not|nothing|none)\b", re.I)
