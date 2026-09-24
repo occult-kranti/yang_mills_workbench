@@ -21,7 +21,8 @@
     "reset_budget": "omega(h_R)<=2(7*7|tau|+2|tau|)=102|tau|, epsilon_R<=17|tau| (square-root control only)",
     "incidence": "exactly two single-factor selected groups (six faces) meet R; ||B_N||<=49|tau|/8+2|tau|/8=51|tau|/8, k'=51|tau|/4",
     "first_order_faces": "faces owning a link of a factor bounded by 96 (four anchors times 24) and 168 for R; omega(W)^{(1)}=+-|tau|/144 unchanged; parity rule unchanged",
-    "dictionary": "tau=96/g^4; at the cap g^4=9.6x10^9"
+    "dictionary": "tau=96/g^4; at the cap g^4=9.6x10^9",
+    "d_prime_note": "the AX2 window budget needs 2(D'+D'^2)+51|tau|/pi<=10^-6, i.e. D'<=4.19x10^-7; the admitted exact-tier D' (candidate about 2-3x10^-8 from 96 faces per factor) is what AX2 binds, never the target"
   },
   "shared_premises": [
     "research/round29/forward/am2/report.md",
@@ -75,7 +76,9 @@
     "5. Incidence. Derive by an all-size argument plus finite enumeration: the stars meeting R (seven), the single-factor selected groups meeting R (two), the selected faces inside R (six), hence ||B_N||<=51|tau|/8 and k'=51|tau|/4 in G units.",
     "6. State lemma constants for route B: the AV1 product-ordering decomposition with the enlarged creation set; the crude tier with J'; the exact first-order tier with the enumerated faces per factor (omitted plus selected: 24 anchored faces per factor, candidates 96 per factor owner-set count and 168 for R, to be derived); D_i and D_ii as exact rationals at both signs; the parity rule and omega(W)^{(1)}=+-|tau|/144 unchanged (cite AW1).",
     "7. Controls as damaging mutations; claim flags continuum_claim:false, uniform_wilson_claim:true only for the fixed-spacing model as labelled, weak_coupling_claim:false, resolved_interaction_shift:false, scientific_priority_verified:false; byte-identical replays; freeze with the tools.",
-    "8. Premise lists as declared; reverse isolation as in AV1; the reverse producer starts from the uniform Hamiltonian and must find the single-factor grouping and the J_0 issue itself."
+    "8. Premise lists as declared; reverse isolation as in AV1; the reverse producer starts from the uniform Hamiltonian and must find the single-factor grouping and the J_0 issue itself.",
+    "9. Transfer of parity and of the first-order Wilson mean to the uniform model: prove (not cite) that in the uniform model every face coefficient is tied to tau (selected faces carry the same nu=alpha*tau/24), so the AW1 flip identity H(tau,kappa)->H(-tau,-kappa) becomes H(tau)->H(-tau) and antisymmetry of omega(W) holds for the uniform model; prove that the AW1 parity theorem's link grading applies verbatim to the selected faces (single-face characters) and that only the Wilson face contributes at first order, so omega(W)^{(1)}=+tau/144 is unchanged; state explicitly which AW1 quantifiers transfer and which need the route-B constants.",
+    "10. Itemized incidence and no double counting: tabulate the seven stars and the two single-factor groups meeting R with their faces (an itemized table, not asserted totals), prove no face is charged twice between a star and a single-factor group, and pin the J_0' and contraction rationals in the results packet with their sha256-bound contract source."
   ],
   "controls": [
     "missing_incoming_stars",
@@ -102,11 +105,17 @@
     "j0_resolution_declared",
     "uniform_sign_convention",
     "tier_mixing_rejected",
-    "reverse_premise_isolation"
+    "reverse_premise_isolation",
+    "uniform_kappa_tied_to_tau",
+    "route_b_no_double_count",
+    "incidence_table_itemized"
   ],
   "new_control_semantics": {
     "j0_resolution_declared": "the contract's R1 re-freeze J_0'=29/10^8 with its two exact inequalities is present; using the old J_0=7/25000000 at tau=10^-8 is rejected",
-    "uniform_sign_convention": "the selected faces enter with the same sign and magnitude nu=alpha*tau/24 as the omitted faces under I1.5; a mixed convention is rejected"
+    "uniform_sign_convention": "the selected faces enter with the same sign and magnitude nu=alpha*tau/24 as the omitted faces under I1.5; a mixed convention is rejected",
+    "uniform_kappa_tied_to_tau": "a fixture with selected coefficients not equal to nu breaks the uniform flip identity; the uniform model's antisymmetry is accepted only with kappa tied to tau",
+    "route_b_no_double_count": "charging a selected face both in a star group and in a single-factor group is rejected; the per-site sum stays 29|tau|",
+    "incidence_table_itemized": "the incidence counts are derived from an itemized face table; asserted totals without the table are rejected"
   },
   "claim_exclusions": [
     "weak coupling or continuum",
@@ -219,7 +228,10 @@
         "j0_resolution_declared",
         "uniform_sign_convention",
         "tier_mixing_rejected",
-        "reverse_premise_isolation"
+        "reverse_premise_isolation",
+        "uniform_kappa_tied_to_tau",
+        "route_b_no_double_count",
+        "incidence_table_itemized"
       ]
     },
     "direction": "paired",
