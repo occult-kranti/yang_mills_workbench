@@ -1,6 +1,6 @@
 # Round32 release verification
 
-Publication is authorized by the 2026-09-23 user request: execute the ten-investigation expert-panel cycle, push the resulting research and merge to main. This round extends the merged Round31 history (baseline `1a686cd`). The release must preserve all earlier scientific files, the exact Draft03 PDF and the Round31 addendum PDF.
+Publication is authorized by the 2026-09-23 user request: execute the ten-investigation expert-panel cycle, push the resulting research and merge to main. This round extends the merged Round31 history (baseline `1a686cd`). The release must preserve all earlier scientific files, the exact Draft03 PDF and the Round31 addendum PDF. Skill instructions under `.codex/skills/` and `.claude/skills/` may be added or extended append-only during the round (the verifier requires each changed skill file's baseline bytes to remain a prefix); the frozen copies the producers used stay under `research/round32/methods/`.
 
 After the tenth skeptical review and gate, regenerate the research network, site data and GitHub Pages files, build the addendum PDF, inspect the rendered pages and the desktop/mobile browser renders. Commit those reviewed sources, then run from a clean checkout:
 

@@ -45,9 +45,21 @@ def main():
     changed = git('diff', '--name-only', a.baseline, 'HEAD').splitlines()
     # The entire earlier science and manuscript are immutable. Only current
     # presentation integration, added current work and tests may change.
-    protected = [p for p in changed if p.startswith(('research/', 'papers/', 'evidence/', '.codex/'))
+    protected = [p for p in changed if p.startswith(('research/', 'papers/', 'evidence/'))
                  and not p.startswith(('research/round32/', 'papers/round32-addendum/'))]
     need(not protected, 'Historical scientific bytes changed: ' + str(protected))
+    # Skills are living method instructions, updated by the round on request: a
+    # skill file may be added, or extended append-only (its baseline bytes stay a
+    # prefix), never rewritten or removed; the frozen copies the producers used
+    # stay under research/round32/methods/.
+    for path in [p for p in changed if p.startswith(('.codex/', '.claude/'))]:
+        need((ROOT / path).is_file(), 'Skill file removed: ' + path)
+        listed = subprocess.run(['git', 'cat-file', '-e', a.baseline + ':' + path], cwd=ROOT,
+                                capture_output=True).returncode == 0
+        if listed:
+            before = subprocess.run(['git', 'show', a.baseline + ':' + path], cwd=ROOT,
+                                    capture_output=True, check=True).stdout
+            need((ROOT / path).read_bytes().startswith(before), 'Skill instructions rewritten: ' + path)
     checks = []
     with tempfile.TemporaryDirectory(prefix='hnm-round31-release-') as temporary:
         external = Path(temporary)
