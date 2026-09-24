@@ -46,11 +46,12 @@
     "research/round32/skeptic/aw1.md"
   ],
   "required": [
-    "1. Prove that both named families satisfy the AV1 premises (AM2 fixed point available for each finite volume; reset budget; local trace-norm compactness) and name the topology.",
+    "1. Prove (itemized, not by analogy) that both named families satisfy the AV1 premises: for the AQ1 centered whole-star boxes cite the admitted chain; for the I1 all-contained-face boxes with padding, prove the AM2 contraction at the same J_0 for the padded interaction family, the reset budget and the local trace-norm compactness. Name two topologies separately: trace norm on B(H_R) for states, and norm on compact time windows for dynamics.",
     "2. Prove ||rho_R-rho'_R||_1<=2D for any two subsequential limits (same family or different families) at the same tau, with D the AV1 admitted tier; state that this is uniform local closeness, never uniqueness, whole-sequence convergence, translation invariance or a rate in N.",
     "3. Derive the first-order reduced density rho^(1)_R explicitly from the AW1-admitted c^(1) as the R-marginal of -(c^(1) Omega_0^* + h.c.) restricted to the creations meeting R (forward), or from the derivative of the vacuum-overlap/fidelity identity (reverse); prove it is the same for every subsequential limit of either family; bound the second-order difference between two limits by 2 K_2' tau^2 with an explicit R-local K_2' built from the AW1 remainder items restricted to faces meeting R (not the whole-box K_2^+), and compare K_2' with K_2^+.",
     "4. Give the mandatory sentence template (Jung loop-2 response) in the report and export the gate fields uniqueness_claimed:false, whole_sequence_claimed:false, rate_claimed:false, translation_invariance_claimed:false, boundary_independence_of_dynamics_claimed:false in results.json.",
-    "5. Controls: topology_named, two_families_named, subsequence_versus_whole_sequence, local_closeness_not_uniqueness, common_clock; a fixed-vector versus moving-vector example; a common enclosing interval is not equality; freeze; byte-identical replays."
+    "5. Controls: topology_named, two_families_named, subsequence_versus_whole_sequence, local_closeness_not_uniqueness, common_clock; a fixed-vector versus moving-vector example; a common enclosing interval is not equality; freeze; byte-identical replays.",
+    "6. Controls: 'uniform in N' must not be conflated with 'uniform in a'; the report defines 'quantitative boundary comparison' as a closeness bound plus a matching first-order term, explicitly not a variational statement about which boundary condition the infinite-volume theory selects."
   ],
   "controls": [
     "missing_incoming_stars",
@@ -71,7 +72,9 @@
     "local_closeness_not_uniqueness",
     "common_clock",
     "tier_mixing_rejected",
-    "reverse_premise_isolation"
+    "reverse_premise_isolation",
+    "padding_family_contraction_proved",
+    "not_uniform_in_a"
   ],
   "claim_exclusions": [
     "uniqueness of the AQ state",
@@ -175,7 +178,9 @@
         "local_closeness_not_uniqueness",
         "common_clock",
         "tier_mixing_rejected",
-        "reverse_premise_isolation"
+        "reverse_premise_isolation",
+        "padding_family_contraction_proved",
+        "not_uniform_in_a"
       ]
     },
     "direction": "paired",
@@ -191,5 +196,6 @@
     "research/round32/skeptic/triage.md",
     "research/round32/experts/jung/loop2-response.md"
   ],
-  "reverse_premise_isolation": true
+  "reverse_premise_isolation": true,
+  "direction_note": "Paired as planned; the historical lens's sub-round-3 preference for single+skeptic is recorded as a dissent (the padding-family verification, the explicit first-order density and the R-local K_2' are new derivations)."
 }
