@@ -1,0 +1,397 @@
+{
+  "schema": "hnm-r32-assistant-tests-v1",
+  "round": 32,
+  "subround": 3,
+  "lens": "historical (Newton/Tesla)",
+  "assistant": 3,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "zero_research_loops": true,
+  "role": "tests and planning only; not a producer, skeptic or advisor artifact",
+  "source_task": "research/round32/experts/historical/update-2.md section 5",
+  "read_before_writing": [
+    "research/round32/experts/historical/update-2.md",
+    "research/round32/advisor/ax1-gate.json",
+    "research/round32/forward/ax1/report.md",
+    "research/round32/forward/ax1/output/results.json",
+    "research/round32/reverse/ax1/output/results.json",
+    "research/round32/reverse/ax1/report.md (sections cited by grep/sed)",
+    "research/round32/skeptic/ax1.md",
+    "research/round32/contracts/ax2.json (AX2 is frozen_before_production; treated here as a provisional premise, not an admitted result)",
+    "research/round32/experts/historical/assistant-1/README.md, am2_tiers_exact.py, haar_parity_exact.py, window_kernel_budget.py",
+    "research/round32/experts/historical/assistant-2/README.md, wrong_face_replay.py, sign_margin_replay.py"
+  ],
+  "overall_pass": true,
+  "replay": "every script run with python3 -B <script>.py and python3 -B -O <script>.py; byte-identical stdout both ways for all five scripts",
+  "scripts": {
+    "j0_contraction_replay.py": {
+      "script": "j0_contraction_replay.py",
+      "zero_research_loops": true,
+      "arithmetic": "fractions.Fraction only; no floats in any comparison",
+      "step1_exp_eighth_bound": {
+        "method": "10-term Taylor truncation + exact geometric tail bound",
+        "exp_1_8_upper_bound_exact": "6859318020554903/6053326906982400",
+        "exp_1_8_upper_bound_decimal_preview": 1.1331484530668263,
+        "target_8_7_decimal_preview": 1.1428571428571428,
+        "exp_1_8_lt_8_7": true
+      },
+      "step2_G_bounds": {
+        "R": "1/64",
+        "G_R": "148/7",
+        "G_R_expected_148_7": "148/7",
+        "G_R_matches": true,
+        "Gp_R": "352",
+        "Gp_R_expected_352": "352",
+        "Gp_R_matches": true
+      },
+      "step3_J_prime": {
+        "per_star_over_tau": "7",
+        "per_group_over_tau": "1",
+        "J_prime": "29/100000000",
+        "J_prime_over_tau": "29",
+        "J0_prime": "29/100000000",
+        "J_prime_equals_J0_prime_at_cap": true
+      },
+      "step4_contraction": {
+        "self_map": "1073/175000000",
+        "self_map_expected": "1073/175000000",
+        "self_map_matches": true,
+        "self_map_lt_1_64": true,
+        "exclusion": "319/1562500",
+        "exclusion_expected": "319/1562500",
+        "exclusion_matches": true,
+        "exclusion_lt_1": true
+      },
+      "old_vs_new_J0": {
+        "J0_old": "7/25000000",
+        "J0_old_decimal_preview": 2.8e-07,
+        "J0_prime": "29/100000000",
+        "J0_prime_decimal_preview": 2.9e-07,
+        "old_lt_new": true
+      },
+      "cross_check_forward_j0_resolution": {
+        "J0_prime": true,
+        "self_map": true,
+        "exclusion": true,
+        "tau_cap": true,
+        "contract_sha256": "bc834eec4f5377041cea9db42a8674cf1f3de0a43b7fef3696a461a011da7d8d"
+      },
+      "cross_check_reverse_j0_resolution": {
+        "J0_prime": true,
+        "J_prime_at_cap": true,
+        "G_R_upper": true,
+        "G_prime_R_upper": true,
+        "self_map_upper": true,
+        "contraction_upper": true,
+        "frozen_AM2_J0": true,
+        "radius": true
+      },
+      "contract_hash_consistent_across_producers": true,
+      "overall_pass": true
+    },
+    "uniform_face_count.py": {
+      "script": "uniform_face_count.py",
+      "zero_research_loops": true,
+      "method": "translation-covariant owner-set enumeration (assistant-1 S2 method extended to 24 route-B classes); no floats",
+      "sanity_gate_21_classes_omitted_only": {
+        "n_faces_per_factor": 49,
+        "n_owner_sets": 15,
+        "owner_set_multiplicities_sorted": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          4,
+          10,
+          10
+        ],
+        "sum_of_multiplicities": 49,
+        "n_faces_meeting_R": 82,
+        "n_faces_inside_R": 16,
+        "n_selected_faces_meeting_R": 0,
+        "matches_AW1_49_15_82_16": true,
+        "matches_assistant1_own_function": true
+      },
+      "route_b_24_classes": {
+        "n_faces_per_factor": 52,
+        "n_owner_sets": 16,
+        "owner_set_multiplicities_sorted": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          10,
+          10
+        ],
+        "sum_of_multiplicities": 52,
+        "n_faces_meeting_R": 88,
+        "n_faces_inside_R": 16,
+        "n_selected_faces_meeting_R": 6
+      },
+      "route_b_matches_expected_52_88_16_6": true,
+      "labelled_bounds": {
+        "per_factor_4x24": 96,
+        "R_7x24": 168,
+        "strictly_exceed_exact_counts": true
+      },
+      "cross_check_forward_face_enumeration": {
+        "faces_per_factor": true,
+        "faces_meeting_R": true,
+        "faces_inside_R": true,
+        "owner_sets_per_factor": true,
+        "multiplicities": true,
+        "labelled_bound_per_factor_96": true,
+        "labelled_bound_R_168": true
+      },
+      "cross_check_reverse_face_enumeration": {
+        "faces_per_factor": true,
+        "faces_meeting_R": true,
+        "faces_inside_R": true,
+        "selected_faces_per_factor": true,
+        "omitted_faces_per_factor": true,
+        "owner_sets_per_factor": true,
+        "labelled_bound_per_factor_96": true,
+        "labelled_bound_R_168": true
+      },
+      "overall_pass": true
+    },
+    "route_b_incidence_table.py": {
+      "script": "route_b_incidence_table.py",
+      "zero_research_loops": true,
+      "arithmetic": "exact fine-link frozenset identity for double-charge check; fractions.Fraction for the norm bound; no floats",
+      "sanity_gate_generalized_builder_matches_assistant1_at_anchor_0": true,
+      "anchors": {
+        "star_anchors_meeting_R_R_minus_S": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            -1,
+            0,
+            1
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "n_star_anchors": 7,
+        "n_star_anchors_expected_7": true,
+        "single_factor_anchors_meeting_R": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "n_single_anchors_expected_2": true
+      },
+      "charge_table": {
+        "n_charged_faces": 153,
+        "n_star_faces_7x21": 147,
+        "n_single_faces_2x3": 6,
+        "total_expected_153": 153,
+        "counts_match_153": true,
+        "no_face_charged_twice": true,
+        "duplicates_found": []
+      },
+      "R_incidence_within_the_153": {
+        "faces_meeting_R": 88,
+        "faces_meeting_R_expected_88": true,
+        "faces_inside_R": 16,
+        "faces_inside_R_expected_16": true
+      },
+      "norm_bound": {
+        "star_norm_bound_over_tau": "7",
+        "single_group_norm_bound_over_tau": "1",
+        "B_N_alpha_units_over_tau": "51",
+        "B_N_G_units_over_tau": "51/8",
+        "matches_51_over_8": true
+      },
+      "cross_check_forward": {
+        "stars": true,
+        "single_factor_groups": true,
+        "selected_faces_inside_R": true,
+        "B_N_over_abs_tau": true
+      },
+      "cross_check_reverse": {
+        "total_faces_153": true,
+        "n_stars_7": true,
+        "n_single_2": true,
+        "star_anchors_match": true,
+        "single_anchors_match": true,
+        "faces_meeting_R_88": true
+      },
+      "overall_pass": true
+    },
+    "uniform_state_tiers.py": {
+      "script": "uniform_state_tiers.py",
+      "zero_research_loops": true,
+      "arithmetic": "fractions.Fraction only; no floats in any comparison",
+      "forward_tier_ii": {
+        "formula": "t1'=52|tau|/144, T'=t1'/(1-352J'), eps=2T'+T'^2, D=2eps(1+eps)/(1+eps^2)",
+        "tau": "1/100000000",
+        "J_prime": "29/100000000",
+        "t1_prime": "13/3600000000",
+        "T_prime": "13/3599632512",
+        "eps": "93590445481/12957354221447430144",
+        "D": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+        "D_decimal_preview": 1.4445919214292387e-08,
+        "signs_equal": true
+      },
+      "reverse_88_face_variant": {
+        "formula": "same T'; a1=88|tau|/144, rho'=352J'T', eps=a1+2rho'+T'^2, D=2eps (directed, >= fidelity form)",
+        "tau": "1/100000000",
+        "a1": "11/1800000000",
+        "rho_prime": "4147/11248851600000000",
+        "eps": "30934916107401289/5061466492752902400000000",
+        "D": "30934916107401289/2530733246376451200000000",
+        "D_decimal_preview": 1.2223696887727876e-08
+      },
+      "eps_difference_identity": {
+        "eps_fwd_minus_eps_rev": "1/900000000",
+        "expected_tau_over_9": "1/900000000",
+        "matches": true
+      },
+      "tau_scaling_ratio_1e-8_over_1e-10": {
+        "forward": "1141044684690263648613378029987029496187588949807221344257215952655137/11409293613114453354209356121876365385343401448357362146246096655137",
+        "forward_decimal": 100.01010784565013,
+        "forward_in_99_101": true,
+        "reverse_variant": "446890788974505352629032675676025/4468374151908635099559448924729",
+        "reverse_decimal": 100.0119447883788,
+        "reverse_in_99_101": true
+      },
+      "targets": {
+        "forward_meets_4e-7_and_1e-6": true,
+        "reverse_variant_meets_4e-7_and_1e-6": true
+      },
+      "cross_check_forward_exported": {
+        "D_plus_matches_exported": true,
+        "D_minus_matches_exported": true,
+        "t1_matches": true,
+        "T_matches": true,
+        "eps_matches": true,
+        "two_creation_term_matches": true,
+        "J_matches": true
+      },
+      "cross_check_reverse_exported": {
+        "D_exact_2eps_matches_exported": true,
+        "T_self_consistent_matches": true,
+        "a1_matches": true,
+        "rho_matches": true,
+        "epsilon_matches": true,
+        "two_creation_term_matches": true
+      },
+      "cross_check_forward_scaling_variant": true,
+      "cross_check_reverse_scaling_variant": true,
+      "overall_pass": true
+    },
+    "ax2_budget_preview.py": {
+      "script": "ax2_budget_preview.py",
+      "zero_research_loops": true,
+      "labelled": "PLANNING PREVIEW ONLY -- AX2 is frozen_before_production; not yet produced or gated; no accepted/limited/insufficient verdict is asserted here",
+      "arithmetic": "fractions.Fraction with a directed Machin pi enclosure (reused from assistant-1's window_kernel_budget.py) for every comparison",
+      "pi_enclosure": {
+        "pi_lower": "9229568093602332597646243298534746305290702048553591607194149974309610707944315723367328863717592627803688669611570511615102882899160037894590195221002846908066880476385494930094686354370644461026146765137034367082569227354760644/2937862769400104336417585094592791309292086300380217915776738025630375919454798821892588632820396014983044195039536790568120829384389398234326788143264244000292374714983139672096753715444146515256562679496710188686847686767578125",
+        "pi_upper": "44434292567368243979494702597942179477861785741710363823784444301310252703641162163233203868503999629952761365892693642847338470585257492029196771290750217041760738598521980690542115598769091246678669774641531015489825007334144/14143874609776241531395387003256553807799648686202271088366852069262677086361752700766125838581413212659742540149377941671770943798376858150940402643470301641785036092161611488359924926859478855334373292862437665462493896484375",
+        "width_decimal": 3.515313707861233e-86
+      },
+      "D_prime": {
+        "value": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+        "decimal_preview": 1.4445919214292387e-08,
+        "sources_agree_bit_for_bit": true,
+        "sources": {
+          "contract": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+          "gate": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+          "forward_export": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+          "own_T4": "2425369125199104794263242601250/167893028420061547330293754713793182097"
+        }
+      },
+      "inputs": {
+        "tau": "1/100000000",
+        "s": "1",
+        "M0": "2",
+        "k_prime_51_tau_over_4": "51/400000000",
+        "target": "1/1000000"
+      },
+      "E_prime": {
+        "formula": "E'=M0*(D'+D'^2)+k'*(4s/pi), k'=51|tau|/4",
+        "E_lower": "61316776536979214388019172804154619773253915942011351772180442013070635018246169624703381565497326403785955354394997753289190464338661759724694991511831460876836474864618045949030499570662599801971319390255903577205647206293543201344334985975256948802809768558562209010802010055936702316423066823125/320644327552598247828372112400916854048980515293039660309249860854880637118565353706218334872639451157020743525519329499662894326127612438276390334612809134265937964833609147549064727243379016704180223605996212976743764399191500618925273121653264363049905549661127564762456669157014936429508165393232101376",
+        "E_upper": "12736274882068326200211066071804058312974679754631383362104432829922209974099052564118821589876281287551553248364840475446593487747192579434957273330326584945884933604275696323294702571350014584680112137242491110159540565617104077436916334979864299582655850146841733218123600312978891008995547462604375/66601907760479870960743430663464624073206603687468067041907859279605952264907532978373427501924680276411137231052797040826270607214113201514890889763835330370121283075314818943591897187382168945401935923111206510300211260741548088791395586922859480841129129619220506875343368008046291008946636772317504357376",
+        "E_upper_decimal_preview": 1.9122988079968718e-07,
+        "below_1e-6": true,
+        "margin_lower_bound_target_over_E": "1040654808757497983761616104116634751143853182616688547529810301243843004139180202787084804717573129318924019235199953762910478237720518773670170152559927037033145048051794045993623393552846389771905248798612601723440800949086688887365556045669679388142642650300320419927240125125723297014791199567461005584/199004295032317596878297907371938411140229371166115365032881762967534530845297696314356587341816895117993019505700632428853023246049884053671207395786352889779452087566807755051479727677343977885626752144413923596242821337767251209951817734060379680978997658544402081533181254890295172015555429103193359375",
+        "margin_decimal_preview": 5.229308284971936
+      },
+      "crossover_s_star": {
+        "definition": "s* solves E'(s*)=10^-6 at tau=10^-8",
+        "s_lower": "1010588377728609338691756304758975599756897202796804641982186650463669032455617951005711147771528664336462206744599018070721314153385075433375193494486765915385010016953980628633381474312520128684026678435309256333445971525771069866016421675504235790869725128759813961842782609792381785211692950487461005584/168937864003428951808438108014279259753273391346231459485258112187360559161735444532982930395772430135531207015099696736663859161714440713376230737713191768131317056468994337691237808437017716797748181781110578206247991914451632188602683363894936083706080137003895623448723739556953660212457180023193359375",
+        "s_upper": "4865317551782489244590132942503077500974190416293854738976931931820328494341747107483651815560077532347689985564784518896809037923722451097498361667836457038777892106879759922429289509162771317004539381601897832463373105411613327456476163115528422280782070222539707008638406737100594087144171004269251584/813324567163441847084618261303667590415962301434037418085222262417047211524259856209980670135981833078396420390966835359719915083270096745128121931883680892073181326114273959928754701776577302907525253230955498095590024272582742806774004745559556433171198642812123325018802688646246679127216339111328125",
+        "decimal_preview": [
+          5.982012284162048,
+          5.982012284162048
+        ],
+        "enclosure_width_below_1e-20": true
+      },
+      "contract_cross_check": {
+        "target_matches_contract_1e-6": true,
+        "contract_preview_radius_text": "about 2(1.4446e-8)+51e-8/pi ~ 1.91e-7 (planning preview; not a result)",
+        "contract_D_prime_text_prefix": "2425369125199104794263242601250/167893028420061547330293754713793182097"
+      },
+      "claim_flags": {
+        "continuum_claim": false,
+        "weak_coupling_claim": false,
+        "uniform_wilson_claim": true,
+        "resolved_interaction_shift": false,
+        "scientific_priority_verified": false,
+        "ax2_gate_status": "not_yet_produced_or_gated; this script's output is a labelled preview, not an admission"
+      },
+      "overall_pass": true
+    }
+  }
+}
