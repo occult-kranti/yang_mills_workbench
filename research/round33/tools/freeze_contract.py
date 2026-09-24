@@ -29,7 +29,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-PLACEHOLDER = re.compile(r'<([^<>]*)>')
+PLACEHOLDER = re.compile(r'<(?![=<>])([^<>=]*)(?<![-=|])>(?!=)')  # never starts at <= or ends at >=
 TEMPLATE_CITES = ('mandatory sentence template', 'mandatory sentence', 'sentence template')
 DIRECTIONS = ('paired', 'single+skeptic', 'statement+skeptic', 'statement-only')
 

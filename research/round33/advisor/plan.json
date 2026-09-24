@@ -1,13 +1,18 @@
 {
   "schema": "hnm-round33-plan-v1",
   "human_author": "Hruday N M (BUNZEEY)",
-  "status": "plan_v1_pending_loop2_signoff",
+  "status": "plan_v2_signed_off",
   "authorization": "2026-09-24 user instruction after the Round32 merge: continue with the next three rounds (sub-rounds of two investigations with the advisor, the skeptic and the expert panel, one research assistant per lens after each), then apply the admitted solutions and new equations to their related problems; publish and merge.",
   "deliberation": [
     {
       "loop": 1,
       "path": "research/round33/advisor/deliberation-1.md",
       "summary": "Lens memos, skeptic triage and advisor synthesis: rate 37888|tau| for coefficient decay by two routes, marginal locality as the main risk, mechanical dynamics bound, consequences restate, center-symmetry and observable transfers."
+    },
+    {
+      "loop": 2,
+      "path": "research/round33/advisor/deliberation-2.md",
+      "summary": "Lens sign-offs and the skeptic's contract review: BA1/BA2 blocking edits applied (weights, cutoff, floor target 1/12, padding source, corrected reverse route, all-M Cauchy quantifier, committed Nachtergaele-Sims excerpt); plan v2 changes P1-P13."
     }
   ],
   "subrounds": [
@@ -24,7 +29,11 @@
         "BA2": "Boundary comparison of the Heisenberg dynamics on compact windows (paired)"
       },
       "selection_note_path": "research/round33/advisor/selection-ba1.md",
-      "panel_update_path": "research/round33/advisor/panel-update-1.md"
+      "panel_update_path": "research/round33/advisor/panel-update-1.md",
+      "selection_note_paths": [
+        "research/round33/advisor/selection-ba1.md",
+        "research/round33/advisor/selection-ba2.md"
+      ]
     },
     {
       "id": 2,
@@ -36,7 +45,7 @@
       ],
       "loop_titles": {
         "BB1": "Marginal locality: from coefficient decay to the reduced density (paired: polymer / iterated split)",
-        "BB2": "Whole-sequence convergence, common limit and coarse translation invariance"
+        "BB2": "Whole-sequence convergence, common limit and coarse translation invariance (paired: nested telescoping / general-volume unions)"
       },
       "selection_note_path": "research/round33/advisor/selection-bb1.md",
       "panel_update_path": "research/round33/advisor/panel-update-2.md"
@@ -50,8 +59,8 @@
         "BC2"
       ],
       "loop_titles": {
-        "BC1": "Node and sign certificates restated for the limit; updated obligations (single+skeptic)",
-        "BC2": "Route-B uniform model: convergence and its node (single+skeptic)"
+        "BC1": "Node and sign certificates restated for the limit; updated obligations (statement+skeptic)",
+        "BC2": "Route-B uniform model: convergence and its node (single+skeptic; only if BB1 and BB2 are accepted)"
       },
       "selection_note_path": "research/round33/advisor/selection-bc1.md",
       "panel_update_path": "research/round33/advisor/panel-update-3.md"
@@ -80,7 +89,13 @@
     "every contract names its metric, weights, window and clock in parameters",
     "the (rate, constant) pair of a decay target is frozen before production with a margin of at least 2",
     "scaling brackets are declared per constant",
-    "the global Lipschitz constant is never a decay factor"
+    "the global Lipschitz constant is never a decay factor",
+    "scaling brackets admit every valid form of the declared tau order (linear [95,105], quadratic [9500,10500] unless exact variants justify narrower), declared before production",
+    "the margin of at least 2 is a freeze-time property against recorded previews; acceptance is 'proved constant at most the frozen target'",
+    "every contract carries new_control_semantics for each control id not defined in an earlier frozen contract",
+    "an external theorem is quoted from a committed source excerpt with its PDF hash, never from a report that cites it",
+    "a within-family Cauchy target is quantified over all M above N",
+    "selected_after never names plan.json; each freeze records plan.json's sha256 in the plan history"
   ],
   "vocabulary": {
     "sub_labels_allowed": [
@@ -98,15 +113,17 @@
       "obstruction_recorded"
     ],
     "tier_names_allowed": [
-      "crude_majorant",
-      "exact_first_order",
-      "weighted_norm",
       "analytic_disc",
-      "polymer_kp",
-      "iterated_split",
-      "polynomial_lieb_robinson",
+      "crude_majorant",
+      "duhamel_inner_f1",
+      "duhamel_inner_f2",
+      "exact_first_order",
       "exponential_lieb_robinson",
-      "first_order_distance_from_product"
+      "first_order_distance_from_product",
+      "iterated_split",
+      "polymer_kp",
+      "polynomial_lieb_robinson",
+      "weighted_norm"
     ],
     "gate_fields": {
       "uniqueness_of_ground_state_claimed": "always false",
@@ -114,21 +131,37 @@
       "rate_in_N_claimed": "separate from rate_in_a_claimed",
       "rate_in_a_claimed": "always false",
       "translation_invariance_claimed": "true only with a scope naming coarse translations and the construction",
-      "continuum_claim": "always false"
+      "continuum_claim": "always false",
+      "state_decay_claimed": "declared per contract",
+      "gns_dynamics_equality_claimed": "declared per contract",
+      "uniform_in_time_claimed": "declared per contract",
+      "scientific_priority_verified": "declared per contract",
+      "common_limit_claimed": "declared per contract",
+      "dynamics_level": "declared per contract",
+      "dynamics_limit_identified_claimed": "declared per contract",
+      "state_convergence_claimed": "declared per contract",
+      "weak_coupling_claim": "declared per contract",
+      "whole_sequence_scope": "declared per contract",
+      "coefficient_cauchy_claimed": "declared per contract",
+      "transfers_to_aq": "declared per contract",
+      "model_is_finite_graph": "declared per contract"
     },
     "forbidden": [
       "the infinite-volume ground state",
       "uniqueness of the infinite-volume ground state",
       "boundary independent (unqualified)",
       "rate (without in N or in a)",
-      "the thermodynamic limit (except as the limit of the named construction after admission)",
+      "the thermodynamic limit",
+      "correlation length",
+      "uniform in a (unqualified)",
       "predicts",
       "confirms"
     ],
     "required": [
       "convergence of the named constructions",
       "rate in N"
-    ]
+    ],
+    "tier_label_rule": "Every constant carries exactly one tier (crude_majorant, exact_first_order, polynomial_lieb_robinson, exponential_lieb_robinson, first_order_distance_from_product) and exactly one route (weighted_norm, analytic_disc, polymer_kp, iterated_split, duhamel_inner_f1, duhamel_inner_f2)."
   },
   "history": [
     {
@@ -139,6 +172,27 @@
         "rate 37888|tau| adopted as the candidate per-step factor",
         "Dobrushin/HTW loop not scheduled (Jung dissent recorded)"
       ]
+    },
+    {
+      "date": "2026-09-24",
+      "event": "plan v2 after deliberation loop 2",
+      "changes": [
+        "P1-P13 of the skeptic's loop-2 review adopted",
+        "BA1 floor target 1/16 -> 1/12",
+        "BA2 reverse route corrected (Duhamel with the inner F2 evolution)",
+        "within-family Cauchy quantified over all M above N",
+        "Nachtergaele-Sims excerpt committed as a source",
+        "BB2 fixed as paired; BC1 statement+skeptic; BC2 conditional on BB1 and BB2"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "event": "BA1 and BA2 frozen",
+      "plan_sha256_at_freeze": "5310d5af55e02f8d34c607c89619a71a42e88ea44c9fba84c6d8e5d31e0cdc4b",
+      "contracts": {
+        "ba1": "2c761366d2d81ee21fa631497f8df9b80dc760bec160c985023152cd768532b9",
+        "ba2": "275ba3b002529b7295d0f8b91dc1cc7a96451e3c7f936ee698a932fdca54fcff"
+      }
     }
   ]
 }

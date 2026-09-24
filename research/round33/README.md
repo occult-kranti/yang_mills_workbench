@@ -6,8 +6,8 @@ The cycle starts from merged Round32 commit `519a9a2a26201422a8bfa9e3a83f9129b66
 
 | Sub-round | Loop | Result | Limitation |
 |---|---|---|---|
-| 1 | BA1 | (planned) | |
-| 1 | BA2 | (planned) | |
+| 1 | BA1 | (in production) | |
+| 1 | BA2 | (in production) | |
 | 2 | BB1 | (planned) | |
 | 2 | BB2 | (planned) | |
 | 3 | BC1 | (planned) | |
