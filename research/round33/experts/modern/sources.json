@@ -1,0 +1,546 @@
+{
+ "schema": "hnm-round33-lens-sources-v1",
+ "status": "advisory_not_premise",
+ "checked_utc_date": "2026-09-24",
+ "role": "modern lens (Penrose/Feynman methodological), model agent",
+ "scope": "Round33 deliberation loop 1: cluster/polymer expansions for quantum lattice ground states, boundary-condition dependence and uniqueness under weak perturbation, Lieb-Robinson bounds and exponential clustering, center symmetry/N-ality, items dated on or after 2026-09-24, September 2026 discourse, programmes and patents.",
+ "search_method": "WebSearch and WebFetch through the session proxy; PDFs that WebFetch returned as binary were saved by the harness and extracted locally with pdftotext; two local float previews (Round11 solver, Weyl integration) in the session scratchpad. No source is a premise; any claimed full solution is a lead only; custody is not confirmation.",
+ "field_conventions": {
+  "reading_depth": "abstract | abstract+theorem statements | selected sections | full statement text | metadata only | search summary only | page text | local execution",
+  "provenance": "arXiv author preprint | journal | institutional page | patent office record via mirror | software registry | community/discourse record | local execution",
+  "category": "a=constructive/Hamiltonian/lattice gauge/center symmetry; b=local perturbation theory, cluster expansions, Lieb-Robinson and clustering; c=certified numerics and local previews; d=quantum simulation hardware; e=patents and programmes; f=discourse"
+ },
+ "records": [
+  {
+   "id": "r33-kotecky-encyclopedia-cluster-expansion",
+   "category": "b",
+   "title": "Cluster Expansion",
+   "author": [
+    "Roman Kotecky"
+   ],
+   "url": "http://www.cts.cuni.cz/~kotecky/publ/K-CE-EMP06.pdf",
+   "version_date": "Encyclopedia of Mathematical Physics article (2006); PDF as served 2026-09-24",
+   "section": "Section 2 abstract polymer models: Dobrushin condition (24) and the Theorem (cluster expansion) (i)-(ii); Section 3.2 correlations: alpha-modified partition function (42)-(48) and the boundary-decay estimate (49)",
+   "reading_depth": "selected sections",
+   "provenance": "institutional page (author-hosted PDF); text extracted locally with pdftotext after WebFetch returned binary",
+   "claim": "For an abstract hard-core polymer gas with weights in a polydisc satisfying the Dobrushin condition R(v) <= r(v) prod_{v' in N(v)} (1-r(v')), log Z_W is an absolutely convergent series with sum over clusters containing v bounded by -log(1-r(v)); local expectations are linear terms of an alpha-modified cluster expansion, and |<Psi> - <Psi>_Lambda| <= |S| K^{-dist(S,Lambda^c)} when sum_{A ni x}|w(A)| K^{|Lambda(A)|} <= 1.",
+   "relevance": "Exact template for memo section 2.5: the creation-product vector psi(s) gives a hard-core polymer gas of pairs (F,F') with site-disjoint compatibility; the boundary-decay estimate (49) is the mechanism of the proposed BB1 forward route.",
+   "unresolved": "Classical-statistical-mechanics setting; the quantum polymer representation of <psi(sbar),psi(s)> and its weights must be derived for the AM2 creation algebra; no constant transfers.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-nachtergaele-sims-math-ph-0506030",
+   "category": "b",
+   "title": "Lieb-Robinson Bounds and the Exponential Clustering Theorem",
+   "author": [
+    "Bruno Nachtergaele",
+    "Robert Sims"
+   ],
+   "url": "https://arxiv.org/abs/math-ph/0506030",
+   "version_date": "v3 2005-09-02; Commun. Math. Phys. 265, 119-130 (2006)",
+   "section": "Section 2: norm (1) with |X| N^{2|X|} e^{lambda D(X)} weights; Theorem 1 (Lieb-Robinson bound, eqs. (4)-(7)); Theorem 2 (exponential clustering, eqs. (10)-(14)) with c(A,B) and mu = gamma lambda/(4||Phi||_lambda + gamma)",
+   "reading_depth": "selected sections",
+   "provenance": "arXiv author preprint with journal reference; text extracted locally with pdftotext (the WebFetch summary was a paraphrase and was not used)",
+   "claim": "A spectral gap gamma implies |<Omega,A tau_{ib}(B) Omega>| <= c(A,B) exp(-mu d (1 + gamma^2 b^2/(4 mu^2 d^2))) for 0 <= gamma b <= 2 mu d, with mu = gamma lambda/(4||Phi||_lambda + gamma) and c(A,B) = ||A|| ||B|| (1 + 2|Y|/pi + (pi mu d)^{-1/2}); trivial bound e^{-gamma b} for large b; assumes a uniform bound N on single-site dimensions.",
+   "relevance": "Route B of memo section 2.6 (static susceptibility by imaginary-time clustering); with the F-norm substitution C_F||Phi||_{F_lambda} = 224*2268 e^{2 lambda}|tau| the preview rate at the cap is mu_B ~ 0.841 at lambda ~ 1.34.",
+   "unresolved": "Finite-dimensional sites assumed (the norm carries N^{2|X|}); the adaptation to unbounded commuting onsite Casimir terms in the interaction picture is unproved here.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-deroeck-schuetz-1501.04571",
+   "category": "b",
+   "title": "Local Perturbations Perturb -Exponentially- Locally",
+   "author": [
+    "Wojciech De Roeck",
+    "Marius Schuetz"
+   ],
+   "url": "https://arxiv.org/abs/1501.04571",
+   "version_date": "v1 2015-01-19, v2 2015-06-29; J. Math. Phys. 56, 061901 (2015)",
+   "section": "Abstract (via WebFetch)",
+   "reading_depth": "abstract",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "For gapped quantum spin systems with local interactions, a transformation between gapped eigenvectors and their perturbations that is local with exponential (not sub-exponential) decay in the distance to the perturbation, improving spectral-flow locality bounds for models with a unique bulk ground state or topological order.",
+   "relevance": "Candidate tool to sharpen route B (boundary influence through the uniform AM2 gap along the interpolation H(theta)).",
+   "unresolved": "Body not read; hypotheses (bounded site spaces, interaction class) unchecked against unbounded Casimir onsite terms; constants not evaluated.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-deroeck-schuetz-1512.07612",
+   "category": "b",
+   "title": "An exponentially local spectral flow for possibly non-self-adjoint perturbations of non-interacting quantum spins, inspired by KAM theory",
+   "author": [
+    "Wojciech De Roeck",
+    "Marius Schuetz"
+   ],
+   "url": "https://arxiv.org/abs/1512.07612",
+   "version_date": "v1 2015-12-23, v2 2016-12-11; Lett. Math. Phys. 107, 505-532 (2017)",
+   "section": "Abstract (via WebFetch of arXiv; the Springer page redirected to a login)",
+   "reading_depth": "abstract",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "Extends quasi-adiabatic continuation to non-self-adjoint perturbations of non-interacting spins with an exponentially local transformation, organized as a KAM-type scheme.",
+   "relevance": "Closest external structure to route A with complex coupling s: a non-interacting gapped reference plus a possibly non-self-adjoint (complexified) perturbation, handled with exponential locality.",
+   "unresolved": "Body not read; whether its scheme admits unbounded onsite terms and explicit constants is unknown.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-yarotsky-jsp2005",
+   "category": "b",
+   "title": "Uniqueness of the Ground State in Weak Perturbations of Non-Interacting Gapped Quantum Lattice Systems",
+   "author": [
+    "D. A. Yarotsky"
+   ],
+   "url": "https://link.springer.com/article/10.1007/s10955-004-8780-x",
+   "version_date": "J. Stat. Phys. 118, 119-144 (2005)",
+   "section": "Search-result summary of the abstract (publisher page behind a login gate, as recorded in Round32)",
+   "reading_depth": "search summary only",
+   "provenance": "journal",
+   "claim": "In finite volume the dependence of the ground state of a weak perturbation of a non-interacting gapped system on the boundary condition decays exponentially with the distance to the boundary, implying uniqueness of the infinite-volume ground state.",
+   "relevance": "The external theorem closest to the Round33 direction: its boundary-decay part is the BB1 target for the named constructions; its uniqueness part is the strong form of obligation O1 (BC2).",
+   "unresolved": "Text not read; constants existential; onsite dimension and boundedness hypotheses unchecked; no premise.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-yarotsky-jmp2004",
+   "category": "b",
+   "title": "Perturbations of ground states in weakly interacting quantum spin systems",
+   "author": [
+    "D. A. Yarotsky"
+   ],
+   "url": "https://doi.org/10.1063/1.1705718",
+   "version_date": "J. Math. Phys. 45, 2134-2152 (2004)",
+   "section": "Search-result metadata",
+   "reading_depth": "search summary only",
+   "provenance": "journal",
+   "claim": "Foundational perturbation theory for ground states of weakly interacting quantum spin systems (details not read).",
+   "relevance": "Background for the Yarotsky cluster-expansion route to boundary decay.",
+   "unresolved": "Not read beyond metadata.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-kennedy-tasaki-cmp1992",
+   "category": "b",
+   "title": "Hidden symmetry breaking and the Haldane phase in S=1 quantum spin chains",
+   "author": [
+    "Tom Kennedy",
+    "Hal Tasaki"
+   ],
+   "url": "https://link.springer.com/article/10.1007/BF02097239",
+   "version_date": "Commun. Math. Phys. 147, 431-484 (1992)",
+   "section": "Search-result summary",
+   "reading_depth": "search summary only",
+   "provenance": "journal",
+   "claim": "Develops rigorous perturbation theory for ground states of quantum spin systems that are small perturbations of diagonal Hamiltonians, extended to diagonally dominant Hamiltonians.",
+   "relevance": "Historical template for convergent ground-state expansions around a product reference, the structural cousin of the AM2 creation expansion.",
+   "unresolved": "Not read; applicability to unbounded rotor sites unchecked.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-datta-fernandez-froehlich-jsp1996",
+   "category": "b",
+   "title": "Low-temperature phase diagrams of quantum lattice systems. I. Stability for quantum perturbations of classical systems with finitely-many ground states",
+   "author": [
+    "N. Datta",
+    "R. Fernandez",
+    "J. Froehlich"
+   ],
+   "url": "https://link.springer.com/article/10.1007/BF02179651",
+   "version_date": "J. Stat. Phys. 84, 455-534 (1996)",
+   "section": "Search-result summary",
+   "reading_depth": "search summary only",
+   "provenance": "journal",
+   "claim": "Small quantum perturbations of classical lattice systems with regular zero-temperature phase diagrams produce smooth deformations of the phase diagram (quantum Pirogov-Sinai via Duhamel contour expansions).",
+   "relevance": "Background for convergent quantum contour/cluster expansions.",
+   "unresolved": "Not read.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-dffrb-hpa1996",
+   "category": "b",
+   "title": "Low-temperature phase diagrams of quantum lattice systems. II. Convergent perturbation expansions and stability in systems with infinite degeneracy",
+   "author": [
+    "N. Datta",
+    "R. Fernandez",
+    "J. Froehlich",
+    "L. Rey-Bellet"
+   ],
+   "url": "https://webspace.science.uu.nl/~ferna107/papers/pert.pdf",
+   "version_date": "Helv. Phys. Acta 69, 752-820 (1996)",
+   "section": "Search-result summary",
+   "reading_depth": "search summary only",
+   "provenance": "journal (author-hosted copy located, not read)",
+   "claim": "Convergent perturbation expansions and stability for quantum lattice systems with infinitely degenerate classical ground states.",
+   "relevance": "Background for convergent ground-state expansions; the project's reference is non-degenerate, so only the expansion technique is relevant.",
+   "unresolved": "Not read.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-kotecky-preiss-cmp1986",
+   "category": "b",
+   "title": "Cluster expansion for abstract polymer models",
+   "author": [
+    "R. Kotecky",
+    "D. Preiss"
+   ],
+   "url": "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-103/issue-3/Cluster-expansion-for-abstract-polymer-models/cmp/1104114796.full",
+   "version_date": "Commun. Math. Phys. 103, 491-498 (1986)",
+   "section": "Metadata (Project Euclid page displayed no abstract); criterion known through r33-kotecky-encyclopedia-cluster-expansion",
+   "reading_depth": "metadata only",
+   "provenance": "journal",
+   "claim": "Direct proof of convergence of cluster expansions for abstract polymer models without Kirkwood-Salsburg equations or tree combinatorics (search summary).",
+   "relevance": "The KP criterion is the convergence condition checked with candidate constants in memo section 2.5.",
+   "unresolved": "Original text not read; the criterion used in the memo is taken in the Dobrushin/KP form of the encyclopedia article.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-ueltschi-math-ph-0304003",
+   "category": "b",
+   "title": "Cluster expansions and correlation functions",
+   "author": [
+    "Daniel Ueltschi"
+   ],
+   "url": "https://arxiv.org/abs/math-ph/0304003v3",
+   "version_date": "v1 2003-04-01, v3 2005-02-18; Moscow Math. J. 4, 511-522 (2004)",
+   "section": "Abstract (via WebFetch)",
+   "reading_depth": "abstract",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "A cluster expansion for continuous and discrete systems under an extension of the Kotecky-Preiss criterion, with expressions and estimates for correlation functions, applied to classical and quantum particles.",
+   "relevance": "Correlation-function estimates in KP form are what BB1 forward needs for the R-marginal.",
+   "unresolved": "Body not read.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-fernandez-procacci-math-ph-0605041",
+   "category": "b",
+   "title": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+   "author": [
+    "Roberto Fernandez",
+    "Aldo Procacci"
+   ],
+   "url": "https://arxiv.org/abs/math-ph/0605041",
+   "version_date": "v1 2006-05-12, v2 2006-10-16; Commun. Math. Phys. 274 (2007)",
+   "section": "Abstract (via WebFetch)",
+   "reading_depth": "abstract",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "Tree-graph approach with the Penrose identity yields a convergence condition improving Kotecky-Preiss and Dobrushin.",
+   "relevance": "A sharper criterion could enlarge the analyticity radius S'' (memo section 2.5) and so reduce q; optional refinement.",
+   "unresolved": "Body not read.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-hastings-koma-math-ph-0507008",
+   "category": "b",
+   "title": "Spectral Gap and Exponential Decay of Correlations",
+   "author": [
+    "Matthew B. Hastings",
+    "Tohru Koma"
+   ],
+   "url": "https://arxiv.org/abs/math-ph/0507008",
+   "version_date": "v1 2005-07-04, v3 2005-12-16; Commun. Math. Phys. 265, 781-804 (2006)",
+   "section": "Abstract (via WebFetch)",
+   "reading_depth": "abstract",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "A nonvanishing spectral gap implies exponential decay of ground-state correlations for short-range quantum spin and fermion systems on a wide class of lattices.",
+   "relevance": "Companion to NS06 for route B.",
+   "unresolved": "Body not read; finite-dimensional sites assumed in the abstract's setting.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-nachtergaele-sims-1004.2086",
+   "category": "b",
+   "title": "Lieb-Robinson Bounds in Quantum Many-Body Physics",
+   "author": [
+    "Bruno Nachtergaele",
+    "Robert Sims"
+   ],
+   "url": "https://arxiv.org/abs/1004.2086",
+   "version_date": "v1 2010-04-13; Contemp. Math. 529, 141-176 (2010)",
+   "section": "Abstract (via WebFetch)",
+   "reading_depth": "abstract",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "Overview of Lieb-Robinson bounds and applications (lecture notes).",
+   "relevance": "Standard reference for the F-norm form of the Lieb-Robinson bound used in memo section 2.8 (2||A|| ||B||/C_F (e^{2||Phi||_F C_F|t|}-1) sum F(d)).",
+   "unresolved": "Body not read this loop; the bound form used is the one AQ1 already cites via NS14.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-nachtergaele-ogata-sims-jsp2006",
+   "category": "b",
+   "title": "Propagation of Correlations in Quantum Lattice Systems",
+   "author": [
+    "Bruno Nachtergaele",
+    "Yoshiko Ogata",
+    "Robert Sims"
+   ],
+   "url": "https://link.springer.com/content/pdf/10.1007/s10955-006-9143-6.pdf",
+   "version_date": "J. Stat. Phys. 124, 1-13 (2006)",
+   "section": "Search-result summary",
+   "reading_depth": "search summary only",
+   "provenance": "journal",
+   "claim": "Simple proof of the Lieb-Robinson bound and an upper bound on the rate at which correlations between separated observables accumulate under the dynamics.",
+   "relevance": "Background for the Lieb-Robinson form with F-functions and for the interaction-picture treatment needed in BA2.",
+   "unresolved": "Not read.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-bravyi-hastings-michalakis-1001.0344",
+   "category": "b",
+   "title": "Topological quantum order: stability under local perturbations",
+   "author": [
+    "Sergey Bravyi",
+    "Matthew Hastings",
+    "Spyridon Michalakis"
+   ],
+   "url": "https://arxiv.org/abs/1001.0344",
+   "version_date": "v1 2010-01-03; J. Math. Phys. 51, 093512 (2010)",
+   "section": "Abstract (search-result summary)",
+   "reading_depth": "search summary only",
+   "provenance": "arXiv author preprint",
+   "claim": "Commuting-projector Hamiltonians with topological order keep a constant gap under weak short-range perturbations.",
+   "relevance": "Background only: the project's reference is a non-degenerate product vacuum, not topologically ordered; the BHM machinery is the general gap-stability frontier.",
+   "unresolved": "Not read; journal reference from memory of the literature, unverified this loop.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-deroeck-salmhofer-1712.00977",
+   "category": "b",
+   "title": "Persistence of exponential decay and spectral gaps for interacting fermions",
+   "author": [
+    "Wojciech De Roeck",
+    "Manfred Salmhofer"
+   ],
+   "url": "https://arxiv.org/abs/1712.00977",
+   "version_date": "arXiv 2017-12; Commun. Math. Phys. (2019)",
+   "section": "Search-result summary",
+   "reading_depth": "search summary only",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "Weakly interacting gapped lattice fermions keep a spectral gap uniformly in the lattice size via convergent fermionic perturbation theory, including non-self-adjoint interaction terms.",
+   "relevance": "Shows convergent-expansion gap stability with non-self-adjoint terms, parallel to complex-s AM2.",
+   "unresolved": "Not read.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-greensite-hep-lat-0301023",
+   "category": "a",
+   "title": "The Confinement Problem in Lattice Gauge Theory",
+   "author": [
+    "J. Greensite"
+   ],
+   "url": "https://arxiv.org/abs/hep-lat/0301023",
+   "version_date": "arXiv 2003-01; Prog. Part. Nucl. Phys. 51, 1 (2003)",
+   "section": "Search-result summary",
+   "reading_depth": "search summary only",
+   "provenance": "arXiv author preprint with journal reference",
+   "claim": "Review of confinement mechanisms in SU(N) lattice gauge theory with emphasis on Z_N center symmetry (center vortices, N-ality).",
+   "relevance": "Background for the BD1 center-symmetry transfer: N-ality selection rules replace the SU(2) link flip for SU(3).",
+   "unresolved": "Not read; the transfer criteria in the memo are this lens's own derivation, not taken from the review.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-osterwalder-seiler-1978",
+   "category": "a",
+   "title": "Gauge field theories on a lattice",
+   "author": [
+    "Konrad Osterwalder",
+    "Erhard Seiler"
+   ],
+   "url": "https://doi.org/10.1016/0003-4916(78)90039-8",
+   "version_date": "Ann. Phys. 110, 440-471 (1978)",
+   "section": "Search-result summaries (secondary descriptions)",
+   "reading_depth": "search summary only",
+   "provenance": "journal",
+   "claim": "Area law at sufficiently strong coupling for lattice gauge theories (Euclidean).",
+   "relevance": "Classical Euclidean counterpart of the conditional Hamiltonian area-law application (memo section 4 item 6).",
+   "unresolved": "Not read; DOI from literature knowledge, unverified this loop.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-ciavarella-quantum-10-2216",
+   "category": "c",
+   "title": "Truncation uncertainties for accurate quantum simulations of lattice gauge theories",
+   "author": [
+    "Anthony N. Ciavarella",
+    "Siddharth Hariprakash",
+    "Jad C. Halimeh",
+    "Christian W. Bauer"
+   ],
+   "url": "https://quantum-journal.org/papers/q-2026-09-24-2216/",
+   "version_date": "Quantum 10, 2216, published 2026-09-24 (arXiv:2508.00061v4)",
+   "section": "Abstract (via WebFetch)",
+   "reading_depth": "abstract",
+   "provenance": "journal",
+   "claim": "Formalism for estimating electric-basis truncation errors using Hilbert-space fragmentation; generic factorial decay in the field truncation; Schwinger model and pure U(1) examples; improves earlier estimates by a factor 10^306.",
+   "relevance": "The one item dated 2026-09-24 found by this loop's search; estimates, not enclosures, and U(1) not SU(2); contrasts with the project's nonperturbative Round10/11 tail inequalities.",
+   "unresolved": "Body not read; no transfer to SU(2) certified tails.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-zenodo-22839765-discourse",
+   "category": "f",
+   "title": "The Yang-Mills Mass Gap Trilogy: A Geometric and Metric-Measure Framework",
+   "author": [
+    "Reinaldo M. Silva-Filho"
+   ],
+   "url": "https://zenodo.org/records/22839765",
+   "version_date": "v12 2026-09-19 (Zenodo preprint, CC BY 4.0)",
+   "section": "Record description (via WebFetch)",
+   "reading_depth": "abstract",
+   "provenance": "community/discourse record",
+   "claim": "Claims an unconditional non-perturbative framework resolving the mass gap, area-law confinement and vacuum uniqueness for four-dimensional SU(N) Yang-Mills, with hypotheses said to be certified in Lean 4.",
+   "relevance": "Claimed full solution: a lead only; no shared model or equation with this project's fixed-lattice family.",
+   "unresolved": "Self-published, no peer review, not replayed; no premise.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-zenodo-22376272-22838127-discourse",
+   "category": "f",
+   "title": "A Geometric Proof of the Yang-Mills Mass Gap, Quark Confinement, and Strong CP Conservation; The Unconditional Yang-Mills Mass Gap Trilogy",
+   "author": [
+    "Reinaldo M. Silva-Filho"
+   ],
+   "url": "https://zenodo.org/records/22376272",
+   "version_date": "2026-09-05 and 2026-09-18 (Zenodo preprints)",
+   "section": "Search-result summaries",
+   "reading_depth": "search summary only",
+   "provenance": "community/discourse record",
+   "claim": "Companion self-published claims of a proof of the mass gap and related statements.",
+   "relevance": "Discourse only; recorded for provenance.",
+   "unresolved": "Not read; no premise.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-doe-quantum-genesis-q-2026",
+   "category": "e",
+   "title": "DOE Launches $215 Million Quantum Genesis Q Competition",
+   "author": [
+    "The Quantum Insider (news report)"
+   ],
+   "url": "https://thequantuminsider.com/2026/09/18/doe-215-million-quantum-genesis-q-competition/",
+   "version_date": "2026-09-18",
+   "section": "Article text (via WebFetch)",
+   "reading_depth": "page text",
+   "provenance": "institutional page (news report of a DOE programme)",
+   "claim": "DOE ASCR competition with up to $215M planned (2.5M in FY2026) for fault-tolerant quantum computing with at least 100 logical qubits; webinar 2026-09-25; applications due 2026-10-19; companion $45M validation and verification testbed lab call.",
+   "relevance": "Programme custody only; names no lattice-gauge-theory deliverable.",
+   "unresolved": "Secondary news source; primary DOE notice not read.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-doe-scac-quantum-report-2026-09",
+   "category": "e",
+   "title": "SCAC Quantum Committee Report",
+   "author": [
+    "DOE Office of Science Science Advisory Committee, Quantum Subcommittee"
+   ],
+   "url": "https://science.osti.gov/-/media/About/pdf/scac/reports/FINAL-REPORT---QUANTUM-SCAC-POST-final-v2.pdf",
+   "version_date": "September 2026",
+   "section": "Front matter; executive passage on the inflection point; scientific-drivers list (text extracted locally with pdftotext)",
+   "reading_depth": "selected sections",
+   "provenance": "institutional page",
+   "claim": "Lists lattice gauge theories among scientific drivers for quantum computing and cites real-time string breaking in lattice gauge theories on quantum simulators as a milestone.",
+   "relevance": "Programme custody only: shows institutional interest; no certified observable relevant to this project.",
+   "unresolved": "Only selected passages read; custody is not confirmation.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-patent-search-record",
+   "category": "e",
+   "title": "Patent search: quantum simulation of SU(2) lattice gauge theory (2026)",
+   "author": [
+    "(search record)"
+   ],
+   "url": "websearch query: patent quantum simulation lattice gauge theory SU(2) 2026 application (no URL; search record)",
+   "version_date": "2026-09-24",
+   "section": "WebSearch results list",
+   "reading_depth": "search summary only",
+   "provenance": "community/discourse record (search record)",
+   "claim": "The search returned only arXiv preprints (e.g. arXiv:2604.06716, 2604.04837, 2606.14842); no patent record surfaced.",
+   "relevance": "Confirms the Round32 finding that no patent claims SU(2)/SU(3) lattice-gauge simulation as such; no premise.",
+   "unresolved": "Patent offices were not queried directly (Round32 recorded 403/503 blocks).",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-round11-solver-local-preview",
+   "category": "c",
+   "title": "Round11 two-plaquette solver used as a local preview tool",
+   "author": [
+    "Hruday N M (BUNZEEY) project code, research/round11/solver/two_plaquette.py"
+   ],
+   "url": "research/round11/solver/two_plaquette.py",
+   "version_date": "repository file (read-only use)",
+   "section": "matrices(), kinetic(), inner(); float generalized eigensolves at D=6 in the session scratchpad",
+   "reading_depth": "local execution",
+   "provenance": "local execution",
+   "claim": "Preview values: <x>/lambda -> 0.1666665 (1/6) and <z>/lambda^2 -> 0.0324073 (7/216) at lambda=0.005; d E_0/d rho / lambda^2 -> 0.0416664 (1/24) at lambda=0.01, for H = K - lambda(x+y) + 2 lambda.",
+   "relevance": "Checks memo section 4 items 4-5 (rectangle coefficient 7/216 and shared-link Casimir 1/24) before any contract; float previews only.",
+   "unresolved": "Not certified; exact Fraction Rayleigh-Schroedinger series to be produced by an assistant.",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "id": "r33-weyl-integration-local-preview",
+   "category": "c",
+   "title": "SU(3) and SU(4) Haar moments of Re Tr U by Weyl integration (local preview)",
+   "author": [
+    "this lens (scratchpad computation)"
+   ],
+   "url": "(session scratchpad, not in the repository)",
+   "version_date": "2026-09-24",
+   "section": "Grid quadrature of the Weyl density: 600^2 points for SU(3), 80^3 for SU(4)",
+   "reading_depth": "local execution",
+   "provenance": "local execution",
+   "claim": "E[(Re Tr U)^n] for n=1..4: SU(3) 0, 1/2, 1/4, 3/4; SU(4) 0, 1/2, 0, 7/8 (floating previews matching representation-theoretic counts).",
+   "relevance": "Supports the BD1 criterion: E[W^3] = 1/108 for SU(3) with W = Re Tr/3 (parity fails), E[W^3] = 0 for SU(4).",
+   "unresolved": "Floating preview; exact values follow from singlet multiplicities and should be recomputed exactly by an assistant.",
+   "checked_date": "2026-09-24"
+  }
+ ],
+ "inherited_round32_records": [
+  "r32-nachtergaele-sims-1410.8174",
+  "r32-nsy-part1-1810.02428",
+  "r32-nsy-part2-2010.15337",
+  "r32-htw-2106.13780v3",
+  "r32-yarotsky-cmp2006",
+  "r32-delvecchio-frohlich-pizzo-2108.13907",
+  "r32-mcdonough-yin-lucas-zhang-2502.02652",
+  "r32-faizal-shabir-2606.19362",
+  "r32-gauvin-2503.15539v3",
+  "r32-nair-2608.10133"
+ ],
+ "access_failures": [
+  {
+   "url": "https://link.springer.com/article/10.1007/s11005-016-0913-z",
+   "what": "De Roeck-Schuetz LMP 2017 publisher page",
+   "outcome": "303 redirect to idp.springer.com login; abstract read on arXiv instead",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "url": "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-103/issue-3/Cluster-expansion-for-abstract-polymer-models/cmp/1104114796.full",
+   "what": "Kotecky-Preiss 1986 abstract",
+   "outcome": "page displayed platform interface only, no abstract or criterion; criterion taken from the Kotecky encyclopedia article",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "url": "http://www.cts.cuni.cz/~kotecky/publ/K-CE-EMP06.pdf",
+   "what": "Kotecky encyclopedia article via WebFetch",
+   "outcome": "WebFetch returned binary PDF streams; recovered by local pdftotext extraction of the saved file",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "url": "https://science.osti.gov/-/media/About/pdf/scac/reports/FINAL-REPORT---QUANTUM-SCAC-POST-final-v2.pdf",
+   "what": "SCAC quantum report via WebFetch",
+   "outcome": "WebFetch returned binary PDF streams; recovered by local pdftotext extraction",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "url": "https://arxiv.org/pdf/math-ph/0506030",
+   "what": "NS06 theorem statements via WebFetch",
+   "outcome": "WebFetch returned a paraphrase with a wrong rate formula (mu' = mu Delta/(2v)); discarded; statements read from local pdftotext extraction",
+   "checked_date": "2026-09-24"
+  },
+  {
+   "url": "https://link.springer.com/article/10.1007/s10955-004-8780-x",
+   "what": "Yarotsky JSP 2005 full text",
+   "outcome": "not re-attempted; Round32 recorded a login gate; reading depth stays search summary",
+   "checked_date": "2026-09-24"
+  }
+ ]
+}
