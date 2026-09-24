@@ -13,7 +13,13 @@
     "trajectory": "(a_n, g_n) with g_n -> 0 as a_n -> 0 (asymptotic-freedom form, stated as a hypothesis, not derived here)",
     "dictionary": "alpha=g^2/(2a), lambda=2/(g^2 a), tau=96/g^4",
     "supplied": "volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9 at fixed a",
-    "failed": "any estimate uniform along a_n->0: the AM2 contraction needs tau<=10^-8 i.e. g^4>=9.6x10^9, violated on every g->0 path; the AL1 bridge condition g^4>=32 also fails"
+    "failed": "any estimate uniform along a_n->0: the AM2 contraction needs tau<=10^-8 i.e. g^4>=9.6x10^9, violated on every g->0 path; the AL1 bridge condition g^4>=32 also fails",
+    "toy_trajectory": "g_n=g_0/n, n>=1, at fixed E_star; g_0^4=9.6x10^9 (the cap) declared; crossover indices n* for g_n^4<9.6x10^9 and for g_n^4<32 computed exactly",
+    "dictionary_identities": [
+      "alpha/16=g^2/(32a)",
+      "tau=96/g^4",
+      "alpha*lambda*a^2=1"
+    ]
   },
   "shared_premises": [
     "research/round29/forward/am2/report.md",
@@ -43,7 +49,12 @@
     "research/round32/experts/modern/sota-table.md"
   ],
   "required": [
-    "1. Name the trajectory and apply the dictionary; locate the admitted regime; 2. identify exactly one necessary uniform estimate and prove or cite that the fixed-spacing family supplies it (the volume-uniform gap at fixed a) and state its failure point on the trajectory; 3. retain the AL1 bridge obstruction and the failure of common rescaling; 4. state what a continuum construction would additionally require (uniform-in-a estimates, reconstruction hypotheses, physical scale control) with the missing premise for each; 5. exact checker for the dictionary arithmetic and the guard controls; skeptic review; no number is a fraction of the continuum problem."
+    "1. Name the trajectory (a_n, g_n) with g_n -> 0 as a_n -> 0 as a hypothesis of asymptotic-freedom form (not derived here) and apply the AL1 dictionary alpha=g^2/(2a), lambda=2/(g^2 a), tau=96/g^4; locate the admitted regime (|tau|<=10^-8, i.e. g^4>=9.6x10^9 at fixed a; AX1 gate).",
+    "2. Identify exactly one necessary uniform estimate and cite (not re-derive) that the fixed-spacing family supplies it: the volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9 at fixed a (AX1 gate); state its failure point on the trajectory: no estimate uniform along a_n->0 is supplied because the AM2 contraction needs tau<=10^-8, violated on every g->0 path, and the AL1 bridge condition g^4>=32 also fails.",
+    "3. Exhibit the failure concretely on at least one explicit, clearly labelled toy trajectory (g_n=g_0/n at fixed E_star, with g_0^4=9.6x10^9 or another declared value): compute the exact crossover index n* at which g_n^4 first drops below 9.6x10^9 and, separately, below the AL1 bridge threshold 32; state plainly that no rigorous construction of a genuine asymptotic-freedom trajectory satisfying either bound uniformly was found in this or any prior sub-round's source search.",
+    "4. Retain the AL1 bridge obstruction and the failure of common rescaling; state what a continuum construction would additionally require (uniform-in-a estimates, reconstruction hypotheses, physical scale control) with the missing premise for each; no number is a fraction of the continuum problem.",
+    "5. Exact checker (Fractions) verifying as literal identities: alpha/16=g^2/(32a) from alpha=g^2/(2a); tau=96/g^4 giving g^4=9.6x10^9 at tau=10^-8 (cite AX1); the cross-identity alpha*lambda*a^2=1 from alpha=g^2/(2a) and lambda=2/(g^2 a); the toy-trajectory crossover indices; every guard control as a damaging mutation; the mandatory sentence template present in the report; the gate fields exported (continuum_claim false, uniform_in_a_claimed false, weak_coupling_claim false, loop_count_fraction_claimed false, uniform_in_N_claimed true with the scope string 'volume-uniform at fixed a, strong bare coupling').",
+    "6. Skeptic independent derivation and replays (single_direction_independent_replay). Forbidden phrasings: 'the continuum limit exists', 'fraction of the problem'; the two senses of 'uniform' (in N at fixed a; in a) never share a sentence without the qualifier."
   ],
   "controls": [
     "missing_incoming_stars",
@@ -63,13 +74,18 @@
     "one_uniform_estimate_identified",
     "e_star_fixed_no_plateau",
     "loop_count_not_fraction",
-    "uniform_label_strong_coupling"
+    "uniform_label_strong_coupling",
+    "uniform_in_N_not_in_a",
+    "dictionary_arithmetic_exact",
+    "toy_trajectory_crossover_exact"
   ],
   "claim_exclusions": [
     "any continuum construction",
     "any uniform-in-a estimate",
     "weak coupling",
-    "scientific priority"
+    "scientific priority",
+    "the continuum limit exists (phrase)",
+    "fraction of the problem (phrase)"
   ],
   "producers": [
     "forward"
@@ -93,7 +109,7 @@
     ],
     "claim_exclusions": [
       "free reference inside enclosure => no interaction claim",
-      "uniqueness of the AQ state",
+      "uniqueness of any subsequential limit",
       "whole-sequence convergence or rate in N",
       "continuum or weak coupling",
       "transfer from a finite graph",
@@ -136,12 +152,13 @@
       }
     },
     "error_terms_itemized": [
-      "not_applicable: statement loop (reason: no new numerical certificate)"
+      "not_applicable: statement loop (reason: exact integer/rational dictionary arithmetic only; no enclosure)"
     ],
     "target": {
-      "quantity": "one uniform estimate named with failure point",
+      "quantity": "dictionary identities verified exactly and the toy-trajectory crossover indices computed",
       "value": "1",
-      "comparator": ">="
+      "comparator": ">=",
+      "note": "feasibility/format check on admitted quantities (AX1 gate), not a blind discovery threshold; the statement is the deliverable"
     },
     "controls_required": {
       "ids": [
@@ -162,11 +179,25 @@
         "one_uniform_estimate_identified",
         "e_star_fixed_no_plateau",
         "loop_count_not_fraction",
-        "uniform_label_strong_coupling"
+        "uniform_label_strong_coupling",
+        "uniform_in_N_not_in_a",
+        "dictionary_arithmetic_exact",
+        "toy_trajectory_crossover_exact"
       ]
     },
     "direction": "statement+skeptic",
-    "error_terms_rule": "an entry may be not_applicable only with a stated reason"
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "gate_fields_required": {
+      "continuum_claim": false,
+      "uniform_in_a_claimed": false,
+      "weak_coupling_claim": false,
+      "loop_count_fraction_claimed": false
+    },
+    "mandatory_sentence_template": "Along the named trajectory (a_n,g_n), the fixed-spacing family supplies exactly one uniform estimate, the volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9, and fails to supply any estimate uniform along a_n->0; this is not a statement that the continuum limit exists, that any estimate is uniform in a, that the coupling is weak, or that any fraction of the continuum problem is thereby resolved.",
+    "forbidden_phrasings": [
+      "the continuum limit exists",
+      "fraction of the problem"
+    ]
   },
   "acceptance": {
     "accepted_within_scope": "Statement verified by the skeptic with the dictionary arithmetic exact.",
@@ -174,5 +205,7 @@
     "insufficient": "The statement overclaims."
   },
   "stop": "Investigation 9 of 10.",
-  "single_direction_independent_replay": true
+  "single_direction_independent_replay": true,
+  "reverse_premise_isolation": false,
+  "direction_note": "statement+skeptic as planned: one forward producer and the skeptic's independent derivation and replays; the historical, Jung and modern lenses all kept AZ1 unchanged after sub-round 4 (update-4 notes)."
 }

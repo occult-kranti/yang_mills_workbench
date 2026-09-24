@@ -18,7 +18,8 @@
       "1/10"
     ],
     "observable": "<W> of one square and its derivative at tau_FG=0 (must reproduce the matched first-order value under the graph's own normalization); second-order coefficient; the graph's own free reference computed in the same code path",
-    "admission": "exact rational linear algebra (Fractions) with Ritz plus residual/Davis-Kahan or exact shell residual; python-flint Arb as labelled cross-check only"
+    "admission": "exact rational linear algebra (Fractions) with Ritz plus residual/Davis-Kahan or exact shell residual; python-flint Arb as labelled cross-check only",
+    "normalization_dictionary": "tau_FG=tau/24 (every face coefficient nu=alpha*tau/24 in the Z^3 model; the two-plaquette graph's own coupling multiplies one face); finite-graph first-order value 1/6 <-> 1/144; consistency only"
   },
   "shared_premises": [
     "research/round29/forward/am2/report.md",
@@ -46,7 +47,12 @@
     "research/round32/forward/aw1/report.md"
   ],
   "required": [
-    "1. Define the graph, the gauge-invariant basis, the cutoff and the certified tail (complete residual over all product channels); 2. compute exact enclosures of <W>(tau_FG) at the grid points and the derivative at zero, with the graph's own free reference; 3. compare the first-order coefficient with the matched Z^3 value 1/144 under an explicit normalization dictionary (consistency, not proof); 4. report second-order coefficients as finite-model values; 5. labels and controls: finite_graph_model_id, complete_residual_all_channels, certified_representation_tail, own_free_reference, no_transfer_to_aq, fg_coefficients_not_fitted; Arb cross-check labelled preview; freeze; skeptic replay."
+    "1. Define the graph (Round11 two-plaquette: two adjacent squares sharing one link, seven links, six Gauss constraints), the gauge-invariant basis, the cutoff (declared in parameters) and the certified tail as a complete residual ledger itemizing separately: (a) the per-link representation tail beyond the cutoff for each of the seven links; (b) the joint product-channel residual across all seven links together (not implied by (a)); (c) the residual from projecting onto the six-Gauss-constraint gauge-invariant subspace; (d) the Ritz/eigenvector residual (Davis-Kahan or exact shell residual); (e) the arithmetic term (directed rounding). One nonzero omitted matrix element proves leakage; it does not bound the omitted norm from above.",
+    "2. Compute exact enclosures of <W>(tau_FG) at the declared grid points and the derivative at tau_FG=0, with the graph's own free reference computed in the same code path (own_free_reference).",
+    "3. Compare the first-order coefficient with the matched Z^3 value 1/144 under the explicit normalization dictionary tau_FG=tau/24 (the finite-graph value 1/6 corresponds to 1/144): consistency on a different finite model, never a prediction, confirmation or transfer.",
+    "4. Report second-order coefficients as finite-model values at the declared cutoffs, with the tail residual bounding the truncation error.",
+    "5. Labels and controls: finite_graph_model_id, complete_residual_all_channels, complete_residual_ledger_itemized, certified_representation_tail, own_free_reference, no_transfer_to_aq, fg_coefficients_not_fitted, sign_convention_fixture; python-flint Arb cross-check as a labelled preview only; the mandatory sentence template in the report; gate fields exported (transfers_to_aq false, model_is_finite_graph true, fg_coefficients_fitted false); freeze; skeptic pre-comparison replay from the contract alone and post-comparison review (single_direction_independent_replay).",
+    "6. Forbidden phrasings: 'predicts', 'confirms the Z^3 value'; the finite graph is 'consistent with' the matched coefficient and nothing more."
   ],
   "controls": [
     "missing_incoming_stars",
@@ -67,13 +73,15 @@
     "own_free_reference",
     "no_transfer_to_aq",
     "fg_coefficients_not_fitted",
-    "sign_convention_fixture"
+    "sign_convention_fixture",
+    "complete_residual_ledger_itemized"
   ],
   "claim_exclusions": [
     "any statement about the AQ model's shift or K_2 from the graph",
     "resolution of roadmap goal 2",
     "continuum",
-    "scientific priority"
+    "scientific priority",
+    "'predicts' or 'confirms the Z^3 value' (phrases)"
   ],
   "producers": [
     "forward"
@@ -97,7 +105,7 @@
     ],
     "claim_exclusions": [
       "free reference inside enclosure => no interaction claim",
-      "uniqueness of the AQ state",
+      "uniqueness of any subsequential limit",
       "whole-sequence convergence or rate in N",
       "continuum or weak coupling",
       "transfer from a finite graph",
@@ -165,11 +173,22 @@
         "own_free_reference",
         "no_transfer_to_aq",
         "fg_coefficients_not_fitted",
-        "sign_convention_fixture"
+        "sign_convention_fixture",
+        "complete_residual_ledger_itemized"
       ]
     },
     "direction": "single+skeptic",
-    "error_terms_rule": "an entry may be not_applicable only with a stated reason"
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "gate_fields_required": {
+      "transfers_to_aq": false,
+      "model_is_finite_graph": true,
+      "fg_coefficients_fitted": false
+    },
+    "mandatory_sentence_template": "The finite-graph derivative of <W>_FG at tau_FG=0, under the stated normalization dictionary, is consistent with the matched Z^3 first-order coefficient 1/144; this is a consistency check on a different, finite model, not a prediction, not a confirmation of the Z^3 value, and it does not transfer to any subsequential limit of the AQ construction or resolve roadmap goal 2.",
+    "forbidden_phrasings": [
+      "predicts",
+      "confirms the Z^3 value"
+    ]
   },
   "acceptance": {
     "accepted_within_scope": "Enclosures with certified tails at every grid point; first-order coefficient consistent with the dictionary; labels present.",
@@ -177,5 +196,6 @@
     "insufficient": "The residual argument fails."
   },
   "stop": "Investigation 10 of 10; scientific production stops after this review.",
-  "single_direction_independent_replay": true
+  "single_direction_independent_replay": true,
+  "reverse_premise_isolation": false
 }
