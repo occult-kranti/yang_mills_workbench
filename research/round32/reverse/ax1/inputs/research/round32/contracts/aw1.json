@@ -1,0 +1,253 @@
+{
+  "id": "AW1",
+  "round": 32,
+  "subround": 2,
+  "sequence": 3,
+  "status": "frozen_before_production",
+  "title": "Hruday parity theorem, link-flip antisymmetry and the first-order Wilson mean with an itemized second-order remainder",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round32/advisor/av2-gate.json",
+  "selection_reason": "The centered correlation's interaction shift is second order in tau by SU(2) Peter-Weyl parity, so roadmap goal 2 is re-targeted to the only first-order Wilson effect, the uncentered mean omega_tau(W)=tau/144+O(tau^2). A sign certificate needs the exact coefficient, an exact antisymmetry control and an itemized second-order remainder K_2 uniform in volume, from the same AM2 expansion admitted through AV1.",
+  "model": "Same zero-selected patterned AQ subfamily as AV1 (selected triple (0,0,0), whole stars phi_b=-(tau/3) sum_f W_f, both signs |tau|<=10^-8, centered whole-star boxes, cover R={0,e_z}, Haar reference), the AV1-admitted state lemma and constants, fixed positive physical scales.",
+  "parameters": {
+    "tau_cap": "1/100000000",
+    "signs": [
+      "+",
+      "-"
+    ],
+    "selected_coefficients_over_alpha": [
+      "0",
+      "0",
+      "0"
+    ],
+    "first_order_candidate": "omega_tau(W)=+tau/144+r(tau) in alpha units under I1.5 (to be derived, not assumed)",
+    "flip_set": "E={(p,x): p_y even} u {(p,y): p_z even} u {(p,z): p_x even}",
+    "aw2_coupling_rule": "tau_AW2 = the largest element of the decade grid {10^-8, 10^-9, ...} with K_2^+ * tau <= 1/288 (half the first-order coefficient), K_2^+ the admitted exact-tier remainder constant; frozen here, never chosen after K_2 is seen",
+    "targets": {
+      "K_2_exact_tier_reported": true,
+      "sign_margin_at_cap": "1/(144 K_2^+ tau) >= 2 for accepted; else sign_certified_below_cap via the rule"
+    }
+  },
+  "shared_premises": [
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/forward/aq2/report.md",
+    "research/round31/forward/at4/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/methods/paired-physics-research/SKILL.md",
+    "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round32/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round32/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round32/methods/historical-physics-panel/SKILL.md",
+    "research/round32/methods/newton-analysis-synthesis/references/research.md",
+    "research/round32/methods/tesla-mechanism-resonance/references/research.md",
+    "research/round32/methods/historical-physics-panel/references/lenses-and-evidence.md",
+    "research/round32/advisor/selection-aw1.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/advisor/av2-gate.json",
+    "research/round32/contracts/av1.json",
+    "research/round32/contracts/av2.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/reverse/av1/report.md",
+    "research/round32/skeptic/av1.md",
+    "research/round32/forward/av2/report.md",
+    "research/round32/reverse/av2/report.md",
+    "research/round32/skeptic/av2.md",
+    "research/round32/experts/modern/loop3-signoff.md",
+    "research/round32/skeptic/loop3-signoff.md"
+  ],
+  "forward_additional_premises": [
+    "research/round32/skeptic/triage.md",
+    "research/round32/skeptic/loop2-response.md",
+    "research/round32/experts/historical/loop2-response.md",
+    "research/round32/experts/modern/loop2-response.md"
+  ],
+  "reverse_premise_isolation": true,
+  "required": [
+    "1. Parity theorem. Prove from SU(2) character multiplicities (Peter-Weyl on each link) that in the zero-selected subfamily every first-order term of omega(W^2), of the real-time correlation omega(W alpha_theta(W)) and of C(s)=<chi,e^{-sG}chi> vanishes: the state term (c^(1) against W^2 Omega_0 and against W alpha^0_theta(W) Omega_0), the Duhamel term and the energy term separately; show E[W^3]=0, E[W^2 W_f]=0 for every omitted f including f=W, E[W^2]=1/4, E[W^4]=1/8; show no omitted face maps the energy-24 multiplet vector W Omega_0 back into itself except through the identity component and that the first-order splitting of that multiplet is zero. Conclude C(s)=e^{-3s}/4+O(tau^2) and omega(W^2)=1/4+O(tau^2) with the O(tau^2) constants left to item 5 or explicitly unbounded. Cross-check (named, not a replacement): the Wilson face contains a free z link, so W is Haar-distributed under the reference (AQ2 section 5); use it to confirm E[W]=0, E[W^2]=1/4 independently of the character count.",
+    "2. Link-flip antisymmetry lemma. Define U_E as the unitary multiplying every link in E by the central element -1. Prove: U_E commutes with every Casimir and every original endpoint gauge action; every elementary plaquette of Z^3 meets E in an odd number of links (enumerate the three orientations by translation covariance); hence U_E H_N(tau,kappa) U_E^* = H_N(-tau,-kappa) for every centered whole-star box including on-site cutoff compressions, where kappa is the selected triple; at kappa=0 the finite ground vectors are covariant, omega_{N,-tau}(W)=-omega_{N,tau}(W), omega_{N,-tau}(W^2)=omega_{N,tau}(W^2) and the finite correlations C_N are even in tau; pass to AQ limits as a statement about the whole set of subsequential limits (state by state only along a common subsequence). State explicitly that oddness does not by itself make the remainder O(tau^3); any third-order remainder is a separate obligation, not assumed. Control: kappa nonzero must break the identity. The odd-intersection enumeration must cover all three orientations and all 49 omitted faces of a factor (full enumeration, not a sample).",
+    "3. First-order coefficient. Derive omega_tau(W)=2<W Omega_0, c^(1)>+O(tau^2) with c^(1) from the AV1-admitted expansion, evaluate it exactly under I1.5 (only f=W contributes; energy 3 in alpha units, 24 normalized; E[W^2]=1/4) to +tau/144 for tau>0, and re-derive the sign from the frozen convention; a wrong-face control (any omitted f not equal to W contributes zero at first order) and an orientation-invariance control.",
+    "4. Second-order remainder K_2, itemized and uniform in volume: the AM2 remainder term (352 J t or the sharper admitted form at the exact tier), the two-creation term, the straddling-support pairing with outside excitations, the outside-traced density term Tr_out|delta><delta|, the normalization term (state its order), and the multiplier for the overlap with W Omega_R (only the creation supported exactly on R overlaps; ||W Omega_R||=1/2; a factor 4 is accepted only if labelled conservative). Report K_2^+ as an exact rational for the exact tier and for the crude tier; every term names its tier; tier mixing rejected. Pin every itemized term to the enumeration (15 owner sets with multiplicities {1x5,2x3,3x2,4x3,10x2}, 82 faces meeting R, 16 touching both factors of R) and record ||W Omega_R||=1/2 as a positive exact control. Separate f=W (the Wilson face is itself one of the 21 omitted classes anchored at factor 0) from the 20 other omitted faces of that anchor throughout.",
+    "5. Sign-certificate feasibility. Evaluate whether K_2^+ tau <= 1/288 at tau=10^-8 (margin >= 2); apply the frozen AW2 coupling rule and report tau_AW2. No enclosure of omega(W) is admitted in this loop; that is AW2.",
+    "6. Consistency controls: sign flip tau->-tau flips the first-order coefficient (and, by item 2, the exact value); the AV1 bounds |omega(W)|<=D are compatible with tau/144 (D>=|tau|/144 at the exact tier); the Haar parity identities computed exactly from character tables (sympy is NOT allowed in the admission path; encode the finite character algebra in exact rationals).",
+    "7. Executable exact checker with every control id below implemented as a damaging mutation; claim flags continuum_claim:false, uniform_wilson_claim:false, resolved_interaction_shift:false (this loop certifies no enclosure), scientific_priority_verified:false, first_order_parity_claim:true only if item 1 is complete; byte-identical normal and -O replays; freeze with research/round32/tools/freeze.py.",
+    "8. Premise lists as declared; the reverse producer is isolated as in AV1 and must derive the parity theorem and the flip lemma from the character structure without the panel notes."
+  ],
+  "controls": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "haar_parity_exact",
+    "first_order_shift_of_C_vanishes",
+    "degenerate_multiplet_first_order",
+    "wilson_mean_first_order_coefficient",
+    "wrong_face_control",
+    "sign_flip_tau",
+    "second_order_remainder_itemized",
+    "static_not_dynamic_effect",
+    "wilson_overlap_single_component",
+    "sign_convention_fixture",
+    "aw2_coupling_rule_prefrozen",
+    "flip_set_odd_intersection",
+    "flip_breaks_at_nonzero_kappa",
+    "flip_no_third_order_claim",
+    "tier_mixing_rejected",
+    "reverse_premise_isolation",
+    "wilson_face_separated",
+    "flip_nonzero_kappa_positive_demonstration"
+  ],
+  "new_control_semantics": {
+    "wilson_overlap_single_component": "only c_R overlaps W Omega_R; a factor 4 is accepted only if labelled conservative",
+    "sign_convention_fixture": "a one-plaquette exact fixture under I1.5 (labelled a finite graph) shows sign(<W>)=sign(tau) at first order",
+    "aw2_coupling_rule_prefrozen": "tau_AW2 is computed by the frozen decade-grid rule from the reported K_2^+; any other choice is rejected",
+    "flip_set_odd_intersection": "every plaquette orientation meets E in an odd number of links; an even-count mutation of E is rejected",
+    "flip_breaks_at_nonzero_kappa": "with a nonzero selected triple the identity maps kappa to -kappa; claiming tau-antisymmetry there is rejected",
+    "flip_no_third_order_claim": "oddness alone does not yield an O(tau^3) remainder; any such claim without a separate proof is rejected",
+    "wilson_face_separated": "the proof and the checker distinguish f=W from the 20 other omitted faces anchored with it; merging them (or excluding W from the omitted set) is rejected",
+    "flip_nonzero_kappa_positive_demonstration": "a nonzero selected triple fixture shows U_E maps kappa to -kappa (positive demonstration), not merely a rejected claim"
+  },
+  "claim_exclusions": [
+    "an admitted enclosure of omega(W) (AW2)",
+    "a dynamical or mass-gap correction (static_not_dynamic)",
+    "any third-order remainder from oddness alone",
+    "uniform Wilson magnetic theory",
+    "AQ uniqueness or a rate in N",
+    "continuum construction",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "preregistration": {
+    "schema": "hnm-r32-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness"
+    ],
+    "claim_exclusions": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "observable": {
+      "id": "omega(W) first-order coefficient and K_2; parity of omega(W^2), C(s)",
+      "centering": "none",
+      "reference_value_exact": "0 and 1/4",
+      "reference_route": "haar"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "am2_remainder",
+      "two_creation",
+      "straddling",
+      "density",
+      "normalization_order",
+      "overlap_multiplier",
+      "arithmetic"
+    ],
+    "target": {
+      "quantity": "K_2^+ tau at the cap",
+      "value": "1/288",
+      "comparator": "<="
+    },
+    "controls_required": {
+      "ids": [
+        "missing_incoming_stars",
+        "full_original_wilson_cover",
+        "wrong_delta_alpha_hbar_clock",
+        "vector_versus_scalar_centering",
+        "first_order_mean_charged",
+        "tau_scaling_exponent",
+        "changed_model_relabelled",
+        "coherent_evidence_tampering",
+        "insufficient_verdict_retained",
+        "exact_arithmetic_admission",
+        "root_n_misuse",
+        "no_priority_or_continuum_claim",
+        "haar_parity_exact",
+        "first_order_shift_of_C_vanishes",
+        "degenerate_multiplet_first_order",
+        "wilson_mean_first_order_coefficient",
+        "wrong_face_control",
+        "sign_flip_tau",
+        "second_order_remainder_itemized",
+        "static_not_dynamic_effect",
+        "wilson_overlap_single_component",
+        "sign_convention_fixture",
+        "aw2_coupling_rule_prefrozen",
+        "flip_set_odd_intersection",
+        "flip_breaks_at_nonzero_kappa",
+        "flip_no_third_order_claim",
+        "tier_mixing_rejected",
+        "reverse_premise_isolation",
+        "wilson_face_separated",
+        "flip_nonzero_kappa_positive_demonstration"
+      ]
+    },
+    "direction": "paired",
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason"
+  },
+  "acceptance": {
+    "accepted_within_scope": "Parity theorem, flip lemma and the exact first-order coefficient proved by both routes; K_2^+ itemized and uniform in volume at the exact tier; the AW2 coupling rule evaluated.",
+    "limited": "K_2^+ only at the crude tier, or the flip lemma proved only in finite volume, or one route fails; the dominating term named.",
+    "insufficient": "The parity theorem or the first-order coefficient fails review."
+  },
+  "stop": "Investigation 3 of 10; AW2 is frozen after this review with tau_AW2 from the rule.",
+  "frozen_at": "2026-09-23T22:59:30.992962+00:00"
+}
