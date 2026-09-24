@@ -1,0 +1,1065 @@
+{
+  "K2_plus": {
+    "exact": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+    "outward_ceiling": "3354803229461691/1000000000000",
+    "reconstruction_equal": true,
+    "source": "AW1 gate decision and accepted text (hash-pinned), equal to the contract K_2_plus string"
+  },
+  "aw2_rule": {
+    "evaluations": [
+      {
+        "K2_times_tau": "207638693805632844612385445095759947457/6189295753091021175534274310329364228603904",
+        "passes": true,
+        "tau": "1/100000000"
+      }
+    ],
+    "grid_start": "1/100000000",
+    "slack": "21282971559982635125992733687992310290751/6189295753091021175534274310329364228603904",
+    "tau_AW2": "1/100000000",
+    "text": "tau_AW2 = the largest element of the decade grid {10^-8, 10^-9, ...} with K_2^+ * tau <= 1/288 (half the first-order coefficient), K_2^+ the admitted exact-tier remainder constant; frozen here, never chosen after K_2 is seen",
+    "threshold": "1/288"
+  },
+  "centered_correlation_shift_resolved": false,
+  "checks": [
+    {
+      "contract_sha256": "aa559b18231961b5bb9dc5b7d0dd3097a1a2753916b54639eb1fd573e08368f9",
+      "frozen_at": "2026-09-24T00:01:24.201697+00:00",
+      "id": "contract_hash_status_single_direction",
+      "passed": true
+    },
+    {
+      "id": "contract_controls_mirror_equal",
+      "n": "23",
+      "passed": true
+    },
+    {
+      "id": "checker_inputs_are_declared_premises",
+      "note": "skeptic/aw1.json is the skeptic own file, bound in the AW1 gate",
+      "passed": true
+    },
+    {
+      "aw1_gate_sha256": "647dc33795f06a66c12934f64ae408725b5354cf0124b32dc4b18a12eb0541ae",
+      "id": "aw1_gate_hash_verdict_and_binding_chain",
+      "passed": true
+    },
+    {
+      "comparator": ">=",
+      "id": "target_read_from_contract",
+      "passed": true,
+      "target": "2"
+    },
+    {
+      "id": "margin_definitions_read_from_contract_text",
+      "passed": true,
+      "text": "exclusion margin m = (|tau|/144 - K_2^+ tau^2)/(K_2^+ tau^2) >= 2 (equivalently 1/(144 K_2^+ |tau|) >= 3); report also the contract-defined sign margin 1/(144 K_2^+ |tau|) (about 207)"
+    },
+    {
+      "id": "reference_read_from_contract",
+      "passed": true,
+      "reference": "0"
+    },
+    {
+      "id": "zero_selected_triple",
+      "passed": true
+    },
+    {
+      "K2": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+      "id": "k2_plus_gate_decision_accepted_and_contract_equal",
+      "passed": true
+    },
+    {
+      "ceiling": "3354803229461691/1000000000000",
+      "id": "k2_outward_ceiling_directed",
+      "passed": true
+    },
+    {
+      "forward": "3.354638329662e+03",
+      "id": "gate_binds_largest_valid_exact_tier_value",
+      "passed": true,
+      "reverse": "3.354499425867e+03"
+    },
+    {
+      "formula": "t<=T=(49|tau|/144)/(1-352J), rho=352JT, J=28|tau|",
+      "id": "gate_exact_tier_formula_parsed",
+      "passed": true
+    },
+    {
+      "cap": "1/100000000",
+      "id": "cap_read_from_aw1_contract",
+      "passed": true
+    },
+    {
+      "form": "(rho + T*T + T^2 + eps^2 + (|tau|/144) eps^2)/tau^2, eps=2T+T^2; cross-check only, the gate value is used",
+      "id": "gate_k2_reconstructed_from_itemization",
+      "passed": true
+    },
+    {
+      "id": "haar_moments_character_recursion",
+      "moments": {
+        "1": "0",
+        "2": "1/4",
+        "3": "0",
+        "4": "1/8",
+        "5": "0",
+        "6": "5/64",
+        "7": "0",
+        "8": "7/128"
+      },
+      "passed": true
+    },
+    {
+      "anchored": "21",
+      "faces_per_site": "49",
+      "id": "geometry_counts_from_I1_4",
+      "max_shared_links": "1",
+      "meeting_R": "82",
+      "owner_set_R": "10",
+      "passed": true,
+      "star_sites": "4",
+      "touching_both": "16"
+    },
+    {
+      "id": "wilson_cover_R_from_link_owners",
+      "owners": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "id": "only_W_pairs_with_W",
+      "nonzero": [
+        "((0, 0, 0), 'xz')"
+      ],
+      "passed": true,
+      "zero_faces": "81"
+    },
+    {
+      "display": "=-{\\tau\\over3}\\sum_{f\\in O_b}W_f",
+      "id": "i15_convention_read",
+      "passed": true
+    },
+    {
+      "amplitude": "-tau/72",
+      "id": "creation_amplitude_both_units",
+      "passed": true
+    },
+    {
+      "id": "first_order_coefficient_plus_1_over_144",
+      "passed": true,
+      "sign_chain": "phi_b=-(tau/3)sum W_f; V_b=-(tau/24)sum W_f; c1=-(tau/72)sum W_f Omega_0; psi=Omega_0-c1; omega=-2Re<W Omega_0,c1>=(tau/36)E[W^2]=tau/144"
+    },
+    {
+      "id": "aw1_literal_display_gives_minus",
+      "literal_value": "-1/144",
+      "passed": true
+    },
+    {
+      "id": "one_plaquette_series",
+      "label": "finite graph (one plaquette), transfers_to_aq false",
+      "passed": true,
+      "series": {
+        "0": "0",
+        "1": "1/144",
+        "2": "0",
+        "3": "-5/11943936",
+        "4": "0",
+        "5": "289/6604518850560"
+      }
+    },
+    {
+      "id": "one_plaquette_exact_sign_both_signs",
+      "label": "finite graph, two-level truncation",
+      "minus": [
+        "-6.944444444444445e-11",
+        "-6.944444444444444e-11"
+      ],
+      "passed": true,
+      "plus": [
+        "6.944444444444444e-11",
+        "6.944444444444445e-11"
+      ]
+    },
+    {
+      "flipped_first_coefficient": "-1/144",
+      "id": "flipped_phi_b_mutation_constructed",
+      "passed": true
+    },
+    {
+      "id": "rule_threshold_is_half_the_derived_coefficient",
+      "passed": true,
+      "threshold": "1/288"
+    },
+    {
+      "id": "rule_grid_starts_at_cap",
+      "passed": true
+    },
+    {
+      "K2_times_tau": "207638693805632844612385445095759947457/6189295753091021175534274310329364228603904",
+      "id": "aw2_tau_from_frozen_rule",
+      "passed": true,
+      "ratio_threshold_over_K2tau": "21490610253788267970605119133088070238208/207638693805632844612385445095759947457",
+      "slack": "21282971559982635125992733687992310290751/6189295753091021175534274310329364228603904",
+      "tau_AW2": "1/100000000",
+      "threshold": "1/288"
+    },
+    {
+      "id": "contract_literal_matches_rule_compared_after",
+      "literal": "1/100000000",
+      "note": "the literal is compared after evaluation, never used as input",
+      "passed": true
+    },
+    {
+      "hi": "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+      "id": "enclosure_plus_tau",
+      "lo": "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+      "passed": true
+    },
+    {
+      "hi": "-42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+      "id": "enclosure_minus_tau_is_flip_image",
+      "lo": "-43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+      "passed": true,
+      "role": "replay (flip image and the same |tau| formula); not a second confirmation"
+    },
+    {
+      "id": "strict_exclusion_of_free_reference_both_signs",
+      "minus_hi_negative": true,
+      "passed": true,
+      "plus_lo_positive": true
+    },
+    {
+      "exclusion_margin": "42773581813770903096597852821080380528959/207638693805632844612385445095759947457",
+      "floor_1e9": "41200010489/200000000",
+      "id": "exclusion_margin_target_met",
+      "passed": true,
+      "target": ">= 2"
+    },
+    {
+      "floor_1e9": "41400010489/200000000",
+      "id": "sign_margin_reported",
+      "passed": true,
+      "sign_margin": "42981220507576535941210238266176140476416/207638693805632844612385445095759947457"
+    },
+    {
+      "id": "margins_equal_at_minus_tau",
+      "passed": true
+    },
+    {
+      "id": "margin_equivalences",
+      "note": "m>=2 <=> s>=3 <=> K|tau|<=1/432; rule K|tau|<=1/288 <=> s>=2 <=> m>=1",
+      "passed": true
+    },
+    {
+      "hi_decimal": "6.977992476739062e-11",
+      "id": "decimals_outward_plus",
+      "lo_decimal": "6.910896412149827e-11",
+      "passed": true
+    },
+    {
+      "hi_decimal": "-6.910896412149827e-11",
+      "id": "decimals_outward_minus",
+      "lo_decimal": "-6.977992476739062e-11",
+      "passed": true
+    },
+    {
+      "exclusion_margin_floor": "41200010489/200000000",
+      "hi": "6.977992476739062e-11",
+      "id": "outward_ceiling_variant_still_excludes",
+      "lo": "6.910896412149827e-11",
+      "passed": true
+    },
+    {
+      "D_ii_preview": "1.361245287027e-08",
+      "id": "av1_bound_contains_enclosure",
+      "passed": true,
+      "ratio_hi_over_D": "5.126183020241e-03"
+    },
+    {
+      "id": "sign_on_punctured_domain_corollary",
+      "note": "0<|tau|<=10^-8: 1/(144 K |tau|) >= 207, labelled corollary",
+      "passed": true
+    },
+    {
+      "id": "itemization_monotone_samples_below_gate",
+      "passed": true,
+      "previews": [
+        "3.354505580429e+03",
+        "3.354475818430e+03",
+        "3.354472842259e+03"
+      ]
+    },
+    {
+      "boxes": [
+        "2",
+        "7"
+      ],
+      "id": "volume_uniform_same_formula_two_boxes",
+      "passed": true
+    },
+    {
+      "first_order_ratio": "10",
+      "id": "scaling_exponents_1_and_2",
+      "passed": true,
+      "remainder_ratio": "100"
+    },
+    {
+      "K2_crude": "1937877026146766159414097129/244140625000000000000",
+      "id": "crude_tier_recomputed",
+      "passed": true
+    },
+    {
+      "exclusion_margin": "-9.125114244057280e-1",
+      "hi": "8.631988743541599e-10",
+      "id": "crude_tier_fails_at_cap_retained",
+      "lo": "-7.243099854652710e-10",
+      "passed": true,
+      "rule_value_comparison_only": "1/10000000000",
+      "sign_margin": "8.748857559427203e-2",
+      "verdict": "limited_retained (tier control, not admissible)"
+    },
+    {
+      "id": "verdict_mapping",
+      "passed": true,
+      "synthetic": {
+        "no_constant": "insufficient",
+        "s=2.5": "limited"
+      }
+    },
+    {
+      "id": "verdict_mapping_synthetic_fixtures",
+      "label": "synthetic constants; not results",
+      "passed": true
+    },
+    {
+      "id": "reference_packet_valid",
+      "passed": true
+    },
+    {
+      "J": "4 x 7|tau| = 28|tau| (7|tau| = 21 faces x |tau|/3, I1.5)",
+      "id": "missing_incoming_stars",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "three_incoming_stars_J_21",
+          "rejected_for": "incident stars"
+        },
+        {
+          "mutation": "faces_per_site_21_anchored_only",
+          "rejected_for": "incident stars"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "four_stars_49_faces"
+      ],
+      "star_sites": "4"
+    },
+    {
+      "id": "full_original_wilson_cover",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "cover_site_0_only",
+          "rejected_for": "cover"
+        },
+        {
+          "mutation": "cover_orthant_star",
+          "rejected_for": "cover"
+        }
+      ],
+      "owners_of_W_links": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "clock": "static mean: no clock enters omega(W); s=alpha t_E/hbar is not used",
+      "id": "wrong_delta_alpha_hbar_clock",
+      "kind": "control",
+      "mixed_coefficients": [
+        "1/18",
+        "1/1152"
+      ],
+      "mutations": [
+        {
+          "mutation": "normalized_V_over_alpha_energy",
+          "rejected_for": "unit mixing"
+        },
+        {
+          "mutation": "alpha_V_over_normalized_energy",
+          "rejected_for": "unit mixing"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "alpha_units",
+        "normalized_units"
+      ]
+    },
+    {
+      "fixture": "<(W-m)e0,P(W-m)e0> = <We0,PWe0> - m^2 = x1 a^2 + x2 b^2, P=diag(1,x1,x2), Pe0=e0; synthetic",
+      "id": "vector_versus_scalar_centering",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "m_hat_in_omega_W_path",
+          "rejected_for": "centering"
+        },
+        {
+          "mutation": "vector_centering_label",
+          "rejected_for": "centering"
+        },
+        {
+          "mutation": "scalar_subtracts_m_not_m2",
+          "rejected_for": "centering"
+        },
+        {
+          "mutation": "equal_time_variance_for_vector",
+          "rejected_for": "centering"
+        }
+      ],
+      "omega_W_path": "uncentered: centering none read from the contract; no m_hat",
+      "passed": true,
+      "positives": [
+        "vector_identity_fixture",
+        "scalar_identity_fixture"
+      ]
+    },
+    {
+      "id": "first_order_mean_charged",
+      "kind": "control",
+      "m1": "1/144",
+      "mutations": [
+        {
+          "mutation": "mean_zero_at_first_order",
+          "rejected_for": "first-order coefficient"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "mean_tau_over_144"
+      ]
+    },
+    {
+      "first_order_ratio": "10",
+      "id": "tau_scaling_exponent",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "remainder_called_linear",
+          "rejected_for": "tau scaling"
+        },
+        {
+          "mutation": "first_order_called_quadratic",
+          "rejected_for": "tau scaling"
+        }
+      ],
+      "passed": true,
+      "positives": [],
+      "remainder_ratio": "100"
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "nonzero_triple",
+          "rejected_for": "model changed"
+        },
+        {
+          "mutation": "beyond_cap_2e-8",
+          "rejected_for": "model changed"
+        },
+        {
+          "mutation": "finite_graph_relabelled",
+          "rejected_for": "model changed"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "cap_model"
+      ]
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "gate_snapshot_removed_manifest_rebound",
+          "rejected_for": "required snapshot missing"
+        },
+        {
+          "mutation": "gate_K2_edited_hash_rebound",
+          "rejected_for": "pinned hash differs"
+        },
+        {
+          "mutation": "manifest_not_rebound",
+          "rejected_for": "manifest hash"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "live_inventory"
+      ],
+      "second_source": "the edited gate value would also differ from the contract K_2_plus string"
+    },
+    {
+      "crude_sign_margin": "8.748857559427204e-2",
+      "id": "insufficient_verdict_retained",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "crude_relabelled_accepted",
+          "rejected_for": "insufficient tier relabelled"
+        },
+        {
+          "mutation": "crude_dropped",
+          "rejected_for": "dropped"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "crude_retained"
+      ]
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "float_tau",
+          "rejected_for": "exact arithmetic"
+        },
+        {
+          "mutation": "float_K",
+          "rejected_for": "exact arithmetic"
+        },
+        {
+          "mutation": "inward_decimal_lo",
+          "rejected_for": "not widened outward"
+        },
+        {
+          "mutation": "inward_decimal_hi_minus",
+          "rejected_for": "not widened outward"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "fraction_inputs"
+      ],
+      "preview_label": "float previews only in the previews block; no Arb/mpmath in this standard-library replay"
+    },
+    {
+      "id": "root_n_misuse",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "radius_over_sqrt_volume",
+          "rejected_for": "radius"
+        },
+        {
+          "mutation": "volume_averaged",
+          "rejected_for": "root-N"
+        },
+        {
+          "mutation": "box_N_1",
+          "rejected_for": "box"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "uniform_N2_N7"
+      ]
+    },
+    {
+      "id": "no_priority_or_continuum_claim",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "flag_continuum_claim",
+          "rejected_for": "forbidden claim"
+        },
+        {
+          "mutation": "flag_scientific_priority_verified",
+          "rejected_for": "forbidden claim"
+        },
+        {
+          "mutation": "flag_uniform_wilson_claim",
+          "rejected_for": "forbidden claim"
+        },
+        {
+          "mutation": "flag_dynamical_correction_claim",
+          "rejected_for": "forbidden claim"
+        },
+        {
+          "mutation": "flag_sign_certified_below_cap",
+          "rejected_for": "forbidden claim"
+        },
+        {
+          "mutation": "flag_centered_correlation_shift_resolved",
+          "rejected_for": "forbidden claim"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "haar_parity_exact",
+      "kind": "control",
+      "moments": {
+        "E[W]": "0",
+        "E[W^2]": "1/4",
+        "E[W^3]": "0",
+        "E[W^4]": "1/8"
+      },
+      "mutations": [
+        {
+          "mutation": "E_W2_as_norm",
+          "rejected_for": "first-order coefficient"
+        },
+        {
+          "mutation": "reference_one_quarter_W2_value",
+          "rejected_for": "reference"
+        },
+        {
+          "mutation": "E_W_nonzero",
+          "rejected_for": "reference"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "exact_moments",
+        "reference_zero"
+      ]
+    },
+    {
+      "first_order_at_cap": [
+        "1/14400000000",
+        "-1/14400000000"
+      ],
+      "fixture_first_coefficient": "1/144",
+      "flipped_first_coefficient": "-1/144",
+      "id": "wilson_mean_first_order_coefficient",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "aw1_literal_display",
+          "rejected_for": "first-order coefficient"
+        },
+        {
+          "mutation": "missing_factor_two",
+          "rejected_for": "first-order coefficient"
+        },
+        {
+          "mutation": "norm_not_norm_squared",
+          "rejected_for": "first-order coefficient"
+        },
+        {
+          "mutation": "flipped_phi_b_string",
+          "rejected_for": "sign convention"
+        },
+        {
+          "mutation": "flipped_fixture_series",
+          "rejected_for": "sign convention"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "plus_1_over_144",
+        "i15_one_plaquette_fixture"
+      ]
+    },
+    {
+      "id": "wrong_face_control",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "ten_faces_of_R",
+          "rejected_for": "wrong face"
+        },
+        {
+          "mutation": "neighbour_face",
+          "rejected_for": "wrong face"
+        },
+        {
+          "mutation": "W_excluded",
+          "rejected_for": "wrong face"
+        }
+      ],
+      "other_faces_meeting_R_zero": "81",
+      "passed": true,
+      "positives": [
+        "only_W"
+      ]
+    },
+    {
+      "id": "sign_flip_tau",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "sign_blind_replay",
+          "rejected_for": "enclosure endpoints"
+        },
+        {
+          "mutation": "minus_tau_as_confirmation",
+          "rejected_for": "replay"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "negated_interval"
+      ]
+    },
+    {
+      "id": "free_reference_exclusion",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "crude_enclosure_claimed_resolved",
+          "rejected_for": "free reference inside"
+        },
+        {
+          "mutation": "touching_zero_claimed_strict",
+          "rejected_for": "free reference inside"
+        },
+        {
+          "mutation": "radius_past_zero_claimed_resolved",
+          "rejected_for": "free reference inside"
+        },
+        {
+          "mutation": "margin_relative_to_first_order",
+          "rejected_for": "margin denominator"
+        },
+        {
+          "mutation": "margin_as_ratio_to_1_288",
+          "rejected_for": "margin denominator"
+        },
+        {
+          "mutation": "sign_margin_reported_as_exclusion_margin",
+          "rejected_for": "margin denominator"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "cap_enclosure"
+      ],
+      "reference": "0",
+      "wrong_denominators": {
+        "ratio_to_1_288": "1.035000262229797e2",
+        "relative_to_first_order": "9.951690833495751e-1"
+      }
+    },
+    {
+      "id": "second_order_remainder_itemized",
+      "itemized": [
+        "first_order_exact",
+        "second_order_remainder",
+        "arithmetic"
+      ],
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "remainder_dropped",
+          "rejected_for": "error term missing"
+        },
+        {
+          "mutation": "arithmetic_na_without_reason",
+          "rejected_for": "without a stated reason"
+        },
+        {
+          "mutation": "forward_aw1_K2_substituted",
+          "rejected_for": "K_2 not the AW1 gate binding"
+        },
+        {
+          "mutation": "reverse_aw1_K2_substituted",
+          "rejected_for": "K_2 not the AW1 gate binding"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "gate_K2"
+      ]
+    },
+    {
+      "id": "static_not_dynamic_effect",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "dynamical_correction",
+          "rejected_for": "static"
+        },
+        {
+          "mutation": "mass_gap_shift",
+          "rejected_for": "static"
+        },
+        {
+          "mutation": "susceptibility",
+          "rejected_for": "static"
+        },
+        {
+          "mutation": "correlation_shift",
+          "rejected_for": "static"
+        },
+        {
+          "mutation": "sub_label_missing",
+          "rejected_for": "static"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "static_mean"
+      ]
+    },
+    {
+      "id": "aw2_coupling_rule_prefrozen",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "literal_coupling",
+          "rejected_for": "coupling rule"
+        },
+        {
+          "mutation": "chosen_1e-9",
+          "rejected_for": "coupling rule"
+        },
+        {
+          "mutation": "off_grid_5e-9",
+          "rejected_for": "coupling rule"
+        },
+        {
+          "mutation": "above_cap_1e-7",
+          "rejected_for": "coupling rule"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "rule_value"
+      ],
+      "rule": "tau_AW2 = the largest element of the decade grid {10^-8, 10^-9, ...} with K_2^+ * tau <= 1/288 (half the first-order coefficient), K_2^+ the admitted exact-tier remainder constant; frozen here, never chosen after K_2 is seen"
+    },
+    {
+      "W_Omega_R_norm_squared": "1/4",
+      "conservative_x4_sign_margin": "5.175001311148988e1",
+      "id": "wilson_overlap_single_component",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "factor_4_unlabelled",
+          "rejected_for": "overlap multiplier"
+        },
+        {
+          "mutation": "single_site_creations_counted",
+          "rejected_for": "wrong face"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "factor_4_labelled_conservative"
+      ]
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "crude_K_in_calculator",
+          "rejected_for": "K_2 not the AW1 gate binding"
+        },
+        {
+          "mutation": "crude_label",
+          "rejected_for": "tier mixing"
+        },
+        {
+          "mutation": "crude_rule_coupling",
+          "rejected_for": "coupling rule"
+        },
+        {
+          "mutation": "crude_rule_eval",
+          "rejected_for": "tier mixing"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "admission_requires": "skeptic single_direction_independent_replay (this package)",
+      "id": "single_producer_declared",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "fabricated_reverse",
+          "rejected_for": "single producer"
+        },
+        {
+          "mutation": "reverse_isolation_claimed",
+          "rejected_for": "single producer"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward_only"
+      ]
+    },
+    {
+      "id": "all_contract_controls_executed_in_order",
+      "n": "23",
+      "passed": true
+    },
+    {
+      "id": "claim_flags_valid",
+      "passed": true
+    },
+    {
+      "id": "selection_scope_wording_read",
+      "passed": true
+    }
+  ],
+  "continuum_claim": false,
+  "contract_sha256": "aa559b18231961b5bb9dc5b7d0dd3097a1a2753916b54639eb1fd573e08368f9",
+  "crude_tier": {
+    "K2": "1937877026146766159414097129/244140625000000000000",
+    "contains_zero": true,
+    "enclosure_at_cap": [
+      "-7.243099854652710e-10",
+      "8.631988743541599e-10"
+    ],
+    "sign_margin_upper": "8.748857559427204e-2",
+    "status": "fails at the cap; retained as a limited-tier control; rule value 10^-10 comparison only"
+  },
+  "direction": "single+skeptic",
+  "dynamical_correction_claim": false,
+  "enclosure": {
+    "+": {
+      "excludes_zero": true,
+      "hi": "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+      "hi_decimal_outward": "6.977992476739062e-11",
+      "lo": "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+      "lo_decimal_outward": "6.910896412149827e-11",
+      "tau": "1/100000000"
+    },
+    "-": {
+      "excludes_zero": true,
+      "hi": "-42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+      "hi_decimal_outward": "-6.910896412149827e-11",
+      "lo": "-43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+      "lo_decimal_outward": "-6.977992476739062e-11",
+      "tau": "-1/100000000"
+    },
+    "minus_tau_role": "replay (flip image), not a second confirmation",
+    "outward_ceiling_variant": [
+      "6.910896412149827e-11",
+      "6.977992476739062e-11"
+    ]
+  },
+  "first_order": {
+    "coefficient": "1/144",
+    "contributing_face": "W only",
+    "i15_display": "=-{\\tau\\over3}\\sum_{f\\in O_b}W_f",
+    "values": {
+      "+": "1/14400000000",
+      "-": "-1/14400000000"
+    }
+  },
+  "fixture_one_plaquette": {
+    "series": {
+      "0": "0",
+      "1": "1/144",
+      "2": "0",
+      "3": "-5/11943936",
+      "4": "0",
+      "5": "289/6604518850560"
+    },
+    "transfers_to_aq": false,
+    "two_level_plus": [
+      "6.944444444444444e-11",
+      "6.944444444444445e-11"
+    ]
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "inputs_sha256": {
+    "research/round21/forward/i1/report.md": "836a4c7d421f0ddf3589c159d2f057839421532c88157a054a61b51c25c781a9",
+    "research/round32/advisor/av1-gate.json": "55e03f2d9c297d41106d983cec45eaa642ca18123544f416916f94414de305a0",
+    "research/round32/advisor/aw1-gate.json": "647dc33795f06a66c12934f64ae408725b5354cf0124b32dc4b18a12eb0541ae",
+    "research/round32/advisor/selection-aw2.md": "673a96919776fcef877e319b3a00c1ad6612c6939114486ca51a8df4b3451e9f",
+    "research/round32/contracts/aw1.json": "c24bf7eb6a1c24034427c810a9c26c4c86d1f9c1d31b0fe36ea4cf2a796814ef",
+    "research/round32/contracts/aw2.json": "aa559b18231961b5bb9dc5b7d0dd3097a1a2753916b54639eb1fd573e08368f9",
+    "research/round32/skeptic/aw1.json": "bd2ee4cdf6a355fd92f8b9f2f0fa8c11a0abab42dc1a5dd511affb31372914f2"
+  },
+  "loop": "AW2",
+  "margins": {
+    "definition_exclusion": "(|tau|/144 - K_2^+ tau^2)/(K_2^+ tau^2)",
+    "definition_sign": "1/(144 K_2^+ |tau|)",
+    "exclusion_margin": "42773581813770903096597852821080380528959/207638693805632844612385445095759947457",
+    "exclusion_margin_floor_1e-9": "41200010489/200000000",
+    "sign_margin": "42981220507576535941210238266176140476416/207638693805632844612385445095759947457",
+    "sign_margin_floor_1e-9": "41400010489/200000000",
+    "target": ">= 2",
+    "target_met": true
+  },
+  "mass_gap_claim": false,
+  "previews": {
+    "K2_plus": "3.354803229462e+03",
+    "crude_K2": "7.937544299097e+06",
+    "crude_sign_margin": "8.748857559427e-02",
+    "enclosure_minus": [
+      "-6.977992476739e-11",
+      "-6.910896412150e-11"
+    ],
+    "enclosure_plus": [
+      "6.910896412150e-11",
+      "6.977992476739e-11"
+    ],
+    "exclusion_margin": "2.060000524460e+02",
+    "first_order_at_cap": "6.944444444444e-11",
+    "label": "floating previews only; no admission Boolean reads them",
+    "radius_at_cap": "3.354803229462e-13",
+    "sign_margin": "2.070000524460e+02"
+  },
+  "producer_files_read": [],
+  "producers": [
+    "forward"
+  ],
+  "proposed_verdict": "accepted_within_scope",
+  "read_from_contract": {
+    "reference_value_exact": "0",
+    "target": {
+      "comparator": ">=",
+      "quantity": "exclusion_margin",
+      "value": "2"
+    },
+    "tau_literal_compared_after_rule": "1/100000000"
+  },
+  "resolved_interaction_shift": true,
+  "reverse_premise_isolation": "not_applicable: single producer",
+  "role": "skeptic",
+  "scientific_priority_verified": false,
+  "scope": "In the AM2/AQ1 zero-selected patterned family (selected triple exactly (0,0,0), Haar reference, whole stars phi_b=-(tau/3) sum W_f, cover R={0,e_z}), at tau=+-tau_AW2=+-10^-8: every state in the whole set of AQ1 subsequential limits (and every centered whole-star box N>=2 at every cutoff) has omega_tau(W) in [tau/144-K_2^+ tau^2, tau/144+K_2^+ tau^2], so sign(omega_tau(W))=sign(tau) and the free reference 0 is strictly excluded. Static equal-time mean only (static_not_dynamic); no dynamical correction, mass shift or susceptibility; the centered correlation shift remains unresolved (AV2 reference_unresolved). The -tau enclosure is a replay, not a second confirmation. No uniqueness, rate in N, uniform Wilson, weak-coupling, continuum or priority claim.",
+  "sign_certified_below_cap": false,
+  "stage": "pre_comparison_independent_replay",
+  "standing": "model-agent skeptic with correlated ancestry; not human peer review, not formal verification",
+  "static_not_dynamic": true,
+  "sub_labels": [
+    "static_not_dynamic"
+  ],
+  "uniform_wilson_claim": false,
+  "uniqueness_claim": false
+}
