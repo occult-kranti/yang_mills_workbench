@@ -1,0 +1,240 @@
+{
+ "closures": {
+  "forward": {
+   "check_py_sha256": "e3a5a14ae8c8fdb18c74a37b7b8263fe23f05a9ea088a6f91db313e894d7f486",
+   "checks": 51,
+   "closure_files": 31,
+   "declared_premises": 27,
+   "every_snapshot_byte_identical_to_repository_source": true,
+   "freeze_json_sha256": "cffc6fdf4246fb6e98e5dcfc9bfab44d2e0f520164e801f643a52fa9460582d0",
+   "inputs": 27,
+   "inventory_equals_declared": true,
+   "report_sha256": "d8ed5bfa780b95a57e5ba822b81f0fea5f71aaa7ea1a01bb4dbecb0d417aa769",
+   "results_sha256": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+   "reverse_isolation_enforced_by_contract": true,
+   "source_manifest_sha256": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+  },
+  "reverse": {
+   "check_py_sha256": "34327deb8741d0411b461098263d3ffa8c1e9a6822963e277c0741ad9a5b78f2",
+   "checks": 61,
+   "closure_files": 31,
+   "declared_premises": 27,
+   "every_snapshot_byte_identical_to_repository_source": true,
+   "freeze_json_sha256": "7749f2f932499b02a5674f25d939bfbb4aca011c34cf233b910e75b9cd99e7c4",
+   "inputs": 27,
+   "inventory_equals_declared": true,
+   "report_sha256": "a986c205542376c2ad5058cdf88e082abe9c12eeba87b052abf3ad9cefebbb86",
+   "results_sha256": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+   "reverse_isolation_enforced_by_contract": true,
+   "source_manifest_sha256": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+  }
+ },
+ "forward_disclosure": "the forward report states that research/round33/reverse/, skeptic/, experts/ and advisor/ (except the selection-ba1.md snapshot) were not opened or listed, and that research/round32/forward/ay1/check.py and report.md and research/round33/tools/{README.md,freeze.py,phrase_scan.py} were read for conventions only",
+ "forward_inventory": {
+  "declared": "AGENTS.md + contracts/ba1.json + 25 shared_premises (forward_additional_premises is empty)",
+  "identical_to_reverse_inventory": true,
+  "inputs": 27,
+  "inventory_equals_declared": true
+ },
+ "freeze_verify": [
+  {
+   "command": "python3 -B research/round33/tools/freeze.py verify research/round33/forward/ba1",
+   "stdout": {
+    "direction": "forward",
+    "loop": "ba1",
+    "status": "verified"
+   }
+  },
+  {
+   "command": "python3 -B research/round33/tools/freeze.py verify research/round33/reverse/ba1",
+   "stdout": {
+    "direction": "reverse",
+    "loop": "ba1",
+    "status": "verified"
+   }
+  }
+ ],
+ "frozen_outputs": {
+  "forward": {
+   "results.json": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+   "source-manifest.json": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+  },
+  "reverse": {
+   "results.json": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+   "source-manifest.json": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+  }
+ },
+ "human_author": "Hruday N M (BUNZEEY)",
+ "loop": "BA1",
+ "producer_replays": [
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "research/round33/forward/ba1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+    "source-manifest.json": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+   },
+   "stdout": "{\"K_floor_preview\": \"1.64131400907e-5\", \"K_headline_preview\": \"2.24052224286e-7\", \"checks\": 51, \"controls_with_damaging_mutations\": 37, \"direction\": \"forward\", \"loop\": \"BA1\", \"rejected_mutation_total\": 96}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "-O",
+    "research/round33/forward/ba1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+    "source-manifest.json": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+   },
+   "stdout": "{\"K_floor_preview\": \"1.64131400907e-5\", \"K_headline_preview\": \"2.24052224286e-7\", \"checks\": 51, \"controls_with_damaging_mutations\": 37, \"direction\": \"forward\", \"loop\": \"BA1\", \"rejected_mutation_total\": 96}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "research/round33/reverse/ba1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "reverse",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+    "source-manifest.json": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+   },
+   "stdout": "{\"checks\": 61, \"controls\": 37, \"direction\": \"reverse\", \"floor_K\": \"2.42778094875e-5\", \"headline_K\": \"4.38320410574e-7\", \"loop\": \"BA1\", \"outcome\": \"accepted_within_scope\"}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "-O",
+    "research/round33/reverse/ba1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "reverse",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+    "source-manifest.json": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+   },
+   "stdout": "{\"checks\": 61, \"controls\": 37, \"direction\": \"reverse\", \"floor_K\": \"2.42778094875e-5\", \"headline_K\": \"4.38320410574e-7\", \"loop\": \"BA1\", \"outcome\": \"accepted_within_scope\"}"
+  }
+ ],
+ "producers": [
+  "forward",
+  "reverse"
+ ],
+ "python": "3.11.15",
+ "result": "all four producer replays (forward/reverse x normal/-O) reproduce the frozen output/ byte for byte (forward results.json 644df274..., reverse results.json ab495dc1...); tools/freeze.py verify reports verified for both closures (31 files each: check.py, report.md, 27 inputs, 2 outputs); both input inventories equal AGENTS.md + contracts/ba1.json + the 25 shared_premises exactly (27 files, identical lists; forward_additional_premises is empty); every snapshot is byte-identical to its repository source; the only skeptic file in either inventory is the declared Round29 review research/round29/skeptic/am2.md; the skeptic pre-comparison package is unchanged since its freeze and replays byte for byte under normal and -O",
+ "reverse_premise_isolation": {
+  "checked_prefixes": [
+   "research/round33/skeptic/",
+   "research/round33/experts/",
+   "research/round33/forward/",
+   "research/round33/advisor/deliberation",
+   "research/round33/advisor/plan",
+   "research/round33/advisor/brief",
+   "research/round33/advisor/panel"
+  ],
+  "declared": "AGENTS.md + contracts/ba1.json + 25 shared_premises",
+  "disclosure": "the reverse report states that nothing under research/round33/forward/, research/round33/skeptic/ or research/round33/experts/ was read, and that the header, validators and result assembly of research/round32/reverse/ay1/check.py and research/round33/tools/{README.md,freeze.py,phrase_scan.py} were read for conventions only; isolation is verified for repository inputs only",
+  "forbidden_files_present": [],
+  "inputs": 27,
+  "inventory_equals_declared": true,
+  "skeptic_files_in_reverse_inputs": [
+   "research/round29/skeptic/am2.md"
+  ],
+  "skeptic_files_note": "the Round29 AM2 review is a declared shared premise; no Round33 skeptic file, no experts/ file, no forward/ba1 file"
+ },
+ "reviewer": "model-agent skeptic with correlated ancestry; not human peer review",
+ "schema": "hnm-r33-skeptic-replays-v1",
+ "scratch_audit": {
+  "forward_private": "/tmp/claude-0/ba1-forward-private (proto.py, consts.py, harness.py, dev5, dev6, run1, run1O), consistent with its disclosure (enumeration prototype, constant preview, harness, development runs)",
+  "method": "directory and file names with mtimes only; no file inside another agent private folder was opened",
+  "reverse_private": "/tmp/claude-0/ba1-reverse-private (proto_geom.py, proto_bfs.py, proto_chain.py, proto_const.py, report_src.txt, t4-t9, n1, o1, run1), consistent with its disclosure (geometry, constant and chain prototypes, report source, test runs)",
+  "shared_scratchpad_root_after_ba1_contract_freeze": "one entry, bb_previews.py (22:55:26Z, modern-lens BB1/BB2 previews after both BA1 commits); not opened",
+  "skeptic_private": "/tmp/claude-0/skeptic-ba1-private (explore.py, geom.py, toy_chain.py, run and replay folders; post/ holds the assembled post-review source pieces, runs and replay logs)"
+ },
+ "skeptic_postreview": {
+  "checker": "research/round33/skeptic/ba1_postreview_check.py",
+  "checker_sha256": "1e6d589d3fc10375160c0eb105d1d730614c998f6ac7109e89c419c4c20267a9",
+  "checks": 20,
+  "command": "python3 -B [-O] research/round33/skeptic/ba1_postreview_check.py --output <fresh-external-dir>",
+  "damaged_packets_rejected_by_review_validator": 10,
+  "input_edits_rejected": 5,
+  "normal_and_O_byte_identical": true,
+  "results_sha256": "85989015b9064aa5f374f5b519effcbfd4f6c2d0825d71e1b5acb1676ba48146",
+  "source_edit_runs_total": 81,
+  "unmutated_copies_reproduce_frozen_results": 2,
+  "validator_weakenings_aborted_with_expected_label": 74
+ },
+ "skeptic_pre_comparison": {
+  "checker": "research/round33/skeptic/ba1_check.py",
+  "checker_sha256": "dc1e7dde69957e189447695123b2f1a204514b150d499e2eade2ad505a9bf7a0",
+  "checks": 101,
+  "command": "python3 -B [-O] research/round33/skeptic/ba1_check.py --output <fresh-external-dir>",
+  "committed": "09ae71e at 2026-09-24T22:36:35Z, before the forward (721ffe5, 22:38:15Z) and reverse (e87511b, 22:41:21Z) commits",
+  "contains_producer_headlines_exactly": [
+   "reverse headline 49/111790368",
+   "reverse floor 49/2018304",
+   "reverse crude 296/390625 and 1/32",
+   "reverse sharp 49/7154583552",
+   "reverse coefficientwise 14/31441041",
+   "tau_star 1/37888",
+   "T(rho) 49/223580736 and 49/4036608"
+  ],
+  "differs_from_producer_and_reconciled": [
+   "forward headline (skeptic 2.2004e-7 with G'(T_w) and no telescoping; forward 2734375/12204185915601 with G'(R) and telescoping 64/63)",
+   "forward floor (skeptic 1.4693e-5; forward 708203125/43148545682688)",
+   "first-order cancellation (skeptic value not flagged as quadratic; the reverse notes it is)"
+  ],
+  "freeze_record": "research/round33/skeptic/ba1-independent-freeze.json",
+  "freeze_record_sha256": "cb1e1f9b546da81f45c1a798e346ce25bb0b6a3792817b4cb23f280ab9621f21",
+  "normal_and_O_byte_identical_on_replay": true,
+  "replay_outputs": {
+   "normal": {
+    "results.json": "2c3afdb2a3b04caa035af9f62c70ada6cb846331a95907cdf15d1b45cdc50fb1"
+   },
+   "optimized": {
+    "results.json": "2c3afdb2a3b04caa035af9f62c70ada6cb846331a95907cdf15d1b45cdc50fb1"
+   }
+  },
+  "replay_stdout": "{\"checks\": 101, \"controls\": {\"implemented\": 37, \"of\": 37, \"mutations\": 90}, \"K_headline_forward\": \"2.200445003350e-07\", \"K_headline_reverse\": \"4.383204105742e-07\"}",
+  "results_sha256": "2c3afdb2a3b04caa035af9f62c70ada6cb846331a95907cdf15d1b45cdc50fb1",
+  "unchanged_since_freeze": true
+ },
+ "timeline_utc": {
+  "contract_draft": "2026-09-24T21:28:37Z (commit 23e8922)",
+  "contract_frozen": "2026-09-24T21:56:57Z (commit a4ff218)",
+  "forward_check_py_last_written": "2026-09-24T22:36:44Z",
+  "forward_commit": "2026-09-24T22:38:15Z (721ffe5)",
+  "forward_freeze_json_written": "2026-09-24T22:37:29Z",
+  "forward_report_last_written": "2026-09-24T22:36:44Z",
+  "note": "working-tree mtimes and commit times; the skeptic package was on disk (uncommitted) from 22:30:49Z and committed 9 s before the forward last wrote check.py and report.md and about 3-4 min before the reverse did; both producers disclose not reading research/round33/skeptic/; content evidence agrees: the forward binds a telescoped general comparison and uses G'(R) where the skeptic package used G'(T_w) and a direct comparison, and the reverse records that the first-order cancellation is quadratic in tau, which the skeptic package missed; isolation rests on disclosure and content, not on timing",
+  "reverse_check_py_last_written": "2026-09-24T22:39:25Z",
+  "reverse_commit": "2026-09-24T22:41:21Z (e87511b)",
+  "reverse_freeze_json_written": "2026-09-24T22:40:25Z",
+  "reverse_report_last_written": "2026-09-24T22:40:08Z",
+  "skeptic_first_read_of_producers": "after the reverse commit e87511b (post-comparison task received after it)",
+  "skeptic_pre_comparison_commit": "2026-09-24T22:36:35Z (09ae71e)",
+  "skeptic_pre_comparison_last_written": "2026-09-24T22:35:50Z (ba1-independent-freeze.json; ba1_check.py 22:30:49Z)"
+ }
+}
