@@ -1,0 +1,1139 @@
+\section{AX1: the uniform Kogut--Susskind Hamiltonian by route B}
+\label{sec:ax1}
+
+\textbf{Contribution \projecttag{HNM-C-AX1}.} The AX1 contract, recorded under
+the title ``Hruday route-B re-derivation for the uniform Kogut--Susskind SU(2)
+Hamiltonian at fixed spacing'', was frozen after the AW2 gate and before
+production. It opens sub-round~3. Sections~\ref{sec:av1}--\ref{sec:aw2} hold
+for the zero-selected patterned subfamily only, which is not the uniform model
+(Section~\ref{sec:dictionary}). The third Round31 roadmap goal asks for the
+uniform Kogut--Susskind SU(2) Hamiltonian at fixed spacing, in which every
+elementary face carries the same coefficient $\alpha\tau/24$. AX1
+re-instantiates the admitted chain for that operator: the AM2 expansion, the
+AQ1 and AQ2 constructions, the incidence on the cover and the AV1 state lemma,
+each with explicit constants. Its preregistered target is
+$D'_{\rm ii}\le4/10^7$ at both signs of the unchanged cap, below the
+threshold that the AX2 window budget needs. Both directions are paired. The forward producer
+received \texttt{AGENTS.md}, the contract, its 36 shared premises and three
+forward-additional premises (the skeptic's triage, the skeptic's loop-2
+response and the modern loop-2 response), 41 files in all. The reverse
+producer received only \texttt{AGENTS.md}, the contract and the 36 shared
+premises, 38 files, and starts from the uniform Hamiltonian. The contract asked
+the reverse producer to find the single-factor grouping and the $J_0$ issue
+itself. The contract text and the selection note already state both, so
+reverse independence covers the proof route, the enumeration and the code only
+(Section~\ref{sec:ax1-findings}).
+
+Notation: primes mark route-B constants ($J'$, $t_1'$, $T'$, $\varrho'$,
+$D'$). For a factor $b$, $O_b$ is the set of its 21 omitted faces and
+$\mathrm{Sel}_b$ the set of its three selected $xy$ faces, the classes with
+$r\le2$, $q=0$ of Table~\ref{tab:dict-classes}. Other notation follows
+Sections~\ref{sec:model}--\ref{sec:aw1}.
+
+\subsection{Reviewed scope}
+The \repo{research/round32/advisor/ax1-gate.json}{AX1 gate} records the
+verdict \recid{accepted_within_scope}. The skeptic's review and the reverse
+packet carry the sub-label \recid{uniform_local_closeness_not_uniqueness}, and
+the gate's statement carries the same restriction. The accepted statement,
+quoted verbatim below in the gate's ASCII notation, is the scope of every claim
+in this section. In it, \texttt{R} inside \texttt{G(R)} and
+\texttt{G\textquotesingle{}(R)} is AM2's anchored radius $R_a=1/64$, and
+\texttt{R} elsewhere is the cover; \texttt{E} is the flip set, \texttt{S} is
+the set $\mathcal S$ of AQ1 subsequential limits and \texttt{o} denotes
+composition.
+\begin{gatequote}
+For the uniform Kogut-Susskind SU(2) Hamiltonian on Z\textasciicircum{}3 at
+fixed spacing and strong bare coupling (every elementary face has
+nu=alpha*tau/24; AL1 dictionary tau=96/g\textasciicircum{}4, so
+g\textasciicircum{}4=9.6x10\textasciicircum{}9 at the cap; never weak coupling
+or continuum; tau<0 has no real g and is the U\_E image of +|tau|), both signs
+|tau|<=10\textasciicircum{}-8 (the uniform triple tau/24 lies in the admitted
+box), centered whole-star boxes Lambda\_N (N>=2), the original xz Wilson loop
+W with cover R=\{0,e\_z\}, clock theta=alpha*t/hbar, G=H/alpha: (1) Route B,
+Haar reference: h\_b=8 sum\_e C\_e>=6Q\_b is tau-independent; whole stars
+phi\_b (21 omitted faces, norm 7|tau|) plus one single-factor group
+psi\_b=-(tau/3) sum of the three selected xy faces (support \{b\},
+||psi\_b||<=|tau|); every face charged once; J\textquotesingle{}=29|tau|;
+support 4 and termination order 8 unchanged. (2) J\textquotesingle{} exceeds
+AM2\textquotesingle{}s J\_0=7/25000000 at the cap; with the re-frozen
+J\_0\textquotesingle{}=29/10\textasciicircum{}8 (R1) the exact inequalities
+J\_0\textquotesingle{}G(R)<1073/175000000<1/64 and
+2J\_0\textquotesingle{}G\textquotesingle{}(R)<319/1562500<1 hold, so every
+finite complete-factor route-B volume has a unique gauge-invariant ground and
+full-space gap >=1/2 normalized (alpha/16 physical), with a nonzero physical
+excited sector. (3) AQ1/AQ2 re-instantiation: reset omega(h\_R)<=102|tau|;
+with the Haar gap six epsilon\_R<=17|tau| and 2sqrt(17|tau|)<=1/500
+(square-root control only; gap one fails), so the variance floor 61999/250000
+holds; C\_F=58|tau||F| and
+||Phi\textquotesingle{}||\_F<=81J\textquotesingle{}=2349|tau|; compactness,
+stationarity, GNS, nonnegativity, gauge averaging, the gap alpha/16,
+cutoff-vector removal and AQ passage re-apply verbatim. (4) Itemized
+incidence: exactly 7 whole stars (anchors R-S) and 2 single-factor groups meet
+R, charging 153 faces, 88 meeting R (82 omitted + 6 selected, the 6 selected
+being the two single groups) and 16 inside R, none twice; ||B\_N||<=51|tau|/8,
+k\textquotesingle{}=51|tau|/4 in G units. (5) Exact first-order count 52 faces
+per factor (49+3) and 88 for R; 96 (4x24) and 168 (7x24) are bounds only. (6)
+State lemma at both signs: tier (ii) with t\_1\textquotesingle{}=52|tau|/144,
+T\textquotesingle{}=t\_1\textquotesingle{}/(1-352J\textquotesingle{})=13/3599632512,
+rho\textquotesingle{}=352J\textquotesingle{}T\textquotesingle{} gives the
+bound value
+D\textquotesingle{}\_ii=2425369125199104794263242601250/167893028420061547330293754713793182097
+(\textasciitilde{}1.44459e-8; 2eps(1+eps)/(1+eps\textasciicircum{}2) with
+eps=2T\textquotesingle{}+T\textquotesingle{}\textasciicircum{}2; certified by
+both inequalities; equal to the skeptic pre-comparison and the reverse
+two-site variant), meeting 4/10\textasciicircum{}7 (margin
+\textasciitilde{}27.7) and 10\textasciicircum{}-6; the
+reverse\textquotesingle{}s labelled R-refinement
+D\textquotesingle{}\_ii=30934916107401289/2530733246376451200000000
+(\textasciitilde{}1.22237e-8; 2eps with
+eps=88|tau|/144+2rho\textquotesingle{}+T\textquotesingle{}\textasciicircum{}2,
+fidelity inequality) is also valid and differs by
+eps\_fwd-eps\_rev=16|tau|/144; tier (i)
+D\textquotesingle{}\_i\textasciitilde{}2.4526e-5 fails and is retained;
+|omega(W)|<=D\textquotesingle{},
+|omega(W\textasciicircum{}2)-1/4|<=D\textquotesingle{}/2,
+m\textasciicircum{}2<=D\textquotesingle{}\textasciicircum{}2, passing to every
+AQ1 subsequential limit as uniform local closeness (not uniqueness,
+whole-sequence convergence or a rate in N). (7) Transfer, proved: every face
+coefficient is -(tau/3) (kappa tied to tau), h\_b and its cutoffs commute with
+U\_E, and E meets every plaquette, selected faces included, oddly; so U\_E
+H\_N(tau) U\_E\textasciicircum{}*=H\_N(-tau) in every box and cutoff,
+omega\_\{N,-tau\}(W)=-omega\_\{N,tau\}(W), omega\_N(W\textasciicircum{}2),
+C\_N, c\_N even, and S(-tau)=S(tau) o alpha\_E as whole sets; the AW1 link
+grading applies verbatim to selected faces and only f=W contributes at first
+order, so omega(W)\textasciicircum{}\{(1)\}=+tau/144 (+-1/14400000000) is
+unchanged. No Euclidean node, K\_2 or uniform omega(W\textasciicircum{}2)
+constant (not transferred), uniform Wilson-mean sign certificate,
+weak-coupling, continuum, uniqueness, rate or priority statement is admitted;
+uniform\_wilson\_claim:true means only that the model is the uniform
+fixed-spacing Kogut-Susskind model as labelled.
+\end{gatequote}
+The rest of this section derives that statement. The limitations recorded by
+the gate close the section (Section~\ref{sec:ax1-limits}).
+
+\subsection{Dictionary, coefficient box and label}
+\label{sec:ax1-dictionary}
+AL1 (Round29) fixes the uniform bulk dictionary in the convention it takes from
+Bauer et al.\ (\href{https://arxiv.org/abs/2307.11829}{arXiv:2307.11829}), with
+$W_p=\tfrac12\tr U_p$ and the raw magnetic term $\lambda\sum_p(1-W_p)$
+(\repo{research/round29/advisor/al1-gate.json}{AL1 gate}):
+\begin{equation}
+ \begin{gathered}
+ H_{\rm KS}=\alpha\sum_eC_e+\lambda\sum_p(1-W_p),\qquad
+ \alpha=\frac{g^2}{2a},\quad \lambda=\frac2{g^2a},\quad
+ \frac\lambda\alpha=\frac4{g^4},\\
+ \nu=\lambda=\frac{\alpha\tau}{24}\ \Longrightarrow\ \tau=\frac{24\lambda}\alpha=\frac{96}{g^4}.
+ \end{gathered}
+ \label{eq:ax1-dictionary}
+\end{equation}
+Dividing by $\delta=\alpha/8$ and dropping the scalar $\lambda N_p$ gives
+\begin{equation}
+ \frac{H_{\rm KS}-\lambda N_p}{\delta}=8\sum_eC_e-\frac\tau3\sum_fW_f ,
+ \label{eq:ax1-normalized}
+\end{equation}
+so every face, selected or omitted, enters with the coefficient $-\tau/3$ of
+the I1.5 convention. The selected triple is therefore
+$(\lambda_L,\mu_M,\lambda_R)/\alpha=(\tau/24,\tau/24,\tau/24)$. The admitted
+box $|\lambda_L|,|\lambda_R|\le\alpha/2$, $|\mu_M|\le\alpha/8$ requires
+$|\tau|/24\le1/8$, that is $|\tau|\le3$. This is AL1's bridge condition
+$g^4\ge32$. At the cap,
+\begin{equation}
+ \frac{|\tau|}{24}=\frac1{2400000000},\qquad
+ g^4=\frac{96}{10^{-8}}=9.6\times10^9\quad(g^2\approx9.80\times10^4),\qquad
+ \frac{g^4}{32}=3\times10^8 .
+ \label{eq:ax1-box}
+\end{equation}
+The model is labelled \emph{uniform Kogut--Susskind SU(2) at fixed spacing,
+strong bare coupling}. It is never described as weak coupling or as a
+continuum approach, and both checkers reject a label that uses either
+phrase. No path with $g\to0$ stays inside the box, since the box
+needs $g^4\ge32$; the cap sits at the opposite, strong-coupling end. The
+physical gap $\alpha/16$ proved below equals $g^2/(32a)$.
+
+For real $g$, $\tau=96/g^4>0$, so $\tau=-10^{-8}$ has no real-$g$ preimage. It
+is the $U_E$ image of $+|\tau|$ (Section~\ref{sec:ax1-transfer}), and its
+evaluation replays the same $|\tau|$ formula at the mirrored coupling. It is
+neither a second Kogut--Susskind coupling nor a second confirmation. The
+checkers verify $\tau g^4=96$, $\alpha\tau/24=\lambda$ and
+$(\alpha/8)(\tau/3)=\lambda$ on three exact $(g^2,a)$ fixtures. Between them
+they reject a non-uniform or ends-only triple, the zero triple, $\tau=4$
+(bridge value $1/6>1/8$) and the normalized $\tau/3$ read in units of $\alpha$.
+
+\subsection{Route B: Haar reference and single-factor groups}
+\label{sec:ax1-routeb}
+\paragraph{Why route B.}
+The admitted chain needs a Haar reference in three places: the AV1 state
+lemma (face vectors $W_f\Omega_0$ at energy 24 and the Haar moments of $P_R$),
+the reset with on-site gap six, and the AW1 grading. Route A keeps the
+selected faces on site,
+$h_b^{\rm A}=8\sum_eC_e-(\tau/3)\sum_{g\in\mathrm{Sel}_b}W_g$. Its vacuum is
+not Haar. For one selected face with $k=\tau/3$, the trial vector
+$\Omega+(k/24)W_g\Omega$ has energy numerator $6t^2-kt/2$ at $t=k/24$, that is
+$-k^2/96=-\tau^2/864<0$, below the Haar value $0$. Route A keeps the triple in
+the box and $J=28|\tau|$, so the AM2 gate already covers the gap of this very
+operator. That coverage is an inherited cross-check only: route A does not
+supply the Haar vector $\psi=e^{-C}\Omega_0$, and claiming the Haar reference
+for it is the rejected control \recid{selected_reference_not_haar}. Route B
+keeps the $\tau$-independent Casimir sum on site and moves the selected faces
+into the interaction:
+\begin{equation}
+ \widehat H'_N=\sum_{b\in\Lambda_N}h_b+\sum_{b+S\subset\Lambda_N}\phi_b
+ +\sum_{b\in\Lambda_N}\psi_b,\qquad
+ \phi_b=-\frac\tau3\sum_{f\in O_b}W_f,\quad
+ \psi_b=-\frac\tau3\sum_{g\in\mathrm{Sel}_b}W_g ,
+ \label{eq:ax1-routeb}
+\end{equation}
+with $h_b=8\sum_{e\text{ owned by }b}C_e$ as in \eqref{eq:dict-star}. All four
+links of a selected face are owned by $b$, so $\psi_b$ has support $\{b\}$ and
+every single-factor group of the box is retained. Routes A and B split the
+same finite box operator up to on-site scalars. The route-B box therefore
+keeps AQ1's inventory: whole stars inside $\Lambda_N$ and every selected face
+of every factor in $\Lambda_N$.
+
+\paragraph{Norms and the per-site sum.}
+Since $\norm{W_f}\le1$,
+\begin{equation}
+ \norm{\phi_b}\le21\cdot\frac{|\tau|}3=7|\tau|,\qquad
+ \norm{\psi_b}\le3\cdot\frac{|\tau|}3=|\tau|,\qquad
+ J'=\max_u\sum_{X\ni u}\norm{V_X}\le4\cdot7|\tau|+|\tau|=29|\tau| .
+ \label{eq:ax1-J}
+\end{equation}
+Both norm bounds are attained at the identity configuration. A site lies in
+exactly four stars, anchored at $u-S$ with the incoming stars included, and in
+exactly one single-factor group. The reverse checker recomputes $J'$ from the
+explicit group list of $\Lambda_3$: the bulk maximum $29$ is attained at the
+origin, and boundary sites are lower. Three other groupings are rejected:
+charging the selected faces in both a star and a single group (a duplicate
+face, per-site sum $33|\tau|$), merging them into the star ($32|\tau|$) and
+dropping them ($28|\tau|$, the zero-selected model). A per-face grouping has
+the smaller sum $52|\tau|/3$, but it changes the interaction decomposition and
+the boundary prescription; the reverse producer discloses it and does not use
+it.
+
+\paragraph{No face is charged twice.}
+A face has one anchor, the image under $\pi$ of its base point, and one class
+among the 24 anchored classes. Stars hold only the 21 omitted classes and
+single groups only the 3 selected ones, so the two families are disjoint. The
+forward checker places each of 3600 plaquettes of a region of complete blocks
+in exactly one group. The reverse checker and the skeptic check the 5565
+retained faces of $\Lambda_3$, that is $216\cdot21+343\cdot3$.
+
+\paragraph{Support and termination.}
+Stars have four sites and single groups one. Two creations meeting the same
+site multiply to zero, so a nonzero nested word carries at most $|X|$
+creations meeting $X$ on each side of $V_X$, and
+\begin{equation}
+ \mathrm{ad}_{C_1}\cdots\mathrm{ad}_{C_k}(V_X)=0\quad(k>2|X|),\qquad
+ \max_X2|X|=8 .
+ \label{eq:ax1-termination}
+\end{equation}
+Exact qubit fixtures give $\mathrm{ad}_C^8(V)\Omega=8!\,|1111\rangle$ and
+$\mathrm{ad}_C^9(V)=0$ for a star, and a nonzero second order with
+$\mathrm{ad}_C^3(V)=0$ for a single site. AM2's multilinear constants
+$2^p(2p)^k(1+k(p+1)/p)$ increase in $p$, and every step of AM2's estimate uses
+$|X|\le p$ only as an upper bound: at most $2^{|X|}$ output sets,
+$\sum_{I\cap X\ne\varnothing}\norm{c_I}\le|X|\,\norm c_a$ and
+$|I_j|\le|M|+|X|$. With $p=4$, single-site groups satisfy AM2's majorant
+unchanged,
+\begin{equation}
+ \norm{L_k(c_1,\ldots,c_k)}_a\le J'\,16\cdot8^k\Bigl(1+\frac{5k}4\Bigr)
+ \prod_j\norm{c_j}_a ,
+ \label{eq:ax1-majorant}
+\end{equation}
+and $G(t)=16e^{8t}(1+10t)$ of \eqref{eq:dict-majorant} is unchanged. This
+monotonicity is the only new step in the majorant; the rest is inherited.
+
+\subsection{Re-frozen contraction and the finite-volume theorem}
+\label{sec:ax1-contraction}
+At the cap, $J'=29/10^8$ exceeds AM2's frozen $J_0=7/25000000=28/10^8$. The
+AM2 gate therefore cannot simply be re-read, and citing it with its admitted
+constants is the rejected control \recid{am2_gap_reuse_justified}. Resolution
+R1, frozen in the contract, re-freezes $J_0'=29/10^8$. With $e^{1/8}<8/7$ one
+has $G(R_a)=\tfrac{37}2e^{1/8}<\tfrac{148}7$ and
+$G'(R_a)=308\,e^{1/8}<352$, as in \eqref{eq:dict-majorant}. So
+\begin{equation}
+ J_0'G(R_a)<\frac{29}{10^8}\cdot\frac{148}7=\frac{1073}{175000000}<\frac1{64}=R_a,
+ \qquad
+ 2J_0'G'(R_a)<2\cdot\frac{29}{10^8}\cdot352=\frac{319}{1562500}<1 .
+ \label{eq:ax1-contraction}
+\end{equation}
+The Lipschitz constant is below $319/3125000$. The self-map inequality alone
+would allow $|\tau|\le7/274688$, about 2548 times the cap, and the exclusion
+inequality $|\tau|<1/20416$. Resolution R2 keeps $J_0$ and lowers the cap to
+$|\tau|\le J_0/29=7/725000000$. That is a changed coupling and is not
+selected; the controls \recid{j0_resolution_declared} and
+\recid{changed_model_relabelled} reject it under the cap label. Both packets
+pin $J_0'$, $1073/175000000$ and $319/1562500$ together with the contract's
+SHA-256.
+
+\paragraph{On-site theorem.}
+By Peter--Weyl, $C_e$ acts as $j(j+1)$ on the spin-$j$ block, and its kernel
+is the constants. So $h_b=8\sum_eC_e\ge0$ has the one-dimensional kernel
+spanned by the Haar vector $\Omega_b$, and its next eigenvalue is
+$8\cdot\tfrac34=6$:
+\begin{equation}
+ h_b\ge6\,Q_b\ge Q_b,\qquad P_b=|\Omega_b\rangle\langle\Omega_b|,\qquad
+ Q_b=I-P_b .
+ \label{eq:ax1-onsite}
+\end{equation}
+The Casimirs are bi-invariant, $\Omega_b$ is constant and every $W_f$ is gauge
+invariant. The forward checker confirms the last point on exact
+rational-quaternion holonomies for six faces, among them $W$ and selected
+faces.
+
+\begin{proposition}[route B, uniform model]
+\label{prop:ax1-gap}
+Take any nonempty finite complete-factor volume with route-B retention: whole
+stars inside the volume and every single-factor group. For either sign of
+$|\tau|\le10^{-8}$ the untruncated Hamiltonian has a unique ground
+$\psi=e^{-C}\Omega_0$ with $\norm c_a\le1/64$, and
+\[
+ E_1-E_0\ge\tfrac12\quad\text{(normalized)},\qquad
+ \Delta_{\rm phys}\ge\frac\alpha8\cdot\frac12=\frac\alpha{16}=\frac{g^2}{32a}.
+\]
+The ground is gauge invariant, and the physical subspace contains a nonzero
+excited sector.
+\end{proposition}
+The proof is AM2 Sections~2--6 with the new constants. It uses $h_x\ge Q_x$
+\eqref{eq:ax1-onsite}; supports of at most four sites with termination at
+order eight \eqref{eq:ax1-termination}; $J\le J'\le J_0'$ in every finite
+volume, because boundary per-site sums never exceed the bulk value (checked
+for $N=1,2,3$); the self-map and the Banach contraction of
+\eqref{eq:ax1-contraction}; the shifted-resolvent exclusion
+$\norm b_a\le2J_0'G'(R_a)\norm b_a<\norm b_a$ for real $|z|<\tfrac12$; and
+continuity of the isolated branch along the coupling from $0$. AM2's cutoff
+removal applies verbatim, because $h_b$ is a Casimir sum on a compact group
+with compact resolvent. The two producers prove the excited sector
+differently. The forward producer uses a selected face $g$: $\Omega_0$ and
+$2W_g\Omega_0$ are orthonormal gauge-invariant vectors, since
+$\mathbb E[W_g]=0$ and $\mathbb E[W_g^2]=\tfrac14$, so the physical subspace
+has dimension at least two. The reverse producer uses the strict positivity of
+the ground, a Schr\"odinger ground of a Laplacian plus a bounded real
+potential on a connected compact manifold, so
+$(W_g-\langle W_g\rangle)\Omega_H$ is nonzero, gauge invariant and orthogonal
+to the ground. The skeptic accepts both arguments.
+
+\subsection{AQ1/AQ2 re-instantiation}
+\label{sec:ax1-checklist}
+\paragraph{Reset on the cover.}
+Reset the finite ground density on $R$ to the Haar product
+$P_R=P_0\otimes P_{e_z}$ and keep the exterior marginal. Each group meeting
+$R$ changes its expectation by at most twice its norm, and every other group
+is unchanged. Seven stars and two single groups meet $R$
+(Section~\ref{sec:ax1-incidence}), so the finite-ground variational principle
+gives
+\begin{equation}
+ \omega_N(h_R)\le2\bigl(7\cdot7|\tau|+2\cdot|\tau|\bigr)=102|\tau| .
+ \label{eq:ax1-reset}
+\end{equation}
+The reverse producer rejects $100|\tau|$ as a miscount. The review notes that
+$2\cdot7\cdot7+2=100$ is also a valid labelled refinement, because the single
+groups lie inside $R$ and have Haar mean $0$. The admitted budget stays
+$102|\tau|$. The Haar product has the two-site gap six:
+$Q_0\otimes I+I\otimes Q_{e_z}-(I-P_0\otimes P_{e_z})=Q_0\otimes Q_{e_z}\ge0$
+gives $h_R\ge6(I-P_R)$. Hence, at $|\tau|=10^{-8}$,
+\begin{equation}
+ \epsilon_R=1-\tr(\rho_RP_R)\le\frac{102|\tau|}6=17|\tau|,\qquad
+ \norm{\rho_R-P_R}_1\le2\sqrt{17|\tau|}\approx8.2462\times10^{-4}\le\frac1{500}.
+ \label{eq:ax1-epsR}
+\end{equation}
+The square-root bound is a control only. It scales by exactly 10 under
+$\tau\to\tau/100$, and the admitted state term is the linear $D'$ of
+Section~\ref{sec:ax1-tiers}.
+
+\paragraph{The Haar gap six is load-bearing.}
+AQ2 needs $\norm{\rho_R-P_R}_1\le1/500$ for its Wilson variance floor. AQ2's
+own argument used only $h_R\ge I-P_R$, and its budget $98|\tau|$ passed with
+gap one only narrowly, $2\sqrt{98\cdot10^{-8}}\approx1.980\times10^{-3}$. With
+the route-B budget, gap one fails and gap six holds:
+\begin{equation}
+ \bigl(2\sqrt{102\cdot10^{-8}}\bigr)^2=\frac{51}{12500000}>\frac1{250000},\qquad
+ \bigl(2\sqrt{17\cdot10^{-8}}\bigr)^2=\frac{17}{25000000}\le\frac1{250000}.
+ \label{eq:ax1-gapsix}
+\end{equation}
+The reference moments $\tr(P_RW)=0$ and $\tr(P_RW^2)=\tfrac14$ now hold
+because all 48 cover links are Haar. With $|\omega(W)|\le1/500$ and
+$\omega(W^2)\ge\tfrac14-\tfrac1{500}$, AQ2's floor follows unchanged:
+\begin{equation}
+ \mathrm{Var}_\omega(W)\ge\frac14-\frac1{500}-\frac1{250000}
+ =\frac{61999}{250000}>\frac15 .
+ \label{eq:ax1-floor}
+\end{equation}
+The forward checker retains the gap-one failure as a control. The producers
+classify this step differently. The reverse lists the floor as a verbatim
+re-application and puts the new constant in its overlap row; the forward
+lists the floor itself as needing the gap six. The substance is the same
+(review finding N9).
+
+\paragraph{AQ1 constants.}
+Resetting a finite region $F$ changes at most $4|F|$ stars and exactly $|F|$
+single groups. Every group has $\ell^1$-diameter at most two. With the
+Nachtergaele--Sims weight $\mathsf F(r)=(1+r)^{-4}$, whose norm (at most 7)
+and convolution constant (at most 224) are unchanged,
+\begin{equation}
+ C_F'=2(4\cdot7+1)|\tau|\,|F|=58|\tau|\,|F|,\qquad
+ \norm{\Phi'}_{\mathsf F}\le\mathsf F(2)^{-1}J'=81\cdot29|\tau|=2349|\tau| .
+ \label{eq:ax1-aq1}
+\end{equation}
+A single-site group contributes only at $x=y$, where $\mathsf F(0)=1$;
+equivalently it is a bounded on-site perturbation of the unbounded Casimir
+sums. The skeptic also records a per-pair bound $567|\tau|$, labelled and not
+needed. Citing AQ1's $2268|\tau|=81\cdot28|\tau|$ or $C_F=56|\tau||F|$ as
+unchanged would be a citation error. Table~\ref{tab:ax1-checklist} lists every
+step. No named constant is left unproved, so the checklist does not trigger
+the contract's limited outcome.
+
+\begin{table}[htbp]
+\centering\small
+\caption{AQ1/AQ2 re-instantiation for route B. ``Verbatim'' means the
+admitted argument re-applies unchanged; ``new'' means it needs the stated
+route-B constant. The last rows count $J$ per $|\tau|$ and $t_1$, $a_1$ per
+$|\tau|/144$.}
+\label{tab:ax1-checklist}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X l
+ >{\raggedright\arraybackslash}p{0.22\linewidth}
+ >{\raggedright\arraybackslash}p{0.27\linewidth}@{}}
+\toprule
+Step (source) & Status & Zero triple (admitted) & Route B\\
+\midrule
+AM2 ground and gap & new & $J\le28|\tau|\le J_0$ & $J'\le29|\tau|\le J_0'=29/10^8$\\
+AM2 on-site hypothesis & verbatim & $h_x\ge Q_x$ & $h_b\ge6Q_b\ge Q_b$\\
+AM2 majorant, termination & verbatim & support 4, order 8 & unchanged; $|X|=1$ by monotonicity\\
+AM2 gauge covariance, cutoff removal & verbatim & & Casimir sum, compact resolvent\\
+AQ1 reset energy on $F$ & new & $56|\tau||F|$ & $58|\tau||F|$\\
+AQ1 compactness, diagonal extraction & verbatim & uses $C_F$ & uses $C_F'$\\
+AQ1 Nachtergaele--Sims placement & new & $2268|\tau|$ & $81J'=2349|\tau|$\\
+AQ1 stationarity, GNS, $H\ge0$ & verbatim & & \\
+AQ2 gauge averaging, gap $\alpha/16$ & verbatim & premise: AM2 full-space gap at $J_0$ & premise: AX1 full-space gap at $J_0'$\\
+AQ2 reset on $R$ & new & $98|\tau|$ & $102|\tau|$\\
+AQ2 overlap, trace distance & new & $\epsilon\le98|\tau|$, gap one & $\epsilon_R\le17|\tau|$, gap six\\
+AQ2 reference moments of $W$ & verbatim & one free $z$ link Haar & all 48 cover links Haar\\
+AQ2 variance floor & verbatim & $61999/250000$ & same; needs gap six\\
+AT4 relative-unitary slope & new & $49|\tau|/8$, $k=49|\tau|/4$ & $51|\tau|/8$, $k'=51|\tau|/4$\\
+AV1 state-lemma tiers & new & $J,t_1,a_1=28,49,82$ & $J',t_1',a_1'=29,52,88$\\
+AV1 cutoff removal, AQ passage & verbatim & gap $\tfrac12$ & gap $\tfrac12$ at $J_0'$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Itemized incidence on the cover}
+\label{sec:ax1-incidence}
+A group meets $R=\{0,e_z\}$ exactly when its support does. A star $b+S$ meets
+$R$ iff $b\in R-S$, the seven anchors of \eqref{eq:dict-seven}, all retained
+for $N\ge2$; the farthest site needed is $2e_z$. A single group $\{b\}$ meets
+$R$ iff $b\in R$: exactly two groups. In $\Lambda_1$ only four of the seven
+stars are retained, which is why the lemma needs $N\ge2$. The forward checker
+enumerates $N=2,3,4$. The reverse checker verifies the coordinate condition
+for $N=2,\dots,11$ and enumerates $\Lambda_2$ and $\Lambda_3$. Both export
+every face with its class, fine base point and owner set, and recompute every
+total from that table. The three tables, forward, reverse and the skeptic's,
+agree row by row (Table~\ref{tab:ax1-incidence}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Groups meeting the cover $R=\{0,e_z\}$, with the faces each charges.
+Norms are in units of $G=H/\alpha$, where each group enters as $V_X/8$.}
+\label{tab:ax1-incidence}
+\begin{tabular}{llcrrrc}
+\toprule
+Group & Anchor & Sites of $R$ met & Faces & Meeting $R$ & Inside $R$ & Norm\\
+\midrule
+star & $0$ & $0,e_z$ & 21 & 21 & 10 & $7|\tau|/8$\\
+star & $e_z$ & $e_z$ & 21 & 21 & 0 & $7|\tau|/8$\\
+star & $-e_z$ & $0$ & 21 & 16 & 0 & $7|\tau|/8$\\
+star & $-e_x$ & $0$ & 21 & 4 & 0 & $7|\tau|/8$\\
+star & $-e_y$ & $0$ & 21 & 8 & 0 & $7|\tau|/8$\\
+star & $e_z-e_x$ & $e_z$ & 21 & 4 & 0 & $7|\tau|/8$\\
+star & $e_z-e_y$ & $e_z$ & 21 & 8 & 0 & $7|\tau|/8$\\
+single & $0$ & $0$ & 3 & 3 & 3 & $|\tau|/8$\\
+single & $e_z$ & $e_z$ & 3 & 3 & 3 & $|\tau|/8$\\
+\midrule
+Total & 9 groups & & 153 & 88 & 16 & $51|\tau|/8$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As in AT4 and \eqref{eq:av2-slope}, every group meeting $R$ enters $B_N$
+whole, so $A_N$ evolves $W$ by the free Casimir generator on $R$. In units of
+$G=H/\alpha$ and with the clock $\theta=\alpha t/\hbar$,
+\begin{equation}
+ \norm{B_N}\le7\cdot\frac{7|\tau|}8+2\cdot\frac{|\tau|}8=\frac{51|\tau|}8,\qquad
+ k'=2\norm{B_N}=\frac{51|\tau|}4 .
+ \label{eq:ax1-slope}
+\end{equation}
+The 153 charged faces are $7\cdot21+2\cdot3$. Of them, 88 meet $R$ (82
+omitted and 6 selected) and 16 lie inside $R$ (10 omitted and 6 selected); the
+other 65 are charged in full, as in AT4. The six selected faces inside $R$
+are exactly the two single groups: the $xy$ faces with fine base points
+$(0,0,0)$, $(1,0,0)$ and $(2,0,0)$ of factor $0$, and $(0,0,1)$, $(1,0,1)$ and
+$(2,0,1)$ of factor $e_z$. Two of them share one link with $W$, namely $(0,x)$
+and $(e_z,x)$. No face appears in two rows. The faces anchored at $0$ whose
+owner sets also contain $e_z$ belong to star $0$ only, and the selected faces
+belong to the single groups only. Rejected mutations include totals without
+the table, a missing single group, a group listed twice, the orthant
+two-anchor count, the outgoing-only sum $J=8|\tau|$, a group count of 7
+instead of 9 and the root-sum-of-squares $\sqrt{345}/8$ of the nine group
+norms (\recid{root_n_misuse}). The contract registered $51|\tau|/8$; both
+producers derive it from the itemized table.
+
+\subsection{Face counts: 52 per factor and 88 for the cover}
+\label{sec:ax1-counts}
+Every retained face $f$, omitted or selected, gives a vector $W_f\Omega_0$
+with spin $\tfrac12$ on its four links, normalized $H_0$-energy
+$8\cdot4\cdot\tfrac34=24$ and norm $\tfrac12$, in the sector of its owner set
+$M_f$. Distinct faces share at most one link, so the vectors are orthogonal;
+the forward checker verifies this over all pairs of the 88 faces meeting $R$.
+A selected face has $M_g=\{b\}$. The first-order collection
+\eqref{eq:av1-first} therefore keeps its form in route B:
+\begin{equation}
+ c'^{(1)}_M=-\frac\tau{72}\sum_{f:\,M_f=M}W_f\Omega_0,\qquad
+ \norm{c'^{(1)}_M}=\frac{|\tau|\sqrt{n_M}}{144},\qquad
+ \norm{c'^{(1)}_{\{b\}}}=\frac{\sqrt3\,|\tau|}{144}\ne0 .
+ \label{eq:ax1-first}
+\end{equation}
+The single-site creations are new. In the zero-selected model every
+first-order support had at least two sites. In route B the supports $\{0\}$
+and $\{e_z\}$ are nonzero at first order, meet $R$ and enter the two-creation
+term.
+
+The counts are derived from the 24-class encoding as in \eqref{eq:av1-49}. A
+face of class $k$ anchored at $b$ has $u$ in its owner set iff $b=u-d$ with
+$d\in K_k$. The offset $0$ lies in all 24 classes, and the selected classes
+contain only $0$. Hence
+\begin{equation}
+ \begin{gathered}
+ \#\{f:\ u\in M_f\}=\sum_{d\in S}\#\{k:\ d\in K_k\}=24+4+8+16=52=49+3,\\
+ \#\{f:\ M_f\cap R\ne\varnothing\}=52+52-16=88 .
+ \end{gathered}
+ \label{eq:ax1-52}
+\end{equation}
+A site lies in 16 owner sets, with multiplicities
+$\{1\times5,2\times3,3\times3,4\times3,10\times2\}$; relative to
+Table~\ref{tab:av1-owners} the new set is $\{u\}$ with $n=3$. Sixteen faces
+lie inside $R$: the 10 omitted faces with owner set $R$ and the 6 selected
+faces. Sixteen faces have owner sets containing both sites, and
+$16+16-3=29$ owner sets meet $R$. The omitted-only sub-table reproduces AV1's
+counts $(49,15,82,10)$. A brute-force fine-lattice enumeration without the
+class table reproduces 52, all 16 multiplicities and 88. Finite-box counts
+never exceed the bulk values (checked for $N=1,2,3$).
+
+\paragraph{The contract candidates are bounds.}
+The contract registered ``96 per factor'' and ``168 for $R$'' as candidates
+to be derived. They are the anchor-group bounds $4\times24$ and $7\times24$:
+every face owning a link of $u$ is anchored in $u-S$, but the four groups at
+those anchors also hold 44 faces whose owner sets miss $u$. The candidates are
+admitted only as labelled bounds; the exact counts are 52 and 88. Using 96 as
+an exact count is a rejected mutation, and so are 49 (selected faces dropped),
+61 (selected faces counted at all four anchors), a hard-coded 52 and a count
+restricted to $0$ and $e_z$.
+
+\subsection{State-lemma tiers}
+\label{sec:ax1-tiers}
+\paragraph{Product ordering with the enlarged creation set.}
+The split of Section~\ref{sec:av1-split} uses only that the creations commute,
+that overlapping creations multiply to zero and that
+$c_I\in\bigotimes_{x\in I}Q_x\mathcal H_x$ with Haar $P_x$. It holds verbatim
+for the route-B creations:
+\begin{equation}
+ \psi=\psi_{\rm out}+\delta,\quad(P_R\otimes1)\psi=\psi_{\rm out},\quad
+ \frac{\norm\delta}{\norm{\psi_{\rm out}}}\le\varepsilon
+ =\sum_{I\cap R\ne\varnothing}\norm{c_I}
+ +\sum_{\substack{I\ni0,\ J\ni e_z\\ I\cap J=\varnothing}}\norm{c_I}\norm{c_J}
+ \le2t+t^2 ,
+ \label{eq:ax1-split}
+\end{equation}
+and both inequalities \eqref{eq:av1-forward} and \eqref{eq:av1-reverse}
+apply. The pair of single-site creations $c_{\{0\}}$ and $c_{\{e_z\}}$ now
+enters the second sum with both factors of first order.
+
+\paragraph{The two tiers.}
+The crude tier uses only $t\le J'G(R_a)$; at the cap $t_{\rm i}=1073/175000000$,
+the self-map rational. The exact tier uses the first-order collection and the
+self-consistent remainder of \eqref{eq:av1-selfconsistent} with the route-B
+constants:
+\begin{equation}
+ \begin{gathered}
+ t_1'=\frac{|\tau|}{144}\max_u\sum_{M\ni u}\sqrt{n_M}\le\frac{52|\tau|}{144}
+ =\frac{13|\tau|}{36},\\
+ t\le T':=\frac{t_1'}{1-352J'},\qquad
+ \varrho':=352J'T'=T'-t_1' .
+ \end{gathered}
+ \label{eq:ax1-T}
+\end{equation}
+At $\tau=\pm10^{-8}$ the inputs are $J'=29/10^8$, $352J'=319/3125000$,
+$t_1'=13/3600000000$, $T'=13/3599632512$ and
+$\varrho'=4147/11248851600000000\approx3.687\times10^{-13}$. Three tier
+mixtures are rejected (\recid{tier_mixing_rejected}): the exact $c'^{(1)}$
+with the crude $t$, $t=t_1'$ without self-consistency, and a zero remainder.
+
+\paragraph{Forward form, bound by the gate.}
+The forward producer, and the skeptic before comparison, use AV1's global
+form $\varepsilon_{\rm fwd}=2T'+T'^2$ with the explicit-density bound $f$ of
+\eqref{eq:av1-forward}:
+\begin{equation}
+ \begin{aligned}
+ \varepsilon_{\rm fwd}&=\frac{93590445481}{12957354221447430144},\\
+ D'_{\rm ii}=f(\varepsilon_{\rm fwd})
+ &=\frac{2425369125199104794263242601250}{167893028420061547330293754713793182097}
+ \approx1.4445919214\times10^{-8}.
+ \end{aligned}
+ \label{eq:ax1-Dii}
+\end{equation}
+Since $g(\varepsilon)\le f(\varepsilon)$, both inequalities certify this
+value. It equals the skeptic's pre-comparison headline rational for rational,
+and the reverse reproduces it exactly as its labelled global two-site variant.
+
+\paragraph{Reverse form, a labelled cover refinement.}
+The reverse producer bounds the first-order sum over creations meeting $R$
+face by face, counting each of the 88 faces meeting $R$ once, and charges the
+remainder at both sites:
+\begin{align}
+ a_1'&=\frac{88|\tau|}{144}=\frac{11}{1800000000},\notag\\
+ \varepsilon_{\rm rev}&=a_1'+2\varrho'+T'^2
+ =\frac{30934916107401289}{5061466492752902400000000}\approx6.1118\times10^{-9},
+ \label{eq:ax1-epsrev}\\
+ D'_{\rm ii,rev}&=2\varepsilon_{\rm rev}
+ =\frac{30934916107401289}{2530733246376451200000000}\approx1.22237\times10^{-8}.
+ \label{eq:ax1-Diirev}
+\end{align}
+This is the route-B analogue of the AV1-reviewed 82-face refinement
+\eqref{eq:av1-Diirev}. Its headline $2\varepsilon$ dominates $g(\varepsilon)$
+and therefore rests on the fidelity inequality. Its density form
+$f(\varepsilon_{\rm rev})\approx1.22237\times10^{-8}$, certified by both
+inequalities, is also below the target.
+
+\paragraph{The one-inequality difference.}
+The two forms share $t_1'$, $T'$, $\varrho'$ and the pair term $T'^2$. They
+differ at one inequality, the bound on the first-order sum
+$\sum_{I\cap R\ne\varnothing}\norm{c^{(1)}_I}$. The forward bound
+$2\norm c_a\le2T'=2t_1'+2\varrho'$ charges $2\times52=104$ first-order faces,
+so the 16 faces whose owner sets contain both sites are counted twice. The
+reverse counts the 88 faces meeting $R$ once. Exactly,
+\begin{equation}
+ \varepsilon_{\rm fwd}-\varepsilon_{\rm rev}=\frac{(104-88)|\tau|}{144}
+ =\frac{16|\tau|}{144}=\frac{|\tau|}9=\frac1{900000000}.
+ \label{eq:ax1-difference}
+\end{equation}
+The final step also differs, $f$ against $2\varepsilon$, but that moves the
+bound by only about $1.04\times10^{-16}$. So
+$D'_{\rm ii}-D'_{\rm ii,rev}\approx2|\tau|/9+1.04\times10^{-16}\approx2.2222\times10^{-9}$,
+a ratio of about $1.1818$, and
+\begin{equation}
+ g(\varepsilon_{\rm rev})\le D'_{\rm ii,rev}\le f(\varepsilon_{\rm rev})
+ <2\varepsilon_{\rm fwd}\le D'_{\rm ii}\le\frac4{10^7}.
+ \label{eq:ax1-ordering}
+\end{equation}
+The gate binds the forward $D'_{\rm ii}$. It is the larger bound, both
+inequalities certify it, and it uses no cover refinement, so it survives any
+dispute of one. It is also the construction the AV1 gate bound: the skeptic's
+code reproduces AV1's $D_{\rm ii}$ \eqref{eq:av1-Dii} exactly from 49 faces
+and $J=28|\tau|$. The reverse value is admitted as a labelled refinement.
+
+\paragraph{Values against the targets.}
+Every value is the same at both signs, because only $|\tau|$ enters.
+Table~\ref{tab:ax1-tiers} compares them with the preregistered target
+$4/10^7$ and the secondary comparison $10^{-6}$.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Route-B state bounds at $\tau=\pm10^{-8}$. Decimals are rounded
+previews of exact rationals in the frozen outputs; the AV1 row is the
+zero-selected value, shown for comparison.}
+\label{tab:ax1-tiers}
+\begin{tabular}{lrcc}
+\toprule
+Bound on $\norm{\rho_R-P_R}_1$ & Approximate value & $\le4/10^7$ & $\le10^{-6}$\\
+\midrule
+Square-root control, $2\sqrt{17|\tau|}$ & $8.246211251\times10^{-4}$ & no & no\\
+Tier (i), forward exact $f(\varepsilon_{\rm i})$ & $2.452609023\times10^{-5}$ & no & no\\
+Tier (i), reverse $2\varepsilon_{\rm i}$ & $2.452578947\times10^{-5}$ & no & no\\
+Tier (ii), labelled 96-face bound (forward) & $2.666938952\times10^{-8}$ & yes & yes\\
+Tier (ii), forward exact, bound by the gate & $1.444591921\times10^{-8}$ & yes & yes\\
+Tier (ii), reverse cover refinement & $1.222369689\times10^{-8}$ & yes & yes\\
+AV1 tier (ii), zero triple & $1.361245287\times10^{-8}$ & yes & yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tier (i), with
+$\varepsilon_{\rm i}=375551151329/30625000000000000$ and the exact forward
+value
+\[
+ D'_{\rm i}=\frac{23002790096235779074916932482}{937890625141038667264537458466241},
+\]
+exceeds $4/10^7$ by a factor of about 61. It fails both targets, is retained
+as a limited-tier value and is not retuned. Iterating the majorant lowers it
+only to about $1.856\times10^{-5}$. Tier (ii) meets the target with margins
+about $27.69$ (forward) and $32.72$ (reverse). Further labelled variants
+(grouped square roots, sharper remainder forms and the reverse's 96/168
+bounds) also lie below the target; they are recorded, not admitted. The
+contract's ``candidate about 2--3$\times10^{-8}$ from 96 faces per factor'' is
+the labelled 96-face row. The uniform value exceeds AV1's zero-triple value
+mainly through the three selected faces per factor ($52/49\approx1.061$), and
+marginally through the extra $|\tau|$ in $J'$.
+
+\paragraph{Consequences, passage and scaling.}
+Trace duality and the effect bound give, at both tiers and both signs,
+\begin{equation}
+ |\omega_\tau(W)|\le D',\qquad \bigl|\omega_\tau(W^2)-\tfrac14\bigr|\le\tfrac{D'}2,
+ \qquad m_\tau^2\le D'^2 .
+ \label{eq:ax1-consequences}
+\end{equation}
+At the bound tier-(ii) value these are about $1.4446\times10^{-8}$ and
+$7.223\times10^{-9}$, and $m_\tau^2\le D'^2$ is charged. The first-order mean
+$|\tau|/144\approx6.94\times10^{-11}$ is paid for, since $D'_{\rm ii}$ is
+about 208 times larger. AV1's cutoff-vector removal
+(Section~\ref{sec:av1-passage}) re-applies with the route-B gap $\tfrac12$;
+the selected face vectors also sit at energy 24, so $L\ge24$ keeps
+$c'^{(1)}$. Passage by local trace-norm convergence to every AQ1 subsequential
+limit re-applies verbatim. The result is uniform local closeness, not
+uniqueness, whole-sequence convergence or a rate in $N$. Every bound increases
+in $|\tau|$, so the cap values bound every smaller coupling. The exact ratios
+$D'(10^{-8})/D'(10^{-10})$ are about $100.0101$ (forward tier (ii)),
+$100.0119$ (reverse tier (ii)), $100.0015$ and $100.0003$ (tier (i)), all in
+$[99,101]$, while the square-root control has ratio exactly 10.
+
+\paragraph{AX2 feasibility, arithmetic only.}
+With $k'M_1=(51|\tau|/4)(4s/\pi)$ at $s=1$, the AX2 window budget of
+\eqref{eq:av2-bound} reads $F_{\rm u}(D)=2(D+D^2)+51|\tau|/\pi\le10^{-6}$. With a
+directed Machin bracket for $\pi$, $F_{\rm u}(D'_{\rm ii})\le1.9123\times10^{-7}$
+(margin about $5.23$) and $F_{\rm u}(4/10^7)\le9.624\times10^{-7}$. The exact
+threshold lies in $[41883,41884]/10^{11}$. The contract's note
+``$D'\le4.19\times10^{-7}$'' is therefore rounded the wrong way:
+$F_{\rm u}(4.19\times10^{-7})>1.0003\times10^{-6}$, so $4.19\times10^{-7}$ itself is
+infeasible. The tested target $4/10^7$ lies below the threshold, and the
+finding is non-blocking. The crude $D'_{\rm i}$ is infeasible. This is
+arithmetic on the contract statement: AX1 proves no window lemma and certifies
+no Euclidean node.
+
+\paragraph{Error ledger.}
+The preregistered items at tier (ii) are the following.
+\begin{itemize}
+\item \recid{am2_remainder}: $\varrho'=4147/11248851600000000$ (forward); the
+reverse charges $2\varrho'$. Not applicable at tier (i), which bounds the
+whole collection.
+\item \recid{two_creation}: $T'^2\approx1.304\times10^{-17}$, now including
+the first-order pair $c_{\{0\}}\otimes c_{\{e_z\}}$.
+\item \recid{straddling}: inside the $2t$ term (forward) or $a_1'$ (reverse);
+72 of the 88 first-order faces meeting $R$ have straddling owner sets.
+\item \recid{density}: $2\varepsilon^2/(1+\varepsilon^2)$, exported by the
+forward producer; not applicable to the reverse's fidelity route, with the
+reason stated. Review finding N6 notes that the exported value is an upper
+bound on $D'-2\varepsilon=2\varepsilon^2(1-\varepsilon)/(1+\varepsilon^2)$,
+not an identity; the excess is about $7.5\times10^{-25}$, and $D'$ itself is
+exact.
+\item \recid{onsite_cutoff_vector}: no numeric cost; it is an exact per-box
+limit.
+\item \recid{arithmetic}: no numeric cost for the exact rationals; every
+enclosure is directed upward ($e^{1/8}<8/7$, $e^{8t}\le1/(1-8t)$,
+square-root brackets, a Machin bracket for $\pi$).
+\end{itemize}
+
+\subsection{Transfer of the flip identity and of \texorpdfstring{$+\tau/144$}{+tau/144}}
+\label{sec:ax1-transfer}
+\paragraph{Every coefficient is tied to $\tau$.}
+In the uniform model every face term of \eqref{eq:ax1-routeb} is
+$-(\tau/3)W_f$, selected faces included, and $h_b$ does not depend on $\tau$.
+In AW1's notation the uniform Hamiltonian is $H_N(\tau,\kappa(\tau))$ with
+$\kappa(\tau)=(\tau/24)(1,1,1)$ in units of $\alpha$, an odd function of
+$\tau$. A mixed convention is the rejected control
+\recid{uniform_sign_convention}: selected faces with the opposite sign, with
+$\tau/24$ read in $\delta$ units, or with zero.
+
+\paragraph{The flip identity, proved.}
+Let $U_E=\prod_{e\in E\cap\Lambda_N}\Gamma_e$ with the flip set $E$ of
+\eqref{eq:aw1-flipset}. Each $\Gamma_e$ acts as $(-1)^{2j}$ on the spin-$j$
+block and, because $-1$ is central, commutes with left and right
+translations. So $U_E$ commutes with every $C_e$, with $h_b$, $P_b$ and every
+spectral cutoff $1_{[0,L]}(h_b)$, and with every endpoint gauge action, and it
+fixes $\Omega_0$. Every plaquette of $\mathbb Z^3$ meets $E$ in one or three
+links (Section~\ref{sec:aw1-flip}), the selected faces included, so
+$U_EW_fU_E^*=-W_f$ for every retained face. Hence, in every centered box and
+at every cutoff,
+\begin{equation}
+ U_E\,\widehat H'_N(\tau)\,U_E^*=\widehat H'_N(-\tau),\qquad
+ U_E\,Q_L\widehat H'_N(\tau)Q_L\,U_E^*=Q_L\,\widehat H'_N(-\tau)\,Q_L .
+ \label{eq:ax1-flip}
+\end{equation}
+Two differences from \eqref{eq:aw1-flip-identity} follow. The patterned
+identity $(\tau,\kappa)\mapsto(-\tau,-\kappa)$ becomes $\tau\mapsto-\tau$,
+because $\kappa$ is tied to $\tau$. And neither the inherited strip-operator
+form nor a $Q_L\to Q_L'$ step is needed, because the reference and its cutoffs
+are Haar and Casimir objects that $U_E$ fixes; AW1's modified flip set $E^*$
+is not needed either. The odd intersection is re-enumerated with the selected
+classes. The forward checker covers the 24 (orientation, base-parity) classes,
+the 24 anchored classes at 27 anchors (648 faces) and 3600 plaquettes. The
+reverse checker covers the 24 residue cases, the 6591 plaquettes with base
+point in $[-6,6]^3$ (3042 meeting $E$ once, 3549 three times, none evenly)
+and all 1719 faces of $\Lambda_2$ (1344 omitted and 375 selected). The Wilson
+face meets $E$ in three links, and exact rational-quaternion holonomies show
+that the traces flip.
+
+\paragraph{Consequences.}
+Proposition~\ref{prop:ax1-gap} gives a unique ground at both signs, so
+$U_E\psi_N(\tau)\propto\psi_N(-\tau)$. With $U_E\Omega_0=\Omega_0$ and the
+intermediate normalization $\langle\Omega_0,\psi\rangle=1$, the creations obey
+$c_I(-\tau)=U_Ec_I(\tau)$. In every box and at every cutoff,
+\begin{equation}
+ \begin{gathered}
+ \omega_{N,-\tau}(W)=-\omega_{N,\tau}(W),\qquad
+ \omega_{N,-\tau}(W^2)=\omega_{N,\tau}(W^2),\\
+ C_{N,-\tau}=C_{N,\tau},\qquad c_{N,-\tau}=c_{N,\tau},\qquad
+ \rho_{N,R}(-\tau)=U_E\,\rho_{N,R}(\tau)\,U_E^* .
+ \end{gathered}
+ \label{eq:ax1-covariance}
+\end{equation}
+Since $U_EP_RU_E^*=P_R$, $\norm{\rho_{N,R}-P_R}_1$ is exactly even in $\tau$.
+For AQ limits, $\mathcal S(-\tau)=\mathcal S(\tau)\circ\alpha_E$ as whole sets
+of subsequential limits, as in \eqref{eq:aw1-aq-sets}; individual states at
+$\pm\tau$ are paired only along a common subsequence. Oddness gives no
+$O(\tau^3)$ remainder.
+
+\paragraph{The tie is essential.}
+The reverse checker applies $U_E$ face by face on $\Lambda_2$ under five
+rules for the selected coefficient (Table~\ref{tab:ax1-tie}). The forward
+producer compresses $H_0-(\tau/3)W-(\kappa/3)W_g$, with $g$ the selected face
+of factor $0$ that shares the link $(0,x)$ with $W$, onto
+$\{\Omega_0,2W\Omega_0,2W_g\Omega_0\}$, where $U_E$ acts as
+$D=\mathrm{diag}(1,-1,-1)$:
+\begin{equation}
+ H(\tau,\kappa)=\begin{pmatrix}0&-\tau/6&-\kappa/6\\ -\tau/6&24&0\\
+ -\kappa/6&0&24\end{pmatrix},\qquad
+ D\,H(\tau,\kappa)\,D=H(-\tau,-\kappa).
+ \label{eq:ax1-compression}
+\end{equation}
+With $\kappa=\tau$ this is
+$H(\tau)\mapsto H(-\tau)$, and the control \recid{uniform_kappa_tied_to_tau}
+rejects the claimed uniform identity for $\kappa=\tau+1/1000$, $\kappa=1/100$
+and $\kappa=2\tau+1/50$. The reverse producer's decoupled one-plaquette
+fixture gives the selected-face mean $k/(2\sqrt{576+k^2})$ with $k=8\kappa$.
+It is odd in $\tau$ for the tied rule and not for the mixed-sign and offset
+rules; for the uniform $k=\tau/3$ its first-order value is $k/48=\tau/144$.
+These are finite compressions with \recid{transfers_to_aq} false; they audit
+the algebra only.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The flip identity under five selected-coefficient rules, applied face
+by face on $\Lambda_2$ by the reverse checker.}
+\label{tab:ax1-tie}
+\begin{tabular}{lcl}
+\toprule
+Selected coefficient over $\alpha$ & $U_EH(\tau)U_E^*=H(-\tau)$ & Status\\
+\midrule
+$\tau/24$ (tied) & yes & the uniform model\\
+$|\tau|/24$ (mixed sign) & no & identity breaks\\
+$\tau/24+1/7$ (offset) & no & identity breaks\\
+$\tau/12$ & yes & odd, but not uniform\\
+$0$ & yes & the zero-selected model, not uniform\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Parity on the selected faces.}
+A selected face is a single-face character $W_g=\tfrac12\tr U_g$, exactly
+like an omitted face, so the centre grading \eqref{eq:aw1-parity} applies
+verbatim. For every face $f$ meeting $R$, selected or omitted,
+\begin{equation}
+ \mathbb E[W^2W_f]=0,\qquad \mathbb E[WW_f]=\tfrac14\,\delta_{f,W},\qquad
+ P_{24}\,V'\,W\Omega_0=0 ,
+ \label{eq:ax1-parity}
+\end{equation}
+where $V'$ is the route-B interaction. On $\Lambda_2$ the odd-link sets
+$W\triangle f$ have sizes $0$, $6$ and $8$, for $1$, $12$ and $1706$ faces.
+The twelve are the ten omitted faces that share a link with $W$ and the two
+selected faces above. An energy-24 vector has exactly four odd links, so no
+face maps $W\Omega_0$ into the energy-24 multiplet. Also
+$\mathbb E[W_gW_fW_h]=0$ for all 117\,480 multisets of three faces meeting
+$R$, because each face meets $E$ oddly; so the invariant multiplet has zero
+first-order splitting. The state, Duhamel, energy and vector-centring terms of
+Section~\ref{sec:aw1-parity} therefore vanish separately, and the finite-box
+parity theorem \eqref{eq:aw1-parity-conclusion} transfers with its
+qualifications: finite boxes, a $\tau^2$ constant for $C_N$ and $c_N$ that is
+explicitly unbounded, and only evenness for AQ limits.
+
+\paragraph{The first-order Wilson mean.}
+The first-order vector now sums over all retained faces, omitted and selected.
+By Kato analyticity in each box ($V'$ bounded, a simple isolated ground with
+gap at least $\tfrac12$),
+\begin{equation}
+ \begin{gathered}
+ \psi^{(1)}=-c'^{(1)}=\frac\tau{72}\sum_fW_f\Omega_0,\\
+ \omega_{N,\tau}(W)=2\,\mathrm{Re}\langle W\Omega_0,\psi^{(1)}\rangle+O_N(\tau^2)
+ =\frac\tau{36}\sum_f\mathbb E[WW_f]+O_N(\tau^2)
+ =+\frac\tau{144}+O_N(\tau^2).
+ \end{gathered}
+ \label{eq:ax1-mean}
+\end{equation}
+Only $f=W$ contributes. This is checked face by face over the 88 faces meeting
+$R$, and the two selected faces that share a link with $W$ contribute exactly
+zero. In the product-split reading of \eqref{eq:aw1-overlap}, only $c_R$
+overlaps $W\Omega_R$. Its first-order part is unchanged, because the ten faces
+with owner set $R$ are all omitted. The new single-site creations
+$c_{\{0\}}$ and $c_{\{e_z\}}$ are orthogonal to $W\Omega_R$, because $W$
+carries one spin-$\tfrac12$ factor on a link of each site. The first-order
+values are $\pm1/14400000000$ at $\tau=\pm10^{-8}$, as in
+\eqref{eq:aw1-mean}. Charging the selected faces at first order, and a zero
+first-order mean in the uniform model, are rejected mutations. The
+Rayleigh--Schr\"odinger series of the compression \eqref{eq:ax1-compression}
+reproduces $1/144$, with the $W_g$ direction contributing zero.
+
+\paragraph{What transfers and what does not.}
+Table~\ref{tab:ax1-quantifiers} lists the AW1 statements. The coefficient
+$+\tau/144$ transfers as a finite-box Taylor coefficient. Its uniform
+remainder does not. AW1's step ``the first-order parts of $c_{\{0\}}$ and
+$c_{\{e_z\}}$ vanish'' is false in route B, and both producers say so. At the
+zero triple the pair term of $K_2$ was actually of third order, because every
+first-order support has at least two sites (Section~\ref{sec:aw1-k2}); here it
+is of second order. A route-B $K_2$ would need its own contract, with $T'$,
+$\varrho'$, the single-site creations and new pins, for example 36 single-site
+faces per site of $R$ instead of 33. Neither producer computes it. No
+uniform-in-$N$ $\tau^2$ constant, enclosure or sign of $\omega(W)$ is
+admitted for the uniform model.
+
+\begin{table}[htbp]
+\centering\small
+\caption{AW1 statements under uniform route B.}
+\label{tab:ax1-quantifiers}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X
+ >{\raggedright\arraybackslash}p{0.25\linewidth}
+ >{\raggedright\arraybackslash}p{0.28\linewidth}@{}}
+\toprule
+AW1 statement & Uniform route B & Needs\\
+\midrule
+Per-link grading; commutes with Casimirs, gauge actions and cutoffs; fixes
+$\Omega_0$ & verbatim & none\\
+$E$ meets every plaquette in 1 or 3 links & verbatim; selected classes
+enumerated & none\\
+$U_EH_N(\tau,\kappa)U_E^*=H_N(-\tau,-\kappa)$ & becomes
+$H_N(\tau)\mapsto H_N(-\tau)$ & $\kappa$ tied to $\tau$\\
+Cutoff compressions $Q_L\to Q_L'$ & $Q_L'=Q_L$ & $\tau$-independent $h_b$\\
+Box covariance; $\omega_N(W)$ odd; $\omega_N(W^2)$, $C_N$, $c_N$ even &
+transfers & route-B unique ground at $J_0'$\\
+$\mathcal S(-\tau)=\mathcal S(\tau)\circ\alpha_E$ as whole sets & transfers &
+route-B AQ1 constants $58|\tau||F|$, $2349|\tau|$\\
+Parity theorem (finite boxes; $\tau^2$ constant of $C_N$ unbounded) &
+transfers, selected faces included & route-B box gap\\
+$\omega_\tau(W)=+\tau/144+r(\tau)$, only $f=W$ & coefficient transfers & none
+for the coefficient\\
+$|r(\tau)|\le K_2^+\tau^2$ uniformly in $N$ & not transferred & $T'$,
+$\varrho'$, $\varepsilon'$, single-site creations, new pins\\
+Uniform $\omega(W^2)$ constant & not transferred & route-B constants\\
+AW2 enclosure and sign & not transferred & claim exclusion\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Controls, replays and review}
+\label{sec:ax1-evidence}
+The contract lists 28 controls. It defines new semantics for five of them.
+\begin{itemize}\raggedright
+\item \recid{j0_resolution_declared}: the R1 re-freeze with its two exact
+inequalities is present; the old $J_0$ at the cap is rejected.
+\item \recid{uniform_sign_convention}: the selected faces enter with the
+same sign and magnitude $\nu=\alpha\tau/24$ as the omitted faces.
+\item \recid{uniform_kappa_tied_to_tau}: an untied selected coefficient
+breaks the uniform flip identity.
+\item \recid{route_b_no_double_count}: a face charged in both a star and a
+single group is rejected; the per-site sum stays $29|\tau|$.
+\item \recid{incidence_table_itemized}: counts come from an itemized face
+table; asserted totals are rejected.
+\end{itemize}
+The forward checker runs 52 exact checks and
+the reverse checker 58. Each implements all 28 controls as damaging mutations
+raised through explicit exceptions, never assertions, so every control stays
+active under optimized Python. The forward producer reports 94 rejections;
+review finding N7 notes that 93 sit in the 28 control checks and one, the
+removal of a link from $E$, in \recid{flip_set_odd_all_classes}. The reverse
+records 111. Both use only the standard library and exact rationals, and both
+reject float, Boolean, NaN and zero-denominator inputs. Both verify the
+contract snapshot's SHA-256 before parsing and read the target $1/2500000$
+and every candidate constant from it. After a coherently rehashed edit of the
+target to $1/3000000$, which is still met, the reverse records the new value
+and the forward aborts, because it pins the target to the acceptance text. A
+rehash requires editing \texttt{check.py}, which the freeze inventory binds.
+Both record the same claim flags:
+\begin{itemize}\raggedright
+\item true: \recid{uniform_wilson_claim}, which means only that the model is
+the uniform fixed-spacing Kogut--Susskind model as labelled (review finding
+N12);
+\item false: \recid{continuum_claim}, \recid{weak_coupling_claim},
+\recid{resolved_interaction_shift}, \recid{scientific_priority_verified} and
+\recid{euclidean_node_certified}.
+\end{itemize}
+The forward packet also sets \recid{uniqueness_claimed},
+\recid{whole_sequence_convergence_claimed}, \recid{rate_in_N_claimed},
+\recid{k2_uniform_claimed} and \recid{wilson_mean_sign_certified} false.
+
+\paragraph{Independent pre-comparison package.}
+The skeptic's package holds a derivation, a contract review and a checker
+with 80 exact checks implementing 26 of the 28 controls. The two deferred
+controls, \recid{vector_versus_scalar_centering} (there is no centering here)
+and \recid{reverse_premise_isolation} (a post-comparison check), are recorded
+with their reasons. The package was hash-frozen and committed
+(\texttt{489e20e}, 00:58:34Z) before the reverse commit (\texttt{4eb7d8e},
+01:08:09Z) and the forward commit (\texttt{b2a1d86}, 01:09:17Z). It already
+contains every producer headline exactly: the forward $D'_{\rm ii}$, the
+reverse $D'_{\rm ii}$ and its density form, and both tier-(i) values. The
+skeptic records that its own triage seeded route B and its constants, so this
+agreement is correlated model-agent work, not an independent discovery.
+
+\paragraph{Post-comparison review.}
+The review adds 57 exact checks, including 29 source-edit mutation receipts.
+Unmutated copies of both closures reproduce the frozen outputs. Twenty-five
+source edits abort at the intended check. Among them are the selected row
+relabelled omitted, the coefficient $-1/4$, the single groups dropped
+($J=28|\tau|$), the remainder zeroed, the flip set re-keyed, a weak-coupling
+flag, a gap-one reset, a 49-face $t_1$ and forbidden files added to the
+reverse inputs. Three silent value edits run to completion in the producer
+checkers: the forward density form replaced by $2\varepsilon$, and the pair
+term $T'^2$ dropped in either producer. Only the skeptic's value validator and
+the cross-producer comparison catch them (N5). The AX2 checker must therefore
+read $D'_{\rm ii}$ from the AX1 gate as an exact rational and reject any
+recomputed or smaller value.
+
+\paragraph{Replays and isolation.}
+The declared-direction replay tool verifies both closures file by file (45
+and 42 files), compares every premise snapshot with its repository source and
+replays under normal and optimized Python into fresh external directories.
+All four runs reproduce the frozen outputs byte for byte, and the freezing
+tool reports both closures verified. The reverse inputs are exactly
+\texttt{AGENTS.md}, the contract and the 36 shared premises; no triage,
+loop-2, deliberation, expert, forward-AX1 or skeptic-AX1 file is among them.
+Isolation between the producers rests on disclosure and content (N11). The
+closures froze 74\,s apart (reverse 01:07:16Z, forward 01:08:30Z). The
+forward report was last written at 01:08:06Z, after the reverse freeze
+record; the forward checker was last written at 01:02:16Z, before the
+reverse checker. The forward shows no reverse-specific construct. Scratch was
+audited by names and times only: the private folders exist as disclosed, and
+the shared scratchpad root holds no AX1 file after the freeze. The disclosed
+protocol and code-style reads (the tools README, the freezing tool and the
+AV1 forward and reverse checkers) and two incidental name exposures (a
+forward listing of the scratch root and a reverse \texttt{git status}) carry
+no premise weight.
+
+\subsection{Non-blocking findings recorded by the gate}
+\label{sec:ax1-findings}
+The gate's decision records four non-blocking findings. Review findings
+N5--N9 and N11 appear above and in the limitations.
+\begin{itemize}
+\item \emph{Mis-rounded feasibility note.} The contract's
+\recid{d_prime_note} writes ``$D'\le4.19\times10^{-7}$'' for the AX2 window
+budget. The threshold lies in $[41883,41884]/10^{11}$, so $4.19\times10^{-7}$
+is infeasible (Section~\ref{sec:ax1-tiers}). The skeptic's contract review
+and both producers found this. The tested target $4/10^7$ lies below the
+threshold.
+\item \emph{Bounds, not counts.} The contract's candidates 96 per factor and
+168 for $R$ are the bounds $4\times24$ and $7\times24$; the exact counts are
+52 and 88 (Section~\ref{sec:ax1-counts}).
+\item \emph{Limited reverse independence.} Contract item~8 asked the reverse
+producer to find the single-factor grouping and the $J_0$ issue itself. The
+contract and the
+\repo{research/round32/advisor/selection-ax1.md}{selection note} already
+state route B,
+$J'=29|\tau|$ and $J_0'$. The skeptic recorded the point before production,
+and both producers disclose it. Independence therefore covers the proof
+route, the enumeration and the code only, and the skeptic's own triage
+seeded route B.
+\item \emph{Pre-registration vocabulary.} The frozen preregistration lists
+the selected triple symbolically as
+\texttt{[\textquotesingle{}tau/24\textquotesingle{},\textquotesingle{}tau/24\textquotesingle{},\textquotesingle{}tau/24\textquotesingle{}]}.
+A Jung/Pauli research-assistant audit found three schema gaps in the
+sub-round~3--5 drafts. The vocabulary extension in the
+\repo{research/round32/advisor/plan.json}{plan record}, recorded at
+00:45:54Z on 24 September, about five minutes after the AX1 freeze, allows a selected triple given as an exact expression in $\tau$ and names AX1
+as covered. The gate records it as an accepted extension. The contract is
+unamended, and both checkers parse and verify the triple.
+\end{itemize}
+
+\subsection{Limitations recorded by the gate}
+\label{sec:ax1-limits}
+The AX1 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong
+bare coupling (g\textasciicircum{}4>=9.6x10\textasciicircum{}9,
+|tau|<=10\textasciicircum{}-8), centered whole-star-plus-single-group boxes
+N>=2 and the cover R=\{0,e\_z\}; never weak coupling or continuum; the box
+boundary is not identified with AL1\textquotesingle{}s all-contained-plaquette
+boundary; tau<0 is the U\_E mirror, not a real-g coupling
+\item Upper certificates only: no lower bound on ||rho\_R-P\_R||\_1; no value
+or sign of omega(W) beyond |omega(W)|<=D\textquotesingle{} and the finite-box
+first-order coefficient; AQ statements are uniform local closeness of every
+subsequential limit, not uniqueness, whole-sequence convergence or a rate in N
+\item Inherited without re-proof, re-applied with the new constants: AM2 fixed
+point, multilinear majorant (the |X|<=4 monotonicity covering single-site
+groups is the only new step), exclusion and cutoff removal; AV1 product split,
+anchored-norm tier, cutoff-vector removal and AQ passage; AQ1 compactness and
+Nachtergaele-Sims dynamics; AQ2 gauge averaging and Fourier gap; AT4 reset and
+relative-unitary arguments; I1 dictionary; Kato, Peter-Weyl and
+Nachtergaele-Sims cited, not machine-checked
+\item D\textquotesingle{}\_ii binding: the forward exact rational
+(\textasciitilde{}1.44459e-8, both inequalities); the reverse
+\textasciitilde{}1.22237e-8 is a valid labelled R-refinement (88 faces meeting
+R) whose headline rests on the fidelity inequality (its density form is also
+below target)
+\item Tier (i) D\textquotesingle{}\_i\textasciitilde{}2.4526e-5 fails
+4/10\textasciicircum{}7 and 10\textasciicircum{}-6 and is retained as a
+limited-tier value
+\item Not transferred: K\_2 (route-B T\textquotesingle{},
+rho\textquotesingle{}, single-site first-order creations and new pins, e.g. 36
+single-site faces per site of R), the uniform omega(W\textasciicircum{}2)
+constant, the AW2 enclosure and every uniform-in-N tau\textasciicircum{}2
+constant
+\item Contract d\_prime\_note mis-rounded (4.19x10\textasciicircum{}-7
+infeasible; threshold [41883,41884]/10\textasciicircum{}11); contract
+candidates 96/168 are bounds, exact counts 52/88
+\item Reverse independence limited: the contract and selection-ax1.md state
+route B, J\textquotesingle{}=29|tau| and the J\_0 issue; independence covers
+proof route, enumeration and code only; all agents are correlated model agents
+and the skeptic\textquotesingle{}s triage seeded route B
+\item Pre-registration vocabulary: the symbolic selected triple
+[\textquotesingle{}tau/24\textquotesingle{},\textquotesingle{}tau/24\textquotesingle{},\textquotesingle{}tau/24\textquotesingle{}]
+in the frozen AX1 preregistration is covered by the plan.json vocabulary
+extension recorded after the freeze (2026-09-24T00:45:54Z, contract
+unamended); the gate should record it as an accepted extension
+\item N5: neither producer checker pins the pair term
+T\textquotesingle{}\textasciicircum{}2 (dropping it runs silently in both) and
+the forward does not pin its density form; caught only by the skeptic value
+validator and cross-producer comparison; AX2 must bind D\textquotesingle{}\_ii
+from the gate
+\item N6: the forward\textquotesingle{}s exported
+density\_part\_of\_D=2eps\textasciicircum{}2/(1+eps\textasciicircum{}2) is an
+upper bound on
+D-2eps=2eps\textasciicircum{}2(1-eps)/(1+eps\textasciicircum{}2) (excess
+\textasciitilde{}7.5e-25), not an identity; D is exact
+\item N7: the forward\textquotesingle{}s \textquotesingle{}94 in
+total\textquotesingle{} counts 93 rejections in the 28 control checks plus 1
+(E\_minus\_one\_link) in flip\_set\_odd\_all\_classes
+\item N8: the reverse rejects 100|tau| as a miscount; 2*7*7+2=100|tau| is also
+a valid labelled refinement (single groups inside R, Haar mean 0); the
+admitted budget is 102|tau|
+\item N9: checklist classification of the variance floor differs (reverse
+verbatim, forward new constant); the substance is the same: the Haar gap six
+is load-bearing
+\item N11: producer isolation rests on disclosure and content: the closures
+froze 74 s apart and the forward report was last written after the reverse
+freeze.json; no reverse-specific construct appears in the forward; scratch
+audited by names and times only (private folders as disclosed; no AX1 file in
+the shared scratchpad root after the freeze); disclosed protocol/style reads
+(tools README, freeze.py, forward/av1/check.py, reverse/av1/check.py) and
+incidental name exposures (the forward\textquotesingle{}s /tmp listing, the
+reverse\textquotesingle{}s git status) carry no premise weight
+\item Fixtures (qubit termination, quaternion holonomies, 3x3 compressions,
+the route-A kappa=30 compression, the one-plaquette mean) are finite algebras,
+transfers\_to\_aq false
+\item Scientific priority unverified
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round32/forward/ax1/report.md}{AX1 forward},
+\repo{research/round32/reverse/ax1/report.md}{AX1 reverse},
+\repo{research/round32/skeptic/ax1.md}{independent model-agent review} and the
+\repo{research/round32/contracts/ax1.json}{frozen contract}. The gate binds
+the forward $D'_{\rm ii}$ as the uniform state bound for AX2 and selects AX2
+next.
+
+\subsection{AX2: the uniform-model window certificate}
+\label{sec:ax2}
+To be completed from the AX2 gate.
