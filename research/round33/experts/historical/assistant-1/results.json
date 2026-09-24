@@ -1,0 +1,1094 @@
+{
+  "schema": "hnm-r33-assistant-tests-v1",
+  "round": 33,
+  "subround": 1,
+  "lens": "historical (Newton/Tesla)",
+  "assistant": 1,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "zero_research_loops": true,
+  "role": "cross-checks and previews only; not a producer, skeptic or advisor artifact; never admission evidence",
+  "source_task": "research/round33/experts/historical/loop2-response.md section 3, items 1-3",
+  "read_before_writing": [
+    "research/round33/experts/historical/loop2-response.md",
+    "research/round33/experts/historical/update-1.md",
+    "research/round21/forward/i1/report.md (sections 3 and 6: star and F2 padding definitions)",
+    "research/round29/forward/am2/report.md (S={0,e_x,e_y,e_z}, 21 omitted faces)",
+    "research/round33/contracts/ba1.json, ba2.json (frozen)",
+    "research/round33/advisor/plan.json (tier/route vocabulary)",
+    "research/round33/advisor/ba1-gate.json, ba2-gate.json",
+    "research/round33/forward/ba1/report.md, output/results.json (data only)",
+    "research/round33/reverse/ba1/report.md, output/results.json (data only)",
+    "research/round33/forward/ba2/report.md, output/results.json (data only)",
+    "research/round33/reverse/ba2/report.md, output/results.json (data only)"
+  ],
+  "never_imported": [
+    "research/round33/forward/ba1/check.py",
+    "research/round33/reverse/ba1/check.py",
+    "research/round33/forward/ba2/check.py",
+    "research/round33/reverse/ba2/check.py"
+  ],
+  "overall_pass": true,
+  "replay": "both scripts run with python3 -B <script>.py and python3 -B -O <script>.py; byte-identical stdout both ways",
+  "scripts": {
+    "diameters_and_sources.py": {
+      "script": "diameters_and_sources.py",
+      "zero_research_loops": true,
+      "arithmetic": "plain Python int only; every quantity is an exact integer count or distance",
+      "diameters": {
+        "star_S": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "star_diam_linf": 1,
+        "star_diam_linf_expected_1": true,
+        "star_diam_l1": 2,
+        "star_diam_l1_expected_2": true,
+        "owner_set_diameters": [
+          {
+            "owner_set": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "multiplicity": 3,
+            "diam_linf": 1,
+            "diam_l1": 1
+          },
+          {
+            "owner_set": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "multiplicity": 1,
+            "diam_linf": 1,
+            "diam_l1": 1
+          },
+          {
+            "owner_set": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "multiplicity": 1,
+            "diam_linf": 1,
+            "diam_l1": 2
+          },
+          {
+            "owner_set": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "multiplicity": 10,
+            "diam_linf": 1,
+            "diam_l1": 1
+          },
+          {
+            "owner_set": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ],
+            "multiplicity": 2,
+            "diam_linf": 1,
+            "diam_l1": 2
+          },
+          {
+            "owner_set": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "multiplicity": 4,
+            "diam_linf": 1,
+            "diam_l1": 2
+          }
+        ],
+        "every_owner_diam_linf_le_1": true,
+        "every_owner_diam_l1_le_2": true
+      },
+      "incidence": {
+        "generic_bulk_site_incident_star_count": 4,
+        "generic_bulk_site_incident_star_count_expected_4": true,
+        "incident_anchors_meeting_R": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            -1,
+            0,
+            1
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "incident_anchors_meeting_R_count": 7,
+        "incident_anchors_meeting_R_expected_7": true,
+        "faces_touching_0": 49,
+        "faces_touching_ez": 49,
+        "faces_touching_both_sites_of_R": 16,
+        "faces_meeting_R": 82,
+        "faces_meeting_R_expected_82": true,
+        "faces_touching_both_expected_16": true,
+        "faces_with_owner_set_inside_R": 10,
+        "faces_with_owner_set_inside_R_expected_10": true,
+        "distinct_owner_set_types_by_translation": 15,
+        "distinct_owner_set_types_expected_15": true
+      },
+      "extra_faces_by_N": {
+        "2": {
+          "count": 616,
+          "closed_form_28N_5N1": 616,
+          "count_matches_closed_form": true,
+          "n_anchors": 60,
+          "n_anchors_closed_form_2N1cubed_minus_2Ncubed_minus_1": 60,
+          "n_anchors_matches": true,
+          "corner_NNN_has_zero_extra_faces": true,
+          "class_table_avoided_to_count": {
+            "e_x": 17,
+            "e_y": 13,
+            "e_z": 5,
+            "e_x,e_y": 10,
+            "e_x,e_z": 3,
+            "e_y,e_z": 1,
+            "e_x,e_y,e_z": 0
+          },
+          "class_table_matches_gate_17_13_5_10_3_1_0": true,
+          "min_dist_from_0_linf": 2,
+          "min_dist_from_0_l1": 2,
+          "min_dist_from_ez_linf": 1,
+          "min_dist_from_ez_l1": 1,
+          "min_dist_from_0_expected_N_both_metrics": true,
+          "min_dist_from_ez_expected_Nminus1_both_metrics": true,
+          "max_owners_per_face": 3,
+          "max_owners_per_face_le_3": true,
+          "no_extra_face_meets_R": true
+        },
+        "3": {
+          "count": 1344,
+          "closed_form_28N_5N1": 1344,
+          "count_matches_closed_form": true,
+          "n_anchors": 126,
+          "n_anchors_closed_form_2N1cubed_minus_2Ncubed_minus_1": 126,
+          "n_anchors_matches": true,
+          "corner_NNN_has_zero_extra_faces": true,
+          "class_table_avoided_to_count": {
+            "e_x": 17,
+            "e_y": 13,
+            "e_z": 5,
+            "e_x,e_y": 10,
+            "e_x,e_z": 3,
+            "e_y,e_z": 1,
+            "e_x,e_y,e_z": 0
+          },
+          "class_table_matches_gate_17_13_5_10_3_1_0": true,
+          "min_dist_from_0_linf": 3,
+          "min_dist_from_0_l1": 3,
+          "min_dist_from_ez_linf": 2,
+          "min_dist_from_ez_l1": 2,
+          "min_dist_from_0_expected_N_both_metrics": true,
+          "min_dist_from_ez_expected_Nminus1_both_metrics": true,
+          "max_owners_per_face": 3,
+          "max_owners_per_face_le_3": true,
+          "no_extra_face_meets_R": true
+        },
+        "4": {
+          "count": 2352,
+          "closed_form_28N_5N1": 2352,
+          "count_matches_closed_form": true,
+          "n_anchors": 216,
+          "n_anchors_closed_form_2N1cubed_minus_2Ncubed_minus_1": 216,
+          "n_anchors_matches": true,
+          "corner_NNN_has_zero_extra_faces": true,
+          "class_table_avoided_to_count": {
+            "e_x": 17,
+            "e_y": 13,
+            "e_z": 5,
+            "e_x,e_y": 10,
+            "e_x,e_z": 3,
+            "e_y,e_z": 1,
+            "e_x,e_y,e_z": 0
+          },
+          "class_table_matches_gate_17_13_5_10_3_1_0": true,
+          "min_dist_from_0_linf": 4,
+          "min_dist_from_0_l1": 4,
+          "min_dist_from_ez_linf": 3,
+          "min_dist_from_ez_l1": 3,
+          "min_dist_from_0_expected_N_both_metrics": true,
+          "min_dist_from_ez_expected_Nminus1_both_metrics": true,
+          "max_owners_per_face": 3,
+          "max_owners_per_face_le_3": true,
+          "no_extra_face_meets_R": true
+        }
+      },
+      "padding_by_N": {
+        "2": {
+          "lambda_N_sites": 125,
+          "B_plus_sites": 200,
+          "padding_sites": 75,
+          "closed_form_3_2N1_sq": 75,
+          "padding_matches_closed_form": true
+        },
+        "3": {
+          "lambda_N_sites": 343,
+          "B_plus_sites": 490,
+          "padding_sites": 147,
+          "closed_form_3_2N1_sq": 147,
+          "padding_matches_closed_form": true
+        },
+        "4": {
+          "lambda_N_sites": 729,
+          "B_plus_sites": 972,
+          "padding_sites": 243,
+          "closed_form_3_2N1_sq": 243,
+          "padding_matches_closed_form": true
+        }
+      },
+      "nested_sources_by_N": {
+        "2": {
+          "f1_count_N": 64,
+          "f1_count_N_closed_form_2N_cubed": 64,
+          "f1_count_N_matches": true,
+          "f1_count_N1": 216,
+          "f1_count_N1_closed_form": 216,
+          "f1_count_N1_matches": true,
+          "new_f1_stars": 152,
+          "new_f1_stars_closed_form_8_3Nsq_3N_1": 152,
+          "new_f1_stars_matches": true,
+          "new_f1_stars_by_difference_of_closed_forms": 152,
+          "f2_count_N": 1960,
+          "f2_count_N_closed_form": 1960,
+          "f2_count_N_matches": true,
+          "f2_count_N1": 5880,
+          "f2_count_N1_closed_form": 5880,
+          "f2_count_N1_matches": true,
+          "new_f2_faces": 3920,
+          "new_f2_faces_closed_form_56_9Nsq_14N_6": 3920,
+          "new_f2_faces_matches": true,
+          "new_f2_faces_by_difference_of_closed_forms": 3920
+        },
+        "3": {
+          "f1_count_N": 216,
+          "f1_count_N_closed_form_2N_cubed": 216,
+          "f1_count_N_matches": true,
+          "f1_count_N1": 512,
+          "f1_count_N1_closed_form": 512,
+          "f1_count_N1_matches": true,
+          "new_f1_stars": 296,
+          "new_f1_stars_closed_form_8_3Nsq_3N_1": 296,
+          "new_f1_stars_matches": true,
+          "new_f1_stars_by_difference_of_closed_forms": 296,
+          "f2_count_N": 5880,
+          "f2_count_N_closed_form": 5880,
+          "f2_count_N_matches": true,
+          "f2_count_N1": 13104,
+          "f2_count_N1_closed_form": 13104,
+          "f2_count_N1_matches": true,
+          "new_f2_faces": 7224,
+          "new_f2_faces_closed_form_56_9Nsq_14N_6": 7224,
+          "new_f2_faces_matches": true,
+          "new_f2_faces_by_difference_of_closed_forms": 7224
+        },
+        "4": {
+          "f1_count_N": 512,
+          "f1_count_N_closed_form_2N_cubed": 512,
+          "f1_count_N_matches": true,
+          "f1_count_N1": 1000,
+          "f1_count_N1_closed_form": 1000,
+          "f1_count_N1_matches": true,
+          "new_f1_stars": 488,
+          "new_f1_stars_closed_form_8_3Nsq_3N_1": 488,
+          "new_f1_stars_matches": true,
+          "new_f1_stars_by_difference_of_closed_forms": 488,
+          "f2_count_N": 13104,
+          "f2_count_N_closed_form": 13104,
+          "f2_count_N_matches": true,
+          "f2_count_N1": 24640,
+          "f2_count_N1_closed_form": 24640,
+          "f2_count_N1_matches": true,
+          "new_f2_faces": 11536,
+          "new_f2_faces_closed_form_56_9Nsq_14N_6": 11536,
+          "new_f2_faces_matches": true,
+          "new_f2_faces_by_difference_of_closed_forms": 11536
+        }
+      },
+      "gate_and_report_comparison": {
+        "all_ok": true,
+        "n_checks": 36,
+        "checks": [
+          {
+            "label": "extra_faces_N2_equals_616",
+            "ok": true,
+            "detail": "got 616"
+          },
+          {
+            "label": "extra_faces_N2_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "extra_faces_N2_in_ba2_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "extra_faces_N3_equals_1344",
+            "ok": true,
+            "detail": "got 1344"
+          },
+          {
+            "label": "extra_faces_N3_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "extra_faces_N3_in_ba2_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "extra_faces_N4_equals_2352",
+            "ok": true,
+            "detail": "got 2352"
+          },
+          {
+            "label": "extra_faces_N4_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "extra_faces_N4_in_ba2_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "padding_sites_N2_equals_75",
+            "ok": true,
+            "detail": "got 75"
+          },
+          {
+            "label": "padding_sites_N3_equals_147",
+            "ok": true,
+            "detail": "got 147"
+          },
+          {
+            "label": "padding_sites_N4_equals_243",
+            "ok": true,
+            "detail": "got 243"
+          },
+          {
+            "label": "padding_75_in_ba2_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "padding_147_in_ba2_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "padding_formula_3_2N1_sq_in_ba2_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "padding_75_in_ba2_rev_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "padding_147_in_ba2_rev_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "new_f1_stars_N2_equals_152",
+            "ok": true,
+            "detail": "got 152"
+          },
+          {
+            "label": "new_f1_stars_N2_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "new_f1_stars_N3_equals_296",
+            "ok": true,
+            "detail": "got 296"
+          },
+          {
+            "label": "new_f1_stars_N3_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "new_f1_stars_N4_equals_488",
+            "ok": true,
+            "detail": "got 488"
+          },
+          {
+            "label": "new_f1_stars_N4_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "new_f2_faces_N2_equals_3920",
+            "ok": true,
+            "detail": "got 3920"
+          },
+          {
+            "label": "new_f2_faces_N2_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "new_f2_faces_N3_equals_7224",
+            "ok": true,
+            "detail": "got 7224"
+          },
+          {
+            "label": "new_f2_faces_N3_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "new_f2_faces_N4_equals_11536",
+            "ok": true,
+            "detail": "got 11536"
+          },
+          {
+            "label": "new_f2_faces_N4_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "formula_28N_5N1_named_in_ba1_gate",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "formula_28N_5N1_named_in_ba2_gate",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "formula_140N2_28N_named_in_ba2_rev_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "class_table_17_13_5_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "class_table_phrase_in_ba2_gate",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "star_diam_linf_1_named_in_ba1_gate",
+            "ok": true,
+            "detail": ""
+          },
+          {
+            "label": "star_diam_l1_2_stated_in_ba1_fwd_report",
+            "ok": true,
+            "detail": ""
+          }
+        ]
+      },
+      "overall_pass": true
+    },
+    "ledger_audit.py": {
+      "script": "ledger_audit.py",
+      "zero_research_loops": true,
+      "vocabulary": {
+        "tiers": [
+          "crude_majorant",
+          "exact_first_order",
+          "polynomial_lieb_robinson",
+          "exponential_lieb_robinson",
+          "first_order_distance_from_product"
+        ],
+        "routes": [
+          "weighted_norm",
+          "analytic_disc",
+          "polymer_kp",
+          "iterated_split",
+          "duhamel_inner_f1",
+          "duhamel_inner_f2"
+        ],
+        "source": "research/round33/advisor/plan.json vocabulary.tier_label_rule",
+        "tier_label_rule_text": "Every constant carries exactly one tier (crude_majorant, exact_first_order, polynomial_lieb_robinson, exponential_lieb_robinson, first_order_distance_from_product) and exactly one route (weighted_norm, analytic_disc, polymer_kp, iterated_split, duhamel_inner_f1, duhamel_inner_f2)."
+      },
+      "loops": {
+        "BA1": {
+          "ledger_completeness": {
+            "contract_error_terms_itemized": [
+              "weighted_contraction_loss",
+              "boundary_source_terms",
+              "order_versus_distance_count",
+              "exact_first_order_remainder",
+              "cutoff_uniformity",
+              "arithmetic"
+            ],
+            "per_item": {
+              "weighted_contraction_loss": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "floor": {
+                    "Gamma": "77/296",
+                    "amplification_1_over_1_minus_Gamma_squared": "87616/47961"
+                  },
+                  "headline": {
+                    "Gamma": "2464/390625",
+                    "Gamma_preview": "6.30784000000e-3",
+                    "amplification_1_over_1_minus_Gamma_squared": "152587890625/150668961921"
+                  },
+                  "note": "loss w^{d_X}=w once per interaction term inside Gamma=J w G'(R), paid in the self-consistent t_w and in the difference",
+                  "status": "charged"
+                },
+                "reverse_value": {
+                  "floor": {
+                    "circle_factor_rho_over_tau": "37888 at |tau|=1, i.e. 1/q_min",
+                    "kappa": "77/296",
+                    "self_map": "1/64"
+                  },
+                  "headline": {
+                    "circle_factor_rho_over_tau": "64",
+                    "kappa": "2464/390625",
+                    "self_map": "148/390625"
+                  },
+                  "reading": "disc contraction (reverse analogue of the weighted loss)"
+                },
+                "ok": true
+              },
+              "boundary_source_terms": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "floor": {
+                    "first_order": "49/5455872",
+                    "remainder": "3773/1194835968",
+                    "total": "49/4036608"
+                  },
+                  "headline": {
+                    "first_order": "49/225000000",
+                    "remainder": "3773/2729257031250",
+                    "total": "49/223580736"
+                  },
+                  "note": "new terms only (each meets B), at most 49 faces per site, J_new at most 28|tau|, loss e^{beta rho_B} at most e^beta",
+                  "status": "charged"
+                },
+                "reverse_value": {
+                  "audit": "face-by-face per-site source sum at most 49|tau|/3 <= J",
+                  "value": "enters only through its distance N-1 (vanishing order); no norm charge in K"
+                },
+                "ok": true
+              },
+              "order_versus_distance_count": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "reason": "not a numeric cost: the enumeration fixes d_X=1 (loss w per interaction) and the exact exponents N-1, N, N+1; it enters the constants only through these integers",
+                  "status": "not_applicable"
+                },
+                "reverse_value": {
+                  "exponent_used": "N-1",
+                  "sharp_exponent": "N (labelled refinement)"
+                },
+                "ok": true
+              },
+              "exact_first_order_remainder": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "floor": {
+                    "preview": "3.15775562591e-6",
+                    "weighted_remainder_Gamma_T_w": "3773/1194835968"
+                  },
+                  "headline": {
+                    "preview": "1.38242750931e-9",
+                    "weighted_remainder_Gamma_T_w": "3773/2729257031250"
+                  },
+                  "status": "charged"
+                },
+                "reverse_value": {
+                  "floor_per_box": {
+                    "exact": "3773/1194835968",
+                    "preview": "3.15775562591e-6"
+                  },
+                  "headline_per_box": {
+                    "exact": "3773/2729257031250",
+                    "preview": "1.38242750931e-9"
+                  },
+                  "note": "28 rho G'(R) T(rho), included in T(rho) and therefore in K"
+                },
+                "ok": true
+              },
+              "cutoff_uniformity": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "reason": "not a numeric cost: every estimate is dimension-free and holds in each Q_L with the same constants; Q_L c^(1) keeps or annihilates face vectors (exact for L at least 24)",
+                  "status": "not_applicable"
+                },
+                "reverse_value": {
+                  "reason": "every constant is independent of L; first-order face vectors are kept exactly for L>=24 and first-order counts only decrease for L<24",
+                  "value": "not_applicable as a numeric cost"
+                },
+                "ok": true
+              },
+              "arithmetic": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "reason": "not a numeric cost: exact Fractions throughout; the only enclosures are directed upward (e^{1/8} at most 8/7, hence G(R) at most 148/7, G'(R) at most 352)",
+                  "status": "not_applicable"
+                },
+                "reverse_value": {
+                  "reason": "exact Fractions; the only enclosure is the directed exp(1/8)<8/7; decimals are truncated previews",
+                  "value": "not_applicable as a numeric cost"
+                },
+                "ok": true
+              }
+            },
+            "extra_terms_in_forward_results_not_in_contract": [],
+            "extra_terms_in_reverse_results_not_in_contract": [],
+            "missing_terms_in_forward_results": [],
+            "missing_terms_in_reverse_results": [],
+            "all_ok": true
+          },
+          "tier_route_labelling": {
+            "vocabulary_word_occurrences": {
+              "accepted": {
+                "tier_words_found": [
+                  "crude_majorant",
+                  "exact_first_order"
+                ],
+                "route_words_found": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ]
+              },
+              "decision": {
+                "tier_words_found": [
+                  "exact_first_order"
+                ],
+                "route_words_found": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ]
+              }
+            },
+            "all_tier_and_route_words_in_text_are_from_vocabulary": true,
+            "named_constants_found": [
+              {
+                "field": "accepted",
+                "name": "K",
+                "value": "49/111790368",
+                "tiers_in_same_sentence": [
+                  "exact_first_order"
+                ],
+                "routes_in_same_sentence": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ],
+                "co_located_tier_and_route": true
+              },
+              {
+                "field": "accepted",
+                "name": "K",
+                "value": "2734375/12204185915601",
+                "tiers_in_same_sentence": [
+                  "exact_first_order"
+                ],
+                "routes_in_same_sentence": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ],
+                "co_located_tier_and_route": true
+              },
+              {
+                "field": "accepted",
+                "name": "K",
+                "value": "49/2018304",
+                "tiers_in_same_sentence": [
+                  "exact_first_order"
+                ],
+                "routes_in_same_sentence": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ],
+                "co_located_tier_and_route": true
+              },
+              {
+                "field": "accepted",
+                "name": "K",
+                "value": "708203125/43148545682688",
+                "tiers_in_same_sentence": [
+                  "exact_first_order"
+                ],
+                "routes_in_same_sentence": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ],
+                "co_located_tier_and_route": true
+              },
+              {
+                "field": "decision",
+                "name": "K",
+                "value": "49/111790368",
+                "tiers_in_same_sentence": [
+                  "exact_first_order"
+                ],
+                "routes_in_same_sentence": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ],
+                "co_located_tier_and_route": true
+              },
+              {
+                "field": "decision",
+                "name": "K",
+                "value": "49/2018304",
+                "tiers_in_same_sentence": [
+                  "exact_first_order"
+                ],
+                "routes_in_same_sentence": [
+                  "analytic_disc",
+                  "weighted_norm"
+                ],
+                "co_located_tier_and_route": true
+              }
+            ],
+            "n_named_constants": 6,
+            "n_co_located_with_tier_and_route": 6,
+            "n_not_co_located": 0,
+            "note": "co_located means the SAME sentence names a tier word and a route word next to the K=.../... assignment; a constant that is tier/route-classified only by an earlier sentence's context (e.g. 'every constant below is tier X', or a route named a few clauses earlier without repeating the word) is reported as not co-located here, which is a limit of this syntactic heuristic, not a claim that the gate mislabels it -- see this package's README for the manually-verified cases."
+          }
+        },
+        "BA2": {
+          "ledger_completeness": {
+            "contract_error_terms_itemized": [
+              "lieb_robinson_tail",
+              "duhamel_boundary_sum",
+              "interaction_picture_onsite",
+              "inner_family_constants",
+              "arithmetic"
+            ],
+            "per_item": {
+              "lieb_robinson_tail": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "cauchy": "S_c(N) <= 49(4/N+4/(N-1)) <= 392/(N-1) (shells 4r^2+2 <= 4(1+r)^2, sum over k from m+1 of k^-2 <= 1/m)",
+                  "comparison": "S_b(N) <= 168(5N+1)N^-3 (at most 3 owners per extra face, each at l1 distance at least N-1 from e_z and at least N from 0, F(N-1)+F(N) <= 2N^-4)"
+                },
+                "reverse_value": {
+                  "tier": "polynomial_lieb_robinson",
+                  "value": "comparison: F(N)+F(N-1)<=2N^-4 per owner; Cauchy: T(N)+T(N-1)<=8/(N-1)"
+                },
+                "ok": true
+              },
+              "duhamel_boundary_sum": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "Lambda_U1": "567/12457664",
+                  "Lambda_U1_preview": "4.55141509676e-5",
+                  "value": "face norm |tau|/3 times Lambda(U) times the F-sum, faces added linearly, each charged once"
+                },
+                "reverse_value": {
+                  "value": "comparison: (|tau|/3) 28N(5N+1) 3 (N^-4+(N+1)^-4) <= (|tau|/3) 168 (5N+1) N^-3; Cauchy: J 8/(N-1) with J=28|tau| (F1) or 49|tau|/3 (F2)"
+                },
+                "ok": true
+              },
+              "interaction_picture_onsite": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "reason": "the unbounded onsite terms are identical in both Hamiltonians of every Duhamel pair (padding and larger-box onsite terms sit in the inner Hamiltonian and factor out); (51) itself handles them through its interaction picture (54),(57)",
+                  "status": "not_applicable",
+                  "value": "0"
+                },
+                "reverse_value": {
+                  "reason": "h_b enters no constant (H_x slot of (44), interaction picture in the proof of Theorem 3.1); padding on-site terms factor out exactly",
+                  "value": "0"
+                },
+                "ok": true
+              },
+              "inner_family_constants": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "value": "F1 inner: C <= 224, ||Phi||_F <= 2268|tau|, v=2||Phi||_F C=1016064|tau|; monotone substitution of upper bounds"
+                },
+                "reverse_value": {
+                  "value": "comparison and F2 Cauchy: Phi', 1323|tau|, C<=224; F1 Cauchy: Phi, 2268|tau|, C<=224; time integral 2||Phi||_F U^2 E(x), E<=E_up rational"
+                },
+                "ok": true
+              },
+              "arithmetic": {
+                "in_forward_report_as_table_row": true,
+                "in_reverse_report_as_table_row": true,
+                "in_forward_results_json": true,
+                "in_reverse_results_json": true,
+                "forward_value_nonempty": true,
+                "reverse_value_nonempty": true,
+                "forward_value": {
+                  "reason": "exact Fractions; the only transcendental step e^x-1-x is replaced by the directed rational upper bound x^2/(2(1-x/3)), x<=1016064|tau|",
+                  "status": "not_applicable",
+                  "value": "0"
+                },
+                "reverse_value": {
+                  "reason": "exact Fractions; E(x) replaced by the directed rational upper bound 1+x/3+x^2/(12(1-x/5)); decimals are truncated previews",
+                  "value": "0"
+                },
+                "ok": true
+              }
+            },
+            "extra_terms_in_forward_results_not_in_contract": [],
+            "extra_terms_in_reverse_results_not_in_contract": [],
+            "missing_terms_in_forward_results": [],
+            "missing_terms_in_reverse_results": [],
+            "all_ok": true
+          },
+          "tier_route_labelling": {
+            "vocabulary_word_occurrences": {
+              "accepted": {
+                "tier_words_found": [
+                  "polynomial_lieb_robinson"
+                ],
+                "route_words_found": [
+                  "duhamel_inner_f1",
+                  "duhamel_inner_f2"
+                ]
+              },
+              "decision": {
+                "tier_words_found": [
+                  "polynomial_lieb_robinson"
+                ],
+                "route_words_found": [
+                  "duhamel_inner_f1",
+                  "duhamel_inner_f2"
+                ]
+              }
+            },
+            "all_tier_and_route_words_in_text_are_from_vocabulary": true,
+            "named_constants_found": [
+              {
+                "field": "accepted",
+                "name": "K_cmp",
+                "value": "3969/155720800000000",
+                "tiers_in_same_sentence": [
+                  "polynomial_lieb_robinson"
+                ],
+                "routes_in_same_sentence": [
+                  "duhamel_inner_f1"
+                ],
+                "co_located_tier_and_route": true
+              },
+              {
+                "field": "accepted",
+                "name": "K'_cmp",
+                "value": "452554889222515527/30481402343750000000000000000",
+                "tiers_in_same_sentence": [],
+                "routes_in_same_sentence": [
+                  "duhamel_inner_f2"
+                ],
+                "co_located_tier_and_route": false
+              },
+              {
+                "field": "accepted",
+                "name": "K_F1",
+                "value": "9261/155720800000000",
+                "tiers_in_same_sentence": [],
+                "routes_in_same_sentence": [],
+                "co_located_tier_and_route": false
+              },
+              {
+                "field": "accepted",
+                "name": "K_F2",
+                "value": "117747/1245766400000000",
+                "tiers_in_same_sentence": [],
+                "routes_in_same_sentence": [],
+                "co_located_tier_and_route": false
+              },
+              {
+                "field": "decision",
+                "name": "K_cmp",
+                "value": "3969/155720800000000",
+                "tiers_in_same_sentence": [
+                  "polynomial_lieb_robinson"
+                ],
+                "routes_in_same_sentence": [
+                  "duhamel_inner_f1",
+                  "duhamel_inner_f2"
+                ],
+                "co_located_tier_and_route": true
+              }
+            ],
+            "n_named_constants": 5,
+            "n_co_located_with_tier_and_route": 2,
+            "n_not_co_located": 3,
+            "note": "co_located means the SAME sentence names a tier word and a route word next to the K=.../... assignment; a constant that is tier/route-classified only by an earlier sentence's context (e.g. 'every constant below is tier X', or a route named a few clauses earlier without repeating the word) is reported as not co-located here, which is a limit of this syntactic heuristic, not a claim that the gate mislabels it -- see this package's README for the manually-verified cases."
+          }
+        }
+      },
+      "overall_pass": true
+    }
+  },
+  "findings": {
+    "discrepancies_found": false,
+    "notes": [
+      "Every enumerated quantity (star/owner-set diameters, per-site and per-R incidence, the 28N(5N+1) extra-face count and its 17/13/5/10/3/1/0 per-anchor class table, the 3(2N+1)^2 padding-site count, the 8(3N^2+3N+1) new-F1-star count and the 56(9N^2+14N+6) new-F2-face count, all at N=2,3,4) matches the BA1/BA2 gates and the forward/reverse producer reports bit-for-bit; no numeric disagreement was found.",
+      "Ledger completeness: every entry of BA1's and BA2's contract.preregistration.error_terms_itemized appears as a table row in both the forward and reverse report.md and as a populated key of both producers' output/results.json ledger dict (error_terms_itemized forward, error_ledger reverse); no channel is silently folded into another or left empty.",
+      "Tier/route labelling (a syntactic, not semantic, finding): every tier word and route word that appears anywhere in the BA1/BA2 gates' accepted+decision text belongs to plan.json's vocabulary partition (tiers vs. routes), so no out-of-vocabulary or swapped-set name was used anywhere. Within BA1's gate text, all 6 explicit 'K...=<fraction>' constants are co-located, in the same sentence, with both a tier word and a route word. Within BA2's gate text, only 2 of 5 explicit 'K...=<fraction>' constants (K_cmp in both accepted and decision) are co-located with a tier word in the same sentence; K'_cmp is co-located with its route (duhamel_inner_f2) but not with a tier word in the same sentence, and the two within-family Cauchy constants K_F1 and K_F2 are named in the gate text only with descriptive phrases ('forward, faces charged once, inner F1' / 'reverse, whole stars, inner F1 on Lambda_M', etc.), never repeating the literal vocabulary words 'polynomial_lieb_robinson', 'duhamel_inner_f1' or 'duhamel_inner_f2' in the same sentence. Both underlying producer reports DO carry an explicit per-constant table row naming the tier 'polynomial_lieb_robinson' for K_cmp/c1/c2 (reverse report.md lines 298-300) and K_cmp/K_c1/K_c2 (forward), so this is a gap in the gate's own prose only, not in the frozen evidence trail; it is recorded here as a non-blocking finding, not a defect this package can adjudicate.",
+      "The BA1 gate's decision text also paraphrases the crude tier as 'crude tiers' rather than repeating the literal vocabulary word 'crude_majorant' (which does appear in the accepted text); noted for completeness alongside the K_F1/K_F2 finding above, both being the same class of observation (a vocabulary word stated once in the accepted text's fuller derivation, then referred to only descriptively later in the same gate)."
+    ]
+  }
+}
