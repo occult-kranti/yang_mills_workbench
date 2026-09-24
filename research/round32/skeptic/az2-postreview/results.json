@@ -1,0 +1,572 @@
+{
+  "checker_sha256": "7783ffe6591ba21c69faab025e2ccb604feedf96f294e0e0c2447c8210db2e2c",
+  "checks": [
+    {
+      "id": "contract_sha256_bound",
+      "passed": true
+    },
+    {
+      "closure_files": 34,
+      "freeze_sha256": "5f08f196de03c827e091e7b5cbbf92e606c999f77ecd6283929f742893fd25c3",
+      "id": "producer_freeze_closure_verified",
+      "note": "every listed file hashed; closure equals the directory; arb_preview.py and preview/arb_preview.json are inside it",
+      "passed": true
+    },
+    {
+      "id": "premise_inventory_28_identical",
+      "note": "AGENTS.md + contract + 26 shared premises; no skeptic/az2 or AZ1 file",
+      "passed": true
+    },
+    {
+      "id": "pre_comparison_package_unchanged",
+      "note": "committed in 4bae265 before the producer commit dc817d8; four files byte-identical to their freeze",
+      "passed": true
+    },
+    {
+      "id": "check_py_never_imports_preview_or_solver",
+      "imports": [
+        "argparse",
+        "decimal",
+        "fractions",
+        "functools",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "re"
+      ],
+      "note": "arb_preview.py is read only for its PREVIEW ONLY label; preview/arb_preview.json is parsed only for a comparison",
+      "passed": true
+    },
+    {
+      "gate_fields": {
+        "fg_coefficients_fitted": false,
+        "model_is_finite_graph": true,
+        "transfers_to_aq": false
+      },
+      "id": "producer_gate_fields_and_counts",
+      "passed": true,
+      "producer_checks": 35,
+      "producer_rejected_mutations": 90
+    },
+    {
+      "id": "derivative_matches_prediction",
+      "passed": true,
+      "predicted": "1/6 exactly at D=6 and D=8",
+      "producer": {
+        "6": [
+          "1/6",
+          "1/6"
+        ],
+        "8": [
+          "1/6",
+          "1/6"
+        ]
+      }
+    },
+    {
+      "id": "free_reference_exactly_zero",
+      "passed": true
+    },
+    {
+      "id": "dictionary_consistency_only",
+      "passed": true
+    },
+    {
+      "E_0": [
+        "0",
+        "0",
+        "-1/6",
+        "0",
+        "187/67392",
+        "0"
+      ],
+      "W_1": [
+        "0",
+        "1/6",
+        "0",
+        "-187/33696",
+        "0",
+        "767713/2523156480"
+      ],
+      "id": "two_face_rs_coefficients_recomputed",
+      "passed": true,
+      "second_order": {
+        "E_0": "-1/6",
+        "W_1": "0",
+        "W_1_W_2": "79/2808",
+        "W_1_squared": "7/576",
+        "outer_loop_z": "7/216"
+      }
+    },
+    {
+      "contract_text": "the model string names one coupling tau_FG without saying which faces carry it; the only face wording is the dictionary parenthetical \"the two-plaquette graph's own coupling multiplies one face\"; the shared premise loop2-response.md specifies H/alpha=K+kappa_1(1-x)+kappa_2(1-y) with two couplings",
+      "id": "model_resolution_two_face_computed_and_disclosed",
+      "identification": "producer a3=-187/33696 and E_2=-1/6 equal the two-face values; the one-face values are -5/864 and -1/12",
+      "passed": true,
+      "producer_model": "H_FG = K - tau_FG (W_1 + W_2), alpha units, K = sum of the seven link Casimirs j(j+1) (Round11 rho=1)",
+      "reading": "not fixed by the contract: both readings are admissible; the producer disclosed its model in the verdict, section 1 and results.model; non-blocking wording defect; the gate must name the two-face model exactly",
+      "skeptic_pre_comparison_model": "H_FG = K - tau_FG W_1 (second face uncoupled)"
+    },
+    {
+      "delta_tau3": "1/4212",
+      "id": "two_body_shift_coefficient_exact",
+      "note": "<W_1>_{two-face} - <W_1>_{one-face} = tau^3/4212 + O(tau^5); first and second order agree",
+      "passed": true
+    },
+    {
+      "half_width_preview": {
+        "1/10": "7.7733e-22",
+        "1/100": "7.3089e-35",
+        "1/1000": "7.2651e-48"
+      },
+      "id": "independent_two_face_enclosures_certified",
+      "mirror": "psi_n has vM-flip parity (-1)^n exactly, so the -tau_FG enclosure is the exact negation",
+      "passed": true,
+      "rs_vector_degree": 12,
+      "separation": "3-2|tau_FG| (Weyl, free gap 3)"
+    },
+    {
+      "contain_skeptic_interval": 12,
+      "id": "producer_enclosures_intersect_independent",
+      "intersect": 12,
+      "note": "the skeptic interval is narrower than every producer interval and lies inside each",
+      "passed": true
+    },
+    {
+      "id": "producer_D8_inside_D6",
+      "passed": true
+    },
+    {
+      "id": "one_face_enclosures_disjoint_two_body_shift_certified",
+      "note": "the producer (two-face) and pre-comparison (one-face) enclosures do not intersect at any of the 12 points; the difference is the certified second-square shift, sign(tau_FG) tau^3/4212 + O(tau^5)",
+      "passed": true,
+      "shift_preview": {
+        "D8_tau+1/10": "2.3697588999e-07",
+        "D8_tau+1/100": "2.3741248805e-10",
+        "D8_tau+1/1000": "2.3741685992e-13",
+        "D8_tau-1/10": "-2.3697588999e-07",
+        "D8_tau-1/100": "-2.3741248805e-10",
+        "D8_tau-1/1000": "-2.3741685992e-13"
+      }
+    },
+    {
+      "id": "width_comparison_recorded",
+      "passed": true,
+      "pre_comparison_one_face_half": {
+        "D6_tau+1/10": "3.709e-17",
+        "D6_tau+1/100": "3.600e-24",
+        "D6_tau+1/1000": "3.589e-31",
+        "D8_tau+1/10": "1.840e-23",
+        "D8_tau+1/100": "1.786e-32",
+        "D8_tau+1/1000": "1.780e-41"
+      },
+      "producer_davis_kahan_over_eckart": {
+        "D6_tau+1/10": "3.872e+00",
+        "D6_tau+1/100": "3.754e+00",
+        "D6_tau+1/1000": "3.743e+00",
+        "D8_tau+1/10": "4.853e+00",
+        "D8_tau+1/100": "4.706e+00",
+        "D8_tau+1/1000": "4.692e+00"
+      },
+      "producer_half": {
+        "D6_tau+1/10": "1.137e-15",
+        "D6_tau+1/100": "1.104e-22",
+        "D6_tau+1/1000": "1.100e-29",
+        "D8_tau+1/10": "2.909e-21",
+        "D8_tau+1/100": "2.823e-30",
+        "D8_tau+1/1000": "2.814e-39"
+      },
+      "reading": "the one-face pre-comparison widths are narrower because that model leaks one spin-network component; the two-face leak spreads over the shell (vM channel x^a y^b) and is about 115 times larger at D=6; in the same model the producer's Eckart/tail-comparison angle is 3.7-4.9 times sharper than Davis-Kahan; the degree-12 skeptic vector is not a cutoff-D certificate; all intervals are valid",
+      "skeptic_two_face_degree12_half": {
+        "D8_tau+1/10": "7.773e-22",
+        "D8_tau+1/100": "7.309e-35",
+        "D8_tau+1/1000": "7.265e-48"
+      }
+    },
+    {
+      "id": "omitted_residual_leading_order_independent",
+      "note": "||Q_D (x+y) psi_D||^2 by exact Gram projection (own LDL, parity blocks), sectors verified orthogonal; the producer rho_Q^2 at tau=1/1000 equals it times tau^(2D+2) to relative 1e-4; the product channel vanishes at leading order and enters at tau^(2D+4) (ratio 10^(2D+4) per decade)",
+      "passed": true,
+      "rows": {
+        "6": {
+          "ell_class": "3.811051e-15",
+          "j_class": "2.896903e-19",
+          "leading_coefficient": "3.811051e-15",
+          "producer_over_leading_at_1_1000": "9.99999835e-01",
+          "producer_product_ratio_1_100_over_1_1000": "9.999814e+15",
+          "product_leading": "0",
+          "sectors": 36
+        },
+        "8": {
+          "ell_class": "3.918219e-22",
+          "j_class": "7.127758e-28",
+          "leading_coefficient": "3.918219e-22",
+          "producer_over_leading_at_1_1000": "9.99999824e-01",
+          "producer_product_ratio_1_100_over_1_1000": "9.999805e+19",
+          "product_leading": "0",
+          "sectors": 55
+        }
+      }
+    },
+    {
+      "id": "thresholds_match_prediction",
+      "passed": true,
+      "thresholds": {
+        "6": {
+          "A": "123/2",
+          "B": "123/2",
+          "S": "45",
+          "joint": "48"
+        },
+        "8": {
+          "A": "96",
+          "B": "96",
+          "S": "69",
+          "joint": "145/2"
+        }
+      }
+    },
+    {
+      "id": "ledger_five_parts_present_all_points",
+      "passed": true,
+      "points": 14
+    },
+    {
+      "id": "mandatory_sentence_and_whole_word_scan",
+      "note": "whole-word, case-insensitive; the only occurrences are the forbidden phrases quoted in code spans in section 9",
+      "passed": true,
+      "prose_hits": {},
+      "quoted_in_code_spans": {
+        "confirms the Z^3 value": 1,
+        "predicts": 1
+      }
+    },
+    {
+      "balls": 14,
+      "flint_version": "0.9.0",
+      "id": "arb_preview_labelled_and_consistent",
+      "note": "every Ritz ball lies inside the producer enclosure; a ball is a truncated-matrix value, so it may sit a certified distance from the full-graph value; never an admission input",
+      "passed": true,
+      "ritz_ball_distance_from_full_graph_value_preview": {
+        "D6_tau+1/10": "0.000e+00",
+        "D6_tau+1/100": "0.000e+00",
+        "D6_tau+1/1000": "0.000e+00",
+        "D8_tau+1/10": "0.000e+00",
+        "D8_tau+1/100": "0.000e+00",
+        "D8_tau+1/1000": "0.000e+00"
+      }
+    },
+    {
+      "defects": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8"
+      ],
+      "id": "producer_defects_and_update4_route",
+      "note": "the producer certifies with the complete residual and the tail comparison; it uses neither update-4 truncated brackets nor its tau^2/(tail-3) heuristic",
+      "passed": true
+    },
+    {
+      "id": "producer_packet_validates",
+      "passed": true
+    },
+    {
+      "count": 18,
+      "id": "damaged_packets_refused",
+      "passed": true,
+      "refusals": {
+        "derivative_1_144": "derivative at zero",
+        "dictionary_as_prediction": "dictionary",
+        "enclosure_shifted_to_one_face": "enclosure disjoint from the certified enclosure: D8_tau+1/10",
+        "fitted_true": "gate field fg_coefficients_fitted",
+        "free_reference_quarter": "own free reference",
+        "gauge_reason_dropped": "gauge item",
+        "hamiltonian_relabelled_one_face": "model-coefficient mismatch: the coefficients belong to the other face-coupling model",
+        "joint_ledger_dropped": "ledger part missing: b_joint_product_channel",
+        "model_unnamed": "model not named",
+        "one_face_energy_with_two_face_series": "model-coefficient mismatch: the coefficients belong to the other face-coupling model",
+        "product_threshold_45": "joint product channel",
+        "second_order_nonzero": "second-order coefficient or fitting",
+        "sentence_altered": "mandatory sentence",
+        "sign_lost": "sign not certified: D6_tau+1/1000",
+        "sub_label_dropped": "sub-labels",
+        "tail_56": "tail_lower",
+        "transfers_true": "gate field transfers_to_aq",
+        "vM_row_dropped": "per-link rows"
+      }
+    },
+    {
+      "id": "unmutated_copy_reproduces_frozen_outputs",
+      "note": "copy outside the checkout; results.json and source-manifest.json byte-identical to output/",
+      "passed": true
+    },
+    {
+      "id": "contract_controls_source_edit_weakenings_abort",
+      "note": "each validator made to return True (rat made to accept non-exact input); the copy aborts with \"damaging mutation accepted\" at that control",
+      "passed": true,
+      "runs": {
+        "certified_representation_tail": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: last_retained_shell_m_D_as_tail"
+        },
+        "changed_model_relabelled": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: anisotropic_shared_link_rho2"
+        },
+        "coherent_evidence_tampering": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: control_boolean_flipped_hash_rebound"
+        },
+        "complete_residual_all_channels": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: y_channel_dropped"
+        },
+        "complete_residual_ledger_itemized": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: joint_product_channel_not_itemized"
+        },
+        "exact_arithmetic_admission": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: float_input"
+        },
+        "fg_coefficients_not_fitted": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: least_squares_slope_through_grid"
+        },
+        "finite_graph_model_id": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: model_is_finite_graph_false"
+        },
+        "first_order_mean_charged": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: first_order_mean_set_to_zero_by_parity"
+        },
+        "full_original_wilson_cover": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: three_drawn_links_open_path"
+        },
+        "insufficient_verdict_retained": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: tail_only_at_D6_relabelled_accepted"
+        },
+        "missing_incoming_stars": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: incoming_face_W2_coupling_omitted"
+        },
+        "no_priority_or_continuum_claim": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: continuum_true"
+        },
+        "no_transfer_to_aq": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: transfers_to_aq_true"
+        },
+        "own_free_reference": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: Z3_first_order_imported_as_reference"
+        },
+        "root_n_misuse": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: rss_of_face_channels_without_interference"
+        },
+        "sign_convention_fixture": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: flipped_sign_gives_minus_one_sixth"
+        },
+        "tau_scaling_exponent": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: remainder_labelled_second_order"
+        },
+        "vector_versus_scalar_centering": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: scalar_subtraction_as_centring_bound"
+        },
+        "wrong_delta_alpha_hbar_clock": {
+          "exit": 1,
+          "last_error": "AdmissionError: damaging mutation accepted: tau_over_18_normalized_face_with_alpha_Casimir"
+        }
+      }
+    },
+    {
+      "id": "semantic_source_edits",
+      "note": "one-face RS default, one-face certificate Hamiltonian, free gap 4, omitted residual dropped and a forbidden phrase abort; removing the Arb preview output changes no admission value",
+      "passed": true,
+      "runs": {
+        "arb_preview_output_removed": {
+          "exit": 0,
+          "outcome": "completes; headline and points unchanged; only the preview comparison record differs"
+        },
+        "certificate_hamiltonian_one_face": {
+          "exit": 1,
+          "last_error": "AdmissionError: square root of a negative number"
+        },
+        "free_gap_4": {
+          "exit": 1,
+          "last_error": "AdmissionError: failed check round11_conventions_bound"
+        },
+        "omitted_residual_dropped": {
+          "exit": 1,
+          "last_error": "AdmissionError: failed check ritz_certificates_complete"
+        },
+        "report_phrase_predicts": {
+          "exit": 1,
+          "last_error": "AdmissionError: forbidden phrasing in the report: predicts"
+        },
+        "rs_series_one_face_default": {
+          "exit": 1,
+          "last_error": "AdmissionError: failed check rs_exact_full_space"
+        }
+      }
+    }
+  ],
+  "contract_sha256": "2861d5c59841b5b8e688712aab4faf3edf9f9f8ee2079d8ebbda07fabb7461c3",
+  "counts": {
+    "checks": 28,
+    "contract_control_weakenings": 20,
+    "damaged_packets_refused": 18,
+    "semantic_edits": 6,
+    "source_edit_runs": 27
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "independent_enclosures_two_face": {
+    "1/10": {
+      "half_width_preview": "7.7733e-22",
+      "lower_1e-60": "8330560043705980738246849233453243245313600830612187660437/500000000000000000000000000000000000000000000000000000000000",
+      "upper_1e-60": "3332224017482392295609671929181911606141162280318193036879/200000000000000000000000000000000000000000000000000000000000"
+    },
+    "1/100": {
+      "half_width_preview": "7.3089e-35",
+      "lower_1e-60": "833330558538480112003845851145111908846584491135457893993/500000000000000000000000000000000000000000000000000000000000",
+      "upper_1e-60": "104166319817310014000480731393148124785019432366999538273/62500000000000000000000000000000000000000000000000000000000"
+    },
+    "1/1000": {
+      "half_width_preview": "7.2651e-48",
+      "lower_1e-60": "83333330558523418990041154813217767425563955683481561239/500000000000000000000000000000000000000000000000000000000000",
+      "upper_1e-60": "166666661117046837980082309626435534851127925897181563333/1000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "loop": "AZ2",
+  "model_resolution": {
+    "common": {
+      "derivative_at_zero": "1/6",
+      "dictionary": "1/6 -> 1/144",
+      "second_order_W": "0"
+    },
+    "computed_by_producer": "H_FG = K - tau_FG (W_1 + W_2), alpha units, K = sum of the seven link Casimirs j(j+1) (Round11 rho=1)",
+    "contract": "fixes neither; non-blocking wording defect; the gate names the two-face model",
+    "identification": {
+      "one_face": {
+        "E_2": "-1/12",
+        "E_4": "5/3456",
+        "a3": "-5/864"
+      },
+      "two_face": {
+        "E_2": "-1/6",
+        "E_4": "187/67392",
+        "a3": "-187/33696"
+      }
+    },
+    "pre_comparison_reading": "H_FG = K - tau_FG W_1 (second face uncoupled; spectator identity with the AW1 one-plaquette fixture)",
+    "spectator_identity": "holds only for the one-face model; the two-face model differs from the AW1 fixture at third order",
+    "two_body_shift_tau3": "1/4212"
+  },
+  "pre_comparison": {
+    "checker_sha256": "6369a169c2ff76dfd738535940fc9aefc1abbb5d28952a289459fc939a729f21",
+    "freeze_sha256": "33f6077ad2902a3a0c726a2676415e91895ce59a2bf0ba561778a55ac4117251",
+    "results_sha256": "30917f54bf41dd5c468b37c9a17fc1809f7c41ee0d0852f102941e9d9c46ea0f"
+  },
+  "producer_enclosures_decimal_32": {
+    "D6_tau+1/10": [
+      "0.01666112008741082417265341370420",
+      "0.01666112008741309878195670288161"
+    ],
+    "D6_tau+1/100": [
+      "0.00166666111707696022389733087208",
+      "0.00166666111707696022411805253250"
+    ],
+    "D6_tau+1/1000": [
+      "0.00016666666111704683798008229862",
+      "0.00016666666111704683798008232063"
+    ],
+    "D6_tau-1/10": [
+      "-0.01666112008741309878195670288161",
+      "-0.01666112008741082417265341370420"
+    ],
+    "D6_tau-1/100": [
+      "-0.00166666111707696022411805253250",
+      "-0.00166666111707696022389733087208"
+    ],
+    "D6_tau-1/1000": [
+      "-0.00016666666111704683798008232063",
+      "-0.00016666666111704683798008229862"
+    ],
+    "D8_tau+1/10": [
+      "0.01666112008741196147439620849567",
+      "0.01666112008741196148021390820658"
+    ],
+    "D8_tau+1/100": [
+      "0.00166666111707696022400769169946",
+      "0.00166666111707696022400769170512"
+    ],
+    "D8_tau+1/1000": [
+      "0.00016666666111704683798008230962",
+      "0.00016666666111704683798008230963"
+    ],
+    "D8_tau-1/10": [
+      "-0.01666112008741196148021390820658",
+      "-0.01666112008741196147439620849567"
+    ],
+    "D8_tau-1/100": [
+      "-0.00166666111707696022400769170512",
+      "-0.00166666111707696022400769169946"
+    ],
+    "D8_tau-1/1000": [
+      "-0.00016666666111704683798008230963",
+      "-0.00016666666111704683798008230962"
+    ]
+  },
+  "producer_sha256": {
+    "arb_preview.py": "d218ffc58c0072a472a67b6284dd7d70d9beddbac72654e3f5d3da962872edc2",
+    "check.py": "4ad3a9f8127ed983a3af9343a4697b77a35bec26f4cd75f1683e32307cab1c7d",
+    "freeze.json": "5f08f196de03c827e091e7b5cbbf92e606c999f77ecd6283929f742893fd25c3",
+    "output/results.json": "96d7b88d8e92f3f4b2f8c25f394d45f323dbcf459b88c46cc83a4df3d2b1ca64",
+    "output/source-manifest.json": "56e2453591b0cb6a685033af5a476143f02bff7be061f625911f64efd99e4a4c",
+    "preview/arb_preview.json": "a5dcbbc4e18181fe14104e1562ac9412bb46155299b07ad3827016dd70d2dd32",
+    "report.md": "7521fd9486e081da00302e1ee6778f5f82920c72c80a39ca86c36876d366ac96"
+  },
+  "role": "skeptic post-comparison review (single+skeptic admission input)",
+  "stage": "post_comparison",
+  "standing": "model-agent skeptic with correlated ancestry; not human peer review, not formal verification",
+  "two_body_shift_intervals_D8": {
+    "D8_tau+1/10": [
+      "2369758899877068068349075461772661/10000000000000000000000000000000000000000",
+      "592439724969270995725861804070797/2500000000000000000000000000000000000000"
+    ],
+    "D8_tau+1/100": [
+      "2374124880476759253083969017883/10000000000000000000000000000000000000000",
+      "9273925314362340832360654839/39062500000000000000000000000000000000"
+    ],
+    "D8_tau+1/1000": [
+      "593542149806554052663836529/2500000000000000000000000000000000000000",
+      "1187084299613108105327673059/5000000000000000000000000000000000000000"
+    ],
+    "D8_tau-1/10": [
+      "-592439724969270995725861804070797/2500000000000000000000000000000000000000",
+      "-2369758899877068068349075461772661/10000000000000000000000000000000000000000"
+    ],
+    "D8_tau-1/100": [
+      "-9273925314362340832360654839/39062500000000000000000000000000000000",
+      "-2374124880476759253083969017883/10000000000000000000000000000000000000000"
+    ],
+    "D8_tau-1/1000": [
+      "-1187084299613108105327673059/5000000000000000000000000000000000000000",
+      "-593542149806554052663836529/2500000000000000000000000000000000000000"
+    ]
+  }
+}
