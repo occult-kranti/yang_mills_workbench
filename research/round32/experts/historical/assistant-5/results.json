@@ -1,0 +1,513 @@
+{
+  "schema": "hnm-r32-assistant-tests-v1",
+  "round": 32,
+  "subround": 5,
+  "lens": "historical (Newton/Tesla)",
+  "assistant": 5,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "zero_research_loops": true,
+  "role": "cross-checks and previews only; not a producer, skeptic or advisor artifact; never admission evidence",
+  "source_task": "research/round32/advisor/panel-update-4.md item 7, historical share",
+  "read_before_writing": [
+    "research/round32/advisor/panel-update-4.md",
+    "research/round32/advisor/az1-gate.json",
+    "research/round32/forward/az1/output/results.json (data only)",
+    "research/round32/contracts/az1.json",
+    "research/round32/advisor/admission-spec.json",
+    "research/round32/advisor/findings.json",
+    "research/round32/contracts/<loop>.json for all ten loops",
+    "research/round32/advisor/<loop>-gate.json for all ten loops",
+    "research/round32/forward/<loop>/output/results.json and research/round32/reverse/<loop>/output/results.json (data only) for all ten loops",
+    "research/round32/skeptic/<loop>.json for all ten loops",
+    "research/round32/experts/historical/assistant-4/README.md, results.json (layout/README convention)"
+  ],
+  "never_imported": [
+    "any research/round32/{forward,reverse}/<loop>/check.py",
+    "any research/round32/skeptic/<loop>_check.py or *_postreview_check.py"
+  ],
+  "overall_pass": true,
+  "replay": "both scripts run with python3 -B <script>.py and python3 -B -O <script>.py; byte-identical stdout both ways for both scripts",
+  "scripts": {
+    "dictionary_replay.py": {
+      "script": "dictionary_replay.py",
+      "zero_research_loops": true,
+      "role": "cross-check only; not a producer, skeptic or advisor artifact; never admission evidence",
+      "never_imported": [
+        "research/round32/forward/az1/check.py"
+      ],
+      "read_only": [
+        "research/round32/advisor/az1-gate.json",
+        "research/round32/contracts/az1.json",
+        "research/round32/forward/az1/output/results.json (data only)"
+      ],
+      "arithmetic": "fractions.Fraction and plain int for every pass/fail comparison; mpmath/python-flint Arb only as labelled numerical previews of sqrt(6)",
+      "route_a_fraction_grid": {
+        "n_a_values": 5,
+        "n_g_values": 7,
+        "n_c_values": 2,
+        "grid_points": 35,
+        "rescale_checks_per_point": 2,
+        "all_identities_and_rescalings_hold": true,
+        "failures": []
+      },
+      "route_b_polynomial_cross_multiplication": {
+        "checks": {
+          "tau_derived_from_24_lambda_over_alpha_eq_96_over_g4": true,
+          "r_derived_from_lambda_over_alpha_eq_4_over_g4": true,
+          "id01_alpha_over_16_eq_g2_over_32a": true,
+          "id02_tau_eq_96_over_g4": true,
+          "id03_alpha_lambda_a2_eq_1": true,
+          "id04_r_eq_4_over_g4": true,
+          "id05_alpha_tau_over_24_eq_lambda": true,
+          "id06_alpha_over_8_times_tau_over_3_eq_lambda": true,
+          "id07_7tau_eq_672_over_g4": true,
+          "id08_tau_over_144_eq_2_over_3g4": true,
+          "id09_alpha_over_8_over_2_eq_g2_over_32a": true,
+          "id10_a_alpha_over_16_eq_g2_over_32": true,
+          "id11_tau_g4_eq_96": true,
+          "rescale_alpha_ca_eq_alpha_a_over_c": true,
+          "rescale_lambda_ca_eq_lambda_a_over_c": true,
+          "rescale_gap_ca_eq_gap_a_over_c": true,
+          "rescale_tau_ca_eq_tau_a_via_ratio": true,
+          "rescale_r_c_alpha_c_lambda_eq_r": true
+        },
+        "all_pass": true,
+        "tau_derived_from_24_lambda_over_alpha": true,
+        "r_derived_from_lambda_over_alpha": true
+      },
+      "cap": {
+        "tau_cap": "1/100000000",
+        "g4_at_cap": "9600000000"
+      },
+      "toy_trajectory_crossovers": {
+        "cap_declared": {
+          "g0_4": 9600000000,
+          "cap": {
+            "threshold": 9600000000,
+            "n_star_isqrt_method": 2,
+            "n_star_scan_method": 2,
+            "expected_from_gate": 2,
+            "methods_agree": true,
+            "matches_gate": true
+          },
+          "bridge": {
+            "threshold": 32,
+            "n_star_isqrt_method": 132,
+            "n_star_scan_method": 132,
+            "expected_from_gate": 132,
+            "methods_agree": true,
+            "matches_gate": true
+          }
+        },
+        "panel_rehearsal": {
+          "g0_4": 1000000000000,
+          "cap": {
+            "threshold": 9600000000,
+            "n_star_isqrt_method": 4,
+            "n_star_scan_method": 4,
+            "expected_from_gate": 4,
+            "methods_agree": true,
+            "matches_gate": true
+          },
+          "bridge": {
+            "threshold": 32,
+            "n_star_isqrt_method": 421,
+            "n_star_scan_method": 421,
+            "expected_from_gate": 421,
+            "methods_agree": true,
+            "matches_gate": true
+          }
+        }
+      },
+      "crossovers_all_match": true,
+      "lattice_units_floor": {
+        "k_digits": 40,
+        "sqrt6_directed_lower_bound": "24494897427831780981972840747058913919659/10000000000000000000000000000000000000000",
+        "sqrt6_lower_bound_decimal": 2.449489742783178,
+        "bound_1250_sqrt6": "24494897427831780981972840747058913919659/8000000000000000000000000000000000000",
+        "bound_1250_sqrt6_decimal": 3061.8621784789725,
+        "is_valid_lower_bound_exact": true,
+        "boundary_g4": "9600000000",
+        "boundary_g2_over_32_squared_exact": "9375000",
+        "target_1250sq_times_6": "9375000",
+        "boundary_matches_1250sq6_sq": true,
+        "mpmath_cross_check": {
+          "dps": 60,
+          "sqrt6": "2.44948974278317809819728407470589139196594748065667012843269",
+          "1250_sqrt6": "3061.86217847897262274660509338236423995743435082083766054087",
+          "lower_bound_is_below_mpmath_value": true
+        },
+        "flint_arb_cross_check": {
+          "arb_sqrt6": "[2.4494897427831780981972840747058913919659474806566701284327 +/- 1.06e-59]",
+          "arb_1250_sqrt6": "[3061.8621784789726227466050933823642399574343508208376605409 +/- 4.31e-56]"
+        }
+      },
+      "lattice_units_floor_ok": true,
+      "gate_comparison": {
+        "route_a_grid_ok": true,
+        "route_b_polynomial_ok": true,
+        "identities_list_matches_headline": true,
+        "cap_matches_headline": true,
+        "crossovers_match_headline_and_gate_text": true,
+        "lattice_floor_both_valid_lower_bounds": true,
+        "lattice_floor_close_to_gate_value": true,
+        "lattice_floor_text_present_in_gate": true,
+        "cap_text_present_in_gate": true,
+        "expected_check_ids_present_in_forward_export": true,
+        "gate_verdict": "accepted_within_scope",
+        "gate_sub_label": null
+      },
+      "overall_pass": true
+    },
+    "round_consistency_sweep.py": {
+      "script": "round_consistency_sweep.py",
+      "zero_research_loops": true,
+      "role": "cross-check only; not a producer, skeptic or advisor artifact; never admission evidence",
+      "loops_checked": [
+        "AV1",
+        "AV2",
+        "AW1",
+        "AW2",
+        "AX1",
+        "AX2",
+        "AY1",
+        "AY2",
+        "AZ1",
+        "AZ2"
+      ],
+      "known_documented_exceptions": {
+        "c_claim_flags": [
+          "aw2/forward/resolved_interaction_shift"
+        ],
+        "d_controls_mirror": {
+          "av2": {
+            "extra_in_controls": [
+              "c1_window_preview_only"
+            ],
+            "missing_in_ids": []
+          }
+        }
+      },
+      "binding_totals": {
+        "checked": 913,
+        "mismatched": 0,
+        "missing": 0
+      },
+      "table": [
+        {
+          "loop": "AV1",
+          "sequence_expected": 1,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward",
+            "reverse"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 84,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": null,
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AV2",
+          "sequence_expected": 2,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward",
+            "reverse"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": false,
+          "d_extra_in_controls": [
+            "c1_window_preview_only"
+          ],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 106,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": null,
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AW1",
+          "sequence_expected": 3,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward",
+            "reverse"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 117,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": null,
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AW2",
+          "sequence_expected": 4,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [
+            {
+              "loop": "aw2",
+              "direction": "forward",
+              "flag": "resolved_interaction_shift",
+              "value": true,
+              "documented_exception": true
+            }
+          ],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 74,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": null,
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AX1",
+          "sequence_expected": 5,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward",
+            "reverse"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 137,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": null,
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AX2",
+          "sequence_expected": 6,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 76,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": null,
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AY1",
+          "sequence_expected": 7,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward",
+            "reverse"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 112,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": "uniform_local_closeness_not_uniqueness",
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AY2",
+          "sequence_expected": 8,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 61,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": "uniform_local_closeness_not_uniqueness",
+          "f_secondary_sub_labels": [
+            "static_not_dynamic"
+          ],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AZ1",
+          "sequence_expected": 9,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 73,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": null,
+          "f_secondary_sub_labels": [],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        },
+        {
+          "loop": "AZ2",
+          "sequence_expected": 10,
+          "g_sequence_ok": true,
+          "g_subround_ok": true,
+          "a_verdict_ok": true,
+          "a_accepted_vs_spec_ok": true,
+          "a_accepted_vs_findings_ok": true,
+          "bonus_skeptic_verdict_matches_gate": true,
+          "producers": [
+            "forward"
+          ],
+          "b_claims_match_producer_results_ok": true,
+          "c_continuum_priority_shift_all_false_or_documented_ok": true,
+          "c_non_false_flags_found": [],
+          "d_controls_equals_prereg_ids_ok": true,
+          "d_controls_exact_match": true,
+          "d_extra_in_controls": [],
+          "d_missing_in_prereg_ids": [],
+          "e_bindings_ok": true,
+          "e_bindings_checked": 73,
+          "e_bindings_mismatched": [],
+          "e_bindings_missing": [],
+          "f_sub_label": "sign_certified_finite_graph",
+          "f_secondary_sub_labels": [
+            "static_not_dynamic"
+          ],
+          "f_sub_labels_allowed_in_contract_ok": true,
+          "f_contract_top_level_sub_labels_allowed_is_null": true,
+          "row_pass": true
+        }
+      ],
+      "text_table": "loop  seq  subrnd a   b   c   d   e   f   row  \n-----------------------------------------------\nAV1   1    ok     ok  ok  ok  ok  ok  ok  ok   \nAV2   2    ok     ok  ok  ok  ok  ok  ok  ok   \nAW1   3    ok     ok  ok  ok  ok  ok  ok  ok   \nAW2   4    ok     ok  ok  ok  ok  ok  ok  ok   \nAX1   5    ok     ok  ok  ok  ok  ok  ok  ok   \nAX2   6    ok     ok  ok  ok  ok  ok  ok  ok   \nAY1   7    ok     ok  ok  ok  ok  ok  ok  ok   \nAY2   8    ok     ok  ok  ok  ok  ok  ok  ok   \nAZ1   9    ok     ok  ok  ok  ok  ok  ok  ok   \nAZ2   10   ok     ok  ok  ok  ok  ok  ok  ok   ",
+      "unexpected_mismatches": [],
+      "n_unexpected_mismatches": 0,
+      "overall_pass": true
+    }
+  }
+}

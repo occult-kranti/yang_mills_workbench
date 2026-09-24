@@ -1,0 +1,248 @@
+{
+  "id": "AX1",
+  "round": 32,
+  "subround": 3,
+  "sequence": 5,
+  "status": "frozen_before_production",
+  "title": "Hruday route-B re-derivation for the uniform Kogut-Susskind SU(2) Hamiltonian at fixed spacing",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round32/advisor/aw2-gate.json",
+  "selection_reason": "The zero-selected patterned certificates do not cover uniform Wilson magnetic theory. Setting the selected triple to the uniform value alpha*tau/24 for each selected xy face keeps the model inside the admitted coefficient box; with a Haar reference and the selected faces moved into the interaction as single-factor groups (route B) the AM2 expansion, the reset budget, the incidence counts, the state lemma and the window certificate can be re-instantiated with explicit constants, labelled uniform Kogut-Susskind SU(2) at fixed spacing and g^4=96/tau.",
+  "model": "Uniform Kogut-Susskind SU(2) on Z^3 at fixed spacing: every elementary face has coefficient nu=alpha*tau/24 (AL1 dictionary alpha=g^2/(2a), lambda=2/(g^2 a), tau=96/g^4); route B: on-site h_b=8 sum_e C_e with Haar reference, whole stars phi_b (21 omitted faces, norm 7|tau|) plus one single-factor group per factor for its three selected xy faces (norm <=|tau|); both signs, |tau|<=10^-8 (g^4>=9.6x10^9); centered whole-star boxes; cover R={0,e_z}; fixed positive physical scales. Not weak coupling, not continuum.",
+  "parameters": {
+    "tau_cap": "1/100000000",
+    "signs": [
+      "+",
+      "-"
+    ],
+    "uniform_selected_coefficient_over_alpha": "tau/24 for each selected face (box check |tau|/24<=1/8 and <=1/2)",
+    "per_site_sum_J_prime": "29|tau| (28 from four anchor stars + 1 from the single-factor group)",
+    "J0_resolution": "R1: re-freeze J_0'=29/10^8 with exact contraction checks J_0'*148/7=1073/175000000<1/64 and 2*J_0'*352=319/1562500<1 (alternative R2: cap |tau|<=7/725000000 is a changed coupling and is not selected)",
+    "reset_budget": "omega(h_R)<=2(7*7|tau|+2|tau|)=102|tau|, epsilon_R<=17|tau| (square-root control only)",
+    "incidence": "exactly two single-factor selected groups (six faces) meet R; ||B_N||<=49|tau|/8+2|tau|/8=51|tau|/8, k'=51|tau|/4",
+    "first_order_faces": "faces owning a link of a factor bounded by 96 (four anchors times 24) and 168 for R; omega(W)^{(1)}=+-|tau|/144 unchanged; parity rule unchanged",
+    "dictionary": "tau=96/g^4; at the cap g^4=9.6x10^9",
+    "d_prime_note": "the AX2 window budget needs 2(D'+D'^2)+51|tau|/pi<=10^-6, i.e. D'<=4.19x10^-7; the admitted exact-tier D' (candidate about 2-3x10^-8 from 96 faces per factor) is what AX2 binds, never the target"
+  },
+  "shared_premises": [
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/forward/aq2/report.md",
+    "research/round31/forward/at4/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/methods/paired-physics-research/SKILL.md",
+    "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round32/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round32/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round32/methods/historical-physics-panel/SKILL.md",
+    "research/round32/methods/newton-analysis-synthesis/references/research.md",
+    "research/round32/methods/tesla-mechanism-resonance/references/research.md",
+    "research/round32/methods/historical-physics-panel/references/lenses-and-evidence.md",
+    "research/round32/advisor/selection-ax1.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/advisor/av2-gate.json",
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/advisor/aw2-gate.json",
+    "research/round32/contracts/av1.json",
+    "research/round32/contracts/av2.json",
+    "research/round32/contracts/aw1.json",
+    "research/round32/contracts/aw2.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/reverse/av1/report.md",
+    "research/round32/skeptic/av1.md",
+    "research/round32/forward/av2/report.md",
+    "research/round32/reverse/av2/report.md",
+    "research/round32/skeptic/av2.md",
+    "research/round32/forward/aw1/report.md",
+    "research/round32/reverse/aw1/report.md",
+    "research/round32/skeptic/aw1.md",
+    "research/round29/forward/al1/report.md",
+    "research/round29/advisor/al1-gate.json"
+  ],
+  "forward_additional_premises": [
+    "research/round32/skeptic/triage.md",
+    "research/round32/skeptic/loop2-response.md",
+    "research/round32/experts/modern/loop2-response.md"
+  ],
+  "reverse_premise_isolation": true,
+  "required": [
+    "1. Dictionary and box. Prove the uniform triple lies in the admitted coefficient box for |tau|<=10^-8, write the AL1 dictionary and the value of g^4 at the cap, and label the model uniform Kogut-Susskind SU(2) at fixed spacing (never weak coupling or continuum).",
+    "2. Route B declared. Define the interaction groups: the four-site whole stars phi_b (unchanged) and one single-factor group psi_b=-(tau/3) sum over the three selected xy faces of factor b; prove ||psi_b||<=|tau|; prove the per-site sum J'<=29|tau|; prove the maximal support is still four sites and the nested-commutator termination order is unchanged (at most eight).",
+    "3. Re-freeze J_0'=29/10^8 (resolution R1) and verify the AM2 contraction as exact rationals: J_0' G(R)<1/64 and 2 J_0' G'(R)<1; conclude the unique finite-volume ground and full-space gap >=1/2 normalized (alpha/16 physical) for the uniform model, citing the AM2 argument with the new constants; prove the on-site theorem (h_b=8 sum C_e>=6 Q_b), Haar gauge invariance and a nonzero physical excited sector.",
+    "4. AQ1/AQ2 re-instantiation checklist: reset budget omega(h_R)<=102|tau| with the Haar reference gap six; trace-norm compactness; the Nachtergaele-Sims placement with the enlarged interaction norm; stationarity, GNS, nonnegativity; physical gap; Wilson variance floor. State which steps are verbatim re-applications and which need a new constant.",
+    "5. Incidence. Derive by an all-size argument plus finite enumeration: the stars meeting R (seven), the single-factor selected groups meeting R (two), the selected faces inside R (six), hence ||B_N||<=51|tau|/8 and k'=51|tau|/4 in G units.",
+    "6. State lemma constants for route B: the AV1 product-ordering decomposition with the enlarged creation set; the crude tier with J'; the exact first-order tier with the enumerated faces per factor (omitted plus selected: 24 anchored faces per factor, candidates 96 per factor owner-set count and 168 for R, to be derived); D_i and D_ii as exact rationals at both signs; the parity rule and omega(W)^{(1)}=+-|tau|/144 unchanged (cite AW1).",
+    "7. Controls as damaging mutations; claim flags continuum_claim:false, uniform_wilson_claim:true only for the fixed-spacing model as labelled, weak_coupling_claim:false, resolved_interaction_shift:false, scientific_priority_verified:false; byte-identical replays; freeze with the tools.",
+    "8. Premise lists as declared; reverse isolation as in AV1; the reverse producer starts from the uniform Hamiltonian and must find the single-factor grouping and the J_0 issue itself.",
+    "9. Transfer of parity and of the first-order Wilson mean to the uniform model: prove (not cite) that in the uniform model every face coefficient is tied to tau (selected faces carry the same nu=alpha*tau/24), so the AW1 flip identity H(tau,kappa)->H(-tau,-kappa) becomes H(tau)->H(-tau) and antisymmetry of omega(W) holds for the uniform model; prove that the AW1 parity theorem's link grading applies verbatim to the selected faces (single-face characters) and that only the Wilson face contributes at first order, so omega(W)^{(1)}=+tau/144 is unchanged; state explicitly which AW1 quantifiers transfer and which need the route-B constants.",
+    "10. Itemized incidence and no double counting: tabulate the seven stars and the two single-factor groups meeting R with their faces (an itemized table, not asserted totals), prove no face is charged twice between a star and a single-factor group, and pin the J_0' and contraction rationals in the results packet with their sha256-bound contract source."
+  ],
+  "controls": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "uniform_triple_in_box",
+    "selected_reference_not_haar",
+    "reference_route_declared",
+    "per_site_sum_recomputed",
+    "reset_budget_recomputed",
+    "selected_incidence_count",
+    "first_order_faces_uniform",
+    "uniform_label_strong_coupling",
+    "am2_gap_reuse_justified",
+    "j0_resolution_declared",
+    "uniform_sign_convention",
+    "tier_mixing_rejected",
+    "reverse_premise_isolation",
+    "uniform_kappa_tied_to_tau",
+    "route_b_no_double_count",
+    "incidence_table_itemized"
+  ],
+  "new_control_semantics": {
+    "j0_resolution_declared": "the contract's R1 re-freeze J_0'=29/10^8 with its two exact inequalities is present; using the old J_0=7/25000000 at tau=10^-8 is rejected",
+    "uniform_sign_convention": "the selected faces enter with the same sign and magnitude nu=alpha*tau/24 as the omitted faces under I1.5; a mixed convention is rejected",
+    "uniform_kappa_tied_to_tau": "a fixture with selected coefficients not equal to nu breaks the uniform flip identity; the uniform model's antisymmetry is accepted only with kappa tied to tau",
+    "route_b_no_double_count": "charging a selected face both in a star group and in a single-factor group is rejected; the per-site sum stays 29|tau|",
+    "incidence_table_itemized": "the incidence counts are derived from an itemized face table; asserted totals without the table are rejected"
+  },
+  "claim_exclusions": [
+    "weak coupling or continuum",
+    "a uniform-model Euclidean datum (AX2)",
+    "a uniform Wilson-mean sign certificate",
+    "AQ uniqueness or a rate in N",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "preregistration": {
+    "schema": "hnm-r32-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness"
+    ],
+    "claim_exclusions": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true
+    },
+    "model_id": "AQ_uniform_routeB",
+    "selected_triple_alpha_units": [
+      "tau/24",
+      "tau/24",
+      "tau/24"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "observable": {
+      "id": "route-B constants: J', J_0', reset, incidence, D_i, D_ii",
+      "centering": "none",
+      "reference_value_exact": "0 and 1/4",
+      "reference_route": "haar"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "am2_remainder",
+      "two_creation",
+      "straddling",
+      "density",
+      "onsite_cutoff_vector",
+      "arithmetic"
+    ],
+    "target": {
+      "quantity": "D_ii (uniform, route B) at the cap",
+      "value": "1/2500000",
+      "comparator": "<="
+    },
+    "controls_required": {
+      "ids": [
+        "missing_incoming_stars",
+        "full_original_wilson_cover",
+        "wrong_delta_alpha_hbar_clock",
+        "vector_versus_scalar_centering",
+        "first_order_mean_charged",
+        "tau_scaling_exponent",
+        "changed_model_relabelled",
+        "coherent_evidence_tampering",
+        "insufficient_verdict_retained",
+        "exact_arithmetic_admission",
+        "root_n_misuse",
+        "no_priority_or_continuum_claim",
+        "uniform_triple_in_box",
+        "selected_reference_not_haar",
+        "reference_route_declared",
+        "per_site_sum_recomputed",
+        "reset_budget_recomputed",
+        "selected_incidence_count",
+        "first_order_faces_uniform",
+        "uniform_label_strong_coupling",
+        "am2_gap_reuse_justified",
+        "j0_resolution_declared",
+        "uniform_sign_convention",
+        "tier_mixing_rejected",
+        "reverse_premise_isolation",
+        "uniform_kappa_tied_to_tau",
+        "route_b_no_double_count",
+        "incidence_table_itemized"
+      ]
+    },
+    "direction": "paired",
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason"
+  },
+  "acceptance": {
+    "accepted_within_scope": "Dictionary, route-B grouping, J_0' contraction, re-instantiation checklist, incidence and both state-lemma tiers proved by both routes with exact rationals; D_ii<=4/10^7 at both signs.",
+    "limited": "Crude tier only, or the re-instantiation checklist leaves a named constant unproved.",
+    "insufficient": "The contraction or the grouping fails."
+  },
+  "stop": "Investigation 5 of 10; AX2 is frozen after this review.",
+  "premise_note": "Reverse producer isolation as in AV1: its inputs equal AGENTS.md, this contract and shared_premises. Producers keep private scratch folders and disclose any scratchpad reads in their reports (sub-round 2 rule).",
+  "frozen_at": "2026-09-24T00:40:52.514703+00:00"
+}

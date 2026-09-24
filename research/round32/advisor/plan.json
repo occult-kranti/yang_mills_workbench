@@ -1,0 +1,198 @@
+{
+  "schema": "hnm-round32-plan-v1",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "status": "completed_ten_investigations_production_stopped",
+  "authorization": "2026-09-23 user instruction: Round32 as an expert-panel adaptive cycle; three deliberation loops; five sub-rounds of two investigations; research assistants after each sub-round; goals may change between sub-rounds; publish and merge to main.",
+  "deliberation": [
+    {
+      "loop": 1,
+      "path": "research/round32/advisor/deliberation-1.md",
+      "summary": "Four lens/skeptic inputs; convergence on the first-order state lemma, the window kernel, the vanishing first-order correlation shift, the tau/144 Wilson mean and the route-B uniform model."
+    },
+    {
+      "loop": 2,
+      "path": "research/round32/advisor/deliberation-2.md",
+      "summary": "Critique of plan v1; K_2 reconciliation; forward/reverse route split for AV1; pre-registration block; contract wording."
+    },
+    {
+      "loop": 3,
+      "path": "research/round32/advisor/deliberation-3.md",
+      "summary": "Final plan freeze and first contract freeze."
+    }
+  ],
+  "subrounds": [
+    {
+      "id": 1,
+      "goal_id": "cap",
+      "title": "Return to the original coupling cap",
+      "loops": [
+        "AV1",
+        "AV2"
+      ],
+      "loop_titles": {
+        "AV1": "First-order local state lemma (paired)",
+        "AV2": "Window-kernel certificate for C(1) at tau=10^-8 (paired)"
+      },
+      "selection_note_path": "research/round32/advisor/selection-av1.md",
+      "panel_update_path": "research/round32/advisor/panel-update-1.md"
+    },
+    {
+      "id": 2,
+      "goal_id": "shift",
+      "title": "Resolve an interaction-induced effect",
+      "loops": [
+        "AW1",
+        "AW2"
+      ],
+      "loop_titles": {
+        "AW1": "Peter-Weyl parity theorem, exact link-flip antisymmetry omega_{-tau}(W)=-omega_tau(W), exact first-order Wilson mean 1/144 and itemized second-order remainder K_2 with the pre-frozen AW2 coupling rule (paired)",
+        "AW2": "Sign-certified enclosure of omega_tau(W) at both signs, coupling fixed by the AW1 formula (single+skeptic)"
+      },
+      "selection_note_path": "research/round32/advisor/selection-aw1.md",
+      "panel_update_path": "research/round32/advisor/panel-update-2.md"
+    },
+    {
+      "id": 3,
+      "goal_id": "uniform",
+      "title": "Match a uniform magnetic Hamiltonian",
+      "loops": [
+        "AX1",
+        "AX2"
+      ],
+      "loop_titles": {
+        "AX1": "Route-B re-derivation for uniform Kogut-Susskind SU(2): contraction, reset, incidence, state lemma constants, J_0 resolution, dictionary tau=96/g^4 (paired)",
+        "AX2": "Uniform-model certified datum C(1) at the cap by the window route (single+skeptic)"
+      },
+      "selection_note_path": "research/round32/advisor/selection-ax1.md",
+      "panel_update_path": "research/round32/advisor/panel-update-3.md"
+    },
+    {
+      "id": 4,
+      "goal_id": "state",
+      "title": "Identify limiting states and boundary effects",
+      "loops": [
+        "AY1",
+        "AY2"
+      ],
+      "loop_titles": {
+        "AY1": "Uniform local closeness of all AQ-type subsequential states and the boundary-independent first-order density (paired)",
+        "AY2": "Two named construction families, topology and explicit constant; what remains unproved (statement+skeptic)"
+      },
+      "selection_note_path": "research/round32/advisor/selection-ay1.md",
+      "panel_update_path": "research/round32/advisor/panel-update-4.md"
+    },
+    {
+      "id": 5,
+      "goal_id": "continuum",
+      "title": "Continuum trajectory statement and a separate finite-graph model",
+      "loops": [
+        "AZ1",
+        "AZ2"
+      ],
+      "loop_titles": {
+        "AZ1": "Regulator/coupling trajectory and the one uniform estimate supplied or failed (statement+skeptic)",
+        "AZ2": "Exact finite-graph first/second-order coefficients on the Round11 two-plaquette graph with Arb cross-check, labelled a different finite model (single+skeptic)"
+      },
+      "selection_note_path": "research/round32/advisor/selection-az1.md",
+      "panel_update_path": "research/round32/advisor/panel-update-5.md"
+    }
+  ],
+  "direction_rules": "Paired forward/reverse for derivation-bearing loops with genuinely different routes disclosed in the contract; single direction plus an independent skeptic replay written from the contract alone for formula-instantiating certificates; statement plus skeptic for state/continuum statements. Same-author passes are never independent review.",
+  "assistants": "After each sub-round one research assistant/coder per lens (historical, jung, modern) runs the tests named in the lenses' loop-2 responses; their outputs live under research/round32/experts/<lens>/assistant-<subround>/ and count zero research loops.",
+  "goal_change_rule": "After each sub-round's panel update the advisor may reorder, replace or retitle the next pair; the change is recorded in the next selection note and this plan's history field.",
+  "history": [
+    {
+      "date": "2026-09-23",
+      "from": "plan v1 (deliberation-1.md)",
+      "to": "plan v2",
+      "changes": [
+        "AV1 target set to D_ii<=4/10^7 (AV2 feasibility) instead of 10^-6",
+        "49 omitted faces per factor replace the 84 bound; second-order multiplier 1 replaces 4",
+        "reverse premise isolation for paired loops; genuinely different routes named per loop",
+        "AW1 gains the exact link-flip antisymmetry lemma and the pre-frozen AW2 coupling rule",
+        "AX1 declares route B and re-freezes J_0'=29/10^8",
+        "finite-graph exact coefficients become AZ2 under a different-finite-model label",
+        "pre-registration block with the skeptic's four amendments in every contract",
+        "Gauvin diff record completed; attribution sentence fixed; no priority claim"
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "event": "panel update after sub-round 1",
+      "changes": [
+        "goals kept",
+        "AW1 contract gains the free-link cross-check, full flip enumeration, pinned K_2 terms, wilson_face_separated and a positive nonzero-kappa demonstration",
+        "AZ2 cutoff read as polynomial degree D (nested 6/8)"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "event": "panel update after sub-round 2",
+      "changes": [
+        "goals kept",
+        "AX1 gains the kappa-tied-to-tau transfer proof, itemized incidence and no-double-count controls",
+        "AX2 binds the admitted AX1 D'",
+        "scratch-isolation disclosure rule"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "event": "pre-registration vocabulary extended after the Jung assistant-2 audit",
+      "changes": [
+        "symbolic tau-dependent triples allowed",
+        "statement+skeptic direction allowed",
+        "n/a reference route and grid coupling allowed for statement and finite-graph loops"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "event": "panel update after sub-round 3",
+      "changes": [
+        "goals kept",
+        "AY1 gains the padding-family proof, explicit first-order density, R-local K_2', mandatory sentence and gate fields",
+        "AZ1 content settled; AZ2 recipe fixed"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "event": "panel update after sub-round 4",
+      "changes": [
+        "goals kept",
+        "AZ1 gains the exact dictionary identities (incl. alpha*lambda*a^2=1), the toy trajectory with exact crossover indices, the uniform_in_N_not_in_a control, gate fields and a sentence template",
+        "AZ2 gains the itemized residual ledger, the cutoff D in {6,8} replacing the ill-posed j_max, gate fields and a sentence template",
+        "second pre-registration vocabulary extension (state_provenance, gate_fields_required, mandatory_sentence_template, the_AQ_state_phrase, target_of_a_certification_loop)"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "event": "closing panel update after sub-round 5",
+      "changes": [
+        "scientific production stopped after AZ2 (ten investigations, all accepted within scope)",
+        "next-round roadmap ranked with one recorded dissent (dynamics first)",
+        "ten machine-checkable contract rules adopted for the next round (Jung update-5 section 3), including placeholder rejection and the mandatory template field at freeze",
+        "no goal executed beyond the ten"
+      ]
+    }
+  ],
+  "preregistration_vocabulary_extensions": {
+    "date": "2026-09-24",
+    "reason": "Jung assistant-2 audit found three schema gaps in the sub-round 3-5 drafts",
+    "selected_triple_alpha_units": "may be an exact expression in tau (e.g. ['tau/24','tau/24','tau/24'] for the uniform model) or the string 'n/a (finite graph)' with the model_id naming the finite graph",
+    "direction": "allowed values: paired, single+skeptic, statement-only, statement+skeptic (a statement loop with a skeptic review and a small exact checker)",
+    "reference_route": "allowed values: haar, selected_strip, own_finite_graph, n/a (statement loops only, with the reason in error_terms_itemized)",
+    "tau.value": "an exact rational, a rule reference, or 'grid' with the grid enumerated in parameters (finite-graph loops)",
+    "applies_to": "AX1 (already frozen; recorded here and in its gate as an accepted extension, contract unamended), AX2, AY1, AY2, AZ1, AZ2",
+    "further_extensions": [
+      {
+        "date": "2026-09-24",
+        "reason": "Jung assistant-4 audit found five further schema gaps in the sub-round 4-5 record",
+        "state_provenance": "may name more than one family at once, as a single string listing each family's own closed-vocabulary description, in the order the contract's own family list gives them, when a statement loop compares subsequential limits from more than one named family together",
+        "gate_fields_required": "must include rate_in_N_claimed in addition to (not instead of) rate_claimed whenever a rate-in-N claim is at stake; the field is not universal across every contract but names the boolean claim-flags the loop's own subject matter puts at risk (the six-name state-identification union for a state-identification loop; continuum_claim/uniform_in_a_claimed/weak_coupling_claim/loop_count_fraction_claimed for a continuum-trajectory statement; transfers_to_aq/model_is_finite_graph/fg_coefficients_fitted for a finite-graph loop)",
+        "mandatory_sentence_template": "a mandatory_sentence_template field is required in any contract whose required items cite 'the mandatory sentence template'; where more than one valid template form exists (a contract form and a Jung loop-2 restatement, as in AY1/AY2), the contract or gate must name which form governs admission",
+        "the_AQ_state_phrase": "the phrase 'uniqueness of the AQ state' is replaced in every contract frozen after 2026-09-24 by 'uniqueness of any subsequential limit', matching loop2-response.md section 4 exactly; frozen contracts (ay1.json, ay2.json and earlier) stay unamended, the phrase there remains inside an excluded-claim list and is never asserted",
+        "target_of_a_certification_loop": "a statement+skeptic loop whose subject is an already-admitted constant states in its preregistration.target block that the target is a feasibility or format check on an admitted quantity, not a blind discovery threshold (AY2 is recorded as the accepted exception, contract unamended)",
+        "applies_to": "AZ1, AZ2 and every later contract; AY1 and AY2 are recorded here as grandfathered exactly as AX1 was in the 2026-09-24 extension above, contracts unamended"
+      }
+    ]
+  }
+}

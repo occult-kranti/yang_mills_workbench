@@ -1,0 +1,1467 @@
+{
+  "ai_assistance": "AI-assisted forward production (a Claude model agent); correlated model-agent work, not independent human review",
+  "al1_gate_sha256": "e415203cc6b6ebca6cea5fcd1230a7eb0e20b7ab2d2e6c99dc8aa2dd3052a75b",
+  "am2_gate_sha256": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+  "ax1_gate_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+  "check_count": 42,
+  "check_py_sha256_recorded_before_evaluation": "d69eb05ff420dfbed2cb543c020fa9156d35c662e1f6df2cfe4f26b50afb5c4a",
+  "checks": [
+    {
+      "contract_path": "research/round32/contracts/az1.json",
+      "contract_sha256": "91c828a7aa6ef9bd4d3dbf762363b7558faa6922c23e1aff476cd098d4177078",
+      "controls_read_from_contract": 21,
+      "dictionary_read_from_contract": "alpha=g^2/(2a), lambda=2/(g^2 a), tau=96/g^4",
+      "hash_binding": {
+        "check_py_reads_target_and_reference_from_contract": true,
+        "check_py_sha256_recorded_before_full_size_evaluation": true,
+        "contract_sha256_in_producer_inputs": true
+      },
+      "id": "contract_snapshot_sha256",
+      "identities_read_from_contract": [
+        "alpha/16=g^2/(32a)",
+        "tau=96/g^4",
+        "alpha*lambda*a^2=1"
+      ],
+      "passed": true,
+      "reference_read_from_contract": "n/a (statement loop; observable id statement, centering none)",
+      "signs": [
+        "+",
+        "-"
+      ],
+      "target_comparator": ">=",
+      "target_quantity": "dictionary identities verified exactly and the toy-trajectory crossover indices computed",
+      "target_read_from_contract": "1",
+      "tau_read_from_contract": "1/100000000"
+    },
+    {
+      "ax1_gate_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+      "id": "premise_inventory_bound",
+      "inputs_sha256": {
+        "AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+        "research/round21/forward/i1/report.md": "836a4c7d421f0ddf3589c159d2f057839421532c88157a054a61b51c25c781a9",
+        "research/round29/advisor/al1-gate.json": "e415203cc6b6ebca6cea5fcd1230a7eb0e20b7ab2d2e6c99dc8aa2dd3052a75b",
+        "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+        "research/round29/forward/al1/report.md": "967995f18ebda3abd1395b2775e0edd06d91c5d6ea7d6b3368d6be4850f39426",
+        "research/round29/forward/am2/report.md": "1b58fb9c1a199f06b156d04c2a9e89f34ba63cf675a5f7c8bfc25bb568e4e019",
+        "research/round29/forward/aq1/report.md": "b091266f5db009fa967a2adea352fa1b190193cc4bcdc6c4c207e5872fc51da3",
+        "research/round29/forward/aq2/report.md": "9144964ca53c995c6c3391625e1a9774d243aefbada43a4e8f8e30f5769589d1",
+        "research/round29/reverse/am2/report.md": "e7313e6a591bacbf37b65c84d57049d2f05a67222cddb8073286e2cd4143d06e",
+        "research/round29/skeptic/am2.md": "2aa921a651a49d043fd30d3e52b845c38a668cc5c2a2f4bf18d4f003bb2f74a7",
+        "research/round31/forward/at4/report.md": "10eb3fcd4b631f3e675ac521669041abb524df80e6520c5331d6e549cbd294f7",
+        "research/round32/advisor/ax1-gate.json": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+        "research/round32/advisor/selection-az1.md": "a2cf9d6ed4f4689f379bec479e5c8a7c9ef53c4dc656a9af0f478679cda7a60b",
+        "research/round32/contracts/az1.json": "91c828a7aa6ef9bd4d3dbf762363b7558faa6922c23e1aff476cd098d4177078",
+        "research/round32/experts/historical/update-4.md": "48b162ede13d5c3158e664418e23775c6a67810a9597f6869d46c62e9fdd200e",
+        "research/round32/experts/modern/memo.md": "ff1ff8799ed68e2e7cc5659a8bff5f605aaad5b4367d87e6c99168a95a6e45c7",
+        "research/round32/experts/modern/sota-table.md": "76f76994061579817c06cb4425a4dde888d844bcf220d1ca6875867cb2d33bd9",
+        "research/round32/experts/modern/update-4.md": "5a0aa5077fe3e044f5c601c99cc7c978e50e54b075b869dd6d5ad659fbd0aadd",
+        "research/round32/forward/ax1/report.md": "2ba5e8360432755e87dab5a2c67c53617ce34494a394c3520e69818e20ce7a38",
+        "research/round32/methods/historical-physics-panel/SKILL.md": "a2b366bc661794ee89c29233d0887868b60c0853c85ec136e0529b6f1d5e223a",
+        "research/round32/methods/historical-physics-panel/references/lenses-and-evidence.md": "3840592d479ca5dc373698c047f8546e8f47e72e3634553fccf5fd5f3b4052c6",
+        "research/round32/methods/newton-analysis-synthesis/SKILL.md": "2fa3dab9b2420d157457ad3ccaeb0723fb1952871be3e6140dcd3d3c9346ccef",
+        "research/round32/methods/newton-analysis-synthesis/references/research.md": "59b4f3d05c4168c87d5ebf12a6f2f74e14665107f18c756c9cd6e2e21e74e0d2",
+        "research/round32/methods/paired-physics-research/SKILL.md": "01cda7ee8f8e3eb65c68b0ac6ff0d9e87198f57ea2d997d810d7907b85f4278d",
+        "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md": "9e387df64ae05738e740d2ff65973cef0672530e64344ab9e730a139b81b435d",
+        "research/round32/methods/tesla-mechanism-resonance/SKILL.md": "81f6d760b3aa45d32db4ae31a3a3c9bec5e1d662e42529b5ae21a220deeb07c3",
+        "research/round32/methods/tesla-mechanism-resonance/references/research.md": "c8c35a9c013f29d601f852a6aa9ef16fad74cc8a0db24178583325a511a174f8",
+        "research/round32/reverse/ax1/report.md": "9ffe3b4af78537a66e194c0d3669edd8f9a5df4a0069bd1d82bea13dad349e8e",
+        "research/round32/skeptic/ax1.md": "9729b61526c6c339f3d0a5793a35877fa9b93bf575d0aa4a25154d2f5abffda3"
+      },
+      "inventory_files": 29,
+      "isolation": "inputs equal AGENTS.md + the AZ1 contract + its 27 shared premises; no current skeptic, expert (beyond these snapshots), deliberation, panel or AZ2 file",
+      "passed": true
+    },
+    {
+      "al1_report_bound_by_al1_gate": true,
+      "id": "gate_bindings_match_snapshots",
+      "mismatched": [],
+      "not_bound_by_ax1_gate": [
+        "research/round32/advisor/ax1-gate.json",
+        "research/round32/advisor/selection-az1.md",
+        "research/round32/contracts/az1.json",
+        "research/round32/experts/historical/update-4.md",
+        "research/round32/experts/modern/memo.md",
+        "research/round32/experts/modern/sota-table.md",
+        "research/round32/experts/modern/update-4.md"
+      ],
+      "note": "the AX1 forward, reverse and skeptic reports, the AL1 report and gate, the AM2 gate and the I1, AT4, AQ1, AQ2 reports snapshotted here are the bytes the AX1 gate binds",
+      "passed": true,
+      "snapshots_bound_by_ax1_gate": 22
+    },
+    {
+      "J0_prime": "29/100000000",
+      "J_per_abs_tau_from_gate": 29,
+      "ax1_gate_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+      "ax1_verdict": "accepted_within_scope",
+      "exclusion_rational": "319/1562500",
+      "first_order_mean_from_gate": "+tau/144",
+      "g4_at_cap_from_gate": "9600000000",
+      "gap_from_gate": ">=1/2 normalized (alpha/16 physical)",
+      "id": "ax1_gate_fields_and_verdict",
+      "incidence_from_gate": {
+        "charged": 153,
+        "groups": 2,
+        "inside": 16,
+        "meet": 88,
+        "meet_omitted": 82,
+        "meet_selected": 6,
+        "stars": 7
+      },
+      "passed": true,
+      "read_from": "the accepted/decision/limitations/model strings of the hash-bound AX1 gate snapshot; no constant is typed in",
+      "selfmap_rational": "1073/175000000"
+    },
+    {
+      "al1_general_statement": "every path with g->0 eventually violates the bridge condition",
+      "al1_limitation": "This is failure of a specified sufficient certificate, not a no-gap or continuum-impossibility theorem.",
+      "bridge": "r<=1/8 <=> g^4>=32",
+      "dictionary_from_al1": {
+        "alpha": "g^2/(2a)",
+        "epsilon": "7|tau|=672/g^4",
+        "lambda": "2/(g^2 a)",
+        "r": "4/g^4",
+        "tau": "24*lambda/alpha=96/g^4"
+      },
+      "ends": "r<=1/2",
+      "id": "al1_gate_and_report_parsed",
+      "passed": true
+    },
+    {
+      "am2_cap": "1/100000000",
+      "am2_gap": "alpha/16",
+      "id": "am2_gate_cap_and_gap",
+      "note": "10^-8 is the preregistered cap at which the AM2 and AX1 certificates are admitted; the AM2 reverse report states it is not a sharp threshold",
+      "passed": true,
+      "sharp_threshold": false
+    },
+    {
+      "id": "dictionary_identities_symbolic",
+      "identities": [
+        "alpha/16=g^2/(32a)",
+        "tau=96/g^4",
+        "alpha*lambda*a^2=1",
+        "r=4/g^4",
+        "alpha*tau/24=lambda",
+        "(alpha/8)*(tau/3)=lambda",
+        "7*tau=672/g^4",
+        "tau/144=2/(3g^4)",
+        "(alpha/8)/2=g^2/(32a)",
+        "a*alpha/16=g^2/32",
+        "tau*g^4=96"
+      ],
+      "identity_sources": {
+        "AX1 reverse report (gap)": [
+          "alpha/16=g^2/(32a)"
+        ],
+        "contract parameters.dictionary (tau)": [
+          "tau=96/g^4"
+        ],
+        "contract parameters.dictionary_identities": [
+          "alpha/16=g^2/(32a)",
+          "tau=96/g^4",
+          "alpha*lambda*a^2=1"
+        ],
+        "contract parameters.supplied": [
+          "alpha/16=g^2/(32a)"
+        ],
+        "mandatory sentence template": [
+          "alpha/16=g^2/(32a)"
+        ],
+        "producer-added (AL1, AX1, I1 premises)": [
+          "r=4/g^4",
+          "alpha*tau/24=lambda",
+          "(alpha/8)*(tau/3)=lambda",
+          "7*tau=672/g^4",
+          "tau/144=2/(3g^4)",
+          "(alpha/8)/2=g^2/(32a)",
+          "a*alpha/16=g^2/32",
+          "tau*g^4=96"
+        ]
+      },
+      "passed": true,
+      "primary_definitions": {
+        "alpha": "g^2/(2a)",
+        "lambda": "2/(g^2 a)",
+        "tau": "24*lambda/alpha (AL1.2)"
+      },
+      "rescaling": {
+        "alpha(c*a)=alpha(a)/c": true,
+        "gap(c*a)=gap(a)/c": true,
+        "lambda(c*a)=lambda(a)/c": true,
+        "r(c*alpha,c*lambda)=r": true,
+        "tau(c*a)=tau(a)": true
+      },
+      "route": "integer-coefficient polynomials in (g, a, c); each identity lhs=rhs checked as num_l*den_r == num_r*den_l",
+      "sources": {
+        "alpha*lambda*a^2=1": "contract (cross-identity)",
+        "alpha/16=g^2/(32a)": "contract, template, parameters.supplied, AX1 reverse report",
+        "tau=96/g^4": "contract; AL1.2; AX1 gate"
+      },
+      "tau_polynomial_form": {
+        "denominator": [
+          [
+            [
+              4,
+              1,
+              0
+            ],
+            1
+          ]
+        ],
+        "numerator": [
+          [
+            [
+              0,
+              1,
+              0
+            ],
+            96
+          ]
+        ]
+      }
+    },
+    {
+      "a_values": [
+        "1/1000",
+        "1/10",
+        "1",
+        "7/3",
+        "1000"
+      ],
+      "g2_values": [
+        "1/7",
+        "1",
+        "3/2",
+        "97979",
+        "100000",
+        "1000000",
+        "1048576/3"
+      ],
+      "grid_points": 35,
+      "id": "dictionary_identities_rational_grid",
+      "identities_per_point": [
+        "7*tau=672/g^4",
+        "a*alpha/16=g^2/32",
+        "alpha*lambda*a^2=1",
+        "alpha*tau/24=lambda",
+        "alpha/16=g^2/(32a)",
+        "r(c*alpha,c*lambda)=r at c=1/3",
+        "r(c*alpha,c*lambda)=r at c=5",
+        "r=4/g^4",
+        "tau(c*a)=tau(a) at c=1/3",
+        "tau(c*a)=tau(a) at c=5",
+        "tau/144=2/(3g^4)",
+        "tau=96/g^4"
+      ],
+      "passed": true,
+      "rescale_factors": [
+        "1/3",
+        "5"
+      ],
+      "route": "direct Fraction arithmetic with the constants parsed from the contract strings (alpha denominator 2, lambda numerator 2) and tau=24*lambda/alpha; independently of the polynomial parser, and the parsed rational functions evaluated at the same points agree"
+    },
+    {
+      "cap": "tau=96/g^4 gives g^4=96/tau=9600000000 at tau=10^-8 (cited: AX1 gate)",
+      "id": "dictionary_arithmetic_exact",
+      "identities": [
+        "alpha/16=g^2/(32a)",
+        "tau=96/g^4",
+        "alpha*lambda*a^2=1",
+        "r=4/g^4",
+        "alpha*tau/24=lambda",
+        "(alpha/8)*(tau/3)=lambda",
+        "7*tau=672/g^4",
+        "tau/144=2/(3g^4)",
+        "(alpha/8)/2=g^2/(32a)",
+        "a*alpha/16=g^2/32",
+        "tau*g^4=96"
+      ],
+      "passed": true,
+      "rejected_mutations": [
+        "alpha_without_factor_two (alpha=g^2/a)",
+        "lambda_numerator_one (lambda=1/(g^2 a))",
+        "tau_coefficient_12_instead_of_24",
+        "gap_written_g2_over_16a",
+        "cross_identity_value_2",
+        "grid_alpha_denominator_1",
+        "grid_float_coupling",
+        "cap_decade_shift"
+      ],
+      "routes": [
+        "integer-polynomial cross-multiplication (dictionary_identities_symbolic)",
+        "exact Fraction grid (dictionary_identities_rational_grid)"
+      ]
+    },
+    {
+      "equivalence": "for real g, tau=96/g^4>0; for T>0: tau<=T <=> g^4>=96/T (multiply by g^4/T>0); at T=10^-8: g^4>=9600000000",
+      "g4_at_cap": "9600000000",
+      "g4_sources": [
+        "contract parameters.supplied",
+        "contract parameters.failed",
+        "contract parameters.toy_trajectory",
+        "mandatory template",
+        "AX1 gate",
+        "AX1 skeptic table"
+      ],
+      "id": "cap_coupling_equivalence",
+      "negative_tau": "tau<0 has no real g; in the uniform model it is the U_E mirror of +|tau| (AX1 gate item 7), not a trajectory point",
+      "passed": true,
+      "tau_cap": "1/100000000"
+    },
+    {
+      "E_star": "E_star = hbar*c/(1 fm) (declared fixed positive reference; about 197.327 MeV, preview)",
+      "alpha": "5000000 fm^-1",
+      "cap_example": {
+        "a": "1/10 fm",
+        "g^2_bracket": [
+          "19595917942265424785578272597647131/200000000000000000000000000000",
+          "12247448713915890490986420373529457/125000000000000000000000000000"
+        ],
+        "g^4": "9600000000",
+        "gap_over_E_star_lower": "19595917942265424785578272597647131/640000000000000000000000000000",
+        "gap_over_E_star_lower_preview": "3.06186217847e4"
+      },
+      "declared_example": {
+        "a": "1/10 fm",
+        "g^2": "1000000",
+        "g^4": "1000000000000",
+        "in_admitted_regime": true,
+        "tau": "3/31250000000"
+      },
+      "gap_MeV_preview": "6.1664681e7 MeV (preview with hbar*c=197.3269804 MeV fm, truncated CODATA 2018)",
+      "gap_lower_bound": "312500 fm^-1 (hbar=c=1)",
+      "gap_over_E_star": "312500",
+      "id": "gap_physical_units_example",
+      "note": "the estimate is cited from the AX1 gate (gap >=1/2 normalized, alpha/16 physical), not re-derived; the numbers here only evaluate the dictionary",
+      "passed": true
+    },
+    {
+      "divergence_example": {
+        "Delta_n lower (fm^-1)": [
+          "3.0618621e4",
+          "3.0618621e5",
+          "3.0618621e6",
+          "3.0618621e7"
+        ],
+        "a_n (fm)": [
+          "1/10",
+          "1/100",
+          "1/1000",
+          "1/10000"
+        ]
+      },
+      "id": "admitted_regime_lattice_units_floor",
+      "lattice_units_floor_lower": "19595917942265424785578272597647131/6400000000000000000000000000000",
+      "lattice_units_floor_preview": "3.06186217847e3",
+      "passed": true,
+      "statement": "for every (a,g) in the admitted regime, a*Delta >= g^2/32 >= sqrt(9.6x10^9)/32 > 3061 (lattice units); a trajectory with a_n->0 that stayed in the admitted regime would have certified Delta_n >= 3061/a_n, divergent in units of the fixed E_star; a finite physical gap as a_n->0 requires leaving the admitted regime"
+    },
+    {
+      "boundary_rule": "crossover = first n with g_n^4 strictly below the threshold; g_n^4 equal to the cap (|tau|=10^-8) is inside the admitted regime",
+      "crossovers": {
+        "cap_declared": {
+          "bridge": {
+            "g_last^4": "9600000000/294499921",
+            "g_last^4_preview": "3.25976318343e1",
+            "g_n_star^4": "12500000/395307",
+            "g_n_star^4_preview": "3.16209933039e1",
+            "last_n_at_or_above": 131,
+            "n_star": 132,
+            "tau_n_star": "1185921/390625",
+            "tau_n_star_preview": "3.03595776000e0",
+            "threshold_g4": "32"
+          },
+          "cap": {
+            "g_last^4": "9600000000",
+            "g_last^4_preview": "9.60000000000e9",
+            "g_n_star^4": "600000000",
+            "g_n_star^4_preview": "6.00000000000e8",
+            "last_n_at_or_above": 1,
+            "n_star": 2,
+            "tau_n_star": "1/6250000",
+            "tau_n_star_preview": "1.60000000000e-7",
+            "threshold_g4": "9600000000"
+          }
+        },
+        "panel_rehearsal": {
+          "bridge": {
+            "g_last^4": "6250000/194481",
+            "g_last^4_preview": "3.21368154215e1",
+            "g_n_star^4": "1000000000000/31414372081",
+            "g_n_star^4_preview": "3.18325636884e1",
+            "last_n_at_or_above": 420,
+            "n_star": 421,
+            "tau_n_star": "94243116243/31250000000",
+            "tau_n_star_preview": "3.01577971977e0",
+            "threshold_g4": "32"
+          },
+          "cap": {
+            "g_last^4": "1000000000000/81",
+            "g_last^4_preview": "1.23456790123e10",
+            "g_n_star^4": "3906250000",
+            "g_n_star^4_preview": "3.90625000000e9",
+            "last_n_at_or_above": 3,
+            "n_star": 4,
+            "tau_n_star": "6/244140625",
+            "tau_n_star_preview": "2.45760000000e-8",
+            "threshold_g4": "9600000000"
+          }
+        }
+      },
+      "declared_trajectory": "g_n=g_0/n, a_n=a_0/n, n>=1, E_star fixed; g_n^4=g_0^4/n^4 exactly",
+      "id": "toy_trajectory_crossover_exact",
+      "panel_rehearsal_reproduced": {
+        "420^4": 31116960000,
+        "421^4": 31414372081,
+        "g_3^4_exact": "1000000000000/81",
+        "indices_agree": true,
+        "n*_bridge": 421,
+        "n*_cap": 4
+      },
+      "passed": true,
+      "premise_arithmetic_note": {
+        "claimed": "g_3^4=10^12/81=12345679012+34/81",
+        "claimed_correct": false,
+        "effect": "none on any crossover index: g_3^4 is above 9.6x10^9 either way; only the mixed-number remainder is wrong",
+        "exact": "g_3^4=10^12/81=12345679012+28/81",
+        "id": "P1",
+        "source": "research/round32/experts/modern/update-4.md section 3 (panel rehearsal)"
+      },
+      "rejected_mutations": [
+        "cap_boundary_n1_counted_as_crossover (g_1^4 equals the cap; |tau|<=10^-8 is inclusive)",
+        "bridge_index_off_by_one_low_131",
+        "bridge_index_not_first_133",
+        "rehearsal_cap_index_3",
+        "rehearsal_bridge_index_420",
+        "R18_B2_threshold_32_over_3_substituted",
+        "cap_decade_wrong_9.6x10^8"
+      ],
+      "routes": [
+        "exact integer fourth root: n*=iroot4(floor(g_0^4/T))+1 with m^4<=F<(m+1)^4 checked",
+        "exact Fraction scan n=1,2,... (limit 1000)"
+      ],
+      "toys": {
+        "cap_declared": "g_0^4=9.6x10^9 (the cap), declared primary (contract parameters.toy_trajectory)",
+        "panel_rehearsal": "g_0=1000, the panel rehearsal (modern update-4 section 3), labelled second example"
+      }
+    },
+    {
+      "along": [
+        {
+          "certificate": "AX1 volume-uniform gap at fixed a_n",
+          "gap_over_E_star_lower": "312500",
+          "in_admitted_regime": true,
+          "n": 1
+        },
+        {
+          "certificate": "AX1 volume-uniform gap at fixed a_n",
+          "gap_over_E_star_lower": "156250",
+          "in_admitted_regime": true,
+          "n": 2
+        },
+        {
+          "certificate": "AX1 volume-uniform gap at fixed a_n",
+          "gap_over_E_star_lower": "312500/3",
+          "in_admitted_regime": true,
+          "n": 3
+        },
+        {
+          "certificate": "none supplied (not a statement that the gap vanishes)",
+          "gap_over_E_star_lower": null,
+          "in_admitted_regime": false,
+          "n": 4
+        },
+        {
+          "certificate": "none supplied (not a statement that the gap vanishes)",
+          "gap_over_E_star_lower": null,
+          "in_admitted_regime": false,
+          "n": 5
+        }
+      ],
+      "id": "toy_gap_along_path",
+      "note": "Delta_n/E_star >= g_0^2/(32 a_0 n E_star) = 312500/n for n<4; from n=4 on the family supplies no certificate; failure of a sufficient certificate is not absence of a gap (AL1 limitation)",
+      "passed": true,
+      "rehearsal_toy": "g_0=1000, a_n=(1/10 fm)/n, E_star=hbar*c/(1 fm)"
+    },
+    {
+      "al1_frozen_path": {
+        "all_n": "g_n^4=1/n^2<=1<32 for every n>=1",
+        "bridge_fails_for_every_n_checked": true,
+        "first_rows": [
+          {
+            "alpha_n*a_0": "1/2",
+            "g_n^4": "1",
+            "n": 1,
+            "tau_n": "96"
+          },
+          {
+            "alpha_n*a_0": "1/2",
+            "g_n^4": "1/4",
+            "n": 2,
+            "tau_n": "384"
+          },
+          {
+            "alpha_n*a_0": "1/2",
+            "g_n^4": "1/9",
+            "n": 3,
+            "tau_n": "864"
+          }
+        ],
+        "law": "a_n=a_0/n, g_n^2=1/n",
+        "tau_n": "96n^2"
+      },
+      "i1_omitted_conditions": "g^4>672/c1 and g^4>1344c2 with c1(S), c2(S) unevaluated (AL1.3): for any fixed positive values the same lemma gives a finite crossover",
+      "id": "any_g_to_zero_path_leaves_regime",
+      "lemma": "if g_n->0 then for every threshold T>0 there is n0 with g_n^4<T for all n>=n0 (definition of the limit); so every such path leaves g^4>=9.6x10^9 and g^4>=32 at finite indices",
+      "passed": true,
+      "slower_toy": {
+        "law": "g_n^4=g_0^4/n (g_0=1000)",
+        "n*_bridge": 31250000001,
+        "n*_cap": 105,
+        "route": "exact integer (p=1) root with bracket"
+      }
+    },
+    {
+      "G_R_bound": "148/7",
+      "Gp_R_bound": "352",
+      "id": "fixed_cap_sensitivity_not_admitted",
+      "note": "NOT admitted regimes: the AX1 chain (reset, variance floor, AQ passage) was evaluated only at the cap; these rows show that the failure point does not depend on where a fixed cap sits",
+      "passed": true,
+      "sensitivity": {
+        "exclusion_only": {
+          "admitted": false,
+          "g4_threshold": "1959936",
+          "g4_threshold_preview": "1.95993600000e6",
+          "n*_cap_declared_toy": 9,
+          "n*_panel_toy": 27,
+          "tau_bound": "1/20416"
+        },
+        "selfmap_only": {
+          "admitted": false,
+          "g4_threshold": "26370048/7",
+          "g4_threshold_preview": "3.76714971428e6",
+          "n*_cap_declared_toy": 8,
+          "n*_panel_toy": 23,
+          "tau_bound": "7/274688"
+        }
+      }
+    },
+    {
+      "J_per_abs_tau": 29,
+      "anchors": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "id": "missing_incoming_stars",
+      "incidence": {
+        "charged": 153,
+        "groups": 2,
+        "inside": 16,
+        "meet": 88,
+        "meet_omitted": 82,
+        "meet_selected": 6,
+        "stars": 7
+      },
+      "note": "the supplied gap is AX1's, computed with complete incoming-star incidence J'=29|tau|; dropping incoming stars changes the self-map rational",
+      "outgoing_only": {
+        "charged": 48,
+        "groups": 2,
+        "inside": 16,
+        "meet": 48,
+        "meet_omitted": 42,
+        "meet_selected": 6,
+        "stars": 2
+      },
+      "passed": true,
+      "rejected_mutations": [
+        "outgoing_stars_only (2 anchors, per-site sum 8|tau|)",
+        "single_factor_groups_dropped (per-site sum 28|tau|, the patterned-model value)",
+        "single_star_at_0_only"
+      ],
+      "stars_per_site": 4
+    },
+    {
+      "cover": "R={0,e_z}",
+      "endpoints": 36,
+      "id": "full_original_wilson_cover",
+      "links": 48,
+      "note": "the model cited by AZ1 (AX1) keeps the original xz Wilson loop with its complete cover; AZ1 adds no observable",
+      "passed": true,
+      "rejected_mutations": [
+        "single_factor_cover_0",
+        "four_drawn_links_as_cover"
+      ],
+      "wilson_owners": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar",
+      "id": "wrong_delta_alpha_hbar_clock",
+      "nonunit_fixture": {
+        "alpha": "5",
+        "hbar": "7",
+        "s": "1",
+        "t_E": "7/5"
+      },
+      "note": "the statement is static; the clock is fixed only so that the gap alpha/16 is an energy in the same units as E_star",
+      "passed": true,
+      "rejected_mutations": [
+        "normalized_gap_read_in_alpha_units (alpha/2)",
+        "gap_one_route (alpha/8)",
+        "haar_onsite_gap_six_as_the_interacting_gap",
+        "normalized_clock_u",
+        "delta_alpha_mixed_gap_g2_over_16a"
+      ],
+      "units": "hbar=c=1 in the dictionary; restoring units, alpha=hbar*c*g^2/(2a) and the gap bound is hbar*c*g^2/(32a); E_star fixed"
+    },
+    {
+      "gap_fixture": {
+        "E0_raw": "17/2",
+        "E1_raw": "9",
+        "gap": "1/2",
+        "label": "two-level exact fixture; not AQ data"
+      },
+      "id": "vector_versus_scalar_centering",
+      "note": "AL1: the raw magnetic scalar lambda*N_p cancels under actual ground centering; the cited gap is a difference of the two lowest eigenvalues",
+      "passed": true,
+      "rejected_mutations": [
+        "vector_centering_imposed_on_a_statement",
+        "scalar_subtraction_imposed",
+        "uncentered_raw_scalar_as_gap_reference"
+      ],
+      "residues": {
+        "scalar": "-51/10000",
+        "uncentered": "1/16",
+        "vector": "1/10000"
+      }
+    },
+    {
+      "along_cap_declared_toy": {
+        "n=1,2,3": [
+          "1/14400000000",
+          "1/900000000",
+          "9/1600000000"
+        ]
+      },
+      "at_cap": "1/14400000000",
+      "first_order_mean": "+tau/144 = 2/(3g^4) (AX1 gate; dictionary)",
+      "id": "first_order_mean_charged",
+      "note": "the first-order coefficient grows like n^4 along g_n=g_0/n: the expansion parameter itself leaves the admitted cap at n=2",
+      "passed": true,
+      "rejected_mutations": [
+        "first_order_mean_set_to_zero",
+        "sign_slip_minus_tau_over_72",
+        "missing_factor_two_tau_over_72"
+      ]
+    },
+    {
+      "crossover_scaling": "n* = iroot4(floor(g_0^4/T))+1, i.e. n* grows like (g_0^4/T)^(1/4)",
+      "exponents": {
+        "alpha": {
+          "a": -1,
+          "g": 2
+        },
+        "gap alpha/16": {
+          "a": -1,
+          "g": 2
+        },
+        "lambda": {
+          "a": -1,
+          "g": -2
+        },
+        "lattice gap a*alpha/16": {
+          "a": 0,
+          "g": 2
+        },
+        "tau": {
+          "a": 0,
+          "g": -4
+        }
+      },
+      "id": "tau_scaling_exponent",
+      "passed": true,
+      "rejected_mutations": [
+        "tau_read_as_96_over_g2",
+        "tau_read_as_a_dependent (common rescaling moves tau)",
+        "lattice_gap_read_as_physical",
+        "dictionary_tau_96_over_g2"
+      ]
+    },
+    {
+      "id": "changed_model_relabelled",
+      "model": {
+        "J_per_abs_tau": 29,
+        "admitted_g4_min": "9600000000",
+        "finite_graph": false,
+        "fixed_spacing": true,
+        "label": "uniform Kogut\u2013Susskind SU(2) at fixed spacing, strong bare coupling",
+        "model_id": "AQ_uniform_routeB along (a_n,g_n)",
+        "negative_tau_is_real_g_point": false,
+        "reference": "haar (route B)",
+        "selected_coefficient_alpha_units": "tau/24",
+        "tau_cap": "1/100000000"
+      },
+      "passed": true,
+      "rejected_mutations": [
+        "patterned_zero_selected_model",
+        "toy_point_n2_relabelled_admitted (tau=16x10^-8)",
+        "al1_frozen_path_point_relabelled_admitted",
+        "negative_tau_as_real_g_coupling",
+        "finite_graph_relabelled",
+        "selected_strip_reference",
+        "trajectory_points_relabelled_one_model"
+      ],
+      "triple_note": "preregistration selected_triple [\"0\",\"0\",\"0\"] read as the route-B Haar reference; the selected faces carry tau/24 in psi_b (AX1)"
+    },
+    {
+      "id": "trajectory_named",
+      "note": "the crossovers do not depend on a_n because tau=96/g^4 is independent of a (rescaling invariance)",
+      "passed": true,
+      "rejected_mutations": [
+        "trajectory_claimed_derived",
+        "a_n_unnamed",
+        "g_constant_not_to_zero",
+        "the_renormalization_trajectory_claimed"
+      ],
+      "trajectory": {
+        "E_star_fixed": true,
+        "claimed_physical_trajectory": false,
+        "derived": false,
+        "form": "g(a)^2 ~ 1/(2 b_0 log(1/(a Lambda))) as a -> 0 with b_0 > 0 (qualitative; no numerical b_0 is used or source-audited)",
+        "name": "H_AF: (a_n, g_n), n>=1, with a_n -> 0 and g_n -> 0",
+        "plateau_fit": false,
+        "post_hoc_node_selection": "forbidden",
+        "status": "hypothesis of asymptotic-freedom form, not derived here",
+        "toy": {
+          "E_star": "fixed",
+          "a_n": "a_0/n",
+          "g_n": "g_0/n"
+        }
+      }
+    },
+    {
+      "estimate": {
+        "citation": "research/round32/advisor/ax1-gate.json",
+        "citation_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+        "cited_not_rederived": true,
+        "failure_point": "every (a_n,g_n) with g_n->0 leaves g^4>=9.6x10^9 at a finite index (declared toy n*=2); the AL1 bridge g^4>=32 fails at a later finite index (n*=132)",
+        "id": "E1",
+        "name": "volume-uniform gap at fixed a",
+        "regime": "|tau|<=10^-8, i.e. g^4>=9.6x10^9, at fixed a",
+        "regime_g4": "9600000000",
+        "statement": "every finite complete-factor route-B volume (every N) of the uniform Kogut-Susskind SU(2) model at fixed spacing a has a unique gauge-invariant ground and full-space gap >= 1/2 normalized = alpha/16 = g^2/(32a); the gap passes to the AQ subsequential states",
+        "uniform_along_a_n": false,
+        "uniform_in": "N (volume) at fixed a"
+      },
+      "id": "one_uniform_estimate_identified",
+      "other_fixed_a_constants_not_selected": [
+        "D'_ii state bound (AX1 gate item 6)",
+        "reset budget 102|tau| (AX1 gate item 3)",
+        "|omega(W)|<=D' (AX1 gate item 6)"
+      ],
+      "passed": true,
+      "reading": "'exactly one' = exactly one necessary estimate (item 2); the AX1 gate also admits other volume-uniform constants at fixed a, none of which is uniform along a_n->0",
+      "rejected_mutations": [
+        "no_estimate_identified",
+        "second_estimate_added",
+        "patterned_model_gate_cited",
+        "estimate_read_along_a_n",
+        "estimate_rederived_instead_of_cited"
+      ]
+    },
+    {
+      "E_star": "E_star = hbar*c/(1 fm) (declared fixed positive reference; about 197.327 MeV, preview)",
+      "id": "e_star_fixed_no_plateau",
+      "nodes": {
+        "pilot_runs": {
+          "declared": [],
+          "excluded_from_count": true
+        },
+        "post_hoc_node_selection": "forbidden",
+        "s_values": []
+      },
+      "passed": true,
+      "plateau_fit": false,
+      "rejected_mutations": [
+        "E_star_zero",
+        "E_star_n_equal_1_over_a_n",
+        "plateau_fit_of_gap_over_E_star",
+        "post_hoc_node_selection"
+      ]
+    },
+    {
+      "id": "uniform_label_strong_coupling",
+      "label": "uniform Kogut\u2013Susskind SU(2) at fixed spacing, strong bare coupling",
+      "passed": true,
+      "rejected_mutations": [
+        "weak_coupling_label",
+        "continuum_label",
+        "fixed_spacing_missing",
+        "strong_bare_coupling_missing"
+      ]
+    },
+    {
+      "forbidden_phrasings": [
+        "the continuum limit exists",
+        "fraction of the problem"
+      ],
+      "id": "mandatory_sentence_and_phrasing",
+      "mandatory_sentence": "Along the named trajectory (a_n,g_n), the fixed-spacing family supplies exactly one uniform estimate, the volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9, and fails to supply any estimate uniform along a_n->0; this is not a statement that the continuum limit exists, that any estimate is uniform in a, that the coupling is weak, or that any fraction of the continuum problem is thereby resolved.",
+      "passed": true,
+      "rejected_mutations": [
+        "report_phrase_the_continuum_limit_exists",
+        "report_phrase_fraction_of_the_problem",
+        "report_limit_exists_asserted",
+        "mandatory_sentence_negation_removed",
+        "hypothesis_status_removed"
+      ],
+      "report_scan": "report.md scanned with the mandatory sentence and code spans removed: no forbidden phrasing, every \"limit exists\" sentence negated, required statements present, crossover indices and exact values present",
+      "template_uniform_qualification": {
+        "a_sense_negated": true,
+        "n_sense_qualifier": true,
+        "occurrences": 4,
+        "qualified_in_place": 3,
+        "reading": "'exactly one uniform estimate' is qualified by its apposition 'the volume-uniform gap'; both a-sense occurrences are negated"
+      }
+    },
+    {
+      "N_tokens": [
+        "volume-uniform",
+        "uniform in n\\b",
+        "uniformly in n\\b",
+        "uniform-in-n\\b"
+      ],
+      "a_tokens": [
+        "uniform in a(?:_n)?\\b",
+        "uniformly in a(?:_n)?\\b",
+        "uniform-in-a\\b",
+        "uniform(?:ly)? along (?:a_n|the trajectory|any trajectory|every trajectory|a trajectory)",
+        "uniform in the lattice spacing"
+      ],
+      "id": "uniform_in_N_not_in_a",
+      "model_tokens": [
+        "uniform kogut",
+        "uniform model",
+        "uniform triple",
+        "uniform coefficients?",
+        "uniform fixed-spacing"
+      ],
+      "passed": true,
+      "rejected_mutations": [
+        "unqualified_uniform_sentence",
+        "positive_uniform_in_a_sentence",
+        "two_senses_conjoined",
+        "positive_uniformly_along_the_trajectory"
+      ],
+      "rule": "every occurrence of \"uniform\" in a sentence of report.md (template and code spans removed) is qualified in place as N-sense (volume-uniform, uniform in N), a-sense (uniform in a, uniform-in-a, uniform along a_n/the trajectory) or model-sense (uniform Kogut-Susskind, uniform model/triple/coefficient); every a-sense sentence carries a negation or requirement word; the two senses are never conjoined"
+    },
+    {
+      "id": "continuum_requirements_listed",
+      "names": [
+        "uniform-in-a estimates",
+        "reconstruction hypotheses",
+        "physical scale control"
+      ],
+      "passed": true,
+      "rejected_mutations": [
+        "physical_scale_row_removed",
+        "uniform_in_a_marked_supplied",
+        "reconstruction_premise_emptied"
+      ],
+      "rows": 3,
+      "source": "the three names are read from contract item 4; the table is parsed from report.md section 4.3",
+      "statuses": [
+        "missing",
+        "missing",
+        "missing"
+      ]
+    },
+    {
+      "id": "unaudited_lead_not_imported",
+      "leads": [
+        {
+          "audited": false,
+          "claim": "strong-coupling and asymptotically-free continuum limits coincide",
+          "imported": false,
+          "reading_depth": "abstract only (modern lens)",
+          "source": "Faizal & Shabir, arXiv:2606.19362 (Fortschr. Phys. 74 (2026) e70097)"
+        }
+      ],
+      "passed": true,
+      "rejected_mutations": [
+        "faizal_shabir_imported_as_premise",
+        "faizal_shabir_marked_audited"
+      ],
+      "source_search": "this producer ran no source search of its own; the statement rests on the searches recorded in the snapshotted modern memo, modern update-4 and historical update-4"
+    },
+    {
+      "gate_fields": {
+        "continuum_claim": false,
+        "loop_count_fraction_claimed": false,
+        "uniform_in_N_claimed": true,
+        "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling",
+        "uniform_in_a_claimed": false,
+        "weak_coupling_claim": false
+      },
+      "id": "gate_fields_exported",
+      "passed": true,
+      "rejected_mutations": [
+        "uniform_in_N_scope_changed",
+        "uniform_in_N_dropped"
+      ],
+      "source": "preregistration.gate_fields_required plus required item 5 (uniform_in_N_claimed with its scope string)"
+    },
+    {
+      "historical_or_occult_numeric_premise": false,
+      "id": "no_priority_or_continuum_claim",
+      "passed": true,
+      "rejected_mutations": [
+        "continuum_true",
+        "priority_true",
+        "weak_coupling_true",
+        "uniform_wilson_true",
+        "shift_true",
+        "uniform_in_a_true"
+      ],
+      "uniform_wilson_note": "AX1 exported uniform_wilson_claim:true meaning only the uniform-model label; AZ1 makes no Wilson-mean claim, so it is false here and the uniform-model meaning is carried by the label"
+    },
+    {
+      "id": "loop_count_not_fraction",
+      "investigation_index": "9 of 10 (an index of executed Round32 investigations, not a measure of the continuum problem)",
+      "passed": true,
+      "rejected_mutations": [
+        "loop_count_fraction_true",
+        "investigation_index_as_fraction_field",
+        "fraction_sentence_in_report"
+      ]
+    },
+    {
+      "bridge": "r=4/g^4<=1/8 <=> g^4>=32 (AL1); on the AL1 frozen path g_n^4=1/n^2<32 for every n>=1; on the declared toy it fails from n*=132 on",
+      "common_rescaling": "tau(c*a)=tau(a) and r(c*alpha,c*lambda)=r exactly: rescaling a, E_star or the whole Hamiltonian cannot move tau; only g does (derived here from the AL1 dictionary; the AL2 result is not a shared premise)",
+      "id": "bridge_obstruction_retained",
+      "passed": true,
+      "rejected_mutations": [
+        "bridge_obstruction_dropped",
+        "R18_B2_bound_32_over_3_substituted",
+        "common_rescaling_claimed_to_reach_the_cap",
+        "a_dependent_tau"
+      ]
+    },
+    {
+      "arithmetic": "fractions.Fraction and Python integers throughout; integer square/fourth roots with explicit brackets; previews truncated from exact rationals",
+      "id": "exact_arithmetic_admission",
+      "passed": true,
+      "rejected_mutations": [
+        "float_input",
+        "bool_input",
+        "nan_input",
+        "zero_denominator",
+        "decimal_preview_as_admission_value",
+        "float_coupling_in_crossover",
+        "non_integer_polynomial_coefficient"
+      ]
+    },
+    {
+      "id": "root_n_misuse",
+      "note": "n* uses the exact fourth root because g_n^4=g_0^4/n^4; the gap is volume-uniform (every N), with no statistical or root-N factor",
+      "passed": true,
+      "rejected_mutations": [
+        "square_root_index_11",
+        "g_n4_read_as_g0_4_over_n2",
+        "gap_divided_by_root_N"
+      ]
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "passed": true,
+      "producer_reading": "inexact dictionary arithmetic is read as limited (the contract names only the citation case); an overclaim is insufficient",
+      "rejected_mutations": [
+        "missing_citation_relabelled_accepted",
+        "overclaim_relabelled_limited",
+        "inexact_arithmetic_relabelled_accepted",
+        "al1_path_failure_dropped",
+        "failure_point_relabelled_resolved"
+      ],
+      "retained_failures": {
+        "al1_frozen_path_fails_bridge_every_n": "g_n^4=1/n^2<32",
+        "cap_declared_toy_leaves_admitted_regime": "n*=2",
+        "cap_declared_toy_leaves_bridge": "n*=132",
+        "i1_omitted_conditions_unevaluated": "c1(S), c2(S) unevaluated",
+        "no_estimate_along_a_n": "none supplied",
+        "panel_toy_leaves_admitted_regime": "n*=4",
+        "panel_toy_leaves_bridge": "n*=421"
+      },
+      "rule": {
+        "accepted_within_scope": "Statement verified by the skeptic with the dictionary arithmetic exact.",
+        "insufficient": "The statement overclaims.",
+        "limited": "The failure point is stated without the supplied estimate's proof citation."
+      }
+    },
+    {
+      "id": "error_ledger_itemized",
+      "ledger": {
+        "not_applicable": {
+          "reason": "statement loop: exact integer/rational dictionary arithmetic and exact crossover indices only; no enclosure; the only irrational quantity (g^2 at the cap, sqrt(9.6x10^9)) is bracketed by directed integer square roots of width 10^-30 and enters only as a lower bound",
+          "status": "not_applicable"
+        }
+      },
+      "passed": true,
+      "preregistered": [
+        "not_applicable: statement loop (reason: exact integer/rational dictionary arithmetic only; no enclosure)"
+      ]
+    },
+    {
+      "blocking": false,
+      "defects": [
+        {
+          "defect": "the template contains the forbidden phrase 'the continuum limit exists' (negated); the report scan removes the template's verbatim occurrence before scanning",
+          "field": "preregistration.mandatory_sentence_template",
+          "id": "D1"
+        },
+        {
+          "defect": "'supplies exactly one uniform estimate': the AX1 gate also admits other volume-uniform constants at fixed a (D'_ii, reset 102|tau|); read with item 2 as 'exactly one necessary estimate'; none of them is uniform along a_n->0",
+          "field": "preregistration.mandatory_sentence_template",
+          "id": "D2"
+        },
+        {
+          "defect": "'the AM2 contraction needs tau<=10^-8': 10^-8 is the preregistered cap at which the AM2/AX1 certificates are admitted, not a sharp threshold (AM2 reverse; AX1 forward records contraction-only margins 7/274688 and 1/20416, not admitted); the failure point holds for every fixed cap",
+          "field": "parameters.failed",
+          "id": "D3"
+        },
+        {
+          "defect": "'the failure of common rescaling' refers to work after AL1 (the AL1 gate selected AL2 to test common scale changes) that is not a shared premise; the invariance is derived here from the AL1 dictionary",
+          "field": "required[3]",
+          "id": "D4"
+        },
+        {
+          "defect": "'the AL1 bridge condition g^4>=32 also fails': on a g_n->0 path it fails from a finite index on (declared toy n*=132, rehearsal n*=421), not at every n; it fails at every n only on the AL1 frozen path",
+          "field": "parameters.failed",
+          "id": "D5"
+        },
+        {
+          "defect": "[\"0\",\"0\",\"0\"] is read as the route-B Haar reference; in the uniform model every selected face carries tau/24 in alpha units, held in psi_b (AX1 gate)",
+          "field": "preregistration.selected_triple_alpha_units",
+          "id": "D6"
+        },
+        {
+          "defect": "names g_n and a fixed E_star but not a_n; a_n=a_0/n is declared here; the crossovers do not depend on a_n (tau is independent of a)",
+          "field": "parameters.toy_trajectory",
+          "id": "D7"
+        },
+        {
+          "defect": "a real-g trajectory has tau=96/g^4>0; tau<0 is the U_E mirror of +|tau| (AX1), not a trajectory point; both signs share the cap",
+          "field": "preregistration.tau.signs_evaluated",
+          "id": "D8"
+        },
+        {
+          "defect": "'finite_volume uniform bound' carries an unqualified 'uniform'; read as volume-uniform at fixed a",
+          "field": "preregistration.state_provenance",
+          "id": "D9"
+        }
+      ],
+      "id": "contract_wording_defects_recorded",
+      "passed": true,
+      "premise_arithmetic_notes": [
+        {
+          "claimed": "g_3^4=10^12/81=12345679012+34/81",
+          "claimed_correct": false,
+          "effect": "none on any crossover index: g_3^4 is above 9.6x10^9 either way; only the mixed-number remainder is wrong",
+          "exact": "g_3^4=10^12/81=12345679012+28/81",
+          "id": "P1",
+          "source": "research/round32/experts/modern/update-4.md section 3 (panel rehearsal)"
+        }
+      ],
+      "relayed_instruction_notes": [
+        {
+          "id": "R1",
+          "note": "uniform_wilson_claim is exported false as instructed; the AX1 gate's true meant only the uniform-model label, which AZ1 carries in its label",
+          "source": "relayed task instruction (not contract text)"
+        },
+        {
+          "id": "R2",
+          "note": "the relayed freeze command omits --verdict, which research/round32/tools/freeze.py requires; the proposed forward verdict text is passed",
+          "source": "relayed task instruction (not contract text)"
+        }
+      ]
+    },
+    {
+      "controls_in_map": 21,
+      "id": "report_item_and_control_map",
+      "items_in_map": 6,
+      "map_section": "report.md section 5.9",
+      "passed": true,
+      "rejected_mutations": [
+        "control_row_removed_from_map",
+        "item_3_row_removed_from_map"
+      ]
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "passed": true,
+      "rejected_mutations": [
+        "control_boolean_flipped_hash_rebound",
+        "bridge_crossover_131_hash_rebound",
+        "cap_crossover_1_hash_rebound",
+        "g4_cap_decade_hash_rebound",
+        "uniform_in_a_flag_hash_rebound",
+        "uniform_in_N_scope_hash_rebound",
+        "ax1_gate_hash_replaced_hash_rebound",
+        "al1_gate_snapshot_removed_hash_rebound",
+        "mandatory_sentence_altered_hash_rebound",
+        "gap_example_doubled_hash_rebound",
+        "second_estimate_added_hash_rebound",
+        "trajectory_marked_derived_hash_rebound",
+        "requirement_marked_supplied_hash_rebound",
+        "verdict_changed_hash_rebound",
+        "continuum_flag_hash_rebound",
+        "retained_failure_dropped_hash_rebound"
+      ]
+    }
+  ],
+  "continuum_claim": false,
+  "contract_controls_covered": [
+    "bridge_obstruction_retained",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "dictionary_arithmetic_exact",
+    "e_star_fixed_no_plateau",
+    "exact_arithmetic_admission",
+    "first_order_mean_charged",
+    "full_original_wilson_cover",
+    "insufficient_verdict_retained",
+    "loop_count_not_fraction",
+    "missing_incoming_stars",
+    "no_priority_or_continuum_claim",
+    "one_uniform_estimate_identified",
+    "root_n_misuse",
+    "tau_scaling_exponent",
+    "toy_trajectory_crossover_exact",
+    "trajectory_named",
+    "uniform_in_N_not_in_a",
+    "uniform_label_strong_coupling",
+    "vector_versus_scalar_centering",
+    "wrong_delta_alpha_hbar_clock"
+  ],
+  "contract_sha256": "91c828a7aa6ef9bd4d3dbf762363b7558faa6922c23e1aff476cd098d4177078",
+  "contract_wording_defects": [
+    {
+      "defect": "the template contains the forbidden phrase 'the continuum limit exists' (negated); the report scan removes the template's verbatim occurrence before scanning",
+      "field": "preregistration.mandatory_sentence_template",
+      "id": "D1"
+    },
+    {
+      "defect": "'supplies exactly one uniform estimate': the AX1 gate also admits other volume-uniform constants at fixed a (D'_ii, reset 102|tau|); read with item 2 as 'exactly one necessary estimate'; none of them is uniform along a_n->0",
+      "field": "preregistration.mandatory_sentence_template",
+      "id": "D2"
+    },
+    {
+      "defect": "'the AM2 contraction needs tau<=10^-8': 10^-8 is the preregistered cap at which the AM2/AX1 certificates are admitted, not a sharp threshold (AM2 reverse; AX1 forward records contraction-only margins 7/274688 and 1/20416, not admitted); the failure point holds for every fixed cap",
+      "field": "parameters.failed",
+      "id": "D3"
+    },
+    {
+      "defect": "'the failure of common rescaling' refers to work after AL1 (the AL1 gate selected AL2 to test common scale changes) that is not a shared premise; the invariance is derived here from the AL1 dictionary",
+      "field": "required[3]",
+      "id": "D4"
+    },
+    {
+      "defect": "'the AL1 bridge condition g^4>=32 also fails': on a g_n->0 path it fails from a finite index on (declared toy n*=132, rehearsal n*=421), not at every n; it fails at every n only on the AL1 frozen path",
+      "field": "parameters.failed",
+      "id": "D5"
+    },
+    {
+      "defect": "[\"0\",\"0\",\"0\"] is read as the route-B Haar reference; in the uniform model every selected face carries tau/24 in alpha units, held in psi_b (AX1 gate)",
+      "field": "preregistration.selected_triple_alpha_units",
+      "id": "D6"
+    },
+    {
+      "defect": "names g_n and a fixed E_star but not a_n; a_n=a_0/n is declared here; the crossovers do not depend on a_n (tau is independent of a)",
+      "field": "parameters.toy_trajectory",
+      "id": "D7"
+    },
+    {
+      "defect": "a real-g trajectory has tau=96/g^4>0; tau<0 is the U_E mirror of +|tau| (AX1), not a trajectory point; both signs share the cap",
+      "field": "preregistration.tau.signs_evaluated",
+      "id": "D8"
+    },
+    {
+      "defect": "'finite_volume uniform bound' carries an unqualified 'uniform'; read as volume-uniform at fixed a",
+      "field": "preregistration.state_provenance",
+      "id": "D9"
+    }
+  ],
+  "contribution_alias": "HNM-AZ1-F forward continuum-trajectory statement: the one estimate the fixed-spacing family supplies (the volume-uniform gap alpha/16=g^2/(32a) at fixed a, cited from AX1) and its failure point along a named (a_n,g_n) with exact toy crossovers",
+  "controls_deferred": {},
+  "controls_with_damaging_mutations": 21,
+  "direction": "forward",
+  "error_terms_itemized": {
+    "not_applicable": {
+      "reason": "statement loop: exact integer/rational dictionary arithmetic and exact crossover indices only; no enclosure; the only irrational quantity (g^2 at the cap, sqrt(9.6x10^9)) is bracketed by directed integer square roots of width 10^-30 and enters only as a lower bound",
+      "status": "not_applicable"
+    }
+  },
+  "estimates": [
+    {
+      "citation": "research/round32/advisor/ax1-gate.json",
+      "citation_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+      "cited_not_rederived": true,
+      "failure_point": "every (a_n,g_n) with g_n->0 leaves g^4>=9.6x10^9 at a finite index (declared toy n*=2); the AL1 bridge g^4>=32 fails at a later finite index (n*=132)",
+      "id": "E1",
+      "name": "volume-uniform gap at fixed a",
+      "regime": "|tau|<=10^-8, i.e. g^4>=9.6x10^9, at fixed a",
+      "regime_g4": "9600000000",
+      "statement": "every finite complete-factor route-B volume (every N) of the uniform Kogut-Susskind SU(2) model at fixed spacing a has a unique gauge-invariant ground and full-space gap >= 1/2 normalized = alpha/16 = g^2/(32a); the gap passes to the AQ subsequential states",
+      "uniform_along_a_n": false,
+      "uniform_in": "N (volume) at fixed a"
+    }
+  ],
+  "exclusions": {
+    "additional": [
+      "no statement about the actual gap where the certificate does not apply (failure of a sufficient certificate is not absence of a gap)",
+      "no asymptotic-freedom trajectory is derived; no numerical beta-function coefficient is used",
+      "the unaudited Faizal-Shabir construction is recorded as a lead, not imported",
+      "the contraction-only margins of the AX1 forward report are not admitted regimes",
+      "no estimate is volume-uniform and uniform in a at once"
+    ],
+    "contract": [
+      "any continuum construction",
+      "any uniform-in-a estimate",
+      "weak coupling",
+      "scientific priority",
+      "the continuum limit exists (phrase)",
+      "fraction of the problem (phrase)"
+    ],
+    "preregistration": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of any subsequential limit",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ]
+  },
+  "gate_fields": {
+    "continuum_claim": false,
+    "loop_count_fraction_claimed": false,
+    "uniform_in_N_claimed": true,
+    "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling",
+    "uniform_in_a_claimed": false,
+    "weak_coupling_claim": false
+  },
+  "headline": {
+    "admitted_regime": "|tau|<=10^-8 <=> g^4>=9600000000 at fixed a (strong bare coupling)",
+    "bridge_g4": "32",
+    "crossovers": {
+      "cap_declared_g0^4=9600000000": {
+        "g0_4": "9600000000",
+        "n*_bridge": 132,
+        "n*_cap": 2
+      },
+      "panel_rehearsal_g0=1000": {
+        "g0_4": "1000000000000",
+        "n*_bridge": 421,
+        "n*_cap": 4
+      }
+    },
+    "dictionary": "alpha=g^2/(2a), lambda=2/(g^2 a), tau=24*lambda/alpha=96/g^4 (AL1), hbar=c=1",
+    "g4_at_cap": "9600000000",
+    "gap_example": {
+      "a_fm": "1/10",
+      "g2": "1000000",
+      "gap_MeV_preview": "6.1664681e7",
+      "gap_fm_inverse": "312500",
+      "gap_over_E_star": "312500"
+    },
+    "identities_verified": [
+      "alpha/16=g^2/(32a)",
+      "tau=96/g^4",
+      "alpha*lambda*a^2=1",
+      "r=4/g^4",
+      "alpha*tau/24=lambda",
+      "(alpha/8)*(tau/3)=lambda",
+      "7*tau=672/g^4",
+      "tau/144=2/(3g^4)",
+      "(alpha/8)/2=g^2/(32a)",
+      "a*alpha/16=g^2/32",
+      "tau*g^4=96"
+    ],
+    "identity_routes": [
+      "integer-polynomial cross-multiplication in (g, a, c)",
+      "exact Fraction grid, 35 points"
+    ],
+    "lattice_units_floor_lower": "19595917942265424785578272597647131/6400000000000000000000000000000",
+    "lattice_units_floor_preview": "3.06186217847e3",
+    "supplied_estimate": "volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9 at fixed a (AX1 gate, cited)",
+    "target": {
+      "achieved": 15,
+      "comparator": ">=",
+      "met": true,
+      "value": "1"
+    },
+    "tau_cap": "1/100000000"
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "label": "uniform Kogut\u2013Susskind SU(2) at fixed spacing, strong bare coupling",
+  "leads_recorded": [
+    {
+      "audited": false,
+      "claim": "strong-coupling and asymptotically-free continuum limits coincide",
+      "imported": false,
+      "reading_depth": "abstract only (modern lens)",
+      "source": "Faizal & Shabir, arXiv:2606.19362 (Fortschr. Phys. 74 (2026) e70097)"
+    }
+  ],
+  "loop": "AZ1",
+  "loop_count_fraction_claimed": false,
+  "mandatory_sentence": "Along the named trajectory (a_n,g_n), the fixed-spacing family supplies exactly one uniform estimate, the volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9, and fails to supply any estimate uniform along a_n->0; this is not a statement that the continuum limit exists, that any estimate is uniform in a, that the coupling is weak, or that any fraction of the continuum problem is thereby resolved.",
+  "model": {
+    "J_per_abs_tau": 29,
+    "admitted_g4_min": "9600000000",
+    "finite_graph": false,
+    "fixed_spacing": true,
+    "label": "uniform Kogut\u2013Susskind SU(2) at fixed spacing, strong bare coupling",
+    "model_id": "AQ_uniform_routeB along (a_n,g_n)",
+    "negative_tau_is_real_g_point": false,
+    "reference": "haar (route B)",
+    "selected_coefficient_alpha_units": "tau/24",
+    "tau_cap": "1/100000000"
+  },
+  "premise_arithmetic_notes": [
+    {
+      "claimed": "g_3^4=10^12/81=12345679012+34/81",
+      "claimed_correct": false,
+      "effect": "none on any crossover index: g_3^4 is above 9.6x10^9 either way; only the mixed-number remainder is wrong",
+      "exact": "g_3^4=10^12/81=12345679012+28/81",
+      "id": "P1",
+      "source": "research/round32/experts/modern/update-4.md section 3 (panel rehearsal)"
+    }
+  ],
+  "proposed_forward_verdict": "accepted_within_scope (forward half of a statement+skeptic loop; admission requires the skeptic's independent derivation and replays); no sub-label proposed",
+  "protocol_steps_outside_check_py": {
+    "freeze_and_byte_identical_replays": "research/round32/tools/freeze.py",
+    "skeptic_review": "independent derivation and replays by the skeptic"
+  },
+  "rejected_mutation_total": 121,
+  "rejected_mutations_in_control_checks": 107,
+  "relayed_instruction_notes": [
+    {
+      "id": "R1",
+      "note": "uniform_wilson_claim is exported false as instructed; the AX1 gate's true meant only the uniform-model label, which AZ1 carries in its label",
+      "source": "relayed task instruction (not contract text)"
+    },
+    {
+      "id": "R2",
+      "note": "the relayed freeze command omits --verdict, which research/round32/tools/freeze.py requires; the proposed forward verdict text is passed",
+      "source": "relayed task instruction (not contract text)"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "missing_premise": "A lower bound Delta(a_n,g_n)>=m E_star with a fixed m>0 for every n along a trajectory with a_n->0 and g_n->0, with the matching control of local states and correlations; it requires a certificate valid for g^4<9.6x10^9, outside strong bare coupling, and no admitted or source-audited result supplies one",
+      "requirement": "uniform-in-a estimates",
+      "status": "missing",
+      "supplied_at_fixed_a": "not along a_n->0: at each fixed a with g^4>=9.6x10^9 only, the volume-uniform gap alpha/16 and the AX1 state bounds, and nothing once g_n^4<9.6x10^9"
+    },
+    {
+      "id": "R2",
+      "missing_premise": "Osterwalder-Schrader axioms for limiting Euclidean Schwinger functions (reflection positivity passed to the limit, restored Euclidean invariance, regularity, clustering), or the Hamiltonian analogue: a limit of the Hilbert spaces and local algebras along a_n->0 carrying a self-adjoint nonnegative Hamiltonian with a unique vacuum, local fields and Poincare covariance; no such limit is constructed in the admitted material",
+      "requirement": "reconstruction hypotheses",
+      "status": "missing",
+      "supplied_at_fixed_a": "fixed-a lattice objects only, no limit object: AQ subsequential states and their GNS Hamiltonians with the gap alpha/16, on a lattice with no rotation or Lorentz covariance"
+    },
+    {
+      "id": "R3",
+      "missing_premise": "A relation between a_n and g_n that holds a physical quantity fixed in units of E_star (the renormalization-group trajectory, here only the hypothesis H_AF), with a proof that a_n*Delta_n->0 while Delta_n/E_star stays bounded above and below; inside the admitted regime a_n*Delta_n>3061 for every n, so the certified Delta_n/E_star diverges as a_n->0",
+      "requirement": "physical scale control",
+      "status": "missing",
+      "supplied_at_fixed_a": "not a physical scale: in lattice units a*Delta>=g^2/32>3061 throughout the admitted regime, so the certified gap is a cutoff-scale quantity"
+    }
+  ],
+  "resolved_interaction_shift": false,
+  "retained_failures": {
+    "al1_frozen_path_fails_bridge_every_n": "g_n^4=1/n^2<32",
+    "cap_declared_toy_leaves_admitted_regime": "n*=2",
+    "cap_declared_toy_leaves_bridge": "n*=132",
+    "i1_omitted_conditions_unevaluated": "c1(S), c2(S) unevaluated",
+    "no_estimate_along_a_n": "none supplied",
+    "panel_toy_leaves_admitted_regime": "n*=4",
+    "panel_toy_leaves_bridge": "n*=421"
+  },
+  "routes_executed": [
+    "forward: dictionary identities as integer-polynomial rational-function identities (cross-multiplication) in (g, a, c)",
+    "forward: the same identities by direct exact Fraction arithmetic on a 35-point grid",
+    "forward: admitted regime, supplied estimate and first-order mean parsed from the hash-bound AX1/AL1/AM2 gates and reports",
+    "forward: toy-trajectory crossovers by exact integer fourth roots and by exact Fraction scans; panel rehearsal reproduced",
+    "forward: inherited incidence and cover geometry recomputed from the I1 owner map",
+    "forward: report scan (mandatory sentence, forbidden phrasings, uniform qualifier rule, requirement table, map)"
+  ],
+  "routes_not_executed": [
+    "skeptic independent derivation and replays (single_direction_independent_replay; outside this producer)"
+  ],
+  "scientific_priority_verified": false,
+  "trajectory": {
+    "E_star_fixed": true,
+    "claimed_physical_trajectory": false,
+    "derived": false,
+    "form": "g(a)^2 ~ 1/(2 b_0 log(1/(a Lambda))) as a -> 0 with b_0 > 0 (qualitative; no numerical b_0 is used or source-audited)",
+    "name": "H_AF: (a_n, g_n), n>=1, with a_n -> 0 and g_n -> 0",
+    "plateau_fit": false,
+    "post_hoc_node_selection": "forbidden",
+    "status": "hypothesis of asymptotic-freedom form, not derived here",
+    "toy": {
+      "E_star": "fixed",
+      "a_n": "a_0/n",
+      "g_n": "g_0/n"
+    }
+  },
+  "uniform_in_N_claimed": true,
+  "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling",
+  "uniform_in_a_claimed": false,
+  "uniform_wilson_claim": false,
+  "weak_coupling_claim": false
+}

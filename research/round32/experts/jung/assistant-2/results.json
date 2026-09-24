@@ -1,0 +1,2528 @@
+{
+  "coupling_rule_chain": {
+    "crude_tier_robustness_preview": {
+      "crude_K2_preview_decimal": "7.9375e6",
+      "crude_tau_from_same_rule": "1/10000000000",
+      "differs_from_exact_tier_tau": true,
+      "note": "preview only; illustrates the rule genuinely depends on K_2^+ (a larger K gives a smaller tau), consistent with the skeptic's remark that the crude rule would give 10^-10"
+    },
+    "id": "coupling_rule_chain",
+    "inputs": [
+      "research/round32/advisor/aw1-gate.json",
+      "research/round32/contracts/aw1.json",
+      "research/round32/contracts/aw2.json",
+      "research/round32/forward/aw2/check.py",
+      "research/round32/forward/aw2/output/results.json"
+    ],
+    "items": [
+      {
+        "detail": {
+          "K_2_plus": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+          "cap": "1/100000000",
+          "gate_tau_decision_sentence": "1/100000000",
+          "gate_tau_item5": "1/100000000"
+        },
+        "item": "aw1_gate_K2_and_cap_parsed",
+        "passed": true
+      },
+      {
+        "detail": {
+          "bound": "1/288",
+          "grid_start_10^-k": 8,
+          "rule_text": "tau_AW2 = the largest element of the decade grid {10^-8, 10^-9, ...} with K_2^+ * tau <= 1/288 (half the first-order coefficient), K_2^+ the admitted exact-tier remainder constant; frozen here, never chosen after K_2 is seen"
+        },
+        "item": "aw1_contract_rule_parsed_as_formula_not_number",
+        "passed": true
+      },
+      {
+        "detail": {
+          "computed_tau_AW2": "1/100000000",
+          "trail": [
+            {
+              "K2_times_tau": "207638693805632844612385445095759947457/6189295753091021175534274310329364228603904",
+              "k": 8,
+              "satisfied": true,
+              "tau": "1/100000000"
+            }
+          ]
+        },
+        "item": "decade_rule_independently_applied",
+        "passed": true
+      },
+      {
+        "detail": {
+          "contract_tau_AW2": "1/100000000",
+          "contract_text": "1/100000000 (from the AW1 rule: largest decade-grid coupling with K_2^+ tau <= 1/288, evaluated inside check.py from the AW1 gate snapshot)",
+          "rule_reference_is_a_formula_not_null_or_number": "AW1 decade-grid rule, frozen in contracts/aw1.json and evaluated in check.py from advisor/aw1-gate.json"
+        },
+        "item": "aw2_contract_tau_matches_replay",
+        "passed": true
+      },
+      {
+        "detail": {
+          "results_K_2_plus": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+          "results_tau_AW2": "1/100000000"
+        },
+        "item": "aw2_results_json_tau_matches_replay",
+        "passed": true
+      },
+      {
+        "detail": {
+          "explanation": "grep for the literal string '1/100000000' (digit-bounded) finds zero standalone occurrences in forward/aw2/check.py. A raw, non-bounded substring search does find one hit, but it lies inside the unrelated literal '1/1000000000' (=10^-9, 9 zeros, used in an unrelated mutation-fixture tuple), which contains '100000000' (8 zeros) only as a coincidental digit-run collision; the digit-bounded regex correctly excludes it. Two occurrences of 'Q(1, 10 ** 8)' exist: one is a decimal-string tolerance bound in a cross-check (never assigned to tau_aw2), and the other is the literal value fed, with provenance='literal', into a call wrapped in rejected(...) -- i.e. check.py's own validate_coupling is required to raise AdmissionError for exactly this hard-coded literal, which it does; a second, similar rejected(...) call even feeds the contract's own displayed tau text with provenance='contract_parameter_text' and requires that rejected too. The sole assignment of the tau_aw2 variable in the file is 'tau_aw2, steps = aw2_rule(K, R)' (K read from the hash-verified AW1 gate, R from the hash-verified AW1 contract rule), never a literal.",
+          "q_1_10_pow_8_hits_explained": [
+            {
+              "classification": "decimal_tolerance_bound_not_tau",
+              "line": 639,
+              "text": "and abs(Q(G['K_about_accepted']) - K) < Q(1, 10 ** 8)"
+            },
+            {
+              "classification": "inside_a_rejected_damaging_mutation_test",
+              "line": 678,
+              "text": "and rejected(lambda: validate_coupling(Q(1, 10 ** 8), 'literal', K, 'exact'), 'literal_coupling_supplied')"
+            }
+          ],
+          "raw_substring_hits_explained": [
+            {
+              "classification": "inside_longer_literal_collision",
+              "line": 1244,
+              "text": "for key, val in (('tau', '1/1000000000'), ('triple', ['0', '1/100', '0']), ('reference_route', 'selected_strip'),"
+            }
+          ],
+          "standalone_literal_1_over_100000000_occurrences": 0,
+          "tau_aw2_assignment_sites": [
+            {
+              "line": 663,
+              "text": "tau_aw2, steps = aw2_rule(K, R)"
+            }
+          ]
+        },
+        "item": "aw2_check_py_contains_no_literal_1_over_100000000_used_as_input",
+        "passed": true
+      },
+      {
+        "detail": {
+          "accepted_rule_derived_value": "1/100000000",
+          "rejected_contract_text_as_coupling": "literal or non-rule coupling rejected: provenance='contract_parameter_text'",
+          "rejected_literal_hardcode": "literal or non-rule coupling rejected: provenance='literal_hardcode'",
+          "rejected_off_rule_coupling": "coupling fails the rule bound K_2^+ * tau <= bound"
+        },
+        "item": "self_contained_hardcode_rejection_test",
+        "passed": true
+      }
+    ],
+    "pass": true,
+    "role": "pre-registration test; zero research loops; replays AW1-gate -> AW2-contract -> AW2-check.py"
+  },
+  "preregistration_audit_2": {
+    "contracts_audited": [
+      "AW1 (frozen_before_production)",
+      "AW2 (frozen_before_production)",
+      "AX1 (frozen_before_production)",
+      "AX2 (draft)",
+      "AY1 (draft)",
+      "AY2 (draft)",
+      "AZ1 (draft)",
+      "AZ2 (draft)"
+    ],
+    "deferred": [
+      {
+        "item": "aw2_gate_accepted_equals_skeptic_supported_statement",
+        "reason": "AW2 review is pending (provisional, per the calling task): advisor/aw2-gate.json exists=True, skeptic/aw2.json exists=True; only skeptic/aw2-independent-freeze.json (the pre-comparison package) is on disk. Not counted toward the overall pass/fail; re-run this item once both files exist.",
+        "status": "not_yet_applicable"
+      }
+    ],
+    "findings": [
+      "AW1 and AW2 (frozen): no AV2-style mirror gap; every preregistration field present and allowed, controls_required.ids == controls byte-for-byte, sub_labels_allowed the closed five-label list, error_terms_itemized/error_terms_rule present as registered.",
+      "Observed contract statuses at audit time: {'AX1': 'frozen_before_production', 'AX2': 'draft', 'AY1': 'draft', 'AY2': 'draft', 'AZ1': 'draft', 'AZ2': 'draft'}. ['AX1'] already moved draft -> frozen_before_production while this audit was being run/re-run; any structural finding below that still applies to it should be recorded in its advisor gate (repair by record, not by silent edit of the frozen contract, per AGENTS.md and the AW1 item-3 sign-shorthand and AV2 mirror-gap precedents), not silently patched.",
+      "Symbolic (tau-proportional) selected triple: ['AX1', 'AX2']'s preregistration.selected_triple_alpha_units is ['tau/24','tau/24','tau/24'] -- each entry is a formula in tau, not an exact-rational constant like AV1/AW1's ['0','0','0']. This fails the closed schema's strict rational-only parse (`common2.rat`), which was designed for a fixed numeric triple. It is a legitimate model need (route B's uniform coefficient nu=alpha*tau/24 scales with tau by construction, per ax1.json's own model text), not an authoring error, but the schema has not been extended to accept a formula-valued triple. Flag for sign-off before AX1/AX2 leave draft: either register an explicit 'formula-valued triple' variant of the schema (naming which formulas are allowed) or record the triple as informational text elsewhere and keep selected_triple_alpha_units numeric (e.g. by fixing tau first and reporting the resulting numeric triple at the cap).",
+      "Undeclared direction value 'statement+skeptic': ['AY2', 'AZ1'] use direction='statement+skeptic' (both at the contract's top level and inside preregistration), but the closed ALLOWED_DIRECTION vocabulary this audit inherits from assistant-1's sub-round-1 script (itself matching the lens's own loop1 `recommendation.json`, whose R32-J5-DICTIONARY goal pair used direction='statement-only') contains 'statement-only', not 'statement+skeptic'. Both drafts are internally consistent (top-level and preregistration agree with each other), so this looks like a deliberate, consistent new convention for the newly-introduced 'statement loop' investigation type -- named consistently with 'single+skeptic' -- rather than a typo. This task's reading list does not include loop2-response.md / loop3-signoff.md section 2 verbatim, so whether this is a signed-off vocabulary amendment cannot be confirmed here. Flag for sign-off before AY2/AZ1 leave draft: either amend the closed direction vocabulary explicitly (the same way a sixth sub-label would need a Jung-lens sign-off note, per assistant-1's README planning note 2) to admit 'statement+skeptic', or rename these two contracts' direction back to 'statement-only'.",
+      "Same two statement loops (['AY2', 'AZ1']) also set observable.reference_route='n/a', which is not in the closed ALLOWED_REFERENCE_ROUTE vocabulary {haar, selected_strip, own_finite_graph}. This is the same root cause as the direction finding above: a 'statement loop' with no numerical certificate has no reference to route, and the template's observable schema was not given an explicit accommodation for that case (contrast AZ2, a genuine finite-graph loop, which correctly uses the pre-anticipated 'own_finite_graph' value rather than 'n/a'). Bundle the fix with the direction finding above.",
+      "AZ2 (the two-plaquette finite-graph loop) fails two schema fields that its own model_id already anticipated needing a finite-graph variant for: preregistration.selected_triple_alpha_units='n/a (finite graph)' is a string, not the required 3-element numeric list (reason: not a 3-element list: 'n/a (finite graph)'), and preregistration.tau.value='grid' does not parse as an exact rational (reason: tau.value does not parse as an exact rational: 'grid') because AZ2 evaluates a declared grid (parameters.tau_FG_grid=['1/1000','1/100','1/10']), not one fixed coupling. Note the asymmetry: ALLOWED_MODEL_ID_PREFIXES already includes 'FG(' and ALLOWED_REFERENCE_ROUTE already includes 'own_finite_graph' -- both correctly used by AZ2 -- so the schema partially anticipated a finite-graph loop, but selected_triple_alpha_units and tau.value were not given a parallel finite-graph/grid accommodation. Also note AZ2's state_provenance is still the 'AQ1_centered_whole_star_subsequence...' boilerplate text (it passes only because that prefix is one of three the schema permits, not because a 'finite_graph_ground...' provenance, the prefix the schema separately anticipates for this case, was actually used); this is a content mismatch worth correcting even though it does not fail the structural check. Flag for sign-off before AZ2 leaves draft: register an explicit grid-tau / non-triple schema variant for finite-graph loops (AZ2 is not the first FG( loop the schema expected, so this variant should probably have existed already).",
+      "All six drafts (AX1,AX2,AY1,AY2,AZ1,AZ2): controls_required.ids == controls byte-for-byte (no AV2-style mirror gap in any draft).",
+      "Of the six drafts, only AY1 passes every structural field check unmodified; AX1, AX2, AY2, AZ1 and AZ2 each hit exactly one of the three schema-vocabulary gaps above (AY1 is the only draft that reuses the AV1/AW1 model shape (AQ_patterned_zero_selected, numeric zero triple, haar reference, statement-standard direction) without any new field shape)."
+    ],
+    "id": "preregistration_audit_2",
+    "items": [
+      {
+        "detail": {
+          "contract": "AW1",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 30,
+            "equal": true,
+            "ids_len": 30,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": false,
+            "items": [
+              "am2_remainder",
+              "two_creation",
+              "straddling",
+              "density",
+              "normalization_order",
+              "overlap_multiplier",
+              "arithmetic"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": true,
+                "value": "paired"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "am2_remainder",
+                  "two_creation",
+                  "straddling",
+                  "density",
+                  "normalization_order",
+                  "overlap_multiplier",
+                  "arithmetic"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "omega(W) first-order coefficient and K_2; parity of omega(W^2), C(s)",
+                  "reference_route": "haar",
+                  "reference_value_exact": "0 and 1/4"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "K_2^+ tau at the cap",
+                  "value": "1/288"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "omega(W) first-order coefficient and K_2; parity of omega(W^2), C(s)",
+                  "reference_route": "haar",
+                  "reference_value_exact": "0 and 1/4"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "am2_remainder",
+                  "two_creation",
+                  "straddling",
+                  "density",
+                  "normalization_order",
+                  "overlap_multiplier",
+                  "arithmetic"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "K_2^+ tau at the cap",
+                  "value": "1/288"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": true,
+                "value": "paired"
+              }
+            ],
+            "passed": true
+          },
+          "passed": true,
+          "status": "frozen_before_production",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "aw1_structural_preregistration_audit",
+        "passed": true
+      },
+      {
+        "detail": {
+          "contract": "AW2",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 23,
+            "equal": true,
+            "ids_len": 23,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": false,
+            "items": [
+              "first_order_exact",
+              "second_order_remainder",
+              "arithmetic"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": true,
+                "value": "single+skeptic"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "first_order_exact",
+                  "second_order_remainder",
+                  "arithmetic"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "omega(W)",
+                  "reference_route": "haar",
+                  "reference_value_exact": "0"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "exclusion_margin",
+                  "value": "2"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": "AW1 decade-grid rule, frozen in contracts/aw1.json and evaluated in check.py from advisor/aw1-gate.json",
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": "AW1 decade-grid rule, frozen in contracts/aw1.json and evaluated in check.py from advisor/aw1-gate.json",
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "omega(W)",
+                  "reference_route": "haar",
+                  "reference_value_exact": "0"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "first_order_exact",
+                  "second_order_remainder",
+                  "arithmetic"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "exclusion_margin",
+                  "value": "2"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": true,
+                "value": "single+skeptic"
+              }
+            ],
+            "passed": true
+          },
+          "passed": true,
+          "status": "frozen_before_production",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "aw2_structural_preregistration_audit",
+        "passed": true
+      },
+      {
+        "detail": {
+          "all_present": true,
+          "missing": [],
+          "n_checks": 41,
+          "n_controls": 30
+        },
+        "item": "aw1_forward_results_contain_every_control_id",
+        "passed": true
+      },
+      {
+        "detail": {
+          "all_present": true,
+          "missing": [],
+          "n_checks": 57,
+          "n_controls": 30
+        },
+        "item": "aw1_reverse_results_contain_every_control_id",
+        "passed": true
+      },
+      {
+        "detail": {
+          "all_present": true,
+          "missing": [],
+          "n_checks": 37,
+          "n_controls": 23
+        },
+        "item": "aw2_forward_results_contain_every_control_id",
+        "passed": true
+      },
+      {
+        "detail": {
+          "gate_accepted_equals_skeptic_supported_statement": true,
+          "gate_limitations_equals_skeptic_limitations": true
+        },
+        "item": "aw1_gate_accepted_equals_skeptic_supported_statement",
+        "passed": true
+      },
+      {
+        "detail": {
+          "gate_accepted_equals_skeptic_supported_statement": true,
+          "gate_limitations_equals_skeptic_limitations": true
+        },
+        "item": "aw1_gate_limitations_equals_skeptic_limitations",
+        "passed": true
+      },
+      {
+        "detail": {
+          "contract": "AX1",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 28,
+            "equal": true,
+            "ids_len": 28,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": false,
+            "items": [
+              "am2_remainder",
+              "two_creation",
+              "straddling",
+              "density",
+              "onsite_cutoff_vector",
+              "arithmetic"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": true,
+                "value": "paired"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "am2_remainder",
+                  "two_creation",
+                  "straddling",
+                  "density",
+                  "onsite_cutoff_vector",
+                  "arithmetic"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_uniform_routeB"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "route-B constants: J', J_0', reset, incidence, D_i, D_ii",
+                  "reference_route": "haar",
+                  "reference_value_exact": "0 and 1/4"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": false,
+                "reason": "entries not exact rationals (symbolic/tau-dependent): ['tau/24', 'tau/24', 'tau/24']",
+                "value": [
+                  "tau/24",
+                  "tau/24",
+                  "tau/24"
+                ]
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "D_ii (uniform, route B) at the cap",
+                  "value": "1/2500000"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_uniform_routeB"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": false,
+                "reason": "entries not exact rationals (symbolic/tau-dependent): ['tau/24', 'tau/24', 'tau/24']",
+                "value": [
+                  "tau/24",
+                  "tau/24",
+                  "tau/24"
+                ]
+              },
+              {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "route-B constants: J', J_0', reset, incidence, D_i, D_ii",
+                  "reference_route": "haar",
+                  "reference_value_exact": "0 and 1/4"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "am2_remainder",
+                  "two_creation",
+                  "straddling",
+                  "density",
+                  "onsite_cutoff_vector",
+                  "arithmetic"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "D_ii (uniform, route B) at the cap",
+                  "value": "1/2500000"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": true,
+                "value": "paired"
+              }
+            ],
+            "passed": false
+          },
+          "passed": false,
+          "status": "frozen_before_production",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "ax1_structural_preregistration_audit",
+        "passed": false
+      },
+      {
+        "detail": {
+          "contract": "AX2",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 24,
+            "equal": true,
+            "ids_len": 24,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": false,
+            "items": [
+              "state",
+              "mean_square",
+              "kernel_dynamics",
+              "arithmetic"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": true,
+                "value": "single+skeptic"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "state",
+                  "mean_square",
+                  "kernel_dynamics",
+                  "arithmetic"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_uniform_routeB"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "vector",
+                  "id": "C(s)",
+                  "reference_route": "haar",
+                  "reference_value_exact": "exp(-3)/4 enclosed"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": false,
+                "reason": "entries not exact rationals (symbolic/tau-dependent): ['tau/24', 'tau/24', 'tau/24']",
+                "value": [
+                  "tau/24",
+                  "tau/24",
+                  "tau/24"
+                ]
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "radius",
+                  "value": "1/1000000"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_uniform_routeB"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": false,
+                "reason": "entries not exact rationals (symbolic/tau-dependent): ['tau/24', 'tau/24', 'tau/24']",
+                "value": [
+                  "tau/24",
+                  "tau/24",
+                  "tau/24"
+                ]
+              },
+              {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "vector",
+                  "id": "C(s)",
+                  "reference_route": "haar",
+                  "reference_value_exact": "exp(-3)/4 enclosed"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "state",
+                  "mean_square",
+                  "kernel_dynamics",
+                  "arithmetic"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "radius",
+                  "value": "1/1000000"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": true,
+                "value": "single+skeptic"
+              }
+            ],
+            "passed": false
+          },
+          "passed": false,
+          "status": "draft",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "ax2_structural_preregistration_audit",
+        "passed": false
+      },
+      {
+        "detail": {
+          "contract": "AY1",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 19,
+            "equal": true,
+            "ids_len": 19,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": false,
+            "items": [
+              "state_boundary",
+              "second_order_difference",
+              "arithmetic"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": true,
+                "value": "paired"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "state_boundary",
+                  "second_order_difference",
+                  "arithmetic"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "||rho_R-rho'_R||_1 and rho^(1)_R",
+                  "reference_route": "haar",
+                  "reference_value_exact": "P_R"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "closeness constant 2D at the cap",
+                  "value": "1/1250000"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "||rho_R-rho'_R||_1 and rho^(1)_R",
+                  "reference_route": "haar",
+                  "reference_value_exact": "P_R"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "state_boundary",
+                  "second_order_difference",
+                  "arithmetic"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": "<=",
+                  "quantity": "closeness constant 2D at the cap",
+                  "value": "1/1250000"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": true,
+                "value": "paired"
+              }
+            ],
+            "passed": true
+          },
+          "passed": true,
+          "status": "draft",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "ay1_structural_preregistration_audit",
+        "passed": true
+      },
+      {
+        "detail": {
+          "contract": "AY2",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 15,
+            "equal": true,
+            "ids_len": 15,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": true,
+            "items": [
+              "not_applicable: statement loop (reason: no new numerical certificate)"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": false,
+                "value": "statement+skeptic"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "not_applicable: statement loop (reason: no new numerical certificate)"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": false,
+                "reason": "observable.reference_route not in ('haar', 'selected_strip', 'own_finite_graph'): 'n/a'",
+                "value": {
+                  "centering": "none",
+                  "id": "statement",
+                  "reference_route": "n/a",
+                  "reference_value_exact": "n/a"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "obligations table complete",
+                  "value": "1"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_patterned_zero_selected"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": false,
+                "reason": "observable.reference_route not in ('haar', 'selected_strip', 'own_finite_graph'): 'n/a'",
+                "value": {
+                  "centering": "none",
+                  "id": "statement",
+                  "reference_route": "n/a",
+                  "reference_value_exact": "n/a"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "not_applicable: statement loop (reason: no new numerical certificate)"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "obligations table complete",
+                  "value": "1"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": false,
+                "value": "statement+skeptic"
+              }
+            ],
+            "passed": false
+          },
+          "passed": false,
+          "status": "draft",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "ay2_structural_preregistration_audit",
+        "passed": false
+      },
+      {
+        "detail": {
+          "contract": "AZ1",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 18,
+            "equal": true,
+            "ids_len": 18,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": true,
+            "items": [
+              "not_applicable: statement loop (reason: no new numerical certificate)"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": false,
+                "value": "statement+skeptic"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "not_applicable: statement loop (reason: no new numerical certificate)"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_uniform_routeB along (a_n,g_n)"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": false,
+                "reason": "observable.reference_route not in ('haar', 'selected_strip', 'own_finite_graph'): 'n/a'",
+                "value": {
+                  "centering": "none",
+                  "id": "statement",
+                  "reference_route": "n/a",
+                  "reference_value_exact": "n/a"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "one uniform estimate named with failure point",
+                  "value": "1"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "AQ_uniform_routeB along (a_n,g_n)"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": true,
+                "reason": null,
+                "value": [
+                  "0",
+                  "0",
+                  "0"
+                ]
+              },
+              {
+                "field": "tau",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "is_model_change_vs_previous_loop": false,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "1/100000000"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": false,
+                "reason": "observable.reference_route not in ('haar', 'selected_strip', 'own_finite_graph'): 'n/a'",
+                "value": {
+                  "centering": "none",
+                  "id": "statement",
+                  "reference_route": "n/a",
+                  "reference_value_exact": "n/a"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "not_applicable: statement loop (reason: no new numerical certificate)"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "one uniform estimate named with failure point",
+                  "value": "1"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": false,
+                "value": "statement+skeptic"
+              }
+            ],
+            "passed": false
+          },
+          "passed": false,
+          "status": "draft",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "az1_structural_preregistration_audit",
+        "passed": false
+      },
+      {
+        "detail": {
+          "contract": "AZ2",
+          "controls_required_ids_equals_controls": {
+            "controls_len": 19,
+            "equal": true,
+            "ids_len": 19,
+            "only_in_controls": [],
+            "only_in_ids": []
+          },
+          "error_terms_itemized_and_rule": {
+            "is_single_not_applicable_sentinel": false,
+            "items": [
+              "truncation_jmax",
+              "eigenvector_residual",
+              "arithmetic"
+            ],
+            "ok": true,
+            "rule": "an entry may be not_applicable only with a stated reason"
+          },
+          "fields_present_and_allowed": {
+            "by_name": {
+              "claim_exclusions": {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              "clock": {
+                "field": "clock",
+                "passed": true
+              },
+              "controls_required": {
+                "field": "controls_required",
+                "passed": true
+              },
+              "direction": {
+                "field": "direction",
+                "passed": true,
+                "value": "single+skeptic"
+              },
+              "error_terms_itemized": {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "truncation_jmax",
+                  "eigenvector_residual",
+                  "arithmetic"
+                ]
+              },
+              "error_terms_rule": {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              "expected_outcome_types": {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              "frozen_before_any_outcome": {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              "hash_binding": {
+                "field": "hash_binding",
+                "passed": true
+              },
+              "model_id": {
+                "field": "model_id",
+                "passed": true,
+                "value": "FG(two-plaquette, j_max, tau_FG, I1.5, gauge-invariant)"
+              },
+              "nodes": {
+                "field": "nodes",
+                "passed": true
+              },
+              "observable": {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "<W>_FG and coefficients",
+                  "reference_route": "own_finite_graph",
+                  "reference_value_exact": "own free reference"
+                }
+              },
+              "schema": {
+                "field": "schema",
+                "passed": true
+              },
+              "selected_triple_alpha_units": {
+                "field": "selected_triple_alpha_units",
+                "passed": false,
+                "reason": "not a 3-element list: 'n/a (finite graph)'",
+                "value": "n/a (finite graph)"
+              },
+              "state_provenance": {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              "sub_labels_allowed": {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              "target": {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "certified tail and enclosure widths reported",
+                  "value": "1"
+                }
+              },
+              "tau": {
+                "field": "tau",
+                "passed": false,
+                "reason": "tau.value does not parse as an exact rational: 'grid'",
+                "value": {
+                  "is_model_change_vs_previous_loop": true,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "grid"
+                }
+              }
+            },
+            "fields": [
+              {
+                "field": "schema",
+                "passed": true
+              },
+              {
+                "field": "frozen_before_any_outcome",
+                "passed": true
+              },
+              {
+                "field": "model_id",
+                "passed": true,
+                "value": "FG(two-plaquette, j_max, tau_FG, I1.5, gauge-invariant)"
+              },
+              {
+                "field": "selected_triple_alpha_units",
+                "passed": false,
+                "reason": "not a 3-element list: 'n/a (finite graph)'",
+                "value": "n/a (finite graph)"
+              },
+              {
+                "field": "tau",
+                "passed": false,
+                "reason": "tau.value does not parse as an exact rational: 'grid'",
+                "value": {
+                  "is_model_change_vs_previous_loop": true,
+                  "rule_if_chosen_later": null,
+                  "signs_evaluated": [
+                    "+",
+                    "-"
+                  ],
+                  "value": "grid"
+                }
+              },
+              {
+                "field": "state_provenance",
+                "passed": true,
+                "value": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound"
+              },
+              {
+                "field": "clock",
+                "passed": true
+              },
+              {
+                "field": "observable",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "centering": "none",
+                  "id": "<W>_FG and coefficients",
+                  "reference_route": "own_finite_graph",
+                  "reference_value_exact": "own free reference"
+                }
+              },
+              {
+                "field": "nodes",
+                "passed": true
+              },
+              {
+                "field": "error_terms_itemized",
+                "passed": true,
+                "value": [
+                  "truncation_jmax",
+                  "eigenvector_residual",
+                  "arithmetic"
+                ]
+              },
+              {
+                "field": "error_terms_rule",
+                "passed": true
+              },
+              {
+                "field": "target",
+                "passed": true,
+                "reason": null,
+                "value": {
+                  "comparator": ">=",
+                  "quantity": "certified tail and enclosure widths reported",
+                  "value": "1"
+                }
+              },
+              {
+                "field": "expected_outcome_types",
+                "passed": true,
+                "value": [
+                  "accepted_within_scope",
+                  "limited",
+                  "insufficient"
+                ]
+              },
+              {
+                "field": "sub_labels_allowed",
+                "passed": true,
+                "value": [
+                  "reference_unresolved",
+                  "sign_certified_finite_graph",
+                  "sign_certified_below_cap",
+                  "static_not_dynamic",
+                  "uniform_local_closeness_not_uniqueness"
+                ]
+              },
+              {
+                "field": "controls_required",
+                "passed": true
+              },
+              {
+                "field": "claim_exclusions",
+                "passed": true
+              },
+              {
+                "field": "hash_binding",
+                "passed": true
+              },
+              {
+                "field": "direction",
+                "passed": true,
+                "value": "single+skeptic"
+              }
+            ],
+            "passed": false
+          },
+          "passed": false,
+          "status": "draft",
+          "sub_labels_closed_vocabulary": true
+        },
+        "item": "az2_structural_preregistration_audit",
+        "passed": false
+      }
+    ],
+    "pass": false,
+    "role": "pre-registration audit; zero research loops"
+  },
+  "sign_convention_fixture": {
+    "convention": "I1.5 (phi_b=-(tau/3) sum W_f); single-face coupling V(tau)=-(tau/24) W re-derived here from second-order Rayleigh-Ritz to reproduce the AW1-admitted first-order coefficient +tau/144 on the j<=1/2 truncation, then reused unchanged at j<=1 and (bonus) j<=3/2",
+    "graph_name": "one_plaquette_character_truncation",
+    "id": "sign_convention_fixture",
+    "items": [
+      {
+        "detail": {
+          "W_at_minus_cap": "-7166361599999999999930880000000000000001/103195607040000000000000000000000000000000000000000",
+          "W_at_plus_cap": "7166361599999999999930880000000000000001/103195607040000000000000000000000000000000000000000",
+          "antisymmetric_W_minus_tau_equals_minus_W_plus_tau": true,
+          "even_order_coefficients_all_zero": true,
+          "first_order_coefficient_is_plus_1_over_144": true,
+          "n_states": 2,
+          "order": 5,
+          "passed": true,
+          "rejected_even_first_order_claim": "mutation: claiming the first-order coefficient is 0 (it is +1/144)",
+          "rejected_non_antisymmetric_claim": "mutation: claiming <W>(-tau) == <W>(+tau) (it is -<W>(+tau))",
+          "rejected_wrong_sign_coupling_claim": "wrong-sign coupling: sign(<W>) at tau>0 is not +1 under the flipped-sign convention",
+          "series_coefficients": [
+            "0",
+            "1/144",
+            "0",
+            "-1/1492992",
+            "0",
+            "1/10319560704"
+          ],
+          "sign_W_minus_cap_is_minus1": true,
+          "sign_W_plus_cap_is_plus1": true,
+          "structural_flip_identity": {
+            "ZH0Z_equals_H0": true,
+            "ZWZ_equals_negW": true,
+            "trivial_operator_correctly_fails_to_flip": "identity is not a flip: I W I == -W is false, as required"
+          },
+          "truncation": "j<=1/2 (2 states: j=0,1/2)"
+        },
+        "item": "flip_and_series_j_le_half",
+        "passed": true
+      },
+      {
+        "detail": {
+          "W_at_minus_cap": "-114661785599999999999308800000000000000007/1651129712640000000000000000000000000000000000000000",
+          "W_at_plus_cap": "114661785599999999999308800000000000000007/1651129712640000000000000000000000000000000000000000",
+          "antisymmetric_W_minus_tau_equals_minus_W_plus_tau": true,
+          "even_order_coefficients_all_zero": true,
+          "first_order_coefficient_is_plus_1_over_144": true,
+          "n_states": 3,
+          "order": 5,
+          "passed": true,
+          "rejected_even_first_order_claim": "mutation: claiming the first-order coefficient is 0 (it is +1/144)",
+          "rejected_non_antisymmetric_claim": "mutation: claiming <W>(-tau) == <W>(+tau) (it is -<W>(+tau))",
+          "rejected_wrong_sign_coupling_claim": "wrong-sign coupling: sign(<W>) at tau>0 is not +1 under the flipped-sign convention",
+          "series_coefficients": [
+            "0",
+            "1/144",
+            "0",
+            "-5/11943936",
+            "0",
+            "7/165112971264"
+          ],
+          "sign_W_minus_cap_is_minus1": true,
+          "sign_W_plus_cap_is_plus1": true,
+          "structural_flip_identity": {
+            "ZH0Z_equals_H0": true,
+            "ZWZ_equals_negW": true,
+            "trivial_operator_correctly_fails_to_flip": "identity is not a flip: I W I == -W is false, as required"
+          },
+          "truncation": "j<=1 (3 states: j=0,1/2,1)"
+        },
+        "item": "flip_and_series_j_le_one",
+        "passed": true
+      },
+      {
+        "detail": {
+          "W_at_minus_cap": "-4586471423999999999972352000000000000000289/66045188505600000000000000000000000000000000000000000",
+          "W_at_plus_cap": "4586471423999999999972352000000000000000289/66045188505600000000000000000000000000000000000000000",
+          "antisymmetric_W_minus_tau_equals_minus_W_plus_tau": true,
+          "even_order_coefficients_all_zero": true,
+          "first_order_coefficient_is_plus_1_over_144": true,
+          "n_states": 4,
+          "order": 5,
+          "passed": true,
+          "rejected_even_first_order_claim": "mutation: claiming the first-order coefficient is 0 (it is +1/144)",
+          "rejected_non_antisymmetric_claim": "mutation: claiming <W>(-tau) == <W>(+tau) (it is -<W>(+tau))",
+          "rejected_wrong_sign_coupling_claim": "wrong-sign coupling: sign(<W>) at tau>0 is not +1 under the flipped-sign convention",
+          "series_coefficients": [
+            "0",
+            "1/144",
+            "0",
+            "-5/11943936",
+            "0",
+            "289/6604518850560"
+          ],
+          "sign_W_minus_cap_is_minus1": true,
+          "sign_W_plus_cap_is_plus1": true,
+          "structural_flip_identity": {
+            "ZH0Z_equals_H0": true,
+            "ZWZ_equals_negW": true,
+            "trivial_operator_correctly_fails_to_flip": "identity is not a flip: I W I == -W is false, as required"
+          },
+          "truncation": "j<=3/2 (4 states: j=0,1/2,1,3/2) [bonus check]"
+        },
+        "item": "monotone_convergence_bonus_j_le_three_half",
+        "passed": true
+      },
+      {
+        "detail": {
+          "j_le_half": "1/144",
+          "j_le_one": "1/144",
+          "j_le_three_half": "1/144"
+        },
+        "item": "first_order_coefficient_stable_across_truncations",
+        "passed": true
+      }
+    ],
+    "model_is_finite_graph": true,
+    "pass": true,
+    "role": "pre-registration test; zero research loops; one-plaquette exact fixture",
+    "tau_cap_evaluated": "1/100000000",
+    "transfers_to_aq": false
+  }
+}

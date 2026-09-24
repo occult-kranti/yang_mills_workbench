@@ -1,0 +1,529 @@
+{
+  "schema": "hnm-round32-findings-v1",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "requested": 10,
+  "completed": 10,
+  "loops": [
+    {
+      "id": "av1",
+      "sequence": 1,
+      "subround": 1,
+      "title": "Hruday first-order local state lemma for the zero-selected AQ subfamily",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, 21 omitted anchored faces per factor grouped into whole stars phi_b=-(tau/3) sum W_f in normalized units delta=alpha/8), at either sign of tau with |tau|<=10^-8 (the cap values bound every smaller |tau| because each bound is increasing in |tau|), the unique untruncated ground state of every centered whole-star box Lambda_N, N>=2, has reduced density on the complete cover R={0,e_z} of the original xz Wilson loop satisfying ||rho_{N,R}-P_R||_1<=D uniformly in N. The bound follows from the product-ordering split psi=psi_out+delta, (P_R x 1)psi=psi_out, ||delta||<=eps||psi_out|| (straddling supports and the two-creation term included) by two independently proved inequalities: the explicit-density bound 2eps(1+eps)/(1+eps^2) (forward) and the fidelity bound 2eps/sqrt(1+eps^2) (reverse). Tier (ii), with the exact first-order face coefficient |tau|/144 and the self-consistent AM2 remainder t<=t_1/(1-352J): D_ii=585079838465912592144137406066050/42981220507576537932303142777593983768257 (~1.3612e-8; exact rational, certified by both inequalities), and the reverse's labelled 82-face refinement D_ii<=113902305553947264976096174312887/10^40 (~1.1390e-8; directed rational upper bound via the fidelity inequality); both meet 4/10^7 and 10^-6 at both signs. Tier (i), crude majorant t<=J_0G(R)=37/6250000: D_i=36133347268157653748322/1525878906463907516326874161 (~2.3680e-5; exact, forward) and D_i<=236800700911401877571290493559933441/10^40 (~2.3680e-5; directed, reverse), failing both targets and retained. Both tiers scale linearly (D(tau)/D(tau/100) in [99,101]). Consequences: |omega(W)|<=D, |omega(W^2)-1/4|<=D/2, with m^2<=D^2 charged. The on-site cutoff is removed for the ground vector itself in each fixed box (uniform-gap argument), and the bound passes by local trace-norm convergence to every subsequential limit of AQ1's centered whole-star construction, including AQ1's chosen state: uniform local closeness, not uniqueness, whole-sequence convergence or a rate in N. No Euclidean node certificate, interaction-induced shift or its sign, first-order coefficient, uniform Wilson, weak-coupling or continuum claim follows.",
+      "summary": "A volume-uniform local state bound linear in tau replaces the square-root reset bound: at the original cap the exact-first-order tier gives trace distance about 1.36e-8 on the Wilson cover, for every AQ1 subsequential limit.",
+      "limitations": [
+        "Only the AM2/AQ1 zero-selected patterned family, the cover R={0,e_z} and fixed spacing; nothing transfers to nonzero selected triples (non-Haar P_R), uniform Wilson theory, weak coupling or the continuum",
+        "Upper certificates only: no lower bound on ||rho_R-P_R||_1; value and sign of omega(W), the first-order coefficient 1/144 and any first-order vanishing are not claimed (AW1)",
+        "Uniform local closeness of all AQ1 subsequential limits (pairwise within 2D on R), not uniqueness, whole-sequence convergence or a rate in N",
+        "Inherited without re-proof: AM2 fixed point, multilinear majorant, cutoff-uniform and untruncated gap 1/2 (AM2 section 6); AQ1 trace-norm compactness and diagonal extraction; the I1 dictionary",
+        "Product-ordering split and normalization-trap location are shared panel premises; independence limited to the inequality, constants, enumeration, cutoff and passage steps; all agents are correlated model agents",
+        "Sign-blind: the tau=-10^-8 evaluation replays the same |tau| formula",
+        "Tier (i) fails 4/10^7 and 10^-6 and is retained as a limited-tier value; AT4 square-root bound not used",
+        "D_ii(rev)~1.1390e-8 rests on the fidelity inequality and the labelled 82-face refinement; D_ii(fwd)~1.3612e-8 is certified by both inequalities",
+        "Forward check.py implements 22 of 25 contract controls as exception-raising mutations; no_priority_or_continuum_claim, first_order_face_enumeration and av2_feasibility_threshold are positive exact checks; the forward sentence \"Every control is a damaging mutation that must raise an explicit exception.\" is not admitted",
+        "Reverse exports no six-name error ledger; the skeptic mapping in av1.md (N2) supplies it",
+        "Reverse remark \"no parity argument removes a first-order mean\" is not admitted (AW1 exclusion)",
+        "Forward attribution of a \"2(E_{0,L}-E_0)/gap form\" to the contract is incorrect wording; the Eckart inequality itself is correct",
+        "Both producers disclose undeclared protocol/code-style reads (tools README and freeze.py, AM2 and AT5 check.py); none carries premise weight",
+        "Scientific priority unverified"
+      ],
+      "model": "AM2/AQ1 zero-selected patterned family; both signs |tau|<=10^-8; centered whole-star boxes N>=2; cover R={0,e_z}; Haar product reference; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/av1-gate.json",
+      "contribution_id": "HNM-C-AV1",
+      "dependencies": [
+        "r29-am2",
+        "r29-aq1",
+        "r29-aq2",
+        "r31-at4"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Order the AM2 commuting nilpotent creation product so that creations meeting the cover R act last; split psi=psi_out+delta with delta orthogonal to psi_out.",
+        "Forward: write the reduced density on R explicitly and bound the trace distance by 2eps(1+eps)/(1+eps^2); reverse: compute the vacuum overlap 1/(1+e^2) and apply the pure-state-mixture inequality.",
+        "Evaluate the crude AM2 tier and the exact first-order tier (49 omitted faces per factor derived from the I1 table, face energy 24, self-consistent remainder) as exact rationals at both signs of tau=10^-8.",
+        "Remove the on-site spectral cutoff for the ground vector and pass the volume-uniform bound to every AQ1 subsequential limit by local trace-norm convergence.",
+        "Verify the linear tau-scaling against the square-root reset bound and the AV2 feasibility threshold 4/10^7."
+      ],
+      "applications": [
+        "Supplies the state term for the cap-level window certificate (AV2) and the expansion for the first-order Wilson mean (AW).",
+        "Gives uniform local closeness of all AQ-type subsequential states on the cover (AY)."
+      ],
+      "evidence": [
+        "research/round32/advisor/av1-gate.json",
+        "research/round32/forward/av1/report.md",
+        "research/round32/reverse/av1/report.md",
+        "research/round32/skeptic/av1.md",
+        "research/round32/skeptic/av1-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "av2",
+      "sequence": 2,
+      "subround": 1,
+      "title": "Hruday window-kernel certificate for the centered Wilson correlation at the original cap",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, whole stars phi_b=-(tau/3) sum W_f; original xz Wilson loop W with complete cover R={0,e_z} and seven incident stars; physical clock s=alpha*t_E/hbar, theta=alpha*t/hbar, G=H/alpha), at the original cap tau=+10^-8 and, as a replay of the same |tau| formula at the mirrored coupling, tau=-10^-8, every AQ1 subsequential state of the centered whole-star construction (each chosen state separately; no uniqueness, whole-sequence convergence or rate in N) has centered Euclidean Wilson correlation C(s)=<chi,e^{-sG}chi>, chi=(pi(W)-omega(W))Omega, satisfying at the single preregistered node s=1: |C(1)-d|<=r with the exact rational datum d=497870683678639429793424156500617766317/(4*10^40) (~0.012446767091965986, the midpoint of the directed enclosure of e^{-3}/4) and r<=R=1831967503411879425147166810021607/10^40 (~1.83196750341e-7, a directed upper bound of both producers' exact radii, which differ by 2.52e-41 and exceed the analytic bound by less than 10^-40), so C(1) in [497863355808625782275723567833377679889/(4*10^40), 99575602309730615462224949033571570549/(8*10^39)] ~ [0.0124465838952156, 0.0124469502887164], meeting the unchanged 10^-6 target (margin 5.4586). The bound is E=M_0(D+D^2)+k M_1=2(D+D^2)+49|tau|s/pi plus the arithmetic half-width 1/(4*10^40): the frozen C^2 window g(x)=e^{-sx} (x>=0), e^{sx}(1-2sx+2s^2x^2) (x<0) has ghat=4s^3/(pi(s-i theta)^3(s+i theta)) in L^1 with M_0=||ghat||_1=2, M_1=4s/pi, M_2=2s^2, proved by half-line transforms (forward) and by residues (reverse); the window lemma C(s)=int ghat c uses L^1 inversion, Fubini and AQ1 nonnegativity only (no AQ2 gap); the seven-star relative-unitary Duhamel slope k=49|tau|/4 holds for every real theta uniformly in the box; the state term uses the AV1-admitted forward tier-(ii) bound D=585079838465912592144137406066050/42981220507576537932303142777593983768257 (~1.3612e-8) by trace duality with no D/2 effect refinement, and m^2<=D^2 is charged. The free reference e^{-3}/4 lies inside the interval (reference_unresolved): no interaction shift, sign or coefficient of C(s) is claimed. Retained failures at unchanged tau and s: the AT4 Poisson certificate at L=10^4 (radius ~8.4152e-4) and the Poisson floor, at least 1.2650882233e-6 for every cutoff L even with D->0 (at least 1.2787e-6 with the admitted D), whose truncated absolute first moment (s/pi)log(1+L^2/s^2) diverges against the window's finite 4s/pi, both insufficient; the tier-(i) window radius ~4.7518e-5 is a retained limited-tier value and the C^1 window (radius ~1.7330e-7) is a preview only. The analytic formula crosses 10^-6 at s* in [6.236863446, 6.236863447] (~6.2368634460); only s=1 is certified. No grid or [0,128] claim, resolved interaction shift, uniform Wilson, weak-coupling, continuum, uniqueness or rate claim follows.",
+      "summary": "A C^2 window kernel replaces the Poisson cutoff and certifies the centered Wilson Euclidean node at the original cap: radius about 1.83e-7 at s=1 against the unchanged 10^-6 target, with the free reference inside.",
+      "limitations": [
+        "Only the AM2/AQ1 zero-selected patterned family, the cover R={0,e_z}, fixed spacing and the single node s=1 at tau=+-10^-8; nothing transfers to nonzero selected triples (non-Haar P_R), uniform Wilson theory, weak coupling or the continuum",
+        "Upper certificate only: the free value e^{-3}/4 lies inside the interval (reference_unresolved); no interaction shift, sign or coefficient of C(s) is claimed, and AV2 is not evidence for or against first-order vanishing (AW1)",
+        "Each AQ1 subsequential state separately; no uniqueness, whole-sequence convergence or rate in N",
+        "Sign-blind: the tau=-10^-8 value is a replay of the same |tau| formula at the mirrored coupling, not a second confirmation",
+        "Inherited without re-proof: AQ1 construction, G>=0, GNS implementation and local norm dynamics on compact theta intervals; AT4 F10-F12 (restated); AV1's D and its passage to AQ limits; the I1 dictionary; Fourier inversion and Fubini are cited, not machine-checked",
+        "The window, transform and constants are frozen shared premises; the forward read the skeptic's triage and loop-2 response (moment integrals) and the reverse read skeptic/av1.md (radius formula); independence is limited to the derivation routes (half-line transforms, residues, skeptic annihilator-jump plus Wallis and Leibniz), the code and the controls",
+        "The crossover s* is that of the analytic formula, not a node certificate; no grid or [0,128] claim; at s* the free value (<1.9e-9) is about 500 times smaller than the radius",
+        "The two producers' exact radii differ by 2.52e-41 (forward: 49|tau|/pi_lo with its Machin pi_lo; reverse: 49|tau|/floor_{10^-40}(pi) rounded up to 10^-40); both are valid directed bounds; the admitted headline is the common outward bound R=1831967503411879425147166810021607/10^40",
+        "Pre-registration mirror: contract controls list 24 ids but preregistration.controls_required.ids lists 23 (missing c1_window_preview_only); both producers executed the missing id as damaging mutations and iterate the 24-id list; non-blocking clerical defect; the frozen contract is not amended; freeze_contract.py now enforces equality (commit 2e1bfc8, after this freeze)",
+        "Tier (i) window radius ~4.7518e-5 retained as a limited-tier value; the contract preview 3.6-4.7e-5 is slightly low; the forward exports only a labelled lower value 2D_i+49|tau|/pi_hi",
+        "Forward sentence \"The centered shift is expected to be O(tau^2) (triage (c)3)\" is not admitted (AW1 obligation)",
+        "Forward reverse_premise_isolation control mutates the contract-declared lists only; the actual isolation is enforced by the reverse checker, freeze.py and replay_loop.py (27 files, verified)",
+        "Forward sign-convention control reads the free atom through the inversion identity g(+-3); the reverse evaluates it through its residue engine",
+        "Reverse reference constants 3 and 1/4 come from its calculator and are validated against the contract model string; target and D are read from the hash-checked snapshot in both",
+        "Both producers disclose undeclared protocol/code-style reads (tools README and freeze.py, AT5 check.py, their own direction's AV1 check.py); none carries premise weight",
+        "Scientific priority unverified"
+      ],
+      "model": "Same actual chosen AQ subsequential state as AT4 at tau=+10^-8 (and -10^-8 as a replay); selected triple (0,0,0); original xz Wilson; s=1; C^2 window; AV1 forward tier-(ii) state bound; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/av2-gate.json",
+      "contribution_id": "HNM-C-AV2",
+      "dependencies": [
+        "r32-av1",
+        "r31-at4",
+        "r31-at5",
+        "r29-aq1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Prove the window lemma: a C^2 window equal to e^{-sx} on the nonnegative spectral support has an L^1 transform; Fourier inversion and Fubini give C(s)=int ghat c and C_0(s)=g(3)/4.",
+        "Derive ghat=4s^3/(pi(s-i theta)^3(s+i theta)) and the moments M_0=2, M_1=4s/pi, M_2=2s^2 (forward: half-line transforms; reverse: residues).",
+        "Combine the seven-star Duhamel slope k=49|tau|/4, the AV1 linear state bound and the mean-square term into |C(s)-C_0(s)|<=2(D+D^2)+49|tau|s/pi.",
+        "Evaluate at tau=+10^-8, s=1 with directed pi and exp enclosures; retain the Poisson failures and the crossover s* about 6.24; report the free reference inside."
+      ],
+      "applications": [
+        "Supplies this programme's first certified actual-state Euclidean node at the original coupling cap (a project record, not a priority claim).",
+        "Provides a reusable exact calculator for the proved domain and the kernel template for the uniform model (AX2)."
+      ],
+      "evidence": [
+        "research/round32/advisor/av2-gate.json",
+        "research/round32/forward/av2/report.md",
+        "research/round32/reverse/av2/report.md",
+        "research/round32/skeptic/av2.md",
+        "research/round32/skeptic/av2-independent-derivation.md",
+        "research/round32/forward/av2/calculator.py"
+      ]
+    },
+    {
+      "id": "aw1",
+      "sequence": 3,
+      "subround": 2,
+      "title": "Hruday parity theorem, link-flip antisymmetry and the first-order Wilson mean with an itemized second-order remainder",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, whole stars phi_b=-(tau/3) sum W_f in normalized units delta=alpha/8; original xz Wilson loop W with complete cover R={0,e_z}; clock s=alpha*t_E/hbar, G=H/alpha), at both signs of tau with |tau|<=10^-8: (1) Parity theorem, finite boxes only: in every open centered whole-star box Lambda_N, N>=2, and every on-site cutoff, the first-order tau-derivatives at tau=0 of omega_N(W^2), of the real-time correlation c_N(theta)=<chi,e^{i theta(G-E)}chi> (every real theta) and of C_N(s)=<chi,e^{-s(G-E)}chi> (every s>=0) vanish, the state, Duhamel, energy and vector-centring terms separately, by the per-link Z_2 centre grading (SU(2) Peter-Weyl multiplicities): E[W]=E[W^3]=0, E[W^2]=1/4, E[W^4]=1/8, E[W^2 W_f]=0 for every omitted f including f=W, P_24 V W Omega_0=0 (only the identity component (1/4)Omega_0 at energy 0 for f=W), and zero first-order splitting of the gauge-invariant energy-24 multiplet span{W_g Omega_0} (not claimed on the non-invariant eigenspace); hence C_N(s)=e^{-3s}/4+O_N(tau^2) with the tau^2 constant explicitly unbounded (not uniform in N; for AQ limits only evenness of C(s), no AQ second-order statement), and omega(W^2)=1/4+O(tau^2) with supplementary uniform constants (not targets; the free value lies inside, no shift resolved). (2) Flip lemma: E={(p,x):p_y even} u {(p,y):p_z even} u {(p,z):p_x even} meets every plaquette of Z^3 in 1 or 3 links; U_E (central -1 on every link of E) commutes with every Casimir and every original endpoint gauge action, fixes Omega_0 and maps every W_f to -W_f, so U_E H_N(tau,kappa) U_E^*=H_N(-tau,-kappa) in every open centered whole-star box, including on-site cutoff compressions (Q_L -> cutoff of h_b(-kappa)); at kappa=0 omega_{N,-tau}(W)=-omega_{N,tau}(W) and omega_N(W^2), C_N, c_N are even in tau; for AQ limits S(-tau)=S(tau)o alpha_E as whole sets of subsequential limits (pointwise only along a common subsequence); odd periodic sides and frozen or gauge-fixed links excluded; no tau-antisymmetry via U_E at kappa!=0; oddness gives no O(tau^3) remainder. (3) omega_tau(W)=+tau/144+r(tau) under I1.5 (AV1 creation convention c^(1)=L_0=-(tau/72) sum W_f Omega_0, omega=-2Re<W Omega_0,c^(1)>+O(tau^2)); only f=W contributes; first-order values +-1/14400000000 at tau=+-10^-8. (4) |r(tau)|<=K_2^+ tau^2 uniformly in N, cutoff and every AQ1 subsequential limit at the exact tier (t<=T=(49|tau|/144)/(1-352J), rho=352JT, J=28|tau|): the bound value is K_2^+=81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984 (~3354.80322946, outward 3354803229461691/10^12; the skeptic itemization, identical to the forward's labelled unpinned_t_bounds variant, dominating the forward 3354.63832966 and reverse 3354.49942587 exact-tier values, all three valid). (5) K_2^+ tau<=1/288 at tau=10^-8, so the frozen decade-grid rule gives tau_AW2=10^-8 (the cap) with sign margin 1/(144 K_2^+ tau)~207.00005 (directed floor 41400010489/200000000). The crude tier (t_c=592|tau|, K_2~7.9375e6, margin 0.0875) fails at the cap and is retained as a limited-tier value. No enclosure or sign of omega(W), no dynamical or mass-gap statement, no third-order remainder, uniqueness, whole-sequence convergence, rate in N, uniform Wilson, weak-coupling, continuum or priority claim is admitted.",
+      "summary": "SU(2) parity makes every first-order shift of the centered correlation vanish; an exact link-sign flip makes the Wilson mean odd in tau; the first-order Wilson mean is +tau/144 with an itemized second-order constant about 3354.8 at the exact tier, so a sign certificate is feasible at the original cap.",
+      "limitations": [
+        "Only the AM2/AQ1 zero-selected patterned family, the cover R={0,e_z}, fixed spacing and |tau|<=10^-8; nothing transfers to nonzero selected triples, uniform Wilson theory, weak coupling or the continuum",
+        "Parity theorem for C(s) and c(theta) is a finite-volume Taylor statement (Kato analyticity per box); the tau^2 constant is explicitly unbounded; AQ limits inherit only the set-level evenness",
+        "Flip lemma needs open boxes and kappa=0 for antisymmetry; the kappa!=0 identity rests on the inherited strip-operator form; AQ statements are about whole sets of subsequential limits",
+        "K_2^+ is an absolute second-order upper bound with no sign of r(tau) and no third-order remainder; the AM2 generic majorant 352JT is 99.98% of it; the -tau ledger is a replay",
+        "No enclosure or sign of omega(W) is admitted (AW2); static equal-time mean, not a dynamical or mass-gap correction",
+        "Inherited without re-proof: AM2 fixed point, majorant, gaps and ground uniqueness; AV1 product split, anchored-norm tier, cutoff removal and AQ passage; AQ1 construction and dynamics; I1 dictionary; Kato and Peter-Weyl cited, not machine-checked",
+        "Fixtures (one plaquette, qubit/four-site creation algebras, kappa compressions, 3x3 compression) are finite graphs or algebras, transfers_to_aq false",
+        "Independence limited to routes and code: shared premises state the mechanism (loop-3 sign-offs, selection-aw1.md, skeptic/av2.md); the forward read the skeptic triage and loop-2 notes as declared premises",
+        "N1: both producers used the shared scratchpad root (files matching the forward's K_2/K_W2 formulas, E'' remark and one-plaquette fixture, and the reverse's alpha-unit fixture and four-site creation fixture, 23:14-23:20Z) without disclosing scratch reads; the forward's k2.py overwrote the skeptic's pre-comparison scratch k2.py; reads cannot be determined; isolation is verified for repository inputs only",
+        "N4: the reverse's headline 'margin ~103.5' is the ratio to 1/288; the contract sign margin is 1/(144 K_2^+ tau) ~207.02",
+        "N5: forward K_W2 ~3354.57 is conservative (2 rho, all 72 straddling faces) against reverse 1677.33 and skeptic 1677.52; supplementary, not a target",
+        "N6: reverse wording that U_E commutes with every on-site spectral cutoff and fixes P_R holds at kappa=0; at kappa!=0 these map to the -kappa objects (forward states Q_L')",
+        "N7: the forward records a coherently rehashed 1/144 target instead of rejecting it (no semantic tie to half the coefficient; the reverse rejects); protected by the check.py hash in freeze.json",
+        "N8: neither producer checker pins individual K_2 term values; four silent undercounts ran to completion and were caught only by the skeptic term validator; AW2 should bind K_2^+ from the gate",
+        "N9: the modern loop-3 sign-off sentence that the direct remainder is O(tau^3) is used by neither producer and is not admitted",
+        "Undeclared disclosed reads: forward tools README, freeze.py, AV1 forward check.py and two assistant scripts (named, not imported; the modern K_2 script holds only loop-2 tiers); reverse portions of reverse/av1/check.py and the line count of reverse/av2/check.py; the reverse's partial reads of the AV2 forward report and skeptic/av2.md are of declared shared premises",
+        "Scientific priority unverified"
+      ],
+      "model": "Same zero-selected patterned AQ subfamily as AV1 (selected triple (0,0,0), whole stars under I1.5, both signs |tau|<=10^-8, centered whole-star boxes, cover R={0,e_z}, Haar reference); the AV1-admitted expansion and constants; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/aw1-gate.json",
+      "contribution_id": "HNM-C-AW1",
+      "dependencies": [
+        "r32-av1",
+        "r29-am2",
+        "r29-aq1",
+        "r29-aq2"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Grade each link by the SU(2) center: a first-order Haar integral with an odd number of j=1/2 factors on some link vanishes; apply to the state, Duhamel and energy terms of C(s), of the real-time correlation and of omega(W^2).",
+        "Define the link set E and enumerate all plaquette orientations: every plaquette meets E oddly, so the central sign flip U_E maps H(tau,kappa) to H(-tau,-kappa); at the zero triple the Wilson mean is odd and the correlations even in tau.",
+        "Evaluate the first-order Wilson mean from the AV1 expansion under I1.5: only the Wilson face contributes, giving +tau/144.",
+        "Itemize the second-order remainder (AM2 remainder, two-creation, straddling, density, normalization, overlap multiplier 1) at the exact and crude tiers; evaluate the frozen AW2 coupling rule."
+      ],
+      "applications": [
+        "Re-targets roadmap goal 2 to the static Wilson mean and fixes the AW2 coupling before its constant is seen.",
+        "Supplies the exact tau-parity controls for every later loop."
+      ],
+      "evidence": [
+        "research/round32/advisor/aw1-gate.json",
+        "research/round32/forward/aw1/report.md",
+        "research/round32/reverse/aw1/report.md",
+        "research/round32/skeptic/aw1.md",
+        "research/round32/skeptic/aw1-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "aw2",
+      "sequence": 4,
+      "subround": 2,
+      "title": "Hruday sign-certified enclosure of the Wilson mean at the AW1-frozen coupling",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, whole stars phi_b=-(tau/3) sum W_f under I1.5 in normalized units delta=alpha/8 with V_b=phi_b/8 in alpha units; original xz Wilson loop W with complete cover R={0,e_z}; fixed positive alpha, hbar, E_star and spacing), with tau_AW2=10^-8 (the cap) evaluated inside check.py by the frozen AW1 decade-grid rule (largest 10^-k, k>=8, with K_2^+ tau<=1/288, half the first-order coefficient) from K_2^+=81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984 (~3354.80322946, outward 3354803229461691/10^12) read from the hash-verified AW1 gate, never from a literal coupling: for every state in the whole set of AQ1 subsequential limits at tau=+10^-8, and in every centered whole-star box N>=2 at every on-site cutoff (uniform in the box; passed to the limits by local trace-norm convergence on R, ||W||<=1, closed interval), the static equal-time Wilson mean omega_tau(W) lies in [tau/144-K_2^+ tau^2, tau/144+K_2^+ tau^2] = [42773581813770903096597852821080380528959/D, 43188859201382168785822623711271900423873/D], D=618929575309102117553427431032936422860390400000000, contained in [6.91089641214e-11, 6.97799247674e-11] (decimals widened outward); at tau=-10^-8 the enclosure is the mirror [-43188859201382168785822623711271900423873/D, -42773581813770903096597852821080380528959/D] (contained in [-6.97799247674e-11, -6.91089641214e-11]), by the AW1 remainder bound at both signs and the AW1 flip lemma at the zero triple (S(-tau)=S(tau) o alpha_E as whole sets; a replay, not a second confirmation). The free Haar reference 0 is strictly excluded at both signs and sign(omega_tau(W))=sign(tau): exclusion margin (|tau|/144-K_2^+ tau^2)/(K_2^+ tau^2)=42773581813770903096597852821080380528959/207638693805632844612385445095759947457 (~206.00005 >= 2, the contract target; directed floor 41200010489/200000000) and sign margin 1/(144 K_2^+ |tau|)=42981220507576535941210238266176140476416/207638693805632844612385445095759947457 (~207.00005; directed floor 41400010489/200000000). Sub-label static_not_dynamic; sign_certified_below_cap does not apply (tau_AW2 is the cap); resolved_interaction_shift refers to omega(W) only. The crude tier (t_c=592|tau|, K_2=1937877026146766159414097129/244140625000000000000 ~7.9375e6) gives an enclosure ~[-7.2431e-10, 8.6320e-10] containing 0 (sign margin ~0.0875) and is retained as a failed limited-tier control. No dynamical correction, mass shift, mass-gap or susceptibility statement, no centered-correlation shift (AV2 reference_unresolved stands), no AQ uniqueness, whole-sequence convergence or rate in N, no third-order remainder, no statement at nonzero selected triples, and no uniform Wilson, weak-coupling, continuum or priority claim follows. Admission rests on the single forward producer plus the skeptic's independent pre-comparison replay from the contract.",
+      "summary": "At the original cap the uncentered Wilson mean is enclosed in about [6.91e-11, 6.98e-11] with zero strictly excluded (exclusion margin about 206): a sign-certified static interaction effect in the actual AQ states, mirrored exactly at the opposite coupling sign.",
+      "limitations": [
+        "Single direction: one forward producer instantiates the admitted AW1 formula; admission rests on that producer plus the skeptic's pre-comparison replay from the contract (correlated model-agent ancestry; K_2^+ is the skeptic's own AW1 itemization); exact agreement is a replay of one admitted formula, not independent physical confirmation",
+        "Only the AM2/AQ1 zero-selected patterned family, the cover R={0,e_z}, fixed spacing and tau=+-10^-8; nothing transfers to nonzero selected triples, uniform Wilson theory, weak coupling or the continuum; calculator values below the cap are corollaries of the AW1 bound, not AW2 admissions",
+        "Inherited without re-proof: the AW1 first-order coefficient +tau/144, remainder bound |r|<=K_2^+ tau^2 (uniform in N, cutoff and every AQ1 limit) and flip lemma; AV1 product split, anchored-norm tier, cutoff removal and AQ passage; AM2 fixed point, majorant, gaps and ground uniqueness; AQ1 construction; I1 dictionary",
+        "K_2^+ is an absolute second-order bound with no sign of r(tau) and no third-order remainder; the AM2 majorant 352JT is 99.98% of it, so the enclosure is conservative",
+        "Static equal-time mean in the AQ states only; resolved_interaction_shift refers to omega(W) alone; no dynamical, mass-gap, susceptibility or centered-correlation statement (AV2 reference_unresolved stands)",
+        "Whole-set statement: no uniqueness of the AQ state, whole-sequence convergence or rate in N; the -tau pairing of individual states holds only along a common subsequence; the -tau enclosure is a replay",
+        "Fixtures (one plaquette, 3x3 centring, synthetic two-limit sequences) are finite exact audits (transfers_to_aq false); the Arb/mpmath preview is a labelled comparison that check.py reads as a veto only and that supplies no admitted value",
+        "The rule K_2^+ tau<=1/288 guarantees only m>=1; the target m>=2 is tested separately; literal-coupling protection for a literal equal to the rule value rests on source review and the check.py hash in freeze.json",
+        "Read isolation verified for repository inputs only: the forward package was written after the skeptic pre-comparison commit on a shared filesystem; its closure excludes skeptic/aw2*, but reads cannot be determined",
+        "Scientific priority unverified"
+      ],
+      "model": "Zero-selected patterned AQ subfamily; tau_AW2=+10^-8 fixed by the AW1 decade-grid rule inside the checker (and -10^-8 by the flip lemma as a replay); whole set of AQ1 subsequential limits; K_2^+ from the AW1 gate; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/aw2-gate.json",
+      "contribution_id": "HNM-C-AW2",
+      "dependencies": [
+        "r32-aw1",
+        "r32-av1"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "single+skeptic",
+      "derivation_steps": [
+        "Evaluate the AW1 decade-grid rule inside the checker from the gate-bound K_2^+ to fix tau_AW2=10^-8 before any outcome.",
+        "Enclose omega_tau(W) in [tau/144 - K_2^+ tau^2, tau/144 + K_2^+ tau^2] with exact rational endpoints at +10^-8 and, by the flip lemma, at -10^-8.",
+        "Prove strict exclusion of zero and report the exclusion and sign margins; retain the crude tier as a failure.",
+        "Scope the statement as a static equal-time effect in the whole set of AQ1 subsequential limits at the zero triple; the skeptic's contract-only replay is an admission input."
+      ],
+      "applications": [
+        "Meets the re-targeted roadmap goal 2 for a static observable at the original cap.",
+        "Supplies the exact-parity sign template for the uniform model (AX) if its constants transfer."
+      ],
+      "evidence": [
+        "research/round32/advisor/aw2-gate.json",
+        "research/round32/forward/aw2/report.md",
+        "research/round32/skeptic/aw2.md",
+        "research/round32/skeptic/aw2-independent-derivation.md",
+        "research/round32/forward/aw2/calculator.py"
+      ]
+    },
+    {
+      "id": "ax1",
+      "sequence": 5,
+      "subround": 3,
+      "title": "Hruday route-B re-derivation for the uniform Kogut-Susskind SU(2) Hamiltonian at fixed spacing",
+      "accepted": "For the uniform Kogut-Susskind SU(2) Hamiltonian on Z^3 at fixed spacing and strong bare coupling (every elementary face has nu=alpha*tau/24; AL1 dictionary tau=96/g^4, so g^4=9.6x10^9 at the cap; never weak coupling or continuum; tau<0 has no real g and is the U_E image of +|tau|), both signs |tau|<=10^-8 (the uniform triple tau/24 lies in the admitted box), centered whole-star boxes Lambda_N (N>=2), the original xz Wilson loop W with cover R={0,e_z}, clock theta=alpha*t/hbar, G=H/alpha: (1) Route B, Haar reference: h_b=8 sum_e C_e>=6Q_b is tau-independent; whole stars phi_b (21 omitted faces, norm 7|tau|) plus one single-factor group psi_b=-(tau/3) sum of the three selected xy faces (support {b}, ||psi_b||<=|tau|); every face charged once; J'=29|tau|; support 4 and termination order 8 unchanged. (2) J' exceeds AM2's J_0=7/25000000 at the cap; with the re-frozen J_0'=29/10^8 (R1) the exact inequalities J_0'G(R)<1073/175000000<1/64 and 2J_0'G'(R)<319/1562500<1 hold, so every finite complete-factor route-B volume has a unique gauge-invariant ground and full-space gap >=1/2 normalized (alpha/16 physical), with a nonzero physical excited sector. (3) AQ1/AQ2 re-instantiation: reset omega(h_R)<=102|tau|; with the Haar gap six epsilon_R<=17|tau| and 2sqrt(17|tau|)<=1/500 (square-root control only; gap one fails), so the variance floor 61999/250000 holds; C_F=58|tau||F| and ||Phi'||_F<=81J'=2349|tau|; compactness, stationarity, GNS, nonnegativity, gauge averaging, the gap alpha/16, cutoff-vector removal and AQ passage re-apply verbatim. (4) Itemized incidence: exactly 7 whole stars (anchors R-S) and 2 single-factor groups meet R, charging 153 faces, 88 meeting R (82 omitted + 6 selected, the 6 selected being the two single groups) and 16 inside R, none twice; ||B_N||<=51|tau|/8, k'=51|tau|/4 in G units. (5) Exact first-order count 52 faces per factor (49+3) and 88 for R; 96 (4x24) and 168 (7x24) are bounds only. (6) State lemma at both signs: tier (ii) with t_1'=52|tau|/144, T'=t_1'/(1-352J')=13/3599632512, rho'=352J'T' gives the bound value D'_ii=2425369125199104794263242601250/167893028420061547330293754713793182097 (~1.44459e-8; 2eps(1+eps)/(1+eps^2) with eps=2T'+T'^2; certified by both inequalities; equal to the skeptic pre-comparison and the reverse two-site variant), meeting 4/10^7 (margin ~27.7) and 10^-6; the reverse's labelled R-refinement D'_ii=30934916107401289/2530733246376451200000000 (~1.22237e-8; 2eps with eps=88|tau|/144+2rho'+T'^2, fidelity inequality) is also valid and differs by eps_fwd-eps_rev=16|tau|/144; tier (i) D'_i~2.4526e-5 fails and is retained; |omega(W)|<=D', |omega(W^2)-1/4|<=D'/2, m^2<=D'^2, passing to every AQ1 subsequential limit as uniform local closeness (not uniqueness, whole-sequence convergence or a rate in N). (7) Transfer, proved: every face coefficient is -(tau/3) (kappa tied to tau), h_b and its cutoffs commute with U_E, and E meets every plaquette, selected faces included, oddly; so U_E H_N(tau) U_E^*=H_N(-tau) in every box and cutoff, omega_{N,-tau}(W)=-omega_{N,tau}(W), omega_N(W^2), C_N, c_N even, and S(-tau)=S(tau) o alpha_E as whole sets; the AW1 link grading applies verbatim to selected faces and only f=W contributes at first order, so omega(W)^{(1)}=+tau/144 (+-1/14400000000) is unchanged. No Euclidean node, K_2 or uniform omega(W^2) constant (not transferred), uniform Wilson-mean sign certificate, weak-coupling, continuum, uniqueness, rate or priority statement is admitted; uniform_wilson_claim:true means only that the model is the uniform fixed-spacing Kogut-Susskind model as labelled.",
+      "summary": "The uniform Kogut-Susskind SU(2) Hamiltonian at fixed spacing re-instantiates the whole admitted chain with a Haar reference (route B): re-frozen contraction constant, unique ground and gap, itemized incidence on the Wilson cover, exact-tier state bound about 1.44e-8 at the cap, and the flip antisymmetry and +tau/144 mean transferred.",
+      "limitations": [
+        "Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling (g^4>=9.6x10^9, |tau|<=10^-8), centered whole-star-plus-single-group boxes N>=2 and the cover R={0,e_z}; never weak coupling or continuum; the box boundary is not identified with AL1's all-contained-plaquette boundary; tau<0 is the U_E mirror, not a real-g coupling",
+        "Upper certificates only: no lower bound on ||rho_R-P_R||_1; no value or sign of omega(W) beyond |omega(W)|<=D' and the finite-box first-order coefficient; AQ statements are uniform local closeness of every subsequential limit, not uniqueness, whole-sequence convergence or a rate in N",
+        "Inherited without re-proof, re-applied with the new constants: AM2 fixed point, multilinear majorant (the |X|<=4 monotonicity covering single-site groups is the only new step), exclusion and cutoff removal; AV1 product split, anchored-norm tier, cutoff-vector removal and AQ passage; AQ1 compactness and Nachtergaele-Sims dynamics; AQ2 gauge averaging and Fourier gap; AT4 reset and relative-unitary arguments; I1 dictionary; Kato, Peter-Weyl and Nachtergaele-Sims cited, not machine-checked",
+        "D'_ii binding: the forward exact rational (~1.44459e-8, both inequalities); the reverse ~1.22237e-8 is a valid labelled R-refinement (88 faces meeting R) whose headline rests on the fidelity inequality (its density form is also below target)",
+        "Tier (i) D'_i~2.4526e-5 fails 4/10^7 and 10^-6 and is retained as a limited-tier value",
+        "Not transferred: K_2 (route-B T', rho', single-site first-order creations and new pins, e.g. 36 single-site faces per site of R), the uniform omega(W^2) constant, the AW2 enclosure and every uniform-in-N tau^2 constant",
+        "Contract d_prime_note mis-rounded (4.19x10^-7 infeasible; threshold [41883,41884]/10^11); contract candidates 96/168 are bounds, exact counts 52/88",
+        "Reverse independence limited: the contract and selection-ax1.md state route B, J'=29|tau| and the J_0 issue; independence covers proof route, enumeration and code only; all agents are correlated model agents and the skeptic's triage seeded route B",
+        "Pre-registration vocabulary: the symbolic selected triple ['tau/24','tau/24','tau/24'] in the frozen AX1 preregistration is covered by the plan.json vocabulary extension recorded after the freeze (2026-09-24T00:45:54Z, contract unamended); the gate should record it as an accepted extension",
+        "N5: neither producer checker pins the pair term T'^2 (dropping it runs silently in both) and the forward does not pin its density form; caught only by the skeptic value validator and cross-producer comparison; AX2 must bind D'_ii from the gate",
+        "N6: the forward's exported density_part_of_D=2eps^2/(1+eps^2) is an upper bound on D-2eps=2eps^2(1-eps)/(1+eps^2) (excess ~7.5e-25), not an identity; D is exact",
+        "N7: the forward's '94 in total' counts 93 rejections in the 28 control checks plus 1 (E_minus_one_link) in flip_set_odd_all_classes",
+        "N8: the reverse rejects 100|tau| as a miscount; 2*7*7+2=100|tau| is also a valid labelled refinement (single groups inside R, Haar mean 0); the admitted budget is 102|tau|",
+        "N9: checklist classification of the variance floor differs (reverse verbatim, forward new constant); the substance is the same: the Haar gap six is load-bearing",
+        "N11: producer isolation rests on disclosure and content: the closures froze 74 s apart and the forward report was last written after the reverse freeze.json; no reverse-specific construct appears in the forward; scratch audited by names and times only (private folders as disclosed; no AX1 file in the shared scratchpad root after the freeze); disclosed protocol/style reads (tools README, freeze.py, forward/av1/check.py, reverse/av1/check.py) and incidental name exposures (the forward's /tmp listing, the reverse's git status) carry no premise weight",
+        "Fixtures (qubit termination, quaternion holonomies, 3x3 compressions, the route-A kappa=30 compression, the one-plaquette mean) are finite algebras, transfers_to_aq false",
+        "Scientific priority unverified"
+      ],
+      "model": "Uniform Kogut-Susskind SU(2) on Z^3 at fixed spacing and strong bare coupling (every face coefficient alpha*tau/24; tau=96/g^4; g^4=9.6x10^9 at the cap); route B with the Haar reference and single-factor selected groups; both signs |tau|<=10^-8; centered whole-star boxes; cover R={0,e_z}; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/ax1-gate.json",
+      "contribution_id": "HNM-C-AX1",
+      "dependencies": [
+        "r32-av1",
+        "r32-aw1",
+        "r29-am2",
+        "r29-al1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Set every face coefficient to alpha*tau/24 (tau=96/g^4) and check the admitted coefficient box; move the three selected xy faces per factor into a single-factor interaction group with norm at most |tau| (route B).",
+        "Re-freeze the per-site sum J_0'=29/10^8 and verify the AM2 contraction as exact rationals; conclude the unique finite-volume ground and gap.",
+        "Tabulate every face meeting the cover (seven stars, two selected groups, 88 faces) with no double counting; derive the reset budget and the seven-star-plus-two-group Duhamel slope k'=51|tau|/4.",
+        "Derive the exact per-factor owner-set count 52 and the route-B state-lemma tiers; prove the flip identity and the parity transfer for the uniform model."
+      ],
+      "applications": [
+        "Extends the Round32 state lemma to uniform Wilson magnetic theory at fixed spacing.",
+        "Supplies the constants for the uniform-model Euclidean certificate (AX2) and the continuum-trajectory statement (AZ1)."
+      ],
+      "evidence": [
+        "research/round32/advisor/ax1-gate.json",
+        "research/round32/forward/ax1/report.md",
+        "research/round32/reverse/ax1/report.md",
+        "research/round32/skeptic/ax1.md",
+        "research/round32/skeptic/ax1-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "ax2",
+      "sequence": 6,
+      "subround": 3,
+      "title": "Hruday uniform-model window certificate for C(1) at the original cap",
+      "accepted": "In the uniform Kogut-Susskind SU(2) model on Z^3 at fixed spacing and strong bare coupling (every elementary face, selected faces included, nu=alpha*tau/24; AL1 dictionary tau=96/g^4, g^4=9.6x10^9 at the cap; label 'uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9)'), handled by route B of AX1 (Haar reference, tau-independent on-site h_b=8 sum C_e, whole stars plus one single-factor group per factor for its three selected xy faces), at tau=+10^-8 (tau=-10^-8 is the U_E mirror, no real g, evaluated only as a replay of the same |tau| formula, not a second confirmation), for the original xz Wilson loop W with cover R={0,e_z}, clock s=alpha*t_E/hbar and G=H/alpha, every AQ1 subsequential state of the centered whole-star-plus-single-group construction (N>=2; each state separately; no uniqueness, whole-sequence convergence or rate in N) has centered Euclidean Wilson correlation C(1) satisfying |C(1)-d|<=r<=R' at the single preregistered node s=1, with the exact datum d=497870683678639429793424156500617766317/(4*10^40) (~0.012446767091965986; midpoint of the directed enclosure of e^{-3}/4; unchanged from AV2) and the exact radius bound R'=1912298807996871790146581299723633/10^40 (~1.91229880800e-7; r=2(D'+D'^2)+51|tau|s/pi^- plus the arithmetic half-width 1/(4*10^40), D'=2425369125199104794263242601250/167893028420061547330293754713793182097 (~1.44459e-8) the AX1 gate forward tier-(ii) value, k'=51|tau|/4 from 7 whole stars and 2 single-factor groups, M_0=2, M_1=4s/pi), so C(1) lies in [0.012446575862085186, 0.012446958321846786], inside [99572606896681488461252714035083774357/(8*10^39), 497878332873871417280584742825816660849/(4*10^40)], meeting the 10^-6 target (margin >=5.22930). The free reference e^{-3}/4 lies inside the interval (reference_unresolved). Retained failures at unchanged tau and s: the AT4-type Poisson certificate at L=10^4 with D=2sqrt(17|tau|) (~8.5790596e-4), the Poisson floor >=1.313477283e-6 for every L even with D->0 (>=1.3279232e-6 with D'), and the tier-(i) window (>=4.921572155e-5), all insufficient. The analytic formula E'(s)=2(D'+D'^2)+51|tau|s/pi crosses 10^-6 at s* in [5.982012284161, 5.982012284163] (~5.98201228416), a crossover of the formula only; only s=1 is certified. No interaction shift, sign or coefficient of C(s), no uniform Wilson-mean sign rider or uniform K_2, no grid, no weak-coupling or continuum statement, and no priority claim follows. Admission rests on the single forward producer plus the skeptic's independent pre-comparison replay from the contract.",
+      "summary": "The window certificate transfers to uniform Wilson magnetic theory at fixed spacing: the centered Wilson Euclidean node at the original cap is enclosed with radius about 1.91e-7 against the unchanged 10^-6 target, with the free reference inside.",
+      "limitations": [
+        "Single direction: one forward producer applies the admitted AV2 window lemma with the admitted AX1 route-B constants; admission rests on that producer plus the skeptic's pre-comparison replay from the contract (correlated model-agent ancestry; the 1.9123e-7 value was already in shared premises); exact agreement is a replay of one admitted formula, not independent physical confirmation",
+        "Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling (g^4=9.6x10^9 at |tau|=10^-8), route B, Haar reference, centered whole-star-plus-single-group boxes N>=2, cover R={0,e_z}, node s=1; tau<0 is the U_E mirror (no real g); calculator values below the cap and at tau=0 (free Casimir limit) are corollaries, not AX2 admissions",
+        "Inherited without re-proof: the AV2 window lemma and constants (Fourier inversion, Fubini); AT4 relative-unitary Duhamel and trace duality; AX1 route-B constants (J_0', gap alpha/16, reset, incidence, D' and its passage to every AQ1 limit, flip identity); AQ1 construction, nonnegativity and norm dynamics; AL1/I1 dictionary",
+        "Upper certificate only: r bounds |C(1)-d|; the free value e^{-3}/4 is inside (reference_unresolved); no interaction shift, sign or coefficient of C(s); no uniform K_2, omega(W^2) constant or uniform Wilson-mean sign rider (loop-2 veto)",
+        "Each AQ1 subsequential state separately; no uniqueness, whole-sequence convergence or rate in N",
+        "s*~5.98201228416 is the crossover of the linear formula only; no grid and no node other than s=1",
+        "Retained failures remain failures at this tau and s: the AT4-type Poisson certificate, the Poisson floor for every L and the tier-(i) window",
+        "Read isolation verified for repository inputs only: the forward calculator and check.py were written concurrently with the skeptic pre-comparison package; the forward report and freeze followed the skeptic commit; scratch and shared-filesystem reads cannot be determined",
+        "No weak-coupling or continuum statement follows",
+        "Scientific priority unverified"
+      ],
+      "model": "Uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9), route B with the Haar reference; tau=+10^-8 (and the U_E mirror as a replay); s=1; C^2 window; the AX1 forward tier-(ii) state bound; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/ax2-gate.json",
+      "contribution_id": "HNM-C-AX2",
+      "dependencies": [
+        "r32-ax1",
+        "r32-av2"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "single+skeptic",
+      "derivation_steps": [
+        "Apply the AV2 window lemma verbatim with the route-B slope k'=51|tau|/4 (seven stars and two single-factor groups) and the AX1-admitted uniform state bound.",
+        "Evaluate the itemized radius at tau=+10^-8, s=1 with directed enclosures; the Haar reference and the exact datum are unchanged.",
+        "Retain the Poisson and crude-tier failures at the uniform slope; report the crossover; the skeptic's contract-only replay is an admission input."
+      ],
+      "applications": [
+        "First certified actual-state Euclidean node for uniform Kogut-Susskind SU(2) at fixed spacing (strong bare coupling).",
+        "Closes roadmap goal 3 within its stated scope; supplies the constants for the continuum-trajectory statement (AZ1)."
+      ],
+      "evidence": [
+        "research/round32/advisor/ax2-gate.json",
+        "research/round32/forward/ax2/report.md",
+        "research/round32/skeptic/ax2.md",
+        "research/round32/skeptic/ax2-independent-derivation.md",
+        "research/round32/forward/ax2/calculator.py"
+      ]
+    },
+    {
+      "id": "ay1",
+      "sequence": 7,
+      "subround": 4,
+      "title": "Hruday uniform local closeness of all AQ-type subsequential states and the boundary-independent first-order density",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference P_R, 21 omitted faces per anchor entering as -(tau/3)W_f in normalized units delta=alpha/8; both signs |tau|<=10^-8; cover R={0,e_z} of the original xz Wilson loop, 48 links, 36 endpoints, 7 incident anchors; observable class B(H_R); common clock s=alpha*t_E/hbar, theta=alpha*t/hbar), with the two named construction families F1 = centered whole-star boxes Lambda_N (AQ1) and F2 = all-contained-face boxes with padding (I1 section 6) on the same Lambda_N=[-N,N]^3, N>=2: (1) both families satisfy the AV1 premises: F1 by the admitted chain I1 -> AM2 -> AQ1/AQ2 -> AV1 -> AW1; F2 item by item (anchor groups of the retained faces supported in (b+S) cap Lambda_N, |X|<=4, termination order 8, per-site sum J<=28|tau|=J_0=7/25000000 at the cap with J_0G(R)<37/6250000<1/64 and 2J_0G'(R)<77/390625<1, at most 49 first-order faces per site, cutoff-vector removal, reset omega(h_R)<=98|tau| and C_F=56|tau||F|, local trace-norm compactness and a diagonal extraction of its own); F2 retains 28N(5N+1) boundary faces more than F1, and both retain the same 82 faces meeting R for N>=2; states are compared in the trace norm on B(H_R), and dynamics is named in the norm on compact time windows with no dynamical statement. (2)-(3) For every pair of subsequential limits of the named construction families F1 and F2 at the same coupling, on the fixed cover R and for the frozen observable class, the reduced densities satisfy ||rho_R - rho'_R||_1 <= 2D and agree to first order in tau; this does not assert equality of the states, whole-sequence convergence, translation invariance, boundary independence of the dynamics, or a rate in N. Constants: 2D=1170159676931825184288274812132100/42981220507576537932303142777593983768257 (~2.72249057405e-8; D=585079838465912592144137406066050/42981220507576537932303142777593983768257 the AV1 gate forward tier (ii)), meeting the preregistered 1/1250000 with margin ~29.38 (tier (i) 2D_i~4.736e-5 fails and is retained); the common first-order density is rho^(1)_R=(tau/72) sum_{f in F_R}(|W_f Omega_R><Omega_R|+|Omega_R><W_f Omega_R|) over the 10 faces F_R with owner set exactly R (xz r=0,1,2, s=0,1 and yz r=0..3, s=0, anchored at 0; the 72 straddling faces among the 82 meeting R have zero R-marginal and the family has no single-site creations), with ||rho^(1)_R||_1=sqrt(10)|tau|/72 (~4.39205e-10 at the cap) and Tr(rho^(1)_R W)=+tau/144 (AW1); for every subsequential limit of either family ||rho_R-P_R-rho^(1)_R||_1<=K_2' tau^2 with the R-local trace-norm constant K_2'=966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000 (~13417.5275439; items 4rho+2T(72a+2rho)+2(33a+rho)^2+2eps_R^2+20a eps_R^2, a=|tau|/144, T=(49a)/(1-352J), rho=352JT, eps_R=82a+2rho+(33a+rho)^2), so any two such limits satisfy ||rho_R-rho'_R||_1<=2K_2' tau^2=966771578474926086618624139557778885954947547760216752246561/360264428489086053772729024659456000000000000000000000000000000000000000 (~2.68350550879e-12). K_2' exceeds the AW1 constant K_2^+=81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984 (~3354.80322946) by the factor ~3.99950, because K_2^+ bounds the single observable W while K_2' bounds the full trace norm on B(H_R); with the admitted AM2 remainder, a trace-norm constant built from the AW1 items is at least 2rho/tau^2~6708.2. Each statement holds for a chosen subsequential limit of either family, every one separately; it is uniform local closeness and not uniqueness. A quantitative boundary comparison here means this closeness bound plus the matching first-order term; it is not a variational statement about which boundary condition the infinite-volume theory selects. Every constant is uniform in N at fixed spacing and fixed tau and is not uniform in the lattice spacing a. The -tau values replay the same |tau| formula. Uniqueness, whole-sequence convergence, a rate in N, translation invariance, boundary independence of the dynamics, a dynamical, continuum or weak-coupling statement and scientific priority are not admitted.",
+      "summary": "Every pair of subsequential limits of the two named construction families (AQ1 centered whole-star boxes; I1 all-contained-face boxes with padding) is within 2D (about 2.72e-8) of each other on the Wilson cover R in trace norm at the same coupling, shares the same explicit first-order reduced density rho^(1)_R (ten faces with owner set R; trace norm sqrt(10)|tau|/72; first-order Wilson mean +tau/144), and differs by at most 2K_2' tau^2 (about 2.7e-12) beyond it, with the R-local trace-norm constant K_2' about 13418, roughly four times the single-observable K_2^+. Uniform local closeness on a fixed region at fixed coupling; not uniqueness.",
+      "limitations": [
+        "Only the zero-selected patterned family (selected triple (0,0,0), Haar reference), the cover R={0,e_z}, fixed spacing and |tau|<=10^-8, with the two named families on centered cubes Lambda_N, N>=2; nothing transfers to literal vertex boxes (I1 section 7), periodic or orthant boxes, nonzero selected triples, the uniform route-B model (its K_2 was not transferred in AX1), weak coupling or the continuum",
+        "Uniform local closeness on the fixed region R at the same coupling, not uniqueness, whole-sequence convergence, a rate in N, translation invariance or boundary independence of the dynamics; two limits may differ by up to 2K_2' tau^2 on R and without bound elsewhere; 2D alone also bounds states at different couplings (P_R is tau-independent), so the boundary-comparison content is the matching first-order term",
+        "The first-order density is a statement about a coefficient through the uniform remainder bound, not a tau-derivative of a subsequential limit (subsequences depend on tau)",
+        "K_2' is an upper bound dominated (99.99%) by the generic AM2 majorant 4rho and exceeds K_2^+ (~3.9995x); the contract's '(not the whole-box K_2^+)' is read as 'built from R-local face pins', not as a smaller constant; labelled variants (sqrt-2 sectors ~9487.945, 288-majorant ~10978.18, both ~7763.06, admitted-eps ~13417.81) are valid, not headline",
+        "Supplementary two-sided observation sqrt(10)|tau|/72 -/+ K_2' tau^2, i.e. ||rho_R-P_R||_1 in [4.3786e-10, 4.4055e-10] for every limit of either family: a labelled observation only, not a contract target, not an admitted tier and not a resolved interaction shift; it does not replace D",
+        "Inherited without re-proof: AM2 majorant, fixed point, excited-sector exclusion and cutoff passage (applied to F2 through their hypotheses); AV1 product split and cutoff-vector removal; AQ1 compactness, diagonal extraction and Nachtergaele-Sims dynamics (named only); AW1 c^(1) and outside-excitation lemma; the I1 dictionary; Peter-Weyl/Haar orthogonality, Uhlmann/Fuchs-van de Graaf and Nachtergaele-Sims cited, not machine-checked",
+        "Independence limited to proof routes, enumeration and code: the forward-only premises (triage goal-4 note, Jung loop-2 notes) and the shared contract, selection note and AV1/AW1 reports and reviews state the mechanism; the Jung sentence form reached the reverse through its task prompt, and the reverse saw two forward file names; isolation is verified for repository inputs only; all agents are correlated model agents",
+        "Producer checkers do not pin every exported value: the forward supplementary lower end and sqrt-2 rounding direction and the reverse 82/72 ledger pins ran silently when edited and were caught only by the skeptic validator; AY2 should read 2D, K_2' and 2K_2' tau^2 from this gate as exact rationals",
+        "The -tau evaluation is a replay of the same |tau| formula (rho^(1)_R is odd under the AW1 flip), not a second confirmation",
+        "Scientific priority unverified"
+      ],
+      "model": "Zero-selected patterned family (AQ_patterned_zero_selected) at both signs |tau|<=10^-8; two named construction families F1 = AQ1 centered whole-star boxes and F2 = I1 all-contained-face boxes with padding on the same Lambda_N=[-N,N]^3, N>=2; cover R={0,e_z}; observable class B(H_R); trace norm on R for states, norm on compact time windows named for dynamics; common clock s=alpha*t_E/hbar",
+      "gate_path": "research/round32/advisor/ay1-gate.json",
+      "contribution_id": "HNM-C-AY1",
+      "dependencies": [
+        "r32-av1",
+        "r32-aw1",
+        "r29-am2",
+        "r29-aq1",
+        "r21-i1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Verify the AV1 premises for both families item by item (padded family: anchor-group supports in (b+S) cap Lambda_N, |X|<=4, termination order 8, per-site sum 28|tau|=J_0 at the cap, reset 98|tau| on R, local trace-norm compactness); name the state topology (trace norm on B(H_R)) and the dynamics topology (norm on compact time windows) separately.",
+        "Pass the AV1 finite-volume bound to every subsequential limit and apply the triangle inequality through the Haar product P_R (forward: reduced density; reverse: vector overlap/fidelity), giving ||rho_R-rho'_R||_1<=2D for any two limits at the same tau.",
+        "Expand the AW1 first-order coefficient on the 82 faces meeting R, take the R-marginal (72 straddling faces vanish), and obtain the common rho^(1)_R; bound the second-order remainder in trace norm by the R-local K_2' from the AW1 items and compare it with K_2^+ (larger, because the trace norm over B(H_R) charges all sectors and the AM2 remainder dominates)."
+      ],
+      "applications": [
+        "Quantitative boundary comparison for roadmap goal 4 within its scope: a closeness bound plus a matching first-order term for every AQ-type subsequential limit of either family; supplies the constants for the AY2 statement and its obligations table.",
+        "Recorded observation (not an admitted tier): every limit satisfies ||rho_R-P_R||_1 in [4.3786e-10, 4.4055e-10], about 31 times sharper than D, to be certified under AY2's own contract."
+      ],
+      "evidence": [
+        "research/round32/advisor/ay1-gate.json",
+        "research/round32/forward/ay1/report.md",
+        "research/round32/reverse/ay1/report.md",
+        "research/round32/skeptic/ay1.md",
+        "research/round32/skeptic/ay1-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "ay2",
+      "sequence": 8,
+      "subround": 4,
+      "title": "Hruday statement on state identification: what the closeness lemma does and does not establish",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference P_R, 21 omitted faces per anchor entering as -(tau/3)W_f in normalized units delta=alpha/8; both signs |tau|<=10^-8; cover R={0,e_z} of the original xz Wilson loop, 48 links, 36 endpoints, 7 incident anchors; observable class B(H_R); common clock s=alpha*t_E/hbar, theta=alpha*t/hbar), with the two named construction families F1 = centered whole-star boxes Lambda_N (AQ1) and F2 = all-contained-face boxes with padding (I1 section 6) on the same Lambda_N=[-N,N]^3, N>=2, and with every constant read as an exact rational from the AY1 gate: (1) For every pair of subsequential limits of the named construction families F1 and F2 at the same coupling, on the fixed cover R and for the frozen observable class, the reduced densities satisfy ||rho_R - rho'_R||_1 <= 2D and agree to first order in tau; this does not assert equality of the states, whole-sequence convergence, translation invariance, boundary independence of the dynamics, or a rate in N. Constants: 2D=1170159676931825184288274812132100/42981220507576537932303142777593983768257 (~2.72249057405e-8; D=585079838465912592144137406066050/42981220507576537932303142777593983768257 the AV1 gate forward tier (ii)); the common first-order density rho^(1)_R=(tau/72) sum over the 10 faces with owner set exactly R of (|W_f Omega_R><Omega_R|+h.c.) (tau included in rho^(1)_R; each face term is rank two with eigenvalues +-|tau|/144, the sum is rank two with eigenvalues +-sqrt(10)tau/144) has trace norm sqrt(10)|tau|/72 and Tr(rho^(1)_R W)=+tau/144; for a chosen subsequential limit of either family, every one separately, ||rho_R-P_R-rho^(1)_R||_1<=K_2' tau^2 (AY1 gate accepted items (2)-(3)) with K_2'=966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000 (~13417.5275440), so any two such limits at the same tau satisfy ||rho_R-rho'_R||_1<=2K_2' tau^2=966771578474926086618624139557778885954947547760216752246561/360264428489086053772729024659456000000000000000000000000000000000000000 (~2.68350550879e-12). Equivalently, for every A in B(H_R) with ||A||<=1, |omega'(A)-omega''(A)|<=2D (order tau) and <=2K_2' tau^2 (order tau^2 after the common first-order density cancels); two limits satisfying this may differ by the stated order on R and without bound elsewhere. (2) Two-sided tier first_order_distance_from_product, a static property of the state on R: for every subsequential limit of either family, at either sign and every |tau|<=10^-8 (K_2'(|tau|) is nondecreasing, so the cap value bounds every smaller |tau|), sqrt(10)|tau|/72 - K_2' tau^2 <= ||rho_R-P_R||_1 <= sqrt(10)|tau|/72 + K_2' tau^2; certified at |tau|=10^-8 with the directed bracket sqrt(10) in [197642353760523708249930846527/62500000000000000000000000000, 3162277660168379331998893544433/1000000000000000000000000000000] as 315493271189404369878663368737136921794795815043212654249128159/720528856978172107545458049318912000000000000000000000000000000000000000 (~4.37863477824e-10) <= ||rho_R-P_R||_1 <= 317426814346354222051900617016352553019063789598114401371582241/720528856978172107545458049318912000000000000000000000000000000000000000 (~4.40546983333e-10); relative width (upper-lower)/(sqrt10_lower |tau|/72) <= 966771578474926086618624139607815612133987277450873561227041/158230021383939647982640996438347350340375381295486435500687360 (~6.10991245541e-3) <= 1/100 (preregistered target, margin ~1.6367); the skeptic's independent enclosure with a 10^-40 bracket, [123239559058361081983852878412972198415914793719936897926499081872887/281456584757098479509944550515200000000000000000000000000000000000000000000000, 619974246770223089945118392610008565852855028054286523715368951086693/1407282923785492397549722752576000000000000000000000000000000000000000000000000], lies inside. The lower end is positive, so no subsequential limit of either family has the Haar product as its R-marginal; the tier does not identify the limit and is not an interaction-shift, Euclidean-node or dynamical statement; the -tau interval replays the same |tau| formula. (3) 2D alone is not a boundary comparison: each limit lies within D of P_R, so limits at +tau and -tau lie within 2D of each other although ||rho_R(+tau)-rho_R(-tau)||_1 >= sqrt(10)|tau|/36-2K_2' tau^2 >= 315493271189404369878663368737136921794795815043212654249128159/360264428489086053772729024659456000000000000000000000000000000000000000 (~8.75726955649e-10); the comparison content is the matching first-order term with the 2K_2' tau^2 difference at the same coupling. (4) The falsifying scenario is not excluded: two density matrices on H_R, psi_pm=Omega_R+(tau/144)sum_f e_f +- nu(e_yz0-e_yz1+e_yz2-e_yz3) with e_f=2W_f Omega_R and nu=K_2' tau^2(1-10^-6)/4, satisfy every admitted one-state constraint (the AY1 ball K_2' tau^2, the AV1 ball D, the AW1 Wilson band K_2^+ tau^2, the reset energy 98|tau|, gauge invariance) and differ by at least (1-2*10^-6)2K_2' tau^2=483384822465884568383225451154749885198587818932560615906528253439/180132214244543026886364512329728000000000000000000000000000000000000000000000 (~2.68350014178e-12); the present one-state bounds therefore cannot exclude two subsequential limits differing this much on R; the witness is not a constructed limit (transfers_to_aq false). (5) Six obligations, all unproved, each with its missing premise and candidate route: uniqueness of the limit, not proved (HTW-type local stability with evaluated constants, the Yarotsky constants c_1(S), c_2(S), or a Dobrushin-type condition; none evaluated); whole-sequence convergence, not proved (a Cauchy estimate in N, or within-family identification of all subsequential limits plus AQ1 compactness); translation invariance under coarse translations, not proved (covariance of the construction plus identification of the limits over every exhausting sequence); a rate in N, not proved (a quantitative Cauchy estimate); boundary independence of dynamics on compact time windows, not proved (a Duhamel and Lieb-Robinson comparison over the 28N(5N+1) boundary faces at distance N-1 with the AQ1 Nachtergaele-Sims constants F(r)=(1+r)^-4, C<=224, ||Phi||_F<=2268|tau| and ||Phi'||_F<=1323|tau|; unwritten); dynamics of the padded family itself, not proved (Nachtergaele-Sims with the owner-set interaction and AQ1 sections 4-5; unwritten). (6) K_2' versus K_2^+: K_2' bounds the trace norm sup over ||A||<=1 in B(H_R) of |Tr(r_R A)|, while K_2^+=81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984 (~3354.80322946) bounds the single observable W and is uniform in N; every valid trace-norm constant is also a valid W constant, and every trace-norm constant assembled from the AW1 items is at least 2rho/tau^2~6708.2 because the AM2 remainder dominates both, so face restriction cannot make K_2' smaller than K_2^+; K_2'/K_2^+~3.99950; the AY1 wording 'not the whole-box K_2^+' means 'built from R-local face pins', not a smaller constant; the labelled variants (sqrt-2 sectors ~9487.945, 288-majorant ~10978.18, both ~7763.06, admitted-eps ~13417.81) are previews only. Every constant is uniform in N at fixed spacing and fixed tau and is not uniform in the lattice spacing a. Not admitted: identification of the limits (uniqueness), whole-sequence convergence, a rate in N, translation invariance, boundary independence of the dynamics, dynamics of the padded family, any dynamical, interaction-shift, continuum or weak-coupling statement, and scientific priority.",
+      "summary": "Statement on state identification with the AY1 constants: uniform local closeness (2D about 2.72e-8) with a common first-order density and a second-order difference bound (about 2.7e-12) for every pair of subsequential limits of both families; six obligations (uniqueness, whole-sequence convergence, translation invariance, rate in N, boundary independence of dynamics, dynamics of the padded family) listed as unproved with missing premises and candidate routes; an explicit falsifying scenario at second order; and a certified static two-sided distance of every limit from the Haar product on R, about 4.38e-10 to 4.41e-10, showing no limit has the product as its R-marginal without identifying the limit.",
+      "limitations": [
+        "Only the zero-selected patterned family (selected triple (0,0,0), Haar reference), the cover R={0,e_z}, fixed spacing and |tau|<=10^-8, with the two named families on centered cubes Lambda_N, N>=2; nothing transfers to literal vertex boxes, periodic or orthant boxes, nonzero selected triples, the uniform route-B model, weak coupling or the continuum; every constant is uniform in N at fixed spacing, never in a",
+        "Uniform local closeness on the fixed region R at the same coupling plus a static two-sided distance tier; not uniqueness, whole-sequence convergence, translation invariance, a rate in N, boundary independence of the dynamics or dynamics of the padded family (all six obligations unproved); two limits may differ by up to 2K_2' tau^2 on R and without bound elsewhere",
+        "The tier first_order_distance_from_product is static: not an interaction shift, Euclidean node or dynamical statement; its positive lower end excludes the Haar product on R but does not identify any limit; it is the AY1 labelled observation certified under the AY2 contract, not a new mathematical result",
+        "The falsifying witness is a pair of density matrices on H_R that satisfies every admitted one-state constraint; it shows what the bounds leave open and is not a constructed limit (transfers_to_aq false)",
+        "The candidate routes are named, not executed: HTW/Yarotsky constants c_1, c_2, c_HTW(1,1) are unevaluated (AM2 gate); a Dobrushin-type condition is not formulated for this model; the Lieb-Robinson constants for the dynamics rows are AQ1's Nachtergaele-Sims constants (F(r)=(1+r)^-4, C<=224, ||Phi||_F<=2268|tau|) and the named ||Phi'||_F<=1323|tau|, not AM2 constants; the contract's 'with the AM2 constants' is wording only",
+        "Inherited without re-proof: AM2 majorant, fixed point, exclusion and cutoff passage; AV1 split and cutoff-vector removal (F22); AY1 F13/F14 and the passage to every limit through closed trace-norm balls; AQ1 compactness and extraction; the I1 dictionary; SU(2) Haar orthogonality and the spectral theorem are standard",
+        "Constants are upper bounds except the certified lower end; K_2' is 99.99% the generic AM2 majorant 4rho",
+        "The mandatory sentence in the producer report is the Jung loop-2 form (AY1 forward section 6); the AY1-contract template (verbatim in the AY1 gate) is carried here in the supported statement with the constants filled; the AY2 preregistration has no template field",
+        "Single producer, correlated model agents: the contract, selection note, AY1 gate and the skeptic's AY1 review state the headline values; independence is limited to route and code; isolation is shown by disclosure, file-name-only exposure and content, not by commit order (the skeptic pre-comparison commit f640111 follows the producer commit ce6bca8; the skeptic's exact values were final at 03:34:06Z, before the producer's check.py and report were last written)",
+        "The -tau evaluation is a replay of the same |tau| formula, not a second confirmation",
+        "Scientific priority unverified"
+      ],
+      "model": "Same families, cover R={0,e_z}, clock and constants as AY1 (zero-selected patterned family at both signs |tau|<=10^-8; F1 = AQ1 centered whole-star boxes, F2 = I1 all-contained-face boxes with padding on the same Lambda_N, N>=2); statement loop with one forward producer and the skeptic's independent derivation and replays",
+      "gate_path": "research/round32/advisor/ay2-gate.json",
+      "contribution_id": "HNM-C-AY2",
+      "dependencies": [
+        "r32-ay1",
+        "r32-av1",
+        "r32-aw1",
+        "r29-aq1"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "statement+skeptic",
+      "derivation_steps": [
+        "Fill the mandatory sentence template with the AY1 gate constants and state the closeness, the common first-order density and the second-order difference bound for every pair of subsequential limits of F1 and F2.",
+        "Tabulate the six unproved obligations with the missing premise and a candidate route each (HTW/Dobrushin-type stability; Cauchy estimate in N; covariance plus uniqueness; Lieb-Robinson/Duhamel with the AQ1 Nachtergaele-Sims constants), and construct an exact pair of admissible densities differing at second order as the falsifying scenario.",
+        "Certify the two-sided tier sqrt(10)|tau|/72 -+ K_2' tau^2 for ||rho_R-P_R||_1 with a directed sqrt(10) bracket and the AY1 gate K_2' (rank-two pieces, eigenvalues +-sqrt(10)tau/144), label it static, and record the corrected K_2' versus K_2^+ reading; skeptic independent derivation, replays and 46 source-edit runs."
+      ],
+      "applications": [
+        "Closes roadmap goal 4 within its honest scope: a quantitative boundary comparison with explicit constants and an explicit list of what remains unproved, ready for HANDOFF and the roadmap.",
+        "The certified two-sided trace-norm distance of every limit from the Haar product on R is the first such two-sided tier in the programme (the AV1 and AX1 gates listed 'no lower bound on ||rho_R-P_R||_1' as a limitation; AW2's sign-certified Wilson mean already implied a positive distance, since ||W||<=1 and Tr(P_R W)=0); it is not an interaction-shift or dynamical statement."
+      ],
+      "evidence": [
+        "research/round32/advisor/ay2-gate.json",
+        "research/round32/forward/ay2/report.md",
+        "research/round32/skeptic/ay2.md",
+        "research/round32/skeptic/ay2-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "az1",
+      "sequence": 9,
+      "subround": 5,
+      "title": "Hruday continuum-trajectory statement: the one uniform estimate the fixed-spacing family supplies and the one it fails to supply",
+      "accepted": "Along the named trajectory (a_n,g_n) -- a hypothesis of asymptotic-freedom form with g_n->0 as a_n->0, not derived -- the fixed-spacing family (uniform Kogut-Susskind SU(2) at fixed spacing, strong bare coupling, as admitted by AX1: every face alpha*tau/24, route B, Haar reference, centered whole-star boxes, cover R={0,e_z}; AL1 dictionary alpha=g^2/(2a), lambda=2/(g^2 a), tau=24 lambda/alpha=96/g^4, so alpha*lambda*a^2=1; E_star and hbar fixed) supplies exactly one uniform estimate, the volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9 (0<tau<=10^-8) at fixed a (every finite complete-factor route-B volume and every AQ subsequential state, AX1 gate items (2)-(3), cited; in lattice units a*Delta>=g^2/32>=1250 sqrt 6, directed lower end 19595917942265424785578272597647131/6400000000000000000000000000000, about 3061.86), and fails to supply any estimate uniform along a_n->0 on a trajectory with g_n->0 (the admitted regime is left at a finite index and the AL1 bridge g^4>=32, i.e. tau<=3, fails from a finite index on; on the toy trajectory g_n=g_0/n the first indices below 9.6x10^9 and below 32 are n*=2 and n*=132 for g_0^4=9.6x10^9 and n*=4 and n*=421 for g_0=1000; common rescaling a->a/s at fixed g moves no admission ratio; a finite physical gap along a_n->0 needs a_n*Delta_n->0, impossible inside the admitted regime; this is failure of a sufficient certificate, not a statement that the gap closes); this is not a statement that the continuum limit exists, that any estimate is uniform in a, that the coupling is weak, or that any fraction of the continuum problem is thereby resolved.",
+      "summary": "Continuum-trajectory statement: along any trajectory (a_n,g_n) of asymptotic-freedom form the fixed-spacing family supplies exactly one necessary uniform estimate, the volume-uniform gap alpha/16=g^2/(32a) at fixed a for g^4>=9.6x10^9, and no estimate uniform along a_n->0; the dictionary identities (including alpha*lambda*a^2=1) are verified exactly, the toy trajectory g_n=g_0/n leaves the admitted regime at n*=2 and the AL1 bridge at n*=132 (4 and 421 for g_0=1000), the admitted regime cannot host a finite-mass limit, and what a continuum construction would additionally require is listed with the missing premise for each. No number is a fraction of the continuum problem.",
+      "limitations": [
+        "Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling (g^4>=9.6x10^9, |tau|<=10^-8) as admitted by AX1, with the AL1 dictionary; the supplied gap is volume-uniform at fixed a and never uniform in a along a trajectory with g_n->0",
+        "The trajectory is a hypothesis of asymptotic-freedom form, not derived; no beta function is computed or used; the toy trajectory g_n=g_0/n (a_n=a_0/n declared) is algebraic and not of asymptotic-freedom form; physical-units numbers are illustrations without scale setting",
+        "Failure of a sufficient certificate only: nothing is said about the actual gap where the certificate stops; the route radii 7/274688 and 1/20416 are not admitted regimes",
+        "The continuum requirements (uniform-in-a estimates, reconstruction hypotheses, physical scale control) are missing, as are the AY2 state obligations and nontriviality; no loop count is a fraction of the continuum problem",
+        "Inherited without re-proof: the AX1 gap (AM2 contraction, cutoff removal, AQ passage), the AL1 dictionary and bridge, the I1 geometry",
+        "The Faizal-Shabir construction (arXiv:2606.19362) is an unaudited lead read at abstract depth by the modern lens; neither producer nor skeptic read it; nothing depends on it",
+        "Single producer, correlated model agents; the premises print the headline; the agreement is a replay of elementary algebra",
+        "Scientific priority unverified"
+      ],
+      "model": "Uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (AX1 route B; every face coefficient alpha*tau/24; dictionary alpha=g^2/(2a), lambda=2/(g^2 a), tau=96/g^4; admitted regime |tau|<=10^-8, i.e. g^4>=9.6x10^9 at fixed a); a named trajectory (a_n,g_n) with g_n->0 stated as a hypothesis of asymptotic-freedom form; toy trajectory g_n=g_0/n, a_n=a_0/n; E_star fixed; statement loop with one forward producer and the skeptic's independent derivation and replays",
+      "gate_path": "research/round32/advisor/az1-gate.json",
+      "contribution_id": "HNM-C-AZ1",
+      "dependencies": [
+        "r32-ax1",
+        "r29-al1",
+        "r29-am2"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "statement+skeptic",
+      "derivation_steps": [
+        "Apply the AL1 dictionary alpha=g^2/(2a), lambda=2/(g^2 a), tau=96/g^4 and verify the identities alpha/16=g^2/(32a), alpha*lambda*a^2=1 and eight derived ones exactly; locate the admitted regime g^4>=9.6x10^9 at fixed a.",
+        "Cite the AX1 volume-uniform gap at fixed a as the one estimate supplied; show every trajectory with g_n->0 leaves the admitted regime after finitely many steps and that the AL1 bridge g^4>=32 fails from a finite index on; compute the exact crossover indices of the toy trajectory.",
+        "Retain the bridge obstruction and the failure of common rescaling; list the additional requirements of a continuum construction with the missing premise for each; disclose the unaudited external lead; skeptic independent derivation, replays and 46 source-mutation runs."
+      ],
+      "applications": [
+        "Closes roadmap goal 5 in its honest form: the dictionary along a trajectory and an explicit identification of the single uniform estimate supplied and the ones missing; the roadmap's continuum goal now names the missing premise exactly.",
+        "The lattice-unit floor a*Delta>=g^2/32 in the admitted regime is the quantitative reason the strong-coupling family cannot approach a finite-mass continuum by itself."
+      ],
+      "evidence": [
+        "research/round32/advisor/az1-gate.json",
+        "research/round32/forward/az1/report.md",
+        "research/round32/skeptic/az1.md",
+        "research/round32/skeptic/az1-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "az2",
+      "sequence": 10,
+      "subround": 5,
+      "title": "Hruday exact finite-graph first- and second-order Wilson coefficients on the two-plaquette graph (a different finite model)",
+      "accepted": "On the Round11 two-plaquette graph (open two-square patch: 6 vertices, 7 links, 6 Gauss constraints; gauge-invariant sector), for the finite-graph model H_FG = K - tau_FG (W_1 + W_2) in alpha units (= Round11 H(alpha=1, lambda1=lambda2=tau_FG, rho=1) - 2 tau_FG), both faces of the Round11 two-plaquette graph coupled equally, K the sum of the seven link Casimirs (rho=1), I1.5 sign, gauge-invariant sector, with observable <W_1> = <psi_0,(1/2)Tr(U) psi_0>, U = vM h3^-1 vL^-1 h1, and cutoffs D in {6,8} (trace-monomial basis of total degree D, dimensions 84 and 165): (1) d<W_1>/dtau_FG at tau_FG=0 is exactly 1/6 at D=6 and at D=8 (enclosure [1/6,1/6]; also on the untruncated graph, psi_1=(W_1+W_2)/3 exactly), and the own free reference computed in the same code path is <W_1>(0)=0 exactly; (2) at tau_FG in {+-1/1000, +-1/100, +-1/10} the full-graph <W_1> lies in the exported exact enclosures (listed in admitted_values.enclosures; e.g. D=8, tau_FG=+1/10: [8330560043705980737198104247838582935020907/500000000000000000000000000000000000000000000, 16661120087411961480213908206571701630183797/1000000000000000000000000000000000000000000000], about 0.016661120087411961474 to 0.016661120087411961480), each excluding 0 with the sign of tau_FG, the D=8 enclosure inside the D=6 one, the -tau_FG enclosure the exact negation; (3) the second-order coefficient of <W_1> is exactly 0 (shared-link centre flip), the second-order energy coefficient is -1/6, <W_1> = tau_FG/6 - (187/33696) tau_FG^3 + (767713/2523156480) tau_FG^5 + ..., E_0 = -tau_FG^2/6 + (187/67392) tau_FG^4 + ..., second-order <W_1^2>, <W_1 W_2>, <z> equal 7/576, 79/2808, 7/216, all finite-model values from exact Rayleigh-Schroedinger algebra with zero truncation error at both cutoffs, never fitted; (4) the complete residual lies in the first omitted shell and is itemized in five parts at every point: (a) seven per-link rows (thresholds 123/2 and 96 on h1,vL,h3 and h2,vR,h4; 45 and 69 on vM), (b) the joint product channel (threshold 48 and 145/2, with corner overlaps and the positive x-y interference), (c) gauge projection exactly 0 with its reason, (d) the Ritz residual with Davis-Kahan and Eckart angles and the Weyl separation 3-2|tau_FG|, (e) directed arithmetic; tail_lower is 45 (D=6) and 69 (D=8). The finite-graph derivative of <W>_FG at tau_FG=0, under the stated normalization dictionary, is consistent with the matched Z^3 first-order coefficient 1/144; this is a consistency check on a different, finite model, not a prediction, not a confirmation of the Z^3 value, and it does not transfer to any subsequential limit of the AQ construction or resolve roadmap goal 2. The finite graph is consistent with the matched coefficient and nothing more; its one-face variant (second face uncoupled), which the contract text also admits, is a different finite model that differs at third order.",
+      "summary": "On the Round11 two-plaquette graph with both faces coupled (a different finite model; polynomial-degree cutoffs D=6 and D=8), the derivative of the Wilson expectation at zero coupling is exactly 1/6 at both cutoffs (consistent with the matched Z^3 coefficient 1/144 under tau_FG=tau/24, a consistency check only), the second-order coefficient is exactly 0, higher coefficients are exact finite-model values, and <W_1> is enclosed at six grid points with certified tails (half-widths down to 2.8e-39) excluding the free reference: sign_certified_finite_graph, static, never a transfer to any subsequential limit of the AQ construction.",
+      "limitations": [
+        "Only the Round11 two-square patch and the named two-face model (both faces coupled equally, alpha=rho=1), D in {6,8} and the declared grid; a static ground-state mean with no dynamics, correlator, clock or mass-gap reading",
+        "No statement about the AQ model, its subsequential limits, K_2 or the Z^3 shift; roadmap goal 2 is not resolved; no continuum or weak-coupling claim; the zero second-order coefficient is a finite-graph centre-flip fact",
+        "The dictionary 1/6 <-> 1/144 is a consistency check expected from the shared normalization (energy 3, E[W^2]=1/4); not a prediction and not a confirmation of the Z^3 value",
+        "The one-face model is not admitted; its values are the skeptic alternative reading, with the certified second-square shift tau^3/4212 + O(tau^5) between the two",
+        "Inherited without re-proof: the Round11 reduction (Q1-Q3), kinetic operator, spectrum, tail threshold and Theorem F; Kato, Weyl, Temple, Eckart and Davis-Kahan are cited; the checkers re-verify fixtures, not the reduction",
+        "Model-agent review with correlated ancestry; not human peer review or formal verification; scientific priority unverified"
+      ],
+      "model": "FG(two-plaquette graph of Round11: two adjacent squares sharing one link, seven links, six Gauss constraints, gauge-invariant trace-monomial basis of polynomial degree D in {6,8}, dimensions 84 and 165; H_FG = K - tau_FG (W_1 + W_2) in alpha units with BOTH faces coupled equally (Round11 H(alpha=1, lambda_1=lambda_2=tau_FG, rho=1) minus 2 tau_FG); I1.5 sign convention; tau_FG in {+-1/1000, +-1/100, +-1/10}; observable <W_1> of one square); model_is_finite_graph true, transfers_to_aq false; single forward producer with the skeptic's pre-comparison replay from the contract alone and post-comparison review",
+      "gate_path": "research/round32/advisor/az2-gate.json",
+      "contribution_id": "HNM-C-AZ2",
+      "dependencies": [
+        "r32-aw1",
+        "r11-operator",
+        "r11-gap"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "single+skeptic",
+      "derivation_steps": [
+        "Build the gauge-invariant trace-monomial basis of the Round11 two-plaquette graph at polynomial degree D in {6,8}, propose Ritz vectors by high-precision inverse iteration, and certify exactly: the complete full-space residual on the first omitted shell (orthogonal sectors), the gap E_1 >= 3-2|tau_FG|, Temple's bound with the Round11 tail comparison and an Eckart angle bound.",
+        "Compute the exact derivative at zero (the first-order vector is exact in the full space) and the exact second- and higher-order coefficients; compare 1/6 with 1/144 under the normalization dictionary as consistency only; identify the one-face and two-face models by their third-order coefficients.",
+        "Itemize the five-part residual ledger at every grid point; label the Arb preview; skeptic pre-comparison replay from the contract alone (one-face reading recorded as the other model) and post-comparison review with 27 source-edit runs."
+      ],
+      "applications": [
+        "Supplies the finite-model comparison the panel planned beside roadmap goal 2 in the only honest form: exact coefficients of a computable different finite model, showing what first- and second-order Wilson coefficients are in a truncated graph, never transferred to Z^3; roadmap goal 2 itself is not resolved by it.",
+        "The exact zero second-order coefficient on the finite graph mirrors the Z^3 parity theorem of AW1 (center grading) as a consistency observation; K_2 and the AQ model are untouched."
+      ],
+      "evidence": [
+        "research/round32/advisor/az2-gate.json",
+        "research/round32/forward/az2/report.md",
+        "research/round32/skeptic/az2.md",
+        "research/round32/skeptic/az2-independent-derivation.md"
+      ]
+    }
+  ],
+  "scope_statement": "Round32 complete: ten reviewed investigations (AV1-AZ2) in five sub-rounds, all accepted within their stated scope, on fixed-lattice SU(2) Kogut-Susskind families at fixed spacing and fixed coupling (the zero-selected patterned AQ family at |tau|<=10^-8, the uniform Kogut-Susskind model at strong bare coupling g^4=96/tau, and a separate finite two-plaquette graph). Every statement names its model, coupling, state, clock and exclusions. Nothing here is uniform in the lattice spacing, nothing identifies a unique infinite-volume state, nothing transfers from the finite graph, and no scientific priority is claimed; the four-dimensional continuum Yang-Mills existence and mass-gap problem remains open.",
+  "summary": "Round32 closes the five roadmap goals of Round31 in their honest forms. Cap precision: a linear local state lemma (exact tier about 1.36e-8) and a C^2 window kernel certify the centered Wilson Euclidean node at tau=10^-8, s=1 with radius about 1.83e-7 (free reference inside). Interaction shift: a center-grading parity theorem and an exact link-flip antisymmetry show the only first-order Wilson effect is the static uncentered mean +tau/144, sign-certified at the AW2 coupling. Uniform Hamiltonian: the uniform Kogut-Susskind model at fixed spacing re-instantiates the chain by a Haar route (52 faces per factor, state bound about 1.44e-8, node radius about 1.91e-7). State identification: every pair of subsequential limits of two named construction families is within 2D (about 2.72e-8) on the cover with a common first-order density and second-order difference about 2.7e-12 (R-local K_2' about 13418, four times the single-observable constant), plus a certified static two-sided distance of every limit from the Haar product (about 4.38e-10 to 4.41e-10) and six unproved obligations listed with routes. Continuum trajectory: the dictionary tau=96/g^4 places the admitted regime at g^4>=9.6x10^9 at fixed spacing; the one uniform estimate supplied is the volume-uniform gap g^2/(32a) at fixed a; nothing is uniform along any trajectory with g->0, and a separate finite graph gives exact Wilson coefficients (derivative 1/6, consistent with 1/144 under tau_FG=tau/24; second order exactly 0) that transfer to nothing.",
+  "addendum": {
+    "title": "Round32 research addendum: linear local state bounds, window kernels, static Wilson shifts, the uniform Kogut-Susskind model, local closeness of subsequential states, the continuum trajectory and a finite graph",
+    "path": "papers/round32-addendum/main.pdf",
+    "url": "ym-round32-addendum.pdf",
+    "source_dir": "papers/round32-addendum/"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "schema": "hnm-round32-modern-recommendation-v1",
+  "status": "round32_loop1_advisory",
+  "lens": "modern-methods (Penrose/Feynman methodological lenses; SOTA surveyor)",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "date": "2026-09-23",
+  "disclaimer": "Prospective recommendations for the advisor's plan.json; not frozen contracts, executed loops or admitted results. Numerical values are scratch previews unless marked exact.",
+  "goal_pairs": [
+    {
+      "id": "AV",
+      "rank": 1,
+      "title": "Cap-level Euclidean enclosure at |tau|=1e-8 via second-order local expansion and a smooth spectral kernel",
+      "model": "Zero-selected patterned AQ subfamily (selected triple (0,0,0), 21 omitted faces per anchor at alpha*tau/24, whole-star boundary, tau=+1e-8, both signs as a control), AQ1 subsequential state omega_num, physical clock s=alpha*t_E/hbar, s=1 and the AT6 grid 0<=s<=128 as a second target",
+      "observable": "C(s)=<chi,e^{-sH/alpha}chi>, chi=(W-omega(W))Omega for the original xz Wilson loop W, plus omega(W) and omega(W^2)",
+      "control": "(1) Poisson-kernel replay must reproduce the 1.2651e-6 floor; (2) a kernel without the x>=0 agreement (f != e^{-sx} on part of [0,inf)) must be rejected; (3) an observable with nonvanishing first order (omega(W) itself, tau/144) must show the O(tau) term; (4) sign flip tau -> -tau must leave C(s) unchanged at O(tau) and change omega(W) sign; (5) dropping the left-eigenvector correction l-Omega_0 must be detected as a normalization error on a four-site fixture",
+      "expected_outcome_types": ["accepted_within_scope (radius <= 1e-8 at s=1)", "limited (only first-order (M2) proved: radius ~4e-7)", "insufficient (anchored bound for the left eigenvector not proved; fallback to sqrt reset)"],
+      "direction": "paired",
+      "why": "Removes both bottlenecks named in the brief: the sqrt state bound (Riesz-projection expansion omega_N(A)=<l,e^{C}Ae^{-C}Omega_0>) and the Poisson log floor (smooth-extension kernel, M_1~3). Selection rules make the whole budget O(tau^2), estimated ~1.5e-9 at the cap with AM2's majorant constants."
+    },
+    {
+      "id": "AW",
+      "rank": 2,
+      "title": "Certified sign and size of an interaction effect on the exact two-plaquette finite graph",
+      "model": "Round11 coupled two-plaquette SU(2) graph (7 links, 6 vertices, physical quotient variables x,y,z, constant Haar density on the constrained body), alpha=1, kappa_i=lambda_i/alpha in {(1,0),(1,1),(1,2),(2,2)}, polynomial degree cutoff D in {6,8} with the exact omitted-degree tail threshold and strict R gate; explicitly a different finite model (kappa=tau/24 in the AL1 dictionary, i.e. tau in [24,48])",
+      "observable": "<x> (plaquette-1 Wilson expectation) and the two-body shift delta=<x>_{kappa1,kappa2}-<x>_{kappa1,0}",
+      "control": "(1) kappa_2=0 must reproduce the Round10 one-plaquette enclosure; (2) dropping the shell-(D+1) residual leakage must be rejected; (3) a wrong-gap input (E_1 lower bound below mu) must fail the Davis-Kahan step; (4) an inertia count at an exact repeated eigenvalue; (5) python-flint fmpq_mat replay must agree bit-for-bit with the Fraction admission values",
+      "expected_outcome_types": ["accepted_within_scope (both <x>>0 and delta sign certified at D=8)", "limited (only <x>>0 certified; delta interval contains 0)", "insufficient (residual widths exceed delta at D<=8)"],
+      "direction": "paired",
+      "why": "The only executable route to an enclosure that excludes the free reference: on the Z^3 family the first-order shift of C(s) vanishes and the mean shift tau/144 is 6.9e-11 at the cap. One-plaquette preview (N=8 characters, Fractions, 0.03 s): kappa=1 gives <W> in [0.1576,0.1639]; matrix sizes 84 (D=6) and 165 (D=8)."
+    },
+    {
+      "id": "AX",
+      "rank": 3,
+      "title": "Uniform Kogut-Susskind datum with the pure-electric reference",
+      "model": "Uniform magnetic model: selected triple = omitted coefficient = alpha*tau/24 (inside the box |lambda|<=alpha/2, |mu|<=alpha/8 for |tau|<=3), same Z^3 whole-star family, Haar product reference h_R^el=8 sum C_e, |tau|<=9.655e-9 unless AM2's J_0 is re-frozen to cover J=29|tau|",
+      "observable": "C(1) and omega(W) for the xz Wilson loop; reset datum omega(h_R^el)",
+      "control": "(1) incidence enumeration must return 7 stars and 6 internal selected faces on R={0,e_z}; (2) budget must be 102|tau| (not 98|tau|); (3) k must be 51|tau|/4; (4) AM2 contraction re-run with J=29|tau| and p_max=4 including support-1 selected terms; (5) AL1 dictionary check tau=96/g^4",
+      "expected_outcome_types": ["accepted_within_scope (uniform datum with O(tau^2) budget after AV)", "limited (sqrt budget only: D=8.246e-4 at the cap)", "insufficient (AM2 re-proof fails for the selected support-1 terms)"],
+      "direction": "single+skeptic",
+      "why": "Goal 3 of the roadmap; the incidence count and budget are now derived (Section 3(iv) of the memo) and the O(tau^2) selection rules carry over unchanged."
+    },
+    {
+      "id": "AY",
+      "rank": 4,
+      "title": "Boundary-family comparison for the AQ limiting states (statement and derivation only)",
+      "model": "Two finite-volume families at |tau|<=1e-8: centered whole-star boxes (AQ1) versus all-contained-face boxes (AL1's padded prescription), local observable class B(H_R) for fixed R, common clock",
+      "observable": "sup over ||A||<=1 in B(H_R) of |omega_N^{(1)}(A)-omega_N^{(2)}(A)| as a function of dist(R, boundary)",
+      "control": "(1) at tau=0 both families give the Haar product exactly; (2) the bound must not depend on |Lambda|; (3) a fixed-volume comparison must not be relabelled as uniqueness of the thermodynamic state",
+      "expected_outcome_types": ["statement with explicit hypotheses (weighted anchored norm, Yarotsky-type decay rate)", "proved obstruction (unweighted anchored norm insufficient)"],
+      "direction": "statement-only",
+      "why": "Goal 4 needs a rate; (M1) plus a weighted anchored norm would give one, and the missing weight is the same unproved step as in AV, so the derivation is shared."
+    },
+    {
+      "id": "AZ",
+      "rank": 5,
+      "title": "Regulator/coupling dictionary and the one uniform estimate (statement only)",
+      "model": "AL1 dictionary a, g^2, alpha=g^2/(2a), lambda=2/(g^2 a), tau=96/g^4, delta=alpha/8, hbar, E_star fixed; Euclidean comparison rows: Cao-Nissim-Sheffield 't Hooft regime, Gauvin fixed-cutoff SU(3), Chatterjee Yang-Mills-Higgs Gaussian limit",
+      "observable": "The volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6e9 and its non-uniformity along a->0, g(a)->0",
+      "control": "(1) every parameter classified (regulator/coupling/state preparation/measured/deformation) with units; (2) the AL1 all-n failure path reproduced; (3) no fraction of the continuum problem stated",
+      "expected_outcome_types": ["statement-only ledger"],
+      "direction": "statement-only",
+      "why": "Goal 5's proposed first-loop test is exactly this statement; it costs no loop and fixes what later loops may claim."
+    }
+  ],
+  "strategy_changes": [
+    "Replace the Poisson kernel by a smooth-extension kernel f=e^{-sx} on x>=0 with a C^2 (or smoother) taper on [-a,0] for every real-time-to-Euclidean transfer; evaluate f-hat in closed form with directed rounding; no cutoff L.",
+    "Count perturbative order by selection rules (Haar single-occurrence orthogonality, center symmetry) before writing an error budget; budget at O(tau^2) where first order vanishes.",
+    "Use the Riesz-projection identity omega_N(A)=<l,e^{C}Ae^{-C}Omega_0> for local expectations from AM2's expansion instead of the variational reset; the reset stays as a control.",
+    "For the shift goal, move to either the mean omega(W_p) (first order tau/144) or the exact finite graph; stop targeting C(s) shifts at first order.",
+    "Adopt python-flint (fmpq_mat, arb) as the independent reverse implementation and cross-check; keep stdlib Fraction arithmetic as the sole admission arithmetic.",
+    "Freeze the Gauvin v1/v3 diff and the AQ1/AM2 family identity as declared premises before AV production."
+  ],
+  "skill_updates": [
+    {
+      "skill": "paired-physics-research",
+      "reference": "references/spectral-kernels-and-order-counting.md (new)",
+      "content": "Kernel smoothness at the spectral edge determines the real-time moment needed; e^{-s|x|} costs a log cutoff, a smooth extension costs a constant. Vanishing first-order terms must be proved by a symmetry/orthogonality rule and then exploited with a second-order remainder."
+    },
+    {
+      "skill": "qeg-research-advisor",
+      "reference": "references/attribution-and-model-dictionaries.md (append)",
+      "content": "Before any AM2 novelty statement, diff arXiv:2503.15539 v1 against v3 for Theorem 2.3 and record which constants (radius, J/delta, on-site gap) differ from AM2's."
+    },
+    {
+      "skill": "historical-physics-panel",
+      "reference": "references/lenses-and-evidence.md (append)",
+      "content": "Record proxy-blocked or paywalled primary records as leads with the HTTP status; a search-summary depth is never promoted to a read section."
+    }
+  ],
+  "tools": [
+    {
+      "name": "python-flint",
+      "version": "0.9.0 (released 2026-07-03; FLINT 3.6.0 wheels; verified locally flint.__version__=='0.9.0')",
+      "license": "MIT AND LGPL-3.0-or-later",
+      "url": "https://pypi.org/project/python-flint/",
+      "how_it_verifies_what": "fmpq_mat exact determinant/inverse/solve for replaying the finite-graph Gram, form and inertia computations; arb/acb ball arithmetic (output ball contains the exact result) for exp, log, pi, sqrt enclosures and for M_0/M_1/M_2 kernel moments; acb_mat.eig ball eigenvalues as a preview of the Round11 brackets. Cross-check only; admission stays in Fraction."
+    },
+    {
+      "name": "Python standard library fractions",
+      "version": "Python 3.11.15",
+      "license": "PSF",
+      "url": "https://docs.python.org/3/library/fractions.html",
+      "how_it_verifies_what": "Exact rational admission arithmetic for all certificates (directed rounding to 10^-30 grids as in AT5/AT6)."
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "license": "BSD",
+      "url": "https://mpmath.org/",
+      "how_it_verifies_what": "High-precision floating previews (30-digit floor reproduction) and the experimental iv interval context as a secondary check; never the sole rigorous check."
+    },
+    {
+      "name": "numpy",
+      "version": "2.4.6",
+      "license": "BSD-3-Clause",
+      "url": "https://numpy.org/",
+      "how_it_verifies_what": "Floating previews only (kernel moment quadrature, float eigen-previews)."
+    },
+    {
+      "name": "sympy",
+      "version": "installed (version not pinned in this memo)",
+      "license": "BSD",
+      "url": "https://www.sympy.org/",
+      "how_it_verifies_what": "Exact symbolic Haar/Clebsch-Gordan algebra for the second-order coefficient kappa_2(s) in route (b) of the shift goal."
+    },
+    {
+      "name": "matplotlib",
+      "version": "installed",
+      "license": "PSF-based",
+      "url": "https://matplotlib.org/",
+      "how_it_verifies_what": "Experiment-setup figures (cover R, seven stars, six selected faces); no admission role."
+    }
+  ],
+  "disagreements": [
+    "Brief observation 3 assumes the interaction shift is O(tau); for C(s) and omega(W^2) it is O(tau^2) by selection rules, so route (b) needs a third-order remainder and route (a) or the mean omega(W) is the honest target.",
+    "Brief observation 2 treats the 1.2-1.3e-6 floor as a property of the real-time comparison; it is a property of the Poisson kernel and disappears with a smooth-extension kernel.",
+    "Brief observation 1 targets O(tau) constants c_1,c_2; for W^2 and for W alpha^0_theta(W) the honest target is O(tau^2), while for omega(W) the exact first-order coefficient 1/144 should be stated rather than a crude c_1~1800.",
+    "AM2's novelty relative to Gauvin v3 Theorem 2.3 is unverified; the ledger flags the version history (v2/v3 dated 2026-09-11/14) and the physics.gen-ph category as provenance facts, not judgments."
+  ],
+  "open_questions_for_skeptic": [
+    "Is an anchored-norm bound for the left eigenvector l provable with AM2's unweighted anchored norm, or is a support-size weight w^{|I|} unavoidable? Provide a damaging example if the unweighted bound fails.",
+    "Are AQ1's centered whole-star boxes exactly AM2's Hamiltonian family (same retained stars, same on-site reference), so that finite-volume local bounds pass to omega_num along AQ1's subsequence?",
+    "Does the relative-unitary Dyson argument of AT4 extend to second order with unbounded on-site terms without new domain assumptions?",
+    "Do faces sharing two links with W (same-plane neighbours) or the W face itself produce any nonzero first-order term? (Predicted: none, by <W^3>_Haar=0 and single-occurrence orthogonality.)",
+    "Which constant J_0 should be frozen for the uniform model (J=29|tau|), and does the AM2 combinatorics accept support-1 selected terms with p_max=4 unchanged?",
+    "Does the finite-graph delta on the Round11 two-plaquette model satisfy the roadmap's meaning of 'an interaction-induced effect', given the explicit different-model label?",
+    "Did Gauvin arXiv:2503.15539 v1 (2025-03-06) already contain the fixed-cutoff creation-expansion gap (Theorem 2.3 in v3)?"
+  ]
+}

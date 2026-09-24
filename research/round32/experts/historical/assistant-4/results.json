@@ -1,0 +1,696 @@
+{
+  "schema": "hnm-r32-assistant-tests-v1",
+  "round": 32,
+  "subround": 4,
+  "lens": "historical (Newton/Tesla)",
+  "assistant": 4,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "zero_research_loops": true,
+  "role": "cross-checks and previews only; not a producer, skeptic or advisor artifact; never admission evidence",
+  "source_task": "research/round32/advisor/panel-update-3.md item 6, historical share",
+  "read_before_writing": [
+    "research/round32/advisor/panel-update-3.md",
+    "research/round32/advisor/ay1-gate.json",
+    "research/round32/forward/ay1/report.md (frozen, gated)",
+    "research/round32/forward/ay1/output/results.json (data only)",
+    "research/round32/reverse/ay1/report.md (frozen, gated)",
+    "research/round32/reverse/ay1/output/results.json (data only)",
+    "research/round32/forward/av1/report.md",
+    "research/round32/forward/av1/output/results.json (data only)",
+    "research/round21/forward/i1/report.md section 6",
+    "research/round32/experts/historical/assistant-1/am2_tiers_exact.py (an assistant script, not a producer)",
+    "research/round32/experts/historical/assistant-3/README.md, results.json, j0_contraction_replay.py (layout/README convention)"
+  ],
+  "never_imported": [
+    "research/round32/forward/ay1/check.py",
+    "research/round32/reverse/ay1/check.py"
+  ],
+  "overall_pass": true,
+  "replay": "every script run with python3 -B <script>.py and python3 -B -O <script>.py; byte-identical stdout both ways for all three scripts",
+  "scripts": {
+    "padding_family_contraction.py": {
+      "script": "padding_family_contraction.py",
+      "zero_research_loops": true,
+      "arithmetic": "fractions.Fraction for all pass/fail comparisons; mpmath and (if available) python-flint Arb for labelled numerical cross-checks only",
+      "box_enumeration": {
+        "2": {
+          "N": 2,
+          "B_sites": 125,
+          "faces_F1": 1344,
+          "faces_F2": 1960,
+          "extra_F2_minus_F1": 616,
+          "full_star_anchors": 64,
+          "partial_groups": 60,
+          "zero_groups": 1,
+          "full_plus_partial_plus_zero": 125,
+          "B_plus_sites": 200,
+          "closed_form_F1_168N3": 1344,
+          "closed_form_F2_28N_2N1_3N1": 1960,
+          "closed_form_extra_28N_5N1": 616,
+          "F1_matches_closed_form": true,
+          "F2_matches_closed_form": true,
+          "extra_matches_closed_form": true
+        },
+        "3": {
+          "N": 3,
+          "B_sites": 343,
+          "faces_F1": 4536,
+          "faces_F2": 5880,
+          "extra_F2_minus_F1": 1344,
+          "full_star_anchors": 216,
+          "partial_groups": 126,
+          "zero_groups": 1,
+          "full_plus_partial_plus_zero": 343,
+          "B_plus_sites": 490,
+          "closed_form_F1_168N3": 4536,
+          "closed_form_F2_28N_2N1_3N1": 5880,
+          "closed_form_extra_28N_5N1": 1344,
+          "F1_matches_closed_form": true,
+          "F2_matches_closed_form": true,
+          "extra_matches_closed_form": true
+        },
+        "4": {
+          "N": 4,
+          "B_sites": 729,
+          "faces_F1": 10752,
+          "faces_F2": 13104,
+          "extra_F2_minus_F1": 2352,
+          "full_star_anchors": 512,
+          "partial_groups": 216,
+          "zero_groups": 1,
+          "full_plus_partial_plus_zero": 729,
+          "B_plus_sites": 972,
+          "closed_form_F1_168N3": 10752,
+          "closed_form_F2_28N_2N1_3N1": 13104,
+          "closed_form_extra_28N_5N1": 2352,
+          "F1_matches_closed_form": true,
+          "F2_matches_closed_form": true,
+          "extra_matches_closed_form": true
+        }
+      },
+      "faces_meeting_R": {
+        "n_faces_meeting_R": 82,
+        "expected_82": true,
+        "by_N": {
+          "2": {
+            "all_82_in_F1": true,
+            "all_82_in_F2": true,
+            "both_families_retain_same_82": true
+          },
+          "3": {
+            "all_82_in_F1": true,
+            "all_82_in_F2": true,
+            "both_families_retain_same_82": true
+          },
+          "4": {
+            "all_82_in_F1": true,
+            "all_82_in_F2": true,
+            "both_families_retain_same_82": true
+          }
+        }
+      },
+      "max_per_site_sum": {
+        "2": {
+          "F1_max_per_site_over_abs_tau": "28",
+          "F2_max_per_site_over_abs_tau": "28",
+          "F1_le_28": true,
+          "F2_le_28": true,
+          "F1_attains_28": true,
+          "F2_attains_28": true
+        },
+        "3": {
+          "F1_max_per_site_over_abs_tau": "28",
+          "F2_max_per_site_over_abs_tau": "28",
+          "F1_le_28": true,
+          "F2_le_28": true,
+          "F1_attains_28": true,
+          "F2_attains_28": true
+        },
+        "4": {
+          "F1_max_per_site_over_abs_tau": "28",
+          "F2_max_per_site_over_abs_tau": "28",
+          "F1_le_28": true,
+          "F2_le_28": true,
+          "F1_attains_28": true,
+          "F2_attains_28": true
+        }
+      },
+      "am2_contraction": {
+        "exp_upper_bound_exact": "68604533559514086391/60543288369532108800",
+        "exp_upper_bound_decimal": 1.1331484530668263,
+        "exp_1_8_lt_8_7": true,
+        "R": "1/64",
+        "G_R": "148/7",
+        "G_R_expected_148_7": "148/7",
+        "G_R_matches": true,
+        "Gp_R": "352",
+        "Gp_R_expected_352": "352",
+        "Gp_R_matches": true,
+        "J0": "7/25000000",
+        "J0_expected_7_25000000": "7/25000000",
+        "J0_matches": true,
+        "self_map_J0_G_R": "37/6250000",
+        "self_map_expected_37_6250000": "37/6250000",
+        "self_map_matches": true,
+        "self_map_lt_1_64": true,
+        "exclusion_2J0_Gp_R": "77/390625",
+        "exclusion_expected_77_390625": "77/390625",
+        "exclusion_matches": true,
+        "exclusion_lt_1": true,
+        "mpmath_cross_check": {
+          "dps": 60,
+          "exp_1_8": "1.1331484530668263168",
+          "exp_1_8_lt_8_7": true,
+          "self_map_preview": "5.86970898689e-6",
+          "exclusion_preview": "0.000195445445185",
+          "true_self_map_below_rational_bound": true
+        },
+        "flint_arb_cross_check": {
+          "arb_exp_1_8": "[1.1331484530668263168290072278117938725655031317451816259128 +/- 2.05e-59]",
+          "arb_exp_1_8_lt_8_7": true
+        },
+        "flint_available": true
+      },
+      "termination_order": {
+        "1": {
+          "p": 1,
+          "dimension": 2,
+          "C_p_zero": false,
+          "C_p1_zero (pigeonhole: p+1 singleton generators from p labels must repeat)": true,
+          "ad_C_k_zero_by_k": {
+            "0": false,
+            "1": false,
+            "2": false,
+            "3": true,
+            "4": true
+          },
+          "first_k_with_ad_identically_zero": 3,
+          "last_k_with_ad_nonzero": 2,
+          "termination_order_2p": true
+        },
+        "2": {
+          "p": 2,
+          "dimension": 4,
+          "C_p_zero": false,
+          "C_p1_zero (pigeonhole: p+1 singleton generators from p labels must repeat)": true,
+          "ad_C_k_zero_by_k": {
+            "0": false,
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": true,
+            "6": true
+          },
+          "first_k_with_ad_identically_zero": 5,
+          "last_k_with_ad_nonzero": 4,
+          "termination_order_2p": true
+        },
+        "3": {
+          "p": 3,
+          "dimension": 8,
+          "C_p_zero": false,
+          "C_p1_zero (pigeonhole: p+1 singleton generators from p labels must repeat)": true,
+          "ad_C_k_zero_by_k": {
+            "0": false,
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": true
+          },
+          "first_k_with_ad_identically_zero": 7,
+          "last_k_with_ad_nonzero": 6,
+          "termination_order_2p": true
+        },
+        "4": {
+          "p": 4,
+          "dimension": 16,
+          "C_p_zero": false,
+          "C_p1_zero (pigeonhole: p+1 singleton generators from p labels must repeat)": true,
+          "ad_C_k_zero_by_k": {
+            "0": false,
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false,
+            "9": true,
+            "10": true
+          },
+          "first_k_with_ad_identically_zero": 9,
+          "last_k_with_ad_nonzero": 8,
+          "termination_order_2p": true
+        }
+      },
+      "termination_order_8_confirmed_for_p4": true,
+      "reset_budget": {
+        "incident_anchors": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            -1,
+            0,
+            1
+          ],
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "n_incident_anchors": 7,
+        "n_incident_expected_7": true,
+        "reset_budget_over_abs_tau": 98,
+        "reset_budget_expected_98": 98,
+        "matches": true
+      },
+      "cross_check_forward": {
+        "N2_faces_F1": true,
+        "N2_faces_F2": true,
+        "N2_extra": true,
+        "N3_faces_F1": true,
+        "N3_faces_F2": true,
+        "N3_extra": true,
+        "N2_faces_meeting_R_82": true,
+        "reset_R_98": true,
+        "incident_anchors_list": true,
+        "J0": true,
+        "G_R_upper": true,
+        "self_map": true,
+        "exclusion": true,
+        "termination_order_am2": true,
+        "termination_fixture_qualitative_four_site_order8_matches_2p": true,
+        "termination_fixture_qualitative_two_site_order4_matches_2p": true
+      },
+      "cross_check_reverse": {
+        "N2_B_sites": true,
+        "N2_am2_volume_sites_Bplus": true,
+        "N2_partial_groups": true,
+        "N2_reset_R_per_tau": true,
+        "N2_padded_incident_groups_R": true,
+        "N3_B_sites": true,
+        "N3_am2_volume_sites_Bplus": true,
+        "N3_partial_groups": true
+      },
+      "overall_pass": true
+    },
+    "fixed_versus_moving_vector.py": {
+      "script": "fixed_versus_moving_vector.py",
+      "zero_research_loops": true,
+      "label": "FIXTURE ONLY -- 2-qubit (R x out) toy model, eps=1/10 is illustrative, not tau; not a physical result",
+      "arithmetic": "fractions.Fraction throughout; trace norms compared via their exact squares (traceless 2x2 real-symmetric matrix => trace_norm^2=-4*det); floats appear only as decimal previews",
+      "setup": {
+        "Omega": "|0>_R x |0>_out",
+        "P_R": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "eps": "1/10",
+        "D_2eps_1pluseps_over_1pluseps2": "22/101",
+        "D_decimal": 0.21782178217821782,
+        "twoD": "44/101",
+        "twoD_decimal": 0.43564356435643564
+      },
+      "item_a_per_N_density_bound": {
+        "records": [
+          {
+            "N": 1,
+            "parity": "odd",
+            "t_N": "1",
+            "a_N": "0",
+            "b_N": "1",
+            "trace_norm_sq_rho_minus_P": "0",
+            "trace_norm_decimal_preview": 0.0,
+            "D_bound_holds": true
+          },
+          {
+            "N": 2,
+            "parity": "even",
+            "t_N": "1/2",
+            "a_N": "3/5",
+            "b_N": "4/5",
+            "trace_norm_sq_rho_minus_P": "90324/6375625",
+            "trace_norm_decimal_preview": 0.11902555044468778,
+            "D_bound_holds": true
+          },
+          {
+            "N": 3,
+            "parity": "odd",
+            "t_N": "1/3",
+            "a_N": "-4/5",
+            "b_N": "3/5",
+            "trace_norm_sq_rho_minus_P": "161024/6375625",
+            "trace_norm_decimal_preview": 0.1589219637732683,
+            "D_bound_holds": true
+          },
+          {
+            "N": 4,
+            "parity": "even",
+            "t_N": "1/4",
+            "a_N": "15/17",
+            "b_N": "8/17",
+            "trace_norm_sq_rho_minus_P": "26212500/851997721",
+            "trace_norm_decimal_preview": 0.1754021874597555,
+            "D_bound_holds": true
+          },
+          {
+            "N": 5,
+            "parity": "odd",
+            "t_N": "1/5",
+            "a_N": "-12/13",
+            "b_N": "5/13",
+            "trace_norm_sq_rho_minus_P": "9817344/291350761",
+            "trace_norm_decimal_preview": 0.18356459738183706,
+            "D_bound_holds": true
+          },
+          {
+            "N": 6,
+            "parity": "even",
+            "t_N": "1/6",
+            "a_N": "35/37",
+            "b_N": "12/37",
+            "trace_norm_sq_rho_minus_P": "676812500/19118316361",
+            "trace_norm_decimal_preview": 0.18815222723681654,
+            "D_bound_holds": true
+          },
+          {
+            "N": 7,
+            "parity": "odd",
+            "t_N": "1/7",
+            "a_N": "-24/25",
+            "b_N": "7/25",
+            "trace_norm_sq_rho_minus_P": "145327104/3984765625",
+            "trace_norm_decimal_preview": 0.1909729771362296,
+            "D_bound_holds": true
+          },
+          {
+            "N": 8,
+            "parity": "even",
+            "t_N": "1/8",
+            "a_N": "63/65",
+            "b_N": "16/65",
+            "trace_norm_sq_rho_minus_P": "6770621844/182094225625",
+            "trace_norm_decimal_preview": 0.19282626624657825,
+            "D_bound_holds": true
+          },
+          {
+            "N": 9,
+            "parity": "odd",
+            "t_N": "1/9",
+            "a_N": "-40/41",
+            "b_N": "9/41",
+            "trace_norm_sq_rho_minus_P": "1086080000/28825587961",
+            "trace_norm_decimal_preview": 0.19410727866176763,
+            "D_bound_holds": true
+          },
+          {
+            "N": 10,
+            "parity": "even",
+            "t_N": "1/10",
+            "a_N": "99/101",
+            "b_N": "20/101",
+            "trace_norm_sq_rho_minus_P": "40376238804/1061520150601",
+            "trace_norm_decimal_preview": 0.19502882705588476,
+            "D_bound_holds": true
+          },
+          {
+            "N": 11,
+            "parity": "odd",
+            "t_N": "1/11",
+            "a_N": "-60/61",
+            "b_N": "11/61",
+            "trace_norm_sq_rho_minus_P": "5410080000/141241424041",
+            "trace_norm_decimal_preview": 0.1957135072799694,
+            "D_bound_holds": true
+          },
+          {
+            "N": 12,
+            "parity": "even",
+            "t_N": "1/12",
+            "a_N": "143/145",
+            "b_N": "24/145",
+            "trace_norm_sq_rho_minus_P": "173648736404/4509358425625",
+            "trace_norm_decimal_preview": 0.19623588823872254,
+            "D_bound_holds": true
+          }
+        ],
+        "all_N_satisfy_D_bound": true
+      },
+      "item_b_two_subsequential_limits": {
+        "even_limit_direction": "(a,b) -> (1,0)  [delta_even -> eps*(1,0)]",
+        "odd_limit_direction": "(a,b) -> (-1,0) [delta_odd -> eps*(-1,0)]",
+        "rho_even_limit": [
+          [
+            "100/101",
+            "10/101"
+          ],
+          [
+            "10/101",
+            "1/101"
+          ]
+        ],
+        "rho_odd_limit": [
+          [
+            "100/101",
+            "-10/101"
+          ],
+          [
+            "-10/101",
+            "1/101"
+          ]
+        ],
+        "trace_norm_sq_even_minus_P": "4/101",
+        "trace_norm_sq_odd_minus_P": "4/101",
+        "each_within_D_of_product": true,
+        "ratio_each_to_D_decimal_preview": 0.9136250564655355,
+        "trace_norm_sq_even_minus_odd": "1600/10201",
+        "limits_within_2D_of_each_other": true,
+        "ratio_separation_to_2D_decimal_preview": 0.9090909090909092,
+        "limits_not_equal": true
+      },
+      "item_c_common_enclosing_interval_not_equality": {
+        "both_limits_in_D_ball_around_P": true,
+        "rho_even_limit_equals_rho_odd_limit": false,
+        "rho_even_limit_equals_P": false,
+        "rho_odd_limit_equals_P": false,
+        "common_ball_but_not_equal": true
+      },
+      "subsequence_versus_whole_sequence": {
+        "dist_to_own_parity_limit_by_N": [
+          {
+            "N": 1,
+            "dist_sq_to_own_parity_limit": "2"
+          },
+          {
+            "N": 2,
+            "dist_sq_to_own_parity_limit": "4/5"
+          },
+          {
+            "N": 3,
+            "dist_sq_to_own_parity_limit": "2/5"
+          },
+          {
+            "N": 4,
+            "dist_sq_to_own_parity_limit": "4/17"
+          },
+          {
+            "N": 5,
+            "dist_sq_to_own_parity_limit": "2/13"
+          },
+          {
+            "N": 6,
+            "dist_sq_to_own_parity_limit": "4/37"
+          },
+          {
+            "N": 7,
+            "dist_sq_to_own_parity_limit": "2/25"
+          },
+          {
+            "N": 8,
+            "dist_sq_to_own_parity_limit": "4/65"
+          },
+          {
+            "N": 9,
+            "dist_sq_to_own_parity_limit": "2/41"
+          },
+          {
+            "N": 10,
+            "dist_sq_to_own_parity_limit": "4/101"
+          },
+          {
+            "N": 11,
+            "dist_sq_to_own_parity_limit": "2/61"
+          },
+          {
+            "N": 12,
+            "dist_sq_to_own_parity_limit": "4/145"
+          }
+        ],
+        "even_subsequence_strictly_approaches_its_limit": true,
+        "odd_subsequence_strictly_approaches_its_limit": true,
+        "consecutive_N_to_N+1_gap_in_ab_plane": [
+          {
+            "N": 1,
+            "N+1": 2,
+            "dist_sq_ab_N_to_Np1": "2/5"
+          },
+          {
+            "N": 2,
+            "N+1": 3,
+            "dist_sq_ab_N_to_Np1": "2"
+          },
+          {
+            "N": 3,
+            "N+1": 4,
+            "dist_sq_ab_N_to_Np1": "242/85"
+          },
+          {
+            "N": 4,
+            "N+1": 5,
+            "dist_sq_ab_N_to_Np1": "722/221"
+          },
+          {
+            "N": 5,
+            "N+1": 6,
+            "dist_sq_ab_N_to_Np1": "1682/481"
+          },
+          {
+            "N": 6,
+            "N+1": 7,
+            "dist_sq_ab_N_to_Np1": "3362/925"
+          },
+          {
+            "N": 7,
+            "N+1": 8,
+            "dist_sq_ab_N_to_Np1": "242/65"
+          },
+          {
+            "N": 8,
+            "N+1": 9,
+            "dist_sq_ab_N_to_Np1": "10082/2665"
+          },
+          {
+            "N": 9,
+            "N+1": 10,
+            "dist_sq_ab_N_to_Np1": "15842/4141"
+          },
+          {
+            "N": 10,
+            "N+1": 11,
+            "dist_sq_ab_N_to_Np1": "23762/6161"
+          },
+          {
+            "N": 11,
+            "N+1": 12,
+            "dist_sq_ab_N_to_Np1": "34322/8845"
+          }
+        ],
+        "whole_sequence_gap_min_sq": "2/5",
+        "whole_sequence_does_not_converge": true
+      },
+      "overall_pass": true
+    },
+    "two_d_independent.py": {
+      "script": "two_d_independent.py",
+      "zero_research_loops": true,
+      "arithmetic": "fractions.Fraction only; no floats in any pass/fail comparison",
+      "formula": "J=28|tau|, t1=49|tau|/144, T=t1/(1-352J), eps=2T+T^2, D=2eps(1+eps)/(1+eps^2), 2D by the trace-norm triangle inequality through the common reference P_R",
+      "at_cap_tau_1e-8": {
+        "J": "7/25000000",
+        "t1": "49/14400000000",
+        "T": "49/14398580736",
+        "eps": "1411060914529/207319127211110301696",
+        "D": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+        "D_decimal": 1.3612452870266384e-08,
+        "twoD": "1170159676931825184288274812132100/42981220507576537932303142777593983768257",
+        "twoD_decimal": 2.722490574053277e-08
+      },
+      "at_tau_1e-10": {
+        "D": "585251133575824318919320965833406066050/4299800008426678122602592393079202282918783768257",
+        "D_decimal": 1.3611124527393337e-10
+      },
+      "gate_comparison": {
+        "gate_D_string": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+        "gate_2D_string": "1170159676931825184288274812132100/42981220507576537932303142777593983768257",
+        "gate_D_string_found_in_accepted_text": true,
+        "gate_2D_string_found_in_accepted_text": true,
+        "D_matches_gate_bit_for_bit": true,
+        "twoD_matches_gate_bit_for_bit": true
+      },
+      "target_margin": {
+        "target_2D_le": "1/1250000",
+        "twoD_le_target": true,
+        "margin_target_over_twoD": "42981220507576537932303142777593983768257/1462699596164781480360343515165125000000",
+        "margin_decimal": 29.38485839489796,
+        "margin_matches_reported_about_29_38": true
+      },
+      "tau_scaling_ratio_1e8_over_1e10": {
+        "ratio": "1026827058924902219786908719017012619177075876582658273671109838351940730300153/10267268581441484054773184713241263646551704758249184509420585185492090300153",
+        "ratio_decimal": 100.00975924414162,
+        "in_99_101": true
+      },
+      "cross_check_forward_ay1_export": {
+        "av1_D_ii_forward_field_equals_D": true,
+        "paths_in_forward_export_equal_to_2D": [
+          "/checks[15]/two_D",
+          "/error_terms_itemized/state_boundary/pair",
+          "/headline/two_D"
+        ],
+        "paths_in_reverse_export_equal_to_2D": [
+          "/checks[11]/two_D/exact",
+          "/checks[37]/admitted/exact",
+          "/error_ledger/state_boundary/value",
+          "/headline/two_D/exact"
+        ]
+      },
+      "cross_check_av1_forward_export": {
+        "paths_in_av1_forward_export_equal_to_D": [
+          "/checks[10]/D_ii_minus",
+          "/checks[10]/D_ii_plus",
+          "/checks[13]/D_ii_plus",
+          "/headline/D_ii_minus",
+          "/headline/D_ii_plus",
+          "/tiers/+/ii/D",
+          "/tiers/-/ii/D"
+        ]
+      },
+      "overall_pass": true
+    }
+  }
+}

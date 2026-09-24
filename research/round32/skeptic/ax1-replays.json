@@ -1,0 +1,206 @@
+{
+  "closures": {
+    "forward": {
+      "closure_files": 45,
+      "declared_premises": 41,
+      "freeze_json_sha256": "a52df9f893d2fae1574d00421d5dca75be58f05f099eb6d69dda16213ce85f0c",
+      "inputs": 41,
+      "inventory_equals_declared": true,
+      "reverse_isolation_enforced": false
+    },
+    "reverse": {
+      "closure_files": 42,
+      "declared_premises": 38,
+      "freeze_json_sha256": "b257e4e9cc39b30e1c68d12ce006183f8b2f349c12492d40d5e28549207276e5",
+      "inputs": 38,
+      "inventory_equals_declared": true,
+      "reverse_isolation_enforced": true
+    }
+  },
+  "forward_inventory": {
+    "declared": "AGENTS.md + contract + 36 shared_premises + 3 forward_additional_premises (skeptic triage, skeptic loop2-response, experts/modern/loop2-response)",
+    "inputs": 41,
+    "inventory_equals_declared": true
+  },
+  "freeze_verify": [
+    {
+      "command": "python3 -B research/round32/tools/freeze.py verify research/round32/forward/ax1",
+      "stdout": {
+        "direction": "forward",
+        "loop": "ax1",
+        "status": "verified"
+      }
+    },
+    {
+      "command": "python3 -B research/round32/tools/freeze.py verify research/round32/reverse/ax1",
+      "stdout": {
+        "direction": "reverse",
+        "loop": "ax1",
+        "status": "verified"
+      }
+    }
+  ],
+  "frozen_outputs": {
+    "forward": {
+      "results.json": "1d2e8fd99df871af33ae880fb075e3aca45b2e2b7765081bbc37bc85a639810b",
+      "source-manifest.json": "d5af230f460c668f990edae2db4b23c8363a8c7bc19ff805877832c51331b364"
+    },
+    "reverse": {
+      "results.json": "5f46c95063627d461380911d7ce717ddbe0f52dfebf46540e696a1bb98524816",
+      "source-manifest.json": "6cc1f8fe1fe112f7a6273b957fe6681552237dcfcae3849419026f3a741905f7"
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AX1",
+  "producer_replays": [
+    {
+      "byte_identical_to_frozen_output": true,
+      "command": [
+        "python3",
+        "-B",
+        "research/round32/forward/ax1/check.py",
+        "--output",
+        "<fresh-external-dir>"
+      ],
+      "direction": "forward",
+      "mode": "normal",
+      "outputs": {
+        "results.json": "1d2e8fd99df871af33ae880fb075e3aca45b2e2b7765081bbc37bc85a639810b",
+        "source-manifest.json": "d5af230f460c668f990edae2db4b23c8363a8c7bc19ff805877832c51331b364"
+      },
+      "stdout": "{\"D_i_preview\": \"2.45260902280e-5\", \"D_ii_preview\": \"1.44459192142e-8\", \"checks\": 52, \"direction\": \"forward\", \"loop\": \"AX1\", \"tier_ii_target_met\": true}"
+    },
+    {
+      "byte_identical_to_frozen_output": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "research/round32/forward/ax1/check.py",
+        "--output",
+        "<fresh-external-dir>"
+      ],
+      "direction": "forward",
+      "mode": "optimized",
+      "outputs": {
+        "results.json": "1d2e8fd99df871af33ae880fb075e3aca45b2e2b7765081bbc37bc85a639810b",
+        "source-manifest.json": "d5af230f460c668f990edae2db4b23c8363a8c7bc19ff805877832c51331b364"
+      },
+      "stdout": "{\"D_i_preview\": \"2.45260902280e-5\", \"D_ii_preview\": \"1.44459192142e-8\", \"checks\": 52, \"direction\": \"forward\", \"loop\": \"AX1\", \"tier_ii_target_met\": true}"
+    },
+    {
+      "byte_identical_to_frozen_output": true,
+      "command": [
+        "python3",
+        "-B",
+        "research/round32/reverse/ax1/check.py",
+        "--output",
+        "<fresh-external-dir>"
+      ],
+      "direction": "reverse",
+      "mode": "normal",
+      "outputs": {
+        "results.json": "5f46c95063627d461380911d7ce717ddbe0f52dfebf46540e696a1bb98524816",
+        "source-manifest.json": "6cc1f8fe1fe112f7a6273b957fe6681552237dcfcae3849419026f3a741905f7"
+      },
+      "stdout": "{\"D_prime_i\": \"2.452578947e-5\", \"D_prime_ii\": \"1.222369688e-8\", \"checks\": 58, \"direction\": \"reverse\", \"loop\": \"AX1\", \"outcome\": \"accepted_within_scope\", \"tier_ii_target_met\": true}"
+    },
+    {
+      "byte_identical_to_frozen_output": true,
+      "command": [
+        "python3",
+        "-B",
+        "-O",
+        "research/round32/reverse/ax1/check.py",
+        "--output",
+        "<fresh-external-dir>"
+      ],
+      "direction": "reverse",
+      "mode": "optimized",
+      "outputs": {
+        "results.json": "5f46c95063627d461380911d7ce717ddbe0f52dfebf46540e696a1bb98524816",
+        "source-manifest.json": "6cc1f8fe1fe112f7a6273b957fe6681552237dcfcae3849419026f3a741905f7"
+      },
+      "stdout": "{\"D_prime_i\": \"2.452578947e-5\", \"D_prime_ii\": \"1.222369688e-8\", \"checks\": 58, \"direction\": \"reverse\", \"loop\": \"AX1\", \"outcome\": \"accepted_within_scope\", \"tier_ii_target_met\": true}"
+    }
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "python": "3.11.15",
+  "result": "all four producer replays (forward/reverse x normal/-O) reproduce the frozen output/ byte for byte (forward results.json 1d2e8fd9..., reverse results.json 5f46c950...); both freeze.json closures verify file by file (45 and 42 files) and tools/freeze.py verify reports verified for both; reverse inputs equal AGENTS.md + contract + the 36 shared_premises exactly (38 files; no triage, loop-2, deliberation, expert, forward-only, forward AX1 or skeptic AX1 file); forward inputs equal the declared 41; every snapshot is byte-identical to its repository source; the replay tool output is identical under normal and -O Python",
+  "reused_tool": "research/round32/skeptic/replay_loop.py",
+  "reused_tool_sha256": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66",
+  "reverse_premise_isolation": {
+    "checked_prefixes": [
+      "research/round32/skeptic/triage.md",
+      "research/round32/skeptic/loop2-response.md",
+      "research/round32/experts/",
+      "research/round32/advisor/deliberation-",
+      "research/round32/forward/ax1/",
+      "research/round32/skeptic/ax1"
+    ],
+    "declared": "AGENTS.md + contracts/ax1.json + 36 shared_premises",
+    "forbidden_files_present": [],
+    "forward_additional_premises_absent": true,
+    "inputs": 38,
+    "inventory_equals_declared": true
+  },
+  "reviewer": "model-agent skeptic with correlated ancestry; not human peer review",
+  "schema": "hnm-r32-skeptic-replays-v1",
+  "scratch_audit": {
+    "forward_private": "/tmp/claude-0/ax1-forward-private (preview.py, dev runs, mutate.py and 12 mutation folders, final-O) plus /tmp/claude-0/ax1-forward-run",
+    "method": "directory and file names with mtimes only; no file inside another agent private folder was opened",
+    "reverse_private": "/tmp/claude-0/ax1-reverse-private (scratch1.py) plus /tmp/claude-0/ax1-reverse-run, -run-O, -run-2",
+    "shared_scratchpad_root_after_ax1_freeze": "no AX1 file; the post-freeze files (nums.py, totex.py, build_results.py, gq.py, aw2.tex, main.txt, latexmk.out, pg-31.png, arbprev.json) are AW2 manuscript work (nums.py opened to confirm: AW2 gate numbers only)",
+    "skeptic_private": "/tmp/claude-0/skeptic-ax1-private"
+  },
+  "skeptic_postreview": {
+    "checker": "research/round32/skeptic/ax1_postreview_check.py",
+    "checker_sha256": "2c3d4a1c37b10dee203ac9a89c93e3b93b59e71df7399b837623d08ad1487b2f",
+    "checks": 57,
+    "command": "python3 -B [-O] research/round32/skeptic/ax1_postreview_check.py --output <fresh-external-dir>",
+    "must_abort_mutations_aborted": 25,
+    "normal_and_O_byte_identical": true,
+    "reads_from_contract_demonstrations": 1,
+    "results_sha256": "def60c5589d1d1a22bbf52bd41b06af15848ae91eebdfae6dad99548ba7aafe3",
+    "silent_edits_caught_by_review": 3,
+    "source_mutation_runs": 29,
+    "unmutated_copies_reproduce_frozen_results": 2
+  },
+  "skeptic_pre_comparison": {
+    "checker": "research/round32/skeptic/ax1_check.py",
+    "checker_sha256": "695c50eafcbf5008524466eaeb920678a476d0169dc10fef47abf847e4b214ce",
+    "checks": 80,
+    "command": "python3 -B [-O] research/round32/skeptic/ax1_check.py --output <fresh-external-dir>",
+    "contains_both_producer_headlines_exactly": [
+      "D_ii_exact52.D_fwd = forward D'_ii",
+      "2*D_ii_R88_labelled.eps = reverse D'_ii",
+      "D_ii_R88_labelled.D_fwd = reverse density form",
+      "D_i_crude.D_fwd = forward D'_i",
+      "2*D_i_crude.eps = reverse D'_i"
+    ],
+    "normal_and_O_byte_identical_on_replay": true,
+    "results_sha256": "2b2b59d6c65493714f3dfa3124bf215bb728f20b3334f02bb502f80df90ab6e4",
+    "unchanged_since_freeze": true
+  },
+  "timeline_utc": {
+    "contract_frozen": "2026-09-24T00:40:52Z (commit 3f87301)",
+    "forward_check_py_last_written": "2026-09-24T01:02:16Z",
+    "forward_commit": "2026-09-24T01:09:17Z (b2a1d86)",
+    "forward_freeze_json_written": "2026-09-24T01:08:30Z",
+    "forward_report_last_written": "2026-09-24T01:08:06Z",
+    "note": "working-tree mtimes and commit times; both closures were frozen within 74 s of each other; the forward report was last written after the reverse freeze.json but its content shows no reverse-specific construct and the forward discloses no reverse read",
+    "plan_json_vocabulary_extension": "2026-09-24T00:45:54Z (commit 51ed542; AX1 contract unamended)",
+    "reverse_check_py_last_written": "2026-09-24T01:03:46Z",
+    "reverse_commit": "2026-09-24T01:08:09Z (4eb7d8e)",
+    "reverse_freeze_json_written": "2026-09-24T01:07:16Z",
+    "reverse_report_last_written": "2026-09-24T01:06:53Z",
+    "skeptic_pre_comparison_commit": "2026-09-24T00:58:34Z (489e20e)"
+  },
+  "tool": "research/round32/skeptic/replay_declared.py",
+  "tool_output_identical_under_normal_and_O": true,
+  "tool_output_sha256": "bade8b1af06e38bc441f012f9e6a982723e4219e175fc5ff06c9b2f02c136830",
+  "tool_sha256": "9707c7794f97ebef237f9f0958dba9d15833615b61dd6c8a6464e516e7cae06a"
+}

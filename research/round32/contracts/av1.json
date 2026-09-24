@@ -1,0 +1,251 @@
+{
+  "id": "AV1",
+  "round": 32,
+  "subround": 1,
+  "sequence": 1,
+  "status": "frozen_before_production",
+  "title": "Hruday first-order local state lemma for the zero-selected AQ subfamily",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round32/advisor/deliberation-3.md",
+  "selection_reason": "Every cap-level, shift, uniform and state-identification goal in Round32 needs a local state comparison linear in tau instead of the square-root reset bound. The AM2 creation expansion gives the finite-volume ground vector explicitly; the panel converged on two genuinely different routes to a volume-uniform bound on ||rho_R-P_R||_1.",
+  "model": "AM2/AQ1 zero-selected patterned family: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0), 21 omitted anchored faces per factor with coefficient alpha*tau/24 grouped into whole stars phi_b=-(tau/3) sum_f W_f (I1.5, normalized units delta=alpha/8), both signs of tau with |tau|<=10^-8, centered whole-star boxes Lambda_N, complete cover R={0,e_z} of the original xz Wilson W, Haar product reference P_R with local reference gap six (normalized). Passage to the AQ1 chosen subsequential state by local trace-norm convergence. Fixed positive alpha, hbar, E_star, lattice spacing.",
+  "parameters": {
+    "tau_cap": "1/100000000",
+    "signs": [
+      "+",
+      "-"
+    ],
+    "selected_coefficients_over_alpha": [
+      "0",
+      "0",
+      "0"
+    ],
+    "cover": "R={0,e_z}: 48 links, 36 original endpoints, seven incident anchors R-S",
+    "am2_constants": {
+      "anchored_radius_R": "1/64",
+      "per_site_sum_J": "<=28|tau|",
+      "J0": "7/25000000",
+      "majorant_G": "16*exp(8t)*(1+10t)",
+      "G_at_R_upper": "148/7",
+      "G_prime_at_R_upper": "352",
+      "nested_order_termination": 8
+    },
+    "normalized_face_energy": "24 (four j=1/2 links, Casimir 3/4, onsite factor 8); alpha units 3",
+    "reference_moments": {
+      "omega_0(W)": "0",
+      "omega_0(W^2)": "1/4"
+    },
+    "evaluation_points": [
+      "tau=+1/10^8",
+      "tau=-1/10^8",
+      "tau=+1/10^10 (scaling control only)"
+    ]
+  },
+  "shared_premises": [
+    "research/round32/advisor/selection-av1.md",
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/forward/aq2/report.md",
+    "research/round31/forward/at4/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/methods/paired-physics-research/SKILL.md",
+    "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round32/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round32/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round32/methods/historical-physics-panel/SKILL.md",
+    "research/round32/methods/newton-analysis-synthesis/references/research.md",
+    "research/round32/methods/tesla-mechanism-resonance/references/research.md",
+    "research/round32/methods/historical-physics-panel/references/lenses-and-evidence.md"
+  ],
+  "required": [
+    "1. AM2 objects. State the AM2 objects: commuting nilpotent creators c_I, the fixed point c with ||c||_a<=R=1/64, psi=e^{-C}Omega_0 in each on-site cutoff space and each centered whole-star box Lambda_N (N>=2). Give J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t), G(R)<148/7 and G'(R)<352 as exact rationals. Prove that AQ1's boxes are AM2's family: the same stars b+S subset Lambda_N and the same on-site Haar reference at the zero selected triple. No Yarotsky, HTW or Gauvin constant is used.",
+    "2. Forward route (product ordering, reduced density). Place the factors meeting R={0,e_z} last in e^{-C}=prod_I(1-c_I) to get psi=psi_out+delta with psi_out=Omega_R (x) phi_out, delta orthogonal to psi_out and ||delta||<=eps||psi_out|| where eps<=2t+t^2 (t=||c||_a) includes the two-creation term I ni 0, J ni e_z, I cap J empty. Write rho_{N,R} explicitly, including |Omega_R><xi|, its adjoint and Tr_out|delta><delta|, and prove ||rho_{N,R}-P_R||_1<=2eps(1+eps)/(1+eps^2) uniformly in N.",
+    "3. Reverse route (vacuum overlap / fidelity). Prove (P_R (x) 1)psi=psi_out and Tr(rho_{N,R}P_R)=1/(1+e^2) with e<=eps, then apply the pure-state-mixture inequality admitted in AT4 (HNM-AT4-F08) to get ||rho_{N,R}-P_R||_1<=2eps/sqrt(1+eps^2). The shared product-ordering premise is declared. Each producer derives the normalization trap (outside creations appear in numerator and denominator) and a model-class counterexample (a three-site creation fixture) before exchange, as AGENTS.md requires.",
+    "4. Tier (i). Use t<=J_0 G(R)<148/25000000, optionally iterated with a directed exponential enclosure. Report D_i at tau=+10^-8 and -10^-8 as exact rationals.",
+    "5. Tier (ii). Enumerate the omitted faces owning a link of every coarse factor (49 faces per factor and their owner sets from the I1 table by translation covariance, boundary counts at most bulk; 84 is accepted only as a labelled bound), show that each W_f Omega_0 is an H_0 eigenvector at normalized energy 24 and that these vectors are orthogonal with norm 1/2, derive ||c^(1)||_a from the I1.5 convention (candidate 49|tau|/144), use the self-consistent remainder t<=t_1/(1-352J) and ||c-c^(1)||_a<=352 J t or a sharper directed form, never zero, and report D_ii at tau=+10^-8 and -10^-8 as exact rationals. Every term names its tier; mixing tiers is rejected.",
+    "6. Cutoff-vector removal. Prove the on-site-cutoff ground vectors converge to the untruncated finite-volume ground vector (uniform gap 1/2, form core, |<psi_n,Q_n phi>|->1) so that the reduced densities on R converge in trace norm and the bound survives cutoff removal. AM2 removed the cutoff for eigenvalues only.",
+    "7. AQ passage. Conclude ||rho_R-P_R||_1<=D for every subsequential limit of AQ1's construction by local trace-norm convergence; state that this is not uniqueness, whole-sequence convergence or a rate in N.",
+    "8. Consequences and scaling. Show |omega_tau(W)|<=D and |omega_tau(W^2)-1/4|<=D/2 (trace-zero effect refinement) for both tiers and both signs, and the exact ratio D(tau)/D(tau/100) in [99,101] for both tiers against [9.9,10.1] for the AT4 square-root bound.",
+    "9. Targets and checker. Test D_ii<=4/10^7 (the value AV2 needs) and also report against 10^-6. check.py --output <absolute fresh dir> records every constant as a rational string, the three-site fixtures, and the claim flags continuum_claim:false, uniform_wilson_claim:false, resolved_interaction_shift:false, scientific_priority_verified:false, euclidean_node_certified:false, first_order_parity_claim:false. Replays are byte-identical under normal and -O Python; freeze with research/round32/tools/freeze.py.",
+    "10. Premise lists. The forward inputs are AGENTS.md, this contract, shared_premises and forward_additional_premises. The reverse inputs are exactly AGENTS.md, this contract and shared_premises.",
+    "11. Face counts derived, not copied. check.py must derive the counts 49 (omitted faces per factor), 15 (owner sets per factor), 82 (faces meeting R) and 10 (faces inside R) from the I1 table of the 21 anchored classes by translation covariance, and reject a hard-coded or contract-copied count; the contract's numbers are candidates to be reproduced."
+  ],
+  "controls": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "deleted_normalization",
+    "outside_creations_do_not_cancel_naively",
+    "omitted_adjoint_terms",
+    "straddling_supports_counted",
+    "anchored_norm_restricted_to_cover",
+    "am2_fixed_point_constants",
+    "first_order_face_enumeration",
+    "cutoff_vector_removal",
+    "aq_passage_trace_norm_only",
+    "tier_mixing_rejected",
+    "face_count_all_sites",
+    "reverse_premise_isolation",
+    "av2_feasibility_threshold"
+  ],
+  "claim_exclusions": [
+    "cap-level Euclidean certificate (AV2)",
+    "interaction-induced shift or its sign (AW)",
+    "uniform Wilson magnetic theory (AX)",
+    "AQ uniqueness, whole-sequence convergence or a rate in N (AY)",
+    "continuum construction (AZ)",
+    "Yarotsky/HTW constant evaluation",
+    "scientific priority",
+    "the value or sign of omega(W) beyond |omega(W)|<=D",
+    "the first-order coefficient 1/144",
+    "vanishing of first-order C(s) or omega(W^2) (AW1)"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "preregistration": {
+    "schema": "hnm-r32-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness"
+    ],
+    "claim_exclusions": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "observable": {
+      "id": "rho_R trace distance; omega(W); omega(W^2)",
+      "centering": "none",
+      "reference_value_exact": "0 and 1/4",
+      "reference_route": "haar"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "am2_remainder",
+      "two_creation",
+      "straddling",
+      "density",
+      "onsite_cutoff_vector",
+      "arithmetic"
+    ],
+    "target": {
+      "quantity": "D_ii",
+      "value": "1/2500000",
+      "comparator": "<="
+    },
+    "controls_required": {
+      "ids": [
+        "missing_incoming_stars",
+        "full_original_wilson_cover",
+        "wrong_delta_alpha_hbar_clock",
+        "vector_versus_scalar_centering",
+        "first_order_mean_charged",
+        "tau_scaling_exponent",
+        "changed_model_relabelled",
+        "coherent_evidence_tampering",
+        "insufficient_verdict_retained",
+        "exact_arithmetic_admission",
+        "root_n_misuse",
+        "no_priority_or_continuum_claim",
+        "deleted_normalization",
+        "outside_creations_do_not_cancel_naively",
+        "omitted_adjoint_terms",
+        "straddling_supports_counted",
+        "anchored_norm_restricted_to_cover",
+        "am2_fixed_point_constants",
+        "first_order_face_enumeration",
+        "cutoff_vector_removal",
+        "aq_passage_trace_norm_only",
+        "tier_mixing_rejected",
+        "face_count_all_sites",
+        "reverse_premise_isolation",
+        "av2_feasibility_threshold"
+      ]
+    },
+    "direction": "paired",
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason"
+  },
+  "acceptance": {
+    "accepted_within_scope": "Both routes proved; D_ii<=4/10^7 at both signs in both producers; cutoff-vector and passage steps complete; every control rejects its mutation.",
+    "limited": "Tier (i) only, or D_ii>4/10^7, or only one route survives review, or the cutoff step is conditional; the dominating term is named.",
+    "insufficient": "The split, the orthogonality or the uniformity fails; AT4's square-root bound stays the admitted state term. A failed upper certificate is not a lower bound."
+  },
+  "stop": "Investigation 1 of 10. AV2 is selected only after the AV1 skeptical review.",
+  "forward_additional_premises": [
+    "research/round32/advisor/deliberation-1.md",
+    "research/round32/skeptic/triage.md",
+    "research/round32/skeptic/prospective-controls.json",
+    "research/round32/skeptic/loop2-response.md",
+    "research/round32/experts/historical/loop2-response.md",
+    "research/round32/experts/jung/loop2-response.md",
+    "research/round31/reverse/at4/report.md"
+  ],
+  "reverse_premise_isolation": true,
+  "premise_note": "The reverse producer's inputs/ inventory must equal AGENTS.md, this contract and shared_premises exactly (control reverse_premise_isolation); it must not read skeptic/triage.md, deliberation-*.md, experts/*/loop2-response.md or any forward AV file before both freezes. The forward producer additionally snapshots forward_additional_premises and discloses them. The product-ordering idea is a shared panel premise for both; independence is claimed only for the inequality, constants, enumeration, cutoff step and passage step.",
+  "new_control_semantics": {
+    "tier_mixing_rejected": "the exact c^(1) combined with the crude t, or a refined t used without the self-consistent inequality t<=t_1/(1-352J), is rejected; every term names its tier",
+    "face_count_all_sites": "49 faces per factor and their owner sets from the I1 table by translation covariance, boundary counts at most bulk; a count restricted to sites 0 and e_z is rejected; 84 accepted only as a labelled bound",
+    "reverse_premise_isolation": "the reverse inputs/ inventory equals AGENTS.md, the contract and shared_premises; it contains no skeptic/triage.md, deliberation-*.md, experts/*/loop2-response.md or forward AV files",
+    "av2_feasibility_threshold": "D_ii is tested against 4/10^7 because 2(D+D^2)+49*10^-8/pi<=10^-6 requires D<=4.22*10^-7",
+    "first_order_face_enumeration": "re-read as 49 omitted faces per factor with owner sets and normalized H_0 eigenvalue 24"
+  },
+  "frozen_at": "2026-09-23T21:23:47.263931+00:00",
+  "amendment_before_production": "2026-09-23: research/round32/advisor/plan.json removed from shared_premises before any producer read the contract, because it is a living planning record (history entries are appended after each sub-round) and premise snapshots must stay byte-identical to their sources. No other change."
+}

@@ -1,0 +1,312 @@
+{
+ "admission_basis": "single forward producer (statement+skeptic, single_direction_independent_replay) plus the skeptic independent pre-comparison derivation and replay (az1_check.py, az1-independent/results.json, frozen in az1-independent-freeze.json and committed 649db92 at 04:54:45Z, before the forward commit 8359876 at 04:59:51Z)",
+ "admitted_values": {
+  "al1_path": "a_n=a_0/n, g_n^2=1/n: tau_n=96n^2>3, bridge fails for every n>=1",
+  "bridge": "r<=1/8 <=> tau<=3 <=> g^4>=32 (AL1)",
+  "crossovers": {
+   "declared_g0_4_9600000000": {
+    "bridge": 132,
+    "cap": 2,
+    "g4_n131": "9600000000/294499921",
+    "g4_n132": "12500000/395307"
+   },
+   "rehearsal_g0_1000": {
+    "bridge": 421,
+    "cap": 4,
+    "g4_n3": "1000000000000/81",
+    "g4_n4": "3906250000",
+    "g4_n420": "6250000/194481",
+    "g4_n421": "1000000000000/31414372081"
+   },
+   "rule": "first n>=1 with g_n^4 strictly below the threshold; n=1 of the declared toy sits exactly on the inclusive cap"
+  },
+  "dictionary": {
+   "alpha": "g^2/(2a)",
+   "delta": "alpha/8",
+   "lambda": "2/(g^2 a)",
+   "r": "4/g^4",
+   "tau": "24*lambda/alpha=96/g^4"
+  },
+  "g2_at_cap": "40000 sqrt 6 (irrational; ~9.79795897113e4)",
+  "g4_at_cap": "9600000000",
+  "gap_examples": {
+   "label": "illustrations without scale setting",
+   "producer": "g^2=10^6 (g_0=1000, n=1), a=1/10 fm: 312500 fm^-1 = 312500 E_star (E_star=hbar c/fm); preview 6.1664681e7 MeV",
+   "skeptic": "g^2=10^5, a=1/10 fm: 31250 fm^-1 = 493317451/80 MeV"
+  },
+  "identities": [
+   "alpha/16=g^2/(32a)",
+   "tau=96/g^4",
+   "alpha*lambda*a^2=1",
+   "r=4/g^4",
+   "alpha*tau/24=lambda",
+   "(alpha/8)*(tau/3)=lambda",
+   "7*tau=672/g^4",
+   "tau/144=2/(3g^4)",
+   "(alpha/8)/2=g^2/(32a)",
+   "a*alpha/16=g^2/32",
+   "tau*g^4=96"
+  ],
+  "labelled_not_admitted": {
+   "ends_g4_8": "187, 595 (skeptic only)",
+   "exclusion_radius": "1/20416 (crossovers 9, 27)",
+   "selfmap_radius": "7/274688 (crossovers 8, 23)",
+   "slower_toy_g0^4/n": "105, 31250000001"
+  },
+  "lattice_units_floor": {
+   "exact": "1250 sqrt 6",
+   "preview": "3.06186217847e3",
+   "producer_lower": "19595917942265424785578272597647131/6400000000000000000000000000000",
+   "skeptic_bracket": [
+    "24494897427831780981972840747058913919659/8000000000000000000000000000000000000",
+    "1224744871391589049098642037352945695983/400000000000000000000000000000000000"
+   ]
+  },
+  "lead": "Faizal-Shabir arXiv:2606.19362: unaudited, abstract depth (modern lens), not imported",
+  "model_label": "uniform Kogut-Susskind SU(2) at fixed spacing, strong bare coupling (AX1); selected faces tau/24 (uniform coefficient)",
+  "requirements_missing": [
+   "uniform-in-a estimates",
+   "reconstruction hypotheses",
+   "physical scale control"
+  ],
+  "rescaling": "tau and r have degree 0 in a; alpha, lambda and the gap degree -1; common rescaling of (alpha,lambda) is a->a/s at fixed g",
+  "supplied_estimate": "volume-uniform gap alpha/16=g^2/(32a) at fixed a for g^4>=9.6x10^9 (AX1 gate items (2)-(3), cited)",
+  "tau_cap": "1/100000000"
+ },
+ "bindings": {
+  "AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+  "research/round29/advisor/al1-gate.json": "e415203cc6b6ebca6cea5fcd1230a7eb0e20b7ab2d2e6c99dc8aa2dd3052a75b",
+  "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+  "research/round29/forward/al1/report.md": "967995f18ebda3abd1395b2775e0edd06d91c5d6ea7d6b3368d6be4850f39426",
+  "research/round29/forward/am2/report.md": "1b58fb9c1a199f06b156d04c2a9e89f34ba63cf675a5f7c8bfc25bb568e4e019",
+  "research/round32/advisor/ax1-gate.json": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+  "research/round32/advisor/selection-az1.md": "a2cf9d6ed4f4689f379bec479e5c8a7c9ef53c4dc656a9af0f478679cda7a60b",
+  "research/round32/contracts/az1.json": "91c828a7aa6ef9bd4d3dbf762363b7558faa6922c23e1aff476cd098d4177078",
+  "research/round32/experts/historical/update-4.md": "48b162ede13d5c3158e664418e23775c6a67810a9597f6869d46c62e9fdd200e",
+  "research/round32/experts/modern/memo.md": "ff1ff8799ed68e2e7cc5659a8bff5f605aaad5b4367d87e6c99168a95a6e45c7",
+  "research/round32/experts/modern/sota-table.md": "76f76994061579817c06cb4425a4dde888d844bcf220d1ca6875867cb2d33bd9",
+  "research/round32/experts/modern/update-4.md": "5a0aa5077fe3e044f5c601c99cc7c978e50e54b075b869dd6d5ad659fbd0aadd",
+  "research/round32/forward/az1/check.py": "d69eb05ff420dfbed2cb543c020fa9156d35c662e1f6df2cfe4f26b50afb5c4a",
+  "research/round32/forward/az1/freeze.json": "a7a910a7b19451ca1c84834f3400e782cbbc483a5725881a65709c670a7b4e9f",
+  "research/round32/forward/az1/inputs/AGENTS.md": "870e1a6b1ff81d6e09888d7084dada2dfdb8128048d97857d9c6b1ffce1b9285",
+  "research/round32/forward/az1/inputs/research/round21/forward/i1/report.md": "836a4c7d421f0ddf3589c159d2f057839421532c88157a054a61b51c25c781a9",
+  "research/round32/forward/az1/inputs/research/round29/advisor/al1-gate.json": "e415203cc6b6ebca6cea5fcd1230a7eb0e20b7ab2d2e6c99dc8aa2dd3052a75b",
+  "research/round32/forward/az1/inputs/research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+  "research/round32/forward/az1/inputs/research/round29/forward/al1/report.md": "967995f18ebda3abd1395b2775e0edd06d91c5d6ea7d6b3368d6be4850f39426",
+  "research/round32/forward/az1/inputs/research/round29/forward/am2/report.md": "1b58fb9c1a199f06b156d04c2a9e89f34ba63cf675a5f7c8bfc25bb568e4e019",
+  "research/round32/forward/az1/inputs/research/round29/forward/aq1/report.md": "b091266f5db009fa967a2adea352fa1b190193cc4bcdc6c4c207e5872fc51da3",
+  "research/round32/forward/az1/inputs/research/round29/forward/aq2/report.md": "9144964ca53c995c6c3391625e1a9774d243aefbada43a4e8f8e30f5769589d1",
+  "research/round32/forward/az1/inputs/research/round29/reverse/am2/report.md": "e7313e6a591bacbf37b65c84d57049d2f05a67222cddb8073286e2cd4143d06e",
+  "research/round32/forward/az1/inputs/research/round29/skeptic/am2.md": "2aa921a651a49d043fd30d3e52b845c38a668cc5c2a2f4bf18d4f003bb2f74a7",
+  "research/round32/forward/az1/inputs/research/round31/forward/at4/report.md": "10eb3fcd4b631f3e675ac521669041abb524df80e6520c5331d6e549cbd294f7",
+  "research/round32/forward/az1/inputs/research/round32/advisor/ax1-gate.json": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+  "research/round32/forward/az1/inputs/research/round32/advisor/selection-az1.md": "a2cf9d6ed4f4689f379bec479e5c8a7c9ef53c4dc656a9af0f478679cda7a60b",
+  "research/round32/forward/az1/inputs/research/round32/contracts/az1.json": "91c828a7aa6ef9bd4d3dbf762363b7558faa6922c23e1aff476cd098d4177078",
+  "research/round32/forward/az1/inputs/research/round32/experts/historical/update-4.md": "48b162ede13d5c3158e664418e23775c6a67810a9597f6869d46c62e9fdd200e",
+  "research/round32/forward/az1/inputs/research/round32/experts/modern/memo.md": "ff1ff8799ed68e2e7cc5659a8bff5f605aaad5b4367d87e6c99168a95a6e45c7",
+  "research/round32/forward/az1/inputs/research/round32/experts/modern/sota-table.md": "76f76994061579817c06cb4425a4dde888d844bcf220d1ca6875867cb2d33bd9",
+  "research/round32/forward/az1/inputs/research/round32/experts/modern/update-4.md": "5a0aa5077fe3e044f5c601c99cc7c978e50e54b075b869dd6d5ad659fbd0aadd",
+  "research/round32/forward/az1/inputs/research/round32/forward/ax1/report.md": "2ba5e8360432755e87dab5a2c67c53617ce34494a394c3520e69818e20ce7a38",
+  "research/round32/forward/az1/inputs/research/round32/methods/historical-physics-panel/SKILL.md": "a2b366bc661794ee89c29233d0887868b60c0853c85ec136e0529b6f1d5e223a",
+  "research/round32/forward/az1/inputs/research/round32/methods/historical-physics-panel/references/lenses-and-evidence.md": "3840592d479ca5dc373698c047f8546e8f47e72e3634553fccf5fd5f3b4052c6",
+  "research/round32/forward/az1/inputs/research/round32/methods/newton-analysis-synthesis/SKILL.md": "2fa3dab9b2420d157457ad3ccaeb0723fb1952871be3e6140dcd3d3c9346ccef",
+  "research/round32/forward/az1/inputs/research/round32/methods/newton-analysis-synthesis/references/research.md": "59b4f3d05c4168c87d5ebf12a6f2f74e14665107f18c756c9cd6e2e21e74e0d2",
+  "research/round32/forward/az1/inputs/research/round32/methods/paired-physics-research/SKILL.md": "01cda7ee8f8e3eb65c68b0ac6ff0d9e87198f57ea2d997d810d7907b85f4278d",
+  "research/round32/forward/az1/inputs/research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md": "9e387df64ae05738e740d2ff65973cef0672530e64344ab9e730a139b81b435d",
+  "research/round32/forward/az1/inputs/research/round32/methods/tesla-mechanism-resonance/SKILL.md": "81f6d760b3aa45d32db4ae31a3a3c9bec5e1d662e42529b5ae21a220deeb07c3",
+  "research/round32/forward/az1/inputs/research/round32/methods/tesla-mechanism-resonance/references/research.md": "c8c35a9c013f29d601f852a6aa9ef16fad74cc8a0db24178583325a511a174f8",
+  "research/round32/forward/az1/inputs/research/round32/reverse/ax1/report.md": "9ffe3b4af78537a66e194c0d3669edd8f9a5df4a0069bd1d82bea13dad349e8e",
+  "research/round32/forward/az1/inputs/research/round32/skeptic/ax1.md": "9729b61526c6c339f3d0a5793a35877fa9b93bf575d0aa4a25154d2f5abffda3",
+  "research/round32/forward/az1/output/results.json": "185cca20e0eaab251c649eeeb403cdf12a19562af253f2818dd9c8e9a6d908ea",
+  "research/round32/forward/az1/output/source-manifest.json": "6e3979415ae1e2b4d9ab1ae6afe0e9c63118025dc8589e9ae538becd05e5eb21",
+  "research/round32/forward/az1/report.md": "0270e36dfd179b7622b40d89fede50db46c874e1be5c8c28bb1ef0b7d4829878",
+  "research/round32/skeptic/ax1.md": "9729b61526c6c339f3d0a5793a35877fa9b93bf575d0aa4a25154d2f5abffda3",
+  "research/round32/skeptic/az1-contract-review.md": "33f76fd8f789b83b1b8bcb586c137633715155a050eb742affbb02e629d06256",
+  "research/round32/skeptic/az1-independent-derivation.md": "680cb2e914b1fe5fbb8b6c009459f787ee5a095b740397945011f03b913b42ba",
+  "research/round32/skeptic/az1-independent-freeze.json": "88603b8b6a78012f835d243e69bcb592f604f6afc2fa611cd127cb9eefededfa",
+  "research/round32/skeptic/az1-independent/results.json": "980c9bc3ccdfee3daf585f7ad262321ca103a0d781fedce569348f03391ad0b8",
+  "research/round32/skeptic/az1-postreview/results.json": "65d99654134f95491ac1113b2a68e19ff0e11c7b96e65466b88ca1acee5d9a3c",
+  "research/round32/skeptic/az1-replays.json": "cc6c9e19cf2c785cb93acd67b72e277fda0df9fef6df6fd5cd1da38065041c69",
+  "research/round32/skeptic/az1.md": "0a53df797481ba544b48dc04865150ba2b99f1ae8fec5a2998767ff8b725ea12",
+  "research/round32/skeptic/az1_check.py": "c31cea4630fad66a5440488718178129a942196f41157da92e40c8a3f2842f7e",
+  "research/round32/skeptic/az1_postreview_check.py": "1f1fe9686367670116fa11f53be60e99ff0a9686516b18e5f7fb9e38bb83d5a6",
+  "research/round32/skeptic/replay_declared.py": "9707c7794f97ebef237f9f0958dba9d15833615b61dd6c8a6464e516e7cae06a",
+  "research/round32/skeptic/replay_loop.py": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66",
+  "research/round32/tools/freeze.py": "85a5462e649e3f10073c4125ac05f9a468b28b47d5de23e12ca50d0351b0bcd4"
+ },
+ "blocking_issues": [],
+ "comparison": {
+  "differences": "gap example choice (g^2=10^6 versus 10^5); D6 reading of the preregistered triple; floor bracket width (10^-30 versus 10^-40)",
+  "producer_vs_skeptic_post_comparison": "the 11 identities re-proved as explicit rational-function pairs; every crossover row (n*, neighbouring g^4, tau at n*) recomputed; rescaling by homogeneity degrees; 12 report decimals truncations; report scanned with the negation-aware pattern rules",
+  "producer_vs_skeptic_pre_comparison": "identical crossovers (2, 132, 4, 421), cap g^4, self-map crossovers (8, 23), gap formula; 8 of the producer 11 identities are among the skeptic 9 (the skeptic adds the inverse map); the producer floor (10^-30 bracket) lies below 1250 sqrt 6 within 10^-30 and above 3061.86; the skeptic floor bracket (10^-40) is tighter"
+ },
+ "continuum_claim": false,
+ "contract_defects": [
+  "D1 (producer; skeptic readings 3, 4): the template contains the forbidden phrase (negated); the producer scan removes the template AND every code span (N1)",
+  "D2 (producer; skeptic reading 6): \"exactly one uniform estimate\" read as exactly one necessary estimate",
+  "D3 (producer; skeptic reading 7): \"needs tau<=10^-8\" is the admitted cap, not a sharp threshold; route radii not admitted",
+  "D4 (producer; skeptic reading 13): the failure of common rescaling is AL2 (not a premise); derived from the dictionary",
+  "D5 (producer; skeptic reading 7): the bridge fails from a finite index on, at every n only on the AL1 frozen path",
+  "D6 (producer; skeptic reading 1, different reading): the preregistered zero triple; the uniform model carries tau/24; record as a vocabulary defect",
+  "D7 (producer; skeptic reading 11): the toy names no a_n; a_n=a_0/n declared; crossovers a-independent",
+  "D8 (producer; skeptic reading 14): tau<0 is the U_E mirror, not a trajectory point",
+  "D9 (producer, new): state_provenance \"finite_volume uniform bound\" carries an unqualified uniform",
+  "P1 (producer, premise note): modern update-4 section 3 writes 10^12/81=12345679012+34/81; the remainder is 28; no index affected",
+  "Skeptic reading 2: gate_fields_required lists four fields; all five (plus flags) exported",
+  "Skeptic reading 5: the template omits \"at fixed a\"; supplied next to it",
+  "Skeptic reading 10: the not-found sentence is a tautology of the regime shape; the lead disclosure follows it",
+  "Skeptic reading 16: direction_note says AZ1 unchanged; the panel adopted new requirements (clerical)"
+ ],
+ "dynamical_claim": false,
+ "euclidean_node_certified": false,
+ "gate_fields": {
+  "continuum_claim": false,
+  "loop_count_fraction_claimed": false,
+  "uniform_in_N_claimed": true,
+  "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling",
+  "uniform_in_a_claimed": false,
+  "weak_coupling_claim": false
+ },
+ "human_author": "Hruday N M (BUNZEEY)",
+ "independent_checks": 110,
+ "independent_checks_breakdown": {
+  "control_validator_weakenings": 21,
+  "damaged_packets_rejected_by_own_validator": 18,
+  "must_abort_edits_aborted_at_intended_check": 41,
+  "post_comparison": 28,
+  "pre_comparison": 82,
+  "pre_comparison_controls": 28,
+  "pre_comparison_rejected_mutations": 122,
+  "pre_comparison_source_edit_runs": 28,
+  "silent_edits_accounted": 4,
+  "source_mutation_runs": 46
+ },
+ "limitations": [
+  "Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling (g^4>=9.6x10^9, |tau|<=10^-8) as admitted by AX1, with the AL1 dictionary; the supplied gap is volume-uniform at fixed a and never uniform in a along a trajectory with g_n->0",
+  "The trajectory is a hypothesis of asymptotic-freedom form, not derived; no beta function is computed or used; the toy trajectory g_n=g_0/n (a_n=a_0/n declared) is algebraic and not of asymptotic-freedom form; physical-units numbers are illustrations without scale setting",
+  "Failure of a sufficient certificate only: nothing is said about the actual gap where the certificate stops; the route radii 7/274688 and 1/20416 are not admitted regimes",
+  "The continuum requirements (uniform-in-a estimates, reconstruction hypotheses, physical scale control) are missing, as are the AY2 state obligations and nontriviality; no loop count is a fraction of the continuum problem",
+  "Inherited without re-proof: the AX1 gap (AM2 contraction, cutoff removal, AQ passage), the AL1 dictionary and bridge, the I1 geometry",
+  "The Faizal-Shabir construction (arXiv:2606.19362) is an unaudited lead read at abstract depth by the modern lens; neither producer nor skeptic read it; nothing depends on it",
+  "Single producer, correlated model agents; the premises print the headline; the agreement is a replay of elementary algebra",
+  "Scientific priority unverified"
+ ],
+ "loop": "AZ1",
+ "loop_count_fraction_claimed": false,
+ "mandatory_sentence": "Along the named trajectory (a_n,g_n), the fixed-spacing family supplies exactly one uniform estimate, the volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9, and fails to supply any estimate uniform along a_n->0; this is not a statement that the continuum limit exists, that any estimate is uniform in a, that the coupling is weak, or that any fraction of the continuum problem is thereby resolved.",
+ "non_blocking_findings": [
+  "N1 the producer report scan excludes the template (one occurrence) and every inline code span and fenced block, broader than D1 states; in this report the only forbidden-phrase text in code spans is the verbatim claim-exclusion list of section 5.3, so nothing is hidden",
+  "N2 the producer forbidden-phrase scan is literal: \"fraction of the continuum problem\" and percentages pass it (two silent edits); this review pattern scan finds none in the frozen report",
+  "N3 four negated \"uniform along a_n->0\" sentences (report lines 81, 87, 185, 218) carry no g_n->0 scope in the sentence; line 87 is scoped by the preceding sentence and 185 defines the a-sense; lines 81 and 218 say the other AX1 constants are not uniform along a_n->0, false at fixed g for D'_ii (a function of tau alone); the gate should scope the a-sense to trajectories with g_n->0",
+  "N4 the AX1 gate hash is not pinned in check.py (no file binds the AX1 gate itself); an unparsed-field edit runs silently and is caught by snapshot-versus-source verification and by this review validator",
+  "N5 the preregistered zero triple: the producer reads it as the Haar reference (D6), the skeptic as a copied defect; both bind tau/24; record as a vocabulary defect",
+  "N6 gap examples differ by declared choice (producer g^2=10^6 at a_0=1/10 fm with E_star=hbar c/fm; skeptic g^2=10^5); both g^2/(32a), illustrations without scale setting",
+  "N7 identity sets: producer 11, skeptic 9, 8 shared, union 12 (skeptic inverse map g^4=4 alpha/lambda); all verified",
+  "N8 labelled extras verified: exclusion radius crossovers 9 and 27, slower toy 105 and 31250000001; not admitted",
+  "N9 isolation: the skeptic package was committed before the producer report and check.py were last written; seven of nine producer defects coincide with skeptic readings, all properties of the frozen text; D6, D9 and P1 differ or are new; isolation by disclosure, name-only exposure, content and commit order; independence limited to route and code",
+  "N10 self-note: the skeptic pre-comparison reproduced the rehearsal indices but did not check the modern lens mixed number; the producer found P1 (remainder 28, not 34)",
+  "N11 exposures: the producer post-freeze git status showed it two file names (relayed by the coordinator; post-dates the freeze; no premise weight); the skeptic saw the names of four untracked AZ2 files and two AZ2 scratch folders during this review, none opened",
+  "N12 replay_loop.py and replay_declared.py do not accept statement+skeptic (as AY2 N9); a new wrapper, not an edit of the bound tools, would remove the in-checker replay"
+ ],
+ "producer_checks": {
+  "controls_as_damaging_mutations": {
+   "forward": 21
+  },
+  "controls_deferred": 0,
+  "forward": 42,
+  "forward_private_source_edit_audit_disclosed": 13,
+  "forward_rejected_in_control_checks": 107,
+  "forward_rejected_mutation_total": 121
+ },
+ "recommended_bound": {
+  "bridge_g4": "32",
+  "crossover_indices": {
+   "declared_g0_4_9600000000": {
+    "bridge": 132,
+    "cap": 2
+   },
+   "rehearsal_g0_1000": {
+    "bridge": 421,
+    "cap": 4
+   }
+  },
+  "crossover_neighbours_g4": {
+   "declared_n131": "9600000000/294499921",
+   "declared_n132": "12500000/395307",
+   "rehearsal_n3": "1000000000000/81",
+   "rehearsal_n4": "3906250000",
+   "rehearsal_n420": "6250000/194481",
+   "rehearsal_n421": "1000000000000/31414372081"
+  },
+  "g4_at_cap": "9600000000",
+  "gap_example_labelled": "g^2=10^6, a=1/10 fm: 312500 fm^-1 (illustration)",
+  "gate_fields": {
+   "continuum_claim": false,
+   "loop_count_fraction_claimed": false,
+   "uniform_in_N_claimed": true,
+   "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling",
+   "uniform_in_a_claimed": false,
+   "weak_coupling_claim": false
+  },
+  "identities": [
+   "alpha/16=g^2/(32a)",
+   "tau=96/g^4",
+   "alpha*lambda*a^2=1",
+   "r=4/g^4",
+   "alpha*tau/24=lambda",
+   "(alpha/8)*(tau/3)=lambda",
+   "7*tau=672/g^4",
+   "tau/144=2/(3g^4)",
+   "(alpha/8)/2=g^2/(32a)",
+   "a*alpha/16=g^2/32",
+   "tau*g^4=96"
+  ],
+  "lattice_units_floor_lower": "19595917942265424785578272597647131/6400000000000000000000000000000",
+  "lattice_units_floor_skeptic_bracket": [
+   "24494897427831780981972840747058913919659/8000000000000000000000000000000000000",
+   "1224744871391589049098642037352945695983/400000000000000000000000000000000000"
+  ],
+  "source": "the producer exact values (frozen certificate), verified exactly by this review; the skeptic floor bracket is the tighter enclosure",
+  "tau_cap": "1/100000000",
+  "wording": "carry \"at fixed a\" and scope every a-sense sentence to trajectories with g_n->0"
+ },
+ "replays": {
+  "byte_identical": true,
+  "closure_files": {
+   "forward": 33
+  },
+  "commit_order": "skeptic pre-comparison 649db92 (04:54:45Z) before producer 8359876 (04:59:51Z)",
+  "freeze_verify": "verified",
+  "frozen_outputs": {
+   "forward_results_sha256": "185cca20e0eaab251c649eeeb403cdf12a19562af253f2818dd9c8e9a6d908ea",
+   "forward_source_manifest_sha256": "6e3979415ae1e2b4d9ab1ae6afe0e9c63118025dc8589e9ae538becd05e5eb21"
+  },
+  "inputs": 29,
+  "producer_runs": 2,
+  "receipts": "research/round32/skeptic/az1-replays.json",
+  "reverse_premise_isolation": "not applicable (single producer); no reverse/az1 package exists",
+  "tool": "research/round32/skeptic/az1_postreview_check.py (replay_declared.py steps with the unchanged replay_loop.verify_freeze; replay_loop.py and replay_declared.py do not accept statement+skeptic unchanged)"
+ },
+ "reports": {
+  "forward": "research/round32/forward/az1/report.md",
+  "skeptic": "research/round32/skeptic/az1.md",
+  "skeptic_contract_review": "research/round32/skeptic/az1-contract-review.md",
+  "skeptic_pre_comparison": "research/round32/skeptic/az1-independent-derivation.md"
+ },
+ "resolved_interaction_shift": false,
+ "reviewer": "Model-agent skeptic with correlated ancestry (five AZ1 control ids come from the skeptic prospective continuum controls; the skeptic AX1 review is a shared premise; the selection note and the modern update-4 print the headline); not external human peer review or formal verification",
+ "route_comparison": "Forward (single producer): identities by an integer-polynomial parser in (g,a,c) with cross-multiplication and a 35-point exact grid; constants parsed from the hash-bound AX1, AL1 and AM2 gates and reports; crossovers by exact integer fourth roots and a Fraction scan; report scan with the template and code spans removed; 21 controls as damaging mutations; coherent-tampering packet. Skeptic pre-comparison: identities as monomial rational functions in (G=g^2,a); crossovers by integer roots with monotone correction and brute force; directed 10^-40 sqrt 6 bracket; negation-aware phrase and two-senses validator; fixed-g counterexample. Skeptic post-comparison: the 11 producer identities mapped to explicit rational-function pairs; homogeneity degrees for rescaling; every crossover row recomputed; report scanned with code spans kept; 46 source-mutation runs",
+ "schema": "hnm-r32-skeptic-review-v1",
+ "scientific_priority_verified": false,
+ "secondary_sub_labels": [],
+ "sub_label": null,
+ "sub_label_note": "none of the five preregistered sub-labels applies: reference_unresolved, sign_certified_finite_graph and sign_certified_below_cap name certificates, uniform_local_closeness_not_uniqueness and static_not_dynamic name state or observable statements; AZ1 is a dictionary and trajectory statement; the producer proposed none",
+ "supported_statement": "Along the named trajectory (a_n,g_n) -- a hypothesis of asymptotic-freedom form with g_n->0 as a_n->0, not derived -- the fixed-spacing family (uniform Kogut-Susskind SU(2) at fixed spacing, strong bare coupling, as admitted by AX1: every face alpha*tau/24, route B, Haar reference, centered whole-star boxes, cover R={0,e_z}; AL1 dictionary alpha=g^2/(2a), lambda=2/(g^2 a), tau=24 lambda/alpha=96/g^4, so alpha*lambda*a^2=1; E_star and hbar fixed) supplies exactly one uniform estimate, the volume-uniform gap alpha/16=g^2/(32a) for g^4>=9.6x10^9 (0<tau<=10^-8) at fixed a (every finite complete-factor route-B volume and every AQ subsequential state, AX1 gate items (2)-(3), cited; in lattice units a*Delta>=g^2/32>=1250 sqrt 6, directed lower end 19595917942265424785578272597647131/6400000000000000000000000000000, about 3061.86), and fails to supply any estimate uniform along a_n->0 on a trajectory with g_n->0 (the admitted regime is left at a finite index and the AL1 bridge g^4>=32, i.e. tau<=3, fails from a finite index on; on the toy trajectory g_n=g_0/n the first indices below 9.6x10^9 and below 32 are n*=2 and n*=132 for g_0^4=9.6x10^9 and n*=4 and n*=421 for g_0=1000; common rescaling a->a/s at fixed g moves no admission ratio; a finite physical gap along a_n->0 needs a_n*Delta_n->0, impossible inside the admitted regime; this is failure of a sufficient certificate, not a statement that the gap closes); this is not a statement that the continuum limit exists, that any estimate is uniform in a, that the coupling is weak, or that any fraction of the continuum problem is thereby resolved.",
+ "target_met": true,
+ "uniform_in_N_claimed": true,
+ "uniform_in_N_scope": "volume-uniform at fixed a, strong bare coupling",
+ "uniform_in_a_claimed": false,
+ "uniform_wilson_claim": false,
+ "verdict": "accepted_within_scope",
+ "weak_coupling_claim": false
+}

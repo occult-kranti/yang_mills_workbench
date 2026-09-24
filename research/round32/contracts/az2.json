@@ -1,0 +1,207 @@
+{
+  "id": "AZ2",
+  "round": 32,
+  "subround": 5,
+  "sequence": 10,
+  "status": "frozen_before_production",
+  "title": "Hruday exact finite-graph first- and second-order Wilson coefficients on the two-plaquette graph (a different finite model)",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round32/advisor/az1-gate.json",
+  "selection_reason": "The Z^3 remainder constant K_2 is an upper bound; a computable finite model shows what first- and second-order coefficients actually are in a truncated graph, as a labelled comparison, never a transfer.",
+  "model": "FG(two-plaquette graph of Round11: two adjacent squares sharing one link, seven links, six Gauss constraints; polynomial-degree cutoff D in {6,8} with certified tail; coupling tau_FG in a declared grid; I1.5 sign convention; gauge-invariant sector). model_is_finite_graph:true; transfers_to_aq:false.",
+  "parameters": {
+    "graph": "Round11 two-plaquette",
+    "tau_FG_grid": [
+      "1/1000",
+      "1/100",
+      "1/10"
+    ],
+    "observable": "<W> of one square and its derivative at tau_FG=0 (must reproduce the matched first-order value under the graph's own normalization); second-order coefficient; the graph's own free reference computed in the same code path",
+    "admission": "exact rational linear algebra (Fractions) with Ritz plus residual/Davis-Kahan or exact shell residual; python-flint Arb as labelled cross-check only",
+    "normalization_dictionary": "tau_FG=tau/24 (every face coefficient nu=alpha*tau/24 in the Z^3 model; the two-plaquette graph's own coupling multiplies one face); finite-graph first-order value 1/6 <-> 1/144; consistency only",
+    "cutoff": "D in {6, 8}: D is the total polynomial degree of the gauge-invariant trace-monomial basis of the Round11 solver (dimension C(D+3,3): 84 at D=6, 165 at D=8); D=6 is the primary cutoff and D=8 the certified refinement; the certified tail uses the solver's tail_lower bound (45 at D=6, 69 at D=8) together with the itemized residual ledger; no per-link spin label j_max is well-posed for this basis (modern lens update-4)",
+    "runtime_note": "assistant-4 timing: about 60 s per grid point at D=8 in exact arithmetic (about 8x faster at D=6); the full grid at both signs and both cutoffs is about 8 minutes; D=10 is not declared"
+  },
+  "shared_premises": [
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/forward/aq2/report.md",
+    "research/round31/forward/at4/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/methods/paired-physics-research/SKILL.md",
+    "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round32/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round32/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round32/methods/historical-physics-panel/SKILL.md",
+    "research/round32/methods/newton-analysis-synthesis/references/research.md",
+    "research/round32/methods/tesla-mechanism-resonance/references/research.md",
+    "research/round32/methods/historical-physics-panel/references/lenses-and-evidence.md",
+    "research/round32/advisor/selection-az2.md",
+    "research/round11/README.md",
+    "research/round11/advisor/advisor.md",
+    "research/round32/experts/modern/loop2-response.md",
+    "research/round32/experts/modern/loop3-signoff.md",
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/forward/aw1/report.md",
+    "research/round11/solver/two_plaquette.py",
+    "research/round11/solver/README.md",
+    "research/round32/experts/modern/update-4.md"
+  ],
+  "required": [
+    "1. Define the graph (Round11 two-plaquette: two adjacent squares sharing one link, seven links, six Gauss constraints), the gauge-invariant basis, the cutoff (declared in parameters) and the certified tail as a complete residual ledger itemizing separately: (a) the per-link representation tail beyond the cutoff for each of the seven links; (b) the joint product-channel residual across all seven links together (not implied by (a)); (c) the residual from projecting onto the six-Gauss-constraint gauge-invariant subspace; (d) the Ritz/eigenvector residual (Davis-Kahan or exact shell residual); (e) the arithmetic term (directed rounding). One nonzero omitted matrix element proves leakage; it does not bound the omitted norm from above.",
+    "2. Compute exact enclosures of <W>(tau_FG) at the declared grid points and the derivative at tau_FG=0, with the graph's own free reference computed in the same code path (own_free_reference).",
+    "3. Compare the first-order coefficient with the matched Z^3 value 1/144 under the explicit normalization dictionary tau_FG=tau/24 (the finite-graph value 1/6 corresponds to 1/144): consistency on a different finite model, never a prediction, confirmation or transfer.",
+    "4. Report second-order coefficients as finite-model values at the declared cutoffs, with the tail residual bounding the truncation error.",
+    "5. Labels and controls: finite_graph_model_id, complete_residual_all_channels, complete_residual_ledger_itemized, certified_representation_tail, own_free_reference, no_transfer_to_aq, fg_coefficients_not_fitted, sign_convention_fixture; python-flint Arb cross-check as a labelled preview only; the mandatory sentence template in the report; gate fields exported (transfers_to_aq false, model_is_finite_graph true, fg_coefficients_fitted false); freeze; skeptic pre-comparison replay from the contract alone and post-comparison review (single_direction_independent_replay).",
+    "6. Forbidden phrasings: 'predicts', 'confirms the Z^3 value'; the finite graph is 'consistent with' the matched coefficient and nothing more."
+  ],
+  "controls": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "finite_graph_model_id",
+    "complete_residual_all_channels",
+    "certified_representation_tail",
+    "own_free_reference",
+    "no_transfer_to_aq",
+    "fg_coefficients_not_fitted",
+    "sign_convention_fixture",
+    "complete_residual_ledger_itemized"
+  ],
+  "claim_exclusions": [
+    "any statement about the AQ model's shift or K_2 from the graph",
+    "resolution of roadmap goal 2",
+    "continuum",
+    "scientific priority",
+    "'predicts' or 'confirms the Z^3 value' (phrases)"
+  ],
+  "producers": [
+    "forward"
+  ],
+  "direction": "single+skeptic",
+  "preregistration": {
+    "schema": "hnm-r32-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness"
+    ],
+    "claim_exclusions": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of any subsequential limit",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true
+    },
+    "model_id": "FG(two-plaquette, D in {6,8}, tau_FG grid, I1.5, gauge-invariant)",
+    "selected_triple_alpha_units": "n/a (finite graph)",
+    "tau": {
+      "value": "grid",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": true,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "observable": {
+      "id": "<W>_FG and coefficients",
+      "centering": "none",
+      "reference_value_exact": "own free reference",
+      "reference_route": "own_finite_graph"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "truncation_jmax",
+      "eigenvector_residual",
+      "arithmetic"
+    ],
+    "target": {
+      "quantity": "certified tail and enclosure widths reported at every grid point and both cutoffs; first-order coefficient enclosure contains 1/6",
+      "value": "1",
+      "comparator": ">=",
+      "note": "feasibility/format check on a rehearsed finite-model computation (assistant-3 and assistant-4 previews), not a blind discovery threshold; the enclosures themselves are the deliverable"
+    },
+    "controls_required": {
+      "ids": [
+        "missing_incoming_stars",
+        "full_original_wilson_cover",
+        "wrong_delta_alpha_hbar_clock",
+        "vector_versus_scalar_centering",
+        "first_order_mean_charged",
+        "tau_scaling_exponent",
+        "changed_model_relabelled",
+        "coherent_evidence_tampering",
+        "insufficient_verdict_retained",
+        "exact_arithmetic_admission",
+        "root_n_misuse",
+        "no_priority_or_continuum_claim",
+        "finite_graph_model_id",
+        "complete_residual_all_channels",
+        "certified_representation_tail",
+        "own_free_reference",
+        "no_transfer_to_aq",
+        "fg_coefficients_not_fitted",
+        "sign_convention_fixture",
+        "complete_residual_ledger_itemized"
+      ]
+    },
+    "direction": "single+skeptic",
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "gate_fields_required": {
+      "transfers_to_aq": false,
+      "model_is_finite_graph": true,
+      "fg_coefficients_fitted": false
+    },
+    "mandatory_sentence_template": "The finite-graph derivative of <W>_FG at tau_FG=0, under the stated normalization dictionary, is consistent with the matched Z^3 first-order coefficient 1/144; this is a consistency check on a different, finite model, not a prediction, not a confirmation of the Z^3 value, and it does not transfer to any subsequential limit of the AQ construction or resolve roadmap goal 2.",
+    "forbidden_phrasings": [
+      "predicts",
+      "confirms the Z^3 value"
+    ]
+  },
+  "acceptance": {
+    "accepted_within_scope": "Enclosures with certified tails at every grid point; first-order coefficient consistent with the dictionary; labels present.",
+    "limited": "Tail certified only at the smaller cutoff D=6, or the joint product-channel residual not itemized.",
+    "insufficient": "The residual argument fails."
+  },
+  "stop": "Investigation 10 of 10; scientific production stops after this review.",
+  "single_direction_independent_replay": true,
+  "reverse_premise_isolation": false,
+  "frozen_at": "2026-09-24T04:29:40.693167+00:00"
+}

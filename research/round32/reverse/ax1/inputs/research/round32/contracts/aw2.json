@@ -1,0 +1,212 @@
+{
+  "id": "AW2",
+  "round": 32,
+  "subround": 2,
+  "sequence": 4,
+  "status": "frozen_before_production",
+  "title": "Hruday sign-certified enclosure of the Wilson mean at the AW1-frozen coupling",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round32/advisor/aw1-gate.json",
+  "selection_reason": "AW1 supplies the exact first-order coefficient tau/144, the flip antisymmetry and an itemized second-order constant K_2^+; the frozen decade-grid rule fixes tau_AW2 before this loop. A single producer instantiates the enclosure; the skeptic replays it from the contract alone.",
+  "model": "Same zero-selected patterned AQ subfamily; tau_AW2 from the AW1 rule at both signs; the AV1/AW1 admitted constants; fixed positive physical scales.",
+  "parameters": {
+    "tau_AW2": "1/100000000 (from the AW1 rule: largest decade-grid coupling with K_2^+ tau <= 1/288, evaluated inside check.py from the AW1 gate snapshot)",
+    "signs": [
+      "+",
+      "-"
+    ],
+    "K_2_plus": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984 (AW1 gate; about 3354.80323; outward ceiling 3354803229461691/10^12 acceptable as a directed bound)",
+    "first_order": "tau/144 (alpha units, I1.5 convention: phi_b=-(tau/3) sum W_f, V_b=phi_b/8)",
+    "target": "exclusion margin m = (|tau|/144 - K_2^+ tau^2)/(K_2^+ tau^2) >= 2 (equivalently 1/(144 K_2^+ |tau|) >= 3); report also the contract-defined sign margin 1/(144 K_2^+ |tau|) (about 207)",
+    "selected_coefficients_over_alpha": [
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "shared_premises": [
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/forward/aq2/report.md",
+    "research/round31/forward/at4/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/methods/paired-physics-research/SKILL.md",
+    "research/round32/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round32/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round32/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round32/methods/historical-physics-panel/SKILL.md",
+    "research/round32/methods/newton-analysis-synthesis/references/research.md",
+    "research/round32/methods/tesla-mechanism-resonance/references/research.md",
+    "research/round32/methods/historical-physics-panel/references/lenses-and-evidence.md",
+    "research/round32/advisor/selection-aw2.md",
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/contracts/aw1.json",
+    "research/round32/forward/aw1/report.md",
+    "research/round32/reverse/aw1/report.md",
+    "research/round32/skeptic/aw1.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/reverse/av1/report.md",
+    "research/round32/skeptic/av1.md"
+  ],
+  "required": [
+    "1. Evaluate tau_AW2 inside check.py by the AW1 rule from the K_2^+ value read from the AW1 gate snapshot (hash-verified); reject any other coupling; record the rule arithmetic as exact rationals.",
+    "2. Enclose omega_tau(W) in [tau/144 - K_2^+ tau^2, tau/144 + K_2^+ tau^2] at tau=+10^-8 and -10^-8 (the mirrored enclosure follows from the AW1 flip lemma at the zero triple and is a replay, not a second confirmation); prove strict exclusion of 0 with the exclusion margin >= 2 and report the sign margin about 207; every endpoint an exact rational.",
+    "3. State the result as a static equal-time effect in the whole set of AQ1 subsequential limits at the zero selected triple (uniform in the box, passed by local trace-norm convergence); sub-label static_not_dynamic; if tau_AW2 were below the cap the sub-label sign_certified_below_cap would apply (it does not here); no dynamical correction, mass shift or susceptibility is claimed; the centered correlation shift remains unresolved (AV2 reference_unresolved).",
+    "4. Controls as damaging mutations: sign flip (tau->-tau flips the enclosure), wrong face (an omitted face other than W contributes zero at first order), centering artifact (no m_hat enters the omega(W) path; the vector/scalar centering identities are re-exhibited as fixtures), sign convention (the I1.5 string is frozen; a flipped phi_b sign mutation is rejected; the one-plaquette finite fixture under I1.5 shows sign(<W>)=sign(tau)), boundary/state (the constant is volume-uniform: the same formula at two box sizes), arithmetic (Fraction admission; scaling exponents 1 and 2 of the two terms; Arb/mpmath preview labelled), tier mixing (crude K_2 fails and is retained as a limited-tier control), coherent tampering (removing a snapshot with rebound hashes still rejected by the validator), reverse premise isolation is not applicable (single producer) and is stated as such.",
+    "5. A reusable exact calculator restricted to the proved domain (zero selected triple, |tau|<=10^-8, K_2^+ from the AW1 gate only; floats rejected); byte-identical normal and -O replays; freeze with the tools; claim flags continuum_claim:false, uniform_wilson_claim:false, resolved_interaction_shift:true only if the exclusion holds at the cap (with sub-label static_not_dynamic), scientific_priority_verified:false, dynamical_correction_claim:false, sign_certified_below_cap:<bool>.",
+    "6. The skeptic's independent pre-comparison replay from the contract alone is required for admission (single_direction_independent_replay)."
+  ],
+  "controls": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "haar_parity_exact",
+    "wilson_mean_first_order_coefficient",
+    "wrong_face_control",
+    "sign_flip_tau",
+    "free_reference_exclusion",
+    "second_order_remainder_itemized",
+    "static_not_dynamic_effect",
+    "aw2_coupling_rule_prefrozen",
+    "wilson_overlap_single_component",
+    "tier_mixing_rejected",
+    "single_producer_declared"
+  ],
+  "claim_exclusions": [
+    "a dynamical correction or mass gap statement",
+    "a correlation shift",
+    "uniform Wilson magnetic theory",
+    "AQ uniqueness",
+    "continuum",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward"
+  ],
+  "direction": "single+skeptic",
+  "preregistration": {
+    "schema": "hnm-r32-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "reference_unresolved",
+      "sign_certified_finite_graph",
+      "sign_certified_below_cap",
+      "static_not_dynamic",
+      "uniform_local_closeness_not_uniqueness"
+    ],
+    "claim_exclusions": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": "AW1 decade-grid rule, frozen in contracts/aw1.json and evaluated in check.py from advisor/aw1-gate.json"
+    },
+    "state_provenance": "AQ1_centered_whole_star_subsequence via finite_volume uniform bound",
+    "observable": {
+      "id": "omega(W)",
+      "centering": "none",
+      "reference_value_exact": "0",
+      "reference_route": "haar"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "first_order_exact",
+      "second_order_remainder",
+      "arithmetic"
+    ],
+    "target": {
+      "quantity": "exclusion_margin",
+      "value": "2",
+      "comparator": ">="
+    },
+    "controls_required": {
+      "ids": [
+        "missing_incoming_stars",
+        "full_original_wilson_cover",
+        "wrong_delta_alpha_hbar_clock",
+        "vector_versus_scalar_centering",
+        "first_order_mean_charged",
+        "tau_scaling_exponent",
+        "changed_model_relabelled",
+        "coherent_evidence_tampering",
+        "insufficient_verdict_retained",
+        "exact_arithmetic_admission",
+        "root_n_misuse",
+        "no_priority_or_continuum_claim",
+        "haar_parity_exact",
+        "wilson_mean_first_order_coefficient",
+        "wrong_face_control",
+        "sign_flip_tau",
+        "free_reference_exclusion",
+        "second_order_remainder_itemized",
+        "static_not_dynamic_effect",
+        "aw2_coupling_rule_prefrozen",
+        "wilson_overlap_single_component",
+        "tier_mixing_rejected",
+        "single_producer_declared"
+      ]
+    },
+    "direction": "single+skeptic",
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason"
+  },
+  "acceptance": {
+    "accepted_within_scope": "0 strictly excluded with margin >=2 at both signs at tau_AW2=10^-8.",
+    "limited": "Excluded only at tau_AW2<10^-8 (sign_certified_below_cap) or margin in [1,2).",
+    "insufficient": "No admissible tau on the grid excludes 0."
+  },
+  "stop": "Investigation 4 of 10; sub-round 2 ends after this review and the assistants' tests.",
+  "single_direction_independent_replay": true,
+  "new_control_semantics": {
+    "single_producer_declared": "the results packet states producers=[forward] and that admission requires the skeptic's independent replay; a fabricated reverse package is rejected",
+    "aw2_coupling_rule_prefrozen": "tau_AW2 is computed by the frozen rule from the AW1 gate's K_2^+ inside check.py; any literal coupling is rejected"
+  },
+  "frozen_at": "2026-09-24T00:01:24.201697+00:00"
+}

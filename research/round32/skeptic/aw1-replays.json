@@ -1,0 +1,147 @@
+{
+ "closures": {
+  "forward": {
+   "closure_files": 39,
+   "declared_premises": 35,
+   "freeze_json_sha256": "8f23559cd6963e8a4dd0775aa2afcc70d4bf716308172bd11c25a0cca1a9e15c",
+   "inputs": 35,
+   "inventory_equals_declared": true,
+   "reverse_isolation_enforced": false
+  },
+  "reverse": {
+   "closure_files": 35,
+   "declared_premises": 31,
+   "freeze_json_sha256": "366a7242d5f817770ea449f027d067d4e922c1feee11e508131364e882710408",
+   "inputs": 31,
+   "inventory_equals_declared": true,
+   "reverse_isolation_enforced": true
+  }
+ },
+ "freeze_verify": [
+  {
+   "command": "python3 -B research/round32/tools/freeze.py verify research/round32/forward/aw1",
+   "stdout": {
+    "direction": "forward",
+    "loop": "aw1",
+    "status": "verified"
+   }
+  },
+  {
+   "command": "python3 -B research/round32/tools/freeze.py verify research/round32/reverse/aw1",
+   "stdout": {
+    "direction": "reverse",
+    "loop": "aw1",
+    "status": "verified"
+   }
+  }
+ ],
+ "frozen_outputs": {
+  "forward": {
+   "results.json": "289e8ba3c0c6adc7bae48e8e0dcb26bad6b330e76fc8f45fb69eb18f1f066f54",
+   "source-manifest.json": "c504f0094212287b1c384be1217f1d0aac5f04fdc724f860ef3c0ecde61b74d8"
+  },
+  "reverse": {
+   "results.json": "1b1f3bf57d4c190f06403d3c5e7ef9a82623770ca80d873c483cdb35c3cf3ce8",
+   "source-manifest.json": "702d5870b533f2971eb95c41c7da8c39f1b739aab67bde22b229d48f16540f50"
+  }
+ },
+ "human_author": "Hruday N M (BUNZEEY)",
+ "loop": "AW1",
+ "producer_replays": [
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "research/round32/forward/aw1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "289e8ba3c0c6adc7bae48e8e0dcb26bad6b330e76fc8f45fb69eb18f1f066f54",
+    "source-manifest.json": "c504f0094212287b1c384be1217f1d0aac5f04fdc724f860ef3c0ecde61b74d8"
+   },
+   "stdout": "{\"K2_crude_preview\": \"7.93754429909e6\", \"K2_exact_preview\": \"3.35463832966e3\", \"checks\": 41, \"direction\": \"forward\", \"first_order\": \"+tau/144\", \"loop\": \"AW1\", \"tau_AW2\": \"1/100000000\"}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "-O",
+    "research/round32/forward/aw1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "289e8ba3c0c6adc7bae48e8e0dcb26bad6b330e76fc8f45fb69eb18f1f066f54",
+    "source-manifest.json": "c504f0094212287b1c384be1217f1d0aac5f04fdc724f860ef3c0ecde61b74d8"
+   },
+   "stdout": "{\"K2_crude_preview\": \"7.93754429909e6\", \"K2_exact_preview\": \"3.35463832966e3\", \"checks\": 41, \"direction\": \"forward\", \"first_order\": \"+tau/144\", \"loop\": \"AW1\", \"tau_AW2\": \"1/100000000\"}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "research/round32/reverse/aw1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "reverse",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "1b1f3bf57d4c190f06403d3c5e7ef9a82623770ca80d873c483cdb35c3cf3ce8",
+    "source-manifest.json": "702d5870b533f2971eb95c41c7da8c39f1b739aab67bde22b229d48f16540f50"
+   },
+   "stdout": "{\"K2_crude\": \"7.937560897e6\", \"K2_exact\": \"3.354499425e3\", \"checks\": 57, \"direction\": \"reverse\", \"loop\": \"AW1\", \"outcome\": \"accepted_within_scope\", \"tau_AW2\": \"1/100000000\"}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "-O",
+    "research/round32/reverse/aw1/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "reverse",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "1b1f3bf57d4c190f06403d3c5e7ef9a82623770ca80d873c483cdb35c3cf3ce8",
+    "source-manifest.json": "702d5870b533f2971eb95c41c7da8c39f1b739aab67bde22b229d48f16540f50"
+   },
+   "stdout": "{\"K2_crude\": \"7.937560897e6\", \"K2_exact\": \"3.354499425e3\", \"checks\": 57, \"direction\": \"reverse\", \"loop\": \"AW1\", \"outcome\": \"accepted_within_scope\", \"tau_AW2\": \"1/100000000\"}"
+  }
+ ],
+ "python": "3.11.15",
+ "result": "all four producer replays (forward/reverse x normal/-O) reproduce the frozen output/ byte for byte; both freeze.json closures verify (39 and 35 files); reverse inputs equal AGENTS.md + contract + shared_premises exactly (31 files, no forward-only, triage, loop-2, deliberation, expert other than the modern loop-3 sign-off, forward AW1 or skeptic AW1 file); forward inputs equal those plus the four forward_additional_premises (35 files)",
+ "reverse_premise_isolation": {
+  "declared": "AGENTS.md + contracts/aw1.json + 29 shared_premises",
+  "forbidden_files_present": [],
+  "forward_additional_premises_absent": true,
+  "inputs": 31,
+  "inventory_equals_declared": true
+ },
+ "reviewer": "model-agent skeptic with correlated ancestry; not human peer review",
+ "schema": "hnm-r32-skeptic-replays-v1",
+ "skeptic_postreview": {
+  "checker_sha256": "5b7f84f4b0ca55ec32c230f9becaa291ded8454e2fb710ef046d056e1db399da",
+  "checks": 65,
+  "command": "python3 -B [-O] research/round32/skeptic/aw1_postreview_check.py --output <fresh-external-dir>",
+  "must_abort_mutations_aborted": 25,
+  "normal_and_O_byte_identical": true,
+  "reads_from_contract_demonstrations": 1,
+  "results_sha256": "c656f26741384f8e27ca064b2eb0defee59bd91b610668696f92c3ee65530c6a",
+  "silent_edits_caught_by_review": 4,
+  "source_mutation_replays": 30
+ },
+ "tool": "research/round32/skeptic/replay_loop.py",
+ "tool_output_identical_under_normal_and_O": true,
+ "tool_sha256": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66"
+}

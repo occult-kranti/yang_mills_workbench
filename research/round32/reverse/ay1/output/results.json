@@ -1,0 +1,1059 @@
+{
+  "ai_assistance": "AI-assisted reverse production (Claude, an AI model); correlated model-agent work, not human review",
+  "attribution": {
+    "creation_expansion": "admitted AM2 construction (Bravyi-DiVincenzo-Loss lineage; Gauvin arXiv:2503.15539v3 A.6-A.8 as template)",
+    "fidelity_inequalities": "standard: pure-state trace distance, Uhlmann fidelity, Bures angle metric, Fuchs-van de Graaf",
+    "padding": "I1 section 6 prescription; the itemized AM2 re-application is this producer's",
+    "scientific_priority": "unverified"
+  },
+  "boundary_independence_of_dynamics_claimed": false,
+  "check_py_sha256_recorded_before_evaluation": "e72ba261f819866f1ffbe81ccecd3ff10d5cc8a5520ef5270493d00116a65b3e",
+  "checks": [
+    {
+      "contract_sha256": "be9b354420e66e7edba03d59b3d194b69f26782b44cfb63cb10e176bf4879ae0",
+      "id": "contract_snapshot_bound",
+      "passed": true,
+      "source": "inputs/research/round32/contracts/ay1.json",
+      "verified": "before any evaluation"
+    },
+    {
+      "check_py_sha256": "e72ba261f819866f1ffbe81ccecd3ff10d5cc8a5520ef5270493d00116a65b3e",
+      "id": "check_py_sha256_recorded_before_evaluation",
+      "passed": true
+    },
+    {
+      "id": "no_interpreter_cache_in_closure",
+      "passed": true
+    },
+    {
+      "G_R_upper": "148/7",
+      "G_prime_R_upper": "352",
+      "J0": "7/25000000",
+      "J0_G_R": "37/6250000",
+      "exp_one_eighth_enclosure": [
+        "2266296906133652633658014455623587745131/2000000000000000000000000000000000000000",
+        "1416435566333532896036259034764742340707/1250000000000000000000000000000000000000"
+      ],
+      "four_qubit_termination": {
+        "ad8_coefficient": 40320,
+        "ad9_zero": true
+      },
+      "id": "am2_constants_rederived",
+      "note": "G(t)=16e^{8t}(1+10t); coefficients k!*[t^k]G = 16*8^k(1+5k/4) for k<=8; termination 2|X|=8 for |X|=4",
+      "passed": true,
+      "two_J0_Gp_R": "77/390625"
+    },
+    {
+      "D_i": {
+        "exact": "36133347268157653748322/1525878906463907516326874161",
+        "preview": "2.36803504623e-5"
+      },
+      "D_ii": {
+        "exact": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+        "preview": "1.36124528702e-8"
+      },
+      "T": "49/14398580736",
+      "eps_admitted": {
+        "exact": "1411060914529/207319127211110301696",
+        "preview": "6.80622638880e-9"
+      },
+      "id": "av1_gate_D_ii_recomputed",
+      "note": "D_ii=2eps(1+eps)/(1+eps^2), eps=2T+T^2, T=(49|tau|/144)/(1-352J), read from the AV1 gate and recomputed exactly",
+      "passed": true,
+      "rho": "3773/11248891200000000"
+    },
+    {
+      "K2_plus": {
+        "exact": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+        "preview": "3.35480322946e3"
+      },
+      "id": "aw1_gate_K2_plus_recomputed",
+      "itemization": "rho + T*T (straddling) + T^2 (two-creation) + (2T+T^2)^2 (density) + (|tau|/144)(2T+T^2)^2",
+      "note": "the AW1 admitted (skeptic) itemization, recomputed exactly and equal to the gate value",
+      "passed": true
+    },
+    {
+      "E_W_n": [
+        "1",
+        "0",
+        "1/4",
+        "0",
+        "1/8"
+      ],
+      "amplitude_per_tau": "-1/72",
+      "face_norm": "1/2",
+      "id": "haar_moments_and_units",
+      "passed": true,
+      "per_face_creation_norm": "|tau|/144"
+    },
+    {
+      "F_R": [
+        "xz r=0 s=0 anchor=(0, 0, 0)",
+        "xz r=0 s=1 anchor=(0, 0, 0)",
+        "xz r=1 s=0 anchor=(0, 0, 0)",
+        "xz r=1 s=1 anchor=(0, 0, 0)",
+        "xz r=2 s=0 anchor=(0, 0, 0)",
+        "xz r=2 s=1 anchor=(0, 0, 0)",
+        "yz r=0 s=0 anchor=(0, 0, 0)",
+        "yz r=1 s=0 anchor=(0, 0, 0)",
+        "yz r=2 s=0 anchor=(0, 0, 0)",
+        "yz r=3 s=0 anchor=(0, 0, 0)"
+      ],
+      "counts": {
+        "containing_0_not_e_z": 33,
+        "containing_both_sites": 16,
+        "containing_e_z_not_0": 33,
+        "faces_meeting_R": 82,
+        "faces_per_factor": 49,
+        "owner_set_exactly_R": 10,
+        "owner_sets_meeting_R": 27,
+        "owner_sets_per_factor": 15,
+        "straddling": 72
+      },
+      "distinct_faces_share_at_most_one_link": true,
+      "id": "face_counts_R_local",
+      "passed": true,
+      "provenance": "I1 snapshot table parsed and re-derived from pi and link tails; translation covariance at every site",
+      "wilson_face": "xz r=0 s=0 anchor (0,0,0)"
+    },
+    {
+      "chain": [
+        {
+          "bound": true,
+          "source": "research/round21/forward/i1/report.md",
+          "step": "I1"
+        },
+        {
+          "bound": true,
+          "source": "research/round29/advisor/am2-gate.json",
+          "step": "AM2"
+        },
+        {
+          "bound": true,
+          "source": "research/round29/forward/aq1/report.md",
+          "step": "AQ1"
+        },
+        {
+          "bound": true,
+          "source": "research/round32/advisor/av1-gate.json",
+          "step": "AV1"
+        },
+        {
+          "bound": true,
+          "source": "research/round32/advisor/aw1-gate.json",
+          "step": "AW1"
+        }
+      ],
+      "id": "item1_F1_admitted_chain",
+      "passed": true,
+      "statement": "I1 dictionary -> AM2 finite-volume ground and gap (J<=28|tau|<=J_0) -> AQ1 reset 56|tau||F|, trace-norm compactness, diagonal extraction, Nachtergaele-Sims dynamics -> AV1 split, D_ii, cutoff-vector removal, passage to every subsequential limit -> AW1 first-order +tau/144 and K_2^+ uniform in N and every limit"
+    },
+    {
+      "J0": "7/25000000",
+      "J_per_tau_max": 28,
+      "boxes": {
+        "2": {
+          "B_sites": 125,
+          "F1_faces": 1344,
+          "F1_subset_F2": true,
+          "F2_faces": 1960,
+          "F2_minus_F1": 616,
+          "F2_partial_groups": 60,
+          "am2_volume_sites": 200,
+          "max_faces_per_site_F1": 49,
+          "max_faces_per_site_F2": 49,
+          "meeting_R_in_F1": true,
+          "meeting_R_in_F2": true,
+          "padded_J_per_tau": "28",
+          "padded_incident_groups_R": 7,
+          "padded_reset_R_per_tau": "98",
+          "padded_termination": 8
+        },
+        "3": {
+          "B_sites": 343,
+          "F1_faces": 4536,
+          "F1_subset_F2": true,
+          "F2_faces": 5880,
+          "F2_minus_F1": 1344,
+          "F2_partial_groups": 126,
+          "am2_volume_sites": 490,
+          "max_faces_per_site_F1": 49,
+          "max_faces_per_site_F2": 49,
+          "meeting_R_in_F1": true,
+          "meeting_R_in_F2": true,
+          "padded_J_per_tau": "28",
+          "padded_incident_groups_R": 7,
+          "padded_reset_R_per_tau": "98",
+          "padded_termination": 8
+        }
+      },
+      "family_sandwich_N2": "faces(F1,Lambda_2) <= faces(F2,Lambda_2) <= faces(F1,Lambda_3)",
+      "id": "item1_F2_padded_am2_contraction",
+      "itemized": [
+        "supports: every retained group is supported in (b+S) cap B, indexed by X_b=b+S inside B_+=B+S (|X_b|=4)",
+        "norms: ||phi_b^(B)||<=(|tau|/3)*#retained<=7|tau|",
+        "per-site sum: u in X_b iff b in u-S, so J<=4*7|tau|=28|tau|<=J_0=7/25000000 (computed max 28 on both boxes)",
+        "termination: ad^k(V_X)Omega=0 for k>2|X|=8 (four-qubit fixture: ad^8 coefficient 8!, ad^9=0)",
+        "constants: G(R)<148/7, G_prime(R)<352, J_0G(R)<R, 2J_0G_prime(R)=77/390625<1 unchanged",
+        "decoupling: no retained face touches B_+ minus B, so the padded ground is psi_B (x) Omega_pad"
+      ],
+      "passed": true
+    },
+    {
+      "compactness": "Tr rho_F(1-Q_{F,L})<=C_F/L and ||rho_F-Q rho_F Q||_1<=2sqrt(C_F/L) with Q_{F,L}=1_[0,L](h_F) finite rank (compact resolvent); precompact in trace norm on every finite F; diagonal extraction over nested cubes",
+      "id": "item1_F2_reset_and_compactness",
+      "passed": true,
+      "reset_R": "<=98|tau| (seven incident groups, each changed by at most 14|tau|)",
+      "reset_general": "Tr(rho_F h_F)<=2*7|tau|*|F-S|<=56|tau||F| for every finite F inside B"
+    },
+    {
+      "D": {
+        "exact": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+        "preview": "1.36124528702e-8"
+      },
+      "D_fidelity_upper": {
+        "exact": "136124527776169485892526179064611/10000000000000000000000000000000000000000",
+        "preview": "1.36124527776e-8"
+      },
+      "F2_same_constants": "F2 boxes: J<=28|tau| and at most 49 retained faces per site (enumerated), so T, rho, eps and D_ii are unchanged",
+      "bures_pairwise": {
+        "exact": "1170159668967453566242603438964736/42981220507576537932303142777593983768257",
+        "preview": "2.72249055552e-8"
+      },
+      "chain": "F=<Omega_R,rho_R Omega_R>=1/(1+e^2)>=1/(1+eps^2) in every box of both families; passes to every limit (|Tr((rho-sigma)P)|<=||rho-sigma||_1); ||rho-P||_1<=2sqrt(1-F)<=2eps/sqrt(1+eps^2)<=D_ii; pairwise: Bures angle A<=arctan(eps) each, A(rho,rho_prime)<=2arctan(eps)<=pi/2, Fuchs-van de Graaf gives ||rho-rho_prime||_1<=2sin(2arctan eps)=4eps/(1+eps^2)<=2D_ii",
+      "fidelity_floor": {
+        "exact": "42981220507576535941210238266176140476416/42981220507576537932303142777593983768257",
+        "preview": "9.99999999999e-1"
+      },
+      "finite_volume": "||rho_{N,R}-rho_prime_{M,R}||_1<=2D for all N,M>=2 in either family, every cutoff L and the untruncated grounds",
+      "id": "item2_pairwise_closeness_2D",
+      "margin": "2.9384858e1",
+      "passed": true,
+      "target": "1/1250000",
+      "target_met": true,
+      "two_D": {
+        "exact": "1170159676931825184288274812132100/42981220507576537932303142777593983768257",
+        "preview": "2.72249057405e-8"
+      }
+    },
+    {
+      "Tr_rho1_W": "1/144",
+      "Tr_rho1_Wg_all_F_R": true,
+      "aw1_consistency": "tau Tr(rho^(1) W)=+tau/144 as admitted in AW1 (both signs)",
+      "basis_form": "(1/144) sum_f (|e_f><e_0| + |e_0><e_f|), e_0=Omega_R, e_f=2W_f Omega_R orthonormal",
+      "first_order_W_mean_at_cap": {
+        "+": "1/14400000000",
+        "-": "-1/14400000000"
+      },
+      "id": "item3_first_order_density_explicit",
+      "passed": true,
+      "rho1": "rho^(1)_R = (1/72) sum_{f in F_R} (|W_f Omega_R><Omega_R| + |Omega_R><W_f Omega_R|), F_R = the 10 faces with owner set exactly R",
+      "trace_norm": "sqrt(10)/72",
+      "trace_norm_bracket": [
+        "219602615289470786944367607252272120397/5000000000000000000000000000000000000000",
+        "87841046115788314777747042900908848159/2000000000000000000000000000000000000000"
+      ],
+      "trace_norm_squared": "5/2592"
+    },
+    {
+      "id": "item3_fidelity_derivative_block_structure",
+      "passed": true,
+      "rejected_mutations": {
+        "first_order_diagonal": "first-order diagonal is nonzero: contradicts the derivative of the fidelity identity",
+        "first_order_excited_block": "first-order excited block is nonzero: contradicts positivity with Tr(1-P)rho(1-P)<=eps^2"
+      },
+      "remainder_identity": "rho-P-tau rho1 = [(F-1)P + rho_perp_perp] + [|rho_perp_0 - tau eta><Omega| + h.c.], ||first||_1=2(1-F)<=2eps^2, rho_perp_0 - tau eta = r_xi/(1+e^2) - tau eta e^2/(1+e^2)",
+      "statement": "F(tau)=1/(1+e^2) with e<=eps(tau)=O(tau) gives a zero first-order diagonal; Tr(1-P)rho(1-P)=1-F<=eps^2 with positivity gives a zero first-order excited block; so rho^(1) is off-diagonal and equals the derivative of (1-P_R)rho_R Omega_R = xi_hat/(1+e^2) from the vacuum-overlap vector identity rho_R Omega_R=(1_R(x)<phi_out|)psi/||psi||^2"
+    },
+    {
+      "K2_prime": {
+        "exact": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+        "preview": "1.34175275439e4"
+      },
+      "id": "item3_second_order_ledger_K2_prime",
+      "ledger": {
+        "K2_prime": {
+          "exact": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+          "preview": "1.34175275439e4"
+        },
+        "eps": {
+          "exact": "180161487949673694520081/31634388307359360000000000000000",
+          "preview": "5.69511527136e-9"
+        },
+        "items": {
+          "am2_remainder": {
+            "exact": "3773/2812222800000000",
+            "over_tau_squared_preview": "1.34164334347e4",
+            "provenance": "AM2 remainder of c_R, c_{0}, c_{e_z} at both sites of R (anchored rho=352JT)",
+            "tier": "ii"
+          },
+          "density": {
+            "exact": "32458161740240419840923214704314125168912246561/500367261790397296906568089804800000000000000000000000000000000",
+            "over_tau_squared_preview": "6.48686759083e-1",
+            "provenance": "diagonal defect plus excited block: 2(1-F)<=2eps^2, eps R-local (82 faces)",
+            "tier": "ii"
+          },
+          "normalization": {
+            "exact": "32458161740240419840923214704314125168912246561/720528856978172107545458049318912000000000000000000000000000000000000000",
+            "over_tau_squared_preview": "4.50476916030e-10",
+            "provenance": "first-order vector times e^2/(1+e^2); ||c^(1)_R||<=10a (third order)",
+            "tier": "ii"
+          },
+          "straddling": {
+            "exact": "1378174049/40492017033419980800000000",
+            "over_tau_squared_preview": "3.40356976502e-1",
+            "provenance": "straddling supports: outside excitation <= T (AW1 R15) times the 72 first-order faces meeting R outside R plus 2rho",
+            "tier": "ii"
+          },
+          "two_creation": {
+            "exact": "166184094520081/15817194153679680000000000000000",
+            "over_tau_squared_preview": "1.05065470465e-1",
+            "provenance": "disjoint pairs I>0, J>e_z: (33a+rho)^2",
+            "tier": "ii"
+          }
+        },
+        "total": {
+          "exact": "966771578474926086618624139557778885954947547760216752246561/720528856978172107545458049318912000000000000000000000000000000000000000",
+          "preview": "1.34175275439e-12"
+        }
+      },
+      "minus_tau": "replay of the same |tau| formula",
+      "passed": true,
+      "ratio_2D_over_2K2tau2": "1.0145276e4",
+      "statement": "for every box of either family at every cutoff L>=24, the untruncated ground and every subsequential limit: ||rho_R - P_R - tau rho^(1)_R||_1 <= K2_prime tau^2; hence two limits differ by at most 2 K2_prime tau^2",
+      "two_K2_prime_tau_squared": {
+        "exact": "966771578474926086618624139557778885954947547760216752246561/360264428489086053772729024659456000000000000000000000000000000000000000",
+        "preview": "2.68350550879e-12"
+      }
+    },
+    {
+      "K2_plus": {
+        "exact": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+        "preview": "3.35480322946e3"
+      },
+      "K2_prime": {
+        "exact": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+        "preview": "1.34175275439e4"
+      },
+      "id": "item3_K2_prime_versus_K2_plus",
+      "items_over_tau2": {
+        "K2_plus": {
+          "am2_remainder": "3.354108358e3",
+          "density": "4.632471765e-1",
+          "normalization": "3.216994281e-11",
+          "straddling": "1.158117937e-1",
+          "two_creation": "1.158117937e-1"
+        },
+        "K2_prime": {
+          "am2_remainder": "1.341643343e4",
+          "density": "6.486867590e-1",
+          "normalization": "4.504769160e-10",
+          "straddling": "3.403569765e-1",
+          "two_creation": "1.050654704e-1"
+        },
+        "K2_prime_per_unit_trace_multiplier": {
+          "am2_remainder": "6.7082167e3",
+          "density": "3.2434337e-1",
+          "normalization": "2.2523845e-10",
+          "straddling": "1.7017848e-1",
+          "two_creation": "5.2532735e-2"
+        }
+      },
+      "passed": true,
+      "ratio": {
+        "exact": "3867086313899704346474496558231115543819790191040867008986244/966893014524284957965768152362480514948256313800811767578125",
+        "preview": "3.99949762363e0"
+      },
+      "reading": "K2_prime bounds the full trace norm over B(H_R) (multiplier 2, all in-R remainder supports at both sites); K2_plus bounds the single observable W (multiplier 2||W Omega_R||=1, only c_R). The R-local face restriction lowers every count-dependent item per unit multiplier, but the AM2 remainder dominates both constants.",
+      "variants": {
+        "admitted_eps_in_density": {
+          "K2_prime": {
+            "exact": "81100357107817583688445488127814612044107557/6044234133877950366732689756181019754496",
+            "preview": "1.34178053515e4"
+          },
+          "ratio_to_K2_plus": "3.9995804e0"
+        },
+        "both_refinements": {
+          "K2_prime": {
+            "exact": "18200615677905077414251595490889340188138498070350092067139154636718165378813900933/2344514646728716762803827985009448787564082892800000000000000000000000000000000",
+            "preview": "7.76306332882e3"
+          },
+          "ratio_to_K2_plus": "2.3140145e0"
+        },
+        "directed_am2_remainder_288": {
+          "K2_prime": {
+            "exact": "13178109467490287403045543419805782131735399530070371836196950822835931978913/1200391499125102982555559928324837779232810441113600000000000000000000000",
+            "preview": "1.09781762675e4"
+          },
+          "ratio_to_K2_plus": "3.2723756e0"
+        },
+        "orthogonal_in_R_sectors_sqrt2": {
+          "K2_prime": {
+            "exact": "1335222321995476366247012179910036314181613976054731509869132861901/140728292378549239754972275257600000000000000000000000000000000",
+            "preview": "9.48794517028e3"
+          },
+          "ratio_to_K2_plus": "2.8281674e0"
+        }
+      }
+    },
+    {
+      "K2_prime_at_tau_over_10k": [
+        "1.341752754e4",
+        "1.341633720e4",
+        "1.341621818e4",
+        "1.341620628e4"
+      ],
+      "id": "item3_scaling_and_monotonicity",
+      "note": "every item is tau^2 times a nondecreasing function of |tau|, so the cap value bounds every smaller |tau|",
+      "passed": true,
+      "ratio_tau_over_tau_100": {
+        "two_D": "1.000097592e2",
+        "two_K2_prime_tau2": "1.000097595e4"
+      }
+    },
+    {
+      "contract_template_filled": "For every pair of subsequential limits of the named construction families F1 (centered whole-star boxes Lambda_N (AQ1), N>=2) and F2 (all-contained-face boxes with padding (I1 section 6), Lambda_N, N>=2) at the same coupling tau with |tau|<=10^-8 (either sign), on the fixed cover R and for the frozen observable class, the reduced densities satisfy ||rho_R - rho'_R||_1 <= 2D = 1170159676931825184288274812132100/42981220507576537932303142777593983768257 (~2.72249e-8 at the cap) and agree to first order in tau (common rho^(1)_R; ||rho_R - rho'_R||_1 <= 2 K2_prime tau^2 = 2.68350e-12 at the cap); this does not assert equality of the states, whole-sequence convergence, translation invariance, boundary independence of the dynamics, or a rate in N.",
+      "gate_fields": {
+        "boundary_independence_of_dynamics_claimed": false,
+        "rate_claimed": false,
+        "translation_invariance_claimed": false,
+        "uniqueness_claimed": false,
+        "whole_sequence_claimed": false
+      },
+      "id": "item4_mandatory_sentences_and_gate_fields",
+      "jung_form_filled": "For every pair of subsequential limits omega', omega'' of the named families F1, F2 at the same coupling tau, and for every A in B(H_R) with ||A|| <= 1 on the fixed cover R: |omega'(A) - omega''(A)| <= 2D(tau) = 2.72249e-8 at |tau|=10^-8 [order tau^1], and <= 2 K2_prime tau^2 = 2.68350e-12 [order tau^2, after subtracting the common first-order density rho^(1)_R]. This is uniform local closeness on a fixed region at fixed coupling, inherited from a finite-volume bound that holds for every volume. It does not assert omega' = omega'', convergence of any whole sequence, translation invariance, boundary independence beyond R, or any rate in N; two states satisfying it may differ by the stated order on R and without bound elsewhere.",
+      "passed": true
+    },
+    {
+      "id": "report_phrasing",
+      "passed": true,
+      "rejected_mutations": {
+        "missing_chosen_subsequential": "required phrasing \"a chosen subsequential\" missing",
+        "the_AQ_state_is_unique": "forbidden phrasing: \"the AQ state\"",
+        "thermodynamic_limit": "forbidden phrasing: \"the thermodynamic limit\"",
+        "unique_without_not": "forbidden phrasing: \"unique\" without \"not\""
+      },
+      "rules": [
+        "no \"the thermodynamic limit\"",
+        "\"the AQ state\" only inside the verbatim negated exclusion",
+        "every line containing \"uniq\" contains \"not\"",
+        "contains \"a chosen subsequential\""
+      ]
+    },
+    {
+      "diff_squared_ratio_lam_over_lam10": "9.8893308e3",
+      "fixture": "four qubit sites (0, e_z | o1, o2); first-order creations on two or three sites, second-order single-site; two environments A and B share only the first-order in-R creation lam*u (u=-1/2, lam=1/50)",
+      "id": "fixture_overlap_identity_and_two_environments",
+      "model_is_finite_graph": true,
+      "passed": true,
+      "rejected_mutations": {
+        "straddling_item_dropped": "ledger item below its component (item undercounts)"
+      },
+      "straddling_component_norm_sq": {
+        "A": "703269/1265989537495620025",
+        "B": "32500441/10768755541783647681"
+      },
+      "transfers_to_aq": false,
+      "verified": [
+        "(<Omega_R|(x)1)psi = prod_{I cap R empty}(1-c_I)Omega_out",
+        "rho_R Omega_R = (1_R(x)<phi_out|)psi/||psi||^2",
+        "F=1/(1+e^2)",
+        "(1-P_R)rho_R Omega_R = xi_hat/(1+e^2) exactly",
+        "delta = in-R + straddling + pair terms exactly",
+        "each xi component within its ledger item",
+        "straddling component nonzero (item required)",
+        "||rho-P-lam rho1||_1 <= 2||.||_2 <= ledger bound (both envs)",
+        "rho_A != rho_B but 2||rho_A-rho_B||_2 <= bound_A+bound_B < ||lam rho1||_1",
+        "difference scales as lam^2 (Tr diff^2 ratio ~10^4)"
+      ]
+    },
+    {
+      "J_per_tau": 28,
+      "id": "missing_incoming_stars",
+      "incident_anchors": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "F2_reset_outgoing_groups_only": "reset budget below the incident groups actually meeting R",
+        "one_star_J_7": "every site lies in |S|=4 stars (incoming stars included)",
+        "orthant_anchors_0_e_z_only": "incident anchors must be the seven sites R-S (incoming stars included)",
+        "reset_two_anchors_28": "reset must charge all seven incident groups"
+      },
+      "reset_R_per_tau": 98
+    },
+    {
+      "cover": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "endpoints": 36,
+      "id": "full_original_wilson_cover",
+      "kind": "damaging_mutation_control",
+      "links": 48,
+      "passed": true,
+      "rejected_mutations": {
+        "cover_origin_only": "cover must be the complete factor cover R={0,e_z} of W",
+        "cover_with_extra_factor": "cover must be the complete factor cover R={0,e_z} of W",
+        "four_drawn_links": "complete cover has 48 links and 36 endpoints"
+      }
+    },
+    {
+      "W_Omega_energy": {
+        "alpha": 3,
+        "delta": 24
+      },
+      "amplitude": "-1/72",
+      "clock_read_from_contract": "s=alpha*t_E/hbar, theta=alpha*t/hbar; u=s/8 and exponent 24 forbidden in packets",
+      "id": "wrong_delta_alpha_hbar_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "exponent_24_on_alpha_clock": "W Omega_0 energy on the alpha clock is 3, not 24",
+        "mixed_units_alpha_coupling_delta_energy": "first-order creation amplitude per face must be -tau/72 in one consistent unit system; got -1/576",
+        "mixed_units_delta_coupling_alpha_energy": "first-order creation amplitude per face must be -tau/72 in one consistent unit system; got -1/9",
+        "u_equals_s_over_8_clock": "clock is not the common preregistered clock: u=s/8"
+      }
+    },
+    {
+      "id": "vector_versus_scalar_centering",
+      "kind": "damaging_mutation_control",
+      "note": "rho^(1)_R is a vector-level (off-diagonal) object; a scalar mean shift or a single-observable constant is not it",
+      "passed": true,
+      "rejected_mutations": {
+        "scalar_W_constant_as_trace_norm_constant": "a single-observable (scalar) constant is not a trace-norm constant: AW1 Wilson-mean K_2^+",
+        "scalar_first_order_shift_as_density": "first-order diagonal is nonzero: contradicts the derivative of the fidelity identity",
+        "scalar_subtraction_as_vector_centering": "only vector centering removes the mean from the correlation vector",
+        "uncentered_residue_as_centered": "only vector centering removes the mean from the correlation vector"
+      },
+      "residues": {
+        "scalar": "-51/10000",
+        "uncentered": "1/16",
+        "vector": "1/10000"
+      }
+    },
+    {
+      "first_order_trace_norm": "sqrt(10)|tau|/72",
+      "id": "first_order_mean_charged",
+      "kind": "damaging_mutation_control",
+      "note": "||tau rho^(1)||_1=sqrt(10)|tau|/72 exceeds the second-order budget; D_ii (linear) charges it",
+      "passed": true,
+      "proved_first_order_lower": {
+        "exact": "616197795291805409919264392064860992079046237503264929983414263332219/1407282923785492397549722752576000000000000000000000000000000000000000000000000",
+        "preview": "4.37863477824e-10"
+      },
+      "rejected_mutations": {
+        "state_budget_second_order_only": "claimed ||rho_R-P_R||_1 budget is below the proved first-order size: first-order mean not charged",
+        "state_budget_two_K2_prime": "claimed ||rho_R-P_R||_1 budget is below the proved first-order size: first-order mean not charged",
+        "zero_first_order_density": "coefficient of |e_f><Omega_R| must be 1/144 (amplitude 1/72 times ||W_f Omega_R||=1/2)"
+      }
+    },
+    {
+      "at4_ratio": "1.0000000e1",
+      "id": "tau_scaling_exponent",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "ratios": {
+        "two_D": "1.000097592e2",
+        "two_K2_prime_tau2": "1.000097595e4"
+      },
+      "rejected_mutations": {
+        "at4_square_root_labelled_linear": "tau -> tau/100 ratio 1.0000000e1 is not order 1",
+        "second_order_difference_labelled_first_order": "tau -> tau/100 ratio 1.0000975e4 is not order 1",
+        "two_D_labelled_second_order": "tau -> tau/100 ratio 1.0000975e2 is not order 2"
+      }
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "damaging_mutation_control",
+      "note": "beyond the cap or at a nonzero triple the certificate is silent; that is not a failure of the model",
+      "passed": true,
+      "rejected_mutations": {
+        "coupling_above_cap": "coupling above the preregistered cap: changed model",
+        "finite_graph_model_id": "model id relabelled: FG(four_qubit_fixture)",
+        "nonzero_selected_triple": "nonzero selected triple: P_R is not Haar (changed model)",
+        "uniform_route_B_J_29": "interaction family changed (per-site sum 29|tau|)",
+        "unnamed_boundary_family": "unnamed construction family"
+      }
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "damaging_mutation_control",
+      "note": "each tampered contract copy is rehashed coherently; semantic validation still rejects it",
+      "passed": true,
+      "rejected_mutations": {
+        "av1_gate_D_ii_edited": "gate value D_ii differs from its exact recomputation",
+        "aw1_gate_K2_plus_halved": "gate value K_2^+ differs from its exact recomputation",
+        "byte_change_without_rehash": "contract bytes do not match the bound hash",
+        "control_removed": "controls list differs from the preregistered ids",
+        "family_removed": "exactly the two named construction families are compared: [\"centered whole-star boxes Lambda_N (AQ1)\"]",
+        "gate_field_uniqueness_true": "gate fields must all be false",
+        "isolation_flag_false": "reverse premise isolation flag",
+        "target_relaxed_1e-3": "target is not twice the AV1 admitted target 4/10^7",
+        "tau_cap_1e-7": "contract tau cap differs from the admitted AM2 cap",
+        "template_negation_removed": "mandatory sentence lost one of its negations"
+      }
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "failing_family_relabelled_limited": "recorded outcome differs from the rule-derived outcome",
+        "no_first_order_density_relabelled_accepted": "recorded outcome differs from the rule-derived outcome",
+        "one_family_relabelled_accepted": "recorded outcome differs from the rule-derived outcome",
+        "tier_i_closeness_admitted": "bound exceeds target",
+        "tier_i_only_relabelled_accepted": "recorded outcome differs from the rule-derived outcome"
+      },
+      "retained": {
+        "family_fails_premises": "insufficient",
+        "no_first_order_density": "limited",
+        "one_family": "limited",
+        "tier_i_meets_target": false,
+        "tier_i_two_D_i": {
+          "exact": "72266694536315307496644/1525878906463907516326874161",
+          "preview": "4.73607009246e-5"
+        }
+      }
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "kind": "damaging_mutation_control",
+      "note": "every Boolean is decided on Fraction values; decimal strings are truncated previews",
+      "passed": true,
+      "rejected_mutations": {
+        "bool_tau": "non-exact numeric input rejected: True",
+        "float_bound_admission": "admission requires an exact Fraction",
+        "float_tau": "non-exact numeric input rejected: 1e-08",
+        "nan_string": "malformed rational input rejected: 'NaN'",
+        "zero_denominator": "malformed rational input rejected: '1/0'"
+      }
+    },
+    {
+      "id": "root_n_misuse",
+      "kind": "damaging_mutation_control",
+      "legitimate_root": "sqrt(10)/72 is the exact Hilbert norm of ten orthogonal face vectors inside one owner set, not a budget",
+      "linear_sum": "1.3417527e-12",
+      "passed": true,
+      "rejected_mutations": {
+        "division_by_sqrt_volume": "no division by a volume factor: the bound is uniform in N, not averaged over N",
+        "root_sum_square_ledger": "ledger items add linearly (triangle inequality); root-sum-square is a root-n misuse",
+        "sqrt72_for_straddling_budget": "anchored/R budget is an l1 sum over faces; 5.89255e-10 < 5.00000e-9",
+        "sqrt82_for_R_first_order_sum": "anchored/R budget is an l1 sum over faces; 6.28846e-10 < 5.69444e-9"
+      },
+      "rss_would_give": "1.3416433e-12"
+    },
+    {
+      "flags": {
+        "boundary_independence_of_dynamics_claimed": false,
+        "continuum_claim": false,
+        "rate_claimed": false,
+        "resolved_interaction_shift": false,
+        "scientific_priority_verified": false,
+        "translation_invariance_claimed": false,
+        "uniform_wilson_claim": false,
+        "uniqueness_claimed": false,
+        "whole_sequence_claimed": false
+      },
+      "id": "no_priority_or_continuum_claim",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "continuum_true": "claim flag must be false: continuum_claim",
+        "priority_true": "claim flag must be false: scientific_priority_verified",
+        "uniform_wilson_true": "claim flag must be false: uniform_wilson_claim",
+        "uniqueness_true": "claim flag must be false: uniqueness_claimed"
+      }
+    },
+    {
+      "dynamics": "operator norm on bounded local observables, uniformly on compact time windows",
+      "id": "topology_named",
+      "kind": "damaging_mutation_control",
+      "mass_escape_example": "rho_n=(1-D/2)|e_0><e_0|+(D/2)|e_n><e_n|: weak-* limit mass 1-D/2, pairwise trace distance D; the reset energy supplies tightness",
+      "passed": true,
+      "rejected_mutations": {
+        "norm_continuity_on_all_of_B": "dynamics topology must be the norm on compact time windows, not norm continuity in time on all of B(H_F)",
+        "one_topology_for_both": "dynamics topology must be the norm on compact time windows, not trace norm on B(H_R)",
+        "weak_star_for_states": "states must be compared in trace norm on B(H_R), not weak-* on finite-rank observables",
+        "weak_star_mass_escape_limit_as_state": "weak-* limit on finite-rank observables lost mass 292539919232956296072068703033025/42981220507576537932303142777593983768257: not a state; trace norm with tightness is required"
+      },
+      "states": "trace norm on B(H_R)"
+    },
+    {
+      "F2_minus_F1_faces_N2": 616,
+      "families": [
+        "centered whole-star boxes Lambda_N (AQ1)",
+        "all-contained-face boxes with padding (I1 section 6)"
+      ],
+      "id": "two_families_named",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "F2_without_padding_whole_star_rule": "face set is not the all-contained-face family (I1 section 6)",
+        "all_boundary_conditions": "exactly the two named construction families are compared: [\"centered whole-star boxes Lambda_N (AQ1)\", \"all boundary conditions\"]",
+        "single_family": "exactly the two named construction families are compared: [\"centered whole-star boxes Lambda_N (AQ1)\"]"
+      }
+    },
+    {
+      "fixed_vector_versus_moving_vector": {
+        "D_squared": "4/100000001",
+        "bures_pair_bound": "40000/100000001",
+        "distance_to_fixed_squared": "4/100000001",
+        "fixed_vector": "P=|Omega><Omega|",
+        "moving_vectors": "w_N=Omega+lam e_{1+(N mod 2)}, lam=1/10000",
+        "pair_distance_squared": "800000004/10000000200000001",
+        "reading": "every element is within D of the fixed vector and pairwise within 2D, yet the moving sequence has two distinct subsequential limits"
+      },
+      "id": "subsequence_versus_whole_sequence",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "quantifier": "every subsequential limit; a chosen subsequential limit is one member of that set",
+      "rejected_mutations": {
+        "unquantified_limit": "unknown quantifier",
+        "whole_sequence_claimed_from_uniform_closeness": "whole-sequence convergence claimed while two subsequential limits differ"
+      }
+    },
+    {
+      "common_interval": {
+        "equal": false,
+        "interval": [
+          "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+          "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000"
+        ],
+        "two_members": [
+          "86170079708958704727032861977448040900289/1237859150618204235106854862065872845720780800000000",
+          "686038418570779512302464728698052168043/9902873204945633880854838896526982765766246400000"
+        ]
+      },
+      "id": "local_closeness_not_uniqueness",
+      "kind": "damaging_mutation_control",
+      "note": "two states within 2D (or two numbers in one enclosure) need not coincide",
+      "passed": true,
+      "rejected_mutations": {
+        "equality_from_closeness": "closeness or a common enclosing interval is not equality (basis: trace distance <= 2D)",
+        "equality_from_common_enclosing_interval": "closeness or a common enclosing interval is not equality (basis: common enclosing interval)",
+        "sentence_without_negation": "mandatory sentence lost one of its negations"
+      }
+    },
+    {
+      "clock": "s=alpha*t_E/hbar (theta=alpha*t/hbar); the closeness statement is static, the clock is common by construction",
+      "id": "common_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "plus_minus_tau_first_order_separation_lower": {
+        "exact": "616197795291805409919264392064860992079046237503264929983414263332219/703641461892746198774861376288000000000000000000000000000000000000000000000000",
+        "preview": "8.75726955649e-10"
+      },
+      "rejected_mutations": {
+        "alpha_clock_versus_delta_clock": "limits compared on different clocks (common clock required)",
+        "second_order_closeness_across_plus_minus_tau": "limits compared at different couplings: the common first-order density needs the same tau",
+        "u_equals_s_over_8_packet": "limits compared on different clocks (common clock required)"
+      },
+      "remark": "at opposite couplings the first-order densities are opposite, so a second-order closeness claim across +-tau is false"
+    },
+    {
+      "admitted": {
+        "exact": "1170159676931825184288274812132100/42981220507576537932303142777593983768257",
+        "preview": "2.72249057405e-8"
+      },
+      "id": "tier_mixing_rejected",
+      "kind": "damaging_mutation_control",
+      "note": "one tier throughout: 2D=2D_ii; K2_prime items all tier (ii)",
+      "passed": true,
+      "rejected_mutations": {
+        "D_ii_plus_D_i": "closeness constant must be exactly 2*D_ii",
+        "crude_t_in_straddling_item": "tier mixing: every ledger item must carry tier (ii)",
+        "reverse_82_face_refinement_as_admitted": "closeness constant must use the single AV1 admitted tier, not AV1 reverse labelled refinement",
+        "t1_without_self_consistency": "closeness constant must be exactly 2*D_ii"
+      }
+    },
+    {
+      "id": "reverse_premise_isolation",
+      "inventory_size": 30,
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "deliberation_added": "forbidden premise in reverse inputs: research/round32/advisor/deliberation-7.md",
+        "forward_ay1_added": "forbidden premise in reverse inputs: research/round32/forward/ay1/report.md",
+        "jung_loop2_added": "forbidden premise in reverse inputs: research/round32/experts/jung/loop2-response.md",
+        "premise_missing": "reverse inputs inventory differs from AGENTS.md + contract + shared_premises",
+        "skeptic_triage_added": "forbidden premise in reverse inputs: research/round32/skeptic/triage.md"
+      }
+    },
+    {
+      "J0": "7/25000000",
+      "J0_G_R": "37/6250000",
+      "id": "padding_family_contraction_proved",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "positive": {
+        "2": {
+          "J_per_tau": "28",
+          "partial_groups": 60,
+          "reset_R_per_tau": "98",
+          "termination": 8
+        },
+        "3": {
+          "J_per_tau": "28",
+          "partial_groups": 126,
+          "reset_R_per_tau": "98",
+          "termination": 8
+        }
+      },
+      "rejected_mutations": {
+        "face_double_counted": "face counted in two groups: per-site sum and norms invalid",
+        "no_padding_am2_volume_equals_B": "indexed support leaves the AM2 volume: padding missing",
+        "padded_site_interacting": "padded sites interact: the padding does not decouple",
+        "straddling_face_retained": "face with actual support outside B retained: not the all-contained-face family",
+        "termination_order_six_imported": "termination order must be 2*max|X|=8"
+      },
+      "two_J0_Gp_R": "77/390625"
+    },
+    {
+      "fixed": [
+        "lattice spacing a",
+        "alpha",
+        "hbar",
+        "E_star",
+        "tau"
+      ],
+      "id": "not_uniform_in_a",
+      "illustration": "AX1 gate (uniform model, different family): the cap corresponds to g^4=9.6x10^9, strong bare coupling; nothing is uniform in a or valid at weak coupling",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "N_to_infinity_called_continuum": "bounds are uniform in N (and cutoff, family, subsequence) at fixed spacing a; not uniform in continuum limit N -> infinity",
+        "uniform_in_a": "bounds are uniform in N (and cutoff, family, subsequence) at fixed spacing a; not uniform in a",
+        "uniform_in_lattice_spacing": "bounds are uniform in N (and cutoff, family, subsequence) at fixed spacing a; not uniform in lattice spacing a",
+        "weak_coupling_g_to_0": "bounds are uniform in N (and cutoff, family, subsequence) at fixed spacing a; not uniform in bare coupling g -> 0"
+      },
+      "uniform_over": [
+        "box size N",
+        "on-site cutoff L",
+        "construction family",
+        "subsequence"
+      ]
+    }
+  ],
+  "closeness_order": [
+    1,
+    2
+  ],
+  "continuum_claim": false,
+  "contract_controls_covered": [
+    "missing_incoming_stars",
+    "full_original_wilson_cover",
+    "wrong_delta_alpha_hbar_clock",
+    "vector_versus_scalar_centering",
+    "first_order_mean_charged",
+    "tau_scaling_exponent",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "insufficient_verdict_retained",
+    "exact_arithmetic_admission",
+    "root_n_misuse",
+    "no_priority_or_continuum_claim",
+    "topology_named",
+    "two_families_named",
+    "subsequence_versus_whole_sequence",
+    "local_closeness_not_uniqueness",
+    "common_clock",
+    "tier_mixing_rejected",
+    "reverse_premise_isolation",
+    "padding_family_contraction_proved",
+    "not_uniform_in_a"
+  ],
+  "contract_sha256": "be9b354420e66e7edba03d59b3d194b69f26782b44cfb63cb10e176bf4879ae0",
+  "contribution_alias": "HNM-AY1-R reverse fidelity closeness and overlap-derivative first-order density",
+  "controls_not_implementable_as_mutations": [],
+  "controls_with_damaging_mutations": [
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "common_clock",
+    "exact_arithmetic_admission",
+    "first_order_mean_charged",
+    "full_original_wilson_cover",
+    "insufficient_verdict_retained",
+    "local_closeness_not_uniqueness",
+    "missing_incoming_stars",
+    "no_priority_or_continuum_claim",
+    "not_uniform_in_a",
+    "padding_family_contraction_proved",
+    "reverse_premise_isolation",
+    "root_n_misuse",
+    "subsequence_versus_whole_sequence",
+    "tau_scaling_exponent",
+    "tier_mixing_rejected",
+    "topology_named",
+    "two_families_named",
+    "vector_versus_scalar_centering",
+    "wrong_delta_alpha_hbar_clock"
+  ],
+  "direction": "reverse",
+  "error_ledger": {
+    "arithmetic": {
+      "reason": "headline constants are exact rationals; directed 10^-40 roundings enter only the fidelity cross-check, the sqrt(2) variant and brackets; decimals are truncated previews",
+      "value": "0"
+    },
+    "second_order_difference": {
+      "meaning": "after the common first-order density, 2 K2_prime tau^2 (order tau^2)",
+      "preview": "2.68350550879e-12",
+      "value": "966771578474926086618624139557778885954947547760216752246561/360264428489086053772729024659456000000000000000000000000000000000000000"
+    },
+    "state_boundary": {
+      "meaning": "pairwise closeness of any two subsequential limits of F1/F2 at the same tau from the finite-volume AV1 bound (order tau)",
+      "preview": "2.72249057405e-8",
+      "value": "1170159676931825184288274812132100/42981220507576537932303142777593983768257"
+    }
+  },
+  "exclusions": {
+    "contract": [
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or a rate in N",
+      "translation invariance",
+      "continuum",
+      "scientific priority"
+    ],
+    "preregistration": [
+      "free reference inside enclosure => no interaction claim",
+      "uniqueness of the AQ state",
+      "whole-sequence convergence or rate in N",
+      "continuum or weak coupling",
+      "transfer from a finite graph",
+      "relabelling a static shift as dynamical",
+      "scientific priority"
+    ]
+  },
+  "families": {
+    "F1": "centered whole-star boxes Lambda_N (AQ1)",
+    "F2": "all-contained-face boxes with padding (I1 section 6)"
+  },
+  "headline": {
+    "D": {
+      "exact": "585079838465912592144137406066050/42981220507576537932303142777593983768257",
+      "preview": "1.36124528702e-8",
+      "source": "AV1 gate tier (ii), recomputed exactly (eps=2T+T^2)"
+    },
+    "K2_plus": {
+      "exact": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+      "meaning": "AW1 admitted Wilson-mean second-order constant (single observable W)",
+      "preview": "3.35480322946e3"
+    },
+    "K2_prime": {
+      "exact": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+      "meaning": "trace-norm second-order remainder on B(H_R), R-local counts 82/72/33/10",
+      "preview": "1.34175275439e4"
+    },
+    "K2_prime_over_K2_plus": {
+      "exact": "3867086313899704346474496558231115543819790191040867008986244/966893014524284957965768152362480514948256313800811767578125",
+      "preview": "3.99949762363e0"
+    },
+    "bures_pairwise_bound": {
+      "exact": "1170159668967453566242603438964736/42981220507576537932303142777593983768257",
+      "preview": "2.72249055552e-8"
+    },
+    "first_order_density": "rho^(1)_R=(1/72) sum_{f in F_R}(|W_f Omega_R><Omega_R|+|Omega_R><W_f Omega_R|), ||rho^(1)_R||_1=sqrt(10)/72",
+    "two_D": {
+      "exact": "1170159676931825184288274812132100/42981220507576537932303142777593983768257",
+      "margin": "2.9384858e1",
+      "preview": "2.72249057405e-8",
+      "target": "1/1250000",
+      "target_comparator": "<=",
+      "target_met": true
+    },
+    "two_K2_prime_tau_squared_at_cap": {
+      "exact": "966771578474926086618624139557778885954947547760216752246561/360264428489086053772729024659456000000000000000000000000000000000000000",
+      "preview": "2.68350550879e-12"
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "item5_freeze_and_replays": "executed by research/round32/tools/freeze.py (normal and -O replays into fresh external directories, byte-identical to output/), recorded in freeze.json",
+  "label": "uniform_local_closeness_not_uniqueness",
+  "loop": "AY1",
+  "mandatory_sentence_contract_template": "For every pair of subsequential limits of the named construction families F1 (centered whole-star boxes Lambda_N (AQ1), N>=2) and F2 (all-contained-face boxes with padding (I1 section 6), Lambda_N, N>=2) at the same coupling tau with |tau|<=10^-8 (either sign), on the fixed cover R and for the frozen observable class, the reduced densities satisfy ||rho_R - rho'_R||_1 <= 2D = 1170159676931825184288274812132100/42981220507576537932303142777593983768257 (~2.72249e-8 at the cap) and agree to first order in tau (common rho^(1)_R; ||rho_R - rho'_R||_1 <= 2 K2_prime tau^2 = 2.68350e-12 at the cap); this does not assert equality of the states, whole-sequence convergence, translation invariance, boundary independence of the dynamics, or a rate in N.",
+  "mandatory_sentence_jung_form": "For every pair of subsequential limits omega', omega'' of the named families F1, F2 at the same coupling tau, and for every A in B(H_R) with ||A|| <= 1 on the fixed cover R: |omega'(A) - omega''(A)| <= 2D(tau) = 2.72249e-8 at |tau|=10^-8 [order tau^1], and <= 2 K2_prime tau^2 = 2.68350e-12 [order tau^2, after subtracting the common first-order density rho^(1)_R]. This is uniform local closeness on a fixed region at fixed coupling, inherited from a finite-volume bound that holds for every volume. It does not assert omega' = omega'', convergence of any whole sequence, translation invariance, boundary independence beyond R, or any rate in N; two states satisfying it may differ by the stated order on R and without bound elsewhere.",
+  "model": "Zero-selected patterned family at both signs |tau|<=10^-8; two named construction families (centered whole-star boxes; boxes with all faces whose actual support is contained, per I1's padding prescription); local observable class B(H_R); trace norm on R; common clock.",
+  "model_label": "AQ_patterned_zero_selected; zero selected triple, Haar reference; whole stars phi_b=-(tau/3) sum W_f; |tau|<=10^-8 both signs; families F1 and F2 (N>=2); cover R={0,e_z} (48 links, 36 endpoints, 7 incident anchors); fixed spacing and fixed positive alpha, hbar, E_star; common clock s=alpha*t_E/hbar",
+  "outcome_note": "proposed for the reverse half only; the acceptance rule needs both routes and skeptical review",
+  "proposed_reverse_verdict": "accepted_within_scope",
+  "quantitative_boundary_comparison_definition": "a closeness bound (2D, and 2K2_prime tau^2) plus a matching first-order term (the common rho^(1)_R); explicitly not a variational statement about which boundary condition the infinite-volume theory selects",
+  "rate_claimed": false,
+  "region": "R fixed before production",
+  "resolved_interaction_shift": false,
+  "route": "vacuum overlap / fidelity (Bures angle) and derivative of the vacuum-overlap vector identity",
+  "routes_executed": [
+    "item 1: F1 admitted chain cited step by step; F2 AM2 contraction, reset and compactness itemized and enumerated (N=2,3)",
+    "item 2: fidelity identity passed to limits; trace-norm triangle via P_R (2D) and Bures-angle route 4eps/(1+eps^2)",
+    "item 3: derivative of the fidelity identity (diagonal, excited block) and of the vacuum-overlap vector identity (off-diagonal) giving rho^(1)_R; R-local trace-norm ledger K2_prime; comparison with K_2^+",
+    "item 4: contract template and Jung-form sentence filled; gate fields exported",
+    "items 5-6: 21 contract controls as damaging mutations; fixtures (finite audits)"
+  ],
+  "scientific_priority_verified": false,
+  "states_compared": "all subsequential limits of F1 and F2",
+  "sub_label": "uniform_local_closeness_not_uniqueness",
+  "target": {
+    "comparator": "<=",
+    "quantity": "closeness constant 2D at the cap",
+    "read_from": "contract preregistration.target",
+    "value": "1/1250000"
+  },
+  "tier_i_retained": {
+    "meets_target": false,
+    "two_D_i": {
+      "exact": "72266694536315307496644/1525878906463907516326874161",
+      "preview": "4.73607009246e-5"
+    }
+  },
+  "topologies": {
+    "dynamics": "operator norm on bounded local observables, uniformly on compact time windows",
+    "states": "trace norm on B(H_R)"
+  },
+  "topology": "trace norm on B(H_R)",
+  "translation_invariance_claimed": false,
+  "uniform_wilson_claim": false,
+  "uniqueness_claimed": false,
+  "whole_sequence_claimed": false
+}

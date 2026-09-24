@@ -1,0 +1,464 @@
+\section{Process history of the Round32 cycle}
+\label{sec:history}
+
+This section records how the cycle was run, using the repository files named
+in each paragraph. It adds no mathematical claim, and none of the planning
+numbers below is an admitted value. All times are UTC. The freezing tool
+wrote the \sourcepath{frozen_at} stamps and the gate tool wrote the
+\sourcepath{completed_at} stamps, both from the machine clock. Like commit
+dates, they are self-reported and are not trusted timestamps. The roles are
+those of the status section: an advisor who owns contracts, gates and
+publication; a skeptic; three methodological lenses; one research assistant
+per lens after each sub-round; and forward and reverse producers. All of them
+are model agents with correlated ancestry, working under the project's
+workflow contract \cite{agents}.
+
+\subsection{Authorization and brief}
+\label{sec:history-brief}
+A user instruction of 23 September 2026 authorized Round32 as an adaptive
+cycle. It named an expert panel of Newton/Tesla, Jung/Pauli and
+Penrose/Feynman lenses, with occult and mystical source reading, together
+with an advisor, a skeptic and subagents for coding and simulation. The
+structure was three panel deliberation loops, then five sub-rounds of two
+investigations each. After every sub-round each lens would receive a research
+assistant, and the panel could change goals, directions, skills and roadmap.
+Publication was by merge to the main branch. The panel was also allowed to
+produce statements, derivations and experiment-setup images where it judged
+them more useful than a numerical certificate.
+
+The advisor's brief of the same day \cite{r32panel} restated the admitted
+Round29 and Round31 results with their quantifiers
+\cite{r29am,r29aq,r29al,r31at}. It listed the five ranked Round31 roadmap
+goals and five technical observations for the panel to test, none of them
+admitted. Before reading any panel memo, the advisor optimized the AT4
+Poisson certificate over its cutoff. The result was a dynamics-plus-tail
+floor of about $1.27\times10^{-6}$ at $s=1$, whatever the state term. An
+Arb/mpmath cross-check tool \cite{flint,mpmath} confirmed that independent
+enclosures lie inside the recorded AT5 intervals. Both were planning
+observations; AV2 later proved the floor as a retained failure
+(Section~\ref{sec:av2-failures}).
+
+\subsection{Three deliberation loops}
+\label{sec:history-loops}
+
+\paragraph{Loop 1: triage, memos and plan~v1.}
+The skeptic wrote first. Its prospective triage was written before any
+Round32 expert memo, contract or producer work existed, and it read nothing
+under \sourcepath{experts/} \cite{r32skeptic}. It inventories every admitted
+result with its quantifiers, sets a complete error ledger for each roadmap
+goal, assesses the brief's five observations, takes a position on direction
+and fixes a minimum acceptable deliverable for each sub-round. The companion
+catalogue \sourcepath{prospective-controls.json} names 60 control ids in seven
+groups: universal~12, cap~15, shift~9, finite graph~5, uniform~9, state~5 and
+continuum~5. Each id names a damaging mutation that every producer checker
+must reject by explicit exceptions that stay active under \texttt{-O}. The
+catalogue's status is
+\recid{prospective_skeptic_requirements_not_executed}.
+
+Each lens then wrote a memo, a source ledger and a structured recommendation
+\cite{r32lenses}, and the Jung/Pauli lens also wrote the occult reading
+ledger \cite{r32occult}. The advisor's synthesis records eight points of
+agreement:
+\begin{itemize}
+\item ordering the creation product removes the square root;
+\item the Poisson floor is an artifact of the kernel;
+\item the shift of the centered correlation is second order, so the only
+first-order Wilson effect is the uncentered mean $\tau/144$ and roadmap
+goal~2 was re-targeted to it;
+\item route~B for the uniform model;
+\item finite-graph certificates are a different model;
+\item the direction rules;
+\item the Jung pre-registration rules;
+\item no occult or historical source became a premise.
+\end{itemize}
+Three disagreements were left open: a second-order Duhamel comparison against
+the window kernel, preview estimates of $K_2$ spanning $1.9\times10^4$ to
+$1.6\times10^8$, and the rank of the finite-graph loop. Plan~v1 already had
+the five sub-rounds of Table~\ref{tab:plan}. The modern memo arrived after the
+synthesis draft and was merged into the same note. It added the Gauvin lead,
+the $J_0$ problem for the uniform model and a concrete design on the Round11
+two-plaquette graph \cite{r11}.
+
+\paragraph{Loop 2: critique of plan~v1.}
+The inputs were the skeptic's loop-2 response and the three lens responses.
+Three loop-2 sessions were interrupted by an account spend limit and
+relaunched on a smaller model; their written responses are complete. The
+skeptic reported two facts that changed numbers in every memo, including its
+own. A bulk factor lies in 49 omitted-face owner sets, not the bound 84
+\cite{r21i1}. The second-order multiplier of the Wilson mean is 1, not 4. The
+response also listed eight vetoes.
+
+The advisor adopted ten corrections:
+\begin{itemize}
+\item the count of 49 faces per factor;
+\item the multiplier of 1, with the resulting range for $K_2$;
+\item the AV1 target $4/10^7$, set by AV2 feasibility;
+\item reverse premise isolation, enforced by the tools;
+\item separate forward and reverse routes;
+\item confirmation of the window kernel;
+\item the $J_0$ re-freeze for the uniform model;
+\item the finite graph after sub-round~2, never as the resolution of goal~2;
+\item an interim Gauvin sentence;
+\item the Jung pre-registration block with the skeptic's four amendments.
+\end{itemize}
+Five vetoes were recorded (Section~\ref{sec:plan}). The modern lens confirmed
+the window constants with sympy and Arb and withdrew its own taper. It also
+proposed the link-flip set $E$, which the advisor checked in all three
+orientations on a $7^3$ block, and Eckart's inequality as a candidate route
+for the cutoff-vector step. Each lens accepted the errors the skeptic
+itemized in its memo, in its loop-2 response or in loop~3.
+
+\paragraph{Loop 3: objection pass and freeze.}
+Each lens and the skeptic read the draft freeze note, \sourcepath{plan.json}
+and the AV1 and AV2 draft contracts, and wrote a sign-off. Nobody vetoed the
+plan. The skeptic signed off the plan and both contract texts, but vetoed
+freezing AV1 until its selection note stopped contradicting the contract in
+three places: the note gave a $10^{-6}$ target where the contract has
+$4/10^7$; it asked producers to find unaided a normalization trap that the
+contract spells out; and it said ``independently'' where ``separately'' is
+correct. The skeptic's loop-3 note also fixed the conditions under which the
+link-flip antisymmetry holds. These are the identity
+$H(\tau,\kappa)\mapsto H(-\tau,-\kappa)$, antisymmetry in $\tau$ only at the
+zero triple, a whole-set statement for AQ limits, and no $O(\tau^3)$ remainder
+from oddness alone, and they entered AW1 as obligations. The advisor applied
+every condition, recorded the change from plan~v1 to~v2, adopted the
+attribution sentence fixed by the skeptic's Gauvin diff record
+(Section~\ref{sec:history-sources}) and froze plan~v2.
+
+Rules added to the method snapshots at this point \cite{r32methods}:
+\begin{itemize}
+\item \emph{Newton:} compute the target's first-order coefficient exactly
+before charging a first-order error budget;
+\item \emph{Tesla:} name source, load, clock and transfer element with their
+exact constants, and use the $\pm\tau$ mirror as a control;
+\item \emph{panel guide:} the Jung pre-registration rules, with two
+cautionary cases, Jung's 1952 astrology statistics and Besant and
+Leadbeater's occult chemistry \cite{jungsync,besant}.
+\end{itemize}
+
+\paragraph{The plan record.}
+\sourcepath{plan.json} carries the status \recid{frozen_after_loop3}. Its
+\sourcepath{history} field held six dated entries at the AZ2 gate: the change from plan~v1
+to~v2 (23 September), the four panel updates, and one entry for a vocabulary
+extension. Its \sourcepath{preregistration_vocabulary_extensions} field holds
+two entries, both dated 24 September. The first followed the Jung
+assistant-2 audit. It allows exact $\tau$-dependent selected triples, the
+\recid{statement+skeptic} direction, and \recid{n/a} reference routes and
+grid couplings for statement and finite-graph loops. AX1 was already frozen,
+so it is recorded as grandfathered with its contract unamended. The second
+followed the Jung assistant-4 audit and closes five further gaps:
+\begin{itemize}
+\item a state provenance may name more than one family;
+\item the required gate fields are topic-specific and include
+\recid{rate_in_N_claimed} where a rate is at stake;
+\item a \recid{mandatory_sentence_template} field is required wherever a
+template is cited;
+\item the phrase ``uniqueness of the AQ state'' becomes ``uniqueness of any
+subsequential limit'';
+\item a certification loop declares its target as a feasibility check.
+\end{itemize}
+AY1 and AY2 are grandfathered in the same way.
+
+\subsection{Contracts, gates and chronology}
+\label{sec:history-chronology}
+Table~\ref{tab:history-chronology} lists the ten contracts in freeze order.
+Every contract was stamped by the freezing tool. The tool checks the required
+fields and the declared premises and refuses to re-freeze. Since sub-round~1
+it also requires the pre-registration control list to equal the contract's
+control list \cite{r32contracts}. Five contracts are paired (AV1, AV2, AW1, AX1, AY1),
+three are single-direction with an independent skeptic replay (AW2, AX2, AZ2)
+and two are statement loops with a skeptic review (AY2, AZ1).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Round32 chronology from the contract and gate records (UTC, 2026).
+Dir.\ is the contract's direction: P = paired, S = single+skeptic,
+T = statement+skeptic.}
+\label{tab:history-chronology}
+\begin{tabular}{@{}lccccl@{}}
+\toprule
+Loop & Dir. & Contract frozen & Gate completed & Verdict & Sub-label\\
+\midrule
+AV1 & P & 09-23 21:23:47 & 09-23 22:10:05 & accepted & UL$^\dagger$\\
+AV2 & P & 09-23 22:10:41 & 09-23 22:59:05 & accepted & RU\\
+AW1 & P & 09-23 22:59:30 & 09-24 00:01:23 & accepted & SD$^\dagger$\\
+AW2 & S & 09-24 00:01:24 & 09-24 00:40:12 & accepted & SD\\
+AX1 & P & 09-24 00:40:52 & 09-24 01:30:55 & accepted & UL$^\dagger$\\
+AX2 & S & 09-24 01:30:56 & 09-24 02:11:13 & accepted & RU\\
+AY1 & P & 09-24 02:11:14 & 09-24 03:06:48 & accepted & UL\\
+AY2 & T & 09-24 03:09:12 & 09-24 04:00:01 & accepted & UL; SD\\
+AZ1 & T & 09-24 04:29:40 & 09-24 05:18:19 & accepted & none\\
+AZ2 & S & 09-24 04:29:40 & 09-24 06:06:38 & accepted & SF; SD\\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\begin{minipage}{0.94\linewidth}\footnotesize\raggedright
+``accepted'' is the verdict \recid{accepted_within_scope}. Sub-labels:
+RU = \recid{reference_unresolved}; SD = \recid{static_not_dynamic};
+UL = \recid{uniform_local_closeness_not_uniqueness};
+SF = \recid{sign_certified_finite_graph}. For AY2, UL is the
+primary sub-label and SD the secondary one; for AZ2, SF is the primary
+sub-label and SD the secondary one. $^\dagger$The label is named by
+the skeptic's review and the producer packets; the gate states the same
+restriction in words but names no label.
+\end{minipage}
+\end{table}
+
+\paragraph{The ten gated investigations.}
+They ran from 21:23 on 23 September to 06:06 on 24 September, and every
+verdict is \recid{accepted_within_scope}. Nine of them took between 38 and
+62 minutes from contract freeze to gate. AZ2, frozen together with AZ1 and
+gated after it, took 97 minutes. For each of them the skeptic wrote a
+contract review from the frozen text as part of its pre-comparison
+package. Each
+successor contract names its predecessor's
+gate in \sourcepath{selected_after}, with three exceptions:
+\begin{itemize}
+\item AV1 names the loop-3 freeze note;
+\item AY2 carries the literal placeholder \texttt{<preceding gate>}, which its
+gate records as contract defect~D1;
+\item AZ2 names the AZ1 gate, which did not yet exist when AZ2 was frozen.
+\end{itemize}
+Only AV1 carries a recorded amendment. Before any producer read it, \sourcepath{plan.json} was removed from its shared
+premises, because the plan is a living record and premise snapshots must stay
+byte-identical to their sources.
+
+\paragraph{AZ1 and AZ2.}
+Both contracts were frozen after panel update~4, 0.03~s apart, and both
+packages were developed in parallel. In both loops the skeptic's
+pre-comparison package was committed before the producer's: \texttt{649db92}
+before \texttt{8359876} for AZ1, and \texttt{4bae265} before \texttt{dc817d8}
+for AZ2. The AZ1 gate was completed at 05:18:19 with the verdict
+\recid{accepted_within_scope} and no sub-label (Section~\ref{sec:az1}). The
+AZ2 gate was completed at 06:06:38 with the verdict
+\recid{accepted_within_scope}, the sub-label
+\recid{sign_certified_finite_graph} and the secondary sub-label
+\recid{static_not_dynamic} (Section~\ref{sec:az2}). The gate resolved a contract wording defect, the
+unfixed face coupling of the finite graph, by naming the two-face model that
+the producer had computed and disclosed.
+
+\paragraph{Closing statement.}
+The Round32 cycle consists of exactly ten gated investigations, AV1 to AZ2,
+in five sub-rounds of two, and all ten are accepted within their stated model
+scope. Five are paired, three are single-direction with an independent
+skeptic replay and two are statement loops with a skeptic review. As its
+contract and gate state, scientific production stopped after AZ2. Nothing
+after the AZ2 gate, including this manuscript, the closing panel update, the
+site data and the release checks, adds a research loop or changes an
+admission.
+
+\subsection{Sub-round updates, assistants and lens reviews}
+\label{sec:history-updates}
+After each sub-round, each lens reviewed the gates and wrote an update, one
+assistant per lens ran the tests that lens had requested, and the advisor
+wrote a panel update \cite{r32panel,r32lenses}. The assistant packages count
+zero research loops, and nothing in them decides an admission. Each of the
+first four updates kept the goals of the remaining sub-rounds.
+
+\paragraph{Panel update~1 (23 September, after AV1 and AV2).}
+The Newton/Tesla assistant reproduced the exact Haar moments by two routes,
+rebuilt the 49/15/82 face enumeration from the I1 table without the
+producers' code, reproduced the forward AV1 constant bit for bit, and
+reproduced the window budget of about $1.832\times10^{-7}$. The Jung/Pauli
+assistant ran the $\tau=0$ null replay and the $\tau$-scaling exponents,
+$1.0000$ for the linear tiers against exactly $0.5$ for the square-root
+bound. Its audit of the AV2 pre-registration found that the frozen contract
+lists 24 controls while its mirror lists 23. Both producers had implemented
+the missing id, so the gate records a non-blocking clerical defect, and the
+freezing tool now rejects such a mismatch. The modern assistant built a
+python-flint harness and checked the flip parity exhaustively on $6^3$ and
+$9^3$ blocks. The AW1 contract gained the free-link cross-check, a full flip
+enumeration, pinned $K_2$ terms and a positive demonstration at nonzero
+$\kappa$. The AZ2 cutoff was reread as a polynomial degree.
+
+\paragraph{Panel update~2 (24 September, after AW1 and AW2).}
+Roadmap goal~2 was recorded as met in its re-targeted, static form. The AX1
+and AX2 contracts gained three requirements: a proof that route~B ties every
+face coefficient to $\tau$; an itemized incidence table with a
+no-double-count control; and binding of the admitted AX1 bound, never the
+target. The update also records that the gate-bound $K_2^+$ is the skeptic's
+conservative itemization. The scratch-folder rule of
+Section~\ref{sec:history-rules} was adopted here.
+
+\paragraph{Panel update~3 (24 September, after AX1 and AX2).}
+The historical lens preferred a single producer plus skeptic for AY1, and its
+dissent was recorded; AY1 stayed paired because its padding-family
+verification, first-order density and R-local $K_2'$ are new derivations. The
+update also settled the content of AZ1 and the recipe for AZ2. AX1's frozen
+contract carried a mis-rounded prose threshold. Both producers and the
+skeptic caught it, and the gate binds exact rationals only.
+
+\paragraph{Panel update~4 (24 September, after AY1 and AY2).}
+The Jung assistant's audit recorded nine defects in the sub-round-4 record,
+none of which decides admission. They led to the second vocabulary extension and to a
+new final-integration audit item on shared field names. The modern lens
+withdrew its sub-round-3 expectation that $K_2'$ would be smaller than
+$K_2^+$: it is about four times larger, and the panel update records the
+expectation as a category error. The historical lens withdrew its AY1 dissent.
+The AZ1 and AZ2 contracts gained the requirements that the panel update
+lists.
+
+% PANEL-UPDATE-5: the advisor may extend this paragraph after writing
+% research/round32/advisor/panel-update-5.md; keep it free of admitted values.
+\paragraph{Panel update~5 (24 September, after AZ1 and AZ2).}
+After the AZ2 gate the cycle closed with a fifth panel update. The closing
+lens updates and the assistant-5 packages, one per lens, are recorded in
+\repo{research/round32/advisor/panel-update-5.md}{panel update~5}, which the
+advisor writes after this manuscript pass. As for the earlier updates, the
+assistant work counts zero investigations and decides no admission; no
+further investigation follows it in Round32.
+
+\paragraph{Web checks.}
+The historical and modern lens updates record dated web searches after every
+sub-round, and the Jung lens searched in sub-round~4. None found a rigorous
+result matching the question at hand. The leads were read at abstract depth:
+\begin{itemize}
+\item a quantum Dobrushin condition at high temperature
+\cite{dob}, a named lead for the uniqueness obligation of AY2;
+\item Lieb--Robinson bounds with exponential-in-volume tails
+\cite{mcdonough}, a candidate for its boundary-dynamics obligation, with
+hypotheses unchecked;
+\item Nair's outline for a three-dimensional gap \cite{nair}, a proposal and
+not a four-dimensional theorem;
+\item a review of gauge-theory quantum simulation \cite{davoudi}. The Jung
+ledger records its abstract as read, while the historical lens saw it only as
+a search summary.
+\end{itemize}
+The modern lens recorded Faizal and Shabir's claimed reflection-positive
+SU($N$) construction \cite{faizal} as a lead for a future skeptical diff only,
+with no priority, correctness or import statement. Its claim that the strong-
+and weak-coupling limits coincide is exactly the kind of estimate that AZ1 is
+contracted to state this family does not supply.
+
+\subsection{Process rules added during the cycle}
+\label{sec:history-rules}
+Four rules were added as repairs by record. None of them edits a frozen file.
+
+\paragraph{Scratch disclosure.}
+The skeptic's AW1 review, finding N1, found that both AW1 producers had used
+the shared scratchpad root between 23:14Z and 23:20Z without disclosing any
+reads. The forward producer's \sourcepath{k2.py} had overwritten the skeptic's
+own pre-comparison scratch file at the same path. Whether any agent read
+another's file cannot be determined from the files. Isolation was therefore
+verified for repository inputs only, and scratch-channel independence is
+unrefuted but unaudited. From sub-round~3 on, producers keep private scratch
+folders and disclose any scratchpad read in their reports. The skeptic keeps
+its own work in private folders as well, and checks the disclosed folders by
+name and time.
+
+\paragraph{Control mirror.}
+After the AV2 clerical defect, the freezing tool refuses any contract whose
+pre-registration control list differs from its control list.
+
+\paragraph{Prose never admits.}
+A threshold written in prose never enters the admission path. Checkers read
+exact targets from the hash-checked contract snapshot.
+
+\paragraph{Vocabulary.}
+The vocabulary extensions are recorded once, in the plan, and later contracts
+write the extended vocabulary directly.
+
+Two earlier rules held throughout. Same-author passes are never called
+independent review, and agreement between producers is described as
+``separate'', not ``independent'', when the producers share a premise.
+
+\subsection{Tools}
+\label{sec:history-tools}
+The shared tools compute no scientific result \cite{r32contracts}:
+\begin{itemize}
+\item \sourcepath{freeze.py} snapshots the declared premises into a producer's
+inputs. It replays the checker under normal and \texttt{-O} Python into fresh
+external directories, requires byte-identical outputs, writes and verifies
+\sourcepath{freeze.json}, and rejects a reverse inventory that differs from
+\texttt{AGENTS.md}, the contract and its shared premises.
+\item \sourcepath{freeze_contract.py} validates and stamps a contract.
+\item \sourcepath{record_gate.py} writes a gate from the skeptic's reviewed
+statement and limitations, with complete evidence bindings, and can never
+widen the reviewed scope.
+\item \sourcepath{arb_crosscheck.py} compares exported rational enclosures
+with python-flint Arb balls and mpmath intervals \cite{flint,mpmath}. It is
+never the admission arithmetic.
+\end{itemize}
+Every producer checker writes a non-empty \sourcepath{checks} list and
+Boolean claim flags. All admission arithmetic uses exact
+\sourcepath{fractions.Fraction}.
+
+\subsection{Sources, attribution and disclosure}
+\label{sec:history-sources}
+
+\paragraph{Gauvin.}
+The modern memo identified Gauvin's arXiv:2503.15539 \cite{gauvin} as the
+closest external analogue of AM2 and AQ, and asked for a version diff before
+any attribution. The Round29 source ledger already recorded the v3 supplement
+as the AM template, so AM2 is not claimed to be independent in any case. The
+skeptic downloaded v1, v2, v3 and both supplements, recorded their hashes and
+diffed them \cite{r32gauvin}. Every item of the fixed-cutoff theorem, its
+lemmas and supplement A.6--A.11 first appears in v2, submitted 11~September
+2026; none appears in v1. The v3 files are byte-identical to those bound in
+Round29. Gauvin credits the creation-operator method to Bravyi, DiVincenzo and
+Loss \cite{bdl}. The record proposes this sentence, quoted with its section
+signs and dashes typeset:
+\begin{quote}\small
+``The AM2 creation-expansion gap and the AQ construction follow strategies
+that first appear publicly in Gauvin arXiv:2503.15539v2 (2026-09-11;
+\S II.C--D and supplement A.6--A.11). The project read them in v3
+(2026-09-14) and records them as its template. Gauvin credits the
+creation-operator method to Bravyi--DiVincenzo--Loss (CMP 284, 2008,
+\S\S2.1--2.4). v1 (2025-03-06) contains none of these items. The SU(2)
+selected-reference application and its explicit constants are this project's
+record; scientific priority is not claimed.''
+\end{quote}
+The loop-3 freeze adopted the shorter form printed in the status section,
+which also says that no independence is claimed. Under both wordings
+\recid{priority_statement_allowed} stays false. No inference about the
+direction of influence is drawn.
+
+\paragraph{Historical, occult and methodological reading.}
+The lenses read selected, located passages, and their ledgers record each
+passage's edition, reading depth and access failures:
+\begin{itemize}
+\item \emph{Newton:} the General Scholium's ``I frame no hypothesis''
+paragraph and three Latin sentences of his ``Hermes'' commentary
+\cite{newtonscholium,newtonhermes};
+\item \emph{Tesla:} two patent specifications, one page of the Colorado
+Springs notes, an essay and a lecture
+\cite{tesla787,tesla1119,teslacs,teslacentury,teslaaiee};
+\item \emph{Jung/Pauli:} Jung's astrology experiment, Pauli's Kepler essay,
+Kepler's recorded null on harmonic proportions in the periodic times, Dee,
+Agrippa, Besant and Leadbeater, and the 1995 AIR remote-viewing evaluation
+\cite{jungsync,paulikepler,kepler,dee,agrippa,besant,air}.
+\end{itemize}
+The Pauli--Jung letters, a CERN letter record and the ETH Pauli archive
+remained leads or were inaccessible. Two CIA locators redirected to a generic
+page. In sub-round~4 the Jung lens read two pre-registration sources
+\cite{naturerr,hofman} as methodological precedent only.
+
+These readings motivated methodological rules only: pre-registration,
+complete accounting, the $\pm\tau$ mirror as a control, and the two
+cautionary cases. The one government record read concludes against the programme it
+evaluates, and government custody is treated as provenance only.
+\emph{No occult, mystical or historical source changed any premise.} The
+occult ledger states that no occult proposition became a physical premise,
+in loop~1 and again in sub-round~4 \cite{r32occult}. Each of the four panel
+updates records that no such source changed a premise in that sub-round.
+
+\paragraph{Sources named in the text.}
+The addendum uses the following sources without re-deriving them:
+\begin{itemize}
+\item the Kogut--Susskind Hamiltonian form \cite{ks};
+\item the Nachtergaele--Sims dynamics used by AQ1 \cite{ns};
+\item Yarotsky's and Henheik--Teufel--Wessel's stability theorems, whose
+constants are not evaluated for this model \cite{yarotsky,htw};
+\item the standard results collected in \cite{standard}.
+\end{itemize}
+Each is cited, not machine-checked. The continuum problem these
+fixed-spacing certificates leave open is the Clay problem statement
+\cite{clay}. Investigation counts are never a fraction of it.
+
+\paragraph{AI assistance.}
+The advisor, the skeptic, the lenses, the assistants and the producers are
+AI model agents directed by the human author. The AY1 reverse report, for
+example, identifies its author as Claude, an AI model. The text of this
+addendum was also drafted with AI assistance. The agreement of these roles is
+correlated model-agent work, not external human peer review.

@@ -1,0 +1,2292 @@
+\section{Sub-round 5: the continuum trajectory and a finite graph}
+\label{sec:continuum}
+
+The fifth Round31 roadmap goal, ``Establish a continuum matching
+trajectory'', asks for a matched lattice family connected to a nontrivial
+four-dimensional continuum theory with the required axioms and a positive
+physical gap. Its recorded missing premise reads ``A regulator/coupling
+trajectory, physical scale control, continuum limits and full reconstruction
+hypotheses remain unproved''
+(\repo{research/round31/advisor/roadmap.json}{Round31 roadmap}). Its proposed
+first test is to ``State the regulator and coupling dictionary, then identify
+one necessary uniform estimate that the present fixed-lattice family actually
+supplies or fails to supply''. Sub-round~5 carries out that first test and
+nothing more. AZ1 is a statement loop: it names a trajectory as a hypothesis,
+applies the AL1 dictionary along it, cites the one necessary estimate that the
+uniform Kogut--Susskind model of Section~\ref{sec:ax1} supplies, and shows
+exactly where that estimate stops. AZ2 computes exact first- and
+second-order Wilson coefficients on the Round11 two-plaquette graph, a
+different finite model, with sign-certified enclosures that transfer nothing
+to $\mathbb Z^3$ (Section~\ref{sec:az2}).
+Neither investigation constructs a continuum theory, and no number in this
+section is a fraction of the continuum problem.
+
+\subsection{AZ1: what the fixed-spacing family supplies along a trajectory}
+\label{sec:az1}
+
+\textbf{Contribution \projecttag{HNM-C-AZ1}.} The AZ1 contract, recorded under
+the title ``Hruday continuum-trajectory statement: the one uniform estimate the
+fixed-spacing family supplies and the one it fails to supply'', was frozen
+after the AY2 gate and panel update~4, and before production. It opens
+sub-round~5 and is investigation~9 of~10. The model is the uniform
+Kogut--Susskind SU(2) family of AX1 (Section~\ref{sec:ax1}): every elementary
+face carries $\nu=\alpha\tau/24$, handled by route~B with the Haar reference,
+centered whole-star boxes and the cover $R=\{0,e_z\}$. It is followed along a
+named trajectory $(a_n,g_n)$, with $E_\star$ fixed and no plateau fit. The
+preregistered model identifier is \recid{AQ_uniform_routeB along (a_n,g_n)},
+the coupling is the cap $\tau=1/100000000$ with both signs evaluated, and the
+state provenance is AQ1's centered whole-star subsequences through a
+finite-volume bound, read as volume-uniform at fixed $a$ (defect~D9). The
+observable is the statement itself, with no centering, no reference value and
+no Euclidean node. The target, ``dictionary identities verified exactly and
+the toy-trajectory crossover indices computed'', at least~1, is declared a
+feasibility and format check on admitted quantities, not a blind discovery
+threshold; the statement is the deliverable. The skeptic reads it as a
+Boolean that is met by construction. It catches arithmetic slips but cannot
+test the failure statement, the scope of the word ``uniform'', the
+requirement table or the verdict, which rest on the controls and on the
+review. The error ledger has one entry, \recid{not_applicable}, with its
+reason (Section~\ref{sec:az1-evidence}).
+
+AZ1 is a statement loop (\recid{statement+skeptic}), as planned. One forward
+producer writes the statement, the requirement table and an exact checker.
+The second admission input is the skeptic's independent derivation and
+replays (\recid{single_direction_independent_replay}). The contract's
+direction note records that the historical, Jung and modern lenses all kept
+AZ1 unchanged after sub-round~4; the skeptic notes that the panel kept the
+goal but adopted new contract requirements, a clerical point (reading~16). The
+producer received \texttt{AGENTS.md}, the contract and its 27 shared
+premises, 29 files in all: the AL1 report and gate; the AX1 gate, both AX1
+reports and the skeptic's AX1 review; the AM2 gate, both AM2 reports and the
+skeptic's AM2 review; the AQ1 and AQ2 reports; the I1 and AT4 reports; the
+method snapshots; the selection note; and the modern and historical lens notes
+of sub-round~4. No reverse package exists, and
+\recid{reverse_premise_isolation} is false.
+
+Both packages were developed at the same time after the contract froze at
+04:29:40Z. This time the skeptic committed first, the reverse of AY2
+(Section~\ref{sec:ay2}). Its pre-comparison checker was final and replayed at
+04:54:11Z, and the package was committed as \texttt{649db92} at 04:54:45Z. The
+producer's report was last written at 04:58:01Z and its checker at 04:58:33Z;
+the producer froze at 04:58:58Z and committed \texttt{8359876} at 04:59:51Z.
+Isolation therefore rests on disclosure, name-only exposure and content, and
+this time also on commit order (Section~\ref{sec:az1-evidence}).
+
+Notation: $g$ is the bare coupling and $a$ the lattice spacing; $\alpha$,
+$\lambda$, $r=\lambda/\alpha$, $\delta=\alpha/8$ and $\tau$ are the scales of
+Section~\ref{sec:ax1-dictionary}. $\Delta$ is the physical gap of the
+finite-volume and GNS Hamiltonians, $E_\star>0$ the fixed comparison energy,
+and $n^*$ a crossover index (Section~\ref{sec:az1-toy}). The dictionary is
+written with $\hbar=c=1$; restoring units, $\alpha=\hbar c\,g^2/(2a)$ and the
+gap bound is $\hbar c\,g^2/(32a)$. The word ``uniform'' is used in two senses
+that are kept apart, as Section~\ref{sec:az1-sentence} explains.
+
+\subsubsection{Reviewed scope}
+\label{sec:az1-scope}
+The \repo{research/round32/advisor/az1-gate.json}{AZ1 gate} records the
+verdict \recid{accepted_within_scope} with no sub-label: its
+\recid{sub_label} field is \texttt{null}. Of the five preregistered
+sub-labels, three name certificates (\recid{reference_unresolved},
+\recid{sign_certified_finite_graph} and \recid{sign_certified_below_cap}) and
+two name state or observable statements
+(\recid{uniform_local_closeness_not_uniqueness} and
+\recid{static_not_dynamic}). AZ1 is a dictionary and trajectory statement, so
+none fits, and the producer proposed none. The accepted statement, quoted
+verbatim below in the gate's ASCII notation, is the scope of every claim in
+this subsection. It is the contract's mandatory sentence template with the
+reviewed constants inserted (Section~\ref{sec:az1-sentence}). In it,
+\texttt{a} is the lattice spacing and \texttt{a\_n} the spacing along the
+trajectory; \texttt{Delta} and \texttt{Delta\_n} are the physical gap
+$\Delta$; \texttt{E\_star} is $E_\star$; \texttt{R} is the cover;
+\texttt{n*} is a crossover index; and \texttt{s} in \texttt{a->a/s} is a
+rescaling factor, not the Euclidean clock.
+\begin{gatequote}
+Along the named trajectory (a\_n,g\_n) -{}- a hypothesis of asymptotic-freedom
+form with g\_n->0 as a\_n->0, not derived -{}- the fixed-spacing family
+(uniform Kogut-Susskind SU(2) at fixed spacing, strong bare coupling, as
+admitted by AX1: every face alpha*tau/24, route B, Haar reference, centered
+whole-star boxes, cover R=\{0,e\_z\}; AL1 dictionary
+alpha=g\textasciicircum{}2/(2a), lambda=2/(g\textasciicircum{}2 a), tau=24
+lambda/alpha=96/g\textasciicircum{}4, so alpha*lambda*a\textasciicircum{}2=1;
+E\_star and hbar fixed) supplies exactly one uniform estimate, the
+volume-uniform gap alpha/16=g\textasciicircum{}2/(32a) for
+g\textasciicircum{}4>=9.6x10\textasciicircum{}9
+(0<tau<=10\textasciicircum{}-8) at fixed a (every finite complete-factor
+route-B volume and every AQ subsequential state, AX1 gate items (2)-(3),
+cited; in lattice units a*Delta>=g\textasciicircum{}2/32>=1250 sqrt 6,
+directed lower end \allowbreak 19595917942265424785578272597647131/\allowbreak
+6400000000000000000000000000000, about 3061.86), and fails to supply any
+estimate uniform along a\_n->0 on a trajectory with g\_n->0 (the admitted
+regime is left at a finite index and the AL1 bridge g\textasciicircum{}4>=32,
+i.e. tau<=3, fails from a finite index on; on the toy trajectory g\_n=g\_0/n
+the first indices below 9.6x10\textasciicircum{}9 and below 32 are n*=2 and
+n*=132 for g\_0\textasciicircum{}4=9.6x10\textasciicircum{}9 and n*=4 and
+n*=421 for g\_0=1000; common rescaling a->a/s at fixed g moves no admission
+ratio; a finite physical gap along a\_n->0 needs a\_n*Delta\_n->0, impossible
+inside the admitted regime; this is failure of a sufficient certificate, not a
+statement that the gap closes); this is not a statement that the continuum
+limit exists, that any estimate is uniform in a, that the coupling is weak, or
+that any fraction of the continuum problem is thereby resolved.
+\end{gatequote}
+The gate's decision admits four items. (1)~The three contract identities and
+eight derived ones hold exactly as rational-function identities and on a
+35-point grid, and the cap is $g^4=9600000000$ at $\tau=10^{-8}$. (2)~The one
+necessary estimate that the family supplies is the volume-uniform gap at
+fixed $a$, cited from AX1 and not re-derived. Every trajectory with
+$g_n\to0$ leaves the admitted regime after finitely many steps, the AL1
+bridge fails from a finite index on, and the lattice-units floor shows that
+the admitted regime cannot host a finite-mass limit. (3)~The toy crossovers
+are exact, and the Faizal--Shabir construction is disclosed as an unaudited
+lead only. (4)~The bridge obstruction and the failure of common rescaling are
+retained, and the additional requirements of a continuum construction are
+listed with the missing premise for each. The gate binds the producer's exact
+values, which the skeptic's review verified exactly; the review records its
+own $10^{-40}$ bracket of $\sqrt6$ as the tighter enclosure of the floor
+(Section~\ref{sec:az1-estimate}). The gate records the non-blocking findings
+of Section~\ref{sec:az1-findings}, and it admits nothing about the continuum,
+weak coupling or an estimate uniform in $a$. The rest of this subsection
+derives the statement, and the limitations recorded by the gate close it
+(Section~\ref{sec:az1-limits}).
+
+\subsubsection{Trajectory, dictionary and admitted regime}
+\label{sec:az1-dictionary}
+\paragraph{The named trajectory.}
+Contract item~1 asks for a trajectory $(a_n,g_n)$ with $g_n\to0$ as
+$a_n\to0$, named as a hypothesis of asymptotic-freedom form and not derived.
+The producer states it as
+\begin{equation}
+ \mathrm{H}_{\rm AF}:\quad(a_n,g_n),\ n\ge1,\qquad a_n\to0,\quad g_n\to0,\qquad
+ g(a)^2\sim\frac1{2b_0\log(1/(a\Lambda))}\quad(a\to0),
+ \label{eq:az1-trajectory}
+\end{equation}
+for some $b_0>0$ and scale $\Lambda$. No beta function is computed, no
+numerical $b_0$ is used or source-audited, and no sequence is claimed to be
+the physical renormalization trajectory. Every conclusion below uses only
+$g_n\to0$. The checker exports the trajectory with the fields
+\recid{derived} and \recid{claimed_physical_trajectory} false. The control
+\recid{trajectory_named} rejects the trajectory marked derived, an unnamed
+$a_n$, a constant $g_n$ and a claimed physical renormalization trajectory.
+
+\paragraph{The dictionary.}
+AL1 fixes the bulk dictionary of the uniform model in the Bauer et al.\
+convention, with the raw magnetic term $\lambda\sum_p(1-W_p)$ and
+$W_p=\tfrac12\tr U_p$ (HNM-AL1.1--2 of the
+\repo{research/round29/forward/al1/report.md}{AL1 forward report};
+\eqref{eq:ax1-dictionary}):
+\begin{equation}
+ \alpha=\frac{g^2}{2a},\qquad\lambda=\frac2{g^2a},\qquad
+ r=\frac\lambda\alpha=\frac4{g^4},\qquad
+ \tau=\frac{24\lambda}\alpha=\frac{96}{g^4},\qquad\delta=\frac\alpha8 .
+ \label{eq:az1-dictionary}
+\end{equation}
+Contract item~5 names three identities: $\alpha/16=g^2/(32a)$,
+$\tau=96/g^4$ and the cross-identity $\alpha\lambda a^2=1$. The producer adds
+eight more from the AL1, AX1 and I1 premises and verifies all eleven as
+literal identities (Table~\ref{tab:az1-identities}), by two routes. The first
+writes each side as a quotient of integer-coefficient polynomials in
+$(g,a,c)$ and compares by cross-multiplication. The second uses direct exact
+rational arithmetic on a grid of 35 points: seven values of $g^2$ ($1/7$, $1$,
+$3/2$, $97979$, $100000$, $1000000$, $1048576/3$) times five of $a$
+($1/1000$, $1/10$, $1$, $7/3$, $1000$), with the rescaling factors $1/3$ and
+$5$. The cross-identity says that the product of the electric and magnetic
+scales is $1/a^2$ whatever the coupling. It catches the commonest slip:
+$\alpha=g^2/a$ makes $\alpha\lambda a^2=2$ identically.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The eleven dictionary identities, verified exactly by the producer and
+re-proved to the zero polynomial by the skeptic. Rows 1--3 are named by the
+contract; rows 4--11 are added from the AL1, AX1 and I1 premises.}
+\label{tab:az1-identities}
+\begin{tabular}{@{}rll@{}}
+\toprule
+& Identity & Reading\\
+\midrule
+1 & $\alpha/16=g^2/(32a)$ & the supplied gap (AX1 gate; AX1 reverse report)\\
+2 & $\tau=96/g^4$ & the AL1 coupling (HNM-AL1.2; AX1 gate)\\
+3 & $\alpha\lambda a^2=1$ & the cross-identity (contract item~5)\\
+4 & $r=4/g^4$ & the ratio $\lambda/\alpha$ (HNM-AL1.1)\\
+5 & $\alpha\tau/24=\lambda$ & every face coefficient $\nu$ equals $\lambda$ (HNM-AL1.2)\\
+6 & $(\alpha/8)(\tau/3)=\lambda$ & the normalized face coefficient $\tau/3$ in units of $\delta$\\
+7 & $7\tau=672/g^4$ & the AL1 local norm $7|\tau|$\\
+8 & $\tau/144=2/(3g^4)$ & the first-order Wilson mean (AX1 gate item~7)\\
+9 & $(\alpha/8)/2=g^2/(32a)$ & the normalized gap $\tfrac12$ in units of $\delta$\\
+10 & $a\,\alpha/16=g^2/32$ & the supplied gap in lattice units\\
+11 & $\tau g^4=96$ & the cap equivalence\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The skeptic's pre-comparison proves nine identities of rational functions in
+$(g^2,a)$ by cross-multiplication to the zero polynomial. Eight of them are
+among the producer's eleven, and the ninth is the inverse map
+$g^4=4\alpha/\lambda$, which with $\alpha\lambda a^2=1$ makes
+$(a,g^2)\mapsto(\alpha,\lambda)$ a bijection of the open positive quadrant;
+$\tau$ depends on the ratio $\lambda/\alpha$ alone. The post-comparison
+review maps each of the producer's eleven to an explicit pair of rational
+functions and checks it to the zero polynomial, so the union of twelve is
+verified (review finding~N7).
+
+\paragraph{The admitted regime.}
+For real $g$, $\tau=96/g^4>0$, and for every $T>0$, $\tau\le T$ if and only
+if $g^4\ge96/T$. At the preregistered cap $T=10^{-8}$ of AM2 and AX1,
+\begin{equation}
+ |\tau|\le10^{-8}\iff g^4\ge\frac{96}{10^{-8}}=9600000000=9.6\times10^9 ,
+ \label{eq:az1-cap}
+\end{equation}
+that is, $g^2\ge40000\sqrt6\approx9.79795897113\times10^4$, at fixed $a$.
+This is strong bare coupling, and the model label is
+``uniform Kogut--Susskind SU(2) at fixed spacing, strong bare coupling''. The
+value $9600000000$ is read from the AX1 gate, the skeptic's AX1 table and
+four places in the contract, and it is recomputed as $96/\tau$ from the
+preregistered $\tau=1/100000000$. Since $g^2$ at the cap is irrational, every
+numerical value at the cap carries a directed bracket of
+$\sqrt{9.6\times10^9}$. A negative $\tau$ has no real $g$. In the uniform
+model it is the $U_E$ mirror of $+|\tau|$ (Section~\ref{sec:ax1-transfer}),
+not a point of any trajectory (defect~D8).
+
+\subsubsection{The one estimate supplied}
+\label{sec:az1-estimate}
+\paragraph{The estimate, cited.}
+Contract item~2 asks for exactly one necessary estimate, cited and not
+re-derived. It is the AX1 gap of Proposition~\ref{prop:ax1-gap}. For both
+signs of $|\tau|\le10^{-8}$, AX1 gate item~(2) admits that every finite
+complete-factor route-B volume has a unique gauge-invariant ground and a
+full-space gap at least $\tfrac12$ normalized, $\alpha/16$ physical, with a
+nonzero physical excited sector. Item~(3) re-applies the gap $\alpha/16$ to
+every AQ subsequential state. In the dictionary \eqref{eq:az1-dictionary},
+\begin{equation}
+ \Delta\ge\frac\alpha{16}=\frac\alpha8\cdot\frac12=\frac{g^2}{32a}
+ \qquad\text{for }g^4\ge9.6\times10^9,\ \text{at fixed }a .
+ \label{eq:az1-gap}
+\end{equation}
+This is one lower bound, the same for every finite complete-factor volume, so
+it is volume-uniform, at one fixed spacing, and it passes to the GNS
+representation of every AQ subsequential state. Its proof is the AM2/AX1
+creation-operator contraction with the re-frozen $J_0'=29/10^8$ and the
+per-site sum $J'=29|\tau|$, incoming stars included:
+$J_0'G(R_a)<1073/175000000<1/64$ and $2J_0'G'(R_a)<319/1562500<1$
+\eqref{eq:ax1-contraction}. The producer's checker re-reads these constants
+from the hash-bound AX1 gate and re-proves nothing. Without the proof citation
+the contract's verdict would have been \recid{limited}.
+
+\paragraph{Why this estimate.}
+A continuum mass gap needs, at the least, a lower bound on the gap in physical
+units that survives along the trajectory, and \eqref{eq:az1-gap} is the only
+estimate of that kind the family supplies. AX1 also admits other
+volume-uniform constants at fixed $a$: the state bound $D'_{\rm ii}$ and the
+reset budget $102|\tau|$, and, the skeptic adds, $\varepsilon_R\le17|\tau|$
+and the Nachtergaele--Sims constants. The template's ``exactly one uniform
+estimate'' is therefore read as exactly one necessary estimate, not as the
+only volume-uniform bound (defect~D2, skeptic reading~6). The control
+\recid{one_uniform_estimate_identified} rejects no estimate, a second
+estimate, the patterned-model gate cited instead of AX1, the estimate read
+along $a_n$, and the estimate re-derived instead of cited.
+
+\paragraph{Units and clock.}
+The gap is read in units of the fixed $E_\star$, with $\hbar$ fixed. In units
+of $\alpha$ it is $\tfrac1{16}$ at every $(a,g)$, and in units of $\delta$ it
+is $\tfrac12$; these numbers are constant only because the unit $\alpha$
+moves with $(a,g)$. The skeptic's non-unit fixture, $\alpha=5$ and $\hbar=7$,
+gives the physical frequency $\alpha/(16\hbar)=5/112$ against the normalized
+misread $1/14$. The control \recid{wrong_delta_alpha_hbar_clock} rejects the
+normalized gap $\tfrac12$ read in units of $\alpha$, the gap-one route
+($\alpha/8$), the Haar on-site gap six read as the interacting gap, a
+normalized clock and the mixed $g^2/(16a)$. The control
+\recid{e_star_fixed_no_plateau} rejects $E_\star=0$, an $E_\star$ that
+varies as $1/a_n$, a plateau fit and post-hoc node selection.
+
+\paragraph{The lattice-units floor.}
+Identity~10 gives $a\Delta\ge g^2/32$ exactly. On the admitted regime
+$g^4\ge9.6\times10^9$, so
+\begin{equation}
+ (a\Delta)^2\ge\frac{g^4}{1024}\ge\frac{9600000000}{1024}=9375000=(1250\sqrt6)^2,
+ \qquad a\Delta\ge\frac{g^2}{32}\ge1250\sqrt6\approx3061.86 .
+ \label{eq:az1-floor}
+\end{equation}
+The producer's directed lower end, from a directed square-root bracket of
+width $10^{-30}$, is
+\begin{equation}
+ a\Delta\ge\frac{19595917942265424785578272597647131}{6400000000000000000000000000000}
+ \approx3.06186217847\times10^3 ,
+ \label{eq:az1-floor-lower}
+\end{equation}
+and the skeptic's directed $10^{-40}$ bracket of $\sqrt6$ encloses the exact
+floor more tightly:
+\begin{equation}
+ \begin{aligned}
+ 1250\sqrt6&\ge\frac{24494897427831780981972840747058913919659}{8000000000000000000000000000000000000},\\
+ 1250\sqrt6&\le\frac{1224744871391589049098642037352945695983}{400000000000000000000000000000000000}.
+ \end{aligned}
+ \label{eq:az1-floor-bracket}
+\end{equation}
+The review checks that the producer's lower end lies below $1250\sqrt6$
+within $10^{-30}$ and above $3061.86$. Both are directed lower bounds of the
+same exact quantity, and the gate binds the producer's value.
+
+\paragraph{The admitted regime cannot host a finite-mass limit.}
+The certified gap is more than three thousand times the inverse spacing, so
+it is a cutoff-scale quantity. A trajectory with $a_n\to0$ that stayed inside
+the admitted regime would have a certified $\Delta_n\ge3061/a_n$, which
+diverges in units of the fixed $E_\star$. At $a_n=1/10$, $1/100$, $1/1000$ and
+$1/10000$~fm the certified lower ends are about $3.0618621\times10^4$,
+$3.0618621\times10^5$, $3.0618621\times10^6$ and
+$3.0618621\times10^7$~fm$^{-1}$. A finite physical gap along $a_n\to0$
+requires $a_n\Delta_n\to0$, which is impossible inside the admitted regime,
+where $a_n\Delta_n>3061$ for every $n$. Equivalently, $(\alpha a)^2=g^4/4\ge
+2.4\times10^9$, so the electric scale is at least $20000\sqrt6/a$. This is
+the physical-scale face of the same failure point (row~R3 of
+Table~\ref{tab:az1-requirements}). The skeptic adds a conditional remark,
+which is not a premise and was not required. If $\Delta_n\to m<\infty$ and
+$g_n^2/a_n\to\infty$, as on any trajectory of asymptotic-freedom form, then
+$\Delta_n\ge g_n^2/(32a_n)$ must fail for all large $n$. The form of the
+estimate, and not only its proof, is then incompatible with the hypothesized
+limit.
+
+\paragraph{Illustrations in physical units.}
+These examples evaluate the dictionary only, without scale setting. The
+producer takes $g^2=10^6$ ($g^4=10^{12}$, $\tau=3/31250000000$, admitted),
+$a=1/10$~fm and the declared $E_\star=\hbar c/(1\,\mathrm{fm})$, about
+197.327~MeV. Then $\alpha=5000000$~fm$^{-1}$ and
+$\Delta\ge312500$~fm$^{-1}$, that is $\Delta/E_\star\ge312500$, about
+$6.1664681\times10^7$~MeV with the truncated CODATA~2018 value
+$\hbar c=197.3269804$~MeV\,fm (preview). At the cap, with the same $a$,
+$\Delta/E_\star$ is at least about $3.06186217847\times10^4$, a directed lower
+bound. The skeptic's example, $g^2=10^5$ at $a=0.1$~fm, gives
+$\Delta\ge31250$~fm$^{-1}$, that is $493317451/80$~MeV, about 6.166~TeV.
+Both examples are $g^2/(32a)$ at a declared point (review finding~N6).
+
+\subsubsection{The failure point}
+\label{sec:az1-failure}
+\paragraph{Every trajectory with \texorpdfstring{$g_n\to0$}{g\_n -> 0} leaves the regime.}
+The failure is elementary. If $g_n\to0$, then for every threshold $T>0$ there
+is an index $n_0$ with $g_n^4<T$ for every $n\ge n_0$; that is the definition
+of the limit. With $T=9.6\times10^9$, every trajectory with $g_n\to0$ leaves
+the admitted regime at a finite index. From that index on
+$\tau_n=96/g_n^4>10^{-8}$, the AM2/AX1 contraction is no longer available as
+admitted, and the family supplies no gap estimate at the spacing $a_n$ at all.
+In particular it supplies no estimate uniform along $a_n\to0$ on that
+trajectory. With $T=32$, the AL1 bridge condition $g^4\ge32$, equivalently
+$r=4/g^4\le1/8$ or $\tau\le3$, also fails from a finite index on. The I1
+omitted-interaction conditions $g^4>672/c_1$ and $g^4>1344c_2$, with the
+source constants $c_1(S)$ and $c_2(S)$ unevaluated, likewise fail from a
+finite index on for any fixed positive values (HNM-AL1.3).
+
+\paragraph{The scope \texorpdfstring{$g_n\to0$}{g\_n -> 0} is essential.}
+At fixed $g$ in the admitted regime the estimate survives any change of
+spacing. With $g^2=10^5$ and $a_n=1/n$, the bound $g^2/(32a_n)=3125n$ holds at
+every $n$ and increases. That sequence is common rescaling: $a_n\Delta\ge3125$
+stays fixed, and in units of $E_\star$ the bound diverges like $1/a_n$, so it
+gives no finite-mass limit either. A negated statement about estimates along
+$a_n\to0$ is therefore true only on a trajectory with $g_n\to0$. Every such
+statement in this subsection is scoped that way, as the gate statement is
+(``\texttt{on a trajectory with g\_n->0}''; skeptic reading~9, review
+finding~N3).
+
+\paragraph{The AL1 frozen path.}
+On AL1's explicit test path $a_n=a_0/n$, $g_n^2=1/n$, the bridge fails at
+every $n\ge1$: $g_n^4=1/n^2\le1<32$ and $\tau_n=96n^2$, while
+$\alpha_na_0=1/2$ stays fixed. AL1 records it as ``an explicit algebraic test
+path, not a claim that this is the physically correct renormalization
+trajectory''. The checker re-verifies it for $n=1,\ldots,1000$. The contract's
+``the AL1 bridge condition $g^4\ge32$ also fails'' therefore means ``fails
+from a finite index on'' on a trajectory with $g_n\to0$, and ``fails at every
+$n$'' only on the AL1 path (defect~D5).
+
+\paragraph{The cap is not a sharp threshold.}
+$10^{-8}$ is the preregistered cap at which the AM2 and AX1 certificates are
+admitted. The AM2 reverse report states that it does not establish a sharp
+threshold, and the contract's ``the AM2 contraction needs
+$\tau\le10^{-8}$'' is read as ``is admitted only for'' (defect~D3, skeptic
+reading~7). The contraction inequalities alone would allow the route radii
+$|\tau|\le7/274688$ for the self-map, about 2548.3 times the cap
+($g^4\ge26370048/7\approx3.767\times10^6$), and $|\tau|<1/20416$ for the
+exclusion ($g^4>1959936$); see Section~\ref{sec:ax1-contraction}. No gate
+froze or reviewed them. They are not admitted regimes, because the rest of
+the AX1 chain was evaluated only at the cap. Nor do they change the
+conclusion. The contraction's smallness parameter is
+$J'=29|\tau|=2784/g^4$, so any finite contraction radius bounds $g^4$ from
+below. The declared toy trajectory leaves the two route radii at $n^*=8$ and
+$n^*=9$ (Table~\ref{tab:az1-extras}).
+
+\paragraph{Failure of a certificate, not of the gap.}
+Nothing here says that the gap closes where the certificate stops. The AL1
+gate records its obstruction as ``failure of a specified sufficient
+certificate, not a no-gap or continuum-impossibility theorem'', and the AM2
+report ``does not interpret rejection beyond the chosen cap as actual gap
+failure''. The producer states ``This is failure of a sufficient certificate,
+not absence of a gap'', and along the toy trajectory ``this is not a
+statement that the gap vanishes'' (Section~\ref{sec:az1-toy}). The control
+\recid{insufficient_verdict_retained} rejects the failure point relabelled
+resolved.
+
+\subsubsection{The toy trajectory}
+\label{sec:az1-toy}
+Contract item~3 asks for the failure on at least one explicit, clearly
+labelled toy trajectory. The producer declares
+\begin{equation}
+ \begin{gathered}
+ \text{T1: }g_n=\frac{g_0}n,\quad a_n=\frac{a_0}n,\quad g_0^4=9.6\times10^9;\\
+ \text{T2: the same law with }g_0=1000,\ \text{so that}\ g_n^4=\frac{10^{12}}{n^4},
+ \end{gathered}
+ \label{eq:az1-toy}
+\end{equation}
+with $n\ge1$ and $E_\star$ fixed. T1 is the contract's declared example and
+the producer's primary one. T2 is the panel rehearsal of the modern lens's
+update~4, labelled a second example. The contract names $g_n$ and $E_\star$
+but not $a_n$; the producer declares $a_n=a_0/n$ (defect~D7). Because $\tau$
+does not depend on $a$, the crossover indices do not depend on that choice.
+The toy law is algebraic, a power law in $n$ that decays faster than the
+logarithmic form \eqref{eq:az1-trajectory}. It is not of asymptotic-freedom
+form and is not a physical trajectory.
+
+A crossover index $n^*$ is the first $n\ge1$ with $g_n^4$ strictly below the
+threshold. The cap is inclusive: $g_n^4=9.6\times10^9$, that is
+$|\tau|=10^{-8}$, lies inside the admitted regime. So $n=1$ of T1, which sits
+exactly on the cap, is not a crossover. Table~\ref{tab:az1-toy} lists the four
+indices. The producer finds each by two routes. The first is the exact
+integer fourth root, $n^*=\mathrm{iroot}_4(F)+1$ with $F=\lfloor
+g_0^4/T\rfloor$ and $m^4\le F<(m+1)^4$ checked; the second is an exact
+rational scan $n=1,2,\ldots$. For T1 and the bridge, $F=300000000$ and
+$131^4=294499921\le F<132^4=303595776$. For T2 and the bridge,
+$420^4=31116960000$ and $421^4=31414372081$. The skeptic computes each index
+by an integer root with a monotone correction and a brute-force cross-check,
+and finds the same four.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Exact crossover indices on the toy trajectory $g_n=g_0/n$ for the
+cap $g^4\ge9.6\times10^9$ and the bridge $g^4\ge32$, with $g_n^4$ at the last
+index inside the threshold and at the crossover, and $\tau=96/g^4$ at the
+crossover. Decimals are truncated previews of the exact rationals.}
+\label{tab:az1-toy}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}llc
+ >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Toy & Threshold & $n^*$ & $g^4$ at $n^*-1$ (inside) & $g^4$ at $n^*$ (outside) & $\tau$ at $n^*$\\
+\midrule
+T1 & cap & 2 & $9600000000$ ($n=1$, on the cap) & $600000000$ &
+$1/6250000$ ($1.6\times10^{-7}$)\\[3pt]
+T1 & bridge & 132 & $9600000000/294499921$ ($\approx32.5976318343$) &
+$12500000/395307$ ($\approx31.6209933039$) & $1185921/390625$
+($\approx3.03595776$)\\[3pt]
+T2 & cap & 4 & $10^{12}/81$ ($\approx1.23456790123\times10^{10}$) &
+$3906250000$ & $6/244140625$ ($\approx2.4576\times10^{-8}$)\\[3pt]
+T2 & bridge & 421 & $6250000/194481$ ($\approx32.1368154215$) &
+$10^{12}/31414372081$ ($\approx31.8325636884$) &
+$94243116243/31250000000$ ($\approx3.01577971977$)\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+So the declared toy keeps the admitted regime only at $n=1$, and it keeps the
+much weaker bridge condition only through $n=131$. The rehearsal keeps them
+through $n=3$ and $n=420$. The control \recid{toy_trajectory_crossover_exact}
+rejects the boundary $n=1$ of T1 counted as a crossover, the T1 bridge
+indices 131 and 133, the T2 indices 3 and 420, the threshold $32/3$ and the
+cap decade $9.6\times10^8$. The control \recid{root_n_misuse} rejects a
+square-root crossover index (11 for T2) and $g_n^4$ read as $g_0^4/n^2$. The
+skeptic's controls also reject $g_n=g_0/n$ read as $g_n^2=g_0^2/n$, which
+gives the bridge indices 17321 and 176777, and $g_n^2$ compared with 32, which
+gives 177 at $g_0=1000$.
+
+\paragraph{The panel rehearsal and its arithmetic slip.}
+The producer reproduces every index and power that the modern lens's
+rehearsal states: $n^*=4$, $n^*=421$, $g_4^4=3906250000$,
+$420^4=31116960000$ and $421^4=31414372081$. It finds one arithmetic slip in
+the lens text, which writes $g_3^4=10^{12}/81=12345679012+34/81$. Since
+$81\times12345679012=999999999972$, the remainder is 28, and
+$10^{12}/81=12345679012+28/81$ exactly (premise note~P1). No index is
+affected, because $g_3^4$ is above the cap either way. The skeptic's
+pre-comparison reproduced the indices but did not check the mixed number, and
+its review records P1 as new and valid (review finding~N10).
+
+\paragraph{What the family supplies along the toy.}
+Along T2 with $a_0=1/10$~fm and $E_\star=\hbar c/(1\,\mathrm{fm})$, the
+supplied estimate gives
+$\Delta_n/E_\star\ge g_0^2/(32a_0nE_\star)=312500/n$ for $n=1,2,3$, that is
+$312500$, $156250$ and $312500/3$. From $n=4$ on the family supplies no
+certificate; this is not a statement that the gap vanishes. Along T1 with the
+same $a_0$ and $E_\star$ only $n=1$ is covered, with $\Delta_1/E_\star$ at
+least about $3.06186217847\times10^4$.
+
+\paragraph{Labelled extras.}
+Table~\ref{tab:az1-extras} lists further crossovers, none of them an admitted
+regime. A slower toy, $g_n^4=g_0^4/n$ with $g_0=1000$, crosses the cap at
+$n^*=105$ and the bridge at $n^*=31250000001$. Every one of these indices is
+finite, as the lemma of Section~\ref{sec:az1-failure} requires.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Labelled extra crossovers on the toys T1 and T2 of
+\eqref{eq:az1-toy}: the first index at which each condition fails. None is an
+admitted regime.}
+\label{tab:az1-extras}
+\begin{tabular}{@{}lccl@{}}
+\toprule
+Condition & T1 & T2 & Computed by\\
+\midrule
+self-map radius $|\tau|\le7/274688$, i.e.\ $g^4\ge26370048/7$ & 8 & 23 & producer and skeptic\\
+exclusion radius $|\tau|<1/20416$, i.e.\ $g^4>1959936$ & 9 & 27 & producer; verified in review\\
+AL1 ends $g^4\ge8$ & 187 & 595 & skeptic\\
+$|\tau/144|=2/(3g^4)\le1$, i.e.\ $g^4\ge2/3$ & 347 & 1107 & skeptic\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The plain statement and the one recorded lead.}
+No rigorous construction of a genuine asymptotic-freedom trajectory
+satisfying either bound uniformly was found in this or any prior sub-round's
+source search. The statement rests on the searches recorded in the
+snapshotted lens notes. The modern memo lists
+``\texttt{any estimate uniform along a -> 0 with g(a) -> 0}'' under what the
+family fails to supply. The historical
+and modern updates of sub-round~4 found no rigorous result of that kind to
+import, and the producer ran no search of its own. The skeptic notes that the
+sentence is also true by the shape of the regime, since no sequence
+$g_n\to0$ satisfies $g_n^4\ge c$ for all $n$ and any $c>0$. That content is
+carried by the lemma of Section~\ref{sec:az1-failure}. The substantive
+statement is that no premise supplies an estimate valid at weak bare
+coupling, that is, a replacement for the contraction (skeptic reading~10).
+
+The same searches found one claimed construction, and it is disclosed next to
+that sentence. Faizal and Shabir~\cite{faizal} (arXiv:2606.19362;
+Fortschr.\ Phys.\ 74 (2026) e70097) claim a reflection-positive SU($N$)
+construction in which the strong-coupling and asymptotically-free continuum
+limits coincide. The modern lens read it at abstract depth only, and neither
+the producer nor the skeptic read it. It is unaudited and not imported: no
+premise, number or conclusion of AZ1 depends on it, and no priority or
+correctness statement about it is made. The skeptic gives the reasons it
+changes nothing here.
+\begin{itemize}
+\item AZ1 states what this fixed-spacing Kogut--Susskind family supplies. A
+ different construction, a Euclidean reflection-positive SU($N$) lattice,
+ cannot supply an estimate for this family without an identification
+ theorem.
+\item Its central claim, if correct, concerns a continuum theory. It is not
+ an estimate for this family at $g^4\ge9.6\times10^9$.
+\item Any route from strong coupling to a continuum with finite mass must
+ cross the whole coupling range, because $a\Delta$ is bounded below in the
+ strong-coupling regime. What would have to be audited is exactly the
+ estimate that row~R1 of Table~\ref{tab:az1-requirements} lists as missing.
+\end{itemize}
+The producer's checker requires ``unaudited'' and ``not imported'' in the
+prose, and removing the paragraph aborts it. The lead is recorded for a
+future round's skeptical diff. That diff should establish which of its
+estimates hold along $a_n\to0$, with what constants and coupling range,
+whether they apply to the Hamiltonian limit of the Wilson action, and an
+independent replay.
+
+\subsubsection{Bridge obstruction, common rescaling and continuum requirements}
+\label{sec:az1-requirements}
+\paragraph{The AL1 bridge obstruction.}
+Contract item~4 asks for it to be retained. In AL1 the selected bridge needs
+$r=4/g^4\le1/8$, that is $g^4\ge32$ or $\tau\le3$, and the ends need
+$r\le1/2$, that is $g^4\ge8$ (HNM-AL1.3). In the uniform model this is the
+condition $|\tau|/24\le1/8$ on the uniform selected triple
+(Section~\ref{sec:ax1-dictionary}). The AL1 gate records that its frozen path
+violates the bridge for every $n\ge1$, and that every path with $g\to0$
+eventually violates it. The R18-B2 bound $g^4\ge32/3$ concerned a different
+finite-graph coefficient box. Its substitution is a rejected mutation, and
+dropping the bridge is rejected by \recid{bridge_obstruction_retained}.
+
+\paragraph{Common rescaling fails.}
+The coupling $\tau=24\lambda/\alpha$ depends on $g$ alone. Exactly, for every
+$c>0$,
+\begin{equation}
+ \tau(ca)=\tau(a),\qquad \alpha(ca)=\frac{\alpha(a)}c,\qquad
+ \lambda(ca)=\frac{\lambda(a)}c,\qquad
+ \frac{g^2}{32\,ca}=\frac1c\cdot\frac{g^2}{32a},\qquad
+ r(c\alpha,c\lambda)=r .
+ \label{eq:az1-rescaling}
+\end{equation}
+In the skeptic's homogeneity degrees in $(g^2,a)$, $\alpha$ has degree
+$(1,-1)$, $\lambda$ has $(-1,-1)$, $\tau$ and $r$ have $(-2,0)$, the gap has
+$(1,-1)$ and the lattice gap has $(1,0)$. The producer's exponents in $g$ are
+twice the degrees in $g^2$. A common rescaling
+$(\alpha,\lambda)\to(s\alpha,s\lambda)$ is exactly $a\to a/s$ at fixed $g$.
+Changing the spacing at fixed $g$, changing the energy unit or rescaling the
+whole Hamiltonian therefore moves the gap $g^2/(32a)$ but never moves $\tau$
+or $r$. No admission ratio moves, and only $g$ decides whether a point lies in
+the admitted regime or satisfies the bridge, so common rescaling can neither
+repair nor break the cap or the bridge. The AL1 gate selected a later loop to
+test common scale changes, but that result is not a shared premise of AZ1,
+and the invariance is derived here from the AL1 dictionary alone
+(defect~D4). An independent magnetic multiplier $\lambda\to s\lambda$ at fixed
+$\alpha$ is a change of model. It changes $g^4$ to $g^4/s$, and the bridge
+then needs $s\le g^4/32$. On the declared toy $s_{\max}<1$ from $n=132$ on,
+about $0.98816$ at $n=132$, and $s_{\max}\to0$ as $g\to0$ (skeptic).
+
+\paragraph{What a continuum construction would additionally require.}
+Contract item~4 names three requirements. Table~\ref{tab:az1-requirements}
+gives each with what the fixed-spacing family supplies and its missing
+premise. The control \recid{coherent_evidence_tampering} rejects a
+requirement marked supplied, and the report scan rejects the removal of a
+row.
+
+\begin{table}[htbp]
+\centering\small
+\caption{What a continuum construction would additionally require. Every row
+is missing; the text is the producer's, as bound by the gate.}
+\label{tab:az1-requirements}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}
+ >{\raggedright\arraybackslash}p{0.27\linewidth}
+ >{\raggedright\arraybackslash}X c@{}}
+\toprule
+Requirement & Supplied by the fixed-spacing family & Missing premise & Status\\
+\midrule
+R1: uniform-in-$a$ estimates &
+Not along $a_n\to0$: at each fixed $a$ with $g^4\ge9.6\times10^9$ only, the
+volume-uniform gap $\alpha/16$ and the AX1 state bounds, and nothing once
+$g_n^4<9.6\times10^9$. &
+A lower bound $\Delta(a_n,g_n)\ge m\,E_\star$ with a fixed $m>0$ for every
+$n$ along a trajectory with $a_n\to0$ and $g_n\to0$, with the matching
+control of local states and correlations. It requires a certificate valid for
+$g^4<9.6\times10^9$, outside strong bare coupling, and no admitted or
+source-audited result supplies one. & missing\\[3pt]
+R2: reconstruction hypotheses &
+Fixed-$a$ lattice objects only, no limit object: AQ subsequential states and
+their GNS Hamiltonians with the gap $\alpha/16$, on a lattice with no
+rotation or Lorentz covariance. &
+Osterwalder--Schrader axioms for limiting Euclidean Schwinger functions
+(reflection positivity passed to the limit, restored Euclidean invariance,
+regularity, clustering), or the Hamiltonian analogue: a limit of the Hilbert
+spaces and local algebras along $a_n\to0$ carrying a self-adjoint
+nonnegative Hamiltonian with a unique vacuum, local fields and Poincar\'e
+covariance. No such limit is constructed in the admitted material. &
+missing\\[3pt]
+R3: physical scale control &
+Not a physical scale: in lattice units $a\Delta\ge g^2/32>3061$ throughout
+the admitted regime, so the certified gap is a cutoff-scale quantity. &
+A relation between $a_n$ and $g_n$ that holds a physical quantity fixed in
+units of $E_\star$ (the renormalization-group trajectory, here only the
+hypothesis $\mathrm{H}_{\rm AF}$), with a proof that $a_n\Delta_n\to0$ while
+$\Delta_n/E_\star$ stays bounded above and below. Inside the admitted regime
+$a_n\Delta_n>3061$ for every $n$, so the certified $\Delta_n/E_\star$
+diverges as $a_n\to0$. & missing\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The skeptic's pre-comparison adds detail to the three rows and three rows of
+its own, none of them a contract requirement.
+\begin{itemize}
+\item \emph{R1.} The contraction parameter $J'=2784/g^4$ is unbounded as
+ $g\to0$, so the AM2/AX1 fixed point and gap exclusion cannot be continued.
+ The skeptic names multiscale renormalization-group control of Balaban type
+ as a candidate route, not read here and not a premise, and notes that shared
+ notation does not transfer a gap between models.
+\item \emph{R2.} Strong-resolvent convergence alone does not carry a gap to a
+ limit: the vacuum eigenvalue can disappear or change multiplicity. On
+ different lattice Hilbert spaces a gap bound that holds along the whole
+ sequence passes to the limit only with identification maps, convergent
+ renormalized ground energies and a surviving vacuum vector.
+ Reflection positivity at each spacing survives limits; everything else needs
+ bounds along $a_n\to0$, and none is available.
+\item \emph{State identification at fixed $a$.} The six AY2 obligations of
+ Table~\ref{tab:ay2-obligations} are unproved even at fixed spacing.
+\item \emph{Nontriviality.} Any non-Gaussian estimate that survives
+ $a_n\to0$ is missing. The only rigorous non-Abelian scaling limit in more
+ than two dimensions in the modern lens's SOTA table, for SU(2)
+ Yang--Mills--Higgs, is Gaussian.
+\item \emph{Observables.} Which operators converge, with operator
+ renormalization and an $a$-dependent normalization, is open.
+\end{itemize}
+The gate's limitations name the AY2 state obligations and nontriviality as
+missing as well.
+
+\paragraph{No fraction.}
+No number in this subsection is a fraction of the continuum problem. AZ1 is
+investigation~9 of~10 of Round32. That is an index of executed
+investigations, not a measure of progress on the continuum problem, and no
+percentage or completion estimate is given. The control
+\recid{loop_count_not_fraction} rejects the loop-count flag set true, an
+investigation index exported as a fraction field and a fraction sentence
+appended to the report.
+
+\subsubsection{The mandatory sentence, gate fields and the two senses}
+\label{sec:az1-sentence}
+\paragraph{The template.}
+Contract item~5 requires the preregistered mandatory sentence template in the
+report. The producer quotes it verbatim, exactly once:
+\begin{gatequote}
+Along the named trajectory (a\_n,g\_n), the fixed-spacing family supplies
+exactly one uniform estimate, the volume-uniform gap
+alpha/16=g\textasciicircum{}2/(32a) for
+g\textasciicircum{}4>=9.6x10\textasciicircum{}9, and fails to supply any
+estimate uniform along a\_n->0; this is not a statement that the continuum
+limit exists, that any estimate is uniform in a, that the coupling is weak, or
+that any fraction of the continuum problem is thereby resolved.
+\end{gatequote}
+The gate statement of Section~\ref{sec:az1-scope} is this template with four
+insertions and no other change. The first insertion is set off by dashes and
+takes in the template's comma after \texttt{(a\_n,g\_n)}.
+Table~\ref{tab:az1-template} lists the four. The negated closing clause is
+unchanged.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The insertions with which the gate fills the mandatory sentence
+template.}
+\label{tab:az1-template}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.3\linewidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+After the template's words & The gate inserts\\
+\midrule
+``Along the named trajectory $(a_n,g_n)$'' & the hypothesis of
+asymptotic-freedom form with $g_n\to0$ as $a_n\to0$, not derived\\[2pt]
+``the fixed-spacing family'' & the AX1 model (every face $\alpha\tau/24$,
+route~B, Haar reference, centered whole-star boxes, cover $R=\{0,e_z\}$), the
+AL1 dictionary with $\alpha\lambda a^2=1$, and $E_\star$ and $\hbar$
+fixed\\[2pt]
+``for $g^4\ge9.6\times10^9$'' & $0<\tau\le10^{-8}$ and ``at fixed a'', then
+every finite complete-factor route-B volume and every AQ subsequential state,
+AX1 gate items (2)--(3), cited, and the lattice-units floor $1250\sqrt6$ with
+its directed lower end\\[2pt]
+``fails to supply any estimate uniform along $a_n\to0$'' &
+``\texttt{on a trajectory with g\_n->0}'', then the exits from the regime and the bridge, the
+four toy crossovers, common rescaling, the finite-mass obstruction and the
+certificate-not-gap reading\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Three readings go with the template. It omits ``at fixed a'', which the scope
+string, the producer's text and the gate statement supply next to it (skeptic
+reading~5). Its ``exactly one uniform estimate'' is exactly one necessary
+estimate (defect~D2). It quotes the first forbidden phrase inside a negation
+(defect~D1), so the producer's scan removes the template's one verbatim
+occurrence before scanning; the review finds that the scan also removes every
+inline code span and fenced block (finding~N1). In this addendum the first
+forbidden phrase occurs only inside the two quoted, negated sentences above,
+and the second nowhere.
+
+\paragraph{Two senses of one word.}
+Two senses of ``uniform'' occur, and they are kept apart. The N-sense is the
+one positive claim: volume-uniform, that is, one bound for every finite
+complete-factor volume at one fixed spacing. The a-sense, uniform in $a$ or
+along $a_n\to0$ on a trajectory with $g_n\to0$, is never claimed. A third,
+unrelated use is the model name, uniform Kogut--Susskind SU(2), with the same
+coefficient on every face. The producer's checker enforces three rules on its
+report. Every occurrence of the word is qualified in place by one of these
+senses, every a-sense sentence carries a negation or a requirement word, and
+the two senses are never conjoined; the template is checked separately and
+is qualified by apposition. The skeptic's validator rejects an a-sense
+occurrence that shares a sentence with an unqualified occurrence and no
+N-qualifier, and an a-sense occurrence that no negator precedes, including
+the ``not only \ldots\ but also'' construction. The control
+\recid{uniform_in_N_not_in_a} rejects four appended sentences: one with the
+unqualified word, one with the a-sense, one with both senses together and one
+asserting validity along the whole trajectory. The control
+\recid{uniform_label_strong_coupling} rejects a weak-coupling or continuum
+label and a label without ``fixed spacing'' or ``strong bare coupling''. This
+subsection follows the same rules.
+
+\paragraph{Gate fields.}
+The preregistration requires four gate fields, and contract item~5 adds a
+fifth with its scope string. The gate exports them as follows.
+\begin{itemize}\raggedright
+\item not claimed, exported as false: \recid{continuum_claim},
+ \recid{uniform_in_a_claimed}, \recid{weak_coupling_claim} and
+ \recid{loop_count_fraction_claimed};
+\item claimed, exported as true with a scope string:
+ \recid{uniform_in_N_claimed}.
+\end{itemize}
+The scope field reads, verbatim:
+\begin{gatequote}
+\begin{itemize}
+\item uniform\_in\_N\_scope: volume-uniform at fixed a, strong bare coupling
+\end{itemize}
+\end{gatequote}
+The \recid{sub_label} field is \texttt{null}. The packets export further
+flags as false.
+\begin{itemize}\raggedright
+\item both packets: \recid{uniform_wilson_claim},
+ \recid{resolved_interaction_shift} and
+ \recid{scientific_priority_verified};
+\item the skeptic's review in addition: \recid{dynamical_claim} and
+ \recid{euclidean_node_certified}.
+\end{itemize}
+The AX1 gate's \recid{uniform_wilson_claim} true meant only the model label,
+which AZ1 carries in its own label, so AZ1 exports the field as false, as its
+task instruction asked (relayed note~R1); AZ1 makes no Wilson-mean claim. The
+preregistered \recid{gate_fields_required} lists only the four false fields
+(skeptic reading~2). The control \recid{no_priority_or_continuum_claim}
+rejects a continuum, priority, weak-coupling, Wilson-mean or shift flag set
+true, and an a-sense flag set true.
+
+\subsubsection{Controls, replays and review}
+\label{sec:az1-evidence}
+\paragraph{Error ledger.}
+The preregistration itemizes one entry, \recid{not_applicable}, with the
+stated reason: a statement loop with exact integer and rational dictionary
+arithmetic and exact crossover indices only, and no enclosure. The only
+irrational quantity, $g^2=\sqrt{9.6\times10^9}$ at the cap, is bracketed by
+directed integer square roots of width $10^{-30}$ and enters only as a lower
+bound. The skeptic notes that the entry holds only because every printed
+numerical gap at the cap carries its directed bracket, as it does here
+(reading~15). All twelve report previews that the review checked are
+truncations of the exact values toward zero.
+
+\paragraph{Contract controls.}
+The contract lists 21 controls, and its preregistration mirror lists the same
+21. Eight ids have AZ1-specific semantics.
+\begin{itemize}\raggedright
+\item new: \recid{uniform_in_N_not_in_a},
+ \recid{dictionary_arithmetic_exact} and
+ \recid{toy_trajectory_crossover_exact};
+\item from the skeptic's prospective continuum group:
+ \recid{trajectory_named}, \recid{bridge_obstruction_retained},
+ \recid{one_uniform_estimate_identified}, \recid{e_star_fixed_no_plateau} and
+ \recid{loop_count_not_fraction}.
+\end{itemize}
+The producer implements all 21 as damaging mutations raised through explicit
+exceptions, with none deferred (Table~\ref{tab:az1-controls}). The inherited
+ids concern $R$-local constants that AZ1 only cites. They guard the cited
+quantities and discriminate little for a dictionary statement (skeptic
+reading~17).
+
+\begin{table}[htbp]
+\centering\small
+\caption{The 21 contract controls and the damaging mutations the forward
+checker rejects under each.}
+\label{tab:az1-controls}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.37\linewidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Control & Damaging mutations rejected\\
+\midrule
+\recid{missing_incoming_stars} & outgoing stars only (two anchors, per-site
+sum $8|\tau|$); single-factor groups dropped ($28|\tau|$); a single star at
+$0$; the incidence (7 stars, 2 groups, 153 faces, 88 meeting $R$, $82+6$, 16
+inside) is recomputed from the I1 owner map\\
+\recid{full_original_wilson_cover} & a single-factor cover $\{0\}$; the four
+drawn links as the cover (48 links and 36 endpoints required)\\
+\recid{wrong_delta_alpha_hbar_clock} & $\tfrac12$ read as $\alpha/2$; the
+gap-one route $\alpha/8$; the Haar gap six; a normalized clock;
+$g^2/(16a)$\\
+\recid{vector_versus_scalar_centering} & vector or scalar centering imposed
+on a statement; a zero reference energy for the gap\\
+\recid{first_order_mean_charged} & the mean set to zero; $-\tau/72$;
+$\tau/72$; the mean is $\tau/144=2/(3g^4)$, $1/14400000000$ at the cap\\
+\recid{tau_scaling_exponent} & $\tau$ as $96/g^2$; $\tau$ depending on $a$;
+the lattice gap $a\alpha/16$ labelled physical\\
+\recid{changed_model_relabelled} & the patterned zero-selected model; the
+toy point $n=2$ ($\tau=16\times10^{-8}$) or an AL1-path point labelled
+admitted; $\tau<0$ as a real-$g$ coupling; a finite graph; the
+selected-strip reference; the trajectory points relabelled as one model\\
+\recid{coherent_evidence_tampering} & sixteen edits with the packet hash
+rebound, among them a flipped control, the T1 indices 131 and 1, the cap
+decade, the scope string, the AX1 gate hash, the mandatory sentence, a second
+estimate, a derived trajectory, a supplied requirement and the verdict\\
+\recid{insufficient_verdict_retained} & a missing citation, an overclaim or
+inexact arithmetic relabelled; the AL1 path failure dropped; the failure
+point relabelled resolved\\
+\recid{exact_arithmetic_admission} & float, Boolean, NaN and
+zero-denominator inputs; a decimal preview as an admission value; a float
+coupling in a crossover; a non-integer polynomial coefficient\\
+\recid{root_n_misuse} & a square-root crossover index (11 for T2); $g_n^4$
+as $g_0^4/n^2$; the gap divided by a root of the volume\\
+\recid{no_priority_or_continuum_claim} & a continuum, priority,
+weak-coupling, Wilson-mean, shift or a-sense flag set true\\
+\recid{trajectory_named} & the trajectory claimed derived; $a_n$ unnamed;
+$g_n$ constant; a claimed physical renormalization trajectory\\
+\recid{bridge_obstruction_retained} & the bridge dropped; $32/3$
+substituted; common rescaling claimed to reach the cap; an $a$-dependent
+$\tau$\\
+\recid{one_uniform_estimate_identified} & no estimate; a second estimate;
+the patterned-model gate cited; the estimate read along $a_n$; the estimate
+re-derived\\
+\recid{e_star_fixed_no_plateau} & $E_\star=0$; $E_\star$ varying as
+$1/a_n$; a plateau fit; post-hoc node selection\\
+\recid{loop_count_not_fraction} & the loop-count flag set true; an
+investigation index as a fraction field; a fraction sentence appended\\
+\recid{uniform_label_strong_coupling} & a weak-coupling or continuum label;
+``fixed spacing'' or ``strong bare coupling'' missing\\
+\recid{uniform_in_N_not_in_a} & four appended sentences: the unqualified
+word, the a-sense, both senses together, validity along the whole
+trajectory\\
+\recid{dictionary_arithmetic_exact} & $\alpha=g^2/a$; $\lambda=1/(g^2a)$;
+$\tau=12\lambda/\alpha$; the gap $g^2/(16a)$; $\alpha\lambda a^2=2$; a grid
+with $\alpha$ denominator 1; a float grid coupling; a shifted cap decade\\
+\recid{toy_trajectory_crossover_exact} & $n=1$ of T1 as a crossover; T1
+bridge 131 or 133; T2 indices 3 and 420; $32/3$; the cap decade
+$9.6\times10^8$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Checker.}
+The forward checker runs 42 exact checks. It implements all 21 controls as
+damaging mutations, with none deferred, and records 107 rejections inside the
+control checks and 121 in the whole checker. It verifies the contract
+snapshot's SHA-256 before any evaluation, reads the cap, the dictionary, the
+identities, the target and the control list from the contract, records its
+own SHA-256 before evaluation, and hashes all 29 input snapshots. Of these,
+22 are byte-identical to what the AX1 gate binds, and the AL1 report is what
+the AL1 gate binds. The checker uses only the standard library and exact
+rationals, and its outputs under \texttt{-B} and \texttt{-B -O} are
+byte-identical. It records the AX1 gate hash but does not pin it (review
+finding~N4). The producer also disclosed a private source-edit audit of
+thirteen damaging edits, all aborting, plus one unmutated copy; it is not
+evidence.
+
+\paragraph{Independent pre-comparison package.}
+The skeptic's package holds a contract review with 18 readings, a derivation
+and a checker with 82 exact checks and 28 controls, the 21 contract ids and
+seven more. The checker rejects 122 mutations, 101 of them inside the
+contract controls. In 28 source-edit runs in private scratch, 24 must-abort
+edits all aborted at the intended check and three silent edits were
+accounted for. The package was written from the contract without opening any
+file under \sourcepath{forward/az1/}; the skeptic listed only the names of
+the 29 input snapshots and hashed them against their sources. Its routes
+differ from the producer's. It proves the identities as rational functions in
+$(g^2,a)$, computes crossovers by an integer root with a monotone correction
+and a brute-force scan, and uses a directed $10^{-40}$ bracket of $\sqrt6$, a
+negation-aware phrase and two-senses validator, and the fixed-$g$
+counterexample of Section~\ref{sec:az1-failure}. Its predictions matched the
+producer's exact values: the crossovers 2, 132, 4 and 421, the cap $g^4$, the
+self-map crossovers 8 and 23 and the gap formula. The skeptic records its
+correlated ancestry. Five of the 21 control ids come from its prospective
+controls, and its AX1 review is a shared premise. The selection note and the
+modern update~4, both premises, already print the statement, the three
+contract identities and the rehearsal indices 4 and 421. The agreement is
+therefore a replay of elementary algebra, independent in route and code only.
+
+\paragraph{Post-comparison review.}
+The review adds 28 exact checks, for 110 independent checks with the 82, and
+46 source-mutation runs. One unmutated copy reproduces the frozen output byte
+for byte. All 41 must-abort edits abort with the intended message.
+\begin{itemize}
+\item Twenty-one weaken the validator of one contract control each; each run
+ then aborts on the producer's own damaging mutation, which shows that every
+ control is live.
+\item Seven are value and logic edits, among them $\tau g^4=95$, a crossover
+ root shifted by two, $a_0=1/5$~fm and \recid{continuum_claim} set true.
+\item Six are input edits, among them a contract byte edit, the AX1 gate's
+ physical gap changed to $\alpha/8$, the AL1 gate's bridge changed to
+ $g^4\ge31$ (caught because the AX1 gate binds the AL1 gate) and an
+ undeclared skeptic input.
+\item Seven are report edits: row R3 removed, the template's negation
+ removed, a forbidden phrase appended, an asserted a-sense sentence appended,
+ $n^*=132$ changed to 131, a map row removed and the Faizal--Shabir paragraph
+ removed.
+\end{itemize}
+Four edits run silently in the producer's checker, and all are accounted for.
+Two appended sentences that state a completion percentage or fraction pass
+the producer's literal scan and are caught by the review's pattern scan (N2).
+An appended negated sentence about estimates along $a_n\to0$ without the
+$g_n\to0$ scope is wording level (N3). An edit to an unparsed field of the
+AX1 gate snapshot is caught by the snapshot comparison and by the review's
+validator, which pins the gate hash (N4). The review's own validator accepts
+the frozen packet and rejects 18 damaged packets.
+
+\paragraph{Replays and isolation.}
+The existing replay tools do not accept a statement loop unchanged.
+\sourcepath{replay_loop.py} verifies and replays the forward closure without
+a mismatch and then stops on the absent reverse freeze, and
+\sourcepath{replay_declared.py} accepts a single producer only with direction
+\recid{single+skeptic}. Both are bound by earlier reviews and gates, so
+neither was edited (N12, as AY2's N9). The review runs the same steps: the
+unchanged freeze verification before and after, two fresh external replay
+directories, a byte comparison with the frozen output and the freezing tool's
+verification. Both replays reproduce \sourcepath{results.json} and
+\sourcepath{source-manifest.json}. The closure lists 33 files plus
+\sourcepath{freeze.json}, and every one verifies. The inputs are exactly
+\texttt{AGENTS.md}, the contract and the 27 shared premises, each
+byte-identical to its repository source. The only skeptic files among them
+are the declared AX1 and AM2 reviews, and no \sourcepath{reverse/az1} package
+exists. The producer's private scratch folder matches its disclosure by names
+and times. The producer disclosed reads outside its inputs for protocol and
+code style only: the tools documentation, the freezing tool, and parts of the
+AY2 forward checker and report. The project's instruction file was shown to
+it as session context. None of these carries premise weight. It read some
+premises in full, some in part and three method references not at all, and
+all 29 are hash-verified. Two name exposures are disclosed (N11). After its
+freeze, a \texttt{git status} run showed the producer two file names; the
+exposure post-dates the frozen closure and carries no premise weight. During
+the review, a whole-tree \texttt{git status} and a scratch listing showed the
+skeptic the names of four untracked AZ2 files and two AZ2 scratch folders,
+none of which it opened. Isolation is verified for repository inputs only,
+and all agents are correlated model agents.
+
+\subsubsection{Contract wording and non-blocking findings}
+\label{sec:az1-findings}
+The gate records the producer's contract wording defects D1--D9 as
+non-blocking. The skeptic verified each against the frozen text; seven
+coincide with its own readings, D6 is read differently and D9 is new.
+\begin{itemize}
+\item \emph{D1.} The template contains the first forbidden phrase, negated;
+ the producer's scan removes the template before scanning.
+\item \emph{D2.} ``supplies exactly one uniform estimate'' is read as exactly
+ one necessary estimate, because AX1 also admits other volume-uniform
+ constants at fixed $a$, $D'_{\rm ii}$ and the reset $102|\tau|$.
+\item \emph{D3.} ``the AM2 contraction needs $\tau\le10^{-8}$'': $10^{-8}$ is
+ the admitted cap, not a sharp threshold; the route radii are not admitted,
+ and the failure point holds for every fixed cap.
+\item \emph{D4.} ``the failure of common rescaling'' refers to work after AL1
+ that is not a shared premise; the invariance is derived here from the
+ dictionary.
+\item \emph{D5.} The bridge fails from a finite index on along a trajectory
+ with $g_n\to0$, and at every $n$ only on the AL1 frozen path.
+\item \emph{D6.} The preregistered selected triple \texttt{["0","0","0"]} is
+ read by the producer as the route-B Haar reference. The skeptic reads it as
+ a defect copied from the patterned-family block and asks the gate to record
+ it as a vocabulary defect (N5). Both bind the uniform coefficient $\tau/24$.
+\item \emph{D7.} The toy trajectory names no $a_n$; $a_n=a_0/n$ is declared,
+ and the crossovers do not depend on it.
+\item \emph{D8.} A real-$g$ trajectory has $\tau>0$; $\tau<0$ is the $U_E$
+ mirror, not a trajectory point.
+\item \emph{D9.} The state provenance's ``finite\_volume uniform bound''
+ carries an unqualified occurrence of the word; it is read as volume-uniform
+ at fixed $a$.
+\end{itemize}
+The premise note P1 is the panel's arithmetic slip of
+Section~\ref{sec:az1-toy}: in the modern lens's update~4,
+$10^{12}/81$ has remainder 28, not 34, and no index is affected. The
+relayed-instruction notes record that \recid{uniform_wilson_claim} is
+exported false as instructed (R1), and that the relayed freeze command
+omitted the \texttt{-{}-verdict} argument that the freezing tool requires,
+so the proposed forward verdict text was passed (R2).
+
+The gate also records the review's findings as non-blocking.
+\begin{itemize}
+\item \emph{N1.} The producer's scan removes the template and also every
+ inline code span and fenced block, which is broader than D1 states. In this
+ report only the verbatim claim-exclusion list sits in code spans, so
+ nothing is hidden, but a future report could hide an assertion there.
+\item \emph{N2.} The producer's forbidden-phrase scan is literal, so a
+ percentage or a differently worded fraction passes it. The review's pattern
+ scan finds none in the frozen report.
+\item \emph{N3.} Four negated sentences about estimates along $a_n\to0$ in
+ the producer's report carry no $g_n\to0$ scope in the sentence. One is
+ scoped by the preceding sentence and one defines the a-sense. The other two
+ deny the a-sense for the other AX1 constants, which is false as a
+ free-standing sentence at fixed $g$, because $D'_{\rm ii}$ depends on $\tau$
+ alone. The gate scopes the a-sense to trajectories with $g_n\to0$; this is
+ wording, not a claim.
+\item \emph{N4.} The AX1 gate hash is not pinned in the checker, as in AY2's
+ N4; no file binds the AX1 gate itself.
+\end{itemize}
+The remaining findings concern the preregistered zero triple (N5), the two
+declared gap examples (N6), the identity sets (N7), the labelled extras (N8),
+isolation and independence (N9), the skeptic's own miss of P1 (N10), the name
+exposures (N11) and the replay tools (N12). The gate's decision also records
+the commit order: the skeptic's pre-comparison \texttt{649db92} before the
+producer's \texttt{8359876}.
+
+\subsubsection{Limitations recorded by the gate}
+\label{sec:az1-limits}
+The AZ1 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong
+bare coupling (g\textasciicircum{}4>=9.6x10\textasciicircum{}9,
+|tau|<=10\textasciicircum{}-8) as admitted by AX1, with the AL1 dictionary;
+the supplied gap is volume-uniform at fixed a and never uniform in a along a
+trajectory with g\_n->0
+\item The trajectory is a hypothesis of asymptotic-freedom form, not derived;
+no beta function is computed or used; the toy trajectory g\_n=g\_0/n
+(a\_n=a\_0/n declared) is algebraic and not of asymptotic-freedom form;
+physical-units numbers are illustrations without scale setting
+\item Failure of a sufficient certificate only: nothing is said about the
+actual gap where the certificate stops; the route radii 7/274688 and 1/20416
+are not admitted regimes
+\item The continuum requirements (uniform-in-a estimates, reconstruction
+hypotheses, physical scale control) are missing, as are the AY2 state
+obligations and nontriviality; no loop count is a fraction of the continuum
+problem
+\item Inherited without re-proof: the AX1 gap (AM2 contraction, cutoff
+removal, AQ passage), the AL1 dictionary and bridge, the I1 geometry
+\item The Faizal-Shabir construction (arXiv:2606.19362) is an unaudited lead
+read at abstract depth by the modern lens; neither producer nor skeptic read
+it; nothing depends on it
+\item Single producer, correlated model agents; the premises print the
+headline; the agreement is a replay of elementary algebra
+\item Scientific priority unverified
+\end{itemize}
+\end{gatequote}
+Full derivation and reviewed implementation:
+\repo{research/round32/forward/az1/report.md}{AZ1 forward},
+\repo{research/round32/skeptic/az1-contract-review.md}{contract review},
+\repo{research/round32/skeptic/az1-independent-derivation.md}{independent
+pre-comparison derivation},
+\repo{research/round32/skeptic/az1.md}{independent model-agent review} and the
+\repo{research/round32/contracts/az1.json}{frozen contract}. The advisor's
+findings record that AZ1 closes the fifth Round31 roadmap goal in its honest
+form: the dictionary along a trajectory, and an explicit identification of
+the single volume-uniform estimate supplied and of the estimates missing. The
+roadmap's continuum goal now names the missing premise exactly. The
+lattice-units floor $a\Delta\ge g^2/32$ in the admitted regime is the
+quantitative reason why the strong-coupling family cannot approach a
+finite-mass continuum by itself. The gate selects AZ2 next; its contract was
+already frozen and in production.
+
+\subsection{AZ2: finite-graph first- and second-order Wilson coefficients}
+\label{sec:az2}
+\providecommand{\tfg}{\tau_{\mathrm{FG}}}
+
+\textbf{Contribution \projecttag{HNM-C-AZ2}.} The AZ2 contract, recorded under
+the title ``Hruday exact finite-graph first- and second-order Wilson
+coefficients on the two-plaquette graph (a different finite model)'', was
+frozen at 04:29:40Z, 0.03~s after AZ1, after panel update~4 and before
+production. It closes sub-round~5 and is investigation~10 of~10. Its model is
+not a $\mathbb Z^3$ model at all. It is the Round11 two-plaquette graph
+\cite{r11}: two adjacent squares sharing one link, seven links, six Gauss
+constraints, the gauge-invariant sector, a polynomial-degree cutoff
+$D\in\{6,8\}$ with a certified tail, a coupling $\tfg$ on a declared grid and
+the I1.5 sign convention. The preregistered model identifier is
+\recid{FG(two-plaquette, D in {6,8}, tau_FG grid, I1.5, gauge-invariant)}, the
+selected triple is \recid{n/a (finite graph)}, and the coupling is the grid
+$\tfg\in\{1/1000,1/100,1/10\}$ at both signs, declared a model change against
+the previous loop. The observable is $\langle W\rangle_{\rm FG}$ of one square
+with its coefficients, without centering; the reference is the graph's own
+free value on the route \recid{own_finite_graph}, and there is no Euclidean
+node. The three itemized error terms are \recid{truncation_jmax},
+\recid{eigenvector_residual} and \recid{arithmetic}. The target, ``certified
+tail and enclosure widths reported at every grid point and both cutoffs;
+first-order coefficient enclosure contains 1/6'', has the value~1 with the
+comparator $\ge$ and is declared a feasibility and format check on a
+rehearsed finite-model computation, not a blind discovery threshold. The
+acceptance clause reads ``Enclosures with certified tails at every grid point;
+first-order coefficient consistent with the dictionary; labels present''; a
+tail certified only at $D=6$, or an unitemized product channel, would have
+been \recid{limited}. The contract's stop field reads ``Investigation 10 of
+10; scientific production stops after this review.''
+
+AZ2 runs in one direction, as planned, because it instantiates certificates
+on a computable finite model; its contract declares \recid{single+skeptic}.
+There is one forward producer.
+The second admission input is the skeptic's pre-comparison derivation and
+replay, written from the contract alone
+(\recid{single_direction_independent_replay}), followed by the
+post-comparison review. The producer received \texttt{AGENTS.md}, the contract
+and its 26 shared premises, 28 files in all, and read all of them in full: the
+selection note; the Round11 README, advisor record, solver README and solver
+source; the modern lens's loop-2 response, loop-3 sign-off and update~4; the
+AW1 gate and AW1 forward report; the complete-residual reference note; the
+AT4, I1, AM2 (forward and reverse), AQ1 and AQ2 reports; the AM2 gate and the
+skeptic's AM2 review; and the four method snapshots with their three
+reference notes. No reverse package exists, and
+\recid{reverse_premise_isolation} is false.
+
+Both packages were developed at the same time after the contract froze. The
+skeptic's first scratch file dates from 04:41:37Z and the producer's from
+04:46:16Z. The skeptic's checker was last written at 05:17:07Z, and its final
+replays followed; the producer's checker and report were last written at
+05:27:23Z and 05:27:39Z and its output at 05:28:27Z. The skeptic froze at
+05:29:35Z and the producer at 05:29:49Z. As for AZ1, the skeptic committed
+first: \texttt{4bae265} at 05:30:10Z, before the producer's \texttt{dc817d8}
+at 05:33:11Z. The two packages also chose different models for the same
+contract text (Section~\ref{sec:az2-model}), which is itself evidence that
+neither read the other. Isolation rests on disclosure, name-only exposure,
+content and commit order (Section~\ref{sec:az2-evidence}).
+
+Notation: $x=W_1$, $y=W_2$ and $z$ are the three trace coordinates of
+Section~\ref{sec:az2-model}; $K$ is the kinetic operator and $H_{\rm FG}$ the
+Hamiltonian in units of $\alpha$; $P_D$ is the span of the monomials of total
+degree at most $D$ and $Q_D=I-P_D$. For a Ritz vector $v\in P_D$ with unit
+vector $\hat v$, $\mu$ is its Rayleigh quotient,
+$r=(H_{\rm FG}-\mu)\hat v$ its complete residual in the full graph space and
+$\rho=\norm r$. $b=3-2|\tfg|$ is the certified separation,
+$t_\ell=\recid{tail_lower}$ the first omitted-shell threshold, and $s_A$ and
+$s_B$ are the Davis--Kahan and Eckart angle bounds. Decimals are previews of
+exact rationals. The word ``interaction'' refers only to this graph.
+
+\subsubsection{Reviewed scope}
+\label{sec:az2-scope}
+The \repo{research/round32/advisor/az2-gate.json}{AZ2 gate}, completed at
+06:06:38Z, records the verdict \recid{accepted_within_scope} with two
+sub-labels.
+\begin{itemize}\raggedright
+\item primary: \recid{sign_certified_finite_graph}, because every enclosure
+ excludes the graph's own free reference;
+\item secondary: \recid{static_not_dynamic}, because the observable is a
+ static ground-state mean.
+\end{itemize}
+The accepted statement, quoted verbatim below in the gate's ASCII notation, is
+the scope of every claim in this subsection. In it, \texttt{tau\_FG} is
+$\tfg$; \texttt{H\_FG}, \texttt{K}, \texttt{W\_1}, \texttt{W\_2} and
+\texttt{z} are as in Section~\ref{sec:az2-model}; \texttt{psi\_0} is the
+ground state and \texttt{psi\_1} the first-order vector;
+\texttt{<W\_1>} is $\langle W_1\rangle=\langle\psi_0,W_1\psi_0\rangle$;
+\texttt{E\_0} is the ground energy; \texttt{h1}, \dots, \texttt{vM} are link
+names; \texttt{rho} is Round11's shared-link weight, written $\rho_{11}$ below;
+and \texttt{tail\_lower} is $t_\ell$. The sentence beginning ``The
+finite-graph derivative'' is the contract's mandatory sentence
+(Section~\ref{sec:az2-sentence}).
+\begin{gatequote}
+On the Round11 two-plaquette graph (open two-square patch: 6 vertices, 7
+links, 6 Gauss constraints; gauge-invariant sector), for the finite-graph
+model H\_FG = K - tau\_FG (W\_1 + W\_2) in alpha units (= Round11 H(alpha=1,
+lambda1=lambda2=tau\_FG, rho=1) - 2 tau\_FG), both faces of the Round11
+two-plaquette graph coupled equally, K the sum of the seven link Casimirs
+(rho=1), I1.5 sign, gauge-invariant sector, with observable <W\_1> =
+<psi\_0,(1/2)Tr(U) psi\_0>, U = vM h3\textasciicircum{}-1
+vL\textasciicircum{}-1 h1, and cutoffs D in \{6,8\} (trace-monomial basis of
+total degree D, dimensions 84 and 165): (1) d<W\_1>/dtau\_FG at tau\_FG=0 is
+exactly 1/6 at D=6 and at D=8 (enclosure [1/6,1/6]; also on the untruncated
+graph, psi\_1=(W\_1+W\_2)/3 exactly), and the own free reference computed in
+the same code path is <W\_1>(0)=0 exactly; (2) at tau\_FG in \{+-1/1000,
++-1/100, +-1/10\} the full-graph <W\_1> lies in the exported exact enclosures
+(listed in admitted\_values.enclosures; e.g. D=8, tau\_FG=+1/10: [\allowbreak
+8330560043705980737198104247838582935020907/\allowbreak
+500000000000000000000000000000000000000000000, \allowbreak
+16661120087411961480213908206571701630183797/\allowbreak
+1000000000000000000000000000000000000000000000], about 0.016661120087411961474
+to 0.016661120087411961480), each excluding 0 with the sign of tau\_FG, the
+D=8 enclosure inside the D=6 one, the -tau\_FG enclosure the exact negation;
+(3) the second-order coefficient of <W\_1> is exactly 0 (shared-link centre
+flip), the second-order energy coefficient is -1/6, <W\_1> = tau\_FG/6 -
+(187/33696) tau\_FG\textasciicircum{}3 + (767713/2523156480)
+tau\_FG\textasciicircum{}5 + ..., E\_0 = -tau\_FG\textasciicircum{}2/6 +
+(187/67392) tau\_FG\textasciicircum{}4 + ..., second-order
+<W\_1\textasciicircum{}2>, <W\_1 W\_2>, <z> equal 7/576, 79/2808, 7/216, all
+finite-model values from exact Rayleigh-Schroedinger algebra with zero
+truncation error at both cutoffs, never fitted; (4) the complete residual lies
+in the first omitted shell and is itemized in five parts at every point: (a)
+seven per-link rows (thresholds 123/2 and 96 on h1,vL,h3 and h2,vR,h4; 45 and
+69 on vM), (b) the joint product channel (threshold 48 and 145/2, with corner
+overlaps and the positive x-y interference), (c) gauge projection exactly 0
+with its reason, (d) the Ritz residual with Davis-Kahan and Eckart angles and
+the Weyl separation 3-2|tau\_FG|, (e) directed arithmetic; tail\_lower is 45
+(D=6) and 69 (D=8). The finite-graph derivative of <W>\_FG at tau\_FG=0, under
+the stated normalization dictionary, is consistent with the matched
+Z\textasciicircum{}3 first-order coefficient 1/144; this is a consistency
+check on a different, finite model, not a prediction, not a confirmation of
+the Z\textasciicircum{}3 value, and it does not transfer to any subsequential
+limit of the AQ construction or resolve roadmap goal 2. The finite graph is
+consistent with the matched coefficient and nothing more; its one-face variant
+(second face uncoupled), which the contract text also admits, is a different
+finite model that differs at third order.
+\end{gatequote}
+The gate's decision admits the statement for the two-face model it names and
+records how that model was fixed: the contract fixed neither the one-face nor
+the two-face coupling, the producer disclosed its choice in its verdict,
+report and results, and the skeptic's one-face pre-comparison reading remains
+admissible, with its values recorded as the other model. It admits four
+items. (1)~The derivative is exactly $[1/6,1/6]$ at both cutoffs with tail
+term exactly~0, the free reference is exactly~0 in the same code path, and
+$1/6\leftrightarrow1/144$ under $\tfg=\tau/24$ is a consistency check, never a
+transfer. (2)~The twelve exact enclosures, with the recorded half-widths, are
+certified by the exact full-space residual on the first omitted shell, the
+certified gap, Temple's bound with the Round11 tail comparison and an Eckart
+angle bound. (3)~The coefficients are exact and cutoff-independent, and the
+one-face model differs certifiably at third order. (4)~The five-part ledger
+is complete, and the python-flint Arb preview is labelled preview only. The
+gate binds the producer's exact rationals. The skeptic's independent two-face
+enclosures lie inside them, and its one-face enclosures are disjoint from
+them, because they belong to a different model. The rest of this subsection
+derives the statement, and the limitations recorded by the gate close it
+(Section~\ref{sec:az2-limits}).
+
+\subsubsection{The graph, the Hamiltonian and the two admissible readings}
+\label{sec:az2-model}
+\paragraph{The graph.}
+The Round11 graph (G1--G2 of the
+\repo{research/round11/advisor/advisor.md}{Round11 advisor record}) has the
+vertices TL, TM, TR, BL, BM, BR and seven oriented links, each with the
+normalized Haar measure of SU(2):
+\begin{center}\small
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+link & h1 & h2 & h3 & h4 & vL & vM & vR\\
+orientation & TL$\to$TM & TM$\to$TR & BL$\to$BM & BM$\to$BR & TL$\to$BL &
+TM$\to$BM & TR$\to$BR\\
+\bottomrule
+\end{tabular}
+\end{center}
+Independent SU(2) gauge transformations act at all six vertices; these are
+the six Gauss constraints. With both loops based at TM,
+\begin{equation}
+ \begin{gathered}
+ U=v_Mh_3^{-1}v_L^{-1}h_1,\qquad V=h_2v_Rh_4^{-1}v_M^{-1},\\
+ x=W_1=\tfrac12\tr U,\qquad y=W_2=\tfrac12\tr V,\qquad z=\tfrac12\tr(UV).
+ \end{gathered}
+ \label{eq:az2-loops}
+\end{equation}
+Square~1 is $U$; the shared link $v_M$ lies in both squares and cancels in
+the outer loop $z$. Round11 reduces the gauge-invariant sector to
+$L^2(\Omega,(2/\pi^2)\,dx\,dy\,dz)$ (its Q1--Q3). The ground state of every
+Hamiltonian below is unique (Round11 Theorem~F, and $E_0\le\mu<b\le E_1$ at
+every grid point).
+
+\paragraph{The admitted Hamiltonian.}
+In units of $\alpha$,
+\begin{equation}
+ \begin{gathered}
+ H_{\rm FG}=K-\tfg\,(W_1+W_2),\qquad K=\sum_{e}C_e,\\
+ H_{\rm FG}=H_{\rm R11}(\alpha=1,\lambda_1=\lambda_2=\tfg,\rho_{11}=1)-2\tfg ,
+ \end{gathered}
+ \label{eq:az2-hamiltonian}
+\end{equation}
+where $K$ is the sum of the seven link Casimirs $j(j+1)$, both faces carry the
+same coupling, and $\rho_{11}=1$ is Round11's shared-link weight, written
+$\rho_{11}$ here to keep it apart from the residual norm $\rho$. The constant
+$-2\tfg$ moves no state. For $\tfg<0$ the Round11 solver's interface, which
+requires $\lambda\ge0$, does not apply; every bound below uses only
+$\norm{W_1+W_2}\le2$ and needs no sign. The sign follows I1.5: the star
+operator is $\phi_b=-(\tau/3)\sum W_f$ in units of $\delta$, that is
+$-(\tau/24)W_f$ in units of $\alpha$, so the first-order mean is positive for
+positive coupling. A static ground-state mean does not depend on $\alpha$,
+and the clock of \eqref{eq:dict-clock} is named only. The normalization
+dictionary of the contract is
+\begin{equation}
+ \tfg=\frac\tau{24},
+ \label{eq:az2-dictionary}
+\end{equation}
+because the $\mathbb Z^3$ face coefficient in units of $\alpha$ is
+$\nu/\alpha=\tau/24$ (I1) and the graph's coupling multiplies one face each.
+
+\paragraph{The kinetic operator.}
+In quotient coordinates $K=3C_U+3C_V+S$: $C_U$ acts on $(x,z)$, $C_V$ on
+$(y,z)$, and the shared-link term $S$, with derivative $L_U-R_V$, on $(x,y)$.
+The checker reproduces the Round11 K5 identities exactly:
+\begin{equation}
+ K1=0,\qquad Kx=3x,\qquad Ky=3y,\qquad Kz=\tfrac92z,\qquad
+ K(xy)=\tfrac{13}2xy-\tfrac12z .
+ \label{eq:az2-k5}
+\end{equation}
+The last identity is the shared-link cross term. The span of $x$ and $y$ is
+the exact eigenspace of $K$ at its free gap $3$.
+
+\paragraph{Which faces carry the coupling: a contract wording defect.}
+The skeptic's pre-comparison package read the contract as
+$H_{\rm FG}=K-\tfg W_1$, with the second face uncoupled; the producer computed
+\eqref{eq:az2-hamiltonian}. The review finds that the contract fixes neither.
+Its model string names one coupling on a declared grid but not which faces
+carry it, and $\lambda_2$ appears nowhere. \recid{parameters.observable}
+names the observable, ``$\langle W\rangle$ of one square'', not the coupling.
+The only face wording is the dictionary's parenthetical ``the two-plaquette
+graph's own coupling multiplies one face'', which explains the per-face
+normalization and reads equally well as ``multiplies one face each''. The
+Round11 defaults $\lambda_1=\lambda_2=0$ decide nothing. The shared premise of
+the modern lens's loop-2 response specifies
+$H/\alpha=K+\kappa_1(1-x)+\kappa_2(1-y)$, with both faces coupled, and the
+uniform $\mathbb Z^3$ model that the dictionary quotes couples every face. So
+the two-face reading is at least as well supported as the one-face reading,
+and the one-face reading remains admissible. The producer named its
+Hamiltonian in its verdict, report and results and in its model control, and
+computed the one-face $E_2=-1/12$ as a labelled control value, so there is no
+undisclosed model change. The review records the point as contract wording
+defect W-A, not a blocking issue, and the gate names the two-face model
+exactly.
+
+\paragraph{The exact coefficients identify the model.}
+The review recomputes the untruncated Rayleigh--Schr\"odinger series of both
+models in Round11 monomials. With
+$\langle W_1\rangle=\sum_na_n\tfg^n$ and $E_0=\sum_ne_n\tfg^n$:
+\begin{center}\small
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Model & $a_1$ & $a_2$ & $a_3$ & $a_5$ & $e_2$ & $e_4$\\
+\midrule
+two faces (admitted) & $1/6$ & $0$ & $-187/33696$ & $767713/2523156480$ &
+$-1/6$ & $187/67392$\\
+one face (the skeptic's reading) & $1/6$ & $0$ & $-5/864$ & $289/829440$ &
+$-1/12$ & $5/3456$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both models share the derivative $1/6$, the zero second-order coefficient of
+$\langle W\rangle$ (a centre flip on $v_M$ in one model, on a link of $U$ in
+the other), the dictionary comparison $1/6\leftrightarrow1/144$, the own free
+reference~0, and the dimensions, tails and channel thresholds of
+Section~\ref{sec:az2-basis}. They first differ at third order. The skeptic's
+pre-comparison package had recorded the two-face values $-187/33696$ and
+$-1/6$ as side values, and they equal the producer's exactly.
+
+\paragraph{The spectator identity holds only in the one-face model.}
+With only $U$ coupled, the spin carried by $h_2$, $v_R$ and $h_4$ is
+conserved, because $x$ acts only on the four links of $U$ and $K$ is diagonal
+in spin-network labels. The ground state lies in the sector of class
+functions of $U$, where $K=4C$ and, in the orthonormal characters $U_k(x)$,
+$H$ is the Jacobi matrix $\mathrm{diag}(k(k+2))-(\tfg/2)(\text{shift up}+
+\text{shift down})$. Under \eqref{eq:az2-dictionary},
+$8H_{\rm FG}=32C-(\tau/3)x$, which is exactly AW1's one-plaquette fixture
+\eqref{eq:aw1-plaquette}, and indeed
+$-\tfrac5{864}\cdot24^{-3}=-\tfrac5{11943936}$. In that model the second square
+is a spectator. In the admitted two-face model it is active, and the model
+differs from the AW1 fixture at third order: $-187/(33696\cdot24^3)$ against
+$-5/11943936$. The two-face model is therefore a genuinely different finite
+model beyond first order, and the spectator identity is not claimed for it.
+
+\paragraph{The second-square shift is certified.}
+Exactly,
+\begin{equation}
+ \langle W_1\rangle_{\text{two faces}}-\langle W_1\rangle_{\text{one face}}
+ =\frac{\tfg^3}{4212}+O(\tfg^5),\qquad
+ -\frac{187}{33696}+\frac5{864}=\frac1{4212}.
+ \label{eq:az2-shift}
+\end{equation}
+The review certifies it at all twelve points from its own two-face
+enclosures and its frozen one-face enclosures, with the sign of $\tfg$ at
+every point; at $D=8$ the midpoints are about $2.3697588999\times10^{-7}$,
+$2.3741248805\times10^{-10}$ and $2.3741685992\times10^{-13}$ at
+$\tfg=+1/10$, $+1/100$ and $+1/1000$. The producer's twelve enclosures and the
+skeptic's twelve one-face pre-comparison enclosures are therefore disjoint at
+every point. The one-face values are recorded in the gate as the skeptic's
+alternative reading, not admitted, and they are not used below.
+
+\subsubsection{Basis, cutoff and the first omitted shell}
+\label{sec:az2-basis}
+\paragraph{Why the complete residual is finite.}
+$P_D$ is spanned by the monomials $x^ay^bz^c$ with $a+b+c\le D$, in Round11
+order, of dimension $\binom{D+3}3$: 84 at $D=6$ and 165 at $D=8$. $K$ is
+triangular in degree, with diagonal
+\begin{equation}
+ \varepsilon(a,b,c)=3j(j+1)+3k(k+1)+\ell(\ell+1),\qquad
+ j=\frac{a+c}2,\quad k=\frac{b+c}2,\quad \ell=\frac{a+b}2
+ \label{eq:az2-eps}
+\end{equation}
+(Round11 E2). $K$ preserves every $P_d$, and multiplication by $x$ or $y$
+raises the degree by at most one. Hence $H_{\rm FG}v\in P_{D+1}$ for every
+$v\in P_D$: the complete full-space residual is a finite polynomial, computed
+exactly, and nothing lies beyond shell $D+1$. $D$ is the total polynomial
+degree. No per-link $j_{\max}$ is well-posed for this basis, as the contract
+states.
+
+\paragraph{Exactly orthogonal sectors.}
+For a monomial $m_s$ of degree $D+1$, $Q_Dm_s=m_s-P_Dm_s$ is a single
+spin-network sector $(j,k,\ell)$ of shell $D+1$ by Peter--Weyl on each link:
+$m_s$ has link spins at most $(j,k,\ell)$ coordinatewise, and the monomials of
+a down-closed label set span exactly the spin networks with those labels. The
+checker verifies orthogonality exactly: the Schur complement
+$G_{D+1,D+1}-B^{\mathsf T}G_D^{-1}B$ has zero off-diagonal entries, for 36
+sectors and 630 pairs at $D=6$ and 55 sectors and 1485 pairs at $D=8$; the
+top retained shells, with 28 and 45 sectors, pass the same test. The Gram
+matrix is block diagonal in the four link-flip parity classes (blocks
+24/20/20/20 at $D=6$ and 45/40/40/40 at $D=8$), and its exact
+$LDL^{\mathsf T}$ has all pivots positive. Every omitted norm is therefore an
+exact sum of sector weights.
+
+\paragraph{Per-link spins and the product channel.}
+The degree-two vertices force one spin along each three-link path: $j$ on
+$h_1$, $v_L$ and $h_3$; $k$ on $h_2$, $v_R$ and $h_4$; and $\ell$ on the
+shared link $v_M$. A shell-$(D+1)$ sector exceeds the retained per-link
+maximum $D/2$ on the $j$ links if and only if $b=0$, on the $k$ links if and
+only if $a=0$, and on $v_M$ if and only if $c=0$. The \emph{product channel}
+is the set of sectors with $a,b,c\ge1$: every link spin is within $D/2$, yet
+the joint degree is omitted, so these states are not implied by any per-link
+item. The exact thresholds are minima of $\varepsilon$ over all omitted
+shells. The enumeration stops once the Round11 E3 shell minimum
+$m_d=\tfrac58d^2+2d+\tfrac38(d\bmod2)$, which increases with $d$, exceeds
+every class minimum (Table~\ref{tab:az2-thresholds}). Both joint thresholds
+equal the contract's 45 and 69 and the E3 formula, $m_7=45$ and $m_9=69$. The
+lowest omitted state excites the shared link. The skeptic reaches the same
+floors independently: $\varepsilon$ increases strictly in each exponent, so
+no later shell undercuts shell $D+1$ and $QKQ\ge m_{D+1}Q$ on the whole
+omitted space.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Exact first-omitted-shell thresholds, in units of $\alpha$, with the
+sector $(a,b,c)$ that attains each. The joint threshold is
+\recid{tail_lower}.}
+\label{tab:az2-thresholds}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$D$ & joint $t_\ell=m_{D+1}$ & $v_M$ per link & $h_1,v_L,h_3$ (and $h_2,v_R,h_4$) & product channel\\
+\midrule
+6 & 45 at $(3,4,0)$ & 45 at $(3,4,0)$ & $123/2$ at $(6,0,1)$ & 48 at $(3,3,1)$\\
+8 & 69 at $(4,5,0)$ & 69 at $(4,5,0)$ & 96 at $(7,0,2)$ & $145/2$ at $(4,4,1)$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{The five-part ledger and the enclosure theorem}
+\label{sec:az2-ledger}
+\paragraph{The complete residual.}
+Take a rational Ritz vector $v\in P_D$, its unit vector $\hat v$, its Rayleigh
+quotient $\mu$ and its complete residual $r=(H_{\rm FG}-\mu)\hat v\in P_{D+1}$.
+Then
+\begin{equation}
+ \rho^2=\norm{H_{\rm FG}\hat v}^2-\mu^2=\rho_P^2+\rho_Q^2,\qquad
+ \rho_Q^2=\tfg^2\,\norm{Q_D(x+y)\hat v}^2 ,
+ \label{eq:az2-residual}
+\end{equation}
+exactly, where $\rho_P$ is the retained part and $\rho_Q$ the omitted part.
+Contract item~1 asks for five separately itemized parts, and a single nonzero
+omitted matrix element, it adds, proves leakage but does not bound it. The
+producer itemizes all five at each of the 14 points (the free reference and
+the twelve grid points, at both cutoffs):
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Per-link representation tail}, one row for each of the seven
+ links: the retained maximum spin $D/2$, the exact threshold of the states
+ whose spin on that link exceeds $D/2$, the exact weight of $r$ in those
+ sectors, the link's boundary layer in $\hat v$ (the shell-$D$ sectors with
+ spin exactly $D/2$) and the certified per-link tail of the true ground state
+ (item~7 below).
+\item \emph{Joint product channel across all seven links}: $\rho_Q^2$ as the
+ exact sum over all shell-$(D+1)$ sectors, the product-channel weight and its
+ threshold, the corner overlaps between per-link classes, and the $x$- and
+ $y$-face channels with their interference $2XY$. That interference is
+ positive, so the two face channels are not orthogonal and may not be added
+ in quadrature. The checker verifies exactly that the per-link classes plus
+ the product channel minus the corners equal $\rho_Q^2$, and it reports the
+ certified joint tail $T_{\rm joint}$ of the true ground state.
+\item \emph{Gauge-invariant projection}: exactly~0. Every basis element is a
+ polynomial in traces of closed holonomies, invariant under all six vertex
+ actions, and $H_{\rm FG}$ commutes with the gauge action. An exact
+ rational-quaternion fixture checks the invariance: seven rational unit
+ quaternions give $(x,y,z)=(13/18,1/6,-4/27)$, unchanged under four sets of
+ six vertex transformations, while the open three-link path
+ $h_3^{-1}v_L^{-1}h_1$ changes; $z$ does not depend on $v_M$, and the $v_M$
+ flip maps $(x,y,z)$ to $(-x,-y,z)$.
+\item \emph{Ritz and eigenvector residual}: $\rho_P^2$, which is below
+ $5\times10^{-199}$ everywhere because the Ritz proposal is rounded at
+ $10^{-100}$; $\rho^2$; the certified gap; and the angle bounds $s_A$ and
+ $s_B$.
+\item \emph{Arithmetic}: exact \sourcepath{Fraction} arithmetic throughout.
+ The only non-rational steps are square roots, rounded upward by integer
+ square roots with width at most $10^{-55}$. Exported ends are rounded
+ outward to denominators $10^{45}$, which contributes at most about
+ $2\times10^{-45}$ of each width, included. The 110-digit decimal inverse
+ iteration only proposes $v$; its rounding enters, measured exactly, in
+ item~(d).
+\end{enumerate}
+The preregistered error terms map onto the ledger as \recid{truncation_jmax}
+$\to$ (a)+(b)+(c), the $D$-cutoff truncation (producer defect~D1);
+\recid{eigenvector_residual} $\to$ (d); and \recid{arithmetic} $\to$ (e). The
+skeptic's contract review read the map the same way, with (c) reported as
+not applicable with its reason; the producer reports it as exactly~0 with
+the same reason.
+
+\paragraph{The enclosure theorem.}
+Write $b=3-2|\tfg|$. The certificate chains seven items; Round11 T1--T5 and
+E3--E4 are inherited, and Kato, Rayleigh--Ritz, Weyl, Temple, Eckart and
+Davis--Kahan are cited \cite{standard}.
+\begin{enumerate}[label=\arabic*.]
+\item \emph{Complete residual.} For $v\in P_D$, $r\in P_{D+1}$ and
+ \eqref{eq:az2-residual} is exact.
+\item \emph{Certified gap (Weyl).}
+ $E_1(H_{\rm FG})\ge E_1(K)-\norm{\tfg(W_1+W_2)}\ge3-2|\tfg|=b$, where
+ $E_1(K)=3$ comes from the complete free spectrum (Round11 E3, with
+ $\mathrm{span}\{x,y\}$ at~3), and $E_0\le\mu$ by Rayleigh--Ritz. At every
+ point $\mu<b$, so the ground state is simple and $E_1-E_0\ge b-\mu$, which
+ ranges from 2.80 to 3.00.
+\item \emph{Davis--Kahan and Temple.} The angle $\theta$ between $\hat v$ and
+ the ground state satisfies $\sin\theta\le\rho/(b-\mu)=:s_A$, and
+ $E_0\ge\mu-\rho^2/(b-\mu)$.
+\item \emph{Round11 tail comparison.} Put $t=t_\ell-2|\tfg|$, so that
+ $Q_DH_{\rm FG}Q_D\ge t\,Q_D$ (E4), and take $R=b<t$. Young's inequality gives
+ $H_{\rm FG}\ge B\oplus R\,Q_D$ with
+ \begin{equation}
+  B=A-\frac{CC^*}{t-R},\qquad A=P_DH_{\rm FG}P_D,\qquad CC^*=P_DVQ_DVP_D,
+  \label{eq:az2-schur}
+ \end{equation}
+ so $E_0\ge\lambda_0(B)$ because $\lambda_0(B)\le\mu<R$. With
+ $\beta_0=\langle\hat v,B\hat v\rangle=\mu-\rho_Q^2/(t-R)$ and the exact
+ $\eta=\norm{(B-\beta_0)\hat v}$, finite Temple gives
+ $\lambda_0(B)\ge\beta_0-\eta^2/(b_B-\beta_0)$ with
+ $b_B=b-4\tfg^2/(t-R)\le\lambda_1(B)$. This energy bound is 14 to 24 times
+ sharper than Temple's, because the omitted leakage is divided by $t-R$,
+ about 42 at $D=6$ and 66 at $D=8$, instead of by $b-\mu\approx2.8$.
+\item \emph{Eckart.}
+ $\sin^2\theta\le(\mu-E_0)/(E_1-E_0)\le(\mu-E_0^{\rm low})/(b-\mu)=:s_B^2$.
+ At every grid point $s_B<s_A$, by a factor of 3.7 to 4.9 (the review records
+ 3.74 to 4.85 exactly). The headline enclosure therefore uses the tail
+ comparison together with the certified gap.
+\item \emph{Observable.} With $\norm{W_1}\le1$, vector centering and
+ $s=\min(s_A,s_B)$,
+ \begin{equation}
+  \bigl|\langle\hat v,W_1\hat v\rangle-\langle\psi_0,W_1\psi_0\rangle\bigr|
+  \le2s\sigma+2s^2\le2s+2s^2,\qquad
+  \sigma=\norm{(W_1-\langle W_1\rangle)\psi_0}\le1 .
+  \label{eq:az2-observable}
+ \end{equation}
+\item \emph{Certified tails of the true ground state.} From
+ $Q_D(H_{\rm FG}-E_0)\psi_0=0$ and $Q_DH_{\rm FG}Q_D\ge t\,Q_D$,
+ $\norm{Q_D\psi_0}\le(\rho_Q+2|\tfg|s)/(t-\mu)=:T_{\rm joint}$. For a link
+ class $e$ let $\Pi_e$ project onto spin above $D/2$; it commutes with $K$,
+ and its range lies in $Q_D$ by the triangle inequality. With $c_e$ the number
+ of faces containing the link, $t_e$ its threshold and $\Lambda_e$ its
+ spin-exactly-$D/2$ layer,
+ $\norm{\Pi_e\psi_0}\le c_e|\tfg|(\norm{\Lambda_e\hat v}+s)/(t_e-2|\tfg|-\mu)$.
+ The smaller of the per-link and joint bounds is reported: for $v_M$ the joint
+ bound, for the other six links the per-link bound, smaller by factors of
+ about 50 to 140.
+\end{enumerate}
+At every grid point and cutoff, then, $\langle W_1\rangle$ lies in
+$[w_R-(2s+2s^2),\,w_R+(2s+2s^2)]$ rounded outward, where
+$w_R=\langle\hat v,W_1\hat v\rangle$; $E_0$ lies between the larger of the
+Temple and tail-comparison bounds and $\mu$; and the ground state's omitted
+weight is at most $T_{\rm joint}$.
+
+\subsubsection{The derivative at zero and the own free reference}
+\label{sec:az2-derivative}
+\paragraph{The free reference, in the same code path.}
+The certificate routine used at every grid point, called at $\tfg=0$, returns
+the constant as its Ritz vector (the rounded proposal is exactly $10^{100}$
+times the constant monomial), with $\mu=0$, $\rho=0$ and the enclosure
+$[0,0]$ at both cutoffs. The value is exactly $\mathbb E[W]=\mathbb E[x]=0$ by
+Haar symmetry: the central flip of $v_M$ maps $x$ to $-x$ and preserves the
+normalized Haar measure. The control \recid{own_free_reference} rejects the
+$\mathbb Z^3$ value $1/144$ imported as the reference, $\mathbb E[W^2]=1/4$ as
+the reference, and a reference computed in another code path.
+
+\paragraph{The exact derivative.}
+$H_{\rm FG}(\tfg)=K+\tfg V$ with $V=-(W_1+W_2)$ bounded, and the free ground
+state $E_0(0)=0$ is simple with gap~3, so Kato's theory makes
+$\langle W_1\rangle(\tfg)$ real-analytic near~0 with Rayleigh--Schr\"odinger
+coefficients. The first-order vector is
+\begin{equation}
+ \psi_1=K^{-1}Q_0(W_1+W_2)\Omega=\frac{W_1+W_2}3
+ \label{eq:az2-psi1}
+\end{equation}
+exactly in the full graph space, because $\mathrm{span}\{x,y\}$ is the exact
+eigenspace of $K$ at~3 \eqref{eq:az2-k5}. The finite-basis resolvent on $P_D$
+therefore coincides with the full resolvent on this vector, the tail term is
+exactly~0, and
+\begin{equation}
+ \frac{d\langle W_1\rangle}{d\tfg}\Big|_{\tfg=0}
+ =2\langle x,\psi_1\rangle=\frac{2\,(\mathbb E[x^2]+\mathbb E[xy])}3
+ =\frac{2\cdot\frac14}3=\frac16
+ \label{eq:az2-derivative}
+\end{equation}
+at $D=6$ and $D=8$ alike, and on the untruncated graph. The skeptic checks the
+same value in the producer's basis without the producer's code: the Galerkin
+identity $K_{\rm form}(e_x/3)=M_Xe_1$ holds entrywise, and the exact inertia of
+the kinetic form is $(0,1,n-1)$, so its kernel is the constants and the
+solution is unique.
+
+\paragraph{A second route: certified finite differences.}
+Independently of the Rayleigh--Schr\"odinger vectors, for complex
+$|\tfg|\le3/8$ the Riesz projection $P(\tfg)$ around $|z|=3/2$ satisfies
+$\norm{(H(\tfg)-z)^{-1}}\le(2/3)/(1-4|\tfg|/3)\le4/3$, hence
+$\norm{P(\tfg)}\le2$ and $|\tr(HP)|\le3$. Cauchy's estimate then gives
+$|a_n|\le2(8/3)^n$ and $|e_n|\le3(8/3)^n$, so the bias of a finite difference
+is fully bounded. The odd part of the certified $\pm1/1000$ enclosures
+encloses $a_1$ in
+$[166628734921/10^{12},\,166704587313/10^{12}]\approx[0.1666287,\,0.1667046]$
+at both cutoffs, which contains $1/6$. The interval is about $10^{-4}$ wide,
+valid, and retained as a weaker tier (review finding~N4).
+
+\subsubsection{Enclosures at the grid}
+\label{sec:az2-enclosures}
+Table~\ref{tab:az2-enclosures} gives the twelve certified enclosures of
+$\langle W_1\rangle$. The exact ends are the producer's exported rationals,
+bound by the gate; for example,
+\begin{equation}
+ \begin{aligned}
+ D=6,\ \tfg=+\tfrac1{10}:\quad&\text{lower end }
+ \frac{833056004370541208632670685210085603968639}{50000000000000000000000000000000000000000000},\\[4pt]
+ &\text{upper end }
+ \frac{4165280021853274695489175720401295534950583}{250000000000000000000000000000000000000000000};\\[6pt]
+ D=8,\ \tfg=+\tfrac1{10}:\quad&\text{lower end }
+ \frac{8330560043705980737198104247838582935020907}{500000000000000000000000000000000000000000000},\\[4pt]
+ &\text{upper end }
+ \frac{16661120087411961480213908206571701630183797}{1000000000000000000000000000000000000000000000}.
+ \end{aligned}
+ \label{eq:az2-example}
+\end{equation}
+
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Certified enclosures of $\langle W_1\rangle$ at the positive grid
+points. Decimals are the review's outward rounding at 32 places of the
+producer's exact rationals (lower ends down, upper ends up), so at $D=8$,
+$\tfg=1/1000$ the printed width exceeds the true one. At $-\tfg$ each
+enclosure is the exact negation. Half-widths are the producer's previews.}
+\label{tab:az2-enclosures}
+\begin{tabular}{@{}ccllc@{}}
+\toprule
+$D$ & $\tfg$ & lower end & upper end & half-width\\
+\midrule
+6 & $1/1000$ & $0.00016666666111704683798008229862$ & $0.00016666666111704683798008232063$ & $1.100\times10^{-29}$\\
+6 & $1/100$ & $0.00166666111707696022389733087208$ & $0.00166666111707696022411805253250$ & $1.103\times10^{-22}$\\
+6 & $1/10$ & $0.01666112008741082417265341370420$ & $0.01666112008741309878195670288161$ & $1.137\times10^{-15}$\\[2pt]
+8 & $1/1000$ & $0.00016666666111704683798008230962$ & $0.00016666666111704683798008230963$ & $2.814\times10^{-39}$\\
+8 & $1/100$ & $0.00166666111707696022400769169946$ & $0.00166666111707696022400769170512$ & $2.822\times10^{-30}$\\
+8 & $1/10$ & $0.01666112008741196147439620849567$ & $0.01666112008741196148021390820658$ & $2.908\times10^{-21}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Properties.}
+Every $D=8$ enclosure lies inside the $D=6$ enclosure at the same point. The
+$-\tfg$ certificate is computed separately, and it equals the $v_M$-flip image
+of the $+\tfg$ certificate exactly: the same Ritz vector up to the signs
+$(-1)^{a+b}$, the same $\mu$ and $\rho$, and the negated $\langle W_1\rangle$.
+The exchange of the two squares gives $\langle W_2\rangle=\langle W_1\rangle$
+exactly. Every enclosure excludes the graph's own free reference~0 and carries
+the sign of $\tfg$. That is the content of the sub-label
+\recid{sign_certified_finite_graph}, for this graph and this model only. The
+preregistered exclusion ``free reference inside enclosure $\Rightarrow$ no
+interaction claim'' is therefore not triggered; the interaction it refers to
+is the graph's own coupling.
+
+\paragraph{Energies and gaps.}
+Table~\ref{tab:az2-energies} gives the energy enclosures. They are identical
+at $D=6$ and $D=8$ to the 22 digits shown, and so are the gap bounds. The
+Temple widths at $\tfg=1/10$ are $1.4\times10^{-29}$ ($D=6$) and
+$1.4\times10^{-40}$ ($D=8$); the tail-comparison widths are
+$9.1\times10^{-31}$ and $5.9\times10^{-42}$. As a labelled comparison,
+$E_0-(-\tfg^2/6+187\tfg^4/67392)$ is about $-1.0\times10^{-10}$ at $1/10$,
+consistent with a sixth-order term.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Ground-energy enclosures (previews; both ends agree to the digits
+shown) and the certified lower bound on $E_1-E_0$, at both cutoffs and both
+signs.}
+\label{tab:az2-energies}
+\begin{tabular}{@{}cll@{}}
+\toprule
+$|\tfg|$ & $E_0$ enclosure, $D=6$ and $D=8$ & $E_1-E_0\ge$\\
+\midrule
+$1/1000$ & $-1.666666638918567016122\times10^{-7}$ & $2.99800017$\\
+$1/100$ & $-1.666663891866742375134\times10^{-5}$ & $2.98001667$\\
+$1/10$ & $-1.666389287037545016204\times10^{-3}$ & $2.80166639$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The ledger values.}
+Tables~\ref{tab:az2-channels} and~\ref{tab:az2-tails} give the ledger at the
+positive points; the $-\tfg$ rows are identical. The per-link weights are the
+Ritz leakage in the sectors that exceed $D/2$ on that link. Three readings
+follow.
+\begin{itemize}
+\item \emph{Channels.} The omitted residual is dominated by the shared-link
+ channel, the sectors $x^ay^b$ with $a+b=D+1$, where $v_M$ carries spin
+ $(D+1)/2$; the $v_M$ class carries essentially all of $\rho_Q^2$. The corner
+ $z^{D+1}$ has exactly zero weight, since shell $D$ cannot reach it in one
+ step. The product channel is small but nonzero, and it is itemized.
+\item \emph{Scaling.} $\rho_Q^2$ scales as $\tfg^{2(D+1)}$; the certified ratio
+ between $1/100$ and $1/1000$ at $D=8$ is $9.99983\times10^{17}$. The
+ product channel scales as $\tfg^{2D+4}$: the review finds it zero at leading
+ order.
+\item \emph{Tail sharpening.} $T_{\rm joint}$ is four to five times smaller
+ than $\sin\theta$, which shows how the tail threshold sharpens the omitted
+ weight.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Omitted-residual channels of the Ritz vector (upward-rounded
+previews): the complete omitted weight $\rho_Q^2$, the $j$-class weight (equal
+to the $k$-class weight), the product-channel weight and the positive face
+interference $2XY$. The retained part $\rho_P^2$ is below $5\times10^{-199}$
+at every point.}
+\label{tab:az2-channels}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$D$ & $\tfg$ & $\rho_Q^2$ & $j$ class & product channel & $2XY$\\
+\midrule
+6 & $1/1000$ & $3.81105\times10^{-57}$ & $2.897\times10^{-61}$ & $4.98938\times10^{-66}$ & $1.68597\times10^{-57}$\\
+6 & $1/100$ & $3.81098\times10^{-43}$ & $2.897\times10^{-47}$ & $4.98929\times10^{-50}$ & $1.68594\times10^{-43}$\\
+6 & $1/10$ & $3.80477\times10^{-29}$ & $2.894\times10^{-33}$ & $4.98003\times10^{-34}$ & $1.68320\times10^{-29}$\\[2pt]
+8 & $1/1000$ & $3.91821\times10^{-76}$ & $7.128\times10^{-82}$ & $3.31098\times10^{-85}$ & $1.78252\times10^{-76}$\\
+8 & $1/100$ & $3.91814\times10^{-58}$ & $7.128\times10^{-64}$ & $3.31092\times10^{-65}$ & $1.78249\times10^{-58}$\\
+8 & $1/10$ & $3.91131\times10^{-40}$ & $7.122\times10^{-46}$ & $3.30449\times10^{-45}$ & $1.77939\times10^{-40}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Angle bounds and certified tails of the true ground state (previews):
+the Davis--Kahan and Eckart bounds on $\sin\theta$, the joint tail
+$T_{\rm joint}$, and the per-link tails for the $h_1,v_L,h_3$ class (equal
+to the $h_2,v_R,h_4$ class) and for $v_M$.}
+\label{tab:az2-tails}
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+$D$ & $\tfg$ & $s_A$ (Davis--Kahan) & $s_B$ (Eckart) & $T_{\rm joint}$ & $T_j$ & $T_{v_M}$\\
+\midrule
+6 & $1/1000$ & $2.059\times10^{-29}$ & $5.502\times10^{-30}$ & $1.372\times10^{-30}$ & $1.759\times10^{-32}$ & $1.372\times10^{-30}$\\
+6 & $1/100$ & $2.072\times10^{-22}$ & $5.518\times10^{-23}$ & $1.375\times10^{-23}$ & $1.840\times10^{-25}$ & $1.374\times10^{-23}$\\
+6 & $1/10$ & $2.202\times10^{-15}$ & $5.687\times10^{-16}$ & $1.402\times10^{-16}$ & $2.682\times10^{-18}$ & $1.402\times10^{-16}$\\[2pt]
+8 & $1/1000$ & $6.603\times10^{-39}$ & $1.407\times10^{-39}$ & $2.869\times10^{-40}$ & $5.708\times10^{-43}$ & $2.869\times10^{-40}$\\
+8 & $1/100$ & $6.642\times10^{-30}$ & $1.411\times10^{-30}$ & $2.874\times10^{-31}$ & $7.033\times10^{-34}$ & $2.873\times10^{-31}$\\
+8 & $1/10$ & $7.059\times10^{-21}$ & $1.454\times10^{-21}$ & $2.917\times10^{-22}$ & $2.075\times10^{-24}$ & $2.916\times10^{-22}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Second- and higher-order coefficients as finite-model values}
+\label{sec:az2-coefficients}
+\paragraph{The exact series.}
+The producer computes the Rayleigh--Schr\"odinger series about the free ground
+state exactly, by polynomial back-substitution, since $K$ is triangular in
+degree. Every $\psi_n$ lies in $P_n$, and the full-space equation
+$K\psi_n=-V\psi_{n-1}+\sum_kE^{(k)}\psi_{n-k}$ holds as a polynomial identity
+for $n\le5$. The coefficients are therefore identical at $D=6$ and $D=8$, and
+their truncation error is exactly zero, not merely bounded. The first two
+vectors are
+\begin{equation}
+ \psi_1=\frac{x+y}3,\qquad
+ \psi_2=\frac{x^2}{24}+\frac{4xy}{39}+\frac{y^2}{24}+\frac{4z}{351}-\frac1{48},
+ \label{eq:az2-psi2}
+\end{equation}
+and Table~\ref{tab:az2-coefficients} lists the coefficients. In closed form,
+\begin{equation}
+ \langle W_1\rangle=\frac{\tfg}6-\frac{187}{33696}\tfg^3
+ +\frac{767713}{2523156480}\tfg^5+\cdots,\qquad
+ E_0=-\frac{\tfg^2}6+\frac{187}{67392}\tfg^4+\cdots .
+ \label{eq:az2-series}
+\end{equation}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Exact Rayleigh--Schr\"odinger coefficients of the admitted two-face
+model, identical at $D=6$ and $D=8$ with truncation error exactly~0. These
+are finite-model values, never fitted.}
+\label{tab:az2-coefficients}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Quantity & order 0 & order 1 & order 2 & order 3 & order 4 & order 5\\
+\midrule
+$\langle W_1\rangle$ & $0$ & $1/6$ & $\mathbf{0}$ & $-187/33696$ & $0$ & $767713/2523156480$\\
+$E_0$ & $0$ & $0$ & $\mathbf{-1/6}$ & $0$ & $187/67392$ & $0$\\
+$\langle W_1^2\rangle$ & $1/4$ & $0$ & $\mathbf{7/576}$ & $0$ & $-787717/1261578240$ & ---\\
+$\langle W_1W_2\rangle$ & $0$ & $0$ & $\mathbf{79/2808}$ & $0$ & $-20159/10513152$ & ---\\
+$\langle z\rangle$ & $0$ & $0$ & $\mathbf{7/216}$ & $0$ & $-349/151632$ & ---\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Checks on the table.}
+\begin{itemize}
+\item \emph{Hellmann--Feynman.} $a_n=-(n+1)e_{n+1}/2$ holds exactly for
+ $n\le4$; for instance $a_1=-e_2=1/6$ and $a_3=-2e_4=-187/33696$.
+\item \emph{Why the second-order coefficient of $\langle W_1\rangle$
+ vanishes.} The shared-link flip $U_E$ with $E=\{v_M\}$ meets both faces once,
+ sends both $W_f$ to $-W_f$ and commutes with every Casimir and with the gauge
+ action. So $\langle W_1\rangle(-\tfg)=-\langle W_1\rangle(\tfg)$ and every
+ even coefficient is zero. This is the finite-graph analogue of the AW1 flip
+ lemma (Section~\ref{sec:aw1-flip}), recorded as a consistency observation
+ only; it is a finite-graph centre-flip fact and says nothing about $K_2$ or
+ the AQ remainder.
+\item \emph{A second route for the second-order values.} The even parts of the
+ certified $\pm1/1000$ enclosures give $a_2\in[-1.0114\times10^{-4},\,
+ 1.0114\times10^{-4}]$ and $e_2\in[-0.16681837,\,-0.16651496]$ at both
+ cutoffs, which contain $0$ and $-1/6$.
+\item \emph{Grid remainder, a labelled comparison.}
+ $(\langle W_1\rangle-\tfg/6)/\tfg^3$ is about $-5.54961982868\times10^{-3}$
+ at $1/1000$ and $-5.54657925470\times10^{-3}$ at $1/10$, against
+ $-187/33696\approx-5.5496201\times10^{-3}$.
+\end{itemize}
+The control \recid{fg_coefficients_not_fitted} rejects the least-squares slope
+through the grid, about $0.1666117$, and the secant; a coefficient read off
+one enclosure is not the coefficient. These are finite-model values only. No
+remainder constant of any other model is bounded or estimated from them.
+
+\subsubsection{The dictionary, the mandatory sentence and the gate fields}
+\label{sec:az2-sentence}
+\paragraph{The comparison, consistency only.}
+Contract item~3 asks for a comparison of the first-order coefficient with the
+matched $\mathbb Z^3$ value under \eqref{eq:az2-dictionary}. The derivative
+$1/6$ corresponds to $(1/6)/24=1/144$, the first-order coefficient of the
+static Wilson mean admitted by AW1 under I1.5 \eqref{eq:aw1-mean}; the Cauchy
+interval divided by 24, $[6.9428640\times10^{-3},\,6.9460245\times10^{-3}]$,
+also contains $1/144$. Two facts make the agreement expected rather than
+informative. Both models share the per-link Casimir normalization, so
+$W\Omega$ has energy~3 in units of $\alpha$ in both; and in both the
+first-order mean is $2\times\text{coefficient}\times\mathbb E[W^2]/3$. The
+skeptic adds that the slope is $2/(\alpha(9+3\rho_{11}))$ in general, so it
+equals $1/6$ only at $\alpha=\rho_{11}=1$ (its reading~2, defect W-B). The finite graph is
+therefore consistent with the matched coefficient and nothing more. Nothing
+about the AQ model's shift, its remainder constant or roadmap goal~2 is
+inferred.
+
+\paragraph{The mandatory sentence.}
+The preregistered template, which the producer's report and the gate quote
+verbatim, reads:
+\begin{gatequote}
+The finite-graph derivative of <W>\_FG at tau\_FG=0, under the stated
+normalization dictionary, is consistent with the matched Z\textasciicircum{}3
+first-order coefficient 1/144; this is a consistency check on a different,
+finite model, not a prediction, not a confirmation of the Z\textasciicircum{}3
+value, and it does not transfer to any subsequential limit of the AQ
+construction or resolve roadmap goal 2.
+\end{gatequote}
+The gate's accepted statement carries it unchanged and adds one sentence: the
+finite graph is consistent with the matched coefficient and nothing more, and
+its one-face variant is a different finite model that differs at third order.
+Contract item~6 forbids two phrasings, a verb of prediction and a phrase of
+confirmation of the $\mathbb Z^3$ value. The producer's checker scans its
+report for both as lowercase substrings with code spans removed; the
+skeptic's whole-word scan of the prose finds neither. The only two
+occurrences sit in code spans of the producer's limitations section, where
+the contract's claim-exclusion list is quoted. Appending the forbidden verb
+to the report aborts the producer's checker. Neither phrasing occurs in this
+addendum.
+
+\paragraph{Gate fields and flags.}
+The preregistration requires three gate fields, and the gate exports them as
+required.
+\begin{itemize}\raggedright
+\item gate fields: \recid{transfers_to_aq} false,
+ \recid{model_is_finite_graph} true and \recid{fg_coefficients_fitted} false;
+\item further flags exported false by the producer's packet:
+ \recid{continuum_claim}, \recid{weak_coupling_claim},
+ \recid{uniform_wilson_claim}, \recid{roadmap_goal_2_resolved},
+ \recid{aq_K2_statement_from_graph}, \recid{scientific_priority_verified} and
+ \recid{resolved_interaction_shift}, which refers to the AQ and
+ $\mathbb Z^3$ shift;
+\item added by the review: \recid{dynamical_claim} false.
+\end{itemize}
+The preregistered
+exclusions all apply: no interaction claim from a reference inside an
+enclosure, no uniqueness of any subsequential limit, no whole-sequence
+convergence or rate in $N$, no continuum or weak coupling, no transfer from a
+finite graph, no static-to-dynamic relabelling and no priority.
+
+\paragraph{The Arb preview.}
+The optional \sourcepath{arb_preview.py} is labelled PREVIEW ONLY. With
+python-flint 0.9.0 \cite{flint} it rebuilds the Haar moments (Round11 Q4) and
+the kinetic operator directly from the Round11 K4 differential formula as
+exact FLINT rational matrices, not from the checker's Casimir decomposition,
+and runs Arb-ball inverse iteration at 400 bits, recording balls for the Ritz
+$\langle W_1\rangle$ and $E_0$ at all 14 points in about four minutes. The
+checker reads its output only for a comparison record: all 14 Wilson balls,
+of width at most $6\times10^{-60}$, lie inside the exact enclosures. The
+checker never imports the preview (the review inspects its imports), and a
+source-edit run that deletes the preview output completes with every headline
+and point value unchanged (review finding~N6). A finite-matrix value is not a
+full-space certificate, and the preview decides no admission.
+
+\subsubsection{Controls, replays and review}
+\label{sec:az2-evidence}
+\paragraph{Contract controls.}
+The contract lists 20 controls, and its preregistration mirror lists the same
+20.
+\begin{itemize}\raggedright
+\item named in contract item~5 and specific to the finite graph:
+ \recid{finite_graph_model_id}, \recid{complete_residual_all_channels},
+ \recid{complete_residual_ledger_itemized},
+ \recid{certified_representation_tail}, \recid{own_free_reference},
+ \recid{no_transfer_to_aq}, \recid{fg_coefficients_not_fitted} and
+ \recid{sign_convention_fixture};
+\item inherited: the other twelve, which name $\mathbb Z^3$ or AQ objects;
+ the producer gives each an explicit finite-graph analogue (defect~D3).
+\end{itemize} All 20 reject damaging mutations through
+explicit exceptions, with none deferred (Table~\ref{tab:az2-controls}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{The 20 contract controls, their finite-graph reading in the forward
+checker and the damaging mutations rejected.}
+\label{tab:az2-controls}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.37\linewidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Control & Finite-graph reading and mutations rejected\\
+\midrule
+\recid{missing_incoming_stars} & both faces coupled ($W_2$ touches $v_M$ of
+square~1) and all seven Casimirs; rejects $W_2$ omitted, $\rho_{11}=0$ and the
+independent rotor\\
+\recid{full_original_wilson_cover} & $W_1$ uses all four links of square~1 in
+the seven-link space; rejects the open three-link path, a basis without $z$
+and the outer perimeter\\
+\recid{wrong_delta_alpha_hbar_clock} & units of $\alpha$ ($\tau/24$, energy
+3) and of $\delta$ ($\tau/3$, energy 24) both give $1/144$; rejects $\tau/18$,
+$\tau/1152$ and the $u$-clock; non-unit fixture $\alpha=5$, $\hbar=7$\\
+\recid{vector_versus_scalar_centering} & the AT4 control is reproduced and
+item~6 uses vector centering; rejects scalar subtraction as a centering
+bound\\
+\recid{first_order_mean_charged} & $1/6$ is charged and the enclosures exclude
+0; rejects a zero first order (parity misapplied) and a first order absorbed
+into the remainder\\
+\recid{tau_scaling_exponent} & certified ratios: linear mean, cubic remainder,
+quadratic energy, leakage $\tfg^{2(D+1)}$; rejects the remainder labelled
+second order and other mislabels\\
+\recid{changed_model_relabelled} & rejects $\rho_{11}=2$, one plaquette, $D=4$, an
+off-grid coupling, unequal faces, the AQ identifier and a flipped sign\\
+\recid{coherent_evidence_tampering} & twelve coherent tamperings with the
+packet hash rebound, rejected by exact recomputation\\
+\recid{insufficient_verdict_retained} & the acceptance rule; weaker tiers
+retained; rejects a tail certified only at $D=6$ relabelled accepted\\
+\recid{exact_arithmetic_admission} & rejects float, Boolean, NaN and
+zero-denominator inputs and the decimal proposal as a value\\
+\recid{root_n_misuse} & the face channels interfere ($2XY>0$); rejects a
+root-sum-square of face channels without interference, division by 7 and a
+root-mean-square over link classes\\
+\recid{no_priority_or_continuum_claim} & flags false; rejects continuum,
+priority, uniform-Wilson, weak-coupling and goal-2 flags set true\\
+\recid{finite_graph_model_id} & finite-graph identifier, graph name and labels;
+rejects the flag false, the AQ identifier and a missing graph name\\
+\recid{complete_residual_all_channels} & complete residual = retained +
+omitted = exact sector sum; rejects a dropped $y$ channel, dropped product
+sectors, one sector as the norm, the finite-matrix residual and one face
+only\\
+\recid{certified_representation_tail} & $t_\ell=45/69$ exact, with
+$T_{\rm joint}$ and per-link tails; rejects $m_D$, an added diagonal, an
+unsubtracted potential, the product or a per-link threshold used as the joint
+one, and a sampled sector\\
+\recid{own_free_reference} & the same code path gives $[0,0]=\mathbb E[W]$;
+rejects $1/144$, $1/4$ and another path\\
+\recid{no_transfer_to_aq} & \recid{transfers_to_aq} false; rejects a $K_2$ or
+goal-2 statement from the graph\\
+\recid{fg_coefficients_not_fitted} & exact Rayleigh--Schr\"odinger values;
+rejects the least-squares slope and the secant\\
+\recid{sign_convention_fixture} & a two-state fixture gives $+1/6$ under I1.5
+and $-1/6$ when flipped, with a positive exact enclosure at $+1/10$; rejects
+the flipped reading\\
+\recid{complete_residual_ledger_itemized} & five items at 14 points; rejects a
+missing (b) or (e), a zero entry without a reason and a missing $v_M$ row\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Checker.}
+The forward checker runs 35 exact checks, implements all 20 controls as
+damaging mutations and records 80 rejections inside the control checks and
+90 in the whole checker. It verifies the contract snapshot's SHA-256 and reads
+from the contract the grid, the cutoffs, the dimensions, the tails, the
+dictionary, the target, the gate fields, the mandatory sentence and the
+forbidden phrasings; it records its own SHA-256 before evaluation and binds
+the Round11 solver's exact source strings (basis, moments, kinetic
+coefficients, tail formula) to the snapshot. It uses only the standard
+library and never imports numpy, scipy, python-flint, the Round11 solver or
+the preview. The target, read as a 0/1 feasibility indicator (defect~D5),
+evaluates to~1. A replay takes about 41~s, dominated by the 14 certificates
+and a 110-digit Ritz proposal of about 4~s each at $D=8$, and outputs under
+\texttt{-B} and \texttt{-B -O} are byte-identical. The producer also disclosed
+a private source-edit audit in scratch, which is not evidence: each listed
+edit aborts, among them the $y$ face dropped from $Hv$,
+$\norm{W_1+W_2}$ set to 1 or~3, the shared-link Casimir weight set to~2, the
+tail read from the last retained shell, the free gap set to~4 and a changed
+Haar normalization. The free-gap edit was at first caught only through the
+report's bound values; the checker now ties the free gap to $m_1=3$ and the
+potential norm to the identity configuration.
+
+\paragraph{Independent pre-comparison package.}
+The skeptic's package holds a contract review with 15 readings, a derivation
+and a checker with 81 exact checks and 23 controls, the 20 contract ids and
+three extra ones: \recid{ground_sector_spectator_disclosed},
+\recid{minus_tau_mirror_replay} and \recid{truncated_bracket_not_full_graph}.
+It rejects 75 mutations, 71 of them inside the contract controls. In 14
+private source-edit runs, 12 edits abort for the intended reason. Two do not,
+and both are accounted for: flipping the sign of $V$ in the Jacobi series is
+harmless because $E_0$ is even, and replacing the sum of ledger items by their
+maximum is invisible below the $10^{-100}$ square-root rounding, which leaves
+a proof-text item. The package was written from the contract without opening
+any file under \sourcepath{forward/az2/}: the skeptic listed the 28 input
+names and hashed them against their repository sources. Its routes differ
+from the producer's. It reduces the one-face model exactly to the Jacobi
+matrix of the $x$ sector; certifies by Davis--Kahan with the one-component
+leak and the separation $3-|\tfg|$ (route~C); cross-checks by
+Hellmann--Feynman concavity with the Round11 Feshbach tail (route~F), which is
+where the tails 45 and 69 enter; places the Ritz energy of the producer's
+basis inside its own bracket by exact inertia of the Round11 pencils; and
+computes the Haar moments by a Beta-function route, cross-checked on 1330
+triples. It uses no numpy, no python-flint and no import of the Round11
+solver, and a run takes about 1~min~50~s. Its model-independent predictions
+all held: $1/6$ at both cutoffs, the free reference~0, $a_2=0$, the
+dimensions, the tails and the channel thresholds. Its one-face predictions
+belong to the other model (finding~N8).
+
+\paragraph{Correlated ancestry.}
+The skeptic's loop-2 response set the conditions ``the Round11 two-plaquette
+graph, or smaller'' and ``coefficients computed algebraically, never
+fitted'', and its triage wrote the finite-graph labelling. The contract, the
+selection note and the modern update~4, all premises, already print $1/6$,
+the dimensions and the tails, so the single producer could copy the headline.
+The agreement is replay and re-derivation, independent in route and code
+only.
+
+\paragraph{Post-comparison review.}
+The review adds 28 exact checks, for 109 independent checks with the 81. It
+recomputes the two-face series of $\langle W_1\rangle$, $E_0$,
+$\langle W_1^2\rangle$, $\langle W_1W_2\rangle$ and $\langle z\rangle$. It
+builds its own two-face enclosures from a degree-12 Rayleigh--Schr\"odinger
+vector with the exact complete residual and the Weyl separation, bounded by
+Davis--Kahan, with the negative points from the exact $(-1)^n$ parity of
+$\psi_n$; these certify the full-graph value, are not cutoff-$D$
+certificates, and lie inside every producer enclosure. By its own exact Gram
+projections on the parity blocks it recomputes the leading-order omitted
+residual, $\tfg^{2D+2}\norm{Q_D(x+y)\psi_D}^2$, which agrees with the
+producer's $\rho_Q^2$ to relative $1.6\times10^{-7}$ ($D=6$) and
+$1.8\times10^{-7}$ ($D=8$) at $1/1000$; the $j$-class weight agrees to
+relative $9\times10^{-8}$, and the product channel vanishes at leading order.
+The review runs 27 source-edit runs on copies of the producer closure outside
+the checkout, always under \texttt{python -B}; a run takes about
+4.5~minutes.
+\begin{itemize}
+\item One unmutated copy reproduces the frozen output byte for byte.
+\item Twenty weaken the validator of one contract control each; each copy
+ then accepts the producer's own damaging mutation and aborts at that
+ control, which shows that every control is live.
+\item Six are semantic edits. Five abort: the one-face default in the series,
+ the one-face certificate Hamiltonian, the free gap~4, the omitted residual
+ dropped and the forbidden verb appended to the report. The sixth, deleting
+ the preview output, completes by design.
+\end{itemize}
+The review's own validator accepts the frozen packet and refuses 18 damaged
+packets, among them the Hamiltonian relabelled one-face while the numbers stay
+two-face, the one-face $E_2$ inserted into the two-face series, an unnamed
+model, an enclosure replaced by the one-face interval, the derivative
+$1/144$, the free reference $1/4$, a nonzero $a_2$, a tail of 56, the product
+threshold 45, the $v_M$ row dropped and a dropped sub-label.
+
+\paragraph{Widths.}
+Table~\ref{tab:az2-widths} compares the half-widths. The one-face
+pre-comparison widths are narrower, by about 30 times at $D=6$ and 160 times
+at $D=8$, and they belong to a different model. In the one-face model the
+omitted residual of the ground vector is a single spin-network component,
+$\lvert(D+1)/2,0,(D+1)/2\rangle$ with amplitude $\tfg v_D/2$. In the
+two-face model $(x+y)$ applied to the top shell leaks into the whole $v_M$
+channel $x^ay^b$ with $a+b=D+1$, with binomially grown amplitudes: about 115
+times the one-face leak at $D=6$ ($6.2\times10^{-15}$ against
+$5.4\times10^{-17}$ at $1/10$). The producer's Eckart angle recovers part of
+that gap. Within one model the producer's cutoff-$D$ certificates are the
+tightest of their kind, and the degree-12 vector is tighter only because it
+leaves $P_8$. All intervals are valid (finding~N3).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Half-widths of the certified enclosures of $\langle W_1\rangle$ at the
+positive grid points.}
+\label{tab:az2-widths}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X ccc@{}}
+\toprule
+Certificate & $1/1000$ & $1/100$ & $1/10$\\
+\midrule
+producer, two faces, $D=6$ (Eckart with tail comparison) & $1.10\times10^{-29}$ & $1.10\times10^{-22}$ & $1.14\times10^{-15}$\\
+producer, two faces, $D=8$ & $2.81\times10^{-39}$ & $2.82\times10^{-30}$ & $2.91\times10^{-21}$\\
+skeptic pre-comparison, one face, $D=6$ (Davis--Kahan) & $3.59\times10^{-31}$ & $3.60\times10^{-24}$ & $3.71\times10^{-17}$\\
+skeptic pre-comparison, one face, $D=8$ & $1.78\times10^{-41}$ & $1.79\times10^{-32}$ & $1.84\times10^{-23}$\\
+review, two faces, degree-12 vector (not a cutoff certificate) & $7.27\times10^{-48}$ & $7.31\times10^{-35}$ & $7.77\times10^{-22}$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Replays and isolation.}
+Unlike the statement loop AZ1, a single-direction loop is accepted unchanged
+by \sourcepath{replay_declared.py}, which reuses \sourcepath{replay_loop.py};
+neither was edited. Two producer replays, under \texttt{-B} and
+\texttt{-B -O}, into fresh external directories reproduce
+\sourcepath{results.json} and \sourcepath{source-manifest.json} byte for
+byte, in about 41~s each, and \sourcepath{freeze.py verify} reports verified,
+inside the tool and in a separate run. The closure lists 34 files plus
+\sourcepath{freeze.json}, and every one verifies. The inputs are exactly
+\texttt{AGENTS.md}, the contract and the 26 shared premises, each
+byte-identical to its repository source; the only skeptic file among them is
+the Round29 AM2 review, and no \sourcepath{reverse/az2} package exists. The
+producer's private scratch folder matches its disclosure by names and
+modification times. The producer read, outside its inputs and for protocol
+and code style only, the tools documentation, the freezing tool, most of the
+AY2 forward checker and the header of the AX2 report; the project's
+instruction file was in its session context. None carries premise weight
+(finding~N7). The skeptic saw, in a \texttt{git status} run after its final
+pre-comparison replays, only the names of the producer's untracked files, and
+opened none of them before its freeze. Isolation is verified for repository
+inputs only, and all agents are correlated model agents.
+
+\subsubsection{Contract wording and non-blocking findings}
+\label{sec:az2-findings}
+The gate records the following as non-blocking.
+\begin{itemize}
+\item \emph{W-A.} The contract does not fix which faces carry $\tfg$. The
+ two-face and one-face readings are both admissible and differ at third
+ order; the gate names the two-face model (Section~\ref{sec:az2-model}).
+ Later contracts that reuse a finite graph should name every coupled face and
+ its coefficient (finding~N1).
+\item \emph{W-B.} $\alpha$, $\rho_{11}$ and $\lambda_2$ are pinned only
+ implicitly; the producer pins $\alpha=\rho_{11}=1$ and $\lambda_1=\lambda_2$.
+\item \emph{D1.} \recid{truncation_jmax} is preregistered although no per-link
+ $j_{\max}$ is well-posed for the basis; it is mapped to ledger items
+ (a)+(b)+(c). The skeptic adds that in the one-face ground sector the degree
+ cutoff is a per-link cutoff.
+\item \emph{D2.} \recid{state_provenance} is the AQ-family string copied from
+ the $\mathbb Z^3$ loops; the state is the unique ground state of
+ $H_{\rm FG}$, and no subsequence is involved.
+\item \emph{D3.} Twelve control ids name AQ or $\mathbb Z^3$ objects; each is
+ given a finite-graph analogue.
+\item \emph{D4.} Item~4 asks for a tail residual bounding the truncation error
+ of the coefficients; that error is exactly zero, and the second-order
+ coefficient of $\langle W\rangle$ is exactly zero.
+\item \emph{D5.} The target, the value~1 with $\ge$ on a conjunction of
+ conditions, is read as a feasibility indicator.
+\item \emph{D6.} \recid{selected_after} names the AZ1 gate, which is not a
+ premise and did not exist when AZ2 was frozen.
+\item \emph{D7.} ``must reproduce'' in \recid{parameters.observable} is read
+ only as the consistency comparison of item~3.
+\item \emph{D8.} The clock's forbidden ``exponent 24'' coexists with the
+ dictionary's denominator 24, which is a coupling ratio, not an exponent.
+\end{itemize}
+Two review findings concern the controls. \emph{N2}: the producer's
+\recid{missing_incoming_stars} control rejects ``$W_2$ omitted'' as a damaging
+mutation, but relative to the frozen text that is the alternative admissible
+model; the control encodes the producer's model choice and is not cited as
+refuting the one-face reading. \emph{N5}: the one-face certificate-Hamiltonian
+edit aborts through an internal square-root guard, not a named check; a named
+consistency check between the proposal and certificate Hamiltonians would be
+clearer. The remaining findings concern the weaker Cauchy tier (N4), the
+preview (N6), the producer's reads outside its inputs (N7) and the skeptic's
+own one-face predictions (N8).
+
+\paragraph{The retained correction of update~4.}
+The modern lens's update~4, a shared premise, describes a
+``certified-tail method'' for the assistant-4 rehearsal. The skeptic's
+contract review finds it wrong on two points, and the gate records the
+correction.
+\begin{itemize}
+\item Update~4 says each exact bracket of the rehearsal ``is already a
+ certified two-sided enclosure'' with the tail threshold as its floor. But
+ the solver's \sourcepath{exact_bracket} brackets an eigenvalue of the
+ \emph{truncated} matrix and never reads the tail threshold; only Round11's
+ \sourcepath{certificate} does. The rehearsal's Ritz values for
+ $\langle W\rangle$ therefore enclose the truncated $\langle W\rangle_D$, not
+ the graph's $\langle W\rangle$.
+\item Its heuristic error estimate $\tfg^2/(t_\ell-3)$ has exponent~2. The
+ certified truncation effect in $\langle W\rangle$ has order $\tfg^{2D+1}$ and
+ the leak order $\tfg^{D+1}$, so the heuristic overstates the error by 13 to
+ 33 orders of magnitude, for example $1.5\times10^{-4}$ against a certified
+ $1.8\times10^{-23}$ at $D=8$, $\tfg=1/10$.
+\end{itemize}
+A packet following either reading would have been retained as
+\recid{insufficient}; the skeptic's extra control
+\recid{truncated_bracket_not_full_graph} rejects it. The producer used
+neither: it certifies full-graph enclosures with the complete residual and
+the Round11 tail comparison.
+
+\subsubsection{Limitations recorded by the gate}
+\label{sec:az2-limits}
+The AZ2 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the Round11 two-square patch and the named two-face model (both
+faces coupled equally, alpha=rho=1), D in \{6,8\} and the declared grid; a
+static ground-state mean with no dynamics, correlator, clock or mass-gap
+reading
+\item No statement about the AQ model, its subsequential limits, K\_2 or the
+Z\textasciicircum{}3 shift; roadmap goal 2 is not resolved; no continuum or
+weak-coupling claim; the zero second-order coefficient is a finite-graph
+centre-flip fact
+\item The dictionary 1/6 <-> 1/144 is a consistency check expected from the
+shared normalization (energy 3, E[W\textasciicircum{}2]=1/4); not a prediction
+and not a confirmation of the Z\textasciicircum{}3 value
+\item The one-face model is not admitted; its values are the skeptic
+alternative reading, with the certified second-square shift
+tau\textasciicircum{}3/4212 + O(tau\textasciicircum{}5) between the two
+\item Inherited without re-proof: the Round11 reduction (Q1-Q3), kinetic
+operator, spectrum, tail threshold and Theorem F; Kato, Weyl, Temple, Eckart
+and Davis-Kahan are cited; the checkers re-verify fixtures, not the reduction
+\item Model-agent review with correlated ancestry; not human peer review or
+formal verification; scientific priority unverified
+\end{itemize}
+\end{gatequote}
+Full derivation and reviewed implementation:
+\repo{research/round32/forward/az2/report.md}{AZ2 forward},
+\repo{research/round32/skeptic/az2-contract-review.md}{contract review},
+\repo{research/round32/skeptic/az2-independent-derivation.md}{independent
+pre-comparison derivation},
+\repo{research/round32/skeptic/az2.md}{independent model-agent review} and the
+\repo{research/round32/contracts/az2.json}{frozen contract}. The advisor's
+findings record AZ2 as the finite-model comparison attached to roadmap
+goal~2, in the only form the contract allows: exact coefficients of a
+computable, different finite model, which show what first- and second-order
+Wilson coefficients are on a truncated graph and are never transferred to
+$\mathbb Z^3$. The goal itself was met in its re-targeted static form by AW2
+(Section~\ref{sec:aw2}), and AZ2 neither resolves nor extends it. The exact
+zero second-order coefficient on the graph mirrors the AW1 flip lemma as a
+consistency observation only; $K_2$ and the AQ model are untouched. The gate
+closes the cycle: investigation~10 of~10, after which scientific production
+stops.

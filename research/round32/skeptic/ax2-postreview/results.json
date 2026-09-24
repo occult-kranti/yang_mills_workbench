@@ -1,0 +1,691 @@
+{
+  "admission_basis": "single forward producer plus the skeptic pre-comparison independent replay",
+  "av2_gate_sha256": "5b0e3b308ccb2e2b9b8ae2db32ae5e2c2ae978b2dbf46cf83a5882b68a2f4b33",
+  "ax1_gate_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+  "checks": [
+    {
+      "controls": 25,
+      "id": "contract_single_direction_bound",
+      "passed": true,
+      "sha256": "da72afe377d7601e6b6ec3835ab69d05813cb26c4b46f67485a4d8e0c055992b"
+    },
+    {
+      "av2_gate_sha256": "5b0e3b308ccb2e2b9b8ae2db32ae5e2c2ae978b2dbf46cf83a5882b68a2f4b33",
+      "ax1_gate_sha256": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+      "id": "gates_hash_pinned",
+      "passed": true
+    },
+    {
+      "closure_files": 36,
+      "freeze_sha256": "b38f3a758293e194c669ec74f6b3c9dd3dc95a8ec7dc82a35d41f94c7b1e3950",
+      "id": "forward_freeze_closure_verified",
+      "passed": true
+    },
+    {
+      "id": "premise_inventory_exact_and_isolated",
+      "inputs": 30,
+      "note": "AGENTS.md + contract + 28 shared premises, byte-identical to their sources; no skeptic/ax2* input; no reverse/ax2 package",
+      "passed": true
+    },
+    {
+      "id": "source_manifest_consistent",
+      "passed": true,
+      "sources": 33
+    },
+    {
+      "files": 4,
+      "id": "pre_comparison_package_unchanged",
+      "passed": true
+    },
+    {
+      "D_prime": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "id": "D_prime_equals_ax1_gate_forward_value",
+      "passed": true,
+      "preview": "1.44459192142e-8",
+      "recipe": "J'=29|tau|, t1'=52|tau|/144, T'=t1'/(1-352J'), eps=2T'+T'^2, D'=2eps(1+eps)/(1+eps^2); equals the AX1 gate decision and accepted texts (sha pinned) and the contract string"
+    },
+    {
+      "id": "rejected_state_values_identified",
+      "note": "each alternative differs from the bound D'; the tier-(ii) formula increases in |tau|, so the gate value bounds every |tau|<=10^-8",
+      "passed": true,
+      "values": {
+        "av1_zero_selected_D": "1.36124528702e-8",
+        "ax1_reverse_refinement": "1.22236968877e-8",
+        "ax1_target": "4.00000000000e-7",
+        "density_form_2eps": "1.44459191099e-8",
+        "not_self_consistent": "1.44444445748e-8",
+        "pair_term_dropped": "1.44459191882e-8",
+        "tier_i": "2.45260902280e-5"
+      }
+    },
+    {
+      "box_counts": {
+        "1": [
+          4,
+          2
+        ],
+        "2": [
+          7,
+          2
+        ],
+        "3": [
+          7,
+          2
+        ],
+        "4": [
+          7,
+          2
+        ]
+      },
+      "id": "incidence_seven_stars_two_groups_own_enumeration",
+      "k_prime_over_tau": "51/4",
+      "note": "k'=2(7*7|tau|/8+2*|tau|/8)=51|tau|/4, identical for N=2,3,4 (local); N=1 has 4 stars",
+      "passed": true,
+      "per_star_faces_meeting_R": [
+        21,
+        21,
+        16,
+        8,
+        8,
+        4,
+        4
+      ]
+    },
+    {
+      "M0": "2",
+      "M1": "4s/pi",
+      "ghat": "4s^3/(pi(s-i theta)^3(s+i theta))",
+      "id": "window_transform_and_moments_own",
+      "method": "half-line integrals 1/b+1/a+2s/a^2+4s^2/a^3 equal 8s^3/(a^3 b) in Gaussian rationals; |a^3 b|^2=(s^2+theta^2)^4; antiderivative derivatives equal (s^2+theta^2)^-2 and theta(s^2+theta^2)^-2 (limits pi/(2s^3) and 1/(2s^2))",
+      "passed": true
+    },
+    {
+      "id": "producer_primitives_contain_own_enclosures",
+      "own_exp": "e^3 power series with geometric remainder, inverted, 10^-60",
+      "own_pi": "Gauss 48atan(1/18)+32atan(1/57)-20atan(1/239), 10^-60",
+      "passed": true
+    },
+    {
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "id": "exported_certificate_equals_own_rederivation",
+      "passed": true,
+      "radius_outward": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+      "radius_preview": "1.91229880799e-7"
+    },
+    {
+      "analytic_own": [
+        "1.912298807996871e-7",
+        "1.912298807996871e-7"
+      ],
+      "id": "radius_between_own_bounds_and_pre_comparison_nesting",
+      "note": "the producer's exact r lies between the own analytic bound (Gauss pi) and the common ceiling R' (excess over the analytic bound below 10^-38); the pre-comparison common interval d+-R' contains the producer interval d+-r, which contains the pre-comparison 10^-60 interval",
+      "passed": true,
+      "producer_radius": "1.912298807996871e-7"
+    },
+    {
+      "id": "decimals_outward",
+      "interval_preview": [
+        "0.012446575862085186",
+        "0.012446958321846786"
+      ],
+      "margin": "5.22930e0",
+      "passed": true,
+      "radius_preview": "1.91229880800e-7"
+    },
+    {
+      "id": "mirror_is_replay_not_confirmation",
+      "note": "tau=-10^-8 is the U_E image (no real g); same |tau| formula, identical datum and radius",
+      "passed": true
+    },
+    {
+      "av2_s_star_lower": "3118431723/500000000",
+      "id": "crossover_nested",
+      "note": "crossover of the linear formula only; s=1 is the only certified node",
+      "own": [
+        "5.9820122841620e0",
+        "5.9820122841620e0"
+      ],
+      "passed": true,
+      "pre_comparison": [
+        "5982012284161/1000000000000",
+        "5982012284163/1000000000000"
+      ],
+      "producer": [
+        "5.9820122841620e0",
+        "5.9820122841620e0"
+      ]
+    },
+    {
+      "at4_type_L1e4": [
+        "8.57905956558e-4",
+        "8.57905956558e-4"
+      ],
+      "floor_with_D": "1.32792320289e-6",
+      "id": "retained_failures_own_brackets",
+      "note": "all insufficient at unchanged tau and s; floor: log(1+L^2)>=2log L, minimum at L=1/(2k'); retained, not retuned",
+      "passed": true,
+      "poisson_floor_D0": [
+        "1.31347728346e-6",
+        "1.31347728346e-6"
+      ],
+      "tier_i_window_lower": "4.92157215562e-5"
+    },
+    {
+      "at4_frozen": "841518704386267/1000000000000000000",
+      "id": "at4_formula_reproduced_then_uniform_inputs",
+      "note": "the AT4 F16 formula with AT4 inputs (D=2sqrt(49|tau|/3), k=49|tau|/4, L=10^4) reproduces the frozen AT4 decimal to 10^-15; the uniform inputs give a larger, still insufficient radius",
+      "own_at4_inputs": [
+        "8.415187043862665e-4",
+        "8.415187043862665e-4"
+      ],
+      "passed": true
+    },
+    {
+      "claims": [
+        "AT4-type in [8.5790595e-4,8.5790596e-4]",
+        "E(1/2)=1.1006086e-7",
+        "E(128)>=2.08081e-5",
+        "E(2)=3.5356793e-7",
+        "E(5)=8.4058205e-7",
+        "Poisson moment L=10^32 >=46.907878",
+        "contract preview ~1.91e-7 within 1e-9",
+        "excess over AV2 >=8.03e-9",
+        "floor in [1.313477283e-6,1.313477284e-6]",
+        "floor with D >=1.3279232e-6",
+        "kernel 1.62338041954e-7 (up)",
+        "margin>=5.22930",
+        "mean_square 4.17369163892e-16 (up)",
+        "s* in [5.9820122841,5.9820122842]",
+        "state 2.88918384286e-8 (up)",
+        "tier-i window >=4.921572155e-5"
+      ],
+      "id": "report_decimals_consistent_with_own_values",
+      "note": "each decimal quoted in report.md is within one unit of its last digit of the own exact value, on the stated side",
+      "passed": true
+    },
+    {
+      "calculator_domain_rejections": 31,
+      "control_rejections": 98,
+      "id": "all_25_controls_damaging_mutations",
+      "note": "every contract id has a check with at least one rejected damaging mutation; the labels carrying each control's meaning are present",
+      "passed": true,
+      "total": 129
+    },
+    {
+      "id": "producer_incidence_equals_own",
+      "note": "7 stars + 2 single-factor groups; box-local",
+      "passed": true
+    },
+    {
+      "false_flags": [
+        "continuum_claim",
+        "weak_coupling_claim",
+        "resolved_interaction_shift",
+        "scientific_priority_verified",
+        "grid_claim",
+        "wilson_mean_sign_certified",
+        "k2_uniform_claimed",
+        "state_uniqueness_claim",
+        "independent_review_claimed",
+        "mirror_is_second_confirmation"
+      ],
+      "id": "claim_flags_and_uniform_label",
+      "label": "uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9)",
+      "passed": true
+    },
+    {
+      "id": "no_weak_coupling_continuum_or_rider_wording",
+      "note": "every mention is a negation, a false flag, an exclusion entry or a rejected mutation; no sign rider or K_2 value is attached",
+      "passed": true,
+      "report_lines_reviewed": {
+        "300": "not claimed: no weak-coupling or continuum statement",
+        "307": "flag continuum_claim false",
+        "309": "flag weak_coupling_claim false",
+        "356": "control: weak-coupling label and continuum wording rejected",
+        "390": "coherent tampering list: weak-coupling flag set (rejected)",
+        "396": "control no_priority_or_continuum_claim (flags set true rejected)",
+        "414": "private audit list of aborting edits: a weak-coupling label",
+        "419": "private audit list of aborting edits: continuum_claim true",
+        "439": "contract claim exclusion (verbatim)",
+        "447": "preregistered claim exclusion (verbatim)",
+        "79": "checker rejects weak-coupling or continuum wording"
+      },
+      "results_hits_reviewed": 35
+    },
+    {
+      "accepted_below_cap": [
+        "1/1000000000",
+        "1/300000000",
+        "-7/1000000000"
+      ],
+      "id": "calculator_domain",
+      "note": "uniform triple only, |tau|<=10^-8 both signs, s>0; D' not an input (pinned to the gate at the cap, the tier-(ii) |tau|-form below it); window C2 only; E'(s) linear in s",
+      "passed": true,
+      "refused": [
+        "alpha_zero",
+        "av1_tier",
+        "bool_s",
+        "cap_exceeded_negative",
+        "cap_exceeded_positive",
+        "exponent_text",
+        "fixed_design_s2",
+        "fixed_design_tau_below",
+        "fixed_design_text",
+        "float_tau",
+        "model_av2",
+        "non_uniform_triple",
+        "none_tau",
+        "positive_triple_at_negative_tau",
+        "reverse_tier",
+        "s_negative",
+        "s_zero",
+        "supplied_D",
+        "supplied_k",
+        "target_negative",
+        "tier_i",
+        "window_c1",
+        "window_poisson",
+        "zero_triple_nonzero_tau"
+      ]
+    },
+    {
+      "id": "calculator_tau_zero_branch_recorded",
+      "note": "tau=0 is accepted as the free Casimir limit (D=0, radius = arithmetic half-width; the uniform triple coincides with the zero triple there); mathematically valid, but a corollary, not an AX2 admission (finding N2)",
+      "passed": true
+    },
+    {
+      "id": "dataflow_contract_to_certificate",
+      "note": "tau, s, target, D' and k' are assigned once, from the hash-checked contract snapshot; no assert statements",
+      "passed": true
+    },
+    {
+      "id": "unmutated_copy_reproduces_frozen_outputs",
+      "note": "copy outside the checkout; results.json and source-manifest.json byte-identical",
+      "passed": true
+    },
+    {
+      "aborted": 42,
+      "id": "must_abort_source_edits",
+      "note": "each edit aborts, and at the intended check or validator",
+      "passed": true,
+      "total": 42
+    },
+    {
+      "id": "silent_edits_accounted",
+      "note": "a literal D' equal to the gate value runs to completion (only the check.py sha changes) and is rejected by the data-flow review; removing only the box-dependence test is the disclosed redundant guard (the slope-value test still rejects the extensive norm)",
+      "passed": true,
+      "total": 2
+    },
+    {
+      "id": "own_validator_rejects_damaged_packets",
+      "note": "D reverse, seven-star slope, D/2, halved radius, shifted datum, resolved reference, weak-coupling label, continuum verdict, continuum flag, sign rider, K_2 rider",
+      "passed": true,
+      "rejected": 11
+    }
+  ],
+  "checks_count": 30,
+  "contract_sha256": "da72afe377d7601e6b6ec3835ab69d05813cb26c4b46f67485a4d8e0c055992b",
+  "exact": {
+    "D_prime": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+    "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+    "interval": [
+      "9185099027283132774641054641651710360271692993911210326959914564533758219450458841003549662138547697233770816954909507936717641496489345627414736088026193/737961920536138914181463715918388209334298421155056649415263413102254897655453546507339173001533179127104223043676670000000000000000000000000000000000000000",
+      "18370762536046660885548813426672217515904304931134329679720280811817242922854942740986392677249221798462892567775364370524169200293132009167539894480420053/1475923841072277828362927431836776418668596842310113298830526826204509795310907093014678346003066358254208446087353340000000000000000000000000000000000000000"
+    ],
+    "k_prime": "51/400000000",
+    "own_analytic_radius": [
+      "1128962960790672533408286737593590574245587725052156069733641552293348275465617441500039563417800869008099302737450061901337352500/5903695364289111313451709727347105674677336591764558401749207041225820799847559179287975582951363464224261833804959355808408709985421167",
+      "529201387870627750035134408246995581677619246118198157687644452187346169836476435359355196886598101025648243181711488979019922500/2767357202010520928180488934693955785005001527389636750819939919697447498066217373154589732738399618717108535457824187155470202774375003"
+    ],
+    "own_pi": [
+      "98174770424681038701957605727484465131161543730472056905467/31250000000000000000000000000000000000000000000000000000000",
+      "628318530717958647692528676655900576839433879875021164194989/200000000000000000000000000000000000000000000000000000000000"
+    ],
+    "own_quarter_e_minus3": [
+      "6223383545982992872417801956257722078962449023552901945953/500000000000000000000000000000000000000000000000000000000000",
+      "12446767091965985744835603912515444157924898047105803891907/1000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "radius_exact": "564481480395336266704143368796795360918943311909025800451682749726483954025058979293352972126403995350933865545354650733917300153317912710422304367667/2951847682144555656725854863673552837337193684620226597661053652409019590621814186029356692006132716508416892174706680000000000000000000000000000000000000000",
+    "radius_outward_1e-40": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+    "s_star_own": [
+      "2687403163700842964401344217346062929850002668512999100892844125413917286725946875295234535851801517691460292276112698176450280274375003/449247349560949786255989690899102726522620387241560507760548657903815958496205937500000000000000000000000000000000000000000000000000000",
+      "5733126749228464990722867663671600917013339026161064748571402625793946569173847737787936019533562595216162531067509293907071357485421167/958394345730026210679444673918085816581590159448662416555837136861474044791906000000000000000000000000000000000000000000000000000000000"
+    ],
+    "terms": {
+      "arithmetic": "1/40000000000000000000000000000000000000000",
+      "kernel_dynamics": "425000000000000000000000000000000/2617993877991494365385536152732919070163",
+      "mean_square": "11764830786938141732661468348022961952714214904225733003125000/28188068992059594431748372762296641664164416454372424016348151084161001317409",
+      "state": "4850738250398209588526485202500/167893028420061547330293754713793182097"
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "AX2",
+  "mutation_receipts": [
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_single_groups_zero_slope_49",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check duhamel_slope_uniform"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_pair_term_dropped",
+      "intended_reason": true,
+      "last_stderr_line": "calculator.CalculatorError: tier-(ii) formula differs from the AX1 gate rational at the cap"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_density_form_2eps",
+      "intended_reason": true,
+      "last_stderr_line": "calculator.CalculatorError: tier-(ii) formula differs from the AX1 gate rational at the cap"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_cap_pin_removed_and_pair_dropped",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check ax1_gate_state_bound_bound"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_effect_half_state_term",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check radius_itemized_tau_plus"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_pi_upper_in_kernel_term",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check radius_itemized_tau_plus"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_mean_square_dropped",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check radius_itemized_tau_plus"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_exponent_24",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check radius_itemized_tau_plus"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_M0_one",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check radius_itemized_tau_plus"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_weak_coupling_label",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: weak-coupling or continuum wording in label"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_continuum_flag_true",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check calculator_fixed_design_matches"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_cap_widened",
+      "intended_reason": true,
+      "last_stderr_line": "calculator.CalculatorError: AX1 tier (ii) is admitted only for |tau|<=10^-8"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_zero_triple_accepted",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: calculator accepted an invalid case: zero_selected_triple_av2_model"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_float_accepted",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: calculator accepted an invalid case: target_float"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_fixed_design_unchecked",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: calculator accepted an invalid case: fixed_design_changed_tau"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_mirror_flag_dropped",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check mirrored_coupling_replay_U_E"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_arithmetic_term_dropped",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check radius_itemized_tau_plus"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_conjugation_factor_dropped",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check radius_itemized_tau_plus"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_uniform_wilson_false",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check calculator_fixed_design_matches"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_window_sign_flipped",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: window differs from e^{-sx} on the AQ1 support [0,inf) at x=1/32"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_resolved_shift_claimed",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check free_reference_inside_reference_unresolved"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "calc_gate_constant_digit",
+      "intended_reason": true,
+      "last_stderr_line": "calculator.CalculatorError: tier-(ii) formula differs from the AX1 gate rational at the cap"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_state_bound_validator_weakened",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: damaging mutation accepted: ax1_reverse_R_refinement"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_label_validator_weakened",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: damaging mutation accepted: continuum_in_verdict"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_claim_validator_weakened",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: damaging mutation accepted: flag_continuum_claim"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_single_producer_validator_weakened",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: damaging mutation accepted: reverse_route_claimed"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_group_validator_weakened",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: damaging mutation accepted: selected_groups_forgotten"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_selected_predicate_changed",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check incidence_enumerated_route_b"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_incoming_star_anchors_dropped",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check incidence_enumerated_route_b"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_slope_validator_disabled",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: damaging mutation accepted: extensive_total_norm"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_tier_i_as_state_bound",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check ax1_gate_state_bound_bound"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "check_decimal_import_added",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check exact_arithmetic_admission"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "contract_byte_edit_without_rehash",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: contract snapshot bytes differ from the frozen AX2 contract"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "contract_target_1e-7_rehash",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check target_boolean_1e-6"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "contract_D_prime_reverse_refinement_rehash",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check ax1_gate_state_bound_bound"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "contract_k_prime_49_rehash",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check duhamel_slope_uniform"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "contract_tau_halved_rehash",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check ax1_gate_state_bound_bound"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "ax1_gate_byte_edit_without_rehash",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: AX1 gate snapshot bytes differ from the admitted gate"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "ax1_gate_D_edit_rehash",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check ax1_gate_state_bound_bound"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "av2_gate_byte_edit",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: snapshot not bound by the AX1 gate: research/round32/advisor/av2-gate.json"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "undeclared_skeptic_ax2_input",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: premise snapshot not bound by a pinned hash or an admitted gate: research/round32/skeptic/ax2-independent-derivation.md"
+    },
+    {
+      "aborted": true,
+      "expected": "abort",
+      "id": "premise_snapshot_removed",
+      "intended_reason": true,
+      "last_stderr_line": "AdmissionError: failed check premise_snapshots_bound"
+    },
+    {
+      "caught_by_review_validator": true,
+      "completed": true,
+      "expected": "runs_to_completion",
+      "handling": "caught_by_dataflow_review",
+      "id": "check_literal_D_prime_equal_to_gate"
+    },
+    {
+      "caught_by_review_validator": false,
+      "completed": true,
+      "expected": "runs_to_completion",
+      "handling": "redundant_guard_disclosed_by_producer",
+      "id": "check_box_dependence_test_removed_only"
+    }
+  ],
+  "passed": true,
+  "previews": {
+    "D_prime": "1.44459192143e-8",
+    "at4_type_L1e4": "8.5790595e-4",
+    "interval": [
+      "1.2446575862085186e-2",
+      "1.2446958321846786e-2"
+    ],
+    "margin": "5.22930e0",
+    "note": "decimal previews only; every Boolean above was decided on exact rationals",
+    "poisson_floor_D0": "1.313477283e-6",
+    "radius": "1.91229880800e-7",
+    "s_star": "5.98201228416e0",
+    "tier_i_window": "4.921572155e-5"
+  },
+  "reviewer": "model-agent skeptic with correlated ancestry; not human peer review or formal verification",
+  "schema": "hnm-r32-skeptic-postcomparison-v1",
+  "stage": "post_comparison"
+}
