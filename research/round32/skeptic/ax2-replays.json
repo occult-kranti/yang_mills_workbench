@@ -1,0 +1,134 @@
+{
+ "closures": {
+  "forward": {
+   "closure_files": 35,
+   "declared_premises": 30,
+   "freeze_json_sha256": "b38f3a758293e194c669ec74f6b3c9dd3dc95a8ec7dc82a35d41f94c7b1e3950",
+   "inputs": 30,
+   "inventory_equals_declared": true,
+   "reverse_isolation_enforced": false
+  }
+ },
+ "freeze_verify": [
+  {
+   "command": "python3 -B research/round32/tools/freeze.py verify research/round32/forward/ax2",
+   "stdout": {
+    "direction": "forward",
+    "loop": "ax2",
+    "status": "verified"
+   }
+  }
+ ],
+ "frozen_outputs": {
+  "forward": {
+   "results.json": "ba8d36d7900d622df5bc85cca9268bddf1c70d31ca176b23ed79abc1ab6fd3a7",
+   "source-manifest.json": "e17de51d9c134342e87e6731b1c63223156a0d6679d06897ade4ef779fa2d7b0"
+  }
+ },
+ "human_author": "Hruday N M (BUNZEEY)",
+ "loop": "AX2",
+ "producer_replays": [
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "research/round32/forward/ax2/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "ba8d36d7900d622df5bc85cca9268bddf1c70d31ca176b23ed79abc1ab6fd3a7",
+    "source-manifest.json": "e17de51d9c134342e87e6731b1c63223156a0d6679d06897ade4ef779fa2d7b0"
+   },
+   "stdout": "{\"checks\": \"52\", \"direction\": \"forward\", \"euclidean_node_certified\": true, \"loop\": \"AX2\", \"radius_preview\": \"1.91229880800e-7\", \"target_met\": true}"
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "command": [
+    "python3",
+    "-B",
+    "-O",
+    "research/round32/forward/ax2/check.py",
+    "--output",
+    "<fresh-external-dir>"
+   ],
+   "direction": "forward",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "ba8d36d7900d622df5bc85cca9268bddf1c70d31ca176b23ed79abc1ab6fd3a7",
+    "source-manifest.json": "e17de51d9c134342e87e6731b1c63223156a0d6679d06897ade4ef779fa2d7b0"
+   },
+   "stdout": "{\"checks\": \"52\", \"direction\": \"forward\", \"euclidean_node_certified\": true, \"loop\": \"AX2\", \"radius_preview\": \"1.91229880800e-7\", \"target_met\": true}"
+  }
+ ],
+ "producers": [
+  "forward"
+ ],
+ "python": "3.11.15",
+ "result": "both forward replays (normal and -O) reproduce the frozen output/ byte for byte (results.json ba8d36d7..., source-manifest.json e17de51d...); the freeze.json closure verifies file by file (35 listed files plus freeze.json); tools/freeze.py verify reports verified; inputs equal AGENTS.md + contracts/ax2.json + the 28 shared_premises (30 files), each byte-identical to its repository source; no skeptic/ax2* input; no reverse/ax2 package exists (single direction, as the contract declares); the replay tool output is identical under normal and -O Python",
+ "reused_tool": "research/round32/skeptic/replay_loop.py",
+ "reused_tool_sha256": "e627df048d9db128ae622dfd5030b887be442645b787d1fb29b4b2fec79ced66",
+ "reviewer": "model-agent skeptic with correlated ancestry; not human peer review",
+ "schema": "hnm-r32-skeptic-replays-v1",
+ "scratch_audit": {
+  "forward_private": "/tmp/claude-0/ax2-private (dev1, dev1O, dev2, mutate.py, runO; 01:45:05-01:50:19Z) plus /tmp/claude-0/ax2-run (results.json, source-manifest.json; 01:50:18Z), as disclosed",
+  "method": "directory and file names with mtimes only; no file inside another agent private folder was opened",
+  "shared_scratchpad_root_after_ax2_freeze": "ax1_verify.py (01:35:22Z) and ax2feas.py (01:35:33Z), names only (an AX2 budget preview by name; the same budget appears in the committed assistant tools 5c80b0a and 06ad78b); the remaining post-freeze files are manuscript work (gq.py, accepted.tex, limitations.tex, verify_quotes.py, main.txt, page PNGs, latexmk.out)",
+  "skeptic_private": "/tmp/claude-0/skeptic-ax2-private"
+ },
+ "single_direction": {
+  "admission_basis": "the single forward producer plus the skeptic pre-comparison independent replay",
+  "contract_producers": [
+   "forward"
+  ],
+  "direction": "single+skeptic",
+  "reverse_package_present": false,
+  "reverse_premise_isolation": "not applicable (single producer)"
+ },
+ "skeptic_postreview": {
+  "checker": "research/round32/skeptic/ax2_postreview_check.py",
+  "checker_sha256": "7129a27a9a632f04b6c4585720681a8bd80aa0c4cf1a006ab6cbd2b71ef1537d",
+  "checks": 30,
+  "command": "python3 -B [-O] research/round32/skeptic/ax2_postreview_check.py --output <fresh-external-dir>",
+  "must_abort_mutations_aborted_at_intended_check": 42,
+  "normal_and_O_byte_identical": true,
+  "own_validator_damaged_packets_rejected": 11,
+  "results_sha256": "4a0b33c27c2b17641e28415e37a58f5251bc84dd9546b55475c7a7d7bd0404b9",
+  "silent_edits": {
+   "caught_by_dataflow_review": 1,
+   "disclosed_redundant_guard": 1
+  },
+  "source_mutation_runs": 45,
+  "unmutated_copy_reproduces_frozen_outputs": true
+ },
+ "skeptic_pre_comparison": {
+  "checker": "research/round32/skeptic/ax2_check.py",
+  "checker_sha256": "484526326e83dcabdd20fdf6bf9de2b9a64b548e838950b7199bf58c2f7c38d8",
+  "checks": 72,
+  "command": "python3 -B [-O] research/round32/skeptic/ax2_check.py --output <fresh-external-dir>",
+  "freeze": "research/round32/skeptic/ax2-independent-freeze.json",
+  "freeze_sha256": "e06bbcf7e4e002e9ab25d95fc632ab6c7deeb9df65438055665de4d97101d602",
+  "normal_and_O_byte_identical_on_replay": true,
+  "results_sha256": "db7e6b56658cc94b1b810d3970459b68ea61d0cceb5161dfff20c777e56da5a1",
+  "unchanged_since_freeze": true
+ },
+ "timeline_utc": {
+  "contract_frozen": "2026-09-24T01:30:56Z (commit a12d8ee)",
+  "forward_calculator_py_last_written": "2026-09-24T01:38:07Z",
+  "forward_check_py_last_written": "2026-09-24T01:45:43Z",
+  "forward_commit": "2026-09-24T01:50:59Z (0ae59e6)",
+  "forward_freeze_json_written": "2026-09-24T01:50:26Z",
+  "forward_report_last_written": "2026-09-24T01:50:06Z",
+  "note": "working-tree mtimes and commit times; the forward calculator and check.py were written concurrently with the skeptic pre-comparison package (both after the contract freeze); the forward report and freeze followed the skeptic commit; the producer declares no skeptic/ax2* read and its closure holds none; the skeptic declared no forward/ax2 read (only the untracked calculator.py name in git status)",
+  "skeptic_ax2_check_py_last_written": "2026-09-24T01:41:35Z",
+  "skeptic_pre_comparison_commit": "2026-09-24T01:48:07Z (85df74d)",
+  "skeptic_pre_comparison_results_written": "2026-09-24T01:41:43Z"
+ },
+ "tool": "research/round32/skeptic/replay_declared.py",
+ "tool_output_identical_under_normal_and_O": true,
+ "tool_output_sha256": "9add8d255d5f567ce6ed65a4bed2a4263fe9355d08598a13a2dd539c063264e0",
+ "tool_sha256": "9707c7794f97ebef237f9f0958dba9d15833615b61dd6c8a6464e516e7cae06a"
+}
