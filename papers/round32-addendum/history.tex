@@ -187,7 +187,7 @@ AX1 & P & 09-24 00:40:52 & 09-24 01:30:55 & accepted & UL$^\dagger$\\
 AX2 & S & 09-24 01:30:56 & 09-24 02:11:13 & accepted & RU\\
 AY1 & P & 09-24 02:11:14 & 09-24 03:06:48 & accepted & UL\\
 AY2 & T & 09-24 03:09:12 & 09-24 04:00:01 & accepted & UL; SD\\
-AZ1 & T & 09-24 04:29:40 & --- & \multicolumn{2}{l}{in production}\\
+AZ1 & T & 09-24 04:29:40 & 09-24 05:18:19 & accepted & none\\
 AZ2 & S & 09-24 04:29:40 & --- & \multicolumn{2}{l}{in production}\\
 \bottomrule
 \end{tabular}
@@ -214,20 +214,20 @@ gate in \sourcepath{selected_after}, with three exceptions:
 \item AV1 names the loop-3 freeze note;
 \item AY2 carries the literal placeholder \texttt{<preceding gate>}, which its
 gate records as contract defect~D1;
-\item AZ2 names the AZ1 gate, which does not exist yet.
+\item AZ2 names the AZ1 gate, which did not yet exist when AZ2 was frozen.
 \end{itemize}
 Only AV1 carries a recorded amendment. Before any producer read it, \sourcepath{plan.json} was removed from its shared
 premises, because the plan is a living record and premise snapshots must stay
 byte-identical to their sources.
 
 \paragraph{AZ1 and AZ2.}
-Both contracts were frozen after panel update~4, 0.03~s apart, and are in
-production. Their forward directories hold only the snapshotted inputs, and
-no gate exists for either, so this edition states no result of either
-investigation. The completion record below is left open on purpose.
+Both contracts were frozen after panel update~4, 0.03~s apart. AZ1 has since
+been gated; its table row is filled from its gate, and Section~\ref{sec:az1}
+records it. AZ2 is in production and no gate exists for it, so this edition
+states no result of it. The completion record below is left open on purpose.
 % TODO(AZ gates): replace the boxed sentence with the recorded completed_at,
 % verdict and sub-labels of advisor/az1-gate.json and advisor/az2-gate.json,
-% and fill the two table rows above.
+% and fill the AZ2 table row above (the AZ1 row is filled).
 
 \medskip
 \noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\small
