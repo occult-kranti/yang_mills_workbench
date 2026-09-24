@@ -1,0 +1,18 @@
+# Round33 scientific addendum
+
+This directory owns a separate manuscript edition. It does not modify Draft03 or the Round31 and Round32 addenda. The manuscript and PDF are authored from the eight reviewed Round33 gates (BA1-BD2: three research sub-rounds and the applications stage); the builder refuses to run before all eight gates exist. Until then `main.tex` and `model.tex` are a compiling skeleton that lists the eight investigations as planned and states no result.
+
+```bash
+python -B papers/round33-addendum/build.py --render
+python -B papers/round33-addendum/build.py --check
+```
+
+The skeleton itself can be compiled for layout checks without the builder (output stays under the ignored `tmp/`):
+
+```bash
+cd papers/round33-addendum && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=tmp/pdfs main.tex
+```
+
+Prerequisites: Python 3, a LaTeX distribution with `pdflatex` and `latexmk`, the packages named in `layout.tex`, and Poppler's `pdftoppm`, `pdftotext` and `pdfinfo`. After a render, run `python -B papers/round33-addendum/inspect_pdf.py` (needs PyMuPDF) and inspect every `tmp/pdfs/page-*.png`. Compilation success alone does not establish visual review.
+
+`build-receipt.json` (schema `hnm-round33-addendum-build-v1`) binds the scientific inputs, manuscript sources and PDF. `qa.json` records the page-image review (geometry schema `hnm-round33-addendum-geometry-v1`). The published copy is `dist/ym-round33-addendum.pdf` (and `docs/ym-round33-addendum.pdf` after the Pages build), byte-identical to `main.pdf`. Intermediate LaTeX and rendered pages under `tmp/pdfs/` are rebuild products, not scientific evidence.
