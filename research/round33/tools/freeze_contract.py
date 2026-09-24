@@ -18,6 +18,7 @@ section 3 and research/round32/advisor/panel-update-5.md item 3):
   R5 a statement loop states whether its target is a feasibility/format check or a
      blind discriminating threshold;
   R8 a selected_after gate that does not exist yet needs a selected_after_note;
+  R10 tier names and sub-labels come from the closed vocabulary in advisor/plan.json;
   the preregistration control mirror must equal the controls list (Round32 rule).
 The tool refuses to re-freeze a contract whose status is already frozen.
 """
@@ -115,6 +116,16 @@ def main():
         note = str(pre.get('target', {}).get('note', '')).lower()
         if not ('feasibility' in note or 'format check' in note or 'blind' in note or 'discriminating' in note):
             fail('R5 statement loop target.note must say feasibility/format check or blind discriminating threshold')
+    # R10 closed tier vocabulary (plan.json vocabulary.tier_names_allowed)
+    plan_path = ROOT / 'research/round33/advisor/plan.json'
+    if plan_path.is_file():
+        allowed = set(json.loads(plan_path.read_text()).get('vocabulary', {}).get('tier_names_allowed', []))
+        used = set(pre.get('tier_names_allowed', []))
+        if used - allowed:
+            fail('R10 tier names outside the closed vocabulary in advisor/plan.json: ' + ', '.join(sorted(used - allowed)))
+        subs = set(json.loads(plan_path.read_text()).get('vocabulary', {}).get('sub_labels_allowed', []))
+        if set(pre.get('sub_labels_allowed', [])) - subs:
+            fail('sub-labels outside the closed vocabulary in advisor/plan.json')
     # R8 selected_after
     sel = c.get('selected_after')
     if sel and not (ROOT / sel).is_file() and not c.get('selected_after_note'):
