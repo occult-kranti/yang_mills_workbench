@@ -1,0 +1,1358 @@
+\section{Sub-round 4: local closeness of subsequential states}
+\label{sec:state}
+
+The fourth Round31 roadmap goal, ``Identify limiting states and boundary
+effects'', asks either for state identification or for a quantitative
+boundary comparison between two frozen construction families, with a local
+observable class and a common physical clock
+(\repo{research/round31/advisor/roadmap.json}{Round31 roadmap}). AQ1 supplies
+its states by diagonal extraction along centered whole-star boxes
+(Section~\ref{sec:dictionary}) and does not prove uniqueness, whole-sequence
+convergence or a rate in $N$. Sub-round~4 does not identify states either.
+AY1 compares every subsequential limit of two named finite-volume
+constructions on the cover $R$, with explicit constants. AY2 is to state, with
+those constants, what the comparison does not establish. This edition records
+the AY1 gate; the AY2 subsection is completed when its gate lands. The model
+returns to the zero-selected patterned family of
+Sections~\ref{sec:av1}--\ref{sec:aw2}. It is not the uniform model of
+Section~\ref{sec:ax1}.
+
+\subsection{AY1: uniform local closeness of subsequential limits}
+\label{sec:ay1}
+
+\textbf{Contribution \projecttag{HNM-C-AY1}.} The AY1 contract, recorded under
+the title ``Hruday uniform local closeness of all AQ-type subsequential states
+and the boundary-independent first-order density'', was frozen after the AX2
+gate and before production. It opens sub-round~4. The preregistered model
+identifier is \recid{AQ_patterned_zero_selected}: the selected triple is
+exactly $(0,0,0)$ with the Haar product reference $P_R$; the 21 omitted faces
+per anchor enter with coefficient $-\tau/3$ in normalized units
+\eqref{eq:dict-star}; both signs of $|\tau|\le10^{-8}$ are covered; and the
+cover is $R=\{0,e_z\}$, with its 48 links, 36 endpoints and seven incident
+anchors \eqref{eq:dict-seven}. The observable class is $B(\mathcal H_R)$, and
+the clock is the common one of \eqref{eq:dict-clock}. There is no centering
+and no Euclidean node. The preregistered target is $2D\le1/1250000$ at the
+cap, twice the AV1 target $4/10^7$, with $D$ the AV1 admitted tier. The
+itemized error terms are \recid{state_boundary},
+\recid{second_order_difference} and \recid{arithmetic}. In the title,
+``boundary-independent'' refers to the first-order density on $R$, which is
+the same for both families. No boundary independence of the dynamics is
+claimed.
+
+Both directions are paired. The contract records the historical lens's
+sub-round-3 preference for one direction plus a skeptic replay as a dissent,
+because the padded-family verification, the explicit first-order density and
+the $R$-local constant $K_2'$ are new derivations. The forward producer
+received \texttt{AGENTS.md}, the contract, its 28 shared premises and two
+forward-additional premises, the skeptic's triage and the Jung loop-2
+response: 32 files in all. It derives the reduced density on $R$ explicitly.
+The reverse producer received only \texttt{AGENTS.md}, the contract and the 28
+shared premises, 30 files, and works from the vacuum overlap and the
+fidelity. The triage's goal-4 note and the Jung note already state the
+mechanism of the closeness and of the common first-order density, so on the
+forward route they are shared panel premises. The contract and the
+\repo{research/round32/advisor/selection-ay1.md}{selection note} state it too.
+Independence therefore covers the proof routes, the enumeration and the code
+only (Section~\ref{sec:ay1-evidence}).
+
+Notation: F1 and F2 are the two construction families of
+Section~\ref{sec:ay1-families}. $\rho_R$ and $\rho'_R$ are the reduced
+densities on $R$ of two subsequential limits, and $\rho_{N,R}$ is that of a
+finite-volume ground state. $F_R$ is the set of the ten faces with owner set
+exactly $R$, and $a=|\tau|/144$ is the norm of one first-order face vector.
+$T$, $\varrho=352JT$ and $\varepsilon=2T+T^2$ are the exact-tier quantities of
+\eqref{eq:av1-selfconsistent} and \eqref{eq:av1-epsvalues}, and $K_2^+$ is the
+AW1 constant \eqref{eq:aw1-K2}. Other notation follows
+Sections~\ref{sec:model}--\ref{sec:aw1}.
+
+\subsubsection{Reviewed scope}
+\label{sec:ay1-scope}
+The \repo{research/round32/advisor/ay1-gate.json}{AY1 gate} records the
+verdict \recid{accepted_within_scope}. Its accepted statement, quoted verbatim
+below in the gate's ASCII notation, is the scope of every claim in this
+subsection. The sub-label, carried by the skeptic's review, both producer
+packets and the gate, is \recid{uniform_local_closeness_not_uniqueness}: the
+statement is local closeness, not uniqueness. In it, \texttt{R} inside \texttt{G(R)} and
+\texttt{G\textquotesingle{}(R)} is AM2's anchored radius $R_a=1/64$, and
+\texttt{R} elsewhere is the cover. \texttt{rho} alone is the AM2 remainder
+$\varrho$, while \texttt{rho\_R}, \texttt{rho\textquotesingle{}\_R} and
+\texttt{rho\textasciicircum{}(1)\_R} are densities on $R$. \texttt{a} inside
+the items of \texttt{K\_2\textquotesingle{}} is $|\tau|/144$, while ``lattice
+spacing a'' is the spacing. \texttt{s} inside the face labels is the fine $y$
+phase $q$ of Table~\ref{tab:dict-classes}, and \texttt{s} elsewhere is the
+Euclidean clock.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (model
+AQ\_patterned\_zero\_selected: SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0) with Haar product reference P\_R, 21 omitted faces per anchor
+entering as -(tau/3)W\_f in normalized units delta=alpha/8; both signs
+|tau|<=10\textasciicircum{}-8; cover R=\{0,e\_z\} of the original xz Wilson
+loop, 48 links, 36 endpoints, 7 incident anchors; observable class B(H\_R);
+common clock s=alpha*t\_E/hbar, theta=alpha*t/hbar), with the two named
+construction families F1 = centered whole-star boxes Lambda\_N (AQ1) and F2 =
+all-contained-face boxes with padding (I1 section 6) on the same
+Lambda\_N=[-N,N]\textasciicircum{}3, N>=2: (1) both families satisfy the AV1
+premises: F1 by the admitted chain I1 -> AM2 -> AQ1/AQ2 -> AV1 -> AW1; F2 item
+by item (anchor groups of the retained faces supported in (b+S) cap Lambda\_N,
+|X|<=4, termination order 8, per-site sum J<=28|tau|=J\_0=7/25000000 at the
+cap with J\_0G(R)<37/6250000<1/64 and 2J\_0G\textquotesingle{}(R)<77/390625<1,
+at most 49 first-order faces per site, cutoff-vector removal, reset
+omega(h\_R)<=98|tau| and C\_F=56|tau||F|, local trace-norm compactness and a
+diagonal extraction of its own); F2 retains 28N(5N+1) boundary faces more than
+F1, and both retain the same 82 faces meeting R for N>=2; states are compared
+in the trace norm on B(H\_R), and dynamics is named in the norm on compact
+time windows with no dynamical statement. (2)-(3) For every pair of
+subsequential limits of the named construction families F1 and F2 at the same
+coupling, on the fixed cover R and for the frozen observable class, the
+reduced densities satisfy ||rho\_R - rho\textquotesingle{}\_R||\_1 <= 2D and
+agree to first order in tau; this does not assert equality of the states,
+whole-sequence convergence, translation invariance, boundary independence of
+the dynamics, or a rate in N. Constants: 2D=\allowbreak
+1170159676931825184288274812132100/\allowbreak
+42981220507576537932303142777593983768257 (\textasciitilde{}2.72249057405e-8;
+D=\allowbreak
+585079838465912592144137406066050/\allowbreak
+42981220507576537932303142777593983768257 the AV1 gate forward tier (ii)),
+meeting the preregistered 1/1250000 with margin \textasciitilde{}29.38 (tier
+(i) 2D\_i\textasciitilde{}4.736e-5 fails and is retained); the common
+first-order density is rho\textasciicircum{}(1)\_R=(tau/72) sum\_\{f in
+F\_R\}(|W\_f Omega\_R><Omega\_R|+|Omega\_R><W\_f Omega\_R|) over the 10 faces
+F\_R with owner set exactly R (xz r=0,1,2, s=0,1 and yz r=0..3, s=0, anchored
+at 0; the 72 straddling faces among the 82 meeting R have zero R-marginal and
+the family has no single-site creations), with
+||rho\textasciicircum{}(1)\_R||\_1=sqrt(10)|tau|/72
+(\textasciitilde{}4.39205e-10 at the cap) and Tr(rho\textasciicircum{}(1)\_R
+W)=+tau/144 (AW1); for every subsequential limit of either family
+||rho\_R-P\_R-rho\textasciicircum{}(1)\_R||\_1<=K\_2\textquotesingle{}
+tau\textasciicircum{}2 with the R-local trace-norm constant
+K\_2\textquotesingle{}=\allowbreak
+966771578474926086618624139557778885954947547760216752246561/\allowbreak
+72052885697817210754545804931891200000000000000000000000
+(\textasciitilde{}13417.5275439; items
+4rho+2T(72a+2rho)+2(33a+rho)\textasciicircum{}2+2eps\_R\textasciicircum{}2+20a
+eps\_R\textasciicircum{}2, a=|tau|/144, T=(49a)/(1-352J), rho=352JT,
+eps\_R=82a+2rho+(33a+rho)\textasciicircum{}2), so any two such limits satisfy
+||rho\_R-rho\textquotesingle{}\_R||\_1<=2K\_2\textquotesingle{}
+tau\textasciicircum{}2=\allowbreak
+966771578474926086618624139557778885954947547760216752246561/\allowbreak
+360264428489086053772729024659456000000000000000000000000000000000000000
+(\textasciitilde{}2.68350550879e-12). K\_2\textquotesingle{} exceeds the AW1
+constant K\_2\textasciicircum{}+=\allowbreak
+81108864767825329926713064490531229475390625/\allowbreak
+24176936535511801466930759024724079017984 (\textasciitilde{}3354.80322946) by
+the factor \textasciitilde{}3.99950, because K\_2\textasciicircum{}+ bounds
+the single observable W while K\_2\textquotesingle{} bounds the full trace
+norm on B(H\_R); with the admitted AM2 remainder, a trace-norm constant built
+from the AW1 items is at least
+2rho/tau\textasciicircum{}2\textasciitilde{}6708.2. Each statement holds for a
+chosen subsequential limit of either family, every one separately; it is
+uniform local closeness and not uniqueness. A quantitative boundary comparison
+here means this closeness bound plus the matching first-order term; it is not
+a variational statement about which boundary condition the infinite-volume
+theory selects. Every constant is uniform in N at fixed spacing and fixed tau
+and is not uniform in the lattice spacing a. The -tau values replay the same
+|tau| formula. Uniqueness, whole-sequence convergence, a rate in N,
+translation invariance, boundary independence of the dynamics, a dynamical,
+continuum or weak-coupling statement and scientific priority are not admitted.
+\end{gatequote}
+The gate's decision binds the triangle values common to the forward
+producer, the reverse producer and the skeptic's pre-comparison package. It
+names the Bures pairwise constant and the $\sqrt2$, 288-majorant and combined
+variants of $K_2'$ as labelled refinements only, and it records the gate
+fields of Section~\ref{sec:ay1-sentence}. The rest of this subsection derives
+the statement. The limitations recorded by the gate close it
+(Section~\ref{sec:ay1-limits}).
+
+\subsubsection{Two named construction families}
+\label{sec:ay1-families}
+Both families use the centered coarse cubes $\Lambda_N=[-N,N]^3$ with
+$N\ge2$:
+\begin{equation}
+ \begin{aligned}
+ \text{F1 (AQ1):}\quad&\widehat H^{(1)}_N=\sum_{b\in\Lambda_N}h_b
+ +\sum_{b+S\subset\Lambda_N}\phi_b,\\
+ \text{F2 (I1 \S6):}\quad&\widehat H^{(2)}_N=\sum_{b\in\Lambda_N}h_b
+ +\sum_{b\in\Lambda_N}\phi^{(\Lambda_N)}_b,\qquad
+ \phi^{(B)}_b=-\frac\tau3\sum_{f\in O_b,\ M_f\subset B}W_f .
+ \end{aligned}
+ \label{eq:ay1-families}
+\end{equation}
+F1 is the box operator of \eqref{eq:dict-star}, I1's source empty-boundary
+rule: an anchor group is retained only when its whole star lies in the box.
+F2 retains every omitted face whose actual owner set $M_f$ lies in the box,
+grouped at its anchor. The anchor always lies in $M_f$, because the offset $0$
+belongs to every class support, so no retained face has an anchor outside the
+box. I1 \S6 pads a finite set $B$ to $B_+=\bigcup_{b\in B}(b+S)$ and places
+the on-site $h_x$ alone on $B_+\setminus B$. The padded sites carry no
+interaction, so the padded ground is $\psi^{(2)}_N\otimes\Omega_{\rm pad}$,
+and its density on $R$ equals that of $\widehat H^{(2)}_N$. The contract
+leaves the F2 box geometry open. Both producers and the skeptic use the same
+centered $\Lambda_N$, and the bounds below hold for every finite coarse region
+containing $R$, since face counts only decrease. Coarse translation by
+$(N,N,N)$ is the fine translation $(4N,2N,N)$, which preserves residues, face
+classes and owner sets. It maps F2 on $\Lambda_N$ to I1's
+all-contained-support prescription on an orthant box.
+
+The families genuinely differ at the boundary. In I1's own example the set
+$B=\{0,e_z\}$ contains no whole star, so F1 retains no face there, while F2
+retains the ten faces with owner set $B$. On the centered cubes F1 retains
+$21(2N)^3$ faces and F2 retains $14m(m+1)^2+7m^2(m+1)$ with $m=2N$, so F2
+keeps $28N(5N+1)$ boundary faces more than F1
+(Table~\ref{tab:ay1-families}). F1 is strictly contained in F2, and on
+$\Lambda_2$ the F2 faces are in turn contained among the F1 faces of
+$\Lambda_3$. The nearest extra face has an owner set at $\ell^\infty$ distance
+$N-1$ from $R$. For every $N\ge2$ both families retain the same 82 faces
+meeting $R$, the same ten faces with owner set $R$ and the same seven full
+groups meeting $R$, because the owner sets of the faces meeting $R$ lie in
+$[-1,1]^2\times[-1,2]\subset\Lambda_2$. At $N=1$ the faces meeting $R$ number
+49 in F1 and 60 in F2, which is why both families start at $N=2$.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Retained omitted faces of the two families, enumerated identically by
+the forward producer, the reverse producer and the skeptic. $B_+$ is the
+padded set of I1~\S6.}
+\label{tab:ay1-families}
+\begin{tabular}{lrrrrrr}
+\toprule
+Box & F1 faces & F2 faces & F2 $-$ F1 & Partial groups in F2 & Sites of $B$ & Sites of $B_+$\\
+\midrule
+$\Lambda_2$ & 1344 & 1960 & 616 & 60 & 125 & 200\\
+$\Lambda_3$ & 4536 & 5880 & 1344 & 126 & 343 & 490\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Other prescriptions are not covered. The literal vertex boxes of I1 \S7 clip
+the on-site operator, so their reference is not Haar and they form another
+model; relabelling them as F2 is a rejected mutation. Periodic and orthant
+boxes are not among the named families either.
+
+\paragraph{Two topologies and one clock.}
+The contract requires two topologies, named separately.
+\begin{itemize}
+\item \emph{States}: the trace norm on $B(\mathcal H_R)$,
+ $\lVert \rho-\rho'\rVert_1=\sup\{|\tr((\rho-\rho')A)|:\ A\in B(\mathcal H_R),\
+ \lVert A\rVert \le1\}$. Convergence on fixed observables is not enough. The
+ densities $(1-D/2)|e_0\rangle\langle e_0|+(D/2)|e_n\rangle\langle e_n|$
+ converge weak-* to a limit of mass $1-D/2$ while staying a trace distance
+ $D$ apart. The reset energy supplies the tightness that excludes this, as in
+ \eqref{eq:av1-passage}.
+\item \emph{Dynamics}: the operator norm on each fixed bounded local
+ observable, uniformly on compact time windows (Nachtergaele--Sims, as placed
+ in AQ1). It is not uniform over the unit ball of a local algebra, and it is
+ named only. F1 inherits the star-indexed interaction. For F2 the native
+ owner-set-indexed interaction has supports of $\ell^1$-diameter at most two
+ and per-site sum at most $49|\tau|/3$, so its weighted norm is at most
+ $81\cdot49|\tau|/3=1323|\tau|$ (reverse). No dynamics, stationarity or GNS
+ generator is constructed for F2 limits, and neither producer claims that the
+ dynamics of the two families coincide.
+\item \emph{Clock}: $s=\alpha t_E/\hbar$, $\theta=\alpha t/\hbar$ and
+ $G=H/\alpha$, as in \eqref{eq:dict-clock}; the normalized clock $u=s/8$ and
+ the exponent 24 are forbidden in packets. The comparison is static. Both
+ families are evaluated at the same coupling and in the same unit convention,
+ with face coefficient $-\tau/3$ in units of $\delta=\alpha/8$.
+\end{itemize}
+
+\subsubsection{The AV1 premises for both families}
+\label{sec:ay1-premises}
+F1 is covered by the admitted chain I1 $\to$ AM2 $\to$ AQ1/AQ2 $\to$ AV1
+$\to$ AW1, which both producers cite step by step; nothing is re-proved for
+F1. The forward checker reads every admitted constant from the hash-bound
+gate and report snapshots, and the reverse checker recomputes the AV1 and AW1
+gate values exactly. The forward checker also verifies, for $N=2,3$, that F1
+retains all seven incident stars and that each retained group has 21 faces. F2 is verified item
+by item, not by analogy. Table~\ref{tab:ay1-premises} lists the premises, and
+the paragraphs below give the arguments.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The AV1 premises for the two families at $\tau=\pm10^{-8}$. F1 values
+are admitted; F2 values are proved in AY1 and enumerated on $\Lambda_2$ and
+$\Lambda_3$.}
+\label{tab:ay1-premises}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}
+ >{\raggedright\arraybackslash}X
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Premise & F1 (admitted chain) & F2 (verified in AY1)\\
+\midrule
+On-site operator & $h_b=8\sum_eC_e\ge6Q_b$, Haar $P_b$ & unchanged; padded
+sites the same\\
+Grouping & whole stars $\phi_b$, 21 faces & anchor groups
+$\phi^{(\Lambda_N)}_b$; each retained face once\\
+Supports & $b+S$, $|X|=4$ & inside $(b+S)\cap\Lambda_N$, $|X|\le4$\\
+Termination & order 8 & order $2|X|\le8$\\
+Per-site sum & $J\le28|\tau|\le J_0$ & $J\le28|\tau|=J_0$ at the cap;
+enumerated maximum 28\\
+Contraction & $J_0G(R_a)<37/6250000<1/64$,
+$2J_0G'(R_a)<77/390625<1$ & the same, at the same $J_0=7/25000000$\\
+First-order faces per site & 49 & at most 49; enumerated maximum 49\\
+Tier (ii) state bound & $D$ of \eqref{eq:av1-Dii} & the same rational\\
+Cutoff-vector removal & AV1, gap $\tfrac12$ & verbatim, $L\ge24$\\
+Reset on $R$; on $F$ & $98|\tau|$; $56|\tau||F|$ & $98|\tau|$ (seven full
+groups); $56|\tau||F|$\\
+Compactness, extraction & AQ1 & trace-norm precompact; own extraction\\
+Dynamics & AQ1, Nachtergaele--Sims & named only\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{The AM2 contraction for F2.}
+AM2's proof uses the interaction only through a short list of hypotheses.
+Both producers verify each of them for F2 at every $N$, and the checkers
+audit them on the actual boxes $N=2,3$.
+\begin{itemize}
+\item \emph{On-site operator.} $h_x=8\sum_eC_e$ is unchanged: $h_x\ge Q_x$,
+ with the Haar vacuum and compact resolvent. The padded sites carry the same
+ operator.
+\item \emph{Grouping and supports.} Each retained face is charged exactly
+ once, at its anchor, and $\phi^{(\Lambda_N)}_b$ acts on
+ $X_b=\bigcup\{M_f:\ f\in O_b,\ M_f\subset\Lambda_N\}\subset(b+S)\cap\Lambda_N$.
+ AM2's counting uses $|X|\le p=4$ only as an upper bound: at most $2^{|X|}$
+ output sets, $\sum_{I\cap X\ne\varnothing}\lVert c_I\rVert \le|X|\,\lVert c\rVert_a$ and
+ $|I_l|\le|M|+|X|$. Smaller supports are therefore covered, as in
+ \eqref{eq:ax1-majorant}. A nested word with more than eight creations puts
+ at least five of them on one side of $V_X$, and two of those overlap, so the
+ commutator nest terminates at order $2|X|\le8$. The exact four-qubit
+ fixture gives $\mathrm{ad}_C^8(V)\Omega=8!\,|1111\rangle$ and
+ $\mathrm{ad}_C^9(V)=0$.
+\item \emph{Per-site sum.} If $u\in X_b$ then $b\in u-S$: at most four
+ anchors, incoming anchors included. Each group has at most 21 faces of norm
+ $|\tau|/3$, so
+ \begin{equation}
+ J^{(2)}=\max_u\sum_{b:\,u\in X_b}\norm{\phi^{(\Lambda_N)}_b}
+ \le4\cdot21\cdot\frac{|\tau|}3=28|\tau|\le J_0=\frac7{25000000}
+ \qquad(|\tau|\le10^{-8}),
+ \label{eq:ay1-J}
+ \end{equation}
+ with equality at bulk sites; the enumerated maximum on $\Lambda_2$ and
+ $\Lambda_3$ is exactly 28. At the cap $J=J_0$, which AM2 allows. The
+ constants of \eqref{eq:dict-majorant} depend only on $p$ and $J_0$, so
+ $J_0G(R_a)<(148/7)(7/25000000)=37/6250000<1/64$ and
+ $2J_0G'(R_a)<2\cdot352\cdot7/25000000=77/390625<1$ hold unchanged. The forward checker evaluates the series enclosure
+ $e^{1/8}<53823253862885575661009/47498854821020880076800<8/7$ exactly.
+ Grouping by owner set instead gives $J=49|\tau|/3$ with supports of at most
+ three sites. It is a labelled alternative and is not used.
+\item \emph{Cutoffs.} Product spectral cutoffs commute with $H_0$, keep
+ supports and do not raise $J^{(2)}$, and each $h_x$ has compact resolvent,
+ so AM2's cutoff removal applies verbatim.
+\end{itemize}
+Every F2 box at every on-site cutoff therefore has the fixed point
+$\psi=e^{-C}\Omega_0$ with excited $c_I$ and $\lVert c\rVert_a\le1/64$, the two
+majorant inequalities of Section~\ref{sec:dictionary}, and a simple ground
+with full-space gap at least $\tfrac12$. The ground is gauge invariant,
+because every retained term is a Wilson loop. The rejected mutations include
+a merged two-anchor group with support five, faces charged with norm one
+($J=84|\tau|>J_0$), a face charged in two groups, a per-site sum from the
+outgoing star alone ($7|\tau|$), a padded site given an interaction,
+termination at order six and the literal vertex boxes relabelled as F2.
+
+\paragraph{Two valid padding conventions.}
+The producers index the F2 groups differently. The forward producer, like
+the skeptic, uses the actual supports $X_b\subset(b+S)\cap\Lambda_N$. With
+that convention AM2 needs no padding, and the padded sites only fit I1's
+source empty-boundary form. The reverse producer indexes each clipped group
+by its declared support $X_b=b+S$ inside the AM2 volume $B_+$. It follows the
+AM2 reverse report's scope statement, under which each group has ``its
+declared support of size at most four''. With that convention padding is
+required, and the reverse checker rejects its removal, because an indexed
+support would then leave the AM2 volume. The fixed-point map preserves the
+collections supported in $B$, so
+$\psi^{\rm pad}=\psi^{(2)}_B\otimes\Omega_{B_+\setminus B}$ in either reading.
+Both conventions are valid, and the density on $R$ is the same (review
+finding~N1).
+
+\paragraph{Tier-(ii) inputs and the state bound.}
+The first-order collection for F2 is $c^{(1)}=L_0=-(\tau/72)\sum_fW_f\Omega_0$
+over the retained faces, as in \eqref{eq:av1-first}. At most 49 retained faces
+have an owner set containing a given site, the enumerated maximum is exactly
+49, and no retained face meets a padded site. So
+$\lVert c^{(1)}\rVert_a\le t_1=49|\tau|/144$. With $J=28|\tau|$ the self-consistent
+tier \eqref{eq:av1-selfconsistent} is unchanged: $T=49/14398580736$,
+$\varrho=3773/11248891200000000$ and
+$\varepsilon=1411060914529/207319127211110301696$ at $\tau=\pm10^{-8}$. The
+product split \eqref{eq:av1-order}--\eqref{eq:av1-eps}, the explicit density
+\eqref{eq:av1-density}, both inequalities \eqref{eq:av1-forward} and
+\eqref{eq:av1-reverse}, and the cutoff-vector removal \eqref{eq:av1-eckart}
+use only commuting excited creations, anchored sums at the two sites of $R$
+and the untruncated gap $\tfrac12$; for $L\ge24$, $c^{(1)}_L=c^{(1)}$. So every
+F2 box $\Lambda_N$, $N\ge2$, satisfies $\lVert \rho^{(2)}_{N,R}-P_R\rVert_1\le D$
+with the AV1 rational \eqref{eq:av1-Dii}. Both checkers recompute $D$ and
+require equality with the AV1 gate value.
+
+\paragraph{Reset and compactness.}
+Reset the finite ground density on $R$ to $P_R$ and keep its exterior
+marginal, as in AQ1. The on-site terms on $R$ drop to zero, groups not
+meeting $R$ keep their expectations, and unbounded exterior energies cancel
+after bounded spectral truncation. Each group meeting $R$ changes by at most
+twice its norm. The groups meeting $R$ are exactly the seven anchors $R-S$,
+each of norm at most $7|\tau|$, and on any finite $F$ at most $4|F|$ groups
+meet $F$. Hence
+\begin{equation}
+ \omega^{(2)}_N(h_R)\le2\cdot7\cdot7|\tau|=98|\tau|,\qquad
+ \omega^{(2)}_N(h_F)\le2\cdot4|F|\cdot7|\tau|=56|\tau|\,|F|=:C_F .
+ \label{eq:ay1-reset}
+\end{equation}
+Enumeration on $\Lambda_2$ and $\Lambda_3$ gives exactly $98|\tau|$ for both
+families. Charging face by face gives the labelled refinement
+$2\cdot82|\tau|/3=164|\tau|/3$, which is not used, and the two-anchor orthant
+reset $28|\tau|$ is rejected. Since $h_F$ has compact resolvent,
+$\tr(\rho_{N,F}(1-Q_{F,L}))\le C_F/L$ for $Q_{F,L}=1_{[0,L]}(h_F)$, and
+purification with partial-trace contractivity gives
+$\lVert \rho-Q\rho Q\rVert_1\le2\sqrt{C_F/L}$. The F2 densities on every finite
+region are therefore trace-norm precompact. Diagonal extraction over the
+nested cubes gives subsequences along which every local density of F2
+converges in trace norm, and the compatible limits define locally normal
+states. F2 needs this extraction of its own, because its limits do not come
+from AQ1's subsequences; the preregistered state provenance names only the F1
+construction (wording defect~W4). A subsequential limit of F2 means any such
+limit, and a chosen subsequential limit is one member of that set.
+
+\subsubsection{The closeness \texorpdfstring{$2D$}{2D}}
+\label{sec:ay1-closeness}
+Let $\omega$ and $\omega'$ be subsequential limits at the same $\tau$,
+$\omega$ along boxes of family F$i$ and $\omega'$ along boxes of family F$j$,
+where $i=j$ is allowed. Here $D$ is the AV1 gate's forward tier-(ii) bound
+\eqref{eq:av1-Dii},
+$D=585079838465912592144137406066050/42981220507576537932303142777593983768257$,
+about $1.3612\times10^{-8}$. Every finite-volume density on $R$ lies in the
+closed trace-norm ball of radius $D$ about $P_R$: by AV1 for F1, and by
+Section~\ref{sec:ay1-premises} for F2. Trace-norm limits stay in closed balls
+\eqref{eq:av1-passage}. Hence
+\begin{equation}
+ \begin{aligned}
+ \norm{\rho_R-\rho'_R}_1&\le\norm{\rho_R-P_R}_1+\norm{P_R-\rho'_R}_1
+ \le2D\le\frac1{1250000},\\
+ 2D&=\frac{1170159676931825184288274812132100}{42981220507576537932303142777593983768257}
+ \approx2.72249057405\times10^{-8}.
+ \end{aligned}
+ \label{eq:ay1-2D}
+\end{equation}
+The target margin is about $29.38$. The target is read from the contract:
+the forward checker pins it to $1/1250000$, and the reverse checker ties it to
+twice the AV1 target. For effects $0\le A\le1$ the trace-zero difference gives
+$|\omega(A)-\omega'(A)|\le D$. Since $D$ increases in $|\tau|$, the cap values
+bound every smaller coupling at either sign, and the ratio
+$D(\tau)/D(\tau/100)$ is about $100.0098$, so the bound is linear. The $-\tau$
+evaluation replays the same $|\tau|$ formula.
+
+\paragraph{Reverse: the vacuum fidelity passed to every limit.}
+In every box of either family, at every cutoff $L\ge24$ and for the
+untruncated ground, the AV1 split gives exactly
+$\tr(\rho_{N,R}P_R)=1/(1+e_N^2)$ with $e_N\le\varepsilon$. Because
+$|\tr((\rho-\sigma)P_R)|\le\lVert \rho-\sigma\rVert_1$, the overlap is trace-norm
+continuous, so every subsequential limit of F1 or F2 satisfies
+\begin{equation}
+ F_{\rm vac}:=\tr(\rho_RP_R)\ge\frac1{1+\varepsilon^2}
+ =\frac{42981220507576535941210238266176140476416}{42981220507576537932303142777593983768257}.
+ \label{eq:ay1-fidelity}
+\end{equation}
+The mixture inequality used in \eqref{eq:av1-reverse} then gives
+$\lVert \rho_R-P_R\rVert_1\le2\varepsilon/\sqrt{1+\varepsilon^2}\le D$. So the
+reverse inequality also certifies $D$, and the triangle inequality gives $2D$.
+
+\paragraph{Labelled variant: the Bures angle.}
+Let $A(\rho,\sigma)=\arccos\sqrt{F_{\rm U}(\rho,\sigma)}$, with $F_{\rm U}$ the
+Uhlmann fidelity; it is a metric on states. For the pure $P_R$,
+\eqref{eq:ay1-fidelity} gives $A(\rho_R,P_R)\le\arctan\varepsilon$, so
+$A(\rho_R,\rho'_R)\le2\arctan\varepsilon\le\pi/2$. The
+Fuchs--van de Graaf inequality then gives
+$\tfrac12\lVert \rho_R-\rho'_R\rVert_1\le\sin(2\arctan\varepsilon)=2\varepsilon/(1+\varepsilon^2)$,
+that is,
+\begin{equation}
+ \begin{aligned}
+ \norm{\rho_R-\rho'_R}_1\le\frac{4\varepsilon}{1+\varepsilon^2}
+ &=\frac{1170159668967453566242603438964736}{42981220507576537932303142777593983768257}\\
+ &\approx2.72249055552\times10^{-8}.
+ \end{aligned}
+ \label{eq:ay1-bures}
+\end{equation}
+This bound is genuinely pairwise and slightly below $2D$, and the skeptic
+re-derived it. It shows that $2D$ is not an artefact of the triangle through
+$P_R$. The contract names $2D$, so the Bures value is a labelled refinement,
+not the headline.
+
+\paragraph{Tiers and retained failures.}
+Table~\ref{tab:ay1-tiers} lists the pair bounds at the cap. Tier (i),
+$2D_{\rm i}=72266694536315307496644/1525878906463907516326874161$, fails the
+target and is retained as a limited-tier value; it is not retuned. The
+doubled Round31 square-root bound fails as well.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Bounds on $\lVert \rho_R-\rho'_R\rVert_1$ for any two subsequential limits
+of F1 or F2 at the same $\tau=\pm10^{-8}$, against the preregistered target
+$1/1250000$. Decimals are previews of exact rationals in the frozen outputs.}
+\label{tab:ay1-tiers}
+\begin{tabular}{lrc}
+\toprule
+Bound & Approximate value & $\le1/1250000$\\
+\midrule
+Round31 reset, doubled, $4\sqrt{49|\tau|/3}$ & $1.61658\times10^{-3}$ & no\\
+Tier (i), $2D_{\rm i}$ & $4.73607\times10^{-5}$ & no\\
+Tier (ii), $2D$, bound by the gate & $2.72249057405\times10^{-8}$ & yes\\
+Bures pairwise (reverse, labelled) & $2.72249055552\times10^{-8}$ & yes\\
+Second order after $\rho^{(1)}_R$, $2K_2'\tau^2$ & $2.68350550879\times10^{-12}$ & yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Quantifiers.}
+The statement covers every pair of subsequential limits of F1 or F2 at the
+same $\tau$, from the same family or from different families. It holds for a
+chosen subsequential limit of either family, every one separately, and it
+does not identify limits with one another. It is uniform local closeness, not
+uniqueness, whole-sequence convergence, translation invariance or a rate in
+$N$. The proof uses only a bound that holds in every box, so no rate can come
+from it. The triangle route is sharp in form. The forward checker takes pure
+states $v_\pm=(\cos\phi,\pm\sin\phi)$ with rational
+$\cos\phi=(1-m^2)/(1+m^2)$ and $m=1/1000$. Each lies at distance
+$D_{\rm ex}=2\sin\phi$ from $P$, yet they are $2D_{\rm ex}\cos\phi$ apart. So
+two states that both satisfy the one-state bound may differ by nearly $2D$.
+
+\paragraph{The same coupling is essential.}
+$P_R$ does not depend on $\tau$, so $2D$ also bounds two states at different
+couplings. The limits at $+\tau$ and $-\tau$ are certifiably different on
+$R$, by at least $2\sqrt{10}|\tau|/72-2K_2'\tau^2\approx8.757\times10^{-10}$
+(Section~\ref{sec:ay1-k2}), yet both lie within $2D$ of each other. The bound
+$2D$ alone is therefore a common enclosing ball, not a boundary comparison.
+The comparison content is the matching first-order term of
+Section~\ref{sec:ay1-density}, and every statement keeps ``at the same
+coupling'' (review finding~N5).
+
+\subsubsection{The common first-order density}
+\label{sec:ay1-density}
+\paragraph{Forward: the \texorpdfstring{$R$}{R}-marginal of the first-order vector.}
+AV1's creation convention is $\psi=e^{-C}\Omega_0$ with
+$\langle\Omega_0,\psi\rangle=1$ and $c^{(1)}=L_0=-(\tau/72)\sum_fW_f\Omega_0$
+(\eqref{eq:av1-first}, \eqref{eq:aw1-psi1}). Because
+$\langle\Omega_0,c_I\rangle=0$,
+\[
+ |\psi\rangle\langle\psi|=|\Omega_0\rangle\langle\Omega_0|
+ -\sum_I\bigl(|\hat c^{(1)}_I\Omega_0\rangle\langle\Omega_0|+\text{h.c.}\bigr)+O(\tau^2),
+ \qquad\norm\psi^2=1+O(\tau^2).
+\]
+Contract item~3 asks for the $R$-marginal of
+$-(c^{(1)}\Omega_0^*+\text{h.c.})$, restricted to the creations meeting $R$.
+With the AV1 convention that form gives $+\tau/144$ for the Wilson mean,
+unlike AW1's display (Section~\ref{sec:aw1-mean}); wording finding~W7
+records it as verified. The supports sort into three kinds.
+\begin{itemize}
+\item \emph{Disjoint from $R$.} The marginal is
+ $\langle\Omega_{\rm out},c_I\rangle|\Omega_R\rangle\langle\Omega_R|=0$.
+\item \emph{Straddling.} Here
+ $\tr_{\rm out}|W_f\Omega_0\rangle\langle\Omega_0|
+ =|\langle\Omega_{\rm out}|W_f\Omega_0\rangle\rangle\langle\Omega_R|$. Every
+ straddling face has a link owned outside $R$ that occurs once, and its Haar
+ integral vanishes; the forward checker verifies this for all 72.
+\item \emph{Inside $R$.} The supports are $R$, $\{0\}$ and $\{e_z\}$. No
+ omitted face has a one-site owner set, so
+ $c^{(1)}_{\{0\}}=c^{(1)}_{\{e_z\}}=0$. The zero-selected family has no
+ single-site creations, unlike route~B (Section~\ref{sec:ax1-counts}).
+\end{itemize}
+Hence
+\begin{equation}
+ \boxed{\;\rho^{(1)}_R=-\bigl(|c^{(1)}_R\rangle\langle\Omega_R|+|\Omega_R\rangle\langle c^{(1)}_R|\bigr)
+ =\frac\tau{72}\sum_{f\in F_R}\bigl(|W_f\Omega_R\rangle\langle\Omega_R|
+ +|\Omega_R\rangle\langle W_f\Omega_R|\bigr).\;}
+ \label{eq:ay1-rho1}
+\end{equation}
+The ten faces of $F_R$ are anchored at $0$: the six $xz$ classes with $r\le2$
+and the four $yz$ classes with $q=0$ (Section~\ref{sec:av1-counts}). The
+Wilson face $W$ is the $xz$ class with $r=0$, $q=0$. The coefficient
+$-\tau/72$ of $c^{(1)}$ is the same in both unit systems, and the mixed values
+$\tau/576$ and $\tau/9$ are rejected. Table~\ref{tab:ay1-recount} recounts the
+creations meeting $R$ by anchor. The 82 faces meeting $R$ have 27 owner sets.
+The 72 straddling faces split as $66+6$ by the size of $I\cap R$, with 33
+single-contact faces per site, and every one of them drops out of the
+marginal.
+
+\begin{table}[htbp]
+\centering\small
+\caption{First-order faces meeting $R$ by incident anchor, and those that
+survive the partial trace over the complement of $R$.}
+\label{tab:ay1-recount}
+\begin{tabular}{lcccccccc}
+\toprule
+Anchor & $0$ & $e_z$ & $-e_z$ & $-e_x$ & $-e_y$ & $e_z-e_x$ & $e_z-e_y$ & Total\\
+\midrule
+Faces meeting $R$ & 21 & 21 & 16 & 4 & 8 & 4 & 8 & 82\\
+Owner set exactly $R$ & 10 & 0 & 0 & 0 & 0 & 0 & 0 & 10\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Reverse: the vector overlap identity.}
+Decompose any density on $R$ in blocks relative to $P_R$:
+$\rho=F_{\rm vac}P_R+|\rho_{\perp0}\rangle\langle\Omega_R|
++|\Omega_R\rangle\langle\rho_{\perp0}|+\rho_{\perp\perp}$, with
+$\rho_{\perp0}=(1-P_R)\rho\,\Omega_R$ and
+$\rho_{\perp\perp}=(1-P_R)\rho(1-P_R)\ge0$.
+\begin{itemize}
+\item The scalar fidelity identity $F_{\rm vac}=1/(1+e^2)$ with
+ $e\le\varepsilon$ gives $0\le1-F_{\rm vac}\le\varepsilon^2$. The diagonal
+ block has no first-order part, because the $\tau$-derivative of the scalar
+ identity vanishes.
+\item Positivity gives $\tr\rho_{\perp\perp}=1-F_{\rm vac}\le\varepsilon^2$,
+ so the excited block has no first-order part either. Exactly,
+ $\lVert (F_{\rm vac}-1)P_R+\rho_{\perp\perp}\rVert_1=2(1-F_{\rm vac})=2e^2/(1+e^2)$.
+\end{itemize}
+A first-order term is therefore off-diagonal and fixed by the single vector
+$\rho_{\perp0}$. The scalar identity cannot supply it; its vector form can.
+For every box of either family, every cutoff $L\ge24$ and the untruncated
+ground,
+\begin{equation}
+ \rho_R\,\Omega_R=\frac{(1_R\otimes\langle\varphi_{\rm out}|)\psi}{\norm\psi^2},
+ \qquad \varphi_{\rm out}=(\langle\Omega_R|\otimes1)\psi .
+ \label{eq:ay1-overlap}
+\end{equation}
+Indeed
+$\langle v,\tr_{\rm out}(|\psi\rangle\langle\psi|)\Omega_R\rangle=\langle v\otimes\chi,\psi\rangle$
+with $\chi=(\langle\Omega_R|\otimes1)\psi$, and the AV1 split
+$(P_R\otimes1)\psi=\Omega_R\otimes\varphi_{\rm out}$ gives
+$\chi=\varphi_{\rm out}$. The $\Omega_R$ component of \eqref{eq:ay1-overlap} is
+the scalar fidelity identity. With $n=\lVert \varphi_{\rm out}\rVert$,
+$(1_R\otimes\langle\varphi_{\rm out}|)\psi=n^2(\Omega_R+\hat\xi)$ with
+$\hat\xi\perp\Omega_R$, and $\rho_{\perp0}=\hat\xi/(1+e^2)$. Sort the supports
+of $\delta$ in \eqref{eq:av1-delta}. The creations inside $R$ contribute
+$-c_R-c_{\{0\}}\otimes\Omega_{e_z}-\Omega_0\otimes c_{\{e_z\}}$ exactly, with
+$n^2$ cancelled. Each straddling creation contributes at most
+$T\lVert c_I\rVert$, by the outside-excitation lemma \eqref{eq:aw1-outside}, and
+each pair at most $\lVert c_I\rVert \lVert c_J\rVert$. The first-order part of $\hat\xi$ is
+therefore $-c^{(1)}_R$, and the reverse route yields the same operator
+\eqref{eq:ay1-rho1}. The contract's phrase ``derivative of the
+vacuum-overlap/fidelity identity'' thus holds in vector form only; the scalar
+derivative vanishes, and the gate records the point as non-blocking.
+Derivatives are taken in finite boxes only.
+
+\paragraph{Properties.}
+The vectors $W_f\Omega_R$, $f\in F_R$, satisfy
+$\langle W_f\Omega_R,W_g\Omega_R\rangle=\tfrac14\delta_{fg}$ and
+$\langle\Omega_R,W_f\Omega_R\rangle=0$, because $\mathbb E[W_f]=0$,
+$\mathbb E[W_f^2]=\tfrac14$ and distinct faces share at most one link. The
+skeptic checks all $82\cdot81$ ordered pairs of faces meeting $R$. With the
+orthonormal vectors $e_f=2W_f\Omega_R$,
+\begin{equation}
+ \rho^{(1)}_R=\frac\tau{144}\sum_{f\in F_R}\bigl(|e_f\rangle\langle\Omega_R|
+ +|\Omega_R\rangle\langle e_f|\bigr),
+ \qquad(\rho^{(1)}_R)^3=\frac{10\tau^2}{144^2}\,\rho^{(1)}_R,\qquad
+ \tr\rho^{(1)}_R=0 .
+ \label{eq:ay1-rho1-basis}
+\end{equation}
+So $\rho^{(1)}_R$ has rank two, eigenvalues $\pm\sqrt{10}|\tau|/144$, a zero
+diagonal and a zero excited block, and
+\begin{equation}
+ \begin{gathered}
+ \norm{\rho^{(1)}_R}_1=\frac{\sqrt{10}\,|\tau|}{72}
+ \approx4.39205230578\times10^{-10},\\
+ \norm{\rho^{(1)}_R}_1^2=\frac1{5184000000000000000},\qquad
+ \norm{\rho^{(1)}_R}_1\le\frac{52704627669473}{120000000000000000000000}
+ \end{gathered}
+ \label{eq:ay1-rho1-norm}
+\end{equation}
+at $\tau=\pm10^{-8}$; the last bound is the directed upper bracket. The
+labelled triangle bound is $5|\tau|/36$. The operator is self-adjoint, traceless and gauge invariant.
+The consistency checks with AW1 and AV1 are exact.
+\begin{itemize}
+\item $\tr(\rho^{(1)}_RW)=2\cdot\tfrac\tau{144}\langle\Omega_R,We_W\rangle
+ =+\tau/144$, the AW1 coefficient \eqref{eq:aw1-mean}, that is
+ $\pm1/14400000000$ at $\tau=\pm10^{-8}$. Only $f=W$ contributes.
+\item $\tr(\rho^{(1)}_R(W^2-\tfrac14))=0$, by the parity rule
+ \eqref{eq:aw1-parity}.
+\item $\lVert \rho^{(1)}_R\rVert_1\le D$.
+\item Under the AW1 flip every face term changes sign, so $\rho^{(1)}_R$ is
+ odd in $\tau$.
+\end{itemize}
+The checkers reject the literal AM2-sign display, which gives $-\tau/144$; a
+dropped adjoint; a scalar or diagonal first-order ansatz; a first-order
+excited block; a zero density; and straddling faces treated as operators on
+$\mathcal H_R$.
+
+\paragraph{The same operator for every limit.}
+For every $N\ge2$ both families retain exactly the same ten faces with owner
+set $R$. This is checked face by face for $N=2,3$ and follows in general from
+the geometry of Section~\ref{sec:ay1-families}. So $c^{(1)}_R$, and hence
+$\rho^{(1)}_R$, is the same operator for every box of both families and every
+cutoff $L\ge24$. With the uniform remainder of Section~\ref{sec:ay1-k2},
+every subsequential limit $\omega_\tau$ of either family satisfies, for every
+$|\tau|\le10^{-8}$,
+\begin{equation}
+ \norm{\rho_R(\omega_\tau)-P_R-\rho^{(1)}_R}_1\le K_2'\tau^2 .
+ \label{eq:ay1-expansion}
+\end{equation}
+This is a statement about a coefficient, not about states. Subsequential
+limits are chosen separately at each $\tau$, so a limit has no
+$\tau$-derivative. If operators $X$ and $X'$ both satisfy the expansion along
+a sequence $\tau_j\to0$, then $\lVert X-X'\rVert_1\le(K+K')|\tau_j|\to0$. The
+first-order coefficient therefore does not depend on the family, the
+subsequence or the selection $\tau\mapsto\omega_\tau$, even one that switches
+families with $\tau$. It does not identify the states: they may still differ
+at order $\tau^2$ on $R$, and without bound elsewhere.
+
+\subsubsection{The \texorpdfstring{$R$}{R}-local constant \texorpdfstring{$K_2'$}{K2'}}
+\label{sec:ay1-k2}
+\paragraph{Exact decomposition.}
+Use the notation of \eqref{eq:av1-density}: $n=\lVert \varphi_{\rm out}\rVert$,
+$e=\lVert \delta\rVert /n$, $\xi=(1_R\otimes\langle\varphi_{\rm out}|)\delta$ and
+$\sigma=\tr_{\rm out}|\delta\rangle\langle\delta|$. Sorting $\delta$ by support
+gives $\xi/n^2=-c^{(1)}_R+\eta$ with
+$\eta=\eta_{\rm am2}+\eta_{\rm str}+\eta_{\rm pair}$, where
+\begin{equation}
+ \begin{gathered}
+ \eta_{\rm am2}=-(c-c^{(1)})_R-c_{\{0\}}\otimes\Omega_{e_z}-\Omega_0\otimes c_{\{e_z\}},\\
+ \eta_{\rm str}=-\sum_{I\ \rm straddling}
+ \frac{(1\otimes\langle\varphi_{\rm out}|)\hat c_I\psi_{\rm out}}{n^2},\qquad
+ \eta_{\rm pair}=\sum_{\rm pairs}
+ \frac{(1\otimes\langle\varphi_{\rm out}|)\hat c_I\hat c_J\psi_{\rm out}}{n^2}.
+ \end{gathered}
+ \label{eq:ay1-eta}
+\end{equation}
+Exact algebra then gives
+\begin{equation}
+ r_R:=\rho_R-P_R-\rho^{(1)}_R
+ =\frac{(|\eta\rangle\langle\Omega_R|+\text{h.c.})+\sigma/n^2-e^2P_R}{1+e^2}
+ +\frac{e^2}{1+e^2}\bigl(|c^{(1)}_R\rangle\langle\Omega_R|+\text{h.c.}\bigr).
+ \label{eq:ay1-remainder}
+\end{equation}
+Each piece has an exact trace norm. Since $\eta\perp\Omega_R$, the first
+operator has trace norm $2\lVert \eta\rVert$. Since $\sigma\ge0$, $P_R\sigma=0$ and
+$\tr\sigma=d^2$, one has $\lVert \sigma/n^2-e^2P_R\rVert_1=2e^2$. The last operator
+has trace norm $2\lVert c^{(1)}_R\rVert =2\sqrt{10}\,a$, which is at most $20a$.
+
+\paragraph{Itemized bound.}
+Each component is bounded with the AW1 ingredients, restricted to supports
+meeting $R$.
+\begin{itemize}
+\item \recid{am2_remainder}: $\varrho=352JT$ bounds the anchored remainder
+ at each site of $R$. So
+ $\lVert (c-c^{(1)})_R\rVert +\lVert c_{\{0\}}\rVert \le\varrho$ at $0$,
+ $\lVert c_{\{e_z\}}\rVert \le\varrho$ at $e_z$, and
+ $\lVert \eta_{\rm am2}\rVert \le2\varrho$.
+\item \recid{straddling}: for a straddling $I$ and a site $u\in I\setminus R$,
+ $c_I$ is excited at $u$, so the outside-excitation lemma
+ \eqref{eq:aw1-outside} gives
+ $\lVert \eta_{\rm str}\rVert \le T\sum_{I\ \rm straddling}\lVert c_I\rVert \le
+ T(72a+2\varrho)$, where 72 counts the straddling faces meeting $R$.
+\item \recid{two_creation}: $\lVert \eta_{\rm pair}\rVert \le A_0A_{e_z}$ with
+ $A_x\le33a+\varrho$, where 33 faces contain one site of $R$ but not the
+ other.
+\item \recid{density}: $e\le\varepsilon_R:=82a+2\varrho+(33a+\varrho)^2$,
+ the $\varepsilon$ pinned to the 82 faces meeting $R$, admitted as valid in
+ the AV1 and AW1 gates. It is about $5.695\times10^{-9}$ at the cap.
+\item normalization: the last term of \eqref{eq:ay1-remainder} is of third
+ order and is still charged, as $20a\,\varepsilon_R^2$.
+\end{itemize}
+Collecting the pieces,
+\begin{equation}
+ \begin{aligned}
+ \norm{r_R}_1\le{}&
+ \underbrace{4\varrho}_{\recid{am2_remainder}}
+ +\underbrace{2T(72a+2\varrho)}_{\recid{straddling}}
+ +\underbrace{2(33a+\varrho)^2}_{\recid{two_creation}}\\
+ &+\underbrace{2\varepsilon_R^2}_{\recid{density}}
+ +\underbrace{20a\,\varepsilon_R^2}_{\text{normalization}}
+ =:K_2'\tau^2 .
+ \end{aligned}
+ \label{eq:ay1-k2}
+\end{equation}
+Table~\ref{tab:ay1-k2} lists the items at the cap. The gate binds the sum,
+\begin{equation}
+ \begin{aligned}
+ K_2'&=\frac{966771578474926086618624139557778885954947547760216752246561}{72052885697817210754545804931891200000000000000000000000}\\
+ &\approx13417.5275439,
+ \end{aligned}
+ \label{eq:ay1-K2}
+\end{equation}
+and the pair constant at $\tau=\pm10^{-8}$,
+\[
+ \begin{aligned}
+ 2K_2'\tau^2&=\frac{966771578474926086618624139557778885954947547760216752246561}{360264428489086053772729024659456000000000000000000000000000000000000000}\\
+ &\approx2.68350550879\times10^{-12}.
+ \end{aligned}
+\]
+Each is the same exact rational in the forward output, the reverse output and
+the skeptic's pre-comparison package. The items add linearly; a
+root-sum-of-squares assembly, a zero item and a crude-tier item are rejected.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The items of $K_2'$ at $\tau=\pm10^{-8}$, each divided by $\tau^2$.
+Decimals are previews of exact rationals in the frozen outputs.}
+\label{tab:ay1-k2}
+\begin{tabular}{llrc}
+\toprule
+Item & Formula & Value$/\tau^2$ & Order\\
+\midrule
+\recid{am2_remainder} & $4\varrho$ & $94325000000/7030557\approx13416.4334347$ & 2\\
+\recid{straddling} & $2T(72a+2\varrho)$ & $538349237890625/1581719415367968\approx0.340356976502$ & 2\\
+\recid{two_creation} & $2(33a+\varrho)^2$ & $166184094520081/1581719415367968\approx0.105065470465$ & 2\\
+\recid{density} & $2\varepsilon_R^2$ & $\approx0.648686759083$ & 2\\
+normalization & $20a\,\varepsilon_R^2$ & $\approx4.50476916030\times10^{-10}$ & 3\\
+\recid{arithmetic} & exact rationals & $0$ & --\\
+\midrule
+$K_2'$ & sum & $\approx13417.5275439$ & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Uniformity and scaling.}
+The bound holds uniformly in $N$, in the cutoff $L\ge24$ and in both
+families. Finite-box face counts never exceed the bulk counts 82, 72 and 33,
+and $T$ and $\varrho$ are the same for both families. It passes to the
+untruncated ground by AV1's cutoff removal and to every subsequential limit
+because the trace-norm ball is closed; that is \eqref{eq:ay1-expansion}. Every
+item is tier (ii). The only inputs that are not $R$-local are $T$ and
+$\varrho$, which are anchored maxima of the AM2 fixed point and are uniform in
+$N$, as in AW1. The forward checker has a second code path that recomputes
+each item from the pins and requires equality, which guards against the
+silent undercounts of AW1 review finding~N8. The ratio $B(\tau)/B(\tau/100)$
+of the total bounds is about $10000.976$, so the bound is quadratic. The
+values of $K_2'$ at $\tau$, $\tau/10$, $\tau/100$ and $\tau/1000$ are about
+$13417.528$, $13416.337$, $13416.218$ and $13416.206$, so $K_2'$ is
+nondecreasing in $|\tau|$ and the cap value bounds every smaller coupling.
+
+Since $\rho^{(1)}_R$ is common to all limits, \eqref{eq:ay1-expansion} gives
+$\lVert \rho_R-\rho'_R\rVert_1\le2K_2'\tau^2$ for any two subsequential limits of
+either family at the same $\tau$ \eqref{eq:ay1-K2}. That is a factor of about
+$1.0145\times10^4$ below $2D$. It is the ``agree to first order in tau'' of
+the template (closeness order 2). It is still not equality, and it says
+nothing outside $R$.
+
+\paragraph{Comparison with \texorpdfstring{$K_2^+$}{K2+}.}
+Contract item~3 asks for $K_2'$ ``built from the AW1 remainder items
+restricted to faces meeting R (not the whole-box $K_2^+$)'' and for a
+comparison. $K_2'$ is larger:
+\begin{equation}
+ \begin{aligned}
+ \frac{K_2'}{K_2^+}
+ &=\frac{3867086313899704346474496558231115543819790191040867008986244}{966893014524284957965768152362480514948256313800811767578125}\\
+ &\approx3.99949762363 .
+ \end{aligned}
+ \label{eq:ay1-ratio}
+\end{equation}
+The two constants bound different quantities. $K_2^+$ bounds the single
+observable $W$. Since $W\Omega_R$ is excited at both sites of $R$, $W$ pairs
+only with $c_R$, with multiplier $2\lVert W\Omega_R\rVert =1$, and it annihilates
+the single-site remainders $c_{\{0\}}$ and $c_{\{e_z\}}$ and the 66 one-site
+straddling faces. The trace norm over $B(\mathcal H_R)$ has no such overlap
+structure. It pays the multiplier 2, and it pays all three excited sectors,
+$\{0\}$, $\{e_z\}$ and $\{0,e_z\}$, at both sites. The dominant item is the
+AM2 generic remainder $\varrho=352JT$, a per-site constant that is not
+$R$-local. It is $99.979\%$ of $K_2^+$ and $99.99\%$ of $K_2'$. Every
+trace-norm constant built from the AW1 items is therefore at least
+$2\varrho/\tau^2\approx6708.2$, and at least about $5488.7$ with the sharper
+majorant $288t/(1-8t)$; both floors exceed $K_2^+$. The restriction to faces
+meeting $R$ helps where it can. $\varepsilon_R$, about $0.5695|\tau|$, lies
+below $2T+T^2$, about $0.6806|\tau|$, and the pins 72 and 33 replace the
+unpinned $T\cdot T$ and $T^2$. Per unit trace multiplier the count-dependent
+items total $0.547$, against $0.695$ in $K_2^+$ (Table~\ref{tab:ay1-compare}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Items of $K_2^+$ and $K_2'$ at the cap, each divided by $\tau^2$
+(reverse comparison ledger). The last column divides the $K_2'$ items by the
+trace-norm multiplier 2.}
+\label{tab:ay1-compare}
+\begin{tabular}{lrrr}
+\toprule
+Item & $K_2^+$ ($W$ only) & $K_2'$ (trace norm on $B(\mathcal H_R)$) & $K_2'$ per unit multiplier\\
+\midrule
+\recid{am2_remainder} & $3354.108358$ ($\varrho$) & $13416.433435$ ($4\varrho$) & $6708.216717$\\
+\recid{straddling} & $0.115812$ ($T\cdot T$) & $0.340357$ & $0.170178$\\
+\recid{two_creation} & $0.115812$ ($T^2$) & $0.105065$ & $0.052533$\\
+\recid{density} & $0.463247$ ($(2T+T^2)^2$) & $0.648687$ ($2\varepsilon_R^2$) & $0.324343$\\
+normalization & $3.2\times10^{-11}$ & $4.5\times10^{-10}$ & $2.3\times10^{-10}$\\
+\midrule
+Total & $3354.80322946$ & $13417.5275439$ & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Only the $W$-projected $R$-local analogue,
+$\varrho+T(6a+\varrho)+(33a+\varrho)^2+\varepsilon_R^2+a\varepsilon_R^2$,
+about $3354.49943$, lies below $K_2^+$, by $0.30380$. It is AW1's minimal
+form, not a density bound. The gate therefore reads the contract's
+parenthetical as ``built from $R$-local face pins'' (82, 72, 33 and 10),
+unlike the unpinned $T\cdot T$, $T^2$ and $2T+T^2$ of $K_2^+$. It does not
+read it as a claim that $K_2'$ is smaller. Nor is $K_2^+$ a ``whole-box''
+constant: it is uniform in $N$ (wording defect~W1). The modern lens's
+update-3 expectation that $K_2'$ would be strictly smaller than $K_2^+$ does
+not hold for a trace-norm constant.
+
+\paragraph{Labelled variants.}
+Four further values of $K_2'$ are valid upper bounds and are recorded as
+previews only (Table~\ref{tab:ay1-variants}). The $\sqrt2$ variant uses that
+$\eta_{\rm am2}$ is a sum of three mutually orthogonal vectors, so
+$\lVert \eta_{\rm am2}\rVert \le\sqrt2\,\varrho$, with a directed bracket for
+$\sqrt2$. The 288-majorant variant replaces $\varrho$ by $288JT/(1-8T)$, from
+$G(t)-16\le288t/(1-8t)$. Each rests on an extra labelled step, and each still
+exceeds $K_2^+$. The gate binds the triangle value, which is purely rational
+and identical in all three computations.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Labelled variants of $K_2'$ (previews only, not headline).}
+\label{tab:ay1-variants}
+\begin{tabular}{lrr}
+\toprule
+Variant & $K_2'$ & Ratio to $K_2^+$\\
+\midrule
+Orthogonal in-$R$ sectors ($\sqrt2$) & $\approx9487.945$ & $\approx2.8281674$\\
+Directed AM2 remainder ($288$-majorant) & $\approx10978.18$ & $\approx3.2723756$\\
+Both refinements combined & $\approx7763.06$ & $\approx2.3140145$\\
+Admitted $\varepsilon=2T+T^2$ in the density item & $\approx13417.81$ & $\approx3.9995804$\\
+Triangle headline, bound by the gate & $\approx13417.5275439$ & $\approx3.99949762363$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{A recorded observation}
+\label{sec:ay1-observation}
+The reverse triangle inequality applied to \eqref{eq:ay1-expansion} gives, for
+every subsequential limit of either family at either sign,
+\begin{equation}
+ \frac{\sqrt{10}\,|\tau|}{72}-K_2'\tau^2\le\norm{\rho_R-P_R}_1
+ \le\frac{\sqrt{10}\,|\tau|}{72}+K_2'\tau^2 .
+ \label{eq:ay1-observation}
+\end{equation}
+At the cap the interval lies in $[4.3786\times10^{-10},\,4.4055\times10^{-10}]$.
+The forward previews of the two ends are $4.37863477824\times10^{-10}$ and
+$4.40546983333\times10^{-10}$. The skeptic verified each end exactly as a
+directed bound,
+$(\text{lower}+K_2'\tau^2)^2\le10\tau^2/5184\le(\text{upper}-K_2'\tau^2)^2$.
+The review asks that the observation be recorded from these exact values,
+because the forward checker does not pin its lower end
+(Section~\ref{sec:ay1-evidence}). The upper
+end is about 30.9 times below $D$. AV1's $\varepsilon$ charges the 72
+straddling faces at first order, but they reach the off-diagonal block only
+at second order. The lower end would be the first lower bound on
+$\lVert \rho_R-P_R\rVert_1$ in Round32; the AV1 gate provides none
+(Section~\ref{sec:av1-limits}).
+
+The gate records \eqref{eq:ay1-observation} as a labelled observation only.
+It is not a preregistered target or comparator and not an admitted tier, and
+it does not replace $D$ anywhere, including in $2D$. It is not a resolved
+interaction shift: \recid{resolved_interaction_shift} stays false, and the
+static Wilson mean belongs to AW2 (Section~\ref{sec:aw2}). AY2 may certify it
+under its own contract.
+
+\subsubsection{The mandatory sentence, gate fields and definitions}
+\label{sec:ay1-sentence}
+\paragraph{The template.}
+The preregistration freezes a mandatory sentence template from the Jung lens,
+and contract item~4 requires it. Items (2)--(3) of the gate statement contain
+it verbatim:
+\begin{gatequote}
+For every pair of subsequential limits of the named construction families F1
+and F2 at the same coupling, on the fixed cover R and for the frozen
+observable class, the reduced densities satisfy ||rho\_R -
+rho\textquotesingle{}\_R||\_1 <= 2D and agree to first order in tau; this does
+not assert equality of the states, whole-sequence convergence, translation
+invariance, boundary independence of the dynamics, or a rate in N.
+\end{gatequote}
+The gate then fills its slots with the constants of this subsection
+(Table~\ref{tab:ay1-template}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{The slots of the mandatory sentence template and the constants with
+which the gate fills them.}
+\label{tab:ay1-template}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.34\linewidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Slot & Filled with\\
+\midrule
+named construction families F1 and F2 & F1: centered whole-star boxes
+$\Lambda_N$ (AQ1); F2: all-contained-face boxes with padding (I1 \S6), on the
+same $\Lambda_N$, $N\ge2$\\
+the same coupling & $\tau=\pm10^{-8}$, and every $|\tau|\le10^{-8}$\\
+the fixed cover $R$ & $R=\{0,e_z\}$: 48 links, 36 endpoints, seven incident
+anchors\\
+the frozen observable class & $B(\mathcal H_R)$, in the trace norm\\
+$2D$ & the exact rational of \eqref{eq:ay1-2D}, about
+$2.72249057405\times10^{-8}$\\
+agree to first order in $\tau$ & the common $\rho^{(1)}_R$ of
+\eqref{eq:ay1-rho1}, with $\lVert \rho_R-\rho'_R\rVert_1\le2K_2'\tau^2$, about
+$2.68350550879\times10^{-12}$ \eqref{eq:ay1-K2}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Both producers also fill the Jung loop-2 form. It quantifies over
+$A\in B(\mathcal H_R)$ with $\lVert A\rVert \le1$, which is equivalent by trace
+duality. It adds that the statement does not assert boundary independence
+beyond $R$, and that two states satisfying it ``may differ by the stated order
+on R and without bound elsewhere''. The frozen template and the Jung text
+differ in wording (review reading~R5), and both are filled.
+
+\paragraph{Gate fields.}
+The preregistration requires five gate fields, which record what is not
+claimed, and the gate exports all five as false. It also exports the Jung
+field \recid{rate_in_N_claimed} as false (wording defect~W3).
+\begin{itemize}\raggedright
+\item not claimed, exported as false: \recid{uniqueness_claimed},
+ \recid{whole_sequence_claimed}, \recid{rate_claimed},
+ \recid{translation_invariance_claimed},
+ \recid{boundary_independence_of_dynamics_claimed} and
+ \recid{rate_in_N_claimed}.
+\end{itemize}
+The descriptive fields read, verbatim:
+\begin{gatequote}
+\begin{itemize}
+\item states\_compared: all subsequential limits of F1 and F2 (every pair,
+same or different family, same tau)
+\item region: R=\{0,e\_z\} fixed before production (complete cover of the
+original xz Wilson loop)
+\item topology: trace norm on B(H\_R); dynamics named in the norm on compact
+time windows (no dynamical statement)
+\item closeness\_order: [1,2]
+\end{itemize}
+\end{gatequote}
+The closeness order is 1 for $2D$ and 2 after subtracting $\rho^{(1)}_R$. The
+forward producer exported $2$ and the reverse $[1,2]$; the gate adopts
+$[1,2]$ (review finding~N4).
+
+\paragraph{Quantitative boundary comparison.}
+Contract item~6 requires a definition, and both producers give it in
+substance. In AY1 a quantitative boundary comparison is the pair of two
+statements: (i) a closeness bound, $\lVert \rho_R-\rho'_R\rVert_1\le2D$ for every
+pair of subsequential limits of the two named prescriptions at the same
+$\tau$; and (ii) a matching first-order term, the same $\rho^{(1)}_R$ for
+every such limit, with second-order difference at most $2K_2'\tau^2$. It is
+explicitly not a variational statement about which boundary condition the
+infinite-volume theory selects. It compares no energies or free energies of
+the prescriptions and ranks neither. It does not say that the limits of
+either family are canonical, and it says nothing outside $R$ or about the
+dynamics. A definition that claims a variational selection, or drops the
+first-order term, is rejected by both checkers.
+
+\paragraph{Uniform in \texorpdfstring{$N$}{N} is not uniform in the spacing.}
+Every constant here is uniform in the box size $N$, the on-site cutoff, the
+family and the subsequence. It holds at fixed lattice spacing, fixed $\alpha$,
+$\hbar$ and $E_\star$, and fixed $\tau$. Nothing is uniform in the spacing,
+and $N\to\infty$ at fixed spacing is not a continuum limit. The zero-selected
+family carries no dictionary between $\tau$ and the spacing
+(Section~\ref{sec:dictionary}). As an illustration from a different model,
+the uniform dictionary $\tau=96/g^4$ of Section~\ref{sec:ax1-dictionary}
+needs $g^4\ge9.6\times10^9$ for the cap and $g^4\ge32$ for the coefficient
+box, so every path with vanishing spacing and $g\to0$ leaves both. The cover
+$R$ is two coarse factors, a block of $4\times2\times2$ fine lattice spacings:
+fixed in lattice units, it shrinks in physical units as the spacing
+decreases. Both checkers reject a claim of uniformity in the spacing, and a
+reading of uniformity in $N$ as a continuum statement
+(\recid{not_uniform_in_a}).
+
+\paragraph{Phrasing rule.}
+Both checkers scan the reports and the exported sentences. They reject a
+definite-article phrase for a single AQ-type state or for a single
+infinite-volume limit, and any sentence that mentions uniqueness without
+``not''. They also require the phrase ``a chosen subsequential''. AQ1's chosen
+state is a chosen subsequential limit of F1, and every statement here holds
+for each such limit separately.
+
+\subsubsection{Controls, replays and review}
+\label{sec:ay1-evidence}
+\paragraph{Error ledger.}
+The preregistered terms are the following.
+\begin{itemize}
+\item \recid{state_boundary}: $D$ per limit and $2D$ per pair
+ \eqref{eq:ay1-2D}, the AV1 forward tier (ii), uniform in $N$, the cutoff and
+ the family.
+\item \recid{second_order_difference}: $K_2'\tau^2\approx1.34175275439\times10^{-12}$
+ per limit and $2K_2'\tau^2$ per pair \eqref{eq:ay1-K2}, the five items of
+ \eqref{eq:ay1-k2} added linearly.
+\item \recid{arithmetic}: no numeric cost. The headline constants are exact
+ rationals. Directed brackets enter only for $\sqrt{10}$ (the trace norm of
+ $\rho^{(1)}_R$), for $\sqrt2$ (a labelled variant) and for $e^{1/8}$, and the
+ reverse producer's directed $10^{-40}$ roundings enter only its fidelity
+ cross-check and brackets.
+\end{itemize}
+A root-sum-of-squares combination and division by $\sqrt N$ or by 64 are
+rejected.
+
+\paragraph{Contract controls.}
+The contract lists 21 controls. Seven of them carry new semantics for AY1.
+\begin{itemize}\raggedright
+\item \recid{topology_named}: weak-* for states, strong continuity relabelled
+ as norm continuity, one topology for both, and a dynamical claim for F2
+ limits are rejected.
+\item \recid{two_families_named}: one family only, ``all boundary
+ conditions'', a third family (the literal vertex boxes), orthant boxes
+ substituted, and F2 collapsed onto F1 (616 faces fewer on $\Lambda_2$) are
+ rejected.
+\item \recid{subsequence_versus_whole_sequence}: whole-sequence convergence
+ and a $1/N$ rate claimed for an alternating sequence whose parity
+ subsequences converge are rejected.
+\item \recid{local_closeness_not_uniqueness}: equality inferred from
+ closeness or from a common enclosing interval, a mandatory sentence without
+ its negation, and a gate field set true are rejected.
+\item \recid{common_clock}: F2's normalized coefficient read in units of
+ $\alpha$ ($8\tau$), different couplings, second-order closeness across
+ $\pm\tau$ (the first-order densities differ by $\sqrt{10}|\tau|/36$), and a
+ normalized clock for one family are rejected.
+\item \recid{padding_family_contraction_proved}: the mutations of
+ Section~\ref{sec:ay1-premises} are rejected.
+\item \recid{not_uniform_in_a}: ``uniform in lattice spacing'', $g\to0$ and
+ $N\to\infty$ called a continuum limit are rejected.
+\end{itemize}
+The inherited controls keep their meaning. Among them,
+\recid{tier_mixing_rejected} rejects the tier-(i) value in the closeness, the
+AV1 reverse 82-face refinement used as the admitted constant, a crude item
+inside $K_2'$ and $t=t_1$ without the remainder. The control
+\recid{first_order_mean_charged} rejects a zero first-order density, which
+the AW2 lower end contradicts because it exceeds $K_2'\tau^2$. The control
+\recid{vector_versus_scalar_centering} rejects scalar subtraction as vector
+centering and the $W$-only $K_2^+$ used as a trace-norm constant. The control
+\recid{reverse_premise_isolation} rejects the triage, the Jung note or the
+forward AY1 report in the reverse inventory.
+
+\paragraph{The two named examples.}
+Contract item~5 also names two examples, and both checkers run them.
+\begin{itemize}
+\item \emph{Fixed vector versus moving vector.} In the forward checker the
+ moving $|e_n\rangle\langle e_n|$ has pairwise trace distance 2, weak limit 0
+ and unbounded energy, and a claim of compactness is rejected. For
+ $U(t)e_j=e^{ijt}e_j$ and $Ae_j=e_{2j}$, the fixed vector $e_1$ gives at most
+ $4/n$ and the moving $e_n$ gives 2, so strong continuity is not norm
+ continuity. In the reverse checker the moving vectors
+ $w_N=\Omega+\lambda e_{1+(N\bmod2)}$, $\lambda=1/10000$, give densities that
+ each lie within $D_{\rm ex}=2\lambda/\sqrt{1+\lambda^2}$ of $P$, yet the
+ sequence has two distinct subsequential limits. Closeness to a fixed vector
+ implies neither convergence of the moving sequence nor equality of its
+ limits.
+\item \emph{A common enclosing interval is not equality.} The forward checker
+ rejects two limits in the AW2 enclosure \eqref{eq:aw2-enclosure} declared
+ equal, and two distinct states in the $D$-ball declared equal. The reverse
+ checker exhibits $\tau/144\pm K_2^+\tau^2/2$, which both lie in the AW2-type
+ enclosure and differ.
+\end{itemize}
+
+\paragraph{Checkers.}
+The forward checker runs 42 exact checks and implements all 21 controls as
+damaging mutations raised through explicit exceptions, never assertions. It
+rejects 97 mutations in all, 72 of them inside the 21 control checks; the
+report's ``All 21 contract controls \ldots\ 97 in total'' counts every
+rejection in the checker (review finding~N7). The reverse checker runs 41
+exact checks and rejects 94 mutations, 87 inside the control checks, and it
+leaves no control unimplemented. Both use only the standard library and exact
+rationals, and both reject float, Boolean, NaN and zero-denominator inputs.
+Both verify the contract snapshot's SHA-256 before parsing and record their
+own SHA-256 before evaluation. A byte edit without a rehash aborts both, and
+so does a coherently rehashed target $1/125000$: the forward checker pins the
+target, and the reverse checker ties it to twice the AV1 target. Both export
+\recid{continuum_claim}, \recid{uniform_wilson_claim},
+\recid{resolved_interaction_shift} and \recid{scientific_priority_verified}
+as false.
+
+\paragraph{Exact fixtures.}
+Finite creation algebras, labelled with \recid{transfers_to_aq} false, audit
+the algebra of Sections~\ref{sec:ay1-density} and~\ref{sec:ay1-k2}. The
+forward fixture has two sites of $R$ of dimension 3, two outside sites and up
+to three decoupled spectators, with creations of every support type. It
+checks \eqref{eq:ay1-remainder}, the component bounds and the
+outside-excitation lemma at both outside sites. It also checks that $\rho_R$
+does not depend on the spectators, while the unnormalized weights take four
+different values. It rejects dropping $\sigma$, dropping the straddling
+creations from $\xi$, the unnormalized weight and dropping the two-creation
+term. The reverse fixture has four qubit sites, $\lambda=1/50$, and two
+environments that share only the first-order creation inside $R$. It checks
+the vector overlap identity and the ledger bound in both environments. The two
+densities differ, yet twice their Hilbert--Schmidt distance stays below the
+sum of the two ledger bounds and below $\lVert \lambda\rho^{(1)}\rVert_1$. The
+squared Hilbert--Schmidt norm of the difference drops by a factor of about
+9889 when $\lambda$ is divided by 10, so the difference scales as
+$\lambda^2$.
+
+\paragraph{Independent pre-comparison package.}
+The skeptic's package holds a contract review, a derivation and a checker
+with 96 exact checks, implementing 26 controls (the 21 contract ids and five
+more) with 70 rejected mutations. It was hash-frozen and committed
+(\texttt{55be992}, 02:39:42Z) before the reverse commit (\texttt{d1e6ac6},
+02:49:24Z) and the forward commit (\texttt{f7b9839}, 02:50:55Z), and a fresh
+replay reproduces its frozen output byte for byte under normal and optimized
+Python. Its predictions matched every producer headline rational for
+rational. They covered $D$, $2D$ and $2D_{\rm i}$; the counts 49, 82, 10, 72,
+66, 33, 16, 6 and 27 and the seven anchors; the F2 values $J=28|\tau|$,
+support 4, termination 8, reset $98|\tau|$ and $C_F=56|\tau||F|$, the
+extra-face count $28N(5N+1)$ and the distance $N-1$; the ten-face
+$\rho^{(1)}_R$ with trace norm $\sqrt{10}|\tau|/72$; $K_2'$ with all five
+items, the $\sqrt2$ variant and the $W$-projected analogue; $2K_2'\tau^2$;
+the $\pm\tau$ separation; and the upper end of the observation. In
+particular, the three values that the gate binds for AY2, $2D$, $K_2'$ and
+$2K_2'\tau^2$, are the same exact rational in the forward output, the reverse
+output and the pre-comparison package. The producers' further labelled
+values, the 288-majorant, combined and admitted-$\varepsilon$ variants, the
+Bures constant and the lower end of the observation, were re-derived exactly
+after the comparison. The skeptic records that its own triage seeded the
+$2D$ observation and the goal-4 controls, and that its AV1 and AW1 reviews
+are shared premises. The agreement is therefore correlated model-agent work,
+not independent discovery. The skeptic also discloses one early recursive
+search whose output was filtered, so that no line from the producer folders
+was displayed.
+
+\paragraph{Post-comparison review.}
+The review adds 55 exact checks, including 28 source-mutation runs, for 151
+independent checks in all. Two unmutated copies reproduce the frozen outputs
+byte for byte. All 22 must-abort source edits abort at the intended check. In
+the forward package they include $4\varrho$ replaced by $2\varrho$, the
+straddling pin 72 replaced by 66 and the density item zeroed, all caught by
+the second code path; the F2 rule replaced by the F1 rule; straddling faces
+added to $F_R$; the amplitude $\tau/576$; a claim flag set true (uniqueness
+and continuum are not claimed); contract edits; the reverse report added as an
+input; and a forbidden sentence appended to the report. In the reverse package
+they include a halved AM2 item, the F2 rule replaced, the padding removed, a
+doubled Bures bound, a contract byte edit, a rehashed target that is not
+twice the AV1 target, the triage or the forward report added as an input,
+and a forbidden phrase appended. Four silent edits run to completion in the
+producer checkers and are caught only by the review's value validator: the
+forward lower end of the observation computed with $K_2'\tau^2/2$; the
+forward $\sqrt2$ rounded down; the reverse $\varepsilon_R$ pinned to 49
+faces instead of 82; and the reverse straddling pin 72 replaced by 66. The
+reverse has no second code path for its ledger, and the forward's second
+path does not cover its supplementary bounds or its variant. AY2's checker
+should therefore read $2D$, $K_2'$ and $2K_2'\tau^2$ from the AY1 gate as
+exact rationals and reject any recomputed or smaller value (review
+finding~N2).
+
+\paragraph{Replays and isolation.}
+The declared-direction replay tools verify both closures file by file, 36
+forward files and 34 reverse. They compare every premise snapshot with its
+repository source and replay each producer under normal and optimized Python
+into fresh external directories. All four runs reproduce the frozen outputs
+byte for byte, and the freezing tool reports both closures verified. The
+reverse inputs are exactly \texttt{AGENTS.md}, the contract and the 28 shared
+premises, 30 files. Their only skeptic files are the declared AV1 and AW1
+reviews, and they hold no triage, Jung loop-2, deliberation, panel, expert,
+forward-AY1 or skeptic-AY1 file. The forward inputs are those 30 plus the two
+forward-additional premises, 32 files. Isolation between the producers rests
+on disclosure and content, not on mechanism (review finding~N3). The Jung
+sentence form reached the reverse producer through its task prompt, not
+through a file. A final \texttt{git status} by the reverse producer, after
+its work was complete, showed the names of the forward checker and report.
+The forward report was last written at 02:49:43Z, after the reverse freeze at
+02:48:44Z, and it contains no reverse-specific construct: no Bures route,
+vector overlap identity or 288-majorant variant. The private scratch folders
+were checked by names and times only, and no file in the shared scratchpad
+root was written after the AY1 freeze except the AX2 manuscript folder. The
+disclosed protocol and style reads (the tools documentation, the freezing
+tool, parts of earlier checkers and output conventions) carry no premise
+weight (N9). Isolation is verified for repository inputs only.
+
+\subsubsection{Contract wording and non-blocking findings}
+\label{sec:ay1-findings}
+The gate records the contract's wording defects, in the forward producer's
+numbering W1--W7, as non-blocking.
+\begin{itemize}
+\item \emph{W1.} Item~3's ``(not the whole-box $K_2^+$)'': $K_2^+$ is uniform
+ in $N$ and specific to $W$, and the $R$-local trace-norm $K_2'$ is about 4.0
+ times larger. The phrase is read as ``built from $R$-local pins''
+ (Section~\ref{sec:ay1-k2}).
+\item \emph{W2.} The claim exclusions of the contract and of the
+ preregistration use the definite-article phrase for a single AQ-type state
+ that the Jung phrasing rule forbids. Both producers quote it only verbatim
+ and negated.
+\item \emph{W3.} The contract's field \recid{rate_claimed} and the Jung
+ field \recid{rate_in_N_claimed} differ in name; both are false.
+\item \emph{W4.} The preregistered state provenance names only the F1
+ construction; F2 has its own diagonal extraction
+ (Section~\ref{sec:ay1-premises}).
+\item \emph{W5.} The contract does not fix the F2 box geometry; it is read as
+ the same centered $\Lambda_N$ (Section~\ref{sec:ay1-families}).
+\item \emph{W6.} Item~5 lists ``freeze; byte-identical replays'' as controls,
+ but they are not among the 21 control ids. They are protocol steps, verified
+ in Section~\ref{sec:ay1-evidence}.
+\item \emph{W7.} Verified, no defect: item~3's sign
+ $-(c^{(1)}\Omega_0^*+\text{h.c.})$ gives $+\tau/144$ with the AV1
+ convention (Section~\ref{sec:ay1-density}).
+\end{itemize}
+The gate also records four findings from the review as non-blocking. The
+reverse route's ``derivative of the fidelity identity'' holds in vector form
+only, because the scalar derivative vanishes (Section~\ref{sec:ay1-density}).
+The two producers use different valid padding conventions
+(Section~\ref{sec:ay1-premises}). The reverse producer does not export
+\recid{rate_in_N_claimed}, and the gate adopts the closeness order $[1,2]$
+(Section~\ref{sec:ay1-sentence}). Reverse isolation holds for repository
+files, and the Jung sentence wording reached the reverse producer through its
+task prompt, as disclosed (Section~\ref{sec:ay1-evidence}).
+
+\subsubsection{Limitations recorded by the gate}
+\label{sec:ay1-limits}
+The AY1 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the zero-selected patterned family (selected triple (0,0,0), Haar
+reference), the cover R=\{0,e\_z\}, fixed spacing and
+|tau|<=10\textasciicircum{}-8, with the two named families on centered cubes
+Lambda\_N, N>=2; nothing transfers to literal vertex boxes (I1 section 7),
+periodic or orthant boxes, nonzero selected triples, the uniform route-B model
+(its K\_2 was not transferred in AX1), weak coupling or the continuum
+\item Uniform local closeness on the fixed region R at the same coupling, not
+uniqueness, whole-sequence convergence, a rate in N, translation invariance or
+boundary independence of the dynamics; two limits may differ by up to
+2K\_2\textquotesingle{} tau\textasciicircum{}2 on R and without bound
+elsewhere; 2D alone also bounds states at different couplings (P\_R is
+tau-independent), so the boundary-comparison content is the matching
+first-order term
+\item The first-order density is a statement about a coefficient through the uniform
+remainder bound, not a tau-derivative of a subsequential limit (subsequences
+depend on tau)
+\item K\_2\textquotesingle{} is an upper bound dominated (99.99\%) by the generic
+AM2 majorant 4rho and exceeds K\_2\textasciicircum{}+
+(\textasciitilde{}3.9995x); the contract\textquotesingle{}s
+\textquotesingle{}(not the whole-box
+K\_2\textasciicircum{}+)\textquotesingle{} is read as \textquotesingle{}built
+from R-local face pins\textquotesingle{}, not as a smaller constant; labelled
+variants (sqrt-2 sectors \textasciitilde{}9487.945, 288-majorant
+\textasciitilde{}10978.18, both \textasciitilde{}7763.06, admitted-eps
+\textasciitilde{}13417.81) are valid, not headline
+\item Supplementary two-sided observation sqrt(10)|tau|/72 -/+
+K\_2\textquotesingle{} tau\textasciicircum{}2, i.e. ||rho\_R-P\_R||\_1 in
+[4.3786e-10, 4.4055e-10] for every limit of either family: a labelled
+observation only, not a contract target, not an admitted tier and not a
+resolved interaction shift; it does not replace D
+\item Inherited without re-proof: AM2 majorant, fixed point, excited-sector
+exclusion and cutoff passage (applied to F2 through their hypotheses); AV1
+product split and cutoff-vector removal; AQ1 compactness, diagonal extraction
+and Nachtergaele-Sims dynamics (named only); AW1 c\textasciicircum{}(1) and
+outside-excitation lemma; the I1 dictionary; Peter-Weyl/Haar orthogonality,
+Uhlmann/Fuchs-van de Graaf and Nachtergaele-Sims cited, not machine-checked
+\item Independence limited to proof routes, enumeration and code: the forward-only
+premises (triage goal-4 note, Jung loop-2 notes) and the shared contract,
+selection note and AV1/AW1 reports and reviews state the mechanism; the Jung
+sentence form reached the reverse through its task prompt, and the reverse saw
+two forward file names; isolation is verified for repository inputs only; all
+agents are correlated model agents
+\item Producer checkers do not pin every exported value: the forward supplementary
+lower end and sqrt-2 rounding direction and the reverse 82/72 ledger pins ran
+silently when edited and were caught only by the skeptic validator; AY2 should
+read 2D, K\_2\textquotesingle{} and 2K\_2\textquotesingle{}
+tau\textasciicircum{}2 from this gate as exact rationals
+\item The -tau evaluation is a replay of the same |tau| formula
+(rho\textasciicircum{}(1)\_R is odd under the AW1 flip), not a second
+confirmation
+\item Scientific priority unverified
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round32/forward/ay1/report.md}{AY1 forward},
+\repo{research/round32/reverse/ay1/report.md}{AY1 reverse},
+\repo{research/round32/skeptic/ay1-independent-derivation.md}{independent
+pre-comparison derivation},
+\repo{research/round32/skeptic/ay1.md}{independent model-agent review} and the
+\repo{research/round32/contracts/ay1.json}{frozen contract}. The gate selects
+AY2 next. The \repo{research/round32/advisor/selection-ay2.md}{AY2 selection
+note} asks AY2 to state, with the AY1 gate constants, what is proved for the
+set of subsequential limits of both families, and to list each obligation
+that the present bounds do not settle, with its missing premise and a
+candidate route. It also asks AY2 to certify the two-sided first-order
+distance of Section~\ref{sec:ay1-observation} under its own contract, as a
+static statement and never as an interaction-shift or dynamical claim. That
+note is a planning record and admits nothing.
+
+\subsection{AY2: what the closeness lemma does and does not establish}
+\label{sec:ay2}
+
+AY2: To be completed from the AY2 gate.
