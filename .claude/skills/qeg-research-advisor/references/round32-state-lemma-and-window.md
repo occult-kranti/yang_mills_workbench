@@ -26,3 +26,9 @@ Written from admitted Round32 evidence only; extended after each gate. Read this
 - A single-direction certificate is admissible only with the skeptic's independent replay written from the contract alone and committed before the producer's package; the review then shows one admitted formula replayed correctly, not independent physical confirmation. Say so in the gate.
 - A "resolved interaction shift" is always scoped to the observable and the order at which it is first order: here the static equal-time Wilson mean at the zero triple, with the sub-label static_not_dynamic; never the centered correlation, a mass shift or a susceptibility.
 - Report the exclusion margin (distance of the enclosure from the reference divided by its half-width) and the sign margin separately; freeze which one the target uses. A preview file that the checker reads must be labelled veto-only if it can abort a run but never supplies an admitted value.
+
+## Admitted after AX1 (gate `research/round32/advisor/ax1-gate.json`)
+
+- A matched uniform Hamiltonian is reached by keeping the Haar reference and moving the selected faces into single-factor interaction groups (route B); every admitted constant must then be re-derived: the per-site sum, the contraction constant (re-freeze it as a new theorem rather than citing an inapplicable frozen value), the reset budget, an itemized incidence table with no face charged twice, and the exact owner-set face count (52 per factor here; products of anchors and classes are bounds, not counts).
+- Label such results "fixed spacing, strong bare coupling" with the dictionary value of g^4; never "weak coupling" or "continuum".
+- When two valid upper bounds differ by a refinement only one route uses, bind the larger value certified by both inequalities and record the refinement as labelled.

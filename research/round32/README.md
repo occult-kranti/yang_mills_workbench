@@ -10,8 +10,8 @@ The cycle starts from merged Round31 commit `1a686cdf9808aca9b5811dbf23e78bd2be1
 | 1 | AV2 | Window-kernel certificate of the centered Wilson node at tau=10^-8, s=1: radius about 1.83e-7 (<10^-6) | Free reference inside (reference_unresolved); only s=1 |
 | 2 | AW1 | Parity theorem, link-flip antisymmetry, first-order Wilson mean +tau/144, exact-tier second-order constant about 3354.8; AW2 coupling fixed at the cap | Static equal-time effect; finite-box parity; no third-order remainder |
 | 2 | AW2 | Sign-certified Wilson mean at the cap: about [6.91e-11, 6.98e-11], zero excluded, exclusion margin about 206 | Static equal-time effect; not dynamical; centered shift unresolved |
-| 3 | AX1 | (in production) | |
-| 3 | AX2 | (planned) | |
+| 3 | AX1 | Uniform Kogut-Susskind SU(2) at fixed spacing (route B): re-frozen contraction constant, itemized incidence, 52 faces per factor, exact-tier state bound about 1.44e-8; flip antisymmetry and +tau/144 transferred | Strong bare coupling g^4=9.6e9; never weak coupling or continuum |
+| 3 | AX2 | (in production) | |
 | 4 | AY1/AY2 | (planned) | |
 | 5 | AZ1/AZ2 | (planned) | |
 
