@@ -2,7 +2,7 @@
   "schema": "hnm-round32-findings-v1",
   "human_author": "Hruday N M (BUNZEEY)",
   "requested": 10,
-  "completed": 5,
+  "completed": 6,
   "loops": [
     {
       "id": "av1",
@@ -280,6 +280,53 @@
         "research/round32/reverse/ax1/report.md",
         "research/round32/skeptic/ax1.md",
         "research/round32/skeptic/ax1-independent-derivation.md"
+      ]
+    },
+    {
+      "id": "ax2",
+      "sequence": 6,
+      "subround": 3,
+      "title": "Hruday uniform-model window certificate for C(1) at the original cap",
+      "accepted": "In the uniform Kogut-Susskind SU(2) model on Z^3 at fixed spacing and strong bare coupling (every elementary face, selected faces included, nu=alpha*tau/24; AL1 dictionary tau=96/g^4, g^4=9.6x10^9 at the cap; label 'uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9)'), handled by route B of AX1 (Haar reference, tau-independent on-site h_b=8 sum C_e, whole stars plus one single-factor group per factor for its three selected xy faces), at tau=+10^-8 (tau=-10^-8 is the U_E mirror, no real g, evaluated only as a replay of the same |tau| formula, not a second confirmation), for the original xz Wilson loop W with cover R={0,e_z}, clock s=alpha*t_E/hbar and G=H/alpha, every AQ1 subsequential state of the centered whole-star-plus-single-group construction (N>=2; each state separately; no uniqueness, whole-sequence convergence or rate in N) has centered Euclidean Wilson correlation C(1) satisfying |C(1)-d|<=r<=R' at the single preregistered node s=1, with the exact datum d=497870683678639429793424156500617766317/(4*10^40) (~0.012446767091965986; midpoint of the directed enclosure of e^{-3}/4; unchanged from AV2) and the exact radius bound R'=1912298807996871790146581299723633/10^40 (~1.91229880800e-7; r=2(D'+D'^2)+51|tau|s/pi^- plus the arithmetic half-width 1/(4*10^40), D'=2425369125199104794263242601250/167893028420061547330293754713793182097 (~1.44459e-8) the AX1 gate forward tier-(ii) value, k'=51|tau|/4 from 7 whole stars and 2 single-factor groups, M_0=2, M_1=4s/pi), so C(1) lies in [0.012446575862085186, 0.012446958321846786], inside [99572606896681488461252714035083774357/(8*10^39), 497878332873871417280584742825816660849/(4*10^40)], meeting the 10^-6 target (margin >=5.22930). The free reference e^{-3}/4 lies inside the interval (reference_unresolved). Retained failures at unchanged tau and s: the AT4-type Poisson certificate at L=10^4 with D=2sqrt(17|tau|) (~8.5790596e-4), the Poisson floor >=1.313477283e-6 for every L even with D->0 (>=1.3279232e-6 with D'), and the tier-(i) window (>=4.921572155e-5), all insufficient. The analytic formula E'(s)=2(D'+D'^2)+51|tau|s/pi crosses 10^-6 at s* in [5.982012284161, 5.982012284163] (~5.98201228416), a crossover of the formula only; only s=1 is certified. No interaction shift, sign or coefficient of C(s), no uniform Wilson-mean sign rider or uniform K_2, no grid, no weak-coupling or continuum statement, and no priority claim follows. Admission rests on the single forward producer plus the skeptic's independent pre-comparison replay from the contract.",
+      "summary": "The window certificate transfers to uniform Wilson magnetic theory at fixed spacing: the centered Wilson Euclidean node at the original cap is enclosed with radius about 1.91e-7 against the unchanged 10^-6 target, with the free reference inside.",
+      "limitations": [
+        "Single direction: one forward producer applies the admitted AV2 window lemma with the admitted AX1 route-B constants; admission rests on that producer plus the skeptic's pre-comparison replay from the contract (correlated model-agent ancestry; the 1.9123e-7 value was already in shared premises); exact agreement is a replay of one admitted formula, not independent physical confirmation",
+        "Only the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling (g^4=9.6x10^9 at |tau|=10^-8), route B, Haar reference, centered whole-star-plus-single-group boxes N>=2, cover R={0,e_z}, node s=1; tau<0 is the U_E mirror (no real g); calculator values below the cap and at tau=0 (free Casimir limit) are corollaries, not AX2 admissions",
+        "Inherited without re-proof: the AV2 window lemma and constants (Fourier inversion, Fubini); AT4 relative-unitary Duhamel and trace duality; AX1 route-B constants (J_0', gap alpha/16, reset, incidence, D' and its passage to every AQ1 limit, flip identity); AQ1 construction, nonnegativity and norm dynamics; AL1/I1 dictionary",
+        "Upper certificate only: r bounds |C(1)-d|; the free value e^{-3}/4 is inside (reference_unresolved); no interaction shift, sign or coefficient of C(s); no uniform K_2, omega(W^2) constant or uniform Wilson-mean sign rider (loop-2 veto)",
+        "Each AQ1 subsequential state separately; no uniqueness, whole-sequence convergence or rate in N",
+        "s*~5.98201228416 is the crossover of the linear formula only; no grid and no node other than s=1",
+        "Retained failures remain failures at this tau and s: the AT4-type Poisson certificate, the Poisson floor for every L and the tier-(i) window",
+        "Read isolation verified for repository inputs only: the forward calculator and check.py were written concurrently with the skeptic pre-comparison package; the forward report and freeze followed the skeptic commit; scratch and shared-filesystem reads cannot be determined",
+        "No weak-coupling or continuum statement follows",
+        "Scientific priority unverified"
+      ],
+      "model": "Uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9), route B with the Haar reference; tau=+10^-8 (and the U_E mirror as a replay); s=1; C^2 window; the AX1 forward tier-(ii) state bound; fixed positive physical scales",
+      "gate_path": "research/round32/advisor/ax2-gate.json",
+      "contribution_id": "HNM-C-AX2",
+      "dependencies": [
+        "r32-ax1",
+        "r32-av2"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "single+skeptic",
+      "derivation_steps": [
+        "Apply the AV2 window lemma verbatim with the route-B slope k'=51|tau|/4 (seven stars and two single-factor groups) and the AX1-admitted uniform state bound.",
+        "Evaluate the itemized radius at tau=+10^-8, s=1 with directed enclosures; the Haar reference and the exact datum are unchanged.",
+        "Retain the Poisson and crude-tier failures at the uniform slope; report the crossover; the skeptic's contract-only replay is an admission input."
+      ],
+      "applications": [
+        "First certified actual-state Euclidean node for uniform Kogut-Susskind SU(2) at fixed spacing (strong bare coupling).",
+        "Closes roadmap goal 3 within its stated scope; supplies the constants for the continuum-trajectory statement (AZ1)."
+      ],
+      "evidence": [
+        "research/round32/advisor/ax2-gate.json",
+        "research/round32/forward/ax2/report.md",
+        "research/round32/skeptic/ax2.md",
+        "research/round32/skeptic/ax2-independent-derivation.md",
+        "research/round32/forward/ax2/calculator.py"
       ]
     }
   ],
