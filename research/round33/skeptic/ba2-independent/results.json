@@ -1,0 +1,1725 @@
+{
+  "cauchy": {
+    "F1_face_charged_Phi": {
+      "closed": "9261/155720800000000",
+      "enclosure": [
+        "59471652686442991973/1000000000000000000000000000000",
+        "29735826343221495987/500000000000000000000000000000"
+      ]
+    },
+    "F1_star_charged_Phi": {
+      "closed": "3969/38930200000000",
+      "enclosure": [
+        "101951404605330843383/1000000000000000000000000000000",
+        "12743925575666355423/125000000000000000000000000000"
+      ]
+    },
+    "F2_face_charged_Phiprime": {
+      "closed": "21609/623765200000000",
+      "enclosure": [
+        "2165175580417608489/62500000000000000000000000000",
+        "1385712371467269433/40000000000000000000000000000"
+      ]
+    },
+    "F2_group_charged_Phiprime": {
+      "closed": "9261/155941300000000",
+      "enclosure": [
+        "59387673062882975699/1000000000000000000000000000000",
+        "593876730628829757/10000000000000000000000000000"
+      ]
+    }
+  },
+  "cauchy_target": "1/4000000000",
+  "checks": [
+    {
+      "id": "contract_sha256_pinned",
+      "passed": true,
+      "sha256": "275ba3b002529b7295d0f8b91dc1cc7a96451e3c7f936ee698a932fdca54fcff"
+    },
+    {
+      "id": "ns_excerpt_sha256_pinned",
+      "passed": true,
+      "sha256": "6a28f4cd6aa2c55286fa839d83c00356ff0709f8b02027ee5b39050df1d6c921"
+    },
+    {
+      "id": "ns_pdf_sha256_equals_round29_binding",
+      "passed": true,
+      "pdf_sha256": "501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba"
+    },
+    {
+      "gates": {
+        "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+        "research/round29/advisor/aq1-gate.json": "b4a93fd49413857af83c969de1e7b2c8a698ea8099aa9e3aea8e8c7fab0a225e",
+        "research/round32/advisor/ay1-gate.json": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+        "research/round32/advisor/ay2-gate.json": "e4faa98884d26d67dd422b382eafb2c52bf88ee679998bc8249003cba88187a6"
+      },
+      "id": "admitted_gate_sha256_pinned",
+      "passed": true
+    },
+    {
+      "id": "premise_reports_bound_by_gates",
+      "passed": true,
+      "reports": [
+        {
+          "gate": "research/round29/advisor/aq1-gate.json",
+          "report": "research/round29/forward/aq1/report.md",
+          "sha256": "b091266f5db009fa967a2adea352fa1b190193cc4bcdc6c4c207e5872fc51da3"
+        },
+        {
+          "gate": "research/round32/advisor/ay1-gate.json",
+          "report": "research/round32/reverse/ay1/report.md",
+          "sha256": "d54e2c073f2510091ca091cf84e4a2e1dbbfbc7c051e8b307b272edbf5eeec8b"
+        },
+        {
+          "gate": "research/round32/advisor/ay1-gate.json",
+          "report": "research/round32/forward/ay1/report.md",
+          "sha256": "7cb1e844d75ee1f3d69de2bccb9a684c791e34bf64f3bb9e2d5061221f75dac1"
+        },
+        {
+          "gate": "research/round32/advisor/ay1-gate.json",
+          "report": "research/round21/forward/i1/report.md",
+          "sha256": "836a4c7d421f0ddf3589c159d2f057839421532c88157a054a61b51c25c781a9"
+        },
+        {
+          "gate": "research/round32/advisor/ay2-gate.json",
+          "report": "research/round32/forward/ay2/report.md",
+          "sha256": "527ce2f2700764d76f98efd245fd5f5fa95444f97ca81e323aaff48fac781e6b"
+        }
+      ]
+    },
+    {
+      "id": "deliberation2_sha256_pinned",
+      "note": "skeptic-only source of the recorded loop-1 previews; not a producer premise",
+      "passed": true
+    },
+    {
+      "id": "contract_targets_cap_window_read",
+      "passed": true,
+      "target_cauchy": "1/4000000000",
+      "target_comparison": "3/50000000000",
+      "tau": "1/100000000",
+      "theta_max": 8,
+      "u_max": "1"
+    },
+    {
+      "brackets": {
+        "cauchy_coefficient": [
+          "9500",
+          "10500"
+        ],
+        "comparison_coefficient": [
+          "9500",
+          "10500"
+        ]
+      },
+      "id": "contract_scaling_brackets_read",
+      "passed": true
+    },
+    {
+      "controls": 35,
+      "id": "contract_control_mirror",
+      "passed": true
+    },
+    {
+      "id": "contract_defect_semantics_coverage_recorded",
+      "missing": [
+        "cross_coupling_comparison_rejected",
+        "full_original_wilson_cover",
+        "gate_fields_topic_specific",
+        "topology_named"
+      ],
+      "passed": true,
+      "reading": "the four ids carry the loop-2 semantics BA2-N2 (not delivered to producers); names are self-explanatory",
+      "semantics_defined": 31
+    },
+    {
+      "id": "contract_defect_bracket_inconsistency_recorded",
+      "passed": true,
+      "reading": "preregistration.scaling_brackets_per_constant [9500,10500] governs; the stale [9900,10100] in new_control_semantics.duhamel_tau_order_quadratic rejects the valid (x^2/2)e^x form"
+    },
+    {
+      "id": "contract_defect_parameters_fields_recorded",
+      "passed": true,
+      "reading": "parameters has metric, weights, window; N_0 is in model/targets prose (N at least 2) and the clock in window and preregistration.clock; the semantics text is copied from BA1 (w=e^mu, e^beta)"
+    },
+    {
+      "count": 27,
+      "id": "contract_shared_premises_exist",
+      "passed": true
+    },
+    {
+      "id": "producer_input_inventories_recorded",
+      "inventory_size": 29,
+      "passed": true,
+      "scope": "recorded by name and sha256 comparison on 2026-09-24; both producers hold exactly AGENTS.md, the contract and the 27 shared premises, byte-identical to the repository"
+    },
+    {
+      "id": "reverse_inventory_excludes_forbidden_files",
+      "passed": true
+    },
+    {
+      "id": "ns_theorem_3_1_and_4_1_quoted_verbatim",
+      "passed": true,
+      "quotes": {
+        "(40)": "(40) \u2016F\u2016 = sup_{x\u2208\u0393} \u03a3_{y\u2208\u0393} F(d(x, y)) < \u221e (uniform integrability);",
+        "(41)": "(41) C = sup_{x,y\u2208\u0393} \u03a3_{z\u2208\u0393} F(d(x, z)) F(d(z, y)) / F(d(x, y)) < \u221e (convolution condition).",
+        "(44)": "(44) H_\u039b = \u03a3_{x\u2208\u039b} H_x + \u03a3_{X\u2282\u039b} \u03a6(X),",
+        "(48)": "(48) \u2016\u03a6\u2016 = sup_{x,y\u2208\u0393} (1/F(d(x, y))) \u03a3_{X\u2282\u0393: x,y\u2208X} \u2016\u03a6(X)\u2016 < \u221e defines the space B_F(\u0393).",
+        "(49)": "(49) S_\u039b(X) = {Z \u2282 \u039b : Z \u2229 X \u2260 \u2205 and Z \u2229 (\u039b \\ X) \u2260 \u2205}, the surface of X in \u039b, and S(X) = S_\u0393(X).",
+        "(50)": "(50) \u2202_\u03a6 X = {x \u2208 X : \u2203Z \u2208 S(X) with x \u2208 Z and \u03a6(Z) \u2260 0}, the \u03a6-boundary of X.",
+        "(51)": "(51) \u2016[\u03c4_t^\u039b(A), B]\u2016 \u2264 (2\u2016A\u2016\u2016B\u2016 / C) (e^{2\u2016\u03a6\u2016C|t|} \u2212 1) D(X, Y)",
+        "(52)": "(52) D(X, Y) = min{ \u03a3_{x\u2208X} \u03a3_{y\u2208\u2202_\u03a6 Y} F(d(x, y)), \u03a3_{x\u2208\u2202_\u03a6 X} \u03a3_{y\u2208Y} F(d(x, y)) }.",
+        "(77)": "(77) \u03c4_t(A) = lim_{\u039b\u2192\u0393} \u03c4_t^\u039b(A)"
+      },
+      "reading": "NS t is the normalized time u=theta/8 of e^{iuH}; NS tau_t^Lambda is the evolution T, not the coupling"
+    },
+    {
+      "id": "ns_section_title_phrase_scan_tension",
+      "passed": true,
+      "reading": "quote the statement of Theorem 4.1 (77) and cite its section as Section 4; the section title contains a contract-forbidden phrasing and trips the negation-aware scan when quoted affirmatively"
+    },
+    {
+      "id": "fine_face_classes_per_anchor",
+      "omitted": 21,
+      "owner_types": {
+        "(0, 0, 0) (0, 0, 1)": 10,
+        "(0, 0, 0) (0, 0, 1) (0, 1, 0)": 4,
+        "(0, 0, 0) (0, 0, 1) (1, 0, 0)": 2,
+        "(0, 0, 0) (0, 1, 0)": 3,
+        "(0, 0, 0) (0, 1, 0) (1, 0, 0)": 1,
+        "(0, 0, 0) (1, 0, 0)": 1
+      },
+      "passed": true,
+      "selected": 3,
+      "total": 24
+    },
+    {
+      "id": "i1_table_matches_fine_enumeration",
+      "passed": true,
+      "rows": 8
+    },
+    {
+      "anchors_checked": 343,
+      "id": "translation_covariance_of_owner_types",
+      "includes_negative_coordinates": true,
+      "passed": true
+    },
+    {
+      "J_over_tau": "28 (4 stars x 21 faces x 1/3)",
+      "face_level_sum_over_tau": "49/3",
+      "faces": 49,
+      "id": "per_site_faces_owner_sets_incoming_stars",
+      "incoming_stars": 4,
+      "owner_sets": 15,
+      "passed": true
+    },
+    {
+      "faces_meeting_R": 82,
+      "id": "cover_R_counts",
+      "incident_anchors": 7,
+      "inside_R": 10,
+      "owner_sets_meeting_R": 27,
+      "passed": true
+    },
+    {
+      "id": "l1_shell_count_4r2_plus_2",
+      "passed": true,
+      "radii": "1..12"
+    },
+    {
+      "id": "star_and_owner_set_l1_diameter_2",
+      "passed": true
+    },
+    {
+      "id": "families_F1_F2_extra_faces_N2_to_N5",
+      "passed": true,
+      "rows": {
+        "2": {
+          "F1_faces": 1344,
+          "F2_faces": 1960,
+          "S_crude_168(5N+1)N^-3": "231",
+          "S_exact": "616396498531/82978560000",
+          "S_exact_over_crude": "3.215750081134e-02",
+          "S_exact_preview": "7.428382687419e+00",
+          "S_refined_all_size": "2716/27",
+          "extra_faces": 616,
+          "extra_formula": "28N(5N+1)=616",
+          "faces_at_min_distance": 11,
+          "min_l1_to_0": 2,
+          "min_l1_to_e_z": 1,
+          "owner_incidences": 1344,
+          "padding_sites": 75
+        },
+        "3": {
+          "F1_faces": 4536,
+          "F2_faces": 5880,
+          "S_crude_168(5N+1)N^-3": "896/9",
+          "S_exact": "193769295466351853/49203008426880000",
+          "S_exact_over_crude": "3.955740577392e-02",
+          "S_exact_preview": "3.938159508159e+00",
+          "S_refined_all_size": "82565/1728",
+          "extra_faces": 1344,
+          "extra_formula": "28N(5N+1)=1344",
+          "faces_at_min_distance": 11,
+          "min_l1_to_0": 3,
+          "min_l1_to_e_z": 2,
+          "owner_incidences": 2940,
+          "padding_sites": 147
+        },
+        "4": {
+          "F1_faces": 10752,
+          "F2_faces": 13104,
+          "S_crude_168(5N+1)N^-3": "441/8",
+          "S_exact": "6959486763925913858573/2810574247360239360000",
+          "S_exact_over_crude": "4.491935878049e-02",
+          "S_exact_preview": "2.476179652775e+00",
+          "S_refined_all_size": "141841/5000",
+          "extra_faces": 2352,
+          "extra_formula": "28N(5N+1)=2352",
+          "faces_at_min_distance": 11,
+          "min_l1_to_0": 4,
+          "min_l1_to_e_z": 3,
+          "owner_incidences": 5152,
+          "padding_sites": 243
+        },
+        "5": {
+          "F1_faces": 21000,
+          "F2_faces": 24640,
+          "S_crude_168(5N+1)N^-3": "4368/125",
+          "S_exact": "38508297773129582955401935967/22535229284522356952309760000",
+          "S_exact_over_crude": "4.890122331423e-02",
+          "S_exact_preview": "1.708804347492e+00",
+          "S_refined_all_size": "255493/13500",
+          "extra_faces": 3640,
+          "extra_formula": "28N(5N+1)=3640",
+          "faces_at_min_distance": 11,
+          "min_l1_to_0": 5,
+          "min_l1_to_e_z": 4,
+          "owner_incidences": 7980,
+          "padding_sites": 363
+        }
+      }
+    },
+    {
+      "anchors": "(2N)^2 per single class, 2N per pair, 1 for xyz",
+      "checked_N": "2..199",
+      "id": "extra_faces_all_size_class_argument",
+      "passed": true,
+      "per_anchor_class": {
+        "x": 17,
+        "xy": 10,
+        "xyz": 0,
+        "xz": 3,
+        "y": 13,
+        "yz": 1,
+        "z": 5
+      },
+      "total": "140N^2+28N=28N(5N+1)"
+    },
+    {
+      "id": "cauchy_new_terms_outside_sup_ball_N",
+      "pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "passed": true,
+      "statement": "every site of a new F1 star and every owner of a new F2 face has |y|_inf at least N; per-site incidence at most 4 stars and 49 faces; none meets R"
+    },
+    {
+      "C_upper": "224",
+      "F_norm_upper": "7",
+      "J_over_tau": "28",
+      "id": "ns_constants_parsed_from_bound_premises",
+      "passed": true,
+      "phi_over_tau": "2268",
+      "phiprime_over_tau": "1323"
+    },
+    {
+      "aq1_upper": "7",
+      "id": "ns_F_norm_enclosure",
+      "lower": "2393230131519/1000000000000",
+      "passed": true,
+      "upper": "614700975503/250000000000"
+    },
+    {
+      "id": "aq1_convolution_half_split_inequality",
+      "passed": true,
+      "statement": "F(r/2) <= 16 F(r), whence C <= 32||F|| <= 224 (AQ1 section 3)"
+    },
+    {
+      "id": "ns_interaction_norm_sharp_values_labelled",
+      "passed": true,
+      "sharp_phi_over_tau": "567",
+      "sharp_phiprime_over_tau": "108",
+      "use": "labelled observation only; the contract fixes 2268|tau| and 1323|tau| for the targets"
+    },
+    {
+      "id": "lieb_robinson_velocities",
+      "passed": true,
+      "per_theta": "127008|tau| and 74088|tau| per unit theta",
+      "v": "2C||Phi||=1016064|tau| per unit u",
+      "v_cap": "3969/390625",
+      "v_prime": "2C||Phi'||=592704|tau|",
+      "v_prime_cap": "9261/1562500"
+    },
+    {
+      "id": "monotonicity_in_C_and_Phi",
+      "passed": true,
+      "statement": "E(vU)/(vC) = 2||Phi||U^2 E(x)/x^2 with x = 2||Phi||CU; E(x)/x^2 = sum_{k>=2} x^(k-2)/k! is increasing, so upper bounds for C and ||Phi||_F may be substituted in (51) and in its time integral"
+    },
+    {
+      "e_half": [
+        "51522539709379/31250000000000",
+        "1648721270700129/1000000000000000"
+      ],
+      "id": "exp_enclosure_self_test",
+      "passed": true
+    },
+    {
+      "formula": "b(N) = (2|tau|/(3C v)) (e^{vU}-1-vU) sum_f sum_{x in R, y in O(f)} F(d(x,y)) <= K (5N+1) N^-3, K = 112|tau| E(vU)/(vC) = 508032 tau^2 U^2 E(x)/x^2 (inner F1)",
+      "forward": {
+        "closed_skeptic_form": "3969/155720800000000",
+        "enclosure": [
+          "5097570230266542169/200000000000000000000000000000",
+          "12743925575666355423/500000000000000000000000000000"
+        ],
+        "leading_not_a_bound": "3969/156250000000000",
+        "modern_form_1_over_1_minus_x": "3969/154662400000000",
+        "modern_form_exact_e_upper": "3207626522265665843/125000000000000000000000000000"
+      },
+      "id": "comparison_coefficients_at_cap",
+      "passed": true,
+      "reverse": {
+        "closed_skeptic_form": "9261/623765200000000",
+        "enclosure": [
+          "3711729566430185981/250000000000000000000000000000",
+          "593876730628829757/40000000000000000000000000000"
+        ],
+        "leading_not_a_bound": "9261/625000000000000",
+        "modern_form_exact_e_upper": "14905685292562115567/1000000000000000000000000000000"
+      }
+    },
+    {
+      "forward": "2.354062711829e+00",
+      "id": "comparison_margins",
+      "passed": true,
+      "reverse": "4.041242696037e+00"
+    },
+    {
+      "id": "comparison_both_signs_replay_same_abs_tau",
+      "note": "every bound depends on |tau| only; the -tau value is a replay of the same |tau| formula, not a second confirmation",
+      "passed": true
+    },
+    {
+      "id": "comparison_exact_distance_sums_labelled",
+      "note": "b_exact = K * S_N / 168 with the enumerated S_N; a labelled refinement, not the target form",
+      "passed": true,
+      "rows": {
+        "2": {
+          "b_crude": "17522897666541238707/500000000000000000000000000000",
+          "b_exact_sum_upper": "140873148982206109/125000000000000000000000000000",
+          "preview_crude": "3.504579533308e-11",
+          "preview_exact": "1.126985191858e-12"
+        },
+        "3": {
+          "b_crude": "471997243543198349/31250000000000000000000000000",
+          "b_exact_sum_upper": "597471567584320513/1000000000000000000000000000000",
+          "preview_crude": "1.510391179338e-11",
+          "preview_exact": "5.974715675843e-13"
+        },
+        "4": {
+          "b_crude": "8363201159031045747/1000000000000000000000000000000",
+          "b_exact_sum_upper": "187834816707974903/500000000000000000000000000000",
+          "preview_crude": "8.363201159031e-12",
+          "preview_exact": "3.756696334159e-13"
+        },
+        "5": {
+          "b_crude": "331342064967325241/62500000000000000000000000000",
+          "b_exact_sum_upper": "64812129249458641/250000000000000000000000000000",
+          "preview_crude": "5.301473039477e-12",
+          "preview_exact": "2.592485169978e-13"
+        }
+      }
+    },
+    {
+      "id": "duhamel_first_order_vanishes",
+      "limit_over_tau2": "254016 (forward), 148176 (reverse)",
+      "passed": true,
+      "reason": "disjoint supports: [V_f, A]=0 for N at least 2, so the integrand ||[V_f, T_s(A)]|| <= (2/C)(e^{vs}-1)... vanishes at s=0; the bound is O(tau^2 U^2)"
+    },
+    {
+      "id": "shell_tail_bound_4_over_k",
+      "passed": true,
+      "statement": "sum_{r>=k}(4r^2+2)(1+r)^-4 <= 4 sum_{m>=k+1} m^-2 <= 4/k; with k=N-1 (from e_z) and k=N (from 0) the R-sum over |y|_inf at least N is at most 4/(N-1)+4/N <= 8/(N-1)"
+    },
+    {
+      "f2_via_f1_triangle": "17204299527149579821/100000000000000000000000000000",
+      "id": "cauchy_coefficients_all_M",
+      "margins": {
+        "F1_face_charged_Phi": "4.203683413980e+00",
+        "F1_star_charged_Phi": "2.452148658155e+00",
+        "F2_face_charged_Phiprime": "7.216504814352e+00",
+        "F2_group_charged_Phiprime": "4.209627808372e+00"
+      },
+      "passed": true,
+      "rows": {
+        "F1_face_charged_Phi": {
+          "closed_skeptic_form": "9261/155720800000000",
+          "enclosure": [
+            "59471652686442991973/1000000000000000000000000000000",
+            "29735826343221495987/500000000000000000000000000000"
+          ],
+          "lead_over_tau2": "592704"
+        },
+        "F1_star_charged_Phi": {
+          "closed_skeptic_form": "3969/38930200000000",
+          "enclosure": [
+            "101951404605330843383/1000000000000000000000000000000",
+            "12743925575666355423/125000000000000000000000000000"
+          ],
+          "lead_over_tau2": "1016064"
+        },
+        "F2_face_charged_Phiprime": {
+          "closed_skeptic_form": "21609/623765200000000",
+          "enclosure": [
+            "2165175580417608489/62500000000000000000000000000",
+            "1385712371467269433/40000000000000000000000000000"
+          ],
+          "lead_over_tau2": "345744"
+        },
+        "F2_group_charged_Phiprime": {
+          "closed_skeptic_form": "9261/155941300000000",
+          "enclosure": [
+            "59387673062882975699/1000000000000000000000000000000",
+            "593876730628829757/10000000000000000000000000000"
+          ],
+          "lead_over_tau2": "592704"
+        }
+      },
+      "triangle_factor": "max_N (5N+1)(N-1)/N^3 = 11/8 at N=2 (decreasing for N at least 2)"
+    },
+    {
+      "bound_via_F1": {
+        "10": "1.262781425375e-11",
+        "100": "1.042581581157e-12",
+        "1000": "1.021809228070e-13",
+        "2": "1.369971999384e-10",
+        "3": "6.607961409605e-11",
+        "5": "3.078932419081e-11"
+      },
+      "bound_via_F2_own_cauchy": "K_C2/(N-1) with K_C2 = 3.464280928668e-11 (face charged)",
+      "id": "f2_limit_identification_rate",
+      "passed": true,
+      "statement": "||T^{F2,N}_theta(A)-T_theta(A)|| <= K(5N+1)N^-3 + K_C1/(N-1) -> 0 for A in B(H_R); for A in A_Y the same Duhamel sum with R replaced by Y tends to 0; T and the F2 limit are automorphisms equal on the local algebra, hence equal"
+    },
+    {
+      "exact": {
+        "cauchy_F1_closed": "1953058850/194651",
+        "cauchy_F2_face_closed": "15624691300/1559413",
+        "comparison_forward_closed": "1953058850/194651",
+        "comparison_forward_modern_1_over_1_minus_x": "976463275/96664",
+        "comparison_reverse_closed": "15624691300/1559413"
+      },
+      "id": "tau_scaling_ratios_in_brackets",
+      "passed": true,
+      "previews": {
+        "cauchy_F1_closed": "1.003364406040e+04",
+        "cauchy_F2_face_closed": "1.001959795128e+04",
+        "comparison_forward_closed": "1.003364406040e+04",
+        "comparison_forward_modern_1_over_1_minus_x": "1.010162288960e+04",
+        "comparison_reverse_closed": "1.001959795128e+04"
+      },
+      "sharp_forward_enclosure": [
+        "1.003361517216e+04",
+        "1.003361517216e+04"
+      ],
+      "sharp_reverse_enclosure": [
+        "1.001958815164e+04",
+        "1.001958815164e+04"
+      ],
+      "stale_bracket_note": "[9900,10100] (control semantics) rejects the valid modern form (ratio about 10101.6)"
+    },
+    {
+      "id": "linear_label_rejected_by_bracket",
+      "linear_ratio": "100",
+      "passed": true
+    },
+    {
+      "exact_ratio_modern_over_skeptic": [
+        "1.006793865272e+00",
+        "1.006793865272e+00"
+      ],
+      "explanation": "the whole gap is the exponential remainder: modern bounds e^x-1-x by (x^2/2)e^x, the skeptic by (x^2/2)/(1-x/3), at x = vU = 3969/390625; both use the same face-distance sum 168(5N+1)N^-3 (|R|=2, at most 3 owners, F(N-1)=N^-4)",
+      "id": "loop1_preview_gap_reconciled",
+      "passed": true,
+      "recorded": {
+        "gap": "0.67%",
+        "modern": "2.566e-11",
+        "skeptic": "2.549e-11"
+      },
+      "relative_gap_to_modern": "6.748020132278e-03",
+      "relative_gap_to_skeptic": "6.793865271909e-03"
+    },
+    {
+      "id": "fixture_polynomial_versus_exponential_tail",
+      "labelled_exponential_instance": "F_mu=e^{-mu r}F: C_{F_mu} <= 224, ||Phi||_{F_mu} <= e^{2mu} 2268|tau|; own labelled constants; no target frozen; no admission weight",
+      "passed": true,
+      "statement": "the shell tail of F(r)=(1+r)^-4 from distance k is at least 1/(4k) for every k, so the Cauchy bound decays like 1/N and cannot be restated as K q^N; q=1/2, K=1 falls below it from N=4"
+    },
+    {
+      "id": "fixture_onsite_term_misplaced",
+      "misplaced_velocity_over_correct": [
+        "5.142857152857e+08",
+        "1.371428572429e+09",
+        "2.057142857243e+10",
+        "1.748571428572e+12"
+      ],
+      "passed": true,
+      "statement": "with h_x inside Phi the F-norm is at least ||h_x 1[spin<=j]|| = 8*24*j(j+1), unbounded in the cutoff; with the interaction-picture placement (h_x in (44)) the velocity is 1016064|tau| at every cutoff",
+      "truncated_onsite_norms": [
+        "144",
+        "384",
+        "5760",
+        "489600"
+      ]
+    },
+    {
+      "id": "fixture_padding_factorizes_exactly",
+      "passed": true,
+      "statement": "ad^k_{H_in (x) 1 + 1 (x) h_pad}(A (x) 1) = (ad^k_{H_in} A) (x) 1 for k=1..7, so the padded evolution is T^{F2,N}(A) (x) 1; charging the padding terms instead puts ||h_pad 1[<=L]|| = L into the source, unbounded in the cutoff L, while their exact contribution is 0"
+    },
+    {
+      "id": "fixture_duhamel_identity_exact",
+      "passed": true,
+      "statement": "Taylor coefficients of T2_u(A)-T1_u(A) and of i int_0^u T2_s([H2-H1, T1_{u-s}(A)]) ds agree to order 6 (ad_{H2}^n - ad_{H1}^n = sum_{j+k=n-1} ad_{H2}^j ad_V ad_{H1}^k); [V,A]=0 for disjoint supports kills the first order, while [V,[H1,A]] survives through the coupling"
+    },
+    {
+      "id": "fixture_n_to_n_plus_1_bound_is_not_cauchy",
+      "passed": true,
+      "statement": "per-step bounds c/(N-1) sum to c H_{M-1} >= c(1+k/2) at M-1=2^k: no finite Cauchy constant; the valid estimate sums every shell beyond N-1 at once"
+    },
+    {
+      "id": "fixture_fixed_versus_moving_vector",
+      "passed": true,
+      "statement": "||U(pi/n) A U(pi/n)* - A|| = 2 for every n (witness e_n), while U(t) e_1 -> e_1: the dynamics topology is per fixed local A, uniformly on compact windows"
+    },
+    {
+      "id": "fixture_cross_coupling_separation",
+      "passed": true,
+      "plus_minus_separation_lower": "315493271189404369878663368737136921794795815043212654249128159/360264428489086053772729024659456000000000000000000000000000000000000000",
+      "preview": "8.757269556491e-10",
+      "statement": "a +tau/-tau comparison is not a boundary comparison"
+    },
+    {
+      "id": "fixture_same_dynamics_different_states",
+      "passed": true,
+      "statement": "one dynamics (identity), two states: omega(Z)=+1 and omega'(Z)=-1; equal algebraic dynamics does not give equal correlation functions of different states (BB2 needed)"
+    },
+    {
+      "freezer_sha256_mirrored": "a33517170edb2ef9f8a1aada0e45b30f837482f3c29958e0c332dee4bea2b923",
+      "id": "placeholder_rule_mirrored",
+      "passed": true
+    },
+    {
+      "id": "phrase_scan_mirrored",
+      "known_weakness": "clause-wide negation: \"X holds and not Y\" passes even when X is forbidden (loop-2 tool note)",
+      "passed": true,
+      "phrase_scan_sha256_mirrored": "028af4c14edbb2fae096a91cb723ccefb036e7550088907ef47062774871f67c"
+    },
+    {
+      "id": "reference_packets_accepted",
+      "passed": true,
+      "routes": [
+        "forward",
+        "reverse"
+      ]
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "control Boolean flipped, digest rebound",
+          "rejected_for": "control booleans"
+        },
+        {
+          "mutation": "snapshot removed, digest rebound",
+          "rejected_for": "snapshot inventory"
+        },
+        {
+          "mutation": "digest not rebound",
+          "rejected_for": "freeze digest"
+        },
+        {
+          "mutation": "coefficient below derivation",
+          "rejected_for": "below the derivable"
+        },
+        {
+          "mutation": "contract rehashed",
+          "rejected_for": "contract hash"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "float coefficient",
+          "rejected_for": "exact arithmetic"
+        },
+        {
+          "mutation": "float tau",
+          "rejected_for": "exact arithmetic"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "no_priority_or_continuum_claim",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "continuum",
+          "rejected_for": "forbidden claim continuum_claim"
+        },
+        {
+          "mutation": "priority",
+          "rejected_for": "forbidden claim scientific_priority"
+        },
+        {
+          "mutation": "weak coupling",
+          "rejected_for": "forbidden claim weak_coupling_claim"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "tau 1e-9 under the label",
+          "rejected_for": "changed model"
+        },
+        {
+          "mutation": "uniform triple",
+          "rejected_for": "changed model"
+        },
+        {
+          "mutation": "SU(3)",
+          "rejected_for": "changed model"
+        },
+        {
+          "mutation": "2D lattice",
+          "rejected_for": "changed model"
+        },
+        {
+          "mutation": "finite graph",
+          "rejected_for": "changed model"
+        },
+        {
+          "mutation": "fine-site metric",
+          "rejected_for": "changed model relabelled: metric"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "missed target accepted",
+          "rejected_for": "insufficient verdict"
+        },
+        {
+          "mutation": "limited without dominating term",
+          "rejected_for": "dominating term"
+        },
+        {
+          "mutation": "retuned",
+          "rejected_for": "retuned"
+        },
+        {
+          "mutation": "targets_met misreported",
+          "rejected_for": "targets_met inconsistent"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet",
+        "limited packet with missed target and dominating term"
+      ]
+    },
+    {
+      "id": "tau_scaling_exponent",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "ratio of a linear bound",
+          "rejected_for": "tau scaling"
+        },
+        {
+          "mutation": "bracket chosen after evaluation",
+          "rejected_for": "tau scaling"
+        },
+        {
+          "mutation": "Cauchy ratio sqrt",
+          "rejected_for": "tau scaling"
+        }
+      ],
+      "note": "the modern form is accepted under the preregistered [9500,10500]; see the recorded bracket defect",
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet",
+        "modern form ratio 10101.6"
+      ]
+    },
+    {
+      "id": "wrong_delta_alpha_hbar_clock",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "u window labelled theta (U=8)",
+          "rejected_for": "window"
+        },
+        {
+          "mutation": "Round29 dictionary label s=delta*t/hbar",
+          "rejected_for": "clock"
+        },
+        {
+          "mutation": "u over theta = 8",
+          "rejected_for": "window"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "missing_incoming_stars",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "outgoing star only",
+          "rejected_for": "incident stars"
+        },
+        {
+          "mutation": "one star per site",
+          "rejected_for": "incident stars"
+        },
+        {
+          "mutation": "four stars meeting R",
+          "rejected_for": "incident stars"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "root_n_misuse",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "sqrt of the face count",
+          "rejected_for": "root-N"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "exponential tier with AQ1 constants",
+          "rejected_for": "tier mixing"
+        },
+        {
+          "mutation": "route label of the other family",
+          "rejected_for": "tier mixing"
+        },
+        {
+          "mutation": "Cauchy tier missing",
+          "rejected_for": "tier mixing"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "reverse_premise_isolation",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "triage in reverse",
+          "rejected_for": "reverse premise isolation"
+        },
+        {
+          "mutation": "deliberation-2 in reverse",
+          "rejected_for": "reverse premise isolation"
+        },
+        {
+          "mutation": "forward BA2 report in reverse",
+          "rejected_for": "reverse premise isolation"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ],
+      "scope": "recorded producer inventories equal the contract inventory (29 files); the mutations run on the contract-derived inventory"
+    },
+    {
+      "id": "face_count_all_sites",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "site-0-only count",
+          "rejected_for": "face count"
+        },
+        {
+          "mutation": "literal 84",
+          "rejected_for": "face count"
+        },
+        {
+          "mutation": "typed literals",
+          "rejected_for": "face count"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "uniform_in_N_not_in_a",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "uniform in N and a",
+          "rejected_for": "uniform in N not in a"
+        },
+        {
+          "mutation": "statement",
+          "rejected_for": "uniform in N not in a"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "placeholder_span_rejected",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "placeholder in a statement",
+          "rejected_for": "placeholder span"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet",
+        "inequality text"
+      ]
+    },
+    {
+      "id": "negation_aware_phrase_scan",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "affirmative forbidden phrase",
+          "rejected_for": "forbidden phrasing"
+        },
+        {
+          "mutation": "NS section title quoted affirmatively",
+          "rejected_for": "forbidden phrasing"
+        },
+        {
+          "mutation": "the AQ state",
+          "rejected_for": "forbidden phrasing"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet",
+        "negated mention"
+      ]
+    },
+    {
+      "id": "parameters_declare_metric_weights_window",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "window missing",
+          "rejected_for": "parameters must declare"
+        },
+        {
+          "mutation": "clock missing",
+          "rejected_for": "parameters must declare"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "fixture": "fixture_polynomial_versus_exponential_tail",
+      "id": "lieb_robinson_polynomial_tail",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "exponential rate in N",
+          "rejected_for": "polynomial tail"
+        },
+        {
+          "mutation": "N to N+1 bound summed",
+          "rejected_for": "N to N+1"
+        },
+        {
+          "mutation": "comparison decays exponentially",
+          "rejected_for": "polynomial tail"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "lieb_robinson_F_declared",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "F changed",
+          "rejected_for": "F declared"
+        },
+        {
+          "mutation": "exponential instance with AQ1 constants",
+          "rejected_for": "exponential instance"
+        },
+        {
+          "mutation": "exponential instance given admission weight",
+          "rejected_for": "exponential instance"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet",
+        "labelled exponential extra"
+      ]
+    },
+    {
+      "id": "lieb_robinson_form_quoted",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "paraphrased (51)",
+          "rejected_for": "form quoted"
+        },
+        {
+          "mutation": "quoted from the AQ1 report",
+          "rejected_for": "second-hand"
+        },
+        {
+          "mutation": "limit theorem misnamed",
+          "rejected_for": "form quoted"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "fixture": "fixture_onsite_term_misplaced",
+      "id": "unbounded_onsite_interaction_picture",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "h_x inside Phi",
+          "rejected_for": "interaction picture"
+        },
+        {
+          "mutation": "bounded bound on the full Hamiltonian",
+          "rejected_for": "interaction picture"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "duhamel_inner_family_constants",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "inner F1 with Phi prime constants",
+          "rejected_for": "inner family"
+        },
+        {
+          "mutation": "reverse inner F2 with Phi unstated",
+          "rejected_for": "inner family"
+        },
+        {
+          "mutation": "forward labelled with inner F2",
+          "rejected_for": "route"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet",
+        "reverse with stated padded anchor groups"
+      ]
+    },
+    {
+      "fixture": "fixture_padding_factorizes_exactly",
+      "id": "extra_face_count_and_distance",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "distance N instead of N-1",
+          "rejected_for": "extra face count and distance"
+        },
+        {
+          "mutation": "count 28N(5N+1) replaced",
+          "rejected_for": "extra face count and distance"
+        },
+        {
+          "mutation": "enumeration on Lambda_2 only",
+          "rejected_for": "extra face count and distance"
+        },
+        {
+          "mutation": "padding charged",
+          "rejected_for": "padding"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "duhamel_tau_order_quadratic",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "linear label",
+          "rejected_for": "tau order"
+        },
+        {
+          "mutation": "no first-order reason",
+          "rejected_for": "tau order"
+        },
+        {
+          "mutation": "leading form without remainder",
+          "rejected_for": "leading form"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "time_window_named_common_clock",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "uniform in time",
+          "rejected_for": "uniform in time"
+        },
+        {
+          "mutation": "uniform in time gate field",
+          "rejected_for": "uniform in time"
+        },
+        {
+          "mutation": "window dropped",
+          "rejected_for": "window"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "fixture": "fixture_same_dynamics_different_states",
+      "id": "algebraic_not_gns_dynamics",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "GNS equality claimed",
+          "rejected_for": "algebraic not gns"
+        },
+        {
+          "mutation": "gate field GNS",
+          "rejected_for": "algebraic not gns"
+        },
+        {
+          "mutation": "common limit of states",
+          "rejected_for": "algebraic not gns"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "f2_limit_dynamics_equals_f1",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "identification missing",
+          "rejected_for": "equals f1"
+        },
+        {
+          "mutation": "sections 4-5 assumed",
+          "rejected_for": "sections 4-5"
+        },
+        {
+          "mutation": "AQ1 subsequence reused",
+          "rejected_for": "sections 4-5"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "two_families_named",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "one family",
+          "rejected_for": "two families"
+        },
+        {
+          "mutation": "orthant substituted",
+          "rejected_for": "two families"
+        },
+        {
+          "mutation": "N at least 1",
+          "rejected_for": "two families"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "subsequence_versus_whole_sequence",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "whole sequence from compactness",
+          "rejected_for": "whole sequence"
+        },
+        {
+          "mutation": "state convergence claimed",
+          "rejected_for": "states"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "decay_rate_in_N_not_a",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "rate in fm",
+          "rejected_for": "decay rate in N not a"
+        },
+        {
+          "mutation": "rate in a claimed",
+          "rejected_for": "decay rate in N not a"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "boundary_source_new_terms_only",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "old terms in the source",
+          "rejected_for": "new terms only"
+        },
+        {
+          "mutation": "new terms not meeting the source set",
+          "rejected_for": "new terms only"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "f2_regrouping_charged_once",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "face charged twice",
+          "rejected_for": "charged once"
+        },
+        {
+          "mutation": "per-site sum doubled",
+          "rejected_for": "charged once"
+        },
+        {
+          "mutation": "Cauchy double charging",
+          "rejected_for": "charged once"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "full_original_wilson_cover",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "R={0}",
+          "rejected_for": "wilson cover"
+        },
+        {
+          "mutation": "four drawn links",
+          "rejected_for": "wilson cover"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "fixture": "fixture_fixed_versus_moving_vector",
+      "id": "topology_named",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "norm continuity in time on B(H)",
+          "rejected_for": "topology"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "fixture": "fixture_cross_coupling_separation",
+      "id": "cross_coupling_comparison_rejected",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "different couplings",
+          "rejected_for": "cross-coupling"
+        },
+        {
+          "mutation": "+tau against -tau",
+          "rejected_for": "cross-coupling"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "gate_fields_topic_specific",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "dynamics_level missing",
+          "rejected_for": "gate fields topic specific"
+        },
+        {
+          "mutation": "empty whole_sequence_scope",
+          "rejected_for": "gate fields topic specific"
+        },
+        {
+          "mutation": "uniqueness claimed",
+          "rejected_for": "gate field claimed"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "lr_constant_substitution_monotone",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "C upper bound substituted without the monotonicity statement",
+          "rejected_for": "monotonicity"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "mandatory_sentence_once",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "sentence edited",
+          "rejected_for": "mandatory sentence"
+        },
+        {
+          "mutation": "sentence split",
+          "rejected_for": "mandatory sentence"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "id": "error_terms_itemized",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "interaction-picture term dropped",
+          "rejected_for": "error term"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "forward reference packet",
+        "reverse reference packet"
+      ]
+    },
+    {
+      "deferred": [],
+      "id": "contract_controls_covered",
+      "implemented": 35,
+      "of": 35,
+      "passed": true
+    }
+  ],
+  "claims": {
+    "continuum_claim": false,
+    "scientific_priority_verified": false,
+    "uniform_in_a_claimed": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false
+  },
+  "comparison": {
+    "forward_inner_F1": {
+      "closed": "3969/155720800000000",
+      "enclosure": [
+        "5097570230266542169/200000000000000000000000000000",
+        "12743925575666355423/500000000000000000000000000000"
+      ]
+    },
+    "reverse_inner_F2": {
+      "closed": "9261/623765200000000",
+      "enclosure": [
+        "3711729566430185981/250000000000000000000000000000",
+        "593876730628829757/40000000000000000000000000000"
+      ]
+    },
+    "target": "3/50000000000"
+  },
+  "constants": {
+    "C_upper": "224",
+    "F_norm": [
+      "2393230131519/1000000000000",
+      "614700975503/250000000000"
+    ],
+    "phi_over_tau": "2268",
+    "phiprime_over_tau": "1323",
+    "sharp_labelled": {
+      "phi": "567",
+      "phiprime": "108"
+    },
+    "v_over_tau": "1016064",
+    "vprime_over_tau": "592704"
+  },
+  "contract_frozen_at": "2026-09-24T21:56:46.222692+00:00",
+  "contract_readings": [
+    "R1 preregistration brackets govern (stale [9900,10100] in control semantics)",
+    "R2 four control ids without semantics read by name and loop-2 BA2-N2",
+    "R3 observable.id N to N+1 read as sup over M greater than N",
+    "R4 fine-unit conversion is display only (no constant)",
+    "R5 Theorem 4.1 cited as Section 4, not by its title",
+    "R6 route labels duhamel_inner_f1/f2 from plan tier_label_rule; tier polynomial_lieb_robinson"
+  ],
+  "contract_sha256": "275ba3b002529b7295d0f8b91dc1cc7a96451e3c7f936ee698a932fdca54fcff",
+  "deferred_parts": {
+    "reverse_premise_isolation": "actual inventories recorded by name and hash (29 files each, identical to the repository); report contents checked at post-comparison"
+  },
+  "error_terms": {
+    "arithmetic": "exact rationals; e^x by Taylor enclosure with geometric remainder (30 terms)",
+    "duhamel_boundary_sum": "28N(5N+1) extra faces, each once, ||V_f||<=|tau|/3",
+    "inner_family_constants": "F1 inner: Phi 2268|tau|; F2 inner: Phi' 1323|tau|; C<=224 by monotonicity",
+    "interaction_picture_onsite": "not_applicable as an error: on-site terms cancel in H2-H1 and are placed in (44); padding factors exactly",
+    "lieb_robinson_tail": "F(N-1)=N^-4 per owner, |R|=2, at most 3 owners; Cauchy shell tail 4/(N-1)+4/N"
+  },
+  "gate_fields": {
+    "common_limit_claimed": false,
+    "continuum_claim": false,
+    "dynamics_level": "algebraic_heisenberg_compact_window",
+    "dynamics_limit_identified_claimed": true,
+    "gns_dynamics_equality_claimed": false,
+    "rate_in_N_claimed": true,
+    "rate_in_a_claimed": false,
+    "scientific_priority_verified": false,
+    "state_convergence_claimed": false,
+    "translation_invariance_claimed": false,
+    "true_values_rule": "a field shown true is exported true only if its target is admitted; otherwise false with the reason",
+    "uniform_in_time_claimed": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false,
+    "whole_sequence_claimed": true,
+    "whole_sequence_scope": "finite-box Heisenberg evolutions of F1 and F2 of A in B(H_R), in norm, uniformly for |theta| at most 8; dynamics only, no state"
+  },
+  "geometry": {
+    "extra_face_classes": {
+      "x": 17,
+      "xy": 10,
+      "xyz": 0,
+      "xz": 3,
+      "y": 13,
+      "yz": 1,
+      "z": 5
+    },
+    "faces_meeting_R": 82,
+    "families": {
+      "2": {
+        "F1_faces": 1344,
+        "F2_faces": 1960,
+        "S_crude_168(5N+1)N^-3": "231",
+        "S_exact": "616396498531/82978560000",
+        "S_exact_over_crude": "3.215750081134e-02",
+        "S_exact_preview": "7.428382687419e+00",
+        "S_refined_all_size": "2716/27",
+        "extra_faces": 616,
+        "extra_formula": "28N(5N+1)=616",
+        "faces_at_min_distance": 11,
+        "min_l1_to_0": 2,
+        "min_l1_to_e_z": 1,
+        "owner_incidences": 1344,
+        "padding_sites": 75
+      },
+      "3": {
+        "F1_faces": 4536,
+        "F2_faces": 5880,
+        "S_crude_168(5N+1)N^-3": "896/9",
+        "S_exact": "193769295466351853/49203008426880000",
+        "S_exact_over_crude": "3.955740577392e-02",
+        "S_exact_preview": "3.938159508159e+00",
+        "S_refined_all_size": "82565/1728",
+        "extra_faces": 1344,
+        "extra_formula": "28N(5N+1)=1344",
+        "faces_at_min_distance": 11,
+        "min_l1_to_0": 3,
+        "min_l1_to_e_z": 2,
+        "owner_incidences": 2940,
+        "padding_sites": 147
+      },
+      "4": {
+        "F1_faces": 10752,
+        "F2_faces": 13104,
+        "S_crude_168(5N+1)N^-3": "441/8",
+        "S_exact": "6959486763925913858573/2810574247360239360000",
+        "S_exact_over_crude": "4.491935878049e-02",
+        "S_exact_preview": "2.476179652775e+00",
+        "S_refined_all_size": "141841/5000",
+        "extra_faces": 2352,
+        "extra_formula": "28N(5N+1)=2352",
+        "faces_at_min_distance": 11,
+        "min_l1_to_0": 4,
+        "min_l1_to_e_z": 3,
+        "owner_incidences": 5152,
+        "padding_sites": 243
+      },
+      "5": {
+        "F1_faces": 21000,
+        "F2_faces": 24640,
+        "S_crude_168(5N+1)N^-3": "4368/125",
+        "S_exact": "38508297773129582955401935967/22535229284522356952309760000",
+        "S_exact_over_crude": "4.890122331423e-02",
+        "S_exact_preview": "1.708804347492e+00",
+        "S_refined_all_size": "255493/13500",
+        "extra_faces": 3640,
+        "extra_formula": "28N(5N+1)=3640",
+        "faces_at_min_distance": 11,
+        "min_l1_to_0": 5,
+        "min_l1_to_e_z": 4,
+        "owner_incidences": 7980,
+        "padding_sites": 363
+      }
+    },
+    "incoming_stars": 4,
+    "inside_R": 10,
+    "owner_types_per_anchor": {
+      "(0, 0, 0) (0, 0, 1)": 10,
+      "(0, 0, 0) (0, 0, 1) (0, 1, 0)": 4,
+      "(0, 0, 0) (0, 0, 1) (1, 0, 0)": 2,
+      "(0, 0, 0) (0, 1, 0)": 3,
+      "(0, 0, 0) (0, 1, 0) (1, 0, 0)": 1,
+      "(0, 0, 0) (1, 0, 0)": 1
+    },
+    "per_site_faces": 49,
+    "per_site_owner_sets": 15
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "BA2",
+  "model": "AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple (0,0,0), Haar reference, 21 omitted faces per anchor entering as -(tau/3)W_f (delta=alpha/8); both signs |tau|<=10^-8; cover R={0,e_z}; families F1 (AQ1 whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on Lambda_N=[-N,N]^3, N at least 2; Heisenberg dynamics on |theta| at most 8",
+  "ns_excerpt_sha256": "6a28f4cd6aa2c55286fa839d83c00356ff0709f8b02027ee5b39050df1d6c921",
+  "ns_pdf_sha256": "501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba",
+  "placement": {
+    "F1": "H^(1)_N = sum_{x in Lambda_N} h_x + sum_{b+S in Lambda_N} Phi(b+S): the native restriction of the whole-star Phi",
+    "F2": "H^(2)_N = sum_{x in Lambda_N} h_x + sum_{O in Lambda_N} Phi'(O): the native restriction of the owner-set Phi'; the padded operator is H^(2)_N (x) 1 + 1 (x) sum_{pad} h_x and its evolution of A in A_{Lambda_N} is T^{F2,N}(A) (x) 1 exactly",
+    "duhamel": "H^(2)_N - H^(1)_N = sum over the 28N(5N+1) extra faces of -(tau/3)W_f, bounded; equal on-site sums cancel",
+    "onsite": "H_x = h_x = 8 sum_e C_e (normalized by delta=alpha/8) in NS (44); unbounded, self-adjoint, compact resolvent; enters only the interaction picture (54),(57); never inside Phi",
+    "time": "NS t = u = theta/8; NS tau_t^Lambda = T^{F,N}"
+  },
+  "predictions": {
+    "cauchy_F1_face_Phi": "5.947165268644e-11",
+    "cauchy_F1_star_Phi": "1.019514046053e-10",
+    "cauchy_F2_face_Phiprime": "3.464280928668e-11",
+    "cauchy_F2_group_Phiprime": "5.938767306288e-11",
+    "cauchy_F2_via_F1_triangle": "1.720429952715e-10",
+    "cauchy_ratio_tau_over_100": {
+      "F1": "1.003364406040e+04",
+      "F2": "1.001959795128e+04"
+    },
+    "comparison_forward_inner_F1": {
+      "closed_form": "254016 tau^2 U^2/(1-vU/3), v=1016064|tau|",
+      "margin": "2.354062711829e+00",
+      "modern_form": "2.566101217813e-11",
+      "ratio_tau_over_100": "1.003364406040e+04",
+      "value": "2.548785115133e-11"
+    },
+    "comparison_reverse_inner_F2": {
+      "closed_form": "148176 tau^2 U^2/(1-v'U/3), v'=592704|tau|",
+      "margin": "4.041242696037e+00",
+      "modern_form": "1.490568529256e-11",
+      "ratio_tau_over_100": "1.001959795128e+04",
+      "value": "1.484691826572e-11"
+    },
+    "exact_distance_sum_over_crude": {
+      "2": "3.215750081134e-02",
+      "3": "3.955740577392e-02",
+      "4": "4.491935878049e-02",
+      "5": "4.890122331423e-02"
+    },
+    "extra_faces": "28N(5N+1): 616, 1344, 2352, 3640 (N=2..5); 11 of them reach l1 distance N-1 from e_z"
+  },
+  "previews": {
+    "K_cauchy_F1": "1.019514046053e-10",
+    "K_cauchy_F2_face": "3.464280928668e-11",
+    "K_forward": "2.548785115133e-11",
+    "K_forward_modern": "2.566101217813e-11",
+    "K_reverse": "1.484691826572e-11",
+    "margin_cauchy_F1": "2.452148658155e+00",
+    "margin_forward": "2.354062711829e+00",
+    "margin_reverse": "4.041242696037e+00",
+    "modern_over_skeptic": "1.006793865272e+00",
+    "ratio_forward": "1.003364406040e+04",
+    "ratio_reverse": "1.001959795128e+04"
+  },
+  "reviewer": "skeptic (model agent, correlated ancestry)",
+  "scaling": {
+    "cauchy_F1_closed": "1953058850/194651",
+    "cauchy_F2_face_closed": "15624691300/1559413",
+    "comparison_forward_closed": "1953058850/194651",
+    "comparison_forward_modern_1_over_1_minus_x": "976463275/96664",
+    "comparison_reverse_closed": "15624691300/1559413"
+  },
+  "sentence": "For the zero-selected patterned family at the same coupling |tau|<=10^-8 and every A in B(H_R) with ||A||<=1 on the fixed cover R, the finite-box Heisenberg evolutions T^{F1,N}_theta and T^{F2,N}_theta of the named construction families F1 and F2 on the same centered coarse cube Lambda_N satisfy ||T^{F2,N}_theta(A)-T^{F1,N}_theta(A)|| <= b(N) for |theta|<=8 in the common clock theta=alpha t/hbar; this is an algebraic comparison of the dynamics of the named constructions on a compact time window at a rate in N, not equality of GNS dynamics or of correlation functions of different states, not a uniform-in-time statement, and not a statement uniform in the lattice spacing a.",
+  "stage": "pre_comparison"
+}
