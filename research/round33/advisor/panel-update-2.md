@@ -1,0 +1,27 @@
+# Panel update after sub-round 2 (BB1, BB2)
+
+Date 2026-09-25. Inputs: the three lens updates (`experts/*/update-2.md`), the three assistant packages (`experts/*/assistant-2/`), the BB1 and BB2 gates and reviews (including the Kotecky-Preiss repair record `skeptic/bb1-kp-repair.md` and the discharge record `skeptic/bb2-bb1-admission.json`), and the modern lens's BC2 proposal (`experts/modern/bc2-targets-proposal.md`; its preview section is advisor-only). Planning record; admits nothing.
+
+## Outcome of sub-round 2
+
+Convergence is established for the named constructions. BB1: the reduced densities of the finite-box ground vectors of F1 and F2 on the cover differ by at most C q^(N-1) with q=1/64 and C about 8.91e-7, and on every finite region Y by at most c_site |Y| e^{|Y|/10^8} q^{d_Y} with c_site about 8.77e-7, for every comparison (nested boxes, the fixed-N change of boundary prescription, any two boxes, any two volumes of one prescription), both signs, in each cutoff space and for the untruncated vectors; a hard-core polymer route with a new mixed-weight lemma and a recursive product-ordering split agree to four digits. BB2: the reduced densities of F1 and F2 converge as whole sequences at the rate q^(N-1) (C' about 4.06e-6) to one common limit on every finite region; the limit coincides with every AQ1 and every F2 subsequential limit and inherits their admitted properties, is invariant under coarse translations, and has correlation functions on |theta| at most 8 that are limits of the finite-box ones (the explicit 1/N rate only on 5<=N<=14000; convergence without a rate beyond). Every BB1 hypothesis BB2 used is discharged by the BB1 gate item by item. Round32's AY2 obligations O2 (whole-sequence convergence), O3 (translation invariance) and O4 (a rate in N) are closed for the named constructions; O1 (uniqueness of any ground state) stays open.
+
+## Assistant findings
+
+- Historical assistant: the every-site common-core lemma holds at every site for all five BB1 comparisons at N=2,3,4, with source counts equal to the closed forms; the face-by-face translation check gives exactly 8 coarse translations of 64 and a histogram-only check would accept all 56 non-coarse ones; the item-5 bracket first exceeds 2 at N=14419 (independently of the skeptic).
+- Jung assistant: the phrase scan of the four packets is clean; template spans and gate fields match; one closed-vocabulary defect (the BB2 forward's if-undischarged dynamics_level value), recorded in the BB2 gate; the BB2 forward's unqualified rate sentences are listed.
+- Modern assistant: every BB1 constant of both routes is reproduced exactly from the formulas the reports state; the Kotecky-Preiss side conditions hold and the forward was self-contained on its hypothesis check but not on the theorem (repaired by the committed Ueltschi excerpt, found covered); a labelled discharge preview (re-evaluation at the BB1 producers' values) gave the margins the BB2 review then recorded.
+
+## Lessons carried into the next contracts
+
+1. Every rate claim carries its certified range of N in the same clause (the BB2 item-5 lesson; skeptic defect D12).
+2. An external theorem a route will use is a declared premise at freeze with its committed excerpt (the BB1 defect D2; the Ueltschi excerpt is now committed).
+3. Direct comparisons carry the targets; union-volume and telescoped variants are labelled only.
+
+## Panel decisions
+
+1. Goals for sub-round 3 are kept by all three lenses: BC1 (statement+skeptic) restates the Round32 node certificate (AV2) and the Wilson-mean enclosure (AW2) for the limit of the named constructions with unchanged constants, proves a sign corollary for the padded boxes from the whole-sequence rate, states the common GNS representation and dynamics of the two named limits (skeptic loop-2 item P8), checks against the AV2 record whether the node was proved box by box before any finite-box restatement, and updates the obligations table.
+2. BC2 runs (its condition holds: BB1 and BB2 are accepted within scope) as single+skeptic on the route-B uniform model: the route-B coefficient input on a complex coupling disc, marginal locality by the recursive split, whole-sequence convergence of the one route-B named construction, exhaustion within the prescription and the pointwise sign mirror in place of a common limit (the admitted record has no second route-B family), identification with every AQ1-type subsequential state of that construction, and the AX2 node restated for the limit. Targets follow the modern lens's proposal: K_B at most 1/1000000, C_B at most 1/250000, c_site,B at most 1/500000 (the binding margin), C'_B at most 1/250000, c'_site,B at most 1/400000 at q=1/64 with disc radius 64|tau|, evaluated at the packet's own constants (no hypothesis layer); the node datum and radius equal the AX2 gate rationals. Route-B dynamics and a route-B boundary-prescription comparison are obligations.
+3. The historical lens's exact enumerations for route B (the 7 stars and 2 single groups meeting R, 153/88/16/72 faces, 52 faces and 5 groups per site) are required fixtures; the Jung lens's templates and gate fields are adopted (certificate_restated_for_limit, transfer_to_named_model); the silent-route-A-constant risk named by the modern lens is a control with a damaging mutation.
+4. The applications stage (BD1, BD2) keeps its plan; its contracts are drafted after the BC gates.
+5. No occult, mystical or historical source changed any premise in sub-round 2; no lens read a new source.
