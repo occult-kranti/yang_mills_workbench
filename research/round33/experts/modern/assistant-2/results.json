@@ -1,0 +1,444 @@
+{
+  "schema": "hnm-round33-modern-lens-assistant2-results-v1",
+  "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "role": "modern (Penrose/Feynman) lens, research assistant/coder assistant-2",
+  "round": 33,
+  "subround": 2,
+  "tools": {
+    "bb1_arb": {
+      "tool": "bb1_arb",
+      "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+      "libraries": {
+        "python-flint": "0.9.0",
+        "mpmath": "1.3.0"
+      },
+      "precision_bits": 256,
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "e18_enclosure_and_admitted_bound",
+          "passed": true,
+          "formula": "e^{1/8}; G'(R)=308 e^{1/8}<=352; G(R)=16 e^{1/8}(37/32)<=148/7 (both reports' shared directed-rounding bound, S0)",
+          "arb_ball_preview": [
+            1.1331484530668263,
+            1.1331484530668263
+          ],
+          "mpmath_iv_preview": [
+            1.1331484530668263,
+            1.1331484530668263
+          ],
+          "admitted_bound": "8/7",
+          "admitted_bound_preview": 1.1428571428571428,
+          "tighter_Gprime_upper_preview": 349.0097235445825,
+          "admitted_Gprime": 352,
+          "tighter_G_upper_preview": 20.963246381736287,
+          "admitted_G": "148/7",
+          "note": "two independent open-source rigorous-arithmetic libraries confirm the shared e^{1/8}<=8/7 directed-rounding bound both BB1 reports cite from AM2/BA1, and give a strictly tighter (irrational) enclosure of G(R), G'(R) contained inside the reports' admitted rational bounds -- exactly as BA1's own producers and assistant-1's weighted_contraction_arb.py already established for these same quantities; reproduced here independently for BB1's use of them."
+        },
+        {
+          "id": "K_gate_bound_value_shared_input",
+          "passed": true,
+          "note": "both BB1 routes use the identical BA1 gate bound value K=49/111790368 at q=1/64, form (b), as their headline every-site coefficient input (forward S8, reverse S2)",
+          "K_gate": "49/111790368",
+          "K_gate_preview": 4.3832041057419186e-07,
+          "forward_ba1_input": "gate bound value K=49/111790368 (analytic_disc), every-site form (b)",
+          "reverse_ba1_input": "gate_bound_value_K=49/111790368"
+        },
+        {
+          "id": "forward_headline_reproduced_exactly",
+          "passed": true,
+          "formula": "C = K(1+q)[2(1+t)+(1+t)^4 kappa0 (S_1qv-1)], c_site = K[2+kappa0(S_1qv-1)]",
+          "C_preview": 8.905119993589828e-07,
+          "admitted_C_preview": 8.905119993589828e-07,
+          "c_site_preview": 8.768118117678244e-07,
+          "admitted_c_site_preview": 8.768118117678244e-07,
+          "tau_bar_preview": 6.679865901092422e-07,
+          "a_preview": 4.462060845657728e-13
+        },
+        {
+          "id": "forward_secondary_reproduced_exactly",
+          "passed": true,
+          "C_preview": 9.644014267962623e-06,
+          "admitted_C_preview": 9.644014267962623e-06,
+          "c_site_preview": 9.629420655310453e-06,
+          "admitted_c_site_preview": 9.629420655310453e-06
+        },
+        {
+          "id": "forward_crude_reproduced_exactly",
+          "passed": true,
+          "C_crude_preview": 0.0020528524083131,
+          "admitted_preview": 0.0020528524083131,
+          "c_site_crude_preview": 0.002021249115919612,
+          "admitted_c_site_crude_preview": 0.002021249115919612,
+          "C2_crude_preview": 0.07803583417175795,
+          "admitted_C2_crude_preview": 0.07803583417175795
+        },
+        {
+          "id": "reverse_headline_reproduced_exactly",
+          "passed": true,
+          "formula": "c_site = K(2+beta* S_lambda), C = c_site (1+q); beta*=c1/(1-c2), c1,c2 from (R11)",
+          "C_preview": 8.904256201148073e-07,
+          "admitted_C_preview": 8.904256201148073e-07,
+          "c_site_preview": 8.767267644207334e-07,
+          "admitted_c_site_preview": 8.767267644207334e-07,
+          "beta_preview": 3.100664375364667e-05,
+          "admitted_beta_preview": 3.100664375364667e-05
+        },
+        {
+          "id": "reverse_secondary_reproduced_exactly",
+          "passed": true,
+          "C_preview": 9.689092748680736e-06,
+          "admitted_C_preview": 9.689092748680736e-06,
+          "c_site_preview": 9.674430955079693e-06,
+          "admitted_c_site_preview": 9.674430955079693e-06
+        },
+        {
+          "id": "reverse_crude_reproduced_exactly",
+          "passed": true,
+          "C_crude_preview": 0.0018005743985870593,
+          "admitted_preview": 0.0018005743985870593,
+          "c_site_crude_preview": 0.0017728732539934121,
+          "admitted_preview2": 0.0017728732539934121
+        },
+        {
+          "id": "forward_reverse_headline_agree_to_stated_digits",
+          "passed": true,
+          "forward_C_preview": 8.905119993589828e-07,
+          "reverse_C_preview": 8.904256201148073e-07,
+          "relative_difference_C_preview": 9.699952862807675e-05,
+          "forward_c_site_preview": 8.768118117678244e-07,
+          "reverse_c_site_preview": 8.767267644207334e-07,
+          "relative_difference_c_site_preview": 9.6996123854217e-05,
+          "note": "agree to 3 significant figures (8.90e-7); the 4th-digit difference is the route-dependent Lipschitz-in-coefficients factor (forward: 2(1+t) via Lemma 2.4's (1+t)^{|Y|-1} bound; reverse: exactly 2, eta=0, via Lemma 1.3's single-support split) -- both are independently proved upper bounds on the same headline target 1/250000, not two measurements of one quantity, so exact equality is not expected."
+        },
+        {
+          "id": "tau_over_100_ratios_recomputed",
+          "passed": true,
+          "forward": {
+            "C_headline": 100.64787576442056,
+            "c_site": 100.6478754251289,
+            "C_secondary": 1.0015003454609293,
+            "c_site_secondary": 1.0
+          },
+          "reverse": {
+            "C_headline": 100.63821678585346,
+            "c_site": 100.63821678585346,
+            "C_secondary": 1.0015003421577136,
+            "c_site_secondary": 1.0000000000955542
+          },
+          "forward_report_quoted": {
+            "C_headline": 100.647875,
+            "c_site": 100.647875,
+            "C_secondary": 1.00150034,
+            "c_site_secondary": 1.0
+          },
+          "reverse_report_quoted": {
+            "C_headline": 100.638216785,
+            "c_site": 100.638216785,
+            "C_secondary": 1.00150034215,
+            "c_site_secondary": 1.00000000009
+          },
+          "note": "each ratio is C(tau=1e-8)/C(tau=1e-10) from the same exact Fraction formula, no intermediate rounding, exactly as each report's own check.py computes it; the forward and reverse headline ratios (~100.64-100.65) differ slightly because K(tau)=2T(64 tau) is common to both, but t(tau) [forward] and t0(tau),beta*(tau) [reverse] carry slightly different nonlinear-in-tau corrections"
+        },
+        {
+          "id": "scaling_brackets_per_constant",
+          "passed": true,
+          "headline_bracket": "[95,105]",
+          "secondary_bracket": "[99/100,101/100]",
+          "forward_C_headline_preview": 100.64787576442056,
+          "reverse_C_headline_preview": 100.63821678585346,
+          "forward_C_secondary_preview": 1.0015003454609293,
+          "reverse_C_secondary_preview": 1.0015003421577136
+        }
+      ],
+      "interpretation": "Independent Fraction recomputation, from the closed-form formulas stated in research/round33/forward/bb1/report.md and research/round33/reverse/bb1/report.md, of every headline, secondary and crude BB1 constant, cross-checked exactly against the ADMITTED output/results.json of each producer; Arb (python-flint) and mpmath.iv rigorously enclose the one shared transcendental input (e^{1/8}<=8/7) both routes' K, t, tau_bar, t0, tW ultimately rest on through G(R), G'(R). Never evidence, never admission; the BB1 contract's own admission is decided only by the frozen producers' exact fractions.Fraction check.py files."
+    },
+    "kp_condition": {
+      "tool": "kp_condition",
+      "status": "preview_only_zero_research_loops_not_a_proof_of_kotecky_preiss",
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "fresh_finite_graph_exploration_tree_audit",
+          "passed": true,
+          "model_is_finite_graph": true,
+          "transfers_to_aq": false,
+          "note": "Own 5-site chain, own rational norms (not the forward producer's fixture numbers), own fresh enumeration code (report.md's check.py, which uses a different 5-site fixture and 233 polymers/275+856 Y-clusters, was neither read nor imported). Verifies Lemma 4.1/4.2's structural claim 'sum over polymers through x of the product of member norms <= sigma^2', sigma = the per-site mixed-weight sum -- the combinatorial fact Proposition 6.2 needs, independently re-derived on a different concrete instance.",
+          "sites": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "marked_site": 2,
+          "n_polymers_through_x": 19,
+          "sigma_exact": "457/16800",
+          "sigma_preview": 0.027202380952380954,
+          "sigma_squared_exact": "208849/282240000",
+          "sigma_squared_preview": 0.0007399695294784581,
+          "sum_over_polymers_exact": "948663719473/3247700400000000",
+          "sum_over_polymers_preview": 0.0002921032123138575,
+          "margin_sigma_sq_over_sum_preview": 2.5332468055276967
+        },
+        {
+          "id": "declared_parameters_reproduced",
+          "passed": true,
+          "taubar_headline_preview": 6.679865901092422e-07,
+          "a_headline_preview": 4.462060845657728e-13,
+          "taubar_secondary_preview": 8.401873153440103e-06,
+          "a_secondary_preview": 7.059147248649754e-11,
+          "note": "tau_bar, a=tau_bar^2 recomputed exactly as in bb1_arb.py (same formulas as report.md Corollary 5.2 / Proposition 6.2), reproduced here without importing that file, for a self-contained script."
+        },
+        {
+          "id": "kp_admissibility_side_conditions_margins",
+          "passed": true,
+          "headline": {
+            "a_le_2b_margin_preview": 4477756057.375061,
+            "v_le_w_margin_preview": 1.5
+          },
+          "secondary": {
+            "a_le_2b_margin_preview": 28303730.28957808,
+            "v_le_w_margin_preview": 1.5
+          },
+          "note": "Theorem 6.1's hypothesis (Prop. 6.2) needs a<=2b and v<=w at the declared weights; both hold with large margin at both pairs. This is a genuine, non-tautological numeric check (unlike the KP series bound itself, next)."
+        },
+        {
+          "id": "kp_series_bound_is_definitional_not_slack",
+          "passed": true,
+          "note": "Proposition 6.2's headline inequality 'sum_{gamma ni x}|w(gamma)|e^{a|supp gamma|+d(gamma)} <= taubar^2 <= a' has ZERO slack margin on its SECOND inequality by the forward's own construction: a is DEFINED to equal taubar^2 exactly (Corollary 5.2/Prop 6.2), not derived as a separate quantity found to exceed it. The forward report itself states this literally ('a=tau_bar^2'); reporting a numeric 'margin' greater than 1 for that specific inequality would misrepresent it as having slack it does not have. The genuine numeric slack in the forward's KP verification sits entirely in the two side-conditions above (a<=2b, v<=w) and in the smallness of tau_bar itself (~6.68e-7 at the cap)."
+        },
+        {
+          "id": "forward_report_self_containment_on_kp",
+          "passed": true,
+          "self_containment": {
+            "theorem_6_1_kp_cluster_expansion_conclusion": {
+              "self_contained": false,
+              "reason": "cited from Kotecky-Preiss 1986 and Ueltschi 2004 'as known to this producer'; report.md's own Attribution paragraph states it is 'cited, not re-proved and not machine-checked'; the primary sources were not re-inspected; no excerpt of either paper is committed under research/round33/sources/ (which holds only the Nachtergaele-Sims excerpt, used by BA2/BB2) or anywhere else in this round."
+            },
+            "proposition_6_2_hypothesis_verification": {
+              "self_contained": true,
+              "reason": "proved in full inside report.md Section 6 from the report's own Lemma 4.2 (exploration-tree count, Section 4), itself proved and audited by brute-force enumeration on a five-site chain in the forward producer's own check.py (report.md S4: 233 polymers, 275 and 856 Y-clusters). This script's Part 1 above independently re-derives the same combinatorial fact on a different finite example."
+            }
+          }
+        }
+      ],
+      "interpretation": "A finite-graph, freshly-coded (not imported) audit of the exploration-tree combinatorial lemma the forward BB1 producer's Kotecky-Preiss verification (Proposition 6.2) depends on, plus a numeric evaluation of that verification's two genuine side-condition margins (a<=2b, v<=w) at the forward's own declared headline and secondary parameters. This is a preview, not a proof: it re-derives none of Kotecky-Preiss 1986 or Ueltschi 2004's own results, and the forward report itself cites, rather than proves or machine-checks, the abstract Kotecky-Preiss theorem (Theorem 6.1) it applies. Nothing here is evidence for, or against, the BB1 gate."
+    },
+    "bb2_constants": {
+      "tool": "bb2_constants",
+      "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+      "libraries": {
+        "python-flint": "0.9.0",
+        "mpmath": "1.3.0",
+        "sympy": "1.14.0"
+      },
+      "precision_bits": 256,
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "forward_state_constants_at_hypothesis_values",
+          "passed": true,
+          "formula": "C'=(64/63) C_h, c'_site=(64/63) c_h (nested_telescoping, factor 1/(1-q))",
+          "C_prime_exact": "4/984375",
+          "C_prime_preview": 4.063492063492063e-06,
+          "c_site_prime_exact": "2/984375",
+          "c_site_prime_preview": 2.0317460317460316e-06,
+          "target_C_prime": "1/100000",
+          "margin_preview": 2.4609375,
+          "target_c_site_prime": "1/200000",
+          "margin_preview_c_site": 2.4609375
+        },
+        {
+          "id": "reverse_state_constants_at_hypothesis_values",
+          "passed": true,
+          "formula": "C'=C_h, c'_site=c_h (union_comparison, assembly factor 1 for nested centered cubes)",
+          "C_prime_exact": "1/250000",
+          "C_prime_preview": 4e-06,
+          "c_site_prime_exact": "1/500000",
+          "c_site_prime_preview": 2e-06,
+          "target_C_prime": "1/100000",
+          "margin_preview": 2.5,
+          "target_c_site_prime": "1/200000",
+          "margin_preview_c_site": 2.5
+        },
+        {
+          "id": "C_dyn_from_ba2_gate",
+          "passed": true,
+          "forward_formula": "C_dyn = 2 K_F1 + K_cmp/4 (both duhamel_inner_f1)",
+          "forward_C_dyn_preview": 1.2531562899753918e-10,
+          "target": "1/2000000000",
+          "forward_margin_preview": 3.9899253109906865,
+          "reverse_F1_formula": "C_dyn[F1] = 2 K_F1 (duhamel_inner_f1)",
+          "reverse_F1_preview": 1.189436478620711e-10,
+          "reverse_F1_margin_preview": 4.203671309793759,
+          "reverse_F2_formula": "C_dyn[F2] = 2 K'_F2 (duhamel_inner_f2)",
+          "reverse_F2_preview": 6.928561857341101e-11,
+          "reverse_F2_margin_preview": 7.2165048143465595
+        },
+        {
+          "id": "E_up_ge_E_arb_mpmath_confirmed",
+          "passed": true,
+          "formula": "E(y)=2(e^y-1-y)/y^2 <= E_up(y)=1+y/3+y^2/(12(1-y/5)), y=592704|tau|",
+          "y_exact": "9261/1562500",
+          "y_preview": 0.00592704,
+          "E_up_exact": "48866741088707/48770243750000",
+          "E_up_preview": 1.0019786109579778,
+          "E_arb_ball_preview": [
+            1.0019786109572903,
+            1.0019786109572903
+          ],
+          "E_mpmath_iv_preview": [
+            1.0019786109572903,
+            1.0019786109572903
+          ],
+          "gap_preview": 6.875902273126665e-13,
+          "note": "independently confirms (own Arb/mpmath calls, not imported from assistant-1's ba2_directed_reconciliation.py, which made the analogous check for BA2's own K_cmp forward-route quantity) the reverse BA2 report's own claim that its rational E_up dominates the true E at the working point; the reported gap ~7e-13 there is reproduced here to the digit."
+        },
+        {
+          "id": "lemma_F08_identity_and_bound",
+          "passed": true,
+          "identity": "N^3-10N^2+28N+6 = N(N-5)^2+3N+6",
+          "identity_verified_with": "sympy",
+          "expanded_rhs": "N**3 - 10*N**2 + 28*N + 6",
+          "note": "the factored form shows g(N)=N(N-5)^2+3N+6 > 0 for EVERY N>=0 directly (N(N-5)^2>=0, 3N+6>0), a strictly simpler proof of forward report.md's Lemma HNM-BB2-F08 than its own g(5)=21-plus-derivative-growth argument (which is also reproduced and confirmed: g(5)=21, and g is increasing for N>=5 since g'(N)=3N^2-20N+28>=3 there).",
+          "sample_rows": [
+            {
+              "N": 5,
+              "r_N": 2,
+              "lhs": 26,
+              "N_cubed_over_4": "125/4",
+              "g_N": 21,
+              "holds": true
+            },
+            {
+              "N": 6,
+              "r_N": 2,
+              "lhs": 31,
+              "N_cubed_over_4": "54",
+              "g_N": 30,
+              "holds": true
+            },
+            {
+              "N": 7,
+              "r_N": 3,
+              "lhs": 72,
+              "N_cubed_over_4": "343/4",
+              "g_N": 55,
+              "holds": true
+            },
+            {
+              "N": 8,
+              "r_N": 3,
+              "lhs": 82,
+              "N_cubed_over_4": "128",
+              "g_N": 102,
+              "holds": true
+            },
+            {
+              "N": 9,
+              "r_N": 4,
+              "lhs": 138,
+              "N_cubed_over_4": "729/4",
+              "g_N": 177,
+              "holds": true
+            },
+            {
+              "N": 10,
+              "r_N": 4,
+              "lhs": 153,
+              "N_cubed_over_4": "250",
+              "g_N": 286,
+              "holds": true
+            },
+            {
+              "N": 100,
+              "r_N": 49,
+              "lhs": 24048,
+              "N_cubed_over_4": "250000",
+              "g_N": 902806,
+              "holds": true
+            },
+            {
+              "N": 1000,
+              "r_N": 499,
+              "lhs": 2490498,
+              "N_cubed_over_4": "250000000",
+              "g_N": 990028006,
+              "holds": true
+            },
+            {
+              "N": 1000000,
+              "r_N": 499999,
+              "lhs": 2499990499998,
+              "N_cubed_over_4": "250000000000000000",
+              "g_N": 999990000028000006,
+              "holds": true
+            }
+          ]
+        },
+        {
+          "id": "bb2_discharge_preview_at_bb1_producer_values",
+          "passed": true,
+          "status": "PREVIEW ONLY -- not a gate, not the BB2 discharge, not read by any BB2 producer or by the BB2 gate; the actual discharge happens at the BB2 gate using the BB1 gate's admitted values, per contract control 'conditional_on_bb1_targets'.",
+          "bb1_producer_values": {
+            "forward_C": 8.905119993589828e-07,
+            "forward_c_site": 8.768118117678244e-07,
+            "reverse_C": 8.904256201148073e-07,
+            "reverse_c_site": 8.767267644207334e-07,
+            "contract_hypothesis_C_h": 4e-06,
+            "contract_hypothesis_c_h": 2e-06
+          },
+          "previews": {
+            "forward_bb1_producer__nested_telescoping": {
+              "C_prime_preview": 9.046471104599191e-07,
+              "c_site_prime_preview": 8.907294595736629e-07,
+              "C_prime_margin_preview": 11.054034091720073,
+              "c_site_prime_margin_preview": 5.613376706315732,
+              "meets_targets": true
+            },
+            "forward_bb1_producer__union_comparison": {
+              "C_prime_preview": 8.905119993589828e-07,
+              "c_site_prime_preview": 8.768118117678244e-07,
+              "C_prime_margin_preview": 11.229494950318804,
+              "c_site_prime_margin_preview": 5.702477923876299,
+              "meets_targets": true
+            },
+            "reverse_bb1_producer__nested_telescoping": {
+              "C_prime_preview": 9.045593601166297e-07,
+              "c_site_prime_preview": 8.906430622686815e-07,
+              "C_prime_margin_preview": 11.055106431832893,
+              "c_site_prime_margin_preview": 5.613921234915141,
+              "meets_targets": true
+            },
+            "reverse_bb1_producer__union_comparison": {
+              "C_prime_preview": 8.904256201148073e-07,
+              "c_site_prime_preview": 8.767267644207334e-07,
+              "C_prime_margin_preview": 11.230584311703257,
+              "c_site_prime_margin_preview": 5.703031095786811,
+              "meets_targets": true
+            },
+            "worse_of_the_two__nested_telescoping": {
+              "C_prime_preview": 9.046471104599191e-07,
+              "c_site_prime_preview": 8.907294595736629e-07,
+              "C_prime_margin_preview": 11.054034091720073,
+              "c_site_prime_margin_preview": 5.613376706315732,
+              "meets_targets": true
+            },
+            "worse_of_the_two__union_comparison": {
+              "C_prime_preview": 8.905119993589828e-07,
+              "c_site_prime_preview": 8.768118117678244e-07,
+              "C_prime_margin_preview": 11.229494950318804,
+              "c_site_prime_margin_preview": 5.702477923876299,
+              "meets_targets": true
+            }
+          },
+          "note": "both BB1 producers' own headline C, c_site (~8.90e-7) are about 4.49x smaller than the contract hypothesis values they are bound to beat (C_h=4e-6, matching BB1's own reported margin against its C<=4e-6 target); since both assembly functions are linear in the hypothesis constant with a fixed positive coefficient (64/63 or 1), the discharge-preview margins here (~11.05-11.23 for C', ~5.61-5.70 for c'_site) are correspondingly about 4.49x the contract-hypothesis-value margins computed in check 1 above (~2.46 and ~2.50)."
+        }
+      ],
+      "interpretation": "Independent recomputation of the BB2 state constants at the BB1 contract's frozen hypothesis values (exactly what the BB2 producers themselves report, conditional_on_bb1_targets) and of C_dyn from the admitted BA2 gate values; a from-scratch sympy verification of the new lemma's polynomial identity; and a clearly labelled, non-authoritative PREVIEW of what the discharge would look like if evaluated at the BB1 producers' own (not yet gated) proved values instead of the contract hypotheses. Never evidence, never a gate, never read by any producer."
+    }
+  },
+  "all_passed": true
+}
