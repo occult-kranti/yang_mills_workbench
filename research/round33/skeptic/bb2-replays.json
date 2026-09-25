@@ -1,0 +1,269 @@
+{
+ "closures": {
+  "forward": {
+   "bb1_snapshot_sha256": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+   "closure_files": 42,
+   "closure_ok": true,
+   "frozen_artifacts_pinned": true,
+   "inputs": 38,
+   "inputs_equal_declared": true,
+   "inputs_equal_recorded_before_production": true,
+   "snapshots_byte_identical": true
+  },
+  "reverse": {
+   "bb1_snapshot_sha256": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+   "closure_files": 42,
+   "closure_ok": true,
+   "frozen_artifacts_pinned": true,
+   "inputs": 38,
+   "inputs_equal_declared": true,
+   "inputs_equal_recorded_before_production": true,
+   "snapshots_byte_identical": true
+  }
+ },
+ "commit_order": {
+  "contracts_frozen": {
+   "commit": "45a87be",
+   "utc": "2026-09-24T23:38:22+00:00"
+  },
+  "forward": {
+   "commit": "d05efda",
+   "utc": "2026-09-25T00:10:26+00:00"
+  },
+  "plan_d8_repair": {
+   "commit": "43eb922",
+   "note": "plan history BB1/BB2 freeze entry with the plan sha256 (skeptic defect D8)"
+  },
+  "reverse": {
+   "commit": "17c0ecf",
+   "utc": "2026-09-25T00:18:36+00:00"
+  },
+  "skeptic_pre_comparison": {
+   "commit": "8921539",
+   "utc": "2026-09-25T00:14:56+00:00"
+  }
+ },
+ "freeze_verify": [
+  {
+   "command": "python3 -B research/round33/tools/freeze.py verify research/round33/forward/bb2",
+   "exit": 0,
+   "stdout": {
+    "direction": "forward",
+    "loop": "bb2",
+    "status": "verified"
+   }
+  },
+  {
+   "command": "python3 -B research/round33/tools/freeze.py verify research/round33/reverse/bb2",
+   "exit": 0,
+   "stdout": {
+    "direction": "reverse",
+    "loop": "bb2",
+    "status": "verified"
+   }
+  }
+ ],
+ "frozen_outputs": {
+  "forward": {
+   "check.py": "6c5fb63e66d4396085811c0b8cd09b9736c75de59a3860ea166d1e480d78dd82",
+   "freeze.json": "f0eb36ff38de2cc8801a42a49d11500b2f6984e92f209ee7845ef56a820447f1",
+   "output/results.json": "b87fea90d8b12aff3924039f31f89893c9979bfb509635c281a717bf3b93753a",
+   "output/source-manifest.json": "b7aedea826a4a61faa4a5e504e2350ab78ff9b40b01ea31eff474ada142636b1",
+   "report.md": "b925ad0720ecb24aeb9483401fe4cf299e713e1793bc2812752d5eca2d723c23"
+  },
+  "reverse": {
+   "check.py": "62831e2acde30bc50786bbb81dd705076e26a51f29cc6cc9eea8c832230809e3",
+   "freeze.json": "dda23c90b60ab51fc68bd02e00a3a49b4c42b83c37dee96a1b05ebc39035f72a",
+   "output/results.json": "51613bda49c2b7333ab1e5374329fca9b5b2d3f0e7591262c234c640db0d0bbe",
+   "output/source-manifest.json": "dc4da2b7b14e002f586214d81f43e08f7ef6ee8b2b797d08f3341a317d8eeb02",
+   "report.md": "6f48706c25ff25bce2ed8db40433416624d355797ec11ee5f34b4a3b7a4867a7"
+  }
+ },
+ "human_author": "Hruday N M (BUNZEEY)",
+ "loop": "BB2",
+ "phrase_scan_tool": {
+  "forward": {
+   "affirmative_hits": {
+    "research/round33/forward/bb2/report.md": []
+   },
+   "exit": 0
+  },
+  "reverse": {
+   "affirmative_hits": {
+    "research/round33/reverse/bb2/report.md": []
+   },
+   "exit": 0
+  }
+ },
+ "producer_replays": [
+  {
+   "byte_identical_to_frozen_output": true,
+   "direction": "forward",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "b87fea90d8b12aff3924039f31f89893c9979bfb509635c281a717bf3b93753a",
+    "source-manifest.json": "b7aedea826a4a61faa4a5e504e2350ab78ff9b40b01ea31eff474ada142636b1"
+   },
+   "stdout": {
+    "C_dyn_preview": "1.25315628997e-10",
+    "C_prime_preview": "4.06349206349e-6",
+    "c_site_prime_preview": "2.03174603174e-6",
+    "checks": 52,
+    "controls_with_damaging_mutations": 34,
+    "direction": "forward",
+    "loop": "BB2",
+    "rejected_mutations": 122
+   }
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "direction": "forward",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "b87fea90d8b12aff3924039f31f89893c9979bfb509635c281a717bf3b93753a",
+    "source-manifest.json": "b7aedea826a4a61faa4a5e504e2350ab78ff9b40b01ea31eff474ada142636b1"
+   },
+   "stdout": {
+    "C_dyn_preview": "1.25315628997e-10",
+    "C_prime_preview": "4.06349206349e-6",
+    "c_site_prime_preview": "2.03174603174e-6",
+    "checks": 52,
+    "controls_with_damaging_mutations": 34,
+    "direction": "forward",
+    "loop": "BB2",
+    "rejected_mutations": 122
+   }
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "direction": "reverse",
+   "mode": "normal",
+   "outputs": {
+    "results.json": "51613bda49c2b7333ab1e5374329fca9b5b2d3f0e7591262c234c640db0d0bbe",
+    "source-manifest.json": "dc4da2b7b14e002f586214d81f43e08f7ef6ee8b2b797d08f3341a317d8eeb02"
+   },
+   "stdout": {
+    "C_dyn_F1": "1.18943647862e-10",
+    "C_dyn_F2": "6.92856185734e-11",
+    "C_prime": "1/250000",
+    "c_site_prime": "1/500000",
+    "checks": 59,
+    "damaging_mutations": 162,
+    "direction": "reverse",
+    "loop": "BB2",
+    "outcome": "accepted_within_scope"
+   }
+  },
+  {
+   "byte_identical_to_frozen_output": true,
+   "direction": "reverse",
+   "mode": "optimized",
+   "outputs": {
+    "results.json": "51613bda49c2b7333ab1e5374329fca9b5b2d3f0e7591262c234c640db0d0bbe",
+    "source-manifest.json": "dc4da2b7b14e002f586214d81f43e08f7ef6ee8b2b797d08f3341a317d8eeb02"
+   },
+   "stdout": {
+    "C_dyn_F1": "1.18943647862e-10",
+    "C_dyn_F2": "6.92856185734e-11",
+    "C_prime": "1/250000",
+    "c_site_prime": "1/500000",
+    "checks": 59,
+    "damaging_mutations": 162,
+    "direction": "reverse",
+    "loop": "BB2",
+    "outcome": "accepted_within_scope"
+   }
+  }
+ ],
+ "producers": [
+  "forward",
+  "reverse"
+ ],
+ "python": "3.11.15",
+ "result": "all four producer replays (forward/reverse x normal/-O) reproduce output/ byte for byte; tools/freeze.py verify reports verified for both; both closures verify file by file (42 files each); each producer holds exactly the 38 declared inputs, equal to the inventory the skeptic recorded before production and byte-identical to the repository, both with the frozen BB1 contract bytes; the reverse inventory holds no forbidden file; the skeptic pre-comparison package is unchanged and replays byte for byte; the stage-1 post-review checker is byte-identical under -B and -B -O",
+ "reverse_premise_isolation": {
+  "assessment": "name-only exposures, disclosed by both producers and bounded by content: the BB2 state constants are fixed by the frozen contract (C_h, c_h, q) and the assembly, so a file name carries no numeric channel; neither report contains a construct from the other producer, a BB1 file or a skeptic-only file; accepted as disclosed (isolation rests on disclosure and content, as in BA1/BA2)",
+  "checked_prefixes": [
+   "research/round33/forward/bb1/",
+   "research/round33/reverse/bb1/",
+   "research/round33/forward/bb2/",
+   "research/round33/advisor/bb1-gate.json",
+   "research/round33/skeptic/bb1",
+   "research/round33/skeptic/triage",
+   "research/round33/skeptic/recommendation",
+   "research/round33/skeptic/prospective-controls",
+   "research/round33/skeptic/loop2-review",
+   "research/round33/skeptic/bb-contract-review",
+   "research/round33/experts/",
+   "research/round33/advisor/deliberation",
+   "research/round33/advisor/plan.json",
+   "research/round33/advisor/panel"
+  ],
+  "declared": "AGENTS.md + contracts/bb2.json + 36 shared_premises (38 files)",
+  "disclosed_reads_outside_inputs": {
+   "forward": "tools/README.md, tools/freeze.py, tools/phrase_scan.py (round list copied), forward/ba2/check.py (conventions only)",
+   "reverse": "tools/README.md, tools/freeze.py, tools/phrase_scan.py (round list copied), reverse/ba2/check.py (conventions only)"
+  },
+  "forbidden_files_present": [],
+  "forward_inventory": "identical 38 files",
+  "inputs": 38,
+  "inventory_equals_declared": true,
+  "inventory_equals_skeptic_record_before_production": true,
+  "name_only_exposures": {
+   "forward": "a git status after its first freeze listed research/round33/reverse/bb2/check.py and research/round33/skeptic/bb2_check.py (untracked names); opened neither; only the disclosure sentence was added afterwards",
+   "reverse": "a git status after its first freeze listed research/round33/forward/bb1/check.py and research/round33/skeptic/bb1_check.py (untracked names); opened neither; only the disclosure sentence was added afterwards",
+   "skeptic": "one early unrestricted git status printed nothing (clean tree); no producer name was displayed before the stage-1 release"
+  }
+ },
+ "reviewer": "model-agent skeptic with correlated ancestry; not human peer review",
+ "schema": "hnm-r33-skeptic-replays-v1",
+ "scratch": {
+  "skeptic_private": "/tmp/claude-0/skeptic-bb2-private (values.py, inputs lists and hashes, replays/, post1, post2, post2O, source_edits.py and mutated copies of the pre-comparison checker, synthetic BB1 gate fixtures for the discharge part, adjudication-stage1.md); no other agent folder was listed or opened"
+ },
+ "skeptic_postreview_stage_1": {
+  "checker": "research/round33/skeptic/bb2_postreview_check.py",
+  "checker_sha256": "b9961d7e776ab9dfc2d3e5f803cd37289b70804744f464e46ecdb4a0e7b9b83b",
+  "checks": 9,
+  "command": "python3 -B [-O] research/round33/skeptic/bb2_postreview_check.py --output <fresh-external-dir>",
+  "discharge_part": "not run: the BB1 gate is not yet supplied (stage 1); run with --bb1-gate and --bb1-admission",
+  "mutation_counts": {
+   "must_abort": 13,
+   "silent_caught_by_skeptic_validator": {
+    "forward": 2,
+    "reverse": 1
+   },
+   "silent_edits": 6,
+   "unmutated_copies_reproducing_output": 2,
+   "weakenings": 68
+  },
+  "normal_and_O_byte_identical": true,
+  "output_dir": "private (/tmp/claude-0/skeptic-bb2-private/post2 and post2O) until stage 2",
+  "results_sha256": "3e618fc6c3108175f0efdd04a1ee43cb3594b68d235c6e4368f1509881d6854c"
+ },
+ "skeptic_pre_comparison": {
+  "checker": "research/round33/skeptic/bb2_check.py",
+  "checker_sha256": "840c8a83b22c951cf5f1cae0b2d8cb0b38b3670ef32c6558dabc1066df7326db",
+  "checks": 81,
+  "committed": "8921539 at 2026-09-25T00:14:56Z",
+  "controls": 38,
+  "freeze_record": "research/round33/skeptic/bb2-independent-freeze.json",
+  "freeze_record_sha256": "7db20abbccd2856b6e13d7d2796fd166dadf2fa72b9a47fb8d38c243aea48349",
+  "rejected_mutations": 142,
+  "replay_byte_identical": true,
+  "results_sha256": "bfab8cf7c6e6478f258575f7e83cb30f59e485280059db5ba6c64f41b36c2ae1",
+  "unchanged_since_freeze": true
+ },
+ "stage": "post_comparison_stage_1 (the BB1 discharge follows at stage 2)",
+ "timeline_note": "the forward closure (00:09:52) and commit (00:10:26) precede the skeptic pre-comparison commit (00:14:56), so the forward cannot have read the package; the reverse check.py (00:08:43), which fixes every value, precedes it, and its report was last written at 00:17:42 after it; the reverse discloses no read of research/round33/skeptic/ beyond the two snapshotted reviews, and its distinctive content (the item-5 range defect W1, K5 by integer blocks) appears nowhere in the skeptic package, which instead stated the unqualified O(1/N) rate (skeptic correction D12); the skeptic read no producer file before its commit and read both only after the coordinator released them for stage 1",
+ "timeline_utc": {
+  "forward_check_py_last_written": "2026-09-25T00:09:12Z",
+  "forward_freeze_json_written": "2026-09-25T00:09:52Z",
+  "forward_report_last_written": "2026-09-25T00:09:50Z",
+  "reverse_check_py_last_written": "2026-09-25T00:08:43Z",
+  "reverse_freeze_json_written": "2026-09-25T00:17:46Z",
+  "reverse_report_last_written": "2026-09-25T00:17:42Z",
+  "skeptic_bb2_check_py_last_written": "2026-09-25T00:13:27Z",
+  "skeptic_pre_freeze_record_written": "2026-09-25T00:14:07Z",
+  "skeptic_pre_results_last_written": "2026-09-25T00:13:58Z"
+ }
+}
