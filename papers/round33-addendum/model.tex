@@ -233,23 +233,28 @@ Table~\ref{tab:obligations} repeats them with their standing in this edition.
 
 \begin{table}[htbp]
 \centering\small
-\caption{The six AY2 obligations and their standing in this edition. ``Open''
-means that no Round33 gate has closed the obligation; a planned loop is named
-where the plan assigns one.}
+\caption{The six AY2 obligations and their standing in this edition, with
+O1 split into O1a and O1b as in the BC1 review. ``Open'' means that no
+Round33 gate has closed the obligation. The reviewed table of the BC1 gate,
+with 21 rows, is Table~\ref{tab:bc1-obligations}.}
 \label{tab:obligations}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.34\linewidth}
  >{\raggedright\arraybackslash}X@{}}
 \toprule
 AY2 obligation & Standing in this edition\\
 \midrule
-O1: uniqueness of the limit & Open as a uniqueness statement. BB2
-identifies every AQ1 and every F2 subsequential limit with the limit of the
-named constructions, so the subsequential limits of these two constructions
-agree; uniqueness of any ground state and any statement about states outside
-the named constructions stay excluded. No separate Dobrushin or HTW loop is
-scheduled (the Jung lens's narrowed dissent is recorded), and the plan fixes
-the gate field \recid{uniqueness_of_ground_state_claimed} to false for every
-investigation.\\
+O1a: all subsequential limits of F1 and F2 coincide on every finite region
+(from O1, uniqueness of the limit) & Closed within the BB2 scope, as the BC1
+review records it (Section~\ref{sec:bc1-obligations}): every AQ1 and every
+F2 subsequential limit equals the limit of the named constructions on every
+finite region (BB2 items~2--3). The scope is the named constructions F1 and
+F2 only, at fixed spacing and both signs of $\tau$ at the cap.\\
+O1b: uniqueness of any ground state, states outside the named constructions
+and other boundary conditions (the general part of O1) & Open. No Round33
+gate addresses it, and the plan fixes the gate field
+\recid{uniqueness_of_ground_state_claimed} to false for every investigation.
+No separate Dobrushin or HTW loop is scheduled (the Jung lens's narrowed
+dissent is recorded); the BC1 table names these as candidate routes.\\
 O2: whole-sequence convergence & Closed for the named constructions within
 the BB2 scope: the reduced densities of F1 and F2 converge as whole sequences
 on every finite region, without compactness, to one common limit that equals
@@ -314,8 +319,10 @@ that justify the frozen margins are recorded in that planning file only; they
 are not producer premises and are not results. Plan~v2 was frozen before BA1
 and BA2 (\repo{research/round33/advisor/plan.json}{plan record}). Its
 history records plan sha256 \texttt{5310d5af\ldots0cdc4b} at the BA1/BA2
-freeze, a panel update after sub-round~1 that kept every goal, and the BB1/BB2
-freeze after a skeptic pre-freeze review. Table~\ref{tab:plan} lists the plan.
+freeze, a panel update after sub-round~1 that kept every goal, the BB1/BB2
+freeze after a skeptic pre-freeze review, and the BC1/BC2 freeze on 25
+September after the skeptic's pre-freeze review of the BC drafts (30
+blocking and 28 non-blocking edits applied). Table~\ref{tab:plan} lists the plan.
 
 \begin{table}[htbp]
 \centering\small
@@ -350,7 +357,8 @@ constructions\\[4pt]
 3, consequences &
 BC1: node and sign certificates restated for the limit; updated
 obligations. &
-T & planned\\
+T & gated: accepted within scope; certificates restated for the limit of the
+named constructions\\
  &
 BC2: route-B uniform model, convergence and its node. &
 S & planned; runs only if BB1 and BB2 are accepted within scope\\[4pt]
