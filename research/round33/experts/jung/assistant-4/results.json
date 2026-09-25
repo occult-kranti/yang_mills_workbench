@@ -1,0 +1,2309 @@
+{
+  "applications_ledger_audit": {
+    "checks": {
+      "numbers_cross_check": {
+        "findings": [
+          "Extracted every word-bounded fraction token (e.g. \"1/144\") and decimal-scientific-notation preview token (e.g. \"1.34e-12\") from each entry's outcome+equation+detail text: 17 fraction token(s) and 6 decimal-preview token(s) across 12 entries. Every fraction token is checked for an exact (whitespace-stripped) substring match in that entry's own gate's accepted+decision text; every decimal-preview token is checked for a same-magnitude match (relative tolerance 5%) against some decimal-preview token the gate text itself carries, since the ledger is allowed a coarser rounding of the gate's own preview (e.g. the ledger's \"2.88e-19\" against the gate's \"2.87586637818e-19\").",
+          "  entry[1] (bd1, Does the Round32 first-order p): fractions=['1/1152', '1/2880', '1/48', '1/5760', '1/864', '1/96'] decimals=[] -> decimal matches={}",
+          "  entry[2] (bd1, SU(3)): fractions=['1/108', '1/589824', '1/6912'] decimals=[] -> decimal matches={}",
+          "  entry[3] (bd1, SO(3)): fractions=['1/2592', '1/27', '1/331776'] decimals=[] -> decimal matches={}",
+          "  entry[4] (bd1, SU(5)): fractions=['1/63403380965376'] decimals=[] -> decimal matches={}",
+          "  entry[6] (bd2, Two-plaquette graph with indep): fractions=[] decimals=['1.8e-17'] -> decimal matches={'1.8e-17': [1.79645e-17, 1.79645e-17]}",
+          "  entry[7] (bd2, Z^3 1x2 Wilson loop): fractions=['7/124416'] decimals=['1.34e-12'] -> decimal matches={'1.34e-12': [1.34175e-12, 1.34175e-12]}",
+          "  entry[8] (bd2, Electric energy on the cover): fractions=['3/2'] decimals=['2.88e-19', '3.4e12', '9.8e-7'] -> decimal matches={'2.88e-19': [2.87586637818e-19, 2.8759e-19], '3.4e12': [3400000000000.0], '9.8e-7': [9.8e-07]}",
+          "  entry[9] (bd2, 2+1 dimensions): fractions=['1/64', '3/32'] decimals=['1.58e-3'] -> decimal matches={'1.58e-3': [0.0015807]}",
+          "0 unsupported numbers: every fraction token in the ledger appears verbatim in its own gate's accepted+decision text, and every decimal preview matches a gate-text preview of the same magnitude -- the applications ledger's numbers are the gate's own numbers, not re-derived or re-rounded incorrectly."
+        ],
+        "id": "numbers_cross_check",
+        "passed": true,
+        "role": "calling task item 3 (third part): cross-check each applications entry's numbers against its gate text; zero research loops",
+        "rows": [
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 0,
+            "loop_id": "bd1",
+            "passed": true,
+            "problem": "Does the Round32 link-flip lemma U_E H(tau) U_E^* = H(-tau) hold for other gauge groups?"
+          },
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [
+              "1/1152",
+              "1/2880",
+              "1/48",
+              "1/5760",
+              "1/864",
+              "1/96"
+            ],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 1,
+            "loop_id": "bd1",
+            "passed": true,
+            "problem": "Does the Round32 first-order parity theorem hold for other gauge groups?"
+          },
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [
+              "1/108",
+              "1/589824",
+              "1/6912"
+            ],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 2,
+            "loop_id": "bd1",
+            "passed": true,
+            "problem": "SU(3)"
+          },
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [
+              "1/2592",
+              "1/27",
+              "1/331776"
+            ],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 3,
+            "loop_id": "bd1",
+            "passed": true,
+            "problem": "SO(3)"
+          },
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [
+              "1/63403380965376"
+            ],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 4,
+            "loop_id": "bd1",
+            "passed": true,
+            "problem": "SU(5)"
+          },
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 5,
+            "loop_id": "bd1",
+            "passed": true,
+            "problem": "SU(2) Wilson loops of any area for the limit of the named constructions"
+          },
+          {
+            "decimal_matches_in_gate_text": {
+              "1.8e-17": [
+                1.79645e-17,
+                1.79645e-17
+              ]
+            },
+            "decimal_preview_tokens": [
+              "1.8e-17"
+            ],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 6,
+            "loop_id": "bd2",
+            "passed": true,
+            "problem": "Two-plaquette graph with independent couplings"
+          },
+          {
+            "decimal_matches_in_gate_text": {
+              "1.34e-12": [
+                1.34175e-12,
+                1.34175e-12
+              ]
+            },
+            "decimal_preview_tokens": [
+              "1.34e-12"
+            ],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [
+              "7/124416"
+            ],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 7,
+            "loop_id": "bd2",
+            "passed": true,
+            "problem": "Z^3 1x2 Wilson loop"
+          },
+          {
+            "decimal_matches_in_gate_text": {
+              "2.88e-19": [
+                2.87586637818e-19,
+                2.8759e-19
+              ],
+              "3.4e12": [
+                3400000000000.0
+              ],
+              "9.8e-7": [
+                9.8e-07
+              ]
+            },
+            "decimal_preview_tokens": [
+              "2.88e-19",
+              "3.4e12",
+              "9.8e-7"
+            ],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [
+              "3/2"
+            ],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 8,
+            "loop_id": "bd2",
+            "passed": true,
+            "problem": "Electric energy on the cover"
+          },
+          {
+            "decimal_matches_in_gate_text": {
+              "1.58e-3": [
+                0.0015807
+              ]
+            },
+            "decimal_preview_tokens": [
+              "1.58e-3"
+            ],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [
+              "1/64",
+              "3/32"
+            ],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 9,
+            "loop_id": "bd2",
+            "passed": true,
+            "problem": "2+1 dimensions"
+          },
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 10,
+            "loop_id": "bd2",
+            "passed": true,
+            "problem": "Area law"
+          },
+          {
+            "decimal_matches_in_gate_text": {},
+            "decimal_preview_tokens": [],
+            "decimal_tokens_unmatched": [],
+            "fraction_tokens": [],
+            "fraction_tokens_missing_from_gate_text": [],
+            "index": 11,
+            "loop_id": "bd2",
+            "passed": true,
+            "problem": "Einstein-QED evidence rounds"
+          }
+        ]
+      },
+      "schema_check": {
+        "findings": [
+          "Checked all 12 findings.json#/applications entries for loop_id in {bd1, bd2}, non-empty problem/equation/outcome/model, kind in {transfer, obstruction, partial}, and a non-empty sources list.",
+          "By loop_id: {'bd1': 6, 'bd2': 6}. By kind: {'obstruction': 4, 'partial': 4, 'transfer': 4}.",
+          "0 schema defects: every entry carries all seven required fields, non-empty, with loop_id and kind from the allowed sets."
+        ],
+        "id": "schema_check",
+        "passed": true,
+        "role": "calling task item 3 (first part): every applications entry has loop_id bd1/bd2, problem, equation, outcome, model, kind in {transfer, obstruction, partial}, and sources; zero research loops",
+        "rows": [
+          {
+            "empty_keys": [],
+            "index": 0,
+            "kind": "transfer",
+            "kind_ok": true,
+            "loop_id": "bd1",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "Does the Round32 link-flip lemma U_E H(tau) U_E^* = H(-tau) hold for other gauge groups?",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 1,
+            "kind": "transfer",
+            "kind_ok": true,
+            "loop_id": "bd1",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "Does the Round32 first-order parity theorem hold for other gauge groups?",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 2,
+            "kind": "obstruction",
+            "kind_ok": true,
+            "loop_id": "bd1",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "SU(3)",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 3,
+            "kind": "obstruction",
+            "kind_ok": true,
+            "loop_id": "bd1",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "SO(3)",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 4,
+            "kind": "partial",
+            "kind_ok": true,
+            "loop_id": "bd1",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "SU(5)",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 5,
+            "kind": "transfer",
+            "kind_ok": true,
+            "loop_id": "bd1",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "SU(2) Wilson loops of any area for the limit of the named constructions",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 6,
+            "kind": "transfer",
+            "kind_ok": true,
+            "loop_id": "bd2",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "Two-plaquette graph with independent couplings",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 7,
+            "kind": "partial",
+            "kind_ok": true,
+            "loop_id": "bd2",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "Z^3 1x2 Wilson loop",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 8,
+            "kind": "partial",
+            "kind_ok": true,
+            "loop_id": "bd2",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "Electric energy on the cover",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 9,
+            "kind": "partial",
+            "kind_ok": true,
+            "loop_id": "bd2",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "2+1 dimensions",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 10,
+            "kind": "obstruction",
+            "kind_ok": true,
+            "loop_id": "bd2",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "Area law",
+            "sources_ok": true
+          },
+          {
+            "empty_keys": [],
+            "index": 11,
+            "kind": "obstruction",
+            "kind_ok": true,
+            "loop_id": "bd2",
+            "loop_id_ok": true,
+            "missing_keys": [],
+            "passed": true,
+            "problem": "Einstein-QED evidence rounds",
+            "sources_ok": true
+          }
+        ]
+      },
+      "sources_bound_by_gate_check": {
+        "findings": [
+          "Checked every source path of every applications entry against that entry's own loop's gate (advisor/bd1-gate.json or bd2-gate.json)#/bindings: the path must be a bindings key, the file must exist on disk, and its sha256 today must equal the sha256 the gate bound -- confirming the ledger cites exactly the byte-identical, gate-admitted text (historical immutability), not a since-edited copy. 30 source citation(s) checked across 12 entries.",
+          "Distinct sources cited: ['research/round33/forward/bd1/report.md', 'research/round33/forward/bd2/report.md', 'research/round33/reverse/bd1/report.md', 'research/round33/skeptic/bd1.md', 'research/round33/skeptic/bd2.md']",
+          "0 defects: every cited source is a key of its own loop's gate bindings, exists on disk, and its current sha256 matches the sha256 the gate bound at freeze time."
+        ],
+        "id": "sources_bound_by_gate_check",
+        "passed": true,
+        "role": "calling task item 3 (second part): every applications entry's sources are bound by its own gate's bindings (sha256 match); zero research loops",
+        "rows": [
+          {
+            "actual_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "bound_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "entry_index": 0,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd1/report.md"
+          },
+          {
+            "actual_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "bound_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "entry_index": 0,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/reverse/bd1/report.md"
+          },
+          {
+            "actual_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "bound_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "entry_index": 0,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd1.md"
+          },
+          {
+            "actual_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "bound_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "entry_index": 1,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd1/report.md"
+          },
+          {
+            "actual_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "bound_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "entry_index": 1,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/reverse/bd1/report.md"
+          },
+          {
+            "actual_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "bound_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "entry_index": 1,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd1.md"
+          },
+          {
+            "actual_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "bound_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "entry_index": 2,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd1/report.md"
+          },
+          {
+            "actual_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "bound_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "entry_index": 2,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/reverse/bd1/report.md"
+          },
+          {
+            "actual_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "bound_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "entry_index": 2,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd1.md"
+          },
+          {
+            "actual_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "bound_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "entry_index": 3,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd1/report.md"
+          },
+          {
+            "actual_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "bound_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "entry_index": 3,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/reverse/bd1/report.md"
+          },
+          {
+            "actual_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "bound_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "entry_index": 3,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd1.md"
+          },
+          {
+            "actual_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "bound_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "entry_index": 4,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd1/report.md"
+          },
+          {
+            "actual_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "bound_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "entry_index": 4,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/reverse/bd1/report.md"
+          },
+          {
+            "actual_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "bound_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "entry_index": 4,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd1.md"
+          },
+          {
+            "actual_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "bound_sha256": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b",
+            "entry_index": 5,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd1/report.md"
+          },
+          {
+            "actual_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "bound_sha256": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1",
+            "entry_index": 5,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/reverse/bd1/report.md"
+          },
+          {
+            "actual_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "bound_sha256": "52ae2b122af9fcd67851e47dbe880598c46ec82f1f0f47e233a1003e93a27e61",
+            "entry_index": 5,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd1",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd1.md"
+          },
+          {
+            "actual_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "bound_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "entry_index": 6,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd2/report.md"
+          },
+          {
+            "actual_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "bound_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "entry_index": 6,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd2.md"
+          },
+          {
+            "actual_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "bound_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "entry_index": 7,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd2/report.md"
+          },
+          {
+            "actual_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "bound_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "entry_index": 7,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd2.md"
+          },
+          {
+            "actual_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "bound_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "entry_index": 8,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd2/report.md"
+          },
+          {
+            "actual_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "bound_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "entry_index": 8,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd2.md"
+          },
+          {
+            "actual_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "bound_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "entry_index": 9,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd2/report.md"
+          },
+          {
+            "actual_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "bound_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "entry_index": 9,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd2.md"
+          },
+          {
+            "actual_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "bound_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "entry_index": 10,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd2/report.md"
+          },
+          {
+            "actual_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "bound_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "entry_index": 10,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd2.md"
+          },
+          {
+            "actual_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "bound_sha256": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733",
+            "entry_index": 11,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/forward/bd2/report.md"
+          },
+          {
+            "actual_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "bound_sha256": "fe17e6418565a5486b5b9fdf7993110e7fafad839b8250e1395d60c627c79c9b",
+            "entry_index": 11,
+            "file_exists": true,
+            "in_gate_bindings": true,
+            "loop_id": "bd2",
+            "passed": true,
+            "sha256_match": true,
+            "source": "research/round33/skeptic/bd2.md"
+          }
+        ]
+      }
+    },
+    "id": "applications_ledger_audit",
+    "passed": true,
+    "role": "Jung/Pauli lens, Round33 applications stage, assistant-4: the applications-ledger audit of findings.json#/applications, calling task item 3; zero research loops; audits only, never admission evidence"
+  },
+  "phrase_audit": {
+    "checks": {
+      "heading_list_severance_check": {
+        "collisions": [],
+        "findings": [
+          "Searched the three BD reports for the \"<...> exclusions (verbatim): item; item; ...\" heading-list pattern assistant-3 found severs its own negation/exclusion cue from every item that follows it (rule: phrase_scan.py's \": \" clause split). Found 3 such heading(s): [('BD1_forward_report', 'Claim exclusions (contract, verbatim)', 7), ('BD1_reverse_report', 'Claim exclusions, exactly as the contract lists them', 1), ('BD2_forward_report', 'Contract exclusions (verbatim)', 8)].",
+          "0 collisions: mechanically checked every list item of every heading found against the union of ROUND_FORBIDDEN, both BD contracts' forbidden_phrasings and the five uniqueness candidates -- none of these BD1/BD2 exclusion-list items happens to equal a forbidden or candidate phrase today, so the severance mechanism (present here structurally, exactly as in sub-round 3) causes no false negative in this corpus."
+        ],
+        "headings_found": [
+          {
+            "heading": "Claim exclusions (contract, verbatim)",
+            "n_items": 7,
+            "source": "BD1_forward_report"
+          },
+          {
+            "heading": "Claim exclusions, exactly as the contract lists them",
+            "n_items": 1,
+            "source": "BD1_reverse_report"
+          },
+          {
+            "heading": "Contract exclusions (verbatim)",
+            "n_items": 8,
+            "source": "BD2_forward_report"
+          }
+        ],
+        "id": "heading_list_severance_check",
+        "passed": true,
+        "role": "calling task item 1 (second part, continued): reapply the sub-round-3 heading-list severance finding to the three BD reports; zero research loops"
+      },
+      "phrase_scan_dry_run": {
+        "affirmative_defects": [],
+        "all_hits": [],
+        "cross_checks": [
+          {
+            "independent_count_limitations_and_supported_statement": 0,
+            "loop": "BD1",
+            "matches": true,
+            "self_reported_all_hits_including_negated": 0
+          },
+          {
+            "independent_count_limitations_and_supported_statement": 0,
+            "loop": "BD2",
+            "matches": true,
+            "self_reported_all_hits_including_negated": 0
+          }
+        ],
+        "findings": [
+          "Ran tools.phrase_scan.scan (rule R6: negation-aware, each contract's own mandatory_sentence_template removed as one literal) over the calling task's exact scan scope: the three BD reports (forward/bd1, reverse/bd1, forward/bd2 -- BD2 has no reverse producer), the two BD gates' accepted/limitations, the two reviews' supported_statement, findings.json#/summary+#/scope_statement+#/applications, and every string field of roadmap.json. BD-scoped text used that loop's own contract vocabulary; round-level text (findings.json's three fields, roadmap.json) used the union of both contracts' forbidden_phrasings. Total raw hits (every hit, affirmative or negated): 0.",
+          "BD1: independent recount over gate_limitations + review_supported_statement = 0; review's own self-reported phrase_scan#/all_hits_including_negated = 0; match: True.",
+          "BD2: independent recount over gate_limitations + review_supported_statement = 0; review's own self-reported phrase_scan#/all_hits_including_negated = 0; match: True.",
+          "0 hits classified AFFIRMATIVE: 0 raw hits at all (not merely 0 unnegated ones) -- the three BD reports, both gates' accepted/limitations, both reviews' supported_statement, findings.json's summary/scope_statement/applications and roadmap.json carry no literal ROUND_FORBIDDEN or contract-forbidden phrase anywhere in this scan scope."
+        ],
+        "id": "phrase_scan_dry_run",
+        "passed": true,
+        "per_target": [
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": null,
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "forward_report",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": null,
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "reverse_report",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": null,
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "forward_report",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": null,
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_accepted",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": "limitations[0]",
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_limitations[0]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": "limitations[1]",
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_limitations[1]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": "limitations[2]",
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_limitations[2]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": "limitations[3]",
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_limitations[3]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": "limitations[4]",
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_limitations[4]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": "limitations[5]",
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_limitations[5]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": "limitations[6]",
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "gate_limitations[6]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": null,
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_accepted",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": "limitations[0]",
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_limitations[0]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": "limitations[1]",
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_limitations[1]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": "limitations[2]",
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_limitations[2]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": "limitations[3]",
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_limitations[3]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": "limitations[4]",
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_limitations[4]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": "limitations[5]",
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_limitations[5]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": "limitations[6]",
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "gate_limitations[6]",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 27,
+            "json_path": null,
+            "loop": "BD1",
+            "n_hits": 0,
+            "source": "review_supported_statement",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 28,
+            "json_path": null,
+            "loop": "BD2",
+            "n_hits": 0,
+            "source": "review_supported_statement",
+            "template_removed": true
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": null,
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_summary",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": null,
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_scope_statement",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[0]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[1]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[1]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[2]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[2]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[3]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[3]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[4]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[4]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[5]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[5]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[6]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[6]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[7]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[7]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[8]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[8]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[9]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[9]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[10]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[10]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "applications[11]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "findings_applications[11]",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "schema",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "human_author",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "status",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "summary",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "ranking_basis",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[0].id",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[0].title",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[0].status",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[0].target",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[0].missing_premise",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[0].proposed_first_loop_test",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[0].limitations[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].id",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].title",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].status",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].target",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].missing_premise",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].proposed_first_loop_test",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].limitations[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[1].limitations[1]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[2].id",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[2].title",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[2].status",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[2].target",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[2].missing_premise",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[2].proposed_first_loop_test",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[2].limitations[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[3].id",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[3].title",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[3].status",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[3].target",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[3].missing_premise",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[3].proposed_first_loop_test",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[3].limitations[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[4].id",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[4].title",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[4].status",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[4].target",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[4].missing_premise",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[4].proposed_first_loop_test",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "goals[4].limitations[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "methods_decision",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "dissents[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "dissents[1]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "stop_boundary",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "closing_lens_updates[0]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "closing_lens_updates[1]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          },
+          {
+            "forbidden_phrase_count": 24,
+            "json_path": "closing_lens_updates[2]",
+            "loop": "ROUND",
+            "n_hits": 0,
+            "source": "roadmap_json",
+            "template_removed": false
+          }
+        ],
+        "role": "calling task item 1 (first part): negation-aware phrase scan of the three BD reports, the two BD gates, the two reviews' supported statements, findings.json summary/scope_statement/applications and roadmap.json, with each BD contract; zero research loops",
+        "total_raw_hits": 0
+      },
+      "transfer_language_audit": {
+        "findings": [
+          "Model-naming check: 4 findings.json#/applications entries of kind \"transfer\" (of 12 total entries); every one names one of the five canonical BD models (one-plaquette model, group-G box, finite graph, Z^3 family, 2+1D constants) in its own model field: [('bd1', 'Does the Round32 link-flip lemma U_E H(t', ['one-plaquette model', 'group-G box']), ('bd1', 'Does the Round32 first-order parity theo', ['one-plaquette model', 'group-G box']), ('bd1', 'SU(2) Wilson loops of any area for the l', ['Z^3 family']), ('bd2', 'Two-plaquette graph with independent cou', ['finite graph'])].",
+          "Forbidden-word check: scanned the same scan scope as checks (a)/(b) for \"predicts\", \"confirms\", \"universal\", \"string tension\" and \"confinement\". Total occurrences (affirmative or negated): 0.",
+          "0 occurrences at all: none of the five forbidden words appears anywhere in the three BD reports, both gates' accepted/limitations, both reviews' supported_statement, findings.json's three scoped fields or roadmap.json (the words appear only inside the BD1/BD2 contracts' own forbidden_phrasings arrays and forbidden-verb control descriptions, which are outside this package's scan scope; contracts supply vocabulary, not scanned text, matching the assistant-3 convention).",
+          "Lattice-limit-value phrasing check: scanned the three BD reports for \"(a/the) lattice-limit value\" and \"a limit value\". Found 4 occurrence(s).",
+          "  BD1_forward_report :: classification=control_table_row_rejected_mutation :: clause='value presented as a limit value'",
+          "  BD1_reverse_report :: classification=negated :: clause='It is never a lattice-limit value for any group other than SU(2).'",
+          "  BD1_reverse_report :: classification=control_table_row_rejected_mutation :: clause='a one-plaquette value presented as a limit value'",
+          "  BD1_reverse_report :: classification=negated :: clause='a lattice-limit value | | no_transfer_called_prediction | each of the two forbidden verbs'",
+          "0 bare AFFIRMATIVE occurrences: two occurrences are mechanically negated by the real NEGATION rule (reverse/bd1/report.md, both inside a run-on clause that also contains the word \"forbidden\"); two more (forward/bd1/report.md's and reverse/bd1/report.md's \"changed_model_relabelled\"/\"one_plaquette_model_terms\" rejected-mutation table rows) are not mechanically negated in their own (post-\";\"-split) clause alone, but are markdown table rows beginning \"| `control_id` |\" -- rejected-mutation descriptions, not producer claims -- confirmed by the table-row structural marker rather than assumed."
+        ],
+        "forbidden_word_affirmative": [],
+        "forbidden_word_hits": [],
+        "id": "transfer_language_audit",
+        "lattice_limit_affirmative": [],
+        "lattice_limit_rows": [
+          {
+            "classification": "control_table_row_rejected_mutation",
+            "clause": "value presented as a limit value",
+            "in_control_table_row": true,
+            "negated": false,
+            "source": "BD1_forward_report"
+          },
+          {
+            "classification": "negated",
+            "clause": "It is never a lattice-limit value for any group other than SU(2).",
+            "in_control_table_row": false,
+            "negated": true,
+            "source": "BD1_reverse_report"
+          },
+          {
+            "classification": "control_table_row_rejected_mutation",
+            "clause": "a one-plaquette value presented as a limit value",
+            "in_control_table_row": true,
+            "negated": false,
+            "source": "BD1_reverse_report"
+          },
+          {
+            "classification": "negated",
+            "clause": "a lattice-limit value | | no_transfer_called_prediction | each of the two forbidden verbs",
+            "in_control_table_row": false,
+            "negated": true,
+            "source": "BD1_reverse_report"
+          }
+        ],
+        "model_rows": [
+          {
+            "index": 0,
+            "kind": "transfer",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "one-plaquette model",
+              "group-G box"
+            ],
+            "model": "one-plaquette models H_FG(G) and group-G whole-star boxes under the frozen convention",
+            "named": true,
+            "problem": "Does the Round32 link-flip lemma U_E H(tau) U_E^* = H(-tau) hold for other gauge groups?"
+          },
+          {
+            "index": 1,
+            "kind": "transfer",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "one-plaquette model",
+              "group-G box"
+            ],
+            "model": "one-plaquette models and group-G boxes",
+            "named": true,
+            "problem": "Does the Round32 first-order parity theorem hold for other gauge groups?"
+          },
+          {
+            "index": 2,
+            "kind": "obstruction",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "one-plaquette model"
+            ],
+            "model": "SU(3) one-plaquette model",
+            "named": true,
+            "problem": "SU(3)"
+          },
+          {
+            "index": 3,
+            "kind": "obstruction",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "one-plaquette model"
+            ],
+            "model": "SO(3) one-plaquette model (vector Wilson representation)",
+            "named": true,
+            "problem": "SO(3)"
+          },
+          {
+            "index": 4,
+            "kind": "partial",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "one-plaquette model"
+            ],
+            "model": "SU(5) one-plaquette model",
+            "named": true,
+            "problem": "SU(5)"
+          },
+          {
+            "index": 5,
+            "kind": "transfer",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "Z^3 family"
+            ],
+            "model": "SU(2) zero-selected family",
+            "named": true,
+            "problem": "SU(2) Wilson loops of any area for the limit of the named constructions"
+          },
+          {
+            "index": 6,
+            "kind": "transfer",
+            "loop_id": "bd2",
+            "matched_categories": [
+              "finite graph"
+            ],
+            "model": "Round11 two-plaquette graph (finite)",
+            "named": true,
+            "problem": "Two-plaquette graph with independent couplings"
+          },
+          {
+            "index": 7,
+            "kind": "partial",
+            "loop_id": "bd2",
+            "matched_categories": [
+              "Z^3 family"
+            ],
+            "model": "SU(2) zero-selected family",
+            "named": true,
+            "problem": "Z^3 1x2 Wilson loop"
+          },
+          {
+            "index": 8,
+            "kind": "partial",
+            "loop_id": "bd2",
+            "matched_categories": [
+              "Z^3 family"
+            ],
+            "model": "SU(2) zero-selected family",
+            "named": true,
+            "problem": "Electric energy on the cover"
+          },
+          {
+            "index": 9,
+            "kind": "partial",
+            "loop_id": "bd2",
+            "matched_categories": [
+              "2+1D constants"
+            ],
+            "model": "declared 2+1D SU(2) model (constants only)",
+            "named": true,
+            "problem": "2+1 dimensions"
+          },
+          {
+            "index": 10,
+            "kind": "obstruction",
+            "loop_id": "bd2",
+            "matched_categories": [
+              "Z^3 family"
+            ],
+            "model": "SU(2) zero-selected family",
+            "named": true,
+            "problem": "Area law"
+          },
+          {
+            "index": 11,
+            "kind": "obstruction",
+            "loop_id": "bd2",
+            "matched_categories": [],
+            "model": "Round3-7 Einstein-QED records",
+            "named": true,
+            "problem": "Einstein-QED evidence rounds"
+          }
+        ],
+        "passed": true,
+        "role": "calling task item 1 (third part): every transfer claim names its model; the scan scope never uses predicts/confirms/universal/string tension/confinement affirmatively; no one-plaquette or graph value is phrased as a lattice-limit value; zero research loops",
+        "transfer_rows": [
+          {
+            "index": 0,
+            "kind": "transfer",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "one-plaquette model",
+              "group-G box"
+            ],
+            "model": "one-plaquette models H_FG(G) and group-G whole-star boxes under the frozen convention",
+            "named": true,
+            "problem": "Does the Round32 link-flip lemma U_E H(tau) U_E^* = H(-tau) hold for other gauge groups?"
+          },
+          {
+            "index": 1,
+            "kind": "transfer",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "one-plaquette model",
+              "group-G box"
+            ],
+            "model": "one-plaquette models and group-G boxes",
+            "named": true,
+            "problem": "Does the Round32 first-order parity theorem hold for other gauge groups?"
+          },
+          {
+            "index": 5,
+            "kind": "transfer",
+            "loop_id": "bd1",
+            "matched_categories": [
+              "Z^3 family"
+            ],
+            "model": "SU(2) zero-selected family",
+            "named": true,
+            "problem": "SU(2) Wilson loops of any area for the limit of the named constructions"
+          },
+          {
+            "index": 6,
+            "kind": "transfer",
+            "loop_id": "bd2",
+            "matched_categories": [
+              "finite graph"
+            ],
+            "model": "Round11 two-plaquette graph (finite)",
+            "named": true,
+            "problem": "Two-plaquette graph with independent couplings"
+          }
+        ],
+        "transfer_unnamed": []
+      },
+      "vocabulary_gap_audit_bd": {
+        "affirmative_unscoped": [],
+        "all_rows": [
+          {
+            "classification": "negated_excluded",
+            "clause": "Uniqueness on R within a named class is not uniqueness of every infinite-volume ground state.",
+            "json_path": "goals[1].limitations[1]",
+            "loop": "ROUND",
+            "mechanically_negated": true,
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "roadmap_json"
+          },
+          {
+            "classification": "vocabulary_list_mention",
+            "clause": "Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert",
+            "json_path": "methods_decision",
+            "loop": "ROUND",
+            "mechanically_negated": false,
+            "phrase": "uniqueness of the limit",
+            "source": "roadmap_json"
+          },
+          {
+            "classification": "vocabulary_list_mention",
+            "clause": "Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert",
+            "json_path": "methods_decision",
+            "loop": "ROUND",
+            "mechanically_negated": false,
+            "phrase": "unique limit",
+            "source": "roadmap_json"
+          },
+          {
+            "classification": "vocabulary_list_mention",
+            "clause": "Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert",
+            "json_path": "methods_decision",
+            "loop": "ROUND",
+            "mechanically_negated": false,
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "roadmap_json"
+          }
+        ],
+        "already_present_in_union_contract_lists": {
+          "is unique": [],
+          "unique limit": [],
+          "uniquely": [],
+          "uniqueness of every infinite-volume ground state": [],
+          "uniqueness of the limit": []
+        },
+        "candidate_phrases": [
+          "uniqueness of the limit",
+          "unique limit",
+          "uniqueness of every infinite-volume ground state",
+          "is unique",
+          "uniquely"
+        ],
+        "findings": [
+          "Reapplied the sub-round-3 vocabulary-gap audit (research/round33/experts/jung/assistant-3/) to this package's own scan scope (the three BD reports, both gates, both reviews' supported_statement, findings.json's summary/scope_statement/applications, roadmap.json) for the same five candidate phrasings. Direct membership check: none of the five is literally present (case-insensitive) in the union of BD1's and BD2's contract forbidden_phrasings: {'uniqueness of the limit': [], 'unique limit': [], 'uniqueness of every infinite-volume ground state': [], 'is unique': [], 'uniquely': []}.",
+          "Total occurrences found: 4.",
+          "Phrase 'uniqueness of the limit': 1 occurrence(s), by classification: {'vocabulary_list_mention': 1}.",
+          "Phrase 'unique limit': 1 occurrence(s), by classification: {'vocabulary_list_mention': 1}.",
+          "Phrase 'uniqueness of every infinite-volume ground state': 2 occurrence(s), by classification: {'negated_excluded': 1, 'vocabulary_list_mention': 1}.",
+          "Phrase 'is unique': 0 occurrence(s), by classification: {}.",
+          "Phrase 'uniquely': 0 occurrence(s), by classification: {}.",
+          "Every occurrence, with its location:",
+          "  ROUND roadmap_json (goals[1].limitations[1]) :: phrase='uniqueness of every infinite-volume ground state' :: classification=negated_excluded :: clause='Uniqueness on R within a named class is not uniqueness of every infinite-volume ground state.'",
+          "  ROUND roadmap_json (methods_decision) :: phrase='uniqueness of the limit' :: classification=vocabulary_list_mention :: clause=\"Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert\"",
+          "  ROUND roadmap_json (methods_decision) :: phrase='unique limit' :: classification=vocabulary_list_mention :: clause=\"Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert\"",
+          "  ROUND roadmap_json (methods_decision) :: phrase='uniqueness of every infinite-volume ground state' :: classification=vocabulary_list_mention :: clause=\"Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert\"",
+          "0 hits classified bare AFFIRMATIVE: every occurrence found in this scan scope is inside roadmap.json (none in the BD1/BD2 reports, gates, reviews or findings.json's three scoped fields). roadmap.json#/goals[1]/limitations[1] ('Uniqueness on R within a named class is not uniqueness of every infinite-volume ground state.') is genuinely negated in the same clause. The other three occurrences ('uniqueness of the limit', 'unique limit' and a second 'uniqueness of every infinite-volume ground state') are all inside roadmap.json#/methods_decision, which quotes exactly these phrases as the vocabulary it recommends adding to the scanner before Round34 (the same recommendation assistant-3 made) -- a forward-looking vocabulary-list mention, not a ground-state or limit claim about BD1/BD2 or any other loop."
+        ],
+        "id": "vocabulary_gap_audit_bd",
+        "passed": true,
+        "per_phrase": {
+          "is unique": {
+            "by_classification": {},
+            "hits": []
+          },
+          "unique limit": {
+            "by_classification": {
+              "vocabulary_list_mention": 1
+            },
+            "hits": [
+              {
+                "classification": "vocabulary_list_mention",
+                "clause": "Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert",
+                "json_path": "methods_decision",
+                "loop": "ROUND",
+                "mechanically_negated": false,
+                "phrase": "unique limit",
+                "source": "roadmap_json"
+              }
+            ]
+          },
+          "uniquely": {
+            "by_classification": {},
+            "hits": []
+          },
+          "uniqueness of every infinite-volume ground state": {
+            "by_classification": {
+              "negated_excluded": 1,
+              "vocabulary_list_mention": 1
+            },
+            "hits": [
+              {
+                "classification": "negated_excluded",
+                "clause": "Uniqueness on R within a named class is not uniqueness of every infinite-volume ground state.",
+                "json_path": "goals[1].limitations[1]",
+                "loop": "ROUND",
+                "mechanically_negated": true,
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "roadmap_json"
+              },
+              {
+                "classification": "vocabulary_list_mention",
+                "clause": "Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert",
+                "json_path": "methods_decision",
+                "loop": "ROUND",
+                "mechanically_negated": false,
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "roadmap_json"
+              }
+            ]
+          },
+          "uniqueness of the limit": {
+            "by_classification": {
+              "vocabulary_list_mention": 1
+            },
+            "hits": [
+              {
+                "classification": "vocabulary_list_mention",
+                "clause": "Before any Round34 contract is frozen, extend the phrase scanner's list with 'uniqueness of the limit' and 'unique limit', and add 'uniqueness of every infinite-volume ground state' only together with a fix for the heading-list clause severance found by the Jung assistant (expert",
+                "json_path": "methods_decision",
+                "loop": "ROUND",
+                "mechanically_negated": false,
+                "phrase": "uniqueness of the limit",
+                "source": "roadmap_json"
+              }
+            ]
+          }
+        },
+        "role": "calling task item 1 (second part): reapply the sub-round-3 vocabulary-gap audit (uniqueness-type phrasings) to the BD1/BD2 scan scope; classify every occurrence; zero research loops"
+      }
+    },
+    "id": "phrase_audit",
+    "passed": true,
+    "role": "Jung/Pauli lens, Round33 applications stage, assistant-4: the phrase scan, the reapplied vocabulary-gap and heading-list-severance audits, and the transfer-language audit, calling task item 1; zero research loops; audits only, never admission evidence"
+  },
+  "summary": {
+    "defect_lines": [],
+    "findings": [
+      "Section pass/fail: phrase_audit=True, template_and_fields=True, applications_ledger_audit=True.",
+      "overall_pass = True.",
+      "All three scripts' checks completed with zero genuine defects -- BD1 and BD2's already-frozen text (the three BD reports, both gates, both reviews' supported_statement, findings.json's summary/scope_statement/applications and roadmap.json) carries no affirmative forbidden phrasing and no affirmative uniqueness-type phrasing (the only four uniqueness-candidate occurrences found are a genuinely negated exclusion clause and a forward-looking vocabulary-list mention in roadmap.json, not a BD1/BD2 claim); every transfer-kind applications entry names a canonical BD model, and the scan scope never uses predicts/confirms/universal/string tension/confinement affirmatively, and no one-plaquette or graph value is phrased as a lattice-limit value; both mandatory sentence templates appear exactly once, as one unbroken span, in every one of their reports and gate texts; every BD gate_fields key agrees in value across contract/gate/review (or, for BD1.flip_transfer_scope's documented description-vs-instantiation exception, gate==review) and satisfies every checkable plan.json rule; and every findings.json#/applications entry has its required fields, cites sources that are byte-identical to what its own gate bound, and states numbers that match its own gate's text. Nothing here reopens or reduces either gate's accepted_within_scope verdict.",
+      "Calling task item 1 (phrase_audit.py): phrase_scan_dry_run found 0 raw hits (not merely 0 unnegated ones) across the exact scan scope; vocabulary_gap_audit_bd found 4 occurrences of the five uniqueness-candidate phrases, all inside roadmap.json, 0 classified bare affirmative; heading_list_severance_check found the same \"exclusions (verbatim): item; item\" heading-list pattern assistant-3 found for sub-round 3, present in all three BD reports, and confirmed mechanically that no round-forbidden, BD-contract-forbidden or uniqueness-candidate phrase is a severed list item today; transfer_language_audit confirmed every transfer-kind applications entry names a canonical model, the forbidden words predicts/confirms/universal/string tension/confinement do not occur at all in the scan scope, and the two lattice-limit-value phrasings the mechanical NEGATION rule alone would miss are both markdown rejected-mutation table rows, confirmed by a structural marker rather than assumed.",
+      "Calling task item 2 (template_and_fields.py): the mandatory_sentence_template appears exactly once, as one unbroken span, in each of BD1's report(s) (forward and reverse) and BD2's report and each gate's accepted text; every gate_fields key required by each contract agrees in value across contract/gate/review for both loops, including the seven calling-task-named fields (BD1.flip_transfer_scope naming SU(2), SU(4), U(1), Z2 -- handled as the contract's own documented description-vs-instantiation exception; BD1.obstructions_recorded=True; BD1.area_parity_limit_claimed=True; BD2.graph_sign_certified=True; BD2.z3_1x2_formal_only=True; BD2.electric_band_scope; BD2.area_law_claimed=False, satisfying plan.json's \"always false in Round33\" rule).",
+      "Calling task item 3 (applications_ledger_audit.py): all 12 findings.json#/applications entries (6 BD1, 6 BD2; 4 transfer, 4 obstruction, 4 partial) carry every required field; all 30 source citations across those entries are keys of their own loop's gate bindings with a matching sha256 on disk today; every fraction token in the ledger's numbers (17 total) appears verbatim in its own gate's text, and every decimal preview (6 total) matches a same-magnitude preview the gate text itself carries."
+    ],
+    "overall_pass": true,
+    "role": "Jung/Pauli lens, Round33 applications stage, assistant-4: final summary rolling up the three audit scripts' pass/fail state and every DEFECT finding line; zero research loops; audits only, never admission evidence; decides nothing about BD1 or BD2 (both already gated accepted_within_scope)",
+    "section_passed": {
+      "applications_ledger_audit": true,
+      "phrase_audit": true,
+      "template_and_fields": true
+    }
+  },
+  "template_and_fields": {
+    "checks": {
+      "gate_fields_comparison_bd": {
+        "findings": [
+          "BD1: 12 gate_fields required by the contract; key sets equal across contract/gate/review: True; 12/12 field(s) agree in value (or, for flip_transfer_scope, gate==review) across contract/gate/review AND satisfy their plan.json rule where one applies.",
+          "BD2: 12 gate_fields required by the contract; key sets equal across contract/gate/review: True; 12/12 field(s) agree in value (or, for flip_transfer_scope, gate==review) across contract/gate/review AND satisfy their plan.json rule where one applies.",
+          "Calling-task-named field BD1.flip_transfer_scope: gate==review verbatim: True; gate/review name all four required groups (['SU(2)', 'SU(4)', 'U(1)', 'Z2']): True; gate/review name none of the three flip-obstructed groups (['SU(3)', 'SU(5)', 'SO(3)']): True; the contract's own value states the general rule (\"the listed groups ... named in the gate group by group\") rather than the concrete list, exactly as bd1-gate.json#/limitations records as a non-blocking contract defect (\"gate_fields_required flip_transfer_scope is a description, so the gate names SU(2), SU(4), U(1) and Z2\"): True. PASS.",
+          "Calling-task-named field BD1.obstructions_recorded: contract=True gate=True review=True; plan.json rule: 'declared per contract (BD1: the SU(3) and SO(3) cells are mandatory)'; PASS.",
+          "Calling-task-named field BD1.area_parity_limit_claimed: contract=True gate=True review=True; plan.json rule: 'declared per contract (BD1: SU(2) area parity pointwise for the limit of the named constructions through BB2)'; PASS.",
+          "Calling-task-named field BD2.graph_sign_certified: contract=True gate=True review=True; plan.json rule: 'declared per contract (BD2: finite graph only)'; PASS.",
+          "Calling-task-named field BD2.z3_1x2_formal_only: contract=True gate=True review=True; plan.json rule: 'declared per contract (BD2: the Z^3 1x2 coefficient is a labelled formal coefficient)'; PASS.",
+          "Calling-task-named field BD2.electric_band_scope: contract='omega(h_R) for every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions, both signs' gate='omega(h_R) for every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions, both signs' review='omega(h_R) for every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions, both signs'; plan.json rule: 'declared per contract'; PASS.",
+          "Calling-task-named field BD2.area_law_claimed: contract=False gate=False review=False; plan.json rule (\"always false in Round33 (no zero-free region is admitted)\"): 'always false in Round33 (no zero-free region is admitted)'; PASS."
+        ],
+        "id": "gate_fields_comparison_bd",
+        "named_fields_ok": true,
+        "passed": true,
+        "per_loop": {
+          "BD1": {
+            "gate_keys": [
+              "area_parity_limit_claimed",
+              "continuum_claim",
+              "flip_transfer_claimed",
+              "flip_transfer_scope",
+              "model_is_finite_graph",
+              "obstructions_recorded",
+              "parity_transfer_claimed",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "transfers_to_aq",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim"
+            ],
+            "keys_match_contract_gate_review": true,
+            "passed": true,
+            "required_keys": [
+              "area_parity_limit_claimed",
+              "continuum_claim",
+              "flip_transfer_claimed",
+              "flip_transfer_scope",
+              "model_is_finite_graph",
+              "obstructions_recorded",
+              "parity_transfer_claimed",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "transfers_to_aq",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim"
+            ],
+            "review_keys": [
+              "area_parity_limit_claimed",
+              "continuum_claim",
+              "flip_transfer_claimed",
+              "flip_transfer_scope",
+              "model_is_finite_graph",
+              "obstructions_recorded",
+              "parity_transfer_claimed",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "transfers_to_aq",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim"
+            ],
+            "rows": [
+              {
+                "contract": true,
+                "field": "area_parity_limit_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BD1: SU(2) area parity pointwise for the limit of the named constructions through BB2)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "continuum_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "flip_transfer_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "true only with a non-empty flip_transfer_scope naming the groups and models (BD1)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": "the listed groups with a central element acting as -1 on the Wilson representation, named in the gate group by group, on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+                "field": "flip_transfer_scope",
+                "gate": "SU(2), SU(4), U(1) and Z2 (central elements -I, -I, e^{i pi} and the nontrivial element, each acting as -1 on the Wilson representation), on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets E_3 and E_2 verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": "SU(2), SU(4), U(1) and Z2 (central elements -I, -I, e^{i pi} and the nontrivial element, each acting as -1 on the Wilson representation), on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets E_3 and E_2 verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "model_is_finite_graph",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "obstructions_recorded",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BD1: the SU(3) and SO(3) cells are mandatory)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "parity_transfer_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BD1)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "rate_in_a_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "scientific_priority_verified",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "transfers_to_aq",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "uniqueness_of_ground_state_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "weak_coupling_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              }
+            ]
+          },
+          "BD2": {
+            "gate_keys": [
+              "area_law_claimed",
+              "continuum_claim",
+              "electric_band_claimed",
+              "electric_band_scope",
+              "graph_sign_certified",
+              "model_is_finite_graph",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "transfers_to_aq",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim",
+              "z3_1x2_formal_only"
+            ],
+            "keys_match_contract_gate_review": true,
+            "passed": true,
+            "required_keys": [
+              "area_law_claimed",
+              "continuum_claim",
+              "electric_band_claimed",
+              "electric_band_scope",
+              "graph_sign_certified",
+              "model_is_finite_graph",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "transfers_to_aq",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim",
+              "z3_1x2_formal_only"
+            ],
+            "review_keys": [
+              "area_law_claimed",
+              "continuum_claim",
+              "electric_band_claimed",
+              "electric_band_scope",
+              "graph_sign_certified",
+              "model_is_finite_graph",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "transfers_to_aq",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim",
+              "z3_1x2_formal_only"
+            ],
+            "rows": [
+              {
+                "contract": false,
+                "field": "area_law_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false in Round33 (no zero-free region is admitted)",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "continuum_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "electric_band_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "true only with a non-empty electric_band_scope (BD2)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": "omega(h_R) for every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions, both signs",
+                "field": "electric_band_scope",
+                "gate": "omega(h_R) for every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions, both signs",
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": "omega(h_R) for every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions, both signs",
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "graph_sign_certified",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BD2: finite graph only)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "model_is_finite_graph",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "rate_in_a_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "scientific_priority_verified",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "transfers_to_aq",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "uniqueness_of_ground_state_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "weak_coupling_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "z3_1x2_formal_only",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BD2: the Z^3 1x2 coefficient is a labelled formal coefficient)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              }
+            ]
+          }
+        },
+        "role": "calling task item 2 (second half): BD gate fields vs contracts vs plan.json vocabulary for BD1 and BD2, with the seven calling-task-named fields (BD1.flip_transfer_scope, .obstructions_recorded, .area_parity_limit_claimed; BD2.graph_sign_certified, .z3_1x2_formal_only, .electric_band_scope, .area_law_claimed) each individually checked; zero research loops"
+      },
+      "mandatory_template_span_check": {
+        "findings": [
+          "BD1: template (1070 chars, whitespace-normalized) occurs {'forward_report': 1, 'reverse_report': 1} time(s) as an unbroken span across its report(s) and 1 time(s) in advisor/bd1-gate.json#/accepted -- PASS.",
+          "BD1: cross-checked against the forward producer's own self-reported template check(s) in forward/bd1/output/results.json (['checks[29]']): all report passed=[True], agrees with this script's independent count.",
+          "BD2: template (847 chars, whitespace-normalized) occurs {'forward_report': 1} time(s) as an unbroken span across its report(s) and 1 time(s) in advisor/bd2-gate.json#/accepted -- PASS."
+        ],
+        "id": "mandatory_template_span_check",
+        "passed": true,
+        "per_loop": {
+          "BD1": {
+            "gate_accepted_occurrences": 1,
+            "passed": true,
+            "report_occurrences": {
+              "forward_report": 1,
+              "reverse_report": 1
+            },
+            "self_reported_forward_check": [
+              {
+                "json_path": "checks[29]",
+                "record": {
+                  "gate_field_groups": {
+                    "flip_transfer_groups": [
+                      "SU(2)",
+                      "SU(4)",
+                      "U(1)",
+                      "Z2"
+                    ],
+                    "flip_transfer_scope_named": "SU(2), SU(4), U(1), Z2 on H_FG(G) and the group-G whole-star box models H^G_N (operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), flip sets verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+                    "obstruction_groups": {
+                      "flip": [
+                        "SU(3)",
+                        "SU(5)",
+                        "SO(3)"
+                      ],
+                      "parity": [
+                        "SU(3)",
+                        "SO(3)"
+                      ]
+                    },
+                    "parity_transfer_groups": [
+                      "SU(2)",
+                      "SU(4)",
+                      "SU(5)",
+                      "U(1)",
+                      "Z2"
+                    ]
+                  },
+                  "gate_fields": {
+                    "area_parity_limit_claimed": true,
+                    "continuum_claim": false,
+                    "flip_transfer_claimed": true,
+                    "flip_transfer_scope": "the listed groups with a central element acting as -1 on the Wilson representation, named in the gate group by group, on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+                    "model_is_finite_graph": true,
+                    "obstructions_recorded": true,
+                    "parity_transfer_claimed": true,
+                    "rate_in_a_claimed": false,
+                    "scientific_priority_verified": false,
+                    "transfers_to_aq": false,
+                    "uniqueness_of_ground_state_claimed": false,
+                    "weak_coupling_claim": false
+                  },
+                  "id": "mandatory_sentence_and_gate_fields",
+                  "mutations_rejected": [
+                    "gate_field_changed_at_accepted",
+                    "uniqueness_field_true",
+                    "template_span_broken",
+                    "template_quoted_twice"
+                  ],
+                  "passed": true,
+                  "template_sha256": "5b76d6c7bfe3b87d9acfe1d3dcd7f5f086e42ba4e1ce7ad1d37c950f5102f893"
+                }
+              }
+            ],
+            "template_length_chars": 1070
+          },
+          "BD2": {
+            "gate_accepted_occurrences": 1,
+            "passed": true,
+            "report_occurrences": {
+              "forward_report": 1
+            },
+            "self_reported_forward_check": [],
+            "template_length_chars": 847
+          }
+        },
+        "role": "calling task item 2 (first half): the mandatory sentence template appears once, as one unbroken span, in each report and each gate text (rule R7); cross-checked against each report's own self-reported check; zero research loops"
+      }
+    },
+    "id": "template_and_fields",
+    "passed": true,
+    "role": "Jung/Pauli lens, Round33 applications stage, assistant-4: the template-span and gate-field audit, calling task item 2; zero research loops; audits only, never admission evidence"
+  }
+}
