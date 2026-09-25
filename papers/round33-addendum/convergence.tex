@@ -1,0 +1,693 @@
+\section{BB2: convergence of the named constructions}
+\label{sec:bb2}
+
+\textbf{Contribution \projecttag{HNM-C-BB2}.} BB1 bounds the difference of the
+reduced densities of two boxes one comparison at a time and forms no limit.
+The BB2 contract, recorded under the title ``Hruday whole-sequence
+convergence of the named constructions, their common limit and its coarse
+translation invariance'', turns those comparisons into statements about a
+limit. It was selected after the BA2 gate and frozen together with BB1 on 24
+September 2026, before either was produced, as investigation~4 of~8
+(\repo{research/round33/advisor/selection-bb2.md}{selection note}). Because
+BB1 was still in production, BB2 uses BB1's \emph{frozen targets} as explicit
+hypotheses, and its gate was recorded after BB1's, on 25 September at 03:31
+UTC. Both directions are paired, and they differ in how the BB1 comparisons
+are assembled, recorded in an assembly field rather than as a route label.
+The forward producer telescopes nested comparisons
+(\recid{nested_telescoping}). The reverse producer, under premise isolation,
+compares any two boxes directly through their union
+(\recid{union_comparison}). Both received \texttt{AGENTS.md}, the contract and
+36 shared premises, among them the BB1 contract, the BA1 and BA2 gates, the
+AQ1 and AQ2 records and the Nachtergaele--Sims excerpt; neither read a BB1
+producer, skeptic or gate file.
+
+The contract names five items: a whole-sequence Cauchy estimate over all
+$M>N$ with the limit obtained without compactness, the common limit of F1 and
+F2, identification with every AQ1 and F2 subsequential limit, coarse
+translation invariance, and convergence of the correlation functions on the
+window $|\theta|\le8$. Its targets are $C'\le1/100000$ and
+$c'_{\rm site}\le1/200000$ for the state constants, evaluated at the
+hypothesis values, and $C_{\rm dyn}\le1/2000000000$ for the dynamics constant.
+A labelled secondary constant has target $1/8000$. The scaling brackets are
+``exactly 1'' for $C'$ and $c'_{\rm site}$ at the hypothesis values,
+$[9500,10500]$ for $C_{\rm dyn}$, $[99/100,101/100]$ for the secondary
+constants, exactly 100 for $q_2$, and no single bracket for the item-5 sum.
+The index $r_N=\lfloor(N-1)/2\rfloor$ of item~5 is frozen. The itemized error
+terms are \recid{bb1_hypothesis_constants},
+\recid{cauchy_telescoping_or_union},
+\recid{identification_with_subsequential_limits},
+\recid{translation_general_volume}, \recid{dynamics_constant_from_ba2},
+\recid{region_form_on_Lambda_rN} and \recid{arithmetic}, and the contract lists
+34 controls.
+
+\subsection{Reviewed scope}
+\label{sec:bb2-scope}
+The \repo{research/round33/advisor/bb2-gate.json}{BB2 gate} records the
+verdict \recid{accepted_within_scope}, with sub-label
+\recid{convergence_of_named_constructions} and secondary sub-label
+\recid{common_limit_of_named_constructions}. Its gate fields set
+\recid{whole_sequence_claimed}, \recid{common_limit_claimed},
+\recid{state_convergence_claimed}, \recid{translation_invariance_claimed} and
+\recid{rate_in_N_claimed} to true. The whole-sequence scope is ``reduced
+densities of the named constructions F1 and F2 on every finite region'', the
+translation scope is ``coarse translations; the limit of the named
+constructions'', and \recid{dynamics_level} is
+\recid{correlation_functions_compact_window}. The fields
+\recid{uniqueness_of_ground_state_claimed},
+\recid{gns_dynamics_equality_claimed}, \recid{uniform_in_time_claimed},
+\recid{rate_in_a_claimed}, \recid{continuum_claim},
+\recid{weak_coupling_claim} and \recid{scientific_priority_verified} are
+false. The claimed rate in $N$ is the state rate $q^{N-1}$ of item~1; the
+correlation rate holds only on a certified range (Section~\ref{sec:bb2-item5}).
+The accepted statement, quoted verbatim below in the gate's ASCII notation, is
+the scope of every claim in this section.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (model
+AQ\_patterned\_zero\_selected: SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0) with Haar product reference, 21 omitted faces per anchor
+entering as -(tau/3)W\_f in normalized units delta=alpha/8; both signs
+|tau|<=10\textasciicircum{}-8; AM2 creation expansion in each on-site cutoff
+space; cover R=\{0,e\_z\}; coarse l-infinity metric with star diameter 1 for
+states and l1 on the coarse factor lattice with F(r)=(1+r)\textasciicircum{}-4
+for dynamics; trace norm on B(H\_Y); clock theta=alpha t/hbar), with the named
+construction families F1 = AQ1 centered whole-star boxes
+Lambda\_N=[-N,N]\textasciicircum{}3 and F2 = I1 section 6 all-contained-face
+boxes with padding on the same Lambda\_N, N at least 2, with the BA2 gate
+dynamics constants, and with the BB1 hypotheses discharged by the BB1 gate
+(sha256 18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827,
+accepted\_within\_scope), which admits for each of the five comparisons c1-c5
+of the BB1 contract, at both signs, in each on-site cutoff space with
+constants independent of the cutoff and at fixed N for the untruncated ground
+vectors, the R form C q\textasciicircum{}(N-1) with q=1/64 and C about
+8.9051e-07 (polymer\_kp bound value; iterated\_split 8.9043e-07), at most
+C\_h=1/250000, and the region form c\_site |Y|
+e\textasciicircum{}\{|Y|/10\textasciicircum{}8\} q\textasciicircum{}\{d\_Y\}
+with c\_site about 8.7681e-07 (iterated\_split 8.7673e-07), at most
+c\_h=1/500000, so that every hypothesis used by either route is discharged:
+For the zero-selected patterned family at the same coupling
+|tau|<=10\textasciicircum{}-8, under the BB1 locality bounds at their frozen
+targets as hypotheses (discharged only when the BB1 gate admits constants at
+most those targets), the reduced densities of the named construction families
+F1 and F2 on centered coarse cubes converge as whole sequences, at a rate in
+N, to one common limit on every finite region; this limit coincides with every
+AQ1 subsequential limit and every F2 subsequential limit, is invariant under
+coarse translations, and has as correlation functions on |theta|<=8 the limits
+of the finite-box correlation functions; this is convergence of the named
+constructions, not uniqueness of any ground state, not a statement about
+states outside the named constructions, and not a statement uniform in the
+lattice spacing a. Constants (exact; both signs; F1 and F2; in each on-site
+cutoff space uniformly in the cutoff and, at fixed N, for the untruncated
+ground vectors; evaluated at the hypothesis values as the contract target
+specifies, and valid under the discharge because each is nondecreasing in the
+BB1 constants). Item 1: sup over M greater than N of
+||rho\textasciicircum{}\{F,M\}\_R-rho\textasciicircum{}\{F,N\}\_R||\_1 <=
+C\textquotesingle{} q\textasciicircum{}(N-1) with C\textquotesingle{}=4/984375
+(about 4.0635e-06; exact\_first\_order, nested\_telescoping, hypothesis source
+bb1\_frozen\_targets, BB1 route polymer\_kp; margin 315/128 against 1/100000),
+and for every finite complete-factor region Y inside Lambda\_N, sup over M
+greater than N of
+||rho\textasciicircum{}\{F,M\}\_Y-rho\textasciicircum{}\{F,N\}\_Y||\_1 <=
+c\textquotesingle{}\_site |Y| e\textasciicircum{}\{|Y|/10\textasciicircum{}8\}
+q\textasciicircum{}\{d\_Y\} with d\_Y=N-max\_\{y in Y\}|y|\_inf and
+c\textquotesingle{}\_site=2/984375 (about 2.0317e-06; margin 315/128 against
+1/200000); the union\_comparison route proves C\textquotesingle{}=1/250000 and
+c\textquotesingle{}\_site=1/500000 (labelled); re-evaluated at the admitted
+BB1 values (labelled, not bound), C\textquotesingle{} is about 9.0465e-07 and
+c\textquotesingle{}\_site about 8.9073e-07 (nested\_telescoping), about
+8.9051e-07 and 8.7681e-07 (union\_comparison). The limit on every finite
+region follows from this Cauchy bound and trace-class completeness, without
+compactness. Item 2: the F1 and F2 limits coincide on every finite region (BB1
+comparison c3, the fixed-N comparison of the two prescriptions). Item 3: the
+limit equals every AQ1 subsequential limit (F1) and every F2 subsequential
+limit on every finite region and inherits exactly the admitted properties of
+those states: AQ1 stationarity under T\_theta, strong continuity of the GNS
+evolution and a nonnegative generator (for F2 limits through
+BA2\textquotesingle{}s rerun of AQ1 sections 4-5), and the AQ2 statement for
+the actual AQ1 centered subsequential state, H\_phys at least
+(alpha/16)(I-P\_Omega) with a simple vacuum on the invariant-local cyclic
+completion, the full-GNS strengthening only as qualified in the AQ2 gate. Item
+4: for every coarse translation v (fine translation (4v\_x,2v\_y,v\_z),
+preserving residues and face classes) and N at least |v|\_inf+2,
+||rho\textasciicircum{}\{Lambda\_N+v\}\_R-rho\textasciicircum{}\{Lambda\_N\}\_R||\_1
+<= C\_h q\textasciicircum{}(N-|v|\_inf-1) with C\_h=1/250000 (the direct BB1
+comparison c5 of two one-prescription volumes containing
+Lambda\_\{N-|v|\_inf\}; re-evaluated at the admitted C about 8.9051e-07,
+labelled; a two-step comparison through the union is labelled only), and the
+limit is invariant under coarse translations on every finite region (region
+form of c5); non-coarse translations are rejected. Item 5: for N at least 5,
+r\_N=floor((N-1)/2), |theta| at most 8 and A in B(H\_R),
+|c\textasciicircum{}\{F,N\}\_A(theta)-c\textasciicircum{}inf\_A(theta)| <=
+||A||\textasciicircum{}2 [C\_dyn/(r\_N-1) + c\textquotesingle{}\_site
+|Lambda\_\{r\_N\}|
+e\textasciicircum{}\{|Lambda\_\{r\_N\}|/10\textasciicircum{}8\}
+q\textasciicircum{}(N-r\_N) + 2C\textquotesingle{} q\textasciicircum{}(N-1)]
+with complex-mean centering,
+c\textasciicircum{}\{F,N\}\_A(theta)=omega\textasciicircum{}\{F,N\}(A*
+T\textasciicircum{}\{F,N\}\_theta(A))-|omega\textasciicircum{}\{F,N\}(A)|\textasciicircum{}2
+and c\textasciicircum{}inf\_A(theta)=omega\_inf(A*
+T\_theta(A))-|omega\_inf(A)|\textasciicircum{}2, and
+C\_dyn=78057/622883200000000 (about 1.2532e-10; polynomial\_lieb\_robinson,
+duhamel\_inner\_f1, 2K\_F1+K\_cmp/4 from the BA2 gate values, one constant for
+both families; margin about 3.99 against 1/2000000000); the reverse per-family
+values 9261/77860400000000 (F1, duhamel\_inner\_f1, about 1.1894e-10) and
+1055961408185869563/15240701171875000000000000000 (F2, duhamel\_inner\_f2,
+about 6.9286e-11) are labelled. This inequality holds for every N at least 5.
+It gives an explicit rate in N only on the certified range 5<=N<=14000, where
+N |c\textasciicircum{}\{F,N\}\_A(theta)-c\textasciicircum{}inf\_A(theta)| <=
+K5 ||A||\textasciicircum{}2 with K5 about 6.10e-09 (about 5.96e-09 and
+5.46e-09 with the reverse F1 and F2 constants); no O(1/N) rate is asserted
+beyond that range. The bracket stays below 2 up to N=14418 and is at least 2
+at N=14419 and at every larger N, so the bound is vacuous from N=14419
+(certified here at the hypothesis values and at the admitted values alike; the
+historical assistant-2 found the same first exceedance independently at the
+hypothesis values). The finite-box correlation functions converge to
+c\textasciicircum{}inf\_A(theta) along the whole sequence of N, for every A in
+B(H\_R) and |theta| at most 8, without a rate outside the certified range (the
+inequality with any fixed r in place of r\_N gives a limsup of at most
+C\_dyn/(r-1) ||A||\textasciicircum{}2). Labelled secondary at q\_2=151552|tau|
+(592/390625 at the cap): C\textquotesingle{}\_2=625/12481056 (about
+5.0076e-05, target 1/8000) and c\textquotesingle{}\_site,2=625/24962112 (about
+2.5038e-05, no target), discharged by the BB1 secondary pair (C\_2 about
+9.689e-06 at most 1/20000 and c\_site,2 about 9.674e-06 at most 1/40000,
+iterated\_split bound values). The tau to tau/100 ratios are exactly 1 for
+C\textquotesingle{} and c\textquotesingle{}\_site at the hypothesis values
+(non-discriminating), 1953058850/194651 (about 10033.64) for C\_dyn and the
+reverse F1 value, about 10019.59 for the reverse F2 value, 1085053/1083425
+(about 1.0015) for C\textquotesingle{}\_2, and exactly 100 for q\_2. Rates are
+per coarse step in N at fixed spacing.
+\end{gatequote}
+The rest of this section derives that statement, and the limitations recorded
+by the gate close it (Section~\ref{sec:bb2-limits}).
+
+\subsection{Hypotheses and their discharge}
+\label{sec:bb2-discharge}
+\paragraph{The hypotheses.} For every BB1 comparison, both signs, each
+on-site cutoff space and, at fixed $N$, the untruncated ground vectors, with
+$N$ the smaller box size,
+\begin{equation}
+ \begin{gathered}
+ \norm{\rho^{\rm box\,1}_R-\rho^{\rm box\,2}_R}_1\le C_h\,q^{N-1},\qquad
+ \norm{\rho^{\rm box\,1}_Y-\rho^{\rm box\,2}_Y}_1\le c_h\,|Y|\,e^{|Y|/10^8}\,q^{d_Y},\\
+ C_h=\frac1{250000},\qquad c_h=\frac1{500000},
+ \end{gathered}
+ \label{eq:bb2-hypotheses}
+\end{equation}
+with $q=1/64$, and at the labelled secondary pair $q_2=151552|\tau|$,
+$C_{2h}=1/20000$ and $c_{2h}=1/40000$. These are BB1's frozen targets. Both
+producers mark every BB1-dependent statement
+\recid{conditional_on_bb1_targets} and write each BB2 state constant as an
+explicit function of $(C_h,c_h)$, nondecreasing in each and evaluated at the
+hypothesis values. A constant proved at the hypothesis values then stays
+valid for any admitted BB1 constants that are at most those values.
+
+\paragraph{The protocol.} The skeptic pre-registered the discharge in its
+pre-comparison checker, committed before it read either producer or the BB1
+gate. An item becomes unconditional only when, at both signs, some route
+proves it from comparisons admitted with a bound dominated pointwise by the
+hypothesis form and a constant at most the hypothesis value. The skeptic's
+admission record transcribes the BB1 gate into 30 anchored entries: 10 bound
+values, 10 iterated\_split values and 10 secondary cells. Each entry must be
+a verbatim substring of the gate's text, including its constant, bound shape,
+comparison label, signs and regimes. The record is cross-checked against the
+BB1 review's table in 40 cells (five comparisons, two forms, two cutoff
+regimes, two signs). The BB1 gate admits the following values
+(Section~\ref{sec:bb1-bounds}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{BB1 admitted values used for the discharge; each has exactly the
+hypothesis shape, for every comparison, both signs and both cutoff regimes.}
+\label{tab:bb2-admitted}
+\begin{tabular}{llllr}
+\toprule
+BB1 constant & Admitted value & Route & Hypothesis & Margin\\
+\midrule
+$C$ & $\approx8.9051\times10^{-7}$ & polymer\_kp & $C_h=1/250000$ & 4.49\\
+$c_{\rm site}$ & $\approx8.7681\times10^{-7}$ & polymer\_kp & $c_h=1/500000$ & 2.28\\
+$C_2$ (labelled secondary) & $\approx9.689\times10^{-6}$ & iterated\_split & $C_{2h}=1/20000$ & 5.16\\
+$c_{{\rm site},2}$ (labelled secondary) & $\approx9.674\times10^{-6}$ & iterated\_split & $c_{2h}=1/40000$ & 2.58\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Item by item.} Item~1 needs c1 and c2 (forward) or c4 (reverse) in
+both forms and both families; item~2 needs item~1 and c3; item~3 needs item~2;
+item~4 needs c5 in both forms and item~1; item~5 needs items~1 and~2 (the $R$
+form, and the region form on $\Lambda_{r_N}$) together with BA2. Every one is
+discharged in full at both signs, and both routes are available for every
+family and form. The producers' own maps of what they use are discharged
+cell by cell: the forward's 104 primary and 24 secondary cells, and the
+reverse's 68 primary and 24 secondary cells. The reverse's item-5 map lists
+only item~1, but its F2 part also needs c3; that reading was run as well and
+its 12 cells are discharged. Two labelled runs support the discharge. The
+secondary pair discharges every item at $q_2=592/390625$. The
+self-contained iterated\_split values of BB1 discharge every item too, so the
+discharge does not depend on the post-hoc Kotecký--Preiss check of BB1's
+polymer route. Eighteen discharge controls, run in memory on edited copies
+of the gate and the record, behave as required. Eight downgrade the
+verdict (for example, dropping c5 drops item~4). One is accepted, because c4
+alone may be dropped: the forward route does not need it. Nine are refused
+outright.
+
+\subsection{Item 1: whole-sequence Cauchy estimates and the limit}
+\label{sec:bb2-item1}
+\paragraph{Forward: nested telescoping.} For $F\in\{F1,F2\}$, $N\ge2$ and every
+$M>N$, write $\rho^{F,M}_Y-\rho^{F,N}_Y$ as the sum of the nested steps
+$\rho^{F,k+1}_Y-\rho^{F,k}_Y$, $k=N,\ldots,M-1$. Each step is the BB1
+comparison c1 or c2 with smaller box $\Lambda_k$, and for
+$Y\subset\Lambda_N$ its exponent is $d_Y+(k-N)$. Summing the full geometric
+tail gives
+\begin{equation}
+ \begin{gathered}
+ \sup_{M>N}\norm{\rho^{F,M}_R-\rho^{F,N}_R}_1\le C'q^{N-1},\\
+ \sup_{M>N}\norm{\rho^{F,M}_Y-\rho^{F,N}_Y}_1\le c'_{\rm site}|Y|e^{|Y|/10^8}q^{d_Y},
+ \end{gathered}
+ \label{eq:bb2-cauchy}
+\end{equation}
+with
+\begin{equation}
+ C'=\frac{C_h}{1-q}=\frac{64}{63}C_h=\frac4{984375}\approx4.0635\times10^{-6},\qquad
+ c'_{\rm site}=\frac{64}{63}c_h=\frac2{984375}\approx2.0317\times10^{-6}.
+ \label{eq:bb2-Cprime}
+\end{equation}
+Each meets its target with margin $315/128=2.4609375$. The bound is the limit
+of the partial sums and is not attained, and nothing of the tail is dropped.
+
+\paragraph{Reverse: one direct comparison.} The reverse compares every $M$
+with $N$ directly. For two volumes $V_1,V_2$ of one prescription containing
+$\Lambda_n$, the triangle inequality through the union $U=V_1\cup V_2$ costs
+the assembly factor $[V_1\ne U]+[V_2\ne U]$. For nested centered cubes the
+union is the larger cube, so the factor is 1 and $C'=C_h=1/250000$,
+$c'_{\rm site}=c_h=1/500000$, each with margin $5/2$. The gate binds the
+forward values, the larger ones, which are valid under either route's
+discharge since $(64/63)C_h\ge C_h$; the reverse values are labelled.
+Re-evaluated at the admitted BB1 constants, $C'$ is about
+$9.0465\times10^{-7}$ and $c'_{\rm site}$ about $8.9073\times10^{-7}$ on the
+forward assembly, and about $8.9051\times10^{-7}$ and $8.7681\times10^{-7}$ on
+the reverse. These re-evaluated values are labelled, not bound.
+
+\paragraph{The limit without compactness.} For a fixed finite region $Y$ the
+whole sequence $(\rho^{F,N}_Y)_N$ is Cauchy in the Banach space of trace-class
+operators on $\mathcal H_Y$, so it converges in trace norm; no compactness,
+subsequence or diagonal extraction is used. Positivity and unit trace are
+closed conditions. The partial trace is a trace-norm contraction, so the
+limits on nested regions are compatible. They define a locally normal state
+on the local algebra, which extends by norm continuity to the quasi-local
+algebra, the norm completion of the local algebra in the Nachtergaele--Sims
+setting. Letting $M\to\infty$ in \eqref{eq:bb2-cauchy} gives
+$\norm{\rho^{F,N}_R-\rho^{F,\infty}_R}_1\le C'q^{N-1}$ and the region analogue.
+The order of limits is fixed. The bound holds in each cutoff space
+uniformly in $L$. Then $L\to\infty$ at fixed $N$ and $M$, by AV1's
+cutoff-vector removal (and the AY1 itemization for F2), which the closed
+trace-norm ball survives. Only then is the supremum over $M$ taken and $N$
+sent to infinity. Two exact fixtures mark what is not enough. The sequence
+$\mathrm{diag}(\tfrac12\pm(-1)^N\delta)$ lies in a one-state ball in every
+box yet has two subsequential limits. A zigzag walk with steps $1/(n+1)$
+satisfies every $N$-to-$N+1$ bound and keeps oscillating.
+
+\subsection{Items 2 and 3: the common limit and its identification}
+\label{sec:bb2-items23}
+\paragraph{Item 2.} For every finite region $Y$ and $N$ large enough, the
+fixed-$N$ comparison c3 of the two prescriptions on the same $\Lambda_N$,
+with item~1 twice, gives
+\begin{equation}
+ \norm{\rho^{F1,\infty}_Y-\rho^{F2,\infty}_Y}_1\le(2c'_{\rm site}+c_h)\,|Y|\,e^{|Y|/10^8}\,q^{d_Y},
+ \label{eq:bb2-common}
+\end{equation}
+and $(2C'+C_h)q^{N-1}$ on $R$. The left side does not depend on $N$, so the
+two limits coincide on every finite region. This common state,
+$\omega_\infty$, is \emph{the limit of the named constructions}:
+$\omega_\infty(A)=\lim_N\omega^{F1,N}(A)=\lim_N\omega^{F2,N}(A)$ for every
+quasi-local $A$. Nothing is said about other boundary conditions or other
+states.
+
+\paragraph{Item 3.} An AQ1 subsequential limit is a state whose local
+densities are trace-norm limits of the F1 densities along some subsequence
+$N_k$. Every subsequence of a convergent sequence has the same limit, so
+every AQ1 subsequential limit equals $\omega_\infty$ on every finite region,
+hence on the quasi-local algebra. The same holds for every F2 subsequential
+limit of AY1's own extraction, by item~2. The set of AQ1 subsequential limits,
+nonempty by AQ1's compactness, is therefore the single state $\omega_\infty$,
+whichever subsequence was chosen. Only after this identification does
+$\omega_\infty$ inherit properties, and in its own GNS representation, which
+is unitarily equivalent to AQ1's because the states are equal. It inherits
+exactly the admitted ones:
+\begin{itemize}
+\item from AQ1: a compatible, locally normal, gauge-invariant state,
+ stationary under $T_\theta$, with a strongly continuous GNS evolution and a
+ nonnegative self-adjoint physical generator reduced by the physical cyclic
+ space; for F2 limits the same list comes through BA2's rerun of AQ1~\S\S4--5,
+ which now concerns the same state and the same dynamics;
+\item from AQ2, for the actual AQ1 centered subsequential state: the complete
+ original-endpoint gauge-fixed space equals the invariant-local cyclic
+ completion and reduces the generator, and on it
+ $H_{\rm phys}\ge(\alpha/16)(I-P_\Omega)$ as a quadratic-form inequality, with
+ a simple vacuum on this completion;
+\item the full-GNS strengthening of that inequality only as qualified in the
+ AQ2 gate, which uses AM2's separately reviewed full-Hilbert finite gap.
+\end{itemize}
+Not inherited: uniqueness of any ground state, anything about states outside
+the named constructions, equality of GNS dynamics of different states, an
+unqualified full-GNS gap, and translation invariance, which AQ1 and AQ2
+exclude and which is proved separately as item~4. The reverse also lists the
+AQ2 Wilson-variance witness of the same state; the gate's list does not
+include it.
+
+\subsection{Item 4: coarse translations}
+\label{sec:bb2-item4}
+\paragraph{Covariance.} A coarse translation $v$ is the fine translation
+$t_v=(4v_x,2v_y,v_z)$. It maps each fine tail $(4i+r,2j+q,k)$ to
+$(4(i+v_x)+r,2(j+v_y)+q,k+v_z)$, so the links owned by $b$ go to the links
+owned by $b+v$ with the same residues, every face goes to a face of the same
+class, and owner sets are translated. The site relabelling $T_v$ therefore
+satisfies $T_v\widehat H^P_VT_v^*=\widehat H^P_{V+v}$ for both prescriptions,
+in each cutoff space; the ground states are simple, so
+$\rho^{V+v}_{Y+v}=T_v\rho^V_YT_v^*$.
+
+\paragraph{The bound.} For $N\ge|v|_\infty+2$ the volumes $\Lambda_N+v$ and
+$\Lambda_N$ both contain $\Lambda_{N-|v|_\infty}$, but for $v\ne0$ they are not
+nested and their union is not a centered cube. The direct BB1 comparison c5
+of two one-prescription volumes containing $\Lambda_{N-|v|_\infty}$, used by
+both producers, gives
+\begin{equation}
+ \norm{\rho^{\Lambda_N+v}_R-\rho^{\Lambda_N}_R}_1\le C_h\,q^{N-\norm v_\infty-1},\qquad
+ C_h=\frac1{250000},
+ \label{eq:bb2-translation}
+\end{equation}
+with the hypothesis constant itself. Re-evaluated at the admitted $C$, it is
+about $8.9051\times10^{-7}$ (labelled). A two-step comparison through the
+union, with factor 2, is labelled only; the skeptic notes that it is valid
+but looser than the available $C_h(1+q^{|v|})$. The region form of c5 gives
+$|\omega^{P,N}(\alpha_v(A))-\omega^{P,N}(A)|\le c_h|Y|e^{|Y|/10^8}
+q^{N-|v|_\infty-\max_{y\in Y}\norm y_\infty}\norm A\to0$ for $A\in B(\mathcal H_Y)$,
+so with item~1 the limit is invariant under every coarse translation, on
+every finite region and on the quasi-local algebra. Nested cubes alone could
+not give this: a covariant one-dimensional domain-wall fixture has constant
+nested marginals and a translated marginal at trace distance 2 for every $N$.
+
+\paragraph{Non-coarse shifts are rejected, face by face.} Of the 64 fine
+translations of the period window $[0,8)\times[0,4)\times[0,2)$, exactly 8
+preserve the selected set, every face class and the owner map, namely
+$(4v_x,2v_y,v_z)$ with $v\in\{0,1\}^3$. The witness $t=(1,0,0)$ maps the
+selected $xy$ face at $r=2$, $q=0$ to the class $r=3$, $q=0$, which is omitted
+with owner set $\{0,e_x\}$. Similarly $(0,1,0)$ maps the selected row to an
+omitted one, and $(2,0,0)$ maps $r=1$ to the omitted $r=3$. Nothing is claimed
+for such shifts. The check must be made face by face. A per-anchor histogram
+of owner types is the same dictionary at every anchor, so a histogram-level
+check accepts all 64 translations, including the 56 non-coarse ones. The
+skeptic's pitfall fixture and the historical assistant's enumeration both
+show this, and neither producer uses such a check. The forward checks role,
+class and a constant owner shift face by face on a fine window. The reverse
+checks all 64 translations.
+
+\subsection{Item 5: correlation functions on the window}
+\label{sec:bb2-item5}
+\paragraph{The bound.} For $A\in B(\mathcal H_R)$ put
+\begin{equation}
+ c^{F,N}_A(\theta)=\omega^{F,N}\bigl(A^*T^{F,N}_\theta(A)\bigr)-|\omega^{F,N}(A)|^2,\qquad
+ c^\infty_A(\theta)=\omega_\infty\bigl(A^*T_\theta(A)\bigr)-|\omega_\infty(A)|^2 ,
+ \label{eq:bb2-correlations}
+\end{equation}
+centered with the complex mean; centering with $\omega(A)^2$ is rejected,
+since at $\theta=0$ it is not the variance. $T_\theta(A)$ lies in the
+quasi-local algebra by Nachtergaele--Sims Theorem~4.1
+(Section~\ref{sec:ba2-ns}). With the local approximant
+$X_r=T^{F1,r}_\theta(A)\in B(\mathcal H_{\Lambda_r})$ and $r=r_N$, the
+difference splits into four terms:
+\begin{itemize}
+\item the finite-box evolution against $X_r$, bounded by the BA2 Cauchy
+ constant $K_{\rm F1}/(r-1)$, plus for F2 the BA2 comparison $b(N)$;
+\item the state difference on the region $\Lambda_r$ that the approximant
+ reaches, not only on $R$, bounded by the region form of item~1;
+\item $X_r$ against the limit dynamics, bounded by $K_{\rm F1}/(r-1)$;
+\item the means, bounded by $2C'q^{N-1}$.
+\end{itemize}
+The new lemma $(5N+1)(r_N-1)\le N^3/4$ for $N\ge5$ turns
+$b(N)=K_{\rm cmp}(5N+1)N^{-3}$ into $(K_{\rm cmp}/4)/(r_N-1)$. It follows from
+$2(r_N-1)\le N-3$ and
+\begin{equation}
+ N^3-2(5N+1)(N-3)=N^3-10N^2+28N+6=N(N-5)^2+3N+6>0 ,
+ \label{eq:bb2-lemma}
+\end{equation}
+an identity the skeptic used to re-prove it; the lemma was also checked
+exactly for $N<4000$. The result, for $N\ge5$, $|\theta|\le8$, both families
+and both signs, is
+\begin{equation}
+ \begin{gathered}
+ \bigl|c^{F,N}_A(\theta)-c^\infty_A(\theta)\bigr|\le\norm A^2\Bigl[
+ \frac{C_{\rm dyn}}{r_N-1}+c'_{\rm site}\,|\Lambda_{r_N}|\,e^{|\Lambda_{r_N}|/10^8}q^{N-r_N}
+ +2C'q^{N-1}\Bigr],\\
+ C_{\rm dyn}=2K_{\rm F1}+\frac{K_{\rm cmp}}4=\frac{78057}{622883200000000},
+ \end{gathered}
+ \label{eq:bb2-item5}
+\end{equation}
+with $C_{\rm dyn}\approx1.2532\times10^{-10}$ (tier
+\recid{polynomial_lieb_robinson}, route \recid{duhamel_inner_f1}, one constant
+for both families, margin about $3.99$). The three constants are separate,
+each checked against its own target. The reverse gives one constant per
+family, $2K$ from the BA2 gate, and these are labelled:
+$C_{\rm dyn}[F1]=9261/77860400000000\approx1.1894\times10^{-10}$
+(\recid{duhamel_inner_f1}, margin about $4.20$) and
+\[
+ C_{\rm dyn}[F2]=\frac{1055961408185869563}{15240701171875000000000000000}\approx6.9286\times10^{-11}
+\]
+(\recid{duhamel_inner_f2}, margin about $7.22$). At $N=5$ the forward bracket
+is about $1.0946\times10^{-9}$, with the region term dominant; at $N=10$ it is
+about $4.179\times10^{-11}$, with the dynamics term dominant.
+
+\paragraph{The rate, and where it stops.} The inequality holds for every
+$N\ge5$, but its rate is explicit only on a certified range. On
+$5\le N\le14000$, $N\le10(r_N-1)$ and the region term is at most
+$c'_{\rm site}g(N)$ with $g(x)=x^4e^{x^3/10^8}8^{-(x+1)}$. The function $\ln g$
+has a convex derivative that is negative at 5, so $g$ decreases and then
+increases on the range, and $g(14000)\le g(5)$ exactly. Hence
+\begin{equation}
+ \begin{gathered}
+ N\,\bigl|c^{F,N}_A(\theta)-c^\infty_A(\theta)\bigr|\le K_5\norm A^2\qquad(5\le N\le14000),\\
+ K_5=10C_{\rm dyn}+c'_{\rm site}\,g(5)+10C'q^4\approx6.10\times10^{-9},
+ \end{gathered}
+ \label{eq:bb2-K5}
+\end{equation}
+about $5.96\times10^{-9}$ and $5.46\times10^{-9}$ with the reverse F1 and F2
+constants. The reverse's own block certificate, about $1.415\times10^{-8}$,
+is valid but looser. Beyond the range the frozen region factor takes over.
+$|\Lambda_{r_N}|$ is of order $N^3$ inside $e^{|\Lambda_{r_N}|/10^8}$ and
+eventually beats $q^{N-r_N}$. The skeptic certifies with logarithmic
+enclosures that the bracket stays below 2 up to $N=14418$ (the tightest point
+is $N=14417$). It is at least 2 at $N=14419$ and at every larger $N$, for the
+forward and both reverse constant sets, at the hypothesis and at the admitted
+values. Since each centered correlation has modulus at most $\norm A^2$, the
+bound is vacuous from $N=14419$. The historical assistant found the same
+first exceedance by its own scan, and the reverse certified vacuity at
+$N=14421$. The finite-box correlation functions still converge to
+$c^\infty_A(\theta)$ along the whole sequence, uniformly for $|\theta|\le8$,
+but without a rate outside the certified range. The inequality with any fixed
+$r\ge2$ in place of $r_N$ gives
+$\limsup_N|c^{F,N}_A-c^\infty_A|\le C_{\rm dyn}\norm A^2/(r-1)$, and $r$ is
+arbitrary. This does not re-choose $r_N$ for any quantitative statement.
+
+\paragraph{The rejected overclaim and defect D12.} The forward report states
+that the rate is $O(1/N)$ while the state terms decay geometrically, the cube
+volume growing only like $N^3$. That paragraph is false from $N=14419$ and is
+rejected; it enters no gate text. The forward checker evaluates item~5 only
+for $N\le59$, and its enclosure $e^x\le1/(1-x)$ cannot be applied from
+$N=465$. The forward's inequality and constants are correct, and its frozen
+files are retained as evidence. The reverse producer found the problem (its
+wording finding W1). The contract's required item~5 asks for a rate in $N$ of
+$O(1/N)$, which the frozen $r_N$ and region form allow only on a certified
+range. The skeptic's own pre-comparison derivation repeated the unqualified
+statement, and it records the defect against itself as D12. The gate text
+therefore claims no correlation rate beyond the certified range. The
+skeptic's planning advice notes that a region form without the exponential,
+such as BB1's iterated\_split form $c_{\rm site}\sum_{y\in Y}q^{N-\norm
+y_\infty}$, would give a rate for every $N$; that is a candidate goal, not a
+result.
+
+\paragraph{What item 5 does not say.} Only the correlation numbers converge.
+$\omega^{F,N}$ and $\omega_\infty$ are different states, and one automorphism
+group can carry two invariant states with different correlations (the fixture
+with $(3\pm4i)/5$), so no equality of GNS dynamics of different states is
+asserted. The BA2 constants hold for $|\theta|\le8$ and grow with the window,
+so nothing is uniform in time.
+
+\subsection{Scaling, the secondary pair and the error ledger}
+\label{sec:bb2-ledger}
+At the hypothesis values $C'$ and $c'_{\rm site}$ do not depend on $\tau$:
+their ratio under $\tau\to\tau/100$ is exactly 1, which meets the bracket but
+cannot discriminate. The linear $\tau$-scaling of the underlying BB1 constants,
+about 100.648, is recorded by BB1. The dynamics constant has the structure of
+the BA2 constants, $C_{\rm dyn}=1248912\,\tau^2/(1-338688|\tau|)$, with ratio
+$1953058850/194651\approx10033.64$ (the reverse F1 value shares it, and the
+reverse F2 value gives about $10019.59$), inside $[9500,10500]$. At the
+labelled secondary pair $q_2=151552|\tau|=592/390625$, the forward gives
+$C'_2=625/12481056\approx5.0076\times10^{-5}$, below $1/8000$ with margin
+2.4962112, and $c'_{{\rm site},2}=625/24962112\approx2.5038\times10^{-5}$,
+which has no target. Its ratio is $1085053/1083425\approx1.0015$, and $q_2$
+scales by exactly 100. The BB1 secondary pair discharges them.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The preregistered BB2 error terms, added linearly.}
+\label{tab:bb2-ledger}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+\toprule
+Term & Entry\\
+\midrule
+\recid{bb1_hypothesis_constants} & $C_h=1/250000$ and $c_h=1/500000$ at
+$q=1/64$ (secondary $1/20000$ and $1/40000$ at $q_2$), discharged by the BB1
+gate\\
+\recid{cauchy_telescoping_or_union} & forward factor $1/(1-q)=64/63$ from the
+full geometric tail; reverse factor 1 for nested cubes (2 for non-nested
+pairs, labelled)\\
+\recid{identification_with_subsequential_limits} & 0: exact, since every
+subsequence of a convergent sequence has the same limit\\
+\recid{translation_general_volume} & $C_hq^{N-|v|_\infty-1}$ on $R$ and the
+region form of c5 on $Y$, factor 1 by the direct comparison\\
+\recid{dynamics_constant_from_ba2} & $C_{\rm dyn}=2K_{\rm F1}+K_{\rm cmp}/4$
+from the BA2 gate values, with the lemma \eqref{eq:bb2-lemma}\\
+\recid{region_form_on_Lambda_rN} &
+$c'_{\rm site}|\Lambda_{r_N}|e^{|\Lambda_{r_N}|/10^8}q^{N-r_N}$ with
+$|\Lambda_r|=(2r+1)^3$; the source of the certified range\\
+\recid{arithmetic} & 0: exact rationals and directed enclosures of the
+exponential\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Evidence and review}
+\label{sec:bb2-evidence}
+Each producer implements all 34 contract controls as damaging mutations: the
+forward checker runs 52 exact checks with 122 rejected mutations, the reverse
+59 exact checks with 162. The skeptic's pre-comparison package (81 checks, 38
+controls, 142 rejected mutations) was committed after the forward commit and
+before the reverse commit, so the forward could not have read it. The
+post-comparison checker runs 11 checks. The review adds 68 validator
+weakenings, one per control per producer, and 13 must-abort source edits,
+all caught. It also records 6 silent edits: three are caught only by the
+review's value validator and three by the reverse checker itself. The two
+unmutated copies reproduce the frozen results. The 18 discharge controls are
+described above. All four producer replays reproduce the frozen outputs byte
+for byte under normal and optimized Python. Both closures (42 files each)
+verify, and each producer holds exactly its 38 declared inputs.
+
+Both producers disclosed name-only exposures to untracked file names of other
+agents after their first freeze; they opened none of them, and the state
+constants are fixed by the contract. One of the skeptic's replay outputs was
+written outside the checkout by an empty shell variable. It is identical to
+the others and is disclosed. The review found no blocking issue for the
+loop. Its recorded findings include:
+\begin{itemize}
+\item the rejected forward rate wording, and the forward's conditional
+ gate-field value, which the Jung assistant found outside the closed
+ vocabulary;
+\item the reverse's item-5 map, which omits c3 for its F2 part, and its
+ labelled union fallback for item~4;
+\item the non-discriminating ``exactly 1'' brackets;
+\item the contract readings of the union route (D2), the composite $C_{\rm
+ dyn}$ (D3, D10), the untargeted $c'_{{\rm site},2}$ (D5), inherited control
+ texts (D6), the BB1 definition of $d_Y$ (D7), the missing frame for limited
+ outcomes (D9) and the scope of the item-3 inheritance (D4, D11).
+\end{itemize}
+
+\paragraph{Meaning.} BB2 establishes convergence of the named constructions.
+The reduced densities of F1 and F2 converge as whole sequences, at the rate
+$q^{N-1}$ per coarse $\ell^\infty$ step at fixed spacing, to one common limit
+on every finite region. That limit is every AQ1 and every F2 subsequential
+limit and is invariant under coarse translations, and its correlation
+functions on $|\theta|\le8$ are the limits of the finite-box ones. It is not
+uniqueness of any ground state and says nothing about states outside the
+named constructions. It is not equality of GNS dynamics of different states,
+and nothing in it is uniform in time or in the lattice spacing.
+
+\subsection{Limitations recorded by the gate}
+\label{sec:bb2-limits}
+The BB2 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Scope: only the zero-selected patterned family (selected triple (0,0,0),
+Haar reference), fixed spacing, |tau|<=10\textasciicircum{}-8, the named
+families F1 and F2 on centered cubes Lambda\_N with N at least 2 and the limit
+of the named constructions, the cover R and finite complete-factor regions,
+coarse translations and the window |theta|<=8; nothing transfers to other
+boundary conditions, states outside the named constructions, nonzero selected
+triples, literal vertex boxes, weak coupling or the continuum; the constants
+are uniform in N at fixed spacing and in the cutoff, never in the lattice
+spacing.
+\item Convergence of the named constructions only: no uniqueness of any ground
+state and no statement about any other infinite-volume state; the limit is
+identified only with the AQ1 and F2 subsequential limits and inherits only the
+listed admitted properties (the full-GNS strengthening only as qualified in
+the AQ2 gate); no equality of GNS dynamics of different states and no
+uniform-in-time statement.
+\item Discharge: both routes prove items 1-5 from the BB1 frozen targets
+C\_h=1/250000 and c\_h=1/500000 at q=1/64 as hypotheses. The BB1 gate (sha256
+18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827, commit
+eef57b4) admits C about 8.9051e-07 and c\_site about 8.7681e-07 for all five
+comparisons, both forms, both cutoff regimes and both signs. The skeptic
+discharge (the protocol committed in bb2\_check.py before either producer or
+the gate was read, applied to the anchored admission record
+bb2-bb1-admission.json and cross-checked with the BB1 review table in 40
+cells) finds every item full and every cell of both
+producers\textquotesingle{} hypothesis maps discharged. The bound constants
+are evaluated at the hypothesis values; the values re-evaluated at the
+admitted constants are labelled only.
+\item The discharge carries the BB1 limitations: the polymer\_kp bound values
+rest on the Kotecky-Preiss criterion, whose citation was checked post hoc
+against the committed Ueltschi excerpt and found covered; the self-contained
+iterated\_split values discharge every item as well (labelled run). F2 volumes
+other than centred cubes in c5 (item 4) rest on the AY1 itemization as a
+reviewed local reading, not a gated statement.
+\item Item-5 rate (reverse W1; skeptic defect D12): contract required item 5
+says the rate in N is O(1/N), but with r\_N and the region form frozen the
+region term on Lambda\_\{r\_N\} carries
+e\textasciicircum{}\{|Lambda\_\{r\_N\}|/10\textasciicircum{}8\} with
+|Lambda\_\{r\_N\}| about N\textasciicircum{}3, which eventually outgrows
+q\textasciicircum{}(N-r\_N). The rate holds only on the certified range
+5<=N<=14000 and the bound is vacuous from N=14419, so that clause of the
+requirement is met on the certified range only. The skeptic\textquotesingle{}s
+own pre-comparison derivation (section 8) stated the rate without the range,
+and its pre-freeze and pre-comparison reviews missed the defect; the reverse
+producer found it.
+\item Rejected forward overclaim: the forward report\textquotesingle{}s rate
+paragraph (the rate in N is O(1/N) while the state terms decay geometrically
+in N, the cube volume growing only like N\textasciicircum{}3) and the matching
+results text are rejected, because the region term is at least 2 from N=14419
+on; the forward checker evaluates item 5 only for N<=59, and its enclosure
+e\textasciicircum{}x<=1/(1-x) is unusable from N=465. The
+forward\textquotesingle{}s item-5 inequality and constants are correct; the
+frozen forward files are retained as evidence and the rejected wording enters
+no gate text.
+\item Constants are upper bounds only; the minus-sign values replay the same
+|tau| formula. C\textquotesingle{} and c\textquotesingle{}\_site at the
+hypothesis values do not depend on tau (ratio exactly 1, non-discriminating);
+the linear tau-scaling of the BB1 constants is recorded by BB1 (about
+100.648). The dynamics constant is BA2\textquotesingle{}s, and the correlation
+bound holds per fixed local A on |theta|<=8 only.
+\item Contract wording read as follows: union\_comparison is one direct
+application of c4 or c5 (a two-step comparison through a third volume is
+labelled, and the reverse\textquotesingle{}s labelled item-4 fallback 2C\_h is
+valid but looser than the available C\_h(1+q\textasciicircum{}|v|)); C\_dyn is
+bound as the forward\textquotesingle{}s single-route constant with the reverse
+per-family values labelled (D3, D10); c\textquotesingle{}\_site,2 has no
+target (D5); d\_Y is the BB1 definition (D7); no frame for limited outcomes
+(D9, moot at this verdict); several inherited control texts were written for
+BA2 or BB1 (D6); the item-3 inheritance is read within the admitted scope (D4,
+D11).
+\item Independence is limited to derivations, constants and code: all agents
+are correlated model agents; the frozen targets, the brackets and the
+conditional semantics came from the skeptic\textquotesingle{}s BB pre-freeze
+review; the skeptic pre-comparison package was committed after the forward
+commit and before the reverse commit; isolation is verified for repository
+inputs only, and both producers disclosed name-only exposures to other
+agents\textquotesingle{} file names.
+\item Scientific priority is unverified.
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round33/forward/bb2/report.md}{BB2 forward},
+\repo{research/round33/reverse/bb2/report.md}{BB2 reverse},
+\repo{research/round33/skeptic/bb2.md}{independent model-agent review}, the
+\repo{research/round33/skeptic/bb2-bb1-admission.json}{BB1 admission
+record} and the \repo{research/round33/contracts/bb2.json}{frozen contract}.
+With BB1 and BB2 gated, sub-round~2 is complete.
