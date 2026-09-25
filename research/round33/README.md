@@ -8,7 +8,7 @@ The cycle starts from merged Round32 commit `519a9a2a26201422a8bfa9e3a83f9129b66
 |---|---|---|---|
 | 1 | BA1 | accepted_within_scope (boundary_decay_rate_only; static_not_dynamic) | Boundary change moves the AM2 coefficients on supports meeting R by at most K q^(N-1): K about 4.38e-7 at q=1/64, about 2.43e-5 at q=37888\|tau\|; both routes, every comparison, both signs, uniform in the cutoff; coefficients only, not the state |
 | 1 | BA2 | accepted_within_scope (dynamics_on_compact_windows) | F1 and F2 Heisenberg evolutions on R differ by at most about 2.55e-11 (5N+1)/N^3 for \|theta\| at most 8; Cauchy estimates at O(1/N) in N; the padded family's limit dynamics is AQ1's; algebraic dynamics only |
-| 2 | BB1 | (produced: both routes frozen; skeptic review in progress) | |
+| 2 | BB1 | accepted_within_scope (boundary_decay_rate_only; static_not_dynamic) | Reduced densities of the named constructions on R differ by at most C q^(N-1), C about 8.91e-7 at q=1/64, and on regions Y by c_site\|Y\|e^{\|Y\|/10^8}q^{d_Y}, c_site about 8.77e-7; every comparison, both signs, each cutoff space and untruncated at fixed N; polymer expansion and recursive split; per comparison, not a limit |
 | 2 | BB2 | (produced: both routes frozen; review stage 1 done; discharge awaits the BB1 gate) | |
 | 3 | BC1 | (planned) | |
 | 3 | BC2 | (planned) | |
