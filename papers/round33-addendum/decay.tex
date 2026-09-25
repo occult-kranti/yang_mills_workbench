@@ -1,0 +1,787 @@
+\section{BA1: boundary decay of the AM2 creation coefficients}
+\label{sec:ba1}
+
+\textbf{Contribution \projecttag{HNM-C-BA1}.} The BA1 contract, recorded under
+the title ``Hruday boundary decay of the AM2 creation coefficients for the
+named constructions'', was frozen before production on 24 September 2026 as
+investigation~1 of~8. It asks how far a change of the box boundary can move
+the AM2 creation coefficients on supports meeting the cover $R$, for the two
+named families F1 and F2 of Section~\ref{sec:families}. Two routes were
+assigned
+(\repo{research/round33/advisor/selection-ba1.md}{selection note}). The
+forward producer uses a diameter-weighted anchored norm that pays a fixed loss
+once per interaction term, together with a difference weight that grows with
+distance from the boundary source (route \recid{weighted_norm}). The reverse
+producer, under premise isolation, continues the AM2 fixed point to complex
+couplings, counts the order at which a distant term can enter, and applies
+Cauchy's estimate in maximum-modulus form (route \recid{analytic_disc}). The
+routes share the AM2 majorant and differ in the decay mechanism. Both
+producers received the same 27 inputs: \texttt{AGENTS.md}, the contract and
+25 shared premises, among them the AM2, AQ1, AV1, AW1, AY1 and AY2 records and
+the I1 dictionary.
+
+The contract froze two (rate, constant) pairs. The headline pair is $q=1/64$
+with target $K\le1/2000000$ at the \recid{exact_first_order} tier, where
+$q=1/64$ is a chosen ratio realized by the weight $w=64$ or the disc radius
+$64|\tau|$, not the ball radius $R_a$ used as a per-step ratio. The floor
+pair is the per-step ball ratio $q_{\min}=37888|\tau|=148/390625$ at the cap,
+with target $K\le1/12$. The \recid{crude_majorant} tier at $q=1/64$ is
+reported, not targeted. The scaling brackets are $[95,105]$ for the headline
+constant, $[99/100,101/100]$ for the floor constant and exactly 100 for
+$q_{\min}$. The itemized error terms are \recid{weighted_contraction_loss},
+\recid{boundary_source_terms}, \recid{order_versus_distance_count},
+\recid{exact_first_order_remainder}, \recid{cutoff_uniformity} and
+\recid{arithmetic}, and the contract lists 37 controls.
+
+\subsection{Reviewed scope}
+\label{sec:ba1-scope}
+The \repo{research/round33/advisor/ba1-gate.json}{BA1 gate} records the
+verdict \recid{accepted_within_scope}, with sub-label
+\recid{boundary_decay_rate_only} and secondary sub-label
+\recid{static_not_dynamic}. Its accepted statement, quoted verbatim below in
+the gate's ASCII notation, is the scope of every claim in this section. In it
+\texttt{R=1/64} is the anchored radius $R_a$, while \texttt{R=\{0,e\_z\}} is the
+cover. The BA1 gate was recorded at 23:11 UTC, three minutes after the BA2
+gate; the investigation numbers follow the plan, not the order of the gates.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (model
+AQ\_patterned\_zero\_selected: SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0) with Haar product reference, 21 omitted faces per anchor
+entering as -(tau/3)W\_f in normalized units delta=alpha/8; both signs
+|tau|<=10\textasciicircum{}-8; AM2 creation expansion with J<=28|tau|, R=1/64,
+G(t)=16e\textasciicircum{}\{8t\}(1+10t); cover R=\{0,e\_z\}; coarse l-infinity
+metric with star diameter d\_X=1), with the named construction families F1 =
+AQ1 centered whole-star boxes Lambda\_N=[-N,N]\textasciicircum{}3 and F2 = I1
+section 6 all-contained-face boxes with padding on the same Lambda\_N, N at
+least 2: For the zero-selected patterned family at the same coupling
+|tau|<=10\textasciicircum{}-8, and for the named construction families F1
+(centered whole-star boxes) and F2 (all-contained-face boxes with padding) on
+centered coarse cubes, the AM2 creation coefficients in each on-site cutoff
+space, on supports meeting the cover R, differ between two boxes of the named
+constructions by at most K q\textasciicircum{}(N-1) in the anchored norm,
+uniformly in the cutoff, where N is the smaller box size; this is decay of the
+coefficients of the named constructions at a rate in N, not decay of the
+reduced density, not a statement about untruncated creation coefficients, not
+uniqueness of any ground state, and not a statement uniform in the lattice
+spacing a. Constants (exact, both signs, every comparison of the contract: F1
+on Lambda\_N versus Lambda\_(N+1), F2 on Lambda\_N versus Lambda\_(N+1), F1
+versus F2 on the same Lambda\_N, any two centered boxes of size at least N and
+any two complete-factor volumes of one prescription containing Lambda\_N):
+headline pair q=1/64 with K=49/111790368 (about 4.3832e-7; exact\_first\_order
+tier, analytic\_disc route on the disc of radius 64|tau|; margin about 1.1407
+against the frozen 1/2000000), also certified by the weighted\_norm route with
+the smaller K=2734375/12204185915601 (about 2.2405e-7, labelled); floor pair
+q=148/390625=37888|tau| with K=49/2018304 (about 2.4278e-5;
+exact\_first\_order tier, analytic\_disc route on the disc of radius
+tau\_star=1/37888), also certified by the weighted\_norm route with
+K=708203125/43148545682688 (about 1.6413e-5, labelled). The crude\_majorant
+tier at q=1/64 (296/390625 analytic\_disc, 9472/24454143 weighted\_norm)
+misses 1/2000000 and is retained. The tau to tau/100 ratios are 4340004/43129
+for the headline K, exactly 1 for the floor K and exactly 100 for q\_min. The
+rate is in N, per coarse l-infinity step at fixed spacing; every interaction
+term present in one box and not the other lies at coarse l-infinity distance
+at least N-1 from R, and the bound uses the contract form ceil(d/diam) of the
+order-versus-distance count. For each family the whole sequence of
+coefficients on supports meeting R is Cauchy in each on-site cutoff space;
+this is a coefficient statement only, with no state, reduced density, common
+limit or untruncated coefficient asserted.
+\end{gatequote}
+The rest of this section derives that statement. The limitations recorded by
+the gate close the section (Section~\ref{sec:ba1-limits}).
+
+\subsection{Metric, weights and the diameter convention}
+\label{sec:ba1-metric}
+Distances are coarse $\ell^\infty$ distances on factor sites,
+$d(p,p')=\max_i|p_i-p'_i|$, and $\operatorname{diam}I$ is the $\ell^\infty$
+diameter of a support. Since
+$S-S\subset\{0,\pm e_i,\pm(e_i-e_j)\}$, every whole star has $\ell^\infty$
+diameter exactly 1 and $\ell^1$ diameter exactly 2, every face and every
+clipped F2 group has $\ell^\infty$ diameter at most 1, and each site lies in
+at most four interaction terms. Both producers verified these values by
+enumeration on $\Lambda_2$, $\Lambda_3$ and $\Lambda_4$ (64, 216 and 512
+stars). The forward norms are
+\begin{equation}
+ \begin{gathered}
+ \norm{c}_w=\max_u\sum_{I\ni u}w^{\operatorname{diam}I}\norm{c_I},\qquad
+ 1\le w\le w_{\max}=\frac{390625}{148},\\
+ \norm{\delta}_{B,\beta}=\max_u\sum_{I\ni u}e^{\beta\rho_B(I)}\norm{\delta_I},\qquad
+ \rho_B(I)=\max_{p\in I}d(p,B),
+ \end{gathered}
+ \label{eq:ba1-norms}
+\end{equation}
+with $1\le e^\beta\le w$. Here $B$ is the source set of a comparison
+(Section~\ref{sec:ba1-sources}). The difference weight grows with distance
+from $B$, that is towards $R$. The headline uses $w=e^\beta=64$ and the floor
+$w=e^\beta=w_{\max}$. The loss $w^{d_X}=w$ is charged once per interaction
+term and never per creation. The reverse route replaces the weight by a disc
+of complex couplings of radius $\rho$, with $q=|\tau|/\rho$: $\rho=64|\tau|$
+for the headline and $\rho=\tau_*=1/37888$ for the floor.
+
+The convention matters. In the $\ell^1$ reading each star costs $w^2$, the
+self-map needs $w^2\le390625/148$, that is $w\le51.37\ldots$, and the rate
+per $\ell^1$ step is at least about $1.9465\times10^{-2}$. The ratio $q=1/64$
+therefore does not close in $\ell^1$; the verified $\ell^\infty$ diameter 1
+carries the headline rate. The distances that matter below are the same in
+both metrics, so the $\ell^1$ reading would give only the slower rate. A
+cardinality weight $e^{\mu|I|}$ would pay $e^{4\mu}$ per term and give a rate
+of at least $(148/390625)^{1/4}\approx0.1395$; it is labelled and not used.
+
+\subsection{The order-versus-distance lemma}
+\label{sec:ba1-order}
+Scale the interaction by a coupling $z$. The fixed point is then analytic in
+$z$ near zero (Section~\ref{sec:ba1-disc}), and its Taylor coefficients obey
+$c_1=L^{(1)}_0$ and
+$c_n=\sum_{k\ge1}\frac1{k!}\sum_{n_1+\cdots+n_k=n-1}L^{(1)}_k(c_{n_1},\ldots,c_{n_k})$.
+Expanding each interaction slot writes $c_n$ as a sum over families of $n$
+interaction pieces $Y_1,\ldots,Y_n$ (faces, stars or clipped groups). Two
+facts of the AM2 estimate drive the lemma: a creation disjoint from the piece
+in the interaction slot commutes with it and kills the word, and the output
+support satisfies $\mathcal N\setminus X\subset M\subset\mathcal N\cup X$,
+with $\mathcal N=\bigcup_jI_j$. By induction on $n$, a nonzero contribution
+to $c_{n,M}$ comes from a family that is connected in its intersection graph
+and whose union contains $M$. The diameters then add through the interaction:
+\begin{equation}
+ \operatorname{diam}M\le d_X+\sum_j\operatorname{diam}I_j .
+ \label{eq:ba1-subadd}
+\end{equation}
+The sum cannot be replaced by a maximum. For $X=\{0,e_x\}$,
+$I_1=\{-e_x,0\}$ and $I_2=\{e_x,2e_x\}$ the output
+$M=\mathcal N\setminus X=\{-e_x,2e_x\}$ is disconnected, with
+$\operatorname{diam}M=3=d_X+1+1$, while $d_X+\max_j\operatorname{diam}I_j=2$.
+Both producers use this fixture as a damaging control, and the reverse checker
+verifies \eqref{eq:ba1-subadd} exhaustively on 3033 configurations.
+
+\paragraph{Lemma (order versus distance).} Let $M$ meet $R$, and let a
+contribution to $c_{n,M}$ involve a piece $Y$ at distance $d\ge1$ from $R$,
+every piece having diameter at most $\operatorname{diam}$. Then
+\begin{equation}
+ n\ \ge\ 1+\Bigl\lceil\frac{d}{\operatorname{diam}}\Bigr\rceil\ \ge\
+ \Bigl\lceil\frac{d}{\operatorname{diam}}\Bigr\rceil .
+ \label{eq:ba1-order}
+\end{equation}
+\emph{Proof.} A point of $M\cap R$ lies in some piece $Z_0$. Connectivity
+gives a chain $Z_0,Z_1,\ldots,Z_m=Y$ of distinct pieces with consecutive
+members intersecting, and stepping through the intersections gives
+$d\le m\operatorname{diam}$. Since $d\ge1$, $Y\ne Z_0$, so the family has at
+least $m+1$ pieces. \qed
+
+Two interactions that differ only in terms at distance at least $d$ from $R$
+therefore give coefficients on supports meeting $R$ that agree through order
+$\lceil d/\operatorname{diam}\rceil$ in the coupling. The contract states the
+weaker form $\lceil d/\operatorname{diam}\rceil$; the sharp form, with the
+$+1$ because the terminal piece need not be crossed, is proved by both
+producers. Every bound constant uses the contract form, for a reason given in
+Section~\ref{sec:ba1-constants}. The proof uses the $\ell^\infty$
+convention with diameter 1.
+
+The contract asked for the order-versus-distance tables in both conventions
+on $\Lambda_2$, $\Lambda_3$ and $\Lambda_4$ (Tables~\ref{tab:ba1-order-inf}
+and~\ref{tab:ba1-order-one}). Each cell gives the number of interaction terms
+at distance $d$ from $R$ and the least tree order at which such a term can
+enter, found by breadth-first search on the enumerated intersection graph.
+Every cell is at least the bound $1+\lceil d/\operatorname{diam}\rceil$. In
+$\ell^\infty$ the bound is attained for every $d\le N-1$, along the chain of
+stars anchored at $(0,0,k)$; the larger values at $d=N$ come from the box
+walls. The seven terms at distance 0 are the seven incident anchors.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Order versus distance in the coarse $\ell^\infty$ convention
+(diameter 1, used in the proof). Entries: terms at distance $d$ / least tree
+order.}
+\label{tab:ba1-order-inf}
+\begin{tabular}{rc cccccc}
+\toprule
+$d$ & $1+\lceil d\rceil$ & F1 $\Lambda_2$ & F1 $\Lambda_3$ & F1 $\Lambda_4$ & F2 $\Lambda_2$ & F2 $\Lambda_3$ & F2 $\Lambda_4$\\
+\midrule
+0 & 1 & 7/1 & 7/1 & 7/1 & 7/1 & 7/1 & 7/1\\
+1 & 2 & 47/2 & 62/2 & 62/2 & 62/2 & 62/2 & 62/2\\
+2 & 3 & 10/4 & 131/3 & 166/3 & 55/3 & 166/3 & 166/3\\
+3 & 4 & -- & 16/6 & 255/4 & -- & 107/4 & 318/4\\
+4 & 5 & -- & -- & 22/8 & -- & -- & 175/5\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Order versus distance in the coarse $\ell^1$ convention (diameter 2,
+a labelled alternative not used in the proof).}
+\label{tab:ba1-order-one}
+\begin{tabular}{rc cccccc}
+\toprule
+$d$ & $1+\lceil d/2\rceil$ & F1 $\Lambda_2$ & F1 $\Lambda_3$ & F1 $\Lambda_4$ & F2 $\Lambda_2$ & F2 $\Lambda_3$ & F2 $\Lambda_4$\\
+\midrule
+0 & 1 & 7/1 & 7/1 & 7/1 & 7/1 & 7/1 & 7/1\\
+1 & 2 & 19/2 & 22/2 & 22/2 & 22/2 & 22/2 & 22/2\\
+2 & 2 & 20/2 & 42/2 & 45/2 & 37/2 & 45/2 & 45/2\\
+3 & 3 & 12/3 & 51/3 & 73/3 & 35/3 & 68/3 & 76/3\\
+4 & 3 & 5/4 & 45/3 & 90/3 & 19/3 & 74/3 & 107/3\\
+5 & 4 & 1/6 & 29/4 & 92/4 & 4/4 & 64/4 & 121/4\\
+6 & 4 & -- & 14/5 & 78/4 & -- & 40/4 & 119/4\\
+7 & 5 & -- & 5/6 & 54/5 & -- & 18/5 & 101/5\\
+8 & 5 & -- & 1/9 & 31/6 & -- & 4/6 & 69/5\\
+9 & 6 & -- & -- & 14/7 & -- & -- & 39/6\\
+10 & 6 & -- & -- & 5/8 & -- & -- & 18/7\\
+11 & 7 & -- & -- & 1/12 & -- & -- & 4/8\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The reverse producer adds an exact sharpness fixture, a finite model that
+transfers to nothing: a qubit chain on sites $0,\ldots,4$ with
+$H_0=\sum_xn_x$, bonds $X_iX_{i+1}$ and $R=\{0\}$, whose creation
+coefficients are obtained by exact cumulant inversion of the
+Rayleigh--Schr\"odinger ground vector. Removing the bond $(d,d+1)$ first
+changes a Taylor coefficient on a support containing $0$ at order exactly
+$1+d$. The witnesses are $c_{\{0,2\}}$ at order 2 for $d=1$ (coefficient
+$-1/2$ with the bond, $0$ without it), $c_{\{0,3\}}$ at order 3 for $d=2$
+($5/8$ against $0$) and $c_{\{0,4\}}$ at order 4 for $d=3$ ($-7/8$ against
+$0$). An exponent read from the far endpoint of the removed bond would claim
+vanishing one order too far.
+
+\subsection{Boundary sources and exact distances}
+\label{sec:ba1-sources}
+In every comparison the smaller box's interaction is contained in the larger
+one's, and the source is the set of terms present in one box and not the
+other, each charged once. Table~\ref{tab:ba1-sources} gives the sources of
+the three named comparisons. The counts are enumerated for $N=2,3,4$ and have
+all-size forms: $(2N+2)^3-(2N)^3=8(3N^2+3N+1)$ new stars for F1,
+$56(9N^2+14N+6)$ new faces for F2 (an all-size form that the historical
+assistant's independent enumeration reproduces), and $28N(5N+1)$ extra faces
+for F1 versus F2.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Boundary sources of the BA1 comparisons ($\ell^\infty$ distances;
+the $\ell^1$ values are the same).}
+\label{tab:ba1-sources}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.2\linewidth}
+ >{\raggedright\arraybackslash}X
+ >{\raggedright\arraybackslash}p{0.17\linewidth}
+ >{\raggedright\arraybackslash}p{0.2\linewidth}@{}}
+\toprule
+Comparison & New terms, charged once & Count at $N=2,3,4$ & Least distance from $e_z$ / $0$\\
+\midrule
+F1 $\Lambda_N$ vs $\Lambda_{N+1}$ & whole stars inside $\Lambda_{N+1}$, not
+inside $\Lambda_N$; each meets the shell $\Lambda_{N+1}\setminus\Lambda_N$ &
+152, 296, 488 stars & $N-1$ / $N$ (shell alone: $N$ / $N+1$)\\[3pt]
+F2 $\Lambda_N$ vs $\Lambda_{N+1}$ & faces with $M_f\subset\Lambda_{N+1}$,
+$M_f\not\subset\Lambda_N$, at 60, 126, 216 gaining anchors; at most 45 new
+faces per site & 3920, 7224, 11536 faces & $N-1$ / $N$\\[3pt]
+F1 vs F2 on $\Lambda_N$ & the extra faces $E_N$; 17, 13, 5 per anchor with one
+coordinate $N$, 10, 3, 1 with two, none at the corner & 616, 1344, 2352 faces
+& $N-1$ / $N$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The exact distances are
+\begin{equation}
+ d(e_z,\text{shell})=N,\quad d(0,\text{shell})=N+1,\qquad
+ d(e_z,\text{outer layer})=N-1,\quad d(0,\text{outer layer})=N,
+ \label{eq:ba1-distances}
+\end{equation}
+where the outer layer of $\Lambda_N$ is $\{\max_i|p_i|=N\}$. A shell point
+has $|p_i|=N+1$ for some $i$; the only way to come within $N$ of $e_z$ is
+$p_z=N+1$, attained at $(0,0,N+1)$. The same argument with $N$ in place of
+$N+1$ gives the layer distances, attained at $(0,0,N)$. The two producers
+read the nested source set differently, and both readings give the same bound.
+The forward producer takes the shell, at distance $N$ from $e_z$, and charges
+the source loss $w$ once, since every new term meets the shell. The reverse
+producer uses the distance $N-1$ of the new terms themselves: the new F1 star
+$(0,0,N)+S$ contains $(0,0,N)\in\Lambda_N$. The sites met by the new F1 stars
+are the shell together with the whole outer layer of $\Lambda_N$, with 98,
+218 and 386 outer-layer sites at $N=2,3,4$. The $28N(5N+1)$ new F1 faces
+lying inside $\Lambda_N$ are exactly the extra F2 faces
+$F2(\Lambda_N)\setminus F1(\Lambda_N)$. Each extra face keeps the coordinate
+that equals $N$ at all its sites, so it lies in the positive outer layer
+$\{\max_ip_i=N\}$.
+
+The reverse producer proves the distance bound for every comparison at once.
+\emph{Common-core lemma}: for $N\ge2$, every omitted face at $\ell^\infty$
+distance at most $N-2$ from $R$ is retained by both families on every finite
+complete-factor volume containing $\Lambda_N$. Such a face has a point $q$
+within $N-2$ of $0$ or of $e_z$, so $q\in\Lambda_{N-1}$; its anchor $b=q-s$,
+$s\in S$, has $b_i\in[-N,N-1]$, so $b+S\subset\Lambda_N$. The enumeration
+against all faces of F2 on $\Lambda_5$ agrees with it (82, 1044 and 3910 faces
+within distance $N-2$ for $N=2,3,4$). Hence every source term of every
+comparison lies at distance at least $N-1$ from $R$, and the three named
+comparisons attain $N-1$.
+
+The F2 padding carries no interaction. The padded fixed point is therefore
+supported in $\Lambda_N$, and coefficients on supports meeting the $3(2N+1)^2$
+padding sites vanish; both producers work on $\Lambda_N$ directly. In each
+comparison the larger interaction, split into its old and new terms with
+faces charged once, has per-site sum at most $28|\tau|$ (the enumerated
+maximum is 84 face units of $|\tau|/3$), so the AM2 constants apply to it.
+The fixed point does not depend on the decomposition, because each $L_k$ is
+linear in $V$.
+
+\subsection{The weighted-norm route}
+\label{sec:ba1-weighted}
+\paragraph{Weighted multilinear estimate.} For collections $c_1,\ldots,c_k$ in
+one box, with interaction terms of at most $p=4$ sites and diameter at most 1,
+\begin{equation}
+ \norm{L_k(c_1,\ldots,c_k)}_w\le w\,J\,L_k^{\rm num}\prod_j\norm{c_j}_w,\qquad
+ L_k^{\rm num}=16\cdot8^k\bigl(1+\tfrac{5k}{4}\bigr),
+ \label{eq:ba1-multilinear}
+\end{equation}
+and $\sum_kL_k^{\rm num}t^k/k!=G(t)$. The proof follows AM2's itemized steps.
+Support localization is unchanged. Diameter subadditivity
+\eqref{eq:ba1-subadd} gives
+$w^{\operatorname{diam}M}\le w^{d_X}\prod_jw^{\operatorname{diam}I_j}$ for
+$w\ge1$. The root in $X$ contributes $16\cdot8^kwJ$, and the root in a
+creation $I_l$ contributes $16\cdot8^k(5k/4)wJ$, the denominator $|I_l|$
+cancelling against $\sum_{X\cap I_l\ne\varnothing}w^{d_X}\norm{V_X}\le
+wJ|I_l|$. The loss $w^{d_X}\le w$ enters once per interaction term,
+independent of $k$ and of the number of creations. In the mixed form one slot
+holds a difference measured in $\norm{\cdot}_{B,\beta}$, and the one-point
+quantity $\rho_B$ satisfies
+$\rho_B(M)\le\rho_B(I_{j^*})+d_X+\sum_{j\ne j^*}\operatorname{diam}I_j$; the
+loss is then $e^\beta$. For a source term $X$ meeting $B$ the loss is
+$e^{\beta\rho_B(X)}\le e^\beta$.
+
+\paragraph{Self-map, contraction and identification.} Summing
+\eqref{eq:ba1-multilinear} over $k$ and telescoping the $k$-linear terms give,
+for $\norm{c}_w,\norm{c'}_w\le R_a$,
+\begin{equation}
+ \norm{\Phi(c)}_w\le J\,w\,G(\norm{c}_w),\qquad
+ \norm{\Phi(c)-\Phi(c')}_w\le\Gamma\norm{c-c'}_w,\quad \Gamma=J\,w\,G'(R_a),
+ \label{eq:ba1-contraction}
+\end{equation}
+re-evaluated as exact rationals at the declared weights. The self-map
+$J_0wG(R_a)\le R_a$ holds exactly when $w\le w_{\max}=390625/148$. At $w=64$
+the self-map value is $148/390625$ and $\Gamma=2464/390625\approx
+6.30784\times10^{-3}$. At $w_{\max}$ the rational self-map bound equals $R_a$
+exactly, the true $G(R_a)\le20.9632\ldots$ making it strict, and
+$\Gamma=77/296\approx0.260135$. For $w\ge1$ the weighted ball lies inside AM2's
+anchored ball, so Banach's theorem and AM2's uniqueness in its ball identify
+the weighted fixed point with AM2's: $\norm{c}_w\le R_a$ for every
+$w\in[1,w_{\max}]$, both families, every box, every $Q_L$ and both signs.
+
+\paragraph{Tiers.} Every omitted owner set has $\ell^\infty$ diameter exactly
+1, so $\norm{c^{(1)}}_w=w\norm{c^{(1)}}_a\le wt_1$. Convexity of $G$ gives
+$\norm{c-c^{(1)}}_w\le Jw(G(t_w)-16)\le\Gamma t_w$, hence the
+\recid{exact_first_order} tier
+\begin{equation}
+ \begin{gathered}
+ t_w:=\norm{c}_w\le T_w=\frac{w\,t_1}{1-J\,w\,G'(R_a)},\\
+ T_{64}=\frac{49}{223580736}\approx2.19160\times10^{-7},\qquad
+ T_{w_{\max}}=\frac{49}{4036608}\approx1.21389\times10^{-5},
+ \end{gathered}
+ \label{eq:ba1-Tw}
+\end{equation}
+the contract's self-consistent inequality re-derived in the weighted norm. The
+\recid{crude_majorant} tier is $t_w\le JwG(R_a)$: $148/390625$ at $w=64$ and
+$1/64$ at $w_{\max}$. An exact first-order source combined with the crude
+$t_w$ would be labelled crude, and the checker rejects every mislabel.
+
+\paragraph{Difference theorem.} Fix a comparison, a cutoff $L$, a sign and
+$|\tau|\le10^{-8}$. Let $c$ be the smaller box's fixed point, zero-extended by
+$\iota$, $c'$ the larger box's, and $\delta=c'-\iota c$. Then, for every
+$u\in R$ and $1\le e^\beta\le w\le w_{\max}$,
+\begin{equation}
+ \sum_{I\ni u}\norm{c'_I-c_I}\le e^{-\beta d(u,B)}\,\frac{S_B}{1-\Gamma_\beta},
+ \qquad \Gamma_\beta=e^\beta J\,G'(R_a),\qquad
+ S_B\le e^\beta t_1+\Gamma_\beta T_w .
+ \label{eq:ba1-difference}
+\end{equation}
+\emph{Proof.} The map is local: $\Phi_{\Lambda'}(\iota c)=\iota\Phi_\Lambda(c)
++\Psi_{\rm new}(\iota c)$, where $\Psi_{\rm new}$ is the AM2 series with $V$
+replaced by the new terms, because
+$\mathrm{ad}^k_{\iota C}(\iota V_\Lambda)\Omega$ factors as box~1's value
+tensored with the outside vacuum. Hence
+$\delta=[\Phi_{\Lambda'}(c')-\Phi_{\Lambda'}(\iota c)]+\Psi_{\rm new}(\iota c)$.
+The mixed estimate contracts the bracket by $\Gamma_\beta$. The source's
+first-order part is exactly $-(\tau/72)\sum_{\text{new }f}W_f\Omega_0$, with at
+most 49 new faces per site and $\rho_B(M_f)\le1$, so it costs at most
+$e^\beta t_1$; the remainder costs at most $\Gamma_\beta T_w$ by the source
+form. The volume is finite, so the difference is absorbed, and
+$\rho_B(I)\ge d(u,B)$ for $I\ni u$ extracts the decay. \qed
+
+The decay comes only from the weight $e^{-\beta d(u,B)}$; the Lipschitz factor
+enters only as $1/(1-\Gamma)$. At $e^\beta=w$ the source bound is
+$S_B\le T_w$, so the constant multiplying $q^{d(e_z,B)}$, $q=1/w$, is
+\begin{equation}
+ K_{\rm own}=\frac{T_w}{1-\Gamma}=\frac{w\,t_1}{(1-\Gamma)^2},\qquad
+ K_{12}=K_{\rm own},\quad K_{\rm nest}=qK_{\rm own},\quad
+ K_{\rm gen}=K_{12}+\frac{K_{\rm nest}}{1-q},
+ \label{eq:ba1-Kweighted}
+\end{equation}
+for F1 versus F2 at exponent $N-1$, for a nested comparison (the shell lies
+at distance $N$), and for any two centered boxes by telescoping. At the
+headline, $K_{12}=19140625/86785322066496\approx2.20551\times10^{-7}$,
+$K_{\rm nest}=19140625/5554260612255744\approx3.44612\times10^{-9}$ and
+$K_{\rm gen}=\tfrac{64}{63}K_{12}=2734375/12204185915601\approx
+2.24052\times10^{-7}$, below $1/2000000$ with margin about 2.2316. At the
+floor the corresponding values are $1813/110502144$,
+$67081/10791225000000$ and $K_{\rm gen}=708203125/43148545682688\approx
+1.64131\times10^{-5}$, with margin about 5077 against $1/12$. The crude tier
+gives $9472/24454143\approx3.873\times10^{-4}$ at the headline, which fails
+$1/2000000$ and is retained, and $14453125/684115704\approx2.1127\times
+10^{-2}$ at the floor, which meets $1/12$ and is reported only.
+
+The global contraction bound
+$\norm{c^{N+1}-c^N}_a\le J_0G(R_a)/(1-J_0G'(R_a))=37/6249384$ is the same
+for every $N$; it has no decay and is never used as a per-shell factor. Its
+denominator uses the Lipschitz constant $J_0G'(R_a)<77/781250$ of the
+fixed-point map; the contract's control text called $2J_0G'(R_a)$, which is
+AM2's exclusion constant, the Lipschitz constant, and both producers corrected
+that wording independently.
+
+\subsection{The analytic-disc route}
+\label{sec:ba1-disc}
+\paragraph{Complexified map.} Write the interaction at unit coupling as
+$V_1=\sum_XV_{X,1}$, $\norm{V_{X,1}}\le7$, and set $V(z)=zV_1$. Then
+\begin{equation}
+ F_z(c)=\sum_{k=0}^{8}\frac{L^{(z)}_k(c,\ldots,c)}{k!},\qquad
+ L^{(z)}_k=z\,L^{(1)}_k,\qquad
+ \norm{L^{(z)}_k(c_1,\ldots,c_k)}_a\le28|z|\,16\cdot8^k\bigl(1+\tfrac{5k}{4}\bigr)\prod_j\norm{c_j}_a .
+ \label{eq:ba1-complex}
+\end{equation}
+The reverse producer re-derives AM2's estimate step by step and records where
+$z$ enters: only through $\norm{V_X(z)}=|z|\norm{V_{X,1}}$. No step uses
+self-adjointness of $V$ or reality of the coupling, and the coefficient
+equation does not involve the ground energy, so nothing else is complexified.
+For $|z|\le\rho$ this gives the self-map bound $28\rho G(R_a)$ and the
+Lipschitz constant $\kappa(\rho)=28\rho G'(R_a)$. The self-map holds up to
+$\tau_*=R_a/(28\cdot148/7)=1/37888$. At the headline radius
+$\rho=64|\tau|=1/1562500$ the values are below $148/390625$ and
+$2464/390625$; at $\rho=\tau_*$ they are at most $1/64$ and $77/296$. A
+radius $2\tau_*$, and the radius $4\tau_*$ that an outgoing-only count $7|z|$
+would allow, are rejected controls.
+
+\paragraph{Analyticity.} For $\rho\le\tau_*$, every finite complete-factor
+volume of F1 or F2 and every $L$, $F_z$ has exactly one fixed point $c(z)$ in
+the ball. The map $z\mapsto c(z)$ is continuous on $|z|\le\rho$ and
+holomorphic on $|z|<\rho$, and at real $z=\tau$ it is the AM2 fixed point.
+The iterates $c^{(m+1)}=F_z(c^{(m)})$, $c^{(0)}=0$, are polynomials in $z$
+that converge uniformly on the closed disc at rate $\kappa^mR_a$; Weierstrass's
+theorem gives holomorphy, contraction gives uniqueness in the ball, and AM2's
+uniqueness identifies the real value. On the circle, with
+$t(w)=\norm{c(w)}_a$ and $t_1(\rho)=49\rho/144$,
+\begin{equation}
+ t(w)\le T(\rho)=\frac{t_1(\rho)}{1-28\rho\,G'(R_a)}\ \
+ \text{(exact first order)},\qquad
+ t(w)\le28\rho\,G(R_a)\ \ \text{(crude majorant)},
+ \label{eq:ba1-circle}
+\end{equation}
+and with $J=28|\tau|$ and $w=\rho/|\tau|$, $T(\rho)$ is exactly the weighted
+$T_w$ of \eqref{eq:ba1-Tw}.
+
+\paragraph{Cauchy's estimate.} Let $\Lambda^A,\Lambda^B$ be finite
+complete-factor volumes containing $\Lambda_N$, with prescriptions in
+$\{F1,F2\}$, and $0<|\tau|<\rho\le\tau_*$. Then, for $u\in R$,
+\begin{equation}
+ \sum_{I\ni u}\norm{c^A_I(\tau)-c^B_I(\tau)}\le2\,t(\rho)
+ \Bigl(\frac{|\tau|}{\rho}\Bigr)^{n_0}\le2\,t(\rho)
+ \Bigl(\frac{|\tau|}{\rho}\Bigr)^{N-1},\qquad n_0\ge N .
+ \label{eq:ba1-schwarz}
+\end{equation}
+\emph{Proof.} Embed both volumes in their union with unperturbed on-site
+factors on the complement; the fixed points keep their supports and values.
+The difference $g(z)$ is holomorphic on the open disc and continuous on the
+closed one. Terms of the Taylor recursion whose faces are all common to both
+volumes coincide, and every other term contains a source face at distance at
+least $N-1$ (common-core lemma), so by \eqref{eq:ba1-order} $g_n=0$ for
+$n<n_0$ with $n_0\ge N$. The maximum principle applied to $g(z)/z^{n_0}$
+through norming functionals, with $r\uparrow\rho$, gives the factor
+$(|\tau|/\rho)^{n_0}$, and the circle bound is $t^A+t^B\le2t(\rho)$. \qed
+
+No Lipschitz constant enters as a decay factor, and no source norm is charged:
+the source enters only through its distance, as the vanishing order. The
+constants are $K=2T(\rho)$ at the exact tier and $K=2\cdot28\rho G(R_a)$ at the
+crude tier. The general comparison is made directly through the union.
+Telescoping at exponent $N-1$ would give $889/1006113312\approx8.836\times
+10^{-7}$ and a two-step union $49/55895184\approx8.766\times10^{-7}$, both
+above the headline target. The headline ratio $q=1/64$ equals $R_a$
+numerically only because the frozen disc radius is $64|\tau|$.
+
+\paragraph{What is not complexified.} Only the creation coefficients are
+continued in $z$. The reduced density needs the normalization, the continued
+$\norm{\psi}^2$, and that can vanish inside the disc: on two qubits
+$\psi(z)=\Omega-2z|11\rangle$ has the entire coefficient $2z$, while its
+normalization $1+4z^2$ vanishes at $z=i/2$. No zero-free region is proved, and
+extending analyticity to the reduced density is a rejected control.
+
+\subsection{The gated constants}
+\label{sec:ba1-constants}
+Following the skeptic's recommendation and the Round32 precedent, the gate
+binds for each pair the larger valid constant, the reverse one, which both
+routes certify because the forward route proves a smaller constant for the
+same statement. At the cap $|\tau|=10^{-8}$, both signs:
+\begin{align}
+ q=\tfrac1{64}:\quad K&=2T(64|\tau|)=\frac{49}{111790368}\approx
+ 4.38320\times10^{-7}\le\frac1{2000000},\label{eq:ba1-Khead}\\
+ q=\tfrac{148}{390625}=37888|\tau|:\quad K&=2T(\tau_*)=\frac{49}{2018304}\approx
+ 2.42778\times10^{-5}\le\frac1{12}.\label{eq:ba1-Kfloor}
+\end{align}
+Table~\ref{tab:ba1-constants} lists every constant with its tier and route.
+Read with the exponent, the headline bound is about $6.849\times10^{-9}$ at
+$N=2$, $1.070\times10^{-10}$ at $N=3$ and $1.672\times10^{-12}$ at $N=4$.
+
+\begin{table}[htbp]
+\centering\small
+\caption{BA1 constants at $|\tau|=10^{-8}$, both signs; decimals are
+summaries of exact rationals. Only the rows marked ``bound'' are the gate's
+admitted values.}
+\label{tab:ba1-constants}
+\begin{tabularx}{\linewidth}{@{}l l l >{\raggedright\arraybackslash}X r@{}}
+\toprule
+Pair & Tier / route & Exact $K$ & Status & $\approx K$\\
+\midrule
+$q=1/64$ & exact / analytic disc, $\rho=64|\tau|$ & $49/111790368$ & bound; margin $1.1407$ & $4.3832\times10^{-7}$\\
+$q=1/64$ & exact / weighted, $w=64$ & $2734375/12204185915601$ & labelled; margin $2.2316$ & $2.2405\times10^{-7}$\\
+$q=1/64$ & crude / analytic disc & $296/390625$ & fails; retained & $7.578\times10^{-4}$\\
+$q=1/64$ & crude / weighted & $9472/24454143$ & fails; retained & $3.873\times10^{-4}$\\[2pt]
+$q=q_{\min}$ & exact / analytic disc, $\rho=\tau_*$ & $49/2018304$ & bound; margin $3432.49$ & $2.4278\times10^{-5}$\\
+$q=q_{\min}$ & exact / weighted, $w=w_{\max}$ & $708203125/43148545682688$ & labelled; margin $5077$ & $1.6413\times10^{-5}$\\
+$q=q_{\min}$ & crude / analytic disc & $1/32$ & meets $1/12$; reported & $3.125\times10^{-2}$\\
+$q=q_{\min}$ & crude / weighted & $14453125/684115704$ & meets $1/12$; reported & $2.113\times10^{-2}$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Both signs, smaller couplings and scaling.} Every formula depends on
+$|\tau|$ only, so the $\tau=-10^{-8}$ value replays the same exact rational; it
+is a replay, not a second confirmation. The headline $K$ is increasing in
+$|\tau|$ at fixed $q=1/64$, so the cap value bounds every smaller coupling.
+The floor constant does not depend on $\tau$: at $w=1/q_{\min}$ both
+$Jw=7/9472$ and $wt_1=49/5455872$ are invariant, while
+$q=37888|\tau|\le148/390625$ scales with $|\tau|$. The preregistered
+$\tau\to\tau/100$ test, evaluated from the same exact formula without
+intermediate rounding, gives
+\begin{equation}
+ \frac{K_{\rm head}(\tau)}{K_{\rm head}(\tau/100)}=\frac{4340004}{43129}\approx100.628,\qquad
+ \frac{K_{\rm floor}(\tau)}{K_{\rm floor}(\tau/100)}=1,\qquad
+ \frac{q_{\min}(\tau)}{q_{\min}(\tau/100)}=100,
+ \label{eq:ba1-scaling}
+\end{equation}
+inside $[95,105]$, $[99/100,101/100]$ and ``exactly 100''. The labelled
+forward constants give $101.261$ and $3255196/3253975\approx1.000375$; the
+latter differs from 1 only through the telescoping factor
+$w_{\max}/(w_{\max}-1)$.
+
+\paragraph{Why the contract form of the exponent.} The sharp count
+$1+\lceil d/\operatorname{diam}\rceil$ gives exponent $N$ at $e_z$. Written
+against $q^{N-1}$, a floor constant that uses it absorbs one factor
+$q_{\min}=37888|\tau|$ and becomes linear in $\tau$, with ratio exactly 100,
+outside the prefrozen floor bracket. Every sharp form is therefore labelled,
+and every bound constant uses exponent $N-1$.
+
+\subsection{The thin headline margin and the labelled refinements}
+\label{sec:ba1-margin}
+The bound headline constant is only about $1.1407$ below its target. The
+freeze-time margin rule was checked against the forward preview only, and a
+looser reverse majorant, or telescoping on the analytic route, would have
+missed the target. Acceptance asks only that the proved constant be at most
+the frozen target, so the thin margin is recorded, not blocking, and nothing
+was retuned after the constants were seen. The producers recorded
+refinements that are valid but not bound, each in the tier
+\recid{exact_first_order}:
+\begin{itemize}
+\item the reverse sharp exponent, $49/7154583552\approx6.85\times10^{-9}$ at
+ the headline and $1813/197100000000$ at the floor;
+\item the reverse first-order cancellation on $R$,
+ $3773/1364628515625\approx2.76\times10^{-9}$: the exact first-order parts on
+ supports through $u\in R$ coincide, so only the remainder is charged on the
+ circle. It is quadratic in $\tau$ (ratio about $10062.8$), outside the
+ prefrozen linear headline bracket;
+\item the forward loss-one F1-versus-F2 value
+ $57270955/16662781836767232\approx3.44\times10^{-9}$: the extra faces lie in
+ the outer layer, where $\rho_B=0$, so no source loss is needed;
+\item the reverse coefficientwise Cauchy form $14/31441041$, which is weaker
+ than the maximum-modulus form.
+\end{itemize}
+A later loop that needs more room would have to prefreeze one of these as its
+own pair, with its exponent and bracket.
+
+\subsection{Coefficient decay is not decay of the reduced density}
+\label{sec:ba1-notdensity}
+The ground vector $\psi=e^{-C}\Omega_0$ depends on every coefficient, and its
+$R$-marginal couples all supports through the normalization and through the
+straddling contractions of AV1. A bound on coefficients meeting $R$ does not
+by itself control $\rho_{N,R}$; that step is BB1. Both producers exhibit the
+exact fixture (AV1 type, a finite model): qubit sites $r,o,o'$ with $R=\{r\}$
+and creations $c_{\{r,o\}}=1/3$ (straddling, the only coefficient meeting $R$),
+$c_{\{o\}}=b$ and a decoupled $c_{\{o'\}}$. Changing $b$ from $1/2$ to $0$ leaves every
+coefficient meeting $R$ unchanged, yet
+\begin{equation}
+ \rho_r=\frac1{49}\begin{pmatrix}45&6\\6&4\end{pmatrix}
+ \ \longrightarrow\
+ \begin{pmatrix}9/10&0\\0&1/10\end{pmatrix},\qquad
+ \norm{\Delta\rho_r}_1^2=\frac{3681}{60025}.
+ \label{eq:ba1-fixture}
+\end{equation}
+The coefficient Cauchy property is a whole-sequence statement about
+coefficients in each cutoff space, obtained from the bound itself and not
+from compactness. The gate fields keep \recid{whole_sequence_claimed},
+\recid{common_limit_claimed} and \recid{state_decay_claimed} false, because
+they concern states; \recid{rate_in_N_claimed} and
+\recid{coefficient_cauchy_claimed} are true, the latter with the scope ``AM2
+creation coefficients of F1 and F2 on supports meeting R, in each on-site
+cutoff space''.
+
+\subsection{Uniformity in the cutoff, traps and error ledger}
+\label{sec:ba1-ledger}
+Every estimate is dimension-free and holds in each $Q_L$ with constants
+independent of $L$. The compressed interactions keep their supports and do
+not increase $J$. The compression $Q_Lc^{(1)}$ keeps or annihilates each face
+vector: $W_f\Omega_0$ lies in a product of on-site eigenspaces with site
+energies at most 18, so every face vector is kept for $L\ge24$, and for
+smaller $L$ the first-order counts only decrease. No cutoff removal is applied
+to coefficients.
+
+The contract required exact fixtures for three traps; each is a damaging
+control in both checkers, and all are finite models that transfer to nothing.
+\begin{itemize}
+\item \emph{A weight growing from $R$ fails.} On a chain with a local
+ averaging map and a unit source at the far end, the weight growing towards
+ $R$ certifies decay (for example $|\Delta_0|\le1/6$ against the exact
+ $1/195$ in the reverse fixture), while the reversed weight gives $128/3$, above
+ the unweighted bound 2; a non-submultiplicative weight $2^{r^2}$ and a
+ min-distance weight are also rejected.
+\item \emph{A global Lipschitz bound does not decay.} The nonlocal map
+ $(A\delta)_i=\tfrac12\delta_n$ has Lipschitz constant $1/2$ and fixed-point
+ difference $\delta_0=1$ for every $n$; the mean-field map on six sites keeps
+ $c_0=1/6$ for every position of the source.
+\item \emph{A per-creation loss charge fails.} A first-order coefficient on a
+ two-site support has diameter $1=d_X$ with no creation, so a loss charged
+ per creation misses it. In the forward qubit fixture ($V=\sigma^x\otimes
+ \sigma^x$ on $X=R$, $L_0=\tfrac12|11\rangle$) the weighted norm 32 at $w=64$
+ exceeds the per-creation bound 16, while the per-interaction bound is 1024.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering\small
+\caption{The preregistered BA1 error terms, added linearly (weighted-norm
+values; the reverse reading is in the text).}
+\label{tab:ba1-ledger}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Term & Headline, $q=1/64$ & Floor, $q=q_{\min}$\\
+\midrule
+\recid{weighted_contraction_loss} & $\Gamma=2464/390625$; amplification
+$(1-\Gamma)^{-2}\approx1.012736$ & $\Gamma=77/296$; $(1-\Gamma)^{-2}\approx
+1.826818$\\
+\recid{boundary_source_terms} & $49/225000000+3773/2729257031250=T_{64}$ &
+$49/5455872+3773/1194835968=T_{w_{\max}}$\\
+\recid{order_versus_distance_count} & not a numeric cost: exponents $N-1$,
+$N$, $N+1$ enter as integers & same\\
+\recid{exact_first_order_remainder} & $\Gamma T_{64}=3773/2729257031250$ &
+$\Gamma T_{w_{\max}}=3773/1194835968$\\
+\recid{cutoff_uniformity} & not a numeric cost: dimension-free in each $Q_L$ &
+same\\
+\recid{arithmetic} & not a numeric cost: exact rationals; only the directed
+enclosure $e^{1/8}<8/7$ & same\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+On the reverse route the contraction loss is the circle factor
+$\rho/|\tau|$ inside $t(\rho)$ (64 at the headline, $1/q$ at the floor), the
+source enters only through its distance, and the remainder
+$28\rho G'(R_a)T(\rho)$ equals the forward values above. Deterministic terms
+add linearly; a root sum of squares and a division by $\sqrt N$ or by the
+square root of a face count are rejected controls.
+
+\subsection{Controls, replays and review}
+\label{sec:ba1-evidence}
+Each producer implements all 37 contract controls as damaging mutations that
+must raise explicit exceptions. The forward checker runs 51 exact checks with
+96 rejected mutations and the reverse checker 61 exact checks with 132. Both
+checkers verify the contract hash before any evaluation, read their targets
+and brackets from the contract, pin every admitted gate they parse and record
+their own hash before the full evaluation. All four producer replays, forward
+and reverse under normal and optimized Python, reproduce the frozen outputs
+byte for byte, and each closure (31 files) verifies file by file. Both input
+inventories equal \texttt{AGENTS.md}, the contract and the 25 shared premises;
+the reverse inventory holds no Round33 skeptic, lens, forward, deliberation,
+plan or brief file.
+
+The skeptic's pre-comparison package, 101 exact checks, was committed before
+either producer's commit. Its values equal the reverse headline, floor and
+crude constants exactly. The forward values differ from its values only
+because the forward evaluates $G'$ at $R_a$ rather than at $T_w$ and
+telescopes the general comparison (factor $64/63$); both are valid upper
+bounds, and the forward F1-versus-F2 value equals an exact variant the skeptic
+had listed. The post-comparison review adds 20 exact checks, 81 source-edit
+runs on temporary copies (two unmutated baselines, 74 validator weakenings,
+one per control per producer, and five input edits, every one aborting as
+expected) and 10 damaged packets rejected by the review's own value
+validator. The producers wrote their final files after the skeptic's commit,
+so isolation rests on disclosure and content, not on timing. Both producers
+disclose protocol and code-style reads outside their inputs; none carries
+premise weight. The review found no blocking issue; its non-blocking findings
+are the thin margin, the two readings of the nested source set, the reverse
+report's ``positive outer layer'' where the literal set is the full outer
+layer, the forward union wording, and the Lipschitz wording of the contract.
+
+\subsection{Limitations recorded by the gate}
+\label{sec:ba1-limits}
+The BA1 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the zero-selected patterned family (selected triple (0,0,0), Haar
+reference), the cover R=\{0,e\_z\}, fixed spacing and
+|tau|<=10\textasciicircum{}-8, with F1 and F2 on centered cubes Lambda\_N, N
+at least 2, and complete-factor volumes of one prescription containing
+Lambda\_N; nothing transfers to nonzero selected triples, the uniform route-B
+model, literal vertex boxes, weak coupling or the continuum; every constant is
+uniform in N at fixed spacing and in the cutoff, never in a.
+\item Coefficients only: the statements concern AM2 creation coefficients in
+each on-site cutoff space Q\_L with constants independent of L; they are not
+decay of the reduced density or of any state (BB1/BB2), not a statement about
+untruncated creation coefficients, and the analyticity in the coupling is not
+extended to the reduced density (no zero-free region of the complexified
+normalization is proved).
+\item The coefficient Cauchy property gives whole-sequence convergence of
+coefficients per cutoff space only; whole\_sequence\_claimed and
+common\_limit\_claimed concern states and stay false; no uniqueness of any
+ground state is asserted.
+\item Thin headline margin: the bound headline K=49/111790368 is about 1.1407
+below 1/2000000 (the freeze-time margin rule was checked against the forward
+preview only); the labelled refinements (reverse sharp exponent 49/7154583552,
+reverse first-order cancellation 3773/1364628515625 which is quadratic in tau,
+forward loss-one F1-versus-F2 value 57270955/16662781836767232) are recorded
+and not bound.
+\item Exponent convention: the bound uses the contract form ceil(d/diam)
+(exponent N-1 at e\_z for every comparison); the sharp count 1+ceil(d/diam)
+gives exponent N, but a floor constant written that way is linear in tau
+(ratio exactly 100) and falls outside the prefrozen floor bracket, so every
+sharp form is labelled.
+\item General comparisons: the reverse compares any two volumes directly
+(constant K); telescoping at exponent N-1 would give 889/1006113312 and a
+two-step union 49/55895184, both above 1/2000000; the forward telescoped
+constant 2734375/12204185915601 and its union constant are valid labelled
+values; the face sets are totally ordered (F1\_N inside F2\_N inside
+F1\_(N+1)), so one nested comparison suffices for any pair of centered boxes.
+\item Contract wording read as follows: the source set of a nested comparison
+is the shell, and the literal set of sites met by the new terms adds the outer
+layer of Lambda\_N (98, 218, 386 sites at N=2,3,4) at distance N-1 from e\_z,
+which gives the same bound once the source loss is charged; the fixed-point
+map has Lipschitz constant J\_0G\textquotesingle{}(R) below 77/781250, while
+2J\_0G\textquotesingle{}(R) is the AM2 exclusion constant;
+gate\_fields\_topic\_specific is read as the 12 frozen gate fields; the floor
+difference weight is e\textasciicircum{}beta=w=390625/148.
+\item Inherited without re-proof: the AM2 multilinear majorant, fixed point,
+uniqueness in the ball and cutoff facts; the AV1 exact first-order coefficient
+and self-consistent remainder; the AY1 item-by-item F2 premises; the I1
+dictionary; Banach, Weierstrass and the maximum principle are standard and not
+machine-checked.
+\item Independence is limited to routes, enumerations and code: the contract
+and selection note name both mechanisms, the skeptic triage proposed both
+routes and the frozen parameters, all agents are correlated model agents, and
+isolation is verified for repository inputs only.
+\item Upper bounds only; the -tau values replay the same |tau| formula;
+scientific priority is unverified.
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round33/forward/ba1/report.md}{BA1 forward},
+\repo{research/round33/reverse/ba1/report.md}{BA1 reverse},
+\repo{research/round33/skeptic/ba1.md}{independent model-agent review} and
+the \repo{research/round33/contracts/ba1.json}{frozen contract}. BA1 is a
+statement about coefficients; Section~\ref{sec:ba2} turns to the dynamics.

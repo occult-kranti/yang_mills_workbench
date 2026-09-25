@@ -1,0 +1,1031 @@
+\section{Applications: transfers and recorded obstructions}
+\label{sec:apps}
+
+The fourth stage of the plan applies admitted Round32 and Round33 equations
+to related problems and records, for each equation it applies, either a
+labelled transfer to a named model with its own exact checks or the
+obstruction that prevents the transfer (Section~\ref{sec:plan}). The BD1 and
+BD2 contracts were drafted during the BC production, since no BD item
+depends on a BC outcome, and were frozen together on 25 September 2026 at
+05:09:10 UTC, after the skeptic's pre-freeze review of the drafts (34 blocking
+and 21 non-blocking edits applied). The review found the drafted BD2 width
+target of $1/10^{10}$ non-discriminating, and the advisor tightened it to
+$1/10^{16}$ at the cutoff $D=8$ before the freeze. BD1 applies the Round32
+centre-symmetry equations (the AW1 link-flip lemma, parity theorem and
+first-order Wilson coefficient) to other gauge groups. BD2 applies admitted
+SU(2) equations to new observables, to a finite graph with independent
+couplings and to a new dimension. Both gates were recorded at 07:52 and 07:53
+UTC on 25 September; with them all eight Round33 investigations are gated.
+Table~\ref{tab:apps-summary} at the end of the section summarizes what
+transferred and what did not.
+
+\subsection{BD1: centre symmetry across gauge groups}
+\label{sec:bd1}
+
+\textbf{Contribution \projecttag{HNM-C-BD1}.} The BD1 contract, recorded
+under the title ``Applications I: centre-symmetry transfer of the parity
+theorem, the link-flip lemma and the first-order Wilson mean across gauge
+groups, with the SU(3) and SO(3) obstructions and the SU(2) area-parity
+corollary'', asks which of three AW1 statements survive when SU(2) is
+replaced by SU(3), SU(4), SU(5), U(1), Z2 or SO(3), and asks for an exact
+counterexample wherever one does not
+(\repo{research/round33/advisor/selection-bd1.md}{selection note}). It is
+investigation~7 of~8 and paired. The forward producer computes by
+characters: Peter--Weyl, the Pieri rule, Clebsch--Gordan series and charge
+counting. The reverse producer, under premise isolation, computes by Weyl
+integration: constant terms on the maximal torus. Both received
+\texttt{AGENTS.md}, the contract and 21 shared premises. The target is exact
+agreement of the two routes on every moment and coefficient, and nonzero
+SU(3) and SO(3) obstruction coefficients; the contract notes that the
+obstruction cells are discriminating, since a zero value would falsify
+them. It lists 22 controls. Its gate is recorded under the title ``Hruday
+centre-symmetry transfer across gauge groups with recorded obstructions''.
+
+\subsubsection{Reviewed scope}
+\label{sec:bd1-scope}
+The \repo{research/round33/advisor/bd1-gate.json}{BD1 gate} records the
+verdict \recid{accepted_within_scope}, with sub-label
+\recid{transfer_to_named_model} and secondary sub-label
+\recid{obstruction_recorded}. Its gate fields set
+\recid{flip_transfer_claimed}, \recid{parity_transfer_claimed},
+\recid{obstructions_recorded}, \recid{area_parity_limit_claimed} and
+\recid{model_is_finite_graph} to true, and \recid{transfers_to_aq},
+\recid{uniqueness_of_ground_state_claimed}, \recid{rate_in_a_claimed},
+\recid{continuum_claim}, \recid{weak_coupling_claim} and
+\recid{scientific_priority_verified} to false. The flip scope names SU(2),
+SU(4), U(1) and Z2 on their one-plaquette and box models, with no AM2, AV1 or
+AQ statement for any group other than SU(2). The accepted statement, quoted
+verbatim below in the gate's ASCII notation, is the scope of every claim in
+this subsection.
+\begin{gatequote}
+Under the frozen BD1 convention (per-link electric term 8 C\_2 with
+C\_F=(N\textasciicircum{}2-1)/(2N) for SU(N), C\_2(n)=n\textasciicircum{}2 for
+U(1), C\_2(l)=l(l+1) for SO(3) and C\_2=1 on the odd Z2 state; face energy 32
+C\_F; magnetic term -(tau/3) W with W = Re chi\_fund/dim fund; creation sign
+psi=e\textasciicircum{}\{-C\} Omega\_0 and omega(W) = -2 Re (W Omega\_0,
+c\textasciicircum{}(1)) + O(tau\textasciicircum{}2)), on the one-plaquette
+finite graphs H\_FG(G) (|tau| below 48 C\_F) and on the group-G whole-star box
+models H\textasciicircum{}G\_N on the open centered boxes Lambda\_N, N at
+least 2, each box separately for |tau| below its Kato radius 12
+C\_F/(21(2N)\textasciicircum{}3), for G in \{SU(2), SU(3), SU(4), SU(5), U(1),
+Z2, SO(3)\}: the Haar moments E[W\textasciicircum{}k], k=1..4, and the
+first-order coefficients of omega(W)/tau (1/144, 1/1152, 1/2880, 1/5760, 1/96,
+1/48 and 1/864 in that order) agree exactly between the characters route
+(forward) and Weyl integration on the SU(N) torus (reverse); the link-flip
+lemma holds on these models for SU(2), SU(4), U(1) and Z2, whose central
+elements -I, -I, e\textasciicircum{}\{i pi\} and the nontrivial element act as
+-1 on the Wilson representation, with E\_3 verified on Lambda\_2, Lambda\_3,
+Lambda\_4 and the 24-link coarse factors and E\_2 on [-N,N]\textasciicircum{}2
+by exact enumeration; the first-order parity theorem holds for SU(2), SU(4),
+SU(5), U(1) and Z2 (E[W\textasciicircum{}3]=0); SU(3) is an obstruction with
+E[W\textasciicircum{}3]=1/108, d omega(W\textasciicircum{}2)/dtau=1/6912 and
+second-order coefficient 1/589824, SO(3) with 1/27, 1/2592 and 1/331776, and
+SU(5) a flip obstruction with fourth-order coefficient
+1/63403380965376=1/(2\textasciicircum{}30 3\textasciicircum{}10) on
+H\_FG(SU(5)); for SU(2) in the AM2/AQ1 zero-selected patterned family at
+kappa=0, |tau| at most 10\textasciicircum{}-8 and both signs,
+omega(W\_C)(-tau)=(-1)\textasciicircum{}\{A(C)\} omega(W\_C)(tau) in every
+open centered whole-star box and every on-site cutoff, and pointwise for the
+limit of the named constructions through the BB2 whole-sequence bound at each
+sign (c\textquotesingle{}\_site=2/984375, q=1/64). Under the frozen
+convention, the link-flip lemma transfers exactly to the listed gauge groups
+that have a central element acting as -1 on the Wilson representation and the
+first-order parity theorem exactly to those with vanishing third Haar moment
+of W, each with its own first-order Wilson coefficient, on one-plaquette
+models and on group box models in each box separately; SU(3) and SO(3) are
+recorded obstructions with exact nonzero coefficients, and SU(5) is a recorded
+flip obstruction with an exact nonzero fourth-order coefficient; for SU(2) in
+the zero-selected family at kappa=0 the Wilson-loop mean is odd or even in tau
+according to the parity of the number of plaquettes of any spanning surface of
+the loop, in every open centered whole-star box and for the limit of the named
+constructions; these are statements about named models and one-plaquette
+finite graphs, not AM2 or continuum statements for other groups, not
+statements for periodic boxes with an odd side, not uniqueness of any ground
+state, and not a statement uniform in the lattice spacing a.
+\end{gatequote}
+
+\subsubsection{The frozen convention and the models}
+\label{sec:bd1-convention}
+Energies are in units $\delta=\alpha/8$. The per-link electric term is
+$8C_2$, with $C_F=(N^2-1)/(2N)$ for SU($N$), $C_2(n)=n^2$ for U(1),
+$C_2(l)=l(l+1)$ for SO(3) and $C_2=1$ on the odd Z2 state. A face whose four
+links carry the Wilson representation $F$ therefore has energy $32C_F$. The
+magnetic term is $-(\tau/3)W$ with $W=\operatorname{Re}\chi_F/\dim F$. With the
+AM2/AV1 creation sign $\psi=e^{-C}\Omega_0$,
+\begin{equation}
+ \begin{gathered}
+ c^{(1)}=-\frac{\tau/3}{32C_F}\sum_fW_f\Omega_0,\qquad a=\frac{1/3}{32C_F},\\
+ \omega(W)=-2\operatorname{Re}\bigl(W\Omega_0,c^{(1)}\bigr)+O(\tau^2)
+ =2a\,\mathbb E[W^2]\,\tau+O(\tau^2).
+ \end{gathered}
+ \label{eq:bd1-first-order}
+\end{equation}
+The inherited AW1 display $2(W\Omega_0,c^{(1)})$ has the opposite sign; the
+contract records it, and both producers reject it (contract defect C7). The
+Z2 normalization is the frozen one, $8C_2=8$ on the odd link state; the
+readings with $C_2(\mathrm{odd})=1/8$ (coefficient $1/6$) and with
+$1-\sigma^x$ (coefficient $1/12$) are rejected controls.
+
+The models are named. The one-plaquette finite graph is
+$H_{FG}(G)=32C_2-(\tau/3)W$ on class functions of one plaquette holonomy
+(\recid{model_is_finite_graph} true, \recid{transfers_to_aq} false). The
+group box model $H^G_N=\sum_e8C_2(e)-(\tau/3)\sum_fW_f$ lives on the open
+centered whole-star box $\Lambda_N$, $N\ge2$, with the AQ1 geometry: coarse
+24-link factors, the 21 omitted faces of an anchor retained when its whole
+star lies in the box, and the selected faces at coefficient 0. For SU(2)
+this is exactly the AW1 box Hamiltonian of the zero-selected family. For
+every other group it carries no AM2, AV1 or AQ statement.
+
+\paragraph{The Kato radius.} For every listed group $C_F$ is the smallest
+nonzero Casimir, attained exactly by $F$ and $\bar F$. The free gap is
+therefore $8C_F$ in a box (one excited link) and $32C_F$ on the plaquette,
+and $\norm{W_f}\le1$. A simple isolated ground eigenvalue persists,
+analytically in complex $\tau$, for
+\begin{equation}
+ |\tau|<48C_F\quad\text{on }H_{FG}(G),\qquad
+ |\tau|<\frac{12C_F}{21(2N)^3}\quad\text{on }H^G_N,
+ \label{eq:bd1-kato}
+\end{equation}
+with $21(2N)^3$ retained faces: $3/448$ for SU(2) at $N=2$. This radius is
+sufficient, not sharp, and it shrinks like $N^{-3}$, so nothing is claimed
+for all $N$ at once for any group other than SU(2), whose AM2 regime
+$|\tau|\le10^{-8}$ is admitted separately. The contract's word ``unique'' in
+items~1 and~6 means this simplicity of a finite-box ground eigenvalue, used as
+a hypothesis (contract defect C3); it is not uniqueness of any ground state.
+
+\subsubsection{\texorpdfstring{Criterion A: a central element acting as $-1$}{Criterion A: a central element acting as -1}}
+\label{sec:bd1-flip}
+Let $z$ be central in $G$ with $\rho_F(z)=-I$, and let $E$ be a set of links
+meeting every plaquette an odd number of times. Multiplying $U_e$ by $z$ on
+every link of $E$ defines a unitary $U_E$. Haar measure is invariant, so
+$U_E$ is unitary and fixes $\Omega_0$. Because $z$ is central, $U_E$ commutes
+with every translation of each link variable, hence with every endpoint gauge
+action; by Schur's lemma it acts on each Peter--Weyl block as a scalar, hence
+commutes with every link Casimir and every on-site cutoff projection. A
+flipped link multiplies the holonomy of each plaquette through it by $z$ or
+$z^{-1}$, which reverses $\chi_F$, and an odd number of flipped links per
+plaquette gives $U_EW_fU_E^*=-W_f$. Hence (\projecttag{HNM-BD1-F05})
+\begin{equation}
+ U_E\,H^G_N(\tau)\,U_E^*=H^G_N(-\tau)\quad\text{in every box and cutoff},\qquad
+ U\,H_{FG}(G)(\tau)\,U^*=H_{FG}(G)(-\tau),
+ \label{eq:bd1-flip}
+\end{equation}
+and $\omega_{-\tau}(W)=-\omega_\tau(W)$ wherever the ground eigenvalue is
+simple, that is, inside \eqref{eq:bd1-kato}. Such an element exists for
+exactly four of the seven groups (Table~\ref{tab:bd1-centre}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Central elements acting as $-1$ on the Wilson representation.}
+\label{tab:bd1-centre}
+\begin{tabular}{llll}
+\toprule
+Group & Centre & Element with $\rho_F(z)=-I$ & Reason\\
+\midrule
+SU(2) & $\{I,-I\}$ & $-I$ & $\det(-I)=(-1)^2=1$\\
+SU(3) & $\mathbb Z_3$ & none & cube roots of unity are never $-1$\\
+SU(4) & $\mathbb Z_4$ & $-I=e^{2\pi i\cdot2/4}I$ & $\det(-I)=(-1)^4=1$\\
+SU(5) & $\mathbb Z_5$ & none & fifth roots of unity are never $-1$\\
+U(1) & U(1) & $e^{i\pi}$ & charge-1 character value $-1$\\
+Z2 & Z2 & the nontrivial element & sign character value $-1$\\
+SO(3) & trivial & none & $-I\notin$ SO(3), since $\det(-I)=-1$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The absence of a central $-1$ is recorded as the reason, not as the proof,
+of non-transfer. The proof is an exact nonzero even-order coefficient
+(Section~\ref{sec:bd1-obstructions}): any unitary that commutes with $32C_2$
+and reverses $W$ on $H_{FG}(G)$, central or not, would make $\omega(W)$ odd in
+$\tau$ and kill every even coefficient.
+
+\subsubsection{Criterion B: the third Haar moment}
+\label{sec:bd1-parity}
+\paragraph{Single-occurrence orthogonality.} In every listed group a product
+of face variables has Haar mean 0 if some link lies in exactly one of the
+faces, because as a function of that link the product is a combination of
+matrix coefficients of $F$ and $\bar F$. Two distinct plaquettes share at most
+one link.
+
+\paragraph{The degenerate level.} The gauge-invariant eigenspace of
+$\sum8C_2$ at energy $32C_F$ is spanned by $\chi_F(U_g)\Omega_0$ and
+$\overline{\chi_F(U_g)}\Omega_0$ over the plaquettes $g$ of the box. Each
+excited link costs at least $C_F$, so at most four links are excited; gauge
+invariance forbids a vertex of degree one; $\mathbb Z^3$ is bipartite, so the
+excited links form a 4-cycle, which is a plaquette. For U(1) and SU($N$),
+$N\ge3$, the level therefore contains the $\operatorname{Im}\chi_F$
+directions as well as $W_g\Omega_0$.
+
+\paragraph{The criterion.} On $H_{FG}(G)$ and on every $H^G_N$ inside its
+Kato radius, if $\mathbb E[W^3]=0$ then the first-order $\tau$-derivatives at 0
+of $\omega(W^2)$, of the centred Euclidean correlation $C(s)$ for every
+$s\ge0$ and of the centred real-time correlation $c(\theta)$ for every real
+$\theta$ vanish, and the first-order splitting of the whole level vanishes. Every first-order term (state, Duhamel, energy and
+vector centring) is a Haar mean of three face variables, which reduces to
+$\mathbb E[W^3]$ by single-occurrence orthogonality. Since
+$\mathbb E[W^3]=(2\dim F)^{-3}\sum_a\binom3a\mathbb E[\chi^a\bar\chi^{3-a}]$ is a
+positive combination of nonnegative integers, $\mathbb E[W^3]=0$ exactly when
+every cubic moment vanishes, which also kills the splitting on the complex
+directions. Conversely, on $H_{FG}(G)$,
+\begin{equation}
+ \frac{d\,\omega(W^2)}{d\tau}\Big|_0=2a\,\mathbb E[W^3],\qquad
+ C(s)^{(1)}=e^{-32C_Fs}\,\mathbb E[W^3]\bigl(2a+\tfrac s3\bigr),
+ \label{eq:bd1-parity}
+\end{equation}
+which are nonzero for every $s\ge0$ when $\mathbb E[W^3]\ne0$. The vanishing
+third moment holds for SU(2), SU(4), SU(5), U(1) and Z2. The flip and the
+parity are separate columns: SU(5) has the parity without the flip.
+
+\subsubsection{Moments and first-order coefficients}
+\label{sec:bd1-moments}
+Table~\ref{tab:bd1-moments} gives the Haar moments and the first-order
+coefficients of $\omega(W)/\tau$ from \eqref{eq:bd1-first-order}. For
+SU($N$), $N\ge3$, only $\mathbb E[|\chi_F|^2]=1$ survives in $\mathbb E[W^2]$, so
+$\mathbb E[W^2]=1/(2N^2)$ and the coefficient is $1/(48N(N^2-1))$. The SU(2)
+value $1/144$ reproduces the admitted AW1 coefficient; it is a check of the
+convention, not a transferred value, and no SU(2) value enters any other
+cell. The first-order coefficients carry the tier
+\recid{exact_first_order}; the moments and the higher-order coefficients
+carry a route and no tier. The same coefficients hold on the box models,
+because every retained face other than $W$ shares at most one link with it.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Haar moments $\mathbb E[W^k]$, $k=1,\ldots,4$, and first-order Wilson
+coefficients under the frozen convention, identical on both routes.}
+\label{tab:bd1-moments}
+\begin{tabular}{lcccccc}
+\toprule
+Group & $\mathbb E[W]$ & $\mathbb E[W^2]$ & $\mathbb E[W^3]$ & $\mathbb E[W^4]$ & $C_F$ & $\omega(W)/\tau$ at first order\\
+\midrule
+SU(2) & 0 & 1/4 & 0 & 1/8 & 3/4 & 1/144\\
+SU(3) & 0 & 1/18 & 1/108 & 1/108 & 4/3 & 1/1152\\
+SU(4) & 0 & 1/32 & 0 & 7/2048 & 15/8 & 1/2880\\
+SU(5) & 0 & 1/50 & 0 & 3/2500 & 12/5 & 1/5760\\
+U(1) & 0 & 1/2 & 0 & 3/8 & 1 & 1/96\\
+Z2 & 0 & 1 & 0 & 1 & 1 & 1/48\\
+SO(3) & 0 & 1/9 & 1/27 & 1/27 & 2 & 1/864\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The cubic moments $\mathbb E[\chi^a\bar\chi^b]$, $a+b=3$, all vanish except for
+SU(3), where the invariant $\varepsilon$ tensor in $F^{\otimes3}$ gives
+$\mathbb E[\chi^3]=\mathbb E[\bar\chi^3]=1$, and SO(3), where the real vector
+representation carries $\varepsilon_{ijk}$ and every cubic moment is 1. The
+forward also exports $\mathbb E[W^5]$ ($5/1296$ for SU(3), $1/50000$ for SU(5),
+$2/81$ for SO(3), zero otherwise).
+
+\subsubsection{The obstruction cells}
+\label{sec:bd1-obstructions}
+On $H_{FG}(G)$ the second-order coefficient of $\omega(W)$ is
+$(\psi_1,W\psi_1)+2(W\Omega_0,\psi_2)=3a^2\,\mathbb E[W^3]$, so a nonzero third
+moment gives a nonzero even coefficient.
+\begin{itemize}
+\item \textbf{SU(3)} ($a=1/128$): $\mathbb E[W^3]=1/108$,
+ $d\omega(W^2)/d\tau=1/6912$, and second-order coefficient $1/589824$. The
+ level $\{\chi_F,\chi_{\bar F}\}$ splits at first order by $\pm1/18$.
+\item \textbf{SO(3)} ($a=1/192$): $\mathbb E[W^3]=1/27$,
+ $d\omega(W^2)/d\tau=1/2592$, and second-order coefficient $1/331776$.
+\item \textbf{SU(5)} ($a=5/1152$): $\mathbb E[W^3]=0$, so the parity column is a
+ transfer. Each application of $W$ changes the 5-ality by $\pm1$, so the
+ order-$m$ coefficient involves Haar means of $m+1$ factors $\chi_F$ or
+ $\bar\chi_F$ with $a-b$ divisible by 5; orders 1 to 3 give no even
+ contribution, and the first even order that can be nonzero is 4. There
+ \begin{equation}
+ c_4=\frac1{63403380965376}=\frac1{2^{30}3^{10}}\approx1.57720295790\times10^{-14},
+ \label{eq:bd1-su5}
+ \end{equation}
+ by three evaluations: the direct Rayleigh--Schr\"odinger series,
+ Hellmann--Feynman $c_4=-15E_5$ with $E_5=-1/951050714480640$, and a closed
+ form. The forward's closed form uses the single channel
+ $\Lambda^2\leftrightarrow\Lambda^3$ inside $\psi_2$; the reverse's uses the
+ column chain $\Lambda^1\to\Lambda^2\to\Lambda^3\to\Lambda^4\to$ trivial, which
+ gives $c_4=(10/81)\,10^{-5}/\prod_kE(\Lambda^k)$ with
+ $E(\Lambda^k)=384/5,\,576/5,\,576/5,\,384/5$. SU(5) is therefore a flip
+ obstruction with the parity column a transfer.
+\end{itemize}
+The one-plaquette series through order 5 are exported for all seven groups;
+the SU(2) row reproduces the admitted AW1 fixture
+$\tau/144-(5/11943936)\tau^3$. As a supplementary argument, not used in place
+of the coefficients, a unitary reversing $W$ on $H_{FG}(G)$ needs the range of
+$W$ to be symmetric; it is $[-1/2,1]$ for SU(3) and $[-1/3,1]$ for SO(3), and
+$-1$ is not attained for SU(5).
+
+\subsubsection{The transfer ledger}
+\label{sec:bd1-ledger}
+Table~\ref{tab:bd1-ledger} is the ledger both producers export. Every
+transfer is to $H_{FG}(G)$ and $H^G_N$: the operator identity in every box and
+cutoff, and the oddness and first-order statements in each box inside its
+Kato radius.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The BD1 transfer ledger. T: transfer to the named models with its own
+exact checks. O: obstruction, with its exact counterexample on
+$H_{FG}(G)$.}
+\label{tab:bd1-ledger}
+\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X ll@{}}
+\toprule
+Group & Flip lemma & Parity theorem & First order & AM2/AQ chain, dictionary\\
+\midrule
+SU(2) & T ($-I$; the admitted AW1 lemma) & T & 1/144 (check) & admitted reference\\
+SU(3) & O: $c_2=1/589824$ (reason $\mathbb Z_3$) & O: $d\omega(W^2)/d\tau=1/6912$ & 1/1152 & obligation\\
+SU(4) & T ($-I$) & T & 1/2880 & obligation\\
+SU(5) & O: $c_4=1/(2^{30}3^{10})$ (reason $\mathbb Z_5$) & T & 1/5760 & obligation\\
+U(1) & T ($e^{i\pi}$) & T & 1/96 & obligation\\
+Z2 & T (nontrivial element) & T & 1/48 & obligation\\
+SO(3) & O: $c_2=1/331776$ (trivial centre) & O: $1/2592$ & 1/864 & obligation\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For every group other than SU(2) the AM2/AQ chain is an obligation: the AM2
+re-instantiation with its finite-volume ground state and gap, the AV1
+product split, the AQ1 construction and dynamics with the AQ2 gap, the BB1
+and BB2 comparisons, and a dictionary to a bare coupling. The review records these as rows
+O1--O7 and O9 of its obligations table; row O8 covers F2 and literal vertex
+boxes, O10 SU(2) at a nonzero selected triple and O11 periodic boxes with an
+odd side.
+
+\subsubsection{Flip sets}
+\label{sec:bd1-flipsets}
+The flip set is
+$E_3=\{(p,x):p_y\text{ even}\}\cup\{(p,y):p_z\text{ even}\}\cup\{(p,z):p_x\text{ even}\}$,
+the admitted AW1 set, and in two dimensions $E_2=\{(p,x):p_y\text{ even}\}$.
+The reverse derives $E_3$ before reading the contract: of the 27 rules ``link
+$(p,d)$ in $E$ if and only if $p_{\sigma(d)}$ is even'', exactly two are odd on
+all 24 plaquette classes, the cyclic rule, which is $E_3$, and the
+anticyclic rule, and they differ by a centre gauge transformation.
+Table~\ref{tab:bd1-flipsets} gives the enumeration on the boxes.
+
+\begin{table}[htbp]
+\centering\small
+\caption{$E_3$ on the open centered whole-star boxes: every owned plaquette
+and every retained face meets $E_3$ an odd number of times.}
+\label{tab:bd1-flipsets}
+\begin{tabular}{rrrrrr}
+\toprule
+$N$ & Owned links & Plaquettes & Met once & Met three times & Retained faces (once / three times)\\
+\midrule
+2 & 3000 & 2335 & 1082 & 1253 & 1344 (672 / 672)\\
+3 & 8232 & 6909 & 3630 & 3279 & 4536 (2268 / 2268)\\
+4 & 17496 & 15291 & 7348 & 7943 & 10752 (5376 / 5376)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The $N=2$ counts reproduce the AW1 forward report. On seven probed coarse
+factors every one of the 52 faces meeting the factor (49 omitted, 3
+selected) meets $E_3$ oddly; $E_3$ holds 16 links of a factor with even $z$
+and 8 with odd $z$, so it is not invariant under odd coarse translations in
+$z$, which the flip lemma does not need. $E_2$ meets every plaquette of
+$[-N,N]^2$ exactly once (16, 36 and 64 plaquettes for $N=2,3,4$).
+
+\paragraph{Periodic tori: the GF(2) reading.} On periodic tori with an odd
+side, $E_3$ and $E_2$ meet seam plaquettes evenly: 16 even plaquettes on
+$3\times4\times4$, $4\times3\times4$ and $4\times4\times3$, 24 on
+$3\times3\times4$, 27 on $3\times3\times3$, and 4 on the $4\times3$ torus. $E_2$,
+keyed to $p_y$ only, still meets every plaquette of the $3\times4$ torus once.
+Gaussian elimination over GF(2) shows more: a link set odd on every plaquette
+of a torus exists exactly when every coordinate plane has an even plaquette
+count, that is, when at most one side is odd in three dimensions, or when
+$L_xL_y$ is even in two. The contract's periodic ``obstruction'' therefore
+concerns $E_3$ and $E_2$ at the seam, not every flip set (contract defect
+C4). These are recorded findings, not claims: no flip or parity statement is
+made on any periodic box with an odd side.
+
+\subsubsection{SU(2) area parity}
+\label{sec:bd1-area}
+For SU(2) in the zero-selected family at $\kappa=0$, $|\tau|\le10^{-8}$ and
+both signs, let $W_C$ be the half-trace of the holonomy of a closed path $C$
+of plaquette edges and $A(C)$ the number of plaquettes of a spanning
+surface. Every plaquette meets $E_3$ oddly and every interior link of a
+surface is counted twice, so for every spanning surface $S$ of $C$,
+$|S|\equiv|C\cap E_3|\pmod2$, independently of $S$; in particular every closed
+surface of plaquettes has an even number of them. In every open centered
+whole-star box, every on-site cutoff and for the untruncated ground vectors,
+the AW1 identity $U_EH_N(\tau)U_E^*=H_N(-\tau)$ and AM2 simplicity give
+\begin{equation}
+ \omega_{N,-\tau}(W_C)=(-1)^{A(C)}\,\omega_{N,\tau}(W_C),
+ \label{eq:bd1-area}
+\end{equation}
+because $-1$ is central and each traversal of a flipped link contributes one
+factor $-1$. For the limit of the named constructions the identity holds
+pointwise at each sign: $U_E$ is a product over links, so
+$\rho^{F1,N}_Y(-\tau)=U_{E\cap Y}\rho^{F1,N}_Y(\tau)U_{E\cap Y}^*$ for the region
+$Y$ owning the links of $C$, and the BB2 whole-sequence bound
+\eqref{eq:bb2-cauchy} with $c'_{\rm site}=2/984375$ and $q=1/64$ carries it to
+the limit at each sign separately. More generally
+$\omega^{-\tau}_\infty=\omega^{\tau}_\infty\circ\alpha_E$. The AW1 whole-set
+statement alone would give this only as sets of subsequential limits, and
+using it for a pointwise claim is a rejected mutation. Observables fixed by
+$U_E$, such as $W_C^2$, are even in $\tau$.
+
+The surface identity is audited on nine loops with two disjoint spanning
+surfaces each and five closed surfaces (6, 10, 14, 24 and 32 plaquettes,
+including a ring of eight cubes of Euler characteristic 0) in the forward, on
+6480 rectangles and 400 random surfaces in the reverse, and on 216 planar
+loops in the skeptic's pre-comparison check. The audits check the identity;
+they do not replace the proof. The statement is made only for SU(2), the
+zero-selected family, $\kappa=0$, open centered whole-star boxes, their
+cutoffs and the limit of the named constructions; not for periodic boxes with
+an odd side, F2 or literal vertex boxes, nonzero selected triples or other
+groups.
+
+\subsubsection{Two routes and the review}
+\label{sec:bd1-review}
+The forward route computes each moment three ways inside the character route
+(iterated action on the character basis, iterated tensor multiplicities, and
+closed-form counts by Schur--Weyl duality with the hook-length formula,
+charge balance, parity and Catalan numbers) and adds a labelled internal Weyl
+cross-check that is never an admission value. The reverse route never uses a
+character table: it integrates on the SU($N$) torus by constant terms
+against the Weyl density, with exponents taken modulo the diagonal, on the
+SO(3) torus with density $(2-z-z^{-1})/2$, by the binomial constant term for
+U(1) and by summation for Z2, and it applies the electric operator to Weyl
+numerators. The forward checker runs 37 exact checks and the reverse 64,
+each with all 22 controls as damaging mutations (111 and 110 rejections);
+both replay byte for byte under \texttt{-B} and \texttt{-B -O}.
+
+The skeptic computed every value by three routes of its own (characters,
+Weyl constant terms, and Frobenius and hook-length counts). The moments for
+$k=1,\ldots,4$, the first-order coefficients and derivatives, the
+one-plaquette series and the SU(5) value $\mathbb E[W^5]$ agree exactly across
+forward, reverse and skeptic, 141 cells in all, with no single-route cell.
+The review records a trap it tested. On the U($N$) torus instead of the
+SU($N$) torus the SU(3) third moment would be 0 and the SU(4) fourth moment
+$3/1024$; both producers reduce modulo the diagonal, return $1/108$ and
+$7/2048$, and abort under a U($N$) substitution. The reverse committed at
+05:53:54 UTC and the forward at 05:54:17. The skeptic's values were final at
+05:45:05, before either producer commit, and its package was committed last,
+at 06:10:08; its exposure before that was to file names, hashes and possibly
+commit subject lines. The post-comparison checker runs 29 checks and 71
+source-edit runs: 44 validator weakenings, 17 must-abort substitutions, and 6
+silent edits, of which 2 are harmless and 4 are caught only by the skeptic's
+validator. It also rejects 27 damaged packets. Both closures of 27 files
+verify, each with its 23 declared inputs. The review found no blocking issue.
+It records a wrong preview digit string for $c_4$ in the reverse report,
+whose results carry the exact value; the forward's literal flip-scope field
+beside its named groups; two reverse fields outside the contract list; and
+both reports written through the shell after a tool refusal.
+
+\paragraph{Contract defects.} Seven are recorded, none blocking: the
+preregistered tier rule conflicts with the tier control for second- and
+fourth-order coefficients, and the control governs (C1); the frozen flip
+scope field is a description, so the gate names the groups (C2); ``unique''
+means finite-box simplicity (C3); the periodic obstruction concerns $E_3$ and
+$E_2$ at the seam (C4); the two-route table comparison is a pair-level
+comparison in a paired loop (C5); the contract does not state that the box
+coefficient equals the plaquette value, which both producers prove (C6); and
+the inherited AW1 display sign (C7).
+
+\subsubsection{Limitations recorded by the gate}
+\label{sec:bd1-limits}
+The BD1 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Scope: statements about named finite models only, H\_FG(G) (finite
+graphs; model\_is\_finite\_graph true, transfers\_to\_aq false) and
+H\textasciicircum{}G\_N box by box inside a Kato radius that shrinks like
+N\textasciicircum{}-3; nothing is claimed for all N at once for any group
+other than SU(2), no limit state is constructed for any other group, and no
+AM2, AV1, AQ, BB1 or BB2 statement and no dictionary to a bare coupling is
+transferred to SU(3), SU(4), SU(5), U(1), Z2 or SO(3); each is recorded as an
+obligation.
+\item The group-cell oddness statements use simplicity of the finite-box
+ground eigenvalue from Kato\textquotesingle{}s theorem with a sufficient, not
+sharp, radius (12 C\_F/F\_N with F\_N=21(2N)\textasciicircum{}3 retained
+faces; 48 C\_F on one plaquette); this is simplicity in a finite box, not
+uniqueness of any ground state, and the word "unique" in contract items 1 and
+6 is read that way.
+\item No flip or parity statement is made on any periodic box with an odd
+side. The recorded obstruction is that E\_3 and E\_2 meet seam plaquettes
+evenly when the keyed coordinate has an odd side (16 on 3x4x4, 4x3x4 and
+4x4x3; 24 on 3x3x4; 4 on the 4x3 torus); E\_2 still meets every plaquette of
+the 3x4 torus once, and by GF(2) elimination some flip set exists whenever
+every coordinate plane has an even plaquette count (at most one odd side);
+these are recorded findings, not claims.
+\item The SU(2) corollary inherits the AW1 flip lemma, AM2 simplicity and
+cutoff removal and the BB2 whole-sequence convergence with their own
+limitations (the named constructions F1 and F2 only; no statement about other
+states or boundary conditions); it is made at kappa=0 only, not at a nonzero
+selected triple and not for F2 or literal vertex boxes; the loop and surface
+enumerations audit the identity |C cap E\_3| = A(C) mod 2 and do not replace
+the proof.
+\item Exact rational arithmetic decides every value; decimals are truncated
+previews (the reverse report prints 1.57720727258e-14 for omega\_4 of SU(5), a
+text slip; the exact value 1/63403380965376 and the results preview
+1.57720295790e-14 stand). Kato\textquotesingle{}s theorem, Peter-Weyl, the
+Weyl integration and character formulas, Schur-Weyl duality and
+Schur\textquotesingle{}s lemma are cited, not machine-checked; the finite
+enumerations and fixtures audit their finite consequences.
+\item Contract defects recorded, none blocking: the preregistered
+tier\_label\_rule conflicts with the tier\_mixing\_rejected control for
+second- and fourth-order coefficients (both producers follow the control:
+route named, no tier); gate\_fields\_required flip\_transfer\_scope is a
+description, so the gate names SU(2), SU(4), U(1) and Z2; items 1 and 6 say
+"unique" for finite-box simplicity; the periodic-torus obstruction concerns
+E\_3 and E\_2 at the seam, not every flip set.
+\item Review standing: model-agent skeptic with correlated ancestry (same
+model family as both producers and the advisor); its pre-comparison package
+was committed after both producer packets, with its values final before either
+producer commit; not human peer review; scientific priority is not verified;
+weak coupling and the continuum are not addressed, and no estimate is made
+uniformly in the lattice spacing a.
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round33/forward/bd1/report.md}{BD1 forward},
+\repo{research/round33/reverse/bd1/report.md}{BD1 reverse},
+\repo{research/round33/skeptic/bd1.md}{independent model-agent review} and the
+\repo{research/round33/contracts/bd1.json}{frozen contract}; the transferred
+statements are those of the \repo{research/round32/advisor/aw1-gate.json}{AW1
+gate}, which is not edited.
+
+\subsection{BD2: new observables and a new dimension in SU(2)}
+\label{sec:bd2}
+
+\textbf{Contribution \projecttag{HNM-C-BD2}.} The BD2 contract, recorded
+under the title ``Applications II: new observables and a new dimension in
+SU(2) - the 1x2 Wilson loop, the electric energy band and the two-plaquette
+graph with independent couplings, and the 2+1D AM2 constants'', applies
+admitted SU(2) equations to four new cases
+(\repo{research/round33/advisor/selection-bd2.md}{selection note}). It is
+investigation~8 of~8 and single-direction: one forward producer, with 33
+shared premises, and the skeptic's replay from the contract. Its blind
+discriminating target is the relative width of the certified enclosure of
+the 1x2 loop on the graph at $D=8$, at most $1/10^{16}$; the other items are
+exact computations and format checks. It lists 21 controls. Its gate is
+recorded under the title ``Hruday new observables and dimensions in SU(2):
+the two-plaquette graph, the 1x2 loop, the electric band and 2+1D''.
+
+\subsubsection{Reviewed scope}
+\label{sec:bd2-scope}
+The \repo{research/round33/advisor/bd2-gate.json}{BD2 gate} records the
+verdict \recid{accepted_within_scope}, with sub-label
+\recid{sign_certified_finite_graph} and secondary sub-labels
+\recid{transfer_to_named_model}, \recid{obstruction_recorded} and
+\recid{static_not_dynamic}. Its gate fields set
+\recid{graph_sign_certified}, \recid{z3_1x2_formal_only},
+\recid{electric_band_claimed} and \recid{model_is_finite_graph} to true, with
+the band scope ``omega(h\_R) for every finite box of F1 and F2 (untruncated at
+fixed N) and the limit of the named constructions, both signs''. Seven
+fields are false: \recid{area_law_claimed}, \recid{transfers_to_aq},
+\recid{uniqueness_of_ground_state_claimed}, \recid{continuum_claim},
+\recid{rate_in_a_claimed}, \recid{weak_coupling_claim} and
+\recid{scientific_priority_verified}. The accepted statement, quoted
+verbatim below in the gate's ASCII notation, is the scope of every claim in
+this subsection.
+\begin{gatequote}
+On the Round11 two-plaquette graph H\_FG(l1,l2) = K - l1 W\_1 - l2 W\_2 (open
+two-square patch, 6 vertices, 7 links, gauge-invariant sector, K the sum of
+the seven link Casimirs at rho=1, alpha units, trace-monomial cutoffs D=6 and
+D=8), the coefficients through total order 4 are identical at both cutoffs:
+<W\_1> = l1/6 - 5 l1\textasciicircum{}3/864 + l1 l2\textasciicircum{}2/4212,
+<z> = 7 l1 l2/216 - 349 (l1\textasciicircum{}3 l2 + l1
+l2\textasciicircum{}3)/303264 for the 1x2 loop z, and <C\_shared> =
+(l1\textasciicircum{}2 + l2\textasciicircum{}2)/48 - 5 (l1\textasciicircum{}4
++ l2\textasciicircum{}4)/4608 - 49 l1\textasciicircum{}2
+l2\textasciicircum{}2/438048; <W\_1> is odd in l1 and even in l2 by the
+one-link flips of h1 and h2, <z> is odd in each coupling and <C\_shared> even
+in each; at l1=l2=l with |l| in \{1/10, 1/100, 1/1000\} and both signs the
+certified enclosures of <z> are positive at D=6 and D=8, with D=8 relative
+width at most 1.79645e-17 against the frozen 1/10\textasciicircum{}16. In the
+zero-selected SU(2) family (AM2/AQ1, |tau| at most 10\textasciicircum{}-8,
+cover R=\{0,e\_z\}) the 1x2 Wilson loop W\_\{1x2\} of the omitted xz faces at
+0 and e\_x has first-order coefficient 0 in every box, satisfies
+|omega(W\_\{1x2\})| <= K\_2\textquotesingle{} tau\textasciicircum{}2
+(K\_2\textquotesingle{} the AY1 gate constant; about 1.34175e-12 at
+|tau|=10\textasciicircum{}-8) for every F1 and F2 box and for the limit of the
+named constructions at both signs, is even in tau in every F1 box and for the
+limit, and has the formal second-order coefficient 7/124416 (labelled
+formal\_second\_order\_coefficient: no sign and no certified remainder); the
+electric energy omega(h\_R) on R lies in [(3/2)L\textasciicircum{}2, 98|tau|],
+about [2.87586637818e-19, 9.8e-7] at |tau|=10\textasciicircum{}-8, with L the
+AY2 lower distance, for every F1 and F2 box (untruncated at fixed N) and for
+the limit, at both signs. In the declared 2+1-dimensional model the AM2
+counting gives p=3, J=|tau|, termination order 6, G\_3(R)=9
+e\textasciicircum{}\{3/32\} and G\_3\textquotesingle{}(R)=118
+e\textasciicircum{}\{3/32\} at R=1/64, and the cap |tau| <= 1/(576
+e\textasciicircum{}\{3/32\}) (directed lower bound
+1580747155173/10\textasciicircum{}15), with no finite-volume theorem. On the
+Round11 two-plaquette graph with independent couplings, the exact low-order
+coefficients of the face mean, the 1x2 loop and the shared-link Casimir are
+computed with zero truncation error, the face mean is odd in its own coupling
+and even in the other, and the 1x2 loop has a certified sign at every grid
+point; in the zero-selected SU(2) family the 1x2 Wilson mean vanishes at first
+order and is even in tau, with only a formal second-order coefficient, the
+electric energy on the cover lies in a certified two-sided band for every box
+and for the limit of the named constructions, and the 2+1-dimensional AM2
+constants are recounted; these are statements about named models and a finite
+graph, not an area law, not a certified sign of the 1x2 mean, not uniqueness
+of any ground state, and not a statement uniform in the lattice spacing a.
+\end{gatequote}
+
+\subsubsection{The two-plaquette graph with independent couplings}
+\label{sec:bd2-graph}
+The graph is the Round11 open two-square patch \cite{r11}: vertices TL, TM, TR, BL, BM,
+BR and seven links $h_1$ (TL$\to$TM), $h_2$ (TM$\to$TR), $h_3$ (BL$\to$BM),
+$h_4$ (BM$\to$BR), $v_L$, $v_M$ and $v_R$, with holonomies
+$U=v_Mh_3^{-1}v_L^{-1}h_1$ and $V=h_2v_Rh_4^{-1}v_M^{-1}$, face variables
+$x=W_1=\tfrac12\operatorname{Tr}U$ and $y=W_2=\tfrac12\operatorname{Tr}V$, and the 1x2
+loop $z=\tfrac12\operatorname{Tr}(UV)$, in which the shared link $v_M$ cancels.
+In alpha units, on the gauge-invariant sector,
+\begin{equation}
+ H_{FG}(l_1,l_2)=K-l_1W_1-l_2W_2,\qquad K=3C_U+3C_V+C_{\rm shared},
+ \label{eq:bd2-graph}
+\end{equation}
+with $K$ the sum of the seven link Casimirs at $\rho=1$ and $C_{\rm shared}$
+the Casimir of $v_M$. AZ2 treated the equal couplings $l_1=l_2$
+(\repo{papers/round32-addendum/main.pdf}{Round32 addendum}); here the two
+faces are coupled independently.
+
+\paragraph{Exact coefficients.} $K$ is triangular in the degree, so every
+Rayleigh--Schr\"odinger vector $\psi_{mn}$ lies in the polynomials of degree
+$m+n$ and the equations hold as polynomial identities for $m+n\le5$. The
+truncation error is therefore exactly 0, and the tables computed at the
+trace-monomial cutoffs $D=6$ and $D=8$ are identical. The first vectors are
+$\psi_{10}=x/3$, $\psi_{01}=y/3$ and $\psi_{11}=4xy/39+4z/351$. Through total
+order 4,
+\begin{equation}
+ \begin{aligned}
+ \langle W_1\rangle&=\frac{l_1}6-\frac{5l_1^3}{864}+\frac{l_1l_2^2}{4212}+\cdots,\\
+ \langle z\rangle&=\frac{7l_1l_2}{216}-\frac{349(l_1^3l_2+l_1l_2^3)}{303264}+\cdots,\\
+ \langle C_{\rm shared}\rangle&=\frac{l_1^2+l_2^2}{48}-\frac{5(l_1^4+l_2^4)}{4608}-\frac{49l_1^2l_2^2}{438048}+\cdots,\\
+ E_0&=-\frac{l_1^2+l_2^2}{12}+\frac{5(l_1^4+l_2^4)}{3456}-\frac{l_1^2l_2^2}{8424}+\cdots,
+ \end{aligned}
+ \label{eq:bd2-series}
+\end{equation}
+with every other coefficient of total order at most 4 exactly zero. The
+checks are exact: Hellmann--Feynman
+$\langle W_1\rangle_{(m,n)}=-(m+1)E_{(m+1,n)}$ through total order 5; a second
+route for $\langle C_{\rm shared}\rangle$ at second order, from
+$E_{20}(\rho)=-1/(3(3+\rho))$ and its $\rho$-derivative $1/48$; the section
+$l_2=0$, which gives the one-face value $-5/864$; and the diagonal $l_1=l_2$,
+which reproduces the admitted AZ2 series ($1/6$ and $-187/33696$ for
+$\langle W_1\rangle$, $7/216$ and $-349/151632$ for $\langle z\rangle$). At
+$l_1=l_2$ the second-order coefficients are $7/216$ for $\langle z\rangle$ and
+$1/24$ for $\langle C_{\rm shared}\rangle$.
+
+\paragraph{Flip parities.} For a link $e$ the flip $U_e\mapsto-U_e$ commutes
+with every Casimir, with the six vertex gauge actions and with Haar measure,
+and reverses every loop through $e$. Table~\ref{tab:bd2-flips} lists the
+actions. The ground state of $H_{FG}$ is simple for every real
+$(l_1,l_2)$ (Round11 Theorem~F), so the flip of $h_1$, a non-shared link of
+face~1, makes $\langle W_1\rangle$ and $\langle z\rangle$ odd in $l_1$ and
+$\langle C_{\rm shared}\rangle$ even, and the flip of $h_2$, a non-shared link
+of face~2, makes $\langle W_1\rangle$ even in $l_2$, $\langle z\rangle$ odd and
+$\langle C_{\rm shared}\rangle$ even. Coefficient by coefficient,
+$F_{h_1}\psi_{mn}=(-1)^m\psi_{mn}$ and $F_{h_2}\psi_{mn}=(-1)^n\psi_{mn}$. The
+shared-link flip alone gives only the joint statement, and reading a
+two-variable parity from it, or checking only at $l_1=l_2$, is a rejected
+control.
+
+\begin{table}[htbp]
+\centering\small
+\caption{One-link centre flips on the two-plaquette graph.}
+\label{tab:bd2-flips}
+\begin{tabular}{lll}
+\toprule
+Flipped link & Action on $(x,y,z)$ & Effect on $H_{FG}(l_1,l_2)$\\
+\midrule
+$h_1$, $v_L$ or $h_3$ (face 1, non-shared) & $(-x,y,-z)$ & $H(-l_1,l_2)$\\
+$h_2$, $v_R$ or $h_4$ (face 2, non-shared) & $(x,-y,-z)$ & $H(l_1,-l_2)$\\
+$v_M$ (shared) & $(-x,-y,z)$ & $H(-l_1,-l_2)$ only\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Certified enclosures of $\langle z\rangle$.} At $l_1=l_2=l$ the
+Hamiltonian is the AZ2 model, and the ground-state certificate is the
+admitted AZ2 certificate code, copied verbatim (63 blocks compared textually
+with the snapshot); only the observable changes. A rational Ritz vector with
+complete residual, the Weyl gap $E_1-E_0\ge3-2|l|$, Temple's bound, the Round11
+Schur-complement tail comparison, and the Eckart and Davis--Kahan angles give
+$\sin\theta\le s$, and then
+$|\langle v,zv\rangle/\langle v,v\rangle-\langle z\rangle|\le2s\sigma_z+2s^2\norm z$
+with $\sigma_z\le\norm z=1$. Ends are rounded outward to denominators
+$10^{45}$. Table~\ref{tab:bd2-enclosures} gives the results.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Certified enclosures of $\langle z\rangle$ at $l_1=l_2$ (both signs
+give the same enclosure, since $\langle z\rangle$ is even under the shared-link
+flip). Relative width is $(\text{upper}-\text{lower})/\min(|\text{lower}|,|\text{upper}|)$.}
+\label{tab:bd2-enclosures}
+\begin{tabular}{rllll}
+\toprule
+$D$ & $|l|$ & Lower end (preview) & Relative width & Sign\\
+\midrule
+6 & 1/1000 & $3.240740510578259506053328\times10^{-8}$ & $6.79043\times10^{-22}$ & $+$\\
+6 & 1/100 & $3.240717724665334529490919\times10^{-6}$ & $6.81088\times10^{-17}$ & $+$\\
+6 & 1/10 & $3.238440859055494033169085\times10^{-4}$ & $7.02377\times10^{-12}$ & $+$\\
+8 & 1/1000 & $3.240740510578259506054428\times10^{-8}$ & $1.73689\times10^{-31}$ & $+$\\
+8 & 1/100 & $3.240717724665334639851747\times10^{-6}$ & $1.74212\times10^{-24}$ & $+$\\
+8 & 1/10 & $3.238440859066867050597032\times10^{-4}$ & $1.79645\times10^{-17}$ & $+$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Every enclosure excludes 0 with a positive sign, and every $D=8$ enclosure
+lies inside its $D=6$ one, which is observed and not a target. The worst
+$D=8$ relative width is $1.79645\times10^{-17}$, at $|l|=1/10$, against the
+frozen $1/10^{16}$: a margin of about $5.57$. At $l=+1/10$ and $D=8$ the exact
+ends are
+\begin{equation}
+ \begin{gathered}
+ \text{lower}=\frac{40480510738335838132462907353125470123319}{125\cdot10^{42}},\\
+ \text{upper}=\frac{64768817181337342175480593943907904225707}{2\cdot10^{44}}.
+ \end{gathered}
+ \label{eq:bd2-ends}
+\end{equation}
+Each point carries the five-part AZ2-type residual ledger: seven per-link rows
+(thresholds $123/2$ and 96 on the non-shared links, 45 and 69 on $v_M$), the
+joint product channel with its corner overlaps and the positive interference,
+the gauge projection, which is exactly 0 with its reason, the Ritz residual
+with both angles and the Weyl gap, and the directed arithmetic. The skeptic
+re-evaluated the lemma in its own spin-network basis with its own Ritz
+vectors and reproduced every angle and width to 8 digits. Its own sharper
+tail certificate gives a worst width of $3.56\times10^{-18}$ (margin
+$28.09$), with enclosures inside the producer's, and Davis--Kahan alone would
+give $8.72\times10^{-17}$; any of the three meets the target.
+
+\subsubsection{\texorpdfstring{The $\mathbb Z^3$ 1x2 rectangle}{The Z3 1x2 rectangle}}
+\label{sec:bd2-rectangle}
+In the zero-selected family the frozen rectangle is the union of the omitted
+$xz$ faces at 0 and $e_x$, with links $(0,x)$, $(e_x,x)$, $(2e_x,z)$,
+$(e_x+e_z,x)$, $(e_z,x)$ and $(0,z)$; the shared middle link cancels. All six
+links are owned by $R=\{0,e_z\}$, so $W_{1\times2}\in B(\mathcal H_R)$ with
+$\norm{W_{1\times2}}\le1$, and on the seven links of the two faces
+$(W_{F1},W_{F2},W_{1\times2})$ is the graph's $(x,y,z)$.
+
+\paragraph{The first-order zero.} Every link of $W_{1\times2}$ occurs once and
+a single face covers at most three of its six links, so
+$\mathbb E[W_{1\times2}W_f]=0$ for every face and the first-order coefficient is
+exactly 0 in every box of F1 and F2.
+
+\paragraph{The bound.} Writing
+$\omega(W_{1\times2})=\tr((\rho_R-P_R-\rho^{(1)}_R)W_{1\times2})$, since the
+product and the first-order density contribute 0,
+\begin{equation}
+ |\omega(W_{1\times2})|\le K_2'\tau^2\approx1.34175\times10^{-12}\quad(|\tau|=10^{-8}),
+ \qquad K_2'\approx13417.5275439,
+ \label{eq:bd2-rectangle}
+\end{equation}
+at both signs, with $K_2'$ the AY1 gate constant. It holds for every F1 and F2
+box through the AY1 per-box ball (AY1 forward F11--F14, a reviewed step of the
+admitted proof, passed to the untruncated vector by AV1 F22) and for the limit
+of the named constructions through the AY1 and AY2 gate ball and BB2
+items~2--3. The bound carries no sign.
+
+\paragraph{Evenness, for F1 and the limit only.} The flip set $E_3$ meets each
+of the two faces in 3 links and the rectangle in all 6, so
+$U_EW_{1\times2}U_E^*=W_{1\times2}$ (area 2). With the AW1 identity at
+$\kappa=0$, $\omega_{N,-\tau}(W_{1\times2})=\omega_{N,\tau}(W_{1\times2})$ in every
+open centered whole-star box (F1) and every cutoff, and the limit is even by
+BB2 at each sign. Evenness is not claimed for F2 boxes, and it gives no
+remainder bound.
+
+\paragraph{The formal second-order coefficient.} Only the ordered pairs of
+the two faces cover the rectangle evenly, with
+$\mathbb E[W_{F1}W_{F2}W_{1\times2}]=1/16$, and $W_{1\times2}\Omega_0$ has energy
+36, so formally
+\begin{equation}
+ \omega(W_{1\times2})=\Bigl(\frac1{31104}+\frac1{41472}\Bigr)\tau^2+\cdots=\frac7{124416}\,\tau^2+\cdots .
+ \label{eq:bd2-formal}
+\end{equation}
+This is labelled \recid{formal_second_order_coefficient}: it has no sign, no
+certified value and no remainder. The identity $7/124416=(7/216)/24^2$
+relates it to the graph coefficient of $\langle z\rangle$ under
+$\tau_{FG}=\tau/24$; it is a labelled identity, not a transfer. The certified
+bound exceeds the formal term by a factor of about $2.38479\times10^8$, so a
+certified sign of the $\mathbb Z^3$ 1x2 mean is a recorded obstruction.
+
+\subsubsection{The electric band}
+\label{sec:bd2-band}
+The observable $h_R=8\sum C_e$ over the 48 links of $R$ is nonnegative and
+unbounded; $\omega(h_R)$ is the monotone limit over its spectral cutoffs. For
+every F1 and F2 box (untruncated at fixed $N$) and for the limit, at both
+signs,
+\begin{equation}
+ \tfrac32L^2\le\omega(h_R)\le98|\tau|,\qquad
+ \tfrac32L^2\approx2.87586637818\times10^{-19},\quad98|\tau|=\frac{49}{50000000}\quad(|\tau|=10^{-8}).
+ \label{eq:bd2-band}
+\end{equation}
+
+\paragraph{Lower end.} The spectrum of $h_R$ is $\{0\}\cup[6,\infty)$ with
+kernel $P_R$, since the smallest nonzero value of $8\sum j_e(j_e+1)$ is
+$8\cdot\tfrac34=6$; hence $\omega(h_R)\ge6\tr(Q_R\rho_R)$ with $Q_R=I-P_R$. For a
+pure reference the Fuchs--van de Graaf inequality, proved inline, gives
+$\tfrac12\norm{\rho_R-P_R}_1\le\sqrt{\tr(Q_R\rho_R)}$, so
+$\omega(h_R)\ge6(L/2)^2=\tfrac32L^2$ whenever $\norm{\rho_R-P_R}_1\ge L$. The
+distance $L\approx4.37863\times10^{-10}$ is the AY2 gate lower end for the
+limit, and the same number from the AY1 per-box ball for every box (tier
+\recid{first_order_distance_from_product}).
+
+\paragraph{Upper end.} The AQ1 reset on $F=R$ charges the seven incident
+anchors, each whole star of norm $7|\tau|$, giving
+$\omega_N(h_R)\le2\cdot7\cdot7|\tau|=98|\tau|$ for every F1 box; for F2 boxes the
+same budget is AY1 gate item~(1) (tier \recid{crude_majorant}). The bound passes
+to the limit only by lower semicontinuity through the cutoff, and an exact
+fixture shows why the other direction fails: $\rho_k=(1-1/k)P_0+(1/k)P_k$ with
+$h=\mathrm{diag}(n)$ has energy 1 for every $k$ and a limit of energy 0.
+
+\paragraph{The tight-enclosure obstruction.} Formally, each link $e$ of $R$
+contributes $n_e/3456$ at second order, with $n_e$ the number of omitted faces
+containing it (28 links with $n_e=4$, 16 with 3 and 4 with 2), which totals
+$168/3456=7/144$: formally $\omega(h_R)=(7/144)\tau^2+\cdots$, about
+$4.861\times10^{-18}$ at the cap. The upper end exceeds this by about
+$2.016\times10^{11}$ and the lower end lies below it by a factor of about
+16.9; the band is about $3.4\times10^{12}$ wide in ratio. A tight enclosure
+needs a second-order upper bound on the unbounded $h_R$, an energy-weighted
+state estimate that is not admitted, and it is recorded as an obstruction.
+
+\subsubsection{The 2+1-dimensional recount}
+\label{sec:bd2-dimension}
+In the declared model on $\mathbb Z^2$ each site owns the links $(p,x)$ and
+$(p,y)$, the face at base $p$ has owner set $\{p,p+e_x,p+e_y\}$, and each face
+is its own interaction term, $V_X=-(\tau/3)W_f$. The AM2 counting is redone for
+this geometry (Table~\ref{tab:bd2-dimension}): the maximal support is $p=3$,
+three faces contain each site, the per-site sum is $J=|\tau|$ and the
+creation expansion terminates at order 6, with
+\begin{equation}
+ \begin{gathered}
+ G_3(t)=8e^{6t}(1+8t),\qquad G_3'(t)=8e^{6t}(14+48t),\\
+ G_3(\tfrac1{64})=9e^{3/32}\approx9.88457,\qquad G_3'(\tfrac1{64})=118e^{3/32}\approx129.598 .
+ \end{gathered}
+ \label{eq:bd2-G3}
+\end{equation}
+The numerators $2^p(2p)^k(1+k(p+1)/p)$ for
+$k=0,\ldots,6$ are 8, 112, 1056, 8640, 65664, 476928 and 3359232, and a
+three-qubit fixture checks termination
+($\operatorname{ad}_C^6(V)\Omega=-720|111\rangle$, $\operatorname{ad}_C^7(V)=0$).
+With a directed series enclosure of $e^{3/32}$, the self-map condition
+$JG_3(R)\le R$ at $R=1/64$ binds and gives the cap
+\begin{equation}
+ |\tau|\le\frac1{576\,e^{3/32}},\qquad\text{directed lower bound }\frac{1580747155173}{10^{15}}\approx1.5807\times10^{-3},
+ \label{eq:bd2-cap}
+\end{equation}
+while the exclusion condition $2JG_3'(R)<1$ alone would allow
+$1/(236e^{3/32})\approx3.858\times10^{-3}$. These constants are recounted, not
+a theorem: no finite-volume ground-state or gap statement, no AQ chain, no
+node and no dictionary is claimed in 2+1 dimensions, where $g^2$ has mass
+dimension and the 3+1D dictionary does not apply.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The AM2 constants recounted in 2+1 dimensions (3+1D values not
+reused).}
+\label{tab:bd2-dimension}
+\begin{tabular}{lll}
+\toprule
+Quantity & 2+1D (recounted) & 3+1D (AM2)\\
+\midrule
+star and faces per anchor & $\{0,e_x,e_y\}$, one face & $\{0,e_x,e_y,e_z\}$, 21 faces\\
+terms containing a site & 3 faces & 4 stars, 49 faces\\
+per-site sum $J$ & $|\tau|$ & $28|\tau|$\\
+maximal support, termination order & 3, 6 & 4, 8\\
+majorant $G_p(t)$ & $8e^{6t}(1+8t)$ & $16e^{8t}(1+10t)$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Obligations, no-transfer rows and code provenance}
+\label{sec:bd2-obligations}
+The review records six rows, each open or a no-transfer row with its missing
+premise:
+\begin{itemize}
+\item \emph{area law:} analyticity of the reduced density in a complex
+ $\tau$-disc uniformly in $N$ (a zero-free region of the complexified
+ normalization) and a family of growing loops; no zero-free region is
+ admitted;
+\item \emph{a certified sign of the $\mathbb Z^3$ 1x2 mean:} a uniform remainder
+ $|\omega(W_{1\times2})-(7/124416)\tau^2|\le K_4\tau^4$ with $K_4\tau^2$ below
+ $7/124416$ for F1 boxes and the limit, and a third-order remainder for F2
+ boxes;
+\item \emph{a tight electric enclosure:} a second-order upper bound on the
+ unbounded $\omega(h_R)$;
+\item \emph{the site-blocked uniform 3+1D regime:} its own contract;
+\item \emph{the finite-volume theorem in 2+1 dimensions:} a two-dimensional
+ finite-volume prescription, the on-site domains and AM2 sections~4--6
+ re-verified, then the AQ chain, node and dictionary;
+\item \emph{the Einstein--QED evidence rounds:} a no-transfer row, since they
+ share no equation with this SU(2) chain.
+\end{itemize}
+
+\paragraph{Code provenance.} The forward checker imports only the standard
+library. The AZ2 certificate algebra is copied verbatim with attribution and
+compared block by block with the pinned snapshot, and the copied code
+reproduces the AZ2 gate enclosure of $\langle W_1\rangle$ exactly. The Round11
+solver is read as bytes from its snapshot to bind 13 exact source strings,
+and it is never imported or executed; the producer agent did not open it.
+No interpreter cache is written under the Round11 or Round32 directories or
+in the closure.
+
+\paragraph{Evidence and review.} The forward checker runs 41 exact checks and
+implements all 21 controls as damaging mutations, with 107 rejections; its
+outputs are byte-identical under \texttt{-B} and \texttt{-B -O}. The skeptic's
+pre-comparison package (64 checks, 21 controls, 85 rejected mutations with 4
+positives) had its values final before the forward commit at 06:00:06 UTC and
+was committed 10~min 2~s after it, at 06:10:08; its exposure was to input
+file names, hashes and possibly the commit subject. Every exported value
+equals, or certifiably contains, the skeptic's own. The post-comparison
+checker runs 22 checks and 38 source-edit runs: 21 validator weakenings, 12
+must-abort edits, and 3 silent edits, of which 1 is harmless and 2 are
+export-only edits caught only by the skeptic's validator. It also rejects 19
+damaged packets. The closure of 39 files verifies, with its 35 declared
+inputs. The review found no blocking issue. It records the producer's
+contract readings W1--W7: the single model id names only the graph;
+evenness is admitted for F1 and the limit only, so a certified sign for F2
+would need a third-order remainder; ``three faces per site'' counts the faces
+whose owner set contains the site; the per-site sum is linear in $|\tau|$;
+the tier name of $K_2'$; and the sign restriction of the Round11 solver
+interface. It also keeps separate the two scopes of the 1x2 loop, the bound
+for F1, F2 and the limit and the evenness for F1 and the limit only.
+
+\subsubsection{Limitations recorded by the gate}
+\label{sec:bd2-limits}
+The BD2 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Graph scope: the Round11 two-square patch only, at D=6 and D=8 and the
+declared grid; static means with no dynamical or mass-gap reading;
+transfers\_to\_aq false; the graph coefficients are finite-graph values, and
+7/124416 = (7/216)/24\textasciicircum{}2 is a labelled identity between the
+graph and the formal Z\textasciicircum{}3 coefficient, not a transfer.
+\item Z\textasciicircum{}3 scope: the zero-selected family at |tau| at most
+10\textasciicircum{}-8, the fixed cover R and fixed spacing; no certified
+value or sign of the Z\textasciicircum{}3 1x2 mean (the admitted bound
+K\_2\textquotesingle{} tau\textasciicircum{}2 exceeds the formal term by about
+2.38479e8; a certified sign needs a uniform fourth-order remainder, and for F2
+boxes a third-order one); evenness in tau is not claimed for F2 boxes.
+\item The band is two-sided but loose (ratio about 3.4e12) and is not a tight
+enclosure, which would need a second-order upper bound for the unbounded h\_R;
+its lower end rests on the AY1 forward F11-F14 per-box ball (a reviewed step,
+not a gate sentence) for boxes and on AY2 item (2) for the limit; its upper
+end passes to the limit by lower semicontinuity only.
+\item No area law and no string-tension statement is made: no zero-free region
+of the reduced density is admitted.
+\item 2+1 dimensions: recounted AM2 constants only; no finite-volume
+ground-state or gap theorem and no AQ chain, node or dictionary in 2+1
+dimensions (g\textasciicircum{}2 has mass dimension); each needs its own
+contract.
+\item The enclosures use the admitted AZ2 certificate code copied verbatim
+(Weyl gap 3-2|l|, Temple, the Round11 Schur-complement tail comparison, Eckart
+and Davis-Kahan angles); the skeptic re-evaluated the lemma in its own basis
+and has its own sharper tail certificate (worst D=8 relative width 3.56e-18);
+Kato, Weyl, Temple, Eckart, Davis-Kahan, Peter-Weyl and Fuchs-van de Graaf are
+cited, not machine-checked.
+\item Review standing: model-agent skeptic with correlated ancestry (same
+model family as the producer and the advisor); its pre-comparison package was
+committed after the producer packet, with its values final before the producer
+commit; not human peer review; scientific priority is not verified; weak
+coupling and the continuum are not addressed, and no estimate is made
+uniformly in the lattice spacing a.
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round33/forward/bd2/report.md}{BD2 forward},
+\repo{research/round33/skeptic/bd2.md}{independent model-agent review} and the
+\repo{research/round33/contracts/bd2.json}{frozen contract}; the graph
+certificate is that of the \repo{research/round32/advisor/az2-gate.json}{AZ2
+gate}, which is not edited.
+
+\subsection*{What transferred and what did not}
+\label{sec:apps-summary}
+Table~\ref{tab:apps-summary} collects the outcome of the applications stage.
+Its rows are the admitted equations that BD1 and BD2 applied, and its columns
+the models they were applied to. ``Source'' marks the model in which an
+equation was admitted; every other cell reads transfer, obstruction or not
+attempted, with its reason. A transfer is a labelled statement about the
+named model with its own exact checks, never a statement about another model,
+and ``not attempted'' records no failure. The Einstein--QED evidence rounds
+share no equation with this chain and are a no-transfer row of BD2; they are
+not a column.
+
+\begin{table}[htbp]
+\centering\scriptsize
+\caption{What transferred and what did not. Columns: the SU(2) zero-selected
+family (boxes and the limit of the named constructions); the one-plaquette
+and box models $H_{FG}(G)$, $H^G_N$ of the other groups; the Round11
+two-plaquette graph with independent couplings; the declared 2+1D SU(2)
+model.}
+\label{tab:apps-summary}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}
+ *{6}{>{\raggedright\arraybackslash}X}@{}}
+\toprule
+Equation & SU(2) family & SU(4), U(1), Z2 & SU(5) & SU(3), SO(3) & Two-plaquette graph & 2+1D model\\
+\midrule
+Link-flip lemma (AW1) & Source; used for the area parity & Transfer: central element acting as $-1$; box by box & Obstruction: $c_4=1/(2^{30}3^{10})$; no central $-1$ & Obstruction: $c_2=1/589824$, $1/331776$; no central $-1$ & Transfer: one-link flips give the parity in each coupling & Not attempted: constants recounted only\\[3pt]
+First-order parity theorem (AW1) & Source (finite boxes) & Transfer: $\mathbb E[W^3]=0$ & Transfer: $\mathbb E[W^3]=0$ by the $\mathbb Z_5$ grading & Obstruction: $d\omega(W^2)/d\tau=1/6912$, $1/2592$ & Not attempted: parities come from the flips & Not attempted: no finite-volume theorem\\[3pt]
+First-order Wilson coefficient $\tau/144$ (AW1) & Source; reproduced as a convention check & Transfer of the method, own values $1/2880$, $1/96$, $1/48$; $1/144$ not transferred & Transfer of the method, own value $1/5760$ & Transfer of the method, own values $1/1152$, $1/864$ & Transfer: $\langle W_1\rangle=l_1/6+\cdots$ with independent couplings & Not attempted\\[3pt]
+Area parity (AW1 flip with BB2) & Transfer at $\kappa=0$: every open centered whole-star (F1) box and pointwise for the limit; not claimed for F2 boxes (so the 1x2 loop is even for F1 and the limit, not F2) & Not attempted: no limit and no regime for all $N$ & Not attempted: no flip & Not attempted: no flip & Not attempted & Not attempted\\[3pt]
+AM2, AV1, AQ1--AQ2, BB1--BB2 chain & Source & Not attempted: group-specific AM2 re-instantiation is an obligation & Not attempted: obligation & Not attempted: obligation & Not attempted: finite graph, no AQ transfer & Not attempted: AM2 constants recounted, cap about $1.5807\times10^{-3}$; no theorem\\[3pt]
+Coupling dictionary $\tau=96/g^4$ & Source & Not attempted: a group-specific dictionary is needed & Not attempted & Not attempted & Not attempted & Not attempted: $g^2$ has mass dimension\\[3pt]
+$R$-local bound $K_2'\tau^2$ (AY1) & Transfer: $|\omega(W_{1\times2})|\le K_2'\tau^2$ for F1, F2 and the limit; certified sign an obstruction & Not attempted & Not attempted & Not attempted & Not attempted: $7/124416=(7/216)/24^2$ is a labelled identity only & Not attempted\\[3pt]
+Reset budget and product distance (AQ1, AY1, AY2) & Transfer: $\tfrac32L^2\le\omega(h_R)\le98|\tau|$; tight enclosure an obstruction & Not attempted & Not attempted & Not attempted & Not attempted & Not attempted\\[3pt]
+Two-plaquette certificate (AZ2) & Not attempted: finite-graph certificate, no AQ transfer & Not attempted & Not attempted & Not attempted & Transfer: independent-coupling tables through total order 4; $\langle z\rangle$ certified positive only at $l_1=l_2=\pm10^{-k}$, $k=1,2,3$ ($D=6$, $D=8$), $D=8$ relative width $\le1.79645\times10^{-17}$ & Not attempted\\
+\bottomrule
+\end{tabularx}
+\end{table}

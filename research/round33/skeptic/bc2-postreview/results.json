@@ -1,0 +1,746 @@
+{
+  "checks": [
+    {
+      "id": "contract_sha256_pinned",
+      "passed": true,
+      "sha256": "28abe3775455087384b3c9dbbb2df67b923e31b964d40efa7ea9787ee8b6b98a"
+    },
+    {
+      "freeze": {
+        "research/round33/skeptic/bc2-contract-review.md": "b1d870c3f6e2d85359caa453f1ebb7b033b66ad4d2d509bd7d5ae0b70a4d4570",
+        "research/round33/skeptic/bc2-independent-derivation.md": "4880ad097b6c8b24bdb54e0196ed2a0d0d3ca68ab499135917adc2464c620e9a",
+        "research/round33/skeptic/bc2-independent/results.json": "f6992cae7780031579c7475e2af2e1362aef1f287ae29bf818a6ca4cbf6c3c5c",
+        "research/round33/skeptic/bc2_check.py": "fc779746298218d5df336c20cd50958a47be5ecd20c122aec8657fa00daceb6f"
+      },
+      "id": "pre_comparison_package_unchanged_and_replayed",
+      "note": "the committed pre-comparison package (5ec599f, before the forward commit ee45eed) is unchanged; bc2_check.py reproduces bc2-independent/results.json byte for byte in this interpreter mode",
+      "passed": true
+    },
+    {
+      "closure_files": 46,
+      "id": "producer_closure_and_inventory",
+      "inputs": 42,
+      "note": "46 closure files verified one by one; 42 inputs equal the contract-derived list and the inventory recorded before production; every snapshot byte-identical to the repository",
+      "passed": true
+    },
+    {
+      "id": "frozen_artifacts_pinned",
+      "passed": true,
+      "pinned": {
+        "check.py": "f118b8475b8c43f8fcbd38a93093317d0de4c7786711e50748f06ab3edac5477",
+        "freeze.json": "c70fad5bad990ef46d0a00169ef60cf584820728fea39950b3f6cd42b6fd93f9",
+        "output/results.json": "efbea72b1ffa6936aa86d848a88b37e0d340734f96e862a440cc79d28cb44f08",
+        "output/source-manifest.json": "c1fa8dccfd30acc51048d6b2635bbe921af6a0c1b1e645fd380ff6226f738ef9",
+        "report.md": "d5ea7d4b27dc88eb904d5a59a16da7219e35a9882d6e3c8d7b4db8c091e7eb96"
+      }
+    },
+    {
+      "id": "producer_replay_byte_identical",
+      "note": "the producer replay in this interpreter mode (-B, or -B -O when this program runs under -O) reproduces output/",
+      "outputs": {
+        "results.json": "efbea72b1ffa6936aa86d848a88b37e0d340734f96e862a440cc79d28cb44f08",
+        "source-manifest.json": "c1fa8dccfd30acc51048d6b2635bbe921af6a0c1b1e645fd380ff6226f738ef9"
+      },
+      "passed": true
+    },
+    {
+      "C_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+      "C_prime_B_union": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+      "K_B": "13/27941256",
+      "c_prime_site_B_union": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+      "c_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+      "id": "producer_values_equal_independent_recomputation",
+      "margins": {
+        "C_B": "4.23207954e+00",
+        "C_prime_B_union": "4.23207954e+00",
+        "K_B": "2.14932738e+00",
+        "c_prime_site_B_union": "2.68637862e+00",
+        "c_site_B": "2.14910289e+00"
+      },
+      "note": "every exported constant, the split closure, crude tier, admissibility, ledger, labelled values, tau/100 ratios, node record, example and translation rows, geometry counts, fixture counts, gate fields, labels, obligations and the report tables equal the recomputation (route-B inputs only; nothing read from the producer)",
+      "passed": true,
+      "previews": {
+        "C_B": "9.451618194149e-07",
+        "K_B": "4.652618336126e-07",
+        "c_site_B": "9.306208683470e-07"
+      }
+    },
+    {
+      "equal": [
+        "K_B",
+        "C_B",
+        "c_site_B",
+        "C'_B (union)",
+        "c'_site,B (union)",
+        "t0",
+        "tW",
+        "c1",
+        "c2",
+        "beta*",
+        "S_lambda",
+        "C'_B and c'_site,B nested (labelled)"
+      ],
+      "id": "pre_comparison_predictions_equal_exactly",
+      "note": "the frozen pre-comparison rationals equal the producer rationals digit for digit",
+      "passed": true,
+      "skeptic_rounding_slip": "the derivation prediction table (section 10) rounds the density-constant tau/100 ratio to 100.662; the exact ratio is about 100.6614518 (100.661 to three decimals, as the contract review and results.json record)"
+    },
+    {
+      "R1": {
+        "(1+2T')^2-1": "1.444591913604e-08",
+        "(1+T')^2-1": "7.222959554975e-09",
+        "producer_t": "T' (per-box anchored bound)"
+      },
+      "R2": {
+        "bound_t_W": "26/3148137",
+        "labelled_refined_t_W": "7.782845804916e-06"
+      },
+      "id": "readings_R1_R2",
+      "note": "R1: the producer re-checks (1+t)^2<=1+10^-8 with t=T' (it fails with 2T'); R2: the weighted first order (49W+3)|tau|/144 is labelled, the bound t_W uses 52W|tau|/144",
+      "passed": true
+    },
+    {
+      "checked": [
+        "research/round32/forward/ax2/",
+        "research/round33/forward/bc2/ (inputs included)",
+        "research/round32/forward/"
+      ],
+      "id": "reading_R7_no_interpreter_cache",
+      "note": "after the producer replays and this review's own calculator runs (executed from source bytes), no __pycache__ or .pyc exists under the checked trees; the producer loads research/round32/forward/ax2/calculator.py from its inputs/ snapshot with bytecode writing disabled (a run without -B is exercised below)",
+      "passed": true
+    },
+    {
+      "c1B_selected_source_faces": {
+        "2": 654,
+        "3": 1158,
+        "4": 1806
+      },
+      "flip_set": {
+        "plaquettes": 864,
+        "selected": 108,
+        "sizes": [
+          1,
+          3
+        ]
+      },
+      "grouping_preserving_translations": {
+        "all_coarse": true,
+        "count": 8
+      },
+      "id": "geometry_reenumerated",
+      "incidence_R": [
+        7,
+        2,
+        153,
+        88,
+        16,
+        72,
+        6
+      ],
+      "note": "own enumeration with the pre-comparison grouping; 19 single-site pieces of Lambda_3 (two or more coordinates equal to +3) meet no star inside the box and are unreachable, hence 324 reached from each u",
+      "passed": true,
+      "per_site_first_order_faces": 52,
+      "piece_graph_Lambda_3": {
+        "bfs": {
+          "(-2, 1, 2)": {
+            "min_slack": 0,
+            "singles_reached": 324
+          },
+          "(0, 0, 0)": {
+            "min_slack": 0,
+            "singles_reached": 324
+          },
+          "(0, 0, 1)": {
+            "min_slack": 0,
+            "singles_reached": 324
+          },
+          "(1, 1, 1)": {
+            "min_slack": 0,
+            "singles_reached": 324
+          },
+          "(2, 0, 0)": {
+            "min_slack": 0,
+            "singles_reached": 324
+          }
+        },
+        "pieces": 1639,
+        "single_site_pieces": 343
+      }
+    },
+    {
+      "R_prime": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "id": "node_replayed_and_cross_checked",
+      "note": "the admitted calculator (executed from its pinned source bytes) returns d and R' at +tau and at the mirror; D'=2eps(1+eps)/(1+eps^2), eps=2T'+T'^2; the producer's labelled r_own lies between the formula's rigorous lower value (own Machin pi, own e^3 series) and R', about 2.7e-41 below R'",
+      "own_lower_bound_of_formula": "1.912298807997e-07",
+      "own_radius_slack": "2.7068e-41",
+      "passed": true,
+      "producer_own_radius": "1.912298807997e-07"
+    },
+    {
+      "id": "phrase_tool_pinned",
+      "passed": true
+    },
+    {
+      "id": "phrase_scan_and_template",
+      "passed": true,
+      "template_lines": 1,
+      "tool_exit": 0
+    },
+    {
+      "clauses": [
+        {
+          "clause": "the limit is a fixed point, the only one in the ball, and at real `tau` it equals the AM2 fixed point by uniqueness in the ball.",
+          "kind": "fixed point unique in the AM2 ball"
+        },
+        {
+          "clause": "- **(P3)** `Cov(T)=sum_{F covers T}prod m<=t_0` for nonempty `T` (the member through the first site of `T` is unique",
+          "kind": "combinatorial (the covering member through a site)"
+        },
+        {
+          "clause": "every finite complete-factor route-B volume has a unique gauge-invariant ground and full-space gap at least `1/2`, with AM2 Section 6 cutoff removal) give `1-|<psi,psi_L>",
+          "kind": "AX1 gate finite-volume statement (every finite complete-factor route-B volume)"
+        },
+        {
+          "clause": "the zero-selected AQ1/AQ2 constants (reset `98|tau|`, `2268|tau|`), the BB2 list, `K_2`, a uniform `omega(W^2)` constant, a uniform Wilson-mean sign, any route-B dynamics",
+          "kind": "negated or excluded"
+        },
+        {
+          "clause": "Item 6 \u2014 obligations (recorded, not attempted) | obligation | missing premise | candidate route | |---|---|---| | a route-B boundary-prescription comparison | an all-cont",
+          "kind": "open obligation row"
+        },
+        {
+          "clause": "`common_limit_claimed`, `uniqueness_of_ground_state_claimed`, `gns_dynamics_equality_claimed`, `uniform_in_time_claimed`, `resolved_interaction_shift`, `rate_in_a_claimed",
+          "kind": "control or field identifier"
+        },
+        {
+          "clause": "exponent `N-1` for every `Y` | | `named_construction_not_uniqueness` | three forbidden phrasings appended (never asserted here)",
+          "kind": "control or field identifier"
+        },
+        {
+          "clause": "a uniqueness flag true | | `global_lipschitz_not_decay` | the route-B fixed-point Lipschitz constant, exclusion constant or no-decay bound `1073/174982136` as a decay fac",
+          "kind": "negated or excluded"
+        },
+        {
+          "clause": "Exclusions, limitations and claim flags **Contract exclusions (respected):** uniqueness of every infinite-volume ground state",
+          "kind": "claim-exclusion list quoted verbatim"
+        },
+        {
+          "clause": "**Claim flags in `results.json`:** `continuum_claim`, `uniqueness_of_ground_state_claimed`, `rate_in_a_claimed`, `scientific_priority_verified`, `common_limit_claimed`, `",
+          "kind": "control or field identifier"
+        },
+        {
+          "clause": "**Inherited without re-proof:** the AM2 majorant steps, fixed point, uniqueness in the ball and Section 6 cutoff facts",
+          "kind": "fixed point unique in the AM2 ball"
+        },
+        {
+          "clause": "the AX1 route-B grouping, `J_0'`, finite-volume theorem (unique gauge-invariant ground, gap `1/2`), AQ1/AQ2 re-instantiation list, state lemma and flip identity",
+          "kind": "AX1 gate finite-volume statement (every finite complete-factor route-B volume)"
+        }
+      ],
+      "id": "uniqueness_wording_classified",
+      "note": "every clause mentioning uniqueness is negated or excluded, a field or control identifier, the open obligation row, the fixed point unique in the AM2 ball, or the AX1 finite-volume statement (a simple ground in every finite route-B volume); no infinite-volume uniqueness is asserted",
+      "passed": true
+    },
+    {
+      "id": "damaged_packets_rejected_by_review_validator",
+      "passed": true,
+      "rows": [
+        {
+          "mutation": "K_B halved",
+          "rejected_for": "headline K_B"
+        },
+        {
+          "mutation": "C_B replaced by a BB1 gate C",
+          "rejected_for": "headline C_B"
+        },
+        {
+          "mutation": "c'_site,B replaced by the nested value under union_comparison",
+          "rejected_for": "headline c_prime_site_B"
+        },
+        {
+          "mutation": "C'_B assembly relabelled nested_telescoping",
+          "rejected_for": "assembly"
+        },
+        {
+          "mutation": "crude C_B changed",
+          "rejected_for": "crude tier"
+        },
+        {
+          "mutation": "node radius replaced by the re-derived own radius",
+          "rejected_for": "node values"
+        },
+        {
+          "mutation": "uniqueness flag true",
+          "rejected_for": "gate fields"
+        },
+        {
+          "mutation": "dynamics_level exported",
+          "rejected_for": "gate fields"
+        },
+        {
+          "mutation": "C_B tau/100 ratio set to 100",
+          "rejected_for": "tau/100 ratio"
+        },
+        {
+          "mutation": "label changed to common_limit_of_named_constructions",
+          "rejected_for": "sub-labels"
+        },
+        {
+          "mutation": "obligation dropped",
+          "rejected_for": "obligations"
+        },
+        {
+          "mutation": "template trimmed in the results",
+          "rejected_for": "mandatory template"
+        },
+        {
+          "mutation": "beta* altered",
+          "rejected_for": "split constant"
+        },
+        {
+          "mutation": "ledger normalization doubled",
+          "rejected_for": "error ledger"
+        },
+        {
+          "mutation": "route-A extreme self-map changed to 1/64",
+          "rejected_for": "route-A extreme self-map"
+        },
+        {
+          "mutation": "region fixture read with 2T'",
+          "rejected_for": "region-factor fixture"
+        }
+      ]
+    },
+    {
+      "id": "unmutated_copies_and_run_without_B",
+      "note": "an unmutated copy outside the checkout reproduces the frozen output byte for byte; a run without -B (and without PYTHONDONTWRITEBYTECODE) reproduces it too and writes no __pycache__ or .pyc anywhere in the copy, the calculator snapshot included (R7)",
+      "passed": true
+    },
+    {
+      "id": "control_validator_weakenings",
+      "note": "one validator weakened per contract control on a temporary copy (\"True or \" inserted into the require that rejects the named mutation, or the float branch returning a Fraction, or one key dropped from the declared parameter list, or the uniqueness vocabulary dropped); each run aborts naming a mutation of that control, except the disc self-map, which is exposed one guard earlier (the route-A extremes check)",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "damaging mutation accepted: K_B_target_relaxed",
+          "control": "coherent_evidence_tampering"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: float_input",
+          "control": "exact_arithmetic_admission"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_true",
+          "control": "no_priority_or_continuum_claim"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: tau_changed",
+          "control": "changed_model_relabelled"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: missed_target_relabelled_accepted",
+          "control": "insufficient_verdict_retained"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: quadratic_headline",
+          "control": "tau_scaling_exponent"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: amplitude_tau_over_576",
+          "control": "wrong_delta_alpha_hbar_clock"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: polymer_kp_route",
+          "control": "tier_mixing_rejected"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: unqualified_uniform_next_to_rate",
+          "control": "uniform_in_N_not_in_a"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: angle_span_space",
+          "control": "placeholder_span_rejected"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: affirmative_thermodynamic_limit",
+          "control": "negation_aware_phrase_scan"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: window_removed",
+          "control": "parameters_declare_metric_weights_window"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: q_1_over_128",
+          "control": "rate_constant_pair_prefrozen"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: per_fm",
+          "control": "decay_rate_in_N_not_a"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: weak_star",
+          "control": "topology_named"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: whole_sequence_from_compactness",
+          "control": "subsequence_versus_whole_sequence"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: signs_at_different_tau",
+          "control": "common_clock"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: state_decay_from_coefficients",
+          "control": "coefficient_decay_not_marginal_decay"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: straddling_dropped",
+          "control": "normalization_couples_supports"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: gap_argument_on_outside_vector",
+          "control": "outside_vector_not_ground_state"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: global_overlap_route",
+          "control": "global_fidelity_orthogonality_catastrophe"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: constants_depend_on_L",
+          "control": "cutoff_uniform_then_removed"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: eigenvalues_only",
+          "control": "cutoff_vector_removal"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: R_constant_reused",
+          "control": "region_constant_scales_with_Y"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: uniqueness_phrase",
+          "control": "named_construction_not_uniqueness"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: route_B_fixed_point_lipschitz",
+          "control": "global_lipschitz_not_decay"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: first_order_claim",
+          "control": "fixture_second_order_propagation"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: growing_region_sizes",
+          "control": "fixture_split_lipschitz_and_trace"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: reduced_density_analytic",
+          "control": "zero_free_region_required"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: BA1_gate_value",
+          "control": "every_site_coefficient_input"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: limits_exchanged",
+          "control": "cutoff_limit_order"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: compactness_plus_closeness",
+          "control": "cauchy_estimate_not_compactness"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: inheritance_first",
+          "control": "limit_identified_with_aq1_limits"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: nested_cubes_only",
+          "control": "translation_invariance_separate_item"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: per_site_sum_28",
+          "control": "route_b_constants_not_route_a"
+        },
+        {
+          "aborted_with": "check failed: weights_declared_and_admissible",
+          "control": "disc_admissible_under_J_prime"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: charged_as_straddling",
+          "control": "support_one_groups"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: route_A_ten_faces",
+          "control": "route_b_first_order_marginal"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: route_A_at_most_18",
+          "control": "selected_face_site_energy"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: common_limit_claimed",
+          "control": "one_family_no_common_limit"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: boundary_condition_phrasing",
+          "control": "exhaustion_within_prescription_only"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: second_coupling",
+          "control": "sign_mirror_pointwise"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: R_only_identification",
+          "control": "identification_before_inheritance_route_b"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: R_form_only",
+          "control": "region_form_load_bearing_for_node"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rederived_radius_headline",
+          "control": "node_values_unchanged"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: shift_claimed",
+          "control": "reference_unresolved_retained_route_b"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: C_N_to_C_inf",
+          "control": "no_finite_box_node_convergence"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: dynamics_comparison",
+          "control": "no_route_b_dynamics_claim"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: invariance_claimed",
+          "control": "non_coarse_translation_no_claim"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: identified_with_BB2_limit",
+          "control": "model_crossing_rejected"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: telescoped_input",
+          "control": "direct_comparison_required"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rate_without_range",
+          "control": "rate_range_stated"
+        }
+      ],
+      "runs": 52
+    },
+    {
+      "id": "route_a_substitutions_abort",
+      "note": "every route-A input (28|tau|, 49 faces, 4 groups, 9856, the route-A disc and split-weight extremes, W=2600) and every route-A gate constant (BA1 K, BB1 C and c_site, BB2 C' and c'_site) substituted into the producer check.py aborts without output; with the T' pin and the per-site must removed, 49 faces are still caught (the per-site face counts of the boxes exceed the substituted bulk value)",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "route-B per-site inputs",
+          "edit": "per-site sum 28|tau| (single group dropped from the sum)"
+        },
+        {
+          "aborted_with": "route-B per-site inputs",
+          "edit": "49 first-order faces (selected faces dropped)"
+        },
+        {
+          "aborted_with": "route-B per-site inputs",
+          "edit": "4 interaction groups per site"
+        },
+        {
+          "aborted_with": "K_B formula",
+          "edit": "every constant evaluated with (28, 49)"
+        },
+        {
+          "aborted_with": "T_B(|tau|) equals the AX1 gate T prime",
+          "edit": "contraction coefficient 9856=28*352 in the circle bound"
+        },
+        {
+          "aborted_with": "G(R)<148/7 and G'(R)<352",
+          "edit": "G'(R) rescaled so that 29 G'(R) = 9856"
+        },
+        {
+          "aborted_with": "K_B formula",
+          "edit": "K_B replaced by the BA1 gate K=49/111790368"
+        },
+        {
+          "aborted_with": "ledger sums to C_B",
+          "edit": "C_B replaced by a BB1 gate C"
+        },
+        {
+          "aborted_with": "tau/100 ratio outside the prefrozen bracket",
+          "edit": "c_site,B replaced by a BB1 gate c_site"
+        },
+        {
+          "aborted_with": "bound exceeds its target",
+          "edit": "C'_B replaced by the BB2 gate C'=4/984375"
+        },
+        {
+          "aborted_with": "tau/100 ratio outside the prefrozen bracket",
+          "edit": "c'_site,B replaced by the BB2 gate c'_site=2/984375"
+        },
+        {
+          "aborted_with": "disc: self-map J rho G(R) <= R fails",
+          "edit": "disc radius set to the route-A extreme 1/37888"
+        },
+        {
+          "aborted_with": "split weight: self-map J rho G(R) <= R fails",
+          "edit": "split weight set to the route-A extreme 1/(37888|tau|)"
+        },
+        {
+          "aborted_with": "split weight: self-map J rho G(R) <= R fails",
+          "edit": "split weight W=2600 (admissible only under 28|tau|)"
+        },
+        {
+          "aborted_with": "route-B incidence on R at N=2",
+          "edit": "route-A ten-face first-order marginal (single groups dropped from the R incidence)"
+        },
+        {
+          "aborted_with": "route-B D prime recomputed",
+          "edit": "D' recomputed with 28|tau|"
+        },
+        {
+          "aborted_with": "route-B D prime recomputed",
+          "edit": "D' recomputed with 49 faces"
+        },
+        {
+          "aborted_with": "a slope other than 51|tau|/4",
+          "edit": "node slope 49|tau|/4 (seven stars)"
+        },
+        {
+          "aborted_with": "I1 table row disagrees with the derived class",
+          "edit": "selected predicate without r=2"
+        },
+        {
+          "aborted_with": "single-factor group clipped by a route-B volume",
+          "edit": "single groups not kept by route-B volumes"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: BA1_K_under_route_B",
+          "edit": "route-A rejection list emptied (weakening of route_b_constants_not_route_a)"
+        },
+        {
+          "aborted_with": "check failed: boundary_counts_at_most_bulk",
+          "edit": "defence in depth: T' pin and per-site must removed, 49 faces"
+        }
+      ],
+      "runs": 22
+    },
+    {
+      "id": "must_abort_edits",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "check failed: report_pins_exact_values",
+          "edit": "lattice sum without its 24r^2 shell"
+        },
+        {
+          "aborted_with": "ledger sums to C_B",
+          "edit": "C_B without the (1+q) of e_z"
+        },
+        {
+          "aborted_with": "ledger sums to C_B",
+          "edit": "near term 2 replaced by 1"
+        },
+        {
+          "aborted_with": "tau/100 ratio outside the prefrozen bracket",
+          "edit": "C'_B with a union-volume factor 2"
+        },
+        {
+          "aborted_with": "calculator replay equals the AX2 gate rationals",
+          "edit": "AX2 gate datum perturbed by 10^-40 (the producer audit edit)"
+        },
+        {
+          "aborted_with": "AX2 calculator bytes differ from the pinned sha256",
+          "edit": "input: AX2 calculator slope edited"
+        },
+        {
+          "aborted_with": "admitted gate bytes differ from the pinned sha256",
+          "edit": "input: AX1 gate T' edited"
+        },
+        {
+          "aborted_with": "contract snapshot hash differs from the bound constant",
+          "edit": "input: contract snapshot edited"
+        },
+        {
+          "aborted_with": "forbidden premise in producer inputs",
+          "edit": "input: undeclared skeptic file"
+        },
+        {
+          "aborted_with": "forbidden phrasing used affirmatively",
+          "edit": "report: forbidden phrase appended"
+        },
+        {
+          "aborted_with": "mandatory template not quoted exactly once",
+          "edit": "report: template altered"
+        },
+        {
+          "aborted_with": "check failed: report_pins_exact_values",
+          "edit": "report: pinned ledger value altered"
+        }
+      ],
+      "runs": 12
+    },
+    {
+      "id": "silent_edits_accounted",
+      "passed": true,
+      "rows": [
+        {
+          "edit": "harmless: e^(1/8) enclosure with 30 terms",
+          "producer": "ran",
+          "review_validator": "accepted (non-damaging: every exported admitted value unchanged)"
+        },
+        {
+          "edit": "example values with exponent N instead of N-1",
+          "producer": "ran",
+          "review_validator": "rejected: example values differ from C_B q^(N-1)"
+        },
+        {
+          "edit": "translation row (4,(1,-1,0)) with exponent 3",
+          "producer": "ran",
+          "review_validator": "rejected: translation rows differ"
+        },
+        {
+          "edit": "labelled own radius with the seven-star slope 49|tau|/4",
+          "producer": "ran",
+          "review_validator": "rejected: labelled own radius is not an upper bound"
+        },
+        {
+          "edit": "report: K_B margin changed in the verdict table",
+          "producer": "ran",
+          "review_validator": "rejected: report table row differs"
+        },
+        {
+          "edit": "report: C_B exact changed at one of its two sites",
+          "producer": "ran",
+          "review_validator": "rejected: report table row differs"
+        }
+      ]
+    },
+    {
+      "checked": [
+        "research/round32/forward/",
+        "research/round33/forward/bc2/"
+      ],
+      "id": "no_interpreter_cache_after_all_runs",
+      "passed": true
+    }
+  ],
+  "contract_sha256": "28abe3775455087384b3c9dbbb2df67b923e31b964d40efa7ea9787ee8b6b98a",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "BC2",
+  "producer": "forward (single producer, single+skeptic)",
+  "reviewer": "skeptic (model agent, correlated ancestry; not human review)",
+  "source_edit_breakdown": {
+    "control_validator_weakenings": 52,
+    "must_abort_edits": 12,
+    "route_a_substitutions": 22,
+    "silent_edits": 6,
+    "unmutated_and_no_B": 2
+  },
+  "source_edit_runs": 94,
+  "stage": "post_comparison"
+}

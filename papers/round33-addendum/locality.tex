@@ -1,0 +1,863 @@
+\section{BB1: locality of the reduced densities}
+\label{sec:bb1}
+
+\textbf{Contribution \projecttag{HNM-C-BB1}.} BA1 bounds how far a change of
+box moves the AM2 creation coefficients on supports meeting the cover; it says
+nothing about the reduced density, which depends on every coefficient through
+the normalization and the straddling supports (Section~\ref{sec:ba1-notdensity}).
+The BB1 contract, recorded under the title ``Hruday marginal locality: from
+coefficient decay to the reduced densities of the named constructions'', was
+frozen after the BA1 gate and before production, on 24 September 2026, as
+investigation~3 of~8 and the first of sub-round~2
+(\repo{research/round33/advisor/selection-bb1.md}{selection note}). It asks
+for the step from coefficients to reduced densities: a bound on
+$\norm{\rho^{\rm box\,1}_Y-\rho^{\rm box\,2}_Y}_1$ on the cover and on finite
+regions $Y$, for every comparison of the two named families, in each on-site
+cutoff space and, at fixed $N$, for the untruncated ground vectors. Both
+directions are paired. The forward producer writes the reduced density as a
+hard-core polymer gas and verifies a Kotecký--Preiss condition (route
+\recid{polymer_kp}). The reverse producer, under premise isolation, applies
+the AV1 product-ordering split recursively with per-site charging (route
+\recid{iterated_split}). Both received \texttt{AGENTS.md}, the contract and 33
+shared premises, among them the BA1 and BA2 gates and reviews.
+
+The contract froze the rate $q=1/64$ and two targets in the
+\recid{exact_first_order} tier: $C\le1/250000$ in the $R$ form and
+$c_{\rm site}\le1/500000$ in the region form
+\begin{equation}
+ \norm{\rho^{\rm box\,1}_R-\rho^{\rm box\,2}_R}_1\le C\,q^{N-1},\qquad
+ \norm{\rho^{\rm box\,1}_Y-\rho^{\rm box\,2}_Y}_1\le c_{\rm site}\,|Y|\,e^{|Y|/10^8}\,q^{d_Y},\quad
+ d_Y=N-\max_{y\in Y}\norm{y}_\infty ,
+ \label{eq:bb1-forms}
+\end{equation}
+for every finite complete-factor region $Y\subset\Lambda_N$, where $N$ is the
+smaller box size and $d_R=N-1$. A labelled secondary pair at
+$q_2=151552|\tau|$ has targets $1/20000$ and $1/40000$; the crude tier is
+reported, never targeted; and the per-step ball ratio of BA1 is not a target
+for densities. The scaling brackets are $[95,105]$ for $C$ and $c_{\rm site}$,
+$[99/100,101/100]$ for the secondary constants and exactly 100 for $q_2$. The
+itemized error terms are \recid{coefficient_input_every_site},
+\recid{straddling_supports}, \recid{normalization},
+\recid{polymer_or_split_remainder}, \recid{cutoff_removal_at_fixed_N} and
+\recid{arithmetic}, and the contract lists 37 controls. The metric is BA1's
+coarse $\ell^\infty$ metric, with star diameter 1.
+
+\subsection{Reviewed scope}
+\label{sec:bb1-scope}
+% One extra line keeps the last line of the gate quotation below on this page.
+\enlargethispage{\baselineskip}%
+The \repo{research/round33/advisor/bb1-gate.json}{BB1 gate} records the
+verdict \recid{accepted_within_scope}, with sub-label
+\recid{boundary_decay_rate_only} and secondary sub-label
+\recid{static_not_dynamic}. Its gate fields set
+\recid{state_decay_claimed} and \recid{rate_in_N_claimed} to true, the first
+with the scope ``reduced densities of F1/F2 finite-box ground vectors on R and
+on regions Y, per comparison''; \recid{whole_sequence_claimed},
+\recid{common_limit_claimed}, \recid{translation_invariance_claimed},
+\recid{uniqueness_of_ground_state_claimed}, \recid{rate_in_a_claimed},
+\recid{continuum_claim}, \recid{weak_coupling_claim} and
+\recid{scientific_priority_verified} are false. The accepted statement,
+quoted verbatim below in the gate's ASCII notation, is the scope of every
+claim in this section. In it \texttt{R=1/64} is the anchored radius $R_a$, and
+the exact rationals are the gate's bound values; where a long numeral breaks
+across lines in the quotation, no character is added or removed. The gate was
+recorded on 25 September 2026 at 03:01 UTC.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (model
+AQ\_patterned\_zero\_selected: SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0) with Haar product reference, 21 omitted faces per anchor
+entering as -(tau/3)W\_f in normalized units delta=alpha/8; both signs
+|tau|<=10\textasciicircum{}-8; AM2 creation expansion with J<=28|tau|, R=1/64,
+G(t)=16e\textasciicircum{}\{8t\}(1+10t); cover R=\{0,e\_z\}; coarse l-infinity
+metric with star diameter 1; trace norm on B(H\_Y)), with the named
+construction families F1 = AQ1 centered whole-star boxes
+Lambda\_N=[-N,N]\textasciicircum{}3 and F2 = I1 section 6 all-contained-face
+boxes with padding on the same Lambda\_N, N at least 2, and with the BA1 gate
+bound value K=49/111790368 used at every site of the union volume through the
+every-site form (b), proved in both packets: For the zero-selected patterned
+family at the same coupling |tau|<=10\textasciicircum{}-8, and for every
+comparison of the named construction families F1 and F2 on centered coarse
+cubes, the reduced densities of the finite-box ground vectors on the cover R
+differ by at most C q\textasciicircum{}(N-1) in trace norm, in each on-site
+cutoff space and, at fixed N, for the untruncated ground vectors, where N is
+the smaller box size; this is locality of the reduced densities of the named
+constructions at a rate in N, not uniqueness of any ground state, not a
+statement about other boundary conditions, and not a statement uniform in the
+lattice spacing a. Constants (exact; both signs; each of the five comparisons
+of the contract, namely c1 F1 on Lambda\_N versus Lambda\_(N+1), c2 F2 on
+Lambda\_N versus Lambda\_(N+1), c3 F1 versus F2 on the same Lambda\_N, c4 any
+two centered boxes of size at least N compared directly, and c5 two finite
+complete-factor volumes of one prescription containing Lambda\_N compared
+directly; in each on-site cutoff space with constants independent of the
+cutoff, and at fixed N for the untruncated ground vectors): q=1/64 and
+C=5784\allowbreak{}307935\allowbreak{}011820\allowbreak{}953163\allowbreak{}614046\allowbreak{}687121\allowbreak{}178140\allowbreak{}973664\allowbreak{}974888\allowbreak{}824331\allowbreak{}236872\allowbreak{}077433\allowbreak{}489356\allowbreak{}435905\allowbreak{}949478\allowbreak{}780525\allowbreak{}215656\allowbreak{}330727\allowbreak{}177728\allowbreak{}048666\allowbreak{}264385\allowbreak{}900654\allowbreak{}159314\allowbreak{}136473\allowbreak{}25/649\allowbreak{}548567\allowbreak{}473042\allowbreak{}337664\allowbreak{}409810\allowbreak{}664855\allowbreak{}266791\allowbreak{}889949\allowbreak{}984121\allowbreak{}342174\allowbreak{}530956\allowbreak{}201606\allowbreak{}073245\allowbreak{}694809\allowbreak{}426490\allowbreak{}159178\allowbreak{}862195\allowbreak{}173312\allowbreak{}829634\allowbreak{}280741\allowbreak{}896750\allowbreak{}749402\allowbreak{}941566\allowbreak{}759659\allowbreak{}762614\allowbreak{}272
+(about 8.9051e-07; exact\_first\_order tier, polymer\_kp route; margin about
+4.49 against the frozen 1/250000); the iterated\_split route proves the
+smaller
+C=1649\allowbreak{}304957\allowbreak{}714574\allowbreak{}761387\allowbreak{}109521\allowbreak{}705122\allowbreak{}525/18\allowbreak{}522658\allowbreak{}383323\allowbreak{}707613\allowbreak{}583283\allowbreak{}296586\allowbreak{}876444\allowbreak{}75392
+(about 8.9043e-07, labelled). Region form: for every finite complete-factor
+region Y inside Lambda\_N,
+||rho\textasciicircum{}box1\_Y-rho\textasciicircum{}box2\_Y||\_1 <= c\_site
+|Y| e\textasciicircum{}\{|Y|/10\textasciicircum{}8\}
+q\textasciicircum{}\{d\_Y\} with d\_Y=N-max\_\{y in Y\}|y|\_inf and
+c\_site\allowbreak{}=20704\allowbreak{}240478\allowbreak{}148137\allowbreak{}003187\allowbreak{}223317\allowbreak{}052643\allowbreak{}618088\allowbreak{}203115\allowbreak{}426121\allowbreak{}658564\allowbreak{}234456\allowbreak{}346164\allowbreak{}961800\allowbreak{}387649\allowbreak{}788809\allowbreak{}586580\allowbreak{}491593\allowbreak{}3/2361\allowbreak{}309485\allowbreak{}145316\allowbreak{}408070\allowbreak{}354817\allowbreak{}652498\allowbreak{}803432\allowbreak{}838086\allowbreak{}633067\allowbreak{}715420\allowbreak{}810025\allowbreak{}828987\allowbreak{}286971\allowbreak{}624327\allowbreak{}992197\allowbreak{}962733\allowbreak{}404743\allowbreak{}301857\allowbreak{}28
+(about 8.7681e-07; polymer\_kp; margin about 2.28 against the frozen
+1/500000); iterated\_split proves the smaller
+c\_site\allowbreak{}=25373\allowbreak{}922426\allowbreak{}378073\allowbreak{}252109\allowbreak{}377257\allowbreak{}001885\allowbreak{}/28941\allowbreak{}653723\allowbreak{}943293\allowbreak{}146223\allowbreak{}880150\allowbreak{}916994\allowbreak{}444928
+(about 8.7673e-07, labelled). Labelled secondary pair at q\_2=151552|tau| with
+the re-instantiated input K\_2=49/10202112 (disc radius 1/151552, proved in
+both packets):
+C\_2=25\allowbreak{}471319\allowbreak{}178685\allowbreak{}888438\allowbreak{}590351\allowbreak{}885513\allowbreak{}687178\allowbreak{}7/2628\allowbreak{}865244\allowbreak{}597236\allowbreak{}108356\allowbreak{}569862\allowbreak{}798185\allowbreak{}760000\allowbreak{}0000
+(about 9.6891e-06) and
+c\_site\allowbreak{},2=651\allowbreak{}079047\allowbreak{}656055\allowbreak{}039494\allowbreak{}458366\allowbreak{}725211\allowbreak{}/67298\allowbreak{}950261\allowbreak{}689244\allowbreak{}373928\allowbreak{}188487\allowbreak{}633555\allowbreak{}456
+(about 9.6744e-06), iterated\_split, meeting 1/20000 and 1/40000; polymer\_kp
+proves the smaller values C\_2 about 9.6440e-06 and c\_site,2 about 9.6294e-06
+(labelled). The crude\_majorant tier at q=1/64 (C about 2.0529e-03 polymer\_kp
+and 1.8006e-03 iterated\_split) misses 1/250000 and is retained. The tau to
+tau/100 ratios of the bound constants are about 100.647876 for C and
+100.647875 for c\_site, about 1.001500 and 1.000000 for the secondary pair,
+and exactly 100 for q\_2. The rate is per coarse l-infinity step in N at fixed
+spacing, with constants uniform in N and in the cutoff; no limit object,
+whole-sequence convergence, common limit or translation statement is formed,
+and no dynamics is asserted.
+\end{gatequote}
+The rest of this section derives that statement, and the limitations recorded
+by the gate close it (Section~\ref{sec:bb1-limits}).
+
+\subsection{The decomposition and the every-site input}
+\label{sec:bb1-decomposition}
+\paragraph{The AV1-type decomposition.} Fix a comparison and a cutoff
+$Q_L$, and let $\Lambda$ be the union of the two volumes, on which both
+finite-box ground vectors live with the smaller box's collection zero-extended
+(the AM2 fixed point of a volume stays supported in it). For a region $Y$ let
+$A$ be the supports meeting $Y$, $T_c=\prod_{I\in A}(1-\hat c_I)=1+D_c$, and
+$\varphi_{\rm out}=\prod_{I\notin A}(1-\hat c_I)\Omega$. Every creation not in
+$A$ acts as the identity on $\mathcal H_Y$, so
+$\psi(c)=T_c(\Omega_Y\otimes\varphi_{\rm out})$. Let
+$O=\bigcup_{I\in A}(I\setminus Y)$ be the straddle region and $\omega_O$ the
+normalized marginal of $\varphi_{\rm out}$ on $O$. Then, exactly,
+\begin{equation}
+ N_c(X)=\tr_O\bigl[T_c(P_Y\otimes X)T_c^*\bigr],\qquad
+ \rho_Y(c)=\frac{N_c(\omega_O)}{\tr N_c(\omega_O)},\qquad
+ \tr N_c(\omega)=1+\tr\bigl[D_c(P_Y\otimes\omega)D_c^*\bigr]\ge1 ,
+ \label{eq:bb1-decomposition}
+\end{equation}
+for every state $\omega$ on $\mathcal H_O$, pure or mixed. The last identity is
+AV1's orthogonality: every term of $D_c$ contains a creation excited at a site
+of $Y$, so $(P_Y\otimes1)D_c=0$ and the cross terms vanish. Two Lipschitz
+bounds follow, and both producers name their constants. In the outside state,
+$\norm{\rho_c(\omega)-\rho_c(\omega')}_1\le2(2\varepsilon_Y+\varepsilon_Y^2)
+\norm{\omega-\omega'}_1$ with
+$\varepsilon_Y\le\prod_{y\in Y}(1+\sum_{I\ni y}\norm{c_I})-1$; for $Y=R$ the
+constant is about $2.72\times10^{-8}$. It does not depend on $N$ and is never
+used as a decay factor. In the coefficients, the forward proves
+$\norm{\rho_Y(c)-\rho_Y(c')}_1\le2(1+t)^{|Y|-1}\sum_{I\cap Y\ne\varnothing}
+\norm{c_I-c'_I}$ from a derivative along the segment, with
+$t=49/14398580736$ the AV1 self-consistent anchored bound. The reverse proves,
+for a change at a single support $J$ and \emph{every} region $Y$,
+\begin{equation}
+ \norm{\rho_Y(c)-\rho_Y(c')}_1\le2\norm{c_J-c'_J}\qquad(\eta=0),
+ \label{eq:bb1-single}
+\end{equation}
+by splitting at $J$ itself: $\psi(c)-\psi(c')=-\hat\delta_J\,\psi_{\neg J}$
+with $\psi_{\neg J}=(P_J\otimes1)\psi(c)$, and the trace distance of two
+normalized rank-one projections is at most twice the distance of the vectors
+over the larger norm. Summed over far supports, \eqref{eq:bb1-single} would
+grow with the shell, so it is used only for supports meeting $Y$.
+
+Neither Lipschitz bound can simply be iterated. Iterating the outside-state
+bound on the straddle region, then on its straddle region, and so on,
+multiplies factors of order $|O_k|t_0$ with regions of growing size; with
+$|O_k|=(2k+1)^3$ that factor exceeds one at depth 264. Comparing the two
+global ground vectors directly fails too: in the global-fidelity fixture the
+one-site marginals stay a fixed distance apart while the global overlap
+collapses with the volume. Both are rejected controls. Two further fixtures
+fix what must be charged. Coefficient decay is not marginal decay (the
+fixture \eqref{eq:ba1-fixture}); and on the chain $r$--$o_1$--$o_2$ with
+supports $\{r,o_1\}$, $\{o_1,o_2\}$ and $\{o_2\}$ of amplitudes $a$, $b$ and
+$c$, the off-diagonal element of the unnormalized $R$-marginal is exactly
+$-abc$: a change two supports away moves the marginal at the order $ab$ of
+the two straddling amplitudes, with no first-order term.
+
+\paragraph{The every-site input, form (b).} The BA1 gate admits the
+coefficient bound for $u\in R$ only. Both routes need it at every site of the
+union volume, and both prove it in full as a BB1 lemma (forward Theorem~8.1,
+reverse Theorem~B6); the contract forbids citing it as an admitted BA1
+statement. For every site $u$,
+\begin{equation}
+ \sum_{I\ni u}\norm{c^A_I(\tau)-c^B_I(\tau)}\le K\,q^{(N-\norm{u}_\infty)_+},\qquad
+ K=2T(\rho),\quad T(\rho)=\frac{49\rho/144}{1-28\rho\,G'(R_a)},\quad q=\frac{|\tau|}{\rho}.
+ \label{eq:bb1-everysite}
+\end{equation}
+The proof is BA1's analytic-disc argument (Section~\ref{sec:ba1-disc}) with
+$R$ replaced by $\{u\}$. The circle bound $2T(\rho)$ is uniform in $u$,
+because the anchored norm is a maximum over sites. The vanishing order at $u$
+comes from the order-versus-distance lemma and from the \emph{common-core
+lemma at $u$}: every omitted face with a site within distance
+$N-\norm{u}_\infty-1$ of $u$ lies in a star $b+S\subset\Lambda_N$, and so is
+retained by both prescriptions on every volume containing $\Lambda_N$. Such a
+face has a site $q'$ with $\norm{q'}_\infty\le N-1$, and its anchor
+$b=q'-s$, $s\in S$, has $b_i\in[-N,N-1]$. Every source term of every
+comparison therefore lies at distance at least $N-\norm{u}_\infty$ from $u$.
+Sites of the union volume outside $\Lambda_N$ take the exponent $0$, from the
+per-box circle bound at the real point. The instances are the headline radius
+$\rho=64|\tau|$, which gives exactly the BA1 gate's bound value
+$K=49/111790368$ at $q=1/64$; the secondary radius $\rho=1/151552=\tau_*/4$,
+which gives $K_2=49/10202112$ at $q_2=151552|\tau|$ and is re-instantiated
+and labelled, since the BA1 gate binds only $64|\tau|$ and $\tau_*$; and the
+crude input $296/390625$. Both producers enumerate the lemma at every site of
+$\Lambda_N$, the reverse for $N=2,3,4$ (125, 343 and 729 sites) and the
+forward for $N=2,3$, for the named comparisons and for general volumes, with
+the distance $N-\norm{u}_\infty$ attained. The historical assistant's
+enumeration covers all five comparisons at $N=2,3,4$.
+
+\subsection{Forward route: hard-core polymers and the Kotecký--Preiss condition}
+\label{sec:bb1-forward}
+\paragraph{Polymers, Y-clusters and vacuum probabilities.} The product
+expands as $\psi(c)=\sum_{\mathcal F}(-1)^{|\mathcal F|}c_{\mathcal F}$ over
+families $\mathcal F$ of pairwise disjoint supports, with
+$\norm{c_{\mathcal F}}=\prod_{I\in\mathcal F}\norm{c_I}$. Because each $c_I$
+is excited at every site of $I$, two families pair to zero against
+$A\otimes1$, $A\in B(\mathcal H_Y)$, unless their excitation sets agree
+outside $Y$. A \emph{polymer} $\gamma=(\mathcal F,\mathcal F')$ is a pair of
+nonempty families with the same excitation set whose bipartite overlap graph
+is connected; its activity is
+$w(\gamma)=(-1)^{|\mathcal F|+|\mathcal F'|}\langle c_{\mathcal F},c_{\mathcal F'}\rangle$,
+and polymers are compatible when their supports are disjoint (hard core). A
+\emph{Y-cluster} $\eta$ is a $Y$-matched pair all of whose members are
+connected to $Y$, and $\rho_\eta\in B(\mathcal H_Y)$ is its signed partial
+trace. Every $Y$-matched pair splits uniquely into one $Y$-cluster and
+compatible polymers away from it, so, with
+$Z(\Lambda')=\sum_\Gamma\prod_{\gamma\in\Gamma}w(\gamma)$,
+\begin{equation}
+ \begin{gathered}
+ \langle\psi,(A\otimes1)\psi\rangle=\sum_\eta\tr(\rho_\eta A)\,
+ Z(\Lambda\setminus\supp\eta),\qquad
+ \rho_Y=\sum_\eta\rho_\eta\,\pi(\supp\eta),\\
+ \pi(S)=\frac{Z(\Lambda\setminus S)}{Z(\Lambda)}
+ =\frac{\langle\psi,P_S\psi\rangle}{\langle\psi,\psi\rangle}\in(0,1].
+ \end{gathered}
+ \label{eq:bb1-polymers}
+\end{equation}
+The outside state enters only through the vacuum probabilities of the
+$Y$-cluster supports, each at most 1. This replaces the factor $e^{a|\gamma|}$
+of a rooted cluster sum and keeps every later bound free of an exponential in
+the size of the differentiated support. The activities obey
+$|w(\gamma)|\le\prod_{K\in\gamma}\norm{c_K}$ and
+$\norm{\rho_\eta}_1\le\prod_{K\in\eta}\norm{c_K}$. An exploration tree that
+adds, at each step, the member of the other side through the least unbalanced
+site bounds the combinatorics: with per-site sum $\sigma\le1$, the polymers
+through a site cost at most $\sigma^2$, and the $Y$-clusters cost at most
+$N_Y=(1+t_a)^{2|Y|}$, with a factor $w^{-d}$ for a member at distance $d$ from
+$Y$. These counts are brute-forced on a five-site chain (233 polymers, and 275
+and 856 $Y$-clusters), and the polymer identity is checked exactly on four
+qutrit sites with all 15 supports.
+
+\paragraph{The mixed-weight contraction lemma.} The Kotecký--Preiss
+hypothesis needs a cardinality factor, which BA1's diameter weight does not
+carry. The forward therefore proves a new lemma in full. With
+$W(I)=w^{\operatorname{diam}I}e^{b|I|}$ and
+$\norm c_{w,b}=\max_u\sum_{I\ni u}W(I)\norm{c_I}$,
+\begin{equation}
+ \norm{L_k(c_1,\ldots,c_k)}_{w,b}\le w\,e^{4b}\,J\,L_k^{\rm num}\prod_j\norm{c_j}_{w,b}.
+ \label{eq:bb1-mixed}
+\end{equation}
+The proof is BA1's weighted estimate with one addition. Besides
+$\operatorname{diam}M\le\operatorname{diam}X+\sum_j\operatorname{diam}I_j$, the
+output also satisfies $|M|\le|X|+\sum_j|I_j|$ with $|X|\le4$, so
+$W(M)\le w\,e^{4b}\prod_jW(I_j)$: the loss is charged once per interaction
+term. It is attained at order zero, where a four-site piece gives $M=X$. The
+checker verifies the weight inequality over 19432 configurations at three
+weight pairs and rejects a loss $w\,e^{3b}$, a loss per creation, the
+maximum-instead-of-sum shortcut, $e^b=2$ and $w=42/q$. With $\hat w=w\,e^{4b}$
+and $\Gamma=J\hat wG'(R_a)$, the self-map and contraction hold when
+$\hat w\le w_{\max}=1/(37888|\tau|)$, and AM2's uniqueness identifies the
+fixed point. The two tiers are
+$\bar\tau=w\,e^{3b}t_1/(1-\Gamma)$ (exact first order) and
+$\bar\tau=J\hat wG(R_a)$ (crude).
+
+The proof weights were declared before any constant, by one rule for both
+pairs: the creation weight $w=3/q$, the cluster distance weight $v=e^\mu=2/q$,
+the cardinality factor $e^b=1001/1000$ and the Kotecký--Preiss parameter
+$a=\bar\tau^2$. The far-site lattice sum needs $qv>1$ ($qv=2$), the reach sum
+needs $v/w<1$ ($v/w=2/3$), admissibility needs $\hat w\le w_{\max}$, and the
+criterion needs $a\le2b$. At the headline, $w=192$, $v=128$,
+\begin{equation}
+ \begin{gathered}
+ \hat w=\frac{3012018012003}{15625000000}\approx192.769,\qquad
+ \Gamma=\frac{231925386924231}{12207031250000000}\approx1.89993\times10^{-2},\\
+ \bar\tau=\frac{6143393381125}{9196881302842190592}\approx6.67987\times10^{-7},
+ \end{gathered}
+ \label{eq:bb1-weights}
+\end{equation}
+and $a=\bar\tau^2\approx4.46206\times10^{-13}$. At the secondary pair
+$w=1171875/592$, $v=390625/296$, $\hat w\approx1987.45$,
+$\Gamma\approx0.195883$, $\bar\tau\approx8.40187\times10^{-6}$ and
+$a\approx7.05915\times10^{-11}$. The lattice sums
+$S_x=\sum_{y\in\mathbb Z^3}x^{d(y,0)}$ are $S_{2/3}=725$ and $S_{1/2}=147$ at
+both pairs.
+
+\paragraph{The Kotecký--Preiss condition.} With $a(\gamma)=a|\supp\gamma|$ and
+the distance weight $d(\gamma)=\mu\sum_{K\in\gamma}\operatorname{diam}K$, the
+per-site bound
+$\sum_{\gamma\ni x}|w(\gamma)|e^{a(\gamma)+d(\gamma)}\le\bar\tau^2\le a$
+follows from the activity bound, $a|\supp\gamma|=(a/2)\sum_{K\in\gamma}|K|$
+(each side of a polymer is a disjoint union), the exploration count and the
+mixed norm. Summing over the sites of a polymer, or of a test set of sites,
+gives the hypothesis
+$\sum_{\gamma'\not\sim\gamma}|w(\gamma')|e^{a(\gamma')+d(\gamma')}\le
+a(\gamma)$. The criterion then gives, for the Ursell-weighted cluster sums
+$\Phi^T$, the site decay
+$\sum_{X\not\sim z,\,X\not\sim s}|\Phi^T(X)|\le a\,v^{-d(z,s)}$, and for
+$S\supset Y$ and a polymer $\gamma$ away from $S$ the truncated vacuum
+probabilities satisfy
+\begin{equation}
+ \bigl|\pi_{\Lambda\setminus S}(\gamma)-\pi_\Lambda(\gamma)\bigr|
+ \le\sum_{z\in\supp\gamma}\sum_{s\in S}a\,v^{-d(z,s)} ,
+ \label{eq:bb1-truncated}
+\end{equation}
+with no factor $e^{a|\gamma|}$, because both probabilities are real, positive
+and at most 1. The checker verifies \eqref{eq:bb1-truncated} exactly on a
+six-site chain.
+
+\paragraph{The cited theorem and its post-hoc check.} The frozen forward
+packet states the criterion as a cited theorem: Kotecký and Preiss (Comm.
+Math. Phys. 103 (1986) 491--498) \cite{kp} in the decay-function form of Ueltschi
+(Moscow Math. J. 4 (2004) 511--522) \cite{ueltschi}, transcribed as known to the producer,
+with the primary sources not re-inspected. The skeptic found that the
+packet's own lemmas bound polymer sums, which is the hypothesis side, not the
+Ursell-weighted cluster sums behind the site decay and
+\eqref{eq:bb1-truncated}. Plan rule P4, that an external theorem is quoted from
+a committed excerpt, had not been carried into the BB1 contract (defect D2),
+so the producer had no excerpt to quote. The skeptic ruled this a limitation,
+not a blocking issue, since every bound value is at least the value of the
+self-contained reverse route. After that ruling, and after the freeze, the
+advisor committed
+\repo{research/round33/sources/ueltschi-math-ph-0304003v3.md}{an excerpt} of
+D.~Ueltschi, ``Cluster expansions and correlation functions'',
+\href{https://arxiv.org/abs/math-ph/0304003v3}{arXiv:math-ph/0304003v3}
+(commit \texttt{cca0584}, 02:51 UTC on 25 September) as a repair source. It is
+not a premise of either frozen packet. Its PDF is bound by the sha256
+\begin{center}\small
+\texttt{2cc3e036af5b2a46afe95acf0b5863fe5c7d31554debb10a2a5cade4122bdbfc}
+\end{center}
+(191795 bytes, 11 pages); the excerpt file itself has sha256
+\texttt{17b0b3ff\ldots0eed66}. As in the Nachtergaele--Sims excerpt, Part~A
+transcribes the displayed statements and was checked by the advisor against
+the rendered pages, and Part~B is the raw \texttt{pdftotext} text. Ueltschi
+states that his criterion (3) is the same as in Kotecký--Preiss when polymers
+are subsets of a lattice; the original paper is not committed. The statements
+used are quoted below as Part~A gives them, set in mathematical notation.
+
+\begin{quote}\small
+Setting (Section 2). $(\mathbb A,\mathcal A,\mu)$ is a measure space; $\mu$ is
+a complex measure with $|\mu|(\mathbb A)<\infty$, $|\mu|$ its total
+variation. $\zeta$ is a complex measurable symmetric function on
+$\mathbb A\times\mathbb A$.
+\begin{equation*}
+ Z=\sum_{n\ge0}\frac1{n!}\int d\mu(A_1)\ldots\int d\mu(A_n)
+ \prod_{1\le i<j\le n}\bigl(1+\zeta(A_i,A_j)\bigr);\ \text{the term $n=0$ is 1.}\tag{1}
+\end{equation*}
+$\mathcal G_n$ is the set of (unoriented) graphs with $n$ vertices and
+$\mathcal C_n\subset\mathcal G_n$ the connected ones.
+\begin{equation*}
+ \varphi(A_1,\ldots,A_n)=1\ \text{if $n=1$, and}\
+ \frac1{n!}\sum_{G\in\mathcal C_n}\prod_{(i,j)\in G}\zeta(A_i,A_j)\ \text{if $n\ge2$}\tag{2}
+\end{equation*}
+(product over the edges of $G$). A sequence $(A_1,\ldots,A_n)$ is a cluster if
+the graph with an edge between $i$ and $j$ whenever $\zeta(A_i,A_j)\ne0$ is
+connected.
+
+\textbf{Theorem 1 (Cluster expansion).} Assume that $|1+\zeta(A,A')|\le1$ for
+all $A,A'\in\mathbb A$, and that there exists a nonnegative function $a$ on
+$\mathbb A$ such that for all $A\in\mathbb A$,
+\begin{equation*}
+ \int d|\mu|(A')\,|\zeta(A,A')|\,e^{a(A')}\le a(A),\tag{3}
+\end{equation*}
+and $\int d|\mu|(A)\,e^{a(A)}<\infty$. Then
+$Z=\exp\{\sum_{n\ge1}\int d\mu(A_1)\ldots\int d\mu(A_n)\,\varphi(A_1,\ldots,A_n)\}$.
+Combined sum and integrals converge absolutely. Furthermore, for all
+$A_1\in\mathbb A$,
+\begin{equation*}
+ 1+\sum_{n\ge2}n\int d|\mu|(A_2)\ldots\int d|\mu|(A_n)\,
+ |\varphi(A_1,\ldots,A_n)|\le e^{a(A_1)}.\tag{4}
+\end{equation*}
+
+Weights (Section 3). $b\ge0$ is a function on $\mathbb A$ and $c\ge0$ a
+symmetric function on $\mathbb A\times\mathbb A$ (both may vanish
+identically). $\mu_b(A)=\mu(A)e^{b(A)}$;
+$\zeta_c(A,A')=\zeta(A,A')e^{c(A,A')}$;
+$c(A_1,\ldots,A_n)=\min_{G\in\mathcal C_n}\sum_{(i,j)\in G}c(A_i,A_j)$ if
+$n\ge3$; $\varphi_c(A_1,\ldots,A_n)=\varphi(A_1,\ldots,A_n)
+e^{c(A_1,\ldots,A_n)}$.
+
+\textbf{Theorem 3 (Decay of correlations).} Assume that
+$|1+\zeta_c(A,A')|\le1$ for all $A,A'\in\mathbb A$, and that there exists a
+nonnegative function $a$ on $\mathbb A$ such that
+\begin{equation*}
+ \int d|\mu_b|(A')\,|\zeta_c(A,A')|\,e^{a(A')}\le a(A)\quad
+ \text{for all }A\in\mathbb A.\tag{16}
+\end{equation*}
+Then for all $m\ge1$ and all $A_1,\ldots,A_m\in\mathbb A$,
+\begin{align*}
+ &\sum_{n\ge m}\frac{n!}{(n-m)!}\int d|\mu_b|(A_{m+1})\ldots\int d|\mu_b|(A_n)\,
+ |\varphi_c(A_1,\ldots,A_n)|\\
+ &\qquad\le\exp\Bigl\{\frac1{m\gamma}\bigl[(1+\gamma)^m-1\bigr]
+ \sum_{i=1}^ma(A_i)\Bigr\}\prod_{1\le i<j\le m}\bigl(1+|\zeta_c(A_i,A_j)|\bigr),
+\end{align*}
+where
+\begin{equation*}
+ \gamma=\sup_n\sup_{A_0,\ldots,A_n}\Bigl|\prod_{i=1}^n\bigl(1+\zeta(A_0,A_i)\bigr)-1\Bigr|
+ \tag{17}
+\end{equation*}
+(clearly $0\le\gamma\le2$). The case $m=1$ is
+\begin{equation*}
+ 1+\sum_{n\ge2}n\int d|\mu_b|(A_2)\ldots\int d|\mu_b|(A_n)\,
+ |\varphi_c(A_1,\ldots,A_n)|\le e^{a(A_1)},\tag{18}
+\end{equation*}
+and multiplying (18) by $|\zeta_c(A,A_1)|$ and integrating over $A_1$, from
+(16),
+\begin{equation*}
+ \sum_{n\ge1}\int d|\mu_b|(A_1)\ldots\int d|\mu_b|(A_n)\Bigl(\sum_{i=1}^n
+ |\zeta_c(A,A_i)|\Bigr)|\varphi_c(A_1,\ldots,A_n)|\le a(A)\quad
+ \text{for all }A\in\mathbb A.\tag{19}
+\end{equation*}
+The paper states that (18) and (19) ``can be proved exactly the same way as
+(4) and (5)''.
+
+Section 4.2, lattice polymer models: a polymer is a connected subset of
+$\mathbb Z^d$; $\mu$ is the counting measure times a weight $w(A)$; polymers
+interact through non-intersection, $\zeta(A,A')=-1$ if $A\cap A'\ne\varnothing$
+and $0$ otherwise (the hard-core case, where $|1+\zeta|\le1$ holds).
+\end{quote}
+
+The skeptic's
+\repo{research/round33/skeptic/bb1-kp-repair.md}{repair record} compares the
+forward's statement and its use with this text, with the dictionary
+hard-core $\zeta\in\{0,-1\}$, $c\equiv0$, $b=d$ (the distance weight) and
+$a(\gamma)=a|\supp\gamma|$. Ueltschi's (16) is then exactly the forward's
+hypothesis. Theorem~1 gives the cluster expansion of every $Z(\Lambda')$, since
+restricting the finite polymer set only removes terms. (19) gives the forward's
+conclusion with the same weight $e^{d(X)}$, counted with multiplicity, and
+with Ueltschi's count $\sum_i|\zeta(A,A_i)|\ge1$ in place of the forward's
+indicator, which only strengthens it. The test sets enter as atoms of
+$\mu$-mass zero with $a(S)=a|S|$, which changes no integral; that is the
+forward's own parenthetical. The site decay and \eqref{eq:bb1-truncated} add
+only the forward's elementary steps. The record finds no missing factor and
+no different hypothesis form: the cited statement and its use are covered.
+The limitation stays, because the check is post hoc and outside the frozen
+packet. The skeptic's conditional alternative, a \recid{limited} verdict with
+the reverse constants bound if P4 were held binding on the frozen producer,
+is retained in its review as the advisor asked and is not recommended.
+
+\paragraph{Marginal locality from a real-parameter derivative.} Put
+$c_\lambda=c+\lambda(c'-c)$ with $\lambda\in[0,1]$ \emph{real}. Every
+coefficient of $\psi(c_\lambda)$ is a real polynomial in $\lambda$ and
+$Z_\lambda(\Lambda)\ge1$, so $\lambda\mapsto\rho_Y(c_\lambda)$ is smooth, and
+no complex $\lambda$ is used. A zero-free region is not needed and none is
+proved; the two-qubit vector $\Omega-2z|11\rangle$, whose normalization
+$1+4z^2$ vanishes at $z=i/2$, shows why analyticity of the reduced density is
+never claimed. The derivative splits into the changes on supports meeting
+$Y$, charged by the coefficient Lipschitz bound, and the changes on the other
+supports. The latter act through the $Y$-cluster derivatives (the straddling
+term) and through the derivatives of the vacuum probabilities (the
+normalization term), which \eqref{eq:bb1-truncated} controls. The result is
+\begin{equation}
+ \norm{\rho_Y(c)-\rho_Y(c')}_1\le2(1+t)^{|Y|-1}\!\!\sum_{I\cap Y\ne\varnothing}\!\!\norm{\delta_I}
+ +N_Y\kappa_0\sum_{x\notin Y}\Bigl(\sum_{y\in Y}v^{-d(x,y)}\Bigr)\sum_{I\ni x}\norm{\delta_I},
+ \label{eq:bb1-forward-lemma}
+\end{equation}
+with $\kappa_0=4\bar\tau+2A(t+\bar\tau(S_{v/w}-1))$ and
+$A=2\bar\tau^2+a(1+2\bar\tau^2S_{v/w})$; at the headline
+$\kappa_0\approx2.67195\times10^{-6}$. In the contract's lemma form this is
+$\kappa(I)\le\kappa_0(Y)(w')^{-d_\infty(I,Y)}p(|I|)$ with
+$\kappa_0(Y)=N_Y|Y|\kappa_0$, $w'=v$ and $p(s)=s$.
+
+\subsection{Reverse route: the iterated split with per-site charging}
+\label{sec:bb1-reverse}
+\paragraph{Weights.} The reverse uses only a diameter weight: $W=1024$ at the
+headline and $W_2=1/(37888|\tau|)$ at the secondary pair, with the site ratio
+$\lambda=2/W=1/512$ and lemma weight $w'=W/2=512$. At the cap $W=1024$ gives
+the weighted self-map value $2368/390625<1/64$ and the contraction constant
+$39424/390625\approx0.1009$. The lattice sums need $\lambda<q$, so $W=64$ is
+rejected. For a comparison put $m_I=\max(\norm{c^A_I},\norm{c^B_I})$, with
+per-site sums $t_0\le2T(|\tau|)=49/7199290368$ and
+$t_W\le2T(W|\tau|)=49/6321618\approx7.75\times10^{-6}$. The reverse also proves
+the mixed-weight lemma for completeness, with the loss $w\,e^{4b}$ and a
+fixture showing that $w\,e^b$ is insufficient, but does not use it.
+
+\paragraph{Single-support telescoping.} Order the supports of the union volume
+and change them one at a time from $c^A$ to $c^B$. Every intermediate
+collection lies in the class $\mathcal C(m)$ of collections with
+$\norm{c_I}\le m_I$, and
+\begin{equation}
+ \norm{\rho_Y(c^A)-\rho_Y(c^B)}_1\le\sum_k\kappa(I_k)\norm{c^A_{I_k}-c^B_{I_k}},\qquad
+ \kappa(J)=\sup\frac{\norm{\rho_Y(c)-\rho_Y(c')}_1}{\norm{c_J-c'_J}},
+ \label{eq:bb1-telescoping}
+\end{equation}
+the supremum over pairs in $\mathcal C(m)$ differing only on $J$. By
+\eqref{eq:bb1-single}, $\kappa(J)\le2$ for every $J$; that bound is used for
+supports meeting $Y$, with $\eta=0$.
+
+\paragraph{The split at the changed support.} For $J$ missing $Y$, apply the
+AV1 product-ordering split at $J$: $\psi(c)=\psi_J+\chi(c)$ with
+$\psi_J=\Omega_J\otimes\varphi$, $\varphi$ common to $c$ and $c'$, and
+$(P_J\otimes1)\chi=0$. Because $J$ is traced out and $\chi$ is excited on
+$J$, the cross terms vanish exactly. This gives an exact identity for
+$\rho_Y(c)-\rho_Y(c')$ with two channels, and
+\begin{equation}
+ \norm{\rho_Y(c)-\rho_Y(c')}_1\le2m_J\norm\delta\,\norm{\rho_Y(\varphi)-\rho_Y(c')}_1
+ +\frac2{n^2}\bigl\|\Gamma(\delta)-\tr\Gamma(\delta)\,\rho_Y(c')\bigr\|_1,
+ \label{eq:bb1-split}
+\end{equation}
+with $n=\norm\varphi$. The first term is the normalization channel, carrying
+the weight $\norm{c_J}^2$ of the $J$-excited component; the second is the
+straddling channel. No intermediate normalization is ever divided by, since
+orthogonality at $J$ gives $\norm{\psi(c)}^2\ge n^2$.
+
+\paragraph{Only coverings survive.} Expand the creations meeting $J$ into
+families. Since $\delta=c_J-c'_J$ is excited at every site of $J$, the
+contraction with $\delta$ kills every family that does not cover $J$, and a
+covering family contributes with the product of its members' amplitudes. The
+spectator families cancel exactly, so no factor $\prod_x(1+s_x)$ over a
+region ever appears. The same holds at the next level. Contracting the
+outside vector against a covering region $S$ keeps only the coverings of $S$
+by supports meeting $S$, which gives a recursion on records
+$\Gamma[U,S,g]$ with a strictly growing removed set $U$. The recursion
+terminates in every finite volume. Its depth is not bounded uniformly, and no
+constant depends on it. Both identities are verified exactly on a five-site
+fixture with two excited levels per site.
+
+\paragraph{Per-site charging and the closure.} With the site potential
+$h(x)=\sum_{y\in Y}\lambda^{d(x,y)}$ and $H(I)=\sum_{x\in I}h(x)$, three
+per-site facts carry the estimate:
+\begin{itemize}
+\item a support through $x$ meeting $Y$ has diameter at least $d(x,Y)$, so
+ $\sum_{I\ni x,\,I\cap Y\ne\varnothing}m_I\le t_Wh(x)$;
+\item $\sum_{I\ni x}m_IH(I)\le8t_Wh(x)$, from
+ $|I|\le(\operatorname{diam}I+1)^3\le8\cdot2^{\operatorname{diam}I}$, so the
+ size of a support is charged once, at the site where the chain enters it,
+ never as a product of growing region sizes;
+\item the coverings of a region $T$ cost at most $t_0$ in total.
+\end{itemize}
+The per-level factor is therefore $8t_W=196/3160809\approx6.2009\times10^{-5}$
+at every depth. Writing $r=\max_{I\cap Y=\varnothing}\kappa(I)/H(I)$, the
+chain bound gives $\kappa(J)\le(c_1+c_2r)H(J)$, hence
+\begin{equation}
+ r\le\beta^*=\frac{c_1}{1-c_2},\qquad
+ c_1=4t_0t_W+\frac{4t_W+4t_0t_W/(1-t_0)}{1-8t_W},\qquad
+ c_2=16t_0t_W+\frac{16t_0t_W}{(1-t_0)(1-8t_W)},
+ \label{eq:bb1-closure}
+\end{equation}
+with $c_1\approx3.10066\times10^{-5}$ and $c_2\approx1.69\times10^{-12}$ at
+the headline, so that
+\[
+ \beta^*=\frac{8027378053355287230305861131}{258892194754590065811608028259796}
+ \approx3.10066\times10^{-5}.
+\] In the contract's lemma form,
+$\eta=0$, $\kappa(I)\le\beta^*H(I)\le\kappa_0(w')^{-d_\infty(I,Y)}|I|$ with
+$\kappa_0=\beta^*|Y|$, $w'=512$ and $p(n)=n$. The lemma is checked end to end
+on a seven-site qubit chain with 23 supports, and each of its 18 single far
+changes stays within $\beta^*H(J)\norm{\delta_J}$.
+
+\subsection{The density bounds for every comparison}
+\label{sec:bb1-bounds}
+Both routes insert the every-site input \eqref{eq:bb1-everysite} into their
+lemma and sum over $\mathbb Z^3$ with
+$q^{N-\norm x_\infty}\le q^{N-\norm y_\infty}q^{-d(x,y)}$. The forward obtains
+\begin{equation}
+ C=K(1+q)\Bigl[2(1+t)+(1+t)^4\kappa_0\bigl(S_{1/(qv)}-1\bigr)\Bigr],\qquad
+ c_{\rm site}=K\Bigl[2+\kappa_0\bigl(S_{1/(qv)}-1\bigr)\Bigr],
+ \label{eq:bb1-forward-constants}
+\end{equation}
+where $(1+t)^{2|Y|}\le e^{|Y|/10^8}$ because $2t+t^2\approx6.806\times10^{-9}$
+is below $10^{-8}$. The reverse obtains
+$c_{\rm site}=K(2+\beta^*S_\lambda)$ with $S_\lambda=2169/343$ at
+$\lambda/q=1/8$, and $C=c_{\rm site}(1+q)$, in the stronger form
+$c_{\rm site}\sum_{y\in Y}q^{N-\norm y_\infty}$ without the exponential factor.
+The factor $1+q$ in both is the site $0$ charged at $q^N$ and $e_z$ at
+$q^{N-1}$.
+
+\paragraph{The five comparisons.} The density lemma sees a comparison only
+through the per-site coefficient differences and the norms of the two fixed
+points. The every-site input covers any two volumes of either prescription
+containing $\Lambda_N$, and the norms are bounded for every such volume, so
+one pair of constants holds for all five comparisons of the contract:
+\begin{itemize}
+\item c1: F1 on $\Lambda_N$ against F1 on $\Lambda_{N+1}$;
+\item c2: F2 on $\Lambda_N$ against F2 on $\Lambda_{N+1}$;
+\item c3: F1 against F2 on the same $\Lambda_N$, the fixed-$N$ change of
+ boundary prescription, named as its own item: its source is the
+ $28N(5N+1)$ extra faces (616, 1344 and 2352 at $N=2,3,4$) on the outer layer,
+ at distance $N-1$ from $e_z$ and $N$ from $0$, enumerated by all three
+ packets;
+\item c4: any two centered boxes of size at least $N$, of either family,
+ compared directly and not by telescoping;
+\item c5: two finite complete-factor volumes of one prescription, both
+ containing $\Lambda_N$, compared directly: the lemma runs once on their
+ union, which serves only as the embedding space. The route through the
+ union volume, each volume against the union and then the triangle
+ inequality, costs a factor 2 and is labelled only ($2C\approx1.781\times
+ 10^{-6}$).
+\end{itemize}
+Every source site in the enumeration audits has $\norm p_\infty\ge N$. The
+$-\tau$ values replay the same $|\tau|$ formulas.
+
+\paragraph{Cutoff removal at fixed $N$.} Every constant is independent of the
+on-site cutoff, so the bounds hold in each $Q_L$. At fixed $N$ and for fixed
+volumes, AM2~\S6 (and, for F2, the AY1 itemization) gives a simple
+untruncated ground state with gap at least $1/2$ in normalized units, and
+AV1's Eckart-type bound makes the cutoff ground vectors converge to it; the
+reduced densities converge in trace norm, and the bound passes through the
+closed ball. The order is fixed: a bound uniform in $L$ at fixed $N$, then
+$L\to\infty$ at fixed $N$, then the reading as a function of $N$. The
+fixture $(1-2^{-L})^{(2N+1)^3}$, whose iterated limits are 1 and 0, shows why
+the two limits are never exchanged.
+
+\paragraph{Constants.} Table~\ref{tab:bb1-constants} lists the constants. For
+each quantity the gate binds the larger valid constant and labels the other
+route's value. The polymer\_kp values are the larger at the headline and the
+iterated\_split values at the secondary pair, so every bound value is at least
+the value that the self-contained reverse route proves.
+
+\begin{table}[htbp]
+\centering\small
+\caption{BB1 constants at $|\tau|=10^{-8}$, both signs, every comparison, each
+cutoff space and the untruncated vectors at fixed $N$. Decimals summarize
+exact rationals; only the rows marked ``bound'' are the gate's admitted
+values.}
+\label{tab:bb1-constants}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.2\linewidth}
+ l r r >{\raggedright\arraybackslash}X@{}}
+\toprule
+Quantity & Route & $\approx$ value & Margin & Status\\
+\midrule
+$C$, $q=1/64$ & polymer\_kp & $8.90512\times10^{-7}$ & $4.4918$ & bound; target $1/250000$\\
+ & iterated\_split & $8.90426\times10^{-7}$ & $4.4922$ & labelled\\
+$c_{\rm site}$, $q=1/64$ & polymer\_kp & $8.76812\times10^{-7}$ & $2.2810$ & bound; target $1/500000$; the binding margin\\
+ & iterated\_split & $8.76727\times10^{-7}$ & $2.2812$ & labelled\\[2pt]
+$C_2$, $q_2=151552|\tau|$ & iterated\_split & $9.68909\times10^{-6}$ & $5.1604$ & bound (labelled pair); target $1/20000$\\
+ & polymer\_kp & $9.64401\times10^{-6}$ & $5.1846$ & labelled\\
+$c_{{\rm site},2}$ & iterated\_split & $9.67443\times10^{-6}$ & $2.5841$ & bound (labelled pair); target $1/40000$\\
+ & polymer\_kp & $9.62942\times10^{-6}$ & $2.5962$ & labelled\\[2pt]
+crude $C$, $q=1/64$ & polymer\_kp & $2.05285\times10^{-3}$ & -- & fails $1/250000$; retained\\
+ & iterated\_split & $1.80057\times10^{-3}$ & -- & fails $1/250000$; retained\\
+crude $c_{\rm site}$ & iterated\_split & $1.77287\times10^{-3}$ & -- & fails $1/500000$; retained\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The exact bound rationals of the headline pair, with numerators and
+denominators of about 150 digits, are those of the gate statement quoted
+above. The labelled iterated\_split values are
+\begin{equation}
+ \begin{aligned}
+ C&=\frac{1649304957714574761387109521705122525}{1852265838332370761358328329658687644475392},\\
+ c_{\rm site}&=\frac{25373922426378073252109377257001885}{28941653723943293146223880150916994444928},
+ \end{aligned}
+ \label{eq:bb1-reverse-values}
+\end{equation}
+and the bound values of the labelled secondary pair are
+\begin{equation}
+ \begin{aligned}
+ C_2&=\frac{254713191786858884385903518855136871787}{26288652445972361083565698627981857600000000},\\
+ c_{{\rm site},2}&=\frac{651079047656055039494458366725211}{67298950261689244373928188487633555456}.
+ \end{aligned}
+ \label{eq:bb1-secondary-values}
+\end{equation}
+The crude polymer\_kp estimate has
+no region constant in the frozen form, because its anchored norm gives
+$(1+t)^2-1\approx1.18\times10^{-5}$, above $10^{-8}$. The reverse's crude
+region constant is in the frozen form, because its near term carries no
+exponential factor, and it fails its target. The skeptic's pre-comparison
+review had said that no crude region constant can be written in the frozen
+form, and it corrected itself on this point. Read with the exponent, the
+bound $C\,q^{N-1}$ is about $1.391\times10^{-8}$ at $N=2$,
+$2.174\times10^{-10}$ at $N=3$ and $3.397\times10^{-12}$ at $N=4$.
+
+\paragraph{Scaling.} Evaluated from the same exact formulas at $\tau$ and
+$\tau/100$, the ratios of the bound constants are about $100.647876$ for $C$
+and $100.647875$ for $c_{\rm site}$, inside $[95,105]$ (the reverse values
+give about $100.638$). The secondary ratios are about $1.001500$ and
+$1.000000$, inside $[99/100,101/100]$, since $K_2$ does not depend on $\tau$
+and only the factor $1+q_2$ remains; and $q_2$ scales by exactly 100.
+
+\paragraph{The input governs the constant.} The near term
+$2K(1+q)=3185/3577291776\approx8.90338\times10^{-7}$ is 99.98\% of $C$ in all
+three computations: the forward's, the reverse's and the skeptic's own
+pre-comparison value $8.903452\times10^{-7}$. The three differ only in how
+the far sites are charged, about $10^{-4}$ of $C$
+(Table~\ref{tab:bb1-ledger}). The forward pays the far cost twice, through
+the straddling families and through the normalization, which is why its
+constant is the larger and is bound. The three derivations agree to within 2
+parts in $10^4$ on $C$ and $c_{\rm site}$. The region margin, about 2.28, is
+the binding one. A later loop that needs more room would have to improve the
+coefficient input, not the density lemma.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The preregistered BB1 error terms as contributions to the headline
+$C$, added linearly.}
+\label{tab:bb1-ledger}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Term & polymer\_kp & iterated\_split\\
+\midrule
+\recid{coefficient_input_every_site} & $2K(1+q)=3185/3577291776\approx8.90338\times10^{-7}$ & the same\\
+\recid{straddling_supports} & $\approx8.683\times10^{-11}$ ($Y$-cluster derivatives) & $\approx8.729\times10^{-11}$ (covering chains reaching $Y$)\\
+\recid{normalization} & $\approx8.683\times10^{-11}$ (vacuum-probability derivatives and $\eta_R$) & $\approx5.94\times10^{-19}$ (the $\norm{c_J}^2$ channel)\\
+\recid{polymer_or_split_remainder} & $\approx2.81\times10^{-20}$ (cluster sums in the truncated probabilities) & $\approx5.94\times10^{-19}$ (removal terms) plus about $1.5\times10^{-22}$ (closure)\\
+\recid{cutoff_removal_at_fixed_N} & not a numeric cost: an exact limit at fixed $N$ & the same\\
+\recid{arithmetic} & not a numeric cost: exact rationals, directed enclosures only & the same\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Readings, defects and review}
+\label{sec:bb1-readings}
+\paragraph{Contract readings.} The review reconciles the contract's wording
+with both packets as follows.
+\begin{itemize}
+\item \emph{D1.} The semantics of \recid{normalization_couples_supports} say
+ that a support strictly containing $R$ has a nonzero first-order
+ $R$-marginal. It does not. At first order only supports contained in $R$
+ move $\rho_R$, namely the ten faces with owner set exactly $R$. Every
+ straddling support has zero first-order $R$-marginal, including the 6 of
+ the 72 straddling faces that strictly contain $R$, and differs from zero
+ only at second order. All three packets exhibit the three kinds, and all
+ three found the defect.
+\item \emph{R10, non-centred F2 volumes.} The AY1 itemization H1--H5 of the
+ AM2 premises is gated for F2 on $\Lambda_N$. Both producers apply it to every
+ F2 volume containing $\Lambda_N$ (on-site operator, grouping at the anchor
+ inside the star, $|X_b|\le4$, per-site sum through $b\in u-S$, cutoff
+ compression), because no item uses the cube shape. The skeptic checked this
+ against the AY1 report and accepts it as a local reading. It is not a gated
+ statement, and it affects the F2 branch of c5.
+\item \emph{Union sites and lemma constants.} Sites of the union volume
+ outside $\Lambda_N$ use the exponent $(N-\norm u_\infty)_+=0$. The lemma
+ constant $\kappa_0$ carries the factor $|Y|$. The reverse split weight is
+ read as $W\le1/(37888|\tau|)$. Tier, route and BA1 input are three separate
+ labels.
+\item \emph{D2, the excerpt rule.} Plan rule P4 was not carried into the BB1
+ contract; the repair is described in Section~\ref{sec:bb1-forward}.
+\item \emph{D3.} The reverse exports comparison names truncated to 80
+ characters. Each prefix is unique.
+\end{itemize}
+
+\paragraph{Controls, replays and review.} Each producer implements all 37
+contract controls as damaging mutations. The forward checker runs 51 exact
+checks with 107 rejected mutations, the reverse checker 78 exact checks with
+132. The skeptic's pre-comparison package, 88 exact checks with all 37
+controls as 106 damaging mutations, was committed before both producer
+commits. The post-comparison review runs 21 exact checks, among them the
+check of the Kotecký--Preiss citation against the committed excerpt. It adds
+82 source-edit runs on temporary copies (two unmutated baselines, 74
+validator weakenings, one per control per producer, and six input edits,
+each aborting as required) and 15 damaged packets rejected by its own value
+validator. All four producer replays reproduce the frozen outputs byte for
+byte under normal and optimized Python. Both closures (39 files each) verify,
+and both input inventories equal \texttt{AGENTS.md}, the contract and the 33
+shared premises. Both producers wrote their reports through a shell heredoc
+after the file tool refused, and saw other agents' file names or commit
+subjects without opening them. The forward disclosed this in its packet; the
+reverse disclosed it only in its hand-back, which the gate records.
+Isolation rests on disclosure and content. The reverse's far-site mechanism
+(covering chains, $\beta^*$, $W=1024$) and its far term differ from the
+forward's, and the forward's weights differ from the skeptic's feasibility
+weights. The reverse read only \S\S1--8 of the AV1 reverse report; the
+skeptic found that everything it uses lies in those parts. The review found
+no blocking issue.
+
+\paragraph{Meaning.} BB1 is a static statement about the reduced densities of
+the finite-box ground vectors of the named constructions, one comparison at a
+time, at a rate in $N$ per coarse $\ell^\infty$ step at fixed spacing. It
+forms no limit object. Whole-sequence convergence, a common limit and
+translation statements are BB2's subject, and BB2's contract uses BB1's
+frozen targets as hypotheses. BB1 asserts no dynamics, no uniqueness of any
+ground state, nothing about boundary conditions outside F1 and F2, no
+analyticity of the reduced density in the coupling, and no estimate in the
+lattice spacing.
+
+\subsection{Limitations recorded by the gate}
+\label{sec:bb1-limits}
+The BB1 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Scope: only the zero-selected patterned family (selected triple (0,0,0),
+Haar reference), fixed spacing, |tau|<=10\textasciicircum{}-8, the named
+families F1 and F2 on centered cubes Lambda\_N with N at least 2, finite
+complete-factor volumes of one prescription containing Lambda\_N, the cover
+R=\{0,e\_z\} and finite complete-factor regions inside Lambda\_N; nothing
+transfers to other boundary conditions, nonzero selected triples, literal
+vertex boxes, weak coupling or the continuum; the constants are uniform in N
+at fixed spacing and in the cutoff, never in the lattice spacing.
+\item Static statement about reduced densities of finite-box ground vectors
+per comparison: no dynamics, no limit object, no whole-sequence convergence or
+common limit (BB2), no translation statement, no uniqueness of any ground
+state and no analyticity of the reduced density in the coupling (no zero-free
+region is proved; the forward uses a real-parameter derivative and the reverse
+single-support telescoping).
+\item The polymer\_kp route uses the Kotecky-Preiss criterion (cited as
+Kotecky-Preiss 1986 in the form of Ueltschi 2004) as an external theorem that
+the frozen packet transcribes without a committed source excerpt (the plan
+rule that an external theorem is quoted from a committed excerpt with its PDF
+hash was not carried into the BB1 contract); its exploration-tree lemmas bound
+polymer sums, not the Ursell-weighted cluster sums behind Corollary 6.3 and
+Lemma 6.4. The citation was checked post hoc against the Ueltschi excerpt
+committed after the freeze
+(research/round33/sources/ueltschi-math-ph-0304003v3.md,
+arXiv:math-ph/0304003v3, PDF sha256
+2cc3e036af5b2a46afe95acf0b5863fe5c7d31554debb10a2a5cade4122bdbfc; repair
+record bb1-kp-repair.md): with hard-core zeta in \{0,-1\}, c=0, b equal to the
+forward distance weight d and a(gamma)=a|supp gamma|, Theorem 3 (16) is the
+forward hypothesis, (19) gives its conclusion with the same weight
+e\textasciicircum{}\{d(X)\}, Theorem 1 gives the cluster expansion of every
+Z(Lambda\textquotesingle{}), and the test sets enter as mass-zero atoms; no
+factor is missing, so the cited statement and its use are covered. The excerpt
+is not a premise of the frozen packet, the original Kotecky-Preiss paper is
+neither committed nor needed, and every bound value is at least the value
+proved by the self-contained iterated\_split route.
+\item F2 volumes other than centred cubes (fifth comparison): the AY1
+itemization H1-H5 is gated for F2 on Lambda\_N; both producers apply it to
+every F2 volume containing Lambda\_N as a local reading (on-site operator,
+per-anchor grouping inside the star, |X\_b|<=4, per-site sum through b in u-S,
+cutoff compression), reviewed here as correct but not a gated statement.
+\item Inherited without re-proof: the AM2 multilinear majorant, fixed point,
+uniqueness in the ball and section 6 facts; the AV1 product-ordering split,
+first-order coefficient (49 faces per site) and cutoff-vector removal F20-F23;
+the AY1 F2 itemization; the I1 dictionary; Banach, Weierstrass and the maximum
+principle are standard and not machine-checked. The every-site coefficient
+input (form (b)) and the secondary input K\_2=49/10202112 are BB1 lemmas
+proved in both packets, not admitted BA1 statements.
+\item Upper bounds only; the -tau values replay the same |tau| formula. The
+near term 2K(1+q)=3185/3577291776 is almost the whole headline constant (the
+far-site terms are about 10\textasciicircum{}-4 of C), so the constants are
+governed by the BA1 input; the region margin (about 2.28) is the binding one.
+The forward, reverse and skeptic derivations agree to within 2 parts in
+10\textasciicircum{}4 on C and c\_site.
+\item Contract wording read as follows: at first order only supports contained
+in R move rho\_R, and every straddling support, including the 6 of the 72
+straddling faces that strictly contain R, has zero first-order R-marginal
+(D1); the lemma constant kappa\_0 carries the factor |Y|; union-volume sites
+outside Lambda\_N use the exponent (N-|u|\_inf)\_+=0; the reverse split weight
+is read as W<=1/(37888|tau|); tier, route and BA1 input are three separate
+labels.
+\item Independence is limited to derivations, constants and code: the contract
+and selection note name both mechanisms and the frozen targets, the skeptic
+triage and pre-freeze review shaped the parameters, all agents are correlated
+model agents, isolation is verified for repository inputs only, and the
+reverse packet does not itself record its heredoc report write or the file
+names it saw.
+\item Scientific priority is unverified.
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round33/forward/bb1/report.md}{BB1 forward},
+\repo{research/round33/reverse/bb1/report.md}{BB1 reverse},
+\repo{research/round33/skeptic/bb1.md}{independent model-agent review}, the
+\repo{research/round33/skeptic/bb1-kp-repair.md}{Kotecký--Preiss repair
+record}, the
+\repo{research/round33/sources/ueltschi-math-ph-0304003v3.md}{committed
+Ueltschi excerpt} and the \repo{research/round33/contracts/bb1.json}{frozen
+contract}.

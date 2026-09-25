@@ -1,0 +1,764 @@
+\section{BA2: boundary comparison of the Heisenberg dynamics on compact windows}
+\label{sec:ba2}
+
+\textbf{Contribution \projecttag{HNM-C-BA2}.} The BA2 contract, recorded under
+the title ``Hruday boundary comparison of the Heisenberg dynamics of the
+named constructions on compact windows'', was frozen with BA1 before
+production as investigation~2 of~8. It takes up the AY2 obligations O5 and O6
+(Table~\ref{tab:obligations}), whose route Round32 had named but not written:
+a Duhamel and Lieb--Robinson comparison over the extra F2 faces with the AQ1
+Nachtergaele--Sims constants
+(\repo{research/round33/advisor/selection-ba2.md}{selection note}). The model
+is that of BA1; the observables are $A\in B(\mathcal H_R)$ on the cover; the
+clock is $\theta=\alpha t/\hbar$ with the window $|\theta|\le8$; the metric is
+the coarse $\ell^1$ metric of AQ1~\S3; the decay function is the polynomial
+$F(r)=(1+r)^{-4}$, tier \recid{polynomial_lieb_robinson}. An exponential
+instance was allowed as a labelled extra without a target and was not
+executed.
+
+Both directions are paired. The forward producer runs Duhamel's formula over
+the extra faces with the F1 evolution inside the integral and the whole-star
+constants (route \recid{duhamel_inner_f1}). The reverse producer, under
+premise isolation, puts the F2 evolution inside and uses the owner-set
+constants (route \recid{duhamel_inner_f2}), and compares each family with its
+own Nachtergaele--Sims limit for the Cauchy estimates. Loop~2 of the
+deliberation replaced an earlier reverse route: the triangle inequality
+through the two limits gives only a bound of order $1/N$ and cannot meet the
+comparison target, so it may appear only as a labelled weaker bound. Both
+producers received \texttt{AGENTS.md}, the contract and 27 shared premises,
+among them the committed Nachtergaele--Sims excerpt, the AQ1 report, gate and
+review, the Round29 source dictionary and primary bindings, and the AY1 and
+AY2 records.
+
+The frozen targets, each with the freeze-time margin of 2, are
+\begin{equation}
+ \begin{gathered}
+ \norm{T^{F2,N}_\theta(A)-T^{F1,N}_\theta(A)}\le6\times10^{-11}\,(5N+1)N^{-3}\norm{A},\\
+ \sup_{M>N}\norm{T^{F,M}_\theta(A)-T^{F,N}_\theta(A)}\le\frac{2.5\times10^{-10}}{N-1}\norm{A},
+ \end{gathered}
+ \label{eq:ba2-targets}
+\end{equation}
+for $|\theta|\le8$, $N\ge2$ and $F\in\{F1,F2\}$, together with whole-sequence
+convergence of the F2 evolutions, identification of their limit with the AQ1
+limit dynamics $T_\theta$, and a rerun of AQ1~\S\S4--5 for every F2
+subsequential limit state. Both coefficients are quadratic in $\tau$, with
+the bracket $[9500,10500]$. The itemized error terms are
+\recid{lieb_robinson_tail}, \recid{duhamel_boundary_sum},
+\recid{interaction_picture_onsite}, \recid{inner_family_constants} and
+\recid{arithmetic}, and the contract lists 35 controls.
+
+\subsection{Reviewed scope}
+\label{sec:ba2-scope}
+The \repo{research/round33/advisor/ba2-gate.json}{BA2 gate} records the
+verdict \recid{accepted_within_scope} with sub-label
+\recid{dynamics_on_compact_windows} and no secondary sub-label. Its gate
+fields set \recid{dynamics_level} to
+\recid{algebraic_heisenberg_compact_window}; \recid{whole_sequence_claimed},
+\recid{dynamics_limit_identified_claimed} and \recid{rate_in_N_claimed} are
+true, the first with the scope ``finite-box Heisenberg evolutions of F1 and F2
+of A in B(H\_R), in norm, uniformly for |theta| at most 8; dynamics only, no
+state''; and \recid{gns_dynamics_equality_claimed},
+\recid{uniform_in_time_claimed}, \recid{common_limit_claimed},
+\recid{state_convergence_claimed}, \recid{translation_invariance_claimed},
+\recid{uniqueness_of_ground_state_claimed}, \recid{rate_in_a_claimed},
+\recid{continuum_claim}, \recid{weak_coupling_claim} and
+\recid{scientific_priority_verified} are false. Both producers read
+\recid{common_limit_claimed}\,=\,false as ``no common limit state''; the
+identification of the dynamics is carried by the separate true field. The
+accepted statement, quoted verbatim below in the gate's ASCII notation, is the
+scope of every claim in this section.
+\begin{gatequote}
+In the AM2/AQ1 zero-selected patterned family (model
+AQ\_patterned\_zero\_selected: SU(2) Kogut-Susskind form on
+Z\textasciicircum{}3 at fixed spacing, coarse 24-link factors, selected triple
+exactly (0,0,0), 21 omitted faces per anchor entering as -(tau/3)W\_f in
+normalized units delta=alpha/8; both signs |tau|<=10\textasciicircum{}-8, the
+-tau value a replay of the same |tau| formula; cover R=\{0,e\_z\} of the
+original xz Wilson loop, 48 links, 36 endpoints; observables A in B(H\_R);
+common clock theta=alpha t/hbar with the window |theta|<=8, i.e. U=1 in the
+internal normalized time u=theta/8), with the two named construction families
+F1 = AQ1 centered whole-star boxes and F2 = I1 section 6 all-contained-face
+boxes with padding on the same Lambda\_N=[-N,N]\textasciicircum{}3, N at least
+2, with the Lieb-Robinson bound of Nachtergaele-Sims arXiv:1410.8174v1 Theorem
+3.1, eqs. (51)-(52), quoted from the committed excerpt (PDF sha256
+501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba), the
+unbounded on-site Casimirs h\_b in the on-site slot of (44) and handled by the
+interaction picture, and the AQ1 constants F(r)=(1+r)\textasciicircum{}-4 on
+the coarse l1 metric, C<=224, ||Phi||\_F<=2268|tau| for the whole-star
+interaction Phi (J=28|tau|, four incident stars) and
+||Phi\textquotesingle{}||\_F<=1323|tau| for the owner-set interaction
+Phi\textquotesingle{} (49 faces per site), substituted as upper bounds by
+monotonicity: (1) H\textasciicircum{}\{F2,pad\}\_N minus
+H\textasciicircum{}\{F1\}\_N is the sum of the 28N(5N+1) extra faces
+(enumerated on Lambda\_2 to Lambda\_5; per anchor 17, 13 and 5 faces when
+exactly one coordinate equals N, 10, 3 and 1 when two do, none at the corner),
+each charged once with norm |tau|/3, every owner on the outer layer at coarse
+l1 distance at least N-1 from e\_z and at least N from 0 (both attained), plus
+the padding on-site terms, which factor out of the evolution exactly and are
+never charged. (2) Define b(N) = K\_cmp (5N+1) N\textasciicircum{}-3 with
+K\_cmp = 3969/155720800000000 (about 2.54879e-11; forward route: Duhamel with
+the inner F1 evolution, whole-star Phi, tier polynomial\_lieb\_robinson, route
+duhamel\_inner\_f1; margin about 2.354 against the frozen
+6x10\textasciicircum{}-11). For the zero-selected patterned family at the same
+coupling |tau|<=10\textasciicircum{}-8 and every A in B(H\_R) with ||A||<=1 on
+the fixed cover R, the finite-box Heisenberg evolutions
+T\textasciicircum{}\{F1,N\}\_theta and T\textasciicircum{}\{F2,N\}\_theta of
+the named construction families F1 and F2 on the same centered coarse cube
+Lambda\_N satisfy
+||T\textasciicircum{}\{F2,N\}\_theta(A)-T\textasciicircum{}\{F1,N\}\_theta(A)||
+<= b(N) for |theta|<=8 in the common clock theta=alpha t/hbar; this is an
+algebraic comparison of the dynamics of the named constructions on a compact
+time window at a rate in N, not equality of GNS dynamics or of correlation
+functions of different states, not a uniform-in-time statement, and not a
+statement uniform in the lattice spacing a. The reverse route (Duhamel with
+the inner F2 evolution, owner-set Phi\textquotesingle{}, route
+duhamel\_inner\_f2) proves the same inequality with the smaller labelled
+second-route constant K\textquotesingle{}\_cmp =
+452554889222515527/30481402343750000000000000000 (about 1.48469e-11, margin
+about 4.041); both constants are quadratic in tau (the first order vanishes
+because no extra face meets R), with exact tau/100 ratios 1953058850/194651
+and 38176688920663121234473000000/3810205403940325763421973 inside the
+preregistered bracket [9500,10500]. (3) For F = F1 and F = F2, sup over M
+greater than N of
+||T\textasciicircum{}\{F,M\}\_theta(A)-T\textasciicircum{}\{F,N\}\_theta(A)||
+<= K\_F/(N-1) ||A|| for |theta|<=8 and N at least 2, at the polynomial rate in
+N at fixed spacing: F1 with K\_F1 = 9261/155720800000000 (about 5.94718e-11,
+forward, faces charged once, inner F1) and the second route
+12128856933354903/118967041015625000000000000 (about 1.01951e-10, reverse,
+whole stars, inner F1 on Lambda\_M); F2 with K\_F2 = 117747/1245766400000000
+(about 9.45177e-11, forward, one F1-inner Duhamel plus the comparison) and the
+second route 1055961408185869563/30481402343750000000000000000 (about
+3.46428e-11, reverse, owner-set Phi\textquotesingle{}, faces charged once);
+every value is at most the frozen 2.5x10\textasciicircum{}-10 (margins about
+4.204, 2.452, 2.645 and 7.217); a bound for N to N+1 alone is not used as a
+Cauchy estimate. (4) Hence the F1 and F2 finite-box evolutions of every A in
+B(H\_R) converge as whole sequences in norm, uniformly for |theta|<=8, and the
+F2 limit dynamics equals the AQ1 limit dynamics T\_theta:
+||T\textasciicircum{}\{F2,N\}\_theta(A)-T\_theta(A)|| <= min(K\_F1,
+second-route K\_F2)/(N-1) ||A||, and on every local algebra the same Duhamel
+sum with R replaced by a finite region tends to zero on every compact window,
+so the two automorphism groups agree on the quasi-local algebra. (5) AQ1
+sections 4-5 are rerun for every subsequential F2 limit state with
+F2\textquotesingle{}s own diagonal extraction (AY1): stationarity under
+T\_theta, strong continuity of the GNS evolution and a nonnegative generator,
+with the physical cyclic space reducing it. Not admitted: equality of GNS
+dynamics or of correlation functions of different states, a common limit state
+or convergence of states, uniqueness of every infinite-volume ground state,
+translation invariance, any uniform-in-time statement, exponential decay in N
+with the polynomial Lieb-Robinson function, any rate or estimate in the
+lattice spacing a, a continuum or weak-coupling statement, and scientific
+priority.
+\end{gatequote}
+The rest of this section derives that statement, and the limitations recorded
+by the gate close it (Section~\ref{sec:ba2-limits}).
+
+\subsection{The Lieb--Robinson theorem as the committed excerpt gives it}
+\label{sec:ba2-ns}
+Plan rule P4 requires an external theorem to be quoted from a committed source
+excerpt, not from a report that cites it. The AQ1 report places the model in
+the theorem but does not state the inequality. The advisor therefore committed
+\repo{research/round33/sources/nachtergaele-sims-1410.8174v1.md}{an excerpt}
+of B.~Nachtergaele and R.~Sims, ``On the dynamics of lattice systems with
+unbounded on-site terms in the Hamiltonian'',
+\href{https://arxiv.org/abs/1410.8174v1}{arXiv:1410.8174v1} \cite{ns}, Section~3 (pages
+7--8) and Section~4 (page~11). The excerpt binds the PDF (203467 bytes,
+14 pages) by the sha256
+\begin{center}\small
+\texttt{501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba},
+\end{center}
+identical to the Round29 primary binding \recid{ns-2014}. Its Part~A transcribes the displayed statements and was
+checked by the advisor against the rendered page images; its Part~B is the
+verbatim \texttt{pdftotext} extraction, in which norm bars and superscripts
+are lost; where they differ, the rendered page is authoritative. The excerpt
+file itself has sha256 \texttt{6a28f4cd\ldots c6921}, pinned in the forward
+checker. The theorem is quoted below as Part~A gives it, set in mathematical
+notation. In the quotation $\tau^\Lambda_t$ is the paper's symbol for the
+dynamics and $t$ its time; neither is the coupling $\tau$ or the physical time
+of this edition.
+
+\begin{quote}\small
+Setting (Section 3). $\Gamma$ is a countable set with a metric $d$. If
+$\Gamma$ is infinite, $F:[0,\infty)\to(0,\infty)$ is non-increasing and
+\begin{align*}
+ &\norm{F}=\sup_{x\in\Gamma}\sum_{y\in\Gamma}F(d(x,y))<\infty
+ \quad\text{(uniform integrability);}\tag{40}\\
+ &C=\sup_{x,y\in\Gamma}\sum_{z\in\Gamma}\frac{F(d(x,z))F(d(z,y))}{F(d(x,y))}<\infty
+ \quad\text{(convolution condition).}\tag{41}
+\end{align*}
+To each $x\in\Gamma$ a separable complex Hilbert space $\mathcal H_x$ is
+associated; for finite $\Lambda\subset\Gamma$,
+$\mathcal H_\Lambda=\bigotimes_{x\in\Lambda}\mathcal H_x$ and
+$\mathcal A_\Lambda=\mathcal B(\mathcal H_\Lambda)$. For each $x$ there is a
+self-adjoint operator $H_x$ with dense domain $D_x\subset\mathcal H_x$; the
+bounded interaction $\Phi$ maps finite $X\subset\Gamma$ to
+$\Phi(X)^*=\Phi(X)\in\mathcal A_X$, and
+\begin{equation*}
+ H_\Lambda=\sum_{x\in\Lambda}H_x+\sum_{X\subset\Lambda}\Phi(X),\tag{44}
+\end{equation*}
+essentially self-adjoint on the dense domain
+$D_\Lambda=\operatorname{span}\{\bigotimes_{x\in\Lambda}\psi_x\mid\psi_x\in D_x\}$
+(45); $\tau^\Lambda_t(A)=e^{itH_\Lambda}Ae^{-itH_\Lambda}$ for
+$A\in\mathcal A_\Lambda$ (46).
+\begin{align*}
+ &\norm{\Phi}=\sup_{x,y\in\Gamma}\frac{1}{F(d(x,y))}
+ \sum_{X\subset\Gamma:\,x,y\in X}\norm{\Phi(X)}<\infty
+ \ \text{defines the space }\mathcal B_F(\Gamma).\tag{48}\\
+ &S_\Lambda(X)=\{Z\subset\Lambda:Z\cap X\ne\varnothing\text{ and }
+ Z\cap(\Lambda\setminus X)\ne\varnothing\},\tag{49}\\
+ &\qquad\text{the surface of $X$ in $\Lambda$, and } S(X)=S_\Gamma(X).\\
+ &\partial_\Phi X=\{x\in X:\exists Z\in S(X)\text{ with }x\in Z\text{ and }
+ \Phi(Z)\ne0\},\ \text{the $\Phi$-boundary of $X$.}\tag{50}
+\end{align*}
+\textbf{Theorem 3.1.} Let $\Gamma$ and $F$ be as indicated above. Fix a
+collection of local Hamiltonians $\{H_x\}_{x\in\Gamma}$ and an interaction
+$\Phi\in\mathcal B_F(\Gamma)$. Let $X,Y\subset\Gamma$ be finite disjoint sets.
+For any finite $\Lambda\subset\Gamma$ with $X\cup Y\subset\Lambda$ and any
+$A\in\mathcal A_X$ and $B\in\mathcal A_Y$, the bound
+\begin{equation*}
+ \norm{[\tau^\Lambda_t(A),B]}\le\frac{2\norm{A}\norm{B}}{C}
+ \bigl(e^{2\norm{\Phi}C|t|}-1\bigr)D(X,Y)\tag{51}
+\end{equation*}
+holds for all $t\in\mathbb R$, where the quantity $D(X,Y)$ is given by
+\begin{equation*}
+ D(X,Y)=\min\Bigl\{\sum_{x\in X}\sum_{y\in\partial_\Phi Y}F(d(x,y)),\
+ \sum_{x\in\partial_\Phi X}\sum_{y\in Y}F(d(x,y))\Bigr\}.\tag{52}
+\end{equation*}
+\textbf{Theorem 4.1.} Let $\Gamma$ and $F$ be as described in Section 3. Fix a
+collection of on-site Hamiltonians $\{H_x\}_{x\in\Gamma}$ and an interaction
+$\Phi\in\mathcal B_F(\Gamma)$. For each $t\in\mathbb R$ and
+$A\in\mathcal A_\Gamma^{\rm loc}$, the norm limit
+\begin{equation*}
+ \tau_t(A)=\lim_{\Lambda\to\Gamma}\tau^\Lambda_t(A)\tag{77}
+\end{equation*}
+exists and the convergence is uniform for $t$ in compact sets. The limit may
+be taken along any increasing sequence of finite sets $\Lambda$ which tend to
+$\Gamma$, and the result is independent of the particular sequence. This
+limiting dynamics $\tau_t(\cdot)$ can be uniquely extended to a one-parameter
+group of ${}^*$-automorphisms on $\mathcal A_\Gamma$.
+\end{quote}
+
+The excerpt adds two notes of its own. The proof of Theorem~3.1 (steps 1--4)
+uses an interaction-picture dynamics (57) generated from
+$H_0=\sum_{x\in\Lambda}H_x+\sum_{Z\subset X}\Phi(Z)$ (54), which is how the
+unbounded on-site terms are handled; and the proof of Theorem~4.1 uses
+$U_\Lambda(t,s)=e^{itH^{\rm loc}_\Lambda}e^{-i(t-s)H_\Lambda}
+e^{-isH^{\rm loc}_\Lambda}$ (78) with $H^{\rm loc}_\Lambda=\sum_{x\in\Lambda}H_x$
+(79). The section title of Theorem~4.1 is omitted here, as in both producer
+reports. Equation (47), Stone's theorem for $t\mapsto e^{-itH_\Lambda}$, is
+available only in Part~B and is used only for strong continuity and domain
+invariance. Both producers quote every statement sentence and equation of
+these passages verbatim; the forward report drops the bold marker of one
+heading and replaces the section title. Both checkers require the quotations
+verbatim, and the forward controls reject a paraphrase, a dropped velocity
+factor 2 or prefactor $1/C$, the minimum in (52) replaced by a maximum and a
+quotation taken from the AQ1 report. The theorems are cited, not
+machine-checked.
+
+\subsection{Placement in the model}
+\label{sec:ba2-placement}
+Table~\ref{tab:ba2-placement} places the model. The unbounded Casimirs sit in
+the on-site slot of (44) and enter no constant; only bounded operators are
+ever subtracted between two generators below.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Placement of the model in the Nachtergaele--Sims setting.}
+\label{tab:ba2-placement}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.27\linewidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Source object & This model\\
+\midrule
+$\Gamma$, metric $d$ & coarse $\mathbb Z^3$ with the $\ell^1$ metric\\
+$F$, (40), (41) & $F(r)=(1+r)^{-4}$; $4r^2+2$ sites at distance $r\ge1$;
+$\norm F\le1+6\sum_{k\ge2}k^{-2}\le7$; $C\le32\norm F\le224$\\
+$H_x$ on $D_x$ & $h_x=8\sum_{e\in x}C_e$, unbounded, self-adjoint, compact
+resolvent, on the separable $L^2(\mathrm{SU}(2)^{24})$\\
+whole-star $\Phi$, (48) & $\Phi(b+S)=\phi_b$; $\ell^1$ diameter 2, four stars
+per site, so $\norm\Phi_F\le81J=2268|\tau|$; F1 on $\Lambda_N$ is its native
+restriction (44)\\
+owner-set $\Phi'$, (48) & $\Phi'(M)=-(\tau/3)\sum_{M_f=M}W_f$; 49 faces per
+site, so $J'\le49|\tau|/3$ and $\norm{\Phi'}_F\le81J'=1323|\tau|$; F2 on
+unpadded $\Lambda_N$ is its native restriction\\
+time $t$ in (46) & the normalized time $u=\theta/8$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The convolution bound comes from splitting the sum at the midpoint: for any
+$z$, $d(x,z)\ge d/2$ or $d(z,y)\ge d/2$, and $F(d/2)\le16F(d)$. The factor
+$(2/C)(e^{2nC|t|}-1)=4n|t|\,\varphi(2nC|t|)$, with $\varphi(y)=(e^y-1)/y$
+increasing, is increasing in $C$ and in $n=\norm\Phi_F$, and so is its time
+integral; the admitted upper bounds may therefore be substituted. The exact
+suprema in (48), found by pair enumeration, are $567|\tau|$ for $\Phi$ and
+$108|\tau|$ for $\Phi'$, factors 4 and 12.25 below the admitted values; they
+are recorded and used nowhere. Placing an on-site operator inside the bounded
+interaction would make $\norm\Phi_F$, and the velocity $2\norm\Phi_FC$, grow
+with every on-site cutoff (at least $448L$ for a ladder of height $L$); both
+checkers reject it.
+
+\subsection{The boundary source and the padding}
+\label{sec:ba2-source}
+On the same box the two padded and unpadded generators differ by
+\begin{equation}
+ \widehat H^{F2,{\rm pad}}_N-\widehat H^{F1}_N\otimes1
+ =\sum_{f\in E_N}\Bigl(-\frac\tau3\Bigr)W_f
+ +\sum_{x\in B_+\setminus\Lambda_N}h_x,\qquad |E_N|=28N(5N+1),
+ \label{eq:ba2-source}
+\end{equation}
+read on $\mathcal H_{\Lambda_N}\otimes\mathcal H_{\rm pad}$.
+
+\paragraph{The extra faces.} A face $(b,K)$, with $D_K$ the set of
+directions in $K$, lies in F2 but not in F1 on $\Lambda_N$ exactly when
+$b\in\Lambda_N$, $b_j<N$ for every $j\in D_K$, and $b_i=N$ for some $i\notin
+D_K$. Counting by anchor, the $(2N)^2$ anchors on each of the three planes
+with exactly one coordinate $N$ carry $17$, $13$ and $5$ faces, the $2N$
+anchors on each of the three edges carry $10$, $3$ and $1$, and the corner
+carries none: $4N^2(17+13+5)+2N(10+3+1)=140N^2+28N=28N(5N+1)$. Counting by
+class instead, each of the 14 one-direction classes contributes $2N(4N+1)$
+and each of the 7 two-direction classes $4N^2$, with $28N(11N+2)$ face--owner
+incidences. The enumerations give 616, 1344 and 2352 extra faces at
+$N=2,3,4$, and the class identities are checked up to $N=199$. An owner
+$y=b+k$ of an extra face keeps $y_i=b_i=N$, so every owner lies on the outer
+layer, at $\ell^1$ distance at least $N-1$ from $e_z$ and at least $N$ from
+$0$; both minima are attained at the owner $(0,0,N)$, and eleven faces reach
+distance $N-1$. No extra face meets $R$, so both families keep the same 82
+faces meeting $R$. Each face is one pair (anchor, class), charged once with
+norm $|\tau|/3$.
+
+\paragraph{The padding factors out.} The padding term acts on its own tensor
+factor and commutes with $\widehat H^{F2}_N$, with every face and with
+$B(\mathcal H_R)$. The closure of a sum of self-adjoint operators on separate
+factors generates the product of their groups, so
+\begin{equation}
+ T^{F2,{\rm pad},N}_\theta(A\otimes1)=T^{F2,N}_\theta(A)\otimes1
+ \qquad(A\in B(\mathcal H_{\Lambda_N})),
+ \label{eq:ba2-padding}
+\end{equation}
+and the Duhamel source on $\mathcal H_{\Lambda_N}$ is the bounded sum over
+$E_N$ alone. The padding has $3(2N+1)^2$ sites (75 at $N=2$, 147 at $N=3$).
+Charging the padding terms as a source would give a norm at least the cutoff
+$L$ while their exact contribution is zero; both checkers reject it, and both
+verify \eqref{eq:ba2-padding} on exact Gaussian-rational fixtures.
+
+\paragraph{Fine units.} A coarse step is $(4a,2a,a)$. The link tails of the
+extra faces are at least $N-1$ fine steps from those of $R$ along $z$, the
+plaquette corners come within $N-2$ fine steps of the 36 endpoints of $R$
+(they touch at $N=2$), and no link is shared. Only link sets matter for
+commutation, and no constant uses the fine metric.
+
+\subsection{Duhamel's formula with a bounded difference}
+\label{sec:ba2-duhamel}
+Let $H_1=H_{\rm loc}+V_1$ and $H_2=H_{\rm loc}+V_2$ on one finite box, with
+$V_1,V_2$ bounded and self-adjoint, so $D(H_1)=D(H_2)=D(H_{\rm loc})$. Write
+$\tau^{(j)}_u(B)=e^{iuH_j}Be^{-iuH_j}$. Then, for bounded $B$ and real $u$,
+\begin{equation}
+ \begin{gathered}
+ \tau^{(2)}_u(B)-\tau^{(1)}_u(B)=i\int_0^u\tau^{(2)}_s\bigl([V_2-V_1,\tau^{(1)}_{u-s}(B)]\bigr)\,ds,\\
+ \norm{\tau^{(2)}_u(B)-\tau^{(1)}_u(B)}\le\int_0^{|u|}\norm{[V_2-V_1,\tau^{(1)}_r(B)]}\,dr .
+ \end{gathered}
+ \label{eq:ba2-duhamel}
+\end{equation}
+The cocycle $W(s)=e^{isH_2}e^{-isH_1}$ satisfies
+$W(s)\psi-\psi=i\int_0^se^{irH_2}(V_2-V_1)e^{-irH_1}\psi\,dr$ on the common
+domain and then on every vector, so it is strongly differentiable; the
+product rule on vectors gives the identity. Only vector derivatives of bounded
+families are used, never a norm derivative in time. The evolution inside the
+commutator, $\tau^{(1)}$, is the \emph{inner} family, and its
+Nachtergaele--Sims constants are the ones that enter. Wherever on-site terms
+of a larger box or the padding appear, they are placed in the inner
+Hamiltonian, where they factor out; the unbounded terms never enter a source.
+For each face the bound (51), with $X=R$, $Y=M_f$ and the first entry of the
+minimum in (52), gives
+\begin{equation}
+ \norm{[W_f,\tau^{(1)}_r(A)]}\le\frac{2\norm A}{C}\bigl(e^{v|r|}-1\bigr)
+ \sum_{x\in R}\sum_{y\in M_f}F(d(x,y)),\qquad v=2\norm{\Phi_{\rm inner}}_FC,
+ \label{eq:ba2-perface}
+\end{equation}
+since $\partial_\Phi M_f\subset M_f$ and $R\cap M_f=\varnothing$.
+
+\paragraph{Why the first order vanishes.} With the on-site evolution alone,
+$e^{irH_{\rm loc}}Ae^{-irH_{\rm loc}}$ stays in $B(\mathcal H_R)$, and no
+extra face acts on a link owned in $R$, so the first-order Dyson term of the
+difference vanishes identically. In the bound one factor $|\tau|$ is the face
+coefficient and the other is the Lieb--Robinson growth $e^{vr}-1=O(|\tau|r)$.
+Every constant below is therefore quadratic in $\tau$; a linear label, as
+from the trivial commutator bound, is a rejected control.
+
+\subsection{The comparison of the two families}
+\label{sec:ba2-comparison}
+\paragraph{Forward route (inner F1, whole stars).} Apply
+\eqref{eq:ba2-duhamel} on $\Lambda_N$ with inner $\widehat H^{F1}_N$ and outer
+$\widehat H^{F2}_N$, add \eqref{eq:ba2-perface} linearly over the extra faces
+and integrate over $|u|\le U$:
+\begin{equation}
+ \begin{gathered}
+ b(N)=\frac{|\tau|}{3}\,\Lambda(U)\,S_b(N),\qquad
+ S_b(N)=\sum_{f\in E_N}\sum_{x\in R}\sum_{y\in M_f}F(d(x,y)),\\
+ \Lambda(U)=\frac{2}{Cv}\bigl(e^{vU}-1-vU\bigr)\le\frac{2\norm\Phi_FU^2}{1-vU/3},
+ \end{gathered}
+ \label{eq:ba2-forward}
+\end{equation}
+using $e^x-1-x\le x^2/(2(1-x/3))$ for $0\le x<3$. Every extra face has at most
+three owners, each contributing
+$F(d(e_z,y))+F(d(0,y))\le N^{-4}+(N+1)^{-4}\le2N^{-4}$, so
+$S_b(N)\le168(5N+1)N^{-3}$ and, at $U=1$,
+\begin{equation}
+ b(N)\le K_{\rm cmp}(5N+1)N^{-3},\qquad
+ K_{\rm cmp}=\frac{254016\,\tau^2}{1-338688|\tau|}=\frac{3969}{155720800000000}
+ \approx2.54879\times10^{-11}.
+ \label{eq:ba2-Kcmp}
+\end{equation}
+At the cap $v=0.01016064$ exactly and $\Lambda(1)\le567/12457664\approx
+4.5514\times10^{-5}$. The margin against $6\times10^{-11}$ is about $2.354$.
+For example, $b(2)\le\tfrac{11}8K_{\rm cmp}\approx3.5046\times10^{-11}$
+against the target $8.25\times10^{-11}$, $b(3)\le\tfrac{16}{27}K_{\rm cmp}
+\approx1.5104\times10^{-11}$ and $b(10)\le0.051K_{\rm cmp}\approx
+1.2999\times10^{-12}$. The bound decays like $N^{-2}$, because the source is a
+surface of about $N^2$ faces at distance about $N$ and $F\sim N^{-4}$.
+
+\paragraph{Reverse route (inner F2, owner sets).} The reverse producer puts the
+F2 evolution inside, which is the native restriction of $\Phi'$, and bounds
+the time integral by $2\norm{\Phi'}_FU^2E(vU)$ with
+$E(y)=2(e^y-1-y)/y^2\le E_{\rm up}(y)=1+y/3+y^2/(12(1-y/5))$, from
+$(j+2)!\ge24\cdot5^{j-2}$. With
+$\sum_f\norm{v_f}D(R,M_f)\le(|\tau|/3)\,28N(5N+1)\,3\,(N^{-4}+(N+1)^{-4})\le
+56|\tau|(5N+1)N^{-3}$,
+\begin{equation}
+ K'_{\rm cmp}=148176\,\tau^2U^2E_{\rm up}(592704|\tau|U)
+ =\frac{452554889222515527}{30481402343750000000000000000}\approx
+ 1.48469\times10^{-11},
+ \label{eq:ba2-Kcmp-rev}
+\end{equation}
+margin about $4.041$, where
+$E_{\rm up}(9261/1562500)=48866741088707/48770243750000\approx1.001979$.
+The skeptic's own closed form $9261/623765200000000$ and its sharp
+exponential enclosure bracket this value: sharp enclosure $\le$ reverse $\le$
+closed form, the three differing only in how $e^x-1-x$ is bounded beyond
+second order. The gate labels $K'_{\rm cmp}$ as the reverse's own formula.
+
+\paragraph{Constants swapped between families.} The constants of the inner
+family, and only those, enter. On $\Lambda_2$ the F1 box is not the native
+restriction of $\Phi'$ (616 faces missing) and the F2 box is not the native
+restriction of $\Phi$ (60 partial star groups), so an F1-inner bound quoted
+with $1323|\tau|$, or an F2-inner bound with $2268|\tau|$, is a rejected
+control.
+
+\paragraph{Labelled values.} The enumerated boundary sum at $N=2$ is
+\[
+ S_b(2)=\frac{616396498531}{82978560000}\approx7.428,
+\]
+against the all-size value 231 in \eqref{eq:ba2-forward}; the all-size face sum exceeds the enumerated
+one by factors of 20 to 31 at $N=2$ to $5$. The enumerated sums give sharper
+values at small $N$ only (about $1.127\times10^{-12}$ forward and
+$6.565\times10^{-13}$ reverse at $N=2$); the headline is the all-size bound.
+The triangle inequality through the common limit gives only
+$2K_{\rm F1}/(N-1)$ (forward) or $(c_1+c_2)/(N-1)$ (reverse), which misses
+the comparison target at every $N\ge2$; it is retained as a labelled weaker
+bound.
+
+\subsection{Within-family Cauchy estimates}
+\label{sec:ba2-cauchy}
+Let $E'_N$ be the set of faces whose anchor star is not inside $\Lambda_N$.
+Every point of such a star has $\norm{y}_\infty\ge N$, so every owner of such
+a face lies at $\ell^1$ distance at least $N$ from $0$ and at least $N-1$
+from $e_z$, and no such face meets $R$. For every $M>N$ the differences
+$F1(\Lambda_M)\setminus F1(\Lambda_N)$,
+$F2(\Lambda_M)\setminus F1(\Lambda_N)$ and
+$F1(\Lambda_M)\setminus F2(\Lambda_N)$ lie in $E'_N$. With at most 49 faces
+through a site, $4r^2+2\le4(1+r)^2$ and $\sum_{k>m}k^{-2}\le1/m$, the tail
+over all such faces is
+\begin{equation}
+ S_c(N)=\sum_{f\in E'_N}\sum_{x\in R}\sum_{y\in M_f}F(d(x,y))
+ \le49\Bigl(\frac4N+\frac4{N-1}\Bigr)\le\frac{392}{N-1},
+ \label{eq:ba2-tail}
+\end{equation}
+uniformly in $M$. Each Duhamel pair lives on $\Lambda_M$ (or its padding),
+with the on-site terms of the larger box in the inner Hamiltonian, where they
+factor out.
+
+\paragraph{Forward.} For F1 the inner Hamiltonian is
+$\sum_{x\in\Lambda_M}h_x$ plus the F1 interaction of $\Lambda_N$, the native
+restriction of the truncated interaction $\Phi_N$, with
+$\norm{\Phi_N}_F\le\norm\Phi_F$. The source is the new stars, split into their
+faces, each charged once. For F2 the forward producer goes through F1: one
+Duhamel pair between F1 on $\Lambda_N$ and padded F2 on $\Lambda_M$, plus the
+comparison at $N$, using $\max_{N\ge2}(5N+1)(N-1)N^{-3}=11/8$. This gives
+\begin{equation}
+ \begin{gathered}
+ \sup_{M>N}\norm{T^{F,M}_\theta(A)-T^{F,N}_\theta(A)}\le\frac{K_F}{N-1}\norm A,\\
+ K_{\rm F1}=\frac{592704\,\tau^2}{1-338688|\tau|}=\frac{9261}{155720800000000},\qquad
+ K_{\rm F2}=K_{\rm F1}+\tfrac{11}{8}K_{\rm cmp}=\frac{117747}{1245766400000000},
+ \end{gathered}
+ \label{eq:ba2-cauchy-fwd}
+\end{equation}
+that is, $K_{\rm F1}\approx5.94718\times10^{-11}$ (margin $4.204$) and
+$K_{\rm F2}=941976\,\tau^2/(1-338688|\tau|)\approx9.45177\times10^{-11}$
+(margin $2.645$). Since $F2(\Lambda_N)\subset F1(\Lambda_M)$ for $M>N$, a
+direct F1-inner pair also gives
+$\norm{T^{F2,N}_\theta(A)-T_\theta(A)}\le K_{\rm F1}/(N-1)\,\norm A$.
+
+\paragraph{Reverse.} Each family is compared with itself, with the larger box
+$\Lambda_M$ inside the integral, so each uses its own interaction: $\Phi$ with
+whole stars for F1 and $\Phi'$ with faces charged once for F2. Exchanging
+sums bounds the source by $J_F(4/N+4/(N-1))\le8J_F/(N-1)$, with
+$J_{\rm F1}=28|\tau|$ and $J_{\rm F2}=49|\tau|/3$, uniformly in $M$:
+\begin{equation}
+ \begin{aligned}
+ c_1&=1016064\,\tau^2E_{\rm up}(1016064|\tau|)
+ =\frac{12128856933354903}{118967041015625000000000000},\\
+ c_2&=345744\,\tau^2E_{\rm up}(592704|\tau|)
+ =\frac{1055961408185869563}{30481402343750000000000000000},
+ \end{aligned}
+ \label{eq:ba2-cauchy-rev}
+\end{equation}
+that is, $c_1\approx1.01951\times10^{-10}$ (margin $2.452$) and
+$c_2\approx3.46428\times10^{-11}$ (margin $7.217$). Charging whole anchor
+groups instead of faces would recharge old faces: from $\Lambda_2$ to
+$\Lambda_3$ it would count 616 old faces again, while the owner-set indexing
+charges only the 3920 new ones.
+
+\paragraph{The rate is $1/N$, and it is honest.} With the polynomial $F$ the
+tail over $\{\norm y_\infty\ge N\}$ is of order $1/N$. Exact lower witnesses
+show that no faster rate follows from these constants: the reverse checker
+proves $m\,S(m)\ge1/2$ for the half-shell sums $S(m)$, $m=2,\ldots,256$, and
+the forward checker a slab lower bound that contradicts any tail $C_0q^N$
+with $C_0=1$, $q=1/2$ from $N=9$ on. The comparison decays faster, like
+$N^{-2}$, only because its source is one surface layer. A bound for $N$ to
+$N+1$ alone is not a Cauchy estimate, since increments of order $1/N$ sum
+like the divergent harmonic series; every estimate above holds for all $M>N$
+at once. No exponential decay in $N$ is claimed. Every rate is a rate in $N$
+at fixed spacing, per coarse step $(4a,2a,a)$, and nothing is uniform in the
+lattice spacing.
+
+\paragraph{Gated values.} Table~\ref{tab:ba2-constants} collects the
+constants. The gate binds the forward route as the headline, because it is
+the contract's designated forward route, its constants are closed rationals
+equal to the skeptic's independent closed forms (with $K_{\rm F2}$ an exact
+composition of two of them), and its margins are at least $2.35$. The reverse
+constants are a labelled second route; the smaller of the two is a valid bound
+for each quantity.
+
+\begin{table}[htbp]
+\centering\small
+\caption{BA2 constants at $|\tau|=10^{-8}$, $|\theta|\le8$, both signs. The
+$\tau\to\tau/100$ ratios lie in the preregistered $[9500,10500]$.}
+\label{tab:ba2-constants}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.16\linewidth}
+ >{\raggedright\arraybackslash}X r r r@{}}
+\toprule
+Quantity & Route (inner family, interaction) & $\approx$ value & Margin & $\tau/100$ ratio\\
+\midrule
+Comparison $K$ & forward headline, \recid{duhamel_inner_f1}, $\Phi$ & $2.54879\times10^{-11}$ & $2.354$ & $10033.644$\\
+ & reverse, \recid{duhamel_inner_f2}, $\Phi'$ & $1.48469\times10^{-11}$ & $4.041$ & $10019.588$\\[2pt]
+F1 Cauchy & forward headline, inner F1, faces once & $5.94718\times10^{-11}$ & $4.204$ & $10033.644$\\
+ & reverse, inner F1 on $\Lambda_M$, whole stars & $1.01951\times10^{-10}$ & $2.452$ & $10033.615$\\[2pt]
+F2 Cauchy & forward headline, through F1 & $9.45177\times10^{-11}$ & $2.645$ & $10033.644$\\
+ & reverse, inner F2 on $\Lambda_M$, faces once & $3.46428\times10^{-11}$ & $7.217$ & $10019.588$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The exact ratios are $1953058850/194651$ for all three forward constants,
+which share the form $c\,\tau^2/(1-338688|\tau|)$, and
+$38176688920663121234473000000/3810205403940325763421973$ (comparison and
+F2) and $13564609990853609831750000/1351916508459800973113$ (F1) for the
+reverse ones. The contract's control semantics carry a stale bracket
+$[9900,10100]$; every ratio happens to lie inside it too, and the
+preregistered $[9500,10500]$ governs. Every constant is increasing in
+$|\tau|$ and in $U$, so the cap values bound every smaller coupling and every
+$|\theta|\le8$, and the $-\tau$ evaluations replay the same $|\tau|$ formula.
+
+\subsection{Whole-sequence convergence and the F2 limit dynamics}
+\label{sec:ba2-limit}
+Because the Cauchy bounds hold for all $M>N$, both whole sequences
+$(T^{F1,N}_\theta(A))_N$ and $(T^{F2,N}_\theta(A))_N$ converge in norm,
+uniformly for $|\theta|\le8$. For F1 the limit is AQ1's $T_\theta$
+(Theorem~4.1 for $\Phi$). For F2, Theorem~4.1 applied to $\Phi'$ gives a limit
+dynamics of its own, and the comparison identifies it with $T_\theta$:
+$\norm{T^{F2,N}_\theta(A)-T^{F1,N}_\theta(A)}\le b(N)\to0$. Letting
+$M\to\infty$ in the Cauchy bounds,
+\begin{equation}
+ \norm{T_\theta(A)-T^{F1,N}_\theta(A)}\le\frac{K_{\rm F1}}{N-1}\norm A,\qquad
+ \norm{T^{F2,N}_\theta(A)-T_\theta(A)}\le\frac{\min(K_{\rm F1},c_2)}{N-1}\norm A,
+ \label{eq:ba2-limit}
+\end{equation}
+where the second minimum is the gate's ``min(K\_F1, second-route K\_F2)''. For
+a general local observable $A\in B(\mathcal H_X)$, $X\subset\Lambda_n$, the
+same Duhamel sum with $R$ replaced by $X$ and distance $N-n$ gives, for
+example on the forward route,
+$\norm{T^{F2,N}_u(A)-T_u(A)}\le(|\tau|/3)\Lambda(U)\cdot49|X|\cdot
+4/(N-n)\cdot\norm A\to0$ on every compact window $|u|\le U$; this is
+qualitative, and the frozen targets concern $|\theta|\le8$ only. The two
+automorphism groups therefore agree on the local algebra and, being
+isometric, on the quasi-local algebra: the F2 limit dynamics is the AQ1 limit
+dynamics. This closes obligation O5 within the stated scope.
+
+\paragraph{AQ1~\S\S4--5 for the F2 limit states (O6).} AY1 admits for F2 its
+own local trace-norm compactness and diagonal extraction. Let $\omega^{(2)}$
+be a subsequential limit along F2's own subsequence $N_k$, the local
+trace-norm limit of the simple F2 box ground states. Both producers rerun
+AQ1~\S\S4--5 for every such state, each one separately.
+\begin{enumerate}
+\item \emph{Stationarity.} Each box ground state is invariant under its own
+ evolution. For local $A$ and fixed $n$, $T^{F2,n}_u(A)$ is local, so
+ local trace-norm convergence passes $k\to\infty$ and the Cauchy bound
+ controls the remainder: $|\omega^{(2)}(T_\theta(A))-\omega^{(2)}(A)|\le
+ 2c_2/(L-1)$ for every $L$ (reverse), or $\le2\varepsilon_n$ with
+ $\varepsilon_n=\sup_{|u|\le1}\norm{T_u(A)-T^{F2,n}_u(A)}$ (forward). Hence
+ $\omega^{(2)}\circ T_\theta=\omega^{(2)}$, then on the quasi-local algebra
+ by density and for every $\theta$ by the group property.
+\item \emph{GNS unitaries and strong continuity.} Stationarity makes
+ $U_\theta\pi(A)\Omega=\pi(T_\theta(A))\Omega$ a unitary group with
+ $U_\theta\Omega=\Omega$. The map $\theta\mapsto\omega^{(2)}(A^*T^{F2,n}_\theta
+ (A))$ is continuous through the normal density on $\Lambda_n$, and the
+ uniform approximation passes continuity to $\omega^{(2)}(A^*T_\theta(A))$,
+ so $\norm{(U_\theta-1)\pi(A)\Omega}^2\to0$. Density of local cyclic vectors
+ and Stone's theorem give a self-adjoint generator.
+\item \emph{Nonnegative generator.} For local $A$ the finite correlation
+ $\omega_N(A^*T^{F2,N}_\theta(A))$ is the Fourier transform of a positive
+ measure on $[0,\infty)$, because the F2 box operator minus its ground energy
+ is nonnegative (simple ground state and gap at least $1/2$ in normalized
+ units, AY1 via AM2). These correlations converge for every $\theta$ and are
+ bounded by $\norm A^2$, so nonnegative smooth tests supported in
+ $(-\infty,0)$ pass their zero integrals to the limit spectral measure; the
+ negative spectral projection annihilates every local cyclic vector and
+ vanishes. Stationarity alone would not suffice: for $H=\mathrm{diag}(0,1)$
+ the invariant excited vector has a correlation of negative frequency.
+\item \emph{Physical sector.} Every retained F2 term is an on-site Casimir or a
+ Wilson loop and the box ground states are simple, so $\omega^{(2)}$ is gauge
+ invariant, $T_\theta$ preserves the gauge-invariant algebra, and the
+ physical cyclic space reduces the unitary group and its generator.
+\end{enumerate}
+Only strong continuity of the GNS group is claimed; norm continuity in time
+on all of $B(\mathcal H)$ fails, as AQ1's shift fixture shows (a difference
+of norm 2). This closes obligation O6 within the stated scope. The F2 limit
+states remain subsequential, and nothing identifies them with each other or
+with F1 limit states.
+
+\subsection{Meaning}
+\label{sec:ba2-meaning}
+BA2 concerns the algebraic Heisenberg dynamics of the named constructions: the
+finite-box evolutions of bounded observables on the cover, in operator norm,
+on the compact window $|\theta|\le8$, at a rate in $N$ at fixed spacing, and
+their common norm limit. It does not assert that the GNS dynamics of
+different states agree, or that correlation functions of different states
+agree; that needs a proved common state, which is BB2's subject. Exact
+fixtures in both checkers show one automorphism group with two invariant
+vector states whose $\sigma_x$ correlations differ, $(3\pm4i)/5$ in the
+forward and $\pm i$ in the reverse fixture. The bounds grow like
+$U^2/(1-vU/3)$ with the window, exactly like $(2/(Cv))(e^{vU}-1-vU)$, and
+nothing is claimed uniformly in time. The rates are $N^{-2}$ for the
+comparison and $1/N$ for the Cauchy estimates, with the polynomial $F$; no
+exponential decay in $N$ and no estimate in the lattice spacing $a$ is
+claimed.
+
+\subsection{Error ledger, controls, replays and review}
+\label{sec:ba2-evidence}
+The preregistered terms are itemized in both reports and added linearly.
+\recid{lieb_robinson_tail} is $S_b(N)\le168(5N+1)N^{-3}$ for the comparison
+and $S_c(N)\le392/(N-1)$ for the Cauchy estimates (the reverse writes
+$F(N)+F(N-1)\le2N^{-4}$ per owner and $8J_F/(N-1)$).
+\recid{duhamel_boundary_sum} is the face norm $|\tau|/3$ times the time
+integral times the $F$-sum. \recid{interaction_picture_onsite} is zero and not
+applicable: the on-site terms are identical in every Duhamel pair, and the
+padding and larger-box on-site terms sit in the inner Hamiltonian.
+\recid{inner_family_constants} names $C\le224$ and $\norm\Phi_F\le2268|\tau|$
+(inner F1) or $\norm{\Phi'}_F\le1323|\tau|$ (inner F2). \recid{arithmetic} is
+zero: exact rationals, with $e^x-1-x$ replaced by the directed rational
+bounds above. No term is divided by $\sqrt N$ or by the square root of a face
+count.
+
+Each producer implements all 35 contract controls as damaging mutations. The
+forward checker runs 44 exact checks with 116 rejections and the reverse
+checker 59 exact checks with 149 rejections; four controls without frozen
+semantics were implemented from their earlier-round meaning. The skeptic's
+pre-comparison package (95 exact checks, 38 controls, 101 rejected
+mutations) was committed before both producer commits. The post-comparison
+review runs 113 checks: unmutated copies reproduce both frozen outputs byte
+for byte; 70 control weakenings, 35 per producer, each abort with the
+intended damaging mutation; 19 must-abort source edits all abort at the
+intended check; and five silent edits pass their producer checkers and are
+caught only by the review's exact value validator. That last finding is why
+the gate binds the exact rationals from the review. All four producer replays
+reproduce the frozen outputs byte for byte, both closures (33 files each)
+verify, and both producers hold exactly the 29 declared inputs, the reverse
+none of the skeptic, lens, deliberation, plan or forward files. The producers
+wrote their final files after the skeptic's commit, so isolation rests on
+disclosure, content and computation, not on commit order.
+
+The review found no blocking issue. Its non-blocking findings are recorded in
+the gate: the stale bracket; four controls without frozen semantics; the
+observable identifier, which names $N$ to $N+1$ while the target and the proof
+concern all $M>N$; the notation $b(N)$ and $B(N)$, and the evolutions written
+with the letter of the coupling; no $N_0$ or clock field in the parameters;
+the route labels living only in the plan; the section title of Theorem~4.1,
+cited and not used as project wording; the exact suprema of (48); the forward
+F2 constant, built through F1 and 2.73 times the reverse's own-family value;
+the reverse comparison constant, its own directed formula between the
+skeptic's sharp enclosure and closed form; and the commit order.
+
+\subsection{Limitations recorded by the gate}
+\label{sec:ba2-limits}
+The BA2 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Only the zero-selected patterned family (selected triple (0,0,0)), the
+cover R=\{0,e\_z\}, fixed spacing and |tau|<=10\textasciicircum{}-8, with the
+two named families F1 and F2 on centered cubes Lambda\_N, N at least 2;
+nothing transfers to literal vertex boxes, periodic or orthant boxes, nonzero
+selected triples, the uniform route-B model, weak coupling or the continuum
+\item Algebraic Heisenberg dynamics of the named constructions on a compact
+window only: no equality of GNS dynamics, no equality of correlation functions
+of different states, no common limit state and no convergence of states is
+established (F1 and F2 limit states remain subsequential and are not
+identified with each other); those need a proved common state (BB2)
+\item The frozen constants hold for |theta|<=8 (U=1); the bounds grow like
+U\textasciicircum{}2/(1-vU/3) and nothing is claimed uniformly in time;
+outside the window only qualitative convergence on compact windows is used
+(for the O6 rerun)
+\item Every rate is a rate in N at fixed spacing and strong bare coupling (a
+coarse step is (4a,2a,a)): order N\textasciicircum{}-2 for the comparison and
+1/N for the Cauchy estimates with the polynomial
+F(r)=(1+r)\textasciicircum{}-4; no exponential decay in N is claimed, the
+optional exponential instance was not executed, and no estimate is uniform in
+the lattice spacing a
+\item All constants are upper bounds: the admitted ||Phi||\_F<=2268|tau| is
+four times the exact (48) supremum 567|tau| and
+||Phi\textquotesingle{}||\_F<=1323|tau| is 12.25 times 108|tau| (recorded, not
+used); the all-size face sum 168(5N+1)N\textasciicircum{}-3 is 20 to 31 times
+the enumerated sum at N=2 to 5
+\item Inherited without re-proof: Nachtergaele-Sims Theorems 3.1 and 4.1 as
+transcribed in the committed excerpt (not machine-checked);
+AQ1\textquotesingle{}s C<=224 and ||Phi||\_F bounds (arithmetic re-verified);
+AM2\textquotesingle{}s simple ground state and gap for F2 boxes and F2
+compactness and diagonal extraction via AY1; the I1 dictionary;
+Stone\textquotesingle{}s theorem, Fourier inversion and the tensor-product
+exponential of commuting self-adjoint operators on separate factors
+\item Independence is limited: the contract, the selection note and the AY2
+obligations table name the route and the constants; the routes differ in the
+inner family, the interaction indexing, the constants, the exponential
+remainder bound, the enumeration and the code; all agents are correlated model
+agents; both producers wrote their final files after the skeptic
+pre-comparison commit, so isolation is shown by disclosure and content, not by
+commit order
+\item The producer checkers do not pin every labelled value: five silent
+source edits (labelled refinements, a retained weaker bound, preview strings)
+pass the producer checkers and are caught only by the skeptic value validator;
+the gate binds the exact rationals above
+\item The -tau evaluations replay the same |tau| formula and are not a second
+confirmation
+\item Scientific priority is unverified; the Lieb-Robinson and limit-dynamics
+theorems are credited to Nachtergaele-Sims and the O6 strategy to AQ1 (Gauvin
+arXiv:2503.15539v3 Supplement A.10)
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round33/forward/ba2/report.md}{BA2 forward},
+\repo{research/round33/reverse/ba2/report.md}{BA2 reverse},
+\repo{research/round33/skeptic/ba2.md}{independent model-agent review}, the
+\repo{research/round33/sources/nachtergaele-sims-1410.8174v1.md}{committed
+source excerpt} and the \repo{research/round33/contracts/ba2.json}{frozen
+contract}. With BA1 and BA2 gated, sub-round~1 is complete; the panel kept
+every goal for sub-round~2
+(\repo{research/round33/advisor/panel-update-1.md}{panel update~1}).

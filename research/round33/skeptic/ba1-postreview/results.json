@@ -1,0 +1,930 @@
+{
+  "admitted_values": {
+    "forward": {
+      "Gamma_floor": "77/296",
+      "Gamma_headline": "2464/390625",
+      "K_F1_vs_F2": "19140625/86785322066496",
+      "K_general_direct": "1244140625/5554260612255744",
+      "K_general_telescoping": "2734375/12204185915601",
+      "K_nested": "19140625/5554260612255744",
+      "K_union_one_prescription": "19140625/2777130306127872",
+      "T_w_floor": "49/4036608",
+      "T_w_headline": "49/223580736",
+      "floor_K_F1_vs_F2": "1813/110502144",
+      "floor_K_general_telescoping": "708203125/43148545682688",
+      "floor_K_nested": "67081/10791225000000",
+      "headline_tau_ratio": "4708908680004/46502766025"
+    },
+    "labelled_refinements": {
+      "forward_loss_one_F1_vs_F2": "57270955/16662781836767232",
+      "reverse_first_order_cancellation_headline": "3773/1364628515625",
+      "reverse_sharp_exponent_floor": "1813/197100000000",
+      "reverse_sharp_exponent_headline": "49/7154583552",
+      "skeptic_contract_form_forward_headline": "7334358121462324769859517388959775878989442259/33331249407719528571734905225718909908536586717145768"
+    },
+    "no_decay_sup_norm_difference": "37/6249384",
+    "reverse": {
+      "T_rho_floor": "49/4036608",
+      "T_rho_headline": "49/223580736",
+      "coefficientwise_headline": "14/31441041",
+      "floor": "49/2018304",
+      "headline": "49/111790368",
+      "telescoped_headline_misses": "889/1006113312"
+    },
+    "tau_star": "1/37888"
+  },
+  "blocking_issues": [],
+  "checks": [
+    {
+      "id": "contract_sha256_pinned",
+      "passed": true,
+      "sha256": "2c761366d2d81ee21fa631497f8df9b80dc760bec160c985023152cd768532b9"
+    },
+    {
+      "id": "contract_pairs_read",
+      "passed": true
+    },
+    {
+      "closures": {
+        "forward": {
+          "check_py_sha256": "e3a5a14ae8c8fdb18c74a37b7b8263fe23f05a9ea088a6f91db313e894d7f486",
+          "checks": 51,
+          "closure_files": 31,
+          "freeze_json_sha256": "cffc6fdf4246fb6e98e5dcfc9bfab44d2e0f520164e801f643a52fa9460582d0",
+          "inputs": 27,
+          "report_sha256": "d8ed5bfa780b95a57e5ba822b81f0fea5f71aaa7ea1a01bb4dbecb0d417aa769",
+          "results_sha256": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+          "source_manifest_sha256": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+        },
+        "reverse": {
+          "check_py_sha256": "34327deb8741d0411b461098263d3ffa8c1e9a6822963e277c0741ad9a5b78f2",
+          "checks": 61,
+          "closure_files": 31,
+          "freeze_json_sha256": "7749f2f932499b02a5674f25d939bfbb4aca011c34cf233b910e75b9cd99e7c4",
+          "inputs": 27,
+          "report_sha256": "a986c205542376c2ad5058cdf88e082abe9c12eeba87b052abf3ad9cefebbb86",
+          "results_sha256": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+          "source_manifest_sha256": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+        }
+      },
+      "id": "closures_inventories_and_reverse_isolation",
+      "inventory": 27,
+      "note": "both inputs/ equal AGENTS.md + contract + the 25 shared premises byte for byte; no Round33 skeptic, expert, deliberation, plan, panel or forward file in either inventory",
+      "passed": true
+    },
+    {
+      "id": "check_py_sha256_recorded_before_evaluation_matches_frozen",
+      "passed": true
+    },
+    {
+      "id": "replays_byte_identical",
+      "passed": true,
+      "replays": {
+        "forward": {
+          "frozen_outputs": {
+            "results.json": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+            "source-manifest.json": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+          },
+          "normal_and_optimized_byte_identical_to_frozen": true
+        },
+        "reverse": {
+          "frozen_outputs": {
+            "results.json": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+            "source-manifest.json": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+          },
+          "normal_and_optimized_byte_identical_to_frozen": true
+        },
+        "skeptic_pre_comparison": {
+          "files_unchanged": [
+            "research/round33/skeptic/ba1-contract-review.md",
+            "research/round33/skeptic/ba1-independent-derivation.md",
+            "research/round33/skeptic/ba1-independent/results.json",
+            "research/round33/skeptic/ba1_check.py"
+          ],
+          "freeze_record_sha256": "cb1e1f9b546da81f45c1a798e346ce25bb0b6a3792817b4cb23f280ab9621f21",
+          "normal_and_optimized_byte_identical_to_frozen": true,
+          "results_sha256": "2c3afdb2a3b04caa035af9f62c70ada6cb846331a95907cdf15d1b45cdc50fb1"
+        }
+      }
+    },
+    {
+      "id": "forward_values_reproduced_exactly",
+      "note": "every per-sign, per-comparison, crude and floor constant and the tau ratios re-derived from the declared formula (Gamma=J w G'(R), S=w t_1+Gamma T_w, telescoping 1/(1-q))",
+      "passed": true
+    },
+    {
+      "id": "reverse_values_reproduced_exactly",
+      "note": "2T(rho) at rho=64|tau| and tau_star, crude 2x28 rho G(R), sharp and cancellation refinements, coefficientwise form, telescoping, tau ratios",
+      "passed": true
+    },
+    {
+      "id": "reverse_equals_pre_comparison_prediction",
+      "identical": [
+        "headline 49/111790368",
+        "floor 49/2018304",
+        "crude 296/390625 and 1/32",
+        "sharp 49/7154583552",
+        "coefficientwise 14/31441041"
+      ],
+      "passed": true
+    },
+    {
+      "forward_F1_vs_F2": "19140625/86785322066496",
+      "forward_floor": "708203125/43148545682688",
+      "forward_general": "2734375/12204185915601",
+      "id": "forward_reconciled_with_pre_comparison",
+      "passed": true,
+      "reason": "the forward uses G'(R) (at most 352) in Gamma and in the remainder, the skeptic G'(T_w); the forward binds the telescoped general comparison (factor 1/(1-q)=64/63); its F1-vs-F2 constant is the exact variant listed in the skeptic derivation section 10; all are valid upper bounds",
+      "skeptic_contract_form": "7334358121462324769859517388959775878989442259/33331249407719528571734905225718909908536586717145768",
+      "skeptic_floor": "325395042514081444976913599169317507/22146911616161991202956352934960706249704"
+    },
+    {
+      "floor": "49/2018304",
+      "floor_margin": "3.432489795918e+03",
+      "forward_floor_labelled": "708203125/43148545682688",
+      "forward_headline_labelled": "2734375/12204185915601",
+      "headline": "49/111790368",
+      "headline_margin": "1.140718040816e+00",
+      "id": "binding_larger_valid_K_per_pair",
+      "note": "both routes certify K at most the bound value: the forward proves a smaller K for every comparison",
+      "passed": true
+    },
+    {
+      "crude_forward": "9472/24454143",
+      "crude_reverse": "296/390625",
+      "id": "bound_constants_scaling_and_crude_tier",
+      "passed": true,
+      "q_min_ratio": "100",
+      "ratio_floor": "1",
+      "ratio_headline": "4340004/43129"
+    },
+    {
+      "forward_union_2K_nested": "19140625/2777130306127872",
+      "id": "general_comparison_routes",
+      "note": "the reverse must compare two volumes directly (as it does); telescoping or a two-step union at exponent N-1 would miss 1/2000000; the face sets are totally ordered, so any pair is one nested comparison",
+      "passed": true,
+      "reverse_direct": "49/111790368",
+      "reverse_telescoped": "889/1006113312",
+      "reverse_two_step_union": "49/55895184"
+    },
+    {
+      "id": "first_order_cancellation_is_quadratic",
+      "note": "self-correction: the pre-comparison listed this refinement without noting that it is quadratic in tau and so outside the prefrozen linear headline bracket; it is a labelled refinement only",
+      "passed": true,
+      "ratio": "1.006284402606e+04",
+      "reverse_value": "3773/1364628515625",
+      "skeptic_pre_value": "37895842225249662223862450437526298964093139/16752081763554509175694105726199042403119424000000000"
+    },
+    {
+      "id": "forward_loss_one_refinement_reproduced",
+      "note": "source loss 1 because the extra F2 faces lie inside the outer layer; face-level J_new=49|tau|/3 in the source remainder; labelled, not bound",
+      "passed": true,
+      "value": "57270955/16662781836767232"
+    },
+    {
+      "exclusion_constant": "2J_0G'(R) < 77/390625",
+      "id": "lipschitz_wording_reconciled",
+      "map_lipschitz": "J_0G'(R) < 77/781250",
+      "note": "the contract semantics of global_lipschitz_not_decay (skeptic loop-1/2 wording) call 2J_0G'(R) the sup-norm Lipschitz constant; 37/6249384 uses J_0G'(R); both producers found this independently",
+      "passed": true
+    },
+    {
+      "id": "damaged_packets_rejected_by_review_validator",
+      "passed": true,
+      "rows": [
+        {
+          "mutation": "headline_K_halved",
+          "producer": "forward",
+          "rejected_for": "pair value"
+        },
+        {
+          "mutation": "skeptic_value_substituted",
+          "producer": "forward",
+          "rejected_for": "not reproduced"
+        },
+        {
+          "mutation": "crude_marked_met",
+          "producer": "forward",
+          "rejected_for": "crude tier must fail"
+        },
+        {
+          "mutation": "minus_sign_differs",
+          "producer": "forward",
+          "rejected_for": "not reproduced"
+        },
+        {
+          "mutation": "f1_vs_f2_distance_N",
+          "producer": "forward",
+          "rejected_for": "forward distance"
+        },
+        {
+          "mutation": "sharp_as_contract_form",
+          "producer": "reverse",
+          "rejected_for": "headline K"
+        },
+        {
+          "mutation": "floor_ratio_100",
+          "producer": "reverse",
+          "rejected_for": "floor and q_min ratios"
+        },
+        {
+          "mutation": "telescoping_marked_met",
+          "producer": "reverse",
+          "rejected_for": "telescoping"
+        },
+        {
+          "mutation": "crude_marked_met",
+          "producer": "reverse",
+          "rejected_for": "crude headline"
+        },
+        {
+          "mutation": "template_trimmed",
+          "producer": "reverse",
+          "rejected_for": "mandatory sentence"
+        }
+      ]
+    },
+    {
+      "id": "source_edit_runs",
+      "input_edits": 5,
+      "passed": true,
+      "runs": [
+        {
+          "edit": "unmutated copy",
+          "outcome": "reproduces frozen output byte for byte",
+          "producer": "forward"
+        },
+        {
+          "edit": "unmutated copy",
+          "outcome": "reproduces frozen output byte for byte",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: l1_distance_with_l_inf_diameter",
+          "control": "coarse_metric_named",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: weights_removed_from_parameters",
+          "control": "parameters_declare_metric_weights_window",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: unweighted_am2_selfmap_cited_for_weighted_ball",
+          "control": "weighted_norm_contraction_rechecked",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rate_below_q_min_with_true_G_lower_bound",
+          "control": "q_min_not_crossed",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: ball_radius_as_tree_ratio",
+          "control": "ball_radius_not_used_as_tree_decay_ratio",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: q_optimized_after_constants_reported_as_headline",
+          "control": "rate_constant_pair_prefrozen",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: exact_source_with_crude_t_labelled_exact",
+          "control": "tier_mixing_rejected",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: square_root_bound_labelled_linear",
+          "control": "tau_scaling_exponent",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: lipschitz_as_decay_nonlocal_chain_n3",
+          "control": "global_lipschitz_not_decay",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: weight_growing_with_distance_from_R",
+          "control": "weight_direction_toward_source",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: loss_charged_only_per_creation_k0",
+          "control": "loss_per_interaction_not_per_creation",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: max_instead_of_sum_disconnected_output",
+          "control": "diameter_subadditivity_through_interaction",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: outgoing_star_only_7tau",
+          "control": "missing_incoming_stars",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: old_terms_charged_in_source",
+          "control": "boundary_source_new_terms_only",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: regrouped_groups_charged_whole",
+          "control": "f2_regrouping_charged_once",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: F1_vs_F2_exponent_N_instead_of_N_minus_1",
+          "control": "boundary_distance_exact",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: site_0_only_counts",
+          "control": "face_count_all_sites",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: four_drawn_links_as_cover",
+          "control": "full_original_wilson_cover",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: state_decay_inferred_from_coefficient_decay",
+          "control": "coefficient_decay_not_marginal_decay",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: tau_over_576_mixed_units",
+          "control": "wrong_delta_alpha_hbar_clock",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: root_sum_of_squares_over_49_aligned_faces",
+          "control": "root_n_misuse",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: float_input",
+          "control": "exact_arithmetic_admission",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: other_group",
+          "control": "changed_model_relabelled",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: crude_tier_relabelled_accepted",
+          "control": "insufficient_verdict_retained",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_claim_true",
+          "control": "no_priority_or_continuum_claim",
+          "edit": "validator weakened (2 anchors)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rate_in_N_field_dropped",
+          "control": "gate_fields_topic_specific",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: cutoff_removed_for_coefficients",
+          "control": "untruncated_coefficients_not_asserted",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rate_converted_to_fm",
+          "control": "decay_rate_in_N_not_a",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: one_family_only",
+          "control": "two_families_named",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: alternating_sequence_with_convergent_subsequences",
+          "control": "subsequence_versus_whole_sequence",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: unqualified_uniformity_next_to_rate",
+          "control": "uniform_in_N_not_in_a",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: diameter_rate_relabelled_as_cardinality_rate",
+          "control": "cardinality_weight_rate_labelled",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: disc_radius_beyond_tau_star",
+          "control": "analytic_route_disc_radius",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: deliberation_added",
+          "control": "reverse_premise_isolation",
+          "edit": "validator weakened (2 anchors)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: affirmative_thermodynamic_limit",
+          "control": "negation_aware_phrase_scan",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: angle_span_with_whitespace",
+          "control": "placeholder_span_rejected",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: control_boolean_flipped_hash_rebound",
+          "control": "coherent_evidence_tampering",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: byte_change_without_rehash",
+          "control": "coherent_evidence_tampering",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: float_tau",
+          "control": "exact_arithmetic_admission",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_true",
+          "control": "no_priority_or_continuum_claim",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: coupling_above_cap",
+          "control": "changed_model_relabelled",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: floor_only_relabelled_accepted",
+          "control": "insufficient_verdict_retained",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: first_order_cancellation_as_headline",
+          "control": "tau_scaling_exponent",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: mixed_units_tau_over_9",
+          "control": "wrong_delta_alpha_hbar_clock",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: outgoing_star_only_J_7",
+          "control": "missing_incoming_stars",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: sqrt49_first_order",
+          "control": "root_n_misuse",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: first_order_cancellation_with_crude_t_labelled_exact",
+          "control": "tier_mixing_rejected",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: forward_ba1_added",
+          "control": "reverse_premise_isolation",
+          "edit": "validator weakened (2 anchors)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: literal_counts",
+          "control": "face_count_all_sites",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: unqualified_uniform_rate",
+          "control": "uniform_in_N_not_in_a",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: angle_span_with_space",
+          "control": "placeholder_span_rejected",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: affirmative_thermodynamic_limit",
+          "control": "negation_aware_phrase_scan",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: clock_removed",
+          "control": "parameters_declare_metric_weights_window",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: nonlocal_fixture_lipschitz_power_claim",
+          "control": "global_lipschitz_not_decay",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: real_cap_constants_cited_for_disc",
+          "control": "weighted_norm_contraction_rechecked",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: per_creation_reach_first_order_face",
+          "control": "loss_per_interaction_not_per_creation",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: max_instead_of_sum",
+          "control": "diameter_subadditivity_through_interaction",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: l1_distance_with_linf_diameter",
+          "control": "coarse_metric_named",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: weight_growing_from_R",
+          "control": "weight_direction_toward_source",
+          "edit": "validator weakened (2 anchors)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: cardinality_relabelled_diameter_rate",
+          "control": "cardinality_weight_rate_labelled",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: nested_shell_distance_N",
+          "control": "boundary_distance_exact",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: source_missing_a_new_star",
+          "control": "boundary_source_new_terms_only",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: face_charged_twice",
+          "control": "f2_regrouping_charged_once",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: headline_q_optimized",
+          "control": "rate_constant_pair_prefrozen",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rate_half_q_min",
+          "control": "q_min_not_crossed",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: reduced_density_analytic_on_disc",
+          "control": "analytic_route_disc_radius",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: untruncated_asserted",
+          "control": "untruncated_coefficients_not_asserted",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: per_fermi",
+          "control": "decay_rate_in_N_not_a",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: state_decay_inferred",
+          "control": "coefficient_decay_not_marginal_decay",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: single_family",
+          "control": "two_families_named",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: whole_sequence_states",
+          "control": "subsequence_versus_whole_sequence",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: four_drawn_links",
+          "control": "full_original_wilson_cover",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rate_in_N_false",
+          "control": "gate_fields_topic_specific",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: ball_radius_as_ratio",
+          "control": "ball_radius_not_used_as_tree_decay_ratio",
+          "edit": "validator weakened (1 anchor)",
+          "producer": "reverse"
+        },
+        {
+          "edit": "contract byte edit without rehash",
+          "outcome": "aborted without output",
+          "producer": "forward"
+        },
+        {
+          "edit": "contract byte edit without rehash",
+          "outcome": "aborted without output",
+          "producer": "reverse"
+        },
+        {
+          "edit": "undeclared skeptic file in inputs",
+          "outcome": "aborted without output",
+          "producer": "forward"
+        },
+        {
+          "edit": "undeclared skeptic file in inputs",
+          "outcome": "aborted without output",
+          "producer": "reverse"
+        },
+        {
+          "edit": "forward BA1 report in inputs",
+          "outcome": "aborted without output",
+          "producer": "reverse"
+        }
+      ],
+      "unmutated": 2,
+      "weakenings": 74
+    },
+    {
+      "forward": {
+        "checks": 51,
+        "controls": 37,
+        "rejected_mutations": 96
+      },
+      "id": "reports_scanned_and_checker_counts",
+      "passed": true,
+      "reverse": {
+        "checks": 61,
+        "controls": 37,
+        "rejected_mutations": 132
+      },
+      "scan": {
+        "forward": {
+          "affirmative_hits": 0,
+          "template_spans": 1
+        },
+        "reverse": {
+          "affirmative_hits": 0,
+          "template_spans": 1
+        }
+      }
+    },
+    {
+      "fields": [
+        "coefficient_cauchy_claimed",
+        "coefficient_cauchy_scope",
+        "common_limit_claimed",
+        "continuum_claim",
+        "rate_in_N_claimed",
+        "rate_in_a_claimed",
+        "scientific_priority_verified",
+        "state_decay_claimed",
+        "translation_invariance_claimed",
+        "uniqueness_of_ground_state_claimed",
+        "weak_coupling_claim",
+        "whole_sequence_claimed"
+      ],
+      "id": "gate_fields_equal_contract",
+      "passed": true
+    },
+    {
+      "id": "review_statement_scanned_template_one_span",
+      "passed": true
+    }
+  ],
+  "closures": {
+    "forward": {
+      "check_py_sha256": "e3a5a14ae8c8fdb18c74a37b7b8263fe23f05a9ea088a6f91db313e894d7f486",
+      "checks": 51,
+      "closure_files": 31,
+      "freeze_json_sha256": "cffc6fdf4246fb6e98e5dcfc9bfab44d2e0f520164e801f643a52fa9460582d0",
+      "inputs": 27,
+      "report_sha256": "d8ed5bfa780b95a57e5ba822b81f0fea5f71aaa7ea1a01bb4dbecb0d417aa769",
+      "results_sha256": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+      "source_manifest_sha256": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+    },
+    "reverse": {
+      "check_py_sha256": "34327deb8741d0411b461098263d3ffa8c1e9a6822963e277c0741ad9a5b78f2",
+      "checks": 61,
+      "closure_files": 31,
+      "freeze_json_sha256": "7749f2f932499b02a5674f25d939bfbb4aca011c34cf233b910e75b9cd99e7c4",
+      "inputs": 27,
+      "report_sha256": "a986c205542376c2ad5058cdf88e082abe9c12eeba87b052abf3ad9cefebbb86",
+      "results_sha256": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+      "source_manifest_sha256": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+    }
+  },
+  "continuum_claim": false,
+  "contract_sha256": "2c761366d2d81ee21fa631497f8df9b80dc760bec160c985023152cd768532b9",
+  "gate_fields": {
+    "coefficient_cauchy_claimed": true,
+    "coefficient_cauchy_scope": "AM2 creation coefficients of F1 and F2 on supports meeting R, in each on-site cutoff space",
+    "common_limit_claimed": false,
+    "continuum_claim": false,
+    "rate_in_N_claimed": true,
+    "rate_in_a_claimed": false,
+    "scientific_priority_verified": false,
+    "state_decay_claimed": false,
+    "translation_invariance_claimed": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false,
+    "whole_sequence_claimed": false
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "limitations": [
+    "Only the zero-selected patterned family (selected triple (0,0,0), Haar reference), the cover R={0,e_z}, fixed spacing and |tau|<=10^-8, with F1 and F2 on centered cubes Lambda_N, N at least 2, and complete-factor volumes of one prescription containing Lambda_N; nothing transfers to nonzero selected triples, the uniform route-B model, literal vertex boxes, weak coupling or the continuum; every constant is uniform in N at fixed spacing and in the cutoff, never in a.",
+    "Coefficients only: the statements concern AM2 creation coefficients in each on-site cutoff space Q_L with constants independent of L; they are not decay of the reduced density or of any state (BB1/BB2), not a statement about untruncated creation coefficients, and the analyticity in the coupling is not extended to the reduced density (no zero-free region of the complexified normalization is proved).",
+    "The coefficient Cauchy property gives whole-sequence convergence of coefficients per cutoff space only; whole_sequence_claimed and common_limit_claimed concern states and stay false; no uniqueness of any ground state is asserted.",
+    "Thin headline margin: the bound headline K=49/111790368 is about 1.1407 below 1/2000000 (the freeze-time margin rule was checked against the forward preview only); the labelled refinements (reverse sharp exponent 49/7154583552, reverse first-order cancellation 3773/1364628515625 which is quadratic in tau, forward loss-one F1-versus-F2 value 57270955/16662781836767232) are recorded and not bound.",
+    "Exponent convention: the bound uses the contract form ceil(d/diam) (exponent N-1 at e_z for every comparison); the sharp count 1+ceil(d/diam) gives exponent N, but a floor constant written that way is linear in tau (ratio exactly 100) and falls outside the prefrozen floor bracket, so every sharp form is labelled.",
+    "General comparisons: the reverse compares any two volumes directly (constant K); telescoping at exponent N-1 would give 889/1006113312 and a two-step union 49/55895184, both above 1/2000000; the forward telescoped constant 2734375/12204185915601 and its union constant are valid labelled values; the face sets are totally ordered (F1_N inside F2_N inside F1_(N+1)), so one nested comparison suffices for any pair of centered boxes.",
+    "Contract wording read as follows: the source set of a nested comparison is the shell, and the literal set of sites met by the new terms adds the outer layer of Lambda_N (98, 218, 386 sites at N=2,3,4) at distance N-1 from e_z, which gives the same bound once the source loss is charged; the fixed-point map has Lipschitz constant J_0G'(R) below 77/781250, while 2J_0G'(R) is the AM2 exclusion constant; gate_fields_topic_specific is read as the 12 frozen gate fields; the floor difference weight is e^beta=w=390625/148.",
+    "Inherited without re-proof: the AM2 multilinear majorant, fixed point, uniqueness in the ball and cutoff facts; the AV1 exact first-order coefficient and self-consistent remainder; the AY1 item-by-item F2 premises; the I1 dictionary; Banach, Weierstrass and the maximum principle are standard and not machine-checked.",
+    "Independence is limited to routes, enumerations and code: the contract and selection note name both mechanisms, the skeptic triage proposed both routes and the frozen parameters, all agents are correlated model agents, and isolation is verified for repository inputs only.",
+    "Upper bounds only; the -tau values replay the same |tau| formula; scientific priority is unverified."
+  ],
+  "loop": "BA1",
+  "previews": {
+    "bound_floor": "2.427780948757e-05",
+    "bound_headline": "4.383204105742e-07",
+    "cancellation_ratio": "1.006284402606e+04",
+    "forward_floor": "1.641314009070e-05",
+    "forward_headline": "2.240522242868e-07",
+    "forward_headline_margin": "2.231622567424e+00",
+    "headline_margin": "1.140718040816e+00",
+    "reverse_telescoped": "8.835982879829e-07"
+  },
+  "recommended_bound": {
+    "crude_majorant_reported": {
+      "floor_forward": "14453125/684115704",
+      "floor_reverse": "1/32",
+      "headline_forward": "9472/24454143",
+      "headline_reverse": "296/390625",
+      "meets_floor_target": true,
+      "meets_headline_target": false
+    },
+    "floor": {
+      "K": "49/2018304",
+      "K_preview": "2.427780948757e-05",
+      "also_certified_by": {
+        "K": "708203125/43148545682688",
+        "K_preview": "1.641314009070e-05",
+        "route": "weighted_norm"
+      },
+      "disc_radius": "tau_star=1/37888",
+      "exponent": "N-1",
+      "margin_preview": "3.432489795918e+03",
+      "q": "148/390625",
+      "route": "analytic_disc",
+      "target": "1/12",
+      "tau_ratio": "1",
+      "tier": "exact_first_order"
+    },
+    "headline": {
+      "K": "49/111790368",
+      "K_preview": "4.383204105742e-07",
+      "also_certified_by": {
+        "K": "2734375/12204185915601",
+        "K_preview": "2.240522242868e-07",
+        "comparison": "any two centered boxes, telescoped",
+        "route": "weighted_norm"
+      },
+      "disc_radius": "64|tau|",
+      "exponent": "N-1",
+      "margin_preview": "1.140718040816e+00",
+      "q": "1/64",
+      "route": "analytic_disc",
+      "target": "1/2000000",
+      "tau_ratio": "4340004/43129",
+      "tier": "exact_first_order"
+    },
+    "q_min": "148/390625",
+    "q_min_ratio": "100"
+  },
+  "replays": {
+    "forward": {
+      "frozen_outputs": {
+        "results.json": "644df274267b7ee822bf17d2403581a6c678745c9cb0db7062e41cd7d2ceda01",
+        "source-manifest.json": "57cb62dbeff29e52930f8b77237cd44ad859b4c8990ccce1364646b1098369f1"
+      },
+      "normal_and_optimized_byte_identical_to_frozen": true
+    },
+    "reverse": {
+      "frozen_outputs": {
+        "results.json": "ab495dc1fb03bf786e63f595a2ce46116a9e7b33357b647710b62fb373d10934",
+        "source-manifest.json": "e61c8946e1cd776408ea08b3a358676fb15629ba9e40c211b745e7b4cdac03ab"
+      },
+      "normal_and_optimized_byte_identical_to_frozen": true
+    },
+    "skeptic_pre_comparison": {
+      "files_unchanged": [
+        "research/round33/skeptic/ba1-contract-review.md",
+        "research/round33/skeptic/ba1-independent-derivation.md",
+        "research/round33/skeptic/ba1-independent/results.json",
+        "research/round33/skeptic/ba1_check.py"
+      ],
+      "freeze_record_sha256": "cb1e1f9b546da81f45c1a798e346ce25bb0b6a3792817b4cb23f280ab9621f21",
+      "normal_and_optimized_byte_identical_to_frozen": true,
+      "results_sha256": "2c3afdb2a3b04caa035af9f62c70ada6cb846331a95907cdf15d1b45cdc50fb1"
+    }
+  },
+  "reviewer": "skeptic (model agent, correlated ancestry)",
+  "scientific_priority_verified": false,
+  "secondary_sub_labels": [
+    "static_not_dynamic"
+  ],
+  "stage": "post_comparison",
+  "state_decay_claimed": false,
+  "sub_label": "boundary_decay_rate_only",
+  "supported_statement": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, 21 omitted faces per anchor entering as -(tau/3)W_f in normalized units delta=alpha/8; both signs |tau|<=10^-8; AM2 creation expansion with J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t); cover R={0,e_z}; coarse l-infinity metric with star diameter d_X=1), with the named construction families F1 = AQ1 centered whole-star boxes Lambda_N=[-N,N]^3 and F2 = I1 section 6 all-contained-face boxes with padding on the same Lambda_N, N at least 2: For the zero-selected patterned family at the same coupling |tau|<=10^-8, and for the named construction families F1 (centered whole-star boxes) and F2 (all-contained-face boxes with padding) on centered coarse cubes, the AM2 creation coefficients in each on-site cutoff space, on supports meeting the cover R, differ between two boxes of the named constructions by at most K q^(N-1) in the anchored norm, uniformly in the cutoff, where N is the smaller box size; this is decay of the coefficients of the named constructions at a rate in N, not decay of the reduced density, not a statement about untruncated creation coefficients, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a. Constants (exact, both signs, every comparison of the contract: F1 on Lambda_N versus Lambda_(N+1), F2 on Lambda_N versus Lambda_(N+1), F1 versus F2 on the same Lambda_N, any two centered boxes of size at least N and any two complete-factor volumes of one prescription containing Lambda_N): headline pair q=1/64 with K=49/111790368 (about 4.3832e-7; exact_first_order tier, analytic_disc route on the disc of radius 64|tau|; margin about 1.1407 against the frozen 1/2000000), also certified by the weighted_norm route with the smaller K=2734375/12204185915601 (about 2.2405e-7, labelled); floor pair q=148/390625=37888|tau| with K=49/2018304 (about 2.4278e-5; exact_first_order tier, analytic_disc route on the disc of radius tau_star=1/37888), also certified by the weighted_norm route with K=708203125/43148545682688 (about 1.6413e-5, labelled). The crude_majorant tier at q=1/64 (296/390625 analytic_disc, 9472/24454143 weighted_norm) misses 1/2000000 and is retained. The tau to tau/100 ratios are 4340004/43129 for the headline K, exactly 1 for the floor K and exactly 100 for q_min. The rate is in N, per coarse l-infinity step at fixed spacing; every interaction term present in one box and not the other lies at coarse l-infinity distance at least N-1 from R, and the bound uses the contract form ceil(d/diam) of the order-versus-distance count. For each family the whole sequence of coefficients on supports meeting R is Cauchy in each on-site cutoff space; this is a coefficient statement only, with no state, reduced density, common limit or untruncated coefficient asserted.",
+  "uniqueness_of_ground_state_claimed": false,
+  "verdict": "accepted_within_scope",
+  "weak_coupling_claim": false
+}

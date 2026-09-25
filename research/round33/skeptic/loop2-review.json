@@ -1,0 +1,529 @@
+{
+  "schema": "hnm-round33-skeptic-loop2-review-v1",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "reviewer": "Model-agent skeptic with correlated ancestry; not human peer review. Scratch: /tmp/claude-0/skeptic-r33-loop2/ (not evidence, not a premise).",
+  "date": "2026-09-24",
+  "status": "loop2_review_before_freeze",
+  "decision": {
+    "ba1": "veto_until_blocking_edits_applied",
+    "ba2": "veto_until_blocking_edits_applied",
+    "plan_v1": "signed_off_with_required_changes"
+  },
+  "verification": {
+    "drafts_as_committed_fail_freezer": "R1 (inequality notation read as placeholder spans): BA1 $.model; BA2 $.model, $.parameters.targets.comparison, $.parameters.targets.within_family_cauchy; checked with the current freeze_contract.py (commit 7c4c344, rule R10 included) on copies with a patched ROOT",
+    "minimal_R1_fix_freezes": true,
+    "proposed_copies_with_all_blocking_edits_freeze": "yes, on a scratch overlay ROOT with stand-ins for deliberation-2.md and the NS excerpt (the two files the edits require the advisor to create)",
+    "phrase_scan_templates": "draft and proposed templates of both loops: no hit, scanned without template removal against the round list, the contract list and a stricter list",
+    "nachtergaele_sims_pdf_sha256": "501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba (matches research/round29/experts/aq-primary-bindings.json)"
+  },
+  "ba1": {
+    "blocking": [
+      {
+        "path": "$.model",
+        "replacement": "Zero-selected patterned family (AM2/AQ1): SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0), Haar product reference, 21 omitted faces per anchor with normalized coefficient -(tau/3) per face (delta=alpha/8), both signs |tau|<=10^-8; the AM2 creation expansion with J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t); construction families F1 (AQ1 centered whole-star boxes Lambda_N=[-N,N]^3 in coarse coordinates) and F2 (I1 section 6 all-contained-face boxes with padding on the same Lambda_N), N at least 2; cover R={0,e_z}.",
+        "reason": "R1: the freezer reads the span from \"J<=28|tau|\" to \"N>\" as a placeholder; the draft does not freeze (verified with the current freeze_contract.py on a copy)."
+      },
+      {
+        "path": "$.parameters.weights",
+        "replacement": "forward: diameter-weighted anchored norm ||c||_w = max_u sum_{I containing u} w^{diam(I)} ||c_I||, diam the coarse l-infinity diameter on factor sites; headline w = e^mu = 64 (q = 1/w = 1/64); admissible w from 1 to 390625/148 (self-map J_0 w G(R) at most R); loss factor w^{d_X} = w charged once per interaction term, never per creation; the star-count weight w^{n(I)} (n(I) the least number of stars in a connected cover of I, n(I) at least diam(I)) is a labelled alternative, never mixed with the diameter weight. Difference weight: ||delta||_{B,beta} = max_u sum_{I containing u} e^{beta rho_B(I)} ||delta_I|| with rho_B(I) = max over p in I of d_inf(p,B), where B is the source set of the comparison (the sites met by the interaction terms present in one box and not the other: the shell Lambda_{N+1} minus Lambda_N for nested comparisons, the outer layer max_i |b_i| = N of Lambda_N for F1 versus F2); e^beta = 64 with beta at most mu; the weight grows with distance from B, that is towards R; a weight growing with distance from R, or a non-submultiplicative pure distance weight, is the rejected reversed direction. Reverse: complex coupling z on a disc of declared radius rho at most tau_star = 1/37888 in the J = 28|z| parametrization (self-map 28 rho G(R) at most R with G(R) below 148/7), q = |tau|/rho: rho = tau_star for the floor pair, rho = 64|tau| for the headline pair.",
+        "reason": "Veto conditions 1 and 4 (recommendation.json BA1): the draft names two inequivalent weights as \"equivalent\" (n(I) is at least the l-infinity diameter, not equal to it), gives no numeric w, e^beta or maximum weight, and its phrase \"growing towards R's complement\" states the reversed direction while \"measured by distance from the boundary source\" states the correct one. The reverse radius for the headline pair was not declared."
+      },
+      {
+        "path": "$.parameters.cutoff",
+        "replacement": "each on-site cutoff space Q_L (product of 1_[0,L](h_x)), every L (for L at least 24 the first-order coefficients are exact, AV1 section 7); every coefficient statement holds in each Q_L with constants uniform in L; no cutoff removal is applied to coefficients and no untruncated creation expansion is asserted (AM2 section 6 removes the cutoff for eigenvalues and AV1 F20-F23 for the ground vector; reduced densities are BB1/BB2)",
+        "reason": "Veto condition 6 (untruncated coefficients): \"then removed as in AV1\" applies AV1's ground-vector cutoff removal to coefficients, which AM2 never defines untruncated; it contradicts control untruncated_coefficients_not_asserted."
+      },
+      {
+        "path": "$.parameters.N_min",
+        "replacement": "2 (every comparison is for N at least 2; the exponent N-1 is then at least 1)",
+        "reason": "Veto condition 1 lists N_0 as a parameters field; the draft has N at least 2 only in the model prose."
+      },
+      {
+        "path": "$.parameters.clock",
+        "replacement": "not applicable to static coefficients; the round clock s=alpha*t_E/hbar, theta=alpha*t/hbar is named in preregistration.clock",
+        "reason": "Plan contract rule: metric, weights, window and clock are named in parameters."
+      },
+      {
+        "path": "$.parameters.rate_constant_pair",
+        "replacement": {
+          "headline": {
+            "q": "1/64",
+            "K_target": "1/2000000",
+            "tier": "exact_first_order",
+            "route": "weighted_norm (forward); analytic_disc with rho = 64|tau| (reverse)"
+          },
+          "rate_floor": {
+            "q": "148/390625",
+            "K_target": "1/12",
+            "tier": "named by the producer from the closed vocabulary (crude_majorant or exact_first_order)",
+            "route": "weighted_norm with w = 390625/148 (forward); analytic_disc with rho = tau_star (reverse)",
+            "note": "q_min = 37888|tau| = |tau|/tau_star at the cap; the floor rate scales with |tau|"
+          },
+          "crude_tier_reported": "crude_majorant at q = 1/64 reported, not a target",
+          "tier_label_rule": "every constant carries a tier in {crude_majorant, exact_first_order} and a route in {weighted_norm, analytic_disc}; exact_first_order requires the exact first-order coefficients (AV1) and the self-consistent inequality t at most w t_1/(1 - J w G'(R)) re-derived in the stated norm; mapping from the skeptic prospective ids: crude_i = crude_majorant, exact_first_order_ii = exact_first_order, weighted_i = weighted_norm with crude_majorant, weighted_ii = weighted_norm with exact_first_order"
+        },
+        "reason": "Veto condition 8 (margin below 2): the floor target 1/16 against the analytic preview (1/32)/(1-q) = 0.0312618 has margin 1.99924 (exact 2(1-148/390625)), below the frozen-margin rule; 1/12 gives 2.666. The headline tier string mixed a vocabulary token with prose and the closed vocabulary conflates routes (weighted_norm, analytic_disc) with tiers (crude_majorant, exact_first_order), so tier_mixing_rejected had no deterministic meaning."
+      },
+      {
+        "path": "$.preregistration.target",
+        "replacement": {
+          "quantity": "K at q=1/64 (exact first-order tier) and K at q=148/390625",
+          "value": "1/2000000 and 1/12",
+          "comparator": "<=",
+          "note": "blind discriminating threshold for a new estimate; margins at least 2 against the loop-1 panel previews (about 2.27 for the headline pair and about 2.67 for the floor pair)"
+        },
+        "reason": "Follows the floor-target change; the old note claimed a margin \"about 2\" that is 1.99924."
+      },
+      {
+        "path": "$.preregistration.scaling_brackets_per_constant",
+        "replacement": {
+          "K_exact_first_order_at_q_1_64": "[100,102.5] (deliberation preview 101.03)",
+          "K_floor_pair": "[99/100, 101/100] (the floor rate q_min(tau) = 37888|tau| scales with |tau| and K_floor is tau-independent at leading order: analytic 2R/(1-q) has ratio about 1.00038, the weighted form at w = 1/q_min is invariant because J w and w t_1 are)",
+          "q_min": "exactly 100 (linear in |tau|)"
+        },
+        "reason": "Veto condition 9 (bracket per constant): with the rate at q_min the tau-dependence sits in q (ratio exactly 100), not in K; the draft bracket [99,101] for K_floor would reject every valid floor constant (ratio near 1)."
+      },
+      {
+        "path": "$.preregistration.sub_labels_allowed",
+        "replacement": [
+          "boundary_decay_rate_only",
+          "static_not_dynamic"
+        ],
+        "reason": "Veto condition 5 (no state statement in BA1): convergence_of_named_constructions, common_limit_of_named_constructions and dynamics_on_compact_windows would let a coefficient result carry a state or dynamics label."
+      },
+      {
+        "path": "$.preregistration.mandatory_sentence_template",
+        "replacement": "For the zero-selected patterned family at the same coupling |tau|<=10^-8, and for the named construction families F1 (centered whole-star boxes) and F2 (all-contained-face boxes with padding) on centered coarse cubes, the AM2 creation coefficients in each on-site cutoff space, on supports meeting the cover R, differ between two boxes of the named constructions by at most K q^(N-1) in the anchored norm, uniformly in the cutoff, where N is the smaller box size; this is decay of the coefficients of the named constructions at a rate in N, not decay of the reduced density, not a statement about untruncated creation coefficients, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+        "reason": "Veto condition 6: the public sentence must carry the cutoff qualifier, since AM2 coefficients exist only in each cutoff space."
+      },
+      {
+        "path": "$.required[3]",
+        "replacement": "4. Prove the coefficient-difference bound sum_{I containing u, I meeting R} ||c_I^{box1}-c_I^{box2}|| <= K q^(N-1) for u in R with the frozen headline pair (q=1/64, K<=1/2000000 at the exact first-order tier) and the floor pair (q=148/390625, K at most 1/12), both signs of tau, for every comparison; report the crude-majorant tier separately; never use the global Lipschitz constant 2J_0G'(R) as a decay factor.",
+        "reason": "Follows the floor-target change (the draft item still carried 1/16)."
+      },
+      {
+        "path": "$.claim_exclusions[4]",
+        "replacement": "any statement about untruncated creation coefficients (AM2 section 6 removes the cutoff for eigenvalues and AV1 F20-F23 for the ground vector; neither defines untruncated coefficients)",
+        "reason": "Veto condition 6: \"beyond the AM2 cutoff-removal chain\" implies such a chain exists for coefficients; it does not."
+      },
+      {
+        "path": "$.preregistration.error_terms_itemized",
+        "replacement": [
+          "weighted_contraction_loss",
+          "boundary_source_terms",
+          "order_versus_distance_count",
+          "exact_first_order_remainder",
+          "cutoff_uniformity",
+          "arithmetic"
+        ],
+        "reason": "Follows the cutoff edit."
+      },
+      {
+        "path": "$.acceptance",
+        "replacement": {
+          "accepted_within_scope": "Both routes prove the coefficient-difference bound for every comparison, at both signs, with each proved constant at most its frozen target (the margin of at least 2 is a freeze-time property of the target against the loop-1 previews, not an acceptance condition).",
+          "limited": "Only the floor pair, only one comparison, or only the crude tier is proved; or the diameter convention fails and only the l1 alternative closes.",
+          "insufficient": "The weighted contraction fails at the cap, or the bound is derived from the global Lipschitz constant."
+        },
+        "reason": "The draft phrase \"frozen pairs met (margin at least 2)\" can be read as requiring K at most target/2, which silently halves every target and flips verdicts; the margin rule is a freeze-time rule."
+      },
+      {
+        "path": "$.selected_after",
+        "replacement": "research/round33/advisor/deliberation-2.md",
+        "reason": "plan.json is a mutable file (status plan_v1_pending_loop2_signoff; history appended after each sub-round) and is bound by no hash; the selection must follow the loop-2 sign-offs (Round32 precedent: AV1 selected_after deliberation-3.md). The file must exist before freeze (freezer R8)."
+      },
+      {
+        "path": "$.new_control_semantics",
+        "replacement": {
+          "coherent_evidence_tampering": "Flipping a required control Boolean or removing a declared snapshot with every hash rebound is still rejected.",
+          "exact_arithmetic_admission": "Admission Booleans depend only on Fraction arithmetic with directed enclosures; Arb/mpmath/numpy values are labelled previews and are never read by an admission check.",
+          "no_priority_or_continuum_claim": "results.json carries scientific_priority_verified:false and continuum_claim:false; historical, occult or governmental provenance supplies no premise.",
+          "changed_model_relabelled": "Packet tau, triple, family, metric, weights, window and model id must equal the contract; a uniform-model, other-group, 2D or finite-graph result under the patterned-family label is rejected.",
+          "insufficient_verdict_retained": "A missed target is reported limited/insufficient with its dominating term at unchanged tau, q, mu, N_0; retuning to pass is rejected.",
+          "tau_scaling_exponent": "Each headline constant's exact ratio C(tau)/C(tau/100), computed from the same exact formula without intermediate rounding, lies in its bracket in preregistration.scaling_brackets_per_constant; a bound of the wrong tau order, or a bracket chosen after evaluation, is rejected.",
+          "wrong_delta_alpha_hbar_clock": "Physical clock theta=alpha t/hbar; AQ1 normalized u=theta/8 appears only with the conversion shown; a window stated in u but labelled theta (eightfold error) is rejected.",
+          "missing_incoming_stars": "Per-site sums include incoming anchors (J=28|tau|, four stars); the outgoing-star-only 7|tau| is rejected in every contraction, source and Lieb-Robinson norm.",
+          "root_n_misuse": "Deterministic bounds add linearly over faces, shells and nodes; division by sqrt(N) or sqrt(#faces) is rejected.",
+          "tier_mixing_rejected": "Every constant names its tier in {crude_majorant, exact_first_order} and its route in {weighted_norm, analytic_disc}; an exact_first_order constant uses the exact first-order coefficients (AV1) with the self-consistent inequality t at most w t_1/(1 - J w G'(R)) re-derived in the norm in which it is stated; an exact first-order source combined with a crude_majorant t is labelled crude_majorant; any other mixing is rejected.",
+          "reverse_premise_isolation": "The reverse inputs/ inventory equals AGENTS.md, this contract and shared_premises exactly; it contains no skeptic triage, recommendation, prospective-controls or loop-2 review, no deliberation, no lens memo, recommendation or loop-2 response, and no forward file of this loop.",
+          "face_count_all_sites": "49 faces per factor, 15 owner sets, 82 meeting R, 10 inside R derived from the I1 table by translation covariance; literals or site-0-only counts are rejected.",
+          "uniform_in_N_not_in_a": "Every uniformity statement says 'in N at fixed spacing'; a uniformity claim in the lattice spacing, or an unqualified uniformity word next to a rate, is rejected.",
+          "placeholder_span_rejected": "(freezer R1) Any angle-bracket span containing whitespace, a vertical bar or 'e.g.' blocks the freeze; inequalities in contract strings are written in words or with one bracket direction per string.",
+          "negation_aware_phrase_scan": "tools/phrase_scan.py (round list plus preregistration.forbidden_phrasings) is run whole-sentence and negation-aware on report, results and gate texts with the mandatory template removed as one literal; an affirmative hit is rejected.",
+          "parameters_declare_metric_weights_window": "Metric, d_X, weights (w=e^mu, e^beta), N_0, the time window and the clock are fields of parameters, not prose; absence blocks the freeze.",
+          "global_lipschitz_not_decay": "The admitted sup-norm Lipschitz constant 2J_0G'(R) below 77/390625 bounds ||c^{N+1}-c^N||_a only by 37/6249384 with no decay; using it as a per-shell decay factor is rejected.",
+          "weighted_norm_contraction_rechecked": "The weighted AM2 inequalities J_0 w G(R) at most R (w at most 390625/148) and the Lipschitz condition are re-evaluated as exact rationals with the declared w; citing the unweighted AM2 constants for the weighted ball is rejected.",
+          "loss_per_interaction_not_per_creation": "The weight loss e^{mu d_X} is charged once per interaction term; omitting it, or charging it only per creation, is rejected by a fixture where the output diameter exceeds the sum of creation diameters by d_X.",
+          "diameter_subadditivity_through_interaction": "diam(M) at most d_X+sum_j diam(I_j) is derived from 'each I_j meets X'; a fixture with M=N minus X (disconnected output) must still satisfy it, and a max-instead-of-sum shortcut is rejected where invalid.",
+          "coarse_metric_named": "The metric (coarse l_inf or l1 on factor indices) and d_X (1 or 2) are declared in parameters; mixing metrics between the weight and the distance is rejected.",
+          "weight_direction_toward_source": "The difference weight e^{beta rho_B(I)}, rho_B(I) = max over p in I of d_inf(p,B), grows with distance from the source set B of the comparison (towards R); a weight growing with distance from R, or a non-submultiplicative pure distance weight, is rejected by a fixture.",
+          "cardinality_weight_rate_labelled": "If support-size weights e^{mu|I|} are used, the loss e^{4 mu} and the rate q at least 0.1395 per site are stated; relabelling it as the diameter rate 3.79e-4 is rejected.",
+          "boundary_distance_exact": "Distances are derived: shell Lambda_{N+1} minus Lambda_N at l_inf distance N from e_z (N+1 from 0), F2 outer layer at N-1; an off-by-one exponent is rejected.",
+          "boundary_source_new_terms_only": "The source contains only interaction terms added from Lambda to Lambda' (each meeting the source set); a source charged with old terms, or new terms not meeting it, is rejected.",
+          "f2_regrouping_charged_once": "F2 clipped groups that gain faces from N to N+1 are charged face by face (per-site face sum 49|tau|/3 at most J) and never twice.",
+          "rate_constant_pair_prefrozen": "The headline (q, K) and the weights are frozen in the contract; optimizing q per N after the constants are seen and reporting it as the rate is rejected (a proved family q in [q_min,1) may be reported as labelled).",
+          "q_min_not_crossed": "A rate below the proved minimum q_min = J G(r)/r at the declared radius (148/390625 at r = R = 1/64) is rejected; a rate proved at another radius is reported only with that radius named.",
+          "analytic_route_disc_radius": "The analyticity route uses a declared disc radius rho at most tau_star = 1/37888 (self-map 28 rho G(R) at most R) with q = |tau|/rho (rho = tau_star for the floor pair, rho = 64|tau| for the headline pair) and the order-versus-distance count; extending it to rho_R without a proved zero-free region for the complexified normalization is rejected.",
+          "untruncated_coefficients_not_asserted": "Every coefficient statement holds in each on-site cutoff space Q_L with constants uniform in L; no cutoff removal is applied to coefficients and no untruncated creation expansion is asserted (AM2 section 6 removes the cutoff for eigenvalues, AV1 F20-F23 for the ground vector).",
+          "decay_rate_in_N_not_a": "q is per coarse step at fixed spacing and strong bare coupling (a coarse step is (4a,2a,a)); a conversion to fm, a physical length-scale reading or a rate in the lattice spacing is rejected.",
+          "coefficient_decay_not_marginal_decay": "A fixture where coefficients meeting R are unchanged but an outside coefficient changes rho_R through a straddling support (AV1 F13 type) must be exhibited; inferring state decay from coefficient decay alone is rejected.",
+          "two_families_named": "F1 (AQ1 whole-star boxes) and F2 (I1 section 6 all-contained faces with padding) on centered Lambda_N, N at least 2, declared before production; a class, if used, is frozen.",
+          "subsequence_versus_whole_sequence": "Every limit statement says whole sequence or subsequence; whole-sequence claims come only from a Cauchy bound."
+        },
+        "reason": "Nineteen of the thirty-four control ids are new in Round33 and four more are amended or renamed Round32 controls; their Round33 meaning exists only in skeptic/prospective-controls.json, which no producer receives (and the reverse must not). Round32 contracts carried new_control_semantics; without it the controls are not executable as damaging mutations and the tier and bracket semantics would silently follow the stale prospective wording. Text sanitized of angle brackets for R1."
+      }
+    ],
+    "non_blocking": [
+      {
+        "path": "$.parameters.comparisons[3]",
+        "replacement": "any two centered boxes Lambda_M and Lambda_M' (M, M' at least N) of F1 or F2, by telescoping and the same-N F1/F2 comparison; separately labelled: any two finite complete-factor volumes of one prescription both containing Lambda_N, compared through their union (input to the BB2 pre-registered translation item)",
+        "reason": "The named constructions are centered cubes, so \"general volumes via the union\" is either redundant or a scope extension; state which, and label the general-volume item as the BB2 input."
+      },
+      {
+        "path": "$.controls and $.preregistration.controls_required.ids",
+        "replacement": [
+          "coherent_evidence_tampering",
+          "exact_arithmetic_admission",
+          "no_priority_or_continuum_claim",
+          "changed_model_relabelled",
+          "insufficient_verdict_retained",
+          "tau_scaling_exponent",
+          "wrong_delta_alpha_hbar_clock",
+          "missing_incoming_stars",
+          "root_n_misuse",
+          "tier_mixing_rejected",
+          "reverse_premise_isolation",
+          "face_count_all_sites",
+          "uniform_in_N_not_in_a",
+          "placeholder_span_rejected",
+          "negation_aware_phrase_scan",
+          "parameters_declare_metric_weights_window",
+          "global_lipschitz_not_decay",
+          "weighted_norm_contraction_rechecked",
+          "loss_per_interaction_not_per_creation",
+          "diameter_subadditivity_through_interaction",
+          "coarse_metric_named",
+          "weight_direction_toward_source",
+          "cardinality_weight_rate_labelled",
+          "boundary_distance_exact",
+          "boundary_source_new_terms_only",
+          "f2_regrouping_charged_once",
+          "rate_constant_pair_prefrozen",
+          "q_min_not_crossed",
+          "analytic_route_disc_radius",
+          "untruncated_coefficients_not_asserted",
+          "decay_rate_in_N_not_a",
+          "coefficient_decay_not_marginal_decay",
+          "two_families_named",
+          "subsequence_versus_whole_sequence",
+          "full_original_wilson_cover",
+          "gate_fields_topic_specific"
+        ],
+        "reason": "full_original_wilson_cover is a universal control (the exponents N-1, N, N+1 depend on R={0,e_z}); gate_fields_topic_specific makes the exported fields executable. Add their semantics: {\"full_original_wilson_cover\": \"The cover R={0,e_z} (48 links, 36 endpoints, 7 incident anchors) is used; a one-factor cover is rejected.\", \"gate_fields_topic_specific\": \"Convergence contracts export whole_sequence_claimed, rate_in_N_claimed, common_limit_claimed, uniqueness_all_ground_states_claimed and dynamics_level; a missing field is rejected.\"}"
+      },
+      {
+        "path": "$.preregistration.gate_fields_required",
+        "replacement": {
+          "uniqueness_of_ground_state_claimed": false,
+          "whole_sequence_claimed": false,
+          "state_decay_claimed": false,
+          "rate_in_N_claimed": true,
+          "rate_in_a_claimed": false,
+          "continuum_claim": false,
+          "scientific_priority_verified": false,
+          "translation_invariance_claimed": false,
+          "common_limit_claimed": false,
+          "weak_coupling_claim": false,
+          "coefficient_cauchy_claimed": true,
+          "coefficient_cauchy_scope": "AM2 creation coefficients of F1 and F2 on supports meeting R, in each on-site cutoff space"
+        },
+        "reason": "translation_invariance_claimed is a plan gate field; the coefficient Cauchy property that BA1 does prove needs its own scoped field so that whole_sequence_claimed=false (states) stays unambiguous."
+      },
+      {
+        "path": "$.preregistration.scaling_brackets_per_constant.K_exact_first_order_at_q_1_64",
+        "replacement": "[95,105] (linear in tau with a positive nonlinear correction; computed from the same exact formula at tau and tau/100 without intermediate rounding)",
+        "reason": "[100,102.5] contains my three exact variants (101.030, 101.261, 101.897) but has no slack at the lower edge for a rounded K(tau/100); [95,105] still separates linear from square-root (10) and quadratic (10^4)."
+      },
+      {
+        "path": "$.preregistration.target.note, $.preregistration.scaling_brackets_per_constant, $.parameters.rate_constant_pair.crude_tier_reported",
+        "replacement": "remove the preview numerals (2.2004e-7, 0.0313, 101.03, 2.9e-4) from producer-visible contract fields; record them in the loop-2 synthesis, which no producer receives",
+        "reason": "The reverse should derive its constants blind; the freeze-time margin can be documented outside the premise closure."
+      },
+      {
+        "path": "$.shared_premises",
+        "replacement": "append research/round32/advisor/aw1-gate.json and research/round32/forward/aw1/report.md",
+        "reason": "The exact_first_order tier rests on c^(1) = L_0 = -(tau/72) sum_f W_f Omega_0 and the amplitude lemma (AW1 F02, F11-F15); AV1 carries t_1 but AW1 carries the formula. Route-neutral, both producers."
+      },
+      {
+        "path": "$.parameters.metric",
+        "replacement": "coarse l-infinity metric on factor sites; every whole star phi_b has support b+S with l-infinity diameter d_X=1 (to be verified by enumeration; an l1 reading with diameter 2 is a labelled alternative, never mixed); any later combination with the coarse l1 Lieb-Robinson constants of BA2 converts explicitly (d_inf at most d_1 at most 3 d_inf)",
+        "reason": "BA1 (l-infinity) and BA2 (l1) are correct separately; BB1/BB2 will combine them."
+      },
+      {
+        "path": "$.forward_additional_premises",
+        "replacement": "none",
+        "reason": "Round32 gave forward producers the skeptic triage; here triage (a).2 is the forward route in full, so giving it would make my previews a copy rather than a separate check. If the advisor adds any, list them and record that the triage numbers no longer count as a separate derivation."
+      },
+      {
+        "path": "$.model",
+        "replacement": "append: \"the F2 padding sites carry no interaction, so coefficients on supports meeting the padding vanish\"",
+        "reason": "Makes the padding explicit for coefficients too (AY1 forward section 1)."
+      }
+    ]
+  },
+  "ba2": {
+    "blocking": [
+      {
+        "path": "$.model",
+        "replacement": "Zero-selected patterned family (AM2/AQ1) as in BA1, both signs |tau|<=10^-8; construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on the same Lambda_N, N at least 2; Heisenberg dynamics generated by the finite-box Hamiltonians with the unbounded on-site Casimir terms h_b and bounded finite-range interactions; observables A in B(H_R), cover R={0,e_z}.",
+        "reason": "R1: the span from \"|tau|<=10^-8\" to \"N>\" is read as a placeholder; the draft does not freeze."
+      },
+      {
+        "path": "$.parameters.metric",
+        "replacement": "l1 metric on the coarse Z^3 factor lattice, as in AQ1 section 3 (F(r)=(1+r)^-4 with 4r^2+2 sites at l1 distance r, convolution constant C at most 224, ||Phi||_F at most 81J = 2268|tau| for whole stars of l1 diameter 2); the F2 owner-set interaction ||Phi'||_F at most 1323|tau| (AY1 reverse) in the same metric; no fine-site metric and no coarse-to-fine conversion enters any constant",
+        "reason": "AQ1 section 3 uses the l1 metric on the coarse factor lattice (stars S={0,e_x,e_y,e_z} of l1 diameter 2, shell count 4r^2+2); \"fine sites\" would invalidate C at most 224 and ||Phi||_F at most 2268|tau|. Metric veto (recommendation.json, parameters rule)."
+      },
+      {
+        "path": "$.parameters.boundary_source",
+        "replacement": "H^{F2,pad}_N minus H^{F1}_N equals the sum of the 28N(5N+1) faces with owner set inside Lambda_N and anchor b with b+S not inside Lambda_N, plus the on-site terms h_x on the padding B_+ minus Lambda_N (I1 section 6, AY1 forward section 1); the padding terms commute with H^(2)_N, with every face and with B(H_R), so they factor out of the evolution exactly and the Duhamel difference is the bounded sum over the extra faces (derived, not assumed; F2 on Lambda_N without padding is the Nachtergaele-Sims native restriction of Phi'); every owner of every extra face lies on the outer layer max_i |b_i| = N, hence at coarse l1 distance at least N-1 from e_z and at least N from 0; count and distance derived by enumeration on Lambda_2 and Lambda_3 plus an all-size argument; each face charged exactly once",
+        "reason": "Veto conditions (unbounded on-site terms; extra-face derivation): the draft source omits the padding on-site terms of the F2 prescription; they are unbounded, so a Duhamel difference that silently keeps them is not bounded and one that silently drops them is unjustified. I identified this from AY1 forward section 1 (\"I1 section 6 pads to B_+ with the onsite h_x alone\")."
+      },
+      {
+        "path": "$.parameters.targets",
+        "replacement": {
+          "comparison": "||tau^{F2,N}_theta(A)-tau^{F1,N}_theta(A)|| <= 6x10^-11 (5N+1) N^-3 ||A|| for |theta| at most 8 and N at least 2 (polynomial_lieb_robinson tier; previews 2.549e-11 and 2.566e-11)",
+          "within_family_cauchy": "sup over M greater than N of ||tau^{F1,M}_theta(A)-tau^{F1,N}_theta(A)|| at most 2.5x10^-10/(N-1) ||A|| for |theta| at most 8 and N at least 2, and the same for F2 (preview 1.0195e-10 for F1); hence ||T_theta(A)-tau^{F1,N}_theta(A)|| at most 2.5x10^-10/(N-1) ||A||; the O(1/N) rate is the honest polynomial-F rate; an N to N+1 bound alone is not a Cauchy estimate",
+          "f2_dynamics": "the F2 finite-box evolutions converge as a whole sequence in norm on compact windows and their limit equals the AQ1 limit dynamics T_theta (identified through the comparison bound); AQ1 sections 4-5 rerun for every subsequential F2 limit state (AY2 row O6)"
+        },
+        "reason": "R1 on two strings; and the within-family target quantified N to N+1 only: a bound c/(N-1) per step is harmonic and does not make the sequence Cauchy. The preview 1.0195e-10 already bounds all M above N (shell sum from N-1 to infinity), so the fix keeps the margin 2.45. O6 per the AY2 gate includes AQ1 sections 4-5 for F2."
+      },
+      {
+        "path": "$.required",
+        "replacement": [
+          "1. Quote the Lieb-Robinson inequality verbatim from the committed source excerpt research/round33/sources/nachtergaele-sims-1410.8174v1.md (Nachtergaele-Sims arXiv:1410.8174v1, Theorem 3.1, eqs. (51)-(52), with the definitions (40), (41), (44), (48)-(50); limit dynamics Theorem 4.1, eq. (77)), with F, C and ||Phi||_F named, and place the unbounded on-site terms h_b exactly as that theorem's setting (44)-(47) and its interaction-picture proof require; the AQ1 report is the placement record, not the quotation source; never paraphrase.",
+          "2. Derive the F2-minus-F1 boundary source on Lambda_N: the extra faces, their count 28N(5N+1), their anchors and their exact l1 distance (at least N-1 in coarse units, converted to fine units) from R, by enumeration on Lambda_2 and Lambda_3 plus an all-size argument; charge each face exactly once.",
+          "3. Prove the Duhamel comparison ||tau^{F2,N}_theta(A)-tau^{F1,N}_theta(A)|| <= B(N)||A|| for |theta|<=8 with B(N) explicit, quadratic in tau (state why the first order vanishes or is bounded), with the inner-family constants of the family whose evolution is inside the integral named; evaluate at the cap, both signs, and meet the frozen target 6x10^-11 (5N+1) N^-3 (margin at least 2).",
+          "4. Prove the within-family Cauchy estimate sup over M greater than N of ||tau^{F,M}_theta(A)-tau^{F,N}_theta(A)|| for F = F1 and F = F2 at the honest polynomial rate and meet 2.5x10^-10/(N-1); prove that the F2 evolutions converge as a whole sequence on compact windows and that the limit equals the AQ1 limit dynamics T_theta; rerun AQ1 sections 4-5 for every subsequential F2 limit state (stationarity under T_theta, strong continuity of the GNS evolution, nonnegative generator) with F2's own subsequences; never claim exponential decay in N with the polynomial F.",
+          "5. State the honest meaning: algebraic Heisenberg dynamics of the named constructions on a compact window; not equality of GNS dynamics or of correlation functions of different states (those need BB2); export the gate fields; quote the mandatory sentence template once as one unbroken span.",
+          "6. Declare and check the tau to tau/100 scaling of each headline constant against preregistration.scaling_brackets_per_constant (comparison and Cauchy coefficients are quadratic in tau: [9500,10500]); exact finite fixtures for the traps (polynomial versus exponential tail; an unbounded on-site term placed wrongly; the padding on-site terms left in the Duhamel difference; an inner-family constant swapped; an N to N+1 bound summed as a Cauchy estimate); every control executed as a damaging mutation."
+        ],
+        "reason": "Item 1: AQ1 does not state the inequality at all (it cites \"Section3 and Theorem4.1\" and says the hypotheses are met); the inequality is Theorem 3.1 eq. (51), the limit Theorem 4.1 eq. (77) (checked on the arXiv v1 PDF whose sha256 matches research/round29/experts/aq-primary-bindings.json). Item 4: quantifier and O6. Item 6: the bracket may not be chosen by the producer after the tau order is derived."
+      },
+      {
+        "path": "$.shared_premises",
+        "replacement": [
+          "research/round29/forward/am2/report.md",
+          "research/round29/reverse/am2/report.md",
+          "research/round29/skeptic/am2.md",
+          "research/round29/advisor/am2-gate.json",
+          "research/round29/forward/aq1/report.md",
+          "research/round29/advisor/aq1-gate.json",
+          "research/round29/forward/aq2/report.md",
+          "research/round21/forward/i1/report.md",
+          "research/round32/advisor/av1-gate.json",
+          "research/round32/forward/av1/report.md",
+          "research/round32/reverse/av1/report.md",
+          "research/round32/advisor/ay1-gate.json",
+          "research/round32/forward/ay1/report.md",
+          "research/round32/reverse/ay1/report.md",
+          "research/round32/advisor/ay2-gate.json",
+          "research/round32/forward/ay2/report.md",
+          "research/round33/methods/paired-physics-research/SKILL.md",
+          "research/round33/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+          "research/round33/methods/newton-analysis-synthesis/SKILL.md",
+          "research/round33/methods/tesla-mechanism-resonance/SKILL.md",
+          "research/round33/methods/historical-physics-panel/SKILL.md",
+          "research/round33/methods/qeg-research-advisor/references/round32-state-lemma-and-window.md",
+          "research/round33/advisor/selection-ba2.md",
+          "research/round33/sources/nachtergaele-sims-1410.8174v1.md"
+        ],
+        "reason": "The repository holds no verbatim statement of the theorem; Round29 kept its reading copy in /tmp and recorded only hashes. The advisor must commit, before freeze, an excerpt with the verbatim statements of Theorem 3.1 (eqs. (40), (41), (44)-(52)) and Theorem 4.1 (eqs. (77)-(80)), the URL https://arxiv.org/pdf/1410.8174v1, PDF sha256 501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba, PDF pages 7-8 and 11-12, extraction method and date. It is route-neutral and goes to both producers."
+      },
+      {
+        "path": "$.direction_note",
+        "replacement": "Forward: Duhamel over the extra F2 faces with the inner F1 evolution bounded by the whole-star Nachtergaele-Sims constants (Phi, 2268|tau|). Reverse: Duhamel with the inner F2 evolution bounded by the owner-set constants (Phi', 1323|tau|, re-derived for F2 on Lambda_N) for the comparison; each family against its own Nachtergaele-Sims limit (Theorem 4.1) for the within-family Cauchy estimates; identification of the two limits from the comparison. The triangle inequality through the two limits gives only O(1/N) and cannot meet the comparison target; it may be reported only as a labelled weaker bound. Independence is limited to the inner family, the interaction indexing, the constants, the enumeration and the code.",
+        "reason": "The drafted reverse (\"comparison bound by the triangle inequality with its own constants\") yields (1.0195e-10 + 5.94e-11)/(N-1) = 1.61e-10/(N-1), which misses the frozen comparison target at every N (N=2: 1.61e-10 against 8.25e-11; N=100: 1.63e-12 against 3.0e-14), so the loop would be limited by construction. The F2-inner Duhamel preview is 1.485e-11 (5N+1)N^-3, margin 4.04. This corrects my own triage, which proposed the limit route for the reverse without checking it against the comparison target. selection-ba2.md must be updated to match."
+      },
+      {
+        "path": "$.acceptance",
+        "replacement": {
+          "accepted_within_scope": "Both routes prove the comparison and the within-family Cauchy estimates with each proved constant at most its frozen target, the F2 limit dynamics identified with AQ1's, and AQ1 sections 4-5 rerun for F2 limit states (the margin of at least 2 is a freeze-time property of the targets, not an acceptance condition).",
+          "limited": "Only the comparison or only the Cauchy estimates are proved, a target is missed at some N, or the F2 limit-state properties (O6) are not closed.",
+          "insufficient": "The Lieb-Robinson inequality does not apply to the unbounded on-site terms as placed, or the boundary source is miscounted."
+        },
+        "reason": "Removes the ambiguous \"margin at least 2\" acceptance reading (it would halve the targets) and aligns acceptance with the O6 item."
+      },
+      {
+        "path": "$.preregistration.scaling_brackets_per_constant",
+        "replacement": {
+          "comparison_coefficient": "[9500,10500] (quadratic in tau; the loop-1 modern form 3969 tau^2 theta^2 e^{127008|tau||theta|} has ratio about 10101.6 and the skeptic form about 10033.6, so [9900,10100] would reject a valid bound)",
+          "cauchy_coefficient": "[9500,10500] (quadratic in tau: the stars outside Lambda_N do not meet R for N at least 2, so the Duhamel integrand vanishes at zero time; preview ratio about 10033.6); the same bracket for F2 and for the F2-inner comparison"
+        },
+        "reason": "Veto condition (bracket per constant): the Cauchy bracket was left to the producer after derivation, and [9900,10100] rejects the modern lens's valid directed-exp form (exact ratio 10101.6 with e^x at most 1/(1-x); 10101.1 with the exact exponential) - the same trap as K_ii at 101.03 in AV1's bracket."
+      },
+      {
+        "path": "$.preregistration.sub_labels_allowed",
+        "replacement": [
+          "dynamics_on_compact_windows"
+        ],
+        "reason": "Veto conditions (GNS/correlation equality; \"boundary independence\" without qualifiers): common_limit_of_named_constructions and convergence_of_named_constructions read as state statements; static_not_dynamic and boundary_decay_rate_only do not describe this loop."
+      },
+      {
+        "path": "$.preregistration.gate_fields_required",
+        "replacement": {
+          "uniqueness_of_ground_state_claimed": false,
+          "gns_dynamics_equality_claimed": false,
+          "uniform_in_time_claimed": false,
+          "rate_in_N_claimed": true,
+          "rate_in_a_claimed": false,
+          "continuum_claim": false,
+          "scientific_priority_verified": false,
+          "whole_sequence_claimed": true,
+          "whole_sequence_scope": "finite-box Heisenberg evolutions of F1 and F2 of A in B(H_R), in norm, uniformly for |theta| at most 8; dynamics only, no state",
+          "dynamics_level": "algebraic_heisenberg_compact_window",
+          "dynamics_limit_identified_claimed": true,
+          "common_limit_claimed": false,
+          "state_convergence_claimed": false,
+          "translation_invariance_claimed": false,
+          "weak_coupling_claim": false,
+          "true_values_rule": "a field shown true is exported true only if its target is admitted; otherwise false with the reason"
+        },
+        "reason": "Plan vocabulary: whole_sequence_claimed needs a scope and translation_invariance_claimed is a plan field; the loop's main claims (whole-sequence convergence of the dynamics, identification of the F2 limit) had no field, and the state fields that must stay false were absent."
+      },
+      {
+        "path": "file:research/round33/advisor/selection-ba2.md (a shared premise of both producers)",
+        "replacement": "replace the phrase \"reverse: each family against its own Nachtergaele-Sims limit and identification of the limits\" by \"reverse: Duhamel with the inner F2 evolution and the owner-set constants, each family against its own Nachtergaele-Sims limit for the Cauchy estimates, and identification of the limits\", and \"2.5x10^-10/(N-1)\" by \"2.5x10^-10/(N-1) for all M above N\"",
+        "reason": "The selection note is snapshotted by both producers; left unchanged it would contradict the corrected direction_note and the corrected Cauchy quantifier."
+      },
+      {
+        "path": "$.selected_after",
+        "replacement": "research/round33/advisor/deliberation-2.md",
+        "reason": "As for BA1."
+      },
+      {
+        "path": "$.new_control_semantics",
+        "replacement": {
+          "coherent_evidence_tampering": "Flipping a required control Boolean or removing a declared snapshot with every hash rebound is still rejected.",
+          "exact_arithmetic_admission": "Admission Booleans depend only on Fraction arithmetic with directed enclosures; Arb/mpmath/numpy values are labelled previews and are never read by an admission check.",
+          "no_priority_or_continuum_claim": "results.json carries scientific_priority_verified:false and continuum_claim:false; historical, occult or governmental provenance supplies no premise.",
+          "changed_model_relabelled": "Packet tau, triple, family, metric, weights, window and model id must equal the contract; a uniform-model, other-group, 2D or finite-graph result under the patterned-family label is rejected.",
+          "insufficient_verdict_retained": "A missed target is reported limited/insufficient with its dominating term at unchanged tau, q, mu, N_0; retuning to pass is rejected.",
+          "tau_scaling_exponent": "Each headline constant's exact ratio C(tau)/C(tau/100), computed from the same exact formula without intermediate rounding, lies in its bracket in preregistration.scaling_brackets_per_constant; a bound of the wrong tau order, or a bracket chosen after evaluation, is rejected.",
+          "wrong_delta_alpha_hbar_clock": "Physical clock theta=alpha t/hbar; AQ1 normalized u=theta/8 appears only with the conversion shown; a window stated in u but labelled theta (eightfold error) is rejected.",
+          "missing_incoming_stars": "Per-site sums include incoming anchors (J=28|tau|, four stars); the outgoing-star-only 7|tau| is rejected in every contraction, source and Lieb-Robinson norm.",
+          "root_n_misuse": "Deterministic bounds add linearly over faces, shells and nodes; division by sqrt(N) or sqrt(#faces) is rejected.",
+          "tier_mixing_rejected": "Every constant names its tier in {polynomial_lieb_robinson, exponential_lieb_robinson} and the interaction (whole-star Phi or owner-set Phi') whose Nachtergaele-Sims constants it uses; mixing is rejected.",
+          "reverse_premise_isolation": "The reverse inputs/ inventory equals AGENTS.md, this contract and shared_premises exactly; it contains no skeptic triage, recommendation, prospective-controls or loop-2 review, no deliberation, no lens memo, recommendation or loop-2 response, and no forward file of this loop.",
+          "face_count_all_sites": "49 faces per factor, 15 owner sets, 82 meeting R, 10 inside R derived from the I1 table by translation covariance; literals or site-0-only counts are rejected.",
+          "uniform_in_N_not_in_a": "Every uniformity statement says 'in N at fixed spacing'; a uniformity claim in the lattice spacing, or an unqualified uniformity word next to a rate, is rejected.",
+          "placeholder_span_rejected": "(freezer R1) Any angle-bracket span containing whitespace, a vertical bar or 'e.g.' blocks the freeze; inequalities in contract strings are written in words or with one bracket direction per string.",
+          "negation_aware_phrase_scan": "tools/phrase_scan.py (round list plus preregistration.forbidden_phrasings) is run whole-sentence and negation-aware on report, results and gate texts with the mandatory template removed as one literal; an affirmative hit is rejected.",
+          "parameters_declare_metric_weights_window": "Metric, d_X, weights (w=e^mu, e^beta), N_0, the time window and the clock are fields of parameters, not prose; absence blocks the freeze.",
+          "lieb_robinson_polynomial_tail": "With AQ1's F(r)=(1+r)^-4 the F1-versus-F2 bound decays like N^-2 and each family's Cauchy estimate like 1/N, stated for all M above N (an N to N+1 bound summed as a Cauchy estimate is rejected: the harmonic sum diverges); an exponential rate claimed with AQ1 constants is rejected.",
+          "lieb_robinson_F_declared": "An exponential F_mu is a new labelled instance with its own C_{F_mu} at most 224 and ||Phi||_{F_mu} at most e^{2 mu} 81 J; mixing it with AQ1's constants is rejected.",
+          "lieb_robinson_form_quoted": "The Lieb-Robinson inequality and its constants are quoted verbatim from the committed excerpt of Nachtergaele-Sims arXiv:1410.8174v1 (Theorem 3.1, eqs. (51)-(52), with (40), (41), (44), (48)-(50); limit dynamics Theorem 4.1, eq. (77); PDF sha256 501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba); a paraphrased, second-hand or re-derived constant form is rejected.",
+          "unbounded_onsite_interaction_picture": "Unbounded on-site Casimirs enter only through the interaction picture; a bounded-interaction Lieb-Robinson bound applied to the full Hamiltonian is rejected.",
+          "duhamel_inner_family_constants": "In a Duhamel formula only the inner family's constants enter (F1 inner: Phi, 2268|tau|; F2 inner: Phi', 1323|tau|); the inner family is named for every bound; using the other family's constants unstated is rejected.",
+          "extra_face_count_and_distance": "28N(5N+1) extra F2 faces, at most 3 owners each, every owner on the outer layer max_i |b_i| = N and hence at coarse l1 distance at least N-1 from e_z and at least N from 0, derived by enumeration (N = 2, 3) and an all-size argument; the padding on-site terms are shown to factor out exactly and are never charged as boundary terms.",
+          "duhamel_tau_order_quadratic": "The dynamics difference is O(tau^2 U^2): its exact ratio at tau and tau/100 lies in [9900,10100]; a linear label is rejected.",
+          "time_window_named_common_clock": "The window |theta| at most Theta is named with U=Theta/8; a uniform-in-time claim is rejected (the bound grows like U^2 e^{vU}).",
+          "algebraic_not_gns_dynamics": "The comparison is of the algebraic Heisenberg dynamics of the named constructions on compact windows; equality of GNS dynamics or of correlation functions of different states without a proved common state is rejected.",
+          "f2_limit_dynamics_equals_f1": "F2 finite dynamics converge as a whole sequence in norm on compact windows to the AQ1 automorphism group T_theta, identified through the comparison bound; stationarity, strong GNS continuity and a nonnegative generator for every subsequential F2 limit state are rerun (AQ1 sections 4-5) with F2's own subsequences, not assumed.",
+          "two_families_named": "F1 (AQ1 whole-star boxes) and F2 (I1 section 6 all-contained faces with padding) on centered Lambda_N, N at least 2, declared before production; a class, if used, is frozen.",
+          "subsequence_versus_whole_sequence": "Every limit statement says whole sequence or subsequence; whole-sequence claims come only from a Cauchy bound.",
+          "decay_rate_in_N_not_a": "q is per coarse step at fixed spacing and strong bare coupling (a coarse step is (4a,2a,a)); a conversion to fm, a physical length-scale reading or a rate in the lattice spacing is rejected.",
+          "boundary_source_new_terms_only": "The source contains only interaction terms added from Lambda to Lambda' (each meeting the source set); a source charged with old terms, or new terms not meeting it, is rejected.",
+          "f2_regrouping_charged_once": "F2 clipped groups that gain faces from N to N+1 are charged face by face (per-site face sum 49|tau|/3 at most J) and never twice."
+        },
+        "reason": "As for BA1: sixteen of the thirty-one ids are new in Round33 and four more are amended or renamed; their Round33 meaning is defined only in the skeptic file no producer receives; four are amended here (form quoted from the committed excerpt, inner-family constants both ways, padding, O6 rerun, all-M Cauchy)."
+      }
+    ],
+    "non_blocking": [
+      {
+        "path": "$.preregistration.mandatory_sentence_template (and the same symbol change in observable.id, parameters.targets, required)",
+        "replacement": "For the zero-selected patterned family at the same coupling |tau|<=10^-8 and every A in B(H_R) with ||A||<=1 on the fixed cover R, the finite-box Heisenberg evolutions T^{F1,N}_theta and T^{F2,N}_theta of the named construction families F1 and F2 on the same centered coarse cube Lambda_N satisfy ||T^{F2,N}_theta(A)-T^{F1,N}_theta(A)|| <= b(N) for |theta|<=8 in the common clock theta=alpha t/hbar; this is an algebraic comparison of the dynamics of the named constructions on a compact time window at a rate in N, not equality of GNS dynamics or of correlation functions of different states, not a uniform-in-time statement, and not a statement uniform in the lattice spacing a.",
+        "reason": "tau is both the coupling and the evolution, and B(N) collides with B(H_R); AQ1 writes T_t. The replacement passes phrase_scan and has no R1 span."
+      },
+      {
+        "path": "$.controls and $.preregistration.controls_required.ids",
+        "replacement": [
+          "coherent_evidence_tampering",
+          "exact_arithmetic_admission",
+          "no_priority_or_continuum_claim",
+          "changed_model_relabelled",
+          "insufficient_verdict_retained",
+          "tau_scaling_exponent",
+          "wrong_delta_alpha_hbar_clock",
+          "missing_incoming_stars",
+          "root_n_misuse",
+          "tier_mixing_rejected",
+          "reverse_premise_isolation",
+          "face_count_all_sites",
+          "uniform_in_N_not_in_a",
+          "placeholder_span_rejected",
+          "negation_aware_phrase_scan",
+          "parameters_declare_metric_weights_window",
+          "lieb_robinson_polynomial_tail",
+          "lieb_robinson_F_declared",
+          "lieb_robinson_form_quoted",
+          "unbounded_onsite_interaction_picture",
+          "duhamel_inner_family_constants",
+          "extra_face_count_and_distance",
+          "duhamel_tau_order_quadratic",
+          "time_window_named_common_clock",
+          "algebraic_not_gns_dynamics",
+          "f2_limit_dynamics_equals_f1",
+          "two_families_named",
+          "subsequence_versus_whole_sequence",
+          "decay_rate_in_N_not_a",
+          "boundary_source_new_terms_only",
+          "f2_regrouping_charged_once",
+          "full_original_wilson_cover",
+          "topology_named",
+          "cross_coupling_comparison_rejected",
+          "gate_fields_topic_specific"
+        ],
+        "reason": "Universal cover control; norm-on-compact-windows topology; one coupling per comparison; executable gate fields. Add their semantics: {\"full_original_wilson_cover\": \"The cover R={0,e_z} (48 links, 36 endpoints, 7 incident anchors) is used; a one-factor cover is rejected.\", \"topology_named\": \"Trace norm on B(H_Y) for states, norm on compact theta windows for dynamics, GNS strong for representations; a fixed-vector versus moving-vector fixture is included.\", \"cross_coupling_comparison_rejected\": \"Every convergence or comparison is at one coupling; a +tau/-tau comparison (difference at least 8.76e-10) presented as boundary comparison is rejected.\", \"gate_fields_topic_specific\": \"Convergence contracts export whole_sequence_claimed, rate_in_N_claimed, common_limit_claimed, uniqueness_all_ground_states_claimed and dynamics_level; a missing field is rejected.\"}"
+      },
+      {
+        "path": "$.shared_premises",
+        "replacement": "append research/round29/experts/aq-source-dictionary.md, research/round29/experts/aq-primary-bindings.json and research/round29/skeptic/aq1.md",
+        "reason": "The Round29 placement dictionary (l1 on the coarse lattice, interaction-picture placement, clock conversion), the PDF hash the new excerpt must match, and the AQ1 review of the placement. Route-neutral."
+      },
+      {
+        "path": "$.parameters.targets, $.preregistration.target.note, research/round33/advisor/selection-ba2.md",
+        "replacement": "remove the preview numerals (2.549e-11, 2.566e-11, 1.0195e-10) from producer-visible text; record them in the loop-2 synthesis",
+        "reason": "They are the modern lens's and my values; the reverse should derive blind."
+      },
+      {
+        "path": "$.parameters.weights",
+        "replacement": "Lieb-Robinson decay function F(r)=(1+r)^-4 (polynomial, AQ1); an exponential F_mu(r)=e^{-mu r}F(r) is a separately labelled instance with its own constants and is optional; no target is frozen for the exponential instance, so any such result is a labelled extra without admission weight in this loop",
+        "reason": "Prevents a post-hoc exponential-in-N headline."
+      },
+      {
+        "path": "$.direction_note (optional extra)",
+        "replacement": "an interaction-picture Dyson bound with an order-versus-distance count (a nonzero nested commutator must chain from R to an extra face) may be reported as a labelled extra; it is not a target",
+        "reason": "For this finite-range bounded interaction at a fixed window it decays faster than any power of N; a genuinely different mechanism, useful as a cross-check, but it must not replace the frozen polynomial-tier targets."
+      }
+    ]
+  },
+  "plan": {
+    "signoff": true,
+    "signoff_scope": "Plan v1 architecture and the sub-round-1 selection. BA1 and BA2 are vetoed until their blocking edits are applied. P1-P5 must be recorded in plan.json history before any sub-round-2 contract is drafted; P6-P11 bind the corresponding contracts.",
+    "required_changes": [
+      "P1 vocabulary.forbidden: remove the exception on 'the thermodynamic limit'; it is never used, and the admitted object is 'the limit of the named constructions'. Add 'correlation length' and an unqualified 'uniform in a' (needed before any sub-round-2 contract).",
+      "P2 vocabulary: add a tier_label_rule: every constant carries a tier (crude_majorant, exact_first_order, polynomial_lieb_robinson, exponential_lieb_robinson, first_order_distance_from_product) and a route (weighted_norm, analytic_disc, polymer_kp, iterated_split), with the mapping from the skeptic prospective ids; R10 checks only the list, so the rule must live in the plan and in each contract.",
+      "P3 vocabulary.gate_fields: close the set over every field the contracts use (state_decay_claimed, gns_dynamics_equality_claimed, uniform_in_time_claimed, scientific_priority_verified, common_limit_claimed, dynamics_level, dynamics_limit_identified_claimed, state_convergence_claimed, weak_coupling_claim, whole_sequence_scope, coefficient_cauchy_claimed, transfers_to_aq).",
+      "P4 contract_rules: add (a) brackets must admit every valid form of the declared tau order (linear [95,105], quadratic [9500,10500] unless exact variants justify narrower), declared before production; (b) the margin of at least 2 is a freeze-time property against recorded previews, and acceptance is 'proved constant at most the frozen target'; (c) every contract carries new_control_semantics for each control id not defined in an earlier frozen contract; (d) an external theorem is quoted from a committed source excerpt with its PDF hash, never from a report that cites it; (e) a within-family Cauchy target is quantified over all M above N.",
+      "P5 selected_after: plan.json (mutable, unhashed) is never a selected_after target; contracts name the loop-2 synthesis (deliberation-2.md) or the preceding gate, and each freeze records plan.json's sha256 in plan.history.",
+      "P6 BB2 direction: fix as paired now (forward: nested telescoping with BA1 and BB1 and cutoff removal at fixed N by AV1 F20-F23; reverse: general-volume comparison through unions, which also gives coarse translation covariance), with coarse translation invariance a pre-registered item whose input is BA1's separately labelled general-volume comparison; if that item is not admitted in BA1, translation invariance is dropped from BB2 and recorded as a limitation.",
+      "P7 BB1: the reverse receives neither the modern memo (polymer constants a=1/10, q=56832|tau|, K at most 2) nor the skeptic triage; eta, kappa_0, w' and the (q,K) pair frozen with margin at least 2 against recorded previews; no analyticity statement for rho_R without a proved zero-free region; the AV1-type fixture showing coefficient decay is not marginal decay is mandatory.",
+      "P8 BC1: direction statement+skeptic (a restatement, no new derivation); either include 'common correlation functions and GNS dynamics of F1 and F2 once BA2 and BB2 are admitted' as a named item or exclude it explicitly; radii and enclosures unchanged; Round32 gates untouched (new files only).",
+      "P9 BC2: single+skeptic with every route-B constant re-derived (J'=29|tau|, J_0'=29/10^8, weighted thresholds, 52 faces per factor, the F2 analogue term by term, ||Phi||_F recomputed); executed only if BB1 and BB2 are accepted_within_scope, else the pre-frozen boundary-class alternative or a recorded obligation.",
+      "P10 BD1: paired is acceptable (forward: characters/representation theory; reverse: exact Weyl integration) provided each cell has an exact check, the SU(3) (E[(Re Tr U/3)^3]=1/108) and SO(3) obstruction cells are mandatory, the convention (W=Re Tr U/dim, h=8 sum C_e, V=-(tau/3) sum W_f, face energy 32 C_F) is frozen in the contract, and 1/144 and tau=96/g^4 are never transferred; state whether the 2D flip set and recounts belong to BD1 or BD2.",
+      "P11 BD2: single+skeptic; the Z^3 1x2 value 7 tau^2/124416 is stated only as an exact second-order coefficient with a certified third-order remainder, otherwise as a labelled formal coefficient with the sign obstruction; the electric energy keeps the unbounded-observable obstruction; finite graphs carry FG model ids and parameters.hamiltonian_terms (R3); calculators display gate-bound values only.",
+      "P12 subrounds[0]: list both selection notes (selection-ba1.md and selection-ba2.md).",
+      "P13 history: record in plan v2 the BA1 floor-target change (1/16 to 1/12), the BA2 reverse-route correction, the Cauchy quantifier fix and the new NS source excerpt."
+    ]
+  }
+}

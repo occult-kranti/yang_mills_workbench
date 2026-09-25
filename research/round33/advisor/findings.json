@@ -1,0 +1,693 @@
+{
+  "schema": "hnm-round33-findings-v1",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "requested": 8,
+  "completed": 8,
+  "loops": [
+    {
+      "id": "ba1",
+      "sequence": 1,
+      "subround": 1,
+      "title": "Hruday boundary decay of the AM2 creation coefficients for the named constructions",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, 21 omitted faces per anchor entering as -(tau/3)W_f in normalized units delta=alpha/8; both signs |tau|<=10^-8; AM2 creation expansion with J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t); cover R={0,e_z}; coarse l-infinity metric with star diameter d_X=1), with the named construction families F1 = AQ1 centered whole-star boxes Lambda_N=[-N,N]^3 and F2 = I1 section 6 all-contained-face boxes with padding on the same Lambda_N, N at least 2: For the zero-selected patterned family at the same coupling |tau|<=10^-8, and for the named construction families F1 (centered whole-star boxes) and F2 (all-contained-face boxes with padding) on centered coarse cubes, the AM2 creation coefficients in each on-site cutoff space, on supports meeting the cover R, differ between two boxes of the named constructions by at most K q^(N-1) in the anchored norm, uniformly in the cutoff, where N is the smaller box size; this is decay of the coefficients of the named constructions at a rate in N, not decay of the reduced density, not a statement about untruncated creation coefficients, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a. Constants (exact, both signs, every comparison of the contract: F1 on Lambda_N versus Lambda_(N+1), F2 on Lambda_N versus Lambda_(N+1), F1 versus F2 on the same Lambda_N, any two centered boxes of size at least N and any two complete-factor volumes of one prescription containing Lambda_N): headline pair q=1/64 with K=49/111790368 (about 4.3832e-7; exact_first_order tier, analytic_disc route on the disc of radius 64|tau|; margin about 1.1407 against the frozen 1/2000000), also certified by the weighted_norm route with the smaller K=2734375/12204185915601 (about 2.2405e-7, labelled); floor pair q=148/390625=37888|tau| with K=49/2018304 (about 2.4278e-5; exact_first_order tier, analytic_disc route on the disc of radius tau_star=1/37888), also certified by the weighted_norm route with K=708203125/43148545682688 (about 1.6413e-5, labelled). The crude_majorant tier at q=1/64 (296/390625 analytic_disc, 9472/24454143 weighted_norm) misses 1/2000000 and is retained. The tau to tau/100 ratios are 4340004/43129 for the headline K, exactly 1 for the floor K and exactly 100 for q_min. The rate is in N, per coarse l-infinity step at fixed spacing; every interaction term present in one box and not the other lies at coarse l-infinity distance at least N-1 from R, and the bound uses the contract form ceil(d/diam) of the order-versus-distance count. For each family the whole sequence of coefficients on supports meeting R is Cauchy in each on-site cutoff space; this is a coefficient statement only, with no state, reduced density, common limit or untruncated coefficient asserted.",
+      "summary": "A change of the box boundary moves the AM2 creation coefficients on supports meeting the Wilson cover by at most K q^(N-1): K about 4.4e-7 at q=1/64 and K about 2.4e-5 at the per-step ball ratio q=37888|tau| (about 3.8e-4 at the cap), for every comparison of the two named box constructions, at both signs and uniformly in the on-site cutoff; proved by a weighted-norm contraction and independently by analyticity on a complex coupling disc.",
+      "limitations": [
+        "Only the zero-selected patterned family (selected triple (0,0,0), Haar reference), the cover R={0,e_z}, fixed spacing and |tau|<=10^-8, with F1 and F2 on centered cubes Lambda_N, N at least 2, and complete-factor volumes of one prescription containing Lambda_N; nothing transfers to nonzero selected triples, the uniform route-B model, literal vertex boxes, weak coupling or the continuum; every constant is uniform in N at fixed spacing and in the cutoff, never in a.",
+        "Coefficients only: the statements concern AM2 creation coefficients in each on-site cutoff space Q_L with constants independent of L; they are not decay of the reduced density or of any state (BB1/BB2), not a statement about untruncated creation coefficients, and the analyticity in the coupling is not extended to the reduced density (no zero-free region of the complexified normalization is proved).",
+        "The coefficient Cauchy property gives whole-sequence convergence of coefficients per cutoff space only; whole_sequence_claimed and common_limit_claimed concern states and stay false; no uniqueness of any ground state is asserted.",
+        "Thin headline margin: the bound headline K=49/111790368 is about 1.1407 below 1/2000000 (the freeze-time margin rule was checked against the forward preview only); the labelled refinements (reverse sharp exponent 49/7154583552, reverse first-order cancellation 3773/1364628515625 which is quadratic in tau, forward loss-one F1-versus-F2 value 57270955/16662781836767232) are recorded and not bound.",
+        "Exponent convention: the bound uses the contract form ceil(d/diam) (exponent N-1 at e_z for every comparison); the sharp count 1+ceil(d/diam) gives exponent N, but a floor constant written that way is linear in tau (ratio exactly 100) and falls outside the prefrozen floor bracket, so every sharp form is labelled.",
+        "General comparisons: the reverse compares any two volumes directly (constant K); telescoping at exponent N-1 would give 889/1006113312 and a two-step union 49/55895184, both above 1/2000000; the forward telescoped constant 2734375/12204185915601 and its union constant are valid labelled values; the face sets are totally ordered (F1_N inside F2_N inside F1_(N+1)), so one nested comparison suffices for any pair of centered boxes.",
+        "Contract wording read as follows: the source set of a nested comparison is the shell, and the literal set of sites met by the new terms adds the outer layer of Lambda_N (98, 218, 386 sites at N=2,3,4) at distance N-1 from e_z, which gives the same bound once the source loss is charged; the fixed-point map has Lipschitz constant J_0G'(R) below 77/781250, while 2J_0G'(R) is the AM2 exclusion constant; gate_fields_topic_specific is read as the 12 frozen gate fields; the floor difference weight is e^beta=w=390625/148.",
+        "Inherited without re-proof: the AM2 multilinear majorant, fixed point, uniqueness in the ball and cutoff facts; the AV1 exact first-order coefficient and self-consistent remainder; the AY1 item-by-item F2 premises; the I1 dictionary; Banach, Weierstrass and the maximum principle are standard and not machine-checked.",
+        "Independence is limited to routes, enumerations and code: the contract and selection note name both mechanisms, the skeptic triage proposed both routes and the frozen parameters, all agents are correlated model agents, and isolation is verified for repository inputs only.",
+        "Upper bounds only; the -tau values replay the same |tau| formula; scientific priority is unverified."
+      ],
+      "model": "Zero-selected patterned family (AQ_patterned_zero_selected) at both signs |tau|<=10^-8; AM2 creation expansion (J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t)) in each on-site cutoff space uniformly in the cutoff; construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on centered coarse cubes Lambda_N, N at least 2; cover R={0,e_z}; coarse l-infinity metric on factor sites (star diameter 1)",
+      "gate_path": "research/round33/advisor/ba1-gate.json",
+      "contribution_id": "HNM-C-BA1",
+      "dependencies": [
+        "r29-am2",
+        "r32-av1",
+        "r32-aw1",
+        "r32-ay1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Show the AM2 multilinear estimate and ball self-map survive in a diameter-weighted anchored norm with the loss paid once per interaction (forward), or for complex couplings on a disc (reverse, analyticity of the fixed point).",
+        "Prove the order-versus-distance lemma: a coefficient on a support meeting R depends on a term at coarse distance d only at order at least 1+ceil(d/diam), with the diameter convention enumerated.",
+        "Identify the boundary source of each comparison (the shell, the 28N(5N+1) extra F2 faces) and bound the coefficient difference by K q^(N-1) at both frozen pairs by the weighted contraction or by Cauchy's estimate."
+      ],
+      "applications": [
+        "First step towards whole-sequence convergence of the named constructions (Round32 roadmap goals 1 and 3): the input to the marginal-locality lemma BB1.",
+        "Coefficient decay alone is not state decay; the normalization couples all supports (BB1)."
+      ],
+      "evidence": [
+        "research/round33/advisor/ba1-gate.json",
+        "research/round33/forward/ba1/report.md",
+        "research/round33/reverse/ba1/report.md",
+        "research/round33/skeptic/ba1.md",
+        "research/round33/skeptic/ba1-independent-derivation.md"
+      ],
+      "sub_label": "boundary_decay_rate_only",
+      "secondary_sub_labels": [
+        "static_not_dynamic"
+      ]
+    },
+    {
+      "id": "ba2",
+      "sequence": 2,
+      "subround": 1,
+      "title": "Hruday boundary comparison of the Heisenberg dynamics of the named constructions on compact windows",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0), 21 omitted faces per anchor entering as -(tau/3)W_f in normalized units delta=alpha/8; both signs |tau|<=10^-8, the -tau value a replay of the same |tau| formula; cover R={0,e_z} of the original xz Wilson loop, 48 links, 36 endpoints; observables A in B(H_R); common clock theta=alpha t/hbar with the window |theta|<=8, i.e. U=1 in the internal normalized time u=theta/8), with the two named construction families F1 = AQ1 centered whole-star boxes and F2 = I1 section 6 all-contained-face boxes with padding on the same Lambda_N=[-N,N]^3, N at least 2, with the Lieb-Robinson bound of Nachtergaele-Sims arXiv:1410.8174v1 Theorem 3.1, eqs. (51)-(52), quoted from the committed excerpt (PDF sha256 501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba), the unbounded on-site Casimirs h_b in the on-site slot of (44) and handled by the interaction picture, and the AQ1 constants F(r)=(1+r)^-4 on the coarse l1 metric, C<=224, ||Phi||_F<=2268|tau| for the whole-star interaction Phi (J=28|tau|, four incident stars) and ||Phi'||_F<=1323|tau| for the owner-set interaction Phi' (49 faces per site), substituted as upper bounds by monotonicity: (1) H^{F2,pad}_N minus H^{F1}_N is the sum of the 28N(5N+1) extra faces (enumerated on Lambda_2 to Lambda_5; per anchor 17, 13 and 5 faces when exactly one coordinate equals N, 10, 3 and 1 when two do, none at the corner), each charged once with norm |tau|/3, every owner on the outer layer at coarse l1 distance at least N-1 from e_z and at least N from 0 (both attained), plus the padding on-site terms, which factor out of the evolution exactly and are never charged. (2) Define b(N) = K_cmp (5N+1) N^-3 with K_cmp = 3969/155720800000000 (about 2.54879e-11; forward route: Duhamel with the inner F1 evolution, whole-star Phi, tier polynomial_lieb_robinson, route duhamel_inner_f1; margin about 2.354 against the frozen 6x10^-11). For the zero-selected patterned family at the same coupling |tau|<=10^-8 and every A in B(H_R) with ||A||<=1 on the fixed cover R, the finite-box Heisenberg evolutions T^{F1,N}_theta and T^{F2,N}_theta of the named construction families F1 and F2 on the same centered coarse cube Lambda_N satisfy ||T^{F2,N}_theta(A)-T^{F1,N}_theta(A)|| <= b(N) for |theta|<=8 in the common clock theta=alpha t/hbar; this is an algebraic comparison of the dynamics of the named constructions on a compact time window at a rate in N, not equality of GNS dynamics or of correlation functions of different states, not a uniform-in-time statement, and not a statement uniform in the lattice spacing a. The reverse route (Duhamel with the inner F2 evolution, owner-set Phi', route duhamel_inner_f2) proves the same inequality with the smaller labelled second-route constant K'_cmp = 452554889222515527/30481402343750000000000000000 (about 1.48469e-11, margin about 4.041); both constants are quadratic in tau (the first order vanishes because no extra face meets R), with exact tau/100 ratios 1953058850/194651 and 38176688920663121234473000000/3810205403940325763421973 inside the preregistered bracket [9500,10500]. (3) For F = F1 and F = F2, sup over M greater than N of ||T^{F,M}_theta(A)-T^{F,N}_theta(A)|| <= K_F/(N-1) ||A|| for |theta|<=8 and N at least 2, at the polynomial rate in N at fixed spacing: F1 with K_F1 = 9261/155720800000000 (about 5.94718e-11, forward, faces charged once, inner F1) and the second route 12128856933354903/118967041015625000000000000 (about 1.01951e-10, reverse, whole stars, inner F1 on Lambda_M); F2 with K_F2 = 117747/1245766400000000 (about 9.45177e-11, forward, one F1-inner Duhamel plus the comparison) and the second route 1055961408185869563/30481402343750000000000000000 (about 3.46428e-11, reverse, owner-set Phi', faces charged once); every value is at most the frozen 2.5x10^-10 (margins about 4.204, 2.452, 2.645 and 7.217); a bound for N to N+1 alone is not used as a Cauchy estimate. (4) Hence the F1 and F2 finite-box evolutions of every A in B(H_R) converge as whole sequences in norm, uniformly for |theta|<=8, and the F2 limit dynamics equals the AQ1 limit dynamics T_theta: ||T^{F2,N}_theta(A)-T_theta(A)|| <= min(K_F1, second-route K_F2)/(N-1) ||A||, and on every local algebra the same Duhamel sum with R replaced by a finite region tends to zero on every compact window, so the two automorphism groups agree on the quasi-local algebra. (5) AQ1 sections 4-5 are rerun for every subsequential F2 limit state with F2's own diagonal extraction (AY1): stationarity under T_theta, strong continuity of the GNS evolution and a nonnegative generator, with the physical cyclic space reducing it. Not admitted: equality of GNS dynamics or of correlation functions of different states, a common limit state or convergence of states, uniqueness of every infinite-volume ground state, translation invariance, any uniform-in-time statement, exponential decay in N with the polynomial Lieb-Robinson function, any rate or estimate in the lattice spacing a, a continuum or weak-coupling statement, and scientific priority.",
+      "summary": "The Heisenberg evolutions of local observables A on the Wilson cover with ||A||<=1 under the two named box constructions differ by at most about 2.5e-11 (5N+1)/N^3 on the window |theta| at most 8, each construction's evolutions form a Cauchy sequence in N at rate O(1/N), and the padded construction's limit dynamics is the AQ1 limit dynamics; the padded family's limit states satisfy the AQ1 stationarity and continuity statements.",
+      "limitations": [
+        "Only the zero-selected patterned family (selected triple (0,0,0)), the cover R={0,e_z}, fixed spacing and |tau|<=10^-8, with the two named families F1 and F2 on centered cubes Lambda_N, N at least 2; nothing transfers to literal vertex boxes, periodic or orthant boxes, nonzero selected triples, the uniform route-B model, weak coupling or the continuum",
+        "Algebraic Heisenberg dynamics of the named constructions on a compact window only: no equality of GNS dynamics, no equality of correlation functions of different states, no common limit state and no convergence of states is established (F1 and F2 limit states remain subsequential and are not identified with each other); those need a proved common state (BB2)",
+        "The frozen constants hold for |theta|<=8 (U=1); the bounds grow like U^2/(1-vU/3) and nothing is claimed uniformly in time; outside the window only qualitative convergence on compact windows is used (for the O6 rerun)",
+        "Every rate is a rate in N at fixed spacing and strong bare coupling (a coarse step is (4a,2a,a)): order N^-2 for the comparison and 1/N for the Cauchy estimates with the polynomial F(r)=(1+r)^-4; no exponential decay in N is claimed, the optional exponential instance was not executed, and no estimate is uniform in the lattice spacing a",
+        "All constants are upper bounds: the admitted ||Phi||_F<=2268|tau| is four times the exact (48) supremum 567|tau| and ||Phi'||_F<=1323|tau| is 12.25 times 108|tau| (recorded, not used); the all-size face sum 168(5N+1)N^-3 is 20 to 31 times the enumerated sum at N=2 to 5",
+        "Inherited without re-proof: Nachtergaele-Sims Theorems 3.1 and 4.1 as transcribed in the committed excerpt (not machine-checked); AQ1's C<=224 and ||Phi||_F bounds (arithmetic re-verified); AM2's simple ground state and gap for F2 boxes and F2 compactness and diagonal extraction via AY1; the I1 dictionary; Stone's theorem, Fourier inversion and the tensor-product exponential of commuting self-adjoint operators on separate factors",
+        "Independence is limited: the contract, the selection note and the AY2 obligations table name the route and the constants; the routes differ in the inner family, the interaction indexing, the constants, the exponential remainder bound, the enumeration and the code; all agents are correlated model agents; both producers wrote their final files after the skeptic pre-comparison commit, so isolation is shown by disclosure and content, not by commit order",
+        "The producer checkers do not pin every labelled value: five silent source edits (labelled refinements, a retained weaker bound, preview strings) pass the producer checkers and are caught only by the skeptic value validator; the gate binds the exact rationals above",
+        "The -tau evaluations replay the same |tau| formula and are not a second confirmation",
+        "Scientific priority is unverified; the Lieb-Robinson and limit-dynamics theorems are credited to Nachtergaele-Sims and the O6 strategy to AQ1 (Gauvin arXiv:2503.15539v3 Supplement A.10)"
+      ],
+      "model": "Zero-selected patterned family (AQ_patterned_zero_selected) at both signs |tau|<=10^-8; construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on the same Lambda_N=[-N,N]^3, N at least 2; finite-box Heisenberg evolutions T^{F,N}_theta of A in B(H_R), cover R={0,e_z}, window |theta| at most 8 in theta=alpha t/hbar; l1 metric on the coarse factor lattice; Lieb-Robinson function F(r)=(1+r)^-4 with the AQ1 constants",
+      "gate_path": "research/round33/advisor/ba2-gate.json",
+      "contribution_id": "HNM-C-BA2",
+      "dependencies": [
+        "r29-aq1",
+        "r32-ay1",
+        "r32-ay2",
+        "r29-am2"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Write the F2-minus-F1 generator difference on Lambda_N as the 28N(5N+1) extra faces (enumerated and proved for all sizes) plus padding on-site terms that factor out exactly.",
+        "Apply Duhamel with the inner evolution bounded by the Nachtergaele-Sims Lieb-Robinson inequality (quoted verbatim from the committed excerpt) with the AQ1 whole-star constants (forward) or the owner-set constants (reverse); the first order vanishes because no extra face meets R.",
+        "Obtain the within-family Cauchy estimates over all M greater than N and identify the F2 limit dynamics with AQ1's; rerun AQ1 sections 4-5 for F2 limit states."
+      ],
+      "applications": [
+        "Closes Round32 AY2 obligations O5 (algebraic dynamics on compact windows, for the named constructions) and O6 (dynamics of the padded family) within scope.",
+        "Supplies the dynamics input for the correlation-function convergence in BB2."
+      ],
+      "evidence": [
+        "research/round33/advisor/ba2-gate.json",
+        "research/round33/forward/ba2/report.md",
+        "research/round33/reverse/ba2/report.md",
+        "research/round33/skeptic/ba2.md",
+        "research/round33/skeptic/ba2-independent-derivation.md"
+      ],
+      "sub_label": "dynamics_on_compact_windows",
+      "secondary_sub_labels": []
+    },
+    {
+      "id": "bb1",
+      "sequence": 3,
+      "subround": 2,
+      "title": "Hruday marginal locality of the reduced densities of the named constructions",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, 21 omitted faces per anchor entering as -(tau/3)W_f in normalized units delta=alpha/8; both signs |tau|<=10^-8; AM2 creation expansion with J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t); cover R={0,e_z}; coarse l-infinity metric with star diameter 1; trace norm on B(H_Y)), with the named construction families F1 = AQ1 centered whole-star boxes Lambda_N=[-N,N]^3 and F2 = I1 section 6 all-contained-face boxes with padding on the same Lambda_N, N at least 2, and with the BA1 gate bound value K=49/111790368 used at every site of the union volume through the every-site form (b), proved in both packets: For the zero-selected patterned family at the same coupling |tau|<=10^-8, and for every comparison of the named construction families F1 and F2 on centered coarse cubes, the reduced densities of the finite-box ground vectors on the cover R differ by at most C q^(N-1) in trace norm, in each on-site cutoff space and, at fixed N, for the untruncated ground vectors, where N is the smaller box size; this is locality of the reduced densities of the named constructions at a rate in N, not uniqueness of any ground state, not a statement about other boundary conditions, and not a statement uniform in the lattice spacing a. Constants (exact; both signs; each of the five comparisons of the contract, namely c1 F1 on Lambda_N versus Lambda_(N+1), c2 F2 on Lambda_N versus Lambda_(N+1), c3 F1 versus F2 on the same Lambda_N, c4 any two centered boxes of size at least N compared directly, and c5 two finite complete-factor volumes of one prescription containing Lambda_N compared directly; in each on-site cutoff space with constants independent of the cutoff, and at fixed N for the untruncated ground vectors): q=1/64 and C=578430793501182095316361404668712117814097366497488882433123687207743348935643590594947878052521565633072717772804866626438590065415931413647325/649548567473042337664409810664855266791889949984121342174530956201606073245694809426490159178862195173312829634280741896750749402941566759659762614272 (about 8.9051e-07; exact_first_order tier, polymer_kp route; margin about 4.49 against the frozen 1/250000); the iterated_split route proves the smaller C=1649304957714574761387109521705122525/1852265838332370761358328329658687644475392 (about 8.9043e-07, labelled). Region form: for every finite complete-factor region Y inside Lambda_N, ||rho^box1_Y-rho^box2_Y||_1 <= c_site |Y| e^{|Y|/10^8} q^{d_Y} with d_Y=N-max_{y in Y}|y|_inf and c_site=207042404781481370031872233170526436180882031154261216585642344563461649618003876497888095865804915933/236130948514531640807035481765249880343283808663306771542081002582898728697162432799219796273340474330185728 (about 8.7681e-07; polymer_kp; margin about 2.28 against the frozen 1/500000); iterated_split proves the smaller c_site=25373922426378073252109377257001885/28941653723943293146223880150916994444928 (about 8.7673e-07, labelled). Labelled secondary pair at q_2=151552|tau| with the re-instantiated input K_2=49/10202112 (disc radius 1/151552, proved in both packets): C_2=254713191786858884385903518855136871787/26288652445972361083565698627981857600000000 (about 9.6891e-06) and c_site,2=651079047656055039494458366725211/67298950261689244373928188487633555456 (about 9.6744e-06), iterated_split, meeting 1/20000 and 1/40000; polymer_kp proves the smaller values C_2 about 9.6440e-06 and c_site,2 about 9.6294e-06 (labelled). The crude_majorant tier at q=1/64 (C about 2.0529e-03 polymer_kp and 1.8006e-03 iterated_split) misses 1/250000 and is retained. The tau to tau/100 ratios of the bound constants are about 100.647876 for C and 100.647875 for c_site, about 1.001500 and 1.000000 for the secondary pair, and exactly 100 for q_2. The rate is per coarse l-infinity step in N at fixed spacing, with constants uniform in N and in the cutoff; no limit object, whole-sequence convergence, common limit or translation statement is formed, and no dynamics is asserted.",
+      "summary": "The reduced densities of the finite-box ground vectors of the two named box constructions differ on the Wilson cover by at most C q^(N-1) with q=1/64 and C about 8.9e-7, and on every finite region Y by at most c_site |Y| e^{|Y|/10^8} q^{d_Y} with c_site about 8.8e-7, for every comparison (nested boxes, the fixed-N change of boundary prescription, any two boxes, any two volumes of one prescription), at both signs, in each cutoff space and for the untruncated vectors; proved by a hard-core polymer expansion with a new mixed-weight lemma and independently by a recursive product-ordering split.",
+      "limitations": [
+        "Scope: only the zero-selected patterned family (selected triple (0,0,0), Haar reference), fixed spacing, |tau|<=10^-8, the named families F1 and F2 on centered cubes Lambda_N with N at least 2, finite complete-factor volumes of one prescription containing Lambda_N, the cover R={0,e_z} and finite complete-factor regions inside Lambda_N; nothing transfers to other boundary conditions, nonzero selected triples, literal vertex boxes, weak coupling or the continuum; the constants are uniform in N at fixed spacing and in the cutoff, never in the lattice spacing.",
+        "Static statement about reduced densities of finite-box ground vectors per comparison: no dynamics, no limit object, no whole-sequence convergence or common limit (BB2), no translation statement, no uniqueness of any ground state and no analyticity of the reduced density in the coupling (no zero-free region is proved; the forward uses a real-parameter derivative and the reverse single-support telescoping).",
+        "The polymer_kp route uses the Kotecky-Preiss criterion (cited as Kotecky-Preiss 1986 in the form of Ueltschi 2004) as an external theorem that the frozen packet transcribes without a committed source excerpt (the plan rule that an external theorem is quoted from a committed excerpt with its PDF hash was not carried into the BB1 contract); its exploration-tree lemmas bound polymer sums, not the Ursell-weighted cluster sums behind Corollary 6.3 and Lemma 6.4. The citation was checked post hoc against the Ueltschi excerpt committed after the freeze (research/round33/sources/ueltschi-math-ph-0304003v3.md, arXiv:math-ph/0304003v3, PDF sha256 2cc3e036af5b2a46afe95acf0b5863fe5c7d31554debb10a2a5cade4122bdbfc; repair record bb1-kp-repair.md): with hard-core zeta in {0,-1}, c=0, b equal to the forward distance weight d and a(gamma)=a|supp gamma|, Theorem 3 (16) is the forward hypothesis, (19) gives its conclusion with the same weight e^{d(X)}, Theorem 1 gives the cluster expansion of every Z(Lambda'), and the test sets enter as mass-zero atoms; no factor is missing, so the cited statement and its use are covered. The excerpt is not a premise of the frozen packet, the original Kotecky-Preiss paper is neither committed nor needed, and every bound value is at least the value proved by the self-contained iterated_split route.",
+        "F2 volumes other than centred cubes (fifth comparison): the AY1 itemization H1-H5 is gated for F2 on Lambda_N; both producers apply it to every F2 volume containing Lambda_N as a local reading (on-site operator, per-anchor grouping inside the star, |X_b|<=4, per-site sum through b in u-S, cutoff compression), reviewed here as correct but not a gated statement.",
+        "Inherited without re-proof: the AM2 multilinear majorant, fixed point, uniqueness in the ball and section 6 facts; the AV1 product-ordering split, first-order coefficient (49 faces per site) and cutoff-vector removal F20-F23; the AY1 F2 itemization; the I1 dictionary; Banach, Weierstrass and the maximum principle are standard and not machine-checked. The every-site coefficient input (form (b)) and the secondary input K_2=49/10202112 are BB1 lemmas proved in both packets, not admitted BA1 statements.",
+        "Upper bounds only; the -tau values replay the same |tau| formula. The near term 2K(1+q)=3185/3577291776 is almost the whole headline constant (the far-site terms are about 10^-4 of C), so the constants are governed by the BA1 input; the region margin (about 2.28) is the binding one. The forward, reverse and skeptic derivations agree to within 2 parts in 10^4 on C and c_site.",
+        "Contract wording read as follows: at first order only supports contained in R move rho_R, and every straddling support, including the 6 of the 72 straddling faces that strictly contain R, has zero first-order R-marginal (D1); the lemma constant kappa_0 carries the factor |Y|; union-volume sites outside Lambda_N use the exponent (N-|u|_inf)_+=0; the reverse split weight is read as W<=1/(37888|tau|); tier, route and BA1 input are three separate labels.",
+        "Independence is limited to derivations, constants and code: the contract and selection note name both mechanisms and the frozen targets, the skeptic triage and pre-freeze review shaped the parameters, all agents are correlated model agents, isolation is verified for repository inputs only, and the reverse packet does not itself record its heredoc report write or the file names it saw.",
+        "Scientific priority is unverified."
+      ],
+      "model": "Zero-selected patterned family (AQ_patterned_zero_selected) at both signs |tau|<=10^-8; AM2 creation expansion (J<=28|tau|, R=1/64, G(t)=16e^{8t}(1+10t)) in each on-site cutoff space uniformly in the cutoff, then at fixed N for the untruncated ground vectors (AV1 F20-F23; AY1 itemization for F2); construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on centered coarse cubes Lambda_N, N at least 2, and finite complete-factor volumes of one prescription containing Lambda_N; cover R={0,e_z} and finite complete-factor regions Y inside Lambda_N; coarse l-infinity metric on factor sites (star diameter 1); trace norm on B(H_Y)",
+      "gate_path": "research/round33/advisor/bb1-gate.json",
+      "contribution_id": "HNM-C-BB1",
+      "dependencies": [
+        "r33-ba1",
+        "r32-av1",
+        "r29-am2",
+        "r32-ay1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Write the reduced density through the AV1-type decomposition and prove the every-site form of the BA1 coefficient decay (every source term lies at distance at least N-|u| from each site u).",
+        "Forward: represent the norm and the marginal by hard-core polymers, prove the mixed-weight contraction lemma (loss w e^{4b} per interaction) and the Kotecky-Preiss condition with a = tau_bar^2; differentiate along a real parameter.",
+        "Reverse: telescope over single-support changes, use orthogonality at the changed support, recurse the split on covering regions and charge support sizes per site.",
+        "Sum the every-site coefficient input against the region's sites to obtain C q^(N-1) and the region form, uniformly in the cutoff, then remove the cutoff at fixed N."
+      ],
+      "applications": [
+        "Input to whole-sequence convergence, the common limit and coarse translation invariance of the named constructions (BB2).",
+        "Marginal locality is a static per-comparison statement; it is not uniqueness of any ground state."
+      ],
+      "evidence": [
+        "research/round33/advisor/bb1-gate.json",
+        "research/round33/forward/bb1/report.md",
+        "research/round33/reverse/bb1/report.md",
+        "research/round33/skeptic/bb1.md",
+        "research/round33/skeptic/bb1-kp-repair.md"
+      ],
+      "sub_label": "boundary_decay_rate_only",
+      "secondary_sub_labels": [
+        "static_not_dynamic"
+      ]
+    },
+    {
+      "id": "bb2",
+      "sequence": 4,
+      "subround": 2,
+      "title": "Hruday whole-sequence convergence and common limit of the named constructions",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, 21 omitted faces per anchor entering as -(tau/3)W_f in normalized units delta=alpha/8; both signs |tau|<=10^-8; AM2 creation expansion in each on-site cutoff space; cover R={0,e_z}; coarse l-infinity metric with star diameter 1 for states and l1 on the coarse factor lattice with F(r)=(1+r)^-4 for dynamics; trace norm on B(H_Y); clock theta=alpha t/hbar), with the named construction families F1 = AQ1 centered whole-star boxes Lambda_N=[-N,N]^3 and F2 = I1 section 6 all-contained-face boxes with padding on the same Lambda_N, N at least 2, with the BA2 gate dynamics constants, and with the BB1 hypotheses discharged by the BB1 gate (sha256 18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827, accepted_within_scope), which admits for each of the five comparisons c1-c5 of the BB1 contract, at both signs, in each on-site cutoff space with constants independent of the cutoff and at fixed N for the untruncated ground vectors, the R form C q^(N-1) with q=1/64 and C about 8.9051e-07 (polymer_kp bound value; iterated_split 8.9043e-07), at most C_h=1/250000, and the region form c_site |Y| e^{|Y|/10^8} q^{d_Y} with c_site about 8.7681e-07 (iterated_split 8.7673e-07), at most c_h=1/500000, so that every hypothesis used by either route is discharged: For the zero-selected patterned family at the same coupling |tau|<=10^-8, under the BB1 locality bounds at their frozen targets as hypotheses (discharged only when the BB1 gate admits constants at most those targets), the reduced densities of the named construction families F1 and F2 on centered coarse cubes converge as whole sequences, at a rate in N, to one common limit on every finite region; this limit coincides with every AQ1 subsequential limit and every F2 subsequential limit, is invariant under coarse translations, and has as correlation functions on |theta|<=8 the limits of the finite-box correlation functions; this is convergence of the named constructions, not uniqueness of any ground state, not a statement about states outside the named constructions, and not a statement uniform in the lattice spacing a. Constants (exact; both signs; F1 and F2; in each on-site cutoff space uniformly in the cutoff and, at fixed N, for the untruncated ground vectors; evaluated at the hypothesis values as the contract target specifies, and valid under the discharge because each is nondecreasing in the BB1 constants). Item 1: sup over M greater than N of ||rho^{F,M}_R-rho^{F,N}_R||_1 <= C' q^(N-1) with C'=4/984375 (about 4.0635e-06; exact_first_order, nested_telescoping, hypothesis source bb1_frozen_targets, BB1 route polymer_kp; margin 315/128 against 1/100000), and for every finite complete-factor region Y inside Lambda_N, sup over M greater than N of ||rho^{F,M}_Y-rho^{F,N}_Y||_1 <= c'_site |Y| e^{|Y|/10^8} q^{d_Y} with d_Y=N-max_{y in Y}|y|_inf and c'_site=2/984375 (about 2.0317e-06; margin 315/128 against 1/200000); the union_comparison route proves C'=1/250000 and c'_site=1/500000 (labelled); re-evaluated at the admitted BB1 values (labelled, not bound), C' is about 9.0465e-07 and c'_site about 8.9073e-07 (nested_telescoping), about 8.9051e-07 and 8.7681e-07 (union_comparison). The limit on every finite region follows from this Cauchy bound and trace-class completeness, without compactness. Item 2: the F1 and F2 limits coincide on every finite region (BB1 comparison c3, the fixed-N comparison of the two prescriptions). Item 3: the limit equals every AQ1 subsequential limit (F1) and every F2 subsequential limit on every finite region and inherits exactly the admitted properties of those states: AQ1 stationarity under T_theta, strong continuity of the GNS evolution and a nonnegative generator (for F2 limits through BA2's rerun of AQ1 sections 4-5), and the AQ2 statement for the actual AQ1 centered subsequential state, H_phys at least (alpha/16)(I-P_Omega) with a simple vacuum on the invariant-local cyclic completion, the full-GNS strengthening only as qualified in the AQ2 gate. Item 4: for every coarse translation v (fine translation (4v_x,2v_y,v_z), preserving residues and face classes) and N at least |v|_inf+2, ||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 <= C_h q^(N-|v|_inf-1) with C_h=1/250000 (the direct BB1 comparison c5 of two one-prescription volumes containing Lambda_{N-|v|_inf}; re-evaluated at the admitted C about 8.9051e-07, labelled; a two-step comparison through the union is labelled only), and the limit is invariant under coarse translations on every finite region (region form of c5); non-coarse translations are rejected. Item 5: for N at least 5, r_N=floor((N-1)/2), |theta| at most 8 and A in B(H_R), |c^{F,N}_A(theta)-c^inf_A(theta)| <= ||A||^2 [C_dyn/(r_N-1) + c'_site |Lambda_{r_N}| e^{|Lambda_{r_N}|/10^8} q^(N-r_N) + 2C' q^(N-1)] with complex-mean centering, c^{F,N}_A(theta)=omega^{F,N}(A* T^{F,N}_theta(A))-|omega^{F,N}(A)|^2 and c^inf_A(theta)=omega_inf(A* T_theta(A))-|omega_inf(A)|^2, and C_dyn=78057/622883200000000 (about 1.2532e-10; polynomial_lieb_robinson, duhamel_inner_f1, 2K_F1+K_cmp/4 from the BA2 gate values, one constant for both families; margin about 3.99 against 1/2000000000); the reverse per-family values 9261/77860400000000 (F1, duhamel_inner_f1, about 1.1894e-10) and 1055961408185869563/15240701171875000000000000000 (F2, duhamel_inner_f2, about 6.9286e-11) are labelled. This inequality holds for every N at least 5. It gives an explicit rate in N only on the certified range 5<=N<=14000, where N |c^{F,N}_A(theta)-c^inf_A(theta)| <= K5 ||A||^2 with K5 about 6.10e-09 (about 5.96e-09 and 5.46e-09 with the reverse F1 and F2 constants); no O(1/N) rate is asserted beyond that range. The bracket stays below 2 up to N=14418 and is at least 2 at N=14419 and at every larger N, so the bound is vacuous from N=14419 (certified here at the hypothesis values and at the admitted values alike; the historical assistant-2 found the same first exceedance independently at the hypothesis values). The finite-box correlation functions converge to c^inf_A(theta) along the whole sequence of N, for every A in B(H_R) and |theta| at most 8, without a rate outside the certified range (the inequality with any fixed r in place of r_N gives a limsup of at most C_dyn/(r-1) ||A||^2). Labelled secondary at q_2=151552|tau| (592/390625 at the cap): C'_2=625/12481056 (about 5.0076e-05, target 1/8000) and c'_site,2=625/24962112 (about 2.5038e-05, no target), discharged by the BB1 secondary pair (C_2 about 9.689e-06 at most 1/20000 and c_site,2 about 9.674e-06 at most 1/40000, iterated_split bound values). The tau to tau/100 ratios are exactly 1 for C' and c'_site at the hypothesis values (non-discriminating), 1953058850/194651 (about 10033.64) for C_dyn and the reverse F1 value, about 10019.59 for the reverse F2 value, 1085053/1083425 (about 1.0015) for C'_2, and exactly 100 for q_2. Rates are per coarse step in N at fixed spacing.",
+      "summary": "The reduced densities of both named box constructions converge along the whole sequence of box sizes, at the rate q^(N-1) with q=1/64 (at most C' q^(N-1) on the cover R with C' about 4.1e-6, and c'_site |Y| e^{|Y|/10^8} q^{d_Y} on a region Y with c'_site about 2.0e-6), to one common limit on every finite region; the limit coincides with every earlier subsequential limit of either family, inherits their admitted stationarity, GNS and gap properties, is invariant under coarse translations, and its correlation functions on |theta|<=8 are the limits of the finite-box ones (rate 1/N on 5<=N<=14000; convergence without a rate beyond).",
+      "limitations": [
+        "Scope: only the zero-selected patterned family (selected triple (0,0,0), Haar reference), fixed spacing, |tau|<=10^-8, the named families F1 and F2 on centered cubes Lambda_N with N at least 2 and the limit of the named constructions, the cover R and finite complete-factor regions, coarse translations and the window |theta|<=8; nothing transfers to other boundary conditions, states outside the named constructions, nonzero selected triples, literal vertex boxes, weak coupling or the continuum; the constants are uniform in N at fixed spacing and in the cutoff, never in the lattice spacing.",
+        "Convergence of the named constructions only: no uniqueness of any ground state and no statement about any other infinite-volume state; the limit is identified only with the AQ1 and F2 subsequential limits and inherits only the listed admitted properties (the full-GNS strengthening only as qualified in the AQ2 gate); no equality of GNS dynamics of different states and no uniform-in-time statement.",
+        "Discharge: both routes prove items 1-5 from the BB1 frozen targets C_h=1/250000 and c_h=1/500000 at q=1/64 as hypotheses. The BB1 gate (sha256 18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827, commit eef57b4) admits C about 8.9051e-07 and c_site about 8.7681e-07 for all five comparisons, both forms, both cutoff regimes and both signs. The skeptic discharge (the protocol committed in bb2_check.py before either producer or the gate was read, applied to the anchored admission record bb2-bb1-admission.json and cross-checked with the BB1 review table in 40 cells) finds every item full and every cell of both producers' hypothesis maps discharged. The bound constants are evaluated at the hypothesis values; the values re-evaluated at the admitted constants are labelled only.",
+        "The discharge carries the BB1 limitations: the polymer_kp bound values rest on the Kotecky-Preiss criterion, whose citation was checked post hoc against the committed Ueltschi excerpt and found covered; the self-contained iterated_split values discharge every item as well (labelled run). F2 volumes other than centred cubes in c5 (item 4) rest on the AY1 itemization as a reviewed local reading, not a gated statement.",
+        "Item-5 rate (reverse W1; skeptic defect D12): contract required item 5 says the rate in N is O(1/N), but with r_N and the region form frozen the region term on Lambda_{r_N} carries e^{|Lambda_{r_N}|/10^8} with |Lambda_{r_N}| about N^3, which eventually outgrows q^(N-r_N). The rate holds only on the certified range 5<=N<=14000 and the bound is vacuous from N=14419, so that clause of the requirement is met on the certified range only. The skeptic's own pre-comparison derivation (section 8) stated the rate without the range, and its pre-freeze and pre-comparison reviews missed the defect; the reverse producer found it.",
+        "Rejected forward overclaim: the forward report's rate paragraph (the rate in N is O(1/N) while the state terms decay geometrically in N, the cube volume growing only like N^3) and the matching results text are rejected, because the region term is at least 2 from N=14419 on; the forward checker evaluates item 5 only for N<=59, and its enclosure e^x<=1/(1-x) is unusable from N=465. The forward's item-5 inequality and constants are correct; the frozen forward files are retained as evidence and the rejected wording enters no gate text.",
+        "Constants are upper bounds only; the minus-sign values replay the same |tau| formula. C' and c'_site at the hypothesis values do not depend on tau (ratio exactly 1, non-discriminating); the linear tau-scaling of the BB1 constants is recorded by BB1 (about 100.648). The dynamics constant is BA2's, and the correlation bound holds per fixed local A on |theta|<=8 only.",
+        "Contract wording read as follows: union_comparison is one direct application of c4 or c5 (a two-step comparison through a third volume is labelled, and the reverse's labelled item-4 fallback 2C_h is valid but looser than the available C_h(1+q^|v|)); C_dyn is bound as the forward's single-route constant with the reverse per-family values labelled (D3, D10); c'_site,2 has no target (D5); d_Y is the BB1 definition (D7); no frame for limited outcomes (D9, moot at this verdict); several inherited control texts were written for BA2 or BB1 (D6); the item-3 inheritance is read within the admitted scope (D4, D11).",
+        "Independence is limited to derivations, constants and code: all agents are correlated model agents; the frozen targets, the brackets and the conditional semantics came from the skeptic's BB pre-freeze review; the skeptic pre-comparison package was committed after the forward commit and before the reverse commit; isolation is verified for repository inputs only, and both producers disclosed name-only exposures to other agents' file names.",
+        "Scientific priority is unverified."
+      ],
+      "model": "Zero-selected patterned family (AQ_patterned_zero_selected) at both signs |tau|<=10^-8; construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on centered coarse cubes Lambda_N, N at least 2, and their limit on every finite complete-factor region; states in trace norm on B(H_Y) with the coarse l-infinity metric; dynamics T_theta and T^{F,N}_theta with the l1 metric and F(r)=(1+r)^-4 on |theta| at most 8, theta=alpha t/hbar; each on-site cutoff space uniformly in the cutoff, then the untruncated ground vectors at fixed N; BB1 locality bounds as hypotheses discharged by the BB1 gate (sha256 18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827)",
+      "gate_path": "research/round33/advisor/bb2-gate.json",
+      "contribution_id": "HNM-C-BB2",
+      "dependencies": [
+        "r33-bb1",
+        "r33-ba2",
+        "r33-ba1",
+        "r29-aq1",
+        "r29-aq2",
+        "r32-ay1"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Take the BB1 locality bounds at their frozen targets as hypotheses and sum consecutive comparisons (forward, geometric factor 1/(1-q)) or compare directly through the larger cube (reverse) to obtain the whole-sequence Cauchy estimate over all M>N and the limit without compactness.",
+        "Use the fixed-N comparison of the two boundary prescriptions to identify the two limits, and the subsequence property to identify the limit with every AQ1 and F2 subsequential limit.",
+        "Compare Lambda_N+v with Lambda_N through Lambda_{N-|v|} for coarse translations; check non-coarse translations face by face.",
+        "Combine the BA2 dynamics comparison on Lambda_{r_N} with the region-form state bound to bound correlation-function differences, and discharge every hypothesis against the BB1 gate item by item."
+      ],
+      "applications": [
+        "Closes AY2 obligations O2 (whole-sequence convergence), O3 (coarse translation invariance) and O4 (a rate in N) for the named constructions; uniqueness of ground states (O1) stays open.",
+        "Makes the Round32 node and sign certificates statements about one limit of the named constructions (BC1)."
+      ],
+      "evidence": [
+        "research/round33/advisor/bb2-gate.json",
+        "research/round33/forward/bb2/report.md",
+        "research/round33/reverse/bb2/report.md",
+        "research/round33/skeptic/bb2.md",
+        "research/round33/skeptic/bb2-bb1-admission.json"
+      ],
+      "sub_label": "convergence_of_named_constructions",
+      "secondary_sub_labels": [
+        "common_limit_of_named_constructions"
+      ]
+    },
+    {
+      "id": "bc1",
+      "sequence": 5,
+      "subround": 3,
+      "title": "Hruday node and sign certificates for the limit of the named constructions",
+      "accepted": "In the AM2/AQ1 zero-selected patterned family (model AQ_patterned_zero_selected: SU(2) Kogut-Susskind form on Z^3 at fixed spacing, coarse 24-link factors, selected triple exactly (0,0,0) with Haar product reference, whole stars phi_b=-(tau/3) sum W_f in normalized units delta=alpha/8; tau=+10^-8, with tau=-10^-8 a replay of the same |tau| formula at the mirrored coupling; original xz Wilson loop W with complete cover R={0,e_z} and ||W|| at most 1; trace norm on B(H_R); Euclidean clock s=alpha t_E/hbar with G=H/alpha at the single preregistered node s=1; real-time clock theta=alpha t/hbar), with omega_inf the limit of the named constructions admitted in BB2 (gate sha256 ad3fdb4bee935b594c992f6d4246b52aa83b9c0d0d03eb5186bff47b45bb0cca, accepted_within_scope: the reduced densities of F1 = AQ1 centered whole-star boxes Lambda_N=[-N,N]^3 and F2 = I1 section 6 all-contained-face boxes with padding on the same Lambda_N, N at least 2, converge as whole sequences on every finite region to one common limit, which equals every AQ1 subsequential limit and every F2 subsequential limit, items 1-3), this identification being used before any certificate is inherited: For the zero-selected patterned family at tau=10^-8, the limit of the named construction families F1 and F2 admitted in BB2 satisfies the Round32 node certificate at s=1 with the unchanged datum and radius and the Round32 enclosure of the static Wilson mean with the unchanged endpoints, and every padded box Lambda_N with N at least the exactly computed N_sign has a static Wilson mean of certified sign; these are restatements of admitted certificates for one limit of the named constructions and a finite-box corollary, not uniqueness of any ground state, not an interaction shift of the Euclidean correlation, and not a statement uniform in the lattice spacing a. Values (exact; read from the hash-verified gates and restated unchanged). Node (AV2 gate sha256 5b0e3b308ccb2e2b9b8ae2db32ae5e2c2ae978b2dbf46cf83a5882b68a2f4b33, sub-label reference_unresolved): C(1)=(chi, e^{-G} chi) with chi=(pi(W)-omega_inf(W))Omega in the GNS representation of omega_inf satisfies |C(1)-d| <= R with d=497870683678639429793424156500617766317/40000000000000000000000000000000000000000 (about 1.24467670920e-2) and R=1831967503411879425147166810021607/10000000000000000000000000000000000000000 (about 1.83196750341e-7), so C(1) lies in [d-R, d+R] = [497863355808625782275723567833377679889/40000000000000000000000000000000000000000, 99575602309730615462224949033571570549/8000000000000000000000000000000000000000]; the free reference e^{-3}/4 lies inside this interval, so no interaction shift, sign or coefficient of C(s) is claimed. Static mean (AW2 gate sha256 640a3b0a74c7fcd66318ba7ce2a60942f837ad154f157bc1d69323589b24be62, sub-label static_not_dynamic): omega_inf(W) lies in [L, U] = [tau/144-K_2^+ tau^2, tau/144+K_2^+ tau^2] with K_2^+=81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984 (about 3354.80322946), L=42773581813770903096597852821080380528959/D and U=43188859201382168785822623711271900423873/D, D=618929575309102117553427431032936422860390400000000 (contained in [6.91089641214e-11, 6.97799247674e-11]), exclusion margin 42773581813770903096597852821080380528959/207638693805632844612385445095759947457 (about 206.00005) and sign margin 42981220507576535941210238266176140476416/207638693805632844612385445095759947457 (about 207.00005), and at tau=-10^-8 in the mirror [-U, -L]; the full second-order remainder K_2^+ tau^2 is kept at both endpoints. Finite-box corollary (the one new constant family, tier exact_first_order; inputs in place of a route: the AW2 gate endpoints and C' of the BB2 gate decision, assembly nested_telescoping, BB1 route polymer_kp, hypothesis source bb1_frozen_targets): for every N at least 2 the untruncated F2 finite-box ground state at fixed N satisfies |omega^{F2,N}(W)-omega_inf(W)| <= ||W|| ||rho^{F2,N}_R-rho^inf_R||_1 <= C' q^(N-1) with C'=4/984375 and q=1/64 (the BB2 item-1 whole-sequence bound with M tending to infinity through the closed trace-norm ball), so omega^{F2,N}(W) lies in [L-C' q^(N-1), U+C' q^(N-1)], and at tau=-10^-8 in [-U-C' q^(N-1), -L+C' q^(N-1)]. N_sign, the least N at least 2 with C' q^(N-1) strictly below L=tau/144-K_2^+ tau^2, is exactly 4: the widening is 1/15750000 at N=2, 1/1008000000 at N=3 and 1/64512000000 at N=4. At N=4 the widened enclosure is [232256915653307984268043972456662444208313/E, 369480171452763518908899363269803522461511/E] with E=4332507027163714822873992017230554960022732800000000 (about 5.36079720580e-11 to 8.52809168309e-11), with its mirror at tau=-10^-8, and the sign of omega^{F2,N}(W) equals the sign of tau for every N at least 4 at both signs. Nothing is claimed for N=2 and N=3 (open row N4), for cutoff-L F2 states or for a finite-box node (open rows N2 and N3); the F1 boxes are as certified by AW2 at every N at least 2 (recorded as agreement). The density rate in N is q^(N-1) for every N at least 2, per coarse step at fixed spacing. Common GNS item: the F1 and F2 limits are one state (BB2 items 2-3) with one GNS triple, whose dynamics is the AQ1 limit dynamics T_theta implemented in that representation (AQ1 for F1, BA2 item 4 for F2); its correlation functions on |theta| at most 8 are the limits of the finite-box correlation functions of either family (BB2 item 5), with a rate in N (K5/N) only on 5<=N<=14000 and convergence without a rate beyond; this concerns one state and is not equality of GNS dynamics of different states. Obligations (the reviewed table of 21 rows): AY2 row O1 is closed only in the narrow form that all subsequential limits of F1 and F2 coincide on every finite region (one limit of the named constructions, BB2 items 2-3, row O1a); uniqueness of any ground state, states outside the named constructions and other boundary conditions are not proved and remain open (rows O1b and N1); rows O2-O6 are closed within the scopes of the BB2 and BA2 gates; rows N1-N14 are open. Labelled information, not claimed: L/(C' q^3) is about 4.4584 and the widened exclusion margin at N=4, (L-C' q^3)/(K_2^+ tau^2+C' q^3), is about 3.3851.",
+      "summary": "At the cap tau=10^-8 (tau=-10^-8 a mirror replay) the Round32 node certificate of the Euclidean Wilson correlation at s=1 and the enclosure of the static Wilson mean hold, with unchanged constants, for the one limit of the two named box constructions; at tau=+-10^-8 every untruncated padded box of size N at least 4 has a Wilson mean of certified sign (nothing is claimed below the cap); the two limits share one GNS representation and dynamics; the Round32 obligations table is updated (whole-sequence convergence, translations, a rate in N and the dynamics rows closed within scope; uniqueness of any ground state open).",
+      "limitations": [
+        "Scope: only the zero-selected patterned family (selected triple (0,0,0), Haar reference), fixed spacing, tau=10^-8 with tau=-10^-8 a mirror replay of the same |tau| formula (never a second confirmation), the cover R={0,e_z} and the original xz Wilson loop W, the single node s=1, the limit of the named constructions omega_inf and the untruncated F2 finite-box ground states at fixed N; nothing transfers to other selected triples, the route-B uniform model (BC2), other boundary conditions, states outside the named constructions, literal vertex boxes, weak coupling or the continuum, and no estimate is uniform in the lattice spacing a.",
+        "Restatement only: the node certificate is the AV2 certificate with d, R and the interval unchanged and the free reference e^{-3}/4 inside the interval (reference_unresolved), so no interaction shift, sign or coefficient of C(s) is claimed; the static Wilson mean is the AW2 enclosure with its endpoints and the full second-order remainder K_2^+ tau^2 unchanged (static_not_dynamic); no constant of either certificate is re-derived or retuned, and no Round32 gate, report or snapshot is edited.",
+        "Identification: the AV2 and AW2 certificates are stated for every state in the whole set of AQ1 subsequential limits (AW2 also in every centered whole-star box at every on-site cutoff); they pass to omega_inf only because BB2 items 2-3 admit that this set is the one limit of the named constructions. BB2 carries its own limitations: the BB1 discharge at the frozen targets, the Kotecky-Preiss citation checked post hoc against the committed excerpt, and the AY1 itemization as a reviewed local reading for non-centred F2 volumes in the fifth BB1 comparison.",
+        "Finite-box sign: certified only for the untruncated F2 finite-box ground states at fixed N with N at least N_sign=4, at both signs, through the BB2 whole-sequence bound at the BB2 gate bound value C'=4/984375 with q=1/64 and ||W|| at most 1 (the labelled union_comparison value and the labelled re-evaluated values are not used); N=2 and N=3 are open (row N4) because the widened interval contains 0 there; cutoff-L F2 states are not claimed; the F1 boxes are as certified by AW2, recorded as agreement and not re-derived. C' at the hypothesis values does not depend on tau and AW2 admits the enclosure at the cap only, so nothing below the cap is claimed.",
+        "No finite-box node: the admitted AV2 record states the window lemma and the comparison only for the GNS vector of an AQ1 subsequential state, so no node certificate for F1 or F2 boxes is restated (rows N2 and N3, open).",
+        "O1 in the narrow form only: AY2 row O1 is closed only as the statement that all subsequential limits of F1 and F2 coincide on every finite region (one limit of the named constructions, row O1a); uniqueness of any ground state, states outside the named constructions and other boundary conditions are not proved and stay open (rows O1b and N1). The producer status closed_within_scope for the whole AY2 row O1 and its summary sentence that AY2 rows O1-O6 are closed within named scopes are not adopted for the gate text; the frozen producer files are retained as evidence.",
+        "Common GNS item and rates: one state with one GNS triple and the AQ1 limit dynamics T_theta; correlation functions only on |theta| at most 8, with a rate in N only on 5<=N<=14000 (BB2 item 5; the bound is vacuous from N=14419 with the frozen r_N) and convergence without a rate beyond; no equality of GNS dynamics of different states and no uniform-in-time statement. The density rate q^(N-1) holds for every N at least 2, per coarse step at fixed spacing.",
+        "Labelled only, not claimed: the ratio L/(C' q^3) about 4.4584, the widened exclusion margin about 3.3851, the half-width K_2^+ (tau/100)^2+C' q^3 about 1.5501e-11 against the first-order value about 6.944e-13 at tau/100, and the row-N4 preview sign margin 1/(144 K_2' tau) about 51.76, which rests on an ungated box-level reading of AY1 F13-F14 and on the untruncated F2 passage and is not admitted.",
+        "Contract wording read as follows (non-blocking): W1 the selection reason omits that AW2 was also stated in every centered whole-star box; W2 the two claim-exclusion lists differ in one entry (the wider contract entry applied); W3 (equal to skeptic D2) the inherited parameter control asks for d_X, N_0 and weights, and BC1 derives no decay estimate (N_min plays the role of N_0); W4 item 4 needs two open rows where the parameter list has one entry; W5 (equal to skeptic R3) the template leaves the finite-box state implicit (the untruncated F2 ground vector at fixed N); D1 no frame for limited outcomes (moot at this verdict); D3 the inherited clock control is loosely fitted to a statement loop (executed in full).",
+        "Phrase-list gap: neither the round list nor this contract's forbidden phrasings contain the AY2 row name or the every-ground-state wording of the claim exclusions, so the negation-aware scanner does not guard the O1 row; the reviewed wording does.",
+        "Independence: one forward producer plus the skeptic's pre-comparison replay, all correlated model agents; the forward commit 5816e0b came first and the skeptic pre-comparison package 5ec599f followed 3 min 32 s later, with the skeptic values final before the forward check.py was last written; isolation rests on disclosure and content, including a disclosed name-only exposure of the skeptic to the forward commit subject; the forward report was written by a shell heredoc and is bound by its freeze record.",
+        "Scientific priority is unverified."
+      ],
+      "model": "Zero-selected patterned family (AQ_patterned_zero_selected) at tau=+10^-8, with tau=-10^-8 a replay of the same |tau| formula at the mirrored coupling; the limit of the named constructions omega_inf (BB2: the common whole-sequence limit of F1 = AQ1 centered whole-star boxes and F2 = I1 section 6 all-contained-face boxes with padding on Lambda_N, equal to every AQ1 and F2 subsequential limit) and the untruncated finite-box ground states of F2 at fixed N; the original xz Wilson loop W with cover R={0,e_z}; Euclidean clock s=alpha t_E/hbar with G=H/alpha at the single node s=1; static equal-time Wilson mean",
+      "gate_path": "research/round33/advisor/bc1-gate.json",
+      "contribution_id": "HNM-C-BC1",
+      "dependencies": [
+        "r33-bb2",
+        "r33-bb1",
+        "r33-ba2",
+        "r32-av2",
+        "r32-aw2",
+        "r32-aw1",
+        "r32-ay2"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "statement+skeptic",
+      "derivation_steps": [
+        "Use BB2's identification of the limit with every AQ1 and F2 subsequential limit to restate the AV2 node and the AW2 enclosure for that one state, reading every constant by hash.",
+        "Bound the padded box's Wilson mean by the limit's enclosure widened by C' q^(N-1) and compute the least N at which the widened enclosure excludes 0.",
+        "Record the common GNS representation and dynamics of the two named limits, and update each Round32 obligation with its closing gate and scope, splitting the limit statement from uniqueness of ground states."
+      ],
+      "applications": [
+        "Makes the Round32 certificates statements about one limit of the named constructions.",
+        "The finite-box node and the F2 sign at N=2,3 remain obligations."
+      ],
+      "evidence": [
+        "research/round33/advisor/bc1-gate.json",
+        "research/round33/forward/bc1/report.md",
+        "research/round33/skeptic/bc1.md",
+        "research/round33/skeptic/bc1-independent-derivation.md"
+      ],
+      "sub_label": "certificate_restated_for_limit",
+      "secondary_sub_labels": [
+        "reference_unresolved",
+        "static_not_dynamic"
+      ]
+    },
+    {
+      "id": "bc2",
+      "sequence": 6,
+      "subround": 3,
+      "title": "Hruday route-B convergence of the uniform model's named construction and its node",
+      "accepted": "In the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling handled by route B (model AQ_uniform_routeB, labelled uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9) by the AL1 dictionary tau=96/g^4 of this model; every elementary face nu=alpha tau/24, selected triple (tau/24, tau/24, tau/24); Haar reference h_b=8 sum_e C_e; whole stars phi_b (21 omitted faces, norm 7|tau|) and single-factor groups psi_b (3 selected faces, support {b}, norm at most |tau|), per-site sum J'=29|tau| (AX1 gate sha256 1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177); both signs |tau|<=10^-8, with tau<0 the U_E mirror and no real g; coarse l-infinity metric on factor sites, a whole star of diameter 1 and a single-factor group of diameter 0; trace norm on B(H_Y); cover R={0,e_z}; Euclidean clock s=alpha t_E/hbar with G=H/alpha at the single node s=1; real-time clock theta=alpha t/hbar for the inherited limit dynamics only), with the named construction FB = centered whole-star-plus-single-group boxes Lambda_N=[-N,N]^3, N at least 2, and the finite complete-factor route-B volumes containing Lambda_N (stars inside the volume, every single group kept), every bound holding in each on-site cutoff space uniformly in the cutoff and then, at fixed N, for the untruncated ground vectors (AV1 F20-F23 with the route-B gap 1/2 of the AX1 gate; the N and cutoff limits are never exchanged): For the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling handled by route B, at the same coupling |tau|<=10^-8, the reduced densities of the named construction (centered whole-star-plus-single-group boxes on centered coarse cubes) converge as a whole sequence on every finite region, at a rate in N that holds for every N at least 2 with the region inside the box, and to the same limit along every exhausting sequence of finite complete-factor volumes of the same prescription; this limit coincides with every AQ1 subsequential state of that construction, is invariant under coarse translations, and at tau=+10^-8 has centered Euclidean Wilson correlation C(1) within the AX2 radius of the AX2 datum at the node s=1; this is convergence of the named constructions (one family for route B), not uniqueness of any ground state, not a statement about other boundary conditions or about states outside the named construction, not weak coupling or continuum, and not a statement uniform in the lattice spacing a. Constants (exact; q=1/64; both signs; the comparisons c1B, c4B and c5B compared directly; every constant recomputed from the route-B inputs, with no hypothesis layer). T0 (tier exact_first_order, route analytic_disc on the disc |z|<=64|tau|, proved in the packet from 52 first-order faces per factor and the per-site sum 29|z|, with the route-B circle bound T_B(rho)=(52 rho/144)/(1-29*352 rho) and T_B(|tau|)=13/3599632512 equal to the AX1 gate T'): at every site u of the union volume and for every N at least 2, sum over I containing u of ||c^A_I-c^B_I|| <= K_B q^((N-|u|_inf)_+) with K_B=2T_B(64|tau|)=13/27941256 (about 4.6526e-7; margin about 2.149 against 1/1000000), in each on-site cutoff space uniformly in the cutoff (no untruncated creation coefficients are asserted). T1 and T2 (tier exact_first_order, route iterated_split with W=1024 and lambda=2/W=1/512; t_0=13/1799816256, t_W=26/3148137, beta*=132572461259098000347351859/4012775859323049054050909456204, S_lambda=2169/343): for every N at least 2, ||rho^{box1}_R-rho^{box2}_R||_1 <= C_B q^(N-1) with C_B=2326328761843649826272217312701707175/2461302090348550272620124432958434944821248 (about 9.4516e-7; margin about 4.232 against 1/250000), and for every N at least 2 and every finite complete-factor region Y inside Lambda_N, ||rho^{box1}_Y-rho^{box2}_Y||_1 <= c_site,B |Y| e^{|Y|/10^8} q^{d_Y}, d_Y=N-max_{y in Y}|y|_inf, with c_site,B=35789673259133074250341804810795495/38457845161696098009689444264975546012832 (about 9.3062e-7; margin about 2.149 against 1/500000) and C_B=c_site,B(1+q). T3 and T4 (assembly union_comparison: each M greater than N compared with N by one direct c4B comparison of Lambda_N and Lambda_M, factor 1): for every N at least 2, sup over all M greater than N of ||rho^{FB,M}_R-rho^{FB,N}_R||_1 <= C'_B q^(N-1) with C'_B=C_B (margin about 4.232 against 1/250000), and for every N at least 2 with Y inside Lambda_N, sup over all M greater than N of ||rho^{FB,M}_Y-rho^{FB,N}_Y||_1 <= c'_site,B |Y| e^{|Y|/10^8} q^{d_Y} with c'_site,B=c_site,B (margin about 2.686 against 1/400000); the nested-telescoping values C_B/(1-q) and c_site,B/(1-q) are labelled only. The limit omega_inf exists on every finite region by this Cauchy bound and trace-class completeness, without compactness, and ||rho^{FB,N}_Y-rho^inf_Y||_1 <= c'_site,B |Y| e^{|Y|/10^8} q^{d_Y} for every N at least 2 with Y inside Lambda_N. Item 2a (exhaustion within the prescription): for finite complete-factor route-B volumes V_k with N_k the largest N with Lambda_N inside V_k, for every N_k at least 2 and every finite complete-factor region Y inside Lambda_{N_k}, ||rho^{V_k}_Y-rho^inf_Y||_1 <= (c_site,B+c'_site,B)|Y| e^{|Y|/10^8} q^(N_k-max_{y in Y}|y|_inf), with c_site,B+c'_site,B=2c_site,B (about 1.8612e-6), from one direct c5B comparison of V_k with Lambda_{N_k} and the whole-sequence bound; this is exhaustion within one prescription, not a comparison of boundary conditions. Item 2b: omega^{-tau}_inf=omega^{tau}_inf o alpha_E on every finite region, from the AX1 identity U_E H_N(tau) U_E^*=H_N(-tau) in every centered box and cutoff (U_E a product of one-link unitaries) and whole-sequence convergence at both signs; the -tau side is a mirror replay, not a second coupling. Item 3: omega_inf equals every AQ1-type subsequential state of the AX1 construction on every finite region, and only then inherits exactly the AX1 gate's route-B list. Item 4: for every coarse translation v and N at least |v|_inf+2, ||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 <= C_B q^(N-|v|_inf-1) by one direct c5B comparison, and omega_inf is invariant under coarse translations on every finite region by the region form of c5B; nothing is claimed for non-coarse fine translations. Node (AX2 gate sha256 1db36627b9eab00915b0cb38a0e9fd9cf9dd4dbf3ceb7eab969336f3f9f44be4, sub-label reference_unresolved): at tau=+10^-8 and s=1, C_inf(1)=(chi, e^{-G} chi) with chi=(pi(W)-omega_inf(W))Omega in the GNS representation of omega_inf satisfies |C_inf(1)-d| <= R' with d=497870683678639429793424156500617766317/40000000000000000000000000000000000000000 (about 1.24467670920e-2) and R'=1912298807996871790146581299723633/10000000000000000000000000000000000000000 (about 1.91229880800e-7), the AX2 gate rationals, returned exactly by the admitted AX2 calculator at its fixed design (the AX1 bound value D', k'=51|tau|/4, M_0=2, M_1=4s/pi); the free value e^{-3}/4 lies inside [d-R', d+R'], so no interaction shift, sign or coefficient of C(s) is claimed. The tau to tau/100 ratios are 39059948/388073 (about 100.651) for K_B and about 100.661 for C_B, c_site,B, C'_B and c'_site,B. Rates are per coarse step in N at fixed spacing.",
+      "summary": "For the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling (route B, |tau|<=10^-8), the box boundary moves the creation coefficients by at most K_B q^(N-|u|) (K_B about 4.65e-7 at q=1/64), the reduced densities of the named construction are local (C_B about 9.45e-7, c_site,B about 9.31e-7) and converge as a whole sequence to one limit on every finite region, the same along every exhausting sequence of volumes of the prescription, mirrored pointwise under tau -> -tau, coarse-translation invariant and equal to every AQ1-type subsequential state; at tau=+10^-8 and the single node s=1 only, the Round32 AX2 node certificate holds for this limit with unchanged datum and radius.",
+      "limitations": [
+        "Scope: only the uniform route-B model at fixed spacing and strong bare coupling (|tau| at most 10^-8, g^4 at least 9.6x10^9 by the AL1 dictionary of this model), the named construction FB and the finite complete-factor route-B volumes containing Lambda_N with N at least 2, finite complete-factor regions and the cover R, coarse translations and the single node s=1 at tau=+10^-8; route B has one named family, so no common limit of two route-B families is claimed; nothing transfers to the zero-selected family (no identification with the BB2 limit and no BB1 or BB2 constant applied), to other boundary prescriptions, to weak coupling or the continuum; the constants are uniform in N at fixed spacing and in the on-site cutoff, and no estimate is uniform in the lattice spacing a.",
+        "Convergence of the named construction only: no uniqueness of any ground state and no statement about states outside the named construction; the limit is identified only with the AQ1-type subsequential states of the AX1 construction and inherits only the AX1 gate's route-B list; the AX1 finite-volume statement (a simple ground and gap 1/2 in every finite complete-factor route-B volume) is a finite-volume premise, not an infinite-volume statement.",
+        "Dynamics: no route-B dynamics comparison and no correlation-function statement (dynamics_level is not exported); stationarity under the route-B limit dynamics T_theta and the GNS generator are inherited properties of the identified state from the AX1 gate (producer reading W6), not a route-B BA2; no equality of GNS dynamics of different states and no uniform-in-time statement; the secondary label static_not_dynamic is read in this sense (state statements and the inherited Euclidean node, no route-B real-time dynamics).",
+        "Node restatement only: d and R' are the AX2 gate rationals; the free value e^{-3}/4 lies inside the interval (reference_unresolved); no interaction shift, sign or coefficient of C(s), no other node and no convergence of finite-box nodes C_N(1) to C_inf(1) is claimed, and the -tau value is the U_E mirror replay; the labelled own re-evaluations of the radius (the producer's and the skeptic's, each about 2.7e-41 below R') are cross-checks, not the headline.",
+        "Coefficient input: T0 is a statement in each on-site cutoff space (untruncated creation coefficients are not asserted; producer reading W3); only the creation coefficients are continued in the coupling, and no analyticity of the reduced density or of the normalization is claimed (no zero-free region); the analytic steps of the disc lemma (Weierstrass, the maximum principle) and the AM2 majorant steps are proved in the report and are not machine-checked.",
+        "Constants are upper bounds only, evaluated at the constants proved in the packet (no hypothesis layer); the thin margins are T0 (about 2.1493) and T2 (about 2.1491), because c_site,B=K_B(2+beta* S_lambda) and the far term is about 1.04e-4 of the near term; the route-A extremes fail the route-B self-map by the factor 29/28 only (producer reading W4); the crude tier fails every target and is retained; the nested-telescoping and union-volume variants, the telescoped coefficient input and the weighted first order (49W+3)|tau|/144 are labelled only.",
+        "Rates: every rate is per coarse step in N at fixed spacing (a coarse step is (4a,2a,a)) and holds for every N at least 2 (on a region Y, for every N with Y inside Lambda_N; for the exhaustion, for every N_k at least 2); no correlation-function rate in N and no rate transferred from BB2 is claimed.",
+        "Contract wording read as follows (non-blocking): W1 clause 2a's item 1 is the whole-sequence bound T4; W2 (equal to skeptic R5) the sharper vanishing order N-|u|_inf+1 is not substituted; W3 T0 holds only in each Q_L; W4 (equal to skeptic R4) the route-A extremes fail only the self-map, by 29/28; W5 (equal to skeptic R6) with union_comparison T3 carries nothing beyond T1; W6 the inherited AX1 stationarity is not a route-B dynamics claim; W7 the factor 2 of 8*2^{diam I} is absorbed into lambda=2/W; skeptic D1 (T1 has no form field), D2 (c1B is a special case of c4B) and D3 (the inherited parameter control asks for d_X and N_0) stand.",
+        "Premises: inherited without re-proof are the AM2 majorant steps and fixed point, the AX1 route-B grouping, finite-volume theorem, state lemma, flip identity and route-B AQ1/AQ2 re-instantiation list, AV1 F20-F23, the AX2 certificate and calculator, and the I1 dictionary; the analytic disc (BA1 reverse Theorem 4.1), the iterated split (BB1 reverse) and the whole-sequence scheme (BB2) are shared premises named by the contract. The producer read parts of the gated BB1 reverse check.py outside its inputs for conventions (disclosed); no BC2 constant depends on it.",
+        "Independence: one forward producer plus the skeptic's pre-comparison replay, all correlated model agents; the skeptic pre-comparison package (5ec599f) was committed 3 min 44 s before the forward commit (ee45eed); the pre-comparison rationals equal the producer's exactly because both follow the frozen formula chain, so the agreement checks code and arithmetic, not a second method; isolation rests on disclosure and content; the report was written by a shell heredoc after a briefly written stub (disclosed to the coordinator, not in the frozen packet) and is bound by its freeze record.",
+        "Scientific priority is unverified."
+      ],
+      "model": "Uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling handled by route B (AQ_uniform_routeB; every elementary face nu=alpha tau/24; AL1 dictionary tau=96/g^4, g^4=9.6x10^9 at the cap; never weak coupling or continuum), both signs |tau|<=10^-8 with tau<0 the U_E mirror; Haar reference; whole stars and single-factor groups, J'=29|tau|, J_0'=29/10^8 (AX1); the named construction of centered whole-star-plus-single-group boxes Lambda_N, N at least 2, and finite complete-factor route-B volumes containing Lambda_N; reduced densities on finite complete-factor regions, trace norm; coarse l-infinity metric; the original xz Wilson loop and the centered Euclidean correlation at s=1",
+      "gate_path": "research/round33/advisor/bc2-gate.json",
+      "contribution_id": "HNM-C-BC2",
+      "dependencies": [
+        "r33-bb2",
+        "r33-bb1",
+        "r33-ba1",
+        "r32-ax1",
+        "r32-ax2",
+        "r29-am2",
+        "r32-av1"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "single+skeptic",
+      "derivation_steps": [
+        "Complexify the route-B fixed point on the disc 64|tau| (per-site sum 29|z|) and bound every-site coefficient differences by Cauchy's estimate with the route-B circle bound from 52 faces.",
+        "Run the recursive product-ordering split with per-site charging on route-B volumes, including the support-one single-factor groups, for direct comparisons of nested boxes, any two boxes and any two volumes.",
+        "Compare any two boxes directly to obtain the whole-sequence Cauchy estimate, then identify the limit with every AQ1-type subsequential state before inheriting the AX1 list, and replay the admitted AX2 calculator to restate the node."
+      ],
+      "applications": [
+        "Makes the Round32 AX2 node a statement about one limit of the route-B named construction.",
+        "Route-B dynamics, a second route-B boundary prescription and anything uniform in the lattice spacing remain obligations."
+      ],
+      "evidence": [
+        "research/round33/advisor/bc2-gate.json",
+        "research/round33/forward/bc2/report.md",
+        "research/round33/skeptic/bc2.md",
+        "research/round33/skeptic/bc2-independent-derivation.md"
+      ],
+      "sub_label": "convergence_of_named_constructions",
+      "secondary_sub_labels": [
+        "certificate_restated_for_limit",
+        "reference_unresolved",
+        "static_not_dynamic"
+      ]
+    },
+    {
+      "id": "bd1",
+      "sequence": 7,
+      "subround": 4,
+      "title": "Hruday centre-symmetry transfer across gauge groups with recorded obstructions",
+      "accepted": "Under the frozen BD1 convention (per-link electric term 8 C_2 with C_F=(N^2-1)/(2N) for SU(N), C_2(n)=n^2 for U(1), C_2(l)=l(l+1) for SO(3) and C_2=1 on the odd Z2 state; face energy 32 C_F; magnetic term -(tau/3) W with W = Re chi_fund/dim fund; creation sign psi=e^{-C} Omega_0 and omega(W) = -2 Re (W Omega_0, c^(1)) + O(tau^2)), on the one-plaquette finite graphs H_FG(G) (|tau| below 48 C_F) and on the group-G whole-star box models H^G_N on the open centered boxes Lambda_N, N at least 2, each box separately for |tau| below its Kato radius 12 C_F/(21(2N)^3), for G in {SU(2), SU(3), SU(4), SU(5), U(1), Z2, SO(3)}: the Haar moments E[W^k], k=1..4, and the first-order coefficients of omega(W)/tau (1/144, 1/1152, 1/2880, 1/5760, 1/96, 1/48 and 1/864 in that order) agree exactly between the characters route (forward) and Weyl integration on the SU(N) torus (reverse); the link-flip lemma holds on these models for SU(2), SU(4), U(1) and Z2, whose central elements -I, -I, e^{i pi} and the nontrivial element act as -1 on the Wilson representation, with E_3 verified on Lambda_2, Lambda_3, Lambda_4 and the 24-link coarse factors and E_2 on [-N,N]^2 by exact enumeration; the first-order parity theorem holds for SU(2), SU(4), SU(5), U(1) and Z2 (E[W^3]=0); SU(3) is an obstruction with E[W^3]=1/108, d omega(W^2)/dtau=1/6912 and second-order coefficient 1/589824, SO(3) with 1/27, 1/2592 and 1/331776, and SU(5) a flip obstruction with fourth-order coefficient 1/63403380965376=1/(2^30 3^10) on H_FG(SU(5)); for SU(2) in the AM2/AQ1 zero-selected patterned family at kappa=0, |tau| at most 10^-8 and both signs, omega(W_C)(-tau)=(-1)^{A(C)} omega(W_C)(tau) in every open centered whole-star box and every on-site cutoff, and pointwise for the limit of the named constructions through the BB2 whole-sequence bound at each sign (c'_site=2/984375, q=1/64). Under the frozen convention, the link-flip lemma transfers exactly to the listed gauge groups that have a central element acting as -1 on the Wilson representation and the first-order parity theorem exactly to those with vanishing third Haar moment of W, each with its own first-order Wilson coefficient, on one-plaquette models and on group box models in each box separately; SU(3) and SO(3) are recorded obstructions with exact nonzero coefficients, and SU(5) is a recorded flip obstruction with an exact nonzero fourth-order coefficient; for SU(2) in the zero-selected family at kappa=0 the Wilson-loop mean is odd or even in tau according to the parity of the number of plaquettes of any spanning surface of the loop, in every open centered whole-star box and for the limit of the named constructions; these are statements about named models and one-plaquette finite graphs, not AM2 or continuum statements for other groups, not statements for periodic boxes with an odd side, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+      "summary": "Under the frozen convention, on the one-plaquette models H_FG(G) and the group-G whole-star box models (each box separately, inside its Kato radius), the Round32 link-flip lemma transfers exactly to the listed gauge groups that have a central element acting as -1 on the Wilson representation (SU(2), SU(4), U(1), Z2) and the first-order parity theorem to the listed groups with vanishing third Haar moment (SU(2), SU(4), SU(5), U(1), Z2), each with its own first-order Wilson coefficient (1/1152, 1/2880, 1/5760, 1/96, 1/48, 1/864 for SU(3), SU(4), SU(5), U(1), Z2, SO(3)); SU(3), SO(3) and SU(5) are recorded obstructions with exact nonzero coefficients; for SU(2) in the zero-selected family at kappa=0 the Wilson-loop mean has the parity of the enclosed area in every open centered whole-star (F1) box and for the limit of the named constructions (no parity is claimed for F2 boxes).",
+      "limitations": [
+        "Scope: statements about named finite models only, H_FG(G) (finite graphs; model_is_finite_graph true, transfers_to_aq false) and H^G_N box by box inside a Kato radius that shrinks like N^-3; nothing is claimed for all N at once for any group other than SU(2), no limit state is constructed for any other group, and no AM2, AV1, AQ, BB1 or BB2 statement and no dictionary to a bare coupling is transferred to SU(3), SU(4), SU(5), U(1), Z2 or SO(3); each is recorded as an obligation.",
+        "The group-cell oddness statements use simplicity of the finite-box ground eigenvalue from Kato's theorem with a sufficient, not sharp, radius (12 C_F/F_N with F_N=21(2N)^3 retained faces; 48 C_F on one plaquette); this is simplicity in a finite box, not uniqueness of any ground state, and the word \"unique\" in contract items 1 and 6 is read that way.",
+        "No flip or parity statement is made on any periodic box with an odd side. The recorded obstruction is that E_3 and E_2 meet seam plaquettes evenly when the keyed coordinate has an odd side (16 on 3x4x4, 4x3x4 and 4x4x3; 24 on 3x3x4; 4 on the 4x3 torus); E_2 still meets every plaquette of the 3x4 torus once, and by GF(2) elimination some flip set exists whenever every coordinate plane has an even plaquette count (at most one odd side); these are recorded findings, not claims.",
+        "The SU(2) corollary inherits the AW1 flip lemma, AM2 simplicity and cutoff removal and the BB2 whole-sequence convergence with their own limitations (the named constructions F1 and F2 only; no statement about other states or boundary conditions); it is made at kappa=0 only, not at a nonzero selected triple and not for F2 or literal vertex boxes; the loop and surface enumerations audit the identity |C cap E_3| = A(C) mod 2 and do not replace the proof.",
+        "Exact rational arithmetic decides every value; decimals are truncated previews (the reverse report prints 1.57720727258e-14 for omega_4 of SU(5), a text slip; the exact value 1/63403380965376 and the results preview 1.57720295790e-14 stand). Kato's theorem, Peter-Weyl, the Weyl integration and character formulas, Schur-Weyl duality and Schur's lemma are cited, not machine-checked; the finite enumerations and fixtures audit their finite consequences.",
+        "Contract defects recorded, none blocking: the preregistered tier_label_rule conflicts with the tier_mixing_rejected control for second- and fourth-order coefficients (both producers follow the control: route named, no tier); gate_fields_required flip_transfer_scope is a description, so the gate names SU(2), SU(4), U(1) and Z2; items 1 and 6 say \"unique\" for finite-box simplicity; the periodic-torus obstruction concerns E_3 and E_2 at the seam, not every flip set.",
+        "Review standing: model-agent skeptic with correlated ancestry (same model family as both producers and the advisor); its pre-comparison package was committed after both producer packets, with its values final before either producer commit; not human peer review; scientific priority is not verified; weak coupling and the continuum are not addressed, and no estimate is made uniformly in the lattice spacing a."
+      ],
+      "model": "One-plaquette finite models H_FG(G) = 32 C_2 - (tau/3) W on class functions of the plaquette holonomy and group-G whole-star box models H^G_N for G in {SU(2), SU(3), SU(4), SU(5), U(1), Z2, SO(3)} under the frozen convention (per-link 8 C_2 with C_F=(N^2-1)/(2N) for SU(N), n^2 for U(1), C_2(odd)=1 for Z2, l(l+1) for SO(3); magnetic -(tau/3) sum W_f with W_f=Re chi_fund(U_f)/dim; face energy 32 C_F); Haar moments; the flip sets E_3 on Z^3 boxes and coarse factors and E_2 on Z^2 boxes; the SU(2) zero-selected family (AM2/AQ1, |tau|<=10^-8, kappa=0) in open centered whole-star boxes and the limit of the named constructions (BB2)",
+      "gate_path": "research/round33/advisor/bd1-gate.json",
+      "contribution_id": "HNM-C-BD1",
+      "dependencies": [
+        "r32-aw1",
+        "r33-bb2",
+        "r32-aw2",
+        "r32-az2"
+      ],
+      "producers": [
+        "forward",
+        "reverse"
+      ],
+      "direction": "paired",
+      "derivation_steps": [
+        "Turn the SU(2) proof into two criteria: a central element acting as -1 gives the link flip; a vanishing third Haar moment gives the first-order parity.",
+        "Compute exact Haar moments and one-plaquette Rayleigh-Schroedinger coefficients for seven groups by characters (forward) and by Weyl integration over the maximal torus (reverse).",
+        "Exhibit the obstructions where a criterion fails, verify the flip sets on boxes, and combine the SU(2) flip with BB2's whole-sequence convergence at each sign for the area parity of the limit."
+      ],
+      "applications": [
+        "Transfer ledger of the Round32 centre-grading equations to other gauge groups, with the SU(3), SO(3) and SU(5) obstructions retained.",
+        "AM2/AQ chains and dictionaries for other groups remain obligations."
+      ],
+      "evidence": [
+        "research/round33/advisor/bd1-gate.json",
+        "research/round33/forward/bd1/report.md",
+        "research/round33/reverse/bd1/report.md",
+        "research/round33/skeptic/bd1.md"
+      ],
+      "sub_label": "transfer_to_named_model",
+      "secondary_sub_labels": [
+        "obstruction_recorded"
+      ]
+    },
+    {
+      "id": "bd2",
+      "sequence": 8,
+      "subround": 4,
+      "title": "Hruday new observables and dimensions in SU(2): the two-plaquette graph, the 1x2 loop, the electric band and 2+1D",
+      "accepted": "On the Round11 two-plaquette graph H_FG(l1,l2) = K - l1 W_1 - l2 W_2 (open two-square patch, 6 vertices, 7 links, gauge-invariant sector, K the sum of the seven link Casimirs at rho=1, alpha units, trace-monomial cutoffs D=6 and D=8), the coefficients through total order 4 are identical at both cutoffs: <W_1> = l1/6 - 5 l1^3/864 + l1 l2^2/4212, <z> = 7 l1 l2/216 - 349 (l1^3 l2 + l1 l2^3)/303264 for the 1x2 loop z, and <C_shared> = (l1^2 + l2^2)/48 - 5 (l1^4 + l2^4)/4608 - 49 l1^2 l2^2/438048; <W_1> is odd in l1 and even in l2 by the one-link flips of h1 and h2, <z> is odd in each coupling and <C_shared> even in each; at l1=l2=l with |l| in {1/10, 1/100, 1/1000} and both signs the certified enclosures of <z> are positive at D=6 and D=8, with D=8 relative width at most 1.79645e-17 against the frozen 1/10^16. In the zero-selected SU(2) family (AM2/AQ1, |tau| at most 10^-8, cover R={0,e_z}) the 1x2 Wilson loop W_{1x2} of the omitted xz faces at 0 and e_x has first-order coefficient 0 in every box, satisfies |omega(W_{1x2})| <= K_2' tau^2 (K_2' the AY1 gate constant; about 1.34175e-12 at |tau|=10^-8) for every F1 and F2 box and for the limit of the named constructions at both signs, is even in tau in every F1 box and for the limit, and has the formal second-order coefficient 7/124416 (labelled formal_second_order_coefficient: no sign and no certified remainder); the electric energy omega(h_R) on R lies in [(3/2)L^2, 98|tau|], about [2.87586637818e-19, 9.8e-7] at |tau|=10^-8, with L the AY2 lower distance, for every F1 and F2 box (untruncated at fixed N) and for the limit, at both signs. In the declared 2+1-dimensional model the AM2 counting gives p=3, J=|tau|, termination order 6, G_3(R)=9 e^{3/32} and G_3'(R)=118 e^{3/32} at R=1/64, and the cap |tau| <= 1/(576 e^{3/32}) (directed lower bound 1580747155173/10^15), with no finite-volume theorem. On the Round11 two-plaquette graph with independent couplings, the exact low-order coefficients of the face mean, the 1x2 loop and the shared-link Casimir are computed with zero truncation error, the face mean is odd in its own coupling and even in the other, and the 1x2 loop has a certified sign at every grid point; in the zero-selected SU(2) family the 1x2 Wilson mean vanishes at first order and is even in tau, with only a formal second-order coefficient, the electric energy on the cover lies in a certified two-sided band for every box and for the limit of the named constructions, and the 2+1-dimensional AM2 constants are recounted; these are statements about named models and a finite graph, not an area law, not a certified sign of the 1x2 mean, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+      "summary": "The admitted SU(2) equations applied to new observables and a new dimension: on the two-plaquette graph with independent couplings the face mean, the 1x2 loop and the shared-link Casimir have exact low-order coefficients (7/216 for the loop, 1/24 for the Casimir at equal couplings), the face mean is odd in its own coupling and even in the other, and the 1x2 loop has a certified positive sign on the grid l1=l2 in {+-1/10, +-1/100, +-1/1000}; in the zero-selected Z^3 family (|tau|<=10^-8) the 1x2 Wilson mean vanishes at first order and is at most about 1.34e-12 at the cap, the electric energy on the cover lies in a certified band, and the AM2 constants recounted in 2+1 dimensions admit |tau| up to about 1.58e-3 (constants only, no finite-volume theorem).",
+      "limitations": [
+        "Graph scope: the Round11 two-square patch only, at D=6 and D=8 and the declared grid; static means with no dynamical or mass-gap reading; transfers_to_aq false; the graph coefficients are finite-graph values, and 7/124416 = (7/216)/24^2 is a labelled identity between the graph and the formal Z^3 coefficient, not a transfer.",
+        "Z^3 scope: the zero-selected family at |tau| at most 10^-8, the fixed cover R and fixed spacing; no certified value or sign of the Z^3 1x2 mean (the admitted bound K_2' tau^2 exceeds the formal term by about 2.38479e8; a certified sign needs a uniform fourth-order remainder, and for F2 boxes a third-order one); evenness in tau is not claimed for F2 boxes.",
+        "The band is two-sided but loose (ratio about 3.4e12) and is not a tight enclosure, which would need a second-order upper bound for the unbounded h_R; its lower end rests on the AY1 forward F11-F14 per-box ball (a reviewed step, not a gate sentence) for boxes and on AY2 item (2) for the limit; its upper end passes to the limit by lower semicontinuity only.",
+        "No area law and no string-tension statement is made: no zero-free region of the reduced density is admitted.",
+        "2+1 dimensions: recounted AM2 constants only; no finite-volume ground-state or gap theorem and no AQ chain, node or dictionary in 2+1 dimensions (g^2 has mass dimension); each needs its own contract.",
+        "The enclosures use the admitted AZ2 certificate code copied verbatim (Weyl gap 3-2|l|, Temple, the Round11 Schur-complement tail comparison, Eckart and Davis-Kahan angles); the skeptic re-evaluated the lemma in its own basis and has its own sharper tail certificate (worst D=8 relative width 3.56e-18); Kato, Weyl, Temple, Eckart, Davis-Kahan, Peter-Weyl and Fuchs-van de Graaf are cited, not machine-checked.",
+        "Review standing: model-agent skeptic with correlated ancestry (same model family as the producer and the advisor); its pre-comparison package was committed after the producer packet, with its values final before the producer commit; not human peer review; scientific priority is not verified; weak coupling and the continuum are not addressed, and no estimate is made uniformly in the lattice spacing a."
+      ],
+      "model": "(a) the finite-graph model H_FG(l1,l2) = K - l1 W_1 - l2 W_2 on the Round11 two-plaquette graph (open two-square patch, 6 vertices, 7 links, gauge-invariant sector, K the sum of the seven link Casimirs at rho=1, alpha units, trace-monomial cutoffs D in {6,8}); (b) the SU(2) zero-selected patterned family (AM2/AQ1, |tau|<=10^-8) with the frozen 1x2 rectangle W_{1x2} and the electric energy h_R on the cover R={0,e_z}, in every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions (BB2); (c) the AM2 creation expansion re-instantiated in 2+1 dimensions for the declared model and factorization (radius 1/64, AM2 normalization)",
+      "gate_path": "research/round33/advisor/bd2-gate.json",
+      "contribution_id": "HNM-C-BD2",
+      "dependencies": [
+        "r32-az2",
+        "r32-aw1",
+        "r32-ay1",
+        "r32-ay2",
+        "r33-bb2",
+        "r29-am2"
+      ],
+      "producers": [
+        "forward"
+      ],
+      "direction": "single+skeptic",
+      "derivation_steps": [
+        "Re-instantiate the admitted AZ2 exact graph algebra with independent couplings and compute coefficient tables at two cutoffs with zero truncation error; use one-link flips for the two parities.",
+        "Certify enclosures of the 1x2 loop with an itemized residual (Eckart, Schur complement, Davis-Kahan).",
+        "Apply the admitted AY1/AY2 bounds to the 1x2 rectangle and to the electric energy (Fuchs-van de Graaf, on-site gap, energy budget, lower semicontinuity through the cutoff), and recount the AM2 majorant for maximal support 3 in 2+1 dimensions."
+      ],
+      "applications": [
+        "New observables and a new dimension for the admitted SU(2) machinery, with the area law, a certified 1x2 sign and a tight electric enclosure recorded as obstructions.",
+        "The 2+1D AQ chain is an obligation."
+      ],
+      "evidence": [
+        "research/round33/advisor/bd2-gate.json",
+        "research/round33/forward/bd2/report.md",
+        "research/round33/skeptic/bd2.md"
+      ],
+      "sub_label": "sign_certified_finite_graph",
+      "secondary_sub_labels": [
+        "transfer_to_named_model",
+        "obstruction_recorded",
+        "static_not_dynamic"
+      ]
+    }
+  ],
+  "scope_statement": "Round33 complete: eight reviewed investigations (BA1-BD2) in three research sub-rounds and an applications stage, all accepted within their stated scope, on fixed-lattice SU(2) Kogut-Susskind families at fixed spacing and fixed coupling (the zero-selected patterned AQ family at |tau|<=10^-8 with its two named box constructions, the BC1 node, Wilson-mean enclosure and padded-box sign only at the cap tau=+-10^-8, the uniform Kogut-Susskind model at strong bare coupling handled by route B at |tau|<=10^-8, its AX2 node only at tau=+10^-8, s=1), on one-plaquette finite models of seven gauge groups, on the Round11 two-plaquette graph, and on the recounted AM2 constants in 2+1 dimensions. Every statement names its model, coupling, construction, state, clock and exclusions. The limit is the limit of the named constructions: nothing here is uniqueness of any ground state or a statement about other boundary conditions, nothing is uniform in the lattice spacing, no finite graph or one-plaquette value transfers to the lattice limit, and no scientific priority is claimed; the four-dimensional continuum Yang-Mills existence and mass-gap problem remains open.",
+  "summary": "Round33 turns the Round32 subsequential statements into statements about one limit and applies the admitted equations to related problems. Locality: a change of box boundary moves the AM2 creation coefficients on supports meeting the Wilson cover R by at most K q^(N-1), N the smaller box size (K=49/111790368 at q=1/64; BA1), and the Heisenberg evolutions of observables A on R (||A||<=1) under the two named constructions differ by at most about 2.55e-11 (5N+1)/N^3 on |theta|<=8 (BA2). Convergence: the reduced densities of the finite-box ground vectors are local at q=1/64 (C about 8.91e-7, c_site about 8.77e-7; BB1, by a hard-core polymer expansion with a new mixed-weight lemma and by a recursive product-ordering split), and both named constructions converge as whole sequences to one common limit on every finite region at the rate q^(N-1) (at most C' q^(N-1) on the cover R with C' about 4.06e-6, and c'_site |Y| e^{|Y|/10^8} q^{d_Y} on a region Y with c'_site about 2.03e-6), equal to every AQ1 (F1) and F2 subsequential limit, coarse-translation invariant, with correlation functions on |theta|<=8 that converge (rate 1/N only on 5<=N<=14000; BB2). Consequences: at the cap tau=10^-8 the Round32 node certificate at s=1 (radius about 1.83e-7) and Wilson-mean enclosure hold for that limit with unchanged constants, and the untruncated padded boxes have a certified sign from N=4 at tau=+-10^-8 only (BC1); the route-B uniform model's named construction converges likewise and the AX2 node (tau=10^-8, s=1) holds for its limit (BC2). Applications: on one-plaquette models and group-G whole-star box models under the frozen convention (each box separately, inside its Kato radius), the link-flip lemma transfers exactly to SU(2), SU(4), U(1), Z2 and the first-order parity also to SU(5), with first-order Wilson coefficients per group, while SU(3), SO(3) and SU(5) are recorded obstructions with exact nonzero coefficients, and the SU(2) area parity holds at kappa=0 in every open centered whole-star (F1) box and for the limit (BD1); the two-plaquette graph with independent couplings gives exact coefficients through total order 4 and a 1x2 loop certified positive at l1=l2 in {+-1/10, +-1/100, +-1/1000}, in the zero-selected family the Z^3 1x2 mean is zero at first order and at most K_2' tau^2 (about 1.34e-12 at |tau|=10^-8), the electric energy on the cover lies in a certified band, and the AM2 constants recounted in 2+1 dimensions admit |tau| up to about 1.58e-3, with no finite-volume theorem (BD2); candidates named in planning but not attempted are recorded as such in the applications ledger. Uniqueness of any ground state, other boundary conditions, route-B dynamics, finite-box nodes, an area law and anything uniform in the lattice spacing remain open.",
+  "addendum": {
+    "title": "Round33 research addendum: boundary decay, locality and convergence of the named constructions, certificates for the limit, and applications to related problems",
+    "path": "papers/round33-addendum/main.pdf",
+    "url": "ym-round33-addendum.pdf",
+    "source_dir": "papers/round33-addendum/"
+  },
+  "applications": [
+    {
+      "loop_id": "bd1",
+      "problem": "Does the Round32 link-flip lemma U_E H(tau) U_E^* = H(-tau) hold for other gauge groups?",
+      "equation": "flip lemma: a central element acting as -1 on the Wilson representation maps every W_f to -W_f",
+      "outcome": "transfers to SU(2), SU(4), U(1) and Z2 (central -I, -I, e^{i pi}, the nontrivial element)",
+      "model": "one-plaquette models H_FG(G) and group-G whole-star boxes under the frozen convention",
+      "kind": "transfer",
+      "detail": "criterion A proved; flip sets E_3 and E_2 verified on boxes",
+      "sources": [
+        "research/round33/forward/bd1/report.md",
+        "research/round33/reverse/bd1/report.md",
+        "research/round33/skeptic/bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd1",
+      "problem": "Does the Round32 first-order parity theorem hold for other gauge groups?",
+      "equation": "E_Haar[W^3]=0 with single-occurrence orthogonality",
+      "outcome": "transfers to SU(2), SU(4), SU(5), U(1) and Z2; first-order Wilson coefficients 1/1152 (SU(3)), 1/2880 (SU(4)), 1/5760 (SU(5)), 1/96 (U(1)), 1/48 (Z2), 1/864 (SO(3)) under the frozen convention",
+      "model": "one-plaquette models H_FG(G) (|tau| below 48 C_F) and group-G whole-star boxes, each box separately inside its Kato radius 12 C_F/(21(2N)^3), under the frozen convention",
+      "kind": "transfer",
+      "detail": "characters and Weyl integration agree exactly on 141 cells",
+      "sources": [
+        "research/round33/forward/bd1/report.md",
+        "research/round33/reverse/bd1/report.md",
+        "research/round33/skeptic/bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd1",
+      "problem": "SU(3)",
+      "equation": "flip lemma and first-order parity",
+      "outcome": "obstruction: no central -1 (det(-I)=-1), E[W^3]=1/108, d omega(W^2)/d tau = 1/6912, second-order coefficient of omega(W) = 1/589824",
+      "model": "SU(3) one-plaquette model",
+      "kind": "obstruction",
+      "detail": "omega(W) is not odd in tau",
+      "sources": [
+        "research/round33/forward/bd1/report.md",
+        "research/round33/reverse/bd1/report.md",
+        "research/round33/skeptic/bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd1",
+      "problem": "SO(3)",
+      "equation": "flip lemma and first-order parity",
+      "outcome": "obstruction: trivial centre, E[W^3]=1/27, d omega(W^2)/d tau = 1/2592, second-order coefficient 1/331776",
+      "model": "SO(3) one-plaquette model (vector Wilson representation)",
+      "kind": "obstruction",
+      "detail": "",
+      "sources": [
+        "research/round33/forward/bd1/report.md",
+        "research/round33/reverse/bd1/report.md",
+        "research/round33/skeptic/bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd1",
+      "problem": "SU(5)",
+      "equation": "flip lemma (parity transfers)",
+      "outcome": "flip obstructed: fourth-order coefficient of omega(W) = 1/63403380965376 = 1/(2^30 3^10), nonzero",
+      "model": "SU(5) one-plaquette model",
+      "kind": "partial",
+      "detail": "parity holds (E[W^3]=0), the flip does not (no central -1)",
+      "sources": [
+        "research/round33/forward/bd1/report.md",
+        "research/round33/reverse/bd1/report.md",
+        "research/round33/skeptic/bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd1",
+      "problem": "SU(2) Wilson loops of any area for the limit of the named constructions",
+      "equation": "area parity omega(W_C)(-tau) = (-1)^{A(C)} omega(W_C)(tau)",
+      "outcome": "holds in every open centered whole-star box at kappa=0 and pointwise for the limit through BB2 at each sign",
+      "model": "SU(2) zero-selected family",
+      "kind": "transfer",
+      "detail": "",
+      "sources": [
+        "research/round33/forward/bd1/report.md",
+        "research/round33/reverse/bd1/report.md",
+        "research/round33/skeptic/bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Two-plaquette graph with independent couplings",
+      "equation": "exact Rayleigh-Schroedinger with the admitted AZ2 algebra; one-link flips",
+      "outcome": "<z> = 7 l1 l2/216 + ..., <C_shared> = (l1^2+l2^2)/48 + ..., <W_1> odd in l1 and even in l2; <z> certified positive on the grid l1=l2 in {+-1/10, +-1/100, +-1/1000} at D=6 and D=8, with D=8 relative width at most about 1.8e-17 against the frozen 1/10^16 (the D=6 widths, up to about 7.0e-12, are reported, not targeted); <z> is odd in each coupling, so no sign is claimed off the diagonal grid",
+      "model": "Round11 two-plaquette graph (finite)",
+      "kind": "transfer",
+      "detail": "finite graph; transfers to nothing in the lattice limit",
+      "sources": [
+        "research/round33/forward/bd2/report.md",
+        "research/round33/skeptic/bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Z^3 1x2 Wilson loop",
+      "equation": "centre grading, AW1 flip, AY1/AY2 bounds",
+      "outcome": "first order exactly 0; |omega(W_1x2)| <= K_2' tau^2 (about 1.34e-12) for every F1 and F2 box and the limit; even in tau for F1 boxes and the limit; 7/124416 formal only",
+      "model": "SU(2) zero-selected family",
+      "kind": "partial",
+      "detail": "a certified sign needs a uniform higher-order remainder (obstruction)",
+      "sources": [
+        "research/round33/forward/bd2/report.md",
+        "research/round33/skeptic/bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Electric energy on the cover",
+      "equation": "Fuchs-van de Graaf, on-site gap, AY2 distance, energy budget",
+      "outcome": "omega(h_R) in [(3/2)L^2, 98|tau|], about [2.88e-19, 9.8e-7] at |tau|=10^-8, every box and the limit",
+      "model": "SU(2) zero-selected family",
+      "kind": "partial",
+      "detail": "a tight enclosure is obstructed (unbounded observable; band about 3.4e12 wide)",
+      "sources": [
+        "research/round33/forward/bd2/report.md",
+        "research/round33/skeptic/bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "2+1 dimensions",
+      "equation": "AM2 majorant recounted for maximal support 3",
+      "outcome": "G_3(1/64)=9e^{3/32}, G_3'(1/64)=118e^{3/32}, termination order 6, admissible |tau| up to about 1.58e-3",
+      "model": "declared 2+1D SU(2) model (constants only)",
+      "kind": "partial",
+      "detail": "no finite-volume 2+1D theorem, node or dictionary claimed",
+      "sources": [
+        "research/round33/forward/bd2/report.md",
+        "research/round33/skeptic/bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Area law",
+      "equation": "order-versus-area argument",
+      "outcome": "not claimed: it needs analyticity of the reduced density (no zero-free region admitted)",
+      "model": "SU(2) zero-selected family",
+      "kind": "obstruction",
+      "detail": "",
+      "sources": [
+        "research/round33/forward/bd2/report.md",
+        "research/round33/skeptic/bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Einstein-QED evidence rounds",
+      "equation": "none shared",
+      "outcome": "no transfer (no shared equation)",
+      "model": "Round3-7 Einstein-QED records",
+      "kind": "obstruction",
+      "detail": "",
+      "sources": [
+        "research/round33/forward/bd2/report.md",
+        "research/round33/skeptic/bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd1",
+      "problem": "Further groups with a central element acting as -1 on the Wilson representation: U(N) for N>=2, Sp(2k), SO(2k) in the vector representation, SU(2k) for k>=3",
+      "equation": "flip lemma and first-order parity (the BD1 criteria)",
+      "outcome": "not attempted: the BD1 contract froze seven groups; the planning records (advisor/deliberation-1.md item 6 and the modern lens memo) name these groups as meeting the criterion, but no cell, check, review or gate covers them, and nothing is claimed for them",
+      "model": "none (no frozen convention or model for these groups)",
+      "kind": "not_attempted",
+      "detail": "a transfer would need its own frozen convention, exact moments and a gate",
+      "sources": [
+        "research/round33/contracts/bd1.json",
+        "research/round33/advisor/selection-bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd1",
+      "problem": "Groups and representations without a central element acting as -1: SU(N) for odd N>=7, SO(2k+1) for k>=2, G2, and adjoint Wilson loops",
+      "equation": "flip lemma",
+      "outcome": "not attempted beyond the frozen list, in which SU(3), SU(5) and SO(3) have no such element (recorded obstructions); no cell, check, review or gate covers the others, and nothing is claimed for them",
+      "model": "none (no frozen convention or model for these groups)",
+      "kind": "not_attempted",
+      "detail": "the modern lens memo expects the flip to fail for SU(N) with N odd, SO(2k+1), G2 and adjoint loops; that expectation is not checked",
+      "sources": [
+        "research/round33/contracts/bd1.json",
+        "research/round33/advisor/selection-bd1.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Round10 one-square graph",
+      "equation": "one-link flip and exact graph algebra",
+      "outcome": "not attempted as a separate application: no investigation took the Round10 one-square gap model as its model; BD1's one-plaquette H_FG(SU(2)) uses the frozen BD1 normalization, and no gate identifies it with the Round10 Hamiltonian or reuses the Round10 gap certificate",
+      "model": "none (Round10 one-square gap model not re-instantiated)",
+      "kind": "not_attempted",
+      "detail": "proposed in the skeptic triage (skeptic/triage.md) and in the brief's candidate list",
+      "sources": [
+        "research/round33/contracts/bd2.json",
+        "research/round33/advisor/selection-bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Round11 two-plaquette graph for U(1) or Z2",
+      "equation": "one-link flip and exact graph algebra",
+      "outcome": "not attempted: the BD2 contract froze the SU(2) graph only, re-instantiating the admitted SU(2) AZ2 certificate code; nothing is claimed for other groups on the graph",
+      "model": "none (no U(1) or Z2 graph model frozen)",
+      "kind": "not_attempted",
+      "detail": "proposed in the skeptic triage (skeptic/triage.md)",
+      "sources": [
+        "research/round33/contracts/bd2.json",
+        "research/round33/advisor/selection-bd2.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "AV1 state lemma and AV2 window kernel in 2+1 dimensions",
+      "equation": "AV1 state bound; AV2 window-kernel constants M_0=2, M_1=4s/pi, M_2=2s^2",
+      "outcome": "not attempted: the AQ chain in 2+1 dimensions, including the AV1 state lemma, needs its own contract (BD2 gate limitation); the forward report's remark that the AV2 window-kernel constants carry over as a dimension-independent spectral identity is not in the gate and is not claimed",
+      "model": "declared 2+1D SU(2) model (constants only)",
+      "kind": "not_attempted",
+      "detail": "no finite-volume 2+1D theorem, node or dictionary exists to which a window kernel could be applied",
+      "sources": [
+        "research/round33/advisor/bd2-gate.json",
+        "research/round33/forward/bd2/report.md"
+      ]
+    },
+    {
+      "loop_id": "bd2",
+      "problem": "Earlier finite-model rounds other than Round10 and Round11 (for example Round9 finite nonabelian models, the Round12 growing-graph study, the Round14 deformed finite SU(2) measure and the Round16 shared-face subproblem)",
+      "equation": "centre grading, one-link flips and the admitted state bounds",
+      "outcome": "not attempted: the applications stage took only the Round11 two-plaquette graph (BD2) and one-plaquette group models (BD1); no investigation re-examined the other finite-model rounds, and nothing is claimed for them",
+      "model": "none (no earlier finite model re-instantiated)",
+      "kind": "not_attempted",
+      "detail": "the brief lists \"the earlier finite-model rounds\" as a candidate; each would need its own contract",
+      "sources": [
+        "research/round33/contracts/bd2.json",
+        "research/round33/advisor/selection-bd2.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1212 @@
+{
+  "arithmetic": {
+    "flip_sets.py": "plain Python int and Python's builtin arbitrary-precision integers used as GF(2) bit-vectors (XOR/AND/bit-length only); no floats, no Fraction",
+    "graph_counts.py": "plain Python int throughout; no floats, no Fraction",
+    "haar_moments.py": "fractions.Fraction throughout for every value entering a comparison; no floats decide anything"
+  },
+  "assistant": 4,
+  "findings": {
+    "discrepancies_found": false,
+    "notes": [
+      "flip_sets.py: an independent, from-scratch derivation of the flip-set membership rules (E_3={(p,x):p_y even} u {(p,y):p_z even} u {(p,z):p_x even} on Z^3, the AW1 set; E_2={(p,x):p_y even} on Z^2) confirms, over all 24 (orientation, p mod 2) residue classes of E_3 (12 meeting once, 12 meeting three times, all covariant under even translation) and all 4 classes of E_2 (every class meeting exactly once), that E_3 meets every plaquette of Z^3 an odd number of times and E_2 meets every plaquette of Z^2 exactly once. Independently re-deriving the I1 coarse-factor ownership rule (a factor (i,j,k) owns, for each of its 8 fine points (4i+r,2j+s,k), r=0..3, s=0..1, the x-, y- and z-link based there -- 24 links total) and the whole-star box Lambda_N = union of factor links for i,j,k in [-N,N], two independent methods (a raw brute-force plaquette enumeration over a padded window, and a closed-form per-anchor sum using the 24-class I1 face table) agree with each other and reproduce every pinned BD1 number exactly for N=2,3,4: owned links 3000/8232/17496 (=24(2N+1)^3), owned plaquettes 2335/6909/15291 with meet-once/meet-three histograms 1082/1253, 3630/3279, 7348/7943, retained faces 1344/4536/10752 (=21(2N)^3, exactly half meeting once and half meeting three times in every case), matching both the forward and reverse BD1 packets' own results.json fields bit-for-bit. The 24-link coarse factor gives exactly 16 links in E_3 when the anchor's z is even and 8 when odd (checked on the seven anchors the forward report probes -- (0,0,0), (0,0,1), (1,0,0), (0,1,0), (1,1,1), (-1,-1,-1), (2,-3,5) -- and on a wide sample of 13x13x13 other anchors), matching the forward report's per-factor table and the reverse's even_z_links=16/odd_z_links=8 fields exactly. E_2 on [-N,N]^2 meets every one of 16/36/64 plaquettes exactly once for N=2,3,4, matching both packets. A genuine GF(2) Gaussian-elimination solvability check (bit-packed integers, not the closed-form 'at most one odd side' rule) on the five named periodic tori -- 4x3x4 and 3x3x4 for E_3, 4x3, 3x3 and 3x4 for E_2 -- finds some odd-covering link set exists on 4x3x4 (one odd side), 4x3 and 3x4 (one odd side each) and does not exist on 3x3x4 and 3x3 (two odd sides each), agreeing exactly with the reverse packet's finding_torus_flip_set_existence_gf2 and periodic_tori_odd_side_recorded checks and with the forward report's remark_gf2_not_claimed entries where they name that torus. The literal keyed E_3/E_2 rule's own seam defect on these five tori (16 even plaquettes on 4x3x4, 24 on 3x3x4, 4 on 4x3, 3 on 3x3, 0 on 3x4) matches the forward report's periodic_tori_E3/periodic_tori_E2 fields and the BD1 gate's limitations text ('16 on 3x4x4, 4x3x4 and 4x4x3; 24 on 3x3x4 ... 4 on the 4x3 torus') exactly. One bug was found and fixed during development, in this script only: an early version of the GF(2) elimination's final contradiction test mis-detected the all-variables-zero/RHS-one row (an off-by-construction comparison of an int to itself shifted), which made every torus look solvable; the corrected test was checked against the direct XOR-of-all-rows parity argument (odd total plaquette count with an even link-degree sum forces 0=1) before being adopted. No discrepancy remains anywhere in this script's output; overall_pass is true.",
+      "haar_moments.py: an independent, from-scratch exact computation of E_Haar[W^k], k=1..4, for SU(2) by direct integration against the SU(2) Weyl density (2/pi) sin^2(theta) dtheta on theta in [0,pi] via the classical Wallis recursion for J_n=integral_0^{pi/2} cos^n(theta) dtheta (with the exact rational C_m=J_{2m}/pi cross-checked two independent ways: the recursion C_{m+1}=C_m(2m+1)/(2m+2), and the closed double-factorial form (2m-1)!!/(2m)!!/2, which agree for every m checked, and against the literature constants C_1=1/4, C_2=3/16, C_3=5/32), for U(1) by the binomial constant term of cos^k(theta) (E[W^k]=C(k,k/2)/2^k for even k, 0 for odd k), and for Z2 by direct summation over its two elements. Results: SU(2) E[W^k]=0,1/4,0,1/8 for k=1..4; U(1) E[W^k]=0,1/2,0,3/8; Z2 E[W^k]=0,1,0,1 -- all four values, for all three groups, matching the BD1 gate's stated moments exactly (parsed independently from the gate's own accepted-field text by a second, separate regex, not copied). The first-order coefficient 2(1/3)E[W^2]/(32 C_F) under the frozen convention (C_F=3/4 for SU(2), 1 for U(1), 1 for Z2, read from the contract's stated Casimir normalization) gives 1/144, 1/96 and 1/48 respectively, matching the BD1 gate's decision-field values bit-for-bit (again parsed independently from the gate text). No discrepancy was found anywhere; overall_pass is true.",
+      "graph_counts.py: an independent combinatorial construction of the Round11 two-plaquette graph, built from scratch as two unit squares glued along one shared edge (not read from research/round11/solver/two_plaquette.py, which this script never opens), gives 6 vertices and 7 links by direct count and, independently, by inclusion-exclusion over the two squares' own vertex and edge sets (4+4-2=6, 4+4-1=7); the one shared edge connects the two grid points shared by both squares, matching the BD2 forward report's vM (TM-BM), which appears in both loop words U and V. Since a local Gauss (gauge) constraint sits at every vertex in lattice gauge theory, the vertex count gives 6 Gauss constraints, matching research/round11/README.md's 'all six local Gauss constraints' and the 'seven-link SU(2) operator on two adjacent open squares' and 'shared-link interaction' wording, and the BD2 gate's and forward report's own '6 vertices, 7 links' phrasing. An independent re-derivation of the I1 24-class anchored face table gives the Z^3 1x2 rectangle (the union of the xz faces at the origin and at e_x, minus their shared middle link (e_x,z)) as exactly the six links (0,x), (e_x,x), (2e_x,z), (e_x+e_z,x), (e_z,x) and (0,z), with I1.1 owners (floor(x/4), floor(y/2), z)) 0,0,0,e_z,e_z,0 in that order -- all six inside R={0,e_z} -- matching the BD2 forward report's own rectangle description and owner list exactly. The R-incidence counts, computed independently by an owner-set search over omitted-face instances (never importing the BC2/route-B grouping any other assistant script uses), give 49 omitted faces at each of the two sites of R (cross-checked as equal by direct computation, not assumed), 16 whose owner set contains both sites of R, 10 whose owner set equals R exactly (inside), 82 meeting R (49+49-16 by inclusion-exclusion, matching a second, independent direct intersection count), 72 straddling (82-10) and 33 at each site of R without the other (49-16) -- reproducing the BD2 skeptic review's line ('My enumeration gives 82 omitted faces meeting R, 10 inside R, 16 containing R and 49 per site. That leaves 33 at one site without the other, and 72 straddling') and the BD2 forward report's own prose figures exactly. One bug was found and fixed during development, in this script only: a list-vs-set comparison of the rectangle's single shared link against its expected value always evaluated false regardless of content; correcting the comparison to compare sets resolved it. No discrepancy remains anywhere in this script's output; overall_pass is true."
+    ]
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "lens": "historical (Newton/Tesla)",
+  "loops": 0,
+  "never_imported": [
+    "research/round33/forward/bd1/check.py",
+    "research/round33/reverse/bd1/check.py",
+    "research/round33/forward/bd2/check.py",
+    "research/round11/solver/two_plaquette.py",
+    "any other check.py or solver module"
+  ],
+  "never_read": [
+    "research/round33/skeptic/bd1_check.py, bd1_postreview_check.py, bd2_check.py, bd2_postreview_check.py",
+    "research/round33/skeptic/bd1-independent/, bd1-postreview/, bd2-independent/, bd2-postreview/ (JSON evidence)",
+    "any other assistant's scratch folder or script"
+  ],
+  "overall_pass": true,
+  "read_before_writing": [
+    "research/round33/contracts/bd1.json (frozen)",
+    "research/round33/contracts/bd2.json (frozen)",
+    "research/round33/advisor/bd1-gate.json",
+    "research/round33/advisor/bd2-gate.json",
+    "research/round33/forward/bd1/report.md and output/results.json",
+    "research/round33/reverse/bd1/report.md and output/results.json",
+    "research/round33/forward/bd2/report.md and output/results.json",
+    "research/round21/forward/i1/report.md (sections 2-3, prose only)",
+    "research/round11/README.md (prose only)",
+    "research/round33/skeptic/bd2.md (prose only, for the pinned face-count line)",
+    "research/round33/experts/historical/assistant-3/README.md (this package's README/results.json layout convention; its scripts are not imported, only its file layout is followed)"
+  ],
+  "replay": "all three scripts run with python3 -B <script>.py and python3 -B -O <script>.py from the repository root; byte-identical stdout both ways for all three (flip_sets.py, haar_moments.py, graph_counts.py)",
+  "role": "cross-checks and previews only; not a producer, skeptic or advisor artifact; never admission evidence",
+  "round": 33,
+  "schema": "hnm-r33-assistant-tests-v1",
+  "scripts": {
+    "flip_sets.py": {
+      "boxes": {
+        "2": {
+          "anchor_based": {
+            "histogram_owned": {
+              "1": 1082,
+              "3": 1253
+            },
+            "histogram_retained": {
+              "1": 672,
+              "3": 672
+            },
+            "n_anchors_retained": 64,
+            "n_anchors_total": 125,
+            "n_plaquettes_owned": 2335,
+            "n_retained_faces": 1344
+          },
+          "brute_force": {
+            "histogram": {
+              "1": 1082,
+              "3": 1253
+            },
+            "n_links_owned": 3000,
+            "n_plaquettes_owned": 2335
+          },
+          "closed_form_retained_21_times_2N_cubed": 1344
+        },
+        "3": {
+          "anchor_based": {
+            "histogram_owned": {
+              "1": 3630,
+              "3": 3279
+            },
+            "histogram_retained": {
+              "1": 2268,
+              "3": 2268
+            },
+            "n_anchors_retained": 216,
+            "n_anchors_total": 343,
+            "n_plaquettes_owned": 6909,
+            "n_retained_faces": 4536
+          },
+          "brute_force": {
+            "histogram": {
+              "1": 3630,
+              "3": 3279
+            },
+            "n_links_owned": 8232,
+            "n_plaquettes_owned": 6909
+          },
+          "closed_form_retained_21_times_2N_cubed": 4536
+        },
+        "4": {
+          "anchor_based": {
+            "histogram_owned": {
+              "1": 7348,
+              "3": 7943
+            },
+            "histogram_retained": {
+              "1": 5376,
+              "3": 5376
+            },
+            "n_anchors_retained": 512,
+            "n_anchors_total": 729,
+            "n_plaquettes_owned": 15291,
+            "n_retained_faces": 10752
+          },
+          "brute_force": {
+            "histogram": {
+              "1": 7348,
+              "3": 7943
+            },
+            "n_links_owned": 17496,
+            "n_plaquettes_owned": 15291
+          },
+          "closed_form_retained_21_times_2N_cubed": 10752
+        }
+      },
+      "checks": {
+        "E2_N2_all_meet_once": true,
+        "E2_N2_fwd_plaquettes_matches": true,
+        "E2_N2_rev_plaquettes_matches": true,
+        "E2_N3_all_meet_once": true,
+        "E2_N3_fwd_plaquettes_matches": true,
+        "E2_N3_rev_plaquettes_matches": true,
+        "E2_N4_all_meet_once": true,
+        "E2_N4_fwd_plaquettes_matches": true,
+        "E2_N4_rev_plaquettes_matches": true,
+        "N2_fwd_histogram_matches": true,
+        "N2_fwd_links_matches": true,
+        "N2_fwd_plaquettes_owned_matches": true,
+        "N2_fwd_retained_faces_matches": true,
+        "N2_fwd_retained_histogram_matches": true,
+        "N2_histogram_methods_agree": true,
+        "N2_links_owned_methods_agree": true,
+        "N2_methods_cross_consistent": true,
+        "N2_plaquettes_owned_methods_agree": true,
+        "N2_retained_matches_closed_form": true,
+        "N2_rev_meet_once_matches": true,
+        "N2_rev_meet_three_matches": true,
+        "N2_rev_owned_matches": true,
+        "N2_rev_retained_faces_matches": true,
+        "N3_fwd_histogram_matches": true,
+        "N3_fwd_links_matches": true,
+        "N3_fwd_plaquettes_owned_matches": true,
+        "N3_fwd_retained_faces_matches": true,
+        "N3_fwd_retained_histogram_matches": true,
+        "N3_histogram_methods_agree": true,
+        "N3_links_owned_methods_agree": true,
+        "N3_methods_cross_consistent": true,
+        "N3_plaquettes_owned_methods_agree": true,
+        "N3_retained_matches_closed_form": true,
+        "N3_rev_meet_once_matches": true,
+        "N3_rev_meet_three_matches": true,
+        "N3_rev_owned_matches": true,
+        "N3_rev_retained_faces_matches": true,
+        "N4_fwd_histogram_matches": true,
+        "N4_fwd_links_matches": true,
+        "N4_fwd_plaquettes_owned_matches": true,
+        "N4_fwd_retained_faces_matches": true,
+        "N4_fwd_retained_histogram_matches": true,
+        "N4_histogram_methods_agree": true,
+        "N4_links_owned_methods_agree": true,
+        "N4_methods_cross_consistent": true,
+        "N4_plaquettes_owned_methods_agree": true,
+        "N4_retained_matches_closed_form": true,
+        "N4_rev_meet_once_matches": true,
+        "N4_rev_meet_three_matches": true,
+        "N4_rev_owned_matches": true,
+        "N4_rev_retained_faces_matches": true,
+        "bd1_gate_limitations_mentions_16_on_4x3x4": true,
+        "bd1_gate_limitations_mentions_24_on_3x3x4": true,
+        "bd1_gate_limitations_mentions_4_on_4x3": true,
+        "bd1_gate_states_at_most_one_odd_side": true,
+        "contract_names_N_2_3_4": true,
+        "contract_states_E2_formula": true,
+        "contract_states_E3_formula": true,
+        "e2_all_4_classes_equal_one": true,
+        "e3_all_24_classes_covariant_under_even_translation": true,
+        "e3_all_24_classes_odd": true,
+        "e3_n_classes_24": true,
+        "e3_ones_equal_threes": true,
+        "factor_0_0_0_fwd_matches": true,
+        "factor_0_0_1_fwd_matches": true,
+        "factor_0_1_0_fwd_matches": true,
+        "factor_1_0_0_fwd_matches": true,
+        "factor_1_1_1_fwd_matches": true,
+        "factor_2_m3_5_fwd_matches": true,
+        "factor_m1_m1_m1_fwd_matches": true,
+        "fwd_flip_sets_verified_passed": true,
+        "fwd_flip_sets_verified_present": true,
+        "general_16_or_8_rule_checked": true,
+        "i1_table_needles_all_present": true,
+        "rev_even_z_links_16_matches": true,
+        "rev_odd_z_links_8_matches": true,
+        "torus_E2_on_3x3_matches_forward_gf2_remark": true,
+        "torus_E2_on_3x3_matches_forward_seam": true,
+        "torus_E2_on_3x3_matches_reverse_gf2": true,
+        "torus_E2_on_3x3_matches_reverse_seam_gf2": true,
+        "torus_E2_on_3x4_matches_forward_gf2_remark": true,
+        "torus_E2_on_3x4_matches_forward_seam": true,
+        "torus_E2_on_3x4_matches_reverse_gf2": true,
+        "torus_E2_on_3x4_matches_reverse_seam_gf2": true,
+        "torus_E2_on_4x3_matches_forward_seam": true,
+        "torus_E2_on_4x3_matches_reverse_gf2": true,
+        "torus_E2_on_4x3_matches_reverse_seam_gf2": true,
+        "torus_E3_on_3x3x4_matches_forward_gf2_remark": true,
+        "torus_E3_on_3x3x4_matches_forward_seam": true,
+        "torus_E3_on_3x3x4_matches_reverse_gf2": true,
+        "torus_E3_on_3x3x4_matches_reverse_seam_gf2": true,
+        "torus_E3_on_4x3x4_matches_forward_seam": true,
+        "torus_E3_on_4x3x4_matches_reverse_gf2": true,
+        "torus_E3_on_4x3x4_matches_reverse_seam_gf2": true
+      },
+      "coarse_factors": {
+        "general_rule_16_or_8_by_z_parity_checked": true,
+        "per_factor": {
+          "-1,-1,-1": {
+            "links_in_E3": 8,
+            "total_links": 24,
+            "z_parity": 1
+          },
+          "0,0,0": {
+            "links_in_E3": 16,
+            "total_links": 24,
+            "z_parity": 0
+          },
+          "0,0,1": {
+            "links_in_E3": 8,
+            "total_links": 24,
+            "z_parity": 1
+          },
+          "0,1,0": {
+            "links_in_E3": 16,
+            "total_links": 24,
+            "z_parity": 0
+          },
+          "1,0,0": {
+            "links_in_E3": 16,
+            "total_links": 24,
+            "z_parity": 0
+          },
+          "1,1,1": {
+            "links_in_E3": 8,
+            "total_links": 24,
+            "z_parity": 1
+          },
+          "2,-3,5": {
+            "links_in_E3": 8,
+            "total_links": 24,
+            "z_parity": 1
+          }
+        }
+      },
+      "cross_checks": {
+        "E2_N2_all_meet_once": true,
+        "E2_N2_fwd_plaquettes_matches": true,
+        "E2_N2_rev_plaquettes_matches": true,
+        "E2_N3_all_meet_once": true,
+        "E2_N3_fwd_plaquettes_matches": true,
+        "E2_N3_rev_plaquettes_matches": true,
+        "E2_N4_all_meet_once": true,
+        "E2_N4_fwd_plaquettes_matches": true,
+        "E2_N4_rev_plaquettes_matches": true,
+        "N2_fwd_histogram_matches": true,
+        "N2_fwd_links_matches": true,
+        "N2_fwd_plaquettes_owned_matches": true,
+        "N2_fwd_retained_faces_matches": true,
+        "N2_fwd_retained_histogram_matches": true,
+        "N2_histogram_methods_agree": true,
+        "N2_links_owned_methods_agree": true,
+        "N2_plaquettes_owned_methods_agree": true,
+        "N2_retained_matches_closed_form": true,
+        "N2_rev_meet_once_matches": true,
+        "N2_rev_meet_three_matches": true,
+        "N2_rev_owned_matches": true,
+        "N2_rev_retained_faces_matches": true,
+        "N3_fwd_histogram_matches": true,
+        "N3_fwd_links_matches": true,
+        "N3_fwd_plaquettes_owned_matches": true,
+        "N3_fwd_retained_faces_matches": true,
+        "N3_fwd_retained_histogram_matches": true,
+        "N3_histogram_methods_agree": true,
+        "N3_links_owned_methods_agree": true,
+        "N3_plaquettes_owned_methods_agree": true,
+        "N3_retained_matches_closed_form": true,
+        "N3_rev_meet_once_matches": true,
+        "N3_rev_meet_three_matches": true,
+        "N3_rev_owned_matches": true,
+        "N3_rev_retained_faces_matches": true,
+        "N4_fwd_histogram_matches": true,
+        "N4_fwd_links_matches": true,
+        "N4_fwd_plaquettes_owned_matches": true,
+        "N4_fwd_retained_faces_matches": true,
+        "N4_fwd_retained_histogram_matches": true,
+        "N4_histogram_methods_agree": true,
+        "N4_links_owned_methods_agree": true,
+        "N4_plaquettes_owned_methods_agree": true,
+        "N4_retained_matches_closed_form": true,
+        "N4_rev_meet_once_matches": true,
+        "N4_rev_meet_three_matches": true,
+        "N4_rev_owned_matches": true,
+        "N4_rev_retained_faces_matches": true,
+        "bd1_gate_limitations_mentions_16_on_4x3x4": true,
+        "bd1_gate_limitations_mentions_24_on_3x3x4": true,
+        "bd1_gate_limitations_mentions_4_on_4x3": true,
+        "bd1_gate_states_at_most_one_odd_side": true,
+        "contract_names_N_2_3_4": true,
+        "contract_states_E2_formula": true,
+        "contract_states_E3_formula": true,
+        "factor_0_0_0_fwd_matches": true,
+        "factor_0_0_1_fwd_matches": true,
+        "factor_0_1_0_fwd_matches": true,
+        "factor_1_0_0_fwd_matches": true,
+        "factor_1_1_1_fwd_matches": true,
+        "factor_2_m3_5_fwd_matches": true,
+        "factor_m1_m1_m1_fwd_matches": true,
+        "fwd_flip_sets_verified_passed": true,
+        "fwd_flip_sets_verified_present": true,
+        "general_16_or_8_rule_checked": true,
+        "rev_even_z_links_16_matches": true,
+        "rev_odd_z_links_8_matches": true,
+        "torus_E2_on_3x3_matches_forward_gf2_remark": true,
+        "torus_E2_on_3x3_matches_forward_seam": true,
+        "torus_E2_on_3x3_matches_reverse_gf2": true,
+        "torus_E2_on_3x3_matches_reverse_seam_gf2": true,
+        "torus_E2_on_3x4_matches_forward_gf2_remark": true,
+        "torus_E2_on_3x4_matches_forward_seam": true,
+        "torus_E2_on_3x4_matches_reverse_gf2": true,
+        "torus_E2_on_3x4_matches_reverse_seam_gf2": true,
+        "torus_E2_on_4x3_matches_forward_seam": true,
+        "torus_E2_on_4x3_matches_reverse_gf2": true,
+        "torus_E2_on_4x3_matches_reverse_seam_gf2": true,
+        "torus_E3_on_3x3x4_matches_forward_gf2_remark": true,
+        "torus_E3_on_3x3x4_matches_forward_seam": true,
+        "torus_E3_on_3x3x4_matches_reverse_gf2": true,
+        "torus_E3_on_3x3x4_matches_reverse_seam_gf2": true,
+        "torus_E3_on_4x3x4_matches_forward_seam": true,
+        "torus_E3_on_4x3x4_matches_reverse_gf2": true,
+        "torus_E3_on_4x3x4_matches_reverse_seam_gf2": true
+      },
+      "e2_all_z2": {
+        "all_exactly_one": true,
+        "n_classes": 4,
+        "residue_table": [
+          {
+            "base_parity": [
+              0,
+              0
+            ],
+            "links_in_E2": 1
+          },
+          {
+            "base_parity": [
+              0,
+              1
+            ],
+            "links_in_E2": 1
+          },
+          {
+            "base_parity": [
+              1,
+              0
+            ],
+            "links_in_E2": 1
+          },
+          {
+            "base_parity": [
+              1,
+              1
+            ],
+            "links_in_E2": 1
+          }
+        ]
+      },
+      "e2_boxes": {
+        "2": {
+          "all_meet_once": true,
+          "meeting_once": 16,
+          "plaquettes": 16
+        },
+        "3": {
+          "all_meet_once": true,
+          "meeting_once": 36,
+          "plaquettes": 36
+        },
+        "4": {
+          "all_meet_once": true,
+          "meeting_once": 64,
+          "plaquettes": 64
+        }
+      },
+      "e3_all_z3": {
+        "all_covariant": true,
+        "all_odd": true,
+        "count_value_1": 12,
+        "count_value_3": 12,
+        "n_classes": 24,
+        "residue_table": [
+          {
+            "base_parity": [
+              0,
+              0,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              0,
+              0,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              0,
+              1,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              0,
+              1,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              1,
+              0,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              1,
+              0,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              1,
+              1,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              1,
+              1,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xy"
+          },
+          {
+            "base_parity": [
+              0,
+              0,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              0,
+              0,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              0,
+              1,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              0,
+              1,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              1,
+              0,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              1,
+              0,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              1,
+              1,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              1,
+              1,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "xz"
+          },
+          {
+            "base_parity": [
+              0,
+              0,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "yz"
+          },
+          {
+            "base_parity": [
+              0,
+              0,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "yz"
+          },
+          {
+            "base_parity": [
+              0,
+              1,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "yz"
+          },
+          {
+            "base_parity": [
+              0,
+              1,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 3,
+            "odd": true,
+            "orientation": "yz"
+          },
+          {
+            "base_parity": [
+              1,
+              0,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "yz"
+          },
+          {
+            "base_parity": [
+              1,
+              0,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "yz"
+          },
+          {
+            "base_parity": [
+              1,
+              1,
+              0
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "yz"
+          },
+          {
+            "base_parity": [
+              1,
+              1,
+              1
+            ],
+            "covariant": true,
+            "links_in_E3": 1,
+            "odd": true,
+            "orientation": "yz"
+          }
+        ]
+      },
+      "i1_table_needles_found_in_text": {
+        "xy: r=0,1,2; s=1": true,
+        "xy: r=3; s=0": true,
+        "xy: r=3; s=1": true,
+        "xz: r=0,1,2; s=0,1": true,
+        "xz: r=3; s=0,1": true,
+        "yz: r=0,1,2,3; s=0": true,
+        "yz: r=0,1,2,3; s=1": true,
+        "{0,e_x,e_y}": true,
+        "{0,e_x,e_z}": true,
+        "{0,e_x}": true,
+        "{0,e_y,e_z}": true,
+        "{0,e_y}": true,
+        "{0,e_z}": true
+      },
+      "overall_pass": true,
+      "periodic_tori": {
+        "E2 on 3x3": {
+          "gf2_some_flip_set_exists": false,
+          "keyed_E2_rule": {
+            "even_plaquettes_at_seam": 3,
+            "plaquettes": 9
+          },
+          "n_equations": 9,
+          "n_vars": 18
+        },
+        "E2 on 3x4": {
+          "gf2_some_flip_set_exists": true,
+          "keyed_E2_rule": {
+            "even_plaquettes_at_seam": 0,
+            "plaquettes": 12
+          },
+          "n_equations": 12,
+          "n_vars": 24
+        },
+        "E2 on 4x3": {
+          "gf2_some_flip_set_exists": true,
+          "keyed_E2_rule": {
+            "even_plaquettes_at_seam": 4,
+            "plaquettes": 12
+          },
+          "n_equations": 12,
+          "n_vars": 24
+        },
+        "E3 on 3x3x4": {
+          "gf2_some_flip_set_exists": false,
+          "keyed_E3_rule": {
+            "even_plaquettes_at_seam": 24,
+            "plaquettes": 108
+          },
+          "n_equations": 108,
+          "n_vars": 108
+        },
+        "E3 on 4x3x4": {
+          "gf2_some_flip_set_exists": true,
+          "keyed_E3_rule": {
+            "even_plaquettes_at_seam": 16,
+            "plaquettes": 144
+          },
+          "n_equations": 144,
+          "n_vars": 144
+        }
+      },
+      "periodic_tori_cross_comparison": {
+        "E2 on 3x3": {
+          "forward_even_plaquettes_at_seam": 3,
+          "forward_gf2_remark": false,
+          "matches_forward_gf2_remark": true,
+          "matches_forward_seam": true,
+          "matches_reverse_gf2": true,
+          "matches_reverse_seam_gf2": true,
+          "mine_gf2_exists": false,
+          "reverse_gf2_exists": false,
+          "reverse_seam_gf2_exists": false
+        },
+        "E2 on 3x4": {
+          "forward_even_plaquettes_at_seam": 0,
+          "forward_gf2_remark": true,
+          "matches_forward_gf2_remark": true,
+          "matches_forward_seam": true,
+          "matches_reverse_gf2": true,
+          "matches_reverse_seam_gf2": true,
+          "mine_gf2_exists": true,
+          "reverse_gf2_exists": true,
+          "reverse_seam_gf2_exists": true
+        },
+        "E2 on 4x3": {
+          "forward_even_plaquettes_at_seam": 4,
+          "matches_forward_seam": true,
+          "matches_reverse_gf2": true,
+          "matches_reverse_seam_gf2": true,
+          "mine_gf2_exists": true,
+          "reverse_gf2_exists": true,
+          "reverse_seam_gf2_exists": true
+        },
+        "E3 on 3x3x4": {
+          "forward_even_plaquettes_at_seam": 24,
+          "forward_gf2_remark": false,
+          "matches_forward_gf2_remark": true,
+          "matches_forward_seam": true,
+          "matches_reverse_gf2": true,
+          "matches_reverse_seam_gf2": true,
+          "mine_gf2_exists": false,
+          "reverse_gf2_exists": false,
+          "reverse_seam_gf2_exists": false
+        },
+        "E3 on 4x3x4": {
+          "forward_even_plaquettes_at_seam": 16,
+          "matches_forward_seam": true,
+          "matches_reverse_gf2": true,
+          "matches_reverse_seam_gf2": true,
+          "mine_gf2_exists": true,
+          "reverse_gf2_exists": true,
+          "reverse_seam_gf2_exists": true
+        }
+      },
+      "script": "flip_sets.py",
+      "structural_checks": {
+        "N2_methods_cross_consistent": true,
+        "N3_methods_cross_consistent": true,
+        "N4_methods_cross_consistent": true,
+        "e2_all_4_classes_equal_one": true,
+        "e3_all_24_classes_covariant_under_even_translation": true,
+        "e3_all_24_classes_odd": true,
+        "e3_n_classes_24": true,
+        "e3_ones_equal_threes": true,
+        "i1_table_needles_all_present": true
+      },
+      "task": "independent exact enumeration of the flip sets E_3 (Z^3, the AW1 set) and E_2 (Z^2) on the named boxes, the 24-link coarse factors, and a GF(2) solvability check on five named periodic tori, compared with the BD1 contract, gate and the forward/reverse BD1 packets"
+    },
+    "graph_counts.py": {
+      "bd2_gate_cross_checks": {
+        "states_6_vertices_7_links": true
+      },
+      "bd2_report_graph_cross_checks": {
+        "states_6_vertices": true,
+        "states_7_links": true,
+        "states_link_labels": true,
+        "states_seven_link_casimirs": true,
+        "states_shared_link_vM": true,
+        "states_vertex_labels": true
+      },
+      "bd2_report_rectangle_cross_checks": {
+        "states_10_inside": true,
+        "states_16_containing": true,
+        "states_21_omitted_per_anchor": true,
+        "states_33_per_site": true,
+        "states_49_per_factor": true,
+        "states_72_straddling": true,
+        "states_82_faces_meeting": true,
+        "states_owners_list": true,
+        "states_six_links_owned_by_R": true
+      },
+      "bd2_skeptic_cross_checks": {
+        "found_face_counts_line": true,
+        "mine_10_matches": true,
+        "mine_16_matches": true,
+        "mine_33_matches": true,
+        "mine_49_matches": true,
+        "mine_72_matches": true,
+        "mine_82_matches": true,
+        "states_10_inside": true,
+        "states_16_containing": true,
+        "states_33_leaves": true,
+        "states_49_per_site": true,
+        "states_72_straddling": true,
+        "states_82_meeting": true
+      },
+      "checks": {
+        "bd2gate_states_6_vertices_7_links": true,
+        "bd2report_rect_states_10_inside": true,
+        "bd2report_rect_states_16_containing": true,
+        "bd2report_rect_states_21_omitted_per_anchor": true,
+        "bd2report_rect_states_33_per_site": true,
+        "bd2report_rect_states_49_per_factor": true,
+        "bd2report_rect_states_72_straddling": true,
+        "bd2report_rect_states_82_faces_meeting": true,
+        "bd2report_rect_states_owners_list": true,
+        "bd2report_rect_states_six_links_owned_by_R": true,
+        "bd2report_states_6_vertices": true,
+        "bd2report_states_7_links": true,
+        "bd2report_states_link_labels": true,
+        "bd2report_states_seven_link_casimirs": true,
+        "bd2report_states_shared_link_vM": true,
+        "bd2report_states_vertex_labels": true,
+        "graph_1_shared_edge": true,
+        "graph_6_gauss_constraints": true,
+        "graph_6_vertices": true,
+        "graph_7_links": true,
+        "graph_edges_inclusion_exclusion_matches": true,
+        "graph_vertices_inclusion_exclusion_matches": true,
+        "r11_states_seven_link": true,
+        "r11_states_shared_link_interaction": true,
+        "r11_states_six_local_gauss_constraints": true,
+        "r11_states_two_adjacent_open_squares": true,
+        "r_10_inside": true,
+        "r_16_containing": true,
+        "r_33_only_0": true,
+        "r_33_only_ez": true,
+        "r_49_per_site": true,
+        "r_72_straddling": true,
+        "r_82_meeting": true,
+        "r_at_site_0_equals_at_site_ez": true,
+        "r_meeting_matches_inclusion_exclusion": true,
+        "rectangle_all_owners_in_R": true,
+        "rectangle_has_6_links": true,
+        "rectangle_owner_multiset_matches_report": true,
+        "rectangle_shared_link_is_ex_z": true,
+        "rectangle_shared_link_is_single": true,
+        "shared_edge_endpoints_are_the_two_shared_vertices": true,
+        "skeptic_found_face_counts_line": true,
+        "skeptic_mine_10_matches": true,
+        "skeptic_mine_16_matches": true,
+        "skeptic_mine_33_matches": true,
+        "skeptic_mine_49_matches": true,
+        "skeptic_mine_72_matches": true,
+        "skeptic_mine_82_matches": true,
+        "skeptic_states_10_inside": true,
+        "skeptic_states_16_containing": true,
+        "skeptic_states_33_leaves": true,
+        "skeptic_states_49_per_site": true,
+        "skeptic_states_72_straddling": true,
+        "skeptic_states_82_meeting": true
+      },
+      "graph": {
+        "n_edges": 7,
+        "n_edges_inclusion_exclusion": 7,
+        "n_gauss_constraints": 6,
+        "n_shared_edges": 1,
+        "n_shared_vertices": 2,
+        "n_vertices": 6,
+        "n_vertices_inclusion_exclusion": 6,
+        "shared_edge_endpoints": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "overall_pass": true,
+      "r_incidence": {
+        "at_site_0": 49,
+        "at_site_0_only": 33,
+        "at_site_ez": 49,
+        "at_site_ez_only": 33,
+        "containing_R": 16,
+        "containing_detail_count": 3,
+        "inside_R": 10,
+        "meeting_R": 82,
+        "meeting_R_via_inclusion_exclusion": 82,
+        "straddling": 72
+      },
+      "rectangle": {
+        "all_owners_in_R": true,
+        "links": [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            "x"
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            "z"
+          ],
+          [
+            [
+              0,
+              0,
+              1
+            ],
+            "x"
+          ],
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            "x"
+          ],
+          [
+            [
+              1,
+              0,
+              1
+            ],
+            "x"
+          ],
+          [
+            [
+              2,
+              0,
+              0
+            ],
+            "z"
+          ]
+        ],
+        "owners": [
+          [
+            [
+              [
+                0,
+                0,
+                0
+              ],
+              "x"
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              [
+                0,
+                0,
+                0
+              ],
+              "z"
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              [
+                0,
+                0,
+                1
+              ],
+              "x"
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              [
+                1,
+                0,
+                0
+              ],
+              "x"
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              [
+                1,
+                0,
+                1
+              ],
+              "x"
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              [
+                2,
+                0,
+                0
+              ],
+              "z"
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        "shared_middle_link_cancelled": [
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            "z"
+          ]
+        ]
+      },
+      "round11_readme_cross_checks": {
+        "states_seven_link": true,
+        "states_shared_link_interaction": true,
+        "states_six_local_gauss_constraints": true,
+        "states_two_adjacent_open_squares": true
+      },
+      "script": "graph_counts.py",
+      "task": "independent verification of the Round11 two-plaquette graph counts (6 vertices, 7 links, 6 Gauss constraints, the shared link) and the Z^3 1x2 rectangle's six R-owned links with the face counts 82/10/16/49/33/72 from the BD2 review"
+    },
+    "haar_moments.py": {
+      "C_F": {
+        "SU(2)": "3/4",
+        "U(1)": "1",
+        "Z2": "1"
+      },
+      "checks": {
+        "contract_C2_n_squared_for_U1": true,
+        "contract_C_F_1_for_Z2": true,
+        "fo_su2_is_1_144": true,
+        "fo_u1_is_1_96": true,
+        "fo_z2_is_1_48": true,
+        "gate_fo_found_SU2": true,
+        "gate_fo_found_U1": true,
+        "gate_fo_found_Z2": true,
+        "gate_fo_matches_SU2": true,
+        "gate_fo_matches_U1": true,
+        "gate_fo_matches_Z2": true,
+        "gate_moments_found_SU2": true,
+        "gate_moments_found_U1": true,
+        "gate_moments_found_Z2": true,
+        "gate_moments_match_SU2": true,
+        "gate_moments_match_U1": true,
+        "gate_moments_match_Z2": true,
+        "su2_moment_1_is_0": true,
+        "su2_moment_2_is_1_4": true,
+        "su2_moment_3_is_0": true,
+        "su2_moment_4_is_1_8": true,
+        "u1_moment_1_is_0": true,
+        "u1_moment_2_is_1_2": true,
+        "u1_moment_3_is_0": true,
+        "u1_moment_4_is_3_8": true,
+        "wallis_known_constants_match": true,
+        "z2_moment_1_is_0": true,
+        "z2_moment_2_is_1": true,
+        "z2_moment_3_is_0": true,
+        "z2_moment_4_is_1": true
+      },
+      "first_order_coefficients": {
+        "SU(2)": "1/144",
+        "U(1)": "1/96",
+        "Z2": "1/48"
+      },
+      "gate_first_order_parsed": {
+        "SU(2)": "1/144",
+        "U(1)": "1/96",
+        "Z2": "1/48"
+      },
+      "gate_moments_parsed": {
+        "SU(2)": [
+          "0",
+          "1/4",
+          "0",
+          "1/8"
+        ],
+        "U(1)": [
+          "0",
+          "1/2",
+          "0",
+          "3/8"
+        ],
+        "Z2": [
+          "0",
+          "1",
+          "0",
+          "1"
+        ]
+      },
+      "moments": {
+        "SU(2)": {
+          "1": "0",
+          "2": "1/4",
+          "3": "0",
+          "4": "1/8"
+        },
+        "U(1)": {
+          "1": "0",
+          "2": "1/2",
+          "3": "0",
+          "4": "3/8"
+        },
+        "Z2": {
+          "1": "0",
+          "2": "1",
+          "3": "0",
+          "4": "1"
+        }
+      },
+      "overall_pass": true,
+      "script": "haar_moments.py",
+      "task": "independent exact computation of E_Haar[W^k], k=1..4, for SU(2) (Weyl density direct integration), U(1) (binomial constant term) and Z2 (summation), and the first-order coefficient under the frozen BD1 convention, compared with the BD1 gate",
+      "wallis_known_constants_cross_check": {
+        "1": {
+          "expected": "1/4",
+          "got": "1/4",
+          "matches": true
+        },
+        "2": {
+          "expected": "3/16",
+          "got": "3/16",
+          "matches": true
+        },
+        "3": {
+          "expected": "5/32",
+          "got": "5/32",
+          "matches": true
+        }
+      },
+      "wallis_recursion_constants_C_m": {
+        "0": "1/2",
+        "1": "1/4",
+        "2": "3/16",
+        "3": "5/32",
+        "4": "35/256"
+      }
+    }
+  }
+}

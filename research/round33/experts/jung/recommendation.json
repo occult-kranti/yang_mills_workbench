@@ -1,0 +1,153 @@
+{
+  "schema": "hnm-round33-jung-recommendation-v1",
+  "status": "round33_deliberation_loop1_advisory",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "lens": "Jung/Pauli observation-map lens; advisory only; admits nothing; counts zero research loops",
+  "date": "2026-09-24",
+  "subrounds": [
+    {
+      "id": 1,
+      "goal": "Direction A: boundary-influence decay giving whole-sequence convergence of the R-marginal and a common limit of both construction families (roadmap goals 1 and 3 together)",
+      "loops": [
+        {
+          "id": "BA1",
+          "title": "Boundary-influence decay chain bound on the R-marginal (paired)",
+          "direction": "paired",
+          "target": "An explicit, summable bound on ||rho_R^{(N)} - rho_R^{(N+1)}||_1 in trace norm on B(H_R), region R fixed before production, via a chain-of-overlapping-supports argument on the AM2 contraction; state provenance is the whole N-indexed sequence, not a subsequence."
+        },
+        {
+          "id": "BA2",
+          "title": "Certified Cauchy/common-limit datum at a declared N range (single+skeptic)",
+          "direction": "single+skeptic",
+          "target": "Given BA1's bound, an exact-rational enclosure of ||rho_R^{(N)} - rho_R^{(M)}||_1 at declared N,M, and, if both families are covered, an enclosure of the distance between their limits; a target.note stating plainly whether this is a feasibility check on BA1's bound or a blind discriminating threshold."
+        }
+      ],
+      "reason": "Best-defined observable and target of the four directions: the brief's own sketch already names the per-step decay factor (J G(R) < 1/64) and the region R the closeness is measured on, closest in spirit to the roadmap's rank-1 'uniqueness' goal, whose Dobrushin-type test this memo's section 1 shows a successful BA1/BA2 would answer as a byproduct without needing to be run as a separate contract this sub-round."
+    },
+    {
+      "id": 2,
+      "goal": "Direction B: Lieb-Robinson/Duhamel dynamics comparison on compact time windows (roadmap goal 2)",
+      "loops": [
+        {
+          "id": "BB1",
+          "title": "Dynamics comparison derivation with the AQ1 Nachtergaele-Sims constants (paired)",
+          "direction": "paired",
+          "target": "||alpha_t^{F1}(A) - alpha_t^{F2}(A)|| <= C(T) * (boundary term in N) for |t|<=T, T frozen in the contract, operator norm on B(H); state_provenance explicitly n/a (operator-level bound, holds for every state)."
+        },
+        {
+          "id": "BB2",
+          "title": "Certified dynamics-bound datum at a frozen T (single+skeptic)",
+          "direction": "single+skeptic",
+          "target": "Given BB1's bound, an exact-rational enclosure of C(T) and the boundary term at a declared small T and a range of N; a target.note stating feasibility check vs blind threshold."
+        }
+      ],
+      "reason": "Fully named route with every constant already admitted (AQ1); independent of BA1/BA2's outcome, so it can run in either order without a contingency gate, unlike Direction C."
+    },
+    {
+      "id": 3,
+      "goal": "Direction C (consequences, contingent on subround 1) and a fallback Dobrushin/HTW-type uniqueness-on-R test (roadmap goal 1's own proposed_first_loop_test, run independently of Direction A's outcome)",
+      "loops": [
+        {
+          "id": "BC1",
+          "title": "Consequence restatement for the node/sign certificates (statement+skeptic, contingent)",
+          "direction": "statement+skeptic",
+          "target": "If BA1/BA2 closed with sub_label convergence_of_named_constructions: restate the AV2/AX2 node certificates and the AW2 sign certificate as statements about the limit rather than about every subsequential limit (template T-C). If BA1/BA2 did not close: record insufficient and keep the 'every subsequential limit' phrasing unchanged; do not freeze this contract with a target that assumes closure."
+        },
+        {
+          "id": "BC2",
+          "title": "Dobrushin/HTW-type interdependence-matrix evaluation at the cap (statement+skeptic)",
+          "direction": "statement+skeptic",
+          "target": "Evaluate the Dobrushin-type interdependence matrix for the AM2 fixed point with J=28|tau| and the 21-face stars on a small centered box at |tau|<=10^-8 (roadmap.json goal 'uniqueness', proposed_first_loop_test verbatim); a norm below one is a blind discriminating threshold distinct from BA1/BA2's chain argument, and a failed condition is not evidence of non-uniqueness (roadmap's own stated limitation)."
+        }
+      ],
+      "reason": "BC1 is cheap and honest only if gated on BA's actual outcome, never assumed; BC2 is the roadmap's own best-defined rank-1 target and should not be dropped merely because Direction A might reach the same conclusion by a different route -- a genuinely independent second route to the same question is worth more than a single closed chain argument, exactly this lens's Round32 reasoning for keeping uniqueness ranked first."
+    },
+    {
+      "id": 4,
+      "goal": "Applications stage: transfer every admitted Round32/Round33 solution and equation to a named related model, or record an explicit obstruction",
+      "loops": [
+        {
+          "id": "BD1",
+          "title": "Gauge-group transfer of the parity theorem and the link-flip lemma (U(1), Z2, SU(N)) (paired)",
+          "direction": "paired",
+          "target": "For each named group, freeze gauge_group, dimension (unchanged, 3+1D), observable (parity theorem / link-flip), coupling (dictionary-mapped); certify transfer_to_named_model where the group's center has an element of order 2 (Z2, U(1) as unit circle, SU(N) with N even), and obstruction_recorded, citing Z(SU(N))=Z_N has no order-2 element for odd N, otherwise."
+        },
+        {
+          "id": "BD2",
+          "title": "Dimension/observable transfer: state lemma and window kernel in 2+1D, or a new observable (larger Wilson loop / electric-flux or Casimir) at the admitted SU(2) 3+1D model (single+skeptic)",
+          "direction": "single+skeptic",
+          "target": "Freeze model_id, gauge_group=SU(2), dimension (2+1D re-derivation) OR observable (new, dimension/coupling unchanged); certify transfer_to_named_model with an explicit, checked dictionary, or obstruction_recorded naming the failing step."
+        }
+      ],
+      "reason": "Covers the brief's two most concrete application candidates (gauge-group transfer with a stated obstruction shape already in the brief; a dimension or observable transfer with an unambiguous dictionary). The two-plaquette/earlier-finite-model-round item is folded into whichever of BD1/BD2 needs a finite-graph testbed; the site-calculator item is excluded from both contracts per this memo section 6 (a presentation task, never a research loop with a contract or gate)."
+    }
+  ],
+  "vocabulary": {
+    "sub_labels": [
+      "convergence_of_named_constructions",
+      "common_limit_of_named_constructions",
+      "boundary_decay_rate_only",
+      "dynamics_on_compact_windows",
+      "transfer_to_named_model",
+      "obstruction_recorded"
+    ],
+    "gate_fields": {
+      "whole_sequence_claimed": "bool, paired with whole_sequence_scope (non-empty string iff true, naming family + region R + index N)",
+      "rate_in_N_claimed": "bool, always exported separately from rate_in_a_claimed",
+      "rate_in_a_claimed": "bool, always exported separately from rate_in_N_claimed",
+      "common_limit_claimed": "bool, paired with common_limit_families (list of two family names) when true",
+      "uniqueness_of_ground_state_claimed": "always false; permanent guard flag on every Direction A/C gate",
+      "dynamics_window_T": "exact rational, the frozen time-window bound",
+      "boundary_independence_of_dynamics_scope": "non-empty string iff boundary_independence_of_dynamics_claimed is true",
+      "translation_invariance_claimed": "always false, carried over from AY1/AY2 union",
+      "contingent_on": "loop id string, Direction C only",
+      "contingent_condition_met": "bool, Direction C only",
+      "transfers_to_named_model": "bool, Direction D only",
+      "obstruction_recorded": "bool, Direction D only, mutually exclusive with transfers_to_named_model within one loop",
+      "named_model_id": "string, Direction D only",
+      "named_model_gauge_group": "string, Direction D only",
+      "named_model_dimension": "string or int, Direction D only",
+      "named_model_observable": "string, Direction D only",
+      "named_model_coupling": "exact rational or dictionary-mapped expression, Direction D only"
+    },
+    "forbidden": [
+      "the continuum limit exists",
+      "any fraction of the continuum problem",
+      "fraction of the problem",
+      "unique (without an explicit not in the same clause)",
+      "the infinite-volume ground state",
+      "uniqueness of the infinite-volume ground state",
+      "boundary independent / boundary independence (unqualified, no window or region named in the same clause)",
+      "rate (without in N or in a attached in the same clause)",
+      "the thermodynamic limit (unless whole_sequence_claimed:true with scope, and only as 'the limit of the named construction')"
+    ],
+    "required": [
+      "of the named construction[s] (attached to any use of limit / ground state / thermodynamic)",
+      "on the compact window [0,T] (attached to any dynamics claim)",
+      "transferred to the named model (attached to any application claim)",
+      "not a statement about SU(2) in 3+1 dimensions beyond what was already admitted (attached to any Direction D result)",
+      "a chosen subsequential (retained from Round32, still required wherever a subsequential-limit claim, as opposed to a whole-sequence claim, is actually made)"
+    ]
+  },
+  "templates": {
+    "T-A1_single_family_convergence": "The R-marginal of the finite-box ground [vector|state] of the named construction [family F1] converges in trace norm on B(H_R), region R fixed before production, as N -> infinity, with a certified rate in N of order <rate(N)>. This is convergence of the named construction, not a statement that the infinite-volume ground state is unique, that any rate in a is thereby obtained, that the construction is translation invariant, or that dynamics beyond the compact window [0,T] (if any is claimed) is boundary independent.",
+    "T-A2_common_limit": "The named construction families F1 and F2 converge to a common limit on R, certified to <distance/order>. This is not a statement of uniqueness of any construction not named here, nor of the infinite-volume ground state of the underlying model; it is agreement, on the fixed region R, of two specific, named sequences.",
+    "T-B_dynamics_compact_window": "On the compact time window |t| <= <T>, T fixed before production, the Heisenberg-evolved observable A in B(H_R), ||A||<=1, differs between the named dynamics of [family F1] and [family F2] by at most <bound(N,T)> in operator norm. This is a statement about dynamics on the fixed window and the fixed region R; it is not a statement that the infinite-volume dynamics beyond R is boundary independent for unbounded time, that the bound holds outside [-T,T], or that any state converges.",
+    "T-C_consequence_contingent": "Given that [Direction A loop id] is accepted within scope with sub-label convergence_of_named_constructions for the family and region used here, the enclosure/sign already certified in [AV2/AX2/AW2] for every AQ-type subsequential limit of that family applies to its unique limit on R. This restates an already-admitted enclosure under a newly-established uniqueness-within-the-construction; it certifies no new numerical value.",
+    "T-D_application_transfer": "The [named equation/certificate] is transferred to the named model (model_id: gauge group <G>, dimension <d>, observable <O>, coupling <lambda>) via the explicit dictionary <map>; [the transfer is exact and certified to <order/enclosure> | the transfer fails at <step> because <explicit obstruction, named as a mathematical fact>, recorded as obstruction_recorded, not as a research failure]. This is a statement about the named model only; it is not a statement about SU(2) in 3+1 dimensions beyond what Round32/33 already admitted, and, where an obstruction is recorded, it is not a claim that the obstruction is permanent or that no other dictionary could succeed."
+  },
+  "dissents": [
+    {
+      "topic": "Ordering of subround 3",
+      "position": "Run BC2 (the Dobrushin/HTW-type uniqueness-on-R test, roadmap goal 1's own proposed_first_loop_test) regardless of whether BA1/BA2 (Direction A) closes, rather than treating goal 1 as fully subsumed by a successful Direction A.",
+      "against": "A reading in which a closed Direction A chain argument retires roadmap goal 1 outright and BC2 is dropped as redundant.",
+      "basis": "A successful whole-sequence convergence argument answers goal 1's question as a byproduct for the specific families and region it covers, but it is a different mathematical route (a contraction/chain argument, not a Dobrushin/HTW interdependence condition) with different failure modes; an independent second route to the same conclusion is worth more than treating one closed argument as having retired a separately-ranked roadmap goal. This mirrors the reasoning this lens already gave in Round32 for ranking uniqueness first (`research/round32/experts/jung/update-5.md` section 4): the best-defined, evaluable threshold should be run, not assumed answered by another loop's success."
+    },
+    {
+      "topic": "Site-calculator item in the applications stage",
+      "position": "The site-calculator candidate in the brief's applications list is not a research loop and should not receive a BD-numbered contract, gate or sub-label at all.",
+      "against": "Treating 'transfer to the site calculators' as a fourth named-model application on par with a gauge-group or dimension transfer.",
+      "basis": "CLAUDE.md states plainly that website pages display recorded results from source-bound data and never compute admissions; a calculator page can only display an already-gated Round33 result, governed by the existing renderer-test discipline (explicitly synthetic fixtures), never originate one."
+    }
+  ]
+}

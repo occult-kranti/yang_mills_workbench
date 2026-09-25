@@ -1,0 +1,2793 @@
+{
+  "phrase_audit": {
+    "checks": {
+      "phrase_scan_dry_run": {
+        "affirmative_defects": [],
+        "all_hits": [],
+        "findings": [
+          "Ran tools.phrase_scan.scan (rule R6: negation-aware, mandatory_sentence_template removed as one literal) with the BC1 contract over BC1's forward report, gate accepted/limitations and review supported_statement, and with the BC2 contract over the same four kinds of BC2 text (BC1 and BC2 have no reverse producer). Total raw hits (every hit, affirmative or negated, per the calling task's own \"list every hit with its clause\"): 0.",
+          "BC1: 0 raw hit(s); independent recount of all_hits_including_negated matches the review's own self-reported phrase_scan block (0 vs 0): True.",
+          "BC2: 0 raw hit(s); independent recount of all_hits_including_negated matches the review's own self-reported phrase_scan block (0 vs 0): True.",
+          "0 hits classified AFFIRMATIVE_needs_review: BC1 and BC2's forward reports, gate accepted/limitations and review supported_statement carry no literal ROUND_FORBIDDEN or contract-forbidden phrase at all (0 raw hits, not merely 0 unnegated ones) -- consistent with both reviews' own self-reported phrase_scan blocks (all_hits_including_negated: 0, limitations_affirmative_hits: [], supported_statement_affirmative_hits: [], for both BC1 and BC2)."
+        ],
+        "id": "phrase_scan_dry_run",
+        "passed": true,
+        "per_loop": {
+          "BC1": {
+            "forbidden_phrase_count": 28,
+            "hits": [],
+            "independent_all_hits_matches_self_report": true,
+            "n_affirmative_needs_review": 0,
+            "n_hits": 0,
+            "review_self_reported_phrase_scan": {
+              "all_hits_including_negated": 0,
+              "contract": "research/round33/contracts/bc1.json",
+              "exit": 0,
+              "limitations_affirmative_hits": [],
+              "mandatory_sentence_template_spans": 1,
+              "supported_statement_affirmative_hits": [],
+              "tool": "research/round33/tools/phrase_scan.py",
+              "tool_sha256": "1c31a4958c4a44144c5d4f256db551385d216b86309eadc54a608c5e2a4ff0e2"
+            },
+            "template_present": true
+          },
+          "BC2": {
+            "forbidden_phrase_count": 29,
+            "hits": [],
+            "independent_all_hits_matches_self_report": true,
+            "n_affirmative_needs_review": 0,
+            "n_hits": 0,
+            "review_self_reported_phrase_scan": {
+              "all_hits_including_negated": 0,
+              "contract": "research/round33/contracts/bc2.json",
+              "exit": 0,
+              "limitations_affirmative_hits": [],
+              "mandatory_sentence_template_spans": 1,
+              "supported_statement_affirmative_hits": [],
+              "tool": "research/round33/tools/phrase_scan.py",
+              "tool_sha256": "1c31a4958c4a44144c5d4f256db551385d216b86309eadc54a608c5e2a4ff0e2"
+            },
+            "template_present": true
+          }
+        },
+        "role": "calling task item 1 (first half): negation-aware phrase scan of both reports, both gates' accepted statements and limitations, and both reviews' supported statements, with each contract; list every hit with its clause; cross-checked against each review's own self-reported phrase_scan block; zero research loops",
+        "total_raw_hits": 0
+      },
+      "vocabulary_gap_audit": {
+        "affirmative_unscoped": [],
+        "all_rows": [
+          {
+            "classification": "negated_excluded",
+            "clause": "Exclusions, limitations and contract wording defects **Contract exclusions (verbatim):** - `decay of the reduced density or of any state (BB1/BB2)` - `whole-sequence convergence of any state` - `uniqueness of every infinite-volume ground st",
+            "json_path": null,
+            "loop": "BA1",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/ba1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "- uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BA1",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/ba1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "different_subject_not_ground_state",
+            "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+            "json_path": null,
+            "loop": "BA2",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/ba2/report.md",
+            "phrase": "uniquely",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "Exclusions and limitations **Contract exclusions.** None of the following is claimed (verbatim, comma-separated) \u2014 `equality of GNS dynamics or of correlation functions of different states`, `uniform-in-time statements`, `exponential decay ",
+            "json_path": null,
+            "loop": "BA2",
+            "mechanically_negated": true,
+            "path": "research/round33/forward/ba2/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "different_subject_not_ground_state",
+            "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+            "json_path": null,
+            "loop": "BA2",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/ba2/report.md",
+            "phrase": "uniquely",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BA2",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/ba2/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "equality of GNS dynamics or of correlation functions of different states, a common limit state or convergence of states, uniqueness of every infinite-volume ground state, translation invariance, any uniform-in-time statement, exponential de",
+            "json_path": "accepted",
+            "loop": "BA2",
+            "mechanically_negated": false,
+            "path": "research/round33/advisor/ba2-gate.json",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "gate_json"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "equality of GNS dynamics or of correlation functions of different states, a common limit state or convergence of states, uniqueness of every infinite-volume ground state, translation invariance, any uniform-in-time statement, exponential de",
+            "json_path": "supported_statement",
+            "loop": "BA2",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/ba2.json",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "skeptic_json"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "- uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BB1",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bb1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "different_subject_not_ground_state",
+            "clause": "the member through the first site `x_0` of `T` is unique, and the other members cover `T` minus it, so `Cov(T) <= s_{x_0} max Cov(smaller) <= t_0` by induction.",
+            "json_path": null,
+            "loop": "BB1",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/bb1/report.md",
+            "phrase": "is unique",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BB1",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/bb1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "different_subject_not_ground_state",
+            "clause": "the reverse exports comparison names truncated to 80 characters | \u2014 | full names | 80-character prefixes | each prefix is unique",
+            "json_path": null,
+            "loop": "BB1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bb1.md",
+            "phrase": "is unique",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+            "json_path": null,
+            "loop": "BB2",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bb2/report.md",
+            "phrase": "uniquely",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "- Not uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BB2",
+            "mechanically_negated": true,
+            "path": "research/round33/forward/bb2/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "different_subject_not_ground_state",
+            "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+            "json_path": null,
+            "loop": "BB2",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/bb2/report.md",
+            "phrase": "uniquely",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "**Not inherited:** uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BB2",
+            "mechanically_negated": true,
+            "path": "research/round33/reverse/bb2/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "uniqueness of every infinite-volume ground state, states outside the named constructions, uniform-in-time statements, equality of GNS dynamics of different states, any estimate uniform in the lattice spacing a, continuum or weak coupling, s",
+            "json_path": null,
+            "loop": "BB2",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/bb2/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "uniqueness of every infinite-volume ground state, statements about boundary conditions outside the named constructions, any estimate uniform in the lattice spacing a, continuum or weak coupling, scientific priority.",
+            "json_path": null,
+            "loop": "BB2",
+            "mechanically_negated": false,
+            "path": "research/round33/reverse/bb2/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "reverse_report"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "| id | obligation | status | closing gate and scope | missing premise | candidate route | |---|---|---|---|---|---| | O1 | uniqueness of the limit | closed_within_scope | BB2 gate items 2-3",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bc1/report.md",
+            "phrase": "uniqueness of the limit",
+            "source": "forward_report"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "Beyond it (states outside the named constructions, other boundary conditions, uniqueness of every infinite-volume ground state) see row N1.",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bc1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "uniqueness of every infinite-volume ground state stays excluded | | L2 | AV2 | Upper certificate only",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": true,
+            "path": "research/round33/forward/bc1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "uniqueness of every infinite-volume ground state stays excluded | | L9 | AY1 | two limits may differ by up to 2K_2' tau^2 on R and without bound elsewhere | lifted_in_part | BB2 items 2-3 for limits of F1 and F2",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": true,
+            "path": "research/round33/forward/bc1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "the limit called uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bc1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "Exclusions and limitations **Contract claim exclusions (verbatim):** uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bc1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "**Preregistration claim exclusions (verbatim):** uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bc1/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "The forward records AY2 row O1 (\"uniqueness of the limit\") as `closed_within_scope`, and its verdict says \"AY2 rows O1\u2013O6 are closed within named scopes\".",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "## The O1 decision **What AY2 meant.** AY2's O1 is \"uniqueness of the limit\".",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "The plan, the contract's claim exclusions (\"uniqueness of every infinite-volume ground state\"), the template (\"not uniqueness of any ground state\") and the coordinator's panel update 2 keep the broad content excluded.",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": true,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "\"Beyond it (states outside the named constructions, other boundary conditions, uniqueness of every infinite-volume ground state) see row N1\".",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "The round list and the contract list contain neither \"uniqueness of the limit\" nor \"uniqueness of every infinite-volume ground state\".",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": true,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "The round list and the contract list contain neither \"uniqueness of the limit\" nor \"uniqueness of every infinite-volume ground state\".",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": true,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "An affirmative \"Uniqueness of every infinite-volume ground state is proved.\" gives no hit",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": true,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "The phrase-list vocabulary gap for \"uniqueness of the limit\" and \"uniqueness of every infinite-volume ground state\".",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "The phrase-list vocabulary gap for \"uniqueness of the limit\" and \"uniqueness of every infinite-volume ground state\".",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "## Advice (planning only) - Add \"uniqueness of every infinite-volume ground state\" and \"uniqueness of the limit\" to later contracts' `forbidden_phrasings`.",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "## Advice (planning only) - Add \"uniqueness of every infinite-volume ground state\" and \"uniqueness of the limit\" to later contracts' `forbidden_phrasings`.",
+            "json_path": null,
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "skeptic_md"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "O1 uniqueness of the limit",
+            "json_path": "o1_decision.producer",
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.json",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_json"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "O1 | uniqueness of the limit | closed_within_scope | BB2 gate items 2-3",
+            "json_path": "rejected_producer_wording[0].quoted",
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.json",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_json"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "O1 (uniqueness of the limit)",
+            "json_path": "reviewed_obligations_table[0].ay2_row",
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.json",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_json"
+          },
+          {
+            "classification": "scoped_to_named_constructions",
+            "clause": "O1 (uniqueness of the limit), general part",
+            "json_path": "reviewed_obligations_table[1].ay2_row",
+            "loop": "BC1",
+            "mechanically_negated": false,
+            "path": "research/round33/skeptic/bc1.json",
+            "phrase": "uniqueness of the limit",
+            "source": "skeptic_json"
+          },
+          {
+            "classification": "different_subject_not_ground_state",
+            "clause": "- **(P3)** `Cov(T)=sum_{F covers T}prod m<=t_0` for nonempty `T` (the member through the first site of `T` is unique",
+            "json_path": null,
+            "loop": "BC2",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bc2/report.md",
+            "phrase": "is unique",
+            "source": "forward_report"
+          },
+          {
+            "classification": "negated_excluded",
+            "clause": "Exclusions, limitations and claim flags **Contract exclusions (respected):** uniqueness of every infinite-volume ground state",
+            "json_path": null,
+            "loop": "BC2",
+            "mechanically_negated": false,
+            "path": "research/round33/forward/bc2/report.md",
+            "phrase": "uniqueness of every infinite-volume ground state",
+            "source": "forward_report"
+          }
+        ],
+        "already_present_in_contract_lists": {
+          "is unique": [],
+          "unique limit": [],
+          "uniquely": [],
+          "uniqueness of every infinite-volume ground state": [],
+          "uniqueness of the limit": []
+        },
+        "candidate_phrases": [
+          "uniqueness of the limit",
+          "unique limit",
+          "uniqueness of every infinite-volume ground state",
+          "is unique",
+          "uniquely"
+        ],
+        "findings": [
+          "Searched every gate (research/round33/advisor/<loop>-gate.json, whole object), review (skeptic/<loop>.md whole text and skeptic/<loop>.json whole object) and report (forward/<loop>/report.md and, where it exists, reverse/<loop>/report.md) of the six already-gated Round33 sub-round-3 loops (ba1, ba2, bb1, bb2, bc1, bc2 -- bd1/bd2 excluded: in production, per the calling task) for the calling task's five named candidate phrasings. Total raw hits: 42.",
+          "Direct membership check: none of the five candidates is literally present (case-insensitive) in ROUND_FORBIDDEN or in any of the six loops' own contract forbidden_phrasings -- confirmed genuine gaps today, round-wide, not only for BC1: {'uniqueness of the limit': [], 'unique limit': [], 'uniqueness of every infinite-volume ground state': [], 'is unique': [], 'uniquely': []}",
+          "Phrase 'uniqueness of the limit': 10 occurrence(s), by classification: {'scoped_to_named_constructions': 6, 'negated_excluded': 4}.",
+          "Phrase 'unique limit': 0 occurrence(s), by classification: {}.",
+          "Phrase 'uniqueness of every infinite-volume ground state': 25 occurrence(s), by classification: {'negated_excluded': 23, 'scoped_to_named_constructions': 2}.",
+          "Phrase 'is unique': 3 occurrence(s), by classification: {'different_subject_not_ground_state': 3}.",
+          "Phrase 'uniquely': 4 occurrence(s), by classification: {'different_subject_not_ground_state': 3, 'scoped_to_named_constructions': 1}.",
+          "The calling task's own named instance (\"uniqueness of the limit\", the AY2/O1 row name): 10 occurrence(s), all in BC1 (forward/bc1/report.md's O1 obligations-table cell -- scoped_to_named_constructions, since the scope qualifier appears in the SAME table row but a colon inside that row cell splits it into a separate clause per phrase_scan.py's own clause rule, so a naive per-clause \"does this clause also mention the named construction\" check would still miss the scope and correctly flag the row for review -- and several quoted discussions of it in skeptic/bc1.md and skeptic/bc1.json's o1_decision/rejected_producer_wording/reviewed_obligations_table fields, all classified negated_excluded or quoted discussion, never a bare unscoped affirmative claim anywhere in the corpus).",
+          "Heading-colon-list severance found independently of the vocabulary gap: 15 occurrence(s) of \"uniqueness of every infinite-volume ground state\" are genuine claim-exclusion-list restatements (\"Contract exclusions (verbatim/respected):\", \"Not admitted:\", \"Not inherited:\" headings followed by a comma- or semicolon-separated list) that this script's own heading-context window correctly reads as negated_excluded, but tools.phrase_scan.NEGATION alone would NOT catch: the heading's own cue word sits in a clause phrase_scan.py's \": \" split severs from the list items that follow, regardless of which cue word the heading used -- and, for the \"exclusions\" headings specifically, NEGATION's \"exclusion\" token is singular and word-bounded (\\bexclusion\\b) so it would not match the plural \"exclusions\" even without a colon in the way. Locations: [('BA1', 'forward_report', 'research/round33/forward/ba1/report.md', None), ('BA1', 'reverse_report', 'research/round33/reverse/ba1/report.md', None), ('BA2', 'reverse_report', 'research/round33/reverse/ba2/report.md', None), ('BA2', 'gate_json', 'research/round33/advisor/ba2-gate.json', 'accepted'), ('BA2', 'skeptic_json', 'research/round33/skeptic/ba2.json', 'supported_statement'), ('BB1', 'forward_report', 'research/round33/forward/bb1/report.md', None), ('BB1', 'reverse_report', 'research/round33/reverse/bb1/report.md', None), ('BB2', 'reverse_report', 'research/round33/reverse/bb2/report.md', None), ('BB2', 'reverse_report', 'research/round33/reverse/bb2/report.md', None), ('BC1', 'forward_report', 'research/round33/forward/bc1/report.md', None), ('BC1', 'forward_report', 'research/round33/forward/bc1/report.md', None), ('BC1', 'forward_report', 'research/round33/forward/bc1/report.md', None), ('BC1', 'skeptic_md', 'research/round33/skeptic/bc1.md', None), ('BC1', 'skeptic_md', 'research/round33/skeptic/bc1.md', None), ('BC2', 'forward_report', 'research/round33/forward/bc2/report.md', None)]",
+          "Recommendations (do not apply; planning only, matching the BC1 review's own \"Advice (planning only)\" section):",
+          "  1. ADD \"uniqueness of the limit\" to later contracts' forbidden_phrasings (as the BC1 review already advises). Would newly flag exactly: [{'loop': 'BC1', 'source': 'forward_report', 'path': 'research/round33/forward/bc1/report.md', 'json_path': None}, {'loop': 'BC1', 'source': 'skeptic_json', 'path': 'research/round33/skeptic/bc1.json', 'json_path': 'o1_decision.producer'}, {'loop': 'BC1', 'source': 'skeptic_json', 'path': 'research/round33/skeptic/bc1.json', 'json_path': 'rejected_producer_wording[0].quoted'}, {'loop': 'BC1', 'source': 'skeptic_json', 'path': 'research/round33/skeptic/bc1.json', 'json_path': 'reviewed_obligations_table[0].ay2_row'}, {'loop': 'BC1', 'source': 'skeptic_json', 'path': 'research/round33/skeptic/bc1.json', 'json_path': 'reviewed_obligations_table[1].ay2_row'}, {'loop': 'BC1', 'source': 'skeptic_md', 'path': 'research/round33/skeptic/bc1.md', 'json_path': None}] -- all correctly deserve review (the O1 row itself, and the skeptic's own quoted discussion of it), and none is a bare unscoped affirmative claim.",
+          "  2. ADD \"uniqueness of every infinite-volume ground state\" (as the BC1 review already advises), but pair it with a companion fix, because it would newly flag 11 distinct location(s) (from 15 raw occurrences, some files hit more than once) across every one of ba1, ba2, bb1, bb2, bc1 and bc2 that are all verbatim claim-exclusion-list or \"Not admitted/inherited:\" list restatements, not affirmative claims: either (a) change tools/phrase_scan.py's clause split so a heading's negation/exclusion cue survives into the list it introduces (fixes \"Not admitted:\", \"Not inherited:\" and \"exclusions\" headings alike), or (b) widen NEGATION to also match the plural \"exclusions\" AND exempt a verbatim \"claim exclusions\"/\"contract exclusions\" list the same way the mandatory_sentence_template is already exempted by name. Locations: [{'loop': 'BA1', 'source': 'forward_report', 'path': 'research/round33/forward/ba1/report.md', 'json_path': None}, {'loop': 'BA1', 'source': 'reverse_report', 'path': 'research/round33/reverse/ba1/report.md', 'json_path': None}, {'loop': 'BA2', 'source': 'gate_json', 'path': 'research/round33/advisor/ba2-gate.json', 'json_path': 'accepted'}, {'loop': 'BA2', 'source': 'reverse_report', 'path': 'research/round33/reverse/ba2/report.md', 'json_path': None}, {'loop': 'BA2', 'source': 'skeptic_json', 'path': 'research/round33/skeptic/ba2.json', 'json_path': 'supported_statement'}, {'loop': 'BB1', 'source': 'forward_report', 'path': 'research/round33/forward/bb1/report.md', 'json_path': None}, {'loop': 'BB1', 'source': 'reverse_report', 'path': 'research/round33/reverse/bb1/report.md', 'json_path': None}, {'loop': 'BB2', 'source': 'reverse_report', 'path': 'research/round33/reverse/bb2/report.md', 'json_path': None}, {'loop': 'BC1', 'source': 'forward_report', 'path': 'research/round33/forward/bc1/report.md', 'json_path': None}, {'loop': 'BC1', 'source': 'skeptic_md', 'path': 'research/round33/skeptic/bc1.md', 'json_path': None}, {'loop': 'BC2', 'source': 'forward_report', 'path': 'research/round33/forward/bc2/report.md', 'json_path': None}]",
+          "  3. ADD \"unique limit\" for forward compatibility: 0 occurrences anywhere in the searched corpus today, so nothing frozen would be newly flagged; it substring-overlaps the round list's existing \"a unique limit\"/\"the unique limit\" (a bare \"unique limit\" with no determiner is not currently caught by either).",
+          "  4. Do NOT add bare \"is unique\" or \"uniquely\": both are used round-wide for unrelated mathematical objects (an AM2/route-B fixed point unique in its ball, a covering-family member unique through a site, the Bratteli-Robinson dynamics-limit theorem's own \"can be uniquely extended to a one-parameter group of *-automorphisms\" quoted verbatim in BA2/BB2 forward and reverse, and the skeptic's own methodological \"each prefix is unique\" in the BB1 review) and would newly flag 3 and 4 location(s) respectively, none about ground-state/limit uniqueness (all classified different_subject_not_ground_state or, for the one BC2 \"is unique\" hit, {'different_subject_not_ground_state': 3}). If a narrower need arises, use a compound phrase such as \"the ground state is unique\" or \"the limit is unique\" instead (0 occurrences of either in the searched corpus today).",
+          "0 hits classified bare AFFIRMATIVE: every one of the 42 occurrences found, round-wide, of these five candidate phrasings is either a negation/exclusion-list restatement, a quoted control-description of a rejected mutation, explicitly scoped to the named constructions (the O1 row), or about a different mathematical object entirely -- this audit finds no admitted, unscoped, affirmative infinite-volume uniqueness claim anywhere in the searched Round33 corpus."
+        ],
+        "id": "vocabulary_gap_audit",
+        "passed": true,
+        "per_phrase": {
+          "is unique": {
+            "by_classification": {
+              "different_subject_not_ground_state": 3
+            },
+            "hits": [
+              {
+                "classification": "different_subject_not_ground_state",
+                "clause": "the member through the first site `x_0` of `T` is unique, and the other members cover `T` minus it, so `Cov(T) <= s_{x_0} max Cov(smaller) <= t_0` by induction.",
+                "json_path": null,
+                "loop": "BB1",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/bb1/report.md",
+                "phrase": "is unique",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "different_subject_not_ground_state",
+                "clause": "the reverse exports comparison names truncated to 80 characters | \u2014 | full names | 80-character prefixes | each prefix is unique",
+                "json_path": null,
+                "loop": "BB1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bb1.md",
+                "phrase": "is unique",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "different_subject_not_ground_state",
+                "clause": "- **(P3)** `Cov(T)=sum_{F covers T}prod m<=t_0` for nonempty `T` (the member through the first site of `T` is unique",
+                "json_path": null,
+                "loop": "BC2",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bc2/report.md",
+                "phrase": "is unique",
+                "source": "forward_report"
+              }
+            ]
+          },
+          "unique limit": {
+            "by_classification": {},
+            "hits": []
+          },
+          "uniquely": {
+            "by_classification": {
+              "different_subject_not_ground_state": 3,
+              "scoped_to_named_constructions": 1
+            },
+            "hits": [
+              {
+                "classification": "different_subject_not_ground_state",
+                "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+                "json_path": null,
+                "loop": "BA2",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/ba2/report.md",
+                "phrase": "uniquely",
+                "source": "forward_report"
+              },
+              {
+                "classification": "different_subject_not_ground_state",
+                "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+                "json_path": null,
+                "loop": "BA2",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/ba2/report.md",
+                "phrase": "uniquely",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+                "json_path": null,
+                "loop": "BB2",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bb2/report.md",
+                "phrase": "uniquely",
+                "source": "forward_report"
+              },
+              {
+                "classification": "different_subject_not_ground_state",
+                "clause": "This limiting dynamics \u03c4_t(\u00b7) can be uniquely extended to a one-parameter group of *-automorphisms on A_\u0393.",
+                "json_path": null,
+                "loop": "BB2",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/bb2/report.md",
+                "phrase": "uniquely",
+                "source": "reverse_report"
+              }
+            ]
+          },
+          "uniqueness of every infinite-volume ground state": {
+            "by_classification": {
+              "negated_excluded": 23,
+              "scoped_to_named_constructions": 2
+            },
+            "hits": [
+              {
+                "classification": "negated_excluded",
+                "clause": "Exclusions, limitations and contract wording defects **Contract exclusions (verbatim):** - `decay of the reduced density or of any state (BB1/BB2)` - `whole-sequence convergence of any state` - `uniqueness of every infinite-volume ground st",
+                "json_path": null,
+                "loop": "BA1",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/ba1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "- uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BA1",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/ba1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "Exclusions and limitations **Contract exclusions.** None of the following is claimed (verbatim, comma-separated) \u2014 `equality of GNS dynamics or of correlation functions of different states`, `uniform-in-time statements`, `exponential decay ",
+                "json_path": null,
+                "loop": "BA2",
+                "mechanically_negated": true,
+                "path": "research/round33/forward/ba2/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BA2",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/ba2/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "equality of GNS dynamics or of correlation functions of different states, a common limit state or convergence of states, uniqueness of every infinite-volume ground state, translation invariance, any uniform-in-time statement, exponential de",
+                "json_path": "accepted",
+                "loop": "BA2",
+                "mechanically_negated": false,
+                "path": "research/round33/advisor/ba2-gate.json",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "gate_json"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "equality of GNS dynamics or of correlation functions of different states, a common limit state or convergence of states, uniqueness of every infinite-volume ground state, translation invariance, any uniform-in-time statement, exponential de",
+                "json_path": "supported_statement",
+                "loop": "BA2",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/ba2.json",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "skeptic_json"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "- uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BB1",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bb1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BB1",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/bb1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "- Not uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BB2",
+                "mechanically_negated": true,
+                "path": "research/round33/forward/bb2/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "**Not inherited:** uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BB2",
+                "mechanically_negated": true,
+                "path": "research/round33/reverse/bb2/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "uniqueness of every infinite-volume ground state, states outside the named constructions, uniform-in-time statements, equality of GNS dynamics of different states, any estimate uniform in the lattice spacing a, continuum or weak coupling, s",
+                "json_path": null,
+                "loop": "BB2",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/bb2/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "uniqueness of every infinite-volume ground state, statements about boundary conditions outside the named constructions, any estimate uniform in the lattice spacing a, continuum or weak coupling, scientific priority.",
+                "json_path": null,
+                "loop": "BB2",
+                "mechanically_negated": false,
+                "path": "research/round33/reverse/bb2/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "reverse_report"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "Beyond it (states outside the named constructions, other boundary conditions, uniqueness of every infinite-volume ground state) see row N1.",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bc1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "uniqueness of every infinite-volume ground state stays excluded | | L2 | AV2 | Upper certificate only",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": true,
+                "path": "research/round33/forward/bc1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "uniqueness of every infinite-volume ground state stays excluded | | L9 | AY1 | two limits may differ by up to 2K_2' tau^2 on R and without bound elsewhere | lifted_in_part | BB2 items 2-3 for limits of F1 and F2",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": true,
+                "path": "research/round33/forward/bc1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "the limit called uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bc1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "Exclusions and limitations **Contract claim exclusions (verbatim):** uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bc1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "**Preregistration claim exclusions (verbatim):** uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bc1/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "The plan, the contract's claim exclusions (\"uniqueness of every infinite-volume ground state\"), the template (\"not uniqueness of any ground state\") and the coordinator's panel update 2 keep the broad content excluded.",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": true,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "\"Beyond it (states outside the named constructions, other boundary conditions, uniqueness of every infinite-volume ground state) see row N1\".",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "The round list and the contract list contain neither \"uniqueness of the limit\" nor \"uniqueness of every infinite-volume ground state\".",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": true,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "An affirmative \"Uniqueness of every infinite-volume ground state is proved.\" gives no hit",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": true,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "The phrase-list vocabulary gap for \"uniqueness of the limit\" and \"uniqueness of every infinite-volume ground state\".",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "## Advice (planning only) - Add \"uniqueness of every infinite-volume ground state\" and \"uniqueness of the limit\" to later contracts' `forbidden_phrasings`.",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "Exclusions, limitations and claim flags **Contract exclusions (respected):** uniqueness of every infinite-volume ground state",
+                "json_path": null,
+                "loop": "BC2",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bc2/report.md",
+                "phrase": "uniqueness of every infinite-volume ground state",
+                "source": "forward_report"
+              }
+            ]
+          },
+          "uniqueness of the limit": {
+            "by_classification": {
+              "negated_excluded": 4,
+              "scoped_to_named_constructions": 6
+            },
+            "hits": [
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "| id | obligation | status | closing gate and scope | missing premise | candidate route | |---|---|---|---|---|---| | O1 | uniqueness of the limit | closed_within_scope | BB2 gate items 2-3",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/forward/bc1/report.md",
+                "phrase": "uniqueness of the limit",
+                "source": "forward_report"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "The forward records AY2 row O1 (\"uniqueness of the limit\") as `closed_within_scope`, and its verdict says \"AY2 rows O1\u2013O6 are closed within named scopes\".",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "## The O1 decision **What AY2 meant.** AY2's O1 is \"uniqueness of the limit\".",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "The round list and the contract list contain neither \"uniqueness of the limit\" nor \"uniqueness of every infinite-volume ground state\".",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": true,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "The phrase-list vocabulary gap for \"uniqueness of the limit\" and \"uniqueness of every infinite-volume ground state\".",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "negated_excluded",
+                "clause": "## Advice (planning only) - Add \"uniqueness of every infinite-volume ground state\" and \"uniqueness of the limit\" to later contracts' `forbidden_phrasings`.",
+                "json_path": null,
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.md",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_md"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "O1 uniqueness of the limit",
+                "json_path": "o1_decision.producer",
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.json",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_json"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "O1 | uniqueness of the limit | closed_within_scope | BB2 gate items 2-3",
+                "json_path": "rejected_producer_wording[0].quoted",
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.json",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_json"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "O1 (uniqueness of the limit)",
+                "json_path": "reviewed_obligations_table[0].ay2_row",
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.json",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_json"
+              },
+              {
+                "classification": "scoped_to_named_constructions",
+                "clause": "O1 (uniqueness of the limit), general part",
+                "json_path": "reviewed_obligations_table[1].ay2_row",
+                "loop": "BC1",
+                "mechanically_negated": false,
+                "path": "research/round33/skeptic/bc1.json",
+                "phrase": "uniqueness of the limit",
+                "source": "skeptic_json"
+              }
+            ]
+          }
+        },
+        "role": "calling task item 1 (second half): search all Round33 gates, reviews and reports for affirmative uniqueness-type phrasings the scanner's vocabulary misses (the BC1 O1-row lesson); classify each as negated/excluded, scoped to the named constructions, or affirmative; recommend (do not apply) additions with a note on which frozen texts they would newly flag; zero research loops",
+        "would_flag_if_added": {
+          "is unique": [
+            {
+              "json_path": null,
+              "loop": "BB1",
+              "path": "research/round33/reverse/bb1/report.md",
+              "source": "reverse_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BB1",
+              "path": "research/round33/skeptic/bb1.md",
+              "source": "skeptic_md"
+            },
+            {
+              "json_path": null,
+              "loop": "BC2",
+              "path": "research/round33/forward/bc2/report.md",
+              "source": "forward_report"
+            }
+          ],
+          "unique limit": [],
+          "uniquely": [
+            {
+              "json_path": null,
+              "loop": "BA2",
+              "path": "research/round33/forward/ba2/report.md",
+              "source": "forward_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BA2",
+              "path": "research/round33/reverse/ba2/report.md",
+              "source": "reverse_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BB2",
+              "path": "research/round33/forward/bb2/report.md",
+              "source": "forward_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BB2",
+              "path": "research/round33/reverse/bb2/report.md",
+              "source": "reverse_report"
+            }
+          ],
+          "uniqueness of every infinite-volume ground state": [
+            {
+              "json_path": null,
+              "loop": "BA1",
+              "path": "research/round33/forward/ba1/report.md",
+              "source": "forward_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BA1",
+              "path": "research/round33/reverse/ba1/report.md",
+              "source": "reverse_report"
+            },
+            {
+              "json_path": "accepted",
+              "loop": "BA2",
+              "path": "research/round33/advisor/ba2-gate.json",
+              "source": "gate_json"
+            },
+            {
+              "json_path": null,
+              "loop": "BA2",
+              "path": "research/round33/reverse/ba2/report.md",
+              "source": "reverse_report"
+            },
+            {
+              "json_path": "supported_statement",
+              "loop": "BA2",
+              "path": "research/round33/skeptic/ba2.json",
+              "source": "skeptic_json"
+            },
+            {
+              "json_path": null,
+              "loop": "BB1",
+              "path": "research/round33/forward/bb1/report.md",
+              "source": "forward_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BB1",
+              "path": "research/round33/reverse/bb1/report.md",
+              "source": "reverse_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BB2",
+              "path": "research/round33/reverse/bb2/report.md",
+              "source": "reverse_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BC1",
+              "path": "research/round33/forward/bc1/report.md",
+              "source": "forward_report"
+            },
+            {
+              "json_path": null,
+              "loop": "BC1",
+              "path": "research/round33/skeptic/bc1.md",
+              "source": "skeptic_md"
+            },
+            {
+              "json_path": null,
+              "loop": "BC2",
+              "path": "research/round33/forward/bc2/report.md",
+              "source": "forward_report"
+            }
+          ],
+          "uniqueness of the limit": [
+            {
+              "json_path": null,
+              "loop": "BC1",
+              "path": "research/round33/forward/bc1/report.md",
+              "source": "forward_report"
+            },
+            {
+              "json_path": "o1_decision.producer",
+              "loop": "BC1",
+              "path": "research/round33/skeptic/bc1.json",
+              "source": "skeptic_json"
+            },
+            {
+              "json_path": "rejected_producer_wording[0].quoted",
+              "loop": "BC1",
+              "path": "research/round33/skeptic/bc1.json",
+              "source": "skeptic_json"
+            },
+            {
+              "json_path": "reviewed_obligations_table[0].ay2_row",
+              "loop": "BC1",
+              "path": "research/round33/skeptic/bc1.json",
+              "source": "skeptic_json"
+            },
+            {
+              "json_path": "reviewed_obligations_table[1].ay2_row",
+              "loop": "BC1",
+              "path": "research/round33/skeptic/bc1.json",
+              "source": "skeptic_json"
+            },
+            {
+              "json_path": null,
+              "loop": "BC1",
+              "path": "research/round33/skeptic/bc1.md",
+              "source": "skeptic_md"
+            }
+          ]
+        }
+      }
+    },
+    "id": "phrase_audit",
+    "passed": true,
+    "role": "Jung/Pauli lens, Round33 sub-round 3, assistant-3: the phrase scan and vocabulary-gap audit, calling task item 1; zero research loops; audits only, never admission evidence"
+  },
+  "rate_range_audit": {
+    "checks": {
+      "rate_range_audit": {
+        "all_rows": [
+          {
+            "clause": "**Item 3 \u2014 the finite-box sign corollary.** For every `N` at least 2, the static Wilson mean of the untruncated F2 ground state on `Lambda_N` lies in the AW2 enclosure widened by `C' q^(N-1)` on both sides, `C'=4/984375` (the BB2 gate bound value), `q=1/64`.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "The rate in `N` of the widening is `q^(N-1)`, for every `N` at least 2.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "Its correlation functions on `theta` in `[-8,8]` are the limits of the finite-box correlation functions of either family, with the rate `K5/N` only on the certified range `5<=N<=14000`.",
+            "has_lower_bound": false,
+            "has_two_sided_range": true,
+            "index": null,
+            "is_correlation_type": true,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_two_sided_range"
+          },
+          {
+            "clause": "- **BB2 gate, item 1:** for `F` in `{F1,F2}`, both signs, every `N` at least 2 and every `M` greater than `N`, `||rho^{F,M}_R-rho^{F,N}_R||_1 <= C' q^(N-1)` with `C'=4/984375`, `q=1/64`, in each on-site cutoff space and at fixed `N` for the untruncated ground vectors",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "Item 3 \u2014 the finite-box sign corollary for the padded family **Theorem (HNM-BC1-F04).** At `tau=+10^-8` and for every `N` at least 2, the untruncated F2 ground state on `Lambda_N` satisfies `omega^{F2,N}(W)` in `[L - C' q^(N-1), U + C' q^(N-1)]`, and at `tau=-10^-8` it lies in th",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "`||rho^{F2,M}_R - rho^{F2,N}_R||_1 <= C' q^(N-1)`, for the untruncated ground vectors at fixed `N` and `M`.",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_established_nearby_same_proof_or_row"
+          },
+          {
+            "clause": "The trace norm is continuous, so `||rho^inf_R - rho^{F2,N}_R||_1 <= C' q^(N-1)` for every `N` at least 2.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "**Duality.** `W` lies in `B(H_R)` with `||W||` at most 1, so `|omega^{F2,N}(W) - omega_inf(W)| = |Tr((rho^{F2,N}_R - rho^inf_R) W)| <= ||W|| ||rho^{F2,N}_R - rho^inf_R||_1 <= C' q^(N-1)`.",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_established_nearby_same_proof_or_row"
+          },
+          {
+            "clause": "**`N_sign`.** `C' q^(N-1)` is strictly decreasing in `N`.",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_established_nearby_same_proof_or_row"
+          },
+          {
+            "clause": "`N_sign` is the least `N` at least 2 with `C' q^(N-1)` strictly below `L`, computed exactly below",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_established_nearby_same_proof_or_row"
+          },
+          {
+            "clause": "| `N` | `C' q^(N-1)` (exact) | preview | widened lower end at `+tau` (preview) | sign certified | |---|---|---|---|---| | 2 | `1/15750000` | `6.34920634920e-8` | `-6.34229545279e-8` | no | | 3 | `1/1008000000` | `9.92063492063e-10` | `-9.22954527941e-10` | no | | 4 | `1/645120000",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": true,
+            "is_table_or_glossary_row": true,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "negated_not_a_claim"
+          },
+          {
+            "clause": "**Rate in `N`, for every `N` at least 2.** The widening `C' q^(N-1)` is the BB2 density rate, `q=1/64` per coarse step at fixed spacing, for every `N` at least 2.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "it gives the rate `K5/N` (`K5` about `6.10e-9`) only on the certified range `5<=N<=14000`, and it is vacuous from `N=14419` on, where only convergence without a rate is admitted.",
+            "has_lower_bound": false,
+            "has_two_sided_range": true,
+            "index": null,
+            "is_correlation_type": true,
+            "is_fixture_context": false,
+            "is_negated": true,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_two_sided_range"
+          },
+          {
+            "clause": "the density rate q^(N-1) with C'=4/984375 for every N at least 2",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "the dynamics comparison K_cmp(5N+1)N^-3 and the Cauchy rate K_F/(N-1) for every N at least 2 on theta in [-8,8]",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "the correlation rate K5/N only on 5<=N<=14000",
+            "has_lower_bound": false,
+            "has_two_sided_range": true,
+            "index": null,
+            "is_correlation_type": true,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_two_sided_range"
+          },
+          {
+            "clause": "the F1 and F2 finite-box Heisenberg evolutions of A in B(H_R) differ by at most K_cmp(5N+1)N^-3 in norm for theta in [-8,8] and every N at least 2, and the F2 limit dynamics equals the AQ1 limit dynamics T_theta",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "there C' q^(N-1) is 1/15750000 and 1/1008000000, both above tau/144-K_2^+ tau^2, and the widened interval contains 0.",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_established_nearby_same_proof_or_row"
+          },
+          {
+            "clause": "| | N5 | the correlation-function rate in N beyond N=14000 with the frozen r_N | open | none (open) | With r_N=floor((N-1)/2) and the frozen region form, the BB2 item-5 bracket gives the rate K5/N only on 5<=N<=14000 and is vacuous from N=14419 on, because the factor e^(volume/10",
+            "has_lower_bound": false,
+            "has_two_sided_range": true,
+            "index": null,
+            "is_correlation_type": true,
+            "is_fixture_context": false,
+            "is_negated": true,
+            "is_table_or_glossary_row": true,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_two_sided_range"
+          },
+          {
+            "clause": "the AQ1 subsequential states are the one state omega_inf and the densities converge as a whole sequence at q^(N-1) for every N at least 2",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "`rate_in_N_claimed` refers to the density rate `q^(N-1)` for every `N` at least 2 and to the correlation rate only on `5<=N<=14000`.",
+            "has_lower_bound": true,
+            "has_two_sided_range": true,
+            "index": null,
+            "is_correlation_type": true,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_two_sided_range"
+          },
+          {
+            "clause": "BB2 items 2-3 make the set of AQ1 subsequential limits `{omega_inf}` | | `restated_constants_exactness` | `0` | `d`, `R`, the interval, `K_2^+` and the four endpoints equal the gate rationals exactly | | `finite_box_whole_sequence_term` | `C' q^(N-1)`, `C'=4/984375`, `q=1/64`",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": true,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "table_or_glossary_row_ranged_elsewhere"
+          },
+          {
+            "clause": "rows reordered | | `rate_range_stated` | an appended unqualified `O(1/N)` sentence",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": true,
+            "is_negated": false,
+            "is_table_or_glossary_row": true,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "fixture_not_a_claim"
+          },
+          {
+            "clause": "the `C' q^(N-1)` widening applied on one side only | | `finite_box_node_only_from_record` | a finite-box node presented as a restatement",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": true,
+            "is_negated": false,
+            "is_table_or_glossary_row": true,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "fixture_not_a_claim"
+          },
+          {
+            "clause": "a sentence stating the `O(1/N)` rate with no range appended",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": true,
+            "is_negated": true,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "fixture_not_a_claim"
+          },
+          {
+            "clause": "for every N at least 2 the untruncated F2 finite-box ground state at fixed N satisfies |omega^{F2,N}(W)-omega_inf(W)| <= ||W|| ||rho^{F2,N}_R-rho^inf_R||_1 <= C' q^(N-1) with C'=4/984375 and q=1/64 (the BB2 item-1 whole-sequence bound with M tending to infinity through the closed",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": false,
+            "source": "gate_accepted",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "N_sign, the least N at least 2 with C' q^(N-1) strictly below L=tau/144-K_2^+ tau^2, is exactly 4",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "gate_accepted",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "The density rate in N is q^(N-1) for every N at least 2, per coarse step at fixed spacing.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "gate_accepted",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "its correlation functions on |theta| at most 8 are the limits of the finite-box correlation functions of either family (BB2 item 5), with a rate in N (K5/N) only on 5<=N<=14000 and convergence without a rate beyond",
+            "has_lower_bound": false,
+            "has_two_sided_range": true,
+            "index": null,
+            "is_correlation_type": true,
+            "is_fixture_context": false,
+            "is_negated": true,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "gate_accepted",
+            "verdict": "OK_two_sided_range"
+          },
+          {
+            "clause": "The density rate q^(N-1) holds for every N at least 2, per coarse step at fixed spacing.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": 6,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC1",
+            "range_established_nearby": true,
+            "source": "gate_limitations",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "`||rho^A_R-rho^B_R||_1<=C_B q^(N-1)` for every N at least 2, `C_B=c_site,B(1+q)`.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC2",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "Example values of `C_B q^(N-1)`, which hold for every N at least 2",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": true,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC2",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "HNM-BC2-F18).** For every N at least 2, every `M>N`, both signs, in each `Q_L` and then for the untruncated vectors, \\[ \\sup_{M>N}\\|\\rho^{FB,M}_R-\\rho^{FB,N}_R\\|_1\\le C'_B\\,q^{N-1},\\qquad \\sup_{M>N}\\|\\rho^{FB,M}_Y-\\rho^{FB,N}_Y\\|_1\\le c'_{\\rm site,B}\\,|Y|\\,e^{|Y|/10^8}q^{d_Y}\\qua",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC2",
+            "range_established_nearby": true,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "Letting `M` tend to infinity gives, for every N at least 2 with `Y` inside `Lambda_N`, `||rho^{FB,N}_Y-rho^inf_Y||_1<=c'_site,B |Y| e^{|Y|/10^8} q^{d_Y}` and `||rho^{FB,N}_R-rho^inf_R||_1<=C'_B q^(N-1)`.",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC2",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "an `O(1/N)` statement",
+            "has_lower_bound": false,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": true,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC2",
+            "range_established_nearby": false,
+            "source": "forward_report",
+            "verdict": "fixture_not_a_claim"
+          },
+          {
+            "clause": "for every N at least 2, ||rho^{box1}_R-rho^{box2}_R||_1 <= C_B q^(N-1) with C_B=2326328761843649826272217312701707175/2461302090348550272620124432958434944821248 (about 9.4516e-7",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC2",
+            "range_established_nearby": true,
+            "source": "gate_accepted",
+            "verdict": "OK_range_present"
+          },
+          {
+            "clause": "for every N at least 2, sup over all M greater than N of ||rho^{FB,M}_R-rho^{FB,N}_R||_1 <= C'_B q^(N-1) with C'_B=C_B (margin about 4.232 against 1/250000), and for every N at least 2 with Y inside Lambda_N, sup over all M greater than N of ||rho^{FB,M}_Y-rho^{FB,N}_Y||_1 <= c'_",
+            "has_lower_bound": true,
+            "has_two_sided_range": false,
+            "index": null,
+            "is_correlation_type": false,
+            "is_fixture_context": false,
+            "is_negated": false,
+            "is_table_or_glossary_row": false,
+            "loop": "BC2",
+            "range_established_nearby": true,
+            "source": "gate_accepted",
+            "verdict": "OK_range_present"
+          }
+        ],
+        "defects": [],
+        "findings": [
+          "Scanned every clause (the same clause-splitting rule as tools/phrase_scan.py and phrase_audit.py: sentence end, semicolon or colon) of forward/bc1/report.md, forward/bc2/report.md, advisor/bc1-gate.json#/accepted+/limitations and advisor/bc2-gate.json#/accepted+/limitations for a RATE claim carrying a concrete formula in N (q^(N-1)-style, O(1/N), K5/N, K_F/(N-1), a Lieb-Robinson N^-3 bound) -- the bare phrase \"rate in N\" alone is not a trigger, since it is also how an obligations-table row NAME or an open-row title refers to a rate whose formula and range are stated elsewhere in the same row/paragraph (checked separately, below), and flagging the bare label itself would manufacture a false defect out of table structure. Total rate-claim clauses found: 37.",
+          "By verdict: 6 two-sided-range correlation/dynamics-type claims (OK, same clause), 20 ranged density/state-type claims (OK, same clause -- a one-sided \"for every N at least k\" is their correct, complete range since these rates have no certified upper cutoff), 5 proof-step or open-row-evaluation clauses whose range is not in this same clause but IS in the governing theorem statement or obligations-row opening cell within 900 characters just before it (OK, a softer \"same numbered proof/row\" standard, distinguished below from a true standalone-claim defect), 4 clauses that only DESCRIBE a rate_range_stated control's own rejected mutations (not a producer claim), 1 clauses that explicitly DISCLAIM a rate rather than assert one (negation-aware, the same principle as tools/phrase_scan.py's own NEGATION rule), 1 constant-glossary or obligations-table-label cells whose own full ranged sentence is elsewhere in the report, and 0 genuine DEFECT(s) (a rate formula with no range in its own clause AND none in the 900 characters before it either).",
+          "The 5 \"established nearby\" clause(s), quoted with their governing statement:",
+          "  NEARBY-OK: BC1 forward_report :: \"`||rho^{F2,M}_R - rho^{F2,N}_R||_1 <= C' q^(N-1)`, for the untruncated ground vectors at fixed `N` and `M`.\"",
+          "  NEARBY-OK: BC1 forward_report :: \"**Duality.** `W` lies in `B(H_R)` with `||W||` at most 1, so `|omega^{F2,N}(W) - omega_inf(W)| = |Tr((rho^{F2,N}_R - rho^inf_R) W)| <= ||W|| ||rho^{F2,N}_R - rho^inf_R||_1 <= C' q^(N-1)`.\"",
+          "  NEARBY-OK: BC1 forward_report :: \"**`N_sign`.** `C' q^(N-1)` is strictly decreasing in `N`.\"",
+          "  NEARBY-OK: BC1 forward_report :: \"`N_sign` is the least `N` at least 2 with `C' q^(N-1)` strictly below `L`, computed exactly below\"",
+          "  NEARBY-OK: BC1 forward_report :: \"there C' q^(N-1) is 1/15750000 and 1/1008000000, both above tau/144-K_2^+ tau^2, and the widened interval contains 0.\"",
+          "BC1: 30 rate-claim clause(s), 0 defect(s).",
+          "BC2: 7 rate-claim clause(s), 0 defect(s).",
+          "No defects: every genuine rate sentence in the BC1/BC2 forward reports and gate texts carries its N-range in the same clause -- the density/widening rate q^(N-1) as \"for every N at least 2\" (unbounded above, correctly one-sided) and the inherited BB2 item-5 correlation rate K5/N as the two-sided \"5<=N<=14000\" (e.g. forward/bc1/report.md: \"the rate K5/N ... only on the certified range 5<=N<=14000\"; advisor/bc1-gate.json#/accepted: \"a rate in N (K5/N) only on 5<=N<=14000\"). Every clause that states an unqualified O(1/N) or \"a rate in N ... without a range\" is, on inspection, one of the frozen `rate_range_stated` control's own listed rejected mutations (a description of what the exact checker catches), not a claim BC1 or BC2 itself makes -- this is the concrete sign that BC1/BC2 learned the BB2 lesson their own contracts' rate_range_stated control was written to enforce."
+        ],
+        "id": "rate_range_audit",
+        "passed": true,
+        "per_loop": {
+          "BC1": {
+            "n_defects": 0,
+            "n_rate_clauses": 30,
+            "passed": true,
+            "rows": [
+              {
+                "clause": "**Item 3 \u2014 the finite-box sign corollary.** For every `N` at least 2, the static Wilson mean of the untruncated F2 ground state on `Lambda_N` lies in the AW2 enclosure widened by `C' q^(N-1)` on both sides, `C'=4/984375` (the BB2 gate bound value), `q=1/64`.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "The rate in `N` of the widening is `q^(N-1)`, for every `N` at least 2.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "Its correlation functions on `theta` in `[-8,8]` are the limits of the finite-box correlation functions of either family, with the rate `K5/N` only on the certified range `5<=N<=14000`.",
+                "has_lower_bound": false,
+                "has_two_sided_range": true,
+                "index": null,
+                "is_correlation_type": true,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_two_sided_range"
+              },
+              {
+                "clause": "- **BB2 gate, item 1:** for `F` in `{F1,F2}`, both signs, every `N` at least 2 and every `M` greater than `N`, `||rho^{F,M}_R-rho^{F,N}_R||_1 <= C' q^(N-1)` with `C'=4/984375`, `q=1/64`, in each on-site cutoff space and at fixed `N` for the untruncated ground vectors",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "Item 3 \u2014 the finite-box sign corollary for the padded family **Theorem (HNM-BC1-F04).** At `tau=+10^-8` and for every `N` at least 2, the untruncated F2 ground state on `Lambda_N` satisfies `omega^{F2,N}(W)` in `[L - C' q^(N-1), U + C' q^(N-1)]`, and at `tau=-10^-8` it lies in th",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "`||rho^{F2,M}_R - rho^{F2,N}_R||_1 <= C' q^(N-1)`, for the untruncated ground vectors at fixed `N` and `M`.",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_established_nearby_same_proof_or_row"
+              },
+              {
+                "clause": "The trace norm is continuous, so `||rho^inf_R - rho^{F2,N}_R||_1 <= C' q^(N-1)` for every `N` at least 2.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "**Duality.** `W` lies in `B(H_R)` with `||W||` at most 1, so `|omega^{F2,N}(W) - omega_inf(W)| = |Tr((rho^{F2,N}_R - rho^inf_R) W)| <= ||W|| ||rho^{F2,N}_R - rho^inf_R||_1 <= C' q^(N-1)`.",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_established_nearby_same_proof_or_row"
+              },
+              {
+                "clause": "**`N_sign`.** `C' q^(N-1)` is strictly decreasing in `N`.",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_established_nearby_same_proof_or_row"
+              },
+              {
+                "clause": "`N_sign` is the least `N` at least 2 with `C' q^(N-1)` strictly below `L`, computed exactly below",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_established_nearby_same_proof_or_row"
+              },
+              {
+                "clause": "| `N` | `C' q^(N-1)` (exact) | preview | widened lower end at `+tau` (preview) | sign certified | |---|---|---|---|---| | 2 | `1/15750000` | `6.34920634920e-8` | `-6.34229545279e-8` | no | | 3 | `1/1008000000` | `9.92063492063e-10` | `-9.22954527941e-10` | no | | 4 | `1/645120000",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": true,
+                "is_table_or_glossary_row": true,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "negated_not_a_claim"
+              },
+              {
+                "clause": "**Rate in `N`, for every `N` at least 2.** The widening `C' q^(N-1)` is the BB2 density rate, `q=1/64` per coarse step at fixed spacing, for every `N` at least 2.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "it gives the rate `K5/N` (`K5` about `6.10e-9`) only on the certified range `5<=N<=14000`, and it is vacuous from `N=14419` on, where only convergence without a rate is admitted.",
+                "has_lower_bound": false,
+                "has_two_sided_range": true,
+                "index": null,
+                "is_correlation_type": true,
+                "is_fixture_context": false,
+                "is_negated": true,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_two_sided_range"
+              },
+              {
+                "clause": "the density rate q^(N-1) with C'=4/984375 for every N at least 2",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "the dynamics comparison K_cmp(5N+1)N^-3 and the Cauchy rate K_F/(N-1) for every N at least 2 on theta in [-8,8]",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "the correlation rate K5/N only on 5<=N<=14000",
+                "has_lower_bound": false,
+                "has_two_sided_range": true,
+                "index": null,
+                "is_correlation_type": true,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_two_sided_range"
+              },
+              {
+                "clause": "the F1 and F2 finite-box Heisenberg evolutions of A in B(H_R) differ by at most K_cmp(5N+1)N^-3 in norm for theta in [-8,8] and every N at least 2, and the F2 limit dynamics equals the AQ1 limit dynamics T_theta",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "there C' q^(N-1) is 1/15750000 and 1/1008000000, both above tau/144-K_2^+ tau^2, and the widened interval contains 0.",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_established_nearby_same_proof_or_row"
+              },
+              {
+                "clause": "| | N5 | the correlation-function rate in N beyond N=14000 with the frozen r_N | open | none (open) | With r_N=floor((N-1)/2) and the frozen region form, the BB2 item-5 bracket gives the rate K5/N only on 5<=N<=14000 and is vacuous from N=14419 on, because the factor e^(volume/10",
+                "has_lower_bound": false,
+                "has_two_sided_range": true,
+                "index": null,
+                "is_correlation_type": true,
+                "is_fixture_context": false,
+                "is_negated": true,
+                "is_table_or_glossary_row": true,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_two_sided_range"
+              },
+              {
+                "clause": "the AQ1 subsequential states are the one state omega_inf and the densities converge as a whole sequence at q^(N-1) for every N at least 2",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "`rate_in_N_claimed` refers to the density rate `q^(N-1)` for every `N` at least 2 and to the correlation rate only on `5<=N<=14000`.",
+                "has_lower_bound": true,
+                "has_two_sided_range": true,
+                "index": null,
+                "is_correlation_type": true,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_two_sided_range"
+              },
+              {
+                "clause": "BB2 items 2-3 make the set of AQ1 subsequential limits `{omega_inf}` | | `restated_constants_exactness` | `0` | `d`, `R`, the interval, `K_2^+` and the four endpoints equal the gate rationals exactly | | `finite_box_whole_sequence_term` | `C' q^(N-1)`, `C'=4/984375`, `q=1/64`",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": true,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "table_or_glossary_row_ranged_elsewhere"
+              },
+              {
+                "clause": "rows reordered | | `rate_range_stated` | an appended unqualified `O(1/N)` sentence",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": true,
+                "is_negated": false,
+                "is_table_or_glossary_row": true,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "fixture_not_a_claim"
+              },
+              {
+                "clause": "the `C' q^(N-1)` widening applied on one side only | | `finite_box_node_only_from_record` | a finite-box node presented as a restatement",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": true,
+                "is_negated": false,
+                "is_table_or_glossary_row": true,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "fixture_not_a_claim"
+              },
+              {
+                "clause": "a sentence stating the `O(1/N)` rate with no range appended",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": true,
+                "is_negated": true,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "fixture_not_a_claim"
+              },
+              {
+                "clause": "for every N at least 2 the untruncated F2 finite-box ground state at fixed N satisfies |omega^{F2,N}(W)-omega_inf(W)| <= ||W|| ||rho^{F2,N}_R-rho^inf_R||_1 <= C' q^(N-1) with C'=4/984375 and q=1/64 (the BB2 item-1 whole-sequence bound with M tending to infinity through the closed",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": false,
+                "source": "gate_accepted",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "N_sign, the least N at least 2 with C' q^(N-1) strictly below L=tau/144-K_2^+ tau^2, is exactly 4",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "gate_accepted",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "The density rate in N is q^(N-1) for every N at least 2, per coarse step at fixed spacing.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "gate_accepted",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "its correlation functions on |theta| at most 8 are the limits of the finite-box correlation functions of either family (BB2 item 5), with a rate in N (K5/N) only on 5<=N<=14000 and convergence without a rate beyond",
+                "has_lower_bound": false,
+                "has_two_sided_range": true,
+                "index": null,
+                "is_correlation_type": true,
+                "is_fixture_context": false,
+                "is_negated": true,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "gate_accepted",
+                "verdict": "OK_two_sided_range"
+              },
+              {
+                "clause": "The density rate q^(N-1) holds for every N at least 2, per coarse step at fixed spacing.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": 6,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC1",
+                "range_established_nearby": true,
+                "source": "gate_limitations",
+                "verdict": "OK_range_present"
+              }
+            ]
+          },
+          "BC2": {
+            "n_defects": 0,
+            "n_rate_clauses": 7,
+            "passed": true,
+            "rows": [
+              {
+                "clause": "`||rho^A_R-rho^B_R||_1<=C_B q^(N-1)` for every N at least 2, `C_B=c_site,B(1+q)`.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC2",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "Example values of `C_B q^(N-1)`, which hold for every N at least 2",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": true,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC2",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "HNM-BC2-F18).** For every N at least 2, every `M>N`, both signs, in each `Q_L` and then for the untruncated vectors, \\[ \\sup_{M>N}\\|\\rho^{FB,M}_R-\\rho^{FB,N}_R\\|_1\\le C'_B\\,q^{N-1},\\qquad \\sup_{M>N}\\|\\rho^{FB,M}_Y-\\rho^{FB,N}_Y\\|_1\\le c'_{\\rm site,B}\\,|Y|\\,e^{|Y|/10^8}q^{d_Y}\\qua",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC2",
+                "range_established_nearby": true,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "Letting `M` tend to infinity gives, for every N at least 2 with `Y` inside `Lambda_N`, `||rho^{FB,N}_Y-rho^inf_Y||_1<=c'_site,B |Y| e^{|Y|/10^8} q^{d_Y}` and `||rho^{FB,N}_R-rho^inf_R||_1<=C'_B q^(N-1)`.",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC2",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "an `O(1/N)` statement",
+                "has_lower_bound": false,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": true,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC2",
+                "range_established_nearby": false,
+                "source": "forward_report",
+                "verdict": "fixture_not_a_claim"
+              },
+              {
+                "clause": "for every N at least 2, ||rho^{box1}_R-rho^{box2}_R||_1 <= C_B q^(N-1) with C_B=2326328761843649826272217312701707175/2461302090348550272620124432958434944821248 (about 9.4516e-7",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC2",
+                "range_established_nearby": true,
+                "source": "gate_accepted",
+                "verdict": "OK_range_present"
+              },
+              {
+                "clause": "for every N at least 2, sup over all M greater than N of ||rho^{FB,M}_R-rho^{FB,N}_R||_1 <= C'_B q^(N-1) with C'_B=C_B (margin about 4.232 against 1/250000), and for every N at least 2 with Y inside Lambda_N, sup over all M greater than N of ||rho^{FB,M}_Y-rho^{FB,N}_Y||_1 <= c'_",
+                "has_lower_bound": true,
+                "has_two_sided_range": false,
+                "index": null,
+                "is_correlation_type": false,
+                "is_fixture_context": false,
+                "is_negated": false,
+                "is_table_or_glossary_row": false,
+                "loop": "BC2",
+                "range_established_nearby": true,
+                "source": "gate_accepted",
+                "verdict": "OK_range_present"
+              }
+            ]
+          }
+        },
+        "role": "calling task item 3: every rate sentence in the BC1/BC2 reports and gates carries its N-range in the same clause (the BB2 lesson and the BC2 rate_range_stated control); zero research loops"
+      }
+    },
+    "id": "rate_range_audit_script",
+    "passed": true,
+    "role": "Jung/Pauli lens, Round33 sub-round 3, assistant-3: the rate-range audit, calling task item 3; zero research loops; audits only, never admission evidence"
+  },
+  "summary": {
+    "defect_and_affirmative_lines": [],
+    "findings": [
+      "Section pass/fail: phrase_audit=True, template_and_fields=True, rate_range_audit=True.",
+      "overall_pass = True.",
+      "All three scripts' checks completed with zero genuine defects -- BC1 and BC2's already-frozen text (forward reports, gate accepted/limitations, review supported_statement) carries no affirmative forbidden phrasing, quotes the mandatory template exactly once as one unbroken span in every report and gate text, exports gate_fields that agree exactly across contract/gate/review and satisfy every checkable plan.json rule, and states every genuine rate sentence with its correct-shape N-range in the same clause (or, for a handful of numbered-proof-step continuations, within the same theorem/row a short distance earlier). Nothing here reopens or reduces either gate's accepted_within_scope verdict.",
+      "Calling task item 1 (phrase_audit.py), first half: phrase_scan_dry_run found 0 raw hits (not merely 0 unnegated ones) across BC1's and BC2's forward report, gate accepted/limitations and review supported_statement, matching both reviews' own self-reported phrase_scan block exactly.",
+      "Calling task item 1 (phrase_audit.py), second half (the vocabulary-gap audit): searched every gate, review and report of ba1/ba2/bb1/bb2/bc1/bc2 (bd1/bd2 excluded, in production) for five candidate uniqueness-type phrasings the real scanner's vocabulary misses today, round-wide (confirmed by direct membership check). 42 occurrences found; 0 classified bare, unscoped AFFIRMATIVE. The calling task's own named instance (\"uniqueness of the limit\", the AY2/O1 row): 10 occurrences, all in BC1, all either scoped to the named constructions (the O1 table row itself) or quoted discussion of it -- never an unscoped claim. A second, general mechanism was found independently: a \"heading: list\" pattern (e.g. \"Contract exclusions (verbatim):\", \"Not admitted:\") severs its own negation/exclusion cue word from every list item that follows it, via phrase_scan.py's own \": \" clause split -- affecting 11 distinct frozen locations across every one of the six loops for \"uniqueness of every infinite-volume ground state\" alone. Recommendations (not applied): ADD \"uniqueness of the limit\" (as the BC1 review already advises); ADD \"uniqueness of every infinite-volume ground state\" paired with a companion fix for the heading-severance mechanism; ADD \"unique limit\" (0 occurrences today, zero-cost); do NOT add bare \"is unique\"/\"uniquely\" (both used round-wide for unrelated mathematical objects).",
+      "Calling task item 2 (template_and_fields.py): the mandatory_sentence_template appears exactly once, as one unbroken span, in each of BC1's and BC2's forward report.md and gate accepted text, cross-checked against each report's own self-reported template check; every gate_fields key required by each contract agrees in value across contract/gate/review for both loops, including the three calling-task-named fields (BC1.correlation_shift_resolved=False, BC1.finite_box_node_claimed=False, BC2.node_certificate_restated_for_limit=True) and the correlation_shift_resolved/resolved_interaction_shift exclusivity plan.json describes; one non-blocking, informational structural note: the advisor gate exports gate_fields only as a nested dict while the skeptic review additionally promotes every member to a flat top-level key (a file-format convention difference, not a value disagreement).",
+      "Calling task item 3 (rate_range_audit.py): 37 rate-claim clauses (a concrete formula in N) found across BC1's and BC2's forward reports and gate accepted/limitations text; 0 genuine defects. Every density/widening-type rate (q^(N-1)) correctly carries a one-sided \"for every N at least k\" (its correct, complete range, since it has no certified upper cutoff); the inherited BB2 item-5 correlation rate (K5/N) correctly carries the certified two-sided \"5<=N<=14000\" every time it is stated as a headline claim; a handful of numbered-proof-step continuations state their governing theorem's range a short distance earlier rather than repeating it verbatim in the very next clause (ordinary mathematical writing, not the BB2 defect); every clause that states an unqualified O(1/N) with no range anywhere nearby is, on inspection, one of the frozen rate_range_stated control's own listed rejected-mutation descriptions, not a producer claim -- the concrete sign that BC1/BC2 learned the BB2 lesson their own contracts' control was written to enforce."
+    ],
+    "overall_pass": true,
+    "role": "Jung/Pauli lens, Round33 sub-round 3, assistant-3: final summary rolling up the three audit scripts' pass/fail state and every DEFECT/AFFIRMATIVE finding line; zero research loops; audits only, never admission evidence; decides nothing about BC1 or BC2 (both already gated accepted_within_scope)",
+    "section_passed": {
+      "phrase_audit": true,
+      "rate_range_audit": true,
+      "template_and_fields": true
+    }
+  },
+  "template_and_fields": {
+    "checks": {
+      "gate_fields_comparison": {
+        "findings": [
+          "BC1: 15 gate_fields required by the contract; key sets equal across contract/gate/review: True; 15/15 field(s) agree in value across contract/gate/review AND satisfy their plan.json rule where one applies.",
+          "BC2: 18 gate_fields required by the contract; key sets equal across contract/gate/review: True; 18/18 field(s) agree in value across contract/gate/review AND satisfy their plan.json rule where one applies.",
+          "BC1: advisor gate top-level duplication=False, skeptic review top-level duplication=True -- a file-format convention difference (the review additionally promotes every gate_fields member to a flat top-level key; the gate does not), not a value disagreement (every value still checked above).",
+          "BC2: advisor gate top-level duplication=False, skeptic review top-level duplication=True -- a file-format convention difference (the review additionally promotes every gate_fields member to a flat top-level key; the gate does not), not a value disagreement (every value still checked above).",
+          "Calling-task-named field BC1.correlation_shift_resolved: contract=False gate=False review=False; plan.json rule: 'always false while the free reference e^{-3}/4 lies inside the certified node interval (reference_unresolved)'; PASS. BC1 restates BOTH the AV2 node certificate and the AW2 static-mean enclosure, so per plan.json's own note it exports the merged correlation_shift_resolved field instead of a separate resolved_interaction_shift field -- confirmed: BC1's contract.gate_fields_required has no resolved_interaction_shift key at all (checked below).",
+          "Calling-task-named field BC1.finite_box_node_claimed: contract=False gate=False review=False; plan.json rule: 'declared per contract (false in BC1: the admitted AV2 record proves no finite-box node)'; PASS.",
+          "Calling-task-named field BC2.node_certificate_restated_for_limit: contract=True gate=True review=True; plan.json rule: 'declared per contract (BC1: AV2 restated for the limit of the named constructions F1/F2; BC2: AX2 restated for the route-B limit); true only with the datum and radius equal to the Round32 gate rationals'; PASS.",
+          "correlation_shift_resolved / resolved_interaction_shift exclusivity (plan.json: \"a contract that restates both AV2 and AW2 exports correlation_shift_resolved instead\"): BC1 has correlation_shift_resolved and no resolved_interaction_shift key (restates both AV2 and AW2); BC2 has resolved_interaction_shift and no correlation_shift_resolved key (restates only AX2). PASS."
+        ],
+        "id": "gate_fields_comparison",
+        "named_fields_ok": true,
+        "passed": true,
+        "per_loop": {
+          "BC1": {
+            "gate_keys": [
+              "continuum_claim",
+              "correlation_shift_resolved",
+              "dynamics_limit_identified_claimed",
+              "finite_box_node_claimed",
+              "finite_box_sign_claimed",
+              "finite_box_sign_scope",
+              "gns_dynamics_equality_claimed",
+              "node_certificate_restated_for_limit",
+              "rate_in_N_claimed",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "sign_certificate_restated_for_limit",
+              "uniform_in_time_claimed",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim"
+            ],
+            "keys_match_contract_gate_review": true,
+            "passed": true,
+            "required_keys": [
+              "continuum_claim",
+              "correlation_shift_resolved",
+              "dynamics_limit_identified_claimed",
+              "finite_box_node_claimed",
+              "finite_box_sign_claimed",
+              "finite_box_sign_scope",
+              "gns_dynamics_equality_claimed",
+              "node_certificate_restated_for_limit",
+              "rate_in_N_claimed",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "sign_certificate_restated_for_limit",
+              "uniform_in_time_claimed",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim"
+            ],
+            "review_keys": [
+              "continuum_claim",
+              "correlation_shift_resolved",
+              "dynamics_limit_identified_claimed",
+              "finite_box_node_claimed",
+              "finite_box_sign_claimed",
+              "finite_box_sign_scope",
+              "gns_dynamics_equality_claimed",
+              "node_certificate_restated_for_limit",
+              "rate_in_N_claimed",
+              "rate_in_a_claimed",
+              "scientific_priority_verified",
+              "sign_certificate_restated_for_limit",
+              "uniform_in_time_claimed",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim"
+            ],
+            "rows": [
+              {
+                "contract": false,
+                "field": "continuum_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "correlation_shift_resolved",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false while the free reference e^{-3}/4 lies inside the certified node interval (reference_unresolved)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "dynamics_limit_identified_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "finite_box_node_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract (false in BC1: the admitted AV2 record proves no finite-box node)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "finite_box_sign_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "true only with a non-empty finite_box_sign_scope naming the family, the range of N and the untruncated vectors",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": "F2 boxes Lambda_N, untruncated ground vectors at fixed N, N at least N_sign, both signs of tau, through the BB2 whole-sequence bound at the BB2 gate bound value; F1 boxes as certified by AW2",
+                "field": "finite_box_sign_scope",
+                "gate": "F2 boxes Lambda_N, untruncated ground vectors at fixed N, N at least N_sign, both signs of tau, through the BB2 whole-sequence bound at the BB2 gate bound value; F1 boxes as certified by AW2",
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": "F2 boxes Lambda_N, untruncated ground vectors at fixed N, N at least N_sign, both signs of tau, through the BB2 whole-sequence bound at the BB2 gate bound value; F1 boxes as certified by AW2",
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "gns_dynamics_equality_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "node_certificate_restated_for_limit",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BC1: AV2 restated for the limit of the named constructions F1/F2; BC2: AX2 restated for the route-B limit); true only with the datum and radius equal to the Round32 gate rationals",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "rate_in_N_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "separate from rate_in_a_claimed",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "rate_in_a_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "scientific_priority_verified",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "sign_certificate_restated_for_limit",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BC1: AW2 enclosure restated for the limit of the named constructions)",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "uniform_in_time_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "uniqueness_of_ground_state_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "weak_coupling_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              }
+            ]
+          },
+          "BC2": {
+            "gate_keys": [
+              "common_limit_claimed",
+              "continuum_claim",
+              "gns_dynamics_equality_claimed",
+              "node_certificate_restated_for_limit",
+              "rate_in_N_claimed",
+              "rate_in_a_claimed",
+              "resolved_interaction_shift",
+              "scientific_priority_verified",
+              "state_convergence_claimed",
+              "state_decay_claimed",
+              "state_decay_scope",
+              "translation_invariance_claimed",
+              "translation_invariance_scope",
+              "uniform_in_time_claimed",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim",
+              "whole_sequence_claimed",
+              "whole_sequence_scope"
+            ],
+            "keys_match_contract_gate_review": true,
+            "passed": true,
+            "required_keys": [
+              "common_limit_claimed",
+              "continuum_claim",
+              "gns_dynamics_equality_claimed",
+              "node_certificate_restated_for_limit",
+              "rate_in_N_claimed",
+              "rate_in_a_claimed",
+              "resolved_interaction_shift",
+              "scientific_priority_verified",
+              "state_convergence_claimed",
+              "state_decay_claimed",
+              "state_decay_scope",
+              "translation_invariance_claimed",
+              "translation_invariance_scope",
+              "uniform_in_time_claimed",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim",
+              "whole_sequence_claimed",
+              "whole_sequence_scope"
+            ],
+            "review_keys": [
+              "common_limit_claimed",
+              "continuum_claim",
+              "gns_dynamics_equality_claimed",
+              "node_certificate_restated_for_limit",
+              "rate_in_N_claimed",
+              "rate_in_a_claimed",
+              "resolved_interaction_shift",
+              "scientific_priority_verified",
+              "state_convergence_claimed",
+              "state_decay_claimed",
+              "state_decay_scope",
+              "translation_invariance_claimed",
+              "translation_invariance_scope",
+              "uniform_in_time_claimed",
+              "uniqueness_of_ground_state_claimed",
+              "weak_coupling_claim",
+              "whole_sequence_claimed",
+              "whole_sequence_scope"
+            ],
+            "rows": [
+              {
+                "contract": false,
+                "field": "common_limit_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "continuum_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "gns_dynamics_equality_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "node_certificate_restated_for_limit",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract (BC1: AV2 restated for the limit of the named constructions F1/F2; BC2: AX2 restated for the route-B limit); true only with the datum and radius equal to the Round32 gate rationals",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "rate_in_N_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "separate from rate_in_a_claimed",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "rate_in_a_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "resolved_interaction_shift",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract and names its observable: false for C(s) in AV2, AX1 and AX2, true for the static Wilson mean omega(W) only in AW2; a contract that restates both AV2 and AW2 exports correlation_shift_resolved instead",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "scientific_priority_verified",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "state_convergence_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "state_decay_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": "reduced densities of route-B finite-box ground vectors on R and on regions Y, per comparison (c1B, c4B, c5B)",
+                "field": "state_decay_scope",
+                "gate": "reduced densities of route-B finite-box ground vectors on R and on regions Y, per comparison (c1B, c4B, c5B)",
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": "reduced densities of route-B finite-box ground vectors on R and on regions Y, per comparison (c1B, c4B, c5B)",
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "translation_invariance_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "true only with a scope naming coarse translations and the construction",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": "coarse translations; the limit of the named construction (route B)",
+                "field": "translation_invariance_scope",
+                "gate": "coarse translations; the limit of the named construction (route B)",
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": "coarse translations; the limit of the named construction (route B)",
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "uniform_in_time_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "uniqueness_of_ground_state_claimed",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "always false",
+                "plan_rule_checked": "plan rule \"always false\"",
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": false,
+                "field": "weak_coupling_claim",
+                "gate": false,
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": false,
+                "value_agrees": true
+              },
+              {
+                "contract": true,
+                "field": "whole_sequence_claimed",
+                "gate": true,
+                "passed": true,
+                "plan_rule": "true only with a non-empty whole_sequence_scope naming the construction",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": true,
+                "value_agrees": true
+              },
+              {
+                "contract": "reduced densities of the centered whole-star-plus-single-group construction of the uniform route-B model on every finite region",
+                "field": "whole_sequence_scope",
+                "gate": "reduced densities of the centered whole-star-plus-single-group construction of the uniform route-B model on every finite region",
+                "passed": true,
+                "plan_rule": "declared per contract",
+                "plan_rule_checked": null,
+                "plan_rule_ok": true,
+                "review": "reduced densities of the centered whole-star-plus-single-group construction of the uniform route-B model on every finite region",
+                "value_agrees": true
+              }
+            ]
+          }
+        },
+        "role": "calling task item 2 (second half): gate fields vs contract gate_fields_required vs plan.json vocabulary, for BC1 and BC2, with BC1's correlation_shift_resolved and finite_box_node_claimed and BC2's node_certificate_restated_for_limit each individually checked; zero research loops"
+      },
+      "mandatory_template_span_check": {
+        "findings": [
+          "BC1: template (667 chars, whitespace-normalized) occurs 1 time(s) as an unbroken span in forward/bc1/report.md and 1 time(s) in advisor/bc1-gate.json#/accepted -- PASS.",
+          "BC1: cross-checked against the forward producer's own self-reported template check(s) in forward/bc1/output/results.json (['checks[20]']): all report passed=[True], agrees with this script's independent count.",
+          "BC2: template (1036 chars, whitespace-normalized) occurs 1 time(s) as an unbroken span in forward/bc2/report.md and 1 time(s) in advisor/bc2-gate.json#/accepted -- PASS.",
+          "BC2: cross-checked against the forward producer's own self-reported template check(s) in forward/bc2/output/results.json (['checks[52]']): all report passed=[True], agrees with this script's independent count."
+        ],
+        "id": "mandatory_template_span_check",
+        "passed": true,
+        "per_loop": {
+          "BC1": {
+            "gate_accepted_occurrences": 1,
+            "passed": true,
+            "report_occurrences": 1,
+            "self_reported_forward_check": [
+              {
+                "json_path": "checks[20]",
+                "record": {
+                  "id": "mandatory_sentence_once",
+                  "passed": true,
+                  "values": {
+                    "L": "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+                    "N_sign": 4,
+                    "R": "1831967503411879425147166810021607/10000000000000000000000000000000000000000",
+                    "U": "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+                    "d": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000"
+                  }
+                }
+              }
+            ],
+            "template_length_chars": 667
+          },
+          "BC2": {
+            "gate_accepted_occurrences": 1,
+            "passed": true,
+            "report_occurrences": 1,
+            "self_reported_forward_check": [
+              {
+                "json_path": "checks[52]",
+                "record": {
+                  "forbidden_count": 29,
+                  "id": "mandatory_template_quoted_once_and_phrase_scan_clean",
+                  "passed": true
+                }
+              }
+            ],
+            "template_length_chars": 1036
+          }
+        },
+        "role": "calling task item 2 (first half): the mandatory sentence template appears once, as one unbroken span, in each report and each gate text (rule R7); cross-checked against each report's own self-reported check; zero research loops"
+      }
+    },
+    "id": "template_and_fields",
+    "passed": true,
+    "role": "Jung/Pauli lens, Round33 sub-round 3, assistant-3: the template-span and gate-field audit, calling task item 2; zero research loops; audits only, never admission evidence"
+  }
+}

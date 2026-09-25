@@ -1,0 +1,680 @@
+{
+  "checks": [
+    {
+      "id": "contract_sha256_pinned",
+      "passed": true,
+      "sha256": "783cad8054a9b7ed3f741e0c06fffd94cfa0d6fda0dcbb7aa0b464058e46f41e"
+    },
+    {
+      "freeze": {
+        "research/round33/skeptic/bd2-contract-review.md": "71d7257ee4399b9f83332ebf82dc7dea008587aec5ef8cafb7f8b9d74eafe32a",
+        "research/round33/skeptic/bd2-independent-derivation.md": "edb73aa19a3c7d42a29cc87ba0e7e2acbac5dcf4b2be15893ffaada1631bd589",
+        "research/round33/skeptic/bd2-independent/results.json": "cc9ad56bacd368cca8d456e3f657879d86db47d174359b9c503659295744603f",
+        "research/round33/skeptic/bd2_check.py": "f8f94d2fb8c35609f302683398534e8246ec1c6211c094a9d26396a3c625d16e"
+      },
+      "id": "pre_comparison_package_unchanged_and_replayed",
+      "note": "the committed pre-comparison package (bf1f531, 06:10:08Z, after the BD2 forward commit 37fa623 06:00:06Z; values final at 05:55:31Z) is unchanged; bd2_check.py reproduces bd2-independent/results.json byte for byte in this mode",
+      "passed": true
+    },
+    {
+      "closure_files": 39,
+      "id": "producer_closure_and_inventory",
+      "inputs": 35,
+      "note": "39 closure files verified one by one; 35 inputs equal the contract-derived list and the names-only inventory recorded before production; every snapshot byte-identical to the repository",
+      "passed": true
+    },
+    {
+      "id": "frozen_artifacts_pinned",
+      "passed": true,
+      "pinned": {
+        "check.py": "c0ed5a1687c574350af55f4c70f1b2ff47b88e6a3020eb13ed25c2bcb122c011",
+        "freeze.json": "1fa53dc0a799cc36337115504888e1b6f622e1f0c6614eece9ffbe20d6c80a9d",
+        "output/results.json": "4e6aa2538c2211351439e956d38e5ae1600120e4dfcaead158b47e8bd86fcacd",
+        "output/source-manifest.json": "91a80bd46db96a1578ff6357b1375e298f5bbf8474e985b3e651d0341b09905e",
+        "report.md": "0f24f60673ffc5a904c61b7c9fe4fa65d4d788204d85d522d8682ed9a43a7733"
+      }
+    },
+    {
+      "id": "producer_replay_byte_identical",
+      "note": "the producer replay in this interpreter mode (-B, or -B -O under -O) reproduces output/",
+      "outputs": {
+        "results.json": "4e6aa2538c2211351439e956d38e5ae1600120e4dfcaead158b47e8bd86fcacd",
+        "source-manifest.json": "91a80bd46db96a1578ff6357b1375e298f5bbf8474e985b3e651d0341b09905e"
+      },
+      "passed": true
+    },
+    {
+      "checked": [
+        "research/round33/forward/bd2/",
+        "research/round11/",
+        "research/round32/"
+      ],
+      "id": "no_interpreter_cache",
+      "passed": true
+    },
+    {
+      "id": "producer_values_equal_independent_recomputation",
+      "note": "tables, parities, enclosures, angles, residuals, thresholds, the rectangle and its counts, K_2' and its items, the bound rows, evenness scope, the formal coefficient, the band rows and route, the per-link counts, the 2+1D constants, obligations, W1-W7, provenance records and the report numbers equal or contain the own values",
+      "passed": true
+    },
+    {
+      "entries_compared": {
+        "C_shared": 15,
+        "E_0": 21,
+        "W_1": 15,
+        "z": 15
+      },
+      "id": "item1_tables_and_flip_parities",
+      "nonzero": {
+        "C_shared": {
+          "0,2": "1/48",
+          "0,4": "-5/4608",
+          "2,0": "1/48",
+          "2,2": "-49/438048",
+          "4,0": "-5/4608"
+        },
+        "E_0": {
+          "0,2": "-1/12",
+          "0,4": "5/3456",
+          "2,0": "-1/12",
+          "2,2": "-1/8424",
+          "4,0": "5/3456"
+        },
+        "W_1": {
+          "1,0": "1/6",
+          "1,2": "1/4212",
+          "3,0": "-5/864"
+        },
+        "z": {
+          "1,1": "7/216",
+          "1,3": "-349/303264",
+          "3,1": "-349/303264"
+        }
+      },
+      "note": "every entry with m+n <= 4 (E_0 to 5), zeros included, equals the own table at D=6 and D=8; nonzero entries obey the face-1 (h1) and face-2 (h2) flip parities; the vM flip alone would only give the l1=l2 statement",
+      "parities": {
+        "C_shared": "even in each",
+        "W_1": "odd in l1 (flip of h1), even in l2 (flip of h2)",
+        "z": "odd in each"
+      },
+      "passed": true
+    },
+    {
+      "id": "item2_producer_lemma_reevaluated",
+      "margin_producer": "5.566e0",
+      "note": "the producer lemma is valid: Weyl E_1 >= 3-2|l| (||W_1+W_2|| <= 2); Temple E_0 >= mu - rho^2/(b-mu); the Round11 comparison H >= B (+) R Q_D with B = A - C C*/(tau_t - R), tau_t = tail_lower - 2|l| (45, 69), R = b, lambda_1(B) >= b - 4l^2/(tau_t - R) by interlacing and ||C|| <= 2|l|, and Temple on B; Eckart sin^2 <= (mu - E0_low)/(b - mu); Davis-Kahan sin <= rho/(b - mu); the observable step 2 s sigma + 2 s^2 ||z|| with ||z|| = 1; evaluated with the own basis and Ritz vectors it reproduces every exported angle and residual to 8 digits; the own tail-comparison enclosures (3.56e-18 worst) lie inside the producer enclosures (1.80e-17 worst)",
+      "own_tail_certificate_worst_D8": "3.560249486658e-18",
+      "own_worst_D8_of_producer_lemma": "1.79645e-17",
+      "passed": true,
+      "rows": {
+        "D6,|l|=1/10": {
+          "davis_kahan_sin_theta_own": "2.2016488e-15",
+          "eckart_sin_theta_own": "5.6865232e-16",
+          "own_evaluation_of_producer_lemma": "7.02377e-12",
+          "own_tail_comparison_certificate": "1.705440249128e-12",
+          "producer_relative_width": "7.02377e-12",
+          "schur_complement_bound_above_temple": true
+        },
+        "D6,|l|=1/100": {
+          "davis_kahan_sin_theta_own": "2.0715724e-22",
+          "eckart_sin_theta_own": "5.5180415e-23",
+          "own_evaluation_of_producer_lemma": "6.81088e-17",
+          "own_tail_comparison_certificate": "1.694061074363e-17",
+          "producer_relative_width": "6.81088e-17",
+          "schur_complement_bound_above_temple": true
+        },
+        "D6,|l|=1/1000": {
+          "davis_kahan_sin_theta_own": "2.0591628e-29",
+          "eckart_sin_theta_own": "5.5015097e-30",
+          "own_evaluation_of_producer_lemma": "6.79043e-22",
+          "own_tail_comparison_certificate": "1.693343193331e-22",
+          "producer_relative_width": "6.79043e-22",
+          "schur_complement_bound_above_temple": true
+        },
+        "D8,|l|=1/10": {
+          "davis_kahan_sin_theta_own": "7.0590303e-21",
+          "eckart_sin_theta_own": "1.4544249e-21",
+          "own_evaluation_of_producer_lemma": "1.79645e-17",
+          "own_tail_comparison_certificate": "3.560249486658e-18",
+          "producer_relative_width": "1.79645e-17",
+          "schur_complement_bound_above_temple": true
+        },
+        "D8,|l|=1/100": {
+          "davis_kahan_sin_theta_own": "6.6423512e-30",
+          "eckart_sin_theta_own": "1.4114298e-30",
+          "own_evaluation_of_producer_lemma": "1.74212e-24",
+          "own_tail_comparison_certificate": "3.541984417623e-25",
+          "producer_relative_width": "1.74212e-24",
+          "schur_complement_bound_above_temple": true
+        },
+        "D8,|l|=1/1000": {
+          "davis_kahan_sin_theta_own": "6.6025647e-39",
+          "eckart_sin_theta_own": "1.4072022e-39",
+          "own_evaluation_of_producer_lemma": "1.73688e-31",
+          "own_tail_comparison_certificate": "3.540981480110e-32",
+          "producer_relative_width": "1.73689e-31",
+          "schur_complement_bound_above_temple": true
+        }
+      },
+      "target": "1/10000000000000000"
+    },
+    {
+      "K2_prime": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+      "bound": "966771578474926086618624139557778885954947547760216752246561/720528856978172107545458049318912000000000000000000000000000000000000000",
+      "bound_preview": "1.34175e-12",
+      "counts": {
+        "containing_R": 16,
+        "inside_R": 10,
+        "meeting_R": 82,
+        "per_site": 49,
+        "per_site_without_other": 33,
+        "straddling": 72
+      },
+      "formal": "7/124416",
+      "id": "item3_rectangle_bound_evenness_formal",
+      "note": "the rectangle is the frozen one (six links owned by R, both faces omitted with owner set R, |C cap E_3| = 6); first order 0 by single occurrence; K_2' from the AY1 items with the own counts equals the AY1 gate rational; the bound K_2' tau^2 holds for F1 and F2 boxes and the limit at both signs; evenness (AW1 flip lemma) only for F1 boxes and the limit (F2 not admitted); 7/124416 = (7/216)/24^2 is labelled formal, with no sign and no remainder",
+      "passed": true,
+      "rectangle": [
+        [
+          0,
+          0,
+          0,
+          "x"
+        ],
+        [
+          0,
+          0,
+          0,
+          "z"
+        ],
+        [
+          0,
+          0,
+          1,
+          "x"
+        ],
+        [
+          1,
+          0,
+          0,
+          "x"
+        ],
+        [
+          1,
+          0,
+          1,
+          "x"
+        ],
+        [
+          2,
+          0,
+          0,
+          "z"
+        ]
+      ]
+    },
+    {
+      "L": "315493271189404369878663368737136921794795815043212654249128159/720528856978172107545458049318912000000000000000000000000000000000000000",
+      "formal_total": "7/144",
+      "id": "item4_band",
+      "lower": "99536004165791049425300773950650456874015451568973476245606417493434267637549163914243518625682267830963863935112811606729281/346107889158847464132330923015611755407765743694640423831387242496000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_preview": "2.87586637818e-19",
+      "n_e_histogram": {
+        "2": 4,
+        "3": 16,
+        "4": 28
+      },
+      "note": "h_R >= 6 Q_R (free Casimir gap 6 delta), Fuchs-van de Graaf with the pure reference: omega(h_R) >= 6 (L/2)^2 = (3/2)L^2 with L the AY2 lower end (limit) and the same rational from the AY1 F11-F14 per-box ball (boxes); upper 2*7*7|tau| = 98|tau| (AQ1 reset, F2: AY1 item (1)), passed to the limit by lower semicontinuity of the monotone cutoff limit; the lower end is proved at the limit directly",
+      "passed": true,
+      "upper": "49/50000000"
+    },
+    {
+      "G3": "9 e^{3/32}",
+      "G3_prime": "118 e^{3/32}",
+      "cap_bracket_preview": [
+        "1.58074715517e-3",
+        "1.58074715517e-3"
+      ],
+      "e_bracket": [
+        "3716864454613321278253456066867102358836762741333056690037910376919529346126992617139189915993036569/3384243597770578613793033736585235028891454986292437088226850556857384948551200047521333248000000000",
+        "22706324953232779688850363112491128310133783586803643319441594492601404775489797898103311197240795234547/20674344138780464751661643096799200791497898511260498171977830051841764650699281090307824812032000000000"
+      ],
+      "exclusion_bracket_preview": [
+        "3.85809475161e-3",
+        "3.85809475161e-3"
+      ],
+      "id": "item5_2p1_recount",
+      "note": "L_k(3) = 8*6^k*(1+4k/3), termination order 6, G_3(R) = 9e^{3/32}, G_3'(R) = 118e^{3/32} at R = 1/64; the self-map J G_3(R) <= R binds: cap 1/(576 e^{3/32}); the exclusion 2 J G_3'(R) < 1 allows 1/(236 e^{3/32}); the producer's directed brackets contain the own ones; no 2+1D finite-volume theorem is claimed",
+      "numerators": [
+        "8",
+        "112",
+        "1056",
+        "8640",
+        "65664",
+        "476928",
+        "3359232"
+      ],
+      "passed": true
+    },
+    {
+      "az2_blocks_copied": 63,
+      "id": "code_provenance",
+      "imports": [
+        "argparse",
+        "decimal",
+        "fractions",
+        "functools",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "re"
+      ],
+      "note": "standard-library imports only; the AZ2 forward algebra is copied verbatim with attribution and compared block by block with the snapshot (63 blocks); the Round11 solver snapshot is read as bytes to bind 13 exact source strings (the list the AZ2 checker uses), never imported or executed; the producer agent reports it did not open that file; the skeptic hashed it only (pre-comparison) and this review does not open it either",
+      "passed": true
+    },
+    {
+      "id": "phrase_tool_pinned",
+      "passed": true
+    },
+    {
+      "id": "phrase_scan_template_and_report_numbers",
+      "passed": true,
+      "printed_numbers": [
+        {
+          "printed": "1.34175e-12",
+          "quantity": "K_2' tau^2 bound"
+        },
+        {
+          "printed": "2.87586637818e-19",
+          "quantity": "band lower (item 4)"
+        },
+        {
+          "printed": "9.8e-7",
+          "quantity": "band upper (item 4)"
+        },
+        {
+          "printed": "4.37863e-10",
+          "quantity": "L"
+        },
+        {
+          "printed": "13417.5275439",
+          "quantity": "K_2'"
+        },
+        {
+          "printed": "4.861e-18",
+          "quantity": "formal band value at the cap"
+        },
+        {
+          "printed": "2.38479e8",
+          "quantity": "bound over formal"
+        },
+        {
+          "printed": "2.016e11",
+          "quantity": "upper over formal band"
+        },
+        {
+          "printed": "16.9",
+          "quantity": "lower below formal band"
+        },
+        {
+          "printed": "3.4e12",
+          "quantity": "band ratio"
+        },
+        {
+          "printed": "1.0982851403078258486",
+          "quantity": "e^{3/32}"
+        },
+        {
+          "printed": "9.88456626277",
+          "quantity": "G_3(R)"
+        },
+        {
+          "printed": "129.597646556",
+          "quantity": "G_3'(R)"
+        },
+        {
+          "printed": "3.858e-3",
+          "quantity": "exclusion cap"
+        },
+        {
+          "printed": "1.58074715517e-3",
+          "quantity": "cap"
+        },
+        {
+          "printed_row": "D=6, |l|=1/1000"
+        },
+        {
+          "printed_row": "D=6, |l|=1/100"
+        },
+        {
+          "printed_row": "D=6, |l|=1/10"
+        },
+        {
+          "printed_row": "D=8, |l|=1/1000"
+        },
+        {
+          "printed_row": "D=8, |l|=1/100"
+        },
+        {
+          "printed_row": "D=8, |l|=1/10"
+        }
+      ],
+      "tool_exit": 0
+    },
+    {
+      "adjudication": {
+        "W1": "correct: the model id names the graph only; each value carries its own model label",
+        "W2": "correct: the zero triple belongs to the Z^3 family",
+        "W3": "correct and new: a fourth-order remainder presupposes evenness, admitted for F1 and the limit only",
+        "W4": "correct: three faces per site = faces whose owner set contains the site (= own count)",
+        "W5": "correct: J = |tau| is linear; J/|tau| = 1 and the G, counts and cap are tau-independent",
+        "W6": "correct (labelling only): AY1 tier (ii) = the BD2 tier name exact_first_order for K_2'",
+        "W7": "correct: the Round11 API sign restriction is irrelevant to the exact certificates"
+      },
+      "id": "wording_defects_W1_W7_adjudicated",
+      "passed": true
+    },
+    {
+      "id": "damaged_packets_rejected_by_review_validator",
+      "passed": true,
+      "rows": [
+        {
+          "mutation": "z coefficient (1,1) changed",
+          "rejected_for": "coefficient z 1,1"
+        },
+        {
+          "mutation": "<W_1> given an (even, even) term",
+          "rejected_for": "coefficient W_1 2,0"
+        },
+        {
+          "mutation": "D8 |l|=1/10 lower end raised above the own enclosure",
+          "rejected_for": "does not contain the own enclosure"
+        },
+        {
+          "mutation": "Eckart angle replaced by the Davis-Kahan angle",
+          "rejected_for": "forward Eckart angle"
+        },
+        {
+          "mutation": "product-channel weight doubled at D=8, |l|=1/10",
+          "rejected_for": "residual ledger items"
+        },
+        {
+          "mutation": "tail threshold 70 at D=8",
+          "rejected_for": "gap or tail threshold"
+        },
+        {
+          "mutation": "W_1x2 bound quartered on the F2 row",
+          "rejected_for": "W_1x2 bound rows"
+        },
+        {
+          "mutation": "evenness claimed for F2 boxes",
+          "rejected_for": "evenness scope"
+        },
+        {
+          "mutation": "formal coefficient relabelled certified",
+          "rejected_for": "formal coefficient record"
+        },
+        {
+          "mutation": "band lower replaced by the formal value",
+          "rejected_for": "band rows"
+        },
+        {
+          "mutation": "band upper passed by continuity",
+          "rejected_for": "band route"
+        },
+        {
+          "mutation": "per-link count of a z-link set to 3",
+          "rejected_for": "per-link formal counts"
+        },
+        {
+          "mutation": "2+1D cap above the true cap",
+          "rejected_for": "2+1D constants"
+        },
+        {
+          "mutation": "2+1D numerators with p=4",
+          "rejected_for": "2+1D counts"
+        },
+        {
+          "mutation": "area law claimed",
+          "rejected_for": "forward claim flag area_law_claimed"
+        },
+        {
+          "mutation": "gate field z3_1x2_formal_only false",
+          "rejected_for": "gate fields"
+        },
+        {
+          "mutation": "obligation row dropped",
+          "rejected_for": "obligations"
+        },
+        {
+          "mutation": "wording defect W3 dropped",
+          "rejected_for": "wording defects W1-W7"
+        },
+        {
+          "mutation": "AZ2 copy with a differing block",
+          "rejected_for": "AZ2 copy attribution"
+        }
+      ]
+    },
+    {
+      "id": "unmutated_copy_and_run_without_B",
+      "note": "an unmutated copy outside the checkout reproduces the frozen output byte for byte; a run without -B (and without PYTHONDONTWRITEBYTECODE) reproduces it too and writes no __pycache__ or .pyc anywhere in the copy",
+      "passed": true
+    },
+    {
+      "id": "control_validator_weakenings",
+      "note": "one validator weakened per contract control on a temporary copy (\"True or \" inserted into the require that rejects a labelled mutation; for exact arithmetic the float branch returns a Fraction and rat is removed from the verbatim-copy list, which would otherwise expose the edit one check earlier); each run aborts naming a mutation of that control",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "damaging mutation accepted: control_boolean_flipped_hash_rebound",
+          "control": "coherent_evidence_tampering"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: float_input",
+          "control": "exact_arithmetic_admission"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_true",
+          "control": "no_priority_or_continuum_claim"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: graph_value_presented_as_Z3_value",
+          "control": "changed_model_relabelled"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: missed_width_target_relabelled_accepted",
+          "control": "insufficient_verdict_retained"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: placeholder_with_whitespace",
+          "control": "placeholder_span_rejected"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: affirmative_thermodynamic_limit",
+          "control": "negation_aware_phrase_scan"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: not_applicable_without_reason",
+          "control": "parameters_declare_metric_weights_window"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: band_lower_under_the_upper_tier",
+          "control": "tier_mixing_rejected"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: equal_coupling_model_under_independent_label",
+          "control": "graph_couplings_named"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: coefficient_differs_between_cutoffs",
+          "control": "exact_rs_zero_truncation"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: parity_checked_at_l1_eq_l2_only",
+          "control": "independent_coupling_flip"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: gauge_entry_without_reason",
+          "control": "enclosure_itemized_residual"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: formal_coefficient_presented_as_certified_value",
+          "control": "formal_coefficient_labelled"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: evenness_claimed_for_F2_boxes",
+          "control": "evenness_from_flip"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: bounded_trace_norm_constant_applied_to_h_R",
+          "control": "unbounded_observable_handled"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: minus_tau_row_not_a_mirror",
+          "control": "band_both_signs"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: three_plus_one_per_site_sum_28_tau_reused",
+          "control": "dimension_recount"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: area_law_claimed_true",
+          "control": "no_area_law_claim"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: eqed_comparison_drawn",
+          "control": "no_transfer_to_eqed"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: rate_without_range",
+          "control": "rate_range_stated"
+        }
+      ],
+      "runs": 21
+    },
+    {
+      "id": "must_abort_edits",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "AdmissionError: failed check az2_algebra_copied_verbatim",
+          "edit": "Weyl free gap 3 replaced by 4 in the copied certificate constants"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check az2_algebra_copied_verbatim",
+          "edit": "Eckart angle from the Temple bound only (tail comparison dropped; copy binding kept)"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check unbounded_observable_handled",
+          "edit": "band upper budget 56|tau| (two anchors per link pair) in place of the frozen 98|tau|"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check unbounded_observable_handled",
+          "edit": "Fuchs-van de Graaf without the one half in the band lower end"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check dimension_recount",
+          "edit": "2+1D exponent with the 3+1D support p=4"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check z3_bound_K2prime",
+          "edit": "K_2' straddling item with rho in place of 2 rho"
+        },
+        {
+          "aborted_with": "AdmissionError: pinned premise hash differs: research/round32/advisor/ay1-gate.json",
+          "edit": "input: AY1 gate K_2' edited"
+        },
+        {
+          "aborted_with": "AdmissionError: contract snapshot bytes differ from the frozen BD2 contract",
+          "edit": "input: contract snapshot edited"
+        },
+        {
+          "aborted_with": "AdmissionError: inputs differ from AGENTS.md + contract + shared premises",
+          "edit": "input: undeclared skeptic file"
+        },
+        {
+          "aborted_with": "AdmissionError: affirmative forbidden phrasing: confirms",
+          "edit": "report: forbidden phrase appended"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check z_certificates_complete",
+          "edit": "Eckart angle from the Temple bound only, with the verbatim binding of certify removed"
+        },
+        {
+          "aborted_with": "AdmissionError: the mandatory template must appear exactly once as one unbroken span",
+          "edit": "report: template altered"
+        }
+      ],
+      "runs": 12
+    },
+    {
+      "id": "silent_edits_accounted",
+      "note": "two export-only edits run to completion and are caught only by the review validator (an interacting tail threshold without the -2|l| correction; the exclusion condition with 3 J G_3'(R)); dropping the tail comparison with the verbatim binding removed is not silent: the producer aborts at z_certificates_complete (its copied code must reproduce the AZ2 gate enclosure of <W_1> exactly)",
+      "passed": true,
+      "rows": [
+        {
+          "edit": "harmless: exclusion-condition preview with 13 digits",
+          "producer_run": "completed",
+          "review_validator": "accepted (non-damaging: every exported admitted value unchanged)"
+        },
+        {
+          "edit": "interacting tail threshold exported without the -2|l| correction",
+          "producer_run": "completed",
+          "review_validator": "rejected: gap or tail threshold"
+        },
+        {
+          "edit": "exclusion condition recorded with 3 J G_3'(R) in place of 2 J G_3'(R)",
+          "producer_run": "completed",
+          "review_validator": "rejected: 2+1D exclusion condition"
+        }
+      ]
+    },
+    {
+      "checked": [
+        "research/round33/forward/bd2/",
+        "research/round11/",
+        "research/round32/"
+      ],
+      "id": "no_interpreter_cache_after_all_runs",
+      "passed": true
+    }
+  ],
+  "commit_order_utc": [
+    {
+      "commit": "a1010a4",
+      "time": "05:53:54",
+      "what": "BD1 reverse producer"
+    },
+    {
+      "commit": "5a792b0",
+      "time": "05:54:17",
+      "what": "BD1 forward producer"
+    },
+    {
+      "commit": "37fa623",
+      "time": "06:00:06",
+      "what": "BD2 forward producer"
+    },
+    {
+      "commit": "bf1f531",
+      "time": "06:10:08",
+      "what": "skeptic BD1 and BD2 pre-comparison packages"
+    }
+  ],
+  "contract_sha256": "783cad8054a9b7ed3f741e0c06fffd94cfa0d6fda0dcbb7aa0b464058e46f41e",
+  "damaged_packets": 19,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "BD2",
+  "producer": "forward (single producer, single+skeptic)",
+  "reviewer": "skeptic (model agent, correlated ancestry; not human review)",
+  "source_edit_breakdown": {
+    "control_validator_weakenings": 21,
+    "must_abort_edits": 12,
+    "silent_edits": 3,
+    "unmutated_and_no_B": 2
+  },
+  "source_edit_runs": 38,
+  "stage": "post_comparison"
+}

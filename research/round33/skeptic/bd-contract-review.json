@@ -1,0 +1,1250 @@
+{
+ "loop": "BD1+BD2",
+ "stage": "pre_freeze",
+ "schema": "hnm-round33-skeptic-bd-contract-review-v1",
+ "human_author": "Hruday N M (BUNZEEY)",
+ "reviewer": "Model-agent skeptic with correlated ancestry; not human peer review and not formal verification. Private scratch /tmp/claude-0/skeptic-bd-private/ is not evidence and not a premise; no producer may receive it, this file or bd-contract-review.md.",
+ "date": "2026-09-25",
+ "reviewed": {
+  "bd1_sha256": "1a3b733311141a314c23110b8cdbf863b6ba51ff9790609e5cf7775de5d3cd00",
+  "bd2_sha256": "4469c037dc11abbe5d7694f771a18d915617421468b903497ad0887781608237",
+  "bd_drafts_commit": "1833023",
+  "selection_bd1_sha256": "08af168f2f19dcee004d0ce893a0d710b96996c2496d73bbd456d276747f1dd9",
+  "selection_bd2_sha256": "ec4768c7e8dd7f8245f56232671f0031dc5182fe3b3b06292022476fe4272941",
+  "plan_sha256": "fafa2ad1bca029bafd4edfc2a4178f68eae392a0258b76b535e22706bc046065",
+  "ba1_contract_sha256": "2c761366d2d81ee21fa631497f8df9b80dc760bec160c985023152cd768532b9",
+  "bb2_contract_sha256": "ed5c0b24b16b19f0db2c16a437ee37608552e1a1cf0629494792aa877d95ad35",
+  "aw1_gate_sha256": "647dc33795f06a66c12934f64ae408725b5354cf0124b32dc4b18a12eb0541ae",
+  "az2_gate_sha256": "d36d53dcad8b1d3e4789d3be76b9e491e73cc5cf2ca88f281f66fd255f98b394",
+  "az2_check_py_sha256": "4ad3a9f8127ed983a3af9343a4697b77a35bec26f4cd75f1683e32307cab1c7d",
+  "ay1_gate_sha256": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+  "ay2_gate_sha256": "e4faa98884d26d67dd422b382eafb2c52bf88ee679998bc8249003cba88187a6",
+  "ay1_forward_report_sha256": "7cb1e844d75ee1f3d69de2bccb9a684c791e34bf64f3bb9e2d5061221f75dac1",
+  "aq1_gate_sha256": "b4a93fd49413857af83c969de1e7b2c8a698ea8099aa9e3aea8e8c7fab0a225e",
+  "aq1_report_sha256": "b091266f5db009fa967a2adea352fa1b190193cc4bcdc6c4c207e5872fc51da3",
+  "am2_gate_sha256": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+  "am2_report_sha256": "1b58fb9c1a199f06b156d04c2a9e89f34ba63cf675a5f7c8bfc25bb568e4e019",
+  "bb2_gate_sha256": "ad3fdb4bee935b594c992f6d4246b52aa83b9c0d0d03eb5186bff47b45bb0cca",
+  "modern_memo_sha256": "56c070de667f7304092fa27603dfd56f43a07a6d393710fba6f2222df5a7830e",
+  "triage_sha256": "d1cf5dcc8ffd9a596cb9c192b7cf67e3ed9e5c323880f04c8781f863cc050f0b"
+ },
+ "verdicts": {
+  "BD1": "freeze_after_blocking_edits",
+  "BD2": "freeze_after_blocking_edits"
+ },
+ "signoff": false,
+ "decision": {
+  "BD1": "5 blocking issues (Z2 normalization and creation sign in the frozen convention; SU(5) cell undefined while the flip semantics make it mandatory; group box models unnamed; template overclaims in every box; inherited tier semantics conflict), 15 field edits",
+  "BD2": "6 blocking issues (Round11 premises missing; electric band: finite-box lower endpoint premise and upper endpoint value; 2+1D model, radius and normalization undeclared; 1x2 rectangle unfrozen and its first-order limit claim unsupported; one flip cannot give both parities; inherited tier semantics conflict), 19 field edits",
+  "plan": "no blocking issue: every gate field of both drafts is in vocabulary.gate_fields; two non-blocking plan entries (P10, P12)",
+  "after_edits": "no further review loop needed; the edited copies freeze (BD1 then BD2) and scan clean; the skeptic checks the frozen bytes against this file before its BD2 pre-comparison replay"
+ },
+ "blocking_issue_count": {
+  "BD1": 5,
+  "BD2": 6,
+  "shared_plan": 0
+ },
+ "blocking_edit_count": {
+  "BD1": 15,
+  "BD2": 19,
+  "plan": 0,
+  "total": 34
+ },
+ "blocking_edits": [
+  {
+   "contract": "bd1",
+   "path": "$.parameters.convention",
+   "op": "replace",
+   "replacement": "per-link electric term 8 C_2(r) in delta units, with C_2 the quadratic Casimir normalized so that C_F = (N^2-1)/(2N) for SU(N) (C_2(lambda) the standard SU(N) Casimir in this normalization for every irrep lambda), C_2(n) = n^2 for the U(1) charge n, C_2(l) = l(l+1) for SO(3) (so the vector representation has C_F = 2, the SU(2) adjoint value under the SU(N) rule), and for Z2 C_2 = 0 on the even (trivial) and C_2 = 1 on the odd (sign) link state, so that the Z2 per-link electric term is 8 on the odd state and C_F = 1 for Z2 as for U(1) (the readings 'electric term 1 on the odd state' and '1 - sigma^x' are other normalizations and are rejected); Wilson representation: fundamental for SU(N), charge 1 for U(1), sign for Z2, vector for SO(3); magnetic term -(tau/3) sum_f W_f with W_f = Re chi_fund(U_f)/dim fund (W = cos theta for U(1), W = the sign character for Z2, W = Tr/3 of the real vector representation for SO(3)); face energy 32 C_F; AM2/AV1 creation sign psi = e^{-C} Omega_0, so that c^(1) = -(tau/3)/(32 C_F) sum_f W_f Omega_0 and omega(W) = -2 Re (W Omega_0, c^(1)) + O(tau^2) = 2 (tau/3) E[W^2]/(32 C_F) + O(tau^2) under the I1.5 sign, with (u, v) the inner product (the literal display 2 (W Omega_0, c^(1)) has the opposite sign; this is the AW1 wording defect); for SU(2) the convention is the admitted I1.5 normalization and reproduces the admitted coefficient 1/144, which is a check of the convention, not a transferred value",
+   "issue": "BD1-1",
+   "reason": "Issue BD1-1 (convention ambiguous). The draft defines the Z2 electric term both as 8 C_2 and as 'eigenvalue 0 on the even and 1 on the odd link state'; the two readings differ by a factor 8 in the face energy and so in the Z2 first-order coefficient, and the modern memo uses a third normalization (1 - sigma^x). Two independent routes can then disagree on the Z2 cell without error, and frozen_convention_used cannot decide which is 'another normalization'. The c^(1) display with a minus sign is consistent with omega(W) = +2(tau/3)E[W^2]/(32 C_F) only under the AM2/AV1 creation sign psi = e^{-C} Omega_0, which the draft does not state; AW1 recorded the same wording defect."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.required[3]",
+   "op": "replace",
+   "replacement": "4. Obstruction cells (mandatory). (a) For SU(3) and SO(3): prove there is no central element acting as -1 on the Wilson representation, compute E[W^3] exactly, and on the one-plaquette model H_FG(G) compute exactly by Rayleigh-Schroedinger the first-order tau-derivative of omega(W^2) and the second-order coefficient of omega(W), both nonzero; record that omega(W) is not odd in tau and that the first-order parity fails for these groups. (b) For SU(5): prove there is no central element acting as -1 (the centre acts by fifth roots of unity), record E[W^3]=0 (the parity column is a transfer), show that the two coefficients of (a) vanish on H_FG(SU(5)) by the Z_5 grading, and exhibit the flip obstruction by the exact nonzero fourth-order coefficient of omega(W) on H_FG(SU(5)), its first possible nonzero even-order coefficient under the Z_5 grading, so that omega(W) is not odd in tau and no unitary commuting with the electric term and reversing W exists on that model. A nonzero even-order coefficient on a one-plaquette model is the exact counterexample that makes a flip entry an obstruction; the absence of a central -1 is recorded as the reason, never as the proof of non-transfer.",
+   "issue": "BD1-2",
+   "reason": "Issue BD1-2 (SU(5) cell undefined). flip_criterion_central_minus_one makes an obstruction cell mandatory for every group without a central -1, which includes SU(5), but only SU(3) and SO(3) cells are defined, and the two coefficients those cells require vanish identically for SU(5) by the Z_5 grading. The template's 'transfers exactly' asserts that the flip lemma does not transfer to SU(5), which the absence of a central -1 does not prove (another symmetry could reverse W). The exact counterexample is a nonzero even-order coefficient of omega(W) on H_FG(SU(5)); the first possible one is the fourth (my exact preview, advisor-only, finds it nonzero, and a floating diagonalization agrees)."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.new_control_semantics.flip_criterion_central_minus_one",
+   "op": "replace",
+   "replacement": "The flip lemma U_E H(tau) U_E^* = H(-tau) is claimed for a group exactly when a central z with rho_fund(z) = -I is exhibited (and U_E commutes with every Casimir, gauge action and on-site cutoff projection), and only on the named models of that group (H_FG(G) and the group-G whole-star box models H^G_N); a group without such z receives no flip claim, and its flip entry records the exact counterexample of its obstruction cell (SU(3) and SO(3): the nonzero second-order coefficient of omega(W); SU(5): the nonzero fourth-order coefficient of omega(W)); a flip entry for a group without a central -1, or a flip obstruction asserted from the missing central element alone, is rejected.",
+   "issue": "BD1-2",
+   "reason": "Issue BD1-2 (SU(5) cell undefined). flip_criterion_central_minus_one makes an obstruction cell mandatory for every group without a central -1, which includes SU(5), but only SU(3) and SO(3) cells are defined, and the two coefficients those cells require vanish identically for SU(5) by the Z_5 grading. The template's 'transfers exactly' asserts that the flip lemma does not transfer to SU(5), which the absence of a central -1 does not prove (another symmetry could reverse W). The exact counterexample is a nonzero even-order coefficient of omega(W) on H_FG(SU(5)); the first possible one is the fourth (my exact preview, advisor-only, finds it nonzero, and a floating diagonalization agrees)."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.controls",
+   "op": "append",
+   "replacement": "su5_flip_obstruction_fourth_order",
+   "issue": "BD1-2",
+   "reason": "Issue BD1-2 (SU(5) cell undefined). flip_criterion_central_minus_one makes an obstruction cell mandatory for every group without a central -1, which includes SU(5), but only SU(3) and SO(3) cells are defined, and the two coefficients those cells require vanish identically for SU(5) by the Z_5 grading. The template's 'transfers exactly' asserts that the flip lemma does not transfer to SU(5), which the absence of a central -1 does not prove (another symmetry could reverse W). The exact counterexample is a nonzero even-order coefficient of omega(W) on H_FG(SU(5)); the first possible one is the fourth (my exact preview, advisor-only, finds it nonzero, and a floating diagonalization agrees)."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.preregistration.controls_required.ids",
+   "op": "append",
+   "replacement": "su5_flip_obstruction_fourth_order",
+   "issue": "BD1-2",
+   "reason": "Issue BD1-2 (SU(5) cell undefined). flip_criterion_central_minus_one makes an obstruction cell mandatory for every group without a central -1, which includes SU(5), but only SU(3) and SO(3) cells are defined, and the two coefficients those cells require vanish identically for SU(5) by the Z_5 grading. The template's 'transfers exactly' asserts that the flip lemma does not transfer to SU(5), which the absence of a central -1 does not prove (another symmetry could reverse W). The exact counterexample is a nonzero even-order coefficient of omega(W) on H_FG(SU(5)); the first possible one is the fourth (my exact preview, advisor-only, finds it nonzero, and a floating diagonalization agrees)."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.new_control_semantics.su5_flip_obstruction_fourth_order",
+   "op": "add",
+   "replacement": "The SU(5) cell exhibits exactly: no central element acting as -1 on the Wilson representation, E[W^3]=0 with the parity column a transfer, the vanishing of the first-order tau-derivative of omega(W^2) and of the second-order coefficient of omega(W) on H_FG(SU(5)), and a nonzero fourth-order coefficient of omega(W) on H_FG(SU(5)) in exact rational arithmetic with its route recorded; omitting the cell, calling SU(5) a flip transfer or a parity obstruction, or resting its flip obstruction on the missing central element alone is rejected.",
+   "issue": "BD1-2",
+   "reason": "Issue BD1-2 (SU(5) cell undefined). flip_criterion_central_minus_one makes an obstruction cell mandatory for every group without a central -1, which includes SU(5), but only SU(3) and SO(3) cells are defined, and the two coefficients those cells require vanish identically for SU(5) by the Z_5 grading. The template's 'transfers exactly' asserts that the flip lemma does not transfer to SU(5), which the absence of a central -1 does not prove (another symmetry could reverse W). The exact counterexample is a nonzero even-order coefficient of omega(W) on H_FG(SU(5)); the first possible one is the fourth (my exact preview, advisor-only, finds it nonzero, and a floating diagonalization agrees)."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.acceptance.accepted_within_scope",
+   "op": "replace",
+   "replacement": "Both routes agree exactly on every moment and first-order coefficient of every listed group; criteria A and B are proved on the named models (H_FG(G) and the group-G whole-star box models, each box inside its Kato radius); the SU(3) and SO(3) obstruction cells are exhibited with exact nonzero coefficients and the SU(5) cell with its exact nonzero fourth-order coefficient; the flip sets are verified; the SU(2) area parity is proved in every open centered whole-star box and every on-site cutoff at kappa=0 and pointwise for the limit of the named constructions; the transfer ledger is complete.",
+   "issue": "BD1-2",
+   "reason": "Issue BD1-2 (SU(5) cell undefined). flip_criterion_central_minus_one makes an obstruction cell mandatory for every group without a central -1, which includes SU(5), but only SU(3) and SO(3) cells are defined, and the two coefficients those cells require vanish identically for SU(5) by the Z_5 grading. The template's 'transfers exactly' asserts that the flip lemma does not transfer to SU(5), which the absence of a central -1 does not prove (another symmetry could reverse W). The exact counterexample is a nonzero even-order coefficient of omega(W) on H_FG(SU(5)); the first possible one is the fourth (my exact preview, advisor-only, finds it nonzero, and a floating diagonalization agrees)."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.model",
+   "op": "replace",
+   "replacement": "FG one-plaquette models H_FG(G) = 32 C_2 - (tau/3) W on class functions of the plaquette holonomy for G in {SU(2), SU(3), SU(4), SU(5), U(1), Z2, SO(3)} (Wilson representation and frozen convention in parameters.convention); group-G box models H^G_N(tau) = sum over the links of the box of 8 C_2 - (tau/3) sum over the retained faces of W_f on L^2 of G to the links of the open centered whole-star box Lambda_N, N at least 2 (the I1/AQ1 geometry: coarse 24-link factors, the 21 omitted faces of an anchor retained when its whole star lies in Lambda_N, selected faces with coefficient 0), untruncated and in every on-site cutoff, for the groups whose flip or parity column is claimed; the group box models carry no AM2, AV1 or AQ statement for any group other than SU(2), and their ground-state and Taylor statements hold in each box for |tau| inside a box-dependent Kato radius, not uniformly in N; Haar moments of W for these groups; the flip sets E_3 on centered boxes of Z^3 (and the 24-link coarse factors) and E_2 on centered boxes of Z^2; the SU(2) zero-selected patterned family (AM2/AQ1, |tau|<=10^-8) for the area-parity corollary, in every open centered whole-star box at kappa=0 and for the limit of the named constructions admitted in BB2.",
+   "issue": "BD1-3",
+   "reason": "Issue BD1-3 (group box models unnamed). Criteria A and B transfer the AW1 flip lemma and parity theorem, which AW1 states for SU(2) whole-star boxes; for the other groups the draft names only one-plaquette models, and the gate scope says 'flip-set boxes' without a Hamiltonian (rule R3 intent: every coupling of every finite model named). Without AM2 for G the box statements need a unique ground state from Kato perturbation theory with a box-dependent radius, which must be said. For complex Wilson representations the degenerate level at energy 32 C_F also contains Im chi(U_g) Omega_0, which the SU(2) argument did not meet."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.parameters.hamiltonian_terms",
+   "op": "append",
+   "replacement": {
+    "term": "group-G box model H^G_N (item 1-2 transfers): electric 8 C_2(r_e) on every link e owned by the open centered whole-star box Lambda_N (frozen convention)",
+    "coefficient": "8 (delta units), per link"
+   },
+   "issue": "BD1-3",
+   "reason": "Issue BD1-3 (group box models unnamed). Criteria A and B transfer the AW1 flip lemma and parity theorem, which AW1 states for SU(2) whole-star boxes; for the other groups the draft names only one-plaquette models, and the gate scope says 'flip-set boxes' without a Hamiltonian (rule R3 intent: every coupling of every finite model named). Without AM2 for G the box statements need a unique ground state from Kato perturbation theory with a box-dependent radius, which must be said. For complex Wilson representations the degenerate level at energy 32 C_F also contains Im chi(U_g) Omega_0, which the SU(2) argument did not meet."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.parameters.hamiltonian_terms",
+   "op": "append",
+   "replacement": {
+    "term": "group-G box model H^G_N: W_f = Re chi_fund(U_f)/dim fund on every retained omitted face of the whole-star box (selected faces carry coefficient 0)",
+    "coefficient": "-tau/3"
+   },
+   "issue": "BD1-3",
+   "reason": "Issue BD1-3 (group box models unnamed). Criteria A and B transfer the AW1 flip lemma and parity theorem, which AW1 states for SU(2) whole-star boxes; for the other groups the draft names only one-plaquette models, and the gate scope says 'flip-set boxes' without a Hamiltonian (rule R3 intent: every coupling of every finite model named). Without AM2 for G the box statements need a unique ground state from Kato perturbation theory with a box-dependent radius, which must be said. For complex Wilson representations the degenerate level at energy 32 C_F also contains Im chi(U_g) Omega_0, which the SU(2) argument did not meet."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.required[0]",
+   "op": "replace",
+   "replacement": "1. Criterion A (flip): prove that if a central z of G acts as -I in the Wilson representation, the operator U_E (z on every link of a flip set E meeting every plaquette an odd number of times) commutes with every link Casimir, every endpoint gauge action and every on-site cutoff projection, fixes the vacuum and maps every W_f to -W_f, so that U_E H^G_N(tau) U_E^* = H^G_N(-tau) in every open centered whole-star box and cutoff and U H_FG(G)(tau) U^* = H_FG(G)(-tau) on the one-plaquette model, with omega(W) odd in tau wherever the ground state is unique (in each box inside its Kato radius); state for each listed group whether such z exists, with the exact reason.",
+   "issue": "BD1-3",
+   "reason": "Issue BD1-3 (group box models unnamed). Criteria A and B transfer the AW1 flip lemma and parity theorem, which AW1 states for SU(2) whole-star boxes; for the other groups the draft names only one-plaquette models, and the gate scope says 'flip-set boxes' without a Hamiltonian (rule R3 intent: every coupling of every finite model named). Without AM2 for G the box statements need a unique ground state from Kato perturbation theory with a box-dependent radius, which must be said. For complex Wilson representations the degenerate level at energy 32 C_F also contains Im chi(U_g) Omega_0, which the SU(2) argument did not meet."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.required[1]",
+   "op": "replace",
+   "replacement": "2. Criterion B (parity): prove, on H_FG(G) and in every group-G box model H^G_N (each box inside its Kato radius), that the first-order tau-derivatives of omega(W^2) and of the centred Euclidean and real-time correlations vanish when E_Haar[W^3]=0 and single-occurrence orthogonality hold (the AW1 argument with the group's moments); for a complex Wilson representation (U(1), and SU(N) with N at least 3) the gauge-invariant level at energy 32 C_F contains Im chi_fund(U_g) Omega_0 as well as W_g Omega_0, and zero first-order splitting must be shown on the whole level, using that E[W^3]=0 is equivalent to the vanishing of every cubic moment E[chi^a conj(chi)^b] with a+b=3, since these moments are nonnegative integers; prove that the derivatives are nonzero on H_FG(G) when E_Haar[W^3] is nonzero.",
+   "issue": "BD1-3",
+   "reason": "Issue BD1-3 (group box models unnamed). Criteria A and B transfer the AW1 flip lemma and parity theorem, which AW1 states for SU(2) whole-star boxes; for the other groups the draft names only one-plaquette models, and the gate scope says 'flip-set boxes' without a Hamiltonian (rule R3 intent: every coupling of every finite model named). Without AM2 for G the box statements need a unique ground state from Kato perturbation theory with a box-dependent radius, which must be said. For complex Wilson representations the degenerate level at energy 32 C_F also contains Im chi(U_g) Omega_0, which the SU(2) argument did not meet."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.preregistration.gate_fields_required.flip_transfer_scope",
+   "op": "replace",
+   "replacement": "the listed groups with a central element acting as -1 on the Wilson representation, named in the gate group by group, on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+   "issue": "BD1-3",
+   "reason": "Issue BD1-3 (group box models unnamed). Criteria A and B transfer the AW1 flip lemma and parity theorem, which AW1 states for SU(2) whole-star boxes; for the other groups the draft names only one-plaquette models, and the gate scope says 'flip-set boxes' without a Hamiltonian (rule R3 intent: every coupling of every finite model named). Without AM2 for G the box statements need a unique ground state from Kato perturbation theory with a box-dependent radius, which must be said. For complex Wilson representations the degenerate level at energy 32 C_F also contains Im chi(U_g) Omega_0, which the SU(2) argument did not meet."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.preregistration.mandatory_sentence_template",
+   "op": "replace",
+   "replacement": "Under the frozen convention, the link-flip lemma transfers exactly to the listed gauge groups that have a central element acting as -1 on the Wilson representation and the first-order parity theorem exactly to those with vanishing third Haar moment of W, each with its own first-order Wilson coefficient, on one-plaquette models and on group box models in each box separately; SU(3) and SO(3) are recorded obstructions with exact nonzero coefficients, and SU(5) is a recorded flip obstruction with an exact nonzero fourth-order coefficient; for SU(2) in the zero-selected family at kappa=0 the Wilson-loop mean is odd or even in tau according to the parity of the number of plaquettes of any spanning surface of the loop, in every open centered whole-star box and for the limit of the named constructions; these are statements about named models and one-plaquette finite graphs, not AM2 or continuum statements for other groups, not statements for periodic boxes with an odd side, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+   "issue": "BD1-4",
+   "reason": "Issue BD1-4 (template overclaims). 'in every box' covers periodic boxes with an odd side (item 5 records them as an obstruction), boxes at nonzero kappa (AW1: no antisymmetry via U_E), and F2 or literal vertex boxes (not covered by the AW1 flip lemma as admitted). 'Enclosed area' is undefined for a non-planar loop; the parity of the plaquette count of any spanning surface is well defined in a box. The template also needs the SU(5) cell of BD1-2 for 'exactly' to hold."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.new_control_semantics.tier_mixing_rejected",
+   "op": "add",
+   "replacement": "(BD1) Every first-order Wilson coefficient and every first-order tau-derivative carries the tier exact_first_order and names its route of computation (characters or weyl_integration) in a route_of_computation field; Haar moments and the second- and fourth-order one-plaquette coefficients of the obstruction cells are exact finite-model rationals with a route_of_computation and no tier; the SU(2) corollary uses the admitted AW1 and BB2 statements with their own gate labels unchanged; a plan route label (weighted_norm, analytic_disc, polymer_kp, iterated_split, duhamel_inner_f1, duhamel_inner_f2) or a hypothesis source attached to a BD1 value, a floating-point value under a tier, a tier on a moment or on a higher-order coefficient, or a route_of_computation other than characters or weyl_integration is rejected (the AV1, BA1, BA2, BB1, BB2 and BC2 definitions of this control do not apply to BD1).",
+   "issue": "BD1-5",
+   "reason": "Issue BD1-5 (inherited tier semantics conflict). tier_mixing_rejected is defined differently in the two contracts the control_semantics_note names: BA1 requires a route in {weighted_norm, analytic_disc}, BB2 a hypothesis source bb1_frozen_targets. BD1's own tier_label_rule requires a route_of_computation in {characters, weyl_integration} and no plan route label. A producer implementing either inherited text would reject BD1's own labels."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.shared_premises",
+   "op": "append",
+   "replacement": "research/round11/README.md",
+   "issue": "BD2-1",
+   "reason": "Issue BD2-1 (Round11 premises missing). The graph, its Gauss reduction (Round11 Q1-Q3), the kinetic operator (K1-K5), the spectrum and tail threshold (E1-E4) and Theorem F are Round11 results that the AZ2 gate inherits without re-proof; the AZ2 checker, a declared BD2 premise, binds them to the Round11 README, advisor report, solver README and two_plaquette.py snapshots and refuses to run without them. BD2 re-instantiates that solver but does not declare these four files."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.shared_premises",
+   "op": "append",
+   "replacement": "research/round11/advisor/advisor.md",
+   "issue": "BD2-1",
+   "reason": "Issue BD2-1 (Round11 premises missing). The graph, its Gauss reduction (Round11 Q1-Q3), the kinetic operator (K1-K5), the spectrum and tail threshold (E1-E4) and Theorem F are Round11 results that the AZ2 gate inherits without re-proof; the AZ2 checker, a declared BD2 premise, binds them to the Round11 README, advisor report, solver README and two_plaquette.py snapshots and refuses to run without them. BD2 re-instantiates that solver but does not declare these four files."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.shared_premises",
+   "op": "append",
+   "replacement": "research/round11/solver/README.md",
+   "issue": "BD2-1",
+   "reason": "Issue BD2-1 (Round11 premises missing). The graph, its Gauss reduction (Round11 Q1-Q3), the kinetic operator (K1-K5), the spectrum and tail threshold (E1-E4) and Theorem F are Round11 results that the AZ2 gate inherits without re-proof; the AZ2 checker, a declared BD2 premise, binds them to the Round11 README, advisor report, solver README and two_plaquette.py snapshots and refuses to run without them. BD2 re-instantiates that solver but does not declare these four files."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.shared_premises",
+   "op": "append",
+   "replacement": "research/round11/solver/two_plaquette.py",
+   "issue": "BD2-1",
+   "reason": "Issue BD2-1 (Round11 premises missing). The graph, its Gauss reduction (Round11 Q1-Q3), the kinetic operator (K1-K5), the spectrum and tail threshold (E1-E4) and Theorem F are Round11 results that the AZ2 gate inherits without re-proof; the AZ2 checker, a declared BD2 premise, binds them to the Round11 README, advisor report, solver README and two_plaquette.py snapshots and refuses to run without them. BD2 re-instantiates that solver but does not declare these four files."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.parameters.electric_band",
+   "op": "replace",
+   "replacement": "for every finite box of F1 and F2 (untruncated ground vector at fixed N) and for the limit of the named constructions, at both signs: omega(h_R) is the monotone limit over the spectral projections Q_L of h_R of Tr(rho_R h_R Q_L), with h_R the sum of 8 C_e over the 48 links of R in delta units (zero-selected); lower endpoint from the operator inequality h_R >= 6 Q_R (I1: free Casimir gap 6 delta; P_R the Haar product projection of the zero-selected reference), Q_R = I - P_R, the Fuchs-van de Graaf inequality for the pure reference proved inline ((1/2)||rho_R - P_R||_1 <= sqrt(Tr(Q_R rho_R)), by convexity from the pure-state case), and a lower bound on ||rho_R - P_R||_1: for the limit, the AY2 gate item (2) (every subsequential limit of either family, identified with the limit by BB2 items 2-3) with its exact directed lower end; for finite F1 and F2 boxes, the per-box bound ||rho_{N,R} - P_R - rho^(1)_R||_1 <= K_2' tau^2 of AY1 forward (HNM-AY1-F11 to F14, uniform in N, in the cutoff and in both families, passed to the untruncated ground vector by AV1 F22) with the AY1 gate constants and the AY2 directed bracket of sqrt(10), labelled as a reviewed step of the admitted AY1 proof and not as an AY1 or AY2 gate sentence; upper endpoint omega(h_R) <= 98|tau| from the AQ1 reset (HNM-AQ1.1 with the 7 incident anchors of R; for F2 the AY1 gate item (1)), passed to the limit by lower semicontinuity of the monotone limit under trace-norm convergence on R (the AQ1 gate's generic 56|tau||F| at F=R is valid but is not the frozen endpoint); exact rational endpoints at tau=10^-8",
+   "issue": "BD2-2",
+   "reason": "Issue BD2-2 (electric band premises and endpoint values). The AY2 two-sided distance and the AY1 ball are gate sentences only for subsequential limits; the finite-box version is AY1 forward F11-F14 (uniform in N, cutoff and both families, passed to the untruncated ground by AV1 F22), and the AY1 forward report is not a declared premise. The upper endpoint is not pinned: AQ1 HNM-AQ1.1 with the 7 incident anchors gives the AY1-gate value 98|tau|, while the AQ1 gate states the generic 56|tau||F|, a different valid endpoint; a single+skeptic loop with an exact endpoint needs one frozen value. Fuchs-van de Graaf enters the record only as cited (AY1 limitations); the pure-reference case is three lines and should be proved inline."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.required[3]",
+   "op": "replace",
+   "replacement": "4. Electric energy band on R: prove the two-sided band for omega(h_R) at both signs for every finite box of F1 and F2 (untruncated ground vector at fixed N) and for the limit of the named constructions, with the endpoints and their premises frozen in parameters.electric_band, exact rational endpoints at tau=10^-8 and the unbounded-observable passage through the spectral cutoffs of h_R made explicit (monotone limits for the value, lower semicontinuity for passing the upper endpoint to the limit); record the formal second-order value per link, with the omitted-face incidence of each link counted from the I1 face classes (selected faces carry coefficient 0 at the zero triple), as labelled formal, and the obstruction to a tight enclosure.",
+   "issue": "BD2-2",
+   "reason": "Issue BD2-2 (electric band premises and endpoint values). The AY2 two-sided distance and the AY1 ball are gate sentences only for subsequential limits; the finite-box version is AY1 forward F11-F14 (uniform in N, cutoff and both families, passed to the untruncated ground by AV1 F22), and the AY1 forward report is not a declared premise. The upper endpoint is not pinned: AQ1 HNM-AQ1.1 with the 7 incident anchors gives the AY1-gate value 98|tau|, while the AQ1 gate states the generic 56|tau||F|, a different valid endpoint; a single+skeptic loop with an exact endpoint needs one frozen value. Fuchs-van de Graaf enters the record only as cited (AY1 limitations); the pure-reference case is three lines and should be proved inline."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.shared_premises",
+   "op": "append",
+   "replacement": "research/round32/forward/ay1/report.md",
+   "issue": "BD2-2",
+   "reason": "Issue BD2-2 (electric band premises and endpoint values). The AY2 two-sided distance and the AY1 ball are gate sentences only for subsequential limits; the finite-box version is AY1 forward F11-F14 (uniform in N, cutoff and both families, passed to the untruncated ground by AV1 F22), and the AY1 forward report is not a declared premise. The upper endpoint is not pinned: AQ1 HNM-AQ1.1 with the 7 incident anchors gives the AY1-gate value 98|tau|, while the AQ1 gate states the generic 56|tau||F|, a different valid endpoint; a single+skeptic loop with an exact endpoint needs one frozen value. Fuchs-van de Graaf enters the record only as cited (AY1 limitations); the pure-reference case is three lines and should be proved inline."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.unbounded_observable_handled",
+   "op": "replace",
+   "replacement": "The electric energy h_R is unbounded: omega(h_R) is the monotone limit over the spectral cutoffs of h_R; the upper endpoint is the AQ1 reset budget 98|tau| on R for every F1 and F2 box and passes to the limit by lower semicontinuity; the lower endpoint uses the operator inequality h_R >= 6 Q_R, the bounded projection Q_R, the inline Fuchs-van de Graaf inequality for the pure reference and the lower bound on ||rho_R - P_R||_1 (AY2 gate item (2) for the limit, AY1 forward F11-F14 per box for F1 and F2); applying a bounded-observable trace-norm constant directly to h_R, using the limit-level AY2 distance for a finite box, or an upper budget other than the frozen one is rejected.",
+   "issue": "BD2-2",
+   "reason": "Issue BD2-2 (electric band premises and endpoint values). The AY2 two-sided distance and the AY1 ball are gate sentences only for subsequential limits; the finite-box version is AY1 forward F11-F14 (uniform in N, cutoff and both families, passed to the untruncated ground by AV1 F22), and the AY1 forward report is not a declared premise. The upper endpoint is not pinned: AQ1 HNM-AQ1.1 with the 7 incident anchors gives the AY1-gate value 98|tau|, while the AQ1 gate states the generic 56|tau||F|, a different valid endpoint; a single+skeptic loop with an exact endpoint needs one frozen value. Fuchs-van de Graaf enters the record only as cited (AY1 limitations); the pure-reference case is three lines and should be proved inline."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.parameters.dimension_2p1",
+   "op": "replace",
+   "replacement": "2+1-dimensional SU(2) model on Z^2 in delta units, declared before production: per-link electric term 8 C_e, every elementary face with -(tau/3) W_f, no selected faces, Haar product reference; single-site factors owning the links (p,x) and (p,y), owner sets {p, p+e_x, p+e_y}, each face its own interaction term V_X on its owner set, three faces per site, maximal support p=3; the AM2 inverse uses the AM2 normalization h_x >= Q_x (unit on-site gap; the free Casimir gap 6 is not used) and the radius is the AM2 radius R=1/64; derive exactly the multilinear numerators at p=3 from the AM2 report's counting, G_3 and G_3' at R with directed rational enclosures of the exponential, the per-site sum, the termination order, and the admissible coupling cap as a directed rational lower bound for the largest |tau| satisfying both the self-map condition J G_3(R) <= R and the exclusion condition 2 J G_3'(R) < 1 at R=1/64; these are recounted constants, not a theorem: no finite-volume ground-state or gap statement in 2+1 dimensions is claimed (an obligation row with its missing premises: a 2D finite-volume prescription, the on-site domains and AM2 sections 4-6 re-verified); the window kernel constants of AV2 (a one-dimensional spectral identity) are recorded as dimension-independent",
+   "issue": "BD2-3",
+   "reason": "Issue BD2-3 (2+1D model not declared). The 2+1D Hamiltonian terms are not named (R3 intent), the radius is 'declared' in required item 5 but nowhere in the contract, and the on-site normalization used in the AM2 inverse is open: with the free Casimir gap in place of the AM2 unit gap the cap scales by that gap, and at the self-map-optimal radius the exclusion condition fails exactly, so the 'admissible coupling cap' is ill-posed until the radius, the normalization and the two conditions are frozen. The draft also leaves open whether a finite-volume 2+1D theorem is claimed."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.parameters.hamiltonian_terms",
+   "op": "append",
+   "replacement": {
+    "term": "2+1D model (item 5, constants only): electric 8 C_e on every link of Z^2",
+    "coefficient": "8 (delta units), per link"
+   },
+   "issue": "BD2-3",
+   "reason": "Issue BD2-3 (2+1D model not declared). The 2+1D Hamiltonian terms are not named (R3 intent), the radius is 'declared' in required item 5 but nowhere in the contract, and the on-site normalization used in the AM2 inverse is open: with the free Casimir gap in place of the AM2 unit gap the cap scales by that gap, and at the self-map-optimal radius the exclusion condition fails exactly, so the 'admissible coupling cap' is ill-posed until the radius, the normalization and the two conditions are frozen. The draft also leaves open whether a finite-volume 2+1D theorem is claimed."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.parameters.hamiltonian_terms",
+   "op": "append",
+   "replacement": {
+    "term": "2+1D model (item 5, constants only): W_f = (1/2) Tr U_f on every elementary face of Z^2",
+    "coefficient": "-tau/3"
+   },
+   "issue": "BD2-3",
+   "reason": "Issue BD2-3 (2+1D model not declared). The 2+1D Hamiltonian terms are not named (R3 intent), the radius is 'declared' in required item 5 but nowhere in the contract, and the on-site normalization used in the AM2 inverse is open: with the free Casimir gap in place of the AM2 unit gap the cap scales by that gap, and at the self-map-optimal radius the exclusion condition fails exactly, so the 'admissible coupling cap' is ill-posed until the radius, the normalization and the two conditions are frozen. The draft also leaves open whether a finite-volume 2+1D theorem is claimed."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.required[4]",
+   "op": "replace",
+   "replacement": "5. 2+1 dimensions: for the declared model and factorization of parameters.dimension_2p1, derive exactly the owner sets, stars, faces per site, the per-site sum, the maximal support, the AM2 multilinear numerators at p=3 from the AM2 report's counting, the AM2 G-function and its derivative at the AM2 radius R=1/64 with directed enclosures, the termination order, and the admissible coupling cap under both the self-map and the exclusion conditions; no finite-volume ground-state or gap theorem in 2+1 dimensions is claimed (obligation row); record which Round32/Round33 statements transfer verbatim (algebraic ones) and which need their own contract (the finite-volume theorem, the AQ chain, the node, the dictionary, where g^2 has mass dimension).",
+   "issue": "BD2-3",
+   "reason": "Issue BD2-3 (2+1D model not declared). The 2+1D Hamiltonian terms are not named (R3 intent), the radius is 'declared' in required item 5 but nowhere in the contract, and the on-site normalization used in the AM2 inverse is open: with the free Casimir gap in place of the AM2 unit gap the cap scales by that gap, and at the self-map-optimal radius the exclusion condition fails exactly, so the 'admissible coupling cap' is ill-posed until the radius, the normalization and the two conditions are frozen. The draft also leaves open whether a finite-volume 2+1D theorem is claimed."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.parameters.z3_1x2",
+   "op": "replace",
+   "replacement": "W_{1x2} = (1/2) Tr of the holonomy around the 1x2 rectangle in the xz plane formed by the original xz face W (fine origin, r=0, s=0) and the xz face at the fine point e_x (r=1, s=0), whose six links are all owned by R={0,e_z}, so W_{1x2} lies in B(H_R) with norm at most 1; first-order coefficient exactly 0 in every box (centre grading, Kato per box) and, for every box of F1 and F2 and for the limit of the named constructions, the certified bound |omega(W_{1x2})| <= K_2' tau^2 at both signs from the AY1 per-box ball (forward F11-F14) and the AY1/AY2 gate ball for every subsequential limit, with Tr(P_R W_{1x2}) = Tr(rho^(1)_R W_{1x2}) = 0 by single-occurrence orthogonality; evenness in tau (AW1 flip lemma, area 2) in every open centered whole-star box at kappa=0 and every on-site cutoff and, through BB2 at each sign, for the limit of the named constructions; the formal second-order coefficient under the I1.5 convention with both faces at -(tau/3) W_f in delta units (labelled formal_second_order_coefficient: no certified third-order remainder and no sign)",
+   "issue": "BD2-4",
+   "reason": "Issue BD2-4 (1x2 loop unfrozen; limit claim unsupported). 'Two adjacent faces of the original loop's plane' does not fix the rectangle; the template asserts that the 1x2 mean vanishes at first order in the family, but for the limit a first-order statement needs a uniform remainder. The rectangle made of W and the xz face at e_x lies inside R, where the AY1 ball (per box) and the AY1/AY2 gate ball (every limit) give |omega(W_{1x2})| <= K_2' tau^2 exactly, because Tr(P_R W_{1x2}) and Tr(rho^(1)_R W_{1x2}) vanish by single occurrence; this is an admitted-premise consequence the draft does not record, and it keeps the formal coefficient formal."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.required[2]",
+   "op": "replace",
+   "replacement": "3. Z^3 1x2 Wilson loop in the zero-selected family (the rectangle frozen in parameters.z3_1x2): prove the first-order coefficient is exactly 0 in every box (centre grading) and the certified bound |omega(W_{1x2})| <= K_2' tau^2 for every box of F1 and F2 and for the limit of the named constructions (AY1 per-box ball and AY1/AY2 gate ball, with Tr(rho^(1)_R W_{1x2}) = 0); prove evenness in tau in every open centered whole-star box at kappa=0 and for the limit of the named constructions (AW1 flip lemma, area 2, and BB2 at each sign); derive the formal second-order coefficient under the stated convention (labelled formal_second_order_coefficient); its sign, a certified third-order remainder and a certified sign of omega(W_{1x2}) are recorded obstructions.",
+   "issue": "BD2-4",
+   "reason": "Issue BD2-4 (1x2 loop unfrozen; limit claim unsupported). 'Two adjacent faces of the original loop's plane' does not fix the rectangle; the template asserts that the 1x2 mean vanishes at first order in the family, but for the limit a first-order statement needs a uniform remainder. The rectangle made of W and the xz face at e_x lies inside R, where the AY1 ball (per box) and the AY1/AY2 gate ball (every limit) give |omega(W_{1x2})| <= K_2' tau^2 exactly, because Tr(P_R W_{1x2}) and Tr(rho^(1)_R W_{1x2}) vanish by single occurrence; this is an admitted-premise consequence the draft does not record, and it keeps the formal coefficient formal."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.formal_coefficient_labelled",
+   "op": "replace",
+   "replacement": "The Z^3 second-order coefficient of omega(W_{1x2}) is labelled formal_second_order_coefficient: no certified third-order remainder, no sign and no value of omega(W_{1x2}) at the cap is claimed; the only certified statement about its size is the bound |omega(W_{1x2})| <= K_2' tau^2 from the AY1/AY2 balls, which carries no sign; presenting the formal coefficient as a certified value or a sign, the bound as an enclosure of the formal coefficient, or the bound for a rectangle not contained in R is rejected.",
+   "issue": "BD2-4",
+   "reason": "Issue BD2-4 (1x2 loop unfrozen; limit claim unsupported). 'Two adjacent faces of the original loop's plane' does not fix the rectangle; the template asserts that the 1x2 mean vanishes at first order in the family, but for the limit a first-order statement needs a uniform remainder. The rectangle made of W and the xz face at e_x lies inside R, where the AY1 ball (per box) and the AY1/AY2 gate ball (every limit) give |omega(W_{1x2})| <= K_2' tau^2 exactly, because Tr(P_R W_{1x2}) and Tr(rho^(1)_R W_{1x2}) vanish by single occurrence; this is an admitted-premise consequence the draft does not record, and it keeps the formal coefficient formal."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.required[0]",
+   "op": "replace",
+   "replacement": "1. Two-plaquette graph with independent couplings: compute the exact Rayleigh-Schroedinger coefficients of <W_1>, <z> and <C_shared> in (l1,l2) through total order 4 at D=6 and D=8 with zero truncation error; prove <W_1> odd in l1 by the one-link centre flip of a non-shared link of face 1 (it reverses W_1 and z and fixes W_2) and even in l2 by the flip of a non-shared link of face 2 (it reverses W_2 and z and fixes W_1), so that <z> is odd in each coupling and <C_shared> even in each; check all three parities on the exact coefficient table (hence every even-order coefficient of <W_1> at l1=l2 vanishes); record the second-order coefficients of <z> and <C_shared> at l1=l2.",
+   "issue": "BD2-5",
+   "reason": "Issue BD2-5 (one flip cannot give both parities). The one-link flip of a non-shared link of face 1 reverses W_1 and z and fixes W_2, so it proves oddness in l1 only; evenness in l2 needs the flip of a non-shared link of face 2. The drafted control prescribes the face-1 flip for both."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.independent_coupling_flip",
+   "op": "replace",
+   "replacement": "Oddness of <W_1> in l1 is proved by the one-link centre flip of a non-shared link of face 1 and evenness in l2 by the flip of a non-shared link of face 2 (the shared-link flip reverses both couplings and proves only the l1=l2 statement); the parities of <W_1>, <z> and <C_shared> in each coupling are checked on the exact coefficient table; a check at l1=l2 only, or a two-variable parity claimed from a single flip, is rejected.",
+   "issue": "BD2-5",
+   "reason": "Issue BD2-5 (one flip cannot give both parities). The one-link flip of a non-shared link of face 1 reverses W_1 and z and fixes W_2, so it proves oddness in l1 only; evenness in l2 needs the flip of a non-shared link of face 2. The drafted control prescribes the face-1 flip for both."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.tier_mixing_rejected",
+   "op": "add",
+   "replacement": "(BD2) The band's lower endpoint carries the tier first_order_distance_from_product (AY2/AY1) and its upper endpoint the tier crude_majorant (the AQ1 reset budget); the bound |omega(W_{1x2})| <= K_2' tau^2 carries exact_first_order (the inherited AY1 constant); the graph Rayleigh-Schroedinger coefficients and enclosures, the formal Z^3 coefficient and the 2+1D constants are exact rationals (directed where transcendental) with no tier; every value names its source (AY1, AY2, AQ1, an AZ2-type certificate or the AM2 counting); a plan route label, a hypothesis source, a Lieb-Robinson tier, a tier attached to a graph coefficient or a 2+1D constant, or a band endpoint under the other endpoint's tier is rejected (the AV1, BA1, BA2, BB1, BB2 and BC2 definitions of this control do not apply to BD2).",
+   "issue": "BD2-6",
+   "reason": "Issue BD2-6 (inherited tier semantics conflict). BA1's tier_mixing_rejected allows only {crude_majorant, exact_first_order} with a route in {weighted_norm, analytic_disc}; BD2 declares first_order_distance_from_product and no plan route; BB2's text requires a hypothesis source. BD2's tier_label_rule also calls graph coefficients of order two to four exact_first_order, which the vocabulary reserves for constants built from first-order coefficients."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.preregistration.tier_label_rule",
+   "op": "replace",
+   "replacement": "the band's lower endpoint carries first_order_distance_from_product (AY2 for the limit, AY1 per box) and its upper endpoint crude_majorant (AQ1 reset); the W_{1x2} bound carries exact_first_order (inherited K_2'); graph coefficients and enclosures, the formal Z^3 coefficient (label formal_second_order_coefficient) and the 2+1D constants (exact rationals with directed enclosures) carry no tier; every value names its source",
+   "issue": "BD2-6",
+   "reason": "Issue BD2-6 (inherited tier semantics conflict). BA1's tier_mixing_rejected allows only {crude_majorant, exact_first_order} with a route in {weighted_norm, analytic_disc}; BD2 declares first_order_distance_from_product and no plan route; BB2's text requires a hypothesis source. BD2's tier_label_rule also calls graph coefficients of order two to four exact_first_order, which the vocabulary reserves for constants built from first-order coefficients."
+  }
+ ],
+ "non_blocking_edits": [
+  {
+   "contract": "bd1",
+   "path": "$.parameters.flip_sets",
+   "op": "replace",
+   "replacement": "E_3 = {(p,x): p_y even} u {(p,y): p_z even} u {(p,z): p_x even} (AW1) on Lambda_N of Z^3, N=2,3,4 (every plaquette whose four links the box owns, and every retained whole-star face); on the 24-link coarse factors: the intersection of E_3 with the links of a factor for each parity of the factor's z coordinate, and every face meeting a factor (AW1 enumerated faces of seven factors), recording that E_3 is not invariant under odd coarse translations in z, which the flip lemma does not need; E_2 = {(p,x): p_y even} on [-N,N]^2, N=2,3,4, exactly one link per plaquette; periodic tori with an odd side recorded with the even plaquettes at the seam",
+   "reason": "The draft's 'E_3 on the 24-link coarse factors' does not say what is verified; every plaquette of Z^3 already meets E_3 oddly, so the factor check is informative only as the per-factor intersection pattern and its non-invariance under odd coarse z shifts."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.required[5]",
+   "op": "replace",
+   "replacement": "6. SU(2) area parity: prove the area-parity corollary in every open centered whole-star box and every on-site cutoff at kappa=0 from the AW1 flip lemma, with |C cap E_3| congruent mod 2 to the number of plaquettes of any spanning surface of C (well defined because every closed surface of plaquettes in the box has an even number of plaquettes), for the untruncated ground vectors by AM2 uniqueness, and for the limit of the named constructions pointwise from the BB2 whole-sequence convergence on a finite complete-factor region containing the links of C, at each sign; state that centre-even observables are even in tau (bounded ones directly; the Casimirs through their bounded spectral cutoffs, which commute with U_E, and the monotone limit).",
+   "reason": "Makes the surface-independence of A(C) mod 2 explicit, names the untruncated vectors and the region through which BB2 applies, and handles the unbounded Casimirs in the limit (trace-norm convergence alone does not pass an unbounded expectation)."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.preregistration.sub_labels_allowed",
+   "op": "replace",
+   "replacement": [
+    "transfer_to_named_model",
+    "obstruction_recorded"
+   ],
+   "reason": "BD1 certifies no sign of a finite-graph mean (its cells are exact coefficients), so sign_certified_finite_graph does not apply."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.preregistration.scaling_brackets_per_constant",
+   "op": "replace",
+   "replacement": {
+    "first_order_terms": "the first-order term c1*tau is exactly linear in tau (ratio exactly 100 under tau -> tau/100); c1 itself is tau-independent",
+    "obstruction_second_order_terms": "exactly quadratic (ratio exactly 10000)",
+    "su5_fourth_order_term": "exactly quartic (ratio exactly 100000000)",
+    "moments": "tau-independent (ratio exactly 1)"
+   },
+   "reason": "A coefficient is tau-independent; the linear and quadratic brackets apply to the terms. Adds the SU(5) fourth-order term."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.shared_premises",
+   "op": "append",
+   "replacement": "research/round32/advisor/az1-gate.json",
+   "reason": "The ledger's dictionary column cites the SU(2) dictionary tau=96/g^4 and alpha=g^2/(2a), which are AZ1 (and AX1/AX2) gate statements; none of those gates is a BD1 premise."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.claim_exclusions",
+   "op": "append",
+   "replacement": "a flip or parity statement for SU(2) at a nonzero selected triple, in periodic boxes with an odd side, or in F2 or literal vertex boxes",
+   "reason": "Aligns the exclusions with AW1's conditions and item 5's recorded obstruction."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.new_control_semantics.changed_model_relabelled",
+   "op": "add",
+   "replacement": "(BD1) Every cell names its group, Wilson representation, model (H_FG(G), H^G_N or the SU(2) zero-selected family) and tau; an SU(2) value under another group's label, a one-plaquette value presented as a box or limit value, a group-G box value under the SU(2) patterned-family label, or a Z2 or U(1) cell under another normalization is rejected (the BA1 and BC2 definitions do not apply).",
+   "reason": "The inherited BA1 text is written for the patterned family and rejects 'other-group' results, which are BD1's subject."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.new_control_semantics.parameters_declare_metric_weights_window",
+   "op": "add",
+   "replacement": "(BD1) Metric, weights, window and clock are fields of parameters, each 'not applicable' with its reason where no decay or time window enters; d_X and N_0 do not apply; absence of a field blocks the freeze.",
+   "reason": "The inherited BA1 text requires d_X and N_0, which BD1 does not have."
+  },
+  {
+   "contract": "bd1",
+   "path": "$.preregistration.gate_fields_rule",
+   "op": "replace",
+   "replacement": "the gate_fields_required values hold for accepted_within_scope; a limited verdict exports area_parity_limit_claimed false when only the box statement is proved and flip_transfer_claimed or parity_transfer_claimed false for a column it cannot support, with the reason, and quotes the template once inside the frame 'The frozen template, which this verdict meets only in part, reads:' followed by the dropped items; flip_transfer_scope names the groups found",
+   "reason": "The template asserts every item; a limited gate still has to quote it (record_gate.py R7), as in the BC review."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.parameters.graph_grid",
+   "op": "replace",
+   "replacement": "the certified enclosures of <z> at l1=l2 in {+-1/1000, +-1/100, +-1/10} (the AZ2 grid) at D=6 and D=8; item 1 is a coefficient statement in (l1,l2) with no grid",
+   "reason": "The drafted 7x7 grid in (l1,l2) is used by no item."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.preregistration.target.note",
+   "op": "replace",
+   "replacement": "relative width means (upper - lower)/min(|lower|, |upper|) of the exported exact enclosure; the threshold is a format threshold for exact enclosures, not a discriminating one (the AZ2 enclosures of <W_1> at the same points are far narrower); nesting of the D=8 enclosure inside the D=6 one is an observed consistency check whose failure is recorded without invalidating either enclosure; the other items are exact computations and format checks",
+   "reason": "Defines the relative width and states honestly how far the target lies from the preview (the margin is in the advisor-only section); the AZ2 gate itself called nesting observed."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.rate_range_stated",
+   "op": "replace",
+   "replacement": "Every claim of a rate in N carries its range of N in the same clause; BD2 makes no new claim of a rate in N.",
+   "reason": "The drafted 'rate claim' is the unqualified form the plan vocabulary forbids (panel-update-2 lesson 1; the plan regex flags it)."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.claim_exclusions[1]",
+   "op": "replace",
+   "replacement": "no area law and no string-tension statement",
+   "reason": "The raw scan flags 'string tension' as affirmative in the drafted exclusion; a gate copying it into its limitations would fail record_gate.py's scan."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.evenness_from_flip",
+   "op": "replace",
+   "replacement": "Evenness of omega(W_{1x2}) in tau is the AW1 flip lemma (area 2) in every open centered whole-star box (F1) and every on-site cutoff at kappa=0 and, through BB2 at each sign, for the limit of the named constructions; F2 boxes are not claimed; it gives no remainder bound.",
+   "reason": "AW1 admits the flip lemma for whole-star boxes; 'every open centered box' would include F2 boxes, which the limit does not need."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.parameters.hamiltonian_terms",
+   "op": "append",
+   "replacement": {
+    "term": "Z^3 zero-selected family (items 3-4, admitted model, unchanged): 8 C_e on every link and -(tau/3) W_f on the 21 omitted faces per anchor, selected faces 0 (AW1/AY1 model)",
+    "coefficient": "8 and -tau/3 (delta units)"
+   },
+   "reason": "Rule R3 completeness: every model of the contract names its couplings; the Z^3 family is admitted and unchanged."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.changed_model_relabelled",
+   "op": "add",
+   "replacement": "(BD2) Every value names its model (the Round11 graph with (l1,l2), the zero-selected Z^3 family with F1, F2 or the limit, or the declared 2+1D model); a graph value presented as a Z^3 value, a 3+1D constant under the 2+1D label, an F1 value under F2, a finite-box value under the limit, or a one-face or equal-coupling graph value under the independent-coupling label is rejected.",
+   "reason": "The inherited BA1 text is written for the patterned family; BD2's risk is relabelling between its three models."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.new_control_semantics.parameters_declare_metric_weights_window",
+   "op": "add",
+   "replacement": "(BD2) Metric, weights, window and clock are fields of parameters, each 'not applicable' with its reason where no decay or time window enters; d_X and N_0 do not apply; absence of a field blocks the freeze.",
+   "reason": "The inherited BA1 text requires d_X and N_0, which BD2 does not have."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.preregistration.gate_fields_rule",
+   "op": "replace",
+   "replacement": "the gate_fields_required values hold for accepted_within_scope; a limited verdict exports the field of each dropped item false with its reason and quotes the template once inside the frame 'The frozen template, which this verdict meets only in part, reads:' followed by the dropped items",
+   "reason": "Limited-outcome frame for the template (BB2 D9; the BC review)."
+  },
+  {
+   "contract": "bd2",
+   "path": "$.acceptance.accepted_within_scope",
+   "op": "replace",
+   "replacement": "Items 1-5 are proved or computed exactly as stated; the enclosures of item 2 meet the frozen relative width at D=8 and exclude 0 at every grid point at both cutoffs; the band of item 4 has exact endpoints at both signs for every F1 and F2 box and for the limit, from the frozen premises; the W_{1x2} bound of item 3 holds for every box and the limit; item 6 lists every obligation with its missing premise, including the finite-volume theorem in 2+1 dimensions.",
+   "reason": "Aligns acceptance with the blocking edits (band premises, the W_{1x2} bound, the 2+1D obligation) and removes the dependence on the observed nesting."
+  },
+  {
+   "contract": "advisor/plan.json",
+   "path": "$.subrounds[3].selection_note_paths",
+   "op": "add",
+   "replacement": [
+    "research/round33/advisor/selection-bd1.md",
+    "research/round33/advisor/selection-bd2.md"
+   ],
+   "reason": "Loop-2 item P12 (sub-rounds 1 and 3 list both notes; sub-round 4 does not)."
+  },
+  {
+   "contract": "advisor/plan.json",
+   "path": "$.subrounds[3].loop_ownership",
+   "op": "add",
+   "replacement": "BD1 owns the 2D flip set E_2 and the group transfer ledger; BD2 owns the 2+1D AM2 recount and every Z^3 observable other than W",
+   "reason": "Loop-2 item P10 ('the plan says which loop owns the 2D flip set and its recounts')."
+  }
+ ],
+ "determinations": {
+  "BD1_moments_two_routes": "E[W^k], k=1..5, agree exactly between characters (Pieri-type multiplication, trivial coefficient) and Weyl integration by constant-term extraction (Z2 by summation) for all seven groups; SU(2) reproduces the AW1 moments 0, 1/4, 0, 1/8 (values in previews_recomputed)",
+  "BD1_convention": "unambiguous for SU(N), U(1) and SO(3) (SO(3) with C_2=l(l+1), vector C_F=2, W=Tr/3 of the real vector representation; Re is redundant there); ambiguous for Z2 (blocking BD1-1: three readings in the record differ in the face energy); reproduces 1/144 for SU(2) exactly; the minus sign in c^(1) is consistent with the stated omega(W) only under the AM2/AV1 creation sign psi=e^{-C}Omega_0",
+  "BD1_one_plaquette_model_well_defined": "yes for all seven groups: class functions of the holonomy in the character basis; U(1): 32 n^2 - (tau/3) cos theta on L^2(U(1)), compact resolvent, simple ground at tau=0 with gap 32; Z2: a two-level model; SO(3): integer spins with W chi_l=(chi_{l-1}+chi_l+chi_{l+1})/3, so W has a diagonal part",
+  "BD1_obstruction_coefficients": "SU(3) and SO(3): the first-order tau-derivative of omega(W^2) and the second-order coefficient of omega(W) are nonzero on H_FG(G); in closed form they are (2/3)E[W^3]/(32C_F) and E[W^3]/(3(32C_F)^2) because W Omega_0 is an exact H_0 eigenvector; the RS series agree with a floating diagonalization (labelled)",
+  "BD1_SU5": "parity without flip: E[W^3]=0, so the first-order derivative of omega(W^2) and the second-order coefficient of omega(W) vanish; the fourth-order coefficient of omega(W) on H_FG(SU(5)) is nonzero (exact; floating diagonalization agrees), so omega(W) is not odd and no flip exists on that model; the draft defines no SU(5) cell (blocking BD1-2)",
+  "BD1_area_parity_limit": "follows from AW1 plus BB2: AW1 F09-F10 give U_E H_N(tau)U_E^*=H_N(-tau) and pointwise covariance for the untruncated and cutoff F1 ground vectors (AM2 uniqueness) at kappa=0; U_E W_C U_E^*=(-1)^{|C cap E|}W_C with |C cap E| congruent to the plaquette count of any spanning surface (closed surfaces in a box are even); BB2 item 1 gives whole-sequence trace-norm convergence on a finite complete-factor region containing C at each sign, so the identity passes to the limit pointwise; the Casimir evenness in the limit needs bounded spectral cutoffs (non-blocking)",
+  "BD1_flip_sets": "E_3 verified on the N=2 and N=3 whole-star boxes (N=2 reproduces AW1: 2335 plaquettes, 1082 met once, 1253 three times, 1344 retained faces); E_2 meets every plaquette exactly once on [-N,N]^2, N=2,3,4; a 2D torus with an odd side has even plaquettes at the seam; E_3 meets a factor in two patterns by the parity of b_z and is not invariant under odd coarse z translations, which the lemma does not need",
+  "BD1_su2_constants": "no SU(2) value is needed for any other cell; each coefficient follows from its own moments and C_F",
+  "BD2_graph_orders_reachable": "yes: psi_{ij} lies in P_{i+j}, so every coefficient through total order 4 (and 5) is exact at D=6 and D=8 with identical tables; the l1=l2 restriction reproduces the AZ2 gate series of <W_1> and the second-order <z>; the two-variable table has <W_1> odd-even, <z> odd-odd, <C_shared> even-even; the AZ2 one-face/two-face difference is the l1 l2^2 coefficient",
+  "BD2_width_target": "the frozen 1/10^10 is met at D=8 with a margin of several million (value advisor-only) and even at D=6; margin at least 2 holds, but the threshold is not discriminating; relabel it as a format threshold or tighten it (advisor choice); nesting D=8 inside D=6 is observed at all twelve points",
+  "BD2_electric_band": "lower endpoint: h_R >= 6Q_R (I1 free Casimir gap, zero-selected Haar reference) and Tr(Q_R rho) >= ((1/2)||rho-P_R||_1)^2 (pure-reference Fuchs-van de Graaf, cited in the AY1 record; three-line proof), with ||rho_R-P_R||_1 bounded below by AY2 item (2) for every subsequential limit (so for the limit via BB2 items 2-3) and, for finite F1/F2 boxes, only by AY1 forward F11-F14 per box (not a gate sentence; report not a premise); upper endpoint: 98|tau| from AQ1 HNM-AQ1.1 with the 7 incident anchors (AY1 gate item (1) for F2); the AQ1 gate states the generic 56|tau||F|, i.e. 112|tau| on R; the budget applies to untruncated F1 and F2 boxes and passes to the limit by lower semicontinuity of the monotone cutoff limit, a step no gate states",
+  "BD2_z3_1x2": "first order exactly 0 per box; evenness from AW1 (area 2) plus BB2 as for BD1; the formal coefficient agrees with the graph value under the dictionary tau_FG=tau/24; with the rectangle W plus the xz face at e_x (all six links owned by R) the AY1 ball gives |omega(W_{1x2})| <= K_2' tau^2 for every box and every limit, an admitted-premise statement the draft omits",
+  "BD2_2p1": "the AM2 report states its counting for general p, so L_k(3)=8*6^k(1+4k/3), G_3(t)=8e^{6t}(1+8t), G_3'(t)=8e^{6t}(14+48t) and termination at order 6 follow from the report alone; the report has no rational exponential bound for e^{3/32} (the producer needs its own directed enclosure); the declared factorization is well posed for the constants; the cap depends on the radius and on the on-site normalization, neither of which is frozen (blocking BD2-3)",
+  "BD2_premises": "missing: the four Round11 files the AZ2 checker binds (blocking BD2-1) and the AY1 forward report for the finite-box lower endpoint (blocking BD2-2); present: AZ2 gate, report, checker and review, AW1, AV1, AV2, AY1 and AY2 gates, AY2 report, AM2 and AQ1 gates and reports, I1, BB2",
+  "R3": "the freezer passes both drafts (it checks only that a non-empty hamiltonian_terms list exists); BD1 names only the one-plaquette terms although it claims transfers on boxes, and BD2 names only the graph terms although it has a 2+1D model and a Z^3 family (blocking for the new models, non-blocking for the admitted Z^3 family)",
+  "R4": "state_provenance, clock and error_terms_itemized of both drafts are unique across all Round32 and Round33 contracts",
+  "controls": "mirrors equal, no duplicates; every new id has semantics; the nine inherited ids are defined in ba1.json (and eight also in ba2.json); tier_mixing_rejected is defined differently in BA1 and BB2 and conflicts with both drafts (blocking); changed_model_relabelled and parameters_declare_metric_weights_window fit poorly (non-blocking)",
+  "gate_fields": "every gate field of both drafts is in plan.json vocabulary.gate_fields; sub-labels and tiers pass R10",
+  "selected_after": "both drafts name the existing bb2-gate.json with a parallel-freezing note; R8 passes and the order is stated truthfully",
+  "scaling_brackets": "BD1: moments exact 1, first-order terms exactly 100, second-order terms exactly 10000 (wording: terms, not coefficients; add the SU(5) quartic term); BD2: band_lower inside [9500,10500], band_upper exactly 100, z3 formal exactly 10000",
+  "overclaims_checked": "SO(3) real trace: fine; SU(5) parity without flip: supported only with the fourth-order cell; the 24-link factor check: vacuous as worded (non-blocking); in every box: overclaim (blocking BD1-4); vanishes at first order for the family: needs the R-local rectangle and the AY1 ball (blocking BD2-4)"
+ },
+ "previews_recomputed": {
+  "status": "ADVISOR-ONLY PREVIEWS. Exact Fractions from the skeptic private scripts groups.py (04:44:16Z), graph_rs.py (04:47:42Z), geometry.py (04:48:38Z) and z_preview.py (04:36:11Z, using a scratch copy of the AZ2 solver primitives and certify path); the modern memo section 4 and the skeptic triage (d) were read before groups.py, graph_rs.py and geometry.py ran and after z_preview.py ran; not evidence, not a premise; never to be given to a producer",
+  "group_cells": {
+   "SU(2)": {
+    "E_W_k_1_to_5": [
+     "0",
+     "1/4",
+     "0",
+     "1/8",
+     "0"
+    ],
+    "routes_agree_characters_vs_weyl_integration": true,
+    "C_F": "3/4",
+    "face_energy": "24",
+    "first_order_coefficient": "1/144",
+    "rs_reproduces_first_order_formula": true,
+    "d_omega_W2_dtau_at_0": "0",
+    "second_order_omega_W": "0",
+    "omega_W_series_tau_orders_0_to_5": [
+     "0",
+     "1/144",
+     "0",
+     "-5/11943936",
+     "0",
+     "289/6604518850560"
+    ],
+    "omega_W2_series_tau_orders_0_to_2": [
+     "1/4",
+     "0",
+     "7/331776"
+    ],
+    "E_W3_zero": true
+   },
+   "SU(3)": {
+    "E_W_k_1_to_5": [
+     "0",
+     "1/18",
+     "1/108",
+     "1/108",
+     "5/1296"
+    ],
+    "routes_agree_characters_vs_weyl_integration": true,
+    "C_F": "4/3",
+    "face_energy": "128/3",
+    "first_order_coefficient": "1/1152",
+    "rs_reproduces_first_order_formula": true,
+    "d_omega_W2_dtau_at_0": "1/6912",
+    "second_order_omega_W": "1/589824",
+    "omega_W_series_tau_orders_0_to_5": [
+     "0",
+     "1/1152",
+     "1/589824",
+     "13/15288238080",
+     "-77/9393093476352",
+     "-2017/67630273029734400"
+    ],
+    "omega_W2_series_tau_orders_0_to_2": [
+     "1/18",
+     "1/6912",
+     "193/238878720"
+    ],
+    "E_W3_zero": false
+   },
+   "SU(4)": {
+    "E_W_k_1_to_5": [
+     "0",
+     "1/32",
+     "0",
+     "7/2048",
+     "0"
+    ],
+    "routes_agree_characters_vs_weyl_integration": true,
+    "C_F": "15/8",
+    "face_energy": "60",
+    "first_order_coefficient": "1/2880",
+    "rs_reproduces_first_order_formula": true,
+    "d_omega_W2_dtau_at_0": "0",
+    "second_order_omega_W": "0",
+    "omega_W_series_tau_orders_0_to_5": [
+     "0",
+     "1/2880",
+     "0",
+     "41/143327232000",
+     "0",
+     "-2699161/14280026477926809600000"
+    ],
+    "omega_W2_series_tau_orders_0_to_2": [
+     "1/32",
+     "0",
+     "257/1592524800"
+    ],
+    "E_W3_zero": true
+   },
+   "SU(5)": {
+    "E_W_k_1_to_5": [
+     "0",
+     "1/50",
+     "0",
+     "3/2500",
+     "1/50000"
+    ],
+    "routes_agree_characters_vs_weyl_integration": true,
+    "C_F": "12/5",
+    "face_energy": "384/5",
+    "first_order_coefficient": "1/5760",
+    "rs_reproduces_first_order_formula": true,
+    "d_omega_W2_dtau_at_0": "0",
+    "second_order_omega_W": "0",
+    "omega_W_series_tau_orders_0_to_5": [
+     "0",
+     "1/5760",
+     "0",
+     "29/8026324992000",
+     "1/63403380965376",
+     "9248293/13779127087624146124800000"
+    ],
+    "omega_W2_series_tau_orders_0_to_2": [
+     "1/50",
+     "0",
+     "2129/69672960000"
+    ],
+    "E_W3_zero": true
+   },
+   "U(1)": {
+    "E_W_k_1_to_5": [
+     "0",
+     "1/2",
+     "0",
+     "3/8",
+     "0"
+    ],
+    "routes_agree_characters_vs_weyl_integration": true,
+    "C_F": "1",
+    "face_energy": "32",
+    "first_order_coefficient": "1/96",
+    "rs_reproduces_first_order_formula": true,
+    "d_omega_W2_dtau_at_0": "0",
+    "second_order_omega_W": "0",
+    "omega_W_series_tau_orders_0_to_5": [
+     "0",
+     "1/96",
+     "0",
+     "-7/7077888",
+     "0",
+     "29/195689447424"
+    ],
+    "omega_W2_series_tau_orders_0_to_2": [
+     "1/2",
+     "0",
+     "1/49152"
+    ],
+    "E_W3_zero": true
+   },
+   "Z2": {
+    "E_W_k_1_to_5": [
+     "0",
+     "1",
+     "0",
+     "1",
+     "0"
+    ],
+    "routes_agree_characters_vs_weyl_integration": true,
+    "C_F": "1",
+    "face_energy": "32",
+    "first_order_coefficient": "1/48",
+    "rs_reproduces_first_order_formula": true,
+    "d_omega_W2_dtau_at_0": "0",
+    "second_order_omega_W": "0",
+    "omega_W_series_tau_orders_0_to_5": [
+     "0",
+     "1/48",
+     "0",
+     "-1/221184",
+     "0",
+     "1/679477248"
+    ],
+    "omega_W2_series_tau_orders_0_to_2": [
+     "1",
+     "0",
+     "0"
+    ],
+    "E_W3_zero": true
+   },
+   "SO(3)": {
+    "E_W_k_1_to_5": [
+     "0",
+     "1/9",
+     "1/27",
+     "1/27",
+     "2/81"
+    ],
+    "routes_agree_characters_vs_weyl_integration": true,
+    "C_F": "2",
+    "face_energy": "64",
+    "first_order_coefficient": "1/864",
+    "rs_reproduces_first_order_formula": true,
+    "d_omega_W2_dtau_at_0": "1/2592",
+    "second_order_omega_W": "1/331776",
+    "omega_W_series_tau_orders_0_to_5": [
+     "0",
+     "1/864",
+     "1/331776",
+     "1/429981696",
+     "-55/2972033482752",
+     "-49/570630428688384"
+    ],
+    "omega_W2_series_tau_orders_0_to_2": [
+     "1/9",
+     "1/2592",
+     "7/4478976"
+    ],
+    "E_W3_zero": false
+   }
+  },
+  "z2_alternative_reading_first_order": "1/6",
+  "su5_fourth_order_coefficient_of_omega_W": "1/63403380965376",
+  "floating_crosscheck_even_part": {
+   "SU(5) tau=1": [
+    1.5772078738526818e-14,
+    1.5772025411331996e-14
+   ],
+   "SU(5) tau=2": [
+    2.5235201298393073e-13,
+    2.52352206529096e-13
+   ],
+   "SU(3) tau=1": [
+    1.6954128094110745e-06,
+    1.6954128094107838e-06
+   ],
+   "SO(3) tau=1": [
+    3.0140632841773457e-06,
+    3.0140632841778056e-06
+   ],
+   "SU(4) tau=2 and 4": [
+    0.0,
+    0.0
+   ],
+   "note": "numpy float64 diagonalization against the exact RS even terms; labelled preview only"
+  },
+  "su2_one_plaquette_third_order_equals_AW1_fixture": true,
+  "graph_two_variable_coefficients": {
+   "W1": {
+    "l1^1 l2^0": "1/6",
+    "l1^1 l2^2": "1/4212",
+    "l1^1 l2^4": "-22285/1513893888",
+    "l1^3 l2^0": "-5/864",
+    "l1^3 l2^2": "-22285/756946944",
+    "l1^5 l2^0": "289/829440"
+   },
+   "z": {
+    "l1^1 l2^1": "7/216",
+    "l1^1 l2^3": "-349/303264",
+    "l1^3 l2^1": "-349/303264"
+   },
+   "C_shared": {
+    "l1^0 l2^2": "1/48",
+    "l1^0 l2^4": "-5/4608",
+    "l1^2 l2^0": "1/48",
+    "l1^2 l2^2": "-49/438048",
+    "l1^4 l2^0": "-5/4608"
+   },
+   "E0": {
+    "l1^0 l2^2": "-1/12",
+    "l1^0 l2^4": "5/3456",
+    "l1^2 l2^0": "-1/12",
+    "l1^2 l2^2": "-1/8424",
+    "l1^4 l2^0": "5/3456"
+   },
+   "at_l1_eq_l2": {
+    "W1": [
+     "0",
+     "1/6",
+     "0",
+     "-187/33696",
+     "0",
+     "767713/2523156480"
+    ],
+    "z": [
+     "0",
+     "0",
+     "7/216",
+     "0",
+     "-349/151632",
+     "0"
+    ],
+    "C_shared": [
+     "0",
+     "0",
+     "1/24",
+     "0",
+     "-7997/3504384",
+     "0"
+    ]
+   },
+   "identical_at_D6_D8": true,
+   "parities": {
+    "W1_odd_even": true,
+    "z_odd_odd": true,
+    "C_even_even": true
+   }
+  },
+  "z_enclosures_l1_eq_l2": {
+   "D6_tau1/1000": {
+    "center_decimal": 3.24074051057826e-08,
+    "width_decimal": 2.2006038972533692e-29,
+    "relative_width_decimal": 6.790435365220605e-22,
+    "excludes_0": true,
+    "margin_against_1e-10": 147265962521.61108
+   },
+   "D6_tau-1/1000": {
+    "center_decimal": 3.24074051057826e-08,
+    "width_decimal": 2.2006038972533692e-29,
+    "relative_width_decimal": 6.790435365220605e-22,
+    "excludes_0": true,
+    "margin_against_1e-10": 147265962521.61108
+   },
+   "D6_tau1/100": {
+    "center_decimal": 3.2407177246653347e-06,
+    "width_decimal": 2.2072166041676347e-22,
+    "relative_width_decimal": 6.810888178777038e-17,
+    "excludes_0": true,
+    "margin_against_1e-10": 1468237.2896915772
+   },
+   "D6_tau-1/100": {
+    "center_decimal": 3.2407177246653347e-06,
+    "width_decimal": 2.2072166041676347e-22,
+    "relative_width_decimal": 6.810888178777038e-17,
+    "excludes_0": true,
+    "margin_against_1e-10": 1468237.2896915772
+   },
+   "D6_tau1/10": {
+    "center_decimal": 0.0003238440859066867,
+    "width_decimal": 2.2746093032891775e-15,
+    "relative_width_decimal": 7.0237790414754636e-12,
+    "excludes_0": true,
+    "margin_against_1e-10": 14.23734992366635
+   },
+   "D6_tau-1/10": {
+    "center_decimal": 0.0003238440859066867,
+    "width_decimal": 2.2746093032891775e-15,
+    "relative_width_decimal": 7.0237790414754636e-12,
+    "excludes_0": true,
+    "margin_against_1e-10": 14.23734992366635
+   },
+   "D8_tau1/1000": {
+    "center_decimal": 3.24074051057826e-08,
+    "width_decimal": 5.6288090820229166e-39,
+    "relative_width_decimal": 1.7368897829522746e-31,
+    "excludes_0": true,
+    "margin_against_1e-10": 5.757417711907155e+20
+   },
+   "D8_tau-1/1000": {
+    "center_decimal": 3.24074051057826e-08,
+    "width_decimal": 5.6288090820229166e-39,
+    "relative_width_decimal": 1.7368897829522746e-31,
+    "excludes_0": true,
+    "margin_against_1e-10": 5.757417711907155e+20
+   },
+   "D8_tau1/100": {
+    "center_decimal": 3.2407177246653347e-06,
+    "width_decimal": 5.645719536452672e-30,
+    "relative_width_decimal": 1.7421201153937895e-24,
+    "excludes_0": true,
+    "margin_against_1e-10": 57401323316559.016
+   },
+   "D8_tau-1/100": {
+    "center_decimal": 3.2407177246653347e-06,
+    "width_decimal": 5.645719536452672e-30,
+    "relative_width_decimal": 1.7421201153937895e-24,
+    "excludes_0": true,
+    "margin_against_1e-10": 57401323316559.016
+   },
+   "D8_tau1/10": {
+    "center_decimal": 0.0003238440859066867,
+    "width_decimal": 5.8176997108945356e-21,
+    "relative_width_decimal": 1.7964508120030523e-17,
+    "excludes_0": true,
+    "margin_against_1e-10": 5566531.481510449
+   },
+   "D8_tau-1/10": {
+    "center_decimal": 0.0003238440859066867,
+    "width_decimal": 5.8176997108945356e-21,
+    "relative_width_decimal": 1.7964508120030523e-17,
+    "excludes_0": true,
+    "margin_against_1e-10": 5566531.481510449
+   }
+  },
+  "z_width_margin_min_D8": 5566531.481510449,
+  "z_width_margin_min_D6": 14.23734992366635,
+  "z_nesting_D8_in_D6_all_points": true,
+  "z3_1x2_formal_second_order_coefficient": "7/124416",
+  "z3_1x2_formal_derivation": "2*(1/3)(1/72)*2*E[W_12 W_f1 W_f2]/36 + 2*(1/72)^2*E[W_f1 W_12 W_f2], E[...]=1/16, rectangle energy 36 delta; equals the graph <z> coefficient 7/216 times (1/24)^2",
+  "W_1x2_certified_bound_at_cap": {
+   "exact": "966771578474926086618624139557778885954947547760216752246561/720528856978172107545458049318912000000000000000000000000000000000000000",
+   "decimal": 1.3417527543996947e-12
+  },
+  "electric_band": {
+   "AY2_L_reproduced_from_formula": true,
+   "lower_exact": "99536004165791049425300773950650456874015451568973476245606417493434267637549163914243518625682267830963863935112811606729281/346107889158847464132330923015611755407765743694640423831387242496000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "lower_decimal": 2.8758663781890463e-19,
+   "upper_exact_98tau": "49/50000000",
+   "upper_decimal": 9.8e-07,
+   "upper_AQ1_gate_56tau_R": "7/6250000",
+   "band_lower_ratio_tau_over_100": 9939.601494694698,
+   "band_lower_ratio_in_9500_10500": true,
+   "band_upper_ratio": "100"
+  },
+  "electric_formal_second_order": {
+   "links": 48,
+   "omitted_faces_meeting_R": 82,
+   "faces_with_owner_set_exactly_R": 10,
+   "sum_n_e": 168,
+   "n_e_histogram": {
+    "2": 4,
+    "3": 16,
+    "4": 28
+   },
+   "formal_second_order_omega_hR_per_tau2_delta_units": "7/144",
+   "triage_value_with_4_faces_per_link": "1/18"
+  },
+  "flip_sets": {
+   "boxes": {
+    "2": {
+     "links": 3000,
+     "plaquettes_all_links_in_box": 2335,
+     "E_intersection_histogram": {
+      "3": 1253,
+      "1": 1082
+     },
+     "all_odd": true,
+     "retained_whole_star_faces": 1344
+    },
+    "3": {
+     "links": 8232,
+     "plaquettes_all_links_in_box": 6909,
+     "E_intersection_histogram": {
+      "1": 3630,
+      "3": 3279
+     },
+     "all_odd": true,
+     "retained_whole_star_faces": 4536
+    }
+   },
+   "factor_pattern": {
+    "b_z parity 0": 16,
+    "b_z parity 1": 8,
+    "E3_invariant_under_coarse_e_z": false
+   },
+   "E2": {
+    "2": {
+     "1": 16
+    },
+    "3": {
+     "1": 36
+    },
+    "4": {
+     "1": 64
+    }
+   },
+   "torus2": {
+    "4x3": {
+     "1": 8,
+     "2": 4
+    },
+    "4x4": {
+     "1": 16
+    }
+   },
+   "loop_parity": [
+    [
+     "rectangles 1..3 x 1..3, all planes, 8 offsets",
+     true
+    ],
+    [
+     "L-shaped xz loop, area 3",
+     true
+    ],
+    [
+     "bent loop over an x edge (xz+xy), area 2",
+     true
+    ],
+    [
+     "1x2 xz rectangle at the origin: links owned by R={0,e_z}",
+     [
+      [
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       1
+      ]
+     ]
+    ]
+   ]
+  },
+  "am2_2p1": {
+   "e^(1/8) < 8/7": true,
+   "G4(R) with 8/7": "148/7",
+   "G4'(R) with 8/7": "352",
+   "L_k(4) matches 16*8^k(1+5k/4)": true,
+   "L_k(3) = 8*6^k(1+4k/3)": true,
+   "p=3: G3(R) bracket": [
+    9.884566262770432,
+    9.884566262770432
+   ],
+   "p=3: G3'(R) bracket": [
+    129.59764655632344,
+    129.59764655632344
+   ],
+   "p=3: J per |tau| (3 faces per site, |tau|/3 each)": "1",
+   "p=3: cap from self-map (directed lower)": 0.0015807471551736703,
+   "p=3: cap from exclusion (directed lower)": 0.003858094751610314,
+   "p=3: cap": 0.0015807471551736703,
+   "p=3: simple bound e^{3/32}<32/29 cap": "29/18432",
+   "p=3: cap if the free gap 6 were used (not AM2 normalization)": 0.009484482931042022,
+   "p=3: self-map-optimal radius (float, exclusion ignored)": 0.09478821740147396,
+   "p=3: cap at that radius (float)": 0.0038156978443543354,
+   "p=3: exclusion 2JG3prime at that radius (float)": 2.0,
+   "p=3: termination order 2p": 6
+  }
+ },
+ "verification": {
+  "drafts_as_committed_freeze_on_copies": [
+   {
+    "contract": "bd1",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BD1\", \"premises\": 20}",
+    "stderr": ""
+   },
+   {
+    "contract": "bd2",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BD2\", \"premises\": 28}",
+    "stderr": ""
+   }
+  ],
+  "copies_with_blocking_edits_freeze": [
+   {
+    "contract": "bd1",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BD1\", \"premises\": 20}",
+    "stderr": ""
+   },
+   {
+    "contract": "bd2",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BD2\", \"premises\": 33}",
+    "stderr": ""
+   }
+  ],
+  "copies_with_all_edits_freeze": [
+   {
+    "contract": "bd1",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BD1\", \"premises\": 21}",
+    "stderr": ""
+   },
+   {
+    "contract": "bd2",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BD2\", \"premises\": 33}",
+    "stderr": ""
+   }
+  ],
+  "gate_fields_outside_plan_vocabulary": {
+   "drafts": {
+    "bd1": [],
+    "bd2": []
+   },
+   "blocking": {
+    "bd1": [],
+    "bd2": []
+   },
+   "all": {
+    "bd1": [],
+    "bd2": []
+   }
+  },
+  "control_mirror_equal": {
+   "blocking": {
+    "bd1": true,
+    "bd2": true
+   },
+   "all": {
+    "bd1": true,
+    "bd2": true
+   }
+  },
+  "phrase_scans": {
+   "method": "phrase_scan.scan (the round tool function) on every string field with the forbidden lists removed, round + contract + plan lists; templates scanned also without removal; plan rule rate (without in N or in a) by a separate regex",
+   "drafts": {
+    "bd1": {
+     "template_hits_without_removal": [],
+     "template_unqualified_rate": [],
+     "affirmative_hits_in_other_fields": [],
+     "all_hits_other_fields": [
+      [
+       "$.new_control_semantics.no_transfer_called_prediction",
+       "confirms",
+       true,
+       "the words predicts and confirms are forbidden, and a non-transfer is recorded with its exact counterexample."
+      ],
+      [
+       "$.new_control_semantics.no_transfer_called_prediction",
+       "predicts",
+       true,
+       "the words predicts and confirms are forbidden, and a non-transfer is recorded with its exact counterexample."
+      ]
+     ]
+    },
+    "bd2": {
+     "template_hits_without_removal": [],
+     "template_unqualified_rate": [],
+     "affirmative_hits_in_other_fields": [
+      [
+       "$.claim_exclusions[1]",
+       "string tension",
+       "an area law or string tension"
+      ]
+     ],
+     "all_hits_other_fields": [
+      [
+       "$.claim_exclusions[1]",
+       "string tension",
+       false,
+       "an area law or string tension"
+      ]
+     ],
+     "unqualified_rate_other_fields": [
+      [
+       "$.new_control_semantics.rate_range_stated",
+       "Every rate claim carries its range of N in the sam"
+      ],
+      [
+       "$.new_control_semantics.rate_range_stated",
+       "s range of N in the same clause; BD2 makes no new rate claim."
+      ]
+     ]
+    }
+   },
+   "edited_blocking": {
+    "bd1": {
+     "template_hits_without_removal": [],
+     "template_unqualified_rate": [],
+     "affirmative_hits_in_other_fields": [],
+     "all_hits_other_fields": [
+      [
+       "$.new_control_semantics.no_transfer_called_prediction",
+       "confirms",
+       true,
+       "the words predicts and confirms are forbidden, and a non-transfer is recorded with its exact counterexample."
+      ],
+      [
+       "$.new_control_semantics.no_transfer_called_prediction",
+       "predicts",
+       true,
+       "the words predicts and confirms are forbidden, and a non-transfer is recorded with its exact counterexample."
+      ]
+     ]
+    },
+    "bd2": {
+     "template_hits_without_removal": [],
+     "template_unqualified_rate": [],
+     "affirmative_hits_in_other_fields": [
+      [
+       "$.claim_exclusions[1]",
+       "string tension",
+       "an area law or string tension"
+      ]
+     ],
+     "all_hits_other_fields": [
+      [
+       "$.claim_exclusions[1]",
+       "string tension",
+       false,
+       "an area law or string tension"
+      ]
+     ],
+     "unqualified_rate_other_fields": [
+      [
+       "$.new_control_semantics.rate_range_stated",
+       "Every rate claim carries its range of N in the sam"
+      ],
+      [
+       "$.new_control_semantics.rate_range_stated",
+       "s range of N in the same clause; BD2 makes no new rate claim."
+      ]
+     ]
+    }
+   },
+   "edited_all": {
+    "bd1": {
+     "template_hits_without_removal": [],
+     "template_unqualified_rate": [],
+     "affirmative_hits_in_other_fields": [],
+     "all_hits_other_fields": [
+      [
+       "$.new_control_semantics.no_transfer_called_prediction",
+       "confirms",
+       true,
+       "the words predicts and confirms are forbidden, and a non-transfer is recorded with its exact counterexample."
+      ],
+      [
+       "$.new_control_semantics.no_transfer_called_prediction",
+       "predicts",
+       true,
+       "the words predicts and confirms are forbidden, and a non-transfer is recorded with its exact counterexample."
+      ]
+     ]
+    },
+    "bd2": {
+     "template_hits_without_removal": [],
+     "template_unqualified_rate": [],
+     "affirmative_hits_in_other_fields": [],
+     "all_hits_other_fields": []
+    }
+   }
+  },
+  "replacement_texts_affirmative_hits": [],
+  "replacement_texts_preview_numerals": [],
+  "order_of_work": "z enclosure preview 04:36Z before reading the modern memo section 4; the group, graph and geometry previews 04:44-04:48Z after reading it and the triage (d); every value that overlaps the memo or the triage agrees except the triage electric second-order value, which counted four coupled faces per link"
+ }
+}

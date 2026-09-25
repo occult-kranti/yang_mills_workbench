@@ -16,18 +16,18 @@ The website needs no build step or packages. Scientific code uses only the stand
 python3 start.py --no-browser --port 8002      # local static server at http://127.0.0.1:8002/#research
 python3 -m unittest test_server tests.test_local_launch   # Python unit tests for the launcher/server
 node tests/test_workbench.mjs                   # one UI/interface test (each tests/*.mjs is standalone)
-node tests/round31_site.mjs --require-release   # current-round site test; also `npm run test:round31`
+node tests/round33_site.mjs --require-release   # current-round site test; also `npm run test:round33`
 python3 scripts/build_pages.py                  # regenerate docs/ (GitHub Pages) from dist/
 ```
 
 Per-round scientific validation (the pattern is the same for every round since ~22; substitute the round):
 
 ```bash
-python3 -B research/round31/reproduce.py --complete --validate-only
-python3 -B research/round31/reproduce.py --complete --output /absolute/fresh/dir          # replays every producer check.py
-python3 -B -O research/round31/reproduce.py --complete --optimized --output /absolute/fresh/dir2
-python3 -B research/round31/test_admission.py                                            # damaging-evidence controls
-python3 -B research/round31/forward/at6/check.py --output /absolute/fresh/dir3            # one producer alone
+python3 -B research/round33/reproduce.py --complete --validate-only
+python3 -B research/round33/reproduce.py --complete --output /absolute/fresh/dir          # replays every producer check.py
+python3 -B -O research/round33/reproduce.py --complete --optimized --output /absolute/fresh/dir2
+python3 -B research/round33/test_admission.py                                            # damaging-evidence controls
+python3 -B research/round33/forward/bb1/check.py --output /absolute/fresh/dir3            # one producer alone
 ```
 
 Replay outputs must be fresh absolute directories outside the checkout (validators refuse otherwise) and must reproduce `output/` byte-for-byte under both normal and `-O` Python. Always run scientific scripts with `-B`; `.pyc` files inside a producer closure fail admission.
@@ -65,7 +65,7 @@ Each round is an adaptive cycle of "loops" (investigations) selected one at a ti
 
 ### Current state
 
-Round32 (AV1–AZ2, five sub-rounds of two investigations, all accepted within scope) is the latest cycle; `research/round32/HANDOFF.md` and `research/round32/advisor/roadmap.json` hold the ranked, unexecuted next goals (uniqueness of the local restriction, boundary independence of dynamics, whole-sequence convergence, a sharper R-local second-order constant, one uniform-in-a estimate). Every Round32 gate binds the root `AGENTS.md` by hash, so that file is not edited during or after the round; the Round32 lessons live in `.codex/skills/qeg-research-advisor/references/round32-state-lemma-and-window.md` (mirrored under `.claude/`) and in the handoff. Start any continuation from those files.
+Round33 (BA1–BD2: three research sub-rounds and an applications stage, eight investigations, all accepted within scope) is the latest cycle; `research/round33/HANDOFF.md` and `research/round33/advisor/roadmap.json` hold the ranked, unexecuted next goals (route-B dynamics; uniqueness beyond the named constructions; finite-box certificates; a correlation rate beyond N=14000; the Z2 chain) and the phrase-scanner methods decision. Every Round32 and Round33 gate binds the root `AGENTS.md` by hash, so that file is not edited; the Round33 lessons live in `.codex/skills/qeg-research-advisor/references/round33-locality-convergence-applications.md` (mirrored under `.claude/`) and in the handoff. Round33 tooling (`research/round33/tools/`: contract freezer, negation-aware phrase scanner, gate recorder, producer freeze helper) is the template for a continuation. Start any continuation from those files.
 
 ## Foreign agent configuration
 

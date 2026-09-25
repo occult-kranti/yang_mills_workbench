@@ -1,0 +1,2323 @@
+{
+  "ai_assistance": "Claude (an AI model) wrote the derivations, check.py and report.md; correlated model-agent work, not human review",
+  "assembly": "union_comparison",
+  "checks": [
+    {
+      "contract_sha256": "28abe3775455087384b3c9dbbb2df67b923e31b964d40efa7ea9787ee8b6b98a",
+      "id": "contract_snapshot_bound",
+      "passed": true,
+      "source": "inputs/research/round33/contracts/bc2.json",
+      "verified": "before any evaluation"
+    },
+    {
+      "check_py_sha256": "f118b8475b8c43f8fcbd38a93093317d0de4c7786711e50748f06ab3edac5477",
+      "id": "check_py_sha256_recorded_before_evaluation",
+      "passed": true
+    },
+    {
+      "id": "no_interpreter_cache_in_closure",
+      "passed": true
+    },
+    {
+      "id": "admitted_gate_sha256_pinned",
+      "passed": true,
+      "pinned": {
+        "research/round29/advisor/al1-gate.json": "e415203cc6b6ebca6cea5fcd1230a7eb0e20b7ab2d2e6c99dc8aa2dd3052a75b",
+        "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+        "research/round29/advisor/aq1-gate.json": "b4a93fd49413857af83c969de1e7b2c8a698ea8099aa9e3aea8e8c7fab0a225e",
+        "research/round29/advisor/aq2-gate.json": "930b697db343ffd261c303c34e6ddd8c6e9c753ee6707931c55dc4171ee47575",
+        "research/round32/advisor/av1-gate.json": "55e03f2d9c297d41106d983cec45eaa642ca18123544f416916f94414de305a0",
+        "research/round32/advisor/av2-gate.json": "5b0e3b308ccb2e2b9b8ae2db32ae5e2c2ae978b2dbf46cf83a5882b68a2f4b33",
+        "research/round32/advisor/ax1-gate.json": "1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177",
+        "research/round32/advisor/ax2-gate.json": "1db36627b9eab00915b0cb38a0e9fd9cf9dd4dbf3ceb7eab969336f3f9f44be4",
+        "research/round33/advisor/ba1-gate.json": "15546f9ec0ab130cdf216ab63b17e6e0ebd7a28c1aefc7ce232f93b77730ebcc",
+        "research/round33/advisor/bb1-gate.json": "18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827",
+        "research/round33/advisor/bb2-gate.json": "ad3fdb4bee935b594c992f6d4246b52aa83b9c0d0d03eb5186bff47b45bb0cca"
+      }
+    },
+    {
+      "bound_by": "research/round32/advisor/ax2-gate.json bindings",
+      "calculator": "inputs/research/round32/forward/ax2/calculator.py",
+      "id": "ax2_calculator_sha256_pinned",
+      "passed": true,
+      "sha256": "f368a3e7e73afc52a14422dd253efbc50fa5d7b59c55b3be569f48043f031f5d"
+    },
+    {
+      "files": 42,
+      "id": "forward_inputs_inventory_exact",
+      "passed": true
+    },
+    {
+      "D_prime_ax1": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "T_prime_ax1": "13/3599632512",
+      "id": "premise_values_parsed_from_pinned_gates",
+      "passed": true,
+      "route_A_values_rejected": [
+        "37888",
+        "9856",
+        "9856=28*352",
+        "BB1_C_0",
+        "BB1_C_1",
+        "BB1_c_site_0",
+        "BB1_c_site_1",
+        "BB2_C_prime=4/984375",
+        "BB2_c_prime_site=2/984375",
+        "K_BA1=49/111790368",
+        "faces_49",
+        "groups_4",
+        "per_site_sum_28"
+      ]
+    },
+    {
+      "G_R_upper": "635717616476182122287393656928299432442305052443637/30325342024794187882087175075677621186461696000000",
+      "Gp_R_upper": "17181557202058976278037666403467552228170406822801/49229451338951603704686972525450683744256000000",
+      "complex_coupling": "only ||V_X(z)||=|z| ||V_X(1)|| depends on z; no step uses reality or self-adjointness",
+      "exp_1_8_upper": "17181557202058976278037666403467552228170406822801/15162671012397093941043587537838810593230848000000",
+      "id": "am2_majorant_rederived_route_b",
+      "passed": true,
+      "statement": "||L_k|| <= J 16 8^k (1+5k/4) prod ||c_j||; single-site groups covered by monotonicity in p=|X|<=4"
+    },
+    {
+      "id": "route_b_partition_brute_force",
+      "partition": {
+        "group_sizes": [
+          [
+            "single",
+            3
+          ],
+          [
+            "star",
+            21
+          ]
+        ],
+        "groups": 250,
+        "plaquettes": 3000
+      },
+      "passed": true,
+      "statement": "every plaquette in exactly one group; selected face <=> one-owner face <=> single-factor group"
+    },
+    {
+      "faces_per_factor": 52,
+      "groups_per_site": 5,
+      "id": "route_b_per_site_inputs_derived",
+      "multiplicities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        10,
+        10
+      ],
+      "omitted": 49,
+      "owner_sets_per_factor": 16,
+      "passed": true,
+      "per_site_sum": "J'=29|tau| (4 stars x 7|tau| + 1 single x |tau|)",
+      "selected": 3
+    },
+    {
+      "N2": {
+        "N": 2,
+        "faces_charged": 153,
+        "inside_R": 16,
+        "meeting_R": 88,
+        "omitted_inside_R": 10,
+        "selected_inside_R": 6,
+        "singles": 2,
+        "stars": 7,
+        "straddling": 72,
+        "straddling_strictly_containing_R": 6,
+        "table": [
+          {
+            "anchor": [
+              -1,
+              0,
+              0
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 4
+          },
+          {
+            "anchor": [
+              -1,
+              0,
+              1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 4
+          },
+          {
+            "anchor": [
+              0,
+              -1,
+              0
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 8
+          },
+          {
+            "anchor": [
+              0,
+              -1,
+              1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 8
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              -1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 16
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              0
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 10,
+            "meeting_R": 21
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 21
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              0
+            ],
+            "faces": 3,
+            "group": "single",
+            "inside_R": 3,
+            "meeting_R": 3
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              1
+            ],
+            "faces": 3,
+            "group": "single",
+            "inside_R": 3,
+            "meeting_R": 3
+          }
+        ]
+      },
+      "N_1_stars": 4,
+      "id": "route_b_incidence_on_R",
+      "passed": true,
+      "summary": "7 whole stars and 2 single-factor groups meet R for N>=2; 153 charged, 88 meeting, 16 inside, 72 straddling (6 strictly contain R)"
+    },
+    {
+      "id": "boundary_counts_at_most_bulk",
+      "passed": true
+    },
+    {
+      "computation": "4 links of one factor x Casimir 3/4 x 8 = 24; omitted faces at most 3 links per factor (18)",
+      "id": "selected_face_site_energy_24",
+      "omitted_max_site_energy": 18,
+      "passed": true,
+      "record": {
+        "first_order_site_energy_max": 24,
+        "kept_in_Q_L_iff_L_at_least": 24,
+        "selected_site_energy": 24
+      }
+    },
+    {
+      "first_order_norm": "||c'^(1)_{b}||=sqrt(3)|tau|/144 (nonzero)",
+      "id": "support_one_groups_enumerated",
+      "passed": true,
+      "record": {
+        "clipped_by_route_b_volume": false,
+        "diameter": 0,
+        "distance_cost": 0,
+        "first_order_creation_nonzero": true,
+        "in_piece_graph": true,
+        "order_cost": 1,
+        "straddles": false,
+        "support_size": 1
+      }
+    },
+    {
+      "R": "1/64",
+      "disc_contraction": "2552/390625",
+      "disc_self_map": "1073/2734375",
+      "id": "weights_declared_and_admissible",
+      "lambda_below_q": true,
+      "order": "declared and checked before any constant is evaluated",
+      "passed": true,
+      "route_A_extremes_self_map": "29/1792",
+      "split_contraction": "40832/390625",
+      "split_self_map": "17168/2734375",
+      "weights": {
+        "cardinality_charge": "|I|<=8*2^{diam I}",
+        "disc_radius": "64|tau| (1/1562500 at the cap)",
+        "lambda": "1/512",
+        "q": "1/64",
+        "route_B_disc_radius_max": "7/274688",
+        "route_B_split_weight_max": "2734375/1073",
+        "split_creation_weight": "1024"
+      }
+    },
+    {
+      "T_B_tau": "13/3599632512",
+      "T_prime_ax1": "13/3599632512",
+      "formula": "T_B(rho)=(52 rho/144)/(1-29*352 rho)",
+      "id": "circle_bound_pinned_to_ax1_T_prime",
+      "passed": true
+    },
+    {
+      "id": "route_b_every_site_common_core",
+      "passed": true,
+      "rows": [
+        {
+          "N": 2,
+          "comparison": "c1B Lambda_N vs Lambda_N+1",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 654,
+          "sites_attaining": 125,
+          "source_faces": 3846
+        },
+        {
+          "N": 3,
+          "comparison": "c1B Lambda_N vs Lambda_N+1",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 1158,
+          "sites_attaining": 343,
+          "source_faces": 7374
+        },
+        {
+          "N": 4,
+          "comparison": "c1B Lambda_N vs Lambda_N+1",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 1806,
+          "sites_attaining": 729,
+          "source_faces": 12054
+        },
+        {
+          "N": 2,
+          "comparison": "c4B Lambda_2 vs Lambda_4",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 1812,
+          "sites_attaining": 125,
+          "source_faces": 11220
+        },
+        {
+          "N": 2,
+          "comparison": "c4B Lambda_3 vs Lambda_4",
+          "min_slack": 1,
+          "ok": true,
+          "selected_source_faces": 1158,
+          "sites_attaining": 0,
+          "source_faces": 7374
+        },
+        {
+          "N": 3,
+          "comparison": "c4B Lambda_3 vs Lambda_5",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 2964,
+          "sites_attaining": 343,
+          "source_faces": 19428
+        },
+        {
+          "N": 2,
+          "comparison": "c5B [-2,3]x[-2,2]x[-2,4] vs Lambda_2",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 255,
+          "sites_attaining": 61,
+          "source_faces": 1431
+        },
+        {
+          "N": 2,
+          "comparison": "c5B [-3,2]x[-2,3]x[-2,2] vs [-2,3]x[-2,2]x[-2,4]",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 420,
+          "sites_attaining": 101,
+          "source_faces": 2352
+        },
+        {
+          "N": 2,
+          "comparison": "c5B Lambda_3+(1,0,0) vs Lambda_3",
+          "min_slack": 0,
+          "ok": true,
+          "selected_source_faces": 294,
+          "sites_attaining": 35,
+          "source_faces": 1806
+        }
+      ],
+      "statement": "every source face (omitted or selected) of c1B, c4B, c5B lies at distance at least N-|u|_inf from each u in Lambda_N"
+    },
+    {
+      "id": "route_b_piece_graph_order_vs_distance",
+      "orders": {
+        "(-2, 1, 2)": {
+          "min_slack_over_1_plus_d": 0,
+          "single_site_pieces_reached": 324
+        },
+        "(0, 0, 0)": {
+          "min_slack_over_1_plus_d": 0,
+          "single_site_pieces_reached": 324
+        },
+        "(0, 0, 1)": {
+          "min_slack_over_1_plus_d": 0,
+          "single_site_pieces_reached": 324
+        },
+        "(1, 1, 1)": {
+          "min_slack_over_1_plus_d": 0,
+          "single_site_pieces_reached": 324
+        },
+        "(2, 0, 0)": {
+          "min_slack_over_1_plus_d": 0,
+          "single_site_pieces_reached": 324
+        }
+      },
+      "passed": true,
+      "pieces": 1639,
+      "single_site_pieces": 343,
+      "statement": "least order >= 1+d on the route-B piece graph (faces as pieces, single sites included; attained)"
+    },
+    {
+      "K_B": {
+        "exact": "13/27941256",
+        "preview": "4.65261833612e-7"
+      },
+      "id": "K_B_every_site_input_meets_target",
+      "margin": "2.14932738461e0",
+      "passed": true,
+      "route": "analytic_disc",
+      "statement": "sum over I containing u of ||c^A_I-c^B_I|| <= K_B q^((N-|u|_inf)_+) at every site u of the union volume, every N at least 2",
+      "target": "1/1000000",
+      "tier": "exact_first_order"
+    },
+    {
+      "C_B": {
+        "exact": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+        "preview": "9.45161819414e-7"
+      },
+      "id": "C_B_meets_target",
+      "margin": "4.23207954218e0",
+      "passed": true,
+      "route": "iterated_split",
+      "target": "1/250000",
+      "tier": "exact_first_order"
+    },
+    {
+      "c_site_B": {
+        "exact": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+        "preview": "9.30620868347e-7"
+      },
+      "id": "c_site_B_meets_target",
+      "margin": "2.14910289251e0",
+      "passed": true,
+      "route": "iterated_split",
+      "target": "1/500000",
+      "tier": "exact_first_order"
+    },
+    {
+      "C_prime_B": {
+        "exact": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+        "preview": "9.45161819414e-7"
+      },
+      "assembly": "union_comparison",
+      "assembly_factor": "1",
+      "id": "C_prime_B_meets_target",
+      "margin": "4.23207954218e0",
+      "passed": true,
+      "target": "1/250000"
+    },
+    {
+      "assembly": "union_comparison",
+      "assembly_factor": "1",
+      "c_prime_site_B": {
+        "exact": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+        "preview": "9.30620868347e-7"
+      },
+      "id": "c_prime_site_B_meets_target",
+      "margin": "2.68637861564e0",
+      "passed": true,
+      "target": "1/400000"
+    },
+    {
+      "C_B_crude": {
+        "exact": "362331029338528852703336460633941/193178427869162139024664513304450000",
+        "preview": "1.87562883358e-3"
+      },
+      "K_B_crude": {
+        "exact": "2146/2734375",
+        "preview": "7.84822857142e-4"
+      },
+      "c_site_B_crude": {
+        "exact": "111486470565701185447180449425828/60368258709113168445207660407640625",
+        "preview": "1.84677300537e-3"
+      },
+      "id": "crude_tier_reported_separately",
+      "passed": true,
+      "status": "fails the targets; retained, never a target"
+    },
+    {
+      "id": "labelled_values_not_bound",
+      "labelled": {
+        "nested_telescoping_C_prime_B": {
+          "exact": "2326328761843649826272217312701707175/2422844245186854174610434988693459398808416",
+          "preview": "9.60164387977e-7"
+        },
+        "nested_telescoping_c_prime_site_B": {
+          "exact": "71579346518266148500683609621590990/75713882662089192956576093396670606212763",
+          "preview": "9.45392628162e-7"
+        },
+        "refined_weighted_first_order_(49W+3)/144": {
+          "exact": "50179/6447384576",
+          "preview": "7.78284580491e-6"
+        },
+        "telescoped_coefficient_input_K": {
+          "exact": "1651/1760299128",
+          "preview": "9.37908775695e-7"
+        },
+        "union_volume_C_B": {
+          "exact": "2326328761843649826272217312701707175/1230651045174275136310062216479217472410624",
+          "preview": "1.89032363882e-6"
+        }
+      },
+      "note": "labelled only; never used to establish a target",
+      "passed": true
+    },
+    {
+      "S_lambda": "2169/343",
+      "beta_star": {
+        "exact": "132572461259098000347351859/4012775859323049054050909456204",
+        "preview": "3.30375944001e-5"
+      },
+      "c1": {
+        "exact": "132572461259098000347351859/4012775859330709325091744109848",
+        "preview": "3.30375944001e-5"
+      },
+      "c2": {
+        "exact": "1915067760208663411/1003193964832677331272936027462",
+        "preview": "1.90897057532e-12"
+      },
+      "id": "marginal_locality_lemma_constants_route_b",
+      "lemma": {
+        "eta": "0",
+        "kappa0": "132572461259098000347351859/4012775859323049054050909456204 |Y|",
+        "p": "|I|",
+        "route": "iterated_split",
+        "tier": "exact_first_order",
+        "w_prime": "512"
+      },
+      "passed": true,
+      "per_level_factor": {
+        "exact": "208/3148137",
+        "preview": "6.60708222037e-5"
+      },
+      "t0": {
+        "exact": "13/1799816256",
+        "preview": "7.22295954193e-9"
+      },
+      "tW": {
+        "exact": "26/3148137",
+        "preview": "8.25885277546e-6"
+      }
+    },
+    {
+      "id": "every_comparison_both_signs",
+      "passed": true,
+      "table": [
+        {
+          "C_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+          "K_B": "13/27941256",
+          "c_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+          "comparison": "c1B:",
+          "direct": true,
+          "each_Q_L_uniformly_in_L": true,
+          "sign": "+",
+          "untruncated_at_fixed_N": true
+        },
+        {
+          "C_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+          "K_B": "13/27941256",
+          "c_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+          "comparison": "c1B:",
+          "direct": true,
+          "each_Q_L_uniformly_in_L": true,
+          "sign": "-",
+          "untruncated_at_fixed_N": true
+        },
+        {
+          "C_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+          "K_B": "13/27941256",
+          "c_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+          "comparison": "c4B:",
+          "direct": true,
+          "each_Q_L_uniformly_in_L": true,
+          "sign": "+",
+          "untruncated_at_fixed_N": true
+        },
+        {
+          "C_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+          "K_B": "13/27941256",
+          "c_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+          "comparison": "c4B:",
+          "direct": true,
+          "each_Q_L_uniformly_in_L": true,
+          "sign": "-",
+          "untruncated_at_fixed_N": true
+        },
+        {
+          "C_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+          "K_B": "13/27941256",
+          "c_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+          "comparison": "c5B:",
+          "direct": true,
+          "each_Q_L_uniformly_in_L": true,
+          "sign": "+",
+          "untruncated_at_fixed_N": true
+        },
+        {
+          "C_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+          "K_B": "13/27941256",
+          "c_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+          "comparison": "c5B:",
+          "direct": true,
+          "each_Q_L_uniformly_in_L": true,
+          "sign": "-",
+          "untruncated_at_fixed_N": true
+        }
+      ]
+    },
+    {
+      "id": "region_form_factor_route_b_t",
+      "note": "the split bound needs no e^{|Y|/10^8} factor; the fixture re-checks (1+t)^2 <= 1+10^-8",
+      "one_plus_t_sq_minus_1": {
+        "exact": "93590445481/12957354221447430144",
+        "preview": "7.22295955497e-9"
+      },
+      "passed": true,
+      "t": "T_B(|tau|)=13/3599632512"
+    },
+    {
+      "C_B_q_pow_N_minus_1": {
+        "2": "1.47681534283e-8",
+        "3": "2.30752397318e-10",
+        "4": "3.60550620809e-12"
+      },
+      "id": "example_values_N_2_3_4",
+      "passed": true
+    },
+    {
+      "id": "route_b_first_order_R_marginal",
+      "passed": true,
+      "record": {
+        "faces_moving_rho_R_at_first_order": 16,
+        "omitted_with_owner_set_R": 10,
+        "selected_single_sites": 6,
+        "straddling_with_zero_first_order": 72,
+        "trace_norm_over_tau": "1/18"
+      },
+      "route_A_ten_face_value": "sqrt(10)|tau|/72 (rejected for route B)"
+    },
+    {
+      "D_prime": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "datum_preview": "1.24467670919e-2",
+      "free_reference_inside": true,
+      "id": "node_replay_equals_ax2_gate",
+      "interval": {
+        "lower": "9185099027283132774641054641651710360271692993911210326959914564533758219450458841003549662138547697233770816954909507936717641496489345627414736088026193/737961920536138914181463715918388209334298421155056649415263413102254897655453546507339173001533179127104223043676670000000000000000000000000000000000000000",
+        "upper": "18370762536046660885548813426672217515904304931134329679720280811817242922854942740986392677249221798462892567775364370524169200293132009167539894480420053/1475923841072277828362927431836776418668596842310113298830526826204509795310907093014678346003066358254208446087353340000000000000000000000000000000000000000"
+      },
+      "k_prime": "51/400000000",
+      "minus_tau_mirror_replay_equal": true,
+      "passed": true,
+      "radius_R_prime": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+      "radius_preview": "1.91229880799e-7",
+      "sub_label": "reference_unresolved",
+      "target_met": true
+    },
+    {
+      "D_prime_recomputed_route_b": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+      "R_prime": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+      "formula": "r_own = 2(D'+D'^2) + 51|tau|/pi_lower + |e^{-3}/4 - d| (outward on 10^-60)",
+      "id": "node_own_reevaluation_cross_check",
+      "label": "labelled cross-check; the restated radius is the gate R-prime",
+      "own_E_prime_upper": {
+        "exact": "47807470199921794753664532493090818207553421606293293/250000000000000000000000000000000000000000000000000000000000",
+        "preview": "1.91229880799e-7"
+      },
+      "own_radius_upper_labelled": {
+        "exact": "95614940399843589507329064986181636466083290310640633/500000000000000000000000000000000000000000000000000000000000",
+        "preview": "1.91229880799e-7"
+      },
+      "own_reference_offset_upper": {
+        "exact": "50976447098054047/500000000000000000000000000000000000000000000000000000000000",
+        "preview": "1.01952894196e-43"
+      },
+      "passed": true,
+      "pi_lower": "3.14159265358e0",
+      "slack": "2.70678334193e-41"
+    },
+    {
+      "brackets": {
+        "C_B": [
+          "95",
+          "105"
+        ],
+        "C_prime_B": [
+          "95",
+          "105"
+        ],
+        "K_B": [
+          "95",
+          "105"
+        ],
+        "c_prime_site_B": [
+          "95",
+          "105"
+        ],
+        "c_site_B": [
+          "95",
+          "105"
+        ],
+        "node_datum": [
+          "1",
+          "1"
+        ],
+        "node_radius_replay": [
+          "95",
+          "105"
+        ],
+        "q_and_rho_over_tau": [
+          "1",
+          "1"
+        ]
+      },
+      "id": "tau_scaling_every_constant",
+      "passed": true,
+      "ratios": {
+        "C_B": {
+          "exact": "3973012283225295933102433664437931755013727502596734387422791637803425359604/39469054080129483627320869613503841640942103623750112087544904966384812729",
+          "preview": "1.00661451758e2"
+        },
+        "C_prime_B": {
+          "exact": "3973012283225295933102433664437931755013727502596734387422791637803425359604/39469054080129483627320869613503841640942103623750112087544904966384812729",
+          "preview": "1.00661451758e2"
+        },
+        "K_B": {
+          "exact": "39059948/388073",
+          "preview": "1.00651032151e2"
+        },
+        "c_prime_site_B": {
+          "exact": "3973012283225295933102433664437931755013727502596734387422791637803425359604/39469054080129483627320869613503841640942103623750112087544904966384812729",
+          "preview": "1.00661451758e2"
+        },
+        "c_site_B": {
+          "exact": "3973012283225295933102433664437931755013727502596734387422791637803425359604/39469054080129483627320869613503841640942103623750112087544904966384812729",
+          "preview": "1.00661451758e2"
+        },
+        "node_datum": {
+          "exact": "1",
+          "preview": "1.00000000000e0"
+        },
+        "node_radius_replay": {
+          "exact": "1912298807996871790146581299723633/19122696033921089038885549926868",
+          "preview": "1.00001527222e2"
+        },
+        "q_and_rho_over_tau": {
+          "exact": "1",
+          "preview": "1.00000000000e0"
+        }
+      }
+    },
+    {
+      "id": "whole_sequence_cauchy_union_comparison",
+      "passed": true,
+      "record": {
+        "C_prime_B": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+        "R_form": "sup_{M>N}||rho^{FB,M}_R-rho^{FB,N}_R||_1 <= C_prime_B q^(N-1) for every N at least 2",
+        "assembly": "union_comparison",
+        "assembly_factor": "1 (one direct c4B comparison of Lambda_N and Lambda_M)",
+        "c_prime_site_B": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+        "limit": "trace-class completeness on every finite region; no compactness",
+        "region_form": "sup_{M>N}||rho^{FB,M}_Y-rho^{FB,N}_Y||_1 <= c_prime_site_B |Y| e^{|Y|/10^8} q^{d_Y} for every N at least 2 with Y inside Lambda_N"
+      }
+    },
+    {
+      "id": "item_2a_exhaustion",
+      "passed": true,
+      "record": {
+        "N_k": "largest N with Lambda_N inside V_k",
+        "bound": "(c_site_B + c_prime_site_B) |Y| e^{|Y|/10^8} q^(N_k - max_{y in Y}|y|_inf), for every N_k at least 2 with Y inside Lambda_{N_k}",
+        "comparison": "one direct c5B comparison",
+        "constant": "35789673259133074250341804810795495/19228922580848049004844722132487773006416",
+        "phrasing": "exhaustion within the route-B prescription",
+        "volumes": "finite complete-factor route-B volumes (stars inside, every single group kept)"
+      }
+    },
+    {
+      "flip_set": {
+        "all_odd": true,
+        "intersection_sizes": [
+          1,
+          3
+        ],
+        "model_is_finite_graph": true,
+        "plaquettes": 864,
+        "selected_plaquettes": 108,
+        "transfers_to_aq": false
+      },
+      "id": "item_2b_sign_mirror_pointwise",
+      "local_mirror": {
+        "model_is_finite_graph": true,
+        "reduced_density_mirrors_locally": true,
+        "transfers_to_aq": false
+      },
+      "passed": true,
+      "record": {
+        "U_E_local": "product of one-link unitaries",
+        "coefficient_tied_to_tau": true,
+        "minus_tau_status": "U_E mirror replay (no real g)",
+        "source": "whole_sequence_both_signs_and_box_covariance"
+      },
+      "statement": "omega^{-tau}_inf = omega^{tau}_inf o alpha_E on every finite region"
+    },
+    {
+      "id": "item_3_identification_then_inheritance",
+      "passed": true,
+      "record": {
+        "extension": "quasi-local algebra by norm density",
+        "inherited_list": "AX1 gate route-B re-instantiation",
+        "order": [
+          "identification_on_every_finite_region",
+          "inheritance"
+        ],
+        "regions": "every finite region"
+      }
+    },
+    {
+      "fixture": {
+        "all_coarse": true,
+        "coarse_covariance": [
+          true,
+          true,
+          true
+        ],
+        "count": 8,
+        "grouping_preserving_translations": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            1
+          ],
+          [
+            4,
+            2,
+            0
+          ],
+          [
+            4,
+            2,
+            1
+          ]
+        ],
+        "model_is_finite_graph": true,
+        "non_coarse_witness": {
+          "coefficient_from": "-tau/3",
+          "coefficient_to": "-tau/3",
+          "from": [
+            [
+              2,
+              0,
+              0
+            ],
+            "xy",
+            "selected (single group, owner set of one site)"
+          ],
+          "to": [
+            [
+              3,
+              0,
+              0
+            ],
+            "xy",
+            "omitted class, owner set of 2 sites"
+          ]
+        },
+        "transfers_to_aq": false,
+        "uniform_coefficient_preserved_by_every_fine_translation": true
+      },
+      "id": "item_4_coarse_translations",
+      "passed": true,
+      "record": {
+        "factor": 1,
+        "nested_cubes_only": false,
+        "source": "direct_c5B_comparison",
+        "translations": "coarse"
+      },
+      "rows": {
+        "(3,(1,0,0))": "1.47681534283e-8",
+        "(4,(1,-1,0))": "2.30752397318e-10",
+        "(6,(2,1,0))": "3.60550620809e-12",
+        "(N,v)=(2,0)": "1.47681534283e-8"
+      }
+    },
+    {
+      "fixture": {
+        "J": [
+          3,
+          4
+        ],
+        "Y": [
+          0
+        ],
+        "Z_at_least_n2": true,
+        "covering_recursion_exact": [
+          true,
+          true,
+          true
+        ],
+        "identity_R07_exact": true,
+        "levels": 3,
+        "model_is_finite_graph": true,
+        "single_site_supports": 6,
+        "sites": 6,
+        "supports": 16,
+        "transfers_to_aq": false
+      },
+      "id": "fixture_split_identity_exact",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "lipschitz_holds": true,
+        "lipschitz_lhs_sq": "1957591268761640619240/706236567267930679326889",
+        "lipschitz_rhs_sq": "350538424506133/51609900056203125",
+        "model_is_finite_graph": true,
+        "trace_N_omega1": "1560311/1433250",
+        "trace_N_omega2": "538597/504063",
+        "trace_at_least_one": true,
+        "transfers_to_aq": false
+      },
+      "id": "fixture_trace_at_least_one_and_lipschitz",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "changes": 33,
+        "holds": true,
+        "model_is_finite_graph": true,
+        "transfers_to_aq": false
+      },
+      "id": "fixture_single_support_lipschitz",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "W": "4",
+        "beta_1d": "1.99898588310e0",
+        "bound": "3.05011487069e-2",
+        "model_is_finite_graph": true,
+        "observed_trace_norm_sq": "1.95957954137e-12",
+        "single_far_support_bounds_hold": true,
+        "sites": 7,
+        "supports": 18,
+        "t0": "5873579599774/172866393708675",
+        "tW": "53425202737189/172866393708675",
+        "total_bound_holds": true,
+        "transfers_to_aq": false
+      },
+      "id": "fixture_end_to_end_chain_lemma",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "d_rho01_dc": {
+          "(1, 1, 0)": "-1"
+        },
+        "first_order_in_c_free": true,
+        "model_is_finite_graph": true,
+        "off_diagonal_is_minus_abc": true,
+        "rho_00": {
+          "(0, 0, 0)": "1",
+          "(0, 0, 2)": "1",
+          "(0, 2, 0)": "1"
+        },
+        "rho_01": {
+          "(1, 1, 1)": "-1"
+        },
+        "rho_11": {
+          "(2, 0, 0)": "1",
+          "(2, 0, 2)": "1"
+        },
+        "transfers_to_aq": false
+      },
+      "id": "fixture_second_order_polynomial",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "inside_R_pair": {
+          "excited_population": "1/101",
+          "first_order_part_nonzero": true
+        },
+        "inside_R_single_site": {
+          "excited_population": "1/101",
+          "first_order_part_nonzero": true
+        },
+        "model_is_finite_graph": true,
+        "straddling_strictly_containing_R": {
+          "excited_population": "1/101",
+          "first_order_part_nonzero": false
+        },
+        "straddling_{r0,o}": {
+          "excited_population": "1/101",
+          "first_order_part_nonzero": false
+        },
+        "transfers_to_aq": false
+      },
+      "id": "fixture_straddling_and_support_one",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "coefficient_difference_on_supports_meeting_R": "0",
+        "model_is_finite_graph": true,
+        "rho_b_half": {
+          "((0,), (0,))": "45/49",
+          "((0,), (1,))": "6/49",
+          "((1,), (0,))": "6/49",
+          "((1,), (1,))": "4/49"
+        },
+        "rho_b_zero": {
+          "((0,), (0,))": "9/10",
+          "((1,), (1,))": "1/10"
+        },
+        "trace_norm_sq": "3681/60025",
+        "transfers_to_aq": false
+      },
+      "id": "fixture_coefficient_vs_marginal",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "global_fidelity_below_1_50": true,
+        "model_is_finite_graph": true,
+        "one_site_fidelity": "100/101",
+        "one_site_trace_distance_sq": "4/101",
+        "sites": 400,
+        "transfers_to_aq": false
+      },
+      "id": "fixture_global_fidelity",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "eigen_equation_exact": true,
+        "ground_energy": "-1/3",
+        "is_lowest": true,
+        "model_is_finite_graph": true,
+        "outside_vector": "|00> - (2/7)|11> on sites 2,3",
+        "outside_vector_is_eigenvector": false,
+        "rayleigh_residual_sq_normalized": "49/44944",
+        "transfers_to_aq": false
+      },
+      "id": "fixture_outside_vector",
+      "passed": true
+    },
+    {
+      "eckart": {
+        "all_hold": true,
+        "degenerate": {
+          "H": "diag(0,0,1)",
+          "energy_excess": "0",
+          "overlap_with_e_1": "0",
+          "trial": "e_2"
+        },
+        "model_is_finite_graph": true,
+        "pairs": [
+          {
+            "energy_excess_over_gap": "3/11",
+            "holds": true,
+            "one_minus_overlap": "2/11"
+          },
+          {
+            "energy_excess_over_gap": "4/5",
+            "holds": true,
+            "one_minus_overlap": "4/5"
+          },
+          {
+            "energy_excess_over_gap": "1/13",
+            "holds": true,
+            "one_minus_overlap": "1/26"
+          },
+          {
+            "energy_excess_over_gap": "0",
+            "holds": true,
+            "one_minus_overlap": "0"
+          }
+        ],
+        "transfers_to_aq": false
+      },
+      "id": "fixture_cutoff_eckart_and_order",
+      "limit_order": {
+        "a(1e9,3)": "2.99999999100e-9",
+        "a(3,1e9)": "9.99999997000e-1",
+        "a(N,L)": "L/(N+L)",
+        "differ": true,
+        "lim_L_lim_N": "0",
+        "lim_N_lim_L": "1",
+        "model_is_finite_graph": true,
+        "transfers_to_aq": false
+      },
+      "passed": true
+    },
+    {
+      "id": "fixture_normalization_zero_mean_field_topology",
+      "mean_field": {
+        "c_0_for_far_sources": [
+          "1/6"
+        ],
+        "claimed_decay_(1/2)^5": "1/32",
+        "lipschitz_sup_norm": "1/2",
+        "model_is_finite_graph": true,
+        "transfers_to_aq": false,
+        "value_at_0": "1/6"
+      },
+      "normalization": {
+        "model_is_finite_graph": true,
+        "normalization_at_i_over_2": [
+          "0",
+          "0"
+        ],
+        "transfers_to_aq": false,
+        "zero_inside_unit_disc": true
+      },
+      "passed": true,
+      "topology": {
+        "fixed_vector_norms_sq": [
+          "1/4",
+          "1/1024",
+          "1/1152921504606846976"
+        ],
+        "model_is_finite_graph": true,
+        "moving_vector_norm": "1",
+        "state_topology": "trace norm on B(H_Y)",
+        "transfers_to_aq": false
+      }
+    },
+    {
+      "fixture": {
+        "alternating_steps": [
+          "1/25"
+        ],
+        "ball_radius_about_half": "1/50",
+        "harmonic_first_N_above_3": 31,
+        "model_is_finite_graph": true,
+        "transfers_to_aq": false,
+        "two_subsequential_limits": true
+      },
+      "id": "fixture_whole_sequence_versus_subsequence",
+      "passed": true
+    },
+    {
+      "first_depth_without_decay": 259,
+      "growing_rule": "(2k+1)^3 t0",
+      "id": "per_site_charging_versus_growing_sizes",
+      "passed": true,
+      "per_site_factor": {
+        "exact": "208/3148137",
+        "preview": "6.60708222037e-5"
+      }
+    },
+    {
+      "id": "cutoff_uniform_then_removed_at_fixed_N",
+      "passed": true,
+      "record": {
+        "constants_depend_on_L": false,
+        "method": "ground_vector_eckart_with_route_b_gap_1/2",
+        "order": "cutoff_L_to_infinity_at_fixed_N_then_bound_in_N",
+        "removal_after_uniform_bound": true,
+        "selected_face_kept_from_L": 24
+      },
+      "route_b_gap": "1/2 normalized (alpha/16 physical), AX1 gate item (2)"
+    },
+    {
+      "forbidden_count": 29,
+      "id": "mandatory_template_quoted_once_and_phrase_scan_clean",
+      "passed": true
+    },
+    {
+      "gate_fields": {
+        "common_limit_claimed": false,
+        "continuum_claim": false,
+        "gns_dynamics_equality_claimed": false,
+        "node_certificate_restated_for_limit": true,
+        "rate_in_N_claimed": true,
+        "rate_in_a_claimed": false,
+        "resolved_interaction_shift": false,
+        "scientific_priority_verified": false,
+        "state_convergence_claimed": true,
+        "state_decay_claimed": true,
+        "state_decay_scope": "reduced densities of route-B finite-box ground vectors on R and on regions Y, per comparison (c1B, c4B, c5B)",
+        "translation_invariance_claimed": true,
+        "translation_invariance_scope": "coarse translations; the limit of the named construction (route B)",
+        "uniform_in_time_claimed": false,
+        "uniqueness_of_ground_state_claimed": false,
+        "weak_coupling_claim": false,
+        "whole_sequence_claimed": true,
+        "whole_sequence_scope": "reduced densities of the centered whole-star-plus-single-group construction of the uniform route-B model on every finite region"
+      },
+      "id": "gate_fields_exported",
+      "passed": true
+    },
+    {
+      "id": "rate_claims_carry_their_range",
+      "passed": true,
+      "rate_claims": [
+        "sum over I containing u of ||c^A_I-c^B_I|| at most K_B q^((N-|u|_inf)_+) for every N at least 2 and every site u of the union volume",
+        "||rho^{box1}_R-rho^{box2}_R||_1 at most C_B q^(N-1) for every N at least 2",
+        "||rho^{box1}_Y-rho^{box2}_Y||_1 at most c_site,B |Y| e^{|Y|/10^8} q^{d_Y} for every N at least 2 with Y inside Lambda_N",
+        "sup over M greater than N of ||rho^{FB,M}_R-rho^{FB,N}_R||_1 at most C_prime_B q^(N-1) for every N at least 2",
+        "sup over M greater than N of ||rho^{FB,M}_Y-rho^{FB,N}_Y||_1 at most c_prime_site,B |Y| e^{|Y|/10^8} q^{d_Y} for every N at least 2 with Y inside Lambda_N",
+        "||rho^{V_k}_Y-rho^inf_Y||_1 at most (c_site,B+c_prime_site,B)|Y| e^{|Y|/10^8} q^(N_k-max|y|_inf) for every N_k at least 2 with Y inside Lambda_{N_k}",
+        "||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 at most C_B q^(N-|v|_inf-1) for N at least |v|_inf+2"
+      ]
+    },
+    {
+      "id": "report_pins_exact_values",
+      "missing": [],
+      "passed": true,
+      "pins": [
+        "13/27941256",
+        "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+        "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+        "132572461259098000347351859/4012775859323049054050909456204",
+        "26/3148137",
+        "13/1799816256",
+        "13/3599632512",
+        "2146/2734375",
+        "362331029338528852703336460633941/193178427869162139024664513304450000",
+        "1073/2734375",
+        "2552/390625",
+        "17168/2734375",
+        "40832/390625",
+        "1.00651032151e2",
+        "1.00661451758e2",
+        "7/274688",
+        "497870683678639429793424156500617766317",
+        "1912298807996871790146581299723633",
+        "845/894120192"
+      ]
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "K_B_target_relaxed": "T0 pair",
+        "admitted_gate_edited": "admitted gate bytes differ from the pinned sha256: research/round29/advisor/al1-gate.json",
+        "byte_change_without_rehash": "contract bytes do not match the bound hash",
+        "calculator_edited": "AX2 calculator bytes differ from the pinned sha256",
+        "common_limit_true": "gate field values",
+        "control_removed": "controls list differs from preregistration",
+        "disc_radius_changed": "weights not declared",
+        "exported_K_B_halved": "exported value differs from the recomputed exact value",
+        "hash_binding_flipped": "hash-binding flags must all be true",
+        "q_changed": "T1 pair",
+        "rate_in_a_true": "gate field values",
+        "snapshot_removed": "producer inputs inventory differs from AGENTS.md + contract + shared_premises",
+        "split_weight_changed": "weights not declared",
+        "tau_changed": "tau value or signs"
+      }
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "bool_input": "non-exact numeric input rejected: True",
+        "float_bound_admission": "malformed rational input rejected: '4.65261833612e-7'",
+        "float_input": "non-exact numeric input rejected: 4.6e-07",
+        "nan_input": "malformed rational input rejected: 'nan'",
+        "zero_denominator": "malformed rational input rejected: '1/0'"
+      }
+    },
+    {
+      "id": "no_priority_or_continuum_claim",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "continuum_true": "claim flag must be false: continuum_claim",
+        "historical_lens_premise": "historical or non-mathematical material used as a premise",
+        "priority_true": "claim flag must be false: scientific_priority_verified",
+        "weak_coupling_true": "claim flag must be false: weak_coupling_claim"
+      }
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "all_contained_boundary": "boundary prescription changed",
+        "clock_changed": "clock changed",
+        "finite_graph_result": "finite-graph result presented under the route-B label",
+        "l1_metric": "metric changed",
+        "route_A_grouping": "route-B grouping changed",
+        "su3": "gauge group or dimension changed",
+        "tau_changed": "packet tau differs from the contract",
+        "two_dimensions": "gauge group or dimension changed",
+        "window_changed": "window changed",
+        "zero_selected_model": "model relabelled",
+        "zero_triple": "selected triple changed"
+      }
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "Q_L_only_relabelled_accepted": "recorded outcome differs from the executed evidence",
+        "R_form_only_relabelled_accepted": "recorded outcome differs from the executed evidence",
+        "W_retuned": "a frozen parameter was retuned after the constants were seen",
+        "failed_input_relabelled_limited": "recorded outcome differs from the executed evidence",
+        "missed_target_relabelled_accepted": "recorded outcome differs from the executed evidence",
+        "rho_retuned": "a frozen parameter was retuned after the constants were seen",
+        "tau_retuned": "a frozen parameter was retuned after the constants were seen"
+      }
+    },
+    {
+      "id": "tau_scaling_exponent",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "bracket_chosen_after_evaluation": "bracket not the prefrozen one",
+        "constant_headline": "tau/100 ratio outside the prefrozen bracket",
+        "node_datum_not_exactly_1": "tau/100 ratio outside the prefrozen bracket",
+        "quadratic_headline": "tau/100 ratio outside the prefrozen bracket",
+        "square_root_relabelled_linear": "tau/100 ratio outside the prefrozen bracket"
+      }
+    },
+    {
+      "id": "wrong_delta_alpha_hbar_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "amplitude_tau_over_576": "first-order coefficient is not -tau/72 in delta units",
+        "amplitude_tau_over_9": "first-order coefficient is not -tau/72 in delta units",
+        "euclidean_clock_labelled_real_time": "clock label and formula disagree",
+        "non_unit_fixture_hbar_dropped": "clock value is not theta=alpha t/hbar (non-unit fixture)",
+        "non_unit_fixture_u_as_theta": "clock value is not theta=alpha t/hbar (non-unit fixture)",
+        "u_labelled_theta": "clock label and formula disagree"
+      }
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "C_B_with_disc_route": "route label not allowed for C_B",
+        "K_B_with_split_route": "route label not allowed for K_B",
+        "assembly_recorded_as_route": "route label not allowed for C_prime_B",
+        "duhamel_route": "route label not allowed for c_site_B",
+        "exact_label_crude_input": "exact_first_order constant with a crude input",
+        "hypothesis_source": "BC2 has no hypothesis layer",
+        "lieb_robinson_tier": "tier outside {exact_first_order, crude_majorant}",
+        "polymer_kp_route": "route label not allowed for C_B",
+        "route_A_constant_under_route_B_label": "constant not computed from the route-B inputs",
+        "weighted_norm_as_bound": "route label not allowed for K_B",
+        "whole_sequence_without_assembly": "whole-sequence constant without assembly"
+      }
+    },
+    {
+      "id": "uniform_in_N_not_in_a",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "uniform_in_lattice_spacing": "uniformity in the lattice spacing claimed",
+        "unqualified_uniform_next_to_rate": "unqualified uniformity next to a rate"
+      }
+    },
+    {
+      "id": "placeholder_span_rejected",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "angle_span_bar": "placeholder span in an exported statement",
+        "angle_span_eg": "placeholder span in an exported statement",
+        "angle_span_space": "placeholder span in an exported statement"
+      }
+    },
+    {
+      "id": "negation_aware_phrase_scan",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "affirmative_boundary_independent": "forbidden phrasing used affirmatively, never allowed [boundary independent]",
+        "affirmative_confirms": "forbidden phrasing used affirmatively, never allowed [confirms]",
+        "affirmative_correlation_length": "forbidden phrasing used affirmatively, never allowed [correlation length]",
+        "affirmative_thermodynamic_limit": "forbidden phrasing used affirmatively, never allowed [the thermodynamic limit]",
+        "affirmative_uniform_in_a": "forbidden phrasing used affirmatively, never allowed [uniform in a]"
+      }
+    },
+    {
+      "id": "parameters_declare_metric_weights_window",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "clock_removed": "contract parameters must declare clock",
+        "cutoff_removed": "contract parameters must declare cutoff",
+        "metric_removed": "contract parameters must declare metric",
+        "weights_removed": "contract parameters must declare weights",
+        "window_removed": "contract parameters must declare window"
+      }
+    },
+    {
+      "id": "rate_constant_pair_prefrozen",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "K_B_target_changed": "bound exceeds its target",
+        "W_64_too_small": "split weight differs from the frozen W=1024",
+        "W_admissible_only_under_28": "route-B range: self-map J rho G(R) <= R fails",
+        "q_1_over_128": "rate differs from the frozen q=1/64",
+        "rho_changed": "disc radius differs from 64|tau|",
+        "rho_optimized_per_N": "q or rho optimized per N or after evaluation",
+        "weights_declared_after": "weights declared after the constants"
+      }
+    },
+    {
+      "id": "decay_rate_in_N_not_a",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "per_fm": "rate unit is not the coarse step in N at fixed spacing",
+        "per_lattice_spacing": "rate unit is not the coarse step in N at fixed spacing",
+        "rate_in_a_flag": "gate field differs from the contract: rate_in_a_claimed"
+      }
+    },
+    {
+      "id": "topology_named",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "hilbert_schmidt": "state topology is not the trace norm on B(H_Y)",
+        "strong_on_fixed_vector": "state topology is not the trace norm on B(H_Y)",
+        "weak_star": "state topology is not the trace norm on B(H_Y)"
+      }
+    },
+    {
+      "id": "subsequence_versus_whole_sequence",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "N_to_N_plus_1_bound_only": "whole-sequence claim without a Cauchy bound over all M greater than N",
+        "unlabelled_limit": "limit statement does not say whole sequence or subsequence",
+        "whole_sequence_from_compactness": "whole-sequence claim without a Cauchy bound over all M greater than N"
+      }
+    },
+    {
+      "id": "common_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "limit_dynamics_other_clock": "limit dynamics in another clock",
+        "minus_sign_other_clock": "the signs in different clocks",
+        "signs_at_different_tau": "the two signs at different |tau|"
+      }
+    },
+    {
+      "id": "coefficient_decay_not_marginal_decay",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "state_decay_from_coefficients": "state decay inferred from coefficient decay (fixture: equal coefficients, different marginals)"
+      }
+    },
+    {
+      "id": "normalization_couples_supports",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "normalization_1_plus_O_t2": "normalization by 1+O(t^2) without the product split",
+        "single_groups_straddle": "single-factor groups charged as straddling",
+        "straddling_dropped": "straddling supports dropped from the split",
+        "straddling_first_order_only": "straddling supports charged at first order only",
+        "strictly_containing_R_nonzero": "a support strictly containing R given a nonzero first-order R-marginal"
+      }
+    },
+    {
+      "id": "outside_vector_not_ground_state",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "gap_argument_on_outside_vector": "a gap argument applied to the outside vector"
+      }
+    },
+    {
+      "id": "global_fidelity_orthogonality_catastrophe",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "global_overlap_route": "a bound through the global overlap of the two box vectors"
+      }
+    },
+    {
+      "id": "cutoff_uniform_then_removed",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "constants_depend_on_L": "constants depend on the on-site cutoff",
+        "removal_before_uniform_bound": "cutoff removed before the uniform bound",
+        "selected_face_kept_at_L_18": "selected face vector kept below its site energy 24"
+      }
+    },
+    {
+      "id": "cutoff_vector_removal",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "am2_section6_cited_alone": "eigenvalue convergence alone or no route-B gap",
+        "eigenvalues_only": "eigenvalue convergence alone or no route-B gap",
+        "route_A_gap_reference": "eigenvalue convergence alone or no route-B gap"
+      }
+    },
+    {
+      "id": "region_constant_scales_with_Y",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "R_constant_reused": "region bound without the |Y| factor (R constant reused)",
+        "exponent_N_minus_1_for_every_Y": "region exponent is not d_Y"
+      }
+    },
+    {
+      "id": "named_construction_not_uniqueness",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "the_infinite_volume_ground_state": "forbidden phrasing used affirmatively, never allowed [the infinite-volume ground state]",
+        "thermodynamic_limit_phrase": "forbidden phrasing used affirmatively, never allowed [the thermodynamic limit]",
+        "uniqueness_flag": "claim flag must be false: uniqueness_of_ground_state_claimed",
+        "uniqueness_phrase": "forbidden phrasing used affirmatively, never allowed [the infinite-volume ground state]"
+      }
+    },
+    {
+      "exclusion_2J0prime_Gprime": "319/1562500",
+      "id": "route_b_global_lipschitz_values_recorded",
+      "lipschitz_J0prime_Gprime": "319/3125000",
+      "no_decay_bound": "1073/174982136",
+      "note": "volume-independent, no decay in the distance; never a per-shell factor",
+      "passed": true
+    },
+    {
+      "id": "global_lipschitz_not_decay",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "density_lipschitz_coefficients": "a global Lipschitz constant or a no-decay bound used as a decay factor",
+        "density_lipschitz_outside": "a global Lipschitz constant or a no-decay bound used as a decay factor",
+        "mean_field_decay_claim": "bound exceeds its target",
+        "route_A_values": "a global Lipschitz constant or a no-decay bound used as a decay factor",
+        "route_B_exclusion_constant": "a global Lipschitz constant or a no-decay bound used as a decay factor",
+        "route_B_fixed_point_lipschitz": "a global Lipschitz constant or a no-decay bound used as a decay factor",
+        "route_B_no_decay_bound": "a global Lipschitz constant or a no-decay bound used as a decay factor"
+      }
+    },
+    {
+      "id": "fixture_second_order_propagation",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "first_order_claim": "first-order propagation claimed (the exact chain is second order)",
+        "per_link_below_exact": "per-link factors below the exact straddling product"
+      }
+    },
+    {
+      "id": "fixture_split_lipschitz_and_trace",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "growing_region_sizes": "per-level split factor not below one at depth 400",
+        "vacuum_component_creation": "Tr N_c(omega) below one (orthogonality broken)"
+      }
+    },
+    {
+      "id": "zero_free_region_required",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "normalization_analytic": "analyticity claimed for the reduced density or normalization without a zero-free region",
+        "reduced_density_analytic": "analyticity claimed for the reduced density or normalization without a zero-free region"
+      }
+    },
+    {
+      "id": "every_site_coefficient_input",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "BA1_forward_boundary_weighted_bound": "coefficient input taken from BA1 or BB1 (BA1 forward boundary-weighted bound)",
+        "BA1_gate_value": "the BA1 gate value used as the route-B input",
+        "BA1_reverse_disc_theorem_cited": "coefficient input taken from BA1 or BB1 (BA1 reverse Theorem 4.1 cited)",
+        "BB1_every_site_form": "coefficient input taken from BA1 or BB1 (BB1 every-site form (b))",
+        "R_only_input_at_far_sites": "R-only coefficient input used at far sites",
+        "cited_as_admitted": "route-B every-site form cited as admitted without its proof",
+        "exponent_N_minus_1_everywhere": "every-site vanishing order not (N-|u|_inf)_+"
+      }
+    },
+    {
+      "id": "cutoff_limit_order",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "limits_exchanged": "the N and cutoff limits exchanged"
+      }
+    },
+    {
+      "id": "cauchy_estimate_not_compactness",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "compactness_plus_closeness": "convergence from compactness plus closeness",
+        "compactness_plus_first_order": "convergence from compactness plus closeness"
+      }
+    },
+    {
+      "id": "limit_identified_with_aq1_limits",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "BB2_list": "inherited list is not the AX1 route-B list",
+        "inheritance_first": "inheritance before identification",
+        "no_quasi_local_extension": "no extension to the quasi-local algebra",
+        "zero_selected_list": "inherited list is not the AX1 route-B list"
+      }
+    },
+    {
+      "id": "translation_invariance_separate_item",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "nested_cubes_only": "invariance derived from nested cubes alone",
+        "non_coarse_claim": "a claim about non-coarse translations",
+        "telescoped_source": "translation bound not from one direct c5B comparison",
+        "two_step_union_bound": "a two-step union comparison used as the bound"
+      }
+    },
+    {
+      "id": "route_b_constants_not_route_a",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "BA1_K_under_route_B": "route-A constant K_BA1=49/111790368 under the route-B label K_B",
+        "BB1_C_under_route_B": "route-A constant BB1_C_1 under the route-B label C_B",
+        "BB1_c_site_under_route_B": "route-A constant BB1_c_site_1 under the route-B label c_site_B",
+        "BB2_C_prime_under_route_B": "route-A constant BB2_C_prime=4/984375 under the route-B label C_prime_B",
+        "BB2_c_prime_site_under_route_B": "route-A constant BB2_c_prime_site=2/984375 under the route-B label c_prime_site_B",
+        "coefficient_9856": "contraction coefficient is not 29*352=10208",
+        "faces_49": "first-order faces per factor under the route-B label is not 52",
+        "groups_4": "interaction groups per site under the route-B label is not 5",
+        "per_site_sum_28": "per-site sum under the route-B label is not 29|tau|",
+        "route_A_label": "constant not labelled route B",
+        "source_substitution_28_49_aborts_at_pin": "T_B(|tau|) differs from the AX1 gate T'"
+      }
+    },
+    {
+      "id": "disc_admissible_under_J_prime",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "route_A_disc_radius": "route-A disc radius 1/37888 under J': self-map J rho G(R) <= R fails",
+        "route_A_split_weight": "route-A split weight under J': self-map J rho G(R) <= R fails",
+        "split_weight_4096": "split weight 4096: self-map J rho G(R) <= R fails",
+        "twice_route_B_maximum": "twice the route-B maximal radius: self-map J rho G(R) <= R fails"
+      }
+    },
+    {
+      "id": "support_one_groups",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "charged_a_distance": "single-factor group omitted from the piece graph or charged a distance",
+        "charged_as_straddling": "single-factor group charged as straddling",
+        "clipped": "single-factor group clipped by a route-B volume containing b",
+        "clipped_volume_enumerated": "boundary single groups clipped in the enumeration",
+        "first_order_dropped": "single-factor first-order creation dropped",
+        "omitted_from_piece_graph": "single-factor group omitted from the piece graph or charged a distance"
+      }
+    },
+    {
+      "id": "route_b_first_order_marginal",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "eighty_eight_faces": "first-order R-marginal face count is not 16 (route-A ten rejected)",
+        "route_A_ten_faces": "first-order R-marginal face count is not 16 (route-A ten rejected)",
+        "route_A_trace_norm": "first-order R-marginal trace norm is not |tau|/18",
+        "straddling_nonzero": "straddling faces not all zero at first order"
+      }
+    },
+    {
+      "id": "selected_face_site_energy",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "kept_from_L_18": "selected face vector kept below L=24",
+        "route_A_at_most_18": "first-order site energies read as at most 18 (route A)",
+        "selected_energy_18": "selected face site energy is not 24"
+      }
+    },
+    {
+      "id": "one_family_no_common_limit",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "all_contained_identified": "route-B boxes identified with an all-contained boundary",
+        "common_limit_claimed": "common limit of two route-B families claimed",
+        "second_family": "a second route-B family or another boundary asserted"
+      }
+    },
+    {
+      "id": "exhaustion_within_prescription_only",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "N_k_not_largest": "N_k not the largest contained centered cube",
+        "boundary_condition_phrasing": "item 2a phrased as a boundary-condition comparison",
+        "singles_dropped_volumes": "volumes outside the route-B prescription",
+        "telescoped_exhaustion": "exhaustion not from one direct c5B comparison"
+      }
+    },
+    {
+      "id": "sign_mirror_pointwise",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "nonlocal_U": "U_E not a product of one-link unitaries",
+        "second_coupling": "-tau presented as a second coupling or observation",
+        "second_observation": "-tau presented as a second coupling or observation",
+        "untied_coefficient": "uniform flip identity fails for an untied selected coefficient",
+        "whole_sets_only": "pointwise mirror from subsequences or whole sets only"
+      }
+    },
+    {
+      "id": "identification_before_inheritance_route_b",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "R_only_identification": "identification not on every finite region",
+        "inheritance_before_identification": "inheritance before identification",
+        "route_A_reset_98": "inherited list is not the AX1 route-B list"
+      }
+    },
+    {
+      "id": "region_form_load_bearing_for_node",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "Q_L_only": "node restated from convergence inside each Q_L only",
+        "R_form_only": "node restated without the region-form Cauchy bound"
+      }
+    },
+    {
+      "id": "node_values_unchanged",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "datum_changed": "restated datum differs from the AX2 gate rational",
+        "other_node": "a node other than s=1",
+        "rederived_radius_headline": "restated radius differs from the AX2 gate rational (re-derived radius as headline)",
+        "seven_star_slope": "a slope other than 51|tau|/4 (seven-star 49|tau|/4 rejected)",
+        "smaller_state_term": "a smaller state term for the limit",
+        "undeclared_file": "the replay read an undeclared file"
+      }
+    },
+    {
+      "id": "reference_unresolved_retained_route_b",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "free_outside": "free value claimed outside the interval",
+        "label_dropped": "reference_unresolved dropped",
+        "shift_claimed": "an interaction shift claimed",
+        "sign_claimed": "a sign or coefficient of C(s) claimed"
+      }
+    },
+    {
+      "id": "no_finite_box_node_convergence",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "C_N_to_C_inf": "finite-box node convergence C_N(1) to C_inf(1) claimed"
+      }
+    },
+    {
+      "id": "no_route_b_dynamics_claim",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "BA2_constant_applied": "the BA2 (route-A) dynamics constant applied to route B",
+        "correlation_statement": "route-B dynamics or correlation-function statement made",
+        "dynamics_comparison": "route-B dynamics or correlation-function statement made",
+        "dynamics_level_exported": "gate field set differs from the contract"
+      }
+    },
+    {
+      "id": "non_coarse_translation_no_claim",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "invariance_claimed": "invariance or non-invariance claimed under non-coarse translations",
+        "non_invariance_claimed": "invariance or non-invariance claimed under non-coarse translations",
+        "route_A_reason": "the route-A rejection reason offered for the uniform model"
+      }
+    },
+    {
+      "id": "model_crossing_rejected",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "BB1_constants_applied": "BB1/BB2 constants applied to route B",
+        "identified_with_BB2_limit": "route-B limit identified with the zero-selected limit",
+        "transfer_to_zero_selected": "route-B statement transferred to the zero-selected family"
+      }
+    },
+    {
+      "id": "direct_comparison_required",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "telescoped_input": "a union-volume or telescoped comparison used to establish a target",
+        "union_volume_factor_2": "a union-volume or telescoped comparison used to establish a target"
+      }
+    },
+    {
+      "id": "rate_range_stated",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "O_one_over_N": "an O(1/N) rate statement",
+        "rate_from_BB2": "a rate in N transferred from BB2",
+        "rate_without_range": "a rate in N without its range of N in the same clause"
+      }
+    },
+    {
+      "count": 52,
+      "id": "contract_controls_all_executed",
+      "passed": true
+    },
+    {
+      "id": "error_ledger_itemized",
+      "ledger": {
+        "arithmetic": {
+          "reason": "exact Fractions; directed enclosures e^{1/8}<8/7, Machin pi and e^{-3} brackets",
+          "status": "not_applicable"
+        },
+        "cutoff_removal_at_fixed_N": {
+          "reason": "an exact limit at fixed N (AV1 F20-F23 with the route-B gap 1/2); constants independent of L",
+          "status": "not_applicable"
+        },
+        "identification_with_ax1_states": {
+          "reason": "exact equality of states on every finite region; no numeric cost",
+          "status": "not_applicable"
+        },
+        "node_restatement": {
+          "reason": "d and R-prime carried unchanged; R-prime already contains the arithmetic half-width",
+          "status": "not_applicable"
+        },
+        "normalization": {
+          "contribution_to_C_B": {
+            "exact": "34416005/48269112715774228399091712",
+            "preview": "7.13002644209e-19"
+          }
+        },
+        "route_b_every_site_coefficient_input": {
+          "contribution_to_C_B": {
+            "exact": "845/894120192",
+            "preview": "9.45063099525e-7"
+          },
+          "note": "supports meeting R through kappa=2: 2K_B(1+q); the far-site input enters the split rows through S_lambda"
+        },
+        "single_factor_groups": {
+          "first_order_share_of_K_B_labelled": {
+            "exact": "1/37255008",
+            "preview": "2.68420288622e-8"
+          },
+          "note": "3 of the 52 first-order faces per site and |z| of the per-site sum 29|z|; never straddling, never clipped",
+          "status": "charged inside K_B, t0 and tW (no separate additive term)"
+        },
+        "split_remainder": {
+          "closure_feedback": {
+            "exact": "51702461013068036493564484139896219768471507473605/274351489185302082854554779080124679068311218362862403859262288756568064",
+            "preview": "1.88453363845e-22"
+          },
+          "contribution_to_C_B": {
+            "exact": "108721080307523477736918873245822867603569255/152433055459041149932857217291001345334736607532029259422158848",
+            "preview": "7.13238214507e-19"
+          },
+          "removal": {
+            "exact": "34416005/48265923187187239477896512",
+            "preview": "7.13049761143e-19"
+          }
+        },
+        "straddling_supports_route_b": {
+          "contribution_to_C_B": {
+            "exact": "2647385/26817139457934784",
+            "preview": "9.87198878595e-11"
+          }
+        },
+        "whole_sequence_assembly": {
+          "assembly": "union_comparison",
+          "extra_cost": "0",
+          "factor": "1",
+          "labelled_nested_telescoping_factor": "64/63"
+        }
+      },
+      "passed": true
+    }
+  ],
+  "clock": "s=alpha*t_E/hbar (node s=1); theta=alpha*t/hbar for the inherited limit dynamics only",
+  "common_limit_claimed": false,
+  "continuum_claim": false,
+  "contract_controls_covered": [
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "no_priority_or_continuum_claim",
+    "changed_model_relabelled",
+    "insufficient_verdict_retained",
+    "tau_scaling_exponent",
+    "wrong_delta_alpha_hbar_clock",
+    "tier_mixing_rejected",
+    "uniform_in_N_not_in_a",
+    "placeholder_span_rejected",
+    "negation_aware_phrase_scan",
+    "parameters_declare_metric_weights_window",
+    "rate_constant_pair_prefrozen",
+    "decay_rate_in_N_not_a",
+    "topology_named",
+    "subsequence_versus_whole_sequence",
+    "common_clock",
+    "coefficient_decay_not_marginal_decay",
+    "normalization_couples_supports",
+    "outside_vector_not_ground_state",
+    "global_fidelity_orthogonality_catastrophe",
+    "cutoff_uniform_then_removed",
+    "cutoff_vector_removal",
+    "region_constant_scales_with_Y",
+    "named_construction_not_uniqueness",
+    "global_lipschitz_not_decay",
+    "fixture_second_order_propagation",
+    "fixture_split_lipschitz_and_trace",
+    "zero_free_region_required",
+    "every_site_coefficient_input",
+    "cutoff_limit_order",
+    "cauchy_estimate_not_compactness",
+    "limit_identified_with_aq1_limits",
+    "translation_invariance_separate_item",
+    "route_b_constants_not_route_a",
+    "disc_admissible_under_J_prime",
+    "support_one_groups",
+    "route_b_first_order_marginal",
+    "selected_face_site_energy",
+    "one_family_no_common_limit",
+    "exhaustion_within_prescription_only",
+    "sign_mirror_pointwise",
+    "identification_before_inheritance_route_b",
+    "region_form_load_bearing_for_node",
+    "node_values_unchanged",
+    "reference_unresolved_retained_route_b",
+    "no_finite_box_node_convergence",
+    "no_route_b_dynamics_claim",
+    "non_coarse_translation_no_claim",
+    "model_crossing_rejected",
+    "direct_comparison_required",
+    "rate_range_stated"
+  ],
+  "contribution_alias": "HNM-BC2-F route-B coefficient decay, marginal locality, whole-sequence convergence and node restatement (forward producer; AI-assisted, Claude)",
+  "controls_with_damaging_mutations": [
+    "cauchy_estimate_not_compactness",
+    "changed_model_relabelled",
+    "coefficient_decay_not_marginal_decay",
+    "coherent_evidence_tampering",
+    "common_clock",
+    "cutoff_limit_order",
+    "cutoff_uniform_then_removed",
+    "cutoff_vector_removal",
+    "decay_rate_in_N_not_a",
+    "direct_comparison_required",
+    "disc_admissible_under_J_prime",
+    "every_site_coefficient_input",
+    "exact_arithmetic_admission",
+    "exhaustion_within_prescription_only",
+    "fixture_second_order_propagation",
+    "fixture_split_lipschitz_and_trace",
+    "global_fidelity_orthogonality_catastrophe",
+    "global_lipschitz_not_decay",
+    "identification_before_inheritance_route_b",
+    "insufficient_verdict_retained",
+    "limit_identified_with_aq1_limits",
+    "model_crossing_rejected",
+    "named_construction_not_uniqueness",
+    "negation_aware_phrase_scan",
+    "no_finite_box_node_convergence",
+    "no_priority_or_continuum_claim",
+    "no_route_b_dynamics_claim",
+    "node_values_unchanged",
+    "non_coarse_translation_no_claim",
+    "normalization_couples_supports",
+    "one_family_no_common_limit",
+    "outside_vector_not_ground_state",
+    "parameters_declare_metric_weights_window",
+    "placeholder_span_rejected",
+    "rate_constant_pair_prefrozen",
+    "rate_range_stated",
+    "reference_unresolved_retained_route_b",
+    "region_constant_scales_with_Y",
+    "region_form_load_bearing_for_node",
+    "route_b_constants_not_route_a",
+    "route_b_first_order_marginal",
+    "selected_face_site_energy",
+    "sign_mirror_pointwise",
+    "subsequence_versus_whole_sequence",
+    "support_one_groups",
+    "tau_scaling_exponent",
+    "tier_mixing_rejected",
+    "topology_named",
+    "translation_invariance_separate_item",
+    "uniform_in_N_not_in_a",
+    "wrong_delta_alpha_hbar_clock",
+    "zero_free_region_required"
+  ],
+  "cover": "R={0,e_z}",
+  "damaging_mutations_total": 219,
+  "direction": "forward",
+  "error_ledger": {
+    "arithmetic": {
+      "reason": "exact Fractions; directed enclosures e^{1/8}<8/7, Machin pi and e^{-3} brackets",
+      "status": "not_applicable"
+    },
+    "cutoff_removal_at_fixed_N": {
+      "reason": "an exact limit at fixed N (AV1 F20-F23 with the route-B gap 1/2); constants independent of L",
+      "status": "not_applicable"
+    },
+    "identification_with_ax1_states": {
+      "reason": "exact equality of states on every finite region; no numeric cost",
+      "status": "not_applicable"
+    },
+    "node_restatement": {
+      "reason": "d and R-prime carried unchanged; R-prime already contains the arithmetic half-width",
+      "status": "not_applicable"
+    },
+    "normalization": {
+      "contribution_to_C_B": {
+        "exact": "34416005/48269112715774228399091712",
+        "preview": "7.13002644209e-19"
+      }
+    },
+    "route_b_every_site_coefficient_input": {
+      "contribution_to_C_B": {
+        "exact": "845/894120192",
+        "preview": "9.45063099525e-7"
+      },
+      "note": "supports meeting R through kappa=2: 2K_B(1+q); the far-site input enters the split rows through S_lambda"
+    },
+    "single_factor_groups": {
+      "first_order_share_of_K_B_labelled": {
+        "exact": "1/37255008",
+        "preview": "2.68420288622e-8"
+      },
+      "note": "3 of the 52 first-order faces per site and |z| of the per-site sum 29|z|; never straddling, never clipped",
+      "status": "charged inside K_B, t0 and tW (no separate additive term)"
+    },
+    "split_remainder": {
+      "closure_feedback": {
+        "exact": "51702461013068036493564484139896219768471507473605/274351489185302082854554779080124679068311218362862403859262288756568064",
+        "preview": "1.88453363845e-22"
+      },
+      "contribution_to_C_B": {
+        "exact": "108721080307523477736918873245822867603569255/152433055459041149932857217291001345334736607532029259422158848",
+        "preview": "7.13238214507e-19"
+      },
+      "removal": {
+        "exact": "34416005/48265923187187239477896512",
+        "preview": "7.13049761143e-19"
+      }
+    },
+    "straddling_supports_route_b": {
+      "contribution_to_C_B": {
+        "exact": "2647385/26817139457934784",
+        "preview": "9.87198878595e-11"
+      }
+    },
+    "whole_sequence_assembly": {
+      "assembly": "union_comparison",
+      "extra_cost": "0",
+      "factor": "1",
+      "labelled_nested_telescoping_factor": "64/63"
+    }
+  },
+  "exclusions": {
+    "contract": [
+      "uniqueness of every infinite-volume ground state",
+      "statements about boundary conditions outside the named construction",
+      "a common limit of two route-B families",
+      "route-B dynamics and correlation functions",
+      "convergence of finite-box nodes",
+      "the zero-selected family",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "scientific priority"
+    ],
+    "preregistration": [
+      "uniqueness of every infinite-volume ground state",
+      "boundary conditions outside the named construction",
+      "route-B dynamics",
+      "the zero-selected family",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "scientific priority"
+    ]
+  },
+  "family": "FB: centered whole-star-plus-single-group boxes Lambda_N=[-N,N]^3 (route B, AX1 construction)",
+  "fixtures": [
+    "coefficient_vs_marginal",
+    "cutoff_limit_order",
+    "cutoff_vector_eckart",
+    "end_to_end_chain_lemma",
+    "fixed_versus_moving_vector",
+    "flip_set_odd",
+    "global_fidelity_product_state",
+    "local_mirror",
+    "mean_field_lipschitz",
+    "normalization_zero",
+    "outside_vector_not_ground_state",
+    "second_order_propagation",
+    "single_support_lipschitz",
+    "split_identity_and_covering_recursion",
+    "split_lipschitz_and_trace_mixed",
+    "straddling_supports",
+    "translation_residues",
+    "whole_sequence_versus_subsequence"
+  ],
+  "gate_fields": {
+    "common_limit_claimed": false,
+    "continuum_claim": false,
+    "gns_dynamics_equality_claimed": false,
+    "node_certificate_restated_for_limit": true,
+    "rate_in_N_claimed": true,
+    "rate_in_a_claimed": false,
+    "resolved_interaction_shift": false,
+    "scientific_priority_verified": false,
+    "state_convergence_claimed": true,
+    "state_decay_claimed": true,
+    "state_decay_scope": "reduced densities of route-B finite-box ground vectors on R and on regions Y, per comparison (c1B, c4B, c5B)",
+    "translation_invariance_claimed": true,
+    "translation_invariance_scope": "coarse translations; the limit of the named construction (route B)",
+    "uniform_in_time_claimed": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false,
+    "whole_sequence_claimed": true,
+    "whole_sequence_scope": "reduced densities of the centered whole-star-plus-single-group construction of the uniform route-B model on every finite region"
+  },
+  "gns_dynamics_equality_claimed": false,
+  "headline": {
+    "C_B": {
+      "exact": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+      "input": "K_B (analytic_disc)",
+      "margin": "4.23207954218e0",
+      "preview": "9.45161819414e-7",
+      "q": "1/64",
+      "route": "iterated_split",
+      "target": "1/250000",
+      "tier": "exact_first_order"
+    },
+    "C_prime_B": {
+      "assembly": "union_comparison",
+      "exact": "2326328761843649826272217312701707175/2461302090348550272620124432958434944821248",
+      "margin": "4.23207954218e0",
+      "preview": "9.45161819414e-7",
+      "q": "1/64",
+      "route": "iterated_split",
+      "target": "1/250000",
+      "tier": "exact_first_order"
+    },
+    "K_B": {
+      "disc_radius": "64|tau|",
+      "exact": "13/27941256",
+      "form": "sum over I containing u of ||c^A_I-c^B_I|| at most K_B q^((N-|u|_inf)_+), every site u of the union volume, every N at least 2",
+      "margin": "2.14932738461e0",
+      "preview": "4.65261833612e-7",
+      "q": "1/64",
+      "route": "analytic_disc",
+      "target": "1/1000000",
+      "tier": "exact_first_order"
+    },
+    "c_prime_site_B": {
+      "assembly": "union_comparison",
+      "exact": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+      "margin": "2.68637861564e0",
+      "preview": "9.30620868347e-7",
+      "q": "1/64",
+      "route": "iterated_split",
+      "target": "1/400000",
+      "tier": "exact_first_order"
+    },
+    "c_site_B": {
+      "exact": "35789673259133074250341804810795495/38457845161696098009689444264975546012832",
+      "margin": "2.14910289251e0",
+      "preview": "9.30620868347e-7",
+      "q": "1/64",
+      "route": "iterated_split",
+      "target": "1/500000",
+      "tier": "exact_first_order"
+    },
+    "crude_tier": {
+      "C_B": {
+        "exact": "362331029338528852703336460633941/193178427869162139024664513304450000",
+        "preview": "1.87562883358e-3"
+      },
+      "K_B": {
+        "exact": "2146/2734375",
+        "preview": "7.84822857142e-4"
+      },
+      "c_site_B": {
+        "exact": "111486470565701185447180449425828/60368258709113168445207660407640625",
+        "preview": "1.84677300537e-3"
+      },
+      "status": "reported only; fails"
+    },
+    "disc_admissibility": {
+      "contraction": "2552/390625",
+      "route_A_extreme_self_map": "29/1792",
+      "self_map": "1073/2734375",
+      "split_contraction": "40832/390625",
+      "split_self_map": "17168/2734375"
+    },
+    "node": {
+      "datum": "497870683678639429793424156500617766317/40000000000000000000000000000000000000000",
+      "radius_R_prime": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+      "s": "1",
+      "status": "restated for the limit, values equal to the AX2 gate rationals",
+      "tau": "+1/100000000"
+    },
+    "statement": "For the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling handled by route B, at the same coupling |tau|<=10^-8, the reduced densities of the named construction (centered whole-star-plus-single-group boxes on centered coarse cubes) converge as a whole sequence on every finite region, at a rate in N that holds for every N at least 2 with the region inside the box, and to the same limit along every exhausting sequence of finite complete-factor volumes of the same prescription; this limit coincides with every AQ1 subsequential state of that construction, is invariant under coarse translations, and at tau=+10^-8 has centered Euclidean Wilson correlation C(1) within the AX2 radius of the AX2 datum at the node s=1; this is convergence of the named constructions (one family for route B), not uniqueness of any ground state, not a statement about other boundary conditions or about states outside the named construction, not weak coupling or continuum, and not a statement uniform in the lattice spacing a. Constants (exact_first_order; q=1/64; both signs; every N at least 2): K_B=13/27941256 (analytic_disc, disc radius 64|tau|), C_B=2326328761843649826272217312701707175/2461302090348550272620124432958434944821248 and c_site,B=35789673259133074250341804810795495/38457845161696098009689444264975546012832 (iterated_split, W=1024), C_prime_B=2326328761843649826272217312701707175/2461302090348550272620124432958434944821248 and c_prime_site,B=35789673259133074250341804810795495/38457845161696098009689444264975546012832 (iterated_split, assembly union_comparison); node datum and radius equal to the AX2 gate rationals."
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "label": "convergence_of_named_constructions",
+  "label_text": "uniform Kogut-Susskind SU(2) at fixed spacing and strong bare coupling (g^4=9.6x10^9)",
+  "loop": "BC2",
+  "mandatory_sentence_template": "For the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare coupling handled by route B, at the same coupling |tau|<=10^-8, the reduced densities of the named construction (centered whole-star-plus-single-group boxes on centered coarse cubes) converge as a whole sequence on every finite region, at a rate in N that holds for every N at least 2 with the region inside the box, and to the same limit along every exhausting sequence of finite complete-factor volumes of the same prescription; this limit coincides with every AQ1 subsequential state of that construction, is invariant under coarse translations, and at tau=+10^-8 has centered Euclidean Wilson correlation C(1) within the AX2 radius of the AX2 datum at the node s=1; this is convergence of the named constructions (one family for route B), not uniqueness of any ground state, not a statement about other boundary conditions or about states outside the named construction, not weak coupling or continuum, and not a statement uniform in the lattice spacing a.",
+  "metric": "coarse l-infinity on factor sites (star diameter 1, single-factor group diameter 0)",
+  "model": "AQ_uniform_routeB",
+  "node_certificate_restated_for_limit": true,
+  "obligations": [
+    "a route-B boundary-prescription comparison (an all-contained analogue with its own itemization)",
+    "route-B dynamics and correlation functions (a route-B BA2)",
+    "uniqueness of any ground state",
+    "anything uniform in the lattice spacing a",
+    "the continuum problem"
+  ],
+  "outcome_note": "proposed for the single forward producer; admission needs the skeptic replay from the contract",
+  "proposed_forward_verdict": "accepted_within_scope",
+  "rate_claims": [
+    "sum over I containing u of ||c^A_I-c^B_I|| at most K_B q^((N-|u|_inf)_+) for every N at least 2 and every site u of the union volume",
+    "||rho^{box1}_R-rho^{box2}_R||_1 at most C_B q^(N-1) for every N at least 2",
+    "||rho^{box1}_Y-rho^{box2}_Y||_1 at most c_site,B |Y| e^{|Y|/10^8} q^{d_Y} for every N at least 2 with Y inside Lambda_N",
+    "sup over M greater than N of ||rho^{FB,M}_R-rho^{FB,N}_R||_1 at most C_prime_B q^(N-1) for every N at least 2",
+    "sup over M greater than N of ||rho^{FB,M}_Y-rho^{FB,N}_Y||_1 at most c_prime_site,B |Y| e^{|Y|/10^8} q^{d_Y} for every N at least 2 with Y inside Lambda_N",
+    "||rho^{V_k}_Y-rho^inf_Y||_1 at most (c_site,B+c_prime_site,B)|Y| e^{|Y|/10^8} q^(N_k-max|y|_inf) for every N_k at least 2 with Y inside Lambda_{N_k}",
+    "||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 at most C_B q^(N-|v|_inf-1) for N at least |v|_inf+2"
+  ],
+  "rate_in_N_claimed": true,
+  "rate_in_a_claimed": false,
+  "resolved_interaction_shift": false,
+  "routes_executed": [
+    "analytic_disc",
+    "iterated_split"
+  ],
+  "scientific_priority_verified": false,
+  "scratch_disclosure": "/tmp/claude-0/bc2-forward-private/ (private; nothing in it is evidence)",
+  "secondary_labels": [
+    "certificate_restated_for_limit",
+    "reference_unresolved",
+    "static_not_dynamic"
+  ],
+  "state_convergence_claimed": true,
+  "state_decay_claimed": true,
+  "state_decay_scope": "reduced densities of route-B finite-box ground vectors on R and on regions Y, per comparison (c1B, c4B, c5B)",
+  "tier": "exact_first_order",
+  "topology": "trace norm on B(H_Y)",
+  "translation_invariance_claimed": true,
+  "translation_invariance_scope": "coarse translations; the limit of the named construction (route B)",
+  "uniform_in_time_claimed": false,
+  "uniform_wilson_claim": true,
+  "uniform_wilson_claim_scope": "means only that the model is the uniform fixed-spacing Kogut-Susskind SU(2) model at strong bare coupling as labelled; no uniform Wilson-mean sign certificate",
+  "uniqueness_of_ground_state_claimed": false,
+  "weak_coupling_claim": false,
+  "whole_sequence_claimed": true,
+  "whole_sequence_scope": "reduced densities of the centered whole-star-plus-single-group construction of the uniform route-B model on every finite region"
+}

@@ -1,0 +1,453 @@
+{
+ "schema": "hnm-round33-modern-lens-assistant4-results-v1",
+ "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+ "human_author": "Hruday N M (BUNZEEY)",
+ "role": "modern (Penrose/Feynman) lens, research assistant/coder assistant-4",
+ "round": 33,
+ "subround": 4,
+ "scope_note": "BD1/BD2 applications stage previews and cross-checks; zero research loops; never imports or executes a producer check.py.",
+ "tools": {
+  "group_moments_flint": {
+   "schema": "hnm-round33-modern-lens-assistant4-group-moments-v1",
+   "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+   "human_author": "Hruday N M (BUNZEEY)",
+   "role": "modern (Penrose/Feynman) lens, research assistant/coder assistant-4",
+   "round": 33,
+   "subround": 4,
+   "admitted_gate_sha256_of_bd1": null,
+   "bd1_gate_accepted_headline": "accepted_within_scope...",
+   "first_order_coefficient": {
+    "closed_form_identity_2_E_W2_over_96_CF_equals_1_over_48N_N2m1": true,
+    "checks": [
+     {
+      "id": "first_order_coefficient_SU3",
+      "N": 3,
+      "formula_value": "1/1152",
+      "admitted_value": "1/1152",
+      "passed": true
+     },
+     {
+      "id": "first_order_coefficient_SU4",
+      "N": 4,
+      "formula_value": "1/2880",
+      "admitted_value": "1/2880",
+      "passed": true
+     },
+     {
+      "id": "first_order_coefficient_SU5",
+      "N": 5,
+      "formula_value": "1/5760",
+      "admitted_value": "1/5760",
+      "passed": true
+     }
+    ]
+   },
+   "SO(3)": {
+    "method": "sympy.integrate of W(theta)^k against (1-cos theta)/pi on [0,pi], exact",
+    "computed_moments": {
+     "1": "0",
+     "2": "1/9",
+     "3": "1/27",
+     "4": "1/27",
+     "5": "2/81"
+    },
+    "comparison": [
+     {
+      "k": 1,
+      "computed": "0",
+      "admitted": "0",
+      "passed": true
+     },
+     {
+      "k": 2,
+      "computed": "1/9",
+      "admitted": "1/9",
+      "passed": true
+     },
+     {
+      "k": 3,
+      "computed": "1/27",
+      "admitted": "1/27",
+      "passed": true
+     },
+     {
+      "k": 4,
+      "computed": "1/27",
+      "admitted": "1/27",
+      "passed": true
+     },
+     {
+      "k": 5,
+      "computed": "2/81",
+      "admitted": "2/81",
+      "passed": true
+     }
+    ],
+    "all_passed": true
+   },
+   "SU_numeric_weyl_quadrature": {
+    "SU(3)": {
+     "M": 21,
+     "M_recheck": 23,
+     "grid_points": 441,
+     "seconds": 0.001,
+     "max_drift_vs_finer_grid": 1.9984014443252818e-15,
+     "E": {
+      "0": 0.9999999999999998,
+      "1": -9.422839597701986e-17,
+      "2": 0.055555555555555504,
+      "3": 0.009259259259259231,
+      "4": 0.009259259259259271,
+      "5": 0.0038580246913580214
+     },
+     "comparison": [
+      {
+       "k": 1,
+       "admitted": "0",
+       "admitted_preview": 0.0,
+       "numeric_preview": -9.422839597701986e-17,
+       "abs_diff": 9.422839597701986e-17,
+       "passed": true
+      },
+      {
+       "k": 2,
+       "admitted": "1/18",
+       "admitted_preview": 0.05555555555555555,
+       "numeric_preview": 0.055555555555555504,
+       "abs_diff": 4.85722573273506e-17,
+       "passed": true
+      },
+      {
+       "k": 3,
+       "admitted": "1/108",
+       "admitted_preview": 0.009259259259259259,
+       "numeric_preview": 0.009259259259259231,
+       "abs_diff": 2.7755575615628914e-17,
+       "passed": true
+      },
+      {
+       "k": 4,
+       "admitted": "1/108",
+       "admitted_preview": 0.009259259259259259,
+       "numeric_preview": 0.009259259259259271,
+       "abs_diff": 1.214306433183765e-17,
+       "passed": true
+      },
+      {
+       "k": 5,
+       "admitted": "5/1296",
+       "admitted_preview": 0.0038580246913580245,
+       "numeric_preview": 0.0038580246913580214,
+       "abs_diff": 3.0357660829594124e-18,
+       "passed": true
+      }
+     ],
+     "all_passed_at_tol_1e-9": true
+    },
+    "SU(4)": {
+     "M": 25,
+     "M_recheck": 27,
+     "grid_points": 15625,
+     "seconds": 0.033,
+     "max_drift_vs_finer_grid": 1.7430501486614958e-14,
+     "E": {
+      "0": 0.9999999999999797,
+      "1": -2.521616156621794e-16,
+      "2": 0.03125000000000027,
+      "3": -1.294271865607636e-17,
+      "4": 0.0034179687500000425,
+      "5": -2.2410210261577155e-18
+     },
+     "comparison": [
+      {
+       "k": 1,
+       "admitted": "0",
+       "admitted_preview": 0.0,
+       "numeric_preview": -2.521616156621794e-16,
+       "abs_diff": 2.521616156621794e-16,
+       "passed": true
+      },
+      {
+       "k": 2,
+       "admitted": "1/32",
+       "admitted_preview": 0.03125,
+       "numeric_preview": 0.03125000000000027,
+       "abs_diff": 2.706168622523819e-16,
+       "passed": true
+      },
+      {
+       "k": 3,
+       "admitted": "0",
+       "admitted_preview": 0.0,
+       "numeric_preview": -1.294271865607636e-17,
+       "abs_diff": 1.294271865607636e-17,
+       "passed": true
+      },
+      {
+       "k": 4,
+       "admitted": "7/2048",
+       "admitted_preview": 0.00341796875,
+       "numeric_preview": 0.0034179687500000425,
+       "abs_diff": 4.2500725161431774e-17,
+       "passed": true
+      },
+      {
+       "k": 5,
+       "admitted": "0",
+       "admitted_preview": 0.0,
+       "numeric_preview": -2.2410210261577155e-18,
+       "abs_diff": 2.2410210261577155e-18,
+       "passed": true
+      }
+     ],
+     "all_passed_at_tol_1e-9": true
+    },
+    "SU(5)": {
+     "M": 29,
+     "M_recheck": 31,
+     "grid_points": 707281,
+     "seconds": 1.677,
+     "max_drift_vs_finer_grid": 1.5987211554602254e-14,
+     "E": {
+      "0": 1.0000000000001545,
+      "1": -1.672995702080601e-15,
+      "2": 0.020000000000001385,
+      "3": -1.0565380966730457e-16,
+      "4": 0.001199999999999909,
+      "5": 2.0000000000005094e-05
+     },
+     "comparison": [
+      {
+       "k": 1,
+       "admitted": "0",
+       "admitted_preview": 0.0,
+       "numeric_preview": -1.672995702080601e-15,
+       "abs_diff": 1.672995702080601e-15,
+       "passed": true
+      },
+      {
+       "k": 2,
+       "admitted": "1/50",
+       "admitted_preview": 0.02,
+       "numeric_preview": 0.020000000000001385,
+       "abs_diff": 1.384309333829492e-15,
+       "passed": true
+      },
+      {
+       "k": 3,
+       "admitted": "0",
+       "admitted_preview": 0.0,
+       "numeric_preview": -1.0565380966730457e-16,
+       "abs_diff": 1.0565380966730457e-16,
+       "passed": true
+      },
+      {
+       "k": 4,
+       "admitted": "3/2500",
+       "admitted_preview": 0.0012,
+       "numeric_preview": 0.001199999999999909,
+       "abs_diff": 9.085614205428527e-17,
+       "passed": true
+      },
+      {
+       "k": 5,
+       "admitted": "1/50000",
+       "admitted_preview": 2e-05,
+       "numeric_preview": 2.0000000000005094e-05,
+       "abs_diff": 5.092362078892854e-18,
+       "passed": true
+      }
+     ],
+     "all_passed_at_tol_1e-9": true
+    }
+   },
+   "SU3_arb_rigorous_enclosure": {
+    "precision_bits": 200,
+    "M": 21,
+    "grid_points": 441,
+    "checks": [
+     {
+      "k": 1,
+      "admitted": "0",
+      "ball": "[+/- 3.08e-59]",
+      "admitted_in_ball": true
+     },
+     {
+      "k": 2,
+      "admitted": "1/18",
+      "ball": "[0.0555555555555555555555555555555555555555555555555555555555 +/- 6.93e-59]",
+      "admitted_in_ball": true
+     },
+     {
+      "k": 3,
+      "admitted": "1/108",
+      "ball": "[0.00925925925925925925925925925925925925925925925925925925926 +/- 7.37e-60]",
+      "admitted_in_ball": true
+     },
+     {
+      "k": 4,
+      "admitted": "1/108",
+      "ball": "[0.00925925925925925925925925925925925925925925925925925925926 +/- 5.16e-60]",
+      "admitted_in_ball": true
+     },
+     {
+      "k": 5,
+      "admitted": "5/1296",
+      "ball": "[0.00385802469135802469135802469135802469135802469135802469136 +/- 4.14e-60]",
+      "admitted_in_ball": true
+     }
+    ],
+    "all_passed": true
+   },
+   "all_passed": true
+  },
+  "obstruction_series": {
+   "schema": "hnm-round33-modern-lens-assistant4-obstruction-series-v1",
+   "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+   "human_author": "Hruday N M (BUNZEEY)",
+   "role": "modern (Penrose/Feynman) lens, research assistant/coder assistant-4",
+   "round": 33,
+   "subround": 4,
+   "SU(3)": {
+    "ring_energies_32C2": [
+     "128/3",
+     "128/3"
+    ],
+    "ring_hop_weight": "1/6",
+    "E_W2_from_ring": "1/18",
+    "d_omega_W2_dtau": "1/6912",
+    "omega_2": "1/589824",
+    "admitted": {
+     "d_omega_W2_dtau": "1/6912",
+     "omega_2": "1/589824"
+    },
+    "passed": true,
+    "arb_preview": {
+     "d_omega_W2_dtau": 0.00014467592592592592,
+     "omega_2": 1.6954210069444444e-06
+    }
+   },
+   "SO(3)": {
+    "by_lmax": {
+     "1": {
+      "d_omega_W2_dtau": "1/2592",
+      "omega_2": "1/331776"
+     },
+     "2": {
+      "d_omega_W2_dtau": "1/2592",
+      "omega_2": "1/331776"
+     },
+     "3": {
+      "d_omega_W2_dtau": "1/2592",
+      "omega_2": "1/331776"
+     },
+     "4": {
+      "d_omega_W2_dtau": "1/2592",
+      "omega_2": "1/331776"
+     }
+    },
+    "truncation_converged_l1_through_l4": true,
+    "d_omega_W2_dtau": "1/2592",
+    "omega_2": "1/331776",
+    "admitted": {
+     "d_omega_W2_dtau": "1/2592",
+     "omega_2": "1/331776"
+    },
+    "passed": true,
+    "arb_preview": {
+     "d_omega_W2_dtau": 0.00038580246913580245,
+     "omega_2": 3.0140817901234566e-06
+    }
+   },
+   "SU(5)": {
+    "ring_energies_32C2_Lambda1to4": [
+     "384/5",
+     "576/5",
+     "576/5",
+     "384/5"
+    ],
+    "ring_hop_weight": "1/10",
+    "E_coefficients_1to5": [
+     "0",
+     "-1/34560",
+     "0",
+     "1/137594142720",
+     "-1/951050714480640"
+    ],
+    "omega_4": "1/63403380965376",
+    "admitted": "1/63403380965376",
+    "passed": true,
+    "arb_preview": {
+     "omega_4": 1.5772029579086495e-14
+    }
+   },
+   "all_passed": true
+  },
+  "bd2_numbers": {
+   "schema": "hnm-round33-modern-lens-assistant4-bd2-numbers-v1",
+   "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+   "human_author": "Hruday N M (BUNZEEY)",
+   "role": "modern (Penrose/Feynman) lens, research assistant/coder assistant-4",
+   "round": 33,
+   "subround": 4,
+   "precision_bits": 300,
+   "electric_band": {
+    "L": "315493271189404369878663368737136921794795815043212654249128159/720528856978172107545458049318912000000000000000000000000000000000000000",
+    "lower_formula": "(3/2) L^2",
+    "lower_exact": "99536004165791049425300773950650456874015451568973476245606417493434267637549163914243518625682267830963863935112811606729281/346107889158847464132330923015611755407765743694640423831387242496000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "admitted_lower": "99536004165791049425300773950650456874015451568973476245606417493434267637549163914243518625682267830963863935112811606729281/346107889158847464132330923015611755407765743694640423831387242496000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "exact_match_lower": true,
+    "arb_lower_ball": "[2.8758663781890461702080613091564659676080874813286195541697088511190520192987121826279547e-19 +/- 9.20e-109]",
+    "arb_lower_contains_admitted": true,
+    "upper_formula": "98 |tau|",
+    "upper_exact": "49/50000000",
+    "admitted_upper": "49/50000000",
+    "exact_match_upper": true,
+    "arb_upper_ball": "[9.8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e-7 +/- 2.22e-96]",
+    "arb_upper_contains_admitted": true,
+    "band_nondegenerate_lower_lt_upper_provable": true,
+    "passed": true
+   },
+   "loop_1x2_bound": {
+    "K_2_prime": "966771578474926086618624139557778885954947547760216752246561/72052885697817210754545804931891200000000000000000000000",
+    "tau": "1/100000000",
+    "bound_exact": "966771578474926086618624139557778885954947547760216752246561/720528856978172107545458049318912000000000000000000000000000000000000000",
+    "admitted": "966771578474926086618624139557778885954947547760216752246561/720528856978172107545458049318912000000000000000000000000000000000000000",
+    "exact_match": true,
+    "arb_ball": "[1.3417527543996946696088344369468275172880248623848145846697295954181849824984309112155758e-12 +/- 2.67e-101]",
+    "arb_contains_admitted": true,
+    "formal_second_order_term_at_tau": "7/1244160000000000000000",
+    "certified_bound_dominates_formal_term": true,
+    "passed": true
+   },
+   "dimension_2p1_constants": {
+    "R": "1/64",
+    "e_3_32_ball": "[1.0982851403078258486502099342567867188098263100638012840808817370937659064142990743328292 +/- 2.18e-89]",
+    "G3_ball_9_e_3_32": "[9.8845662627704326378518894083110804692884367905742115567279356338438931577286916689954630 +/- 3.06e-89]",
+    "G3_admitted_bracket": [
+     "49422831313852163189259447041555402346441/5000000000000000000000000000000000000000",
+     "98845662627704326378518894083110804692891/10000000000000000000000000000000000000000"
+    ],
+    "G3_bracket_contains_ball_lo": true,
+    "G3_bracket_contains_ball_hi": true,
+    "G3p_ball_118_e_3_32": "[129.59764655632345014072477224230083281955950458752855152154404497706437695688729077127385 +/- 2.25e-87]",
+    "G3p_admitted_bracket": [
+     "323994116390808625351811930605752082048891/2500000000000000000000000000000000000000",
+     "647988232781617250703623861211504164097841/5000000000000000000000000000000000000000"
+    ],
+    "G3p_bracket_contains_ball_lo": true,
+    "G3p_bracket_contains_ball_hi": true,
+    "cap_ball_1_over_576_e_3_32": "[0.0015807471551736703608394182053407154094075230751083581330359587691311987446840144726665518 +/- 1.69e-92]",
+    "cap_directed_lower_admitted": "1580747155173/1000000000000000",
+    "cap_directed_lower_is_valid_lower_bound": true,
+    "selfmap_condition_tau_G3_leq_R_at_cap_directed_lower": true,
+    "exclusion_condition_2_tau_G3p_lt_1_at_cap_directed_lower": true,
+    "closed_form_8e6t_1p8t_matches_9e_3_32": true,
+    "closed_form_8e6t_14p48t_matches_118e_3_32": true,
+    "passed": true
+   },
+   "all_passed": true
+  }
+ },
+ "all_passed": true
+}

@@ -1,0 +1,189 @@
+{
+ "schema": "hnm-round33-lens-recommendation-v1",
+ "status": "advisory_not_contract",
+ "lens": "modern (Penrose/Feynman methodological), model agent with shared ancestry",
+ "human_author": "Hruday N M (BUNZEEY)",
+ "date": "2026-09-24",
+ "memo": "research/round33/experts/modern/memo.md",
+ "subrounds": [
+  {
+   "id": "BA",
+   "goal": "Locality inputs: boundary decay of the AM2 creation coefficients and boundary independence of the finite-volume dynamics (F1 versus F2), both from admitted constants.",
+   "loops": [
+    {
+     "id": "BA1",
+     "title": "Weighted creation norm and boundary decay of the AM2 coefficients",
+     "direction": "paired (forward: Steiner-star weighted norm, Lemma W, and a boundary-weighted Lipschitz argument; reverse: complex-coupling analyticity, Cauchy estimate and tree locality)",
+     "target": "(T1) For every F1 and F2 box, every onsite cutoff and every 1 ≤ w ≤ 1/(37888|tau|) (390625/148 at |tau|=10^-8): ||c||_{sigma,w} ≤ 1/64, with sigma(M) the least number of overlap-connected star translates covering M. (T2) For u in R={0,e_z}: sum_{M ni u} ||c^{N'}_M - c^{N}_M|| ≤ (1/32)(37888|tau|)^{n_0}/(1-37888|tau|), with n_0=N for F1-F1 and F2-F2 (N'≥N+1≥2) and n_0=N-1 for F1 against F2 on the same box; preview at the cap and N=2: 4.49e-9. Mandatory label: coefficient decay, not convergence of states. Retained failure: only cardinality weights close (limited: smallness in support size, no distance decay)."
+    },
+    {
+     "id": "BA2",
+     "title": "Boundary independence of the dynamics on compact time windows and existence of the F2 dynamics",
+     "direction": "paired (forward: polynomial F(r)=(1+r)^-4; reverse: exponential F_lambda(r)=e^{-lambda r}(1+r)^-4 with lambda=1)",
+     "target": "For A in B(H_R), ||A||≤1, |tau|≤10^-8 and common clock theta=alpha t/hbar: sup_{|theta|≤1} ||tau^{F2,N}_theta(A)-tau^{F1,N}_theta(A)|| ≤ 3969 tau^2 e^{127008|tau|} (5N+1)/N^3 (at most 5.5e-13 at N=2 at the cap), using C=224, ||Phi||_F≤2268|tau| and the 28N(5N+1) extra faces at l1 distance at least N-1; and the F2 box evolutions converge in norm, uniformly on compact windows, to the AQ1 automorphism group T_theta. Retained failure: the interaction-picture Lieb-Robinson form does not apply to the face commutator (limited, no F2 dynamics)."
+    }
+   ],
+   "reason": "Both loops are most feasible: BA2 uses only admitted constants (AQ1, AY2 face count) and a Duhamel identity; BA1 needs one short lemma on top of the AM2 majorant. They are independent and supply the inputs of BB1 (weighted norm for route A; exponential Lieb-Robinson constants for route B)."
+  },
+  {
+   "id": "BB",
+   "goal": "Whole-sequence convergence of the R-marginal with an explicit rate, a common limit omega_inf for F1 and F2, and the correlation functions, gap and translation invariance of that limit.",
+   "loops": [
+    {
+     "id": "BB1",
+     "title": "Whole-sequence convergence of the R-marginal, common limit of F1 and F2, explicit rate",
+     "direction": "paired (forward route A: hard-core polymer gas of pairs (F,F') from psi(s)=e^{-C(s)}Omega_0, Kotecky-Preiss with evaluated weights, uniform bound K, Cauchy estimate in the complex coupling; reverse route B: AM2 gap along the interpolation H(theta), exponential Lieb-Robinson, imaginary-time clustering and static susceptibility)",
+     "target": "Exact rationals C and q below 1 with ||rho^{Fi,N}_R - rho^{Fj,N'}_R||_1 ≤ C q^{N-1} for all N'≥N≥2 and i,j in {1,2}. Tiers: (a) some q below 1 (whole-sequence convergence and a common limit; every subsequential limit of either family equals omega_inf on R); (b) q≤1/1000 and C≤4 at |tau|=10^-8 (route A candidate q=222/390625, K≤2); (c) ||rho^{F2,5}_R - rho^inf_R||_1 ≤ 2K_2' tau^2 (about 2.68e-12). Required wording: whole-sequence convergence of the named constructions, not uniqueness of infinite-volume ground states. Retained failure: KP not closable with evaluated constants (forward limited: coefficient decay only); C_B not explicit (reverse limited). A failed route is not evidence that limits differ."
+    },
+    {
+     "id": "BB2",
+     "title": "Correlation functions, gap and translation invariance of the limit",
+     "direction": "single+skeptic",
+     "target": "For bounded local A on R and |theta|≤1: |c^{Fi,N}_A(theta) - c^inf_A(theta)| ≤ an explicit bound decaying exponentially in N (via a Lieb-Robinson ball approximation and the BB1 rate on the ball); omega_inf composed with any coarse translation equals omega_inf; the AQ2 gap alpha/16 and vacuum simplicity hold in the GNS representation of omega_inf. Retained failure: only polynomial-F rates close (limited: O(1/N))."
+    }
+   ],
+   "reason": "BB1 is the central new mathematics (a standard method with a large margin at the cap: KP sum at most 1/32 against a=1/10) and settles the literal roadmap goal 1 for the named families plus AY2 obligations O2, O4 (and O3 via BB2). BB2 is assembly once BA2 and BB1 are admitted."
+  },
+  {
+   "id": "BC",
+   "goal": "Consequences for the admitted certificates and the remaining uniqueness question.",
+   "loops": [
+    {
+     "id": "BC1",
+     "title": "The AV2, AW2 and AX2 certificates as statements about the limit omega_inf",
+     "direction": "single+skeptic (replay on the limit; AX2 needs BB1 re-instantiated for the uniform route-B model with J'=29|tau|)",
+     "target": "Each certificate (AV2 Euclidean node radius about 1.83e-7; AW2 sign-certified mean about [6.91e-11, 6.98e-11]; AX2 uniform node radius about 1.91e-7) holds for omega_inf with its admitted radius or interval, the BB1 tail being zero in the limit. Retained failure: KP does not close for the uniform model (AX2 transfer limited)."
+    },
+    {
+     "id": "BC2",
+     "title": "Uniqueness beyond the named constructions: boundary-class tier and obligations statement",
+     "direction": "statement+skeptic (with one certified tier)",
+     "target": "Certified tier: the same limit omega_inf arises from every bounded boundary interaction satisfying AM2 hypotheses H1-H5 with J≤J_0 (route A covers these verbatim). Statement: the missing premise between this and uniqueness among all infinite-volume ground states (omega(A*[H,A])≥0), with the Yarotsky-type local-gap route, an updated six-row obligations table and a falsifying scenario. Target note: feasibility and format check for the statement; blind threshold only for the boundary-class tier."
+    }
+   ],
+   "reason": "BC1 is a replay (very feasible, but depends on BB1); BC2 is a statement loop that keeps the word uniqueness honest after BB1."
+  }
+ ],
+ "applications": [
+  {
+   "problem": "Gauge-group transfer of the link-flip lemma (U(1), Z2, SU(N), U(N), Sp, SO; SU(3) with center Z3)",
+   "equation": "U_E H(tau,kappa) U_E^* = H(-tau,-kappa), with E meeting every plaquette oddly and U_E left multiplication by a central z on the links of E",
+   "expected_outcome": "Holds iff some central z acts as -1 in the Wilson-loop representation: SU(2k), U(N), U(1), Z2, Sp(2k), SO(2k) vector. Fails for SU(N) with N odd, SO(2k+1), G2 and adjoint loops. For SU(3), multiplication by omega=e^{2 pi i/3} maps Re Tr U_f/3 to Re(omega^{+-1} Tr U_f)/3, a flux-twisted Hamiltonian, not a sign flip; only the Z3 N-ality selection rule and charge conjugation survive.",
+   "assistant_computation": "Enumerate centers and representation phases; verify pi-flux flip sets E={x-links, y even} on Z^2 boxes and E={x-links, y+z even} union {y-links, z even} on Z^3 boxes and on the 24-link factors; exact moment tables."
+  },
+  {
+   "problem": "Center-grading first-order parity (AW1) for other groups",
+   "equation": "First-order terms of omega(W^2), C(s), c(theta) vanish by single-occurrence orthogonality and E_Haar[W^3]=0",
+   "expected_outcome": "Holds iff E[W^3]=0: every SU(N) with N not 3 (including SU(5), where the flip lemma fails), U(N), U(1), Z2. Fails for SU(3) (E[W^3]=1/108 with W=Re Tr U/3; preview E[(Re Tr U)^n]=1,0,1/2,1/4,3/4), G2 and SO(3); the SU(3) obstruction is a certified nonzero first-order centered coefficient proportional to E[W^3].",
+   "assistant_computation": "Exact Weyl-integration moments for SU(2..5) with python-flint fmpq; exact first-order centered coefficient on an SU(3) one-plaquette graph."
+  },
+  {
+   "problem": "SU(2) corollaries: Wilson loops of any shape and center-even observables",
+   "equation": "omega(W_C)(-tau) = (-1)^{A(C)} omega(W_C)(tau); center-even observables are even in tau",
+   "expected_outcome": "Exact parity statements; on the Round11 graph ⟨x⟩ is odd in lambda_1 and even in lambda_2, AZ2's a_2=0 is this lemma, the one-face/two-face difference 1/4212 is the lambda_1 lambda_2^2 coefficient, and a_4=0 is predicted.",
+   "assistant_computation": "Exact Fraction Rayleigh-Schroedinger series to order 6 on the Round11 solver with independent lambda_1, lambda_2; check a_4=0."
+  },
+  {
+   "problem": "Larger Wilson loop (1x2 rectangle)",
+   "equation": "omega(W_{1x2}) = 7 tau^2/124416 + O(tau^4) (both faces coupled at tau/3 in delta units); graph: ⟨z⟩ = 7 lambda^2/216 + O(lambda^4)",
+   "expected_outcome": "Exact second-order coefficient (float preview on the Round11 graph at D=6: 0.0324073 against 7/216=0.0324074); certified enclosure on the graph at the AZ2 grid; on Z^3 an R-local remainder on a three-factor cover is needed.",
+   "assistant_computation": "Round11 solver exact series for z; enclosure with the AZ2 full-space residual method."
+  },
+  {
+   "problem": "Electric flux / Casimir observable",
+   "equation": "omega(C_e) = n_e tau^2/27648 + O(tau^4) (n_e coupled faces containing e); graph: lambda^2/48 per coupled face",
+   "expected_outcome": "Exact leading coefficient (preview: shared-link Casimir 0.0416664 against 1/24 on the two-plaquette graph); even in tau by the flip lemma. Obstruction on Z^3: C_e is unbounded, so trace-norm tiers do not control it; an energy-weighted anchored norm (from the H_M^{-1} factor of AM2) is required.",
+   "assistant_computation": "Hellmann-Feynman in rho on the Round11 solver, exact series; draft of the energy-weighted AM2 bound."
+  },
+  {
+   "problem": "Strong-coupling area law at fixed spacing (conditional on BB1 route A)",
+   "equation": "|omega_inf(W_C)| ≤ 2K_C q^{A_min(C)}/(1-q)",
+   "expected_outcome": "String-tension lower bound sigma a^2 ≥ log(1/q), about 7.47 at the cap, with a perimeter correction through K_C; Hamiltonian analogue of the Osterwalder-Seiler strong-coupling area law; not continuum confinement.",
+   "assistant_computation": "Evaluate K_C for small rectangles from the BB1 constants; mpmath preview of the bound against A_min."
+  },
+  {
+   "problem": "State lemma and window kernel in 2+1 dimensions",
+   "equation": "AV1 F06-F12 (algebraic) and the C^2 window kernel (M_0=2, M_1=4s/pi, one-dimensional spectral identity) verbatim; AM2 with site blocking p=3: G_3(t)=8e^{6t}(1+8t), termination order 6",
+   "expected_outcome": "Kernel and density formula transfer verbatim; J=|tau| (3 faces per site); cap about |tau|≤1.58e-3; +tau/144 transfers under the same face normalization; first-order pins (faces per site, t_1, D, K_2') must be recounted.",
+   "assistant_computation": "Exact e^{3/32} enclosure and G_3 bounds; enumeration of the 2D site-blocked model; exact D and K_2' analogues."
+  },
+  {
+   "problem": "Uniform 3+1D model with site blocking (regime remark)",
+   "equation": "AM2 with p=3 and J=9 |tau|/3=3|tau|",
+   "expected_outcome": "Candidate cap |tau| ≤ (1/64)/(3 G_3(1/64)) about 5.27e-4 (g^4 ≥ 1.82e5 instead of 9.6e9 in the AZ1 dictionary); every g→0 trajectory still leaves the regime, so the AZ1 conclusion is unchanged; needs its own contract (new factors and AQ chain).",
+   "assistant_computation": "Exact rational cap with directed e^{3/32}; optimization of the radius R subject to the Lipschitz condition."
+  },
+  {
+   "problem": "U(1) and Z2 gauge theories; external duality check",
+   "equation": "Flip lemma; AM2/AV1 with recomputed onsite gaps (U(1) electric n^2; Z2 1-sigma^x, gap 2, E[W^2]=1)",
+   "expected_outcome": "Transfers with new constants; 2+1D Z2 has the Wegner duality to the 2D transverse-field Ising model, an external exact cross-check of low-order coefficients.",
+   "assistant_computation": "Exact low-order series of the Z2 plaquette mean on small graphs compared with the dual transverse-field Ising series."
+  },
+  {
+   "problem": "Earlier finite graphs and earlier rounds",
+   "equation": "Items 3-5 on the Round10/11 graphs; Einstein-QED evidence rounds 3-7",
+   "expected_outcome": "Exact predictions for the Round10/11 graphs; no shared equation with the Einstein-QED rounds, recorded as an obstruction (no transfer).",
+   "assistant_computation": "Round11 solver exact series (as above)."
+  },
+  {
+   "problem": "Site calculators",
+   "equation": "Display of recorded values only",
+   "expected_outcome": "Display-only pages: flip-parity table by group, rectangle and Casimir coefficients, rate curves C q^{N-1} and the BA2 bound against N, from source-bound data; the site never computes an admission.",
+   "assistant_computation": "Synthetic-fixture renderer tests."
+  }
+ ],
+ "applications_split": {
+  "BD1": {
+   "title": "Center-symmetry transfer across gauge groups and dimensions",
+   "direction": "paired",
+   "items": [
+    "flip lemma criterion",
+    "first-order parity criterion",
+    "SU(3)/Z3 obstruction with certified nonzero coefficient",
+    "SU(2) corollaries on the Round11 graph (a_4=0)",
+    "U(1)/Z2 transfer"
+   ]
+  },
+  "BD2": {
+   "title": "New observables and dimensions in the admitted SU(2) models",
+   "direction": "single+skeptic",
+   "items": [
+    "1x2 loop 7/124416 (Z^3) and 7/216 (graph)",
+    "Casimir n_e/27648 and 1/48 per face",
+    "2+1D and site-blocked AM2 constants",
+    "area law only if BB1 admitted"
+   ]
+  }
+ },
+ "feasibility": {
+  "boundary_decay": {
+   "verdict": "feasible: coefficient decay is nearly immediate from AM2 (complex coupling or Steiner-star weights, same constant); state decay needs a standard Kotecky-Preiss polymer expansion with a large margin at the cap",
+   "candidate_rate": "Coefficients: sum_{M ni u}||c^{N'}_M - c^N_M|| ≤ (1/32)(37888|tau|)^N/(1-37888|tau|) (ratio 148/390625 = 3.7888e-4 at the cap). States (route A): ||rho^{F1,N}_R - rho^{F1,N'}_R||_1 ≤ 2K q^N/(1-q), with exponent N-1 when F2 is involved, q = 56832|tau| (222/390625 = 5.68e-4 at the cap), candidate K≤2; previews 7.3e-10 at N=4 and 4.2e-13 at N=5. Route B: C_B |tau| N^{5/2} e^{-mu_B(N-1)}, mu_B about 0.841 at the cap, C_B of order 10^2-10^3.",
+   "obstacles": [
+    "The AM2 contraction is in an unweighted sup-type norm; distance-to-R weights are the wrong object (the bulk fixed point is translation covariant) and cardinality weights do not control extent (M contains N minus X, so supports thin out); Steiner-star weights or complex-coupling analyticity are needed.",
+    "The R-marginal depends on the normalized outside state (AV1 normalization trap); a recursive shell argument gives t^k (k!)^3-type products and no convergence proof; a polymer (KP) expansion of ⟨psi(sbar),psi(s)⟩ with evaluated weights and a uniform bound K is required.",
+    "The reach count n_0 (N or N-1) must be verified exactly for both families, including partial F2 stars.",
+    "Route B: NS06 clustering assumes finite-dimensional sites; the imaginary-time step must be redone for unbounded commuting Casimir terms in the interaction picture.",
+    "The rate is in N at fixed tau and fixed spacing; nothing is uniform in a; uniqueness among all infinite-volume ground states is not implied."
+   ]
+  },
+  "dynamics": {
+   "verdict": "feasible and essentially mechanical with the admitted AQ1 constants",
+   "candidate_bound": "||tau^{F2,N}_theta(A) - tau^{F1,N}_theta(A)|| ≤ (|tau|/336) [(e^{kappa|u|}-1-kappa|u|)/kappa] sum_{f,x,y} F(d(x,y)) ≤ 3969 tau^2 theta^2 e^{127008|tau||theta|} (5N+1)/N^3 ||A|| with u=theta/8, kappa=1016064|tau|, F(r)=(1+r)^-4 (O(N^-2)); with F_lambda multiply by e^{2 lambda} e^{-lambda(N-1)} and replace kappa by kappa e^{2 lambda} (exponential in N). Same-family Cauchy rate: O(1/N) with polynomial F, O(e^{-lambda N}) with F_lambda.",
+   "obstacles": [
+    "The interaction-picture Lieb-Robinson bound (NS14 form, unbounded commuting onsite terms) must be checked for the commutator with a bounded face W_f exactly as written.",
+    "The polynomial F gives only polynomial decay; the exponential F_lambda is admissible because the interactions are finite range but its constants must be re-evaluated.",
+    "Correlation-function consequences need the BB1 state rate on balls growing with N."
+   ]
+  }
+ },
+ "dissents": [
+  "The per-chain-step factor is J G(R)/R = 37888|tau| (about 3.79e-4 at the cap), set by the ball condition; J G(R) below 1/64 is an absolute smallness statement, J G'(R) = 9856|tau| is the fixed-point Lipschitz constant and 2J G'(R) is the excited-sector constant. None of the latter three should be pre-registered as a rate.",
+  "Coefficient decay does not give convergence of states: the R-marginal depends on the global normalized outside state. Coefficient decay (BA1) and state convergence (BB1) should be separate loops with separate labels.",
+  "The weighted norm should weight support extent (Steiner star count), not distance to R; distance weights belong on the difference between two boxes, measured from the boundary.",
+  "Roadmap goal 1 in its literal wording (any two subsequential limits of the named families agree on R) is subsumed by BB1; the word uniqueness should be reserved for the strong form (all infinite-volume ground states), which stays open and goes to BC2.",
+  "The expected O(N^-2) Duhamel rate holds for F1 against F2 on the same box; the same-family Cauchy rate with F(r)=(1+r)^-4 is only O(1/N). Do not pre-register N^-2 for the Cauchy step.",
+  "The 10^-8 cap has a factor of about 2600 of slack in the AM2 contraction itself (the inequalities hold up to |tau| about 2.6e-5 with the frozen J=28|tau|), and for the uniform model it is partly a blocking artifact (site blocking gives a candidate cap near 5.27e-4). This changes no continuum conclusion but should be recorded before any contract re-freezes J_0."
+ ],
+ "closing": "This lens admits nothing and counts zero research loops."
+}

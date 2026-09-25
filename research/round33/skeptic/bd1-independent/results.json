@@ -1,0 +1,1729 @@
+{
+  "checks": [
+    {
+      "id": "contract_sha256_pinned",
+      "passed": true,
+      "sha256": "a5c8416600c49b0728fdca05cd67c3ff2e53d9fd9e146d4305abcd2da775c1fc"
+    },
+    {
+      "frozen_at": "2026-09-25T05:09:10.267890+00:00",
+      "id": "contract_frozen_paired",
+      "passed": true
+    },
+    {
+      "gates": [
+        "research/round32/advisor/aw1-gate.json",
+        "research/round32/advisor/aw2-gate.json",
+        "research/round32/advisor/ay2-gate.json",
+        "research/round32/advisor/az1-gate.json",
+        "research/round32/advisor/az2-gate.json",
+        "research/round33/advisor/bb2-gate.json"
+      ],
+      "id": "premise_gates_pinned_and_accepted",
+      "passed": true
+    },
+    {
+      "files": 23,
+      "id": "producer_inventories_equal_contract",
+      "note": "forward/bd1/inputs and reverse/bd1/inputs were listed by find (names only) and hashed: both hold the same 23 files, each byte-identical to the repository; no plan, panel, expert or skeptic review file",
+      "passed": true
+    },
+    {
+      "id": "bd_contract_review_pinned",
+      "passed": true
+    },
+    {
+      "edits": 24,
+      "id": "prefreeze_edits_verbatim_in_frozen_bytes",
+      "note": "15 blocking and 9 non-blocking BD1 edits of the pre-freeze review are verbatim; its previews are not read",
+      "passed": true
+    },
+    {
+      "id": "control_mirror_22",
+      "passed": true
+    },
+    {
+      "id": "control_semantics_coverage",
+      "inherited": {
+        "coherent_evidence_tampering": "research/round33/contracts/ba1.json",
+        "exact_arithmetic_admission": "research/round33/contracts/ba1.json",
+        "insufficient_verdict_retained": "research/round33/contracts/ba1.json",
+        "negation_aware_phrase_scan": "research/round33/contracts/ba1.json",
+        "no_priority_or_continuum_claim": "research/round33/contracts/ba1.json",
+        "placeholder_span_rejected": "research/round33/contracts/ba1.json"
+      },
+      "own": 16,
+      "passed": true
+    },
+    {
+      "id": "plan_vocabulary_covers_gate_fields",
+      "passed": true,
+      "plan_sha256": "7d71bfcb2feee038c9ccb9c9fec15bfb5989aba456501a16ec5625e622b775c9"
+    },
+    {
+      "id": "mandatory_template_scans_clean",
+      "passed": true
+    },
+    {
+      "id": "parameters_declare_metric_weights_window_frozen",
+      "passed": true
+    },
+    {
+      "id": "aw1_su2_anchors_parsed",
+      "passed": true
+    },
+    {
+      "id": "aw1_one_plaquette_third_order_parsed",
+      "passed": true,
+      "value": "-5/11943936"
+    },
+    {
+      "id": "su2_dictionary_located_in_az1",
+      "note": "the SU(2) dictionary tau=96/g^4 and alpha=g^2/(2a) is an AZ1 (AL1) statement; it is never used for another group",
+      "passed": true
+    },
+    {
+      "id": "moments_three_routes_agree",
+      "passed": true,
+      "routes": [
+        "characters (Pieri/Clebsch-Gordan)",
+        "weyl_integration (constant-term extraction)",
+        "labelled third route (Frobenius hook lengths, central binomials, Catalan inverse binomial transform)"
+      ],
+      "table": {
+        "SO(3)": [
+          "0",
+          "1/9",
+          "1/27",
+          "1/27",
+          "2/81"
+        ],
+        "SU(2)": [
+          "0",
+          "1/4",
+          "0",
+          "1/8",
+          "0"
+        ],
+        "SU(3)": [
+          "0",
+          "1/18",
+          "1/108",
+          "1/108",
+          "5/1296"
+        ],
+        "SU(4)": [
+          "0",
+          "1/32",
+          "0",
+          "7/2048",
+          "0"
+        ],
+        "SU(5)": [
+          "0",
+          "1/50",
+          "0",
+          "3/2500",
+          "1/50000"
+        ],
+        "U(1)": [
+          "0",
+          "1/2",
+          "0",
+          "3/8",
+          "0"
+        ],
+        "Z2": [
+          "0",
+          "1",
+          "0",
+          "1",
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "weyl_route_torus_trap",
+      "note": "labelled trap: constant-term extraction on the U(N) torus (exponent 0 only) drops the determinant terms and gives E[W^3]=0 for SU(3), E[W^4]=3/1024 instead of 7/2048 for SU(4) and E[W^5]=0 for SU(5); the SU(N) torus keeps z^{c(1,...,1)}; a reverse route on the wrong torus would silently turn the SU(3) obstruction into a parity transfer",
+      "passed": true,
+      "unitary_torus_moments": {
+        "SU(3)": [
+          "0",
+          "1/18",
+          "0",
+          "1/108",
+          "0"
+        ],
+        "SU(4)": [
+          "0",
+          "1/32",
+          "0",
+          "3/1024",
+          "0"
+        ],
+        "SU(5)": [
+          "0",
+          "1/50",
+          "0",
+          "3/2500",
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "su2_convention_check_reproduces_aw1",
+      "note": "1/144, the AW1 moments and the AW1 one-plaquette third-order coefficient -5/11943936 are reproduced; a check of the frozen convention, not a transferred value",
+      "passed": true
+    },
+    {
+      "id": "first_order_coefficients_frozen_convention",
+      "note": "tier exact_first_order; both routes of computation give the same rational; SU(N), N>=3: 1/(48N(N^2-1))",
+      "passed": true,
+      "values": {
+        "SO(3)": "1/864",
+        "SU(2)": "1/144",
+        "SU(3)": "1/1152",
+        "SU(4)": "1/2880",
+        "SU(5)": "1/5760",
+        "U(1)": "1/96",
+        "Z2": "1/48"
+      }
+    },
+    {
+      "id": "z2_normalization_discriminates",
+      "passed": true,
+      "rejected_readings": {
+        "1 - sigma^x (face energy 8)": "1/12",
+        "electric 1 on the odd link state (face energy 4)": "1/6"
+      }
+    },
+    {
+      "id": "creation_sign_convention",
+      "note": "omega(W) = -2 Re(W Omega_0, c^(1)) with c^(1) = -(tau/3)/(32C_F) W Omega_0; the literal display 2(W Omega_0, c^(1)) gives -c1 for every group",
+      "passed": true
+    },
+    {
+      "id": "pieri_tables_weyl_character_formula",
+      "identities_checked": 660,
+      "note": "chi_fund chi_lam and chi_antifund chi_lam equal the Pieri sums as GL(N) bialternant identities at two exact rational points for every irrep of the SU(N) Rayleigh-Schroedinger bases (N=2..5)",
+      "passed": true
+    },
+    {
+      "cells": {
+        "SO(3)": {
+          "E[W^3]": "1/27",
+          "d omega(W^2)/dtau at 0": "1/2592",
+          "second_order_omega_W": "1/331776"
+        },
+        "SU(3)": {
+          "E[W^3]": "1/108",
+          "d omega(W^2)/dtau at 0": "1/6912",
+          "second_order_omega_W": "1/589824"
+        }
+      },
+      "id": "su3_so3_obstruction_cells",
+      "note": "closed forms (2/3)E[W^3]/(32C_F) and E[W^3]/(3(32C_F)^2) (W Omega_0 is an exact H_0 eigenvector) equal the Rayleigh-Schroedinger series; omega(W) is not odd in tau for SU(3) and SO(3)",
+      "passed": true
+    },
+    {
+      "fourth_order": "1/63403380965376",
+      "id": "su5_parity_transfer_flip_obstruction",
+      "note": "E[W^3]=0 (parity column a transfer); both SU(3)/SO(3) coefficients vanish by the Z_5 grading; the first possible nonzero even order is 4, and the column path 1 -> Lambda^1 -> ... -> Lambda^5 = 1 (and its conjugate) gives omega_4 = 30/(243*10^5*prod_k 32 C_2(Lambda^k)) exactly, equal to the series",
+      "passed": true,
+      "preview": "1.577202957909e-14"
+    },
+    {
+      "id": "flip_groups_even_orders_vanish",
+      "note": "consistent with the flip identity: omega(W) odd in tau on H_FG(G)",
+      "passed": true
+    },
+    {
+      "cubic_moments_E_chi_a_chibar_b": {
+        "SU(2)": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "SU(3)": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "SU(4)": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "SU(5)": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "id": "criteria_a_b_one_plaquette",
+      "levels": {
+        "SO(3)": {
+          "level_compression_zero": false,
+          "level_irreps_at_C_F": [
+            "1"
+          ]
+        },
+        "SU(2)": {
+          "level_compression_zero": true,
+          "level_irreps_at_C_F": [
+            "(1, 0)"
+          ]
+        },
+        "SU(3)": {
+          "level_compression_zero": false,
+          "level_irreps_at_C_F": [
+            "(1, 0, 0)",
+            "(1, 1, 0)"
+          ]
+        },
+        "SU(4)": {
+          "level_compression_zero": true,
+          "level_irreps_at_C_F": [
+            "(1, 0, 0, 0)",
+            "(1, 1, 1, 0)"
+          ]
+        },
+        "SU(5)": {
+          "level_compression_zero": true,
+          "level_irreps_at_C_F": [
+            "(1, 0, 0, 0, 0)",
+            "(1, 1, 1, 1, 0)"
+          ]
+        },
+        "U(1)": {
+          "level_compression_zero": true,
+          "level_irreps_at_C_F": [
+            "-1",
+            "1"
+          ]
+        },
+        "Z2": {
+          "level_compression_zero": true,
+          "level_irreps_at_C_F": [
+            "1"
+          ]
+        }
+      },
+      "note": "criterion A: U = (-1)^{N-ality} anticommutes with W and commutes with 32 C_2 exactly for SU(2), SU(4), U(1), Z2; criterion B: the compression of W to the level at 32 C_F vanishes exactly iff E[W^3]=0, and E[W^3]=0 iff every cubic moment E[chi^a chibar^b] (a nonnegative integer) vanishes",
+      "passed": true
+    },
+    {
+      "flip": [
+        "SU(2)",
+        "SU(4)",
+        "U(1)",
+        "Z2"
+      ],
+      "id": "transfer_columns",
+      "obstructions": {
+        "flip": [
+          "SU(3)",
+          "SU(5)",
+          "SO(3)"
+        ],
+        "parity": [
+          "SU(3)",
+          "SO(3)"
+        ]
+      },
+      "parity": [
+        "SU(2)",
+        "SU(4)",
+        "SU(5)",
+        "U(1)",
+        "Z2"
+      ],
+      "passed": true
+    },
+    {
+      "boxes": {
+        "2": {
+          "met_once": 1082,
+          "met_three_times": 1253,
+          "plaquettes": 2335,
+          "retained_whole_star_faces": 1344
+        },
+        "3": {
+          "met_once": 3630,
+          "met_three_times": 3279,
+          "plaquettes": 6909,
+          "retained_whole_star_faces": 4536
+        },
+        "4": {
+          "met_once": 7348,
+          "met_three_times": 7943,
+          "plaquettes": 15291,
+          "retained_whole_star_faces": 10752
+        }
+      },
+      "id": "flip_set_E3_boxes",
+      "note": "N=2 reproduces AW1 (2335 plaquettes, 1082/1253, 1344 retained faces); 24 classes odd",
+      "passed": true
+    },
+    {
+      "factors": {
+        "(-1, -1, -1)": {
+          "E3_links_in_factor": 8,
+          "faces_meeting_factor": 52
+        },
+        "(-1, 0, 0)": {
+          "E3_links_in_factor": 16,
+          "faces_meeting_factor": 52
+        },
+        "(0, -1, 0)": {
+          "E3_links_in_factor": 16,
+          "faces_meeting_factor": 52
+        },
+        "(0, 0, 0)": {
+          "E3_links_in_factor": 16,
+          "faces_meeting_factor": 52
+        },
+        "(0, 0, 1)": {
+          "E3_links_in_factor": 8,
+          "faces_meeting_factor": 52
+        },
+        "(1, 1, 1)": {
+          "E3_links_in_factor": 8,
+          "faces_meeting_factor": 52
+        },
+        "(2, -3, 5)": {
+          "E3_links_in_factor": 8,
+          "faces_meeting_factor": 52
+        }
+      },
+      "id": "flip_set_E3_coarse_factors",
+      "note": "E_3 meets a 24-link factor in 16 links (b_z even) or 8 (b_z odd): not invariant under odd coarse z translations, which the lemma does not need; every face meeting a factor meets E_3 oddly",
+      "passed": true
+    },
+    {
+      "boxes": {
+        "2": {
+          "met_exactly_once": 16,
+          "plaquettes": 16
+        },
+        "3": {
+          "met_exactly_once": 36,
+          "plaquettes": 36
+        },
+        "4": {
+          "met_exactly_once": 64,
+          "plaquettes": 64
+        }
+      },
+      "id": "flip_set_E2_boxes",
+      "passed": true
+    },
+    {
+      "even_plaquettes": {
+        "E2_sides_3_4": 0,
+        "E2_sides_4_3": 4,
+        "E2_sides_4_4": 0,
+        "E3_sides_3_4_4": 16,
+        "E3_sides_4_3_4": 16,
+        "E3_sides_4_4_3": 16,
+        "E3_sides_4_4_4": 0
+      },
+      "id": "periodic_odd_side_obstruction",
+      "note": "on a periodic side of odd length the two parallel keyed links of a seam plaquette are both in (or both out of) the flip set, so seam plaquettes are met evenly; recorded as an obstruction, never verified; even sides give no even plaquette; E_2 is keyed to p_y only, so an odd x side alone is harmless",
+      "passed": true
+    },
+    {
+      "id": "area_parity_rule_enumerated",
+      "nonplanar_and_named": [
+        {
+          "C_cap_E3": 11,
+          "faces": 5,
+          "loop_links": 14
+        },
+        {
+          "C_cap_E3": 7,
+          "faces": 3,
+          "loop_links": 8
+        },
+        {
+          "C_cap_E3": 3,
+          "faces": 1,
+          "loop_links": 4
+        },
+        {
+          "C_cap_E3": 6,
+          "faces": 2,
+          "loop_links": 6
+        }
+      ],
+      "note": "|C cap E_3| = A(S) mod 2 for every enumerated loop and for alternative surfaces differing by cube boundaries; the W face meets E_3 three times (odd) and the 1x2 rectangle six times (even)",
+      "passed": true,
+      "planar_loops": 216
+    },
+    {
+      "id": "scaling_brackets_exact",
+      "passed": true,
+      "ratios": {
+        "first_order_terms": "100",
+        "moments": "1",
+        "obstruction_second_order_terms": "10000",
+        "su5_fourth_order_term": "100000000"
+      }
+    },
+    {
+      "id": "transfer_ledger_complete",
+      "passed": true,
+      "rows": 28
+    },
+    {
+      "id": "packet_validator_accepts_own_derivation",
+      "passed": true
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "control Boolean flipped and rebound",
+          "rejected_for": "coherent evidence tampering: control booleans"
+        },
+        {
+          "mutation": "reverse snapshot removed and rebound",
+          "rejected_for": "coherent evidence tampering: snapshot inventory"
+        },
+        {
+          "mutation": "forward read the reverse packet",
+          "rejected_for": "coherent evidence tampering: undeclared read"
+        },
+        {
+          "mutation": "snapshot hash edited and rebound",
+          "rejected_for": "coherent evidence tampering: snapshot hash"
+        },
+        {
+          "mutation": "input edited without rebinding",
+          "rejected_for": "coherent evidence tampering: freeze digest"
+        },
+        {
+          "mutation": "SU(4) moment coherently changed in both routes",
+          "rejected_for": "coherent evidence tampering: moment value"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "exact_arithmetic_admission",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "float moment",
+          "rejected_for": "exact arithmetic: float in packet"
+        },
+        {
+          "mutation": "preview read by admission",
+          "rejected_for": "exact arithmetic: preview read by admission"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "no_priority_or_continuum_claim",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "continuum claim",
+          "rejected_for": "no priority or continuum claim"
+        },
+        {
+          "mutation": "priority verified",
+          "rejected_for": "no priority or continuum claim"
+        },
+        {
+          "mutation": "historical provenance as premise",
+          "rejected_for": "no priority or continuum claim"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "SU(2) value under the SU(3) label",
+          "rejected_for": "su2 constants not transferred"
+        },
+        {
+          "mutation": "one-plaquette value as a box value",
+          "rejected_for": "changed model relabelled"
+        },
+        {
+          "mutation": "SO(3) under the spin-1 SU(2) label",
+          "rejected_for": "changed model relabelled"
+        },
+        {
+          "mutation": "Z2 under another normalization",
+          "rejected_for": "frozen convention used"
+        },
+        {
+          "mutation": "sub-labels changed",
+          "rejected_for": "changed model relabelled"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "insufficient_verdict_retained",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "accepted with disagreeing routes",
+          "rejected_for": "moment tables two routes"
+        },
+        {
+          "mutation": "accepted after retuning",
+          "rejected_for": "insufficient verdict retained"
+        },
+        {
+          "mutation": "ledger row dropped",
+          "rejected_for": "insufficient verdict retained"
+        },
+        {
+          "mutation": "limited without a reason",
+          "rejected_for": "insufficient verdict retained"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "limited with its reason and the limited gate fields accepted"
+      ]
+    },
+    {
+      "id": "placeholder_span_rejected",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "placeholder in a statement",
+          "rejected_for": "placeholder span"
+        },
+        {
+          "mutation": "placeholder in the sentence",
+          "rejected_for": "placeholder span"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "negation_aware_phrase_scan",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "affirmative forbidden phrase",
+          "rejected_for": "negation aware phrase scan"
+        },
+        {
+          "mutation": "affirmative uniqueness phrase",
+          "rejected_for": "negation aware phrase scan"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "negated phrase accepted"
+      ]
+    },
+    {
+      "id": "parameters_declare_metric_weights_window",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "window removed",
+          "rejected_for": "parameters must declare metric weights window"
+        },
+        {
+          "mutation": "weights without reason",
+          "rejected_for": "parameters must declare metric weights window"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "first-order coefficient without tier",
+          "rejected_for": "tier mixing"
+        },
+        {
+          "mutation": "plan route label as route of computation",
+          "rejected_for": "tier mixing: plan route label"
+        },
+        {
+          "mutation": "hypothesis source attached",
+          "rejected_for": "tier mixing: hypothesis source"
+        },
+        {
+          "mutation": "tier on a moment",
+          "rejected_for": "tier mixing: tier on a moment"
+        },
+        {
+          "mutation": "tier on the SU(5) fourth-order coefficient",
+          "rejected_for": "tier mixing: tier on a higher-order"
+        },
+        {
+          "mutation": "first-order derivative of omega(W^2) without tier",
+          "rejected_for": "tier mixing: first-order derivative without"
+        },
+        {
+          "mutation": "route label rayleigh_schroedinger on the SO(3) second order",
+          "rejected_for": "tier mixing: route on a higher-order"
+        },
+        {
+          "mutation": "plan route label on the SU(5) fourth order",
+          "rejected_for": "tier mixing: plan route label"
+        },
+        {
+          "mutation": "float under a tier",
+          "rejected_for": "exact arithmetic: float"
+        }
+      ],
+      "passed": true,
+      "positives": [
+        "weyl_integration route accepted",
+        "weyl_integration route on the SU(5) fourth order accepted"
+      ]
+    },
+    {
+      "id": "frozen_convention_used",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "Z2 electric term 1 on the odd state",
+          "rejected_for": "frozen convention used: Z2 normalization"
+        },
+        {
+          "mutation": "Z2 as 1 - sigma^x",
+          "rejected_for": "frozen convention used: Z2 normalization"
+        },
+        {
+          "mutation": "literal display sign",
+          "rejected_for": "frozen convention used: creation sign"
+        },
+        {
+          "mutation": "SO(3) with C_2=l(l+1)/2",
+          "rejected_for": "frozen convention used: C_F"
+        },
+        {
+          "mutation": "convention text changed",
+          "rejected_for": "frozen convention used: convention"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "su2_constants_not_transferred",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "1/144 under U(1)",
+          "rejected_for": "su2 constants not transferred"
+        },
+        {
+          "mutation": "dictionary asserted for SU(3)",
+          "rejected_for": "su2 constants not transferred"
+        },
+        {
+          "mutation": "dictionary ledger row for Z2",
+          "rejected_for": "su2 constants not transferred"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "flip_criterion_central_minus_one",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "flip claimed for SU(3)",
+          "rejected_for": "flip criterion central minus one"
+        },
+        {
+          "mutation": "SO(3) obstruction from the missing centre alone",
+          "rejected_for": "flip criterion central minus one: obstruction from the missing central element alone"
+        },
+        {
+          "mutation": "central -1 claimed for SU(5)",
+          "rejected_for": "flip criterion central minus one: centre analysis"
+        },
+        {
+          "mutation": "flip on the one-plaquette model only",
+          "rejected_for": "flip criterion central minus one: models"
+        },
+        {
+          "mutation": "gate scope names SU(5)",
+          "rejected_for": "gate scope does not name exactly"
+        },
+        {
+          "mutation": "gate scope literal frozen description",
+          "rejected_for": "gate scope does not name exactly"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "parity_criterion_third_moment",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "parity claimed for SO(3)",
+          "rejected_for": "so3 obstruction mandatory"
+        },
+        {
+          "mutation": "parity obstruction for U(1)",
+          "rejected_for": "parity criterion third moment"
+        },
+        {
+          "mutation": "parity without single-occurrence orthogonality",
+          "rejected_for": "parity criterion third moment"
+        },
+        {
+          "mutation": "complex level shown for W_g only",
+          "rejected_for": "parity criterion third moment"
+        },
+        {
+          "mutation": "flip and parity merged",
+          "rejected_for": "parity criterion third moment"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "moment_tables_two_routes",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "single-route cell",
+          "rejected_for": "moment tables two routes: single route"
+        },
+        {
+          "mutation": "routes disagree",
+          "rejected_for": "moment tables two routes: routes disagree"
+        },
+        {
+          "mutation": "floating moment",
+          "rejected_for": "exact arithmetic: float"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "su3_obstruction_mandatory",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "SU(3) cell omitted",
+          "rejected_for": "su3 obstruction mandatory"
+        },
+        {
+          "mutation": "SU(3) called a transfer",
+          "rejected_for": "su3 obstruction mandatory"
+        },
+        {
+          "mutation": "SU(3) second-order coefficient zeroed",
+          "rejected_for": "su3 obstruction mandatory: coefficient value"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "so3_obstruction_mandatory",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "SO(3) cell omitted",
+          "rejected_for": "so3 obstruction mandatory"
+        },
+        {
+          "mutation": "SO(3) derivative of omega(W^2) zeroed",
+          "rejected_for": "so3 obstruction mandatory: coefficient value"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "flip_sets_verified",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "E_3 count at N=2 changed",
+          "rejected_for": "flip sets verified: enumeration"
+        },
+        {
+          "mutation": "E_2 with two links per plaquette",
+          "rejected_for": "flip sets verified: enumeration"
+        },
+        {
+          "mutation": "coarse factors not checked",
+          "rejected_for": "flip sets verified: enumeration"
+        },
+        {
+          "mutation": "odd periodic torus verified",
+          "rejected_for": "flip sets verified: periodic"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "area_parity_scope",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "periodic odd side claimed",
+          "rejected_for": "area parity scope: excluded boxes claimed"
+        },
+        {
+          "mutation": "kappa nonzero claimed",
+          "rejected_for": "area parity scope"
+        },
+        {
+          "mutation": "F2 boxes claimed",
+          "rejected_for": "area parity scope"
+        },
+        {
+          "mutation": "limit through a common subsequence",
+          "rejected_for": "area parity scope: limit passage"
+        },
+        {
+          "mutation": "Casimir evenness from trace-norm convergence",
+          "rejected_for": "area parity scope: surface or Casimir step"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "one_plaquette_model_terms",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "free reference from another code path",
+          "rejected_for": "one plaquette model terms"
+        },
+        {
+          "mutation": "transfers_to_aq true",
+          "rejected_for": "one plaquette model terms"
+        },
+        {
+          "mutation": "electric term 8 C_2",
+          "rejected_for": "one plaquette model terms"
+        },
+        {
+          "mutation": "packet model not a finite graph",
+          "rejected_for": "one plaquette model terms"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "no_transfer_called_prediction",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "predicts",
+          "rejected_for": "no transfer called prediction"
+        },
+        {
+          "mutation": "confirms",
+          "rejected_for": "no transfer called prediction"
+        },
+        {
+          "mutation": "non-transfer without counterexample",
+          "rejected_for": "no transfer called prediction: non-transfer without counterexample"
+        },
+        {
+          "mutation": "cell labelled a prediction",
+          "rejected_for": "no transfer called prediction"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "am2_not_reinstantiated",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "AM2 chain claimed for U(1)",
+          "rejected_for": "am2 not reinstantiated"
+        },
+        {
+          "mutation": "AM2 obligation for Z2 dropped",
+          "rejected_for": "am2 not reinstantiated: obligations"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "id": "su5_flip_obstruction_fourth_order",
+      "kind": "control",
+      "mutations": [
+        {
+          "mutation": "SU(5) cell omitted",
+          "rejected_for": "su5 flip obstruction fourth order"
+        },
+        {
+          "mutation": "fourth-order coefficient zeroed",
+          "rejected_for": "su5 flip obstruction fourth order"
+        },
+        {
+          "mutation": "SU(5) called a flip transfer from its parity",
+          "rejected_for": "flip criterion central minus one"
+        },
+        {
+          "mutation": "SU(5) called a parity obstruction",
+          "rejected_for": "su5 flip obstruction fourth order: SU(5) called a parity obstruction"
+        },
+        {
+          "mutation": "SU(5) obstruction from the missing centre alone",
+          "rejected_for": "su5 flip obstruction fourth order: missing counterexample"
+        },
+        {
+          "mutation": "SU(5) counterexample at second order",
+          "rejected_for": "su5 flip obstruction fourth order"
+        },
+        {
+          "mutation": "route of the fourth-order value missing",
+          "rejected_for": "tier mixing: route on a higher-order"
+        }
+      ],
+      "passed": true,
+      "positives": []
+    },
+    {
+      "controls": 22,
+      "id": "every_control_executed",
+      "mutations": 88,
+      "passed": true
+    }
+  ],
+  "claims": {
+    "continuum_claim": false,
+    "scientific_priority_verified": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false
+  },
+  "contract_frozen_at": "2026-09-25T05:09:10.267890+00:00",
+  "contract_readings": [
+    "R1: flip and parity separate for SU(5) (parity without flip); SU(4) has both (central -I, Z_4 grading).",
+    "R2: every obstruction coefficient has a closed form because W Omega_0 is an exact H_0 eigenvector; SU(5) needs the fourth order, fixed by the unique Z_5 column path.",
+    "R3: criterion B for complex representations: the level at 32 C_F is {chi_f, chi_fbar}; its W-compression is a combination of cubic moments, each a nonnegative integer, so it vanishes iff E[W^3]=0.",
+    "R4: surface independence of A(C) mod 2 needs no homology argument: |C cap E_3| depends on C alone and equals A(S) mod 2 for every spanning surface S.",
+    "R5: E_3 on the coarse factors has two patterns by the parity of b_z; the flip lemma never needs translation invariance of E_3."
+  ],
+  "contract_sha256": "a5c8416600c49b0728fdca05cd67c3ff2e53d9fd9e146d4305abcd2da775c1fc",
+  "criteria": {
+    "SO(3)": {
+      "level_compression_zero": false,
+      "level_irreps_at_C_F": [
+        "1"
+      ]
+    },
+    "SU(2)": {
+      "level_compression_zero": true,
+      "level_irreps_at_C_F": [
+        "(1, 0)"
+      ]
+    },
+    "SU(3)": {
+      "level_compression_zero": false,
+      "level_irreps_at_C_F": [
+        "(1, 0, 0)",
+        "(1, 1, 0)"
+      ]
+    },
+    "SU(4)": {
+      "level_compression_zero": true,
+      "level_irreps_at_C_F": [
+        "(1, 0, 0, 0)",
+        "(1, 1, 1, 0)"
+      ]
+    },
+    "SU(5)": {
+      "level_compression_zero": true,
+      "level_irreps_at_C_F": [
+        "(1, 0, 0, 0, 0)",
+        "(1, 1, 1, 1, 0)"
+      ]
+    },
+    "U(1)": {
+      "level_compression_zero": true,
+      "level_irreps_at_C_F": [
+        "-1",
+        "1"
+      ]
+    },
+    "Z2": {
+      "level_compression_zero": true,
+      "level_irreps_at_C_F": [
+        "1"
+      ]
+    }
+  },
+  "deferred_parts": {
+    "area_parity_limit": "the passage through BB2 item 1 is restated in the derivation, not machine-checked",
+    "box_models": "criteria A and B on H^G_N are restated in the derivation (Kato per box, single occurrence), not machine-checked beyond the one-plaquette models and the flip sets",
+    "inventory": "recorded by find and sha256 (names only)",
+    "phrase_scan": "mirror of the round tool",
+    "tampering": "packet level (synthetic packet built from this derivation)"
+  },
+  "flip_sets": {
+    "E2_boxes": {
+      "2": {
+        "met_exactly_once": 16,
+        "plaquettes": 16
+      },
+      "3": {
+        "met_exactly_once": 36,
+        "plaquettes": 36
+      },
+      "4": {
+        "met_exactly_once": 64,
+        "plaquettes": 64
+      }
+    },
+    "E3_boxes": {
+      "2": {
+        "met_once": 1082,
+        "met_three_times": 1253,
+        "plaquettes": 2335,
+        "retained_whole_star_faces": 1344
+      },
+      "3": {
+        "met_once": 3630,
+        "met_three_times": 3279,
+        "plaquettes": 6909,
+        "retained_whole_star_faces": 4536
+      },
+      "4": {
+        "met_once": 7348,
+        "met_three_times": 7943,
+        "plaquettes": 15291,
+        "retained_whole_star_faces": 10752
+      }
+    },
+    "E3_factors": {
+      "(-1, -1, -1)": {
+        "E3_links_in_factor": 8,
+        "faces_meeting_factor": 52
+      },
+      "(-1, 0, 0)": {
+        "E3_links_in_factor": 16,
+        "faces_meeting_factor": 52
+      },
+      "(0, -1, 0)": {
+        "E3_links_in_factor": 16,
+        "faces_meeting_factor": 52
+      },
+      "(0, 0, 0)": {
+        "E3_links_in_factor": 16,
+        "faces_meeting_factor": 52
+      },
+      "(0, 0, 1)": {
+        "E3_links_in_factor": 8,
+        "faces_meeting_factor": 52
+      },
+      "(1, 1, 1)": {
+        "E3_links_in_factor": 8,
+        "faces_meeting_factor": 52
+      },
+      "(2, -3, 5)": {
+        "E3_links_in_factor": 8,
+        "faces_meeting_factor": 52
+      }
+    },
+    "periodic_even_plaquettes": {
+      "E2_sides_3_4": 0,
+      "E2_sides_4_3": 4,
+      "E2_sides_4_4": 0,
+      "E3_sides_3_4_4": 16,
+      "E3_sides_4_3_4": 16,
+      "E3_sides_4_4_3": 16,
+      "E3_sides_4_4_4": 0
+    }
+  },
+  "gate_fields": {
+    "area_parity_limit_claimed": true,
+    "continuum_claim": false,
+    "flip_transfer_claimed": true,
+    "flip_transfer_scope": "the listed groups with a central element acting as -1 on the Wilson representation, named in the gate group by group, on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+    "model_is_finite_graph": true,
+    "obstructions_recorded": true,
+    "parity_transfer_claimed": true,
+    "rate_in_a_claimed": false,
+    "scientific_priority_verified": false,
+    "transfers_to_aq": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false
+  },
+  "group_table": {
+    "SO(3)": {
+      "C_F": "2",
+      "basis_irreps": 7,
+      "centre": {
+        "minus_one_element": null,
+        "order": 1,
+        "reason": "the centre of SO(3) is trivial (-I has determinant -1), and the identity acts as +1 on the vector representation"
+      },
+      "energy_series_0..5": [
+        "0",
+        "0",
+        "-1/5184",
+        "-1/2985984",
+        "-1/5159780352",
+        "11/8916100448256"
+      ],
+      "face_energy_32C_F": "64",
+      "first_order_coefficient": "1/864",
+      "moments_E[W^k]_k=1..5": [
+        "0",
+        "1/9",
+        "1/27",
+        "1/27",
+        "2/81"
+      ],
+      "omega_W2_series_0..1": [
+        "1/9",
+        "1/2592"
+      ],
+      "omega_W_series_0..4": [
+        "0",
+        "1/864",
+        "1/331776",
+        "1/429981696",
+        "-55/2972033482752"
+      ]
+    },
+    "SU(2)": {
+      "C_F": "3/4",
+      "basis_irreps": 7,
+      "centre": {
+        "minus_one_element": "exp(i pi) I = -I (k=1)",
+        "order": 2,
+        "reason": "-I lies in SU(2) (det(-I)=(-1)^2=1) and acts as -1 on the fundamental"
+      },
+      "energy_series_0..5": [
+        "0",
+        "0",
+        "-1/864",
+        "0",
+        "5/143327232",
+        "0"
+      ],
+      "face_energy_32C_F": "24",
+      "first_order_coefficient": "1/144",
+      "moments_E[W^k]_k=1..5": [
+        "0",
+        "1/4",
+        "0",
+        "1/8",
+        "0"
+      ],
+      "omega_W2_series_0..1": [
+        "1/4",
+        "0"
+      ],
+      "omega_W_series_0..4": [
+        "0",
+        "1/144",
+        "0",
+        "-5/11943936",
+        "0"
+      ]
+    },
+    "SU(3)": {
+      "C_F": "4/3",
+      "basis_irreps": 28,
+      "centre": {
+        "minus_one_element": null,
+        "order": 3,
+        "reason": "the centre is the 3-th roots of unity times I and -1 is not a 3-th root of unity (det(-I)=-1)"
+      },
+      "energy_series_0..5": [
+        "0",
+        "0",
+        "-1/6912",
+        "-1/5308416",
+        "-13/183458856960",
+        "77/140896402145280"
+      ],
+      "face_energy_32C_F": "128/3",
+      "first_order_coefficient": "1/1152",
+      "moments_E[W^k]_k=1..5": [
+        "0",
+        "1/18",
+        "1/108",
+        "1/108",
+        "5/1296"
+      ],
+      "omega_W2_series_0..1": [
+        "1/18",
+        "1/6912"
+      ],
+      "omega_W_series_0..4": [
+        "0",
+        "1/1152",
+        "1/589824",
+        "13/15288238080",
+        "-77/9393093476352"
+      ]
+    },
+    "SU(4)": {
+      "C_F": "15/8",
+      "basis_irreps": 50,
+      "centre": {
+        "minus_one_element": "exp(i pi) I = -I (k=2)",
+        "order": 4,
+        "reason": "-I lies in SU(4) (det(-I)=(-1)^4=1) and acts as -1 on the fundamental"
+      },
+      "energy_series_0..5": [
+        "0",
+        "0",
+        "-1/17280",
+        "0",
+        "-41/1719926784000",
+        "0"
+      ],
+      "face_energy_32C_F": "60",
+      "first_order_coefficient": "1/2880",
+      "moments_E[W^k]_k=1..5": [
+        "0",
+        "1/32",
+        "0",
+        "7/2048",
+        "0"
+      ],
+      "omega_W2_series_0..1": [
+        "1/32",
+        "0"
+      ],
+      "omega_W_series_0..4": [
+        "0",
+        "1/2880",
+        "0",
+        "41/143327232000",
+        "0"
+      ]
+    },
+    "SU(5)": {
+      "C_F": "12/5",
+      "basis_irreps": 80,
+      "centre": {
+        "minus_one_element": null,
+        "order": 5,
+        "reason": "the centre is the 5-th roots of unity times I and -1 is not a 5-th root of unity (det(-I)=-1)"
+      },
+      "energy_series_0..5": [
+        "0",
+        "0",
+        "-1/34560",
+        "0",
+        "-29/96315899904000",
+        "-1/951050714480640"
+      ],
+      "face_energy_32C_F": "384/5",
+      "first_order_coefficient": "1/5760",
+      "moments_E[W^k]_k=1..5": [
+        "0",
+        "1/50",
+        "0",
+        "3/2500",
+        "1/50000"
+      ],
+      "omega_W2_series_0..1": [
+        "1/50",
+        "0"
+      ],
+      "omega_W_series_0..4": [
+        "0",
+        "1/5760",
+        "0",
+        "29/8026324992000",
+        "1/63403380965376"
+      ]
+    },
+    "U(1)": {
+      "C_F": "1",
+      "basis_irreps": 13,
+      "centre": {
+        "minus_one_element": "z=-1",
+        "order": "U(1)",
+        "reason": "U(1) is abelian; z=-1 acts on charge 1 as -1"
+      },
+      "energy_series_0..5": [
+        "0",
+        "0",
+        "-1/576",
+        "0",
+        "7/84934656",
+        "0"
+      ],
+      "face_energy_32C_F": "32",
+      "first_order_coefficient": "1/96",
+      "moments_E[W^k]_k=1..5": [
+        "0",
+        "1/2",
+        "0",
+        "3/8",
+        "0"
+      ],
+      "omega_W2_series_0..1": [
+        "1/2",
+        "0"
+      ],
+      "omega_W_series_0..4": [
+        "0",
+        "1/96",
+        "0",
+        "-7/7077888",
+        "0"
+      ]
+    },
+    "Z2": {
+      "C_F": "1",
+      "basis_irreps": 2,
+      "centre": {
+        "minus_one_element": "z=-1",
+        "order": 2,
+        "reason": "Z2 is abelian; the non-identity element acts on the sign representation as -1"
+      },
+      "energy_series_0..5": [
+        "0",
+        "0",
+        "-1/288",
+        "0",
+        "1/2654208",
+        "0"
+      ],
+      "face_energy_32C_F": "32",
+      "first_order_coefficient": "1/48",
+      "moments_E[W^k]_k=1..5": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "omega_W2_series_0..1": [
+        "1",
+        "0"
+      ],
+      "omega_W_series_0..4": [
+        "0",
+        "1/48",
+        "0",
+        "-1/221184",
+        "0"
+      ]
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "ledger": [
+    {
+      "counterexample": null,
+      "equation": "flip lemma",
+      "group": "SU(2)",
+      "reason": "-I lies in SU(2) (det(-I)=(-1)^2=1) and acts as -1 on the fundamental",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "parity theorem",
+      "group": "SU(2)",
+      "reason": "E[W^3]=0",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "first-order coefficient",
+      "group": "SU(2)",
+      "reason": "own cell value 1/144",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "dictionary",
+      "group": "SU(2)",
+      "reason": "tau=96/g^4 is an SU(2) statement",
+      "status": "admitted (AZ1)"
+    },
+    {
+      "counterexample": "second_order_omega_W",
+      "equation": "flip lemma",
+      "group": "SU(3)",
+      "reason": "the centre is the 3-th roots of unity times I and -1 is not a 3-th root of unity (det(-I)=-1)",
+      "status": "obstruction"
+    },
+    {
+      "counterexample": "first_derivative_omega_W2",
+      "equation": "parity theorem",
+      "group": "SU(3)",
+      "reason": "E[W^3]=1/108",
+      "status": "obstruction"
+    },
+    {
+      "counterexample": null,
+      "equation": "first-order coefficient",
+      "group": "SU(3)",
+      "reason": "own cell value 1/1152",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "dictionary",
+      "group": "SU(3)",
+      "reason": "tau=96/g^4 is an SU(2) statement",
+      "status": "not asserted"
+    },
+    {
+      "counterexample": null,
+      "equation": "flip lemma",
+      "group": "SU(4)",
+      "reason": "-I lies in SU(4) (det(-I)=(-1)^4=1) and acts as -1 on the fundamental",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "parity theorem",
+      "group": "SU(4)",
+      "reason": "E[W^3]=0",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "first-order coefficient",
+      "group": "SU(4)",
+      "reason": "own cell value 1/2880",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "dictionary",
+      "group": "SU(4)",
+      "reason": "tau=96/g^4 is an SU(2) statement",
+      "status": "not asserted"
+    },
+    {
+      "counterexample": "fourth_order_omega_W",
+      "equation": "flip lemma",
+      "group": "SU(5)",
+      "reason": "the centre is the 5-th roots of unity times I and -1 is not a 5-th root of unity (det(-I)=-1)",
+      "status": "obstruction"
+    },
+    {
+      "counterexample": null,
+      "equation": "parity theorem",
+      "group": "SU(5)",
+      "reason": "E[W^3]=0",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "first-order coefficient",
+      "group": "SU(5)",
+      "reason": "own cell value 1/5760",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "dictionary",
+      "group": "SU(5)",
+      "reason": "tau=96/g^4 is an SU(2) statement",
+      "status": "not asserted"
+    },
+    {
+      "counterexample": null,
+      "equation": "flip lemma",
+      "group": "U(1)",
+      "reason": "U(1) is abelian; z=-1 acts on charge 1 as -1",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "parity theorem",
+      "group": "U(1)",
+      "reason": "E[W^3]=0",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "first-order coefficient",
+      "group": "U(1)",
+      "reason": "own cell value 1/96",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "dictionary",
+      "group": "U(1)",
+      "reason": "tau=96/g^4 is an SU(2) statement",
+      "status": "not asserted"
+    },
+    {
+      "counterexample": null,
+      "equation": "flip lemma",
+      "group": "Z2",
+      "reason": "Z2 is abelian; the non-identity element acts on the sign representation as -1",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "parity theorem",
+      "group": "Z2",
+      "reason": "E[W^3]=0",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "first-order coefficient",
+      "group": "Z2",
+      "reason": "own cell value 1/48",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "dictionary",
+      "group": "Z2",
+      "reason": "tau=96/g^4 is an SU(2) statement",
+      "status": "not asserted"
+    },
+    {
+      "counterexample": "second_order_omega_W",
+      "equation": "flip lemma",
+      "group": "SO(3)",
+      "reason": "the centre of SO(3) is trivial (-I has determinant -1), and the identity acts as +1 on the vector representation",
+      "status": "obstruction"
+    },
+    {
+      "counterexample": "first_derivative_omega_W2",
+      "equation": "parity theorem",
+      "group": "SO(3)",
+      "reason": "E[W^3]=1/27",
+      "status": "obstruction"
+    },
+    {
+      "counterexample": null,
+      "equation": "first-order coefficient",
+      "group": "SO(3)",
+      "reason": "own cell value 1/864",
+      "status": "transfer"
+    },
+    {
+      "counterexample": null,
+      "equation": "dictionary",
+      "group": "SO(3)",
+      "reason": "tau=96/g^4 is an SU(2) statement",
+      "status": "not asserted"
+    }
+  ],
+  "loop": "BD1",
+  "model": "FG one-plaquette models H_FG(G) = 32 C_2 - (tau/3) W for the seven listed groups under the frozen convention (model_is_finite_graph true, transfers_to_aq false); group-G box models H^G_N for the flip and parity statements (each box inside its Kato radius); SU(2) zero-selected family at kappa=0 for the area parity (F1 boxes, every on-site cutoff, the limit of the named constructions through BB2)",
+  "obligations": [
+    "AM2 re-instantiation for SO(3) (finite-volume ground state and gap)",
+    "AM2 re-instantiation for SU(3) (finite-volume ground state and gap)",
+    "AM2 re-instantiation for SU(4) (finite-volume ground state and gap)",
+    "AM2 re-instantiation for SU(5) (finite-volume ground state and gap)",
+    "AM2 re-instantiation for U(1) (finite-volume ground state and gap)",
+    "AM2 re-instantiation for Z2 (finite-volume ground state and gap)",
+    "AQ chain for every group other than SU(2)",
+    "F2 and literal vertex boxes",
+    "dictionary to a bare coupling for every group other than SU(2)",
+    "flip or parity for SU(2) at a nonzero selected triple",
+    "periodic boxes with an odd side"
+  ],
+  "obstruction_cells": {
+    "SO(3)": {
+      "E[W^3]": "1/27",
+      "d omega(W^2)/dtau at 0": "1/2592",
+      "second_order_omega_W": "1/331776"
+    },
+    "SU(3)": {
+      "E[W^3]": "1/108",
+      "d omega(W^2)/dtau at 0": "1/6912",
+      "second_order_omega_W": "1/589824"
+    }
+  },
+  "predictions": {
+    "SO(3)": {
+      "E[W^3]": "1/27",
+      "d omega(W^2)/dtau at 0": "1/2592",
+      "second_order_omega_W": "1/331776"
+    },
+    "SU(3)": {
+      "E[W^3]": "1/108",
+      "d omega(W^2)/dtau at 0": "1/6912",
+      "second_order_omega_W": "1/589824"
+    },
+    "SU(5)_fourth_order_omega_W": "1/63403380965376",
+    "SU(5)_fourth_order_preview": "1.577202957909e-14",
+    "first_order": {
+      "SO(3)": "1/864",
+      "SU(2)": "1/144",
+      "SU(3)": "1/1152",
+      "SU(4)": "1/2880",
+      "SU(5)": "1/5760",
+      "U(1)": "1/96",
+      "Z2": "1/48"
+    },
+    "first_order_preview": {
+      "SO(3)": "1.157407407407e-03",
+      "SU(2)": "6.944444444444e-03",
+      "SU(3)": "8.680555555556e-04",
+      "SU(4)": "3.472222222222e-04",
+      "SU(5)": "1.736111111111e-04",
+      "U(1)": "1.041666666667e-02",
+      "Z2": "2.083333333333e-02"
+    },
+    "flip_transfer": [
+      "SU(2)",
+      "SU(4)",
+      "U(1)",
+      "Z2"
+    ],
+    "parity_transfer": [
+      "SU(2)",
+      "SU(4)",
+      "SU(5)",
+      "U(1)",
+      "Z2"
+    ]
+  },
+  "reviewer": "skeptic (model agent, correlated ancestry; not human review)",
+  "scaling": {
+    "first_order_terms": "100",
+    "moments": "1",
+    "obstruction_second_order_terms": "10000",
+    "su5_fourth_order_term": "100000000"
+  },
+  "sentence": "Under the frozen convention, the link-flip lemma transfers exactly to the listed gauge groups that have a central element acting as -1 on the Wilson representation and the first-order parity theorem exactly to those with vanishing third Haar moment of W, each with its own first-order Wilson coefficient, on one-plaquette models and on group box models in each box separately; SU(3) and SO(3) are recorded obstructions with exact nonzero coefficients, and SU(5) is a recorded flip obstruction with an exact nonzero fourth-order coefficient; for SU(2) in the zero-selected family at kappa=0 the Wilson-loop mean is odd or even in tau according to the parity of the number of plaquettes of any spanning surface of the loop, in every open centered whole-star box and for the limit of the named constructions; these are statements about named models and one-plaquette finite graphs, not AM2 or continuum statements for other groups, not statements for periodic boxes with an odd side, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+  "stage": "pre_comparison",
+  "su5_fourth_order": "1/63403380965376"
+}

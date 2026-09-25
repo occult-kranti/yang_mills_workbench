@@ -1,0 +1,378 @@
+{
+ "schema": "hnm-round33-skeptic-bb-contract-review-v1",
+ "human_author": "Hruday N M (BUNZEEY)",
+ "reviewer": "Model-agent skeptic with correlated ancestry; not human peer review. Scratch: /tmp/claude-0/skeptic-bb-review-private/ (not evidence, not a premise; no producer may receive it).",
+ "date": "2026-09-24",
+ "status": "pre_freeze_review_of_draft_contracts",
+ "reviewed": {
+  "bb1_sha256": "d2b824888aa1102bcd6f0c6902a82ab455bbc41f9ae7740210704636f5936d6b",
+  "bb2_sha256": "ac7583e7345f8b9e8dc6b049b326eba53e4bc6c5e496b916c03c42236f2a0563",
+  "commits": "bad14fc and 4c8acd3",
+  "selection_bb1_sha256": "dd6057b59020e0bbb6cb29e046037a60b0d4c2dd538dd3af9800d8644af5236c",
+  "selection_bb2_sha256": "639a6054ab1dabb4ae17c85981135e6b11eee83caae611377e5ebcfe02ec9a47",
+  "proposal_sha256": "35f5711e02319fbe7e276145778954cc6fde04a518f8e0906552f61b9c8d86b1",
+  "plan_sha256": "8857add14a1453f07812f4d57b07eec46a2fdf37e17c361c98fd2eee55550494"
+ },
+ "decision": {
+  "bb1": "veto_until_blocking_edits_applied",
+  "bb2": "veto_until_blocking_edits_applied",
+  "after_edits": "no further review loop needed; the edited copies freeze and scan clean; the skeptic checks the frozen bytes against this file at pre-comparison time"
+ },
+ "signoff": false,
+ "bb1": {
+  "blocking": [
+   {
+    "path": "$.parameters.coefficient_input",
+    "replacement": "BA1 coefficient differences at every site u of the smaller box Lambda_N, not only on R, in one of two forms, each stated with its constant, exponent and route and checked exactly: (a) the BA1 forward boundary-weighted bound, max over u of the sum over I containing u of e^{beta rho_B(I)}||delta_I|| at most K_own (reviewed in BA1 for every u; its values are labelled values of the BA1 gate, not the bound value), hence the sum over I containing u of ||delta_I|| at most K_own e^{-beta d_inf(u,B)}; or (b) the BA1 reverse Theorem 4.1 restated for every u (its Lemmas 2.2 and 3.1 with R replaced by {u}: every source term of every comparison lies at l-infinity distance at least N-|u|_inf from u, and the circle bound 2T(rho) is uniform in u), giving the sum over I containing u of ||delta_I|| at most K q^(N-|u|_inf) with the gate's bound value K=49/111790368 at q=1/64. The BA1 gate admits the bound for u in R only, so form (b) is a BB1 lemma proved in full in each packet, never cited as an admitted BA1 statement.",
+    "reason": "Risk 4 of the proposal is real. The BA1 gate decision and accepted statement are for u in R (reverse Theorem 4.1 is stated 'for u in R'; its Lemma 2.2 assumes M meets R). No every-site reverse form exists in BA1, so 'a stated admitted form' names a premise that does not exist. The forward boundary-weighted norm is every-site but its constants are labelled, not bound. The restatement is short but must be proved in BB1."
+   },
+   {
+    "path": "$.required[3]",
+    "replacement": "4. Use the BA1 coefficient differences at every site through one of the two forms of parameters.coefficient_input, proving the every-site form in full where the BA1 gate states only u in R; prove the headline bound ||rho^{box1}_R-rho^{box2}_R||_1 <= C q^(N-1) with q=1/64 and C at most 1/250000 and the region form with c_site at most 1/500000 for every comparison, both signs, in each on-site cutoff space and at fixed N for the untruncated vectors; report the labelled secondary pair and the crude tier separately; never use the global Lipschitz constant as a decay factor.",
+    "reason": "Same defect as coefficient_input: 'a stated admitted form' does not exist for far sites."
+   },
+   {
+    "path": "$.new_control_semantics.every_site_coefficient_input",
+    "replacement": "The BA1 coefficient differences are used at every site u of the smaller box (not only on R) through a form stated with its constant and exponent: the BA1 forward boundary-weighted bound (reviewed for every u in BA1, labelled constants) or the BA1 reverse disc theorem restated and proved in full for every u with vanishing order at least N-|u|_inf; an R-only input (the BA1 gate statement, which is for u in R) used at far sites, or the restated reverse form cited as admitted without its proof, is rejected.",
+    "reason": "The damaging mutation must be decidable: 'restated for every u' is a new proof, not an admitted form."
+   },
+   {
+    "path": "$.new_control_semantics.marginal_locality_constants_explicit",
+    "replacement": "Each route states its marginal-locality lemma in the form ||rho_Y(c)-rho_Y(c')||_1 at most 2(1+eta) times the sum over supports I meeting Y of ||c_I-c'_I|| plus the sum over supports I not meeting Y of kappa(I)||c_I-c'_I||, with kappa(I) at most kappa_0 (w')^(-d_inf(I,Y)) p(|I|) for an explicit polynomial p, and gives eta, kappa_0, w' and p as exact rationals or directed enclosures at its declared weights, each with its tier and route; a Kotecky-Preiss criterion asserted without activity bounds and combinatorial counts, or constants named without this lemma form, is rejected.",
+    "reason": "The draft semantics name 'eta, kappa_0 and w' of the marginal-locality lemma', but that lemma is stated only in the skeptic triage, which the reverse must not receive (P7). The control is not executable from the contract alone."
+   },
+   {
+    "path": "$.preregistration.tier_label_rule",
+    "replacement": "every BB1 constant carries exactly one tier (exact_first_order or crude_majorant) and exactly one route (polymer_kp for the forward, iterated_split for the reverse), and names its BA1 coefficient input (the gate bound value K=49/111790368, analytic_disc, or a labelled weighted_norm value) and the every-site form it uses; the BA1 route of the input is recorded as the input, never as the BB1 route",
+    "reason": "The draft rule lists the BA2 dynamics routes and no input field. With BA1 inputs carrying their own routes, a constant would otherwise carry two routes."
+   },
+   {
+    "path": "$.new_control_semantics.tier_mixing_rejected",
+    "replacement": "Every BB1 constant names its tier in {exact_first_order, crude_majorant}, its route in {polymer_kp, iterated_split} and its BA1 input; an exact_first_order constant uses an exact_first_order BA1 input (the gate bound value or a labelled exact_first_order value) and exact first-order coefficients in the normalization and straddling terms; a crude_majorant input or remainder makes the constant crude_majorant; a Lieb-Robinson tier, a BA1 route label used as the BB1 route, or any other mixing is rejected (the BA1 and BA2 definitions of this control do not apply to BB1).",
+    "reason": "BB1 has no semantics for this control. The two frozen ones are loop-specific: BA1 requires routes in {weighted_norm, analytic_disc}, and BA2 (the later one) requires tiers in {polynomial_lieb_robinson, exponential_lieb_robinson}. Either would reject every BB1 constant, so the control has no deterministic meaning (loop-2 criterion, BA1-B6/B16)."
+   },
+   {
+    "path": "$.parameters.comparisons[4]",
+    "replacement": "two finite complete-factor volumes of one prescription both containing Lambda_N, compared directly (the BA1 accepted statement covers the coefficient comparison of any two such volumes with the bound K); required for accepted_within_scope and the input of BB2 item 4; a comparison of the reduced densities through the union costs a factor 2 and is labelled only",
+    "reason": "As drafted, the item is 'labelled' and 'compared through their union'. At the density level the union costs a factor 2: 2 x 1.7540e-6 = 3.5079e-6 at the worst admitted BA1 input, margin 1.140 against 1/250000. That is below the plan's freeze margin of 2, and it is exactly where the thin BA1 margin reappears. BB2 item 4 needs this comparison with the constant C, so it cannot stay optional. A direct comparison costs no factor, since BA1 admits any two such volumes directly."
+   }
+  ],
+  "non_blocking": [
+   {
+    "path": "$.parameters.rate_constant_pair.secondary",
+    "replacement": {
+     "q": "151552|tau| (labelled secondary pair; the headline decides the loop)",
+     "C_target": "1/20000",
+     "c_site_target": "1/40000",
+     "coefficient_input": "the BA1 reverse Theorem 4.1 re-instantiated at the disc radius rho=|tau|/q_2 (1/151552 at the cap), recomputed exactly and labelled; the BA1 gate binds only the radii 64|tau| and tau_star, and the admitted floor constant does not reach this target"
+    },
+    "reason": "The proposal's secondary preview uses the BA1 reverse constant 2T(rho) at rho=1/151552, which is 49/10202112, about 4.803e-6. That is not a gate value. With the admitted floor constant 49/2018304 (rate q_min, at most q_2), C_2 is about 9.71e-5 and misses 1/20000. State the input."
+   },
+   {
+    "path": "$.new_control_semantics.global_lipschitz_not_decay",
+    "replacement": "The fixed-point map has Lipschitz constant J_0G'(R) below 77/781250 (2J_0G'(R) below 77/390625 is AM2's exclusion constant), which bounds ||c^{N+1}-c^N||_a only by 37/6249384 with no decay; that bound, or a Lipschitz constant of the density map in the coefficients or in the outside state, used as a per-shell decay factor is rejected.",
+    "reason": "BB1 inherits the BA1 semantics, which call 2J_0G'(R) the sup-norm Lipschitz constant. Both BA1 producers corrected that (BA1 review N5). The density-level Lipschitz constants of required item 1 are the new BB1 temptation."
+   },
+   {
+    "path": "$.new_control_semantics.normalization_couples_supports",
+    "replacement": "The dependence of rho_R on the normalized outside state (straddling contractions, pair terms, sigma, d^2/n^2) is bounded explicitly; dropping it or normalizing by 1+O(t^2) without the product split is rejected. The straddling fixture is required: a straddling creation enters e^2 at first order but the off-diagonal marginal element only at second order, and a one-site straddling first-order face has zero R-marginal while a support strictly containing R does not; dropping straddling supports from the split, or charging them only at first order, is rejected.",
+    "reason": "required[4] names a straddling-supports fixture, but no control carries it, so it has no damaging mutation."
+   },
+   {
+    "path": "$.parameters.rate_constant_pair.region_form.form",
+    "replacement": "for every finite complete-factor region Y inside Lambda_N (N the smaller box size, |Y| its number of coarse factor sites): ||rho^{box1}_Y-rho^{box2}_Y||_1 <= c_site |Y| e^{|Y|/10^8} q^{d_Y}, d_Y = N - max_{y in Y} |y|_inf (so d_R = N-1)",
+    "reason": "The draft does not say where Y ranges, and the count behind |Y| is implicit. d_Y matches the every-site exponent N-|u|_inf."
+   },
+   {
+    "path": "$.new_control_semantics.rate_constant_pair_prefrozen",
+    "replacement": "The pairs (q, C) and (q, c_site) at q=1/64 and the labelled secondary pair are frozen in the contract; each producer states its proof weights (creation weight, cardinality factor e^b, Kotecky-Preiss parameter a and cluster weight, or the split creation weight) as exact values before its constants, each admissible under the weighted self-map at the declared weight (at most 1/(37888|tau|) after the cardinality loss); optimizing q per N, reporting a rate other than the frozen pairs as the result, or a proof weight outside the admissible range is rejected; a proved family of rates may be reported only as labelled.",
+    "reason": "The inherited BA1 semantics say that the weights are frozen in the contract and allow a labelled family down to q_min. BB1 freezes only ranges, and q_min is not reachable for densities."
+   },
+   {
+    "path": "$.new_control_semantics.reverse_premise_isolation",
+    "replacement": "The reverse inputs/ inventory equals AGENTS.md, this contract and shared_premises exactly; it contains no skeptic triage, recommendation, prospective-controls, loop-2 review or BB contract review, no deliberation, plan or panel file, no lens memo, recommendation, loop-2 response or the modern BB-targets proposal, no forward file of this loop and no BB2 producer file; the only skeptic files are the declared BA1 and BA2 reviews.",
+    "reason": "P7 is met by the premise list. This names the proposal and the review files, which hold previews, in the control that rejects them."
+   },
+   {
+    "path": "$.parameters.cutoff",
+    "replacement": "each on-site cutoff space Q_L, every L, constants uniform in L; then, at fixed N, the untruncated ground vectors by the AV1 cutoff-vector removal (F20-F23), which uses the AM2 section 6 facts for each finite box (for F2 boxes with padding through the AY1 itemization, which includes cutoff-vector removal); the N and L limits are never exchanged",
+    "reason": "AV1 F20-F23 were derived for F1 boxes. F2 needs the AY1 itemization, which the AY1 gate lists."
+   },
+   {
+    "path": "$.acceptance",
+    "replacement": {
+     "accepted_within_scope": "Both routes prove the headline and region bounds for every comparison (including the one-prescription volumes), both signs, in each on-site cutoff space and at fixed N for the untruncated ground vectors, with each proved constant at most its frozen target.",
+     "limited": "Only the R form is proved (no region form), or only the near-support part with no control of far supports, or only some comparisons, or only one route, or the bounds hold in each Q_L without the passage to the untruncated vectors at fixed N; each recorded with its dominating term.",
+     "insufficient": "Neither route controls the outside-state dependence; BA1's coefficient decay still stands, labelled as such."
+    },
+    "reason": "The acceptance text should mirror the template (cutoff regimes) and say what one route alone gives."
+   },
+   {
+    "path": "$.preregistration.forbidden_phrasings",
+    "replacement": [
+     "the infinite-volume ground state",
+     "uniqueness of the infinite-volume ground state",
+     "the thermodynamic limit",
+     "the AQ state",
+     "correlation length",
+     "boundary independent",
+     "uniform in a",
+     "confirms"
+    ],
+    "reason": "These close the list over plan.json vocabulary.forbidden. Both templates stay clean with the additions."
+   },
+   {
+    "path": "$.preregistration.tier_names_allowed",
+    "replacement": [
+     "crude_majorant",
+     "exact_first_order",
+     "polymer_kp",
+     "iterated_split",
+     "analytic_disc",
+     "weighted_norm"
+    ],
+    "reason": "The BA1 input routes appear in every constant's input field. Both are in the plan vocabulary (R10)."
+   }
+  ]
+ },
+ "bb2": {
+  "blocking": [
+   {
+    "path": "$.parameters.rate_constant_pair",
+    "replacement": {
+     "hypotheses": "the BB1 frozen targets (control conditional_on_bb1_targets): for every BB1 comparison, both signs, in each on-site cutoff space and at fixed N for the untruncated ground vectors, ||rho^{box1}_R-rho^{box2}_R||_1 at most C_h q^(N-1) and ||rho^{box1}_Y-rho^{box2}_Y||_1 at most c_h |Y| e^{|Y|/10^8} q^{d_Y}, with q=1/64, C_h=1/250000 and c_h=1/500000; secondary q_2=151552|tau|, C_2h=1/20000, c_2h=1/40000",
+     "headline": {
+      "q": "1/64",
+      "C_prime_target": "1/100000",
+      "c_site_prime_target": "1/200000",
+      "tier": "exact_first_order",
+      "assembly": "nested_telescoping (forward) or union_comparison (reverse) over the hypotheses; the BB1 route of the discharging constant is attached at the BB2 gate",
+      "note": "each BB2 state constant is an explicit function of (C_h, c_h), nondecreasing in each, evaluated at the hypothesis values"
+     },
+     "dynamics": {
+      "C_dyn_target": "1/2000000000",
+      "tier": "polynomial_lieb_robinson",
+      "routes": "duhamel_inner_f1 or duhamel_inner_f2 (BA2 admitted constants, read exactly from the BA2 gate)"
+     },
+     "secondary": {
+      "q": "151552|tau| (labelled; conditional on the BB1 secondary pair)",
+      "C_prime_target": "1/8000"
+     }
+    },
+    "reason": "The BB2 targets C'=1/250000 and c_site=1/500000 equal the BB1 hypothesis values. From the hypotheses alone, nested telescoping (the forward assembly fixed by P6) gives C_h/(1-q)=4/984375 (about 4.0635e-6) and c_h/(1-q)=2/984375, above the targets, so the forward cannot meet them. The union comparison gives exactly C_h, margin 1. The advisor's 2.24 margin used BB1 previews, which the conditional design forbids BB2 producers to use. The targets 1/100000 and 1/200000 have margin 315/128=2.4609 against the hypothesis-derived telescoped values. Secondary: C_2h/(1-q_2)=625/12481056 (about 5.0076e-5) exceeds 1/20000; 1/8000 gives margin 2.496."
+   },
+   {
+    "path": "$.preregistration.target",
+    "replacement": {
+     "quantity": "C' and c'_site at q=1/64 (item 1, evaluated at the BB1 hypothesis values); C_dyn at |theta|<=8",
+     "value": "1/100000, 1/200000 and 1/2000000000",
+     "comparator": "<=",
+     "note": "blind discriminating threshold for new estimates built on the BB1 frozen targets as hypotheses and on BA2 admitted constants; margins of at least 2 against the advisor-recorded previews evaluated at the hypothesis values (not a producer premise)"
+    },
+    "reason": "This must mirror the corrected rate_constant_pair."
+   },
+   {
+    "path": "$.parameters.items.1_whole_sequence",
+    "replacement": "sup over M greater than N of ||rho^{F,M}_R-rho^{F,N}_R||_1 <= C' q^(N-1) and, for every finite complete-factor region Y inside Lambda_N, sup over M greater than N of ||rho^{F,M}_Y-rho^{F,N}_Y||_1 <= c'_site |Y| e^{|Y|/10^8} q^{d_Y}, for F in {F1,F2}, N at least 2, with C' and c'_site the BB2 constants of rate_constant_pair evaluated at the BB1 hypothesis values",
+    "reason": "'the region form with c_site' reuses the BB1 symbol for a different constant. The Cauchy region constant is not the BB1 comparison constant."
+   },
+   {
+    "path": "$.parameters.items.5_correlations",
+    "replacement": "for N at least 5, r_N=floor((N-1)/2), |theta| at most 8 and A in B(H_R): |c^{F,N}_A(theta)-c^inf_A(theta)| <= ||A||^2 [C_dyn/(r_N-1) + c'_site |Lambda_{r_N}| e^{|Lambda_{r_N}|/10^8} q^(N-r_N) + 2C' q^(N-1)], with c^{F,N}_A(theta)=omega^{F,N}(A* T^{F,N}_theta(A))-|omega^{F,N}(A)|^2, c^inf_A(theta)=omega_inf(A* T_theta(A))-|omega_inf(A)|^2, and C', c'_site the item-1 constants",
+    "reason": "The state term compares box N with the limit on Lambda_{r_N}, so it needs the item-1 Cauchy region constant, not BB1's c_site."
+   },
+   {
+    "path": "$.required[4]",
+    "replacement": "5. Prove the correlation-function bound with the three separate constants C_dyn (at most 1/2000000000, polynomial_lieb_robinson, from the BA2 gate), c'_site and C' (item 1, at most 1/200000 and 1/100000 at the hypothesis values), r_N frozen as written, complex-mean centering; the rate in N is O(1/N) because the Lieb-Robinson function is polynomial; no uniform-in-time claim and no equality of GNS dynamics of different states.",
+    "reason": "This must match the corrected targets and symbols."
+   },
+   {
+    "path": "$.preregistration.scaling_brackets_per_constant",
+    "replacement": {
+     "C_prime": "exactly 1 at the hypothesis values (the hypothesis constants and the assembly factor at fixed q are tau-independent); the linear tau-scaling of the underlying BB1 constants is checked in BB1 and recorded at the BB2 gate with the discharge",
+     "c_site_prime": "exactly 1 at the hypothesis values (as C_prime)",
+     "C_dyn": "[9500,10500] (quadratic, from the BA2 formulas)",
+     "secondary_constants": "[99/100,101/100] (the factor 1/(1-q_2) at the hypothesis values)",
+     "q_secondary": "exactly 100",
+     "item_5_sum": "no single bracket; each constant checked separately"
+    },
+    "reason": "Under the conditional design, C' and c'_site are functions of the fixed numbers C_h and c_h, and q=1/64 is fixed. Their tau -> tau/100 ratio is therefore exactly 1, and the draft brackets [95,105] reject every valid BB2 packet. A ratio near 100 would need BB1's formulas, which conditional_on_bb1_targets forbids. Secondary: (1-q_2(tau/100))/(1-q_2(tau)) is about 1.0015, inside [99/100,101/100]."
+   },
+   {
+    "path": "$.new_control_semantics.conditional_on_bb1_targets",
+    "replacement": "Every BB2 conclusion that uses BB1 is derived from the BB1 frozen targets as explicit hypotheses: for every BB1 comparison, both signs, in each on-site cutoff space and at fixed N for the untruncated ground vectors, the R form with C_h=1/250000 and the region form with c_h=1/500000 at q=1/64 (secondary: C_2h=1/20000 and c_2h=1/40000 at q_2=151552|tau|). Each BB2 state constant is written as an explicit function of the hypothesis constants and of admitted BA2 constants, nondecreasing in each hypothesis constant (checked exactly), and is evaluated at the hypothesis values against its BB2 target. A conclusion becomes unconditional only when the BB1 gate admits, for every BB1 comparison, form, cutoff regime and sign that the item uses, constants at most the hypothesis values; the BB2 skeptic review records the BB1 gate sha256, the item-by-item discharge and the BB2 constants re-evaluated at the admitted BB1 values. BB2 producers read no BB1 producer, skeptic or gate file. Rejected: a BB2 packet that uses a BB1 value other than the frozen targets, drops the condition, uses a constant that decreases when a hypothesis constant increases, or calls a conclusion unconditional before the discharge.",
+    "reason": "The design is sound as an implication discharged by monotonicity, but only if the draft is tightened in four ways. The hypotheses must be BB1's frozen statements, not only its constants: the quantifiers over comparisons, forms, cutoff regimes and signs matter. Monotonicity must be proved, not assumed. The discharge must be hash-bound: record_gate.py binds only skeptic files with the bb2 prefix, and the BB1 gate is not a BB2 premise. BB2 must be isolated from the concurrent BB1 production."
+   },
+   {
+    "path": "$.acceptance",
+    "replacement": {
+     "accepted_within_scope": "Both routes prove items 1-5 from the BB1 hypotheses with each proved constant, evaluated at the hypothesis values, at most its frozen target, and the BB1 gate discharges every hypothesis the items use (admitted constants at most the hypothesis values for every comparison, form, cutoff regime and sign used).",
+     "limited": "Item 4 is dropped (the BB1 general-volume comparison is not admitted) or item 5 and the region-form parts of items 1-3 are dropped (the BB1 region form is not admitted; items 1-2 then hold on R and item 3 for R-marginals only), each recorded; or the discharge is partial, and the undischarged items are retained as conditional statements labelled conditional_on_bb1_targets.",
+     "insufficient": "The Cauchy estimate cannot be closed from the hypotheses, or BB1 is insufficient; the BB2 implications are then retained as labelled conditional statements, never as unconditional ones."
+    },
+    "reason": "The draft 'the BB1 gate admits constants at most those targets' ignores scope, and its 'limited' clause does not map BB1 outcomes to BB2 items. A proved implication with an undischarged hypothesis must be retained, not lost."
+   },
+   {
+    "path": "$.parameters.items.4_translations",
+    "replacement": "for every coarse translation v (fine translation (4v_x,2v_y,v_z), preserving residues and face classes) the limit is invariant; quantitatively ||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 <= C_h q^(N-|v|_inf-1) for N at least |v|_inf+2, from the BB1 general-volume comparison of the reduced densities (a hypothesis whose coefficient input is the BA1 accepted comparison of any two complete-factor volumes of one prescription containing Lambda_N), applied with Lambda_{N-|v|_inf}; dropped and recorded as a limitation if the BB1 gate does not admit that comparison",
+    "reason": "As drafted, the input is 'BA1's general-volume comparison', which is a coefficient statement. Deriving density translation invariance from it is exactly the coefficient_decay_not_marginal_decay trap. The density input is BB1's comparison (P6 condition: the BA1 accepted statement does cover these volumes)."
+   },
+   {
+    "path": "$.required[3]",
+    "replacement": "4. Prove coarse translation invariance from the BB1 general-volume comparison of the reduced densities (a hypothesis; its coefficient input is BA1's accepted general-volume comparison) as a pre-registered item, with the quantitative bound; reject non-coarse translations.",
+    "reason": "Consistent with items.4_translations and with BB1 comparisons[4], which is now required, not labelled."
+   },
+   {
+    "path": "$.preregistration.mandatory_sentence_template",
+    "replacement": "For the zero-selected patterned family at the same coupling |tau|<=10^-8, under the BB1 locality bounds at their frozen targets as hypotheses (discharged only when the BB1 gate admits constants at most those targets), the reduced densities of the named construction families F1 and F2 on centered coarse cubes converge as whole sequences, at a rate in N, to one common limit on every finite region; this limit coincides with every AQ1 subsequential limit and every F2 subsequential limit, is invariant under coarse translations, and has as correlation functions on |theta|<=8 the limits of the finite-box correlation functions; this is convergence of the named constructions, not uniqueness of any ground state, not a statement about states outside the named constructions, and not a statement uniform in the lattice spacing a.",
+    "reason": "BB2 producers prove only implications from the BB1 targets. The drafted template states the conclusions unconditionally, so a producer cannot quote it truthfully before the BB1 gate. The replacement is the same sentence with one hypothesis clause. It remains true after the discharge, and it passes phrase_scan.py and the plan list without removal."
+   },
+   {
+    "path": "$.shared_premises",
+    "replacement": [
+     "research/round29/forward/am2/report.md",
+     "research/round29/reverse/am2/report.md",
+     "research/round29/skeptic/am2.md",
+     "research/round29/advisor/am2-gate.json",
+     "research/round29/forward/aq1/report.md",
+     "research/round29/advisor/aq1-gate.json",
+     "research/round29/forward/aq2/report.md",
+     "research/round21/forward/i1/report.md",
+     "research/round32/advisor/av1-gate.json",
+     "research/round32/forward/av1/report.md",
+     "research/round32/reverse/av1/report.md",
+     "research/round32/advisor/ay1-gate.json",
+     "research/round32/forward/ay1/report.md",
+     "research/round32/reverse/ay1/report.md",
+     "research/round32/advisor/ay2-gate.json",
+     "research/round32/forward/ay2/report.md",
+     "research/round33/methods/paired-physics-research/SKILL.md",
+     "research/round33/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+     "research/round33/methods/newton-analysis-synthesis/SKILL.md",
+     "research/round33/methods/tesla-mechanism-resonance/SKILL.md",
+     "research/round33/methods/historical-physics-panel/SKILL.md",
+     "research/round33/methods/qeg-research-advisor/references/round32-state-lemma-and-window.md",
+     "research/round32/advisor/aw1-gate.json",
+     "research/round32/forward/aw1/report.md",
+     "research/round33/advisor/ba1-gate.json",
+     "research/round33/forward/ba1/report.md",
+     "research/round33/reverse/ba1/report.md",
+     "research/round33/skeptic/ba1.md",
+     "research/round33/advisor/ba2-gate.json",
+     "research/round33/forward/ba2/report.md",
+     "research/round33/reverse/ba2/report.md",
+     "research/round33/skeptic/ba2.md",
+     "research/round33/contracts/bb1.json",
+     "research/round33/sources/nachtergaele-sims-1410.8174v1.md",
+     "research/round33/advisor/selection-bb2.md",
+     "research/round29/advisor/aq2-gate.json"
+    ],
+    "reason": "Item 3 inherits AQ2's gap alpha/16 and vacuum simplicity, but only the AQ2 forward report is a premise. The admitted statement lives in research/round29/advisor/aq2-gate.json, which exists."
+   },
+   {
+    "path": "$.parameters.items.3_identification",
+    "replacement": "the limit equals every AQ1 subsequential limit (F1) and every F2 subsequential limit (AY1, BA2) on every finite region, and therefore inherits exactly the admitted properties of those states: AQ1 stationarity under T_theta, strong continuity of the GNS evolution and a nonnegative generator (AQ1; for F2 limits BA2's rerun of AQ1 sections 4-5), and the AQ2 statement for the actual AQ1 centered subsequential state: H_phys at least (alpha/16)(I-P_Omega) with a simple vacuum on the invariant-local cyclic completion, and the full-GNS strengthening only as qualified in the AQ2 gate",
+    "reason": "'gap alpha/16 and vacuum simplicity in its own GNS representation' overstates the AQ2 gate. The gate states the gap on the physical invariant-local cyclic completion, with an explicitly qualified full-GNS strengthening."
+   },
+   {
+    "path": "$.preregistration.tier_label_rule",
+    "replacement": "every state constant carries exactly one tier (exact_first_order or crude_majorant), the assembly (nested_telescoping or union_comparison) and the hypothesis source bb1_frozen_targets; its BB1 route (polymer_kp or iterated_split) is attached at the BB2 gate from the BB1 gate's bound value; every dynamics constant carries the tier polynomial_lieb_robinson and exactly one route (duhamel_inner_f1 or duhamel_inner_f2) from the BA2 gate",
+    "reason": "Under the draft rule every constant carries one of four routes. A state constant built on hypotheses has no BB1 route when the producer builds it, so no BB2 state constant can be labelled as the draft requires."
+   },
+   {
+    "path": "$.new_control_semantics.tier_mixing_rejected",
+    "replacement": "Every BB2 state constant names its tier in {exact_first_order, crude_majorant}, its assembly in {nested_telescoping, union_comparison} and the hypothesis source bb1_frozen_targets; every dynamics constant names polynomial_lieb_robinson and its BA2 route (duhamel_inner_f1 or duhamel_inner_f2) with the exact BA2 gate value; a state constant with a Lieb-Robinson tier, a dynamics constant with a state tier, a BB1 route claimed by a BB2 producer, a single lumped bracket for item 5, or any other mixing is rejected (the BA1 and BA2 definitions of this control do not apply to BB2).",
+    "reason": "Same defect as BB1: the only frozen semantics are BA1's (weighted_norm/analytic_disc) and BA2's (Lieb-Robinson tiers only)."
+   }
+  ],
+  "non_blocking": [
+   {
+    "path": "$.new_control_semantics.reverse_premise_isolation",
+    "replacement": "The reverse inputs/ inventory equals AGENTS.md, this contract and shared_premises exactly; it contains no skeptic triage, recommendation, prospective-controls, loop-2 review or BB contract review, no deliberation, plan or panel file, no lens memo, recommendation, loop-2 response or the modern BB-targets proposal, no forward file of this loop and no BB1 producer, skeptic or gate file; the only skeptic files are the declared BA1 and BA2 reviews.",
+    "reason": "As for BB1. It also names the concurrent BB1 production."
+   },
+   {
+    "path": "$.preregistration.gate_fields_rule",
+    "replacement": "the gate_fields_required values hold for accepted_within_scope after the discharge; a limited verdict exports the field of each dropped item false with the reason (translation_invariance_claimed for item 4; dynamics_level not set to correlation_functions_compact_window for item 5), and an undischarged hypothesis keeps every field that depends on it false",
+    "reason": "The BA2 gate used a true_values_rule. BB2 needs one, because its fields are true only after the discharge."
+   },
+   {
+    "path": "$.preregistration.forbidden_phrasings",
+    "replacement": [
+     "the infinite-volume ground state",
+     "uniqueness of the infinite-volume ground state",
+     "the thermodynamic limit",
+     "the AQ state",
+     "correlation length",
+     "boundary independent",
+     "uniform in a",
+     "confirms"
+    ],
+    "reason": "These close the list over plan.json vocabulary.forbidden."
+   },
+   {
+    "path": "freeze order (no field)",
+    "replacement": "Freeze BB1 first, then BB2, and check that the BB2 snapshot of research/round33/contracts/bb1.json has the frozen BB1 sha256.",
+    "reason": "bb1.json is a BB2 premise. Freezing BB2 first would snapshot the draft bytes."
+   },
+   {
+    "path": "limited-outcome template (no field)",
+    "replacement": "When item 4 or 5 is dropped, the gate quotes the template inside an explicit frame ('the preregistered sentence ... is established except for item k'), or the contract adds a second template for that outcome.",
+    "reason": "R7 requires the template span, but the template asserts every item."
+   }
+  ]
+ },
+ "verification": {
+  "drafts_as_committed_freeze_on_copies": [
+   {
+    "contract": "bb1",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BB1\", \"premises\": 33}",
+    "stderr": ""
+   },
+   {
+    "contract": "bb2",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BB2\", \"premises\": 35}",
+    "stderr": ""
+   }
+  ],
+  "copies_with_all_edits_freeze": [
+   {
+    "contract": "bb1",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BB1\", \"premises\": 33}",
+    "stderr": ""
+   },
+   {
+    "contract": "bb2",
+    "rc": 0,
+    "stdout": "{\"status\": \"frozen\", \"id\": \"BB2\", \"premises\": 36}",
+    "stderr": ""
+   }
+  ],
+  "phrase_scans": {
+   "bb1_draft": {
+    "template_hits_without_removal": [],
+    "template_unqualified_rate": [],
+    "affirmative_hits_in_other_fields": []
+   },
+   "bb1_edited": {
+    "template_hits_without_removal": [],
+    "template_unqualified_rate": [],
+    "affirmative_hits_in_other_fields": []
+   },
+   "bb2_draft": {
+    "template_hits_without_removal": [],
+    "template_unqualified_rate": [],
+    "affirmative_hits_in_other_fields": []
+   },
+   "bb2_edited": {
+    "template_hits_without_removal": [],
+    "template_unqualified_rate": [],
+    "affirmative_hits_in_other_fields": []
+   }
+  },
+  "replacement_texts_affirmative_hits": []
+ }
+}

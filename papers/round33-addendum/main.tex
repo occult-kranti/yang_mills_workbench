@@ -1,0 +1,348 @@
+\documentclass[11pt,a4paper]{article}
+\input{layout}
+% Edition-local helpers (layout.tex is shared and left unchanged).
+% gatequote: a reviewed gate record quoted verbatim in its own ASCII notation.
+\newenvironment{gatequote}{\begin{quote}\footnotesize\ttfamily\frenchspacing\raggedright}{\end{quote}}
+% Every table caption stands above its table; keep it clear of the top rule.
+\setlength{\belowcaptionskip}{6pt}
+% recid: a record identifier (control id, sub-label, error-term name) printed verbatim;
+% a line may break after an underscore, and nothing else in the identifier changes.
+\makeatletter
+\newcommand{\recid}[1]{\texttt{\expandafter\recid@scan\detokenize{#1}\recid@end}}
+\def\recid@end{\recid@end}
+\def\recid@scan#1{\ifx\recid@end#1\expandafter\@gobble\else\expandafter\@firstofone\fi
+  {\recid@put#1\recid@scan}}
+\def\recid@put#1{#1\if\string_#1\allowbreak\fi}
+\makeatother
+% The title equals the addendum title of research/round33/advisor/findings.json.
+\title{Round33 research addendum: boundary decay, locality and convergence of
+the named constructions, certificates for the limit, and applications to
+related problems}
+\author{Hruday N M (BUNZEEY)}
+\date{25 September 2026\\\small Round33 scientific addendum: BA1--BD2}
+\begin{document}
+\maketitle
+\begin{abstract}
+This addendum records the Round33 cycle: eight prospectively contracted
+investigations in three research sub-rounds and an applications stage, all
+accepted within their stated model scope. They are the paired BA1, BA2, BB1,
+BB2 and BD1, the statement investigation BC1 and the single-direction
+investigations BC2 and BD2. BA1, BA2, BB1 and BB2
+concern the zero-selected patterned family of the SU(2)
+Kogut--Susskind form at fixed spacing and the original coupling cap
+$|\tau|\le10^{-8}$, and BC1 the same family at the cap $\tau=\pm10^{-8}$
+only, with the two named construction families of Round32:
+F1, AQ1's centered whole-star boxes, and F2, I1's all-contained-face boxes
+with padding, both on $\Lambda_N=[-N,N]^3$, $N\ge2$. BA1 shows that
+replacing one box of the named constructions by another moves the AM2
+creation coefficients on supports meeting the Wilson cover $R=\{0,e_z\}$ by at
+most $Kq^{N-1}$ in the anchored norm, where $N$ is the smaller box size, in
+each on-site cutoff space and uniformly in the cutoff: $K=49/111790368\approx
+4.383\times10^{-7}$ at $q=1/64$, and $K=49/2018304\approx2.428\times10^{-5}$
+at the per-step ball ratio $q=37888|\tau|=148/390625$, for every comparison of
+the contract and both signs. It is proved by two routes, a weighted-norm
+contraction and analyticity on a complex-coupling disc. This is decay of coefficients
+at a rate in $N$, not decay of the reduced density. BA2 shows that the
+finite-box Heisenberg evolutions of F1 and F2 of every $A\in B(\mathcal H_R)$
+differ in norm by at most $K_{\rm cmp}(5N+1)N^{-3}\norm A$, with
+$K_{\rm cmp}=3969/155720800000000\approx2.549\times10^{-11}$, for
+$|\theta|\le8$ in $\theta=\alpha t/\hbar$. The evolutions of each family are
+Cauchy in $N$ at the rate $1/(N-1)$, with constants about
+$5.947\times10^{-11}$ (F1) and $9.452\times10^{-11}$ (F2), and the F2 limit
+dynamics equals the AQ1 limit dynamics. This closes two obligations left
+open by Round32, boundary independence of the dynamics on compact windows and
+the dynamics of the padded family, within that scope. Both BA2 constants are
+quadratic in $\tau$. The BA2 statements concern the algebraic dynamics of the
+named constructions on a compact window. They assert no equality of GNS
+dynamics or of correlation functions of different states and nothing uniform
+in time. BB1 turns coefficient decay into locality of the reduced densities.
+For each of five comparisons of the named constructions, among them the
+fixed-$N$ change of boundary prescription and two volumes of one
+prescription, the reduced densities of the finite-box ground vectors on $R$
+differ in trace norm by at most $Cq^{N-1}$ with $q=1/64$ and
+$C\approx8.905\times10^{-7}$. On every finite region $Y\subset\Lambda_N$ they
+differ by at most $c_{\rm site}|Y|e^{|Y|/10^8}q^{d_Y}$ with
+$c_{\rm site}\approx8.768\times10^{-7}$. The bounds hold in each on-site
+cutoff space and, at fixed $N$, for the untruncated ground vectors. They are
+proved by a hard-core polymer expansion with a Kotecký--Preiss condition,
+whose cited criterion was checked after the freeze against a committed
+excerpt, and by an iterated product-ordering split. BB1 is static and per
+comparison. BB2 uses BB1's frozen targets as hypotheses, which the BB1 gate
+discharges item by item. The reduced densities of F1 and F2 then converge as
+whole sequences, without compactness, on every finite region: the supremum
+over $M>N$ of the difference on $R$ is at most $C'q^{N-1}$ with
+$C'=4/984375\approx4.06\times10^{-6}$. They converge to one common limit, the
+limit of the named constructions. That limit equals every AQ1 and every F2
+subsequential limit, inherits exactly their admitted properties, and is
+invariant under coarse translations. Its correlation functions on
+$|\theta|\le8$ are the limits of the finite-box ones. The correlation bound
+carries an explicit rate only for $5\le N\le14000$ and is vacuous from
+$N=14419$. BC1 restates two Round32 certificates for that one state with
+every constant unchanged: the node certificate for the centered Euclidean
+Wilson correlation at $s=1$, whose interval still contains the free
+reference $e^{-3}/4$, and the enclosure
+$[\tau/144-K_2^+\tau^2,\tau/144+K_2^+\tau^2]$ of the static Wilson mean. The
+whole-sequence bound then certifies the sign of the static Wilson mean of the
+untruncated padded boxes for every $N\ge N_{\rm sign}=4$ at
+$\tau=\pm10^{-8}$; nothing is claimed below the cap, the boxes with $N=2,3$
+stay open, and no finite-box node is claimed.
+BC1 also splits the Round32 obligation ``uniqueness of the limit'': the
+coincidence of all subsequential limits of the two named families is closed
+within the BB2 scope, and uniqueness of any ground state stays open. BC2
+concerns the uniform Kogut--Susskind SU(2) model at fixed spacing and strong
+bare coupling, in which every face carries the coupling, handled by
+Round32's route~B. It re-derives the chain of BA1, BB1 and BB2 with the
+route-B constants (per-site sum $29|\tau|$, 52 first-order faces and 5
+interaction groups per site): coefficient decay with
+$K_B=13/27941256\approx4.653\times10^{-7}$, locality with
+$C_B\approx9.452\times10^{-7}$ and $c_{{\rm site},B}\approx9.306\times10^{-7}$,
+and whole-sequence convergence of that model's one named construction for
+every $N\ge2$. The limit is also reached along every exhausting sequence of
+the same prescription, is identified with every AQ1-type subsequential state
+of that construction, is mirrored pointwise between the two signs of $\tau$
+and is invariant under coarse translations. At $\tau=+10^{-8}$ and $s=1$
+only, it satisfies the Round32 node certificate of that model with unchanged
+constants. None of these
+investigations establishes uniqueness of any ground state, a statement about
+states outside the named constructions or about other boundary
+prescriptions, equality of GNS dynamics of different states, route-B
+dynamics, an interaction shift of the Euclidean correlation, an estimate
+uniform in the lattice spacing or a continuum statement. The applications
+stage records what transfers and what does not. BD1 carries the Round32
+link-flip lemma and first-order parity theorem to other gauge groups on
+one-plaquette and box models under a frozen convention. The flip transfers
+to SU(2), SU(4), U(1) and Z2, whose centres contain an element acting as $-1$
+on the Wilson representation, and the parity to SU(2), SU(4), SU(5), U(1) and
+Z2, whose third Haar moment of the Wilson variable vanishes. SU(3) and SO(3)
+are obstructions with exact nonzero coefficients ($1/589824$ and $1/331776$
+at second order), and SU(5) is a flip obstruction with the fourth-order
+coefficient $1/(2^{30}3^{10})$. For SU(2) in the zero-selected family at
+$\kappa=0$ the Wilson-loop mean is odd or even in $\tau$ with the parity of
+the area of any spanning surface, in every open centered whole-star box
+and, through BB2, for the limit; no parity is claimed for F2 boxes. BD2 turns to new SU(2) observables and a new
+dimension. On the two-plaquette graph with independent couplings it gives
+exact coefficients through total order 4 and certifies the 1x2 loop
+positive at $l_1=l_2\in\{\pm10^{-1},\pm10^{-2},\pm10^{-3}\}$, with $D=8$
+relative width at most $1.79645\times10^{-17}$. In the zero-selected family the 1x2 Wilson mean
+vanishes at first order and is bounded by $K_2'\tau^2$, with only a formal
+second-order coefficient, and the electric energy on the cover lies in the
+certified band $[\tfrac32L^2,98|\tau|]$. In 2+1 dimensions only the AM2 constants
+are recounted, with no theorem. The addendum closes with the process history,
+the reviewed state of the 21 obligations, what the applications did not
+transfer, and a ranked roadmap of unexecuted goals. The limit throughout is the
+limit of the named constructions, nothing is uniform in the lattice spacing,
+and investigation counts are never a fraction of the four-dimensional
+continuum Yang--Mills problem, which remains open.
+\end{abstract}
+
+\section*{Status and reading guide}
+This is a separate scientific addendum; Draft03 \cite{draft03} and the Round31
+and Round32 addenda \cite{r31add,r32add} are unchanged. The Round33 cycle consists of eight prospectively
+contracted investigations in four sub-rounds of two. Three are research
+sub-rounds: locality (BA1, BA2), convergence of the named constructions (BB1,
+BB2) and consequences for the admitted certificates (BC1, BC2). The fourth is
+an applications stage (BD1, BD2). It applies admitted Round32 and Round33
+equations to related problems and records an explicit obstruction where an
+equation does not transfer. An expert panel fixed the goals, directions and
+contract rules in two deliberation loops before any production. The panel
+consists of three methodological lenses (Newton/Tesla, Jung/Pauli and
+Penrose/Feynman), an advisor and a skeptic. After each sub-round one research
+assistant per lens runs the tests named in the lens updates, and the advisor
+may reorder, replace or retitle the next pair. Assistant work counts as zero
+investigations.
+
+This is the complete edition. It records all four sub-rounds, and all eight
+investigations are gated and accepted within their stated model scope. It is
+authored from the eight reviewed gates, and its builder refuses to run before
+all eight exist and verifies every gate binding.
+
+BA1, BA2, BB1, BB2 and BC1 concern one model, the zero-selected patterned
+family of Round32, and the two named construction families of
+Section~\ref{sec:families}. BC2 concerns the uniform model handled by
+route~B and its one named construction (Section~\ref{sec:bc2-model}). BD1
+concerns one-plaquette and box models of seven gauge groups and, for SU(2),
+the zero-selected family; BD2 concerns the Round11 two-plaquette graph, the
+zero-selected family and a declared 2+1-dimensional model. BA1, BA2, BB1 and BB2 are paired: a forward and a
+reverse producer proved the same frozen targets by different routes, the
+reverse under premise isolation. The skeptic derived the constants in a
+pre-comparison package, committed before both producer commits for BA1, BA2
+and BB1 and between the two for BB2, and replayed and mutated both producers
+after the comparison. BC1 is a statement investigation with one forward
+producer; the skeptic's pre-comparison replay was committed 3~min 32~s after
+the forward commit, with its values final before the forward checker was last
+written. BC2 is a single-direction investigation with one forward producer;
+the skeptic's pre-comparison replay from the contract was committed 3~min
+44~s before the forward commit. BD1 is paired, with a characters route and a
+Weyl-integration route, and BD2 is single-direction; for both, the skeptic's
+pre-comparison package was committed after the producer commits, with its
+values final before them. BA1 carries the sub-label
+\recid{boundary_decay_rate_only} with the secondary label
+\recid{static_not_dynamic}: it is a statement about creation coefficients, not
+about states or dynamics. BA2 carries \recid{dynamics_on_compact_windows}: it
+is a statement about the algebraic Heisenberg dynamics on the window
+$|\theta|\le8$, not about the states. BB1 carries
+\recid{boundary_decay_rate_only} with \recid{static_not_dynamic}: it is a
+statement about the reduced densities of finite-box ground vectors, one
+comparison at a time, and forms no limit object. BB2 carries
+\recid{convergence_of_named_constructions} with
+\recid{common_limit_of_named_constructions}: it is a statement about the limit
+of the named constructions only. BC1 carries
+\recid{certificate_restated_for_limit} with \recid{reference_unresolved} for
+the node and \recid{static_not_dynamic} for the static mean: it restates
+admitted certificates for that one limit and adds a finite-box corollary.
+BC2 carries \recid{convergence_of_named_constructions} with
+\recid{certificate_restated_for_limit}, \recid{reference_unresolved} and
+\recid{static_not_dynamic}: it concerns the one named construction of the
+route-B model, its limit and the restated node, and no route-B real-time
+dynamics. BD1 carries \recid{transfer_to_named_model} with
+\recid{obstruction_recorded}, and BD2 carries
+\recid{sign_certified_finite_graph} with \recid{transfer_to_named_model},
+\recid{obstruction_recorded} and \recid{static_not_dynamic}: they are
+statements about named models and a finite graph.
+
+The headline results, each within the scope its gate records, are these.
+\begin{itemize}
+\item Boundary decay of the AM2 creation coefficients (BA1):
+ $\sum_{I\ni u}\norm{c^{\rm box\,1}_I-c^{\rm box\,2}_I}\le Kq^{N-1}$ for $u\in R$,
+ with $K\approx4.383\times10^{-7}$ at $q=1/64$ (margin about $1.14$, recorded
+ as thin) and $K\approx2.428\times10^{-5}$ at $q=37888|\tau|$, for every
+ comparison of two named boxes, both signs and every on-site cutoff; the
+ crude tier misses the headline target and is retained.
+\item Comparison of the dynamics (BA2):
+ $\norm{T^{F2,N}_\theta(A)-T^{F1,N}_\theta(A)}\le2.549\times10^{-11}(5N+1)N^{-3}$
+ for $\norm A\le1$ and $|\theta|\le8$, with the first order in $\tau$
+ vanishing exactly.
+\item Cauchy estimates and the F2 limit dynamics (BA2): rate $1/(N-1)$ in $N$
+ for both families, whole-sequence convergence of the evolutions, the F2
+ limit dynamics identified with AQ1's, and AQ1~\S\S4--5 rerun for every F2
+ subsequential limit state. This closes the Round32 obligations O5 and O6
+ within that scope.
+\item Locality of the reduced densities (BB1):
+ $\norm{\rho^{\rm box\,1}_R-\rho^{\rm box\,2}_R}_1\le Cq^{N-1}$ with
+ $C\approx8.905\times10^{-7}$ at $q=1/64$ (margin about $4.49$), and a region
+ form with $c_{\rm site}\approx8.768\times10^{-7}$ (margin about $2.28$, the
+ binding one), for every comparison, both signs, each cutoff space and the
+ untruncated vectors at fixed $N$; the crude tier fails and is retained.
+\item Convergence of the named constructions (BB2), with every BB1 hypothesis
+ discharged: whole-sequence Cauchy bounds with $C'=4/984375$ and
+ $c'_{\rm site}=2/984375$ (margin $315/128$), one common limit identified with
+ every AQ1 and F2 subsequential limit, coarse translation invariance with
+ $\norm{\rho^{\Lambda_N+v}_R-\rho^{\Lambda_N}_R}_1\le C_hq^{N-|v|_\infty-1}$,
+ and convergence of the correlation functions on $|\theta|\le8$ with
+ $C_{\rm dyn}\approx1.2532\times10^{-10}$, at a rate $K_5/N$ on
+ $5\le N\le14000$ only. This closes the Round32 obligations O2, O3 and O4 for
+ the named constructions within that scope.
+\item Certificates for the limit (BC1), at $\tau=10^{-8}$ with
+ $\tau=-10^{-8}$ a mirror replay: the node certificate $|C(1)-d|\le R$
+ with $R\approx1.832\times10^{-7}$ and the free reference $e^{-3}/4$ inside the
+ interval, and the static enclosure of $\omega_\infty(W)$ in about
+ $[6.91090\times10^{-11},6.97799\times10^{-11}]$, both restated for the limit
+ of the named constructions with unchanged constants; the sign of the static
+ Wilson mean of the untruncated padded boxes certified for every $N\ge4$ at
+ $\tau=\pm10^{-8}$ only, with the boxes $N=2,3$ open and no finite-box node; and a
+ reviewed obligations table of 21 rows, in which O1 is split into O1a, closed
+ within the BB2 scope, and O1b, open.
+\item Convergence for the route-B uniform model (BC2): every-site
+ coefficient decay with $K_B=13/27941256$ (margin about $2.149$) on the disc
+ $|z|\le64|\tau|$, admissible under $J'=29|\tau|$ while the route-A extremes
+ fail the self-map by the factor $29/28$; locality by the iterated split with
+ $C_B\approx9.452\times10^{-7}$ and $c_{{\rm site},B}\approx9.306\times10^{-7}$
+ (margin about $2.149$); whole-sequence convergence by one direct comparison
+ for every $N\ge2$, exhaustion within the prescription, the pointwise sign
+ mirror, identification before inheritance and coarse translation
+ invariance; and the AX2 node at $\tau=+10^{-8}$, $s=1$ restated for the
+ limit, with the free reference still inside the interval.
+\item Centre symmetry across gauge groups (BD1): exact Haar moments and
+ first-order Wilson coefficients for SU(2), SU(3), SU(4), SU(5), U(1), Z2 and
+ SO(3) ($1/144$, $1/1152$, $1/2880$, $1/5760$, $1/96$, $1/48$, $1/864$), equal
+ on two routes and the skeptic's three in 141 cells; the flip lemma
+ transferred to SU(2), SU(4), U(1) and Z2 and the parity theorem to SU(2),
+ SU(4), SU(5), U(1) and Z2, box by box inside a Kato radius; SU(3), SO(3) and
+ SU(5) recorded as obstructions with exact coefficients; and the SU(2) area
+ parity at $\kappa=0$ in every open centered whole-star box and for the
+ limit.
+\item New observables and a new dimension (BD2): exact two-coupling tables
+ through total order 4 on the two-plaquette graph with the one-link flip
+ parities, and the 1x2 loop certified positive at $l_1=l_2$ with
+ $|l|\in\{10^{-1},10^{-2},10^{-3}\}$ at $D=8$ relative width at most
+ $1.79645\times10^{-17}$ against
+ $10^{-16}$; the $\mathbb Z^3$ 1x2 Wilson mean zero at first order, bounded
+ by $K_2'\tau^2\approx1.34\times10^{-12}$, even for F1 and the limit, with the
+ formal coefficient $7/124416$ labelled; the electric band $[\tfrac32L^2,98|\tau|]$
+ for every box and the limit; and the 2+1D AM2 constants
+ $G_3=9e^{3/32}$, $G_3'=118e^{3/32}$ with the cap about
+ $1.5807\times10^{-3}$, no theorem claimed.
+\end{itemize}
+The four-dimensional continuum Yang--Mills problem remains open, and no
+investigation count is a fraction of it.
+
+Section~\ref{sec:model} fixes the model dictionary, the two families, the
+Round32 checkpoint and the frozen Round33 plan. Section~\ref{sec:ba1} derives
+the coefficient decay, Section~\ref{sec:ba2} the comparison of the dynamics,
+Section~\ref{sec:bb1} the locality of the reduced densities,
+Section~\ref{sec:bb2} the convergence of the named constructions,
+Section~\ref{sec:bc1} the certificates for their limit,
+Section~\ref{sec:bc2} the convergence for the route-B uniform model and
+Section~\ref{sec:apps} the applications, ending with
+Table~\ref{tab:apps-summary} of what transferred and what did not.
+Section~\ref{sec:history} records the process history,
+Section~\ref{sec:limits} what the record does and does not establish, with
+the ranked roadmap, and Appendix~\ref{sec:contributions} the contribution and
+evidence ledger. Each
+investigation opens with its gate's accepted statement, quoted
+verbatim in the gate's ASCII notation as the reviewed scope, and closes with
+the limitations the gate recorded. Exact rational arithmetic decides
+admission. Decimals summarize exact rationals, and labelled values are
+recorded but not bound.
+
+The human project author is Hruday N M (BUNZEEY). \emph{AI-assistance
+disclosure:} the advisor, the skeptic, the expert-panel lenses (Newton/Tesla,
+Jung/Pauli and Penrose/Feynman as documented methodological lenses), the
+research assistants and the forward and reverse producers are model-agent
+roles with shared mathematical ancestry. Their agreement is correlated
+model-agent work, not external human peer review or independent physical
+observation. Historical figures supply documented methodological lenses; none
+participated in or endorsed this work. No historical, occult, mystical or
+governmental source supplies a premise, and the Jung lens's reading ledger
+records custody, not confirmation. HNM contribution aliases identify project
+records; scientific priority is unverified. Investigation counts are never a
+fraction of the continuum problem.
+
+BA2 applies the Lieb--Robinson bound and the limit-dynamics theorem of
+Nachtergaele and Sims
+(\href{https://arxiv.org/abs/1410.8174v1}{arXiv:1410.8174v1}) \cite{ns}, quoted
+from a committed excerpt. Its rerun for the padded family follows AQ1~\S\S4--5, whose
+strategy AQ1 credits to Gauvin, arXiv:2503.15539v3, Supplement A.10
+\cite{gauvin}. BA1
+applies standard tools to the admitted AM2 fixed point: weighted norms that
+pay a fixed loss per interaction, Banach's fixed-point theorem, Weierstrass's
+theorem, the maximum principle and Cauchy's estimates. The BB1 polymer
+route cites the Kotecký--Preiss criterion (1986) \cite{kp} in the form of
+Ueltschi (\href{https://arxiv.org/abs/math-ph/0304003v3}{arXiv:math-ph/0304003v3})
+\cite{ueltschi},
+checked after the freeze against a committed excerpt. BD1 applies
+Peter--Weyl theory, Schur's lemma, the Pieri rule, Clebsch--Gordan series,
+Schur--Weyl duality with the hook-length formula, the Weyl integration and
+character formulas and Kato's analytic perturbation theory; centre symmetries
+of lattice gauge theories are a known kind of argument, and no priority is
+claimed for either criterion. BD2 applies the Weyl, Temple, Eckart and
+Davis--Kahan bounds and the Fuchs--van de Graaf inequality to the Round11
+graph reduction and the admitted AZ2 certificate code. The attribution
+sentence of the Round32 addendum \cite{r32add} for the AM2 creation expansion
+and the AQ construction is inherited unchanged. Scientific priority is unverified, and
+no independence from those sources is claimed.
+
+\input{model}
+\input{decay}
+\input{dynamics}
+\input{locality}
+\input{convergence}
+\input{consequences}  % BC1: certificates restated for the limit
+\input{uniform}       % BC2: route-B uniform model, convergence of its named construction and its node
+\input{applications}  % BD1, BD2: transfers to named models and recorded obstructions
+\input{history}
+\input{limits}
+\appendix
+\input{contributions}
+\input{references}
+\end{document}

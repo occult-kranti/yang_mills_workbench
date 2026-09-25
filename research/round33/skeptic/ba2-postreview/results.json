@@ -1,0 +1,1544 @@
+{
+  "checks": [
+    {
+      "contract_sha256": "275ba3b002529b7295d0f8b91dc1cc7a96451e3c7f936ee698a932fdca54fcff",
+      "id": "contract_sha256_and_targets",
+      "passed": true
+    },
+    {
+      "files": 4,
+      "freeze_record": "research/round33/skeptic/ba2-independent-freeze.json",
+      "id": "pre_comparison_package_unchanged_and_replayed",
+      "passed": true,
+      "results_sha256": "378f0e0a280c83c7290f7411939d626fcf7820538864f6c26976dc26b6a745c8"
+    },
+    {
+      "closures": {
+        "forward": {
+          "check_py_sha256_recorded": true,
+          "closure_files": 33,
+          "frozen_artifacts_pinned": true,
+          "inputs": 29,
+          "inventory_equals_declared": true,
+          "snapshots_byte_identical": true
+        },
+        "reverse": {
+          "check_py_sha256_recorded": true,
+          "closure_files": 33,
+          "frozen_artifacts_pinned": true,
+          "inputs": 29,
+          "inventory_equals_declared": true,
+          "snapshots_byte_identical": true
+        }
+      },
+      "id": "closures_inventories_and_reverse_isolation",
+      "passed": true,
+      "reverse_inputs": "AGENTS.md + contract + 27 shared premises exactly; no skeptic, lens, deliberation, plan or forward file"
+    },
+    {
+      "id": "producer_replays_byte_identical",
+      "passed": true,
+      "receipts": [
+        {
+          "byte_identical_to_frozen_output": true,
+          "direction": "forward",
+          "mode": "normal",
+          "outputs": {
+            "results.json": "4e85123b1a386d514fa709652706dd6227e55d6190989c50bfa04805c20d5cf9",
+            "source-manifest.json": "73925914d27f602a180cfa15bfde21829ab481d95c11c98f57a1834125744b04"
+          },
+          "stdout": "{\"K_c1_preview\": \"5.94718239310e-11\", \"K_c2_preview\": \"9.45177201761e-11\", \"K_cmp_preview\": \"2.54879245418e-11\", \"checks\": 44, \"direction\": \"forward\", \"loop\": \"BA2\", \"rejected_mutations\": 116}"
+        },
+        {
+          "byte_identical_to_frozen_output": true,
+          "direction": "forward",
+          "mode": "optimized",
+          "outputs": {
+            "results.json": "4e85123b1a386d514fa709652706dd6227e55d6190989c50bfa04805c20d5cf9",
+            "source-manifest.json": "73925914d27f602a180cfa15bfde21829ab481d95c11c98f57a1834125744b04"
+          },
+          "stdout": "{\"K_c1_preview\": \"5.94718239310e-11\", \"K_c2_preview\": \"9.45177201761e-11\", \"K_cmp_preview\": \"2.54879245418e-11\", \"checks\": 44, \"direction\": \"forward\", \"loop\": \"BA2\", \"rejected_mutations\": 116}"
+        },
+        {
+          "byte_identical_to_frozen_output": true,
+          "direction": "reverse",
+          "mode": "normal",
+          "outputs": {
+            "results.json": "ac9b5cf7fae17be35b5922ff72d19c6b7a4e45707394843aa14098c7dac6625c",
+            "source-manifest.json": "91e45888bb4ef3df573d2b20da10bd6440ed4785d4d5a0453e5f02a23bf33ff4"
+          },
+          "stdout": "{\"K_cmp\": \"1.48469182657e-11\", \"c1\": \"1.01951404605e-10\", \"c2\": \"3.46428092867e-11\", \"checks\": 59, \"damaging_mutations\": 149, \"direction\": \"reverse\", \"loop\": \"BA2\", \"outcome\": \"accepted_within_scope\"}"
+        },
+        {
+          "byte_identical_to_frozen_output": true,
+          "direction": "reverse",
+          "mode": "optimized",
+          "outputs": {
+            "results.json": "ac9b5cf7fae17be35b5922ff72d19c6b7a4e45707394843aa14098c7dac6625c",
+            "source-manifest.json": "91e45888bb4ef3df573d2b20da10bd6440ed4785d4d5a0453e5f02a23bf33ff4"
+          },
+          "stdout": "{\"K_cmp\": \"1.48469182657e-11\", \"c1\": \"1.01951404605e-10\", \"c2\": \"3.46428092867e-11\", \"checks\": 59, \"damaging_mutations\": 149, \"direction\": \"reverse\", \"loop\": \"BA2\", \"outcome\": \"accepted_within_scope\"}"
+        }
+      ],
+      "runs": 4
+    },
+    {
+      "id": "producer_values_validated_exactly",
+      "passed": true
+    },
+    {
+      "K_c1": {
+        "forward_face_charged": "9261/155720800000000",
+        "skeptic_pre_closed_face_charged": "9261/155720800000000"
+      },
+      "K_c2": {
+        "composition": "K_c1 (face) + (11/8) K_cmp, both skeptic closed forms; one F1-inner Duhamel F2(M) against F1(N) plus the comparison at N; (5N+1)(N-1)N^-3 at most 11/8",
+        "forward": "117747/1245766400000000"
+      },
+      "K_cmp": {
+        "equal": true,
+        "forward": "3969/155720800000000",
+        "skeptic_pre_closed": "3969/155720800000000"
+      },
+      "id": "forward_headlines_equal_skeptic_closed_forms",
+      "margins": {
+        "K_c1": "4.203671e+00",
+        "K_c2": "2.645007e+00",
+        "K_cmp": "2.354056e+00"
+      },
+      "passed": true
+    },
+    {
+      "E_up": {
+        "x_phi": "3055897438487/3045556250000",
+        "x_phiprime": "48866741088707/48770243750000"
+      },
+      "K_cmp": {
+        "relative_excess_of_closed_over_reverse": "9.781451e-07",
+        "relative_excess_of_reverse_over_sharp": "6.862324e-13",
+        "reverse": "452554889222515527/30481402343750000000000000000",
+        "skeptic_closed": "9261/623765200000000",
+        "skeptic_sharp_upper": "593876730628829757/40000000000000000000000000000"
+      },
+      "c1": {
+        "reverse": "12128856933354903/118967041015625000000000000",
+        "skeptic_closed_star": "3969/38930200000000"
+      },
+      "c2": {
+        "reverse": "1055961408185869563/30481402343750000000000000000",
+        "skeptic_closed_face": "21609/623765200000000"
+      },
+      "id": "reverse_headlines_reconciled_with_skeptic",
+      "margins": {
+        "K_cmp": "4.041243e+00",
+        "c1": "2.452149e+00",
+        "c2": "7.216505e+00"
+      },
+      "passed": true,
+      "reconciliation": "both are directed upper bounds of the same quantity 2||Phi||U^2 E(x)/x^2-type integral: the reverse bounds the remainder e^x-1-x by (x^2/2)(1+x/3+x^2/(12(1-x/5))) ((j+2)! at least 24*5^(j-2)), the skeptic closed form by (x^2/2)/(1-x/3) (k! at least 2*3^(k-2)); sharp enclosure <= reverse <= closed; the difference is in the fourth order of the exponential remainder, relative size about 1e-6 of the constant"
+    },
+    {
+      "id": "tau_scaling_ratios_in_preregistered_bracket",
+      "passed": true,
+      "previews": {
+        "forward": "1.003364406e+04",
+        "reverse_F1": "1.003361517e+04",
+        "reverse_cmp_and_F2": "1.001958815e+04"
+      },
+      "ratios": {
+        "forward": "1953058850/194651",
+        "reverse_F1": "13564609990853609831750000/1351916508459800973113",
+        "reverse_cmp_and_F2": "38176688920663121234473000000/3810205403940325763421973"
+      },
+      "stale_bracket_note": "every producer ratio also lies in the stale [9900,10100] of the control semantics (defect D1 did not bite)"
+    },
+    {
+      "all_size": "per-anchor classes 17/13/5 (one coordinate equal to N), 10/3/1 (two), 0 (corner): 140N^2+28N",
+      "forward_enumerated": "N=2,3,4 identical (F1, F2, extra, incidences 28N(11N+2), distances, exact distance sums)",
+      "id": "extra_face_enumeration_and_all_size_formula",
+      "passed": true,
+      "reverse_enumerated": "N=2,3 identical (count, distances, 60/126 partial groups, 75/147 padding sites); counts to N=6 match 168N^3 and 28N(2N+1)(3N+1)",
+      "skeptic": {
+        "2": {
+          "F1": 1344,
+          "F2": 1960,
+          "S": "616396498531/82978560000",
+          "extra": 616,
+          "incidences": 1344,
+          "max_owners": 3,
+          "min_0": 2,
+          "min_ez": 1,
+          "padding": 75,
+          "partial_groups": 60
+        },
+        "3": {
+          "F1": 4536,
+          "F2": 5880,
+          "S": "193769295466351853/49203008426880000",
+          "extra": 1344,
+          "incidences": 2940,
+          "max_owners": 3,
+          "min_0": 3,
+          "min_ez": 2,
+          "padding": 147,
+          "partial_groups": 126
+        },
+        "4": {
+          "F1": 10752,
+          "F2": 13104,
+          "S": "6959486763925913858573/2810574247360239360000",
+          "extra": 2352,
+          "incidences": 5152,
+          "max_owners": 3,
+          "min_0": 4,
+          "min_ez": 3,
+          "padding": 243,
+          "partial_groups": 216
+        },
+        "5": {
+          "F1": 21000,
+          "F2": 24640,
+          "S": "38508297773129582955401935967/22535229284522356952309760000",
+          "extra": 3640,
+          "incidences": 7980,
+          "max_owners": 3,
+          "min_0": 5,
+          "min_ez": 4,
+          "padding": 363,
+          "partial_groups": 330
+        }
+      }
+    },
+    {
+      "forward_fixture": "exact Gaussian-rational unitaries V=Cayley(H), W=Cayley(K): (V x W)(A x 1)(V x W)* = (V A V*) x 1",
+      "id": "padding_factorization_both_routes",
+      "passed": true,
+      "reverse_statement": "H^{F2,pad}_N = H^(2)_N (x) 1 + 1 (x) sum_{x in B_+ minus Lambda_N} h_x; e^{iuH^pad} = e^{iuH^(2)} (x) e^{iuP}; so T^{F2,pad}(A (x) 1) = T^(2)(A) (x) 1 exactly and the padding never enters the Duhamel source",
+      "skeptic_fixture": "ad^k_{H_in (x) 1 + 1 (x) h_pad}(A (x) 1) = (ad^k_{H_in} A) (x) 1, k=1..7 (exact)"
+    },
+    {
+      "finding": "the forward block is described as copied byte for byte; two headings differ from the excerpt bytes (the bold markers of Theorem 3.1 and the Theorem 4.1 parenthetical replaced by \"(section title omitted)\"); every statement sentence and equation is verbatim; neither report quotes the section title",
+      "forward": {
+        "edited_heading_or_markdown": [
+          "markdown bold markers removed: Theorem 3.1. Let \u0393 and F be as indicated",
+          "Theorem 4.1 (section title omitted). "
+        ],
+        "lines": 17,
+        "part_b_47_lines": 5,
+        "verbatim": 15
+      },
+      "id": "ns_passages_match_committed_excerpt",
+      "passed": true,
+      "reverse": {
+        "lines": 18,
+        "part_b_47_lines": 1,
+        "verbatim": 18
+      }
+    },
+    {
+      "gate_fields": {
+        "common_limit_claimed": false,
+        "continuum_claim": false,
+        "dynamics_level": "algebraic_heisenberg_compact_window",
+        "dynamics_limit_identified_claimed": true,
+        "gns_dynamics_equality_claimed": false,
+        "rate_in_N_claimed": true,
+        "rate_in_a_claimed": false,
+        "scientific_priority_verified": false,
+        "state_convergence_claimed": false,
+        "translation_invariance_claimed": false,
+        "true_values_rule": "a field shown true is exported true only if its target is admitted; otherwise false with the reason",
+        "uniform_in_time_claimed": false,
+        "uniqueness_of_ground_state_claimed": false,
+        "weak_coupling_claim": false,
+        "whole_sequence_claimed": true,
+        "whole_sequence_scope": "finite-box Heisenberg evolutions of F1 and F2 of A in B(H_R), in norm, uniformly for |theta| at most 8; dynamics only, no state"
+      },
+      "id": "gate_fields_equal_contract_both",
+      "passed": true
+    },
+    {
+      "id": "mandatory_sentence_one_unbroken_span",
+      "passed": true,
+      "spans": {
+        "forward": {
+          "normalized_occurrences": 1,
+          "occurrences": 1,
+          "single_line": true
+        },
+        "reverse": {
+          "normalized_occurrences": 1,
+          "occurrences": 1,
+          "single_line": true
+        }
+      }
+    },
+    {
+      "id": "phrase_scan_tool_pinned",
+      "passed": true,
+      "sha256": "028af4c14edbb2fae096a91cb723ccefb036e7550088907ef47062774871f67c",
+      "tool": "research/round33/tools/phrase_scan.py"
+    },
+    {
+      "id": "round_phrase_scan_tool_on_both_reports",
+      "passed": true,
+      "scan": {
+        "forward": {
+          "affirmative_hits": 0,
+          "exit": 0
+        },
+        "reverse": {
+          "affirmative_hits": 0,
+          "exit": 0
+        }
+      }
+    },
+    {
+      "forward_steps": [
+        "gns_unitaries",
+        "nonnegative_generator",
+        "physical_sector",
+        "stationarity",
+        "strong_continuity"
+      ],
+      "id": "o6_rerun_and_local_algebra_identification_both",
+      "identification": "both routes identify the F2 limit with T_theta on every local observable (R replaced by a finite X), then on the quasi-local algebra; skeptic reading R7 met",
+      "passed": true,
+      "reverse_steps": [
+        "gauge_physical_restriction",
+        "gns_strong_continuity",
+        "nonnegative_generator",
+        "stationarity"
+      ],
+      "stationarity": {
+        "forward": "|omega(T_u A)-omega(A)| <= 2 eps_n with eps_n=sup||T_u(A)-T^{F2,n}_u(A)||",
+        "reverse": "|omega(T_theta A)-omega(A)| <= 2c2/(L-1)"
+      }
+    },
+    {
+      "id": "sharp_48_supremum_observation_agrees",
+      "owner_set": "108|tau| (admitted 1323|tau|)",
+      "passed": true,
+      "use": "labelled observation only; no constant, target or gate value uses it",
+      "whole_star": "567|tau| (admitted 2268|tau|)"
+    },
+    {
+      "forward": {
+        "controls": 35,
+        "rejections": 116
+      },
+      "id": "producer_control_coverage",
+      "passed": true,
+      "reverse": {
+        "controls": 35,
+        "rejections": 149
+      }
+    },
+    {
+      "id": "mutation_harness_unmutated_copies_reproduce_frozen_results",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_coherent_evidence_tampering",
+      "last_error_line": "AdmissionError: damaging mutation accepted: K_cmp_halved_hash_rebound",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_exact_arithmetic_admission",
+      "last_error_line": "AdmissionError: damaging mutation accepted: float_input",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_no_priority_or_continuum_claim",
+      "last_error_line": "AdmissionError: damaging mutation accepted: continuum_true",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_changed_model_relabelled",
+      "last_error_line": "AdmissionError: damaging mutation accepted: tau_changed",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_insufficient_verdict_retained",
+      "last_error_line": "AdmissionError: damaging mutation accepted: missed_comparison_relabelled_accepted",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_tau_scaling_exponent",
+      "last_error_line": "AdmissionError: damaging mutation accepted: linear_order_bound",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_wrong_delta_alpha_hbar_clock",
+      "last_error_line": "AdmissionError: damaging mutation accepted: eightfold_u_labelled_theta",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_missing_incoming_stars",
+      "last_error_line": "AdmissionError: damaging mutation accepted: outgoing_star_only_J_7",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_root_n_misuse",
+      "last_error_line": "AdmissionError: damaging mutation accepted: division_by_isqrt_of_616_faces",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_tier_mixing_rejected",
+      "last_error_line": "AdmissionError: damaging mutation accepted: exponential_label_on_polynomial_constants",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_reverse_premise_isolation",
+      "last_error_line": "AdmissionError: damaging mutation accepted: declaration_false",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_face_count_all_sites",
+      "last_error_line": "AdmissionError: damaging mutation accepted: site_0_only_count",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_uniform_in_N_not_in_a",
+      "last_error_line": "AdmissionError: damaging mutation accepted: uniform_in_a_claimed",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_placeholder_span_rejected",
+      "last_error_line": "AdmissionError: damaging mutation accepted: whitespace_placeholder",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_negation_aware_phrase_scan",
+      "last_error_line": "AdmissionError: damaging mutation accepted: affirmative_thermodynamic_limit",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_parameters_declare_metric_weights_window",
+      "last_error_line": "AdmissionError: damaging mutation accepted: window_field_absent",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_lieb_robinson_polynomial_tail",
+      "last_error_line": "AdmissionError: damaging mutation accepted: N_to_N_plus_1_bound_as_cauchy",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_lieb_robinson_F_declared",
+      "last_error_line": "AdmissionError: damaging mutation accepted: exponential_instance_with_AQ1_Phi_norm",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_lieb_robinson_form_quoted",
+      "last_error_line": "AdmissionError: damaging mutation accepted: velocity_factor_2_dropped",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_unbounded_onsite_interaction_picture",
+      "last_error_line": "AdmissionError: damaging mutation accepted: onsite_in_bounded_interaction",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_duhamel_inner_family_constants",
+      "last_error_line": "AdmissionError: damaging mutation accepted: F1_inner_with_owner_set_1323_unstated",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_extra_face_count_and_distance",
+      "last_error_line": "AdmissionError: damaging mutation accepted: padding_sites_counted_as_faces",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_duhamel_tau_order_quadratic",
+      "last_error_line": "AdmissionError: damaging mutation accepted: quadratic_bound_labelled_linear",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_time_window_named_common_clock",
+      "last_error_line": "AdmissionError: damaging mutation accepted: uniform_in_time_claimed",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_algebraic_not_gns_dynamics",
+      "last_error_line": "AdmissionError: damaging mutation accepted: gns_dynamics_equality_claimed",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_f2_limit_dynamics_equals_f1",
+      "last_error_line": "AdmissionError: damaging mutation accepted: identified_by_local_terms_only",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_two_families_named",
+      "last_error_line": "AdmissionError: damaging mutation accepted: orthant_boxes",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_subsequence_versus_whole_sequence",
+      "last_error_line": "AdmissionError: damaging mutation accepted: alternating_sequence_parity_limits",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_decay_rate_in_N_not_a",
+      "last_error_line": "AdmissionError: damaging mutation accepted: conversion_to_fm",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_boundary_source_new_terms_only",
+      "last_error_line": "AdmissionError: damaging mutation accepted: new_star_dropped",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_f2_regrouping_charged_once",
+      "last_error_line": "AdmissionError: damaging mutation accepted: face_charged_twice",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_full_original_wilson_cover",
+      "last_error_line": "AdmissionError: damaging mutation accepted: four_drawn_links_as_cover",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_topology_named",
+      "last_error_line": "AdmissionError: damaging mutation accepted: strong_relabelled_norm",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_cross_coupling_comparison_rejected",
+      "last_error_line": "AdmissionError: damaging mutation accepted: opposite_signs_compared",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_forward_gate_fields_topic_specific",
+      "last_error_line": "AdmissionError: damaging mutation accepted: field_missing",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_coherent_evidence_tampering",
+      "last_error_line": "ProducerError: damaging mutation accepted: isolation_flag_flipped_rehashed",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_exact_arithmetic_admission",
+      "last_error_line": "ProducerError: damaging mutation accepted: float_tau",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_no_priority_or_continuum_claim",
+      "last_error_line": "ProducerError: damaging mutation accepted: continuum_true",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_changed_model_relabelled",
+      "last_error_line": "ProducerError: damaging mutation accepted: tau_1e-7",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_insufficient_verdict_retained",
+      "last_error_line": "ProducerError: damaging mutation accepted: missed_comparison_relabelled_accepted",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_tau_scaling_exponent",
+      "last_error_line": "ProducerError: damaging mutation accepted: linear_order_bound",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_wrong_delta_alpha_hbar_clock",
+      "last_error_line": "ProducerError: damaging mutation accepted: u_window_labelled_theta",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_missing_incoming_stars",
+      "last_error_line": "ProducerError: damaging mutation accepted: outgoing_star_J",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_root_n_misuse",
+      "last_error_line": "ProducerError: damaging mutation accepted: divide_by_sqrt_faces",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_tier_mixing_rejected",
+      "last_error_line": "ProducerError: damaging mutation accepted: exponential_tier_with_polynomial_F",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_reverse_premise_isolation",
+      "last_error_line": "ProducerError: damaging mutation accepted: forward_ba2_report_added",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_face_count_all_sites",
+      "last_error_line": "ProducerError: damaging mutation accepted: literal_counts",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_uniform_in_N_not_in_a",
+      "last_error_line": "ProducerError: damaging mutation accepted: uniform_in_lattice_spacing",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_placeholder_span_rejected",
+      "last_error_line": "ProducerError: damaging mutation accepted: placeholder_gate",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_negation_aware_phrase_scan",
+      "last_error_line": "ProducerError: damaging mutation accepted: affirmative_thermodynamic_limit",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_parameters_declare_metric_weights_window",
+      "last_error_line": "ProducerError: damaging mutation accepted: clock_removed",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_lieb_robinson_polynomial_tail",
+      "last_error_line": "ProducerError: damaging mutation accepted: comparison_N_minus_4",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_lieb_robinson_F_declared",
+      "last_error_line": "ProducerError: damaging mutation accepted: F_mu_with_AQ1_norm",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_lieb_robinson_form_quoted",
+      "last_error_line": "ProducerError: damaging mutation accepted: second_hand_source_aq1",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_unbounded_onsite_interaction_picture",
+      "last_error_line": "ProducerError: damaging mutation accepted: onsite_inside_Phi",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_duhamel_inner_family_constants",
+      "last_error_line": "ProducerError: damaging mutation accepted: f2_cauchy_with_f1_inner",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_extra_face_count_and_distance",
+      "last_error_line": "ProducerError: damaging mutation accepted: count_140N2_formula",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_duhamel_tau_order_quadratic",
+      "last_error_line": "ProducerError: damaging mutation accepted: linear_label",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_time_window_named_common_clock",
+      "last_error_line": "ProducerError: damaging mutation accepted: uniform_in_time",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_algebraic_not_gns_dynamics",
+      "last_error_line": "ProducerError: damaging mutation accepted: gns_equality",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_f2_limit_dynamics_equals_f1",
+      "last_error_line": "ProducerError: damaging mutation accepted: identified_from_static_closeness",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_two_families_named",
+      "last_error_line": "ProducerError: damaging mutation accepted: single_family",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_subsequence_versus_whole_sequence",
+      "last_error_line": "ProducerError: damaging mutation accepted: states_whole_sequence_from_compactness",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_decay_rate_in_N_not_a",
+      "last_error_line": "ProducerError: damaging mutation accepted: converted_to_fm",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_boundary_source_new_terms_only",
+      "last_error_line": "ProducerError: damaging mutation accepted: comparison_source_short_one",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_f2_regrouping_charged_once",
+      "last_error_line": "ProducerError: damaging mutation accepted: whole_group_recharge",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_full_original_wilson_cover",
+      "last_error_line": "ProducerError: damaging mutation accepted: cover_zero_only",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_topology_named",
+      "last_error_line": "ProducerError: damaging mutation accepted: norm_continuity_in_theta",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_cross_coupling_comparison_rejected",
+      "last_error_line": "ProducerError: damaging mutation accepted: plus_versus_minus_tau",
+      "passed": true
+    },
+    {
+      "id": "control_weakening_reverse_gate_fields_topic_specific",
+      "last_error_line": "ProducerError: damaging mutation accepted: gns_equality_true",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_comparison_face_sum_168_to_84",
+      "last_error_line": "AdmissionError: failed check comparison_bound_all_N",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_cauchy_face_sum_392_to_196",
+      "last_error_line": "AdmissionError: failed check within_family_cauchy_and_limits",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_lr_time_integral_factor_2_dropped",
+      "last_error_line": "AdmissionError: failed check comparison_bound_all_N",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_contract_byte_edit_no_rehash",
+      "last_error_line": "AdmissionError: contract snapshot bytes differ from the frozen BA2 contract",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_contract_target_rehashed_9e-11",
+      "last_error_line": "AdmissionError: failed check contract_snapshot_sha256",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_undeclared_input_reverse_report",
+      "last_error_line": "AdmissionError: failed check reverse_premise_isolation",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_report_forbidden_phrase",
+      "last_error_line": "AdmissionError: affirmative forbidden phrasing in report.md: the thermodynamic limit",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_report_quote_51_paraphrased",
+      "last_error_line": "AdmissionError: verbatim quotation missing from report: 51",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_forward_report_template_removed",
+      "last_error_line": "AdmissionError: failed check mandatory_sentence_verbatim_once",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_E_up_quadratic_term_dropped",
+      "last_error_line": "ProducerError: check failed: item3_duhamel_comparison_inner_F2",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_geometry_coefficient_168_to_84",
+      "last_error_line": "AdmissionError: geometry coefficient 3*28*2=168 per (5N+1)N^-3",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_F2_per_site_face_sum_to_7",
+      "last_error_line": "AdmissionError: per-site source sum must be J=28|tau| (F1) or 49|tau|/3 (F2)",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_tail_coefficient_8_to_4",
+      "last_error_line": "AdmissionError: polynomial tail: 4/N+4/(N-1)<=8/(N-1), the honest O(1/N) rate",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_contract_byte_edit_no_rehash",
+      "last_error_line": "ProducerError: contract snapshot hash differs from the bound constant",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_contract_target_rehashed_9e-11",
+      "last_error_line": "AdmissionError: preregistered target values",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_skeptic_triage_added_to_inputs",
+      "last_error_line": "AdmissionError: forbidden premise in reverse inputs: research/round33/skeptic/triage.md",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_forward_report_added_to_inputs",
+      "last_error_line": "AdmissionError: forbidden premise in reverse inputs: research/round33/forward/ba2/report.md",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_report_forbidden_phrase",
+      "last_error_line": "AdmissionError: affirmative forbidden phrasing: the thermodynamic limit :: ```bash python3 -B research/round33/reverse/ba2/check.py --output /absolute/fresh/dir python3 -B -O research/round33/reverse/ba2/check.py --output /absolute/fre",
+      "passed": true
+    },
+    {
+      "id": "mutation_aborts_reverse_report_quote_51_paraphrased",
+      "last_error_line": "AdmissionError: Nachtergaele-Sims passage not quoted verbatim: (51) \u2016[\u03c4_t^\u039b(A), B]\u2016 \u2264 (2\u2016A\u2016\u2016B\u2016 / C) (e^{2\u2016\u03a6\u2016C|t|} \u2212 1) D(X, Y)",
+      "passed": true
+    },
+    {
+      "id": "silent_edit_caught_by_review_forward_retained_triangle_coefficient_tripled",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "retained triangle coefficient differs from 2 K_c1"
+    },
+    {
+      "id": "silent_edit_caught_by_review_forward_b_N_preview_shape_5N",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "b(N) all-size preview differs at N=2"
+    },
+    {
+      "id": "silent_edit_caught_by_review_reverse_labelled_sharper_value_halved",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "reverse labelled sharper comparison value differs at N=2"
+    },
+    {
+      "id": "silent_edit_caught_by_review_reverse_general_X_example_26_sites",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "reverse general-X example differs at N=10"
+    },
+    {
+      "id": "silent_edit_caught_by_review_reverse_triangle_bound_over_N",
+      "passed": true,
+      "producer_exit": 0,
+      "review_rejection": "reverse triangle bound differs at N=1000"
+    }
+  ],
+  "checks_count": 113,
+  "contract_sha256": "275ba3b002529b7295d0f8b91dc1cc7a96451e3c7f936ee698a932fdca54fcff",
+  "exact": {
+    "exact_distance_sums": {
+      "2": "616396498531/82978560000",
+      "3": "193769295466351853/49203008426880000",
+      "4": "6959486763925913858573/2810574247360239360000",
+      "5": "38508297773129582955401935967/22535229284522356952309760000"
+    },
+    "forward": {
+      "K_c1": "9261/155720800000000",
+      "K_c2": "117747/1245766400000000",
+      "K_cmp": "3969/155720800000000",
+      "ratio_tau_over_100": "1953058850/194651",
+      "retained_triangle_2K_c1": "9261/77860400000000"
+    },
+    "reverse": {
+      "K_cmp": "452554889222515527/30481402343750000000000000000",
+      "c1": "12128856933354903/118967041015625000000000000",
+      "c2": "1055961408185869563/30481402343750000000000000000",
+      "ratio_c1": "13564609990853609831750000/1351916508459800973113",
+      "ratio_cmp_and_c2": "38176688920663121234473000000/3810205403940325763421973"
+    },
+    "skeptic_closed": {
+      "c1_face": "9261/155720800000000",
+      "c1_star": "3969/38930200000000",
+      "c2_face": "21609/623765200000000",
+      "fwd_c2": "117747/1245766400000000",
+      "fwd_cmp": "3969/155720800000000",
+      "rev_cmp": "9261/623765200000000"
+    },
+    "skeptic_sharp_upper": {
+      "c1_face": "29735826343221495987/500000000000000000000000000000",
+      "c1_star": "12743925575666355423/125000000000000000000000000000",
+      "c2_face": "1385712371467269433/40000000000000000000000000000",
+      "fwd_cmp": "12743925575666355423/500000000000000000000000000000",
+      "rev_cmp": "593876730628829757/40000000000000000000000000000"
+    },
+    "targets": {
+      "cauchy": "1/4000000000",
+      "comparison": "3/50000000000"
+    }
+  },
+  "frozen_producer_artifacts": {
+    "forward": {
+      "check.py": "2b36f3e9e6db17613637f84778ce69b2a861b5b7eebf4e048a935de66f549f71",
+      "freeze.json": "255988f344f5e900092dca1a2bd9ff591618b620072c3d783af8a9e09e0fe058",
+      "output/results.json": "4e85123b1a386d514fa709652706dd6227e55d6190989c50bfa04805c20d5cf9",
+      "output/source-manifest.json": "73925914d27f602a180cfa15bfde21829ab481d95c11c98f57a1834125744b04",
+      "report.md": "101b404ce2aea29ed6bfd7264f6b4527c7decb73aea9386ce0885fa9b72f7d98"
+    },
+    "reverse": {
+      "check.py": "7fc29c0b5136572f23b8da18d823b1d564ec5709cc9e3a8d20f59d13a8ab3ca6",
+      "freeze.json": "4dfc52788c7adfc78b0a1dcb8d961764c022cb415ae6fcb97eff6b586eb8ceeb",
+      "output/results.json": "ac9b5cf7fae17be35b5922ff72d19c6b7a4e45707394843aa14098c7dac6625c",
+      "output/source-manifest.json": "91e45888bb4ef3df573d2b20da10bd6440ed4785d4d5a0453e5f02a23bf33ff4",
+      "report.md": "b6615292a7c1f418d567cd17b989605634b2610fc8b1fe30c313d4a3a6cb1ff4"
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "BA2",
+  "mutation_counts": {
+    "must_abort": 19,
+    "silent": 5,
+    "unmutated": 2,
+    "weakenings": 70
+  },
+  "mutation_receipts": [
+    {
+      "accepted_mutation": "K_cmp_halved_hash_rebound",
+      "control": "coherent_evidence_tampering",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "float_input",
+      "control": "exact_arithmetic_admission",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "continuum_true",
+      "control": "no_priority_or_continuum_claim",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "tau_changed",
+      "control": "changed_model_relabelled",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "missed_comparison_relabelled_accepted",
+      "control": "insufficient_verdict_retained",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "linear_order_bound",
+      "control": "tau_scaling_exponent",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "eightfold_u_labelled_theta",
+      "control": "wrong_delta_alpha_hbar_clock",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "outgoing_star_only_J_7",
+      "control": "missing_incoming_stars",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "division_by_isqrt_of_616_faces",
+      "control": "root_n_misuse",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "exponential_label_on_polynomial_constants",
+      "control": "tier_mixing_rejected",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "declaration_false",
+      "control": "reverse_premise_isolation",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "site_0_only_count",
+      "control": "face_count_all_sites",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "uniform_in_a_claimed",
+      "control": "uniform_in_N_not_in_a",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "whitespace_placeholder",
+      "control": "placeholder_span_rejected",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "affirmative_thermodynamic_limit",
+      "control": "negation_aware_phrase_scan",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "window_field_absent",
+      "control": "parameters_declare_metric_weights_window",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "N_to_N_plus_1_bound_as_cauchy",
+      "control": "lieb_robinson_polynomial_tail",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "exponential_instance_with_AQ1_Phi_norm",
+      "control": "lieb_robinson_F_declared",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "velocity_factor_2_dropped",
+      "control": "lieb_robinson_form_quoted",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "onsite_in_bounded_interaction",
+      "control": "unbounded_onsite_interaction_picture",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "F1_inner_with_owner_set_1323_unstated",
+      "control": "duhamel_inner_family_constants",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "padding_sites_counted_as_faces",
+      "control": "extra_face_count_and_distance",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "quadratic_bound_labelled_linear",
+      "control": "duhamel_tau_order_quadratic",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "uniform_in_time_claimed",
+      "control": "time_window_named_common_clock",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "gns_dynamics_equality_claimed",
+      "control": "algebraic_not_gns_dynamics",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "identified_by_local_terms_only",
+      "control": "f2_limit_dynamics_equals_f1",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "orthant_boxes",
+      "control": "two_families_named",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "alternating_sequence_parity_limits",
+      "control": "subsequence_versus_whole_sequence",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "conversion_to_fm",
+      "control": "decay_rate_in_N_not_a",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "new_star_dropped",
+      "control": "boundary_source_new_terms_only",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "face_charged_twice",
+      "control": "f2_regrouping_charged_once",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "four_drawn_links_as_cover",
+      "control": "full_original_wilson_cover",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "strong_relabelled_norm",
+      "control": "topology_named",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "opposite_signs_compared",
+      "control": "cross_coupling_comparison_rejected",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "field_missing",
+      "control": "gate_fields_topic_specific",
+      "direction": "forward",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "isolation_flag_flipped_rehashed",
+      "control": "coherent_evidence_tampering",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "float_tau",
+      "control": "exact_arithmetic_admission",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "continuum_true",
+      "control": "no_priority_or_continuum_claim",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "tau_1e-7",
+      "control": "changed_model_relabelled",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "missed_comparison_relabelled_accepted",
+      "control": "insufficient_verdict_retained",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "linear_order_bound",
+      "control": "tau_scaling_exponent",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "u_window_labelled_theta",
+      "control": "wrong_delta_alpha_hbar_clock",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "outgoing_star_J",
+      "control": "missing_incoming_stars",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "divide_by_sqrt_faces",
+      "control": "root_n_misuse",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "exponential_tier_with_polynomial_F",
+      "control": "tier_mixing_rejected",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "forward_ba2_report_added",
+      "control": "reverse_premise_isolation",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "literal_counts",
+      "control": "face_count_all_sites",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "uniform_in_lattice_spacing",
+      "control": "uniform_in_N_not_in_a",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "placeholder_gate",
+      "control": "placeholder_span_rejected",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "affirmative_thermodynamic_limit",
+      "control": "negation_aware_phrase_scan",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "clock_removed",
+      "control": "parameters_declare_metric_weights_window",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "comparison_N_minus_4",
+      "control": "lieb_robinson_polynomial_tail",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "F_mu_with_AQ1_norm",
+      "control": "lieb_robinson_F_declared",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "second_hand_source_aq1",
+      "control": "lieb_robinson_form_quoted",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "onsite_inside_Phi",
+      "control": "unbounded_onsite_interaction_picture",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "f2_cauchy_with_f1_inner",
+      "control": "duhamel_inner_family_constants",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "count_140N2_formula",
+      "control": "extra_face_count_and_distance",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "linear_label",
+      "control": "duhamel_tau_order_quadratic",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "uniform_in_time",
+      "control": "time_window_named_common_clock",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "gns_equality",
+      "control": "algebraic_not_gns_dynamics",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "identified_from_static_closeness",
+      "control": "f2_limit_dynamics_equals_f1",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "single_family",
+      "control": "two_families_named",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "states_whole_sequence_from_compactness",
+      "control": "subsequence_versus_whole_sequence",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "converted_to_fm",
+      "control": "decay_rate_in_N_not_a",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "comparison_source_short_one",
+      "control": "boundary_source_new_terms_only",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "whole_group_recharge",
+      "control": "f2_regrouping_charged_once",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "cover_zero_only",
+      "control": "full_original_wilson_cover",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "norm_continuity_in_theta",
+      "control": "topology_named",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "plus_versus_minus_tau",
+      "control": "cross_coupling_comparison_rejected",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "accepted_mutation": "gns_equality_true",
+      "control": "gate_fields_topic_specific",
+      "direction": "reverse",
+      "kind": "control_validator_weakening",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "comparison_face_sum_168_to_84",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "cauchy_face_sum_392_to_196",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "lr_time_integral_factor_2_dropped",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "contract_byte_edit_no_rehash",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "contract_target_rehashed_9e-11",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "undeclared_input_reverse_report",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "report_forbidden_phrase",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "report_quote_51_paraphrased",
+      "producer_aborted": true
+    },
+    {
+      "direction": "forward",
+      "kind": "must_abort",
+      "mutation": "report_template_removed",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "E_up_quadratic_term_dropped",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "geometry_coefficient_168_to_84",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "F2_per_site_face_sum_to_7",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "tail_coefficient_8_to_4",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "contract_byte_edit_no_rehash",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "contract_target_rehashed_9e-11",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "skeptic_triage_added_to_inputs",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "forward_report_added_to_inputs",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "report_forbidden_phrase",
+      "producer_aborted": true
+    },
+    {
+      "direction": "reverse",
+      "kind": "must_abort",
+      "mutation": "report_quote_51_paraphrased",
+      "producer_aborted": true
+    },
+    {
+      "caught_by_skeptic_value_validator": true,
+      "direction": "forward",
+      "kind": "silent_edit",
+      "mutation": "retained_triangle_coefficient_tripled",
+      "producer_aborted": false,
+      "reason": "retained triangle coefficient differs from 2 K_c1"
+    },
+    {
+      "caught_by_skeptic_value_validator": true,
+      "direction": "forward",
+      "kind": "silent_edit",
+      "mutation": "b_N_preview_shape_5N",
+      "producer_aborted": false,
+      "reason": "b(N) all-size preview differs at N=2"
+    },
+    {
+      "caught_by_skeptic_value_validator": true,
+      "direction": "reverse",
+      "kind": "silent_edit",
+      "mutation": "labelled_sharper_value_halved",
+      "producer_aborted": false,
+      "reason": "reverse labelled sharper comparison value differs at N=2"
+    },
+    {
+      "caught_by_skeptic_value_validator": true,
+      "direction": "reverse",
+      "kind": "silent_edit",
+      "mutation": "general_X_example_26_sites",
+      "producer_aborted": false,
+      "reason": "reverse general-X example differs at N=10"
+    },
+    {
+      "caught_by_skeptic_value_validator": true,
+      "direction": "reverse",
+      "kind": "silent_edit",
+      "mutation": "triangle_bound_over_N",
+      "producer_aborted": false,
+      "reason": "reverse triangle bound differs at N=1000"
+    }
+  ],
+  "passed": true,
+  "pre_comparison_module_sha256": "30e0aee1abf9fe266ed8d24170bc99fe71871a68f6688b26a0f627460f4fc3ff",
+  "previews": {
+    "forward_K_c1": "5.947182393104e-11",
+    "forward_K_c2": "9.451772017611e-11",
+    "forward_K_cmp": "2.548792454187e-11",
+    "note": "decimal previews only; every Boolean above was decided on exact rationals",
+    "reverse_K_cmp": "1.484691826573e-11",
+    "reverse_c1": "1.019514046059e-10",
+    "reverse_c2": "3.464280928671e-11"
+  },
+  "reviewer": "model-agent skeptic with correlated ancestry; not human peer review or formal verification",
+  "schema": "hnm-r33-skeptic-postcomparison-v1",
+  "stage": "post_comparison"
+}

@@ -1,0 +1,330 @@
+{
+  "id": "BB1",
+  "round": 33,
+  "subround": 2,
+  "sequence": 3,
+  "status": "frozen_before_production",
+  "title": "Hruday marginal locality: from coefficient decay to the reduced densities of the named constructions",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round33/advisor/ba1-gate.json",
+  "selection_reason": "BA1 admits boundary decay of the AM2 creation coefficients of the named constructions at q=1/64; the reduced density on R depends on the normalized outside state through straddling supports and the normalization, so coefficient decay is not state decay. BB1 closes that gap by two routes.",
+  "model": "Zero-selected patterned family (AM2/AQ1), both signs |tau|<=10^-8; AM2 creation expansion in each on-site cutoff space; construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on centered coarse cubes Lambda_N, N at least 2; reduced densities rho^{box}_Y of the normalized finite-box ground vectors on finite complete-factor regions Y, in particular the cover R={0,e_z}; trace norm on B(H_Y).",
+  "parameters": {
+    "metric": "coarse l-infinity metric on factor sites (star diameter 1), as admitted in BA1",
+    "weights": "forward (polymer_kp): the BA1 diameter weight at w up to 1/(37888|tau|) and, for cardinality control, the mixed weight w^{diam I} e^{b|I|} with loss w e^{4b} per interaction (a new lemma, proved in full); reverse (iterated_split): the diameter weight with support sizes charged per site through |I| at most 8*2^{diam I}",
+    "rate_constant_pair": {
+      "headline": {
+        "q": "1/64",
+        "C_target": "1/250000",
+        "tier": "exact_first_order",
+        "routes": "polymer_kp (forward), iterated_split (reverse)"
+      },
+      "region_form": {
+        "q": "1/64",
+        "c_site_target": "1/500000",
+        "form": "for every finite complete-factor region Y inside Lambda_N (N the smaller box size, |Y| its number of coarse factor sites): ||rho^{box1}_Y-rho^{box2}_Y||_1 <= c_site |Y| e^{|Y|/10^8} q^{d_Y}, d_Y = N - max_{y in Y} |y|_inf (so d_R = N-1)"
+      },
+      "secondary": {
+        "q": "151552|tau| (labelled secondary pair; the headline decides the loop)",
+        "C_target": "1/20000",
+        "c_site_target": "1/40000",
+        "coefficient_input": "the BA1 reverse Theorem 4.1 re-instantiated at the disc radius rho=|tau|/q_2 (1/151552 at the cap), recomputed exactly and labelled; the BA1 gate binds only the radii 64|tau| and tau_star, and the admitted floor constant does not reach this target"
+      },
+      "crude_tier_reported": "crude_majorant tier reported separately, never a target",
+      "floor_not_frozen": "the BA1 per-step ratio 37888|tau| is not a target for reduced densities (both routes must spend part of the weight range)"
+    },
+    "comparisons": [
+      "F1 on Lambda_N versus F1 on Lambda_{N+1}",
+      "F2 on Lambda_N versus F2 on Lambda_{N+1}",
+      "F1 versus F2 on the same Lambda_N: the fixed-N comparison of two boundary prescriptions (changed exterior at the same box size), named as its own item (historical lens)",
+      "any two centered boxes Lambda_M, Lambda_M' with M, M' at least N, of F1 or F2 (compared directly, not by telescoping)",
+      "two finite complete-factor volumes of one prescription both containing Lambda_N, compared directly (the BA1 accepted statement covers the coefficient comparison of any two such volumes with the bound K); required for accepted_within_scope and the input of BB2 item 4; a comparison of the reduced densities through the union costs a factor 2 and is labelled only"
+    ],
+    "cutoff": "each on-site cutoff space Q_L, every L, constants uniform in L; then, at fixed N, the untruncated ground vectors by the AV1 cutoff-vector removal (F20-F23), which uses the AM2 section 6 facts for each finite box (for F2 boxes with padding through the AY1 itemization, which includes cutoff-vector removal); the N and L limits are never exchanged",
+    "N_min": "2",
+    "clock": "not applicable to static densities; the round clock is named in preregistration.clock",
+    "window": "not applicable (static densities)",
+    "coefficient_input": "BA1 coefficient differences at every site u of the smaller box Lambda_N, not only on R, in one of two forms, each stated with its constant, exponent and route and checked exactly: (a) the BA1 forward boundary-weighted bound, max over u of the sum over I containing u of e^{beta rho_B(I)}||delta_I|| at most K_own (reviewed in BA1 for every u; its values are labelled values of the BA1 gate, not the bound value), hence the sum over I containing u of ||delta_I|| at most K_own e^{-beta d_inf(u,B)}; or (b) the BA1 reverse Theorem 4.1 restated for every u (its Lemmas 2.2 and 3.1 with R replaced by {u}: every source term of every comparison lies at l-infinity distance at least N-|u|_inf from u, and the circle bound 2T(rho) is uniform in u), giving the sum over I containing u of ||delta_I|| at most K q^(N-|u|_inf) with the gate's bound value K=49/111790368 at q=1/64. The BA1 gate admits the bound for u in R only, so form (b) is a BB1 lemma proved in full in each packet, never cited as an admitted BA1 statement."
+  },
+  "required": [
+    "1. Write the exact AV1-type decomposition rho_Y = N_c(omega_O)/Tr N_c(omega_O) with omega_O the outside marginal on the straddle region; prove Tr N_c at least 1 (AV1 orthogonality) and the two Lipschitz bounds (in the coefficients and in omega_O), naming every constant with one tier and one route.",
+    "2. Forward (polymer_kp): derive the hard-core polymer representation of the norm (psi,psi) and the expectation (psi, A psi) (polymers are overlap-connected pairs of families of disjoint supports with the same excitation set), the activity bound |w(gamma)| at most the product of the creation norms, the Kotecky-Preiss condition with an explicit a, weights and tree majorant; prove the mixed-weight contraction lemma in full; use the real-parameter derivative along c+lambda(c'-c); never claim analyticity of the reduced density without a proved zero-free region.",
+    "3. Reverse (iterated_split): apply the AV1 product-ordering split recursively to the outside state, charging support sizes per site through the diameter weight, never the product of growing shell sizes; bound multi-support straddling families explicitly.",
+    "4. Use the BA1 coefficient differences at every site through one of the two forms of parameters.coefficient_input, proving the every-site form in full where the BA1 gate states only u in R; prove the headline bound ||rho^{box1}_R-rho^{box2}_R||_1 <= C q^(N-1) with q=1/64 and C at most 1/250000 and the region form with c_site at most 1/500000 for every comparison, both signs, in each on-site cutoff space and at fixed N for the untruncated vectors; report the labelled secondary pair and the crude tier separately; never use the global Lipschitz constant as a decay factor.",
+    "5. Exhibit exactly the finite fixtures named by the fixture controls (coefficient decay is not marginal decay; second-order propagation; normalization coupling including a global-fidelity fixture; straddling supports; split-route trace and Lipschitz checks; polymer identity and cardinality factor; cutoff-limit order), each labelled model_is_finite_graph:true and transfers_to_aq:false; quote the mandatory sentence template once as one unbroken span; export the gate fields.",
+    "6. Declare and check the tau -> tau/100 scaling of every headline constant against its preregistered bracket; every control executed as a damaging mutation."
+  ],
+  "controls": [
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "no_priority_or_continuum_claim",
+    "changed_model_relabelled",
+    "insufficient_verdict_retained",
+    "tau_scaling_exponent",
+    "wrong_delta_alpha_hbar_clock",
+    "root_n_misuse",
+    "tier_mixing_rejected",
+    "reverse_premise_isolation",
+    "uniform_in_N_not_in_a",
+    "placeholder_span_rejected",
+    "negation_aware_phrase_scan",
+    "parameters_declare_metric_weights_window",
+    "rate_constant_pair_prefrozen",
+    "decay_rate_in_N_not_a",
+    "topology_named",
+    "two_families_named",
+    "subsequence_versus_whole_sequence",
+    "common_clock",
+    "coefficient_decay_not_marginal_decay",
+    "normalization_couples_supports",
+    "outside_vector_not_ground_state",
+    "global_fidelity_orthogonality_catastrophe",
+    "marginal_locality_constants_explicit",
+    "cutoff_uniform_then_removed",
+    "cutoff_vector_removal",
+    "region_constant_scales_with_Y",
+    "named_construction_not_uniqueness",
+    "global_lipschitz_not_decay",
+    "fixture_second_order_propagation",
+    "fixture_split_lipschitz_and_trace",
+    "fixture_polymer_identity",
+    "zero_free_region_required",
+    "every_site_coefficient_input",
+    "mixed_weight_lemma_proved",
+    "cutoff_limit_order"
+  ],
+  "claim_exclusions": [
+    "whole-sequence convergence or a common limit (BB2)",
+    "uniqueness of every infinite-volume ground state",
+    "boundary conditions outside the named constructions",
+    "analyticity of the reduced density in the coupling",
+    "any estimate uniform in the lattice spacing a",
+    "continuum or weak coupling",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "direction_note": "Forward: polymer representation with a Kotecky-Preiss condition and a mixed-weight contraction lemma. Reverse: the AV1 product-ordering split applied recursively with per-site charging. Independence is limited to route and code; both use the admitted BA1 constants.",
+  "reverse_premise_isolation": true,
+  "acceptance": {
+    "accepted_within_scope": "Both routes prove the headline and region bounds for every comparison (including the one-prescription volumes), both signs, in each on-site cutoff space and at fixed N for the untruncated ground vectors, with each proved constant at most its frozen target.",
+    "limited": "Only the R form is proved (no region form), or only the near-support part with no control of far supports, or only some comparisons, or only one route, or the bounds hold in each Q_L without the passage to the untruncated vectors at fixed N; each recorded with its dominating term.",
+    "insufficient": "Neither route controls the outside-state dependence; BA1's coefficient decay still stands, labelled as such."
+  },
+  "stop": "Investigation 3 of 8.",
+  "shared_premises": [
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/advisor/aq1-gate.json",
+    "research/round29/forward/aq2/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/reverse/av1/report.md",
+    "research/round32/advisor/ay1-gate.json",
+    "research/round32/forward/ay1/report.md",
+    "research/round32/reverse/ay1/report.md",
+    "research/round32/advisor/ay2-gate.json",
+    "research/round32/forward/ay2/report.md",
+    "research/round33/methods/paired-physics-research/SKILL.md",
+    "research/round33/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round33/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round33/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round33/methods/historical-physics-panel/SKILL.md",
+    "research/round33/methods/qeg-research-advisor/references/round32-state-lemma-and-window.md",
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/forward/aw1/report.md",
+    "research/round33/advisor/ba1-gate.json",
+    "research/round33/forward/ba1/report.md",
+    "research/round33/reverse/ba1/report.md",
+    "research/round33/skeptic/ba1.md",
+    "research/round33/advisor/ba2-gate.json",
+    "research/round33/forward/ba2/report.md",
+    "research/round33/reverse/ba2/report.md",
+    "research/round33/skeptic/ba2.md",
+    "research/round33/advisor/selection-bb1.md"
+  ],
+  "new_control_semantics": {
+    "topology_named": "(R32) Trace norm on B(H_Y) for states, norm on compact theta windows for dynamics, GNS strong for representations; a fixed-vector versus moving-vector fixture is included.",
+    "common_clock": "(R32) Both families and all comparisons use the same coupling and theta=alpha t/hbar.",
+    "normalization_couples_supports": "The dependence of rho_R on the normalized outside state (straddling contractions, pair terms, sigma, d^2/n^2) is bounded explicitly; dropping it or normalizing by 1+O(t^2) without the product split is rejected. The straddling fixture is required: a straddling creation enters e^2 at first order but the off-diagonal marginal element only at second order, and a one-site straddling first-order face has zero R-marginal while a support strictly containing R does not; dropping straddling supports from the split, or charging them only at first order, is rejected.",
+    "outside_vector_not_ground_state": "phi_out is the restriction of the box's coefficient family, not a ground state of an outside Hamiltonian; any gap argument applied to it is rejected.",
+    "global_fidelity_orthogonality_catastrophe": "Any bound through the global overlap of psi^N and psi^{N+1} (exponentially small in the shell) is rejected by a product-state fixture.",
+    "marginal_locality_constants_explicit": "Each route states its marginal-locality lemma in the form ||rho_Y(c)-rho_Y(c')||_1 at most 2(1+eta) times the sum over supports I meeting Y of ||c_I-c'_I|| plus the sum over supports I not meeting Y of kappa(I)||c_I-c'_I||, with kappa(I) at most kappa_0 (w')^(-d_inf(I,Y)) p(|I|) for an explicit polynomial p, and gives eta, kappa_0, w' and p as exact rationals or directed enclosures at its declared weights, each with its tier and route; a Kotecky-Preiss criterion asserted without activity bounds and combinatorial counts, or constants named without this lemma form, is rejected.",
+    "cutoff_uniform_then_removed": "Cauchy bounds hold uniformly in the on-site cutoff L, then pass L->infinity at fixed N via AV1 F20-F23 (Eckart, untruncated gap 1/2); reversing the limits is rejected.",
+    "cutoff_vector_removal": "(R32) The ground vector, not only eigenvalues, converges as the on-site cutoff is removed before any density bound is passed.",
+    "region_constant_scales_with_Y": "Bounds on regions Y state the |Y|-dependence and the exponent d(Y,B_N); a constant proved for R and reused on Y is rejected.",
+    "named_construction_not_uniqueness": "Convergence and a common limit of F1 and F2 (or of a pre-frozen AM2-admissible class) are never called uniqueness of every infinite-volume ground state, 'the thermodynamic limit' or 'the infinite-volume ground state'.",
+    "fixture_second_order_propagation": "A chain fixture where a change two supports away from R moves the R-marginal exactly at the order of the product of the two straddling amplitudes (verified as an exact polynomial); first-order propagation claims or a per-link factor below the exact one are rejected.",
+    "fixture_split_lipschitz_and_trace": "Tr N_c(omega) >= 1 and ||rho(omega)-rho(omega')||_1 <= 2||N(omega-omega')||_1 are checked exactly on a mixed outside state; a split bound that charges the product of growing region sizes (increasing with depth) is rejected in favour of per-site charging.",
+    "fixture_polymer_identity": "Brute-force (psi,psi) on a four-site collection equals the polymer sum; pairing families with different excitation sets gives zero; dropping the cardinality factor in the tree majorant underestimates the cluster sum and is rejected.",
+    "zero_free_region_required": "Any statement of analyticity of the reduced density in the coupling without a proved zero-free region of the complexified normalization is rejected.",
+    "every_site_coefficient_input": "The BA1 coefficient differences are used at every site u of the smaller box (not only on R) through a form stated with its constant and exponent: the BA1 forward boundary-weighted bound (reviewed for every u in BA1, labelled constants) or the BA1 reverse disc theorem restated and proved in full for every u with vanishing order at least N-|u|_inf; an R-only input (the BA1 gate statement, which is for u in R) used at far sites, or the restated reverse form cited as admitted without its proof, is rejected.",
+    "mixed_weight_lemma_proved": "The contraction with the mixed weight w^{diam I} e^{b|I|} (loss w e^{4b} per interaction) is proved in full before it is used; citing BA1 for it is rejected.",
+    "cutoff_limit_order": "Bounds hold in each on-site cutoff space uniformly in the cutoff and pass to the untruncated vectors at fixed N; swapping the N and cutoff limits is rejected.",
+    "tier_mixing_rejected": "Every BB1 constant names its tier in {exact_first_order, crude_majorant}, its route in {polymer_kp, iterated_split} and its BA1 input; an exact_first_order constant uses an exact_first_order BA1 input (the gate bound value or a labelled exact_first_order value) and exact first-order coefficients in the normalization and straddling terms; a crude_majorant input or remainder makes the constant crude_majorant; a Lieb-Robinson tier, a BA1 route label used as the BB1 route, or any other mixing is rejected (the BA1 and BA2 definitions of this control do not apply to BB1).",
+    "global_lipschitz_not_decay": "The fixed-point map has Lipschitz constant J_0G'(R) below 77/781250 (2J_0G'(R) below 77/390625 is AM2's exclusion constant), which bounds ||c^{N+1}-c^N||_a only by 37/6249384 with no decay; that bound, or a Lipschitz constant of the density map in the coefficients or in the outside state, used as a per-shell decay factor is rejected.",
+    "rate_constant_pair_prefrozen": "The pairs (q, C) and (q, c_site) at q=1/64 and the labelled secondary pair are frozen in the contract; each producer states its proof weights (creation weight, cardinality factor e^b, Kotecky-Preiss parameter a and cluster weight, or the split creation weight) as exact values before its constants, each admissible under the weighted self-map at the declared weight (at most 1/(37888|tau|) after the cardinality loss); optimizing q per N, reporting a rate other than the frozen pairs as the result, or a proof weight outside the admissible range is rejected; a proved family of rates may be reported only as labelled.",
+    "reverse_premise_isolation": "The reverse inputs/ inventory equals AGENTS.md, this contract and shared_premises exactly; it contains no skeptic triage, recommendation, prospective-controls, loop-2 review or BB contract review, no deliberation, plan or panel file, no lens memo, recommendation, loop-2 response or the modern BB-targets proposal, no forward file of this loop and no BB2 producer file; the only skeptic files are the declared BA1 and BA2 reviews."
+  },
+  "preregistration": {
+    "schema": "hnm-r33-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar (Euclidean), theta=alpha*t/hbar (real time); normalized u=theta/8 only internally with the conversion shown",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "boundary_decay_rate_only",
+      "static_not_dynamic"
+    ],
+    "tier_names_allowed": [
+      "crude_majorant",
+      "exact_first_order",
+      "polymer_kp",
+      "iterated_split",
+      "analytic_disc",
+      "weighted_norm"
+    ],
+    "tier_label_rule": "every BB1 constant carries exactly one tier (exact_first_order or crude_majorant) and exactly one route (polymer_kp for the forward, iterated_split for the reverse), and names its BA1 coefficient input (the gate bound value K=49/111790368, analytic_disc, or a labelled weighted_norm value) and the every-site form it uses; the BA1 route of the input is recorded as the input, never as the BB1 route",
+    "claim_exclusions": [
+      "uniqueness of every infinite-volume ground state",
+      "statements about boundary conditions outside the named constructions",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true,
+      "admitted_gate_sha256_pinned_in_check_py": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "finite-box ground vectors of the named construction families F1 and F2 (per comparison; no limit)",
+    "observable": {
+      "id": "||rho^{box1}_Y-rho^{box2}_Y||_1 on B(H_Y), Y=R and finite complete-factor regions",
+      "centering": "none",
+      "reference_value_exact": "0",
+      "reference_route": "n/a (density difference)"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "coefficient_input_every_site",
+      "straddling_supports",
+      "normalization",
+      "polymer_or_split_remainder",
+      "cutoff_removal_at_fixed_N",
+      "arithmetic"
+    ],
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "target": {
+      "quantity": "C at q=1/64 (R form) and c_site at q=1/64 (region form)",
+      "value": "1/250000 and 1/500000",
+      "comparator": "<=",
+      "note": "blind discriminating threshold for a new estimate; margins of at least 2 against the advisor-recorded previews (not a producer premise)"
+    },
+    "direction": "paired",
+    "controls_required": {
+      "ids": [
+        "coherent_evidence_tampering",
+        "exact_arithmetic_admission",
+        "no_priority_or_continuum_claim",
+        "changed_model_relabelled",
+        "insufficient_verdict_retained",
+        "tau_scaling_exponent",
+        "wrong_delta_alpha_hbar_clock",
+        "root_n_misuse",
+        "tier_mixing_rejected",
+        "reverse_premise_isolation",
+        "uniform_in_N_not_in_a",
+        "placeholder_span_rejected",
+        "negation_aware_phrase_scan",
+        "parameters_declare_metric_weights_window",
+        "rate_constant_pair_prefrozen",
+        "decay_rate_in_N_not_a",
+        "topology_named",
+        "two_families_named",
+        "subsequence_versus_whole_sequence",
+        "common_clock",
+        "coefficient_decay_not_marginal_decay",
+        "normalization_couples_supports",
+        "outside_vector_not_ground_state",
+        "global_fidelity_orthogonality_catastrophe",
+        "marginal_locality_constants_explicit",
+        "cutoff_uniform_then_removed",
+        "cutoff_vector_removal",
+        "region_constant_scales_with_Y",
+        "named_construction_not_uniqueness",
+        "global_lipschitz_not_decay",
+        "fixture_second_order_propagation",
+        "fixture_split_lipschitz_and_trace",
+        "fixture_polymer_identity",
+        "zero_free_region_required",
+        "every_site_coefficient_input",
+        "mixed_weight_lemma_proved",
+        "cutoff_limit_order"
+      ]
+    },
+    "mandatory_sentence_template": "For the zero-selected patterned family at the same coupling |tau|<=10^-8, and for every comparison of the named construction families F1 and F2 on centered coarse cubes, the reduced densities of the finite-box ground vectors on the cover R differ by at most C q^(N-1) in trace norm, in each on-site cutoff space and, at fixed N, for the untruncated ground vectors, where N is the smaller box size; this is locality of the reduced densities of the named constructions at a rate in N, not uniqueness of any ground state, not a statement about other boundary conditions, and not a statement uniform in the lattice spacing a.",
+    "gate_fields_required": {
+      "state_decay_claimed": true,
+      "state_decay_scope": "reduced densities of F1/F2 finite-box ground vectors on R and on regions Y, per comparison",
+      "rate_in_N_claimed": true,
+      "whole_sequence_claimed": false,
+      "common_limit_claimed": false,
+      "uniqueness_of_ground_state_claimed": false,
+      "rate_in_a_claimed": false,
+      "continuum_claim": false,
+      "translation_invariance_claimed": false,
+      "weak_coupling_claim": false,
+      "scientific_priority_verified": false
+    },
+    "forbidden_phrasings": [
+      "the infinite-volume ground state",
+      "uniqueness of the infinite-volume ground state",
+      "the thermodynamic limit",
+      "the AQ state",
+      "correlation length",
+      "boundary independent",
+      "uniform in a",
+      "confirms"
+    ],
+    "scaling_brackets_per_constant": {
+      "C_headline": "[95,105] (linear in tau with a positive nonlinear correction)",
+      "c_site": "[95,105]",
+      "secondary_constants": "[99/100,101/100] (q-dominated at q=151552|tau|)",
+      "q_secondary": "exactly 100"
+    }
+  },
+  "frozen_at": "2026-09-24T23:36:46.587471+00:00"
+}

@@ -1,0 +1,286 @@
+{
+  "id": "BD1",
+  "round": 33,
+  "subround": 4,
+  "sequence": 7,
+  "status": "frozen_before_production",
+  "title": "Applications I: centre-symmetry transfer of the parity theorem, the link-flip lemma and the first-order Wilson mean across gauge groups, with the SU(3) and SO(3) obstructions and the SU(2) area-parity corollary",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round33/advisor/bb2-gate.json",
+  "selected_after_note": "drafted and frozen during BC production because no BD1 item depends on a BC outcome; its gate is recorded after the BC gates",
+  "selection_reason": "The Round32 centre-grading parity theorem and link-flip lemma (AW1) were proved for SU(2) from two structural facts: a central element acting as -1 on the Wilson representation and a vanishing third Haar moment. The applications stage asks where these equations transfer. BD1 turns the two facts into criteria, tests them exactly on a frozen list of gauge groups with two independent routes, records the SU(3) and SO(3) obstructions with exact nonzero coefficients, and applies the flip lemma with the BB2 whole-sequence convergence to make the SU(2) area parity pointwise for the limit of the named constructions.",
+  "model": "FG one-plaquette models H_FG(G) = 32 C_2 - (tau/3) W on class functions of the plaquette holonomy for G in {SU(2), SU(3), SU(4), SU(5), U(1), Z2, SO(3)} (Wilson representation and frozen convention in parameters.convention); group-G box models H^G_N(tau) = sum over the links of the box of 8 C_2 - (tau/3) sum over the retained faces of W_f on L^2 of G to the links of the open centered whole-star box Lambda_N, N at least 2 (the I1/AQ1 geometry: coarse 24-link factors, the 21 omitted faces of an anchor retained when its whole star lies in Lambda_N, selected faces with coefficient 0), untruncated and in every on-site cutoff, for the groups whose flip or parity column is claimed; the group box models carry no AM2, AV1 or AQ statement for any group other than SU(2), and their ground-state and Taylor statements hold in each box for |tau| inside a box-dependent Kato radius, not uniformly in N; Haar moments of W for these groups; the flip sets E_3 on centered boxes of Z^3 (and the 24-link coarse factors) and E_2 on centered boxes of Z^2; the SU(2) zero-selected patterned family (AM2/AQ1, |tau|<=10^-8) for the area-parity corollary, in every open centered whole-star box at kappa=0 and for the limit of the named constructions admitted in BB2.",
+  "parameters": {
+    "metric": "not applicable to the group cells (exact moments and exact finite-model coefficients); trace norm on B(H_Y) and the coarse l-infinity metric for the SU(2) corollary through BB2",
+    "weights": "not applicable (no decay estimate)",
+    "window": "not applicable (static and first/second-order coefficients only)",
+    "clock": "not applicable to the group cells; the SU(2) corollary uses the admitted clocks unchanged",
+    "groups": [
+      "SU(2)",
+      "SU(3)",
+      "SU(4)",
+      "SU(5)",
+      "U(1)",
+      "Z2",
+      "SO(3)"
+    ],
+    "convention": "per-link electric term 8 C_2(r) in delta units, with C_2 the quadratic Casimir normalized so that C_F = (N^2-1)/(2N) for SU(N) (C_2(lambda) the standard SU(N) Casimir in this normalization for every irrep lambda), C_2(n) = n^2 for the U(1) charge n, C_2(l) = l(l+1) for SO(3) (so the vector representation has C_F = 2, the SU(2) adjoint value under the SU(N) rule), and for Z2 C_2 = 0 on the even (trivial) and C_2 = 1 on the odd (sign) link state, so that the Z2 per-link electric term is 8 on the odd state and C_F = 1 for Z2 as for U(1) (the readings 'electric term 1 on the odd state' and '1 - sigma^x' are other normalizations and are rejected); Wilson representation: fundamental for SU(N), charge 1 for U(1), sign for Z2, vector for SO(3); magnetic term -(tau/3) sum_f W_f with W_f = Re chi_fund(U_f)/dim fund (W = cos theta for U(1), W = the sign character for Z2, W = Tr/3 of the real vector representation for SO(3)); face energy 32 C_F; AM2/AV1 creation sign psi = e^{-C} Omega_0, so that c^(1) = -(tau/3)/(32 C_F) sum_f W_f Omega_0 and omega(W) = -2 Re (W Omega_0, c^(1)) + O(tau^2) = 2 (tau/3) E[W^2]/(32 C_F) + O(tau^2) under the I1.5 sign, with (u, v) the inner product (the literal display 2 (W Omega_0, c^(1)) has the opposite sign; this is the AW1 wording defect); for SU(2) the convention is the admitted I1.5 normalization and reproduces the admitted coefficient 1/144, which is a check of the convention, not a transferred value",
+    "hamiltonian_terms": [
+      {
+        "term": "electric: 32 C_2(r) on the character chi_r of the plaquette holonomy (four links, each 8 C_2)",
+        "coefficient": "32 (delta units)"
+      },
+      {
+        "term": "magnetic: W = Re chi_fund(U)/dim fund of the plaquette holonomy",
+        "coefficient": "-tau/3"
+      },
+      {
+        "term": "group-G box model H^G_N (item 1-2 transfers): electric 8 C_2(r_e) on every link e owned by the open centered whole-star box Lambda_N (frozen convention)",
+        "coefficient": "8 (delta units), per link"
+      },
+      {
+        "term": "group-G box model H^G_N: W_f = Re chi_fund(U_f)/dim fund on every retained omitted face of the whole-star box (selected faces carry coefficient 0)",
+        "coefficient": "-tau/3"
+      }
+    ],
+    "model_is_finite_graph": true,
+    "flip_sets": "E_3 = {(p,x): p_y even} u {(p,y): p_z even} u {(p,z): p_x even} (AW1) on Lambda_N of Z^3, N=2,3,4 (every plaquette whose four links the box owns, and every retained whole-star face); on the 24-link coarse factors: the intersection of E_3 with the links of a factor for each parity of the factor's z coordinate, and every face meeting a factor (AW1 enumerated faces of seven factors), recording that E_3 is not invariant under odd coarse translations in z, which the flip lemma does not need; E_2 = {(p,x): p_y even} on [-N,N]^2, N=2,3,4, exactly one link per plaquette; periodic tori with an odd side recorded with the even plaquettes at the seam",
+    "area_parity": "for SU(2), kappa=0, every loop C of plaquette edges bounding a surface of A(C) plaquettes in the box: omega_{N,-tau}(W_C) = (-1)^{A(C)} omega_{N,tau}(W_C) in every open centered whole-star box and on-site cutoff, and omega^{-tau}_inf(W_C) = (-1)^{A(C)} omega^{tau}_inf(W_C) for the limit of the named constructions (BB2 whole-sequence convergence at each sign)",
+    "N_min": "2"
+  },
+  "required": [
+    "1. Criterion A (flip): prove that if a central z of G acts as -I in the Wilson representation, the operator U_E (z on every link of a flip set E meeting every plaquette an odd number of times) commutes with every link Casimir, every endpoint gauge action and every on-site cutoff projection, fixes the vacuum and maps every W_f to -W_f, so that U_E H^G_N(tau) U_E^* = H^G_N(-tau) in every open centered whole-star box and cutoff and U H_FG(G)(tau) U^* = H_FG(G)(-tau) on the one-plaquette model, with omega(W) odd in tau wherever the ground state is unique (in each box inside its Kato radius); state for each listed group whether such z exists, with the exact reason.",
+    "2. Criterion B (parity): prove, on H_FG(G) and in every group-G box model H^G_N (each box inside its Kato radius), that the first-order tau-derivatives of omega(W^2) and of the centred Euclidean and real-time correlations vanish when E_Haar[W^3]=0 and single-occurrence orthogonality hold (the AW1 argument with the group's moments); for a complex Wilson representation (U(1), and SU(N) with N at least 3) the gauge-invariant level at energy 32 C_F contains Im chi_fund(U_g) Omega_0 as well as W_g Omega_0, and zero first-order splitting must be shown on the whole level, using that E[W^3]=0 is equivalent to the vanishing of every cubic moment E[chi^a conj(chi)^b] with a+b=3, since these moments are nonnegative integers; prove that the derivatives are nonzero on H_FG(G) when E_Haar[W^3] is nonzero.",
+    "3. Moment table: compute exactly E_Haar[W^k], k=1..4, for every listed group by the packet's route (forward: characters, Peter-Weyl and tensor-product multiplicities; reverse: Weyl integration over the maximal torus by constant-term extraction, with U(1) and Z2 by direct integration or summation), and the first-order coefficient 2 (1/3) E[W^2]/(32 C_F) of omega(W)/tau under the frozen convention.",
+    "4. Obstruction cells (mandatory). (a) For SU(3) and SO(3): prove there is no central element acting as -1 on the Wilson representation, compute E[W^3] exactly, and on the one-plaquette model H_FG(G) compute exactly by Rayleigh-Schroedinger the first-order tau-derivative of omega(W^2) and the second-order coefficient of omega(W), both nonzero; record that omega(W) is not odd in tau and that the first-order parity fails for these groups. (b) For SU(5): prove there is no central element acting as -1 (the centre acts by fifth roots of unity), record E[W^3]=0 (the parity column is a transfer), show that the two coefficients of (a) vanish on H_FG(SU(5)) by the Z_5 grading, and exhibit the flip obstruction by the exact nonzero fourth-order coefficient of omega(W) on H_FG(SU(5)), its first possible nonzero even-order coefficient under the Z_5 grading, so that omega(W) is not odd in tau and no unitary commuting with the electric term and reversing W exists on that model. A nonzero even-order coefficient on a one-plaquette model is the exact counterexample that makes a flip entry an obstruction; the absence of a central -1 is recorded as the reason, never as the proof of non-transfer.",
+    "5. Flip sets: verify E_3 and E_2 by exact enumeration on the named boxes (every plaquette met an odd number of times; E_2 exactly once) and E_3 on the 24-link coarse factors; record periodic tori with an odd side as an obstruction.",
+    "6. SU(2) area parity: prove the area-parity corollary in every open centered whole-star box and every on-site cutoff at kappa=0 from the AW1 flip lemma, with |C cap E_3| congruent mod 2 to the number of plaquettes of any spanning surface of C (well defined because every closed surface of plaquettes in the box has an even number of plaquettes), for the untruncated ground vectors by AM2 uniqueness, and for the limit of the named constructions pointwise from the BB2 whole-sequence convergence on a finite complete-factor region containing the links of C, at each sign; state that centre-even observables are even in tau (bounded ones directly; the Casimirs through their bounded spectral cutoffs, which commute with U_E, and the monotone limit).",
+    "7. Write the transfer ledger: one row per group and equation (flip lemma, parity theorem, first-order coefficient, dictionary) with transfer or obstruction and its exact reason; the AM2/AQ chain for groups other than SU(2) as obligations.",
+    "8. Quote the mandatory sentence template once as one unbroken span; export the gate fields; every control executed as a damaging mutation; exact checker byte-identical under -B and -B -O."
+  ],
+  "controls": [
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "no_priority_or_continuum_claim",
+    "changed_model_relabelled",
+    "insufficient_verdict_retained",
+    "placeholder_span_rejected",
+    "negation_aware_phrase_scan",
+    "parameters_declare_metric_weights_window",
+    "tier_mixing_rejected",
+    "frozen_convention_used",
+    "su2_constants_not_transferred",
+    "flip_criterion_central_minus_one",
+    "parity_criterion_third_moment",
+    "moment_tables_two_routes",
+    "su3_obstruction_mandatory",
+    "so3_obstruction_mandatory",
+    "flip_sets_verified",
+    "area_parity_scope",
+    "one_plaquette_model_terms",
+    "no_transfer_called_prediction",
+    "am2_not_reinstantiated",
+    "su5_flip_obstruction_fourth_order"
+  ],
+  "claim_exclusions": [
+    "any AM2, AV1 or AQ statement for a group other than SU(2)",
+    "a dictionary to a bare coupling for a group other than SU(2)",
+    "weak coupling or continuum",
+    "uniqueness of any ground state",
+    "any estimate uniform in the lattice spacing a",
+    "scientific priority",
+    "a flip or parity statement for SU(2) at a nonzero selected triple, in periodic boxes with an odd side, or in F2 or literal vertex boxes"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "direction_note": "Forward: characters, Peter-Weyl orthogonality and tensor-product multiplicities. Reverse: Weyl integration over the maximal torus by constant-term extraction (direct integration or summation for U(1) and Z2). Both use the admitted AW1 argument for the SU(2) structure; independence is limited to route and code.",
+  "reverse_premise_isolation": true,
+  "acceptance": {
+    "accepted_within_scope": "Both routes agree exactly on every moment and first-order coefficient of every listed group; criteria A and B are proved on the named models (H_FG(G) and the group-G whole-star box models, each box inside its Kato radius); the SU(3) and SO(3) obstruction cells are exhibited with exact nonzero coefficients and the SU(5) cell with its exact nonzero fourth-order coefficient; the flip sets are verified; the SU(2) area parity is proved in every open centered whole-star box and every on-site cutoff at kappa=0 and pointwise for the limit of the named constructions; the transfer ledger is complete.",
+    "limited": "A group cell is missing or misclassified by a criterion, or the routes disagree on a cell, or the area parity for the limit is not proved (box level only); each recorded.",
+    "insufficient": "Criterion A or B is not proved, or an obstruction cell is not exhibited; the SU(2) record then stands only as admitted."
+  },
+  "stop": "Investigation 7 of 8.",
+  "shared_premises": [
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/forward/aw1/report.md",
+    "research/round32/reverse/aw1/report.md",
+    "research/round32/skeptic/aw1.md",
+    "research/round32/advisor/aw2-gate.json",
+    "research/round32/advisor/az2-gate.json",
+    "research/round32/forward/az2/report.md",
+    "research/round32/advisor/ay2-gate.json",
+    "research/round21/forward/i1/report.md",
+    "research/round33/advisor/bb2-gate.json",
+    "research/round33/forward/bb2/report.md",
+    "research/round33/skeptic/bb2.md",
+    "research/round33/contracts/ba1.json",
+    "research/round33/contracts/bb2.json",
+    "research/round33/methods/paired-physics-research/SKILL.md",
+    "research/round33/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round33/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round33/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round33/methods/historical-physics-panel/SKILL.md",
+    "research/round33/advisor/selection-bd1.md",
+    "research/round32/advisor/az1-gate.json"
+  ],
+  "control_semantics_note": "Inherited control ids are defined in the frozen contracts research/round33/contracts/ba1.json and bb2.json (declared premises); this contract's new_control_semantics override them.",
+  "new_control_semantics": {
+    "frozen_convention_used": "Every group cell uses the frozen convention of parameters.convention (per-link electric term 8 C_2 with the stated Casimir normalization, magnetic term -(tau/3) sum_f W_f with W_f = Re chi_fund(U_f)/dim fund, face energy 32 C_F, first-order creation c^(1) = -(tau/3)/(32 C_F) sum_f W_f Omega_0); a cell computed under another normalization, or a value copied from the SU(2) record, is rejected.",
+    "su2_constants_not_transferred": "The SU(2) values 1/144 and tau=96/g^4 (and alpha=g^2/(2a)) are never used for another group; each group's first-order coefficient is derived in its own cell, and no dictionary to a bare coupling is asserted for any group other than SU(2).",
+    "flip_criterion_central_minus_one": "The flip lemma U_E H(tau) U_E^* = H(-tau) is claimed for a group exactly when a central z with rho_fund(z) = -I is exhibited (and U_E commutes with every Casimir, gauge action and on-site cutoff projection), and only on the named models of that group (H_FG(G) and the group-G whole-star box models H^G_N); a group without such z receives no flip claim, and its flip entry records the exact counterexample of its obstruction cell (SU(3) and SO(3): the nonzero second-order coefficient of omega(W); SU(5): the nonzero fourth-order coefficient of omega(W)); a flip entry for a group without a central -1, or a flip obstruction asserted from the missing central element alone, is rejected.",
+    "parity_criterion_third_moment": "The first-order parity (vanishing first-order tau-derivatives of omega(W^2) and of the centred correlations) is claimed for a group exactly when E_Haar[W^3]=0 is proved exactly together with single-occurrence orthogonality; flip and parity are separate columns (a group may have parity without flip).",
+    "moment_tables_two_routes": "Every Haar moment E[W^k], k=1..4, and every first-order coefficient is computed exactly by both routes (characters/Peter-Weyl and Weyl integration) and must agree exactly; a single-route cell or a floating-point moment is rejected.",
+    "su3_obstruction_mandatory": "The SU(3) cell exhibits exactly: no central -I (det(-I)=-1), E[W^3] nonzero, and on the SU(3) one-plaquette graph a nonzero first-order tau-derivative of omega(W^2) and a nonzero second-order coefficient of omega(W) (so omega(W) is not odd in tau); omitting the cell or calling SU(3) a transfer is rejected.",
+    "so3_obstruction_mandatory": "The SO(3) (vector representation, trivial centre) cell exhibits exactly: no central element acting as -1, E[W^3] nonzero, and the same two nonzero one-plaquette coefficients; omitting it is rejected.",
+    "flip_sets_verified": "The flip sets E_3 (Z^3; the AW1 set) and E_2 = {(p,x): p_y even} (Z^2) are verified by exact enumeration to meet every plaquette of the named boxes in an odd number of links (E_2: exactly one), including the 24-link coarse factors for E_3; periodic tori with an odd side are recorded as an obstruction, not verified.",
+    "area_parity_scope": "The SU(2) area-parity corollary omega(W_C)(-tau) = (-1)^{A(C)} omega(W_C)(tau) is claimed in every open centered whole-star box and every on-site cutoff at kappa=0 for loops C whose spanning surface has A(C) plaquettes, and for the limit of the named constructions pointwise through BB2 at each sign; it is never claimed for other boundary conditions or at kappa nonzero.",
+    "one_plaquette_model_terms": "Each one-plaquette finite model is H_FG(G) = 32 C_2 (on the character chi_r) - (tau/3) W on class functions of the holonomy, with its free reference computed in the same code path, labelled model_is_finite_graph:true and transfers_to_aq:false; the coefficient it gives is a finite-model value, never a lattice-limit value.",
+    "no_transfer_called_prediction": "A transferred equation is a labelled statement about a named model with its own exact checks; the words predicts and confirms are forbidden, and a non-transfer is recorded with its exact counterexample.",
+    "am2_not_reinstantiated": "No AM2, AV1 or AQ chain is claimed for any group other than SU(2); the U(1) and Z2 transfer is of the flip lemma, the parity theorem and the first-order coefficient only, with the AM2 re-instantiation recorded as an obligation.",
+    "su5_flip_obstruction_fourth_order": "The SU(5) cell exhibits exactly: no central element acting as -1 on the Wilson representation, E[W^3]=0 with the parity column a transfer, the vanishing of the first-order tau-derivative of omega(W^2) and of the second-order coefficient of omega(W) on H_FG(SU(5)), and a nonzero fourth-order coefficient of omega(W) on H_FG(SU(5)) in exact rational arithmetic with its route recorded; omitting the cell, calling SU(5) a flip transfer or a parity obstruction, or resting its flip obstruction on the missing central element alone is rejected.",
+    "tier_mixing_rejected": "(BD1) Every first-order Wilson coefficient and every first-order tau-derivative carries the tier exact_first_order and names its route of computation (characters or weyl_integration) in a route_of_computation field; Haar moments and the second- and fourth-order one-plaquette coefficients of the obstruction cells are exact finite-model rationals with a route_of_computation and no tier; the SU(2) corollary uses the admitted AW1 and BB2 statements with their own gate labels unchanged; a plan route label (weighted_norm, analytic_disc, polymer_kp, iterated_split, duhamel_inner_f1, duhamel_inner_f2) or a hypothesis source attached to a BD1 value, a floating-point value under a tier, a tier on a moment or on a higher-order coefficient, or a route_of_computation other than characters or weyl_integration is rejected (the AV1, BA1, BA2, BB1, BB2 and BC2 definitions of this control do not apply to BD1).",
+    "changed_model_relabelled": "(BD1) Every cell names its group, Wilson representation, model (H_FG(G), H^G_N or the SU(2) zero-selected family) and tau; an SU(2) value under another group's label, a one-plaquette value presented as a box or limit value, a group-G box value under the SU(2) patterned-family label, or a Z2 or U(1) cell under another normalization is rejected (the BA1 and BC2 definitions do not apply).",
+    "parameters_declare_metric_weights_window": "(BD1) Metric, weights, window and clock are fields of parameters, each 'not applicable' with its reason where no decay or time window enters; d_X and N_0 do not apply; absence of a field blocks the freeze."
+  },
+  "preregistration": {
+    "schema": "hnm-r33-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "group cells: no clock (static moments and perturbative coefficients); SU(2) corollary: the admitted s=alpha t_E/hbar and theta=alpha t/hbar unchanged",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "transfer_to_named_model",
+      "obstruction_recorded"
+    ],
+    "tier_names_allowed": [
+      "exact_first_order"
+    ],
+    "tier_label_rule": "every group coefficient carries the tier exact_first_order (exact rational from exact moments) and names its route (characters or weyl_integration, recorded in a route_of_computation field, not a plan route label); no decay route applies",
+    "claim_exclusions": [
+      "AM2/AQ statements for groups other than SU(2)",
+      "dictionaries for groups other than SU(2)",
+      "continuum or weak coupling",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true,
+      "admitted_gate_sha256_pinned_in_check_py": true
+    },
+    "model_id": "FG(one_plaquette_group_cells: SU(2),SU(3),SU(4),SU(5),U(1),Z2,SO(3))",
+    "model_is_finite_graph": true,
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "symbolic for the group cells (exact coefficients); 1/100000000 for the SU(2) corollary",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": true,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "group cells: the Haar measure and the one-plaquette ground states of H_FG(G) by exact Rayleigh-Schroedinger; SU(2) corollary: the finite-box ground vectors of the AQ1 whole-star boxes and the limit of the named constructions (BB2)",
+    "observable": {
+      "id": "E_Haar[W^k]; omega(W)/tau at first order; d omega(W^2)/d tau at 0 and the second-order coefficient of omega(W) on H_FG(G); omega(W_C) at +-tau",
+      "centering": "none for moments; chi=(W-omega(W)) for the centred correlations",
+      "reference_value_exact": "the free (tau=0) values computed in the same code path",
+      "reference_route": "Haar"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "moment_arithmetic",
+      "character_multiplicities",
+      "weyl_constant_terms",
+      "one_plaquette_truncation",
+      "flip_set_enumeration",
+      "bb2_limit_passage",
+      "arithmetic"
+    ],
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "target": {
+      "quantity": "exact agreement of the two routes on every moment and coefficient; the SU(3) and SO(3) obstruction coefficients",
+      "value": "equality between routes; obstruction coefficients nonzero",
+      "comparator": "== and !=0",
+      "note": "exact-equality format check between two independent routes, not a blind numerical threshold; the obstruction cells are discriminating (a zero value would falsify the obstruction)"
+    },
+    "direction": "paired",
+    "controls_required": {
+      "ids": [
+        "coherent_evidence_tampering",
+        "exact_arithmetic_admission",
+        "no_priority_or_continuum_claim",
+        "changed_model_relabelled",
+        "insufficient_verdict_retained",
+        "placeholder_span_rejected",
+        "negation_aware_phrase_scan",
+        "parameters_declare_metric_weights_window",
+        "tier_mixing_rejected",
+        "frozen_convention_used",
+        "su2_constants_not_transferred",
+        "flip_criterion_central_minus_one",
+        "parity_criterion_third_moment",
+        "moment_tables_two_routes",
+        "su3_obstruction_mandatory",
+        "so3_obstruction_mandatory",
+        "flip_sets_verified",
+        "area_parity_scope",
+        "one_plaquette_model_terms",
+        "no_transfer_called_prediction",
+        "am2_not_reinstantiated",
+        "su5_flip_obstruction_fourth_order"
+      ]
+    },
+    "mandatory_sentence_template": "Under the frozen convention, the link-flip lemma transfers exactly to the listed gauge groups that have a central element acting as -1 on the Wilson representation and the first-order parity theorem exactly to those with vanishing third Haar moment of W, each with its own first-order Wilson coefficient, on one-plaquette models and on group box models in each box separately; SU(3) and SO(3) are recorded obstructions with exact nonzero coefficients, and SU(5) is a recorded flip obstruction with an exact nonzero fourth-order coefficient; for SU(2) in the zero-selected family at kappa=0 the Wilson-loop mean is odd or even in tau according to the parity of the number of plaquettes of any spanning surface of the loop, in every open centered whole-star box and for the limit of the named constructions; these are statements about named models and one-plaquette finite graphs, not AM2 or continuum statements for other groups, not statements for periodic boxes with an odd side, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+    "gate_fields_required": {
+      "model_is_finite_graph": true,
+      "transfers_to_aq": false,
+      "flip_transfer_claimed": true,
+      "flip_transfer_scope": "the listed groups with a central element acting as -1 on the Wilson representation, named in the gate group by group, on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+      "parity_transfer_claimed": true,
+      "obstructions_recorded": true,
+      "area_parity_limit_claimed": true,
+      "uniqueness_of_ground_state_claimed": false,
+      "rate_in_a_claimed": false,
+      "continuum_claim": false,
+      "weak_coupling_claim": false,
+      "scientific_priority_verified": false
+    },
+    "gate_fields_rule": "the gate_fields_required values hold for accepted_within_scope; a limited verdict exports area_parity_limit_claimed false when only the box statement is proved and flip_transfer_claimed or parity_transfer_claimed false for a column it cannot support, with the reason, and quotes the template once inside the frame 'The frozen template, which this verdict meets only in part, reads:' followed by the dropped items; flip_transfer_scope names the groups found",
+    "forbidden_phrasings": [
+      "the infinite-volume ground state",
+      "the thermodynamic limit",
+      "the AQ state",
+      "correlation length",
+      "uniform in a",
+      "confirms",
+      "predicts",
+      "universal"
+    ],
+    "scaling_brackets_per_constant": {
+      "first_order_terms": "the first-order term c1*tau is exactly linear in tau (ratio exactly 100 under tau -> tau/100); c1 itself is tau-independent",
+      "obstruction_second_order_terms": "exactly quadratic (ratio exactly 10000)",
+      "su5_fourth_order_term": "exactly quartic (ratio exactly 100000000)",
+      "moments": "tau-independent (ratio exactly 1)"
+    }
+  },
+  "frozen_at": "2026-09-25T05:09:10.267890+00:00"
+}

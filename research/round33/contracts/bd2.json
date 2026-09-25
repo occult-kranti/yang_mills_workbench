@@ -1,0 +1,305 @@
+{
+  "id": "BD2",
+  "round": 33,
+  "subround": 4,
+  "sequence": 8,
+  "status": "frozen_before_production",
+  "title": "Applications II: new observables and a new dimension in SU(2) - the 1x2 Wilson loop, the electric energy band and the two-plaquette graph with independent couplings, and the 2+1D AM2 constants",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round33/advisor/bb2-gate.json",
+  "selected_after_note": "drafted and frozen during BC production because no BD2 item depends on a BC outcome; its gate is recorded after the BD1 gate",
+  "selection_reason": "The admitted SU(2) equations (the AW1 centre grading and flip lemma, the AV1/AY1/AY2 state bounds, the AZ2 exact graph algebra, the BB2 limit of the named constructions and the AM2 majorant) apply to observables and dimensions the earlier rounds did not treat. BD2 applies them to the 1x2 Wilson loop, to the electric energy on the cover, to the two-plaquette graph with independent couplings, and to the 2+1-dimensional re-instantiation of the AM2 constants, and records the obstructions (a certified sign for the 1x2 loop, an area law, the unbounded Casimir) where the admitted machinery stops.",
+  "model": "(a) the finite-graph model H_FG(l1,l2) = K - l1 W_1 - l2 W_2 on the Round11 two-plaquette graph (open two-square patch, 6 vertices, 7 links, gauge-invariant sector; K the sum of the seven link Casimirs at rho=1; alpha units; trace-monomial cutoffs D in {6,8}), with the observables W_1, the 1x2 loop z (the boundary of both squares) and the shared-link Casimir C_shared; (b) the SU(2) zero-selected patterned family (AM2/AQ1, |tau|<=10^-8) with the 1x2 Wilson loop W_{1x2} on two adjacent faces of the original loop's plane and the electric energy h_R on the cover R={0,e_z}, in every open centered box of F1 and F2 and for the limit of the named constructions (BB2); (c) the AM2 creation expansion re-instantiated in 2+1 dimensions for a declared 2D factorization.",
+  "parameters": {
+    "metric": "trace norm on B(H_R) for states; energy expectations through the on-site cutoff by monotone limits",
+    "weights": "not applicable (no decay estimate); the AM2 radius and G-function of the 2+1D re-instantiation are derived in the packet",
+    "window": "not applicable (static expectations and perturbative coefficients)",
+    "clock": "not applicable (static)",
+    "hamiltonian_terms": [
+      {
+        "term": "K: sum of the seven link Casimirs of the Round11 two-square patch (rho=1)",
+        "coefficient": "1 (alpha units)"
+      },
+      {
+        "term": "W_1 = (1/2) Tr U_1 of square 1",
+        "coefficient": "-l1"
+      },
+      {
+        "term": "W_2 = (1/2) Tr U_2 of square 2",
+        "coefficient": "-l2"
+      },
+      {
+        "term": "2+1D model (item 5, constants only): electric 8 C_e on every link of Z^2",
+        "coefficient": "8 (delta units), per link"
+      },
+      {
+        "term": "2+1D model (item 5, constants only): W_f = (1/2) Tr U_f on every elementary face of Z^2",
+        "coefficient": "-tau/3"
+      },
+      {
+        "term": "Z^3 zero-selected family (items 3-4, admitted model, unchanged): 8 C_e on every link and -(tau/3) W_f on the 21 omitted faces per anchor, selected faces 0 (AW1/AY1 model)",
+        "coefficient": "8 and -tau/3 (delta units)"
+      }
+    ],
+    "model_is_finite_graph": true,
+    "graph_grid": "the certified enclosures of <z> at l1=l2 in {+-1/1000, +-1/100, +-1/10} (the AZ2 grid) at D=6 and D=8; item 1 is a coefficient statement in (l1,l2) with no grid",
+    "graph_orders": "exact Rayleigh-Schroedinger coefficients of <W_1>, <z> and <C_shared> in (l1,l2) through total order 4 at D=6 and D=8",
+    "z3_1x2": "W_{1x2} = (1/2) Tr of the holonomy around the 1x2 rectangle in the xz plane formed by the original xz face W (fine origin, r=0, s=0) and the xz face at the fine point e_x (r=1, s=0), whose six links are all owned by R={0,e_z}, so W_{1x2} lies in B(H_R) with norm at most 1; first-order coefficient exactly 0 in every box (centre grading, Kato per box) and, for every box of F1 and F2 and for the limit of the named constructions, the certified bound |omega(W_{1x2})| <= K_2' tau^2 at both signs from the AY1 per-box ball (forward F11-F14) and the AY1/AY2 gate ball for every subsequential limit, with Tr(P_R W_{1x2}) = Tr(rho^(1)_R W_{1x2}) = 0 by single-occurrence orthogonality; evenness in tau (AW1 flip lemma, area 2) in every open centered whole-star box at kappa=0 and every on-site cutoff and, through BB2 at each sign, for the limit of the named constructions; the formal second-order coefficient under the I1.5 convention with both faces at -(tau/3) W_f in delta units (labelled formal_second_order_coefficient: no certified third-order remainder and no sign)",
+    "electric_band": "for every finite box of F1 and F2 (untruncated ground vector at fixed N) and for the limit of the named constructions, at both signs: omega(h_R) is the monotone limit over the spectral projections Q_L of h_R of Tr(rho_R h_R Q_L), with h_R the sum of 8 C_e over the 48 links of R in delta units (zero-selected); lower endpoint from the operator inequality h_R >= 6 Q_R (I1: free Casimir gap 6 delta; P_R the Haar product projection of the zero-selected reference), Q_R = I - P_R, the Fuchs-van de Graaf inequality for the pure reference proved inline ((1/2)||rho_R - P_R||_1 <= sqrt(Tr(Q_R rho_R)), by convexity from the pure-state case), and a lower bound on ||rho_R - P_R||_1: for the limit, the AY2 gate item (2) (every subsequential limit of either family, identified with the limit by BB2 items 2-3) with its exact directed lower end; for finite F1 and F2 boxes, the per-box bound ||rho_{N,R} - P_R - rho^(1)_R||_1 <= K_2' tau^2 of AY1 forward (HNM-AY1-F11 to F14, uniform in N, in the cutoff and in both families, passed to the untruncated ground vector by AV1 F22) with the AY1 gate constants and the AY2 directed bracket of sqrt(10), labelled as a reviewed step of the admitted AY1 proof and not as an AY1 or AY2 gate sentence; upper endpoint omega(h_R) <= 98|tau| from the AQ1 reset (HNM-AQ1.1 with the 7 incident anchors of R; for F2 the AY1 gate item (1)), passed to the limit by lower semicontinuity of the monotone limit under trace-norm convergence on R (the AQ1 gate's generic 56|tau||F| at F=R is valid but is not the frozen endpoint); exact rational endpoints at tau=10^-8",
+    "dimension_2p1": "2+1-dimensional SU(2) model on Z^2 in delta units, declared before production: per-link electric term 8 C_e, every elementary face with -(tau/3) W_f, no selected faces, Haar product reference; single-site factors owning the links (p,x) and (p,y), owner sets {p, p+e_x, p+e_y}, each face its own interaction term V_X on its owner set, three faces per site, maximal support p=3; the AM2 inverse uses the AM2 normalization h_x >= Q_x (unit on-site gap; the free Casimir gap 6 is not used) and the radius is the AM2 radius R=1/64; derive exactly the multilinear numerators at p=3 from the AM2 report's counting, G_3 and G_3' at R with directed rational enclosures of the exponential, the per-site sum, the termination order, and the admissible coupling cap as a directed rational lower bound for the largest |tau| satisfying both the self-map condition J G_3(R) <= R and the exclusion condition 2 J G_3'(R) < 1 at R=1/64; these are recounted constants, not a theorem: no finite-volume ground-state or gap statement in 2+1 dimensions is claimed (an obligation row with its missing premises: a 2D finite-volume prescription, the on-site domains and AM2 sections 4-6 re-verified); the window kernel constants of AV2 (a one-dimensional spectral identity) are recorded as dimension-independent",
+    "N_min": "2"
+  },
+  "required": [
+    "1. Two-plaquette graph with independent couplings: compute the exact Rayleigh-Schroedinger coefficients of <W_1>, <z> and <C_shared> in (l1,l2) through total order 4 at D=6 and D=8 with zero truncation error; prove <W_1> odd in l1 by the one-link centre flip of a non-shared link of face 1 (it reverses W_1 and z and fixes W_2) and even in l2 by the flip of a non-shared link of face 2 (it reverses W_2 and z and fixes W_1), so that <z> is odd in each coupling and <C_shared> even in each; check all three parities on the exact coefficient table (hence every even-order coefficient of <W_1> at l1=l2 vanishes); record the second-order coefficients of <z> and <C_shared> at l1=l2.",
+    "2. Certified enclosures of <z> at l1=l2 on the AZ2 grid at D=6 and D=8 with the AZ2-type itemized residual, each excluding 0, the D=8 enclosure inside the D=6 one, with relative width at D=8 at most the frozen value (the D=6 widths are reported, not targeted); the sign of <z> certified at every grid point.",
+    "3. Z^3 1x2 Wilson loop in the zero-selected family (the rectangle frozen in parameters.z3_1x2): prove the first-order coefficient is exactly 0 in every box (centre grading) and the certified bound |omega(W_{1x2})| <= K_2' tau^2 for every box of F1 and F2 and for the limit of the named constructions (AY1 per-box ball and AY1/AY2 gate ball, with Tr(rho^(1)_R W_{1x2}) = 0); prove evenness in tau in every open centered whole-star box at kappa=0 and for the limit of the named constructions (AW1 flip lemma, area 2, and BB2 at each sign); derive the formal second-order coefficient under the stated convention (labelled formal_second_order_coefficient); its sign, a certified third-order remainder and a certified sign of omega(W_{1x2}) are recorded obstructions.",
+    "4. Electric energy band on R: prove the two-sided band for omega(h_R) at both signs for every finite box of F1 and F2 (untruncated ground vector at fixed N) and for the limit of the named constructions, with the endpoints and their premises frozen in parameters.electric_band, exact rational endpoints at tau=10^-8 and the unbounded-observable passage through the spectral cutoffs of h_R made explicit (monotone limits for the value, lower semicontinuity for passing the upper endpoint to the limit); record the formal second-order value per link, with the omitted-face incidence of each link counted from the I1 face classes (selected faces carry coefficient 0 at the zero triple), as labelled formal, and the obstruction to a tight enclosure.",
+    "5. 2+1 dimensions: for the declared model and factorization of parameters.dimension_2p1, derive exactly the owner sets, stars, faces per site, the per-site sum, the maximal support, the AM2 multilinear numerators at p=3 from the AM2 report's counting, the AM2 G-function and its derivative at the AM2 radius R=1/64 with directed enclosures, the termination order, and the admissible coupling cap under both the self-map and the exclusion conditions; no finite-volume ground-state or gap theorem in 2+1 dimensions is claimed (obligation row); record which Round32/Round33 statements transfer verbatim (algebraic ones) and which need their own contract (the finite-volume theorem, the AQ chain, the node, the dictionary, where g^2 has mass dimension).",
+    "6. Obligations and no-transfer rows: the area law (no zero-free region), a certified sign of the Z^3 1x2 loop (a uniform fourth-order remainder), a tight electric-energy enclosure, the site-blocked uniform 3+1D regime (its own contract), and the Einstein-QED rounds (no shared equation).",
+    "7. Quote the mandatory sentence template once as one unbroken span; export the gate fields; every control executed as a damaging mutation; exact checker byte-identical under -B and -B -O."
+  ],
+  "controls": [
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "no_priority_or_continuum_claim",
+    "changed_model_relabelled",
+    "insufficient_verdict_retained",
+    "placeholder_span_rejected",
+    "negation_aware_phrase_scan",
+    "parameters_declare_metric_weights_window",
+    "tier_mixing_rejected",
+    "graph_couplings_named",
+    "exact_rs_zero_truncation",
+    "independent_coupling_flip",
+    "enclosure_itemized_residual",
+    "formal_coefficient_labelled",
+    "evenness_from_flip",
+    "unbounded_observable_handled",
+    "band_both_signs",
+    "dimension_recount",
+    "no_area_law_claim",
+    "no_transfer_to_eqed",
+    "rate_range_stated"
+  ],
+  "claim_exclusions": [
+    "a certified value or sign of the Z^3 1x2 Wilson mean",
+    "no area law and no string-tension statement",
+    "a tight enclosure of the electric energy",
+    "an AQ chain, node or dictionary in 2+1 dimensions",
+    "uniqueness of any ground state",
+    "any estimate uniform in the lattice spacing a",
+    "continuum or weak coupling",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward"
+  ],
+  "direction": "single+skeptic",
+  "direction_note": "Single direction: one forward producer computes the graph algebra (re-instantiating the admitted AZ2 exact solver), the Z^3 statements from admitted gates and the 2+1D constants; the skeptic replays from the contract alone with its own code before reading the producer.",
+  "reverse_premise_isolation": false,
+  "acceptance": {
+    "accepted_within_scope": "Items 1-5 are proved or computed exactly as stated; the enclosures of item 2 meet the frozen relative width at D=8 and exclude 0 at every grid point at both cutoffs; the band of item 4 has exact endpoints at both signs for every F1 and F2 box and for the limit, from the frozen premises; the W_{1x2} bound of item 3 holds for every box and the limit; item 6 lists every obligation with its missing premise, including the finite-volume theorem in 2+1 dimensions.",
+    "limited": "A graph order or cutoff is missing, an enclosure misses the width target, the band holds only for finite boxes, or the 2+1D constants are incomplete; each recorded with its reason.",
+    "insufficient": "The graph algebra or the band cannot be established; the admitted record is unchanged."
+  },
+  "stop": "Investigation 8 of 8.",
+  "shared_premises": [
+    "research/round32/advisor/az2-gate.json",
+    "research/round32/forward/az2/report.md",
+    "research/round32/forward/az2/check.py",
+    "research/round32/skeptic/az2.md",
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/forward/aw1/report.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/advisor/av2-gate.json",
+    "research/round32/advisor/ay1-gate.json",
+    "research/round32/advisor/ay2-gate.json",
+    "research/round32/forward/ay2/report.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/am2/report.md",
+    "research/round29/advisor/aq1-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round33/advisor/bb2-gate.json",
+    "research/round33/forward/bb2/report.md",
+    "research/round33/skeptic/bb2.md",
+    "research/round33/contracts/ba1.json",
+    "research/round33/contracts/bb2.json",
+    "research/round33/methods/paired-physics-research/SKILL.md",
+    "research/round33/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round33/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round33/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round33/methods/historical-physics-panel/SKILL.md",
+    "research/round33/advisor/selection-bd2.md",
+    "research/round11/README.md",
+    "research/round11/advisor/advisor.md",
+    "research/round11/solver/README.md",
+    "research/round11/solver/two_plaquette.py",
+    "research/round32/forward/ay1/report.md"
+  ],
+  "control_semantics_note": "Inherited control ids are defined in the frozen contracts research/round33/contracts/ba1.json and bb2.json (declared premises); this contract's new_control_semantics override them.",
+  "new_control_semantics": {
+    "graph_couplings_named": "The two-plaquette graph model is H_FG(l1,l2) = K - l1 W_1 - l2 W_2 in alpha units with K the sum of the seven link Casimirs (rho=1) as in AZ2, every term named with its coefficient (rule R3), free reference computed in the same code path, model_is_finite_graph:true, transfers_to_aq:false; a value from another graph or coupling is rejected.",
+    "exact_rs_zero_truncation": "Every graph coefficient is exact Rayleigh-Schroedinger algebra in the trace-monomial basis at both cutoffs D in {6,8} with zero truncation error shown (as AZ2), never fitted; a coefficient that differs between the cutoffs, or a fitted value, is rejected.",
+    "independent_coupling_flip": "Oddness of <W_1> in l1 is proved by the one-link centre flip of a non-shared link of face 1 and evenness in l2 by the flip of a non-shared link of face 2 (the shared-link flip reverses both couplings and proves only the l1=l2 statement); the parities of <W_1>, <z> and <C_shared> in each coupling are checked on the exact coefficient table; a check at l1=l2 only, or a two-variable parity claimed from a single flip, is rejected.",
+    "enclosure_itemized_residual": "Every certified graph enclosure carries the AZ2-type complete residual (per-link rows, joint channel, gauge projection, Ritz/Davis-Kahan/Eckart part, directed arithmetic) at every grid point; an enclosure without the itemized residual is rejected.",
+    "formal_coefficient_labelled": "The Z^3 second-order coefficient of omega(W_{1x2}) is labelled formal_second_order_coefficient: no certified third-order remainder, no sign and no value of omega(W_{1x2}) at the cap is claimed; the only certified statement about its size is the bound |omega(W_{1x2})| <= K_2' tau^2 from the AY1/AY2 balls, which carries no sign; presenting the formal coefficient as a certified value or a sign, the bound as an enclosure of the formal coefficient, or the bound for a rectangle not contained in R is rejected.",
+    "evenness_from_flip": "Evenness of omega(W_{1x2}) in tau is the AW1 flip lemma (area 2) in every open centered whole-star box (F1) and every on-site cutoff at kappa=0 and, through BB2 at each sign, for the limit of the named constructions; F2 boxes are not claimed; it gives no remainder bound.",
+    "unbounded_observable_handled": "The electric energy h_R is unbounded: omega(h_R) is the monotone limit over the spectral cutoffs of h_R; the upper endpoint is the AQ1 reset budget 98|tau| on R for every F1 and F2 box and passes to the limit by lower semicontinuity; the lower endpoint uses the operator inequality h_R >= 6 Q_R, the bounded projection Q_R, the inline Fuchs-van de Graaf inequality for the pure reference and the lower bound on ||rho_R - P_R||_1 (AY2 gate item (2) for the limit, AY1 forward F11-F14 per box for F1 and F2); applying a bounded-observable trace-norm constant directly to h_R, using the limit-level AY2 distance for a finite box, or an upper budget other than the frozen one is rejected.",
+    "band_both_signs": "The electric-energy band is stated at both signs of tau (even quantity) for every finite box of both families and the limit of the named constructions, with exact rational endpoints; the -tau statement is a mirror replay.",
+    "dimension_recount": "Every 2+1D constant is recounted for the declared 2D factorization (owner sets, stars, per-site sum, maximal support p, termination order, G_p) and derived from the AM2 formula structure; a 3+1D constant reused in 2+1D is rejected; the 2+1D dictionary is not the 3+1D one.",
+    "no_area_law_claim": "No area-law bound or string-tension statement is made (it would need analyticity of the reduced density, for which no zero-free region is admitted); it is recorded as an obligation.",
+    "no_transfer_to_eqed": "The Einstein-QED evidence rounds share no equation with this chain; this is recorded as a no-transfer row, not as a comparison.",
+    "rate_range_stated": "Every claim of a rate in N carries its range of N in the same clause; BD2 makes no new claim of a rate in N.",
+    "tier_mixing_rejected": "(BD2) The band's lower endpoint carries the tier first_order_distance_from_product (AY2/AY1) and its upper endpoint the tier crude_majorant (the AQ1 reset budget); the bound |omega(W_{1x2})| <= K_2' tau^2 carries exact_first_order (the inherited AY1 constant); the graph Rayleigh-Schroedinger coefficients and enclosures, the formal Z^3 coefficient and the 2+1D constants are exact rationals (directed where transcendental) with no tier; every value names its source (AY1, AY2, AQ1, an AZ2-type certificate or the AM2 counting); a plan route label, a hypothesis source, a Lieb-Robinson tier, a tier attached to a graph coefficient or a 2+1D constant, or a band endpoint under the other endpoint's tier is rejected (the AV1, BA1, BA2, BB1, BB2 and BC2 definitions of this control do not apply to BD2).",
+    "changed_model_relabelled": "(BD2) Every value names its model (the Round11 graph with (l1,l2), the zero-selected Z^3 family with F1, F2 or the limit, or the declared 2+1D model); a graph value presented as a Z^3 value, a 3+1D constant under the 2+1D label, an F1 value under F2, a finite-box value under the limit, or a one-face or equal-coupling graph value under the independent-coupling label is rejected.",
+    "parameters_declare_metric_weights_window": "(BD2) Metric, weights, window and clock are fields of parameters, each 'not applicable' with its reason where no decay or time window enters; d_X and N_0 do not apply; absence of a field blocks the freeze."
+  },
+  "preregistration": {
+    "schema": "hnm-r33-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "static expectations only; no clock is used by BD2",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "transfer_to_named_model",
+      "obstruction_recorded",
+      "sign_certified_finite_graph",
+      "static_not_dynamic"
+    ],
+    "tier_names_allowed": [
+      "exact_first_order",
+      "first_order_distance_from_product",
+      "crude_majorant"
+    ],
+    "tier_label_rule": "the band's lower endpoint carries first_order_distance_from_product (AY2 for the limit, AY1 per box) and its upper endpoint crude_majorant (AQ1 reset); the W_{1x2} bound carries exact_first_order (inherited K_2'); graph coefficients and enclosures, the formal Z^3 coefficient (label formal_second_order_coefficient) and the 2+1D constants (exact rationals with directed enclosures) carry no tier; every value names its source",
+    "claim_exclusions": [
+      "a certified 1x2 value or sign in Z^3",
+      "an area law",
+      "a tight electric enclosure",
+      "2+1D AQ statements",
+      "continuum or weak coupling",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true,
+      "admitted_gate_sha256_pinned_in_check_py": true
+    },
+    "model_id": "FG(round11_two_plaquette_independent_couplings)",
+    "model_is_finite_graph": true,
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "graph grid as in parameters.graph_grid; 1/100000000 for the Z^3 items",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": true,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "graph: exact ground states of H_FG(l1,l2) in the trace-monomial basis at D in {6,8}; Z^3: untruncated finite-box ground vectors of F1 and F2 at fixed N and the limit of the named constructions (BB2); 2+1D: no state (constants only)",
+    "observable": {
+      "id": "<W_1>, <z>, <C_shared> on the graph; omega(W_{1x2}); omega(h_R); 2+1D AM2 constants",
+      "centering": "none",
+      "reference_value_exact": "graph free values in the same code path; omega(W_{1x2})=0 and omega(h_R)=0 at tau=0 (Haar)",
+      "reference_route": "Haar"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "graph_truncation_zero",
+      "graph_residual_itemized",
+      "flip_parity_graph",
+      "z3_formal_coefficient",
+      "band_lower_trace_duality",
+      "band_upper_energy_budget",
+      "cutoff_monotone_passage",
+      "dimension_recount",
+      "arithmetic"
+    ],
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "target": {
+      "quantity": "relative width of the certified enclosure of <z> at every graph grid point with l1=l2 nonzero, at D=8",
+      "value": "1/10000000000000000",
+      "comparator": "<=",
+      "note": "relative width means (upper - lower)/min(|lower|, |upper|) of the exported exact enclosure; blind discriminating threshold at D=8, set by the advisor after the skeptic's pre-freeze review found the drafted 1/10^10 non-discriminating, with a margin of at least 2 against the skeptic's recorded preview (not a producer premise); nesting of the D=8 enclosure inside the D=6 one is an observed consistency check whose failure is recorded without invalidating either enclosure; the other items are exact computations and format checks"
+    },
+    "direction": "single+skeptic",
+    "controls_required": {
+      "ids": [
+        "coherent_evidence_tampering",
+        "exact_arithmetic_admission",
+        "no_priority_or_continuum_claim",
+        "changed_model_relabelled",
+        "insufficient_verdict_retained",
+        "placeholder_span_rejected",
+        "negation_aware_phrase_scan",
+        "parameters_declare_metric_weights_window",
+        "tier_mixing_rejected",
+        "graph_couplings_named",
+        "exact_rs_zero_truncation",
+        "independent_coupling_flip",
+        "enclosure_itemized_residual",
+        "formal_coefficient_labelled",
+        "evenness_from_flip",
+        "unbounded_observable_handled",
+        "band_both_signs",
+        "dimension_recount",
+        "no_area_law_claim",
+        "no_transfer_to_eqed",
+        "rate_range_stated"
+      ]
+    },
+    "mandatory_sentence_template": "On the Round11 two-plaquette graph with independent couplings, the exact low-order coefficients of the face mean, the 1x2 loop and the shared-link Casimir are computed with zero truncation error, the face mean is odd in its own coupling and even in the other, and the 1x2 loop has a certified sign at every grid point; in the zero-selected SU(2) family the 1x2 Wilson mean vanishes at first order and is even in tau, with only a formal second-order coefficient, the electric energy on the cover lies in a certified two-sided band for every box and for the limit of the named constructions, and the 2+1-dimensional AM2 constants are recounted; these are statements about named models and a finite graph, not an area law, not a certified sign of the 1x2 mean, not uniqueness of any ground state, and not a statement uniform in the lattice spacing a.",
+    "gate_fields_required": {
+      "model_is_finite_graph": true,
+      "transfers_to_aq": false,
+      "graph_sign_certified": true,
+      "z3_1x2_formal_only": true,
+      "electric_band_claimed": true,
+      "electric_band_scope": "omega(h_R) for every finite box of F1 and F2 (untruncated at fixed N) and the limit of the named constructions, both signs",
+      "area_law_claimed": false,
+      "uniqueness_of_ground_state_claimed": false,
+      "rate_in_a_claimed": false,
+      "continuum_claim": false,
+      "weak_coupling_claim": false,
+      "scientific_priority_verified": false
+    },
+    "gate_fields_rule": "the gate_fields_required values hold for accepted_within_scope; a limited verdict exports the field of each dropped item false with its reason and quotes the template once inside the frame 'The frozen template, which this verdict meets only in part, reads:' followed by the dropped items",
+    "forbidden_phrasings": [
+      "the infinite-volume ground state",
+      "the thermodynamic limit",
+      "the AQ state",
+      "correlation length",
+      "uniform in a",
+      "confirms",
+      "predicts",
+      "string tension",
+      "confinement"
+    ],
+    "scaling_brackets_per_constant": {
+      "graph_coefficients": "coupling-independent exact rationals (not applicable)",
+      "band_lower": "quadratic in tau up to the K_2' correction: [9500,10500]",
+      "band_upper": "linear in tau: exactly 100",
+      "z3_formal": "exactly quadratic (ratio exactly 10000)",
+      "dimension_constants": "tau-independent"
+    }
+  },
+  "frozen_at": "2026-09-25T05:09:10.297357+00:00"
+}
