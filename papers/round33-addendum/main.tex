@@ -1,38 +1,162 @@
 \documentclass[11pt,a4paper]{article}
 \input{layout}
 % Edition-local helpers (layout.tex is shared and left unchanged).
-% recid: a record identifier (control id, sub-label, error-term name) printed verbatim.
-\newcommand{\recid}[1]{\texttt{\detokenize{#1}}}
-\title{Round33 research addendum}
+% gatequote: a reviewed gate record quoted verbatim in its own ASCII notation.
+\newenvironment{gatequote}{\begin{quote}\footnotesize\ttfamily\frenchspacing\raggedright}{\end{quote}}
+% recid: a record identifier (control id, sub-label, error-term name) printed verbatim;
+% a line may break after an underscore, and nothing else in the identifier changes.
+\makeatletter
+\newcommand{\recid}[1]{\texttt{\expandafter\recid@scan\detokenize{#1}\recid@end}}
+\def\recid@end{\recid@end}
+\def\recid@scan#1{\ifx\recid@end#1\expandafter\@gobble\else\expandafter\@firstofone\fi
+  {\recid@put#1\recid@scan}}
+\def\recid@put#1{#1\if\string_#1\allowbreak\fi}
+\makeatother
+% Provisional title; it may be revised when the later gates land.
+\title{Boundary decay, locality and convergence of the named constructions\\
+at the original coupling cap, with applications}
 \author{Hruday N M (BUNZEEY)}
-\date{Skeleton edition, 24 September 2026\\\small Round33 scientific addendum: BA1--BD2 (in progress)}
+\date{24 September 2026\\\small Round33 scientific addendum: BA1--BD2 (in progress)}
 \begin{document}
 \maketitle
 \begin{abstract}
-This is the skeleton of the Round33 addendum. Round33 is a continuation cycle
-of eight prospectively contracted investigations in four sub-rounds of two:
-three research sub-rounds (BA1/BA2, BB1/BB2, BC1/BC2) and an applications stage
-(BD1/BD2) that applies admitted Round32 and Round33 equations to related
-problems and records an explicit obstruction where an equation does not
-transfer. No investigation has been gated, so this edition states no
-scientific result. The completed edition will be authored from the eight
-reviewed gates; its builder refuses to run before all eight gates exist.
-The four-dimensional continuum Yang–Mills problem remains open.
+This edition is in progress. It records sub-round~1 of the Round33 cycle,
+two prospectively contracted and paired investigations, BA1 and BA2, both
+accepted within their stated model scope, and will be extended as the later
+gates land. Both concern the zero-selected patterned family of the SU(2)
+Kogut--Susskind form at fixed spacing and the original coupling cap
+$|\tau|\le10^{-8}$, with the two named construction families of Round32:
+F1, AQ1's centered whole-star boxes, and F2, I1's all-contained-face boxes
+with padding, both on $\Lambda_N=[-N,N]^3$, $N\ge2$. BA1 shows that
+replacing one box of the named constructions by another moves the AM2
+creation coefficients on supports meeting the Wilson cover $R=\{0,e_z\}$ by at
+most $Kq^{N-1}$ in the anchored norm, where $N$ is the smaller box size, in
+each on-site cutoff space and uniformly in the cutoff: $K=49/111790368\approx
+4.383\times10^{-7}$ at $q=1/64$, and $K=49/2018304\approx2.428\times10^{-5}$
+at the per-step ball ratio $q=37888|\tau|=148/390625$, for every comparison of
+the contract and both signs. It is proved by two routes, a weighted-norm
+contraction and analyticity on a complex-coupling disc. This is decay of coefficients
+at a rate in $N$, not decay of the reduced density. BA2 shows that the
+finite-box Heisenberg evolutions of F1 and F2 of every $A\in B(\mathcal H_R)$
+differ in norm by at most $K_{\rm cmp}(5N+1)N^{-3}\norm A$, with
+$K_{\rm cmp}=3969/155720800000000\approx2.549\times10^{-11}$, for
+$|\theta|\le8$ in $\theta=\alpha t/\hbar$. The evolutions of each family are
+Cauchy in $N$ at the rate $1/(N-1)$, with constants about
+$5.947\times10^{-11}$ (F1) and $9.452\times10^{-11}$ (F2), and the F2 limit
+dynamics equals the AQ1 limit dynamics. This closes two obligations left
+open by Round32, boundary independence of the dynamics on compact windows and
+the dynamics of the padded family, within that scope. Both BA2 constants are
+quadratic in $\tau$. The statements concern the algebraic dynamics of the
+named constructions on a compact window. They assert no equality of GNS
+dynamics or of correlation functions of different states and nothing uniform
+in time. Neither investigation establishes convergence of states, a common
+limit state, uniqueness of any ground state, an estimate uniform in the
+lattice spacing or a continuum statement. The four-dimensional continuum
+Yang--Mills problem remains open.
 \end{abstract}
 
-\section*{Status and authorship}
+\section*{Status and reading guide}
 This is a separate scientific addendum; Draft03 and the Round31 and Round32
-addenda are unchanged. The human project author is Hruday N M (BUNZEEY).
-\emph{AI-assistance disclosure:} the advisor, the skeptic, the expert-panel
-lenses (Newton/Tesla, Jung/Pauli and Penrose/Feynman as documented
-methodological lenses), the research assistants and the forward and reverse
-producers are model-agent roles with shared mathematical ancestry. Their
-agreement is correlated model-agent work, not external human peer review or
-independent physical observation. Historical figures supply documented
-methodological lenses; none participated in or endorsed this work, and no
-historical, occult or mystical text supplies a premise. HNM contribution
-aliases identify project records; scientific priority is unverified.
-Investigation counts are never a fraction of the continuum problem.
+addenda are unchanged. The Round33 cycle consists of eight prospectively
+contracted investigations in four sub-rounds of two. Three are research
+sub-rounds: locality (BA1, BA2), convergence of the named constructions (BB1,
+BB2) and consequences for the admitted certificates (BC1, BC2). The fourth is
+an applications stage (BD1, BD2). It applies admitted Round32 and Round33
+equations to related problems and records an explicit obstruction where an
+equation does not transfer. An expert panel fixed the goals, directions and
+contract rules in two deliberation loops before any production. The panel
+consists of three methodological lenses (Newton/Tesla, Jung/Pauli and
+Penrose/Feynman), an advisor and a skeptic. After each sub-round one research
+assistant per lens runs the tests named in the lens updates, and the advisor
+may reorder, replace or retitle the next pair. Assistant work counts as zero
+investigations.
+
+This edition records sub-round~1: both of its investigations are accepted
+within their stated model scope. Later sub-rounds are added as their gates
+land, and the abstract, this guide and the plan table will be extended with
+them. No sentence here anticipates a later gate. The completed edition will
+be authored from the eight reviewed gates; its builder refuses to run before
+all eight exist.
+
+Both sub-round-1 investigations concern one model, the zero-selected
+patterned family of Round32, and the two named construction families of
+Section~\ref{sec:families}. Both are paired: a forward and a reverse producer
+proved the same frozen targets by different routes, the reverse under premise
+isolation. The skeptic derived the constants before the comparison, in a
+package committed ahead of the producers' commits, and replayed and mutated
+both producers after it. BA1 carries the sub-label
+\recid{boundary_decay_rate_only} with the secondary label
+\recid{static_not_dynamic}: it is a statement about creation coefficients, not
+about states or dynamics. BA2 carries \recid{dynamics_on_compact_windows}: it
+is a statement about the algebraic Heisenberg dynamics on the window
+$|\theta|\le8$, not about the states.
+
+The headline results, each within the scope its gate records, are these.
+\begin{itemize}
+\item Boundary decay of the AM2 creation coefficients (BA1):
+ $\sum_{I\ni u}\norm{c^{\rm box\,1}_I-c^{\rm box\,2}_I}\le Kq^{N-1}$ for $u\in R$,
+ with $K\approx4.383\times10^{-7}$ at $q=1/64$ (margin about $1.14$, recorded
+ as thin) and $K\approx2.428\times10^{-5}$ at $q=37888|\tau|$, for every
+ comparison of two named boxes, both signs and every on-site cutoff; the
+ crude tier misses the headline target and is retained.
+\item Comparison of the dynamics (BA2):
+ $\norm{T^{F2,N}_\theta(A)-T^{F1,N}_\theta(A)}\le2.549\times10^{-11}(5N+1)N^{-3}$
+ for $\norm A\le1$ and $|\theta|\le8$, with the first order in $\tau$
+ vanishing exactly.
+\item Cauchy estimates and the F2 limit dynamics (BA2): rate $1/(N-1)$ in $N$
+ for both families, whole-sequence convergence of the evolutions, the F2
+ limit dynamics identified with AQ1's, and AQ1~\S\S4--5 rerun for every F2
+ subsequential limit state. This closes the Round32 obligations O5 and O6
+ within that scope.
+\end{itemize}
+The four-dimensional continuum Yang--Mills problem remains open, and no
+investigation count is a fraction of it.
+
+Section~\ref{sec:model} fixes the model dictionary, the two families, the
+Round32 checkpoint and the frozen Round33 plan. Section~\ref{sec:ba1} derives
+the coefficient decay and Section~\ref{sec:ba2} the comparison of the
+dynamics. Each investigation opens with its gate's accepted statement, quoted
+verbatim in the gate's ASCII notation as the reviewed scope, and closes with
+the limitations the gate recorded. Exact rational arithmetic decides
+admission. Decimals summarize exact rationals, and labelled values are
+recorded but not bound.
+
+The human project author is Hruday N M (BUNZEEY). \emph{AI-assistance
+disclosure:} the advisor, the skeptic, the expert-panel lenses (Newton/Tesla,
+Jung/Pauli and Penrose/Feynman as documented methodological lenses), the
+research assistants and the forward and reverse producers are model-agent
+roles with shared mathematical ancestry. Their agreement is correlated
+model-agent work, not external human peer review or independent physical
+observation. Historical figures supply documented methodological lenses; none
+participated in or endorsed this work. No historical, occult, mystical or
+governmental source supplies a premise, and the Jung lens's reading ledger
+records custody, not confirmation. HNM contribution aliases identify project
+records; scientific priority is unverified. Investigation counts are never a
+fraction of the continuum problem.
+
+BA2 applies the Lieb--Robinson bound and the limit-dynamics theorem of
+Nachtergaele and Sims
+(\href{https://arxiv.org/abs/1410.8174v1}{arXiv:1410.8174v1}), quoted from a
+committed excerpt. Its rerun for the padded family follows AQ1~\S\S4--5, whose
+strategy AQ1 credits to Gauvin, arXiv:2503.15539v3, Supplement A.10. BA1
+applies standard tools to the admitted AM2 fixed point: weighted norms that
+pay a fixed loss per interaction, Banach's fixed-point theorem, Weierstrass's
+theorem, the maximum principle and Cauchy's estimates. The attribution
+sentence of the Round32 addendum for the AM2 creation expansion and the AQ
+construction is inherited unchanged. Scientific priority is unverified, and
+no independence from those sources is claimed.
 
 \input{model}
+\input{decay}
+\input{dynamics}
+% Later sub-rounds are added as their gates land:
+% \input{locality}      % BB1: marginal locality, from coefficient decay to the reduced density
+% \input{convergence}   % BB2: whole-sequence convergence, common limit, coarse translations
+% \input{consequences}  % BC1, BC2: certificates restated for the limit; route-B uniform model
+% \input{applications}  % BD1, BD2: transfers to named models and recorded obstructions
+% \input{history}
+% \input{limits}
+% \appendix
+% \input{contributions}
+% \input{references}
 \end{document}

@@ -1,6 +1,6 @@
 # Round33 scientific addendum
 
-This directory owns a separate manuscript edition. It does not modify Draft03 or the Round31 and Round32 addenda. The manuscript and PDF are authored from the eight reviewed Round33 gates (BA1-BD2: three research sub-rounds and the applications stage); the builder refuses to run before all eight gates exist. Until then `main.tex` and `model.tex` are a compiling skeleton that lists the eight investigations as planned and states no result.
+This directory owns a separate manuscript edition. It does not modify Draft03 or the Round31 and Round32 addenda. The manuscript and PDF are authored from the eight reviewed Round33 gates (BA1-BD2: three research sub-rounds and the applications stage); the builder refuses to run before all eight gates exist. Until then the sources are a compiling in-progress edition: `main.tex`, `model.tex` and one section per gated investigation (`decay.tex` for BA1, `dynamics.tex` for BA2), each quoting its gate's accepted statement and limitations verbatim; sections for later investigations are added as their gates land.
 
 ```bash
 python -B papers/round33-addendum/build.py --render
