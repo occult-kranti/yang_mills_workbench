@@ -16,3 +16,29 @@ The cycle starts from merged Round32 commit `519a9a2a26201422a8bfa9e3a83f9129b66
 | 4 | BD2 | accepted_within_scope (sign_certified_finite_graph; transfer_to_named_model, obstruction_recorded, static_not_dynamic) | Two-plaquette graph with independent couplings: exact coefficients, flip parities, certified positive 1x2 loop; Z^3 1x2 mean zero at first order and at most about 1.34e-12; electric energy band [about 2.88e-19, 9.8e-7]; 2+1D AM2 cap about 1.58e-3; no area law, no certified 1x2 sign |
 
 Loop counts are never a fraction of the four-dimensional Yang–Mills problem, which remains open.
+
+## Records
+
+- Reviewed findings: [`advisor/findings.json`](advisor/findings.json) (eight rows, summary, scope statement, applications ledger); admission specification: [`advisor/admission-spec.json`](advisor/admission-spec.json); gates: `advisor/<loop>-gate.json`.
+- Plan and panel: [`advisor/brief.md`](advisor/brief.md), [`advisor/plan.json`](advisor/plan.json) (plan v2, contract rules, vocabulary, history with the plan sha at every freeze), deliberations 1-2, panel updates 1-4, selection notes.
+- Contracts: `contracts/<loop>.json` (frozen after the skeptic's pre-freeze reviews `skeptic/bb-contract-review.*`, `bc-contract-review.*`, `bd-contract-review.*`).
+- Producers: `forward/<loop>/` and `reverse/<loop>/` (report, exact checker, snapshotted inputs, output, freeze).
+- Skeptic: pre-comparison packages (`<loop>-contract-review.md`, `<loop>-independent-derivation.md`, `<loop>_check.py`, `<loop>-independent/`), post-comparison reviews (`<loop>.md`, `<loop>.json`, `<loop>-replays.json`, `<loop>_postreview_check.py`, `<loop>-postreview/`), the BB2 discharge record `bb2-bb1-admission.json` and the Kotecky-Preiss repair record `bb1-kp-repair.md`; `skeptic/programs.json` lists every program.
+- Committed source excerpts: [`sources/`](sources/) (Nachtergaele-Sims arXiv:1410.8174v1; Ueltschi arXiv:math-ph/0304003v3, committed after the BB1 freeze as a repair source).
+- Lenses and assistants: `experts/<lens>/` (memo, sources, loop-2 response, updates 1-4, assistant packages 1-4); the occult reading ledger `experts/occult/reading-ledger.md`.
+- Roadmap (planning only): [`advisor/roadmap.json`](advisor/roadmap.json); handoff: [`HANDOFF.md`](HANDOFF.md); tools: [`tools/`](tools/).
+- Addendum: [`papers/round33-addendum/main.pdf`](../../papers/round33-addendum/main.pdf) with its build receipt and page-image QA.
+
+## Reproduce
+
+```sh
+python3 -B research/round33/reproduce.py --complete --validate-only
+python3 -B research/round33/reproduce.py --complete --output /absolute/fresh/r33-normal
+python3 -B -O research/round33/reproduce.py --complete --optimized --output /absolute/fresh/r33-optimized
+python3 -B research/round33/test_admission.py
+python3 -B research/round33/forward/bb1/check.py --output /absolute/fresh/one-producer
+python3 -B research/round33/skeptic/bb2_postreview_check.py --output /absolute/fresh/one-review
+node tests/round33_site.mjs --require-release
+```
+
+Replay outputs must be fresh absolute directories outside the checkout and reproduce `output/` byte for byte under normal and `-O` Python. Publication follows [`release/README.md`](release/README.md).
