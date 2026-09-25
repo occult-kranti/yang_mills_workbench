@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""BB2 post-comparison skeptic checks (stage 1: producers; discharge part: the BB1 gate).
+"""BB2 post-comparison skeptic checks (stage 1: producers; stage 2: the discharge against the BB1 gate).
 
 Human project author: Hruday N M (BUNZEEY). Model-agent skeptic with correlated ancestry (same model family as the advisor,
 the lenses and both producers; the frozen BB2 targets, brackets and conditional semantics came from the skeptic's own BB
@@ -24,15 +24,22 @@ Stage 1 adds to the frozen pre-comparison package (bb2_check.py, committed at 89
     (68 runs; the producer checker must abort with 'damaging mutation accepted: <label>'), must-abort edits, unmutated
     copies that reproduce output/ byte for byte, and silent edits that the producer checkers do not pin, which this
     review's value validator must catch.
-The discharge part needs --bb1-gate and --bb1-admission (the skeptic's transcription of the gate's admitted constants,
-each anchored to a verbatim gate substring) and applies the pre-registered protocol (bb2_check.discharge); without them it
-is not run and says so.
+Stage 2 (the BB1 gate exists: sha256 18141fea..., commit eef57b4, accepted_within_scope) runs by default and adds:
+  * bb2-bb1-admission.json, the skeptic's transcription of the constants the BB1 gate admits, pinned by sha256; every
+    constant, bound shape, q, comparison label (also equal to the BB1 contract list), sign and regime must be a verbatim
+    substring of the gate text, and every cell equals the BB1 review's admitted_values table (bb1.json, pinned);
+  * the pre-registered discharge protocol (bb2_check.discharge) on the admitted constants, on the labelled secondary pair
+    and on the self-contained iterated_split values; each producer's own hypothesis map (forward H1-H4, reverse B3-B5 with
+    its item references) discharged cell by cell (comparison x form x regime x sign), cross-checked against the Jung
+    assistant-2 table (pinned);
+  * the constants at the hypothesis values (bound by the gate) beside the constants re-evaluated at the admitted values
+    (labelled); the item-5 range, the bracket below 2 on 14001<=N<=14418 (fine logarithms) and at least 2 from N=14419 for
+    both constant sets; the gate fields from the discharge engine; 18 in-memory damaging edits of the gate and admission.
 
 Standard library only; exact Fractions decide every Boolean; failures are explicit exceptions (never assert), so the
 output bytes match under python -O.
 
 Usage: python3 -B research/round33/skeptic/bb2_postreview_check.py --output /abs/fresh/dir
-       [--bb1-gate research/round33/advisor/bb1-gate.json --bb1-admission research/round33/skeptic/bb2-bb1-admission.json]
 """
 import argparse
 import hashlib
@@ -76,6 +83,8 @@ COMMITS = {  # recorded from git at review time (not read at run time)
     'forward_producer': {'commit': 'd05efda', 'time': '2026-09-25T00:10:26Z'},
     'reverse_producer': {'commit': '17c0ecf', 'time': '2026-09-25T00:18:36Z'},
     'plan_d8_repair': {'commit': '43eb922', 'note': 'plan history BB1/BB2 freeze entry with the plan sha256 (skeptic defect D8)'},
+    'skeptic_post_comparison_stage_1': {'commit': 'e2a9ed2'},
+    'bb1_gate': {'commit': 'eef57b4', 'note': 'the BB1 gate; stage 2 read it only after this commit'},
 }
 TEMPLATE_KEY = 'mandatory_sentence_template'
 
@@ -619,51 +628,560 @@ SILENT = [
 ]
 
 
-# ------------------------------------------------------------ discharge part
-def discharge_stage(gate_path, admission_path, ref):
-    gate_bytes = Path(gate_path).read_bytes()
-    gate_sha = hashlib.sha256(gate_bytes).hexdigest()
+# ------------------------------------------------------------ discharge part (stage 2: the BB1 gate exists)
+BB1_GATE = R33 / 'advisor/bb1-gate.json'
+BB1_GATE_SHA = '18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827'   # commit eef57b4
+BB1_REVIEW = HERE / 'bb1.json'
+BB1_REVIEW_SHA = '5e5235c8be37fdab8878e1b913cae8bcbc3eb257078f18150f34434aa0031235'  # commit 092f862
+ADMISSION = HERE / 'bb2-bb1-admission.json'
+ADMISSION_SHA = '6eb6e3bed86fc069ab8905f108759aee0b7a8d8c9705e545f82cf443dda946f6'
+JUNG_A2 = R33 / 'experts/jung/assistant-2/results.json'
+JUNG_A2_SHA = '89c2a23b7ac657d181cf246c38307fea659ee48b41db1eac0825a8033df96b8f'   # commit bffcb6f
+SHORT = dict(zip(pre.COMPARISONS, ('c1', 'c2', 'c3', 'c4', 'c5')))
+# verbatim gate phrases and the bound shape each one fixes (the admission may cite only these)
+SHAPE_OF_TEXT = {
+    'differ by at most C q^(N-1) in trace norm': {'exponent_shift': 0, 'Y_power': 0, 'Y_exp_rate': F(0)},
+    '<= c_site |Y| e^{|Y|/10^8} q^{d_Y} with d_Y=N-max_{y in Y}|y|_inf': {'exponent_shift': 0, 'Y_power': 1,
+                                                                         'Y_exp_rate': F(1, 10 ** 8)},
+}
+SIGNS_OF_TEXT = {'Constants (exact; both signs;': ('+', '-'), 'at both signs, in each on-site cutoff space': ('+', '-')}
+REGIMES_OF_TEXT = {'in each on-site cutoff space with constants independent of the cutoff, and at fixed N for the untruncated '
+                   'ground vectors': ('Q_L', 'untruncated')}
+DISCHARGE_RULE = ('an item is unconditional only when, at both signs, some BB2 route proves it from BB1 comparisons admitted at '
+                  'q=1/64 in a bound dominated pointwise by the hypothesis form with a constant at most the hypothesis value, '
+                  'in the untruncated regime or in Q_L for a route that removes the cutoff itself (pre-registered in bb2_check.py, '
+                  'committed at 8921539 before either producer or the BB1 gate was read)')
+
+
+def gate_text_of(gate):
+    return re.sub(r'\s+', ' ', ' '.join([str(gate.get('accepted', '')), str(gate.get('decision', '')),
+                                         ' '.join(gate.get('limitations', []))]))
+
+
+def read_admission(gate_bytes, adm, bb1_comparisons, ref):
+    """Turn the admission record into the discharge engine's record; every entry must be anchored in the gate text."""
     gate = json.loads(gate_bytes)
-    adm = json.loads(Path(admission_path).read_text())
     if gate.get('loop') != 'BB1':
         raise ReviewFailure('the supplied gate is not the BB1 gate')
-    if adm.get('bb1_gate_sha256') != gate_sha or adm.get('verdict') != gate.get('verdict'):
+    if adm.get('bb1_gate_sha256') != hashlib.sha256(gate_bytes).hexdigest() or adm.get('verdict') != gate.get('verdict'):
         raise ReviewFailure('admission record does not match the BB1 gate (sha256 or verdict)')
-    text = ' '.join([str(gate.get('accepted', '')), str(gate.get('decision', '')), ' '.join(gate.get('limitations', []))])
-    text_n = re.sub(r'\s+', ' ', text)
-    admitted = {}
+    text = gate_text_of(gate)
+
+    def anchored(s, what):
+        if not isinstance(s, str) or not s or re.sub(r'\s+', ' ', s) not in text:
+            raise ReviewFailure('not anchored in the BB1 gate text: ' + what)
+    signs, regimes = set(), set()
+    for s in adm['signs_gate_text']:
+        anchored(s, 'signs')
+        signs |= set(SIGNS_OF_TEXT.get(s, ()))
+    for s in adm['regimes_gate_text']:
+        anchored(s, 'regimes')
+        regimes |= set(REGIMES_OF_TEXT.get(s, ()))
+    if not set(adm['signs']) <= signs or not set(adm['regimes']) <= regimes:
+        raise ReviewFailure('signs or regimes claimed beyond the gate text')
+    anchored(adm['comparisons_gate_text'], 'comparison list')
+    anchored(adm['q_gate_text'], 'q')
+    m = re.fullmatch(r'q=(\d+/\d+)', adm['q_gate_text'])
+    if m is None:
+        raise ReviewFailure('q anchor malformed')
+    q_gate = F(m.group(1))
     anchors = 0
-    for comp in pre.COMPARISONS:
-        forms = (adm.get('admitted') or {}).get(comp)
-        if forms is None:
-            admitted[comp] = None
+
+    def entry(f, what):
+        nonlocal anchors
+        anchored(f['gate_text'], what)
+        if not re.sub(r'\s+', ' ', f['gate_text']).endswith('=' + f['c']):
+            raise ReviewFailure('admitted constant not anchored in the BB1 gate text: ' + what)
+        anchors += 1
+        return F(f['c'])
+    admitted, also = {}, {}
+    for i, comp in enumerate(pre.COMPARISONS):
+        e = (adm.get('admitted') or {}).get(comp)
+        if e is None:
+            admitted[comp] = also[comp] = None
             continue
-        admitted[comp] = {}
+        anchored(e['gate_scope_text'], comp)
+        if not e['gate_scope_text'].startswith(SHORT[comp] + ' ') or e['bb1_contract_comparison'] != bb1_comparisons[i]:
+            raise ReviewFailure('comparison label differs from the BB1 gate or contract: ' + comp)
+        admitted[comp], also[comp] = {}, {}
         for form in ('R', 'Y'):
-            e = forms.get(form)
-            if e is None:
-                admitted[comp][form] = None
+            f = e.get(form)
+            if f is None:
+                admitted[comp][form] = also[comp][form] = None
                 continue
-            anchor = re.sub(r'\s+', ' ', e['gate_text'])
-            if anchor not in text_n or e['c'] not in anchor:
-                raise ReviewFailure('admitted constant not anchored in the BB1 gate text: %s %s' % (comp, form))
-            anchors += 1
-            admitted[comp][form] = {'c': F(e['c']), 'shape': {'q': F(e['q']), 'exponent_shift': int(e['exponent_shift']),
-                                                              'Y_power': int(e['Y_power']), 'Y_exp_rate': F(e['Y_exp_rate'])}}
-    record = {'verdict': gate['verdict'], 'admitted': admitted, 'regimes': list(adm['regimes']), 'signs': list(adm['signs'])}
-    hyp = {'q': ref['q'], 'const': {'R': ref['C_h'], 'Y': ref['c_h']},
-           'shape': {'R': {'q': ref['q'], 'exponent_shift': 0, 'Y_power': 0, 'Y_exp_rate': F(0)},
-                     'Y': {'q': ref['q'], 'exponent_shift': 0, 'Y_power': 1, 'Y_exp_rate': F(1, 10 ** 8)}}}
-    res = pre.discharge(record, hyp, cutoff_routes=tuple(adm.get('routes_with_own_cutoff_removal', ['forward'])))
-    reeval = {k: q(v) for k, v in res['reevaluated'].items()}
-    c5 = (admitted.get('c5_one_prescription_volumes') or {}).get('R')
-    return {'bb1_gate_sha256': gate_sha, 'bb1_verdict': gate['verdict'], 'anchored_constants': anchors,
-            'items': res['items'], 'items_by_sign': res['items_by_sign'], 'bb2_verdict_from_discharge': res['verdict'],
-            'unconditional': res['unconditional'], 'gate_fields': res['gate_fields'], 'reevaluated_constants': reeval,
-            'item4_constant_reevaluated': q(c5['c']) if c5 else None,
-            'bb1_route_of_bound_value': adm.get('bb1_route_of_bound_value'),
-            'rule': 'unconditional only when, at both signs, some BB2 route proves the item from BB1 comparisons admitted at q=1/64 '
-                    'with a bound dominated pointwise by the hypothesis form and a constant at most the hypothesis value'}
+            anchored(f['shape_text'], comp + ' ' + form + ' shape')
+            shp = SHAPE_OF_TEXT.get(f['shape_text'])
+            if shp is None or (form == 'R') != (shp['Y_power'] == 0):
+                raise ReviewFailure('shape text does not fix a bound of this form: ' + comp + ' ' + form)
+            claimed = {'exponent_shift': int(f['exponent_shift']), 'Y_power': int(f['Y_power']), 'Y_exp_rate': F(f['Y_exp_rate'])}
+            if claimed != shp or F(f['q']) != q_gate:
+                raise ReviewFailure('shape differs from the gate text: ' + comp + ' ' + form)
+            shape = dict(shp, q=q_gate)
+            admitted[comp][form] = {'c': entry(f, comp + ' ' + form), 'shape': shape}
+            anchored(f['route'], 'route')
+            a = f.get('also_certified_by')
+            if a is not None:
+                anchored(a['route'], 'route')
+            also[comp][form] = None if a is None else {'c': entry(a, comp + ' ' + form + ' also'), 'shape': shape,
+                                                       'route': a['route']}
+    sec = adm['secondary_labelled']
+    anchored(sec['q_gate_text'], 'secondary q')
+    anchored(sec['targets_gate_text'], 'secondary targets')
+    if F(sec['q_at_cap']) != ref['q2'] or '151552|tau|' not in sec['q_gate_text']:
+        raise ReviewFailure('secondary q differs from 151552|tau| at the cap')
+    q2 = ref['q2']
+    secondary = {}
+    for comp in pre.COMPARISONS:
+        if admitted[comp] is None:
+            secondary[comp] = None
+            continue
+        secondary[comp] = {}
+        for form in ('R', 'Y'):
+            base = admitted[comp][form]
+            secondary[comp][form] = None if base is None else {
+                'c': entry(sec[form], 'secondary ' + form), 'shape': dict(base['shape'], q=q2)}
+    return {'gate': gate, 'text': text, 'anchors': anchors, 'signs': sorted(adm['signs']), 'regimes': sorted(adm['regimes']),
+            'admitted': admitted, 'also': also, 'secondary': secondary}
+
+
+def hyp_primary(ref):
+    return {'q': ref['q'], 'const': {'R': ref['C_h'], 'Y': ref['c_h']},
+            'shape': {'R': {'q': ref['q'], 'exponent_shift': 0, 'Y_power': 0, 'Y_exp_rate': F(0)},
+                      'Y': {'q': ref['q'], 'exponent_shift': 0, 'Y_power': 1, 'Y_exp_rate': F(1, 10 ** 8)}}}
+
+
+def hyp_secondary(ref):
+    h = hyp_primary(ref)
+    return {'q': ref['q2'], 'const': {'R': ref['C_2h'], 'Y': ref['c_2h']},
+            'shape': {k: dict(v, q=ref['q2']) for k, v in h['shape'].items()}}
+
+
+def engine(rec, admitted, hyp):
+    record = {'verdict': rec['gate']['verdict'], 'admitted': admitted, 'regimes': rec['regimes'], 'signs': rec['signs']}
+    return pre.discharge(record, hyp)
+
+
+# ---- the producers' own hypothesis maps
+def _regime(s):
+    s = s.strip()
+    if s.startswith('each on-site cutoff space Q_L') or s.startswith('each Q_L'):
+        return 'Q_L'
+    if 'untruncated' in s:
+        return 'untruncated'
+    raise ReviewFailure('unreadable cutoff regime: ' + s)
+
+
+def _form(s):
+    if s.startswith('R'):
+        return 'R'
+    if s.startswith('region'):
+        return 'Y'
+    raise ReviewFailure('unreadable form: ' + s)
+
+
+def _sign(s):
+    if s in ('+', '+tau'):
+        return '+'
+    if s in ('-', '-tau'):
+        return '-'
+    raise ReviewFailure('unreadable sign: ' + s)
+
+
+def forward_map(res, bb1_comparisons):
+    comp_of = {t: pre.COMPARISONS[i] for i, t in enumerate(bb1_comparisons)}
+    items = {k: {'hypotheses': [], 'cells': set()} for k in ('1', '2', '3', '4', '5', 'secondary')}
+    by_id = {}
+    for h in res['hypotheses_used']:
+        if h['id'] == 'H1s-H3s':
+            if h['comparison'] != 'as H1-H3, secondary pair':
+                raise ReviewFailure('forward secondary hypothesis text changed')
+            comps = [by_id[i] for i in ('H1', 'H2', 'H3')]
+            targets = ['secondary']
+        else:
+            if h['comparison'] not in comp_of:
+                raise ReviewFailure('forward hypothesis not a BB1 contract comparison: ' + h['id'])
+            comps = [comp_of[h['comparison']]]
+            by_id[h['id']] = comps[0]
+            targets = list(h['items'])
+        for it in targets:
+            items[it]['hypotheses'].append(h['id'])
+            for comp in comps:
+                for form in h['forms']:
+                    for reg in h['cutoff_regimes']:
+                        for sg in h['signs']:
+                            items[it]['cells'].add((comp, _form(form), _regime(reg), _sign(sg)))
+    return items, by_id
+
+
+def reverse_map(res, bb1_comparisons):
+    comp_of = {t: pre.COMPARISONS[i] for i, t in enumerate(bb1_comparisons)}
+    b_comp = {b: comp_of[t] for b, t in res['bb1_comparisons'].items()}
+    hu = res['hypotheses_used']
+    literal, refs = {}, {}
+    for k in ('1', '2', '3', '4', '5', 'secondary'):
+        row = hu['item' + k] if k != 'secondary' else hu['secondary']
+        text = ' '.join(row['comparisons'])
+        literal[k] = sorted({b_comp['B' + b] for b in re.findall(r'\bB([1-5])\b', text)})
+        rr = set()
+        for a, b in re.findall(r'\bitems? (\d)(?:-(\d))?', text):
+            rr |= set(str(i) for i in range(int(a), int(b or a) + 1))
+        refs[k] = sorted(rr - {k})
+    closure = {}
+
+    def close(k, seen=()):
+        out = set(literal[k])
+        for r in refs[k]:
+            if r not in seen:
+                out |= close(r, seen + (k,))
+        return out
+    for k in literal:
+        closure[k] = sorted(close(k))
+    items = {}
+    for k in literal:
+        row = hu['item' + k] if k != 'secondary' else hu['secondary']
+        forms = [_form(f) for f in row['forms']]
+        regs = [_regime(r) for r in row.get('cutoff_regimes', [])] or ['Q_L', 'untruncated']
+        sgs = [_sign(s) for s in row.get('signs', [])] or ['+', '-']
+        cells = {(c, f, r, s) for c in closure[k] for f in forms for r in regs for s in sgs}
+        items[k] = {'literal': literal[k], 'item_references': refs[k], 'closure': closure[k], 'cells': cells,
+                    'regimes_listed': bool(row.get('cutoff_regimes')), 'signs_listed': bool(row.get('signs'))}
+    return items
+
+
+def discharge_cells(cells, rec, admitted, hyp):
+    """Every (comparison, form, regime, sign) cell used must be admitted with a dominated bound (conservative: alternatives
+    such as the reverse's 'B4 ... equivalently B5' are all required)."""
+    missing = []
+    for comp, form, reg, sg in sorted(cells):
+        e = (admitted.get(comp) or {}).get(form)
+        if not (reg in rec['regimes'] and sg in rec['signs'] and pre.dominated(e, form, hyp)):
+            missing.append('%s %s %s %s' % (SHORT[comp], form, reg, sg))
+    return missing
+
+
+def map_rows(items_cells, rec, admitted, hyp, extra=None):
+    rows = {}
+    for k, v in items_cells.items():
+        cells = v['cells']
+        missing = discharge_cells(cells, rec, admitted, hyp)
+        row = {'comparisons': sorted({SHORT[c] for c, _, _, _ in cells}), 'forms': sorted({f for _, f, _, _ in cells}),
+               'regimes': sorted({r for _, _, r, _ in cells}), 'signs': sorted({s for _, _, _, s in cells}),
+               'cells': len(cells), 'cells_discharged': len(cells) - len(missing), 'missing': missing,
+               'status': 'discharged' if not missing and cells else 'conditional_on_bb1_targets'}
+        for key in (extra or ()):
+            row[key] = [SHORT[c] for c in v[key]] if key in ('literal', 'closure') else v[key]
+        rows[k] = row
+    return rows
+
+
+# ---- item-5 range, vacuity and first exceedance at a given constant set
+def ln_enclosure(z, l2, terms=40, den=10 ** 45):
+    """Directed enclosure of ln z (z > 0 rational): z = 2^k w with 1 <= w < 2 and ln w = 2 atanh t, t = (w-1)/(w+1) < 1/3,
+    the atanh series with the geometric remainder; ln 2 from the 140-term series enclosure; results on a 10^-45 grid."""
+    z = F(z)
+    if z <= 0:
+        raise ReviewFailure('ln domain')
+    k = 0
+    while z >= 2:
+        z /= 2
+        k += 1
+    while z < 1:
+        z *= 2
+        k -= 1
+    t = (z - 1) / (z + 1)
+    s, p, t2 = F(0), t, t * t
+    for j in range(terms):
+        s += p / (2 * j + 1)
+        p *= t2
+    lo = 2 * s + k * (l2[0] if k >= 0 else l2[1])
+    hi = 2 * (s + p / (2 * terms + 1) / (1 - t2)) + k * (l2[1] if k >= 0 else l2[0])
+    n_lo = lo * den
+    n_hi = hi * den
+    return F(n_lo.numerator // n_lo.denominator, den), F(-((-n_hi.numerator) // n_hi.denominator), den)
+
+
+def item5_profile(cdyn, csp, cp, q_, l2):
+    """For one constant set: range certificate on 5<=N<=14000 (the envelope of check 4), bracket < 2 on 14001<=N<=14418
+    (fine logarithms), bracket >= 2 at 14419, 14420 and every N >= 14421 (coarse logarithms and the monotone envelope)."""
+    g5_up = 625 * pre.e_region_hi(125) / 8 ** 6
+    k5 = 10 * cdyn + csp * g5_up + 10 * cp * q_ ** 4
+    eps = F(1, 10 ** 6)
+    small = cdyn + 2 * cp * q_ ** 4 <= eps          # dynamics and mean terms together, for every N >= 5
+    ln_c = ln_enclosure(csp, l2)
+    ln2_minus = l2[0] - (eps / 2) / (1 - eps / 2)   # ln(2 - eps) >= ln 2 - (eps/2)/(1-eps/2)
+    below = small
+    worst = None
+    for n in range(14001, 14419):
+        r = r_N(n)
+        lam = (2 * r + 1) ** 3
+        up = ln_c[1] + ln_enclosure(lam, l2)[1] + F(lam, 10 ** 8) - (n - r) * 6 * l2[0]
+        margin = ln2_minus - up
+        if worst is None or margin < worst[1]:
+            worst = (n, margin)
+        below = below and margin > 0
+    vac = {'14419': vacuous_at(14419, csp, l2), '14420': vacuous_at(14420, csp, l2)}
+    lam = 14420 ** 3
+    m = ln_lower_integer(csp * lam)
+    vac['all_N_from_14421'] = (m + F(lam, 10 ** 8) - (F(14421, 2) + 1) * 6 * l2[1] >= l2[1]) and 14420 ** 2 >= 10 ** 8 * l2[1]
+    return {'K5_upper_on_5_to_14000': pre.rup(k5), 'K5_preview': preview(k5, 6),
+            'bracket_N5_upper': pre.rup(pre.item5_terms(5, cdyn, csp, cp, q_)['sum']),
+            'bracket_N5_preview': preview(pre.item5_terms(5, cdyn, csp, cp, q_)['sum'], 6),
+            'bracket_N10_upper': pre.rup(pre.item5_terms(10, cdyn, csp, cp, q_)['sum']),
+            'bracket_N10_preview': preview(pre.item5_terms(10, cdyn, csp, cp, q_)['sum'], 6),
+            'below_2_on_14001_to_14418': below, 'tightest_below_2': {'N': worst[0], 'log_margin_lower': preview(worst[1], 6)},
+            'vacuous': vac, 'first_exceedance_of_2': 14419 if below and all(vac.values()) else None}
+
+
+# ---- the whole stage
+def discharge_stage(gate_bytes, adm, review, jung, ref, results, bb1_comparisons, contract):
+    rec = read_admission(gate_bytes, adm, bb1_comparisons, ref)
+    hyp, hyp2 = hyp_primary(ref), hyp_secondary(ref)
+    main = engine(rec, rec['admitted'], hyp)
+    sec = engine(rec, rec['secondary'], hyp2)
+    alt = engine(rec, rec['also'], hyp)
+    # the producers' maps, item by item
+    fmap, fids = forward_map(results['forward'], bb1_comparisons)
+    rmap = reverse_map(results['reverse'], bb1_comparisons)
+    frows = map_rows({k: v for k, v in fmap.items() if k != 'secondary'}, rec, rec['admitted'], hyp, extra=('hypotheses',))
+    rrows = map_rows({k: v for k, v in rmap.items() if k != 'secondary'}, rec, rec['admitted'], hyp,
+                     extra=('literal', 'item_references', 'closure'))
+    fsec = map_rows({'secondary': fmap['secondary']}, rec, rec['secondary'], hyp2, extra=('hypotheses',))['secondary']
+    rsec = map_rows({'secondary': rmap['secondary']}, rec, rec['secondary'], hyp2,
+                    extra=('literal', 'item_references', 'closure', 'regimes_listed', 'signs_listed'))['secondary']
+    # the reverse item-5 reading: its F2 part needs the F2 limit identified with the common limit (item 2, hence c3)
+    r5_read = {c for c, _, _, _ in rmap['5']['cells']} | {c for c, _, _, _ in rmap['2']['cells']}
+    r5_cells = {(c, f, r, s) for c in r5_read for (_, f, r, s) in rmap['5']['cells']}
+    r5_missing = discharge_cells(r5_cells, rec, rec['admitted'], hyp)
+    # the Jung assistant-2 table (a lens input, not a decision) against these parsed maps
+    pim = jung['hypotheses_map']['checks']['hypotheses_map']['per_item_map']
+    jung_eq = {'forward': all(sorted(pim[k]['forward']['bb1_comparisons_used']) == frows[k]['comparisons'] for k in '12345'),
+               'reverse_literal': all(sorted(pim[k]['reverse']['bb1_comparisons_used']) == rrows[k]['literal'] for k in '12345'),
+               'forward_ids': {h: SHORT[c] for h, c in sorted(fids.items())}}
+    # the BB1 review's admitted_values table cell by cell
+    av = review['admitted_values']
+    cells_checked = 0
+    for comp in pre.COMPARISONS:
+        s = SHORT[comp]
+        for form, rkey, ckey, skey in (('R', 'R', 'C', 'C2'), ('Y', 'region', 'c_site', 'c_site2')):
+            a = adm['admitted'][comp][form]
+            for regime in ('each_Q_L_uniform_in_L', 'untruncated_fixed_N'):
+                for sg in ('+', '-'):
+                    cell = av[s][rkey][regime][sg]
+                    if not (cell[ckey] == a['c'] and cell['route'] == a['route'] and cell['meets_target'] is True
+                            and cell['sign'] == sg and cell['tier'] == a['tier']
+                            and cell['also_certified_by'][ckey] == a['also_certified_by']['c']
+                            and cell['also_certified_by']['route'] == a['also_certified_by']['route']
+                            and cell['secondary_labelled'][skey] == adm['secondary_labelled'][form]['c']
+                            and cell['secondary_labelled']['route'] == adm['secondary_labelled'][form]['route']):
+                        raise ReviewFailure('admission differs from the BB1 review admitted_values: %s %s %s %s' % (s, form, regime, sg))
+                    cells_checked += 1
+    rb = review['recommended_bound']
+    rb_equal = (rb['C']['value'] == adm['admitted'][pre.COMPARISONS[0]]['R']['c']
+                and rb['c_site']['value'] == adm['admitted'][pre.COMPARISONS[0]]['Y']['c']
+                and rb['secondary_labelled']['C2'] == adm['secondary_labelled']['R']['c']
+                and rb['secondary_labelled']['c_site2'] == adm['secondary_labelled']['Y']['c'])
+    # constants: hypothesis values (bound by the BB2 gate) and re-evaluated at the admitted values (labelled)
+    Ca, ca = F(adm['admitted'][pre.COMPARISONS[0]]['R']['c']), F(adm['admitted'][pre.COMPARISONS[0]]['Y']['c'])
+    C2a, c2a = F(adm['secondary_labelled']['R']['c']), F(adm['secondary_labelled']['Y']['c'])
+    q_, q2 = ref['q'], ref['q2']
+    fw, rv = ref['forward'], ref['reverse']
+    re_fw = {'C_prime': pre.cprime('nested_telescoping', Ca, q_), 'c_site_prime': pre.csite_prime('nested_telescoping', ca, q_),
+             'C_prime_2': C2a / (1 - q2), 'c_site_prime_2': c2a / (1 - q2)}
+    re_rv = {'C_prime': pre.cprime('union_comparison', Ca, q_), 'c_site_prime': pre.csite_prime('union_comparison', ca, q_),
+             'C_prime_2': C2a, 'c_site_prime_2': c2a}
+    engine_re = main['reevaluated']
+    consistent = all(engine_re['%s_%s_forward' % (fam, form)] == (re_fw['C_prime'] if form == 'R' else re_fw['c_site_prime'])
+                     and engine_re['%s_%s_reverse' % (fam, form)] == (re_rv['C_prime'] if form == 'R' else re_rv['c_site_prime'])
+                     for fam in ('F1', 'F2') for form in ('R', 'Y'))
+
+    def exact_and_preview(d):
+        return {k: {'exact': q(v), 'preview': preview(v)} for k, v in d.items()}
+    l2 = ln2_enclosure()
+    profiles = {
+        'hypothesis_values': {
+            'forward': item5_profile(fw['C_dyn'], fw['c_site_prime'], fw['C_prime'], q_, l2),
+            'reverse_F1': item5_profile(rv['C_dyn_F1'], rv['c_site_prime'], rv['C_prime'], q_, l2),
+            'reverse_F2': item5_profile(rv['C_dyn_F2'], rv['c_site_prime'], rv['C_prime'], q_, l2)},
+        'admitted_values_labelled': {
+            'forward': item5_profile(fw['C_dyn'], re_fw['c_site_prime'], re_fw['C_prime'], q_, l2),
+            'reverse_F1': item5_profile(rv['C_dyn_F1'], re_rv['c_site_prime'], re_rv['C_prime'], q_, l2),
+            'reverse_F2': item5_profile(rv['C_dyn_F2'], re_rv['c_site_prime'], re_rv['C_prime'], q_, l2)}}
+    profiles_ok = all(p['below_2_on_14001_to_14418'] and all(p['vacuous'].values()) and p['first_exceedance_of_2'] == 14419
+                      for grp in profiles.values() for p in grp.values())
+    # gate fields: the engine's fields plus the contract scopes of the discharged items
+    gf = dict(main['gate_fields'])
+    req = contract['preregistration']['gate_fields_required']
+    if main['items']['1'] == 'full':
+        gf['whole_sequence_scope'] = req['whole_sequence_scope']
+    if main['items']['4'] == 'full':
+        gf['translation_invariance_scope'] = req['translation_invariance_scope']
+    return {
+        'bb1_gate': {'path': 'research/round33/advisor/bb1-gate.json', 'sha256': hashlib.sha256(gate_bytes).hexdigest(),
+                     'commit': 'eef57b4', 'verdict': rec['gate']['verdict'], 'sub_label': rec['gate'].get('sub_label')},
+        'admission': {'path': 'research/round33/skeptic/bb2-bb1-admission.json', 'anchored_entries': rec['anchors'],
+                      'signs': rec['signs'], 'regimes': rec['regimes'],
+                      'anchor_rule': 'every constant, bound shape, q, comparison label, sign and regime is a verbatim substring '
+                                     'of the gate accepted/decision/limitations text (whitespace-normalized); each constant '
+                                     'anchor ends with =<the exact constant>; comparison labels also equal the BB1 contract list'},
+        'bb1_review_cross_check': {'path': 'research/round33/skeptic/bb1.json', 'cells_equal': cells_checked,
+                                   'recommended_bound_equal': rb_equal},
+        'protocol': {'rule': DISCHARGE_RULE, 'items': main['items'], 'items_by_sign': main['items_by_sign'],
+                     'routes_at_plus': main['routes_plus'], 'verdict': main['verdict'], 'unconditional': main['unconditional'],
+                     'map': {'1': 'c1 and c2 (forward, nested telescoping) or c4 (reverse, direct centered comparison), R and '
+                                  'region forms, both families', '2': 'item 1 and c3', '3': 'item 2 (per_family from item 1 alone)',
+                             '4': 'c5 in R and region form and item 1', '5': 'items 1-2 (region form at Lambda_rN, R form) and BA2'}},
+        'producer_maps': {'forward': frows, 'reverse': rrows,
+                          'reverse_item5_with_item2': {'comparisons': sorted(SHORT[c] for c in r5_read),
+                                                       'cells': len(r5_cells), 'missing': r5_missing,
+                                                       'note': 'the reverse lists item 5 as through item 1 only; its F2 part '
+                                                               'also needs the F2 limit identified with the common limit '
+                                                               '(item 2, hence c3), which is admitted'},
+                          'jung_assistant_2_cross_check': jung_eq},
+        'secondary_labelled': {'q': '151552|tau| = 592/390625 at the cap', 'items': sec['items'], 'verdict': sec['verdict'],
+                               'forward_map': fsec, 'reverse_map': rsec,
+                               'hypotheses': {'C_2h': q(ref['C_2h']), 'c_2h': q(ref['c_2h'])},
+                               'admitted': {'C_2': q(C2a), 'c_site_2': q(c2a), 'route': 'iterated_split'}},
+        'iterated_split_alternative_labelled': {'items': alt['items'], 'verdict': alt['verdict'],
+                                                'note': 'the self-contained BB1 route (no Kotecky-Preiss citation) also '
+                                                        'discharges every item'},
+        'constants': {
+            'hypothesis_values_bound_at_the_gate': {
+                'forward': {'C_prime': q(fw['C_prime']), 'c_site_prime': q(fw['c_site_prime']), 'C_dyn': q(fw['C_dyn']),
+                            'C_prime_2': q(fw['C_prime_2']), 'c_site_prime_2': q(fw['c_site_prime_2']),
+                            'item4': 'C_h q^(N-|v|_inf-1), C_h = ' + q(ref['C_h'])},
+                'reverse_labelled': {'C_prime': q(rv['C_prime']), 'c_site_prime': q(rv['c_site_prime']),
+                                     'C_dyn_F1': q(rv['C_dyn_F1']), 'C_dyn_F2': q(rv['C_dyn_F2']),
+                                     'C_prime_2': q(rv['C_prime_2']), 'c_site_prime_2': q(rv['c_site_prime_2'])}},
+            'reevaluated_at_admitted_values_labelled': {
+                'forward_nested_telescoping': exact_and_preview(re_fw),
+                'reverse_union_comparison': exact_and_preview(re_rv),
+                'item4_constant': {'exact': q(Ca), 'preview': preview(Ca), 'form': 'C q^(N-|v|_inf-1) with the admitted c5 C'},
+                'C_dyn': 'unchanged (BA2 gate constants; not a BB1 quantity)',
+                'engine_reevaluated_consistent': consistent},
+            'bb1_route_of_bound_value': adm['bb1_route_of_bound_value'],
+            'admitted_below_hypothesis': {'C': Ca <= ref['C_h'], 'c_site': ca <= ref['c_h'], 'C_2': C2a <= ref['C_2h'],
+                                          'c_site_2': c2a <= ref['c_2h'],
+                                          'margins_preview': {'C': preview(ref['C_h'] / Ca, 6), 'c_site': preview(ref['c_h'] / ca, 6),
+                                                              'C_2': preview(ref['C_2h'] / C2a, 6),
+                                                              'c_site_2': preview(ref['c_2h'] / c2a, 6)}}},
+        'item5': {'profiles': profiles, 'all_profiles_first_exceedance_14419': profiles_ok,
+                  'statement': 'the inequality holds for every N >= 5; N * bracket <= K5 on 5<=N<=14000 (rate O(1/N) there only); '
+                               'the bracket is below 2 on 14001<=N<=14418 and at least 2 at N=14419, 14420 and every N>=14421, '
+                               'at the hypothesis values and at the admitted values alike; the correlation functions converge '
+                               'along the whole sequence for every N without a rate'},
+        'gate_fields': gf, 'gate_fields_equal_contract': gf == req,
+        'bb2_verdict_from_discharge': main['verdict'],
+        '_ok': (main['verdict'] == 'accepted_within_scope' and all(v == 'full' for v in main['items'].values())
+                and sec['verdict'] == 'accepted_within_scope' and alt['verdict'] == 'accepted_within_scope'
+                and all(r['status'] == 'discharged' for r in frows.values()) and all(r['status'] == 'discharged' for r in rrows.values())
+                and fsec['status'] == 'discharged' and rsec['status'] == 'discharged' and not r5_missing
+                and jung_eq['forward'] and jung_eq['reverse_literal'] and cells_checked == 40 and rb_equal and consistent
+                and profiles_ok and gf == req and Ca <= ref['C_h'] and ca <= ref['c_h'] and C2a <= ref['C_2h'] and c2a <= ref['c_2h']),
+    }
+
+
+def discharge_controls(gate_bytes, adm, ref, bb1_comparisons):
+    """Damaging edits of the gate and the admission record, each with the packet hash rebound unless stated: the engine
+    must refuse, or return the stated verdict and item statuses."""
+    C = adm['admitted'][pre.COMPARISONS[0]]['R']['c']
+    hyp = hyp_primary(ref)
+
+    def variant(gate_edit=None, adm_edit=None, rebind=True):
+        gate = json.loads(gate_bytes)
+        if gate_edit is not None:
+            gate_edit(gate)
+        gb = json.dumps(gate, sort_keys=True).encode() if gate_edit is not None else gate_bytes
+        a = json.loads(json.dumps(adm))
+        if rebind:
+            a['bb1_gate_sha256'] = hashlib.sha256(gb).hexdigest()
+        if adm_edit is not None:
+            adm_edit(a)
+        return gb, a
+
+    def each_form(a, form, fn):
+        for comp in pre.COMPARISONS:
+            if a['admitted'][comp] is not None and a['admitted'][comp][form] is not None:
+                fn(a['admitted'][comp][form])
+
+    def raise_C(g):
+        g['accepted'] = g['accepted'].replace('q=1/64 and C=' + C, 'q=1/64 and C=1/200000')
+
+    def raise_C_adm(a):
+        each_form(a, 'R', lambda f: f.update(c='1/200000', gate_text='q=1/64 and C=1/200000'))
+
+    def q32(g):
+        g['accepted'] = g['accepted'].replace('q=1/64 and C=', 'q=1/32 and C=')
+
+    def q32_adm(a):
+        a['q_gate_text'] = 'q=1/32'
+        each_form(a, 'R', lambda f: f.update(q='1/32', gate_text=f['gate_text'].replace('q=1/64', 'q=1/32')))
+        each_form(a, 'Y', lambda f: f.update(q='1/32'))
+
+    def one_sign(g):
+        for key in ('accepted', 'decision'):
+            g[key] = g[key].replace('Constants (exact; both signs;', 'Constants (exact; +tau;').replace(
+                'at both signs, in each on-site cutoff space', 'at +tau, in each on-site cutoff space')
+
+    def drop(comp):
+        return lambda a: a['admitted'].__setitem__(comp, None)
+
+    def drop_region(a):
+        for comp in pre.COMPARISONS:
+            a['admitted'][comp]['Y'] = None
+
+    def insufficient(g):
+        g['verdict'] = 'insufficient'
+
+    specs = [
+        ('R_constant_above_hypothesis', dict(gate_edit=raise_C, adm_edit=raise_C_adm), ('verdict', 'insufficient', {'1': 'conditional'})),
+        ('q_retuned_to_1_over_32', dict(gate_edit=q32, adm_edit=q32_adm), ('verdict', 'insufficient', {'1': 'conditional'})),
+        ('region_form_not_admitted', dict(adm_edit=drop_region),
+         ('verdict', 'limited', {'1': 'R_only', '2': 'R_only', '3': 'R_marginals', '4': 'R_translate_covariance', '5': 'dropped'})),
+        ('c5_general_volume_not_admitted', dict(adm_edit=drop(pre.COMPARISONS[4])), ('verdict', 'limited', {'4': 'dropped', '1': 'full'})),
+        ('c3_same_N_not_admitted', dict(adm_edit=drop(pre.COMPARISONS[2])),
+         ('verdict', 'limited', {'2': 'conditional', '3': 'per_family', '5': 'per_family'})),
+        ('c1_c2_nested_and_c4_not_admitted', dict(adm_edit=lambda a: [drop(pre.COMPARISONS[i])(a) for i in (0, 1, 3)]),
+         ('verdict', 'insufficient', {'1': 'conditional'})),
+        ('c4_only_dropped_forward_route_suffices', dict(adm_edit=drop(pre.COMPARISONS[3])),
+         ('verdict', 'accepted_within_scope', {'1': 'full', '5': 'full'})),
+        ('minus_sign_not_admitted', dict(adm_edit=lambda a: a.update(signs=['+'])),
+         ('verdict', 'limited', {k: 'conditional' for k in '12345'})),
+        ('gate_verdict_insufficient', dict(gate_edit=insufficient, adm_edit=lambda a: a.update(verdict='insufficient')),
+         ('verdict', 'insufficient', {k: 'conditional' for k in '12345'})),
+        ('both_signs_claimed_beyond_gate', dict(gate_edit=one_sign), ('refused', 'not anchored in the BB1 gate text: signs')),
+        ('smaller_constant_not_anchored', dict(adm_edit=lambda a: a['admitted'][pre.COMPARISONS[0]]['R'].update(
+            c=a['admitted'][pre.COMPARISONS[0]]['R']['also_certified_by']['c'])), ('refused', 'admitted constant not anchored')),
+        ('region_shape_without_exponential', dict(adm_edit=lambda a: a['admitted'][pre.COMPARISONS[0]]['Y'].update(Y_exp_rate='0')),
+         ('refused', 'shape differs from the gate text')),
+        ('R_shape_text_on_region_entry', dict(adm_edit=lambda a: a['admitted'][pre.COMPARISONS[1]]['Y'].update(
+            shape_text='differ by at most C q^(N-1) in trace norm')), ('refused', 'shape text does not fix a bound of this form')),
+        ('gate_edited_sha_not_rebound', dict(gate_edit=lambda g: g.update(decision=g['decision'] + ' '), rebind=False),
+         ('refused', 'admission record does not match the BB1 gate')),
+        ('comparison_label_swapped', dict(adm_edit=lambda a: a['admitted'][pre.COMPARISONS[3]].update(
+            gate_scope_text='c5 two finite complete-factor volumes of one prescription containing Lambda_N compared directly')),
+         ('refused', 'comparison label differs')),
+        ('bb1_contract_comparison_text_changed', dict(adm_edit=lambda a: a['admitted'][pre.COMPARISONS[1]].update(
+            bb1_contract_comparison='F2 on Lambda_N versus F2 on Lambda_{N+2}')), ('refused', 'comparison label differs')),
+        ('secondary_q_off_the_cap', dict(adm_edit=lambda a: a['secondary_labelled'].update(q_at_cap='1/600')),
+         ('refused', 'secondary q differs')),
+        ('regime_claimed_beyond_gate', dict(adm_edit=lambda a: a.update(regimes=['Q_L', 'untruncated', 'thermodynamic'])),
+         ('refused', 'signs or regimes claimed beyond the gate text')),
+    ]
+    rows = []
+    for name, kw, want in specs:
+        gb, a = variant(**kw)
+        try:
+            rec = read_admission(gb, a, bb1_comparisons, ref)
+            out = engine(rec, rec['admitted'], hyp)
+        except ReviewFailure as exc:
+            if want[0] != 'refused' or want[1] not in str(exc):
+                raise ReviewFailure('discharge control %s: refused for the wrong reason: %s' % (name, exc))
+            rows.append({'control': name, 'outcome': 'refused', 'reason': str(exc)})
+            continue
+        if want[0] != 'verdict' or out['verdict'] != want[1] or any(out['items'][k] != v for k, v in want[2].items()):
+            raise ReviewFailure('discharge control %s: engine returned %s %s' % (name, out['verdict'], out['items']))
+        rows.append({'control': name, 'outcome': out['verdict'], 'items': out['items']})
+    return rows
 
 
 # ------------------------------------------------------------ main computation
@@ -862,27 +1380,51 @@ def run(args):
          must_abort=sum(1 for r in runs if r['kind'] == 'must_abort'),
          silent=sum(1 for r in runs if r['kind'].startswith('silent')))
 
-    # 8. discharge part
-    if args.bb1_gate is None and args.bb1_admission is None:
-        discharge = {'status': 'not run: the BB1 gate is not yet supplied (stage 1); run with --bb1-gate and --bb1-admission'}
-    elif args.bb1_gate is None or args.bb1_admission is None:
-        raise SystemExit('the discharge part needs both --bb1-gate and --bb1-admission')
-    else:
-        discharge = discharge_stage(args.bb1_gate, args.bb1_admission, ref)
-        need(True, 'bb1_discharge', **discharge)
+    # 8. discharge (stage 2): the BB1 gate, the anchored admission record, the BB1 review table, the producers' maps
+    pins = {'bb1_gate': sha(BB1_GATE) == BB1_GATE_SHA, 'admission': sha(ADMISSION) == ADMISSION_SHA,
+            'bb1_review': sha(BB1_REVIEW) == BB1_REVIEW_SHA, 'jung_assistant_2': sha(JUNG_A2) == JUNG_A2_SHA}
+    if not all(pins.values()):
+        raise ReviewFailure('stage-2 input differs from its pinned sha256: ' + ', '.join(k for k, v in pins.items() if not v))
+    bb1_comparisons = json.loads(BB1_CONTRACT.read_text())['parameters']['comparisons']
+    gate_bytes = BB1_GATE.read_bytes()
+    adm = json.loads(ADMISSION.read_text())
+    discharge = discharge_stage(gate_bytes, adm, json.loads(BB1_REVIEW.read_text()), json.loads(JUNG_A2.read_text()), ref,
+                                results, bb1_comparisons, con)
+    ok = discharge.pop('_ok')
+    need(ok, 'bb1_discharge', pinned={'bb1_gate': BB1_GATE_SHA, 'admission': ADMISSION_SHA, 'bb1_review': BB1_REVIEW_SHA,
+                                       'jung_assistant_2': JUNG_A2_SHA},
+         verdict=discharge['bb2_verdict_from_discharge'], items=discharge['protocol']['items'],
+         forward_map={k: v['status'] for k, v in discharge['producer_maps']['forward'].items()},
+         reverse_map={k: v['status'] for k, v in discharge['producer_maps']['reverse'].items()},
+         secondary=discharge['secondary_labelled']['verdict'],
+         iterated_split_alternative=discharge['iterated_split_alternative_labelled']['verdict'],
+         bb1_review_cells_equal=discharge['bb1_review_cross_check']['cells_equal'],
+         item5_first_exceedance=14419, gate_fields_equal_contract=discharge['gate_fields_equal_contract'])
+    controls = discharge_controls(gate_bytes, adm, ref, bb1_comparisons)
+    outcomes = [r['outcome'] for r in controls]
+    need(len(controls) == 18 and outcomes.count('refused') == 9 and outcomes.count('accepted_within_scope') == 1,
+         'discharge_controls', controls=controls, refused=outcomes.count('refused'),
+         downgraded=sum(1 for o in outcomes if o in ('limited', 'insufficient')),
+         accepted=outcomes.count('accepted_within_scope'),
+         note='in-memory edits of the gate and the admission record (packet hash rebound unless stated); the engine must '
+              'refuse the record or return the stated verdict and item statuses')
 
     return {
-        'loop': 'BB2', 'stage': 'post_comparison_stage_1' if 'status' in discharge else 'post_comparison_with_discharge',
+        'loop': 'BB2', 'stage': 'post_comparison_with_discharge',
         'reviewer': 'skeptic (model agent, correlated ancestry)', 'human_author': 'Hruday N M (BUNZEEY)',
-        'contract_sha256': CONTRACT_SHA, 'bb1_contract_sha256': BB1_CONTRACT_SHA,
+        'contract_sha256': CONTRACT_SHA, 'bb1_contract_sha256': BB1_CONTRACT_SHA, 'bb1_gate_sha256': BB1_GATE_SHA,
         'binding_recommendation': {
-            'C_prime': q(fw['C_prime']) + ' (forward, nested telescoping; valid under either discharge because it dominates C_h); '
-                       'labelled second route ' + q(rv['C_prime']) + ' (reverse, direct nested comparison)',
+            'C_prime': q(fw['C_prime']) + ' (forward, nested telescoping, evaluated at the hypothesis value C_h; valid under '
+                       'the discharge because the admitted C is below C_h); labelled second route ' + q(rv['C_prime'])
+                       + ' (reverse, direct comparison)',
             'c_site_prime': q(fw['c_site_prime']) + ' (forward); labelled second route ' + q(rv['c_site_prime']) + ' (reverse)',
             'C_dyn': q(fw['C_dyn']) + ' (forward, 2K_F1+K_cmp/4, duhamel_inner_f1, one constant for both families); labelled '
                      'second route per family ' + q(rv['C_dyn_F1']) + ' (F1, duhamel_inner_f1) and ' + q(rv['C_dyn_F2'])
                      + ' (F2, duhamel_inner_f2)',
-            'item4': 'C_h q^(N-|v|_inf-1) (direct general-volume comparison, both routes); union two-step labelled only'},
+            'secondary': q(fw['C_prime_2']) + ' and ' + q(fw['c_site_prime_2']) + ' at q_2=151552|tau| (forward; labelled)',
+            'item4': 'C_h q^(N-|v|_inf-1) (direct general-volume comparison c5, both routes); union two-step labelled only',
+            'bb1_route_of_bound_value': 'polymer_kp for C and c_site; iterated_split for the secondary pair (BB1 gate)',
+            'reevaluated_at_admitted_values': 'labelled only (discharge.constants)'},
         'discharge': discharge,
         'checks': CHECKS,
     }
@@ -891,8 +1433,6 @@ def run(args):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--output', required=True)
-    ap.add_argument('--bb1-gate', default=None)
-    ap.add_argument('--bb1-admission', default=None)
     args = ap.parse_args()
     out = Path(args.output)
     if not out.is_absolute():
@@ -903,6 +1443,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     (out / 'results.json').write_text(json.dumps(result, indent=2, sort_keys=True, default=str) + '\n')
     print(json.dumps({'checks': len(result['checks']), 'stage': result['stage'],
+                      'discharge': result['discharge']['bb2_verdict_from_discharge'],
                       'source_edit_runs': [c for c in result['checks'] if c['id'] == 'source_edit_runs'][0]['weakenings']}))
 
 

@@ -1,0 +1,1746 @@
+{
+  "bb1_contract_sha256": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+  "bb1_gate_sha256": "18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827",
+  "binding_recommendation": {
+    "C_dyn": "78057/622883200000000 (forward, 2K_F1+K_cmp/4, duhamel_inner_f1, one constant for both families); labelled second route per family 9261/77860400000000 (F1, duhamel_inner_f1) and 1055961408185869563/15240701171875000000000000000 (F2, duhamel_inner_f2)",
+    "C_prime": "4/984375 (forward, nested telescoping, evaluated at the hypothesis value C_h; valid under the discharge because the admitted C is below C_h); labelled second route 1/250000 (reverse, direct comparison)",
+    "bb1_route_of_bound_value": "polymer_kp for C and c_site; iterated_split for the secondary pair (BB1 gate)",
+    "c_site_prime": "2/984375 (forward); labelled second route 1/500000 (reverse)",
+    "item4": "C_h q^(N-|v|_inf-1) (direct general-volume comparison c5, both routes); union two-step labelled only",
+    "reevaluated_at_admitted_values": "labelled only (discharge.constants)",
+    "secondary": "625/12481056 and 625/24962112 at q_2=151552|tau| (forward; labelled)"
+  },
+  "checks": [
+    {
+      "bb1": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+      "bb2": "ed5c0b24b16b19f0db2c16a437ee37608552e1a1cf0629494792aa877d95ad35",
+      "id": "contracts_pinned",
+      "passed": true
+    },
+    {
+      "commit_order": "forward d05efda (00:10:26) before the skeptic package 8921539 (00:14:56) before the reverse 17c0ecf (00:18:36); the skeptic read no producer file before its commit (disclosure); the forward could not have read the package, which did not exist when it committed",
+      "commits": {
+        "bb1_gate": {
+          "commit": "eef57b4",
+          "note": "the BB1 gate; stage 2 read it only after this commit"
+        },
+        "forward_producer": {
+          "commit": "d05efda",
+          "time": "2026-09-25T00:10:26Z"
+        },
+        "plan_d8_repair": {
+          "commit": "43eb922",
+          "note": "plan history BB1/BB2 freeze entry with the plan sha256 (skeptic defect D8)"
+        },
+        "reverse_producer": {
+          "commit": "17c0ecf",
+          "time": "2026-09-25T00:18:36Z"
+        },
+        "skeptic_post_comparison_stage_1": {
+          "commit": "e2a9ed2"
+        },
+        "skeptic_pre_comparison": {
+          "commit": "8921539",
+          "time": "2026-09-25T00:14:56Z"
+        }
+      },
+      "files": [
+        "research/round33/skeptic/bb2-contract-review.md",
+        "research/round33/skeptic/bb2-independent-derivation.md",
+        "research/round33/skeptic/bb2-independent/results.json",
+        "research/round33/skeptic/bb2_check.py"
+      ],
+      "id": "pre_comparison_package_unchanged_and_replayed",
+      "passed": true
+    },
+    {
+      "closures": {
+        "forward": {
+          "bb1_snapshot_sha256": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+          "closure_ok": true,
+          "frozen_artifacts_pinned": true,
+          "inputs": 38,
+          "inputs_equal_declared": true,
+          "inputs_equal_recorded_before_production": true,
+          "snapshots_byte_identical": true
+        },
+        "reverse": {
+          "bb1_snapshot_sha256": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+          "closure_ok": true,
+          "frozen_artifacts_pinned": true,
+          "inputs": 38,
+          "inputs_equal_declared": true,
+          "inputs_equal_recorded_before_production": true,
+          "snapshots_byte_identical": true
+        }
+      },
+      "id": "closures_inventories_isolation",
+      "name_only_exposures": {
+        "assessment": "name-only; every value was fixed before the listing (disclosed); the BB2 state constants are determined by the frozen contract, so no numeric channel exists",
+        "forward": "saw the untracked names research/round33/reverse/bb2/check.py and research/round33/skeptic/bb2_check.py after its first freeze; opened neither",
+        "reverse": "saw the untracked names research/round33/forward/bb1/check.py and research/round33/skeptic/bb1_check.py after its first freeze; opened neither"
+      },
+      "passed": true,
+      "reverse_isolation": "inventory = AGENTS.md + contract + 36 shared premises; no triage, plan, deliberation, lens file, proposal, BB contract review, forward file or BB1 producer, skeptic or gate file"
+    },
+    {
+      "id": "producer_replays_byte_identical",
+      "passed": true,
+      "replays": {
+        "forward": {
+          "normal": true,
+          "optimized": true
+        },
+        "reverse": {
+          "normal": true,
+          "optimized": true
+        }
+      }
+    },
+    {
+      "compared_values": {
+        "forward": 16,
+        "reverse": 48
+      },
+      "forward": {
+        "C_dyn": "78057/622883200000000",
+        "C_dyn_F1": "9261/77860400000000",
+        "C_dyn_margin": "3.989925e+00",
+        "C_dyn_preview": "1.253156289975e-10",
+        "C_dyn_ratio": "1953058850/194651",
+        "C_prime": "4/984375",
+        "c_site_prime": "2/984375",
+        "secondary": [
+          "625/12481056",
+          "625/24962112"
+        ]
+      },
+      "id": "headlines_match_independent_values",
+      "lemma_F08": "(5N+1)(r_N-1) <= (5N+1)(N-3)/2 <= N^3/4 because N^3-10N^2+28N+6 = N(N-5)^2+3N+6 > 0 (skeptic identity; the forward used g(5)=21 and g'>=3)",
+      "passed": true,
+      "predictions": "C', c'_site, C'_2, c'_2 and the reverse C_dyn values equal the pre-comparison predictions exactly; the forward C_dyn is a valid assembly between the pre-comparison refined (72/343) and unrefined (11/8) inner-F1 values and above the floor 2K_c2_rev",
+      "reverse": {
+        "C_dyn_F1": "9261/77860400000000",
+        "C_dyn_F2": "1055961408185869563/15240701171875000000000000000",
+        "C_dyn_F2_preview": "6.928561857341e-11",
+        "C_prime": "1/250000",
+        "c_site_prime": "1/500000"
+      }
+    },
+    {
+      "K5_reverse": {
+        "F1": "1.415368513585e-08",
+        "F2": "1.365710484296e-08"
+      },
+      "K5_skeptic": {
+        "forward": "6.099644394905e-09",
+        "reverse_F1": "5.960198206911e-09",
+        "reverse_F2": "5.463617914025e-09"
+      },
+      "certified_range": "5<=N<=14000: N*bracket <= K5 = 10 C_dyn + c_site*g(5) + 10 C_prime q^4 (skeptic envelope; the reverse certifies the same range by integer blocks with larger K_reg)",
+      "forward_overclaim": {
+        "finding": "false for N >= 14419 (odd) and every N >= 14421: e^{|Lambda_rN|/10^8} with |Lambda_rN| ~ N^3 beats q^(N-r_N); the forward checker evaluates only N <= 59 and its enclosure e^x <= 1/(1-x) is invalid from N=465",
+        "quoted": "The rate in N is O(1/N): ... while the state terms decay geometrically in N (the cube volume grows only like N^3)"
+      },
+      "honest_statement": "the item-5 inequality holds for every N >= 5; it gives |c^{F,N}-c^inf| <= K5/N ||A||^2 on 5<=N<=14000; the bracket exceeds the trivial bound 2 for N=14419, 14420 and every N>=14421; the correlation functions converge along the whole sequence for every N without a rate (fixed-r argument, reverse Corollary 8.6)",
+      "id": "item5_rate_range_and_vacuity_independent",
+      "passed": true,
+      "vacuity": {
+        "forward": {
+          "14417_below_2": true,
+          "14418_below_2": true,
+          "14419": true,
+          "14420": true,
+          "14421": true,
+          "all_N_from_14421": true
+        },
+        "reverse": {
+          "14417_below_2": true,
+          "14418_below_2": true,
+          "14419": true,
+          "14420": true,
+          "14421": true,
+          "all_N_from_14421": true
+        }
+      },
+      "vacuity_method": "ln(region) >= m + |Lambda_r|/10^8 - (N-r) 6 ln2_up with E_UP^m <= c_site|Lambda_r| and a 140-term series enclosure of ln 2; for all N >= 14421 a monotone lower envelope"
+    },
+    {
+      "id": "report_text_checks",
+      "note": "the round phrase rule is mirrored (bb2_check affirmative_hits with the round list and the contract list); the tool run itself is recorded in bb2-replays.json",
+      "passed": true,
+      "text": {
+        "forward": {
+          "affirmative_hits": [],
+          "quoted_block_lines": 7,
+          "quoted_lines_verbatim": true,
+          "template_count": 1,
+          "template_lines": 1
+        },
+        "reverse": {
+          "affirmative_hits": [],
+          "quoted_block_lines": 5,
+          "quoted_lines_verbatim": true,
+          "template_count": 1,
+          "template_lines": 1
+        }
+      }
+    },
+    {
+      "forward": "top level = the contract values labelled proposed; gate_fields_if_undischarged = dependent fields false and dynamics_level not set (non-blocking presentation difference from gate_fields_rule)",
+      "id": "gate_field_blocks",
+      "passed": true,
+      "reverse": "top level = before the discharge (dependent fields false; dynamics_level algebraic_heisenberg_compact_window); gate_fields_after_discharge = the contract values"
+    },
+    {
+      "id": "source_edit_runs",
+      "must_abort": 13,
+      "passed": true,
+      "runs": [
+        {
+          "abort": "AdmissionError: damaging mutation accepted: control_boolean_flipped_hash_rebound",
+          "control": "coherent_evidence_tampering",
+          "expected": "damaging mutation accepted: control_boolean_flipped_hash_rebound",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: float_input",
+          "control": "exact_arithmetic_admission",
+          "expected": "damaging mutation accepted: float_input",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: continuum_true",
+          "control": "no_priority_or_continuum_claim",
+          "expected": "damaging mutation accepted: continuum_true",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: tau_changed",
+          "control": "changed_model_relabelled",
+          "expected": "damaging mutation accepted: tau_changed",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: missed_item_relabelled_accepted",
+          "control": "insufficient_verdict_retained",
+          "expected": "damaging mutation accepted: missed_item_relabelled_accepted",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: C_dyn_linear_order",
+          "control": "tau_scaling_exponent",
+          "expected": "damaging mutation accepted: C_dyn_linear_order",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: eightfold_u_labelled_theta",
+          "control": "wrong_delta_alpha_hbar_clock",
+          "expected": "damaging mutation accepted: eightfold_u_labelled_theta",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: division_by_isqrt_of_10_steps",
+          "control": "root_n_misuse",
+          "expected": "damaging mutation accepted: division_by_isqrt_of_10_steps",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: state_constant_LR_tier",
+          "control": "tier_mixing_rejected",
+          "expected": "damaging mutation accepted: state_constant_LR_tier",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: reads_bb1_producer",
+          "control": "reverse_premise_isolation",
+          "expected": "damaging mutation accepted: reads_bb1_producer",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: uniform_in_a_claimed",
+          "control": "uniform_in_N_not_in_a",
+          "expected": "damaging mutation accepted: uniform_in_a_claimed",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: whitespace_placeholder",
+          "control": "placeholder_span_rejected",
+          "expected": "damaging mutation accepted: whitespace_placeholder",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: affirmative_thermodynamic_limit",
+          "control": "negation_aware_phrase_scan",
+          "expected": "damaging mutation accepted: affirmative_thermodynamic_limit",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: window_field_absent",
+          "control": "parameters_declare_metric_weights_window",
+          "expected": "damaging mutation accepted: window_field_absent",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: q_retuned",
+          "control": "rate_constant_pair_prefrozen",
+          "expected": "damaging mutation accepted: q_retuned",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: conversion_to_fm",
+          "control": "decay_rate_in_N_not_a",
+          "expected": "damaging mutation accepted: conversion_to_fm",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: weak_star_relabelled_trace_norm",
+          "control": "topology_named",
+          "expected": "damaging mutation accepted: weak_star_relabelled_trace_norm",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: orthant_boxes",
+          "control": "two_families_named",
+          "expected": "damaging mutation accepted: orthant_boxes",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: whole_sequence_from_compactness",
+          "control": "subsequence_versus_whole_sequence",
+          "expected": "damaging mutation accepted: whole_sequence_from_compactness",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: F2_at_opposite_sign",
+          "control": "common_clock",
+          "expected": "damaging mutation accepted: F2_at_opposite_sign",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: uniqueness_claimed",
+          "control": "named_construction_not_uniqueness",
+          "expected": "damaging mutation accepted: uniqueness_claimed",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: compactness_plus_closeness",
+          "control": "cauchy_estimate_not_compactness",
+          "expected": "damaging mutation accepted: compactness_plus_closeness",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: inherit_first",
+          "control": "limit_identified_with_aq1_limits",
+          "expected": "damaging mutation accepted: inherit_first",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: invariance_from_nested_cubes",
+          "control": "translation_invariance_separate_item",
+          "expected": "damaging mutation accepted: invariance_from_nested_cubes",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: R_constant_reused_on_Lambda_2",
+          "control": "region_constant_scales_with_Y",
+          "expected": "damaging mutation accepted: R_constant_reused_on_Lambda_2",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: N_limit_taken_in_Q_L_first",
+          "control": "cutoff_uniform_then_removed",
+          "expected": "damaging mutation accepted: N_limit_taken_in_Q_L_first",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: gns_dynamics_equality_claimed",
+          "control": "algebraic_not_gns_dynamics",
+          "expected": "damaging mutation accepted: gns_dynamics_equality_claimed",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: exponential_tail_with_polynomial_F",
+          "control": "lieb_robinson_polynomial_tail",
+          "expected": "damaging mutation accepted: exponential_tail_with_polynomial_F",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: uniform_in_time_claimed",
+          "control": "time_window_named_common_clock",
+          "expected": "damaging mutation accepted: uniform_in_time_claimed",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: one_state_ball_read_as_convergence",
+          "control": "fixture_whole_sequence_vs_subsequence",
+          "expected": "damaging mutation accepted: one_state_ball_read_as_convergence",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: fine_x_shift_by_1",
+          "control": "fixture_translation_residues",
+          "expected": "damaging mutation accepted: fine_x_shift_by_1",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: centering_with_omega_A_squared",
+          "control": "fixture_correlation_centering",
+          "expected": "damaging mutation accepted: centering_with_omega_A_squared",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: bb1_value_other_than_frozen_target",
+          "control": "conditional_on_bb1_targets",
+          "expected": "damaging mutation accepted: bb1_value_other_than_frozen_target",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: damaging mutation accepted: post_hoc_optimized_r_N",
+          "control": "r_N_prefrozen",
+          "expected": "damaging mutation accepted: post_hoc_optimized_r_N",
+          "kind": "weakening",
+          "producer": "forward"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: isolation_flag_flipped_rehashed",
+          "control": "coherent_evidence_tampering",
+          "expected": "damaging mutation accepted: isolation_flag_flipped_rehashed",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: float_constant",
+          "control": "exact_arithmetic_admission",
+          "expected": "damaging mutation accepted: float_constant",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: continuum_true",
+          "control": "no_priority_or_continuum_claim",
+          "expected": "damaging mutation accepted: continuum_true",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: tau_1e-7",
+          "control": "changed_model_relabelled",
+          "expected": "damaging mutation accepted: tau_1e-7",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: missed_C_prime_relabelled_accepted",
+          "control": "insufficient_verdict_retained",
+          "expected": "damaging mutation accepted: missed_C_prime_relabelled_accepted",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: C_dyn_linear_order",
+          "control": "tau_scaling_exponent",
+          "expected": "damaging mutation accepted: C_dyn_linear_order",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: u_window_labelled_theta",
+          "control": "wrong_delta_alpha_hbar_clock",
+          "expected": "damaging mutation accepted: u_window_labelled_theta",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: item5_terms_in_quadrature",
+          "control": "root_n_misuse",
+          "expected": "damaging mutation accepted: item5_terms_in_quadrature",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: state_constant_lr_tier",
+          "control": "tier_mixing_rejected",
+          "expected": "damaging mutation accepted: state_constant_lr_tier",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: forward_bb2_report_added",
+          "control": "reverse_premise_isolation",
+          "expected": "damaging mutation accepted: forward_bb2_report_added",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: uniform_in_lattice_spacing",
+          "control": "uniform_in_N_not_in_a",
+          "expected": "damaging mutation accepted: uniform_in_lattice_spacing",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: placeholder_gate",
+          "control": "placeholder_span_rejected",
+          "expected": "damaging mutation accepted: placeholder_gate",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: affirmative_thermodynamic_limit",
+          "control": "negation_aware_phrase_scan",
+          "expected": "damaging mutation accepted: affirmative_thermodynamic_limit",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: weights_removed",
+          "control": "parameters_declare_metric_weights_window",
+          "expected": "damaging mutation accepted: weights_removed",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: q_optimized_per_N",
+          "control": "rate_constant_pair_prefrozen",
+          "expected": "damaging mutation accepted: q_optimized_per_N",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: converted_to_fm",
+          "control": "decay_rate_in_N_not_a",
+          "expected": "damaging mutation accepted: converted_to_fm",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: norm_continuity_in_theta",
+          "control": "topology_named",
+          "expected": "damaging mutation accepted: norm_continuity_in_theta",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: single_family",
+          "control": "two_families_named",
+          "expected": "damaging mutation accepted: single_family",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: states_whole_sequence_from_compactness",
+          "control": "subsequence_versus_whole_sequence",
+          "expected": "damaging mutation accepted: states_whole_sequence_from_compactness",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: plus_versus_minus_tau",
+          "control": "common_clock",
+          "expected": "damaging mutation accepted: plus_versus_minus_tau",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: the_infinite_volume_ground_state",
+          "control": "named_construction_not_uniqueness",
+          "expected": "damaging mutation accepted: the_infinite_volume_ground_state",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: compactness_plus_closeness",
+          "control": "cauchy_estimate_not_compactness",
+          "expected": "damaging mutation accepted: compactness_plus_closeness",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: inherit_before_identification",
+          "control": "limit_identified_with_aq1_limits",
+          "expected": "damaging mutation accepted: inherit_before_identification",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: from_nested_cubes",
+          "control": "translation_invariance_separate_item",
+          "expected": "damaging mutation accepted: from_nested_cubes",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: R_constant_reused_on_Y",
+          "control": "region_constant_scales_with_Y",
+          "expected": "damaging mutation accepted: R_constant_reused_on_Y",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: limits_exchanged",
+          "control": "cutoff_uniform_then_removed",
+          "expected": "damaging mutation accepted: limits_exchanged",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: gns_equality_finite_versus_limit",
+          "control": "algebraic_not_gns_dynamics",
+          "expected": "damaging mutation accepted: gns_equality_finite_versus_limit",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: O_one_over_N_for_all_N",
+          "control": "lieb_robinson_polynomial_tail",
+          "expected": "damaging mutation accepted: O_one_over_N_for_all_N",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: uniform_in_time",
+          "control": "time_window_named_common_clock",
+          "expected": "damaging mutation accepted: uniform_in_time",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: alternating_one_state_ball_as_convergent",
+          "control": "fixture_whole_sequence_vs_subsequence",
+          "expected": "damaging mutation accepted: alternating_one_state_ball_as_convergent",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: fine_x_by_1",
+          "control": "fixture_translation_residues",
+          "expected": "damaging mutation accepted: fine_x_by_1",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: real_square_centering",
+          "control": "fixture_correlation_centering",
+          "expected": "damaging mutation accepted: real_square_centering",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: bb1_value_other_than_target",
+          "control": "conditional_on_bb1_targets",
+          "expected": "damaging mutation accepted: bb1_value_other_than_target",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: damaging mutation accepted: r_N_N_minus_2",
+          "control": "r_N_prefrozen",
+          "expected": "damaging mutation accepted: r_N_N_minus_2",
+          "kind": "weakening",
+          "producer": "reverse"
+        },
+        {
+          "abort": "AdmissionError: failed check item1_whole_sequence_cauchy_R",
+          "edit": "C_prime_function_coefficient_changed",
+          "expected": "failed check item1_whole_sequence_cauchy_R",
+          "kind": "must_abort",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: failed check item5_correlation_bound",
+          "edit": "lemma_F08_quarter_to_eighth",
+          "expected": "failed check item5_correlation_bound",
+          "kind": "must_abort",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: failed check tau_scaling_exponent",
+          "edit": "C_dyn_K_cmp_over_8",
+          "expected": "failed check",
+          "kind": "must_abort",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: contract snapshot bytes differ from the frozen BB2 contract",
+          "edit": "contract_byte_edit",
+          "expected": "contract snapshot bytes differ from the frozen BB2 contract",
+          "kind": "must_abort",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: failed check reverse_premise_isolation",
+          "edit": "undeclared_input_bb1_forward_report",
+          "expected": "failed check reverse_premise_isolation",
+          "kind": "must_abort",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: affirmative forbidden phrasing in report.md: the thermodynamic limit",
+          "edit": "report_forbidden_phrase",
+          "expected": "affirmative forbidden phrasing in report.md",
+          "kind": "must_abort",
+          "producer": "forward"
+        },
+        {
+          "abort": "AdmissionError: failed check mandatory_sentence_verbatim_once",
+          "edit": "report_template_removed",
+          "expected": "failed check mandatory_sentence_verbatim_once",
+          "kind": "must_abort",
+          "producer": "forward"
+        },
+        {
+          "abort": "ProducerError: check failed: item5_rate_in_N_certified_range",
+          "edit": "dynamics_ratio_10_to_2",
+          "expected": "check failed: item5_rate_in_N_certified_range",
+          "kind": "must_abort",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: check failed: item5_rate_in_N_certified_range",
+          "edit": "vacuous_at_14415",
+          "expected": "check failed: item5_rate_in_N_certified_range",
+          "kind": "must_abort",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: BB2 contract snapshot hash differs from the bound constant",
+          "edit": "contract_byte_edit",
+          "expected": "contract",
+          "kind": "must_abort",
+          "producer": "reverse"
+        },
+        {
+          "abort": "AdmissionError: forbidden triage/deliberation/memo file in reverse inputs: research/round33/skeptic/triage.md",
+          "edit": "skeptic_triage_added_to_inputs",
+          "expected": "triage",
+          "kind": "must_abort",
+          "producer": "reverse"
+        },
+        {
+          "abort": "den phrasing: the thermodynamic limit :: Reproduction ```bash python3 -B research/round33/reverse/bb2/check.py --output /absolute/fresh/dir python3 -B -O research/round33/reverse/bb2/check.py --output",
+          "edit": "report_forbidden_phrase",
+          "expected": "affirmative forbidden phrasing",
+          "kind": "must_abort",
+          "producer": "reverse"
+        },
+        {
+          "abort": "AdmissionError: mandatory sentence template must appear exactly once verbatim",
+          "edit": "report_template_removed",
+          "expected": "mandatory",
+          "kind": "must_abort",
+          "producer": "reverse"
+        },
+        {
+          "kind": "unmutated_copy",
+          "producer": "forward",
+          "results_sha256": "b87fea90d8b12aff3924039f31f89893c9979bfb509635c281a717bf3b93753a"
+        },
+        {
+          "kind": "unmutated_copy",
+          "producer": "reverse",
+          "results_sha256": "51613bda49c2b7333ab1e5374329fca9b5b2d3f0e7591262c234c640db0d0bbe"
+        },
+        {
+          "caught_by": "skeptic value validator",
+          "edit": "item5_F1_sums_with_the_F2_constant",
+          "kind": "silent",
+          "producer": "forward",
+          "reason": "value differs from the independent recomputation: forward item5_F1_sum_N5"
+        },
+        {
+          "caught_by": "skeptic value validator",
+          "edit": "secondary_c_site_factor_doubled",
+          "kind": "silent",
+          "producer": "forward",
+          "reason": "value differs from the independent recomputation: forward c_site_prime_2"
+        },
+        {
+          "abort": "ProducerError: check failed: report_binds_constants_exclusions_disclosure",
+          "caught_by": "producer checker",
+          "edit": "K_R_coefficient_10_to_5",
+          "kind": "silent_or_abort",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: check failed: report_binds_constants_exclusions_disclosure",
+          "caught_by": "producer checker",
+          "edit": "K_reg_without_the_e_factor",
+          "kind": "silent_or_abort",
+          "producer": "reverse"
+        },
+        {
+          "abort": "ProducerError: check failed: item2_common_limit_F1_F2",
+          "caught_by": "producer checker",
+          "edit": "C_prime_function_doubled",
+          "kind": "silent_or_abort",
+          "producer": "reverse"
+        },
+        {
+          "caught_by": "skeptic value validator",
+          "edit": "item4_union_fallback_factor_3",
+          "kind": "silent",
+          "producer": "reverse",
+          "reason": "item-4 union fallback differs from 2 C_h q^(N-|v|-1): N=10,v=(3, 0, 0)"
+        }
+      ],
+      "silent": 6,
+      "silent_caught_by_skeptic_validator": {
+        "forward": 2,
+        "reverse": 1
+      },
+      "weakenings": 68
+    },
+    {
+      "bb1_review_cells_equal": 40,
+      "forward_map": {
+        "1": "discharged",
+        "2": "discharged",
+        "3": "discharged",
+        "4": "discharged",
+        "5": "discharged"
+      },
+      "gate_fields_equal_contract": true,
+      "id": "bb1_discharge",
+      "item5_first_exceedance": 14419,
+      "items": {
+        "1": "full",
+        "2": "full",
+        "3": "full",
+        "4": "full",
+        "5": "full"
+      },
+      "iterated_split_alternative": "accepted_within_scope",
+      "passed": true,
+      "pinned": {
+        "admission": "6eb6e3bed86fc069ab8905f108759aee0b7a8d8c9705e545f82cf443dda946f6",
+        "bb1_gate": "18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827",
+        "bb1_review": "5e5235c8be37fdab8878e1b913cae8bcbc3eb257078f18150f34434aa0031235",
+        "jung_assistant_2": "89c2a23b7ac657d181cf246c38307fea659ee48b41db1eac0825a8033df96b8f"
+      },
+      "reverse_map": {
+        "1": "discharged",
+        "2": "discharged",
+        "3": "discharged",
+        "4": "discharged",
+        "5": "discharged"
+      },
+      "secondary": "accepted_within_scope",
+      "verdict": "accepted_within_scope"
+    },
+    {
+      "accepted": 1,
+      "controls": [
+        {
+          "control": "R_constant_above_hypothesis",
+          "items": {
+            "1": "conditional",
+            "2": "conditional",
+            "3": "conditional",
+            "4": "dropped",
+            "5": "dropped"
+          },
+          "outcome": "insufficient"
+        },
+        {
+          "control": "q_retuned_to_1_over_32",
+          "items": {
+            "1": "conditional",
+            "2": "conditional",
+            "3": "conditional",
+            "4": "dropped",
+            "5": "dropped"
+          },
+          "outcome": "insufficient"
+        },
+        {
+          "control": "region_form_not_admitted",
+          "items": {
+            "1": "R_only",
+            "2": "R_only",
+            "3": "R_marginals",
+            "4": "R_translate_covariance",
+            "5": "dropped"
+          },
+          "outcome": "limited"
+        },
+        {
+          "control": "c5_general_volume_not_admitted",
+          "items": {
+            "1": "full",
+            "2": "full",
+            "3": "full",
+            "4": "dropped",
+            "5": "full"
+          },
+          "outcome": "limited"
+        },
+        {
+          "control": "c3_same_N_not_admitted",
+          "items": {
+            "1": "full",
+            "2": "conditional",
+            "3": "per_family",
+            "4": "full",
+            "5": "per_family"
+          },
+          "outcome": "limited"
+        },
+        {
+          "control": "c1_c2_nested_and_c4_not_admitted",
+          "items": {
+            "1": "conditional",
+            "2": "conditional",
+            "3": "conditional",
+            "4": "dropped",
+            "5": "dropped"
+          },
+          "outcome": "insufficient"
+        },
+        {
+          "control": "c4_only_dropped_forward_route_suffices",
+          "items": {
+            "1": "full",
+            "2": "full",
+            "3": "full",
+            "4": "full",
+            "5": "full"
+          },
+          "outcome": "accepted_within_scope"
+        },
+        {
+          "control": "minus_sign_not_admitted",
+          "items": {
+            "1": "conditional",
+            "2": "conditional",
+            "3": "conditional",
+            "4": "conditional",
+            "5": "conditional"
+          },
+          "outcome": "limited"
+        },
+        {
+          "control": "gate_verdict_insufficient",
+          "items": {
+            "1": "conditional",
+            "2": "conditional",
+            "3": "conditional",
+            "4": "conditional",
+            "5": "conditional"
+          },
+          "outcome": "insufficient"
+        },
+        {
+          "control": "both_signs_claimed_beyond_gate",
+          "outcome": "refused",
+          "reason": "not anchored in the BB1 gate text: signs"
+        },
+        {
+          "control": "smaller_constant_not_anchored",
+          "outcome": "refused",
+          "reason": "admitted constant not anchored in the BB1 gate text: c1_F1_nested R"
+        },
+        {
+          "control": "region_shape_without_exponential",
+          "outcome": "refused",
+          "reason": "shape differs from the gate text: c1_F1_nested Y"
+        },
+        {
+          "control": "R_shape_text_on_region_entry",
+          "outcome": "refused",
+          "reason": "shape text does not fix a bound of this form: c2_F2_nested Y"
+        },
+        {
+          "control": "gate_edited_sha_not_rebound",
+          "outcome": "refused",
+          "reason": "admission record does not match the BB1 gate (sha256 or verdict)"
+        },
+        {
+          "control": "comparison_label_swapped",
+          "outcome": "refused",
+          "reason": "comparison label differs from the BB1 gate or contract: c4_centered_any_two"
+        },
+        {
+          "control": "bb1_contract_comparison_text_changed",
+          "outcome": "refused",
+          "reason": "comparison label differs from the BB1 gate or contract: c2_F2_nested"
+        },
+        {
+          "control": "secondary_q_off_the_cap",
+          "outcome": "refused",
+          "reason": "secondary q differs from 151552|tau| at the cap"
+        },
+        {
+          "control": "regime_claimed_beyond_gate",
+          "outcome": "refused",
+          "reason": "signs or regimes claimed beyond the gate text"
+        }
+      ],
+      "downgraded": 8,
+      "id": "discharge_controls",
+      "note": "in-memory edits of the gate and the admission record (packet hash rebound unless stated); the engine must refuse the record or return the stated verdict and item statuses",
+      "passed": true,
+      "refused": 9
+    }
+  ],
+  "contract_sha256": "ed5c0b24b16b19f0db2c16a437ee37608552e1a1cf0629494792aa877d95ad35",
+  "discharge": {
+    "admission": {
+      "anchor_rule": "every constant, bound shape, q, comparison label, sign and regime is a verbatim substring of the gate accepted/decision/limitations text (whitespace-normalized); each constant anchor ends with =<the exact constant>; comparison labels also equal the BB1 contract list",
+      "anchored_entries": 30,
+      "path": "research/round33/skeptic/bb2-bb1-admission.json",
+      "regimes": [
+        "Q_L",
+        "untruncated"
+      ],
+      "signs": [
+        "+",
+        "-"
+      ]
+    },
+    "bb1_gate": {
+      "commit": "eef57b4",
+      "path": "research/round33/advisor/bb1-gate.json",
+      "sha256": "18141fea672e5bae09024a5fddc56ea7102aae56ecca16fbb30d67a1354a3827",
+      "sub_label": "boundary_decay_rate_only",
+      "verdict": "accepted_within_scope"
+    },
+    "bb1_review_cross_check": {
+      "cells_equal": 40,
+      "path": "research/round33/skeptic/bb1.json",
+      "recommended_bound_equal": true
+    },
+    "bb2_verdict_from_discharge": "accepted_within_scope",
+    "constants": {
+      "admitted_below_hypothesis": {
+        "C": true,
+        "C_2": true,
+        "c_site": true,
+        "c_site_2": true,
+        "margins_preview": {
+          "C": "4.491798e+00",
+          "C_2": "5.160442e+00",
+          "c_site": "2.280991e+00",
+          "c_site_2": "2.584131e+00"
+        }
+      },
+      "bb1_route_of_bound_value": {
+        "C": "polymer_kp",
+        "C_2": "iterated_split",
+        "c_site": "polymer_kp",
+        "c_site_2": "iterated_split",
+        "rule": "the larger valid constant per quantity is bound (BB1 review); the other route is labelled"
+      },
+      "hypothesis_values_bound_at_the_gate": {
+        "forward": {
+          "C_dyn": "78057/622883200000000",
+          "C_prime": "4/984375",
+          "C_prime_2": "625/12481056",
+          "c_site_prime": "2/984375",
+          "c_site_prime_2": "625/24962112",
+          "item4": "C_h q^(N-|v|_inf-1), C_h = 1/250000"
+        },
+        "reverse_labelled": {
+          "C_dyn_F1": "9261/77860400000000",
+          "C_dyn_F2": "1055961408185869563/15240701171875000000000000000",
+          "C_prime": "1/250000",
+          "C_prime_2": "1/20000",
+          "c_site_prime": "1/500000",
+          "c_site_prime_2": "1/40000"
+        }
+      },
+      "reevaluated_at_admitted_values_labelled": {
+        "C_dyn": "unchanged (BA2 gate constants; not a BB1 quantity)",
+        "engine_reevaluated_consistent": true,
+        "forward_nested_telescoping": {
+          "C_prime": {
+            "exact": "82632970500168870759480200666958873973442480928212697490446241029677621276520512942135411150360223661867531110400695232348370009345133059092475/91342767300896578734057629624745271892609524216517063743293415715850854050175832575600178634527496196247116667320729329230574134788657825577154117632",
+            "preview": "9.046471104599e-07"
+          },
+          "C_prime_2": {
+            "exact": "36387598826694126340843359836448124541/3749830209631063007270904734342454076452864",
+            "preview": "9.703799050217e-06"
+          },
+          "c_site_prime": {
+            "exact": "29577486397354481433124604738646633740126004450608745226520334937637378516857696642555442266543559419/33205914634856011988489364623238264423274285593277514748105140988220133723038467112390283850938504202682368",
+            "preview": "8.907294595737e-07"
+          },
+          "c_site_prime_2": {
+            "exact": "36332536141520928543217542786005078125/3749830209631063007270904734342454076452864",
+            "preview": "9.689115002649e-06"
+          }
+        },
+        "item4_constant": {
+          "exact": "578430793501182095316361404668712117814097366497488882433123687207743348935643590594947878052521565633072717772804866626438590065415931413647325/649548567473042337664409810664855266791889949984121342174530956201606073245694809426490159178862195173312829634280741896750749402941566759659762614272",
+          "form": "C q^(N-|v|_inf-1) with the admitted c5 C",
+          "preview": "8.905119993590e-07"
+        },
+        "reverse_union_comparison": {
+          "C_prime": {
+            "exact": "578430793501182095316361404668712117814097366497488882433123687207743348935643590594947878052521565633072717772804866626438590065415931413647325/649548567473042337664409810664855266791889949984121342174530956201606073245694809426490159178862195173312829634280741896750749402941566759659762614272",
+            "preview": "8.905119993590e-07"
+          },
+          "C_prime_2": {
+            "exact": "254713191786858884385903518855136871787/26288652445972361083565698627981857600000000",
+            "preview": "9.689092748681e-06"
+          },
+          "c_site_prime": {
+            "exact": "207042404781481370031872233170526436180882031154261216585642344563461649618003876497888095865804915933/236130948514531640807035481765249880343283808663306771542081002582898728697162432799219796273340474330185728",
+            "preview": "8.768118117678e-07"
+          },
+          "c_site_prime_2": {
+            "exact": "651079047656055039494458366725211/67298950261689244373928188487633555456",
+            "preview": "9.674430955080e-06"
+          }
+        }
+      }
+    },
+    "gate_fields": {
+      "common_limit_claimed": true,
+      "continuum_claim": false,
+      "dynamics_level": "correlation_functions_compact_window",
+      "gns_dynamics_equality_claimed": false,
+      "rate_in_N_claimed": true,
+      "rate_in_a_claimed": false,
+      "scientific_priority_verified": false,
+      "state_convergence_claimed": true,
+      "translation_invariance_claimed": true,
+      "translation_invariance_scope": "coarse translations; the limit of the named constructions",
+      "uniform_in_time_claimed": false,
+      "uniqueness_of_ground_state_claimed": false,
+      "weak_coupling_claim": false,
+      "whole_sequence_claimed": true,
+      "whole_sequence_scope": "reduced densities of the named constructions F1 and F2 on every finite region"
+    },
+    "gate_fields_equal_contract": true,
+    "item5": {
+      "all_profiles_first_exceedance_14419": true,
+      "profiles": {
+        "admitted_values_labelled": {
+          "forward": {
+            "K5_preview": "3.377363e-09",
+            "K5_upper_on_5_to_14000": "675472535481783336203/200000000000000000000000000000",
+            "below_2_on_14001_to_14418": true,
+            "bracket_N10_preview": "4.178133e-11",
+            "bracket_N10_upper": "20890662783988593329/500000000000000000000000000000",
+            "bracket_N5_preview": "5.501569e-10",
+            "bracket_N5_upper": "550156906484244150687/1000000000000000000000000000000",
+            "first_exceedance_of_2": 14419,
+            "tightest_below_2": {
+              "N": 14417,
+              "log_margin_lower": "1.565533e+00"
+            },
+            "vacuous": {
+              "14419": true,
+              "14420": true,
+              "all_N_from_14421": true
+            }
+          },
+          "reverse_F1": {
+            "K5_preview": "3.280452e-09",
+            "K5_upper_on_5_to_14000": "3280452141250586913823/1000000000000000000000000000000",
+            "below_2_on_14001_to_14418": true,
+            "bracket_N10_preview": "3.965718e-11",
+            "bracket_N10_upper": "2478574013240647603/62500000000000000000000000000",
+            "bracket_N5_preview": "5.371468e-10",
+            "bracket_N5_upper": "537146780388046291427/1000000000000000000000000000000",
+            "first_exceedance_of_2": 14419,
+            "tightest_below_2": {
+              "N": 14417,
+              "log_margin_lower": "1.581281e+00"
+            },
+            "vacuous": {
+              "14419": true,
+              "14420": true,
+              "all_N_from_14421": true
+            }
+          },
+          "reverse_F2": {
+            "K5_preview": "2.783872e-09",
+            "K5_upper_on_5_to_14000": "2783871848363986177329/1000000000000000000000000000000",
+            "below_2_on_14001_to_14418": true,
+            "bracket_N10_preview": "2.310451e-11",
+            "bracket_N10_upper": "4620901556459400753/200000000000000000000000000000",
+            "bracket_N5_preview": "4.874888e-10",
+            "bracket_N5_upper": "243744375549693108889/500000000000000000000000000000",
+            "first_exceedance_of_2": 14419,
+            "tightest_below_2": {
+              "N": 14417,
+              "log_margin_lower": "1.581281e+00"
+            },
+            "vacuous": {
+              "14419": true,
+              "14420": true,
+              "all_N_from_14421": true
+            }
+          }
+        },
+        "hypothesis_values": {
+          "forward": {
+            "K5_preview": "6.099644e-09",
+            "K5_upper_on_5_to_14000": "1524911098726347889103/250000000000000000000000000000",
+            "below_2_on_14001_to_14418": true,
+            "bracket_N10_preview": "4.179343e-11",
+            "bracket_N10_upper": "41793429955387778761/1000000000000000000000000000000",
+            "bracket_N5_preview": "1.094613e-09",
+            "bracket_N5_upper": "547306624991769562883/500000000000000000000000000000",
+            "first_exceedance_of_2": 14419,
+            "tightest_below_2": {
+              "N": 14417,
+              "log_margin_lower": "7.409225e-01"
+            },
+            "vacuous": {
+              "14419": true,
+              "14420": true,
+              "all_N_from_14421": true
+            }
+          },
+          "reverse_F1": {
+            "K5_preview": "5.960198e-09",
+            "K5_upper_on_5_to_14000": "1490049551727794842323/250000000000000000000000000000",
+            "below_2_on_14001_to_14418": true,
+            "bracket_N10_preview": "3.966910e-11",
+            "bracket_N10_upper": "158676397872830653/4000000000000000000000000000",
+            "bracket_N5_preview": "1.073096e-09",
+            "bracket_N5_upper": "1073095993520164782521/1000000000000000000000000000000",
+            "first_exceedance_of_2": 14419,
+            "tightest_below_2": {
+              "N": 14417,
+              "log_margin_lower": "7.566708e-01"
+            },
+            "vacuous": {
+              "14419": true,
+              "14420": true,
+              "all_N_from_14421": true
+            }
+          },
+          "reverse_F2": {
+            "K5_preview": "5.463618e-09",
+            "K5_upper_on_5_to_14000": "2731808957012289316399/500000000000000000000000000000",
+            "below_2_on_14001_to_14418": true,
+            "bracket_N10_preview": "2.311642e-11",
+            "bracket_N10_upper": "11558211519327152683/500000000000000000000000000000",
+            "bracket_N5_preview": "1.023438e-09",
+            "bracket_N5_upper": "127929745528938088609/125000000000000000000000000000",
+            "first_exceedance_of_2": 14419,
+            "tightest_below_2": {
+              "N": 14417,
+              "log_margin_lower": "7.566708e-01"
+            },
+            "vacuous": {
+              "14419": true,
+              "14420": true,
+              "all_N_from_14421": true
+            }
+          }
+        }
+      },
+      "statement": "the inequality holds for every N >= 5; N * bracket <= K5 on 5<=N<=14000 (rate O(1/N) there only); the bracket is below 2 on 14001<=N<=14418 and at least 2 at N=14419, 14420 and every N>=14421, at the hypothesis values and at the admitted values alike; the correlation functions converge along the whole sequence for every N without a rate"
+    },
+    "iterated_split_alternative_labelled": {
+      "items": {
+        "1": "full",
+        "2": "full",
+        "3": "full",
+        "4": "full",
+        "5": "full"
+      },
+      "note": "the self-contained BB1 route (no Kotecky-Preiss citation) also discharges every item",
+      "verdict": "accepted_within_scope"
+    },
+    "producer_maps": {
+      "forward": {
+        "1": {
+          "cells": 16,
+          "cells_discharged": 16,
+          "comparisons": [
+            "c1",
+            "c2"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "hypotheses": [
+            "H1",
+            "H2"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "2": {
+          "cells": 24,
+          "cells_discharged": 24,
+          "comparisons": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "hypotheses": [
+            "H1",
+            "H2",
+            "H3"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "3": {
+          "cells": 24,
+          "cells_discharged": 24,
+          "comparisons": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "hypotheses": [
+            "H1",
+            "H2",
+            "H3"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "4": {
+          "cells": 16,
+          "cells_discharged": 16,
+          "comparisons": [
+            "c1",
+            "c5"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "hypotheses": [
+            "H1",
+            "H4"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "5": {
+          "cells": 24,
+          "cells_discharged": 24,
+          "comparisons": [
+            "c1",
+            "c2",
+            "c3"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "hypotheses": [
+            "H1",
+            "H2",
+            "H3"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        }
+      },
+      "jung_assistant_2_cross_check": {
+        "forward": true,
+        "forward_ids": {
+          "H1": "c1",
+          "H2": "c2",
+          "H3": "c3",
+          "H4": "c5"
+        },
+        "reverse_literal": true
+      },
+      "reverse": {
+        "1": {
+          "cells": 16,
+          "cells_discharged": 16,
+          "closure": [
+            "c4",
+            "c5"
+          ],
+          "comparisons": [
+            "c4",
+            "c5"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "item_references": [],
+          "literal": [
+            "c4",
+            "c5"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "2": {
+          "cells": 24,
+          "cells_discharged": 24,
+          "closure": [
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "comparisons": [
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "item_references": [
+            "1"
+          ],
+          "literal": [
+            "c3"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "3": {
+          "cells": 12,
+          "cells_discharged": 12,
+          "closure": [
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "comparisons": [
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "item_references": [
+            "1",
+            "2"
+          ],
+          "literal": [
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "missing": [],
+          "regimes": [
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "4": {
+          "cells": 8,
+          "cells_discharged": 8,
+          "closure": [
+            "c5"
+          ],
+          "comparisons": [
+            "c5"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "item_references": [],
+          "literal": [
+            "c5"
+          ],
+          "missing": [],
+          "regimes": [
+            "Q_L",
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        },
+        "5": {
+          "cells": 8,
+          "cells_discharged": 8,
+          "closure": [
+            "c4",
+            "c5"
+          ],
+          "comparisons": [
+            "c4",
+            "c5"
+          ],
+          "forms": [
+            "R",
+            "Y"
+          ],
+          "item_references": [
+            "1"
+          ],
+          "literal": [
+            "c4",
+            "c5"
+          ],
+          "missing": [],
+          "regimes": [
+            "untruncated"
+          ],
+          "signs": [
+            "+",
+            "-"
+          ],
+          "status": "discharged"
+        }
+      },
+      "reverse_item5_with_item2": {
+        "cells": 12,
+        "comparisons": [
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "missing": [],
+        "note": "the reverse lists item 5 as through item 1 only; its F2 part also needs the F2 limit identified with the common limit (item 2, hence c3), which is admitted"
+      }
+    },
+    "protocol": {
+      "items": {
+        "1": "full",
+        "2": "full",
+        "3": "full",
+        "4": "full",
+        "5": "full"
+      },
+      "items_by_sign": {
+        "+": {
+          "1": "full",
+          "2": "full",
+          "3": "full",
+          "4": "full",
+          "5": "full"
+        },
+        "-": {
+          "1": "full",
+          "2": "full",
+          "3": "full",
+          "4": "full",
+          "5": "full"
+        }
+      },
+      "map": {
+        "1": "c1 and c2 (forward, nested telescoping) or c4 (reverse, direct centered comparison), R and region forms, both families",
+        "2": "item 1 and c3",
+        "3": "item 2 (per_family from item 1 alone)",
+        "4": "c5 in R and region form and item 1",
+        "5": "items 1-2 (region form at Lambda_rN, R form) and BA2"
+      },
+      "routes_at_plus": {
+        "F1_R": [
+          "forward",
+          "reverse"
+        ],
+        "F1_Y": [
+          "forward",
+          "reverse"
+        ],
+        "F2_R": [
+          "forward",
+          "reverse"
+        ],
+        "F2_Y": [
+          "forward",
+          "reverse"
+        ]
+      },
+      "rule": "an item is unconditional only when, at both signs, some BB2 route proves it from BB1 comparisons admitted at q=1/64 in a bound dominated pointwise by the hypothesis form with a constant at most the hypothesis value, in the untruncated regime or in Q_L for a route that removes the cutoff itself (pre-registered in bb2_check.py, committed at 8921539 before either producer or the BB1 gate was read)",
+      "unconditional": true,
+      "verdict": "accepted_within_scope"
+    },
+    "secondary_labelled": {
+      "admitted": {
+        "C_2": "254713191786858884385903518855136871787/26288652445972361083565698627981857600000000",
+        "c_site_2": "651079047656055039494458366725211/67298950261689244373928188487633555456",
+        "route": "iterated_split"
+      },
+      "forward_map": {
+        "cells": 24,
+        "cells_discharged": 24,
+        "comparisons": [
+          "c1",
+          "c2",
+          "c3"
+        ],
+        "forms": [
+          "R",
+          "Y"
+        ],
+        "hypotheses": [
+          "H1s-H3s"
+        ],
+        "missing": [],
+        "regimes": [
+          "Q_L",
+          "untruncated"
+        ],
+        "signs": [
+          "+",
+          "-"
+        ],
+        "status": "discharged"
+      },
+      "hypotheses": {
+        "C_2h": "1/20000",
+        "c_2h": "1/40000"
+      },
+      "items": {
+        "1": "full",
+        "2": "full",
+        "3": "full",
+        "4": "full",
+        "5": "full"
+      },
+      "q": "151552|tau| = 592/390625 at the cap",
+      "reverse_map": {
+        "cells": 24,
+        "cells_discharged": 24,
+        "closure": [
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "comparisons": [
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "forms": [
+          "R",
+          "Y"
+        ],
+        "item_references": [
+          "1",
+          "2"
+        ],
+        "literal": [],
+        "missing": [],
+        "regimes": [
+          "Q_L",
+          "untruncated"
+        ],
+        "regimes_listed": false,
+        "signs": [
+          "+",
+          "-"
+        ],
+        "signs_listed": false,
+        "status": "discharged"
+      },
+      "verdict": "accepted_within_scope"
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "BB2",
+  "reviewer": "skeptic (model agent, correlated ancestry)",
+  "stage": "post_comparison_with_discharge"
+}
