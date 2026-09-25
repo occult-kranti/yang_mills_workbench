@@ -1,0 +1,39 @@
+# Modern lens (Penrose/Feynman), Round33 sub-round 2 update
+
+2026-09-25. `round33_subround2_update`; not a contract, loop or gate. Human project author: Hruday N M (BUNZEEY). This lens is a model agent with ancestry shared with every other agent in the round, so this is not external review. Read this update: `advisor/bb1-gate.json`, `advisor/bb2-gate.json`, `skeptic/bb1.md`, `skeptic/bb1-kp-repair.md`, `skeptic/bb2.md`, `advisor/plan.json`, `skeptic/loop2-review.md` (items P8-P11), Round32 gates `av2-gate.json`, `aw2-gate.json`, `ax1-gate.json`, `ax2-gate.json`, `ay2-gate.json`, own `assistant-2/README.md`. The arithmetic below is re-checked, not re-derived; it is a preview cross-check, not evidence for any gate.
+
+## 1. Technical assessment of sub-round 2
+
+**Feynman reading.** BB1 computed exactly what my own §2.5-2.7 ledger flagged as the main risk: a standard cluster expansion closing with a large margin. Headline `q=1/64`, `C≈8.9051e-7` (polymer_kp, margin ~4.49 against 1/250000), region `c_site≈8.7681e-7` (polymer_kp, margin ~2.28 against 1/500000, the binding one) — both reproduced exactly, bit for bit, from the reports' own closed-form formulas by `assistant-2/bb1_arb.py`, and both certified independently smaller by the self-contained `iterated_split` route (`C≈8.9043e-7`, `c_site≈8.7673e-7`). The forward's uncommitted Kotecký–Preiss citation, flagged by the skeptic and repaired post hoc against a committed Ueltschi excerpt, is covered with no missing factor; `assistant-2/kp_condition.py` independently confirmed the forward is self-contained on its own Proposition 6.2 but not on the cited Theorem 6.1 itself — the same "structure transfers, no constant transfers" reading this lens has applied to every external citation since Round32. BB2 then assembled whole-sequence convergence (`C'=4/984375≈4.0635e-6`, margin `315/128≈2.46`; `c'_site=2/984375≈2.0317e-6`, same margin), the common limit, identification with every AQ1/F2 subsequential limit, coarse translation invariance, and correlation functions on `|theta|<=8` with `C_dyn=78057/622883200000000≈1.2532e-10` (margin ~3.99) — all reproduced exactly by `assistant-2/bb2_constants.py`, including the `sympy`-confirmed identity behind the new lemma `(5N+1)(r_N-1)<=N^3/4`. AY2 obligations O2, O3 and O4 are now closed for the named constructions.
+
+**Penrose reading.** The bracket that carries the correlation-function rate is where structure, not size, decides the outcome: `C_dyn/(r_N-1) + c'_site |Lambda_{r_N}| e^{|Lambda_{r_N}|/10^8} q^(N-r_N) + 2C' q^(N-1)` holds for every `N>=5`, but the region term's `e^{|Lambda_{r_N}|/10^8}` factor — a cube-volume growth, `|Lambda_r|~N^3` — eventually outgrows the geometric decay `q^(N-r_N)`, so the bracket is a genuine rate only on the certified range `5<=N<=14000` and is vacuous from `N=14419`. This is the same lesson as the BA1 headline pair's `q=1/64` versus `q_min=148/390625`: a bound built for one regime should never be read as valid past the regime it was actually derived in. **Not established.** Uniqueness of any ground state; other boundary conditions; equality of GNS dynamics of different states; anything uniform in time; anything uniform in the lattice spacing a; the continuum.
+
+## 2. Goals for sub-round 3
+
+**Keep BC1 and BC2.** BB1 and BB2 are both `accepted_within_scope`, so BC2's stated precondition holds exactly as written, with no reordering needed. This matches my own §3 feasibility framing from loop 1: locality and convergence were always meant to unlock a consequences stage, not to stand alone.
+
+**BC1's content, feasibility-checked.** Restating the AV2 node (`d≈0.012447`, `R≈1.832e-7`) and AW2 sign certificate (`K_2^+≈3354.803`, sign margin ~207) for the limit is, on inspection, a continuity argument and nothing more: AV2's derivation used only the window's L¹ inversion, Fubini and AQ1 nonnegativity — no gap argument, no limit object — so it already holds verbatim for any finite-box ground state of either family, a fact BC1 should state as a corollary rather than a fresh result. The one genuinely new number BC1 must produce is the explicit N at which the F2 finite-box static Wilson mean falls within BB2's own `C' q^(N-1)` of the limit mean closely enough to inherit AW2's sign. A back-of-envelope check (not an admission): `C' q^3 = (4/984375)(1/64)^3 ≈1.55e-11`, comfortably below AW2's exclusion margin `≈6.91e-11` at the cap, suggests `N=4` should suffice; BC1's own exact-rational computation is what actually decides it, and the margin should be reported with the same discipline as every other BB1/BB2 constant — never estimated in the frozen packet.
+
+**BC2's content, feasibility-checked.** Re-deriving BA1's coefficient decay, BB1's marginal locality and BB2's convergence for the AX1 route-B construction is mechanical in the same sense BA2's dynamics comparison was: every constant AX1 already re-derived (`J'=29|tau|`, `J_0'=29/10^8`, the itemized incidence of 7 whole stars and 2 single-factor groups meeting R, 153 faces charged, 88 meeting R, 16 inside, none twice) slots directly into the BA1/BB1/BB2 machinery in place of the route-A constants, since nothing in those derivations used route A's specific face count beyond the generic bounds `J`, `G(R)`. The retained failure mode is the same one AX1 itself flagged: if the re-frozen `J_0'` fails the self-map or contraction inequality at some intermediate step not already checked by AX1, the loop should record `limited` rather than force a close. Restating the AX2 node (`d` unchanged, `R'≈1.912e-7` at `D'_ii≈1.44459e-8`) for the route-B limit is then the same continuity argument as BC1's, applied to the second construction.
+
+## 3. Concrete requirements for the BC1/BC2 contracts
+
+- Every constant BC1 or BC2 states as "unchanged" from AV2/AW2/AX1/AX2 must be checked bit for bit against the cited gate's own exact rational, not merely asserted equal by inspection — the same discipline `bb1_arb.py` and `bb2_constants.py` applied this sub-round.
+- The one new number per loop (BC1's finite-N sign threshold; BC2's re-derived `J_0'`-based margins) must carry its own margin-of-2 freeze-time target, exactly as every BA1/BB1/BB2 constant did; a restatement loop is not exempt from the margin rule merely because most of its content is inherited.
+- If BC2's re-derivation needs any external theorem beyond what AX1 already cites, the committed-excerpt rule (the lesson of the BB1 Kotecký–Preiss repair) applies from the start: no contract should freeze citing an uncommitted source a second time.
+- `preregistration.sub_labels_allowed` for BC1: `certificate_restated_for_limit`; for BC2: `transfer_to_named_model`; neither loop's contract should list `obstruction_recorded` as anything but a genuine fallback outcome.
+
+## 4. Assistant tests wanted after sub-round 3
+
+- Reproduce, in exact `Fraction` arithmetic and by import of no producer `check.py`, the "unchanged" AV2/AW2/AX1/AX2 constants BC1/BC2 cite, exactly as `bb1_arb.py` did for BB1's headline and secondary pairs.
+- Independently recompute the finite-N sign-certificate threshold for F2 boxes from BB2's own admitted `C'` and AW2's own admitted exclusion margin, and confirm it against whatever N BC1 reports.
+- Confirm BC2's re-derived contraction inequalities (`J_0'G(R)`-type bounds) hold as rigorous enclosures at the cap, both signs, using the same Arb/mpmath cross-check pattern as `bb1_arb.py`'s `e^{1/8}<=8/7` confirmation.
+- A short placement note (no new fetch required) locating BC1's restatement pattern relative to the standard practice of transferring a perturbative certificate from a finite volume to its thermodynamic limit once convergence is established — background only, no scientific-priority claim.
+
+## 5. Sources
+
+None read this sub-round; no new WebSearch or WebFetch was run. `sources.json` is unchanged.
+
+## 6. Closing
+
+This lens admits nothing and counts zero research loops.
