@@ -1,0 +1,2253 @@
+{
+  "ai_assistance": "AI-assisted reverse production (Claude, an AI model); correlated model-agent work, not human review",
+  "assembly": "union_comparison",
+  "attribution": {
+    "banach_space_facts": "completeness of the trace class and trace-norm contractivity of the partial trace (standard)",
+    "gns_strategy": "AQ1 sections 4-5 and AQ2 (Gauvin arXiv:2503.15539v3 Supplement A.10 as the prior strategy)",
+    "limit_dynamics": "Nachtergaele-Sims arXiv:1410.8174v1 Theorem 4.1 (77), quoted verbatim; admitted for F1 and F2 in the BA2 gate",
+    "scientific_priority": "unverified"
+  },
+  "bb1_comparisons": {
+    "B1": "F1 on Lambda_N versus F1 on Lambda_{N+1}",
+    "B2": "F2 on Lambda_N versus F2 on Lambda_{N+1}",
+    "B3": "F1 versus F2 on the same Lambda_N: the fixed-N comparison of two boundary prescriptions (changed exterior at the same box size), named as its own item (historical lens)",
+    "B4": "any two centered boxes Lambda_M, Lambda_M' with M, M' at least N, of F1 or F2 (compared directly, not by telescoping)",
+    "B5": "two finite complete-factor volumes of one prescription both containing Lambda_N, compared directly (the BA1 accepted statement covers the coefficient comparison of any two such volumes with the bound K); required for accepted_within_scope and the input of BB2 item 4; a comparison of the reduced densities through the union costs a factor 2 and is labelled only"
+  },
+  "bb1_contract_sha256": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+  "check_py_sha256_recorded_before_evaluation": "62831e2acde30bc50786bbb81dd705076e26a51f29cc6cc9eea8c832230809e3",
+  "checks": [
+    {
+      "bb1_contract_sha256": "30400d2eeea733a49ef66e0ed7ed735aa8d603581948650e6ef6ac61f8e55018",
+      "bb2_contract_sha256": "ed5c0b24b16b19f0db2c16a437ee37608552e1a1cf0629494792aa877d95ad35",
+      "id": "contract_snapshots_bound_before_evaluation",
+      "passed": true,
+      "sources": [
+        "inputs/research/round33/contracts/bb2.json",
+        "inputs/research/round33/contracts/bb1.json"
+      ],
+      "verified": "both before any evaluation"
+    },
+    {
+      "check_py_sha256": "62831e2acde30bc50786bbb81dd705076e26a51f29cc6cc9eea8c832230809e3",
+      "id": "check_py_sha256_recorded_before_evaluation",
+      "passed": true
+    },
+    {
+      "id": "pinned_gate_and_excerpt_hashes",
+      "ns_pdf_sha256_named_in_excerpt": "501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba",
+      "passed": true,
+      "pinned_sha256": {
+        "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+        "research/round29/advisor/aq1-gate.json": "b4a93fd49413857af83c969de1e7b2c8a698ea8099aa9e3aea8e8c7fab0a225e",
+        "research/round29/advisor/aq2-gate.json": "930b697db343ffd261c303c34e6ddd8c6e9c753ee6707931c55dc4171ee47575",
+        "research/round32/advisor/av1-gate.json": "55e03f2d9c297d41106d983cec45eaa642ca18123544f416916f94414de305a0",
+        "research/round32/advisor/aw1-gate.json": "647dc33795f06a66c12934f64ae408725b5354cf0124b32dc4b18a12eb0541ae",
+        "research/round32/advisor/ay1-gate.json": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+        "research/round32/advisor/ay2-gate.json": "e4faa98884d26d67dd422b382eafb2c52bf88ee679998bc8249003cba88187a6",
+        "research/round33/advisor/ba1-gate.json": "15546f9ec0ab130cdf216ab63b17e6e0ebd7a28c1aefc7ce232f93b77730ebcc",
+        "research/round33/advisor/ba2-gate.json": "e6b163fc8f80de28c51609f77d0bef21dcdc1286638c862ad67202e6f7b0ca35",
+        "research/round33/sources/nachtergaele-sims-1410.8174v1.md": "6a28f4cd6aa2c55286fa839d83c00356ff0709f8b02027ee5b39050df1d6c921"
+      }
+    },
+    {
+      "id": "no_interpreter_cache_in_closure",
+      "passed": true
+    },
+    {
+      "declared": "AGENTS.md + contract + 36 shared premises",
+      "id": "reverse_inputs_inventory_isolated",
+      "inputs": 38,
+      "passed": true,
+      "skeptic_inputs": [
+        "research/round33/skeptic/ba1.md",
+        "research/round33/skeptic/ba2.md"
+      ]
+    },
+    {
+      "bb1_comparisons": {
+        "B1": "F1 on Lambda_N versus F1 on Lambda_{N+1}",
+        "B2": "F2 on Lambda_N versus F2 on Lambda_{N+1}",
+        "B3": "F1 versus F2 on the same Lambda_N: the fixed-N comparison of two boundary prescriptions (changed exterior at the same box size), named as its own item (historical lens)",
+        "B4": "any two centered boxes Lambda_M, Lambda_M' with M, M' at least N, of F1 or F2 (compared directly, not by telescoping)",
+        "B5": "two finite complete-factor volumes of one prescription both containing Lambda_N, compared directly (the BA1 accepted statement covers the coefficient comparison of any two such volumes with the bound K); required for accepted_within_scope and the input of BB2 item 4; a comparison of the reduced densities through the union costs a factor 2 and is labelled only"
+      },
+      "bb1_region_form": "for every finite complete-factor region Y inside Lambda_N (N the smaller box size, |Y| its number of coarse factor sites): ||rho^{box1}_Y-rho^{box2}_Y||_1 <= c_site |Y| e^{|Y|/10^8} q^{d_Y}, d_Y = N - max_{y in Y} |y|_inf (so d_R = N-1)",
+      "discharge": "not recorded by this producer (it reads no BB1 gate); recorded at the BB2 gate",
+      "hypotheses": {
+        "C_2h": "1/20000",
+        "C_h": "1/250000",
+        "bb1_gate_sha256": null,
+        "c_2h": "1/40000",
+        "c_h": "1/500000",
+        "discharged": false,
+        "label": "conditional_on_bb1_targets",
+        "q": "1/64",
+        "q2_per_tau": "151552",
+        "source": "bb1_frozen_targets",
+        "unconditional": false
+      },
+      "id": "hypotheses_equal_bb1_frozen_targets",
+      "passed": true,
+      "read_from": [
+        "bb2 parameters.rate_constant_pair.hypotheses",
+        "bb2 new_control_semantics.conditional_on_bb1_targets",
+        "bb1 parameters.rate_constant_pair (C_target, c_site_target, secondary)"
+      ]
+    },
+    {
+      "ba2_gate_values": {
+        "K_F1_fwd": {
+          "exact": "9261/155720800000000",
+          "preview": "5.94718239310e-11"
+        },
+        "K_F1_rev": {
+          "exact": "12128856933354903/118967041015625000000000000",
+          "preview": "1.01951404605e-10"
+        },
+        "K_F2_fwd": {
+          "exact": "117747/1245766400000000",
+          "preview": "9.45177201761e-11"
+        },
+        "K_F2_rev": {
+          "exact": "1055961408185869563/30481402343750000000000000000",
+          "preview": "3.46428092867e-11"
+        }
+      },
+      "dynamics_constants": {
+        "F1": {
+          "K_gate": "9261/155720800000000",
+          "family": "F1",
+          "formula": "C_dyn = 2 K_F1, K_F1 = 592704 tau^2/(1-338688|tau|) (BA2 forward, faces charged once, inner F1)",
+          "margin": "4.2036713e0",
+          "preview": "1.18943647862e-10",
+          "route": "duhamel_inner_f1",
+          "source": "research/round33/advisor/ba2-gate.json",
+          "target": "1/2000000000",
+          "tier": "polynomial_lieb_robinson",
+          "value": "9261/77860400000000"
+        },
+        "F2": {
+          "K_gate": "1055961408185869563/30481402343750000000000000000",
+          "family": "F2",
+          "formula": "C_dyn = 2 K'_F2, K'_F2 = 345744 tau^2 E_up(592704|tau|) (BA2 reverse, owner-set Phi', inner F2)",
+          "margin": "7.2165048e0",
+          "preview": "6.92856185734e-11",
+          "route": "duhamel_inner_f2",
+          "source": "research/round33/advisor/ba2-gate.json",
+          "target": "1/2000000000",
+          "tier": "polynomial_lieb_robinson",
+          "value": "1055961408185869563/15240701171875000000000000000"
+        }
+      },
+      "formula_provenance": "BA2 forward report (K_c1, K_c2) and BA2 reverse report (c1, c2, E_up), re-evaluated exactly at |tau|=10^-8",
+      "id": "ba2_gate_dynamics_constants_read_exactly",
+      "labelled_alternatives": {
+        "F1 via BA2 reverse whole-star (duhamel_inner_f1)": {
+          "exact": "12128856933354903/59483520507812500000000000",
+          "preview": "2.03902809211e-10"
+        },
+        "F2 via BA2 forward through F1 (duhamel_inner_f1)": {
+          "exact": "117747/622883200000000",
+          "preview": "1.89035440352e-10"
+        }
+      },
+      "passed": true,
+      "why_twice": "item 5 replaces T^{F,N}_theta(A) by T^{F,r_N}_theta(A) inside omega^{F,N} (BA2 sup over M>r_N, M=N) and T_theta(A) by T^{F,r_N}_theta(A) inside omega_inf (BA2 limit bound); each costs K_F/(r_N-1) ||A||^2"
+    },
+    {
+      "am2": "simple ground and gap alpha/16 for every nonempty finite I1 complete-factor volume (hence translated boxes)",
+      "av1": "cutoff-vector removal F20-F23 (Eckart, untruncated gap 1/2) in each fixed box",
+      "ba1": "coefficient input of B5: any two complete-factor volumes of one prescription containing Lambda_N (BA1 gate)",
+      "id": "premise_gates_read",
+      "passed": true
+    },
+    {
+      "assembly": "union_comparison",
+      "id": "item0_union_comparison_assembly",
+      "lemma": "for volumes V1,V2 of one prescription containing Lambda_n, U=V1 u V2 contains Lambda_n and ||rho^{V1}_Y-rho^{V2}_Y||_1 <= [V1!=U] H(V1,U) + [V2!=U] H(V2,U), H the BB1 hypothesis bound",
+      "margins": {
+        "C_prime": "5/2",
+        "c_site_prime": "5/2"
+      },
+      "monotone": "checked exactly at 3 points x 3 increments in each hypothesis constant (linear, coefficients 1 and 0)",
+      "nested_centered_union_factors": {
+        "Lambda_2,Lambda_3": 1,
+        "Lambda_2,Lambda_5": 1,
+        "Lambda_3,Lambda_4": 1,
+        "Lambda_3,Lambda_6": 1
+      },
+      "passed": true,
+      "state_constants": {
+        "C_prime": {
+          "assembly": "union_comparison",
+          "assembly_factor": "1",
+          "bb1_route": "attached at the BB2 gate from the BB1 gate bound value",
+          "function": "C'(C_h,c_h) = 1*C_h",
+          "hypothesis_source": "bb1_frozen_targets",
+          "preview": "4.00000000000e-6",
+          "tier": "exact_first_order",
+          "value": "1/250000"
+        },
+        "c_site_prime": {
+          "assembly": "union_comparison",
+          "assembly_factor": "1",
+          "bb1_route": "attached at the BB2 gate from the BB1 gate bound value",
+          "function": "c'_site(C_h,c_h) = 1*c_h",
+          "hypothesis_source": "bb1_frozen_targets",
+          "preview": "2.00000000000e-6",
+          "tier": "exact_first_order",
+          "value": "1/500000"
+        }
+      },
+      "targets": {
+        "C_prime": "1/100000",
+        "c_site_prime": "1/200000"
+      },
+      "translated_pairs": {
+        "Lambda_3 vs Lambda_3+(0, 1, 1)": {
+          "both_contain_Lambda_(N-|v|)": true,
+          "nested": false,
+          "union_factor": 2,
+          "union_is_centered_cube": false
+        },
+        "Lambda_3 vs Lambda_3+(1, 0, 0)": {
+          "both_contain_Lambda_(N-|v|)": true,
+          "nested": false,
+          "union_factor": 2,
+          "union_is_centered_cube": false
+        },
+        "Lambda_4 vs Lambda_4+(1, 1, 1)": {
+          "both_contain_Lambda_(N-|v|)": true,
+          "nested": false,
+          "union_factor": 2,
+          "union_is_centered_cube": false
+        },
+        "Lambda_4 vs Lambda_4+(2, -1, 0)": {
+          "both_contain_Lambda_(N-|v|)": true,
+          "nested": false,
+          "union_factor": 2,
+          "union_is_centered_cube": false
+        }
+      }
+    },
+    {
+      "C_prime": {
+        "exact": "1/250000",
+        "preview": "4.00000000000e-6"
+      },
+      "R_rows": {
+        "10": {
+          "exact": "1/4503599627370496000000",
+          "preview": "2.22044604925e-22"
+        },
+        "2": {
+          "exact": "1/16000000",
+          "preview": "6.25000000000e-8"
+        },
+        "3": {
+          "exact": "1/1024000000",
+          "preview": "9.76562500000e-10"
+        },
+        "4": {
+          "exact": "1/65536000000",
+          "preview": "1.52587890625e-11"
+        }
+      },
+      "c_site_prime": {
+        "exact": "1/500000",
+        "preview": "2.00000000000e-6"
+      },
+      "contractivity_audit": "diagonal two-qubit pairs: marginal l1 distance <= joint l1 distance (exact)",
+      "id": "item1_whole_sequence_cauchy_R_and_regions",
+      "limit": "the tail supremum tends to 0, so (rho^{F,N}_Y)_N is Cauchy in the trace class T(H_Y), which is complete; its limit rho^inf_Y is positive with trace one, partial traces are compatible (||Tr_2 X||_1<=||X||_1), and ||rho^inf_Y-rho^{F,N}_Y||_1 <= c'_site|Y|e^{|Y|/10^8}q^{d_Y} by closedness of the ball; no compactness is used",
+      "passed": true,
+      "region_rows": {
+        "Lambda_1": {
+          "max_|y|_inf": 1,
+          "rows": {
+            "2": {
+              "bound": "c'_site*27*e^{27/10^8}*q^1",
+              "d_Y": 1,
+              "upper_value": "8.4375022e-7"
+            },
+            "3": {
+              "bound": "c'_site*27*e^{27/10^8}*q^2",
+              "d_Y": 2,
+              "upper_value": "1.3183597e-8"
+            },
+            "6": {
+              "bound": "c'_site*27*e^{27/10^8}*q^5",
+              "d_Y": 5,
+              "upper_value": "5.0291432e-14"
+            }
+          },
+          "|Y|": 27
+        },
+        "R": {
+          "max_|y|_inf": 1,
+          "rows": {
+            "2": {
+              "bound": "c'_site*2*e^{2/10^8}*q^1",
+              "d_Y": 1,
+              "upper_value": "6.2500001e-8"
+            },
+            "3": {
+              "bound": "c'_site*2*e^{2/10^8}*q^2",
+              "d_Y": 2,
+              "upper_value": "9.7656251e-10"
+            },
+            "6": {
+              "bound": "c'_site*2*e^{2/10^8}*q^5",
+              "d_Y": 5,
+              "upper_value": "3.7252903e-15"
+            }
+          },
+          "|Y|": 2
+        },
+        "{(2,0,0),(2,1,0)}": {
+          "max_|y|_inf": 2,
+          "rows": {
+            "2": {
+              "bound": "c'_site*2*e^{2/10^8}*q^0",
+              "d_Y": 0,
+              "upper_value": "4.0000000e-6"
+            },
+            "3": {
+              "bound": "c'_site*2*e^{2/10^8}*q^1",
+              "d_Y": 1,
+              "upper_value": "6.2500001e-8"
+            },
+            "6": {
+              "bound": "c'_site*2*e^{2/10^8}*q^4",
+              "d_Y": 4,
+              "upper_value": "2.3841858e-13"
+            }
+          },
+          "|Y|": 2
+        },
+        "{0}": {
+          "max_|y|_inf": 0,
+          "rows": {
+            "2": {
+              "bound": "c'_site*1*e^{1/10^8}*q^2",
+              "d_Y": 2,
+              "upper_value": "4.8828125e-10"
+            },
+            "3": {
+              "bound": "c'_site*1*e^{1/10^8}*q^3",
+              "d_Y": 3,
+              "upper_value": "7.6293946e-12"
+            },
+            "6": {
+              "bound": "c'_site*1*e^{1/10^8}*q^6",
+              "d_Y": 6,
+              "upper_value": "2.9103830e-17"
+            }
+          },
+          "|Y|": 1
+        },
+        "{e_x,e_y}": {
+          "max_|y|_inf": 1,
+          "rows": {
+            "2": {
+              "bound": "c'_site*2*e^{2/10^8}*q^1",
+              "d_Y": 1,
+              "upper_value": "6.2500001e-8"
+            },
+            "3": {
+              "bound": "c'_site*2*e^{2/10^8}*q^2",
+              "d_Y": 2,
+              "upper_value": "9.7656251e-10"
+            },
+            "6": {
+              "bound": "c'_site*2*e^{2/10^8}*q^5",
+              "d_Y": 5,
+              "upper_value": "3.7252903e-15"
+            }
+          },
+          "|Y|": 2
+        }
+      },
+      "statement": "for F in {F1,F2}, N>=2: sup_{M>N} ||rho^{F,M}_R-rho^{F,N}_R||_1 <= C' q^(N-1) and, for every finite complete-factor Y inside Lambda_N, sup_{M>N} ||rho^{F,M}_Y-rho^{F,N}_Y||_1 <= c'_site |Y| e^{|Y|/10^8} q^{d_Y}, d_Y=N-max_Y|y|_inf; each M>N compared directly (B4 same family nested, or B5 nested), never by summing steps"
+    },
+    {
+      "eckart_fixture": {
+        "1-|<psi,psi_L>|^2": "5/9",
+        "E_L-E_0": "1/3",
+        "H": "diag(0,1/2,1)",
+        "bound_(E_L-E_0)/gap": "2/3",
+        "psi_L": "(2/3,2/3,1/3)"
+      },
+      "id": "item1_cutoff_uniform_then_removed",
+      "order": [
+        "bounds in each Q_L uniformly in L",
+        "L to infinity at fixed N and M (AV1 F20-F23: Eckart vector bound, untruncated gap 1/2)",
+        "N to infinity on the untruncated vectors only"
+      ],
+      "passed": true,
+      "statement": "in each Q_L the hypotheses hold with the same constants, so item 1 holds in each Q_L uniformly in L; at fixed N and M, rho^{F,N,L}_Y -> rho^{F,N}_Y in trace norm (AV1 F20-F23; F2 through the AY1 itemization; translated boxes through the covariance unitary), so the bound passes to the untruncated vectors; only then N -> infinity"
+    },
+    {
+      "hypothesis": "B3 (F1 versus F2 on the same Lambda_N), R and region forms",
+      "id": "item2_common_limit_F1_F2",
+      "identification_bound_on_R_rows": {
+        "10": {
+          "exact": "3/4503599627370496000000",
+          "preview": "6.66133814775e-22"
+        },
+        "2": {
+          "exact": "3/16000000",
+          "preview": "1.87500000000e-7"
+        },
+        "5": {
+          "exact": "3/4194304000000",
+          "preview": "7.15255737304e-13"
+        }
+      },
+      "identification_constant_R": {
+        "exact": "3/250000",
+        "preview": "1.20000000000e-5"
+      },
+      "identification_constant_region": {
+        "exact": "3/500000",
+        "preview": "6.00000000000e-6"
+      },
+      "passed": true,
+      "statement": "||rho^{F1,inf}_Y-rho^{F2,inf}_Y||_1 <= ||rho^{F1,inf}_Y-rho^{F1,N}_Y||_1 + ||rho^{F1,N}_Y-rho^{F2,N}_Y||_1 + ||rho^{F2,N}_Y-rho^{F2,inf}_Y||_1 <= (2c'_site + c_h)|Y| e^{|Y|/10^8} q^{d_Y} for every N, hence 0: the two whole-sequence limits coincide on every finite region (B3 for the middle term)"
+    },
+    {
+      "id": "item3_identification_then_inheritance",
+      "inherited": [
+        "locally normal gauge-invariant state, stationary under T_theta [AQ1]",
+        "strongly continuous GNS evolution, nonnegative self-adjoint physical energy generator [AQ1]",
+        "physical cyclic restriction reducing [AQ1]",
+        "gauge-fixed space equals the invariant-local cyclic completion and reduces the generator [AQ2]",
+        "H_phys >= (alpha/16)(I-P_Omega), simple vacuum on the invariant-local cyclic completion [AQ2]",
+        "full-GNS strengthening only as qualified (uses the AM2 full-Hilbert finite gap) [AQ2]",
+        "original xz Wilson variance at least 61999/250000 in the same state [AQ2]",
+        "F2 limit dynamics equals T_theta; AQ1 sections 4-5 rerun for F2 limit states [BA2]"
+      ],
+      "not_inherited": [
+        "uniqueness of every infinite-volume ground state",
+        "states outside the named constructions",
+        "equality of GNS dynamics of different states",
+        "an unqualified full-GNS gap"
+      ],
+      "passed": true,
+      "representation": "the GNS representation (pi_inf, H_inf, Omega_inf) of omega_inf, unitarily equivalent to the AQ1 chosen representation because omega_inf equals the AQ1 chosen subsequential state"
+    },
+    {
+      "bound_rows": {
+        "N=10,v=(3, 0, 0)": {
+          "exact": "1/17179869184000000",
+          "preview": "5.82076609134e-17",
+          "union_fallback_labelled": "1.16415321826e-16"
+        },
+        "N=2,v=(0, 0, 0)": {
+          "exact": "1/16000000",
+          "preview": "6.25000000000e-8",
+          "union_fallback_labelled": "1.25000000000e-7"
+        },
+        "N=3,v=(1, 0, 0)": {
+          "exact": "1/16000000",
+          "preview": "6.25000000000e-8",
+          "union_fallback_labelled": "1.25000000000e-7"
+        },
+        "N=4,v=(1, -1, 0)": {
+          "exact": "1/1024000000",
+          "preview": "9.76562500000e-10",
+          "union_fallback_labelled": "1.95312500000e-9"
+        },
+        "N=6,v=(2, 1, 0)": {
+          "exact": "1/65536000000",
+          "preview": "1.52587890625e-11",
+          "union_fallback_labelled": "3.05175781250e-11"
+        },
+        "N=8,v=(1, 2, -3)": {
+          "exact": "1/4194304000000",
+          "preview": "2.38418579101e-13",
+          "union_fallback_labelled": "4.76837158203e-13"
+        }
+      },
+      "characterization": "a fine translation t preserves the selected set, the face classes and the owner map pi (up to a constant coarse shift) iff t=(4v_x,2v_y,v_z); checked exhaustively for t in [0,8)x[0,4)x[0,2)",
+      "coarse_count": 8,
+      "face_set_covariance": {
+        "N=3,v=(0, -1, 1)": {
+          "F1_covariant": true,
+          "F1_faces": 4536,
+          "F2_covariant": true,
+          "F2_faces": 5880,
+          "padding_covariant": true
+        },
+        "N=3,v=(1, 0, 0)": {
+          "F1_covariant": true,
+          "F1_faces": 4536,
+          "F2_covariant": true,
+          "F2_faces": 5880,
+          "padding_covariant": true
+        },
+        "N=4,v=(1, 1, 0)": {
+          "F1_covariant": true,
+          "F1_faces": 10752,
+          "F2_covariant": true,
+          "F2_faces": 13104,
+          "padding_covariant": true
+        }
+      },
+      "id": "item4_coarse_translation_invariance",
+      "non_coarse_witness": {
+        "face": "xy at fine (2,0,0), class r=2,s=0 selected",
+        "image_class": "('xy', 3, 0)",
+        "image_selected": false,
+        "t": "(1,0,0)"
+      },
+      "passed": true,
+      "statement": "for coarse v and N>=|v|_inf+2: ||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 <= C_h q^(N-|v|_inf-1) (B5 direct, both volumes contain Lambda_(N-|v|_inf)); with the region form, omega_inf(alpha_v(A))=omega_inf(A) for every local A; labelled fallback with nested-only B5: 2 C_h q^(N-|v|_inf-1) through the union",
+      "window_translations": 64
+    },
+    {
+      "C_prime": {
+        "exact": "1/250000",
+        "preview": "4.00000000000e-6"
+      },
+      "c_site_prime": {
+        "exact": "1/500000",
+        "preview": "2.00000000000e-6"
+      },
+      "dynamics_constants": {
+        "F1": {
+          "exact": "9261/77860400000000",
+          "preview": "1.18943647862e-10"
+        },
+        "F2": {
+          "exact": "1055961408185869563/15240701171875000000000000000",
+          "preview": "6.92856185734e-11"
+        }
+      },
+      "e_enclosure": {
+        "E_LO": "1359/500",
+        "E_UP": "27183/10000",
+        "series_24_terms": [
+          "2.71828182845904e0",
+          "2.71828182845904e0"
+        ]
+      },
+      "id": "item5_correlation_bound_three_constants",
+      "passed": true,
+      "proof": "|c^{F,N}_A-c^inf_A| <= |omega^{F,N}(A*(T^{F,N}-T^{F,r})(A))| + |(omega^{F,N}-omega_inf)(A*T^{F,r}(A))| + |omega_inf(A*(T^{F,r}-T)(A))| + ||a_N|^2-|a|^2|, r=r_N; the four terms are <= ||A||^2 times K_F/(r-1), c'_site|Lambda_r|e^{|Lambda_r|/10^8}q^(N-r), K_F/(r-1) and 2C'q^(N-1)",
+      "record": {
+        "N_min": 5,
+        "centering": "complex_mean",
+        "combine": "linear",
+        "constants": [
+          "C_dyn",
+          "c_site_prime",
+          "C_prime"
+        ],
+        "decay": "polynomial",
+        "gns_dynamics_equality": false,
+        "lumped": false,
+        "r_N": "floor((N-1)/2)",
+        "uniform_in_time": false,
+        "window": "|theta|<=8"
+      },
+      "values": {
+        "F1,N=10": {
+          "2C'q^(N-1)": {
+            "exact": "1/2251799813685248000000",
+            "preview": "4.44089209850e-22"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "3087/77860400000000",
+            "preview": "3.96478826206e-11"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "53042117683025649713939871/2500000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "2.12168470732e-14"
+          },
+          "r_N": 4,
+          "sum (directed upper)": {
+            "exact": "99172748670519158122530988567/2500000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "3.96690994682e-11"
+          },
+          "|Lambda_rN|": 729
+        },
+        "F1,N=20": {
+          "2C'q^(N-1)": {
+            "exact": "1/2596148429267413814265248164610048000000",
+            "preview": "3.85185988877e-40"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "9261/622883200000000",
+            "preview": "1.48679559827e-11"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "46481579943970481/250000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.85926319775e-22"
+          },
+          "r_N": 9,
+          "sum (directed upper)": {
+            "exact": "74339779914724063685023328739/5000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.48679559829e-11"
+          },
+          "|Lambda_rN|": 6859
+        },
+        "F1,N=5": {
+          "2C'q^(N-1)": {
+            "exact": "1/2097152000000",
+            "preview": "4.76837158203e-13"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "9261/77860400000000",
+            "preview": "1.18943647862e-10"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "1907351016999781132365266676061/2000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "9.53675508499e-10"
+          },
+          "r_N": 2,
+          "sum (directed upper)": {
+            "exact": "10730959935201647825204636086173/10000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.07309599352e-9"
+          },
+          "|Lambda_rN|": 125
+        },
+        "F1,N=6": {
+          "2C'q^(N-1)": {
+            "exact": "1/134217728000000",
+            "preview": "7.45058059692e-15"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "9261/77860400000000",
+            "preview": "1.18943647862e-10"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "37252949550776975241509114767/2500000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.49011798203e-11"
+          },
+          "r_N": 2,
+          "sum (directed upper)": {
+            "exact": "167315347828723506578198645617/1250000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.33852278262e-10"
+          },
+          "|Lambda_rN|": 125
+        },
+        "F2,N=10": {
+          "2C'q^(N-1)": {
+            "exact": "1/2251799813685248000000",
+            "preview": "4.44089209850e-22"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "351987136061956521/15240701171875000000000000000",
+            "preview": "2.30952061911e-11"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "53042117683025649713939871/2500000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "2.12168470732e-14"
+          },
+          "r_N": 4,
+          "sum (directed upper)": {
+            "exact": "231164230386543053658769716699/10000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "2.31164230386e-11"
+          },
+          "|Lambda_rN|": 729
+        },
+        "F2,N=20": {
+          "2C'q^(N-1)": {
+            "exact": "1/2596148429267413814265248164610048000000",
+            "preview": "3.85185988877e-40"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "1055961408185869563/121925609375000000000000000000",
+            "preview": "8.66070232167e-12"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "46481579943970481/250000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.85926319775e-22"
+          },
+          "r_N": 9,
+          "sum (directed upper)": {
+            "exact": "8660702321862303530828881839/1000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "8.66070232186e-12"
+          },
+          "|Lambda_rN|": 6859
+        },
+        "F2,N=5": {
+          "2C'q^(N-1)": {
+            "exact": "1/2097152000000",
+            "preview": "4.76837158203e-13"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "1055961408185869563/15240701171875000000000000000",
+            "preview": "6.92856185734e-11"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "1907351016999781132365266676061/2000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "9.53675508499e-10"
+          },
+          "r_N": 2,
+          "sum (directed upper)": {
+            "exact": "10234379642315047088710573373467/10000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.02343796423e-9"
+          },
+          "|Lambda_rN|": 125
+        },
+        "F2,N=6": {
+          "2C'q^(N-1)": {
+            "exact": "1/134217728000000",
+            "preview": "7.45058059692e-15"
+          },
+          "C_dyn/(r_N-1)": {
+            "exact": "1055961408185869563/15240701171875000000000000000",
+            "preview": "6.92856185734e-11"
+          },
+          "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+            "exact": "37252949550776975241509114767/2500000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "1.49011798203e-11"
+          },
+          "r_N": 2,
+          "sum (directed upper)": {
+            "exact": "84194248974318731613152645223/1000000000000000000000000000000000000000",
+            "grid": "10^-40",
+            "preview": "8.41942489743e-11"
+          },
+          "|Lambda_rN|": 125
+        }
+      }
+    },
+    {
+      "K5": {
+        "F1": {
+          "exact": "7222143131/510265917440000000",
+          "preview": "1.41536851358e-8"
+        },
+        "F2": {
+          "exact": "42627861255071838599399/3121295600000000000000000000000",
+          "preview": "1.36571048429e-8"
+        }
+      },
+      "K_R": {
+        "exact": "1/419430400000",
+        "preview": "2.38418579101e-12"
+      },
+      "K_reg": {
+        "exact": "27183/2097152000000",
+        "preview": "1.29618644714e-8"
+      },
+      "block_A": "5<=N<=464",
+      "blocks_B": [
+        {
+          "N": [
+            465,
+            929
+          ],
+          "ceil_b3_over_1e8": 9
+        },
+        {
+          "N": [
+            930,
+            1859
+          ],
+          "ceil_b3_over_1e8": 65
+        },
+        {
+          "N": [
+            1860,
+            3719
+          ],
+          "ceil_b3_over_1e8": 515
+        },
+        {
+          "N": [
+            3720,
+            7439
+          ],
+          "ceil_b3_over_1e8": 4117
+        },
+        {
+          "N": [
+            7440,
+            10720
+          ],
+          "ceil_b3_over_1e8": 12320
+        },
+        {
+          "N": [
+            10721,
+            12360
+          ],
+          "ceil_b3_over_1e8": 18883
+        },
+        {
+          "N": [
+            12361,
+            13180
+          ],
+          "ceil_b3_over_1e8": 22896
+        },
+        {
+          "N": [
+            13181,
+            13590
+          ],
+          "ceil_b3_over_1e8": 25100
+        },
+        {
+          "N": [
+            13591,
+            14000
+          ],
+          "ceil_b3_over_1e8": 27440
+        }
+      ],
+      "float_previews_labelled": {
+        "region term exceeds 1 first at": 14419,
+        "region term exceeds the dynamics term first at": 14411
+      },
+      "id": "item5_rate_in_N_certified_range",
+      "passed": true,
+      "qualitative": "for every fixed r>=2, limsup_N |c^{F,N}_A-c^inf_A| <= ||A||^2 C_dyn/(r-1); r is arbitrary, so the whole sequence of correlation functions converges for every theta in the window (no rate; r_N is not re-chosen)",
+      "statement": "for 5<=N<=14000 the frozen item-5 bracket is at most K5_F/N with K5_F = 10 C_dyn[F] + K_reg + K_R (N/(r_N-1)<=10; N*region(N)<=K_reg by block A (|Lambda_rN|<=10^8, N^4 8^-(N+1) decreasing) and blocks B; N*2C'q^(N-1)<=K_R)",
+      "vacuous_at": {
+        "N": 14421,
+        "floor(|Y|/10^8)": 29990,
+        "r_N": 7210,
+        "statement": "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) >= 2 exactly (E_LO lower bound), so the frozen bracket exceeds the trivial bound 2 for |c^N-c^inf|/||A||^2",
+        "|Lambda_rN|": 2999066740461
+      }
+    },
+    {
+      "brackets": {
+        "C_dyn_F1": [
+          "9500",
+          "10500"
+        ],
+        "C_dyn_F2": [
+          "9500",
+          "10500"
+        ],
+        "C_prime": [
+          "1",
+          "1"
+        ],
+        "C_prime_secondary": [
+          "99/100",
+          "101/100"
+        ],
+        "c_site_prime": [
+          "1",
+          "1"
+        ],
+        "c_site_prime_secondary": [
+          "99/100",
+          "101/100"
+        ],
+        "q_secondary": [
+          "100",
+          "100"
+        ]
+      },
+      "id": "item6_tau_scaling_per_constant",
+      "item_5_sum": "no single bracket; each constant checked separately",
+      "passed": true,
+      "ratios": {
+        "C_dyn_F1": {
+          "exact": "1953058850/194651",
+          "preview": "1.00336440603e4"
+        },
+        "C_dyn_F2": {
+          "exact": "38176688920663121234473000000/3810205403940325763421973",
+          "preview": "1.00195881516e4"
+        },
+        "C_prime": {
+          "exact": "1",
+          "preview": "1.00000000000e0"
+        },
+        "C_prime_secondary": {
+          "exact": "1",
+          "preview": "1.00000000000e0"
+        },
+        "c_site_prime": {
+          "exact": "1",
+          "preview": "1.00000000000e0"
+        },
+        "c_site_prime_secondary": {
+          "exact": "1",
+          "preview": "1.00000000000e0"
+        },
+        "q_secondary": {
+          "exact": "100",
+          "preview": "1.00000000000e2"
+        }
+      },
+      "rule": "same exact rational formula at tau and tau/100, no intermediate rounding"
+    },
+    {
+      "C_prime_2": {
+        "exact": "1/20000",
+        "preview": "5.00000000000e-5"
+      },
+      "c_site_prime_2": {
+        "exact": "1/40000",
+        "preview": "2.50000000000e-5"
+      },
+      "id": "secondary_pair_labelled",
+      "label": "secondary (labelled; conditional on the BB1 secondary pair); the headline decides the loop",
+      "margin": "5/2",
+      "passed": true,
+      "q2": {
+        "exact": "592/390625",
+        "preview": "1.51552000000e-3"
+      },
+      "target_C_prime_2": "1/8000"
+    },
+    {
+      "id": "ns_theorem_4_1_quoted_verbatim",
+      "passed": true,
+      "pdf_sha256": "501af040512f2bdb62344ecbd093664e79ad1861338eabbce2c9791fca4e2fba",
+      "quoted_passages": 5,
+      "source": "research/round33/sources/nachtergaele-sims-1410.8174v1.md",
+      "use": "T^{F,N}_theta is (46) for the native restriction (44); T_theta is the (77) limit, admitted in the BA2 gate for both families"
+    },
+    {
+      "fixtures": {
+        "algebraic_not_gns": {
+          "omega_0(A tau(A))": [
+            "0",
+            "1"
+          ],
+          "omega_1(A tau(A))": [
+            "0",
+            "-1"
+          ]
+        },
+        "centering": {
+          "omega(A)": [
+            "0",
+            "12/25"
+          ],
+          "omega(A)^2": [
+            "-144/625",
+            "0"
+          ],
+          "omega(A*A)": "16/25",
+          "|omega(A)|^2": "144/625",
+          "||(A-a)phi||^2": "256/625"
+        },
+        "cutoff_exchange": {
+          "a(N,L)": "1 if L<=N else 0",
+          "checked": true,
+          "lim_L lim_N": 1,
+          "lim_N lim_L": 0
+        },
+        "harmonic_zigzag": {
+          "step_bound_1/(n+1)": true,
+          "tail_oscillation": {
+            "10": "1.02145e0",
+            "100": "1.00763e0",
+            "400": "6.65216e-1"
+          }
+        },
+        "one_state_ball": {
+          "distance_of_limits": "1/250",
+          "every_term_within_2delta_of_P": true,
+          "limits": [
+            "even",
+            "odd"
+          ],
+          "tail_sup": "1/250"
+        },
+        "topology": {
+          "fixed_ok": true,
+          "fixed_vector_bound": "|e^{i pi/n}-1| <= pi/n < 22/(7n) -> 0",
+          "moving_vector_norm_2_for_n_le_40": true
+        }
+      },
+      "id": "fixtures_exact",
+      "model_is_finite_graph": true,
+      "passed": true,
+      "transfers_to_aq": false
+    },
+    {
+      "gate_fields_after_discharge": {
+        "common_limit_claimed": true,
+        "continuum_claim": false,
+        "dynamics_level": "correlation_functions_compact_window",
+        "gns_dynamics_equality_claimed": false,
+        "rate_in_N_claimed": true,
+        "rate_in_a_claimed": false,
+        "scientific_priority_verified": false,
+        "state_convergence_claimed": true,
+        "translation_invariance_claimed": true,
+        "translation_invariance_scope": "coarse translations; the limit of the named constructions",
+        "uniform_in_time_claimed": false,
+        "uniqueness_of_ground_state_claimed": false,
+        "weak_coupling_claim": false,
+        "whole_sequence_claimed": true,
+        "whole_sequence_scope": "reduced densities of the named constructions F1 and F2 on every finite region"
+      },
+      "gate_fields_undischarged": {
+        "common_limit_claimed": false,
+        "continuum_claim": false,
+        "dynamics_level": "algebraic_heisenberg_compact_window",
+        "gns_dynamics_equality_claimed": false,
+        "rate_in_N_claimed": false,
+        "rate_in_a_claimed": false,
+        "scientific_priority_verified": false,
+        "state_convergence_claimed": false,
+        "translation_invariance_claimed": false,
+        "translation_invariance_scope": "coarse translations; the limit of the named constructions",
+        "uniform_in_time_claimed": false,
+        "uniqueness_of_ground_state_claimed": false,
+        "weak_coupling_claim": false,
+        "whole_sequence_claimed": false,
+        "whole_sequence_scope": "reduced densities of the named constructions F1 and F2 on every finite region"
+      },
+      "id": "gate_fields_undischarged_and_after_discharge",
+      "passed": true,
+      "rule": "gate_fields_rule: the contract values hold for accepted_within_scope after the discharge; before it every BB1-dependent field stays false and dynamics_level stays at the BA2 algebraic level"
+    },
+    {
+      "id": "coherent_evidence_tampering",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "C_prime_target_loosened_rehashed": "targets differ from the frozen values",
+        "ba2_gate_constant_edited": "pinned premise changed: research/round33/advisor/ba2-gate.json",
+        "bb1_contract_target_edited": "BB1 contract bytes do not match the bound hash",
+        "byte_change_without_rehash": "contract bytes do not match the bound hash",
+        "control_removed_rehashed": "controls differ from the preregistered ids",
+        "gate_field_flipped_rehashed": "gate_fields_required changed",
+        "hash_binding_flag_flipped_rehashed": "hash-binding flags",
+        "hypothesis_changed_in_both_places_rehashed": "hypothesis differs from the BB1 frozen target: C_h",
+        "isolation_flag_flipped_rehashed": "reverse premise isolation flag",
+        "ns_excerpt_edited": "pinned premise changed: research/round33/sources/nachtergaele-sims-1410.8174v1.md",
+        "r_N_formula_changed_rehashed": "item 5 frozen parameters",
+        "snapshot_removed_with_contract_line": "a declared premise snapshot is missing"
+      }
+    },
+    {
+      "admission": "Fraction only; e^x replaced by directed rational enclosures; previews are truncated strings never read",
+      "id": "exact_arithmetic_admission",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "bool_value": "non-exact numeric input rejected: True",
+        "decimal_preview_as_admission": "malformed rational input rejected: '1.18943647862e-10'",
+        "float_constant": "non-exact numeric input rejected: 4e-06",
+        "float_target": "non-exact numeric input rejected: 5e-10",
+        "nan_string": "malformed rational input rejected: 'nan'",
+        "zero_denominator": "malformed rational input rejected: '1/0'"
+      }
+    },
+    {
+      "id": "no_priority_or_continuum_claim",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "provenance": "historical, occult or governmental material supplies no premise",
+      "rejected_mutations": {
+        "continuum_true": "claim flag must be exactly false: continuum_claim",
+        "ground_state_uniqueness_true": "claim flag must be exactly false: uniqueness_of_ground_state_claimed",
+        "priority_true": "claim flag must be exactly false: scientific_priority_verified",
+        "weak_coupling_true": "claim flag must be exactly false: weak_coupling_claim"
+      }
+    },
+    {
+      "id": "changed_model_relabelled",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "exponential_weights": "dynamics metric must be coarse l1 with the AQ1 F",
+        "finite_graph": "finite-graph or uniform model relabelled",
+        "l1_state_metric": "state metric must be coarse l-infinity",
+        "literal_vertex_boxes": "both named construction families required",
+        "nonzero_triple": "selected triple must be exactly (0,0,0)",
+        "su3_group": "group/dimension must be SU(2) on Z^3",
+        "tau_1e-7": "packet tau differs from the contract (retuning or changed model)",
+        "two_dimensional": "group/dimension must be SU(2) on Z^3",
+        "uniform_model": "finite-graph or uniform model relabelled",
+        "window_64": "window must be |theta|<=8"
+      }
+    },
+    {
+      "hypothetical_missed_example": {
+        "C'": {
+          "exact": "1/50000",
+          "preview": "2.00000000000e-5"
+        },
+        "C_h": "1/50000",
+        "dominating_term": "bb1_hypothesis_constants (C_h itself)",
+        "meets_1/100000": false,
+        "rule_outcome": "limited"
+      },
+      "id": "insufficient_verdict_retained",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "bb1_insufficient_relabelled_limited": "recorded verdict limited differs from the rule (insufficient)",
+        "cauchy_open_relabelled_limited": "recorded verdict limited differs from the rule (insufficient)",
+        "condition_dropped_before_discharge": "a verdict proposed before the discharge must carry the condition",
+        "item4_dropped_relabelled_accepted": "recorded verdict accepted_within_scope differs from the rule (limited)",
+        "missed_C_prime_relabelled_accepted": "recorded verdict accepted_within_scope differs from the rule (limited)",
+        "partial_discharge_relabelled_accepted": "recorded verdict accepted_within_scope differs from the rule (limited)",
+        "retuned_tau_to_pass": "packet tau differs from the contract (retuning or changed model)"
+      }
+    },
+    {
+      "id": "tau_scaling_exponent",
+      "kind": "damaging_mutation_control",
+      "linear_ratio": "100",
+      "passed": true,
+      "rejected_mutations": {
+        "C_dyn_cubic_label": "tau -> tau/100 ratio outside its preregistered bracket",
+        "C_dyn_linear_order": "tau -> tau/100 ratio outside its preregistered bracket",
+        "C_prime_tau_dependent": "tau -> tau/100 ratio outside its preregistered bracket",
+        "post_hoc_bracket": "bracket chosen after evaluation rejected",
+        "q2_ratio_10": "tau -> tau/100 ratio outside its preregistered bracket",
+        "secondary_with_1_over_1_minus_q2_misread": "tau -> tau/100 ratio outside its preregistered bracket"
+      }
+    },
+    {
+      "conversion": "u=delta t/hbar=theta/8 with delta=alpha/8; |theta|<=8 is |u|<=1",
+      "id": "wrong_delta_alpha_hbar_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "delta_clock_label": "physical clock must be theta=alpha t/hbar (common clock)",
+        "euclidean_clock": "physical clock must be theta=alpha t/hbar (common clock)",
+        "one_eighth_window": "normalized window must be U=Theta/8 (u=theta/8, delta=alpha/8)",
+        "u_window_labelled_theta": "normalized window must be U=Theta/8 (u=theta/8, delta=alpha/8)"
+      }
+    },
+    {
+      "id": "root_n_misuse",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "divide_by_sqrt_N": "division by sqrt(N) rejected for deterministic bounds",
+        "item5_terms_in_quadrature": "root-sum-square or root-N assembly rejected",
+        "union_legs_rss": "root-sum-square or root-N assembly rejected"
+      }
+    },
+    {
+      "id": "tier_mixing_rejected",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "assembly_as_route_label": "assembly or a route recorded as a route label on a BB2 state constant",
+        "assembly_missing": "the reverse assembly is union_comparison, recorded in the assembly field",
+        "bb1_route_claimed": "a BB2 producer cannot claim a BB1 route (polymer_kp or iterated_split)",
+        "dynamics_constant_state_tier": "dynamics constant must carry the tier polynomial_lieb_robinson",
+        "dynamics_value_not_from_gate": "dynamics constant is not twice an exact BA2 gate value of its route (finite-box and limit replacement)",
+        "dynamics_with_assembly_label": "state labels on a dynamics constant (tier mixing)",
+        "f1_constant_with_inner_f2_route": "route not admitted for this family in the BA2 gate",
+        "lumped_item5_bracket": "three separate constants: a single lumped bracket for item 5 is rejected",
+        "state_constant_lr_tier": "state constant must carry exactly one state tier (exact_first_order or crude_majorant)"
+      }
+    },
+    {
+      "id": "reverse_premise_isolation",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "bb1_gate_added": "forbidden premise in reverse inputs: research/round33/advisor/bb1-gate.json",
+        "bb1_reverse_producer_added": "forbidden premise in reverse inputs: research/round33/reverse/bb1/report.md",
+        "bb1_skeptic_added": "forbidden premise in reverse inputs: research/round33/skeptic/bb1.md",
+        "bb_contract_review_added": "forbidden premise in reverse inputs: research/round33/skeptic/bb-contract-review.md",
+        "deliberation_added": "forbidden premise in reverse inputs: research/round33/advisor/deliberation-4.md",
+        "forward_bb2_report_added": "forbidden premise in reverse inputs: research/round33/forward/bb2/report.md",
+        "lens_memo_added": "forbidden premise in reverse inputs: research/round33/experts/jung/memo.md",
+        "premise_removed": "reverse inputs inventory differs from AGENTS.md + contract + shared_premises",
+        "skeptic_triage_added": "forbidden triage/deliberation/memo file in reverse inputs: research/round33/skeptic/triage-bb.md"
+      }
+    },
+    {
+      "accepted_wording": "every constant is uniform in N at fixed spacing and fixed tau and uniform in the on-site cutoff L; nothing is uniform in the spacing",
+      "id": "uniform_in_N_not_in_a",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "continuum_reading": "weak coupling or continuum reading rejected",
+        "uniform_in_a": "uniformity in the lattice spacing rejected",
+        "uniform_in_lattice_spacing": "uniformity in the lattice spacing rejected",
+        "unqualified_uniformly": "uniformity statements must say 'in N at fixed spacing'"
+      }
+    },
+    {
+      "id": "placeholder_span_rejected",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "bar_span": "placeholder span blocks the freeze: <a|b>",
+        "contract_placeholder_rehashed": "placeholder span blocks the freeze: <BB1 gate>",
+        "eg_span": "placeholder span blocks the freeze: <e.g.x>",
+        "placeholder_gate": "placeholder span blocks the freeze: <preceding gate>"
+      }
+    },
+    {
+      "id": "negation_aware_phrase_scan",
+      "kind": "damaging_mutation_control",
+      "negated_positive_control": true,
+      "passed": true,
+      "rejected_mutations": {
+        "affirmative_boundary_independent": "affirmative forbidden phrasing: boundary independent :: Reproduction ```bash python3 -B research/round33/reverse/bb2/check.py --output /absolute/fresh/dir python3 -B -O research/round33/reverse/bb2/check.py --output ",
+        "affirmative_confirms": "affirmative forbidden phrasing: confirms :: Reproduction ```bash python3 -B research/round33/reverse/bb2/check.py --output /absolute/fresh/dir python3 -B -O research/round33/reverse/bb2/check.py --output ",
+        "affirmative_infinite_volume_ground_state": "affirmative forbidden phrasing: the infinite-volume ground state :: Reproduction ```bash python3 -B research/round33/reverse/bb2/check.py --output /absolute/fresh/dir python3 -B -O research/round33/reverse/bb2/check.py --output ",
+        "affirmative_thermodynamic_limit": "affirmative forbidden phrasing: the thermodynamic limit :: Reproduction ```bash python3 -B research/round33/reverse/bb2/check.py --output /absolute/fresh/dir python3 -B -O research/round33/reverse/bb2/check.py --output ",
+        "affirmative_unique_limit": "affirmative forbidden phrasing: the unique limit :: Reproduction ```bash python3 -B research/round33/reverse/bb2/check.py --output /absolute/fresh/dir python3 -B -O research/round33/reverse/bb2/check.py --output "
+      }
+    },
+    {
+      "declared": {
+        "N_min": "parameters.N_min",
+        "clock": "parameters.clock and preregistration.clock",
+        "metric": "parameters.metric",
+        "weights": "parameters.weights",
+        "window": "parameters.window"
+      },
+      "id": "parameters_declare_metric_weights_window",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "clock_removed": "parameters must declare clock as a field (not prose)",
+        "metric_removed": "parameters must declare metric as a field (not prose)",
+        "weights_removed": "parameters must declare weights as a field (not prose)",
+        "window_removed": "parameters must declare window as a field (not prose)"
+      }
+    },
+    {
+      "id": "rate_constant_pair_prefrozen",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "C_h_retuned": "hypothesis constants are frozen",
+        "c_h_retuned": "hypothesis constants are frozen",
+        "q_one_over_32": "the rate pair is frozen at q=1/64 (no q optimized per N)",
+        "q_optimized_per_N": "optimizing q per N rejected"
+      }
+    },
+    {
+      "accepted": "q^(N-1) with q=1/64 per coarse step at fixed spacing and strong bare coupling; a coarse step is (4a,2a,a)",
+      "id": "decay_rate_in_N_not_a",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "converted_to_fm": "rate converted to a physical length or to a",
+        "correlation_length": "rate converted to a physical length or to a",
+        "no_coarse_step": "rate must be per coarse step at fixed spacing",
+        "rate_in_lattice_spacing": "rate converted to a physical length or to a"
+      }
+    },
+    {
+      "fixed_versus_moving_vector": {
+        "fixed_ok": true,
+        "fixed_vector_bound": "|e^{i pi/n}-1| <= pi/n < 22/(7n) -> 0",
+        "moving_vector_norm_2_for_n_le_40": true
+      },
+      "id": "topology_named",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "norm_continuity_in_theta": "representations: GNS strong continuity only",
+        "one_topology": "state topology must be the trace norm on B(H_Y)",
+        "weak_star_states": "state topology must be the trace norm on B(H_Y)"
+      },
+      "topologies": {
+        "dynamics": "operator norm, uniformly for |theta|<=8 (compact window)",
+        "representations": "strong continuity of the GNS unitary group (not norm continuity in theta)",
+        "states": "trace norm on B(H_Y) for every finite complete-factor region Y"
+      }
+    },
+    {
+      "faces_N2": {
+        "F1": 1344,
+        "F2": 1960
+      },
+      "id": "two_families_named",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "all_boundary_conditions": "exactly the two named families F1 and F2",
+        "f2_collapsed_onto_f1": "F2 collapsed onto F1 (the families differ by the extra faces)",
+        "single_family": "exactly the two named families F1 and F2"
+      }
+    },
+    {
+      "id": "subsequence_versus_whole_sequence",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "states_whole_sequence_from_compactness": "whole-sequence claims come only from a Cauchy bound",
+        "unquantified_limit": "limit statement must say whole sequence or subsequence",
+        "whole_sequence_from_diagonal_extraction": "whole-sequence claims come only from a Cauchy bound"
+      },
+      "statements": {
+        "AQ1/AY1 states": "subsequence (compactness), identified in item 3",
+        "BB2 states": "whole sequence (Cauchy bound)"
+      }
+    },
+    {
+      "id": "common_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "reason": "every comparison and both families at the same coupling and the common clock theta=alpha t/hbar",
+      "rejected_mutations": {
+        "f2_on_u_clock": "both families and all comparisons use the common clock theta=alpha t/hbar",
+        "plus_versus_minus_tau": "cross-coupling comparison rejected: every comparison at the same tau",
+        "tau_versus_half_tau": "cross-coupling comparison rejected: every comparison at the same tau"
+      }
+    },
+    {
+      "id": "named_construction_not_uniqueness",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "the_infinite_volume_ground_state": "affirmative forbidden phrasing: the infinite-volume ground state :: The limit is the infinite-volume ground state.",
+        "thermodynamic_limit_phrase": "affirmative forbidden phrasing: the thermodynamic limit :: We call omega_inf the thermodynamic limit.",
+        "uniqueness_flag": "claim flag must be exactly false: uniqueness_of_ground_state_claimed",
+        "uniqueness_phrase": "affirmative forbidden phrasing: the infinite-volume ground state :: This gives uniqueness of the infinite-volume ground state."
+      },
+      "wording": "the limit of the named constructions (F1 and F2)"
+    },
+    {
+      "id": "cauchy_estimate_not_compactness",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "compactness_plus_closeness": "whole-sequence convergence from compactness plus closeness is rejected",
+        "n_to_n_plus_1_only": "an N to N+1 bound alone is not a Cauchy estimate",
+        "one_state_ball_sequence_as_cauchy": "tail supremum exceeds the claimed Cauchy bound at N=2"
+      }
+    },
+    {
+      "id": "limit_identified_with_aq1_limits",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "identification_along_subsequence": "identification needs the whole-sequence limit",
+        "inherit_before_identification": "inheriting AQ1/AQ2 properties before the identification is rejected",
+        "inherit_translation_invariance_from_aq1": "property not admitted by its gate: translation invariance",
+        "inherit_uniqueness": "property not admitted by its gate: uniqueness of every infinite-volume ground state",
+        "inherit_unqualified_full_gns_gap": "property not admitted by its gate: full-GNS gap"
+      }
+    },
+    {
+      "id": "translation_invariance_separate_item",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "N_too_small": "needs N at least |v|_inf+2",
+        "from_nested_cubes": "translation invariance from nested cubes alone is rejected",
+        "not_separate_item": "translation invariance only as the separate pre-registered item 4",
+        "union_factor_hidden": "bound must be C_h q^(N-|v|_inf-1)"
+      }
+    },
+    {
+      "id": "region_constant_scales_with_Y",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "R_constant_reused_on_Y": "a constant proved for R reused on a region Y",
+        "e_factor_dropped": "region bound must carry |Y| e^{|Y|/10^8}",
+        "exponent_N_minus_1_for_all_Y": "region exponent must be d_Y = N - max_Y |y|_inf",
+        "size_factor_dropped": "region bound must carry |Y| e^{|Y|/10^8}"
+      }
+    },
+    {
+      "exchange_fixture": {
+        "a(N,L)": "1 if L<=N else 0",
+        "checked": true,
+        "lim_L lim_N": 1,
+        "lim_N lim_L": 0
+      },
+      "id": "cutoff_uniform_then_removed",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "L_dependent_constant": "Cauchy constants must be uniform in the cutoff L",
+        "eigenvalue_only_removal": "eigenvalue convergence alone does not remove the cutoff for vectors",
+        "limits_exchanged": "the N and L limits are never exchanged (uniform in L, then L at fixed N)"
+      }
+    },
+    {
+      "fixture": {
+        "omega_0(A tau(A))": [
+          "0",
+          "1"
+        ],
+        "omega_1(A tau(A))": [
+          "0",
+          "-1"
+        ]
+      },
+      "id": "algebraic_not_gns_dynamics",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "algebraic_level_relabelled": "dynamics level is correlation functions on a compact window",
+        "correlations_equal_F1_F2_boxes": "equality of correlation functions of different states rejected",
+        "gns_equality_finite_versus_limit": "equality of GNS dynamics of different states rejected"
+      }
+    },
+    {
+      "id": "lieb_robinson_polynomial_tail",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "O_one_over_N_for_all_N": "O(1/N) claimed beyond the certified range: the frozen bound is vacuous at N=14421",
+        "exponential_form": "the rate of the frozen bound is O(1/N) (polynomial F), never exponential",
+        "exponential_rate_item5": "exponential Lieb-Robinson tail claimed with the polynomial F",
+        "unstated_range": "the O(1/N) range must be stated explicitly"
+      },
+      "vacuous_witness_N": 14421
+    },
+    {
+      "id": "time_window_named_common_clock",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "U_equals_Theta": "window must be named with U=Theta/8",
+        "uniform_in_time": "uniform-in-time claim rejected (the BA2 bounds grow like U^2/(1-vU/3))",
+        "window_unnamed": "window must be named with U=Theta/8"
+      }
+    },
+    {
+      "fixture": {
+        "harmonic_zigzag": {
+          "step_bound_1/(n+1)": true,
+          "tail_oscillation": {
+            "10": "1.02145e0",
+            "100": "1.00763e0",
+            "400": "6.65216e-1"
+          }
+        },
+        "one_state_ball": {
+          "distance_of_limits": "1/250",
+          "every_term_within_2delta_of_P": true,
+          "limits": [
+            "even",
+            "odd"
+          ],
+          "tail_sup": "1/250"
+        }
+      },
+      "id": "fixture_whole_sequence_vs_subsequence",
+      "kind": "damaging_mutation_control",
+      "model_is_finite_graph": true,
+      "passed": true,
+      "rejected_mutations": {
+        "alternating_one_state_ball_as_convergent": "tail supremum exceeds the claimed Cauchy bound at N=2",
+        "harmonic_steps_as_cauchy": "an N to N+1 bound alone is not a Cauchy estimate",
+        "harmonic_tail_as_small": "tail supremum exceeds the claimed Cauchy bound at N=10"
+      },
+      "transfers_to_aq": false
+    },
+    {
+      "id": "fixture_translation_residues",
+      "kind": "damaging_mutation_control",
+      "model_is_finite_graph": true,
+      "passed": true,
+      "rejected_mutations": {
+        "fine_x_by_1": "a non-coarse fine translation is not a symmetry of the patterned model",
+        "fine_x_by_2": "a non-coarse fine translation is not a symmetry of the patterned model",
+        "fine_y_by_1": "a non-coarse fine translation is not a symmetry of the patterned model",
+        "non_coarse_record": "non-coarse fine translation rejected (breaks residues and face classes)",
+        "translated_box_through_nested_cubes": "translation invariance from nested cubes alone is rejected"
+      },
+      "transfers_to_aq": false,
+      "witness": {
+        "face": "xy at fine (2,0,0), class r=2,s=0 selected",
+        "image_class": "('xy', 3, 0)",
+        "image_selected": false,
+        "t": "(1,0,0)"
+      }
+    },
+    {
+      "fixture": {
+        "omega(A)": [
+          "0",
+          "12/25"
+        ],
+        "omega(A)^2": [
+          "-144/625",
+          "0"
+        ],
+        "omega(A*A)": "16/25",
+        "|omega(A)|^2": "144/625",
+        "||(A-a)phi||^2": "256/625"
+      },
+      "id": "fixture_correlation_centering",
+      "kind": "damaging_mutation_control",
+      "model_is_finite_graph": true,
+      "passed": true,
+      "rejected_mutations": {
+        "exponential_tail_polynomial_F": "exponential Lieb-Robinson tail claimed with the polynomial F",
+        "post_hoc_r_N": "post-hoc choice of r_N rejected",
+        "real_square_centering": "centering must use |omega(A)|^2 (complex mean), not omega(A)^2",
+        "uncentred": "centering must use |omega(A)|^2 (complex mean), not omega(A)^2"
+      },
+      "transfers_to_aq": false
+    },
+    {
+      "id": "conditional_on_bb1_targets",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "bb1_value_other_than_target": "a BB1 value other than the frozen target: C_h",
+        "condition_dropped": "the condition conditional_on_bb1_targets was dropped",
+        "decreasing_constant": "constant decreases when c_h increases",
+        "gate_fields_true_before_discharge": "undischarged BB1 hypothesis: field must stay false: whole_sequence_claimed",
+        "producer_records_discharge": "a BB2 producer reads no BB1 gate and cannot record the discharge",
+        "unconditional_before_discharge": "a conclusion called unconditional before the discharge"
+      }
+    },
+    {
+      "id": "r_N_prefrozen",
+      "kind": "damaging_mutation_control",
+      "passed": true,
+      "rejected_mutations": {
+        "r_N_N_minus_2": "r_N differs from floor((N-1)/2) at N=5",
+        "r_N_floor_N_over_2": "r_N differs from floor((N-1)/2) at N=6",
+        "r_N_optimized": "r_N differs from floor((N-1)/2) at N=5",
+        "record_with_other_r_N": "r_N must be floor((N-1)/2) as frozen"
+      }
+    },
+    {
+      "id": "mandatory_template_once",
+      "passed": true,
+      "template_sha256": "dddab387665ec0f26caf7a7d32d18ac22302ae1c2387e3a63d4a64318c7c7367"
+    },
+    {
+      "forbidden_count": 27,
+      "id": "report_phrase_scan_negation_aware",
+      "passed": true,
+      "scanned": [
+        "report.md",
+        "exported sentences"
+      ]
+    },
+    {
+      "exclusions_verbatim": true,
+      "headline_rationals_in_report": true,
+      "id": "report_binds_constants_exclusions_disclosure",
+      "passed": true
+    },
+    {
+      "id": "error_ledger_itemized",
+      "ledger": {
+        "arithmetic": {
+          "reason": "exact Fractions; e^x replaced by directed enclosures (E_UP=27183/10000, E_LO=2718/1000, series with tail bound); decimals are truncated previews; block comparisons in integers",
+          "value": "0"
+        },
+        "bb1_hypothesis_constants": {
+          "label": "conditional_on_bb1_targets",
+          "value": "C_h=1/250000 (R form), c_h=1/500000 (region form) at q=1/64; secondary C_2h=1/20000, c_2h=1/40000 at q_2=151552|tau| (labelled)"
+        },
+        "cauchy_telescoping_or_union": {
+          "value": "union comparison, factor 1 for nested centered cubes (the union is the larger cube): C'=C_h, c'_site=c_h; no telescoping sum; non-nested pairs cost factor 2 (labelled)"
+        },
+        "dynamics_constant_from_ba2": {
+          "tier": "polynomial_lieb_robinson",
+          "value": "C_dyn[F1]=9261/77860400000000 (duhamel_inner_f1), C_dyn[F2]=1055961408185869563/15240701171875000000000000000 (duhamel_inner_f2): twice the exact BA2 gate values"
+        },
+        "identification_with_subsequential_limits": {
+          "reason": "exact: a trace-norm convergent sequence has every subsequence converging to the same limit; no constant enters",
+          "value": "0"
+        },
+        "region_form_on_Lambda_rN": {
+          "value": "c'_site |Lambda_rN| e^{|Lambda_rN|/10^8} q^(N-r_N); O(1/N) of the bracket certified on 5<=N<=14000; vacuous at N=14421"
+        },
+        "translation_general_volume": {
+          "value": "C_h q^(N-|v|_inf-1) on R, c_h|Y|e^{|Y|/10^8}q^(N-|v|_inf-max_Y|y|_inf) on Y (B5 direct); labelled union fallback 2C_h q^(N-|v|_inf-1)"
+        }
+      },
+      "passed": true
+    }
+  ],
+  "common_limit_claimed": false,
+  "condition": "conditional_on_bb1_targets",
+  "continuum_claim": false,
+  "contract_controls_covered": [
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "no_priority_or_continuum_claim",
+    "changed_model_relabelled",
+    "insufficient_verdict_retained",
+    "tau_scaling_exponent",
+    "wrong_delta_alpha_hbar_clock",
+    "root_n_misuse",
+    "tier_mixing_rejected",
+    "reverse_premise_isolation",
+    "uniform_in_N_not_in_a",
+    "placeholder_span_rejected",
+    "negation_aware_phrase_scan",
+    "parameters_declare_metric_weights_window",
+    "rate_constant_pair_prefrozen",
+    "decay_rate_in_N_not_a",
+    "topology_named",
+    "two_families_named",
+    "subsequence_versus_whole_sequence",
+    "common_clock",
+    "named_construction_not_uniqueness",
+    "cauchy_estimate_not_compactness",
+    "limit_identified_with_aq1_limits",
+    "translation_invariance_separate_item",
+    "region_constant_scales_with_Y",
+    "cutoff_uniform_then_removed",
+    "algebraic_not_gns_dynamics",
+    "lieb_robinson_polynomial_tail",
+    "time_window_named_common_clock",
+    "fixture_whole_sequence_vs_subsequence",
+    "fixture_translation_residues",
+    "fixture_correlation_centering",
+    "conditional_on_bb1_targets",
+    "r_N_prefrozen"
+  ],
+  "contract_sha256": "ed5c0b24b16b19f0db2c16a437ee37608552e1a1cf0629494792aa877d95ad35",
+  "contribution_alias": "HNM-BB2-R reverse union-comparison whole-sequence convergence, common limit, identification, coarse translation invariance and correlation functions of the named constructions (conditional on the BB1 frozen targets)",
+  "controls_not_implementable_as_mutations": [],
+  "controls_with_damaging_mutations": [
+    "algebraic_not_gns_dynamics",
+    "cauchy_estimate_not_compactness",
+    "changed_model_relabelled",
+    "coherent_evidence_tampering",
+    "common_clock",
+    "conditional_on_bb1_targets",
+    "cutoff_uniform_then_removed",
+    "decay_rate_in_N_not_a",
+    "exact_arithmetic_admission",
+    "fixture_correlation_centering",
+    "fixture_translation_residues",
+    "fixture_whole_sequence_vs_subsequence",
+    "insufficient_verdict_retained",
+    "lieb_robinson_polynomial_tail",
+    "limit_identified_with_aq1_limits",
+    "named_construction_not_uniqueness",
+    "negation_aware_phrase_scan",
+    "no_priority_or_continuum_claim",
+    "parameters_declare_metric_weights_window",
+    "placeholder_span_rejected",
+    "r_N_prefrozen",
+    "rate_constant_pair_prefrozen",
+    "region_constant_scales_with_Y",
+    "reverse_premise_isolation",
+    "root_n_misuse",
+    "subsequence_versus_whole_sequence",
+    "tau_scaling_exponent",
+    "tier_mixing_rejected",
+    "time_window_named_common_clock",
+    "topology_named",
+    "translation_invariance_separate_item",
+    "two_families_named",
+    "uniform_in_N_not_in_a",
+    "wrong_delta_alpha_hbar_clock"
+  ],
+  "cutoff_order": [
+    "bounds in each Q_L uniformly in L",
+    "L to infinity at fixed N and M (AV1 F20-F23: Eckart vector bound, untruncated gap 1/2)",
+    "N to infinity on the untruncated vectors only"
+  ],
+  "damaging_mutations_rejected": 162,
+  "direction": "reverse",
+  "dynamics_level": "algebraic_heisenberg_compact_window",
+  "error_ledger": {
+    "arithmetic": {
+      "reason": "exact Fractions; e^x replaced by directed enclosures (E_UP=27183/10000, E_LO=2718/1000, series with tail bound); decimals are truncated previews; block comparisons in integers",
+      "value": "0"
+    },
+    "bb1_hypothesis_constants": {
+      "label": "conditional_on_bb1_targets",
+      "value": "C_h=1/250000 (R form), c_h=1/500000 (region form) at q=1/64; secondary C_2h=1/20000, c_2h=1/40000 at q_2=151552|tau| (labelled)"
+    },
+    "cauchy_telescoping_or_union": {
+      "value": "union comparison, factor 1 for nested centered cubes (the union is the larger cube): C'=C_h, c'_site=c_h; no telescoping sum; non-nested pairs cost factor 2 (labelled)"
+    },
+    "dynamics_constant_from_ba2": {
+      "tier": "polynomial_lieb_robinson",
+      "value": "C_dyn[F1]=9261/77860400000000 (duhamel_inner_f1), C_dyn[F2]=1055961408185869563/15240701171875000000000000000 (duhamel_inner_f2): twice the exact BA2 gate values"
+    },
+    "identification_with_subsequential_limits": {
+      "reason": "exact: a trace-norm convergent sequence has every subsequence converging to the same limit; no constant enters",
+      "value": "0"
+    },
+    "region_form_on_Lambda_rN": {
+      "value": "c'_site |Lambda_rN| e^{|Lambda_rN|/10^8} q^(N-r_N); O(1/N) of the bracket certified on 5<=N<=14000; vacuous at N=14421"
+    },
+    "translation_general_volume": {
+      "value": "C_h q^(N-|v|_inf-1) on R, c_h|Y|e^{|Y|/10^8}q^(N-|v|_inf-max_Y|y|_inf) on Y (B5 direct); labelled union fallback 2C_h q^(N-|v|_inf-1)"
+    }
+  },
+  "exclusions": {
+    "contract": [
+      "uniqueness of every infinite-volume ground state",
+      "states outside the named constructions",
+      "uniform-in-time statements",
+      "equality of GNS dynamics of different states",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "scientific priority"
+    ],
+    "preregistration": [
+      "uniqueness of every infinite-volume ground state",
+      "statements about boundary conditions outside the named constructions",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "scientific priority"
+    ]
+  },
+  "families": {
+    "F1": "F1 (AQ1 centered whole-star boxes)",
+    "F2": "F2 (I1 section 6 all-contained-face boxes with padding)"
+  },
+  "gate_fields": {
+    "common_limit_claimed": false,
+    "continuum_claim": false,
+    "dynamics_level": "algebraic_heisenberg_compact_window",
+    "gns_dynamics_equality_claimed": false,
+    "rate_in_N_claimed": false,
+    "rate_in_a_claimed": false,
+    "scientific_priority_verified": false,
+    "state_convergence_claimed": false,
+    "translation_invariance_claimed": false,
+    "translation_invariance_scope": "coarse translations; the limit of the named constructions",
+    "uniform_in_time_claimed": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false,
+    "whole_sequence_claimed": false,
+    "whole_sequence_scope": "reduced densities of the named constructions F1 and F2 on every finite region"
+  },
+  "gate_fields_after_discharge": {
+    "common_limit_claimed": true,
+    "continuum_claim": false,
+    "dynamics_level": "correlation_functions_compact_window",
+    "gns_dynamics_equality_claimed": false,
+    "rate_in_N_claimed": true,
+    "rate_in_a_claimed": false,
+    "scientific_priority_verified": false,
+    "state_convergence_claimed": true,
+    "translation_invariance_claimed": true,
+    "translation_invariance_scope": "coarse translations; the limit of the named constructions",
+    "uniform_in_time_claimed": false,
+    "uniqueness_of_ground_state_claimed": false,
+    "weak_coupling_claim": false,
+    "whole_sequence_claimed": true,
+    "whole_sequence_scope": "reduced densities of the named constructions F1 and F2 on every finite region"
+  },
+  "gate_fields_note": "top-level gate fields are the values before the BB1 discharge (gate_fields_rule); gate_fields_after_discharge are the contract values that hold for accepted_within_scope once the BB1 gate admits every hypothesis used",
+  "gns_dynamics_equality_claimed": false,
+  "headline": {
+    "C_dyn": {
+      "F1": {
+        "exact": "9261/77860400000000",
+        "formula": "C_dyn = 2 K_F1, K_F1 = 592704 tau^2/(1-338688|tau|) (BA2 forward, faces charged once, inner F1)",
+        "margin": "4.2036713e0",
+        "preview": "1.18943647862e-10",
+        "route": "duhamel_inner_f1",
+        "source": "research/round33/advisor/ba2-gate.json",
+        "target": "1/2000000000",
+        "tau_over_100_ratio": {
+          "exact": "1953058850/194651",
+          "preview": "1.00336440603e4"
+        },
+        "tier": "polynomial_lieb_robinson"
+      },
+      "F2": {
+        "exact": "1055961408185869563/15240701171875000000000000000",
+        "formula": "C_dyn = 2 K'_F2, K'_F2 = 345744 tau^2 E_up(592704|tau|) (BA2 reverse, owner-set Phi', inner F2)",
+        "margin": "7.2165048e0",
+        "preview": "6.92856185734e-11",
+        "route": "duhamel_inner_f2",
+        "source": "research/round33/advisor/ba2-gate.json",
+        "target": "1/2000000000",
+        "tau_over_100_ratio": {
+          "exact": "38176688920663121234473000000/3810205403940325763421973",
+          "preview": "1.00195881516e4"
+        },
+        "tier": "polynomial_lieb_robinson"
+      }
+    },
+    "C_prime": {
+      "assembly": "union_comparison",
+      "bb1_route": "attached at the BB2 gate from the BB1 gate bound value",
+      "bound": "sup_{M>N} ||rho^{F,M}_R-rho^{F,N}_R||_1 <= C' q^(N-1), q=1/64, N>=2, F in {F1,F2}",
+      "exact": "1/250000",
+      "function": "C'(C_h,c_h)=C_h",
+      "hypothesis_source": "bb1_frozen_targets",
+      "margin": "5/2",
+      "preview": "4.00000000000e-6",
+      "target": "1/100000",
+      "tier": "exact_first_order"
+    },
+    "c_site_prime": {
+      "assembly": "union_comparison",
+      "bb1_route": "attached at the BB2 gate from the BB1 gate bound value",
+      "bound": "sup_{M>N} ||rho^{F,M}_Y-rho^{F,N}_Y||_1 <= c'_site |Y| e^{|Y|/10^8} q^{d_Y}",
+      "exact": "1/500000",
+      "function": "c'_site(C_h,c_h)=c_h",
+      "hypothesis_source": "bb1_frozen_targets",
+      "margin": "5/2",
+      "preview": "2.00000000000e-6",
+      "target": "1/200000",
+      "tier": "exact_first_order"
+    },
+    "item4_bound": "||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 <= C_h q^(N-|v|_inf-1) = (1/250000) 64^-(N-|v|_inf-1), N>=|v|_inf+2, v coarse (fine (4v_x,2v_y,v_z))",
+    "item4_rows": {
+      "N=10,v=(3, 0, 0)": {
+        "exact": "1/17179869184000000",
+        "preview": "5.82076609134e-17",
+        "union_fallback_labelled": "1.16415321826e-16"
+      },
+      "N=2,v=(0, 0, 0)": {
+        "exact": "1/16000000",
+        "preview": "6.25000000000e-8",
+        "union_fallback_labelled": "1.25000000000e-7"
+      },
+      "N=3,v=(1, 0, 0)": {
+        "exact": "1/16000000",
+        "preview": "6.25000000000e-8",
+        "union_fallback_labelled": "1.25000000000e-7"
+      },
+      "N=4,v=(1, -1, 0)": {
+        "exact": "1/1024000000",
+        "preview": "9.76562500000e-10",
+        "union_fallback_labelled": "1.95312500000e-9"
+      },
+      "N=6,v=(2, 1, 0)": {
+        "exact": "1/65536000000",
+        "preview": "1.52587890625e-11",
+        "union_fallback_labelled": "3.05175781250e-11"
+      },
+      "N=8,v=(1, 2, -3)": {
+        "exact": "1/4194304000000",
+        "preview": "2.38418579101e-13",
+        "union_fallback_labelled": "4.76837158203e-13"
+      }
+    },
+    "item5_K5_certified_5_to_14000": {
+      "F1": {
+        "exact": "7222143131/510265917440000000",
+        "preview": "1.41536851358e-8"
+      },
+      "F2": {
+        "exact": "42627861255071838599399/3121295600000000000000000000000",
+        "preview": "1.36571048429e-8"
+      }
+    },
+    "item5_vacuous_at": 14421,
+    "item5_values": {
+      "F1,N=10": {
+        "2C'q^(N-1)": {
+          "exact": "1/2251799813685248000000",
+          "preview": "4.44089209850e-22"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "3087/77860400000000",
+          "preview": "3.96478826206e-11"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "53042117683025649713939871/2500000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "2.12168470732e-14"
+        },
+        "r_N": 4,
+        "sum (directed upper)": {
+          "exact": "99172748670519158122530988567/2500000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "3.96690994682e-11"
+        },
+        "|Lambda_rN|": 729
+      },
+      "F1,N=20": {
+        "2C'q^(N-1)": {
+          "exact": "1/2596148429267413814265248164610048000000",
+          "preview": "3.85185988877e-40"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "9261/622883200000000",
+          "preview": "1.48679559827e-11"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "46481579943970481/250000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.85926319775e-22"
+        },
+        "r_N": 9,
+        "sum (directed upper)": {
+          "exact": "74339779914724063685023328739/5000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.48679559829e-11"
+        },
+        "|Lambda_rN|": 6859
+      },
+      "F1,N=5": {
+        "2C'q^(N-1)": {
+          "exact": "1/2097152000000",
+          "preview": "4.76837158203e-13"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "9261/77860400000000",
+          "preview": "1.18943647862e-10"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "1907351016999781132365266676061/2000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "9.53675508499e-10"
+        },
+        "r_N": 2,
+        "sum (directed upper)": {
+          "exact": "10730959935201647825204636086173/10000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.07309599352e-9"
+        },
+        "|Lambda_rN|": 125
+      },
+      "F1,N=6": {
+        "2C'q^(N-1)": {
+          "exact": "1/134217728000000",
+          "preview": "7.45058059692e-15"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "9261/77860400000000",
+          "preview": "1.18943647862e-10"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "37252949550776975241509114767/2500000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.49011798203e-11"
+        },
+        "r_N": 2,
+        "sum (directed upper)": {
+          "exact": "167315347828723506578198645617/1250000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.33852278262e-10"
+        },
+        "|Lambda_rN|": 125
+      },
+      "F2,N=10": {
+        "2C'q^(N-1)": {
+          "exact": "1/2251799813685248000000",
+          "preview": "4.44089209850e-22"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "351987136061956521/15240701171875000000000000000",
+          "preview": "2.30952061911e-11"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "53042117683025649713939871/2500000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "2.12168470732e-14"
+        },
+        "r_N": 4,
+        "sum (directed upper)": {
+          "exact": "231164230386543053658769716699/10000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "2.31164230386e-11"
+        },
+        "|Lambda_rN|": 729
+      },
+      "F2,N=20": {
+        "2C'q^(N-1)": {
+          "exact": "1/2596148429267413814265248164610048000000",
+          "preview": "3.85185988877e-40"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "1055961408185869563/121925609375000000000000000000",
+          "preview": "8.66070232167e-12"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "46481579943970481/250000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.85926319775e-22"
+        },
+        "r_N": 9,
+        "sum (directed upper)": {
+          "exact": "8660702321862303530828881839/1000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "8.66070232186e-12"
+        },
+        "|Lambda_rN|": 6859
+      },
+      "F2,N=5": {
+        "2C'q^(N-1)": {
+          "exact": "1/2097152000000",
+          "preview": "4.76837158203e-13"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "1055961408185869563/15240701171875000000000000000",
+          "preview": "6.92856185734e-11"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "1907351016999781132365266676061/2000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "9.53675508499e-10"
+        },
+        "r_N": 2,
+        "sum (directed upper)": {
+          "exact": "10234379642315047088710573373467/10000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.02343796423e-9"
+        },
+        "|Lambda_rN|": 125
+      },
+      "F2,N=6": {
+        "2C'q^(N-1)": {
+          "exact": "1/134217728000000",
+          "preview": "7.45058059692e-15"
+        },
+        "C_dyn/(r_N-1)": {
+          "exact": "1055961408185869563/15240701171875000000000000000",
+          "preview": "6.92856185734e-11"
+        },
+        "c'_site|Lambda_rN|e^{|Lambda_rN|/10^8}q^(N-r_N) (directed upper)": {
+          "exact": "37252949550776975241509114767/2500000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "1.49011798203e-11"
+        },
+        "r_N": 2,
+        "sum (directed upper)": {
+          "exact": "84194248974318731613152645223/1000000000000000000000000000000000000000",
+          "grid": "10^-40",
+          "preview": "8.41942489743e-11"
+        },
+        "|Lambda_rN|": 125
+      }
+    },
+    "secondary_labelled": {
+      "C_prime_2": {
+        "exact": "1/20000",
+        "preview": "5.00000000000e-5"
+      },
+      "c_site_prime_2": {
+        "exact": "1/40000",
+        "preview": "2.50000000000e-5"
+      },
+      "q2": {
+        "exact": "592/390625",
+        "preview": "1.51552000000e-3"
+      },
+      "target_C_prime_2": "1/8000"
+    }
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "hypotheses": {
+    "C_2h": "1/20000",
+    "C_h": "1/250000",
+    "bb1_gate_sha256": null,
+    "c_2h": "1/40000",
+    "c_h": "1/500000",
+    "discharged": false,
+    "label": "conditional_on_bb1_targets",
+    "q": "1/64",
+    "q2_per_tau": "151552",
+    "source": "bb1_frozen_targets",
+    "unconditional": false
+  },
+  "hypotheses_used": {
+    "item1": {
+      "comparisons": [
+        "B4 restricted to same-family nested pairs (Lambda_N inside Lambda_M, M>N)",
+        "equivalently B5 for nested one-prescription pairs"
+      ],
+      "cutoff_regimes": [
+        "each Q_L uniformly in L",
+        "untruncated at fixed N"
+      ],
+      "forms": [
+        "R (C_h)",
+        "region (c_h)"
+      ],
+      "signs": [
+        "+tau",
+        "-tau"
+      ]
+    },
+    "item2": {
+      "comparisons": [
+        "B3 (F1 versus F2 on the same Lambda_N)",
+        "plus item 1"
+      ],
+      "cutoff_regimes": [
+        "untruncated at fixed N",
+        "each Q_L for the cutoff-space version"
+      ],
+      "forms": [
+        "R (C_h)",
+        "region (c_h)"
+      ],
+      "signs": [
+        "+tau",
+        "-tau"
+      ]
+    },
+    "item3": {
+      "comparisons": [
+        "through items 1-2 (B3, B4/B5 nested)"
+      ],
+      "cutoff_regimes": [
+        "untruncated at fixed N"
+      ],
+      "forms": [
+        "R form for R-marginals",
+        "region form for every finite region"
+      ],
+      "signs": [
+        "+tau",
+        "-tau"
+      ]
+    },
+    "item4": {
+      "comparisons": [
+        "B5 for the non-nested pair (Lambda_N+v, Lambda_N), both containing Lambda_(N-|v|_inf)",
+        "labelled fallback: B5 nested-only through the union (factor 2)"
+      ],
+      "cutoff_regimes": [
+        "untruncated at fixed N",
+        "each Q_L"
+      ],
+      "forms": [
+        "R (C_h) for the quantitative bound",
+        "region (c_h) for invariance on every finite region"
+      ],
+      "signs": [
+        "+tau",
+        "-tau"
+      ]
+    },
+    "item5": {
+      "admitted_not_hypotheses": "BA2 gate K_F1 (duhamel_inner_f1), K'_F2 (duhamel_inner_f2) and the identification of the F2 limit dynamics",
+      "comparisons": [
+        "through item 1 (B4/B5 nested)"
+      ],
+      "cutoff_regimes": [
+        "untruncated at fixed N"
+      ],
+      "forms": [
+        "R form (C')",
+        "region form at Y=Lambda_{r_N} (c'_site)"
+      ],
+      "signs": [
+        "+tau",
+        "-tau"
+      ]
+    },
+    "secondary": {
+      "comparisons": [
+        "as items 1-2"
+      ],
+      "forms": [
+        "R (C_2h)",
+        "region (c_2h)"
+      ],
+      "label": "labelled only"
+    }
+  },
+  "label": "convergence_of_named_constructions",
+  "limitations_recorded": [
+    "item 5: the frozen bracket is O(1/N) only on 5<=N<=14000 (certified); at N=14421 its region term alone exceeds 2 because |Lambda_{r_N}| grows like N^3 inside e^{|Lambda_{r_N}|/10^8}; the whole sequence of correlation functions still converges (no rate)",
+    "all BB2 conclusions are conditional_on_bb1_targets until the BB1 gate discharges them",
+    "item 4 at the contract constant needs the direct non-nested B5 comparison; the union route alone gives 2C_h"
+  ],
+  "loop": "BB2",
+  "mandatory_sentence_template": "For the zero-selected patterned family at the same coupling |tau|<=10^-8, under the BB1 locality bounds at their frozen targets as hypotheses (discharged only when the BB1 gate admits constants at most those targets), the reduced densities of the named construction families F1 and F2 on centered coarse cubes converge as whole sequences, at a rate in N, to one common limit on every finite region; this limit coincides with every AQ1 subsequential limit and every F2 subsequential limit, is invariant under coarse translations, and has as correlation functions on |theta|<=8 the limits of the finite-box correlation functions; this is convergence of the named constructions, not uniqueness of any ground state, not a statement about states outside the named constructions, and not a statement uniform in the lattice spacing a.",
+  "model": "Zero-selected patterned family (AM2/AQ1), both signs |tau|<=10^-8; AM2 creation expansion in each on-site cutoff space; construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on centered coarse cubes Lambda_N, N at least 2; reduced densities rho^{box}_Y of the normalized finite-box ground vectors on finite complete-factor regions Y, in particular the cover R={0,e_z}; trace norm on B(H_Y). Heisenberg evolutions T^{F,N}_theta and the AQ1 limit dynamics T_theta (BA2), |theta| at most 8 in theta=alpha t/hbar.",
+  "outcome_note": "proposed for the reverse half only; acceptance needs both routes, the BB1 discharge and the skeptical review",
+  "pinned_premise_sha256": {
+    "research/round29/advisor/am2-gate.json": "be4ec35a004c831f8ea0771df84bf8e3e6aa02681107b57265a0ddc82d45211d",
+    "research/round29/advisor/aq1-gate.json": "b4a93fd49413857af83c969de1e7b2c8a698ea8099aa9e3aea8e8c7fab0a225e",
+    "research/round29/advisor/aq2-gate.json": "930b697db343ffd261c303c34e6ddd8c6e9c753ee6707931c55dc4171ee47575",
+    "research/round32/advisor/av1-gate.json": "55e03f2d9c297d41106d983cec45eaa642ca18123544f416916f94414de305a0",
+    "research/round32/advisor/aw1-gate.json": "647dc33795f06a66c12934f64ae408725b5354cf0124b32dc4b18a12eb0541ae",
+    "research/round32/advisor/ay1-gate.json": "d1d3f921b1465d6ef3e6d5539dd24ea4f83cbf5e18635fb50f0f8a33a9ac78e5",
+    "research/round32/advisor/ay2-gate.json": "e4faa98884d26d67dd422b382eafb2c52bf88ee679998bc8249003cba88187a6",
+    "research/round33/advisor/ba1-gate.json": "15546f9ec0ab130cdf216ab63b17e6e0ebd7a28c1aefc7ce232f93b77730ebcc",
+    "research/round33/advisor/ba2-gate.json": "e6b163fc8f80de28c51609f77d0bef21dcdc1286638c862ad67202e6f7b0ca35",
+    "research/round33/sources/nachtergaele-sims-1410.8174v1.md": "6a28f4cd6aa2c55286fa839d83c00356ff0709f8b02027ee5b39050df1d6c921"
+  },
+  "proposed_reverse_verdict": "accepted_within_scope",
+  "proposed_reverse_verdict_condition": "conditional_on_bb1_targets: unconditional only after the BB1 gate admits, for every comparison (B3, B4/B5 nested, B5 general), form (R, region), cutoff regime and sign used, constants at most the hypothesis values; partial discharge gives limited, BB1 insufficient gives insufficient",
+  "rate_in_N_claimed": false,
+  "rate_in_a_claimed": false,
+  "rate_units": "q^(N-1) with q=1/64 per coarse step at fixed spacing and strong bare coupling; a coarse step is (4a,2a,a)",
+  "resolved_interaction_shift": false,
+  "routes_executed": [
+    "hypotheses: BB1 frozen targets read from both contracts and cross-checked; BA2 gate constants read exactly and re-derived from the BA2 formulas",
+    "item 0: union comparison lemma; factor 1 for nested centered cubes, 2 for translated pairs (enumerated); monotone constants",
+    "item 1: whole-sequence Cauchy estimate over all M>N on R and on regions Y; limit from completeness of the trace class; cutoff order",
+    "item 2: common limit through B3",
+    "item 3: identification with every AQ1 and F2 subsequential limit, then inheritance of exactly the gate-admitted properties",
+    "item 4: coarse translation covariance (I1 table, face sets, padding), B5 direct bound, non-coarse translations rejected",
+    "item 5: C_dyn per family from the BA2 gate, three separate constants, r_N frozen, O(1/N) certified on 5<=N<=14000, vacuous at N=14421",
+    "item 6: tau/100 scaling per constant; six fixtures; 34 controls as damaging mutations"
+  ],
+  "scaling": {
+    "C_dyn_F1": {
+      "exact": "1953058850/194651",
+      "preview": "1.00336440603e4"
+    },
+    "C_dyn_F2": {
+      "exact": "38176688920663121234473000000/3810205403940325763421973",
+      "preview": "1.00195881516e4"
+    },
+    "C_prime": {
+      "exact": "1",
+      "preview": "1.00000000000e0"
+    },
+    "C_prime_secondary": {
+      "exact": "1",
+      "preview": "1.00000000000e0"
+    },
+    "c_site_prime": {
+      "exact": "1",
+      "preview": "1.00000000000e0"
+    },
+    "c_site_prime_secondary": {
+      "exact": "1",
+      "preview": "1.00000000000e0"
+    },
+    "q_secondary": {
+      "exact": "100",
+      "preview": "1.00000000000e2"
+    }
+  },
+  "scientific_priority_verified": false,
+  "secondary_sub_labels": [
+    "common_limit_of_named_constructions"
+  ],
+  "state_convergence_claimed": false,
+  "topologies": {
+    "dynamics": "operator norm, uniformly for |theta|<=8 (compact window)",
+    "representations": "strong continuity of the GNS unitary group (not norm continuity in theta)",
+    "states": "trace norm on B(H_Y) for every finite complete-factor region Y"
+  },
+  "translation_invariance_claimed": false,
+  "translation_invariance_scope": "coarse translations; the limit of the named constructions",
+  "uniform_in_time_claimed": false,
+  "uniform_wilson_claim": false,
+  "uniformity": "every constant is uniform in N at fixed spacing and fixed tau and uniform in the on-site cutoff L; nothing is uniform in the spacing",
+  "uniqueness_of_ground_state_claimed": false,
+  "verdict_by_discharge": {
+    "B5_general_not_admitted": "limited (item 4 quantitative bound dropped; the union fallback 2C_h needs B5 nested)",
+    "bb1_insufficient": "insufficient",
+    "full": "accepted_within_scope",
+    "region_form_not_admitted": "limited (item 5 and the region parts of items 1-3 dropped; items 1-2 on R, item 3 for R-marginals)"
+  },
+  "weak_coupling_claim": false,
+  "whole_sequence_claimed": false,
+  "whole_sequence_scope": "reduced densities of the named constructions F1 and F2 on every finite region"
+}
