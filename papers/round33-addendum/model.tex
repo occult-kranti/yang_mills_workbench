@@ -208,8 +208,8 @@ $\Lambda_4$ & 10752 & 13104 & 2352 & 216 & 243\\
 Other prescriptions are not covered. The literal vertex boxes of I1~\S7 clip
 the on-site operator and form another model; periodic and orthant boxes are
 not among the named families either. Two coarse metrics occur, and neither is
-a fine-site metric. BA1 uses the coarse $\ell^\infty$ metric, in which every
-star has diameter 1; BA2 uses the coarse $\ell^1$ metric of AQ1~\S3, in which
+a fine-site metric. BA1 and BB1 use the coarse $\ell^\infty$ metric, in which
+every star has diameter 1; BA2 uses the coarse $\ell^1$ metric of AQ1~\S3, in which
 every star has diameter 2. They satisfy $d_\infty\le d_1\le3d_\infty$, and no
 constant mixes them.
 
@@ -239,7 +239,7 @@ where the plan assigns one.}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.34\linewidth}
  >{\raggedright\arraybackslash}X@{}}
 \toprule
-AY2 obligation & Standing after sub-round 1\\
+AY2 obligation & Standing in this edition\\
 \midrule
 O1: uniqueness of the limit & Open. No separate Dobrushin or HTW loop is
 scheduled (the Jung lens's narrowed dissent is recorded), and the plan fixes
@@ -247,10 +247,13 @@ the gate field \recid{uniqueness_of_ground_state_claimed} to false for every
 investigation.\\
 O2: whole-sequence convergence & Open for states. BA1 proves a Cauchy
 property for the creation coefficients in each cutoff space and BA2 for the
-dynamics; the states are the subject of BB1 and BB2.\\
+dynamics. BB1 bounds the difference of the finite-box reduced densities for
+each comparison (Section~\ref{sec:bb1}) but forms no limit; whole-sequence
+convergence of states is the subject of BB2.\\
 O3: translation invariance & Open; a preregistered item of BB2.\\
-O4: a rate in $N$ & Open for states. BA1 and BA2 supply rates in $N$ for
-coefficients and for dynamics only.\\
+O4: a rate in $N$ & Open for limit states. BA1 and BA2 supply rates in $N$
+for coefficients and for dynamics, and BB1 for the finite-box reduced
+densities, one comparison at a time.\\
 O5: boundary independence of dynamics on compact time windows & Closed within
 the BA2 scope: an algebraic comparison of the F1 and F2 finite-box
 evolutions on $|\theta|\le8$ (Section~\ref{sec:ba2}).\\
@@ -329,7 +332,8 @@ P & gated: accepted within scope; dynamics on compact windows\\[4pt]
 2, convergence &
 BB1: marginal locality, from coefficient decay to the reduced density
 (polymer / iterated split). &
-P & contract frozen; in production\\
+P & gated: accepted within scope; boundary decay rate only; static, not
+dynamic\\
  &
 BB2: whole-sequence convergence, common limit and coarse translation
 invariance (nested telescoping / general-volume unions). &

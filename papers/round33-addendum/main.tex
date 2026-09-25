@@ -21,9 +21,10 @@ at the original coupling cap, with applications}
 \maketitle
 \begin{abstract}
 This edition is in progress. It records sub-round~1 of the Round33 cycle,
-two prospectively contracted and paired investigations, BA1 and BA2, both
-accepted within their stated model scope, and will be extended as the later
-gates land. Both concern the zero-selected patterned family of the SU(2)
+two prospectively contracted and paired investigations, BA1 and BA2, and the
+first investigation of sub-round~2, BB1, all three accepted within their
+stated model scope; it will be extended as the later gates land. All three
+concern the zero-selected patterned family of the SU(2)
 Kogut--Susskind form at fixed spacing and the original coupling cap
 $|\tau|\le10^{-8}$, with the two named construction families of Round32:
 F1, AQ1's centered whole-star boxes, and F2, I1's all-contained-face boxes
@@ -46,12 +47,24 @@ $5.947\times10^{-11}$ (F1) and $9.452\times10^{-11}$ (F2), and the F2 limit
 dynamics equals the AQ1 limit dynamics. This closes two obligations left
 open by Round32, boundary independence of the dynamics on compact windows and
 the dynamics of the padded family, within that scope. Both BA2 constants are
-quadratic in $\tau$. The statements concern the algebraic dynamics of the
+quadratic in $\tau$. The BA2 statements concern the algebraic dynamics of the
 named constructions on a compact window. They assert no equality of GNS
 dynamics or of correlation functions of different states and nothing uniform
-in time. Neither investigation establishes convergence of states, a common
-limit state, uniqueness of any ground state, an estimate uniform in the
-lattice spacing or a continuum statement. The four-dimensional continuum
+in time. BB1 turns coefficient decay into locality of the reduced densities.
+For each of five comparisons of the named constructions, among them the
+fixed-$N$ change of boundary prescription and two volumes of one
+prescription, the reduced densities of the finite-box ground vectors on $R$
+differ in trace norm by at most $Cq^{N-1}$ with $q=1/64$ and
+$C\approx8.905\times10^{-7}$. On every finite region $Y\subset\Lambda_N$ they
+differ by at most $c_{\rm site}|Y|e^{|Y|/10^8}q^{d_Y}$ with
+$c_{\rm site}\approx8.768\times10^{-7}$. The bounds hold in each on-site
+cutoff space and, at fixed $N$, for the untruncated ground vectors. They are
+proved by a hard-core polymer expansion with a Kotecký--Preiss condition,
+whose cited criterion was checked after the freeze against a committed
+excerpt, and by an iterated product-ordering split. BB1 is static and per
+comparison. No investigation so far establishes convergence of states, a
+common limit state, uniqueness of any ground state, an estimate uniform in
+the lattice spacing or a continuum statement. The four-dimensional continuum
 Yang--Mills problem remains open.
 \end{abstract}
 
@@ -71,16 +84,18 @@ assistant per lens runs the tests named in the lens updates, and the advisor
 may reorder, replace or retitle the next pair. Assistant work counts as zero
 investigations.
 
-This edition records sub-round~1: both of its investigations are accepted
-within their stated model scope. Later sub-rounds are added as their gates
-land, and the abstract, this guide and the plan table will be extended with
-them. No sentence here anticipates a later gate. The completed edition will
+This edition records sub-round~1 and the first investigation of
+sub-round~2, BB1; all three investigations are accepted within their stated
+model scope. Later investigations are added as their gates land, and the
+abstract, this guide and the plan table will be extended with them. No
+sentence here anticipates a later gate. The completed edition will
 be authored from the eight reviewed gates; its builder refuses to run before
 all eight exist.
 
-Both sub-round-1 investigations concern one model, the zero-selected
-patterned family of Round32, and the two named construction families of
-Section~\ref{sec:families}. Both are paired: a forward and a reverse producer
+All three investigations concern one model, the zero-selected patterned
+family of Round32, and the two named construction families of
+Section~\ref{sec:families}. All three are paired: a forward and a reverse
+producer
 proved the same frozen targets by different routes, the reverse under premise
 isolation. The skeptic derived the constants before the comparison, in a
 package committed ahead of the producers' commits, and replayed and mutated
@@ -89,7 +104,10 @@ both producers after it. BA1 carries the sub-label
 \recid{static_not_dynamic}: it is a statement about creation coefficients, not
 about states or dynamics. BA2 carries \recid{dynamics_on_compact_windows}: it
 is a statement about the algebraic Heisenberg dynamics on the window
-$|\theta|\le8$, not about the states.
+$|\theta|\le8$, not about the states. BB1 carries
+\recid{boundary_decay_rate_only} with \recid{static_not_dynamic}: it is a
+statement about the reduced densities of finite-box ground vectors, one
+comparison at a time, and forms no limit object.
 
 The headline results, each within the scope its gate records, are these.
 \begin{itemize}
@@ -108,14 +126,21 @@ The headline results, each within the scope its gate records, are these.
  limit dynamics identified with AQ1's, and AQ1~\S\S4--5 rerun for every F2
  subsequential limit state. This closes the Round32 obligations O5 and O6
  within that scope.
+\item Locality of the reduced densities (BB1):
+ $\norm{\rho^{\rm box\,1}_R-\rho^{\rm box\,2}_R}_1\le Cq^{N-1}$ with
+ $C\approx8.905\times10^{-7}$ at $q=1/64$ (margin about $4.49$), and a region
+ form with $c_{\rm site}\approx8.768\times10^{-7}$ (margin about $2.28$, the
+ binding one), for every comparison, both signs, each cutoff space and the
+ untruncated vectors at fixed $N$; the crude tier fails and is retained.
 \end{itemize}
 The four-dimensional continuum Yang--Mills problem remains open, and no
 investigation count is a fraction of it.
 
 Section~\ref{sec:model} fixes the model dictionary, the two families, the
 Round32 checkpoint and the frozen Round33 plan. Section~\ref{sec:ba1} derives
-the coefficient decay and Section~\ref{sec:ba2} the comparison of the
-dynamics. Each investigation opens with its gate's accepted statement, quoted
+the coefficient decay, Section~\ref{sec:ba2} the comparison of the dynamics
+and Section~\ref{sec:bb1} the locality of the reduced densities. Each
+investigation opens with its gate's accepted statement, quoted
 verbatim in the gate's ASCII notation as the reviewed scope, and closes with
 the limitations the gate recorded. Exact rational arithmetic decides
 admission. Decimals summarize exact rationals, and labelled values are
@@ -141,7 +166,10 @@ committed excerpt. Its rerun for the padded family follows AQ1~\S\S4--5, whose
 strategy AQ1 credits to Gauvin, arXiv:2503.15539v3, Supplement A.10. BA1
 applies standard tools to the admitted AM2 fixed point: weighted norms that
 pay a fixed loss per interaction, Banach's fixed-point theorem, Weierstrass's
-theorem, the maximum principle and Cauchy's estimates. The attribution
+theorem, the maximum principle and Cauchy's estimates. The BB1 polymer
+route cites the Kotecký--Preiss criterion (1986) in the form of Ueltschi
+(\href{https://arxiv.org/abs/math-ph/0304003v3}{arXiv:math-ph/0304003v3}),
+checked after the freeze against a committed excerpt. The attribution
 sentence of the Round32 addendum for the AM2 creation expansion and the AQ
 construction is inherited unchanged. Scientific priority is unverified, and
 no independence from those sources is claimed.
@@ -149,8 +177,8 @@ no independence from those sources is claimed.
 \input{model}
 \input{decay}
 \input{dynamics}
-% Later sub-rounds are added as their gates land:
-% \input{locality}      % BB1: marginal locality, from coefficient decay to the reduced density
+\input{locality}
+% Later investigations are added as their gates land:
 % \input{convergence}   % BB2: whole-sequence convergence, common limit, coarse translations
 % \input{consequences}  % BC1, BC2: certificates restated for the limit; route-B uniform model
 % \input{applications}  % BD1, BD2: transfers to named models and recorded obstructions
