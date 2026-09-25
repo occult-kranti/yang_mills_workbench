@@ -1,0 +1,909 @@
+\section{BC2: convergence for the route-B uniform model}
+\label{sec:bc2}
+
+\textbf{Contribution \projecttag{HNM-C-BC2}.} Round32 also handled a second
+model: the uniform Kogut--Susskind SU(2) Hamiltonian at fixed spacing and
+strong bare coupling, in which every elementary face, the three selected
+faces of each factor included, carries the coupling. AX1 regrouped its
+interaction (route~B), and AX2 certified its Euclidean Wilson node at $s=1$
+for each AQ1-type subsequential state of its one named construction
+separately (\repo{papers/round32-addendum/main.pdf}{Round32 addendum}). The
+BC2 contract, recorded under the title ``Route-B uniform model: coefficient
+decay, marginal locality and whole-sequence convergence of its named
+construction, and the node certificate restated for the limit'', re-derives
+the chain of BA1, BB1 and BB2 for that model with its own constants,
+identifies the limit, and restates the AX2 node for it. The plan ran BC2 only
+if BB1 and BB2 were accepted within scope; both were, and BC2 was selected as
+investigation~6 of~8
+(\repo{research/round33/advisor/selection-bc2.md}{selection note}). It was
+frozen together with BC1 on 25 September 2026 at 04:21:44 UTC, after the
+skeptic's pre-freeze review of the BC drafts. Its gate is recorded under the
+title ``Hruday route-B convergence of the uniform model's named construction
+and its node''.
+
+BC2 is a single-direction investigation (direction S of
+Table~\ref{tab:plan}). One forward producer proves every item; the skeptic's
+pre-comparison replay from the contract is the second admission input. The
+forward producer received \texttt{AGENTS.md}, the contract and 40 shared
+premises, among them the AX1 and AX2 gates, the admitted AX2 calculator, the
+AX1 forward report, the BA1 forward and reverse reports, the BB1 reverse
+report, the BB2 reports and the I1 class table. The contract names three
+shared methods: the analytic disc of the BA1 reverse
+(Section~\ref{sec:ba1-disc}), the iterated split of the BB1 reverse
+(Section~\ref{sec:bb1-reverse}) and the whole-sequence and identification
+scheme of BB2 (Section~\ref{sec:bb2}). It forbids citing any BA1, BB1 or BB2
+value or form as admitted for route~B, and it forbids the polymer route,
+since no Kotecký--Preiss excerpt is a premise of this contract. Every constant
+is evaluated at the constants proved in the packet, with no hypothesis layer.
+
+The contract names seven items: route-B incidence and admissibility, the
+coefficient input on a complex disc, marginal locality by the iterated split,
+whole-sequence convergence with four further items, the node restated for
+the limit, the obligations, and the fixtures with the mandatory sentence, the
+gate fields and an exact checker. Its targets are $K_B\le1/1000000$,
+$C_B\le1/250000$ and $c_{{\rm site},B}\le1/500000$, frozen as blind
+discriminating thresholds with a margin of at least 2 against the advisor's
+recorded previews. The whole-sequence targets, $C'_B\le1/250000$ and
+$c'_{{\rm site},B}\le1/400000$, follow from the first two up to the assembly
+factor, and the contract calls them consequences, not independent
+thresholds. The node values are a format check by equality. The
+$\tau\to\tau/100$ bracket is $[95,105]$ for every constant, exactly 1 for $q$,
+for $\rho/|\tau|$ and for the node datum, and $[95,105]$, recorded and not a
+target, for the node radius replay. The contract itemizes ten error terms and
+lists 52 controls.
+
+\subsection{Reviewed scope}
+\label{sec:bc2-scope}
+The \repo{research/round33/advisor/bc2-gate.json}{BC2 gate} records the
+verdict \recid{accepted_within_scope}, with sub-label
+\recid{convergence_of_named_constructions} and secondary sub-labels
+\recid{certificate_restated_for_limit}, \recid{reference_unresolved} and
+\recid{static_not_dynamic}. The review reads the last as covering state
+statements and the inherited Euclidean node, with no route-B real-time
+dynamics. The gate fields \recid{whole_sequence_claimed},
+\recid{state_convergence_claimed}, \recid{state_decay_claimed},
+\recid{rate_in_N_claimed}, \recid{translation_invariance_claimed} and
+\recid{node_certificate_restated_for_limit} are true, each within its scope
+string: the whole sequence ``reduced densities of the centered
+whole-star-plus-single-group construction of the uniform route-B model on
+every finite region'', the translations ``coarse translations; the limit of
+the named construction (route B)'', and the state decay ``reduced densities
+of route-B finite-box ground vectors on R and on regions Y, per comparison
+(c1B, c4B, c5B)''. Nine fields are false:
+\recid{common_limit_claimed} and \recid{uniqueness_of_ground_state_claimed}
+for the limit; \recid{gns_dynamics_equality_claimed} and
+\recid{uniform_in_time_claimed} for the dynamics;
+\recid{resolved_interaction_shift} for the node; \recid{rate_in_a_claimed};
+and \recid{continuum_claim}, \recid{weak_coupling_claim} and
+\recid{scientific_priority_verified}. No dynamics level is exported. The
+accepted statement, quoted verbatim below in the gate's ASCII notation, is
+the scope of every claim in this section.
+\begin{gatequote}
+In the uniform Kogut-Susskind SU(2) model at fixed spacing and strong bare
+coupling handled by route B (model AQ\_uniform\_routeB, labelled uniform
+Kogut-Susskind SU(2) at fixed spacing and strong bare coupling
+(g\textasciicircum{}4=9.6x10\textasciicircum{}9) by the AL1 dictionary
+tau=96/g\textasciicircum{}4 of this model; every elementary face nu=alpha
+tau/24, selected triple (tau/24, tau/24, tau/24); Haar reference h\_b=8 sum\_e
+C\_e; whole stars phi\_b (21 omitted faces, norm 7|tau|) and single-factor
+groups psi\_b (3 selected faces, support \{b\}, norm at most |tau|), per-site
+sum J\textquotesingle{}=29|tau| (AX1 gate sha256
+1b8fb152696659439bb01fc7df429fc76fa3132d4936df450d8131256015d177); both signs
+|tau|<=10\textasciicircum{}-8, with tau<0 the U\_E mirror and no real g;
+coarse l-infinity metric on factor sites, a whole star of diameter 1 and a
+single-factor group of diameter 0; trace norm on B(H\_Y); cover R=\{0,e\_z\};
+Euclidean clock s=alpha t\_E/hbar with G=H/alpha at the single node s=1;
+real-time clock theta=alpha t/hbar for the inherited limit dynamics only),
+with the named construction FB = centered whole-star-plus-single-group boxes
+Lambda\_N=[-N,N]\textasciicircum{}3, N at least 2, and the finite
+complete-factor route-B volumes containing Lambda\_N (stars inside the volume,
+every single group kept), every bound holding in each on-site cutoff space
+uniformly in the cutoff and then, at fixed N, for the untruncated ground
+vectors (AV1 F20-F23 with the route-B gap 1/2 of the AX1 gate; the N and
+cutoff limits are never exchanged): For the uniform Kogut-Susskind SU(2) model
+at fixed spacing and strong bare coupling handled by route B, at the same
+coupling |tau|<=10\textasciicircum{}-8, the reduced densities of the named
+construction (centered whole-star-plus-single-group boxes on centered coarse
+cubes) converge as a whole sequence on every finite region, at a rate in N
+that holds for every N at least 2 with the region inside the box, and to the
+same limit along every exhausting sequence of finite complete-factor volumes
+of the same prescription; this limit coincides with every AQ1 subsequential
+state of that construction, is invariant under coarse translations, and at
+tau=+10\textasciicircum{}-8 has centered Euclidean Wilson correlation C(1)
+within the AX2 radius of the AX2 datum at the node s=1; this is convergence of
+the named constructions (one family for route B), not uniqueness of any ground
+state, not a statement about other boundary conditions or about states outside
+the named construction, not weak coupling or continuum, and not a statement
+uniform in the lattice spacing a. Constants (exact; q=1/64; both signs; the
+comparisons c1B, c4B and c5B compared directly; every constant recomputed from
+the route-B inputs, with no hypothesis layer). T0 (tier exact\_first\_order,
+route analytic\_disc on the disc |z|<=64|tau|, proved in the packet from 52
+first-order faces per factor and the per-site sum 29|z|, with the route-B
+circle bound T\_B(rho)=(52 rho/144)/(1-29*352 rho) and
+T\_B(|tau|)=13/3599632512 equal to the AX1 gate T\textquotesingle{}): at every
+site u of the union volume and for every N at least 2, sum over I containing u
+of ||c\textasciicircum{}A\_I-c\textasciicircum{}B\_I|| <= K\_B
+q\textasciicircum{}((N-|u|\_inf)\_+) with K\_B=2T\_B(64|tau|)=13/27941256
+(about 4.6526e-7; margin about 2.149 against 1/1000000), in each on-site
+cutoff space uniformly in the cutoff (no untruncated creation coefficients are
+asserted). T1 and T2 (tier exact\_first\_order, route iterated\_split with
+W=1024 and lambda=2/W=1/512; t\_0=13/1799816256, t\_W=26/3148137,
+beta*=132572461259098000347351859/4012775859323049054050909456204,
+S\_lambda=2169/343): for every N at least 2,
+||rho\textasciicircum{}\{box1\}\_R-rho\textasciicircum{}\{box2\}\_R||\_1 <=
+C\_B q\textasciicircum{}(N-1) with
+C\_B=23\allowbreak{}263287\allowbreak{}618436\allowbreak{}498262\allowbreak{}722173\allowbreak{}127017\allowbreak{}07175/\allowbreak{}246130\allowbreak{}209034\allowbreak{}855027\allowbreak{}262012\allowbreak{}443295\allowbreak{}843494\allowbreak{}482124\allowbreak{}8
+(about 9.4516e-7; margin about 4.232 against 1/250000), and for every N at
+least 2 and every finite complete-factor region Y inside Lambda\_N,
+||rho\textasciicircum{}\{box1\}\_Y-rho\textasciicircum{}\{box2\}\_Y||\_1 <=
+c\_site,B |Y| e\textasciicircum{}\{|Y|/10\textasciicircum{}8\}
+q\textasciicircum{}\{d\_Y\}, d\_Y=N-max\_\{y in Y\}|y|\_inf, with
+c\_site\allowbreak{},B=357\allowbreak{}896732\allowbreak{}591330\allowbreak{}742503\allowbreak{}418048\allowbreak{}107954\allowbreak{}95/384\allowbreak{}578451\allowbreak{}616960\allowbreak{}980096\allowbreak{}894442\allowbreak{}649755\allowbreak{}460128\allowbreak{}32
+(about 9.3062e-7; margin about 2.149 against 1/500000) and
+C\_B=c\_site,B(1+q). T3 and T4 (assembly union\_comparison: each M greater
+than N compared with N by one direct c4B comparison of Lambda\_N and
+Lambda\_M, factor 1): for every N at least 2, sup over all M greater than N of
+||rho\textasciicircum{}\{FB,M\}\_R-rho\textasciicircum{}\{FB,N\}\_R||\_1 <=
+C\textquotesingle{}\_B q\textasciicircum{}(N-1) with
+C\textquotesingle{}\_B=C\_B (margin about 4.232 against 1/250000), and for
+every N at least 2 with Y inside Lambda\_N, sup over all M greater than N of
+||rho\textasciicircum{}\{FB,M\}\_Y-rho\textasciicircum{}\{FB,N\}\_Y||\_1 <=
+c\textquotesingle{}\_site,B |Y|
+e\textasciicircum{}\{|Y|/10\textasciicircum{}8\} q\textasciicircum{}\{d\_Y\}
+with c\textquotesingle{}\_site,B=c\_site,B (margin about 2.686 against
+1/400000); the nested-telescoping values C\_B/(1-q) and c\_site,B/(1-q) are
+labelled only. The limit omega\_inf exists on every finite region by this
+Cauchy bound and trace-class completeness, without compactness, and
+||rho\textasciicircum{}\{FB,N\}\_Y-rho\textasciicircum{}inf\_Y||\_1 <=
+c\textquotesingle{}\_site,B |Y|
+e\textasciicircum{}\{|Y|/10\textasciicircum{}8\} q\textasciicircum{}\{d\_Y\}
+for every N at least 2 with Y inside Lambda\_N. Item 2a (exhaustion within the
+prescription): for finite complete-factor route-B volumes V\_k with N\_k the
+largest N with Lambda\_N inside V\_k, for every N\_k at least 2 and every
+finite complete-factor region Y inside Lambda\_\{N\_k\},
+||rho\textasciicircum{}\{V\_k\}\_Y-rho\textasciicircum{}inf\_Y||\_1 <=
+(c\_site,B+c\textquotesingle{}\_site,B)|Y|
+e\textasciicircum{}\{|Y|/10\textasciicircum{}8\}
+q\textasciicircum{}(N\_k-max\_\{y in Y\}|y|\_inf), with
+c\_site,B+c\textquotesingle{}\_site,B=2c\_site,B (about 1.8612e-6), from one
+direct c5B comparison of V\_k with Lambda\_\{N\_k\} and the whole-sequence
+bound; this is exhaustion within one prescription, not a comparison of
+boundary conditions. Item 2b:
+omega\textasciicircum{}\{-tau\}\_inf=omega\textasciicircum{}\{tau\}\_inf o
+alpha\_E on every finite region, from the AX1 identity U\_E H\_N(tau)
+U\_E\textasciicircum{}*=H\_N(-tau) in every centered box and cutoff (U\_E a
+product of one-link unitaries) and whole-sequence convergence at both signs;
+the -tau side is a mirror replay, not a second coupling. Item 3: omega\_inf
+equals every AQ1-type subsequential state of the AX1 construction on every
+finite region, and only then inherits exactly the AX1 gate\textquotesingle{}s
+route-B list. Item 4: for every coarse translation v and N at least
+|v|\_inf+2,
+||rho\textasciicircum{}\{Lambda\_N+v\}\_R-rho\textasciicircum{}\{Lambda\_N\}\_R||\_1
+<= C\_B q\textasciicircum{}(N-|v|\_inf-1) by one direct c5B comparison, and
+omega\_inf is invariant under coarse translations on every finite region by
+the region form of c5B; nothing is claimed for non-coarse fine translations.
+Node (AX2 gate sha256
+1db36627b9eab00915b0cb38a0e9fd9cf9dd4dbf3ceb7eab969336f3f9f44be4, sub-label
+reference\_unresolved): at tau=+10\textasciicircum{}-8 and s=1,
+C\_inf(1)=(chi, e\textasciicircum{}\{-G\} chi) with
+chi=(pi(W)-omega\_inf(W))Omega in the GNS representation of omega\_inf
+satisfies |C\_inf(1)-d| <= R\textquotesingle{} with
+d=4978\allowbreak{}706836\allowbreak{}786394\allowbreak{}297934\allowbreak{}241565\allowbreak{}006177\allowbreak{}66317/\allowbreak{}400000\allowbreak{}000000\allowbreak{}000000\allowbreak{}000000\allowbreak{}000000\allowbreak{}000000\allowbreak{}00000
+(about 1.24467670920e-2) and
+R\textquotesingle{}=1912298807996871790146581299723633/10000000000000000000000000000000000000000
+(about 1.91229880800e-7), the AX2 gate rationals, returned exactly by the
+admitted AX2 calculator at its fixed design (the AX1 bound value
+D\textquotesingle{}, k\textquotesingle{}=51|tau|/4, M\_0=2, M\_1=4s/pi); the
+free value e\textasciicircum{}\{-3\}/4 lies inside [d-R\textquotesingle{},
+d+R\textquotesingle{}], so no interaction shift, sign or coefficient of C(s)
+is claimed. The tau to tau/100 ratios are 39059948/388073 (about 100.651) for
+K\_B and about 100.661 for C\_B, c\_site,B, C\textquotesingle{}\_B and
+c\textquotesingle{}\_site,B. Rates are per coarse step in N at fixed spacing.
+\end{gatequote}
+The rest of this section derives that statement, and the limitations recorded
+by the gate close it (Section~\ref{sec:bc2-limits}).
+
+\subsection{The route-B model and its single named construction}
+\label{sec:bc2-model}
+\paragraph{The model.} The model identifier is
+\recid{AQ_uniform_routeB}, with the label ``uniform Kogut--Susskind SU(2) at
+fixed spacing and strong bare coupling ($g^4=9.6\times10^9$)''. Every
+elementary face has $\nu=\alpha\tau/24$, so the selected triple is
+$(\tau/24,\tau/24,\tau/24)$. By the AL1 dictionary of this model,
+$\tau=96/g^4$, the cap $|\tau|\le10^{-8}$ corresponds to $g^4\ge9.6\times10^9$;
+the model is never at weak coupling or in the continuum. Both signs are
+treated, and $\tau<0$, which has no real $g$, is the $U_E$ mirror. Route~B
+keeps the Haar reference $h_b=8\sum_eC_e\ge6Q_b$, independent of $\tau$, and
+groups the interaction into
+\begin{equation}
+ \begin{gathered}
+ \phi_b\ \text{(whole star: 21 omitted faces, }\norm{\phi_b}\le7|\tau|),\\
+ \psi_b\ \text{(single-factor group: 3 selected faces, support }\{b\},\ \norm{\psi_b}\le|\tau|),\\
+ J'=\sum_{X\ni u}\norm{V_X}=4\cdot7|\tau|+|\tau|=29|\tau|,\qquad J_0'=\frac{29}{10^8},
+ \end{gathered}
+ \label{eq:bc2-grouping}
+\end{equation}
+where the four stars through a factor include the incoming ones (AX1 gate).
+AX1 admits that every finite complete-factor route-B volume has a simple
+gauge-invariant ground and a full-space gap of at least $1/2$ in normalized
+units. The metric is the coarse $\ell^\infty$ metric on factor sites, in
+which a whole star has diameter 1 and a single-factor group diameter 0.
+
+\paragraph{One named construction.} The named construction FB consists of the
+centered whole-star-plus-single-group boxes $\Lambda_N=[-N,N]^3$, $N\ge2$, and
+the finite complete-factor route-B volumes containing $\Lambda_N$, with every
+star inside the volume and every single group of the volume kept. Three
+comparisons are made directly: c1B ($\Lambda_N$ against $\Lambda_{N+1}$), c4B
+(any two centered boxes $\Lambda_M,\Lambda_{M'}$ with $M,M'\ge N$) and c5B (any
+two finite complete-factor route-B volumes containing $\Lambda_N$). The
+admitted record has no second route-B family. The contract therefore
+replaces BB2's common-limit item by exhaustion within the prescription
+(item~2a) and the pointwise sign mirror (item~2b), and the control
+\recid{one_family_no_common_limit} rejects a common limit, a second route-B
+family and an identification with an all-contained boundary. The gate field
+\recid{common_limit_claimed} is false. Nothing is identified with the
+zero-selected limit of BB2, and no BA1, BB1 or BB2 constant is applied to
+route~B (control \recid{model_crossing_rejected}).
+
+\subsection{What changes from route A}
+\label{sec:bc2-changes}
+The forward checker derives every route-B input from the fine geometry, with
+factor $b$ owning the 24 positive links with tails
+$(4b_x+r,2b_y+s,b_z)$, $r=0,\ldots,3$, $s=0,1$. Over the 3000 plaquettes with
+base in the fine region of $\Lambda_2$, every plaquette lies in exactly one
+route-B group: the single-factor group of its anchor if it is selected, and
+otherwise its anchor's star. Table~\ref{tab:bc2-changes} compares the inputs
+with those of the zero-selected family.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Inputs of the zero-selected family (route~A, BA1 and BB1) and of the
+route-B uniform model (BC2). Every route-B entry is enumerated or recomputed
+in the BC2 packet; substituting a route-A entry aborts the forward checker.}
+\label{tab:bc2-changes}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X ll@{}}
+\toprule
+Quantity & Route A & Route B\\
+\midrule
+per-site interaction sum & $28|\tau|$ & $J'=29|\tau|$\\
+first-order faces per factor & 49 & 52 (49 omitted, 3 selected)\\
+interaction groups per site & 4 stars & 5 (4 stars, 1 single-factor group)\\
+groups of support one & none & one per factor, diameter 0\\
+groups meeting $R$ & 7 stars & 7 stars, 2 single-factor groups\\
+faces meeting $R$ & 82 & 88 (82 omitted, 6 selected)\\
+faces inside $R$ (first-order $R$-marginal) & 10 & 16 (10 omitted, 6 selected)\\
+largest first-order site energy & 18 & 24 (selected faces)\\
+circle bound at $|\tau|$ & $49/14398580736$ & $13/3599632512$ (AX1 $T'$)\\
+coefficient constant at $q=1/64$ & $K=49/111790368$ & $K_B=13/27941256$\\
+node slope & $49|\tau|/4$ & $k'=51|\tau|/4$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Per-site inputs.} For a factor $u$, the faces with $u$ in their
+owner set number $21+4+8+16=49$ omitted and 3 selected, 52 in all. The owner
+sets containing $u$ number 16, and the interaction groups containing $u$
+number 5: the stars at $u-S$ and the single group at $u$. The per-site sum is
+$(4\cdot21+3)|\tau|/3=29|\tau|$. Boundary counts never exceed the bulk value
+(checked on $\Lambda_1$ to $\Lambda_3$).
+
+\paragraph{Incidence on $R$.} For every $N\ge2$ (enumerated for $N=2,3,4$)
+exactly 7 whole stars, with anchors $R-S$, and 2 single-factor groups, at 0
+and $e_z$, meet $R=\{0,e_z\}$. They charge 153 faces, of which 88 meet $R$
+(82 omitted and 6 selected), 16 lie inside $R$ (the 10 omitted faces with
+owner set $R$ and the 6 selected faces of the two single sites) and 72
+straddle; 6 of the 72 have an owner set strictly containing $R$.
+
+\paragraph{Support-one groups.} A single-factor group has support $\{b\}$ and
+diameter 0. It is never clipped by a route-B volume containing $b$, and it
+never straddles a region, since a one-site support is either inside or
+outside. Its first-order creation is nonzero, with
+$\norm{c'^{(1)}_{\{b\}}}=\sqrt3\,|\tau|/144$. It enters the order-versus-distance
+count at a cost of one order and zero distance.
+
+\paragraph{The first-order $R$-marginal.} The first-order ground vector is
+$(\tau/72)\sum_fW_f\Omega_0$ over the retained faces. After the partial trace
+over $R^c$ a face term survives only if its owner set lies in $R$, because
+the Haar mean of a spin-$\tfrac12$ link outside $R$ vanishes. Exactly the 16
+faces inside $R$ survive. Their vectors are orthogonal with norm $\tfrac12$, so
+the first-order marginal has trace norm exactly $|\tau|/18$, while all 72
+straddling faces, including the 6 whose owner set strictly contains $R$, have
+zero first-order $R$-marginal. The route-A ten-face value
+$\sqrt{10}\,|\tau|/72$ is rejected.
+
+\paragraph{Selected-face site energy.} A selected face puts spin $\tfrac12$ on
+four links of one factor, so its vector has site energy
+$8\cdot4\cdot\tfrac34=24$ there, while an omitted face has at most three links
+on one factor and site energy at most 18. The selected-face vectors are
+therefore kept in the cutoff space $Q_L$ exactly for $L\ge24$; the route-A
+statement that first-order site energies are at most 18 is false for
+route~B.
+
+\subsection{Admissibility of the disc and the weight}
+\label{sec:bc2-admissible}
+The AM2 majorant has $G(R)<148/7$ and $G'(R)<352$ at the ball radius
+$R=1/64$, from $e^{1/8}<8/7$. Under $J'=29|\tau|$, the disc radius
+$\rho=64|\tau|$ and the split weight $W=1024$ are admissible, checked as exact
+rationals before any constant is evaluated
+(\projecttag{HNM-BC2-F01}):
+\begin{equation}
+ \begin{aligned}
+ 29\rho\,G(R)&\le\frac{1073}{2734375}<\frac1{64}, &
+ 29\rho\,G'(R)&\le\frac{2552}{390625}<1 &&(\rho=64|\tau|),\\
+ 29W|\tau|\,G(R)&\le\frac{17168}{2734375}<\frac1{64}, &
+ 29W|\tau|\,G'(R)&\le\frac{40832}{390625}<1 &&(W=1024),
+ \end{aligned}
+ \label{eq:bc2-admissible}
+\end{equation}
+and $\lambda=2/W=1/512$ lies below $q=1/64$. The route-B maximal disc radius
+is $R/(29\cdot148/7)=7/274688$, so the admissible weights are
+$1\le W\le7/(274688|\tau|)$, about $2548.35$ at the cap. The rate $q=1/64$ is
+frozen and never optimized in $N$.
+
+\paragraph{The route-A extremes are rejected, by a factor of only 29/28.} The
+BA1 disc radius $\tau_*=1/37888$ and the BB1 secondary weight
+$1/(37888|\tau|)$ sit exactly on route A's own boundary,
+$28\cdot(148/7)/37888=1/64$. Under route B they give
+\begin{equation}
+ 29\cdot\frac{148}{7}\cdot\frac1{37888}=\frac{29}{1792}>\frac{28}{1792}=\frac1{64},
+ \label{eq:bc2-route-a}
+\end{equation}
+so they fail the route-B self-map (\projecttag{HNM-BC2-F02}). The contraction
+alone would accept them ($319/1184<1$), so the self-map is the test that
+rejects them. The rejection is exact but thin: the factor is $29/28$
+(producer reading W4, equal to the skeptic's R4). A weight admissible only
+under $28|\tau|$, such as $W=2600$, is rejected as well, and $W=64$ fails
+because $\lambda$ is then not below $q$.
+
+\subsection{The coefficient input}
+\label{sec:bc2-coefficients}
+The route-B coefficient input is proved in full in the packet, on the pattern
+of BA1's reverse route; no BA1 statement is cited as admitted. For complex
+$z$ the complexified route-B map satisfies
+\begin{equation}
+ F_z(c)=\sum_{k=0}^{8}\frac{L^{(z)}_k(c,\ldots,c)}{k!},\qquad
+ \norm{L^{(z)}_k(c_1,\ldots,c_k)}_a\le29|z|\,16\cdot8^k\bigl(1+\tfrac{5k}4\bigr)\prod_j\norm{c_j}_a ,
+ \label{eq:bc2-complex}
+\end{equation}
+since $z$ enters only through $\norm{V_X(z)}=|z|\norm{V_{X,1}}$, with the
+per-site sum $29|z|$ and termination above order 8. The constants of the AM2
+steps increase with the support size, so the one-site groups are covered by
+the bound for support 4 (checked for supports 1 to 4 and orders 0 to 8). For
+$\rho\le7/274688$ the map sends the anchored ball into itself and contracts
+it. Its fixed point $c(z)$ is continuous on the closed disc, holomorphic
+inside, and equal to the route-B AM2 fixed point at real $\tau$. Only the
+creation coefficients are continued in $z$; no zero-free region of the
+normalization is proved, and no analyticity of the reduced density is
+claimed.
+
+\paragraph{The circle bound.} The first-order coefficient counts 52 faces per
+factor, selected ones included, each with face vector norm $\tfrac12$ and
+energy 24, so on the circle $|w|=\rho$
+\begin{equation}
+ \begin{gathered}
+ \norm{c(w)}_a\le T_B(\rho)=\frac{52\rho/144}{1-29\cdot352\,\rho}
+ =\frac{13\rho/36}{1-10208\rho},\\
+ T_B(|\tau|)=\frac{13}{3599632512},\qquad T_B(64|\tau|)=\frac{13}{55882512}.
+ \end{gathered}
+ \label{eq:bc2-circle}
+\end{equation}
+The value at $|\tau|$ is exactly the AX1 gate value $T'$, and the checker
+pins it: a route-A substitution of $(28,49)$ gives $49/14398580736$ and
+aborts at the pin.
+
+\paragraph{Order against distance, and the common core.} In the piece graph
+of route~B, omitted faces have owner sets of diameter 1 and selected faces
+owner sets of diameter 0. A nonzero term of order $n$ on a support through
+$u$ that contains a piece at distance $d\ge1$ from $u$ has $n\ge1+d$, since a
+single-site piece costs one order and no distance. A breadth-first search on
+the 1639 pieces of $\Lambda_3$, 343 of them single sites, finds the bound
+attained, with slack 0, from five sites. Every face, omitted or selected,
+with a site at distance at most $N-|u|_\infty-1$ from $u$ is retained by
+every route-B volume containing $\Lambda_N$, so every source face of a
+comparison lies at distance at least $N-|u|_\infty$ from $u$. The enumeration
+covers c1B, c4B and c5B; the source faces of c1B include 654, 1158 and 1806
+selected faces at $N=2,3,4$.
+
+\paragraph{The every-site bound.} Schwarz's lemma on the disc then gives, for
+c1B, c4B and c5B, both signs, every on-site cutoff and every site $u$ of the
+union volume (\projecttag{HNM-BC2-F09}),
+\begin{equation}
+ \sum_{I\ni u}\norm{c^A_I(\tau)-c^B_I(\tau)}\le K_Bq^{(N-|u|_\infty)_+},\qquad
+ K_B=2T_B(64|\tau|)=\frac{13}{27941256}\approx4.65262\times10^{-7},
+ \label{eq:bc2-KB}
+\end{equation}
+with margin about $2.1493$ against $1/1000000$ (tier
+\recid{exact_first_order}, route \recid{analytic_disc}). The bound holds in
+each cutoff space uniformly in the cutoff, and no untruncated creation
+coefficients are asserted (producer reading W3). The proved vanishing order is
+at least $N-|u|_\infty+1$; the contract form $(N-|u|_\infty)_+$ is used, and
+the sharper exponent is not substituted (W2, equal to the skeptic's R5). The
+crude tier $2\cdot29\rho G(R)=2146/2734375\approx7.848\times10^{-4}$ fails and
+is retained. The global Lipschitz constant of the route-B map, at most
+$319/3125000$, and the no-decay bound $1073/174982136$ carry no distance and
+appear in no constant.
+
+\subsection{Marginal locality by the iterated split}
+\label{sec:bc2-split}
+The split route is BB1's reverse route
+(eqs.~\eqref{eq:bb1-telescoping}--\eqref{eq:bb1-closure}), re-derived with the
+route-B sums. Nothing in it uses the shape of a support beyond its diameter
+and size, so single-site supports enter like any other and never straddle.
+With the per-site sums of a comparison,
+\begin{equation}
+ \begin{gathered}
+ t_0=2T_B(|\tau|)=\frac{13}{1799816256},\qquad
+ t_W=2T_B(1024|\tau|)=\frac{26}{3148137},\\
+ 8t_W=\frac{208}{3148137}\approx6.607\times10^{-5},
+ \end{gathered}
+ \label{eq:bc2-sums}
+\end{equation}
+the weighted sum carrying the loss $W^{d_X}$ once per interaction term, with
+$d_X=1$ for stars and 0 for single groups. The closure
+\eqref{eq:bb1-closure} gives
+\begin{equation}
+ \beta^*=\frac{132572461259098000347351859}{4012775859323049054050909456204}\approx3.30375944\times10^{-5},
+ \label{eq:bc2-beta}
+\end{equation}
+with $c_2\approx1.909\times10^{-12}$. The lattice sum at $x=\lambda/q=1/8$ is
+$S_\lambda=1+24x(1+x)/(1-x)^3+2x/(1-x)=2169/343$. For c1B, c4B and c5B,
+compared directly, both signs, every cutoff and every finite complete-factor
+region $Y\subset\Lambda_N$ (\projecttag{HNM-BC2-F17}),
+\begin{equation}
+ \norm{\rho^A_Y-\rho^B_Y}_1\le c_{{\rm site},B}\sum_{y\in Y}q^{N-|y|_\infty}
+ \le c_{{\rm site},B}\,|Y|\,e^{|Y|/10^8}q^{d_Y},\qquad
+ \norm{\rho^A_R-\rho^B_R}_1\le C_Bq^{N-1},
+ \label{eq:bc2-locality}
+\end{equation}
+with $d_Y=N-\max_{y\in Y}|y|_\infty$ and
+\begin{equation}
+ \begin{gathered}
+ c_{{\rm site},B}=K_B(2+\beta^*S_\lambda)
+ =\frac{35789673259133074250341804810795495}{38457845161696098009689444264975546012832}
+ \approx9.30621\times10^{-7},\\
+ C_B=c_{{\rm site},B}(1+q)
+ =\frac{2326328761843649826272217312701707175}{2461302090348550272620124432958434944821248}
+ \approx9.45162\times10^{-7}.
+ \end{gathered}
+ \label{eq:bc2-constants}
+\end{equation}
+The margins are about $2.1491$ against $1/500000$ and $4.2321$ against
+$1/250000$ (tier \recid{exact_first_order}, route \recid{iterated_split}). The
+same bounds hold for the untruncated ground vectors at fixed $N$. The order is
+fixed: the bound in each cutoff space uniformly in $L$, then $L\to\infty$ at
+fixed $N$ by AV1 F20--F23 with the route-B gap $1/2$, then the bound read as
+a function of $N$; the two limits are never exchanged.
+
+\paragraph{Where the constant comes from.} The ledger adds exactly to $C_B$.
+The near term $2K_B(1+q)=845/894120192\approx9.4506\times10^{-7}$ is almost
+all of it. The straddling channel contributes about $9.872\times10^{-11}$,
+the normalization channel about $7.13\times10^{-19}$, and the split remainder
+less still, so the far terms are about $1.04\times10^{-4}$ of the near term.
+This is why the two thin margins agree: $c_{{\rm site},B}$ is essentially
+$2K_B$, and its margin is inherited from the coefficient input. The split
+bound needs no factor $e^{|Y|/10^8}$; the contract still asks for
+$(1+t)^2\le1+10^{-8}$ as a fixture with the route-B anchored bound, and with
+$t=T'$ the value is $93590445481/12957354221447430144\approx7.223\times10^{-9}$.
+The union-volume form $2C_B$, the weighted first order $(49W+3)|\tau|/144$ and
+the nested values are labelled only, and the crude tier (about
+$1.876\times10^{-3}$ for $C_B$ and $1.847\times10^{-3}$ for
+$c_{{\rm site},B}$) fails and is retained.
+
+\subsection{Whole-sequence convergence}
+\label{sec:bc2-whole}
+Each $M>N$ is compared with $N$ by one direct c4B comparison of $\Lambda_N$
+and $\Lambda_M$, both of which contain $\Lambda_N$ (assembly
+\recid{union_comparison}, factor 1). Hence, for every $N\ge2$, both signs,
+each cutoff space and then the untruncated vectors (\projecttag{HNM-BC2-F18}),
+\begin{equation}
+ \sup_{M>N}\norm{\rho^{FB,M}_R-\rho^{FB,N}_R}_1\le C'_Bq^{N-1},\qquad
+ \sup_{M>N}\norm{\rho^{FB,M}_Y-\rho^{FB,N}_Y}_1\le c'_{{\rm site},B}\,|Y|\,e^{|Y|/10^8}q^{d_Y},
+ \label{eq:bc2-cauchy}
+\end{equation}
+with $C'_B=C_B$ and $c'_{{\rm site},B}=c_{{\rm site},B}$, the second for every
+$N$ with $Y\subset\Lambda_N$. The margins are about $4.2321$ against
+$1/250000$ and $2.6864$ against $1/400000$. With this assembly the
+whole-sequence bound on $R$ carries nothing beyond the comparison bound
+(W5, equal to the skeptic's R6). Nested telescoping would give
+$C_B/(1-q)\approx9.6016\times10^{-7}$ and
+$c_{{\rm site},B}/(1-q)\approx9.4539\times10^{-7}$; these are labelled only.
+
+For a fixed region the whole sequence $\rho^{FB,N}_Y$ is Cauchy in the trace
+class, so it converges in trace norm without compactness, and the limits on
+nested regions are compatible. They define a locally normal state
+$\omega_\infty$ that extends to the quasi-local algebra, and letting
+$M\to\infty$ in \eqref{eq:bc2-cauchy} gives
+$\norm{\rho^{FB,N}_R-\rho^\infty_R}_1\le C'_Bq^{N-1}$ and the region analogue.
+Example values of $C_Bq^{N-1}$ are about $1.4768\times10^{-8}$ ($N=2$),
+$2.3075\times10^{-10}$ ($N=3$) and $3.6055\times10^{-12}$ ($N=4$). Every
+rate is per coarse step in $N$ at fixed spacing, and it holds for every
+$N\ge2$ (on a region $Y$, for every $N$ with $Y\subset\Lambda_N$; for the
+exhaustion below, for every $N_k\ge2$). No correlation-function rate in $N$ is
+claimed, and no BB2 rate is transferred.
+
+\subsection{Items 2a, 2b, 3 and 4}
+\label{sec:bc2-items}
+\paragraph{Item 2a: exhaustion within the prescription.} Let $V_k$ be finite
+complete-factor route-B volumes, with every star inside the volume and every
+single group kept, and let $N_k$ be the largest $N$ with $\Lambda_N\subset
+V_k$, tending to infinity. For every $N_k\ge2$ and every finite
+complete-factor region $Y\subset\Lambda_{N_k}$, one direct c5B comparison of
+$V_k$ with $\Lambda_{N_k}$ and the whole-sequence bound give
+(\projecttag{HNM-BC2-F19})
+\begin{equation}
+ \begin{gathered}
+ \norm{\rho^{V_k}_Y-\rho^\infty_Y}_1\le(c_{{\rm site},B}+c'_{{\rm site},B})\,|Y|\,e^{|Y|/10^8}q^{N_k-\max_{y\in Y}|y|_\infty},\\
+ c_{{\rm site},B}+c'_{{\rm site},B}=2c_{{\rm site},B}\approx1.8612\times10^{-6}.
+ \end{gathered}
+ \label{eq:bc2-exhaustion}
+\end{equation}
+Every such exhausting sequence therefore has the same limit on every finite
+region. This is exhaustion within one prescription, not a comparison of
+boundary conditions. The contract's clause cites ``item 1'' for the second
+ingredient; the producer reads it as the whole-sequence bound, not BC2's
+item~1 (W1).
+
+\paragraph{Item 2b: the pointwise sign mirror.} In every centered box and
+every cutoff, $U_EH_N(\tau)U_E^*=H_N(-\tau)$ (AX1 forward F19--F20): every face
+coefficient, selected faces included, is $-\tau/3$, the on-site operator and
+its cutoffs commute with $U_E$, and the flip set meets every plaquette in 1 or
+3 links (864 plaquettes of a period window re-enumerated, 108 of them
+selected). The grounds are simple, and $U_E$ is a product of one-link
+unitaries, hence of factor unitaries $U_{E,x}$, so
+$\rho^N_Y(-\tau)=U_{E,Y}\rho^N_Y(\tau)U_{E,Y}^*$ for every finite $Y$, every $N$
+and every cutoff. Whole-sequence convergence at both signs then gives
+(\projecttag{HNM-BC2-F20})
+\begin{equation}
+ \omega^{-\tau}_\infty=\omega^{\tau}_\infty\circ\alpha_E\quad\text{on every finite region},\qquad
+ \alpha_E(A)=U_EAU_E^* .
+ \label{eq:bc2-mirror}
+\end{equation}
+AX1's whole-set statement $S(-\tau)=S(\tau)\circ\alpha_E$ becomes pointwise.
+The $-\tau$ side is the mirror replay with no real $g$, not a second coupling
+and not a second observation.
+
+\paragraph{Item 3: identification before inheritance.} An AQ1-type
+subsequential state of the AX1 construction is a limit, along some
+subsequence, of the densities of the centered whole-star-plus-single-group
+boxes on every finite region (AQ1's diagonal extraction, re-applied in
+route~B by AX1). The whole sequence converges, so every subsequence has the
+same limit, and the set of these states, nonempty by compactness, is the
+single state $\omega_\infty$ (\projecttag{HNM-BC2-F21}). Only then does
+$\omega_\infty$ inherit exactly the AX1 gate's route-B list: a compatible,
+locally normal, gauge-invariant state, stationary under the route-B limit
+dynamics $T_\theta$, with a strongly continuous GNS evolution and a
+nonnegative physical generator; the AQ2-type inequality
+$H_{\rm phys}\ge(\alpha/16)(I-P_\Omega)$ on the invariant-local cyclic
+completion, with the full-GNS strengthening only as qualified there; the
+reset $\omega(h_R)\le102|\tau|$ and $\epsilon_R\le17|\tau|$; and the AX1 state
+lemma with
+$D'=2425369125199104794263242601250/167893028420061547330293754713793182097\approx1.44459\times10^{-8}$.
+Not inherited: the zero-selected constants, the BB2 list, a uniform
+$\omega(W^2)$ constant or Wilson-mean sign, any route-B dynamics comparison or
+correlation-function statement, and uniqueness of any ground state. The
+inherited stationarity is a property of the identified state, not a route-B
+dynamics claim (W6).
+
+\paragraph{Item 4: coarse translations.} A coarse translation $v$ is the fine
+translation $(4v_x,2v_y,v_z)$. It preserves the residues, the face classes,
+the selected set and link ownership, so it maps route-B volumes to route-B
+volumes. For every coarse $v$ and every $N\ge|v|_\infty+2$, both
+$\Lambda_N+v$ and $\Lambda_N$ contain $\Lambda_{N-|v|_\infty}$, and one
+direct c5B comparison gives (\projecttag{HNM-BC2-F22})
+\begin{equation}
+ \norm{\rho^{\Lambda_N+v}_R-\rho^{\Lambda_N}_R}_1\le C_Bq^{N-|v|_\infty-1}\qquad(N\ge|v|_\infty+2).
+ \label{eq:bc2-translation}
+\end{equation}
+The region form of c5B makes $\omega_\infty$ invariant under every coarse
+translation on every finite region. Nothing is claimed for non-coarse fine
+translations, neither invariance nor its failure. Among the 64 fine
+translations of a period window exactly the 8 coarse ones preserve the factor
+partition and the grouping. A non-coarse translation keeps the uniform
+coefficient $-\tau/3$ of every face but not the grouping: $(1,0,0)$ maps the
+selected face at $(2,0,0)$, a single group with one owner, to the face at
+$(3,0,0)$ with two owners. The route-A reason for rejecting such translations,
+a selected face mapped to an omitted face of another coefficient, does not
+apply here.
+
+\subsection{The AX2 node restated for the limit}
+\label{sec:bc2-node}
+AX2 certifies, for every AQ1-type subsequential state of the construction,
+each separately, at $\tau=+10^{-8}$ and $s=1$, that $|C(1)-d|\le r\le R'$. By
+item~3 the limit is that state, with the same GNS representation and
+generator, so with $\chi=(\pi(W)-\omega_\infty(W))\Omega$ in the GNS
+representation of $\omega_\infty$
+\begin{equation}
+ \begin{gathered}
+ |C_\infty(1)-d|\le R',\qquad C_\infty(1)=\bigl(\chi,e^{-G}\chi\bigr),\\
+ d=\frac{497870683678639429793424156500617766317}{4\cdot10^{40}}\approx1.24467670920\times10^{-2},\\
+ R'=\frac{1912298807996871790146581299723633}{10^{40}}\approx1.91229880800\times10^{-7},
+ \end{gathered}
+ \label{eq:bc2-node}
+\end{equation}
+so $C_\infty(1)$ lies in $[d-R',d+R']$ with
+\begin{equation}
+ \begin{gathered}
+ d-R'=\frac{99572606896681488461252714035083774357}{8\cdot10^{39}}\approx1.24465758620\times10^{-2},\\
+ d+R'=\frac{497878332873871417280584742825816660849}{4\cdot10^{40}}\approx1.24469583218\times10^{-2}.
+ \end{gathered}
+ \label{eq:bc2-node-interval}
+\end{equation}
+The datum is the AV2 datum, unchanged because the Haar reference and the free
+$z$ link are unchanged. Both values are read by hash from the AX2 gate. The
+admitted AX2 calculator, a declared premise loaded from the producer's input
+snapshot, is replayed at its fixed design ($\tau=+10^{-8}$, $s=1$, the
+gate-bound $D'$, $k'=51|\tau|/4$, $M_0=2$, $M_1=4s/\pi$). It returns $d$ and
+its outward $10^{-40}$ radius equal to the gate rationals exactly, the label
+\recid{reference_unresolved}, and at $-\tau$ the same values as the mirror
+replay. The skeptic ran the calculator from its source bytes and obtained the
+same values. The producer's own re-evaluation, with its own Machin enclosure
+of $\pi$ and bracket for $e^{-3}$, lies about $2.7\times10^{-41}$ below $R'$,
+and so does the skeptic's; both are labelled cross-checks, not the headline.
+
+The free value $e^{-3}/4$ lies inside the interval, so no interaction shift,
+sign or coefficient of $C(s)$ is claimed, and
+\recid{resolved_interaction_shift} is false. No other node, no convergence of
+the finite-box nodes $C_N(1)$ to $C_\infty(1)$ and no smaller state term for
+the limit is claimed; the first would need a route-B dynamics comparison. The
+region form of \eqref{eq:bc2-cauchy} is load-bearing here. $C(1)$ is a
+functional of the state on the quasi-local algebra, so the restatement needs
+the identification on every finite region, for the untruncated vectors; with
+the $R$ form only, or inside each cutoff space only, it would fail (control
+\recid{region_form_load_bearing_for_node}). The datum ratio under
+$\tau\to\tau/100$ is exactly 1, and the radius replay ratio, about
+$100.0015$, is recorded and not a target.
+
+\subsection{Constants and scaling}
+\label{sec:bc2-table}
+Table~\ref{tab:bc2-constants} collects the bound values. The binding margins,
+both about $2.149$, are those of $K_B$ and $c_{{\rm site},B}$.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The BC2 constants at $q=1/64$, both signs, every $N\ge2$ (on a
+region, every $N$ with $Y\subset\Lambda_N$). Exact values are in
+\eqref{eq:bc2-KB}, \eqref{eq:bc2-constants} and \eqref{eq:bc2-node}; every
+constant is tier \recid{exact_first_order}. The ratio is the constant at
+$\tau$ over its value at $\tau/100$, from the same exact formula.}
+\label{tab:bc2-constants}
+\begin{tabular}{@{}lllll l@{}}
+\toprule
+Constant & Preview & Target & Margin & Route or assembly & Ratio\\
+\midrule
+$K_B$ (T0) & $4.6526\times10^{-7}$ & $10^{-6}$ & 2.1493 & analytic\_disc & 100.651\\
+$C_B$ (T1) & $9.4516\times10^{-7}$ & $1/250000$ & 4.2321 & iterated\_split & 100.661\\
+$c_{{\rm site},B}$ (T2) & $9.3062\times10^{-7}$ & $1/500000$ & 2.1491 & iterated\_split & 100.661\\
+$C'_B=C_B$ (T3) & $9.4516\times10^{-7}$ & $1/250000$ & 4.2321 & union\_comparison & 100.661\\
+$c'_{{\rm site},B}=c_{{\rm site},B}$ (T4) & $9.3062\times10^{-7}$ & $1/400000$ & 2.6864 & union\_comparison & 100.661\\
+exhaustion $2c_{{\rm site},B}$ & $1.8612\times10^{-6}$ & --- & --- & c5B and T4 & ---\\
+node $d$, $R'$ & AX2 gate values & equality & equal & calculator replay & 1 ($d$)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ratio for $K_B$ is exactly $39059948/388073$. Every ratio lies in the
+frozen bracket $[95,105]$: each constant is linear in
+$\tau$ with a small positive correction from $1/(1-10208\cdot64|\tau|)$ and the
+split terms. A quadratic, constant or square-root headline and a bracket
+chosen after evaluation are rejected controls. The skeptic's pre-comparison
+table printed the density ratio as about $100.662$; the exact value is
+$100.6614518$, and the review records the slip against itself.
+
+\subsection{Evidence and review}
+\label{sec:bc2-evidence}
+The forward checker runs 111 exact checks and implements all 52 contract
+controls as damaging mutations, with 219 rejections. Its outputs are
+byte-identical under \texttt{-B} and \texttt{-B -O}. The skeptic's
+pre-comparison package (110 checks, 52 controls as 138 rejected mutations
+with 5 positives) was final by 04:58:27 UTC and committed first, at 05:00:47.
+The forward checker was last written at 05:02:17, and the forward commit
+followed at 05:04:31, 3~min 44~s after the skeptic's.
+The skeptic's exposure was to names only: untracked file names in a
+\texttt{git status}, and the subject line of the forward commit, which states
+$K_B$, seen after its BC2 package was committed. It opened the forward
+directory only after the coordinator's post-comparison message. The
+post-comparison checker runs 21 checks and 94 source-edit runs. The forward
+replays reproduce the frozen outputs byte for byte, the closure of 46 files
+verifies, and the forward holds exactly its 42 declared inputs. No interpreter
+cache is written under the AX2 calculator's directory or in the closure, even
+by a run without \texttt{-B}. The gate was recorded at 05:57 UTC on 25
+September.
+
+\paragraph{What the exact agreement means.} Every route-B constant, including
+$t_0$, $t_W$, $c_1$, $c_2$, $\beta^*$ and $S_\lambda$, equals the skeptic's
+frozen pre-comparison rational exactly, not only to the printed digits. Both
+codes follow the same frozen formula chain: the contract's route-B inputs,
+the BB1 reverse covering-chain closure and $T_B$. The agreement therefore
+checks arithmetic and code. It is not a second method. The skeptic's code
+reproduces both BB1 gate \recid{iterated_split} rationals exactly from route-A
+inputs, which anchors its implementation.
+
+\paragraph{Twenty-two route-A substitutions abort.} The review substituted
+route-A inputs and gate constants into the producer's checker 22 times, and
+each run aborted without output. The substitutions were:
+\begin{itemize}
+\item the per-site sum $28|\tau|$, 49 faces or 4 groups;
+\item every constant evaluated with $(28,49)$, or $K_B$ replaced by the BA1
+ value;
+\item the contraction coefficient $9856=28\cdot352$ in $T_B$, or $G'(R)$
+ rescaled so that $29G'(R)=9856$;
+\item BB1 or BB2 gate constants in place of $C_B$, $c_{{\rm site},B}$,
+ $C'_B$ or $c'_{{\rm site},B}$;
+\item the route-A disc radius or split weight, or $W=2600$;
+\item the route-A ten faces on $R$;
+\item $D'$ recomputed with $28|\tau|$ or 49 faces, or the node slope
+ $49|\tau|/4$;
+\item a changed selected predicate, clipped single groups, or an emptied
+ route-A rejection list;
+\item both guards removed, in which case the derived per-site face counts
+ still expose 49.
+\end{itemize}
+
+\paragraph{Readings, silent edits and disclosures.} The review adopts
+reading R1: the $(1+t)^2$ fixture uses $t=T'$, the per-box anchored bound, and
+not $2T'$, with which the value, about $1.4446\times10^{-8}$, would fail. Of
+six silent source edits, one is harmless (a 30-term enclosure of $e^{1/8}$).
+The other five run silently in the producer's checker and are rejected only
+by the skeptic's validator. They were the example exponent $N$ in place of
+$N-1$, a translation row with exponent 3, the labelled own radius computed
+with slope $49|\tau|/4$, a changed $K_B$ margin in the verdict table, and a
+changed digit of $C_B$ at one of its two report sites. The review's advice
+for later single-direction loops is to freeze an exact-value pin list for
+every exported number, examples and labelled cross-checks included. The
+forward disclosed that the file tool refused its report, which was written
+through a shell heredoc after a briefly written stub; the stub was disclosed
+to the coordinator and not in the frozen packet, so the review records it. It
+also disclosed a listing of tool file names and a reading of parts of the
+gated BB1 reverse checker, outside its inputs, for coding conventions; no BC2
+constant depends on either. The review records the contract readings W1--W7
+and its own D1--D3 as non-blocking, and found no blocking issue.
+
+\subsection{Obligations}
+\label{sec:bc2-obligations}
+The review records five open obligations for route~B, as contract item~6
+requires (Table~\ref{tab:bc2-obligations}). Row N9 of Table~\ref{tab:bc1-obligations},
+which was to cite the BC2 gate only once recorded, stays as the BC1 review
+froze it; what the BC2 gate admits for the route-B model is stated in this
+section, and these five rows are what it leaves open.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Open obligations recorded by the BC2 review for the route-B model.}
+\label{tab:bc2-obligations}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.05\linewidth}
+ >{\raggedright\arraybackslash}p{0.27\linewidth}
+ >{\raggedright\arraybackslash}X@{}}
+\toprule
+Row & Obligation & Missing premise and candidate route\\
+\midrule
+B1 & A second route-B boundary prescription (an all-contained analogue with
+its own itemization) & An all-contained route-B prescription with its own
+grouping, per-site sum and retention, compared with FB. Route: re-run the
+coefficient input and the split with the new source set; not executed.\\
+B2 & Route-B dynamics and correlation functions (a route-B BA2) & A route-B
+Lieb--Robinson/Duhamel comparison; the BA2 constants use $2268|\tau|$, while
+route~B has $\norm{\Phi'}_F\le2349|\tau|$. Route: the BA2 route with the
+route-B constants; not executed.\\
+B3 & Uniqueness of any ground state & A mechanism covering states outside
+the named construction. Route: local stability with evaluated constants; not
+formulated.\\
+B4 & Anything uniform in the lattice spacing $a$ & Every constant is at fixed
+spacing and strong bare coupling. No route within this model.\\
+B5 & The continuum problem & Outside this investigation; no route claimed.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Meaning.} BC2 carries the whole locality and convergence chain of
+BA1, BB1 and BB2 over to the uniform model handled by route~B, with every
+constant recomputed from route-B inputs and each at most its frozen target.
+The reduced densities of the one named construction converge as a whole
+sequence at the rate $q^{N-1}$ per coarse step at fixed spacing, to one limit
+that is also reached along every exhausting sequence of the same
+prescription. That limit is the AQ1-type subsequential state of the AX1
+construction, is mirrored pointwise between the two signs, is invariant
+under coarse translations, and satisfies the AX2 node certificate at $s=1$
+with unchanged constants. It is convergence of one named construction. It is
+not uniqueness of any ground state, not a statement about other boundary
+prescriptions or about route-B dynamics, not a finite-box node, not weak
+coupling or continuum, and not uniform in the lattice spacing.
+
+\subsection{Limitations recorded by the gate}
+\label{sec:bc2-limits}
+The BC2 gate records the following limitations verbatim.
+\begin{gatequote}
+\begin{itemize}
+\item Scope: only the uniform route-B model at fixed spacing and strong bare
+coupling (|tau| at most 10\textasciicircum{}-8, g\textasciicircum{}4 at least
+9.6x10\textasciicircum{}9 by the AL1 dictionary of this model), the named
+construction FB and the finite complete-factor route-B volumes containing
+Lambda\_N with N at least 2, finite complete-factor regions and the cover R,
+coarse translations and the single node s=1 at tau=+10\textasciicircum{}-8;
+route B has one named family, so no common limit of two route-B families is
+claimed; nothing transfers to the zero-selected family (no identification with
+the BB2 limit and no BB1 or BB2 constant applied), to other boundary
+prescriptions, to weak coupling or the continuum; the constants are uniform in
+N at fixed spacing and in the on-site cutoff, and no estimate is uniform in
+the lattice spacing a.
+\item Convergence of the named construction only: no uniqueness of any ground
+state and no statement about states outside the named construction; the limit
+is identified only with the AQ1-type subsequential states of the AX1
+construction and inherits only the AX1 gate\textquotesingle{}s route-B list;
+the AX1 finite-volume statement (a simple ground and gap 1/2 in every finite
+complete-factor route-B volume) is a finite-volume premise, not an
+infinite-volume statement.
+\item Dynamics: no route-B dynamics comparison and no correlation-function
+statement (dynamics\_level is not exported); stationarity under the route-B
+limit dynamics T\_theta and the GNS generator are inherited properties of the
+identified state from the AX1 gate (producer reading W6), not a route-B BA2;
+no equality of GNS dynamics of different states and no uniform-in-time
+statement; the secondary label static\_not\_dynamic is read in this sense
+(state statements and the inherited Euclidean node, no route-B real-time
+dynamics).
+\item Node restatement only: d and R\textquotesingle{} are the AX2 gate
+rationals; the free value e\textasciicircum{}\{-3\}/4 lies inside the interval
+(reference\_unresolved); no interaction shift, sign or coefficient of C(s), no
+other node and no convergence of finite-box nodes C\_N(1) to C\_inf(1) is
+claimed, and the -tau value is the U\_E mirror replay; the labelled own
+re-evaluations of the radius (the producer\textquotesingle{}s and the
+skeptic\textquotesingle{}s, each about 2.7e-41 below R\textquotesingle{}) are
+cross-checks, not the headline.
+\item Coefficient input: T0 is a statement in each on-site cutoff space
+(untruncated creation coefficients are not asserted; producer reading W3);
+only the creation coefficients are continued in the coupling, and no
+analyticity of the reduced density or of the normalization is claimed (no
+zero-free region); the analytic steps of the disc lemma (Weierstrass, the
+maximum principle) and the AM2 majorant steps are proved in the report and are
+not machine-checked.
+\item Constants are upper bounds only, evaluated at the constants proved in
+the packet (no hypothesis layer); the thin margins are T0 (about 2.1493) and
+T2 (about 2.1491), because c\_site,B=K\_B(2+beta* S\_lambda) and the far term
+is about 1.04e-4 of the near term; the route-A extremes fail the route-B
+self-map by the factor 29/28 only (producer reading W4); the crude tier fails
+every target and is retained; the nested-telescoping and union-volume
+variants, the telescoped coefficient input and the weighted first order
+(49W+3)|tau|/144 are labelled only.
+\item Rates: every rate is per coarse step in N at fixed spacing (a coarse
+step is (4a,2a,a)) and holds for every N at least 2 (on a region Y, for every
+N with Y inside Lambda\_N; for the exhaustion, for every N\_k at least 2); no
+correlation-function rate in N and no rate transferred from BB2 is claimed.
+\item Contract wording read as follows (non-blocking): W1 clause
+2a\textquotesingle{}s item 1 is the whole-sequence bound T4; W2 (equal to
+skeptic R5) the sharper vanishing order N-|u|\_inf+1 is not substituted; W3 T0
+holds only in each Q\_L; W4 (equal to skeptic R4) the route-A extremes fail
+only the self-map, by 29/28; W5 (equal to skeptic R6) with union\_comparison
+T3 carries nothing beyond T1; W6 the inherited AX1 stationarity is not a
+route-B dynamics claim; W7 the factor 2 of 8*2\textasciicircum{}\{diam I\} is
+absorbed into lambda=2/W; skeptic D1 (T1 has no form field), D2 (c1B is a
+special case of c4B) and D3 (the inherited parameter control asks for d\_X and
+N\_0) stand.
+\item Premises: inherited without re-proof are the AM2 majorant steps and
+fixed point, the AX1 route-B grouping, finite-volume theorem, state lemma,
+flip identity and route-B AQ1/AQ2 re-instantiation list, AV1 F20-F23, the AX2
+certificate and calculator, and the I1 dictionary; the analytic disc (BA1
+reverse Theorem 4.1), the iterated split (BB1 reverse) and the whole-sequence
+scheme (BB2) are shared premises named by the contract. The producer read
+parts of the gated BB1 reverse check.py outside its inputs for conventions
+(disclosed); no BC2 constant depends on it.
+\item Independence: one forward producer plus the skeptic\textquotesingle{}s
+pre-comparison replay, all correlated model agents; the skeptic pre-comparison
+package (5ec599f) was committed 3 min 44 s before the forward commit
+(ee45eed); the pre-comparison rationals equal the producer\textquotesingle{}s
+exactly because both follow the frozen formula chain, so the agreement checks
+code and arithmetic, not a second method; isolation rests on disclosure and
+content; the report was written by a shell heredoc after a briefly written
+stub (disclosed to the coordinator, not in the frozen packet) and is bound by
+its freeze record.
+\item Scientific priority is unverified.
+\end{itemize}
+\end{gatequote}
+Full derivations and reviewed implementations:
+\repo{research/round33/forward/bc2/report.md}{BC2 forward},
+\repo{research/round33/skeptic/bc2.md}{independent model-agent review},
+\repo{research/round33/skeptic/bc2-independent-derivation.md}{skeptic
+pre-comparison derivation} and the
+\repo{research/round33/contracts/bc2.json}{frozen contract}; the restated node
+is that of the \repo{research/round32/advisor/ax2-gate.json}{AX2 gate}, and
+the route-B grouping that of the
+\repo{research/round32/advisor/ax1-gate.json}{AX1 gate}, neither of which is
+edited. With BC1 and BC2 gated, sub-round~3 is complete.
