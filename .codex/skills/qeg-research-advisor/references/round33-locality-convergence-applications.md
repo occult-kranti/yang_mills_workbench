@@ -24,3 +24,4 @@ Round33 (BA1-BD2, eight investigations, all accepted within scope) turned the Ro
 - Freeze two contracts of a sub-round together when the second can take the first's targets as hypotheses; record the plan sha at each freeze in the plan history.
 - Pre-freeze skeptic reviews produce field-path edits that are applied programmatically; blocking edits must be applied before freeze; tighten a non-discriminating target at freeze with a recorded reason.
 - Record commit order as it happened (producer before or after the skeptic package), with values-final times and name-only exposures.
+- Never edit a tool in place once a gate-bound program pins its hash: the BA2 post-review pinned the round phrase scanner before its vocabulary was extended, so the release replay needed a committed historical copy and a repair record (`research/round33/release/repair-ba2-postreview-scanner.md`). Add a new versioned file instead and let later programs pin it.

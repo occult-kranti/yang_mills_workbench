@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tarfile
@@ -14,6 +15,18 @@ ROOT = Path(__file__).resolve().parents[2]
 BASELINE = '519a9a2a26201422a8bfa9e3a83f9129b66b8c88'
 LOOPS = ('ba1', 'ba2', 'bb1', 'bb2', 'bc1', 'bc2', 'bd1', 'bd2')
 FINAL_RENDER = 'research/round33/presentation/final-render/'
+# Repair record research/round33/release/repair-ba2-postreview-scanner.md: the BA2 post-review
+# program pins the round phrase scanner as it stood at its review (commit 7c4c344); the scanner
+# vocabulary was extended at 058cd0b before the later reviews, which pin the extended bytes. That
+# one program is replayed in a separate copy of the archived tree carrying the committed historical
+# bytes, verified against the pinned hash; no gate, review, checker or recorded output is changed.
+HISTORICAL_TOOL_PINS = {
+    'ba2_postreview_check.py': {
+        'research/round33/tools/phrase_scan.py': (
+            'research/round33/tools/history/phrase_scan-028af4c1.py',
+            '028af4c14edbb2fae096a91cb723ccefb036e7550088907ef47062774871f67c'),
+    },
+}
 
 
 def need(ok, why):
@@ -95,14 +108,29 @@ def main():
         # Independent reviewer computations are replayed from their frozen sources.
         need(any(name.startswith('bd2') for name in skeptic_programs), 'Missing final skeptic program inventory')
         for program, recorded in skeptic_programs.items():
+            base = work
+            pins = HISTORICAL_TOOL_PINS.get(program)
+            if pins:
+                base = external / ('pinned-' + program.replace('/', '_').replace('.', '_'))
+                shutil.copytree(work, base)
+                for tool, (historical, pinned) in pins.items():
+                    need(sha(base / historical) == pinned, 'Historical tool bytes differ: ' + historical)
+                    need(sha(base / tool) != pinned, 'Pinned tool unexpectedly current: ' + tool)
+                    shutil.copyfile(base / historical, base / tool)
             for mode in ('normal', 'optimized'):
                 target = external / ('skeptic-' + program.replace('/', '_') + '-' + mode)
                 flags = ['-O'] if mode == 'optimized' else []
-                run('skeptic-' + program + '-' + mode,
-                    [sys.executable, '-B', *flags, 'research/round33/skeptic/' + program,
-                     '--output', str(target)])
+                done = subprocess.run([sys.executable, '-B', *flags, 'research/round33/skeptic/' + program,
+                                       '--output', str(target)], cwd=base, capture_output=True, text=True,
+                                      env={**os.environ, 'PYTHONDONTWRITEBYTECODE': '1'})
+                need(done.returncode == 0, 'skeptic-' + program + '-' + mode + ': ' + done.stdout[-1500:] + done.stderr[-2500:])
+                checks.append({'name': 'skeptic-' + program + '-' + mode, 'exit_code': done.returncode,
+                               'stdout': done.stdout.strip().replace(str(external), '<external>'),
+                               'historical_tool_pins': sorted(pins) if pins else []})
                 need(tree_files(target) == tree_files(work / 'research/round33/skeptic' / recorded),
                      'Changed independent skeptical output: ' + program)
+            if pins:
+                shutil.rmtree(base)
         # The inherited source validators are read-only; no earlier producers are
         # rerun because their exact protected trees were separately released.
         run('inherited-round32-integrity', [sys.executable, '-B', 'research/round32/reproduce.py', '--complete', '--validate-only'])
