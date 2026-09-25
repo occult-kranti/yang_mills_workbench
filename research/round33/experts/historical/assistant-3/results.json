@@ -1,0 +1,789 @@
+{
+  "assistant": 3,
+  "findings": {
+    "discrepancies_found": false,
+    "notes": [
+      "route_b_incidence.py: an independent, from-scratch fine-lattice and coarse-lattice enumeration of the route-B partition (BC2's model AQ_uniform_routeB) reproduces every pinned number in the BC2 contract's required item 1 exactly: on a genuine fine grid (125 coarse anchors x 8 (x mod 4, y mod 2) residues x 3 orientations = 3000 plaquette instances, matching the scale of the BC2 forward producer's own brute-force check), every plaquette lands in exactly one route-B group (250 groups total: 125 whole stars of 21 faces plus 125 single-factor groups of 3 faces, exactly matching the BC2 forward results.json route_b_partition_brute_force field). At coarse level, per factor u: 52 first-order faces (49 omitted + 3 selected), 16 distinct owner sets (multiplicities {1x5, 2x3, 3x3, 4x3, 10x2}), and 5 interaction groups (4 incoming stars + 1 single group) -- all matching the BC2 forward report's route_b_per_site_inputs_derived numbers exactly. R={0,e_z} incidence: exactly 7 whole stars and 2 single-factor groups meet R, charging 153 faces (88 meeting R, 16 inside R, 72 straddling) -- matching the BC2 contract's required item 1, the AX1 gate's own incidence sentence, and the BC2 forward results.json route_b_incidence_on_R field exactly, including the per-anchor meeting_R/inside_R breakdown. The every-site common core for route B (Lemma D5 of the BC2 forward report, re-derived here from scratch) was checked at N=2 and N=3: every new source face (both the 21 faces of a newly-retained whole star and the 3 faces of a newly-retained single-factor group, going from Lambda_N to Lambda_{N+1}) lies at coarse l-infinity distance at least N-|u|_inf from every site u of Lambda_N, min_slack=0 (the bound attained) in both cases, with exact source-face counts (3846 at N=2: 3192 omitted from 152 new stars + 654 selected from 218 new single anchors; 7374 at N=3: 6216 omitted from 296 new stars + 1158 selected from 386 new single anchors) matching the BC2 forward results.json route_b_every_site_common_core rows bit-for-bit, and matching this script's own independent closed-form cross-check (8(3N^2+3N+1) new stars, (2N+3)^3-(2N+1)^3 new single anchors) exactly. No discrepancy was found anywhere in this script.",
+      "n_sign.py: parsed K_2^+ as an exact rational directly out of the plain text of the hash-verified AW2 gate (research/round32/advisor/aw2-gate.json) and C'=4/984375, q=1/64 directly out of the hash-verified BB2 gate (research/round33/advisor/bb2-gate.json), using regex patterns specific enough to pick out the nested_telescoping BOUND value the BC1 contract names (rejecting the BB2 gate's own labelled union_comparison value C'=1/250000 and its labelled re-evaluated preview, both of which a bare 'C'=<num>/<den>' pattern would also match -- an early version of this script raised an assertion on exactly this ambiguity, which is itself a useful confirmation that the BB2 gate text carries more than one C' value and that picking the right one matters). From these, independently recomputed L=tau/144-K_2^+ tau^2 and U=tau/144+K_2^+ tau^2 at tau=10^-8 and confirmed both equal the AW2 gate's own literal endpoint rationals exactly (bit-for-bit, via a second, independent regex over the gate's own '[num1/D, num2/D], D=...' spelling). Computed N_sign, the least N at least 2 with C' q^(N-1) strictly below L, by a monotone from-scratch scan (not a closed-form log inversion): N_sign=4 exactly, matching the BC1 forward report, the BC1 forward results.json f2_finite_box_sign_corollary field, and the BC1 gate's own stated value bit-for-bit. The widening table at N=2..6 (C' q^(N-1) exact for each N, and whether it is below L) matches the BC1 forward results.json table row-for-row for every one of these five N values (widening values, and the certified/not-certified flag, both agree exactly). New, non-blocking finding: the exact robustness range of C' giving the same N_sign=4 (holding q=1/64 and L fixed) is C' in [L/q^2, L/q^3) = [42773581813770903096597852821080380528959/151105853346948759168317243904525493862400000000, 42773581813770903096597852821080380528959/2361028958546074362004956936008210841600000000), i.e. approximately [2.8307e-7, 1.8117e-5) -- a factor-of-64 window (since successive N steps change the widening by exactly one power of q). The BB2 gate's actual bound value C'=4/984375 (about 4.0635e-6) lies comfortably inside this range, with room to move either up by a factor of about 4.46 or down by a factor of about 14.35 before N_sign would change; this was not previously stated as an exact range in any BC1 or BC2 record and is reported here as a labelled observation, not a bound on anything admitted. No discrepancy was found: every recomputed value equals its gate or BC1-packet counterpart exactly.",
+      "obligations_audit.py: the reviewed_obligations_table of research/round33/skeptic/bc1.json carries exactly 21 rows, matching the skeptic packet's own obligations_reconciliation.reviewed_rows=21 field. All 6 closed_within_scope rows (O1a, O2, O3, O4, O5, O6) name at least one gate token (BA1, BA2 and/or BB2) that resolves to a real research/round33/advisor/<token>-gate.json file on disk, and every one of their closing_gate_and_scope strings states an explicit scope (contains the word 'scope'). O1a and O1b are both present, with O1a closed_within_scope and O1b open, exactly reproducing the BC1 gate's own reviewed split of the AY2 row O1 (the un-split producer row 'O1' does not reappear in the reviewed table). All 15 open rows (O1b, N1 through N14) carry a non-trivial missing_premise and a non-trivial candidate_route (neither blank nor the literal word 'none' in either field, even though every open row's closing_gate_and_scope is, correctly, the literal 'none (open)'). No discrepancy was found: the reviewed table is structurally complete by every criterion checked here."
+    ]
+  },
+  "human_author": "Hruday N M (BUNZEEY)",
+  "lens": "historical (Newton/Tesla)",
+  "never_imported": [
+    "research/round33/forward/bc1/check.py",
+    "research/round33/forward/bc2/check.py",
+    "research/round33/skeptic/bc1_check.py",
+    "research/round33/skeptic/bc1_postreview_check.py",
+    "research/round33/skeptic/bc2_check.py",
+    "research/round33/skeptic/bc2_postreview_check.py",
+    "any other check.py"
+  ],
+  "never_read": [
+    "research/round33/forward/bd1/ (in production)",
+    "research/round33/forward/bd2/ (in production)",
+    "research/round33/reverse/bd1/ (in production)"
+  ],
+  "overall_pass": true,
+  "read_before_writing": [
+    "research/round33/forward/bc1/report.md and output/results.json",
+    "research/round33/forward/bc2/report.md and output/results.json",
+    "research/round33/contracts/bc1.json (frozen)",
+    "research/round33/contracts/bc2.json (frozen)",
+    "research/round33/advisor/bc1-gate.json",
+    "research/round33/advisor/bc2-gate.json",
+    "research/round33/advisor/bb2-gate.json",
+    "research/round33/skeptic/bc1.json (reviewed_obligations_table, o1_decision, obligations_reconciliation)",
+    "research/round32/advisor/ax1-gate.json",
+    "research/round32/advisor/ax2-gate.json",
+    "research/round32/advisor/aw2-gate.json",
+    "research/round32/advisor/av2-gate.json",
+    "research/round32/forward/ax1/report.md",
+    "research/round21/forward/i1/report.md (sections 2-3 and 6: the Euclidean division, the anchored face table, and the F2/route-B padding constructions)",
+    "research/round29/forward/am2/report.md (S={0,e_x,e_y,e_z}, 21 omitted faces per anchor)",
+    "research/round33/experts/historical/assistant-2/README.md (this package's README/results.json layout convention; its scripts are not imported, only its file layout is followed)"
+  ],
+  "replay": "all three scripts run with python3 -B <script>.py and python3 -B -O <script>.py; byte-identical stdout both ways (verified for route_b_incidence.py, n_sign.py and obligations_audit.py)",
+  "role": "cross-checks and previews only; not a producer, skeptic or advisor artifact; never admission evidence",
+  "round": 33,
+  "schema": "hnm-r33-assistant-tests-v1",
+  "scripts": {
+    "n_sign.py": {
+      "checks": {
+        "L_less_than_U": true,
+        "L_matches_gate_literal": true,
+        "L_positive": true,
+        "U_matches_gate_literal": true,
+        "c_prime_in_robustness_range": true,
+        "n_sign_equals_4": true,
+        "table_N2_not_below_L": true,
+        "table_N3_not_below_L": true,
+        "table_N4_below_L": true,
+        "table_N5_below_L": true,
+        "table_N6_below_L": true
+      },
+      "cross_check_against_bc1_forward_and_gate": {
+        "N2_certified_matches": true,
+        "N2_widening_matches": true,
+        "N3_certified_matches": true,
+        "N3_widening_matches": true,
+        "N4_certified_matches": true,
+        "N4_widening_matches": true,
+        "N5_certified_matches": true,
+        "N5_widening_matches": true,
+        "N6_certified_matches": true,
+        "N6_widening_matches": true,
+        "bc1_N_sign_matches": true,
+        "bc1_gate_states_N_sign_exactly_4": true,
+        "bc1_report_states_N_sign_4": true,
+        "bc1_results_f2_sign_found": true
+      },
+      "endpoints": {
+        "L_exact": "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+        "L_preview": 6.910896412149827e-11,
+        "U_exact": "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+        "U_preview": 6.977992476739061e-11,
+        "cross_check_against_gate_literal": {
+          "L_lit": "42773581813770903096597852821080380528959/618929575309102117553427431032936422860390400000000",
+          "L_matches_gate_literal": true,
+          "U_lit": "43188859201382168785822623711271900423873/618929575309102117553427431032936422860390400000000",
+          "U_matches_gate_literal": true,
+          "literal_endpoints_found": true
+        }
+      },
+      "n_sign": 4,
+      "overall_pass": true,
+      "parsed_constants": {
+        "C_prime": "4/984375",
+        "C_prime_preview": 4.063492063492063e-06,
+        "K_2_plus": "81108864767825329926713064490531229475390625/24176936535511801466930759024724079017984",
+        "K_2_plus_preview": 3354.8032294616905,
+        "q": "1/64",
+        "tau": "1/100000000"
+      },
+      "robustness_range_of_C_prime": {
+        "c_prime_in_range": true,
+        "lower_bound_exact": "42773581813770903096597852821080380528959/151105853346948759168317243904525493862400000000",
+        "lower_bound_preview": 2.830703170416569e-07,
+        "n_sign_at_lower_bound": 4,
+        "n_sign_just_below_upper_bound": 4,
+        "upper_bound_exact": "42773581813770903096597852821080380528959/2361028958546074362004956936008210841600000000",
+        "upper_bound_preview": 1.8116500290666042e-05
+      },
+      "script": "n_sign.py",
+      "task": "independent exact recomputation of N_sign from C'=4/984375, q=1/64 and the AW2 endpoints (tau/144 -+ K_2^+ tau^2 at tau=10^-8), the widenings at N=2..6, and the robustness range of C' giving the same N_sign",
+      "widening_table_N2_to_6": [
+        {
+          "N": 2,
+          "below_L": false,
+          "widening_exact": "1/15750000",
+          "widening_preview": 6.349206349206349e-08
+        },
+        {
+          "N": 3,
+          "below_L": false,
+          "widening_exact": "1/1008000000",
+          "widening_preview": 9.92063492063492e-10
+        },
+        {
+          "N": 4,
+          "below_L": true,
+          "widening_exact": "1/64512000000",
+          "widening_preview": 1.5500992063492063e-11
+        },
+        {
+          "N": 5,
+          "below_L": true,
+          "widening_exact": "1/4128768000000",
+          "widening_preview": 2.422030009920635e-13
+        },
+        {
+          "N": 6,
+          "below_L": true,
+          "widening_exact": "1/264241152000000",
+          "widening_preview": 3.784421890500992e-15
+        }
+      ]
+    },
+    "obligations_audit.py": {
+      "checks": {
+        "all_closed_rows_name_an_existing_gate_and_a_scope": true,
+        "all_open_rows_have_missing_premise_and_candidate_route": true,
+        "closed_row_ids_expected": true,
+        "n_closed_rows_is_6": true,
+        "n_open_rows_is_15": true,
+        "no_rows_with_unexpected_status": true,
+        "o1_decision_mentions_O1a": true,
+        "o1_decision_mentions_O1b": true,
+        "o1_split_present": true,
+        "o1a_is_closed_within_scope": true,
+        "o1a_present": true,
+        "o1b_is_open": true,
+        "o1b_present": true,
+        "open_row_ids_expected": true,
+        "reconciliation_reviewed_rows_21": true,
+        "table_has_21_rows": true,
+        "unsplit_O1_row_absent": true
+      },
+      "closed_row_audit": [
+        {
+          "all_named_gates_exist": true,
+          "gate_tokens_found": [
+            "BB2"
+          ],
+          "gate_tokens_resolved": {
+            "BB2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/bb2-gate.json"
+              ]
+            }
+          },
+          "has_at_least_one_gate_token": true,
+          "has_scope_word": true,
+          "id": "O1a",
+          "status": "closed_within_scope"
+        },
+        {
+          "all_named_gates_exist": true,
+          "gate_tokens_found": [
+            "BA1",
+            "BA2",
+            "BB2"
+          ],
+          "gate_tokens_resolved": {
+            "BA1": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/ba1-gate.json"
+              ]
+            },
+            "BA2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/ba2-gate.json"
+              ]
+            },
+            "BB2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/bb2-gate.json"
+              ]
+            }
+          },
+          "has_at_least_one_gate_token": true,
+          "has_scope_word": true,
+          "id": "O2",
+          "status": "closed_within_scope"
+        },
+        {
+          "all_named_gates_exist": true,
+          "gate_tokens_found": [
+            "BB2"
+          ],
+          "gate_tokens_resolved": {
+            "BB2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/bb2-gate.json"
+              ]
+            }
+          },
+          "has_at_least_one_gate_token": true,
+          "has_scope_word": true,
+          "id": "O3",
+          "status": "closed_within_scope"
+        },
+        {
+          "all_named_gates_exist": true,
+          "gate_tokens_found": [
+            "BA2",
+            "BB2"
+          ],
+          "gate_tokens_resolved": {
+            "BA2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/ba2-gate.json"
+              ]
+            },
+            "BB2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/bb2-gate.json"
+              ]
+            }
+          },
+          "has_at_least_one_gate_token": true,
+          "has_scope_word": true,
+          "id": "O4",
+          "status": "closed_within_scope"
+        },
+        {
+          "all_named_gates_exist": true,
+          "gate_tokens_found": [
+            "BA2",
+            "BB2"
+          ],
+          "gate_tokens_resolved": {
+            "BA2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/ba2-gate.json"
+              ]
+            },
+            "BB2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/bb2-gate.json"
+              ]
+            }
+          },
+          "has_at_least_one_gate_token": true,
+          "has_scope_word": true,
+          "id": "O5",
+          "status": "closed_within_scope"
+        },
+        {
+          "all_named_gates_exist": true,
+          "gate_tokens_found": [
+            "BA2",
+            "BB2"
+          ],
+          "gate_tokens_resolved": {
+            "BA2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/ba2-gate.json"
+              ]
+            },
+            "BB2": {
+              "exists": true,
+              "paths": [
+                "/home/user/yang_mills_workbench/research/round33/advisor/bb2-gate.json"
+              ]
+            }
+          },
+          "has_at_least_one_gate_token": true,
+          "has_scope_word": true,
+          "id": "O6",
+          "status": "closed_within_scope"
+        }
+      ],
+      "cross_checks": {
+        "closed_row_ids": [
+          "O1a",
+          "O2",
+          "O3",
+          "O4",
+          "O5",
+          "O6"
+        ],
+        "closed_row_ids_expected": true,
+        "n_closed_rows_is_6": true,
+        "n_open_rows_is_15": true,
+        "o1_decision_mentions_O1a": true,
+        "o1_decision_mentions_O1b": true,
+        "open_row_ids": [
+          "N1",
+          "N10",
+          "N11",
+          "N12",
+          "N13",
+          "N14",
+          "N2",
+          "N3",
+          "N4",
+          "N5",
+          "N6",
+          "N7",
+          "N8",
+          "N9",
+          "O1b"
+        ],
+        "open_row_ids_expected": true,
+        "reconciliation_reviewed_rows_21": true,
+        "table_has_21_rows": true
+      },
+      "open_row_audit": [
+        {
+          "candidate_route_len": 188,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "O1b",
+          "missing_premise_len": 213,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 262,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N1",
+          "missing_premise_len": 280,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 385,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N2",
+          "missing_premise_len": 426,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 243,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N3",
+          "missing_premise_len": 332,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 567,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N4",
+          "missing_premise_len": 237,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 269,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N5",
+          "missing_premise_len": 288,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 183,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N6",
+          "missing_premise_len": 236,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 259,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N7",
+          "missing_premise_len": 144,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 126,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N8",
+          "missing_premise_len": 272,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 85,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N9",
+          "missing_premise_len": 118,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 134,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N10",
+          "missing_premise_len": 223,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 30,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N11",
+          "missing_premise_len": 120,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 225,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N12",
+          "missing_premise_len": 221,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 70,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N13",
+          "missing_premise_len": 93,
+          "missing_premise_present": true,
+          "status": "open"
+        },
+        {
+          "candidate_route_len": 82,
+          "candidate_route_present": true,
+          "closing_gate_and_scope_is_none_open": true,
+          "id": "N14",
+          "missing_premise_len": 80,
+          "missing_premise_present": true,
+          "status": "open"
+        }
+      ],
+      "other_status_rows": [],
+      "overall_pass": true,
+      "row_count": 21,
+      "row_ids_in_order": [
+        "O1a",
+        "O1b",
+        "O2",
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "N1",
+        "N2",
+        "N3",
+        "N4",
+        "N5",
+        "N6",
+        "N7",
+        "N8",
+        "N9",
+        "N10",
+        "N11",
+        "N12",
+        "N13",
+        "N14"
+      ],
+      "script": "obligations_audit.py",
+      "source": "research/round33/skeptic/bc1.json reviewed_obligations_table",
+      "task": "parse the reviewed obligations table from research/round33/skeptic/bc1.json and check that every closed row names a gate that exists and a scope, that O1a/O1b are both present, and that every open row has a missing premise and a candidate route"
+    },
+    "route_b_incidence.py": {
+      "checks": {
+        "core_N2_ok": true,
+        "core_N3_ok": true,
+        "core_closed_form_ok": true,
+        "incidence_153_charged": true,
+        "incidence_16_inside": true,
+        "incidence_2_singles": true,
+        "incidence_72_straddling": true,
+        "incidence_7_stars": true,
+        "incidence_88_meeting": true,
+        "partition_faces_sum_to_3000": true,
+        "partition_group_count_250": true,
+        "partition_plaquette_count_3000": true,
+        "partition_single_size_is_3": true,
+        "partition_star_size_is_21": true,
+        "persite_faces_total_52": true,
+        "persite_groups_5": true,
+        "persite_multiplicities_expected": true,
+        "persite_owner_sets_16": true
+      },
+      "comparison_with_bc2_producer_results": {
+        "N2_min_slack_matches": true,
+        "N2_ok_matches": true,
+        "N2_selected_source_faces_matches": true,
+        "N2_source_faces_matches": true,
+        "N3_min_slack_matches": true,
+        "N3_ok_matches": true,
+        "N3_selected_source_faces_matches": true,
+        "N3_source_faces_matches": true,
+        "faces_charged_matches": true,
+        "faces_per_factor_matches": true,
+        "groups_per_site_matches": true,
+        "inside_R_matches": true,
+        "meeting_R_matches": true,
+        "multiplicities_match": true,
+        "omitted_matches": true,
+        "owner_sets_per_factor_matches": true,
+        "selected_matches": true,
+        "singles_meeting_R_matches": true,
+        "stars_meeting_R_matches": true,
+        "straddling_matches": true
+      },
+      "cross_check_against_frozen_sources": {
+        "ax1_gate_states_7_and_2": true,
+        "ax1_report_states_4_stars_1_single": true,
+        "ax1_report_states_52_faces_per_factor": true,
+        "bc2_report_states_153_88_16_72": true,
+        "bc2_report_states_16_owner_sets": true,
+        "bc2_report_states_52_faces": true,
+        "bc2_report_states_5_groups": true,
+        "bc2_results_core_found": true,
+        "bc2_results_groups_250": true,
+        "bc2_results_incidence_found": true,
+        "bc2_results_partition_found": true,
+        "bc2_results_persite_found": true,
+        "bc2_results_plaquettes_3000": true,
+        "contract_item1_has_153_faces": true,
+        "contract_item1_has_16_inside_R": true,
+        "contract_item1_has_52_first_order": true,
+        "contract_item1_has_5_interaction_groups": true,
+        "contract_item1_has_72_straddling": true,
+        "contract_item1_has_7_stars_2_singles": true,
+        "contract_item1_has_88_meeting_R": true
+      },
+      "every_site_common_core": [
+        {
+          "N": 2,
+          "comparison": "c1B Lambda_2 vs Lambda_3",
+          "expected_new_singles_closed_form": 218,
+          "expected_new_stars_closed_form": 152,
+          "min_slack": 0,
+          "n_new_singles": 218,
+          "n_new_stars": 152,
+          "new_singles_matches_closed_form": true,
+          "new_stars_matches_closed_form": true,
+          "num_failures": 0,
+          "num_sites_checked": 125,
+          "ok": true,
+          "omitted_source_faces": 3192,
+          "selected_source_faces": 654,
+          "source_faces": 3846,
+          "worst_case": {
+            "distance": 0,
+            "kind": "omitted",
+            "required": 0,
+            "u": [
+              -2,
+              -2,
+              -2
+            ]
+          }
+        },
+        {
+          "N": 3,
+          "comparison": "c1B Lambda_3 vs Lambda_4",
+          "expected_new_singles_closed_form": 386,
+          "expected_new_stars_closed_form": 296,
+          "min_slack": 0,
+          "n_new_singles": 386,
+          "n_new_stars": 296,
+          "new_singles_matches_closed_form": true,
+          "new_stars_matches_closed_form": true,
+          "num_failures": 0,
+          "num_sites_checked": 343,
+          "ok": true,
+          "omitted_source_faces": 6216,
+          "selected_source_faces": 1158,
+          "source_faces": 7374,
+          "worst_case": {
+            "distance": 0,
+            "kind": "omitted",
+            "required": 0,
+            "u": [
+              -3,
+              -3,
+              -3
+            ]
+          }
+        }
+      ],
+      "incidence_on_R": {
+        "faces_charged": 153,
+        "inside_R": 16,
+        "meeting_R": 88,
+        "n_singles_meeting_R": 2,
+        "n_stars_meeting_R": 7,
+        "straddling": 72,
+        "table": [
+          {
+            "anchor": [
+              -1,
+              0,
+              0
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 4
+          },
+          {
+            "anchor": [
+              -1,
+              0,
+              1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 4
+          },
+          {
+            "anchor": [
+              0,
+              -1,
+              0
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 8
+          },
+          {
+            "anchor": [
+              0,
+              -1,
+              1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 8
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              -1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 16
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              0
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 10,
+            "meeting_R": 21
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              1
+            ],
+            "faces": 21,
+            "group": "star",
+            "inside_R": 0,
+            "meeting_R": 21
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              0
+            ],
+            "faces": 3,
+            "group": "single",
+            "inside_R": 3,
+            "meeting_R": 3
+          },
+          {
+            "anchor": [
+              0,
+              0,
+              1
+            ],
+            "faces": 3,
+            "group": "single",
+            "inside_R": 3,
+            "meeting_R": 3
+          }
+        ]
+      },
+      "overall_pass": true,
+      "partition_fine_grid_check": {
+        "n_groups": 250,
+        "n_single_groups": 125,
+        "n_star_groups": 125,
+        "single_sizes": [
+          3
+        ],
+        "star_sizes": [
+          21
+        ],
+        "sum_single_faces": 375,
+        "sum_star_faces": 2625,
+        "total_plaquettes": 3000
+      },
+      "per_site_inputs": {
+        "faces_omitted": 49,
+        "faces_selected": 3,
+        "faces_total": 52,
+        "multiplicities_sorted": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          10,
+          10
+        ],
+        "n_interaction_groups": 5,
+        "n_owner_sets": 16
+      },
+      "script": "route_b_incidence.py",
+      "task": "independent exact enumeration of the route-B partition, incidence and every-site common core of the BC2 uniform model, compared with the BC2 producer results and the AX1/AX2 gates"
+    }
+  }
+}
