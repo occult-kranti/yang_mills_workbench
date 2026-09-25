@@ -1,0 +1,330 @@
+{
+  "id": "BB2",
+  "round": 33,
+  "subround": 2,
+  "sequence": 4,
+  "status": "frozen_before_production",
+  "title": "Hruday whole-sequence convergence of the named constructions, their common limit and its coarse translation invariance",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "selected_after": "research/round33/advisor/ba2-gate.json",
+  "selected_after_note": "frozen together with BB1 (same sub-round); BB2 uses the BB1 frozen targets as explicit hypotheses (control conditional_on_bb1_targets) and its gate is recorded after the BB1 gate",
+  "selection_reason": "With BB1's locality of the reduced densities (as frozen targets) and BA1/BA2's admitted constants, the finite-box reduced densities form Cauchy sequences in N without compactness, the two named constructions share one limit, that limit equals every AQ1 and F2 subsequential limit and inherits their properties, it is invariant under coarse translations through the general-volume comparison, and its correlation functions on compact windows are limits of finite-box correlation functions (BA2 dynamics).",
+  "model": "Zero-selected patterned family (AM2/AQ1), both signs |tau|<=10^-8; AM2 creation expansion in each on-site cutoff space; construction families F1 (AQ1 centered whole-star boxes) and F2 (I1 section 6 all-contained-face boxes with padding) on centered coarse cubes Lambda_N, N at least 2; reduced densities rho^{box}_Y of the normalized finite-box ground vectors on finite complete-factor regions Y, in particular the cover R={0,e_z}; trace norm on B(H_Y). Heisenberg evolutions T^{F,N}_theta and the AQ1 limit dynamics T_theta (BA2), |theta| at most 8 in theta=alpha t/hbar.",
+  "parameters": {
+    "metric": "coarse l-infinity metric on factor sites (star diameter 1) for states; l1 on the coarse factor lattice with F(r)=(1+r)^-4 for dynamics, as admitted in BA1 and BA2",
+    "weights": "inherited from the inputs: BB1 frozen targets at q=1/64 (hypotheses), BA2 admitted dynamics constants",
+    "rate_constant_pair": {
+      "hypotheses": "the BB1 frozen targets (control conditional_on_bb1_targets): for every BB1 comparison, both signs, in each on-site cutoff space and at fixed N for the untruncated ground vectors, ||rho^{box1}_R-rho^{box2}_R||_1 at most C_h q^(N-1) and ||rho^{box1}_Y-rho^{box2}_Y||_1 at most c_h |Y| e^{|Y|/10^8} q^{d_Y}, with q=1/64, C_h=1/250000 and c_h=1/500000; secondary q_2=151552|tau|, C_2h=1/20000, c_2h=1/40000",
+      "headline": {
+        "q": "1/64",
+        "C_prime_target": "1/100000",
+        "c_site_prime_target": "1/200000",
+        "tier": "exact_first_order",
+        "assembly": "nested_telescoping (forward) or union_comparison (reverse) over the hypotheses; the BB1 route of the discharging constant is attached at the BB2 gate",
+        "note": "each BB2 state constant is an explicit function of (C_h, c_h), nondecreasing in each, evaluated at the hypothesis values"
+      },
+      "dynamics": {
+        "C_dyn_target": "1/2000000000",
+        "tier": "polynomial_lieb_robinson",
+        "routes": "duhamel_inner_f1 or duhamel_inner_f2 (BA2 admitted constants, read exactly from the BA2 gate)"
+      },
+      "secondary": {
+        "q": "151552|tau| (labelled; conditional on the BB1 secondary pair)",
+        "C_prime_target": "1/8000"
+      }
+    },
+    "assembly": "forward: nested telescoping with BB1 and BA1 and cutoff removal at fixed N; reverse: general-volume comparison through unions (which also gives coarse translation covariance); recorded in an assembly field, not as a route label",
+    "items": {
+      "1_whole_sequence": "sup over M greater than N of ||rho^{F,M}_R-rho^{F,N}_R||_1 <= C' q^(N-1) and, for every finite complete-factor region Y inside Lambda_N, sup over M greater than N of ||rho^{F,M}_Y-rho^{F,N}_Y||_1 <= c'_site |Y| e^{|Y|/10^8} q^{d_Y}, for F in {F1,F2}, N at least 2, with C' and c'_site the BB2 constants of rate_constant_pair evaluated at the BB1 hypothesis values",
+      "2_common_limit": "the F1 and F2 limits coincide on every finite region",
+      "3_identification": "the limit equals every AQ1 subsequential limit (F1) and every F2 subsequential limit (AY1, BA2) on every finite region, and therefore inherits exactly the admitted properties of those states: AQ1 stationarity under T_theta, strong continuity of the GNS evolution and a nonnegative generator (AQ1; for F2 limits BA2's rerun of AQ1 sections 4-5), and the AQ2 statement for the actual AQ1 centered subsequential state: H_phys at least (alpha/16)(I-P_Omega) with a simple vacuum on the invariant-local cyclic completion, and the full-GNS strengthening only as qualified in the AQ2 gate",
+      "4_translations": "for every coarse translation v (fine translation (4v_x,2v_y,v_z), preserving residues and face classes) the limit is invariant; quantitatively ||rho^{Lambda_N+v}_R-rho^{Lambda_N}_R||_1 <= C_h q^(N-|v|_inf-1) for N at least |v|_inf+2, from the BB1 general-volume comparison of the reduced densities (a hypothesis whose coefficient input is the BA1 accepted comparison of any two complete-factor volumes of one prescription containing Lambda_N), applied with Lambda_{N-|v|_inf}; dropped and recorded as a limitation if the BB1 gate does not admit that comparison",
+      "5_correlations": "for N at least 5, r_N=floor((N-1)/2), |theta| at most 8 and A in B(H_R): |c^{F,N}_A(theta)-c^inf_A(theta)| <= ||A||^2 [C_dyn/(r_N-1) + c'_site |Lambda_{r_N}| e^{|Lambda_{r_N}|/10^8} q^(N-r_N) + 2C' q^(N-1)], with c^{F,N}_A(theta)=omega^{F,N}(A* T^{F,N}_theta(A))-|omega^{F,N}(A)|^2, c^inf_A(theta)=omega_inf(A* T_theta(A))-|omega_inf(A)|^2, and C', c'_site the item-1 constants"
+    },
+    "cutoff": "each on-site cutoff space Q_L, every L, constants uniform in L; then, at fixed N, the untruncated ground vectors by the AV1 cutoff-vector removal (F20-F23); the N and L limits are never exchanged",
+    "N_min": "2 (item 5: N at least 5)",
+    "clock": "theta=alpha t/hbar for item 5",
+    "window": "|theta| at most 8 (item 5)"
+  },
+  "required": [
+    "1. Using BB1's frozen targets as explicit hypotheses (control conditional_on_bb1_targets), prove the whole-sequence Cauchy estimate over all M greater than N for each family on R and on regions Y, and deduce the existence of the limit on every finite region without compactness.",
+    "2. Prove the common limit of F1 and F2 on every finite region and write it as the limit of the named constructions.",
+    "3. Prove the identification with every AQ1 and every F2 subsequential limit and state exactly which AQ1/AQ2 properties the limit inherits (stationarity, GNS continuity, nonnegative generator, gap alpha/16, vacuum simplicity), in its own GNS representation.",
+    "4. Prove coarse translation invariance from the BB1 general-volume comparison of the reduced densities (a hypothesis; its coefficient input is BA1's accepted general-volume comparison) as a pre-registered item, with the quantitative bound; reject non-coarse translations.",
+    "5. Prove the correlation-function bound with the three separate constants C_dyn (at most 1/2000000000, polynomial_lieb_robinson, from the BA2 gate), c'_site and C' (item 1, at most 1/200000 and 1/100000 at the hypothesis values), r_N frozen as written, complex-mean centering; the rate in N is O(1/N) because the Lieb-Robinson function is polynomial; no uniform-in-time claim and no equality of GNS dynamics of different states.",
+    "6. Exhibit the fixtures named by the fixture controls; quote the mandatory sentence template once as one unbroken span; export the gate fields; check the tau -> tau/100 scaling of each constant separately against its bracket; every control executed as a damaging mutation."
+  ],
+  "controls": [
+    "coherent_evidence_tampering",
+    "exact_arithmetic_admission",
+    "no_priority_or_continuum_claim",
+    "changed_model_relabelled",
+    "insufficient_verdict_retained",
+    "tau_scaling_exponent",
+    "wrong_delta_alpha_hbar_clock",
+    "root_n_misuse",
+    "tier_mixing_rejected",
+    "reverse_premise_isolation",
+    "uniform_in_N_not_in_a",
+    "placeholder_span_rejected",
+    "negation_aware_phrase_scan",
+    "parameters_declare_metric_weights_window",
+    "rate_constant_pair_prefrozen",
+    "decay_rate_in_N_not_a",
+    "topology_named",
+    "two_families_named",
+    "subsequence_versus_whole_sequence",
+    "common_clock",
+    "named_construction_not_uniqueness",
+    "cauchy_estimate_not_compactness",
+    "limit_identified_with_aq1_limits",
+    "translation_invariance_separate_item",
+    "region_constant_scales_with_Y",
+    "cutoff_uniform_then_removed",
+    "algebraic_not_gns_dynamics",
+    "lieb_robinson_polynomial_tail",
+    "time_window_named_common_clock",
+    "fixture_whole_sequence_vs_subsequence",
+    "fixture_translation_residues",
+    "fixture_correlation_centering",
+    "conditional_on_bb1_targets",
+    "r_N_prefrozen"
+  ],
+  "claim_exclusions": [
+    "uniqueness of every infinite-volume ground state",
+    "states outside the named constructions",
+    "uniform-in-time statements",
+    "equality of GNS dynamics of different states",
+    "any estimate uniform in the lattice spacing a",
+    "continuum or weak coupling",
+    "scientific priority"
+  ],
+  "producers": [
+    "forward",
+    "reverse"
+  ],
+  "direction": "paired",
+  "direction_note": "Forward: nested telescoping with BB1 and BA1 and the AV1 cutoff removal at fixed N. Reverse: general-volume comparison through unions, which also gives coarse translation covariance. Both use BB1's frozen targets as hypotheses and BA2's admitted dynamics constants.",
+  "reverse_premise_isolation": true,
+  "acceptance": {
+    "accepted_within_scope": "Both routes prove items 1-5 from the BB1 hypotheses with each proved constant, evaluated at the hypothesis values, at most its frozen target, and the BB1 gate discharges every hypothesis the items use (admitted constants at most the hypothesis values for every comparison, form, cutoff regime and sign used).",
+    "limited": "Item 4 is dropped (the BB1 general-volume comparison is not admitted) or item 5 and the region-form parts of items 1-3 are dropped (the BB1 region form is not admitted; items 1-2 then hold on R and item 3 for R-marginals only), each recorded; or the discharge is partial, and the undischarged items are retained as conditional statements labelled conditional_on_bb1_targets.",
+    "insufficient": "The Cauchy estimate cannot be closed from the hypotheses, or BB1 is insufficient; the BB2 implications are then retained as labelled conditional statements, never as unconditional ones."
+  },
+  "stop": "Investigation 4 of 8.",
+  "shared_premises": [
+    "research/round29/forward/am2/report.md",
+    "research/round29/reverse/am2/report.md",
+    "research/round29/skeptic/am2.md",
+    "research/round29/advisor/am2-gate.json",
+    "research/round29/forward/aq1/report.md",
+    "research/round29/advisor/aq1-gate.json",
+    "research/round29/forward/aq2/report.md",
+    "research/round21/forward/i1/report.md",
+    "research/round32/advisor/av1-gate.json",
+    "research/round32/forward/av1/report.md",
+    "research/round32/reverse/av1/report.md",
+    "research/round32/advisor/ay1-gate.json",
+    "research/round32/forward/ay1/report.md",
+    "research/round32/reverse/ay1/report.md",
+    "research/round32/advisor/ay2-gate.json",
+    "research/round32/forward/ay2/report.md",
+    "research/round33/methods/paired-physics-research/SKILL.md",
+    "research/round33/methods/paired-physics-research/references/complete-residual-and-error-scope.md",
+    "research/round33/methods/newton-analysis-synthesis/SKILL.md",
+    "research/round33/methods/tesla-mechanism-resonance/SKILL.md",
+    "research/round33/methods/historical-physics-panel/SKILL.md",
+    "research/round33/methods/qeg-research-advisor/references/round32-state-lemma-and-window.md",
+    "research/round32/advisor/aw1-gate.json",
+    "research/round32/forward/aw1/report.md",
+    "research/round33/advisor/ba1-gate.json",
+    "research/round33/forward/ba1/report.md",
+    "research/round33/reverse/ba1/report.md",
+    "research/round33/skeptic/ba1.md",
+    "research/round33/advisor/ba2-gate.json",
+    "research/round33/forward/ba2/report.md",
+    "research/round33/reverse/ba2/report.md",
+    "research/round33/skeptic/ba2.md",
+    "research/round33/contracts/bb1.json",
+    "research/round33/sources/nachtergaele-sims-1410.8174v1.md",
+    "research/round33/advisor/selection-bb2.md",
+    "research/round29/advisor/aq2-gate.json"
+  ],
+  "new_control_semantics": {
+    "topology_named": "(R32) Trace norm on B(H_Y) for states, norm on compact theta windows for dynamics, GNS strong for representations; a fixed-vector versus moving-vector fixture is included.",
+    "common_clock": "(R32) Both families and all comparisons use the same coupling and theta=alpha t/hbar.",
+    "named_construction_not_uniqueness": "Convergence and a common limit of F1 and F2 (or of a pre-frozen AM2-admissible class) are never called uniqueness of every infinite-volume ground state, 'the thermodynamic limit' or 'the infinite-volume ground state'.",
+    "cauchy_estimate_not_compactness": "Whole-sequence convergence follows from an explicit ||rho^N_Y-rho^M_Y||_1<=C q^N bound and completeness of the trace class; a compactness plus closeness argument is rejected.",
+    "limit_identified_with_aq1_limits": "The whole-sequence limit is shown equal to every AQ1 subsequential limit before AQ1/AQ2 properties are inherited; inheriting them otherwise is rejected.",
+    "translation_invariance_separate_item": "Coarse translation invariance is claimed only as a pre-registered item proved from the general-volume version (union comparison); claiming it from nested cubes alone is rejected.",
+    "region_constant_scales_with_Y": "Bounds on regions Y state the |Y|-dependence and the exponent d(Y,B_N); a constant proved for R and reused on Y is rejected.",
+    "cutoff_uniform_then_removed": "Cauchy bounds hold uniformly in the on-site cutoff L, then pass L->infinity at fixed N via AV1 F20-F23 (Eckart, untruncated gap 1/2); reversing the limits is rejected.",
+    "fixture_whole_sequence_vs_subsequence": "A sequence satisfying a one-state ball in every box but with two distinct subsequential limits is rejected as convergence; an N to N+1 bound alone is rejected as a Cauchy estimate.",
+    "fixture_translation_residues": "A non-coarse fine translation that breaks residues and face classes is rejected; a translated box sequence is compared only through the general-volume comparison.",
+    "fixture_correlation_centering": "Correlation functions are centred with |omega(A)|^2 (complex means), not omega(A)^2; a post-hoc choice of r_N or an exponential Lieb-Robinson tail claimed with the polynomial F is rejected.",
+    "conditional_on_bb1_targets": "Every BB2 conclusion that uses BB1 is derived from the BB1 frozen targets as explicit hypotheses: for every BB1 comparison, both signs, in each on-site cutoff space and at fixed N for the untruncated ground vectors, the R form with C_h=1/250000 and the region form with c_h=1/500000 at q=1/64 (secondary: C_2h=1/20000 and c_2h=1/40000 at q_2=151552|tau|). Each BB2 state constant is written as an explicit function of the hypothesis constants and of admitted BA2 constants, nondecreasing in each hypothesis constant (checked exactly), and is evaluated at the hypothesis values against its BB2 target. A conclusion becomes unconditional only when the BB1 gate admits, for every BB1 comparison, form, cutoff regime and sign that the item uses, constants at most the hypothesis values; the BB2 skeptic review records the BB1 gate sha256, the item-by-item discharge and the BB2 constants re-evaluated at the admitted BB1 values. BB2 producers read no BB1 producer, skeptic or gate file. Rejected: a BB2 packet that uses a BB1 value other than the frozen targets, drops the condition, uses a constant that decreases when a hypothesis constant increases, or calls a conclusion unconditional before the discharge.",
+    "r_N_prefrozen": "r_N = floor((N-1)/2) is frozen as written; any other or post-hoc choice is rejected.",
+    "tier_mixing_rejected": "Every BB2 state constant names its tier in {exact_first_order, crude_majorant}, its assembly in {nested_telescoping, union_comparison} and the hypothesis source bb1_frozen_targets; every dynamics constant names polynomial_lieb_robinson and its BA2 route (duhamel_inner_f1 or duhamel_inner_f2) with the exact BA2 gate value; a state constant with a Lieb-Robinson tier, a dynamics constant with a state tier, a BB1 route claimed by a BB2 producer, a single lumped bracket for item 5, or any other mixing is rejected (the BA1 and BA2 definitions of this control do not apply to BB2).",
+    "reverse_premise_isolation": "The reverse inputs/ inventory equals AGENTS.md, this contract and shared_premises exactly; it contains no skeptic triage, recommendation, prospective-controls, loop-2 review or BB contract review, no deliberation, plan or panel file, no lens memo, recommendation, loop-2 response or the modern BB-targets proposal, no forward file of this loop and no BB1 producer, skeptic or gate file; the only skeptic files are the declared BA1 and BA2 reviews."
+  },
+  "preregistration": {
+    "schema": "hnm-r33-prereg-v1",
+    "frozen_before_any_outcome": true,
+    "clock": "s=alpha*t_E/hbar (Euclidean), theta=alpha*t/hbar (real time); normalized u=theta/8 only internally with the conversion shown",
+    "expected_outcome_types": [
+      "accepted_within_scope",
+      "limited",
+      "insufficient"
+    ],
+    "sub_labels_allowed": [
+      "convergence_of_named_constructions",
+      "common_limit_of_named_constructions"
+    ],
+    "tier_names_allowed": [
+      "crude_majorant",
+      "exact_first_order",
+      "polymer_kp",
+      "iterated_split",
+      "polynomial_lieb_robinson",
+      "duhamel_inner_f1",
+      "duhamel_inner_f2"
+    ],
+    "tier_label_rule": "every state constant carries exactly one tier (exact_first_order or crude_majorant), the assembly (nested_telescoping or union_comparison) and the hypothesis source bb1_frozen_targets; its BB1 route (polymer_kp or iterated_split) is attached at the BB2 gate from the BB1 gate's bound value; every dynamics constant carries the tier polynomial_lieb_robinson and exactly one route (duhamel_inner_f1 or duhamel_inner_f2) from the BA2 gate",
+    "claim_exclusions": [
+      "uniqueness of every infinite-volume ground state",
+      "statements about boundary conditions outside the named constructions",
+      "any estimate uniform in the lattice spacing a",
+      "continuum or weak coupling",
+      "scientific priority"
+    ],
+    "hash_binding": {
+      "contract_sha256_in_producer_inputs": true,
+      "check_py_reads_target_and_reference_from_contract": true,
+      "check_py_sha256_recorded_before_full_size_evaluation": true,
+      "admitted_gate_sha256_pinned_in_check_py": true
+    },
+    "model_id": "AQ_patterned_zero_selected",
+    "selected_triple_alpha_units": [
+      "0",
+      "0",
+      "0"
+    ],
+    "tau": {
+      "value": "1/100000000",
+      "signs_evaluated": [
+        "+",
+        "-"
+      ],
+      "is_model_change_vs_previous_loop": false,
+      "rule_if_chosen_later": null
+    },
+    "state_provenance": "the whole sequences of finite-box ground vectors of the named construction families F1 and F2 and their limit (the limit of the named constructions)",
+    "observable": {
+      "id": "sup over M>N of ||rho^{F,M}_Y-rho^{F,N}_Y||_1; translation differences; correlation-function differences on |theta|<=8",
+      "centering": "complex-mean |omega(A)|^2 for correlations",
+      "reference_value_exact": "0",
+      "reference_route": "n/a (Cauchy differences)"
+    },
+    "nodes": {
+      "s_values": [],
+      "post_hoc_node_selection": "forbidden",
+      "pilot_runs": {
+        "declared": [],
+        "excluded_from_count": true
+      }
+    },
+    "error_terms_itemized": [
+      "bb1_hypothesis_constants",
+      "cauchy_telescoping_or_union",
+      "identification_with_subsequential_limits",
+      "translation_general_volume",
+      "dynamics_constant_from_ba2",
+      "region_form_on_Lambda_rN",
+      "arithmetic"
+    ],
+    "error_terms_rule": "an entry may be not_applicable only with a stated reason",
+    "target": {
+      "quantity": "C' and c'_site at q=1/64 (item 1, evaluated at the BB1 hypothesis values); C_dyn at |theta|<=8",
+      "value": "1/100000, 1/200000 and 1/2000000000",
+      "comparator": "<=",
+      "note": "blind discriminating threshold for new estimates built on the BB1 frozen targets as hypotheses and on BA2 admitted constants; margins of at least 2 against the advisor-recorded previews evaluated at the hypothesis values (not a producer premise)"
+    },
+    "direction": "paired",
+    "controls_required": {
+      "ids": [
+        "coherent_evidence_tampering",
+        "exact_arithmetic_admission",
+        "no_priority_or_continuum_claim",
+        "changed_model_relabelled",
+        "insufficient_verdict_retained",
+        "tau_scaling_exponent",
+        "wrong_delta_alpha_hbar_clock",
+        "root_n_misuse",
+        "tier_mixing_rejected",
+        "reverse_premise_isolation",
+        "uniform_in_N_not_in_a",
+        "placeholder_span_rejected",
+        "negation_aware_phrase_scan",
+        "parameters_declare_metric_weights_window",
+        "rate_constant_pair_prefrozen",
+        "decay_rate_in_N_not_a",
+        "topology_named",
+        "two_families_named",
+        "subsequence_versus_whole_sequence",
+        "common_clock",
+        "named_construction_not_uniqueness",
+        "cauchy_estimate_not_compactness",
+        "limit_identified_with_aq1_limits",
+        "translation_invariance_separate_item",
+        "region_constant_scales_with_Y",
+        "cutoff_uniform_then_removed",
+        "algebraic_not_gns_dynamics",
+        "lieb_robinson_polynomial_tail",
+        "time_window_named_common_clock",
+        "fixture_whole_sequence_vs_subsequence",
+        "fixture_translation_residues",
+        "fixture_correlation_centering",
+        "conditional_on_bb1_targets",
+        "r_N_prefrozen"
+      ]
+    },
+    "mandatory_sentence_template": "For the zero-selected patterned family at the same coupling |tau|<=10^-8, under the BB1 locality bounds at their frozen targets as hypotheses (discharged only when the BB1 gate admits constants at most those targets), the reduced densities of the named construction families F1 and F2 on centered coarse cubes converge as whole sequences, at a rate in N, to one common limit on every finite region; this limit coincides with every AQ1 subsequential limit and every F2 subsequential limit, is invariant under coarse translations, and has as correlation functions on |theta|<=8 the limits of the finite-box correlation functions; this is convergence of the named constructions, not uniqueness of any ground state, not a statement about states outside the named constructions, and not a statement uniform in the lattice spacing a.",
+    "gate_fields_required": {
+      "whole_sequence_claimed": true,
+      "whole_sequence_scope": "reduced densities of the named constructions F1 and F2 on every finite region",
+      "common_limit_claimed": true,
+      "state_convergence_claimed": true,
+      "translation_invariance_claimed": true,
+      "translation_invariance_scope": "coarse translations; the limit of the named constructions",
+      "rate_in_N_claimed": true,
+      "dynamics_level": "correlation_functions_compact_window",
+      "uniqueness_of_ground_state_claimed": false,
+      "rate_in_a_claimed": false,
+      "continuum_claim": false,
+      "gns_dynamics_equality_claimed": false,
+      "uniform_in_time_claimed": false,
+      "weak_coupling_claim": false,
+      "scientific_priority_verified": false
+    },
+    "forbidden_phrasings": [
+      "the infinite-volume ground state",
+      "uniqueness of the infinite-volume ground state",
+      "the thermodynamic limit",
+      "the AQ state",
+      "correlation length",
+      "boundary independent",
+      "uniform in a",
+      "confirms"
+    ],
+    "scaling_brackets_per_constant": {
+      "C_prime": "exactly 1 at the hypothesis values (the hypothesis constants and the assembly factor at fixed q are tau-independent); the linear tau-scaling of the underlying BB1 constants is checked in BB1 and recorded at the BB2 gate with the discharge",
+      "c_site_prime": "exactly 1 at the hypothesis values (as C_prime)",
+      "C_dyn": "[9500,10500] (quadratic, from the BA2 formulas)",
+      "secondary_constants": "[99/100,101/100] (the factor 1/(1-q_2) at the hypothesis values)",
+      "q_secondary": "exactly 100",
+      "item_5_sum": "no single bracket; each constant checked separately"
+    },
+    "gate_fields_rule": "the gate_fields_required values hold for accepted_within_scope after the discharge; a limited verdict exports the field of each dropped item false with the reason (translation_invariance_claimed for item 4; dynamics_level not set to correlation_functions_compact_window for item 5), and an undischarged hypothesis keeps every field that depends on it false"
+  },
+  "frozen_at": "2026-09-24T23:36:46.617010+00:00"
+}
