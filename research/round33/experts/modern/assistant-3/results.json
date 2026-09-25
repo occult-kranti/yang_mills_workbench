@@ -1,0 +1,257 @@
+{
+  "schema": "hnm-round33-modern-lens-assistant3-results-v1",
+  "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+  "human_author": "Hruday N M (BUNZEEY)",
+  "role": "modern (Penrose/Feynman) lens, research assistant/coder assistant-3",
+  "round": 33,
+  "subround": 3,
+  "tools": {
+    "bc2_arb": {
+      "tool": "bc2_arb",
+      "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+      "libraries": {
+        "python-flint": "0.9.0",
+        "mpmath": "1.3.0"
+      },
+      "precision_bits": 256,
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "e18_enclosure_reused_by_bc2",
+          "passed": true,
+          "formula": "e^{1/8}; G'(R)=308 e^{1/8}<=352; G(R)=16 e^{1/8}(37/32)<=148/7 (the same directed-rounding bound BA1/BB1 use; BC2 uses the rational bounds 352, 148/7 throughout, so this is the one place a genuine transcendental enters the route-B closure)",
+          "arb_ball_preview": [
+            1.1331484530668263,
+            1.1331484530668263
+          ],
+          "mpmath_iv_preview": [
+            1.1331484530668263,
+            1.1331484530668263
+          ],
+          "admitted_bound": "8/7",
+          "admitted_bound_preview": 1.1428571428571428,
+          "tighter_Gprime_upper_preview": 349.0097235445825,
+          "admitted_Gprime": 352,
+          "tighter_G_upper_preview": 20.963246381736287,
+          "admitted_G": "148/7"
+        },
+        {
+          "id": "S_lambda_closed_form_matches_admitted",
+          "passed": true,
+          "formula": "S_x=1+24x(1+x)/(1-x)^3+2x/(1-x) at x=lambda/q=(2/1024)/(1/64)=1/8",
+          "S_lambda": "2169/343",
+          "S_lambda_preview": 6.3236151603498545
+        },
+        {
+          "id": "T_B_and_split_closure_reproduced_exactly",
+          "passed": true,
+          "formula": "T_B(rho)=(52 rho/144)/(1-10208 rho); t0=2T_B(|tau|), tW=2T_B(1024|tau|); c1,c2 the (F16) closure; beta*=c1/(1-c2)",
+          "t0_preview": 7.2229595419322625e-09,
+          "tW_preview": 8.258852775466886e-06,
+          "beta_preview": 3.3037594400167374e-05,
+          "admitted_beta_preview": 3.3037594400167374e-05,
+          "arb_contains_t0": true,
+          "arb_contains_tW": true,
+          "arb_contains_beta": true,
+          "mpmath_contains_t0": true,
+          "mpmath_contains_tW": true,
+          "mpmath_contains_beta": true
+        },
+        {
+          "id": "K_B_reproduced_exactly_and_enclosed",
+          "passed": true,
+          "formula": "K_B=2 T_B(64|tau|)",
+          "K_B_preview": 4.652618336126336e-07,
+          "admitted_K_B_preview": 4.652618336126336e-07,
+          "arb_contains": true,
+          "mpmath_contains": true,
+          "arb_ball_preview": [
+            4.652618336126336e-07,
+            4.652618336126336e-07
+          ],
+          "mpmath_iv_preview": [
+            4.652618336126336e-07,
+            4.652618336126336e-07
+          ]
+        },
+        {
+          "id": "C_B_c_site_B_reproduced_exactly_and_enclosed",
+          "passed": true,
+          "formula": "c_site,B=K_B(2+beta* S_lambda); C_B=c_site,B(1+q), q=1/64",
+          "C_B_preview": 9.451618194149477e-07,
+          "admitted_C_B_preview": 9.451618194149477e-07,
+          "c_site_B_preview": 9.306208683470254e-07,
+          "admitted_c_site_B_preview": 9.306208683470254e-07,
+          "arb_contains_C_B": true,
+          "arb_contains_c_site_B": true,
+          "mpmath_contains_C_B": true,
+          "mpmath_contains_c_site_B": true
+        },
+        {
+          "id": "whole_sequence_assembly_union_comparison_factor_one",
+          "passed": true,
+          "note": "C'_B=C_B and c'_site,B=c_site,B exactly, because the assembly is one direct c4B comparison of Lambda_N and Lambda_M (factor 1), not nested_telescoping (which would cost 64/63, and is labelled only in the report)"
+        },
+        {
+          "id": "crude_tier_K_B_reproduced",
+          "passed": true,
+          "formula": "crude K_B = 2*29*64|tau|*G(R), G(R)=148/7 (never a target)",
+          "K_B_crude_preview": 0.0007848228571428571
+        },
+        {
+          "id": "tau_over_100_ratios_recomputed",
+          "passed": true,
+          "K_B_ratio_preview": 100.65103215116744,
+          "C_B_ratio_preview": 100.66145175811272,
+          "c_site_B_ratio_preview": 100.66145175811272,
+          "report_quoted": {
+            "K_B": "1.00651032151e2",
+            "C_B_c_site_B": "1.00661451758e2"
+          },
+          "bracket": "[95,105]"
+        },
+        {
+          "id": "reconciled_with_lens_bc2_targets_proposal_section_10",
+          "passed": true,
+          "note": "every BC2-report constant this script recomputes was already previewed, as the identical exact fraction, in this lens's own bc2-targets-proposal.md Section 10 (the iterated_split column of \u00a710.3, the admissibility numbers of \u00a710.1, and the T0 preview of \u00a710.2); the report's own recomputation and this script's independent one both reproduce those same previews exactly, so there is no reconciliation gap. The proposal's \u00a710.3 also lists a polymer_kp preview column (C_B~9.452589e-7, c_site,B~9.307164e-7); the BC2 contract requires iterated_split only (polymer_kp is permitted only with a committed Ueltschi excerpt, which is not a declared premise), so the producer used iterated_split and the polymer_kp column was never exercised -- not a discrepancy, an unused labelled alternative route.",
+          "differences_found": []
+        }
+      ],
+      "interpretation": "Independent Fraction, Arb-ball and mpmath-interval recomputation, from the closed-form formulas stated in research/round33/forward/bc2/report.md, of every BC2 route-B constant (K_B, t0, tW, c1, c2, beta*, S_lambda, C_B, c_site,B, C'_B, c'_site,B and the crude tier), cross-checked exactly against the ADMITTED research/round33/forward/bc2/output/results.json, and reconciled against this lens's own bc2-targets-proposal.md Section 10 previews. Never evidence, never admission; the BC2 contract's own admission is decided only by the frozen producer's exact fractions.Fraction check.py."
+    },
+    "admissibility": {
+      "tool": "admissibility",
+      "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+      "libraries": {
+        "python-flint": "0.9.0"
+      },
+      "precision_bits": 256,
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "headline_disc_self_map_and_contraction",
+          "passed": true,
+          "formula": "self-map: 29*64|tau|*148/7 <= 1/64; contraction: 29*64|tau|*352 < 1",
+          "rho": "1/1562500",
+          "self_map": "1073/2734375",
+          "self_map_preview": 0.00039241142857142857,
+          "contraction": "2552/390625",
+          "contraction_preview": 0.00653312,
+          "q_target": "1/64"
+        },
+        {
+          "id": "split_weight_disc_self_map_and_contraction",
+          "passed": true,
+          "formula": "self-map: 29*1024|tau|*148/7 <= 1/64; contraction: 29*1024|tau|*352 < 1",
+          "rho": "4/390625",
+          "self_map": "17168/2734375",
+          "self_map_preview": 0.006278582857142857,
+          "contraction": "40832/390625",
+          "contraction_preview": 0.10452992
+        },
+        {
+          "id": "route_b_maximal_disc_radius_and_split_weight",
+          "passed": true,
+          "formula": "rho_max = q/(29*G(R)) = (1/64)/(29*148/7) = 7/274688; W_max = rho_max/|tau| = 7/(274688|tau|)",
+          "rho_max": "7/274688",
+          "rho_max_preview": 2.548345759552656e-05,
+          "W_max_at_cap": "2734375/1073",
+          "W_max_at_cap_preview": 2548.345759552656,
+          "chosen_split_weight": "1024",
+          "chosen_within_admissible_range": true
+        },
+        {
+          "id": "route_a_extremes_rejected",
+          "passed": true,
+          "formula": "29*G(R)/37888 = 29*(148/7)/37888 = 29/1792, compared with q=1/64=28/1792",
+          "route_a_ratio": "29/1792",
+          "route_a_ratio_preview": 0.016183035714285716,
+          "q_as_over_1792": "1/64",
+          "route_a_own_boundary_check": "1/64 == q (1/64), exactly",
+          "note": "the route-A disc radius tau_star=1/37888 (BA1/BB1) and the route-A secondary split weight 1/(37888|tau|) (BB1) both reduce to this same ratio under the route-B per-site coefficient 29. Route A's own per-site coefficient is 28, for which 28*(148/7)/37888=1/64 exactly: tau_star=1/37888 is precisely the radius where route A's own disc self-map saturates route A's own q=1/64, which is why the BA1/BB1 producers chose it. Route B's larger per-site sum J'=29|tau| pushes the same radius just outside q=1/64, by exactly the factor 29/28; rejected because 29/1792 > 28/1792 = 1/64."
+        },
+        {
+          "id": "reconciled_with_lens_bc2_targets_proposal_section_10_1",
+          "passed": true,
+          "note": "every admissibility number this script recomputes (rho_max=7/274688, W_max=2734375/1073, the headline disc self-map 1073/2734375, and the route-A rejection ratio 29/1792) already appears verbatim in this lens's own bc2-targets-proposal.md Section 10.1, and the BC2 report's own recomputation reproduces the same values exactly; no difference found.",
+          "found": {
+            "largest_disc_radius_7_over_274688": true,
+            "maximal_weight_2734375_over_1073": true,
+            "disc_self_map_1073_over_2734375": true,
+            "route_a_extremal_29_over_1792": true
+          }
+        }
+      ],
+      "interpretation": "Exact Fraction and independent Arb-ball recomputation of the BC2 route-B admissibility inequalities (disc self-map and contraction at the headline and split-weight discs, the maximal disc radius and split weight, and the rejection of the route-A extremes), cross-checked exactly against the ADMITTED research/round33/forward/bc2/output/results.json. Never evidence, never admission."
+    },
+    "node_replay": {
+      "tool": "node_replay",
+      "status": "preview_and_crosscheck_only_zero_research_loops_not_a_contract_or_gate",
+      "libraries": {
+        "python-flint": "0.9.0"
+      },
+      "precision_bits": 256,
+      "all_passed": true,
+      "checks": [
+        {
+          "id": "D_prime_rederived_from_ax1_gate_formula",
+          "passed": true,
+          "formula": "J'=29|tau|, t1'=52|tau|/144, T'=t1'/(1-352J'), eps=2T'+T'^2, D'=2eps(1+eps)/(1+eps^2)",
+          "D_prime": "2425369125199104794263242601250/167893028420061547330293754713793182097",
+          "D_prime_preview": 1.4445919214292387e-08,
+          "gate_D_prime_preview": 1.4445919214292387e-08
+        },
+        {
+          "id": "k_prime_rederived_from_route_b_incidence",
+          "passed": true,
+          "formula": "B_N/|tau| = (7 stars * 7 + 2 single groups * 1)/8 = 51/8 (G units); k'=2*B_N/|tau|=51/4",
+          "k_prime_over_tau": "51/4"
+        },
+        {
+          "id": "pi_enclosure_arb_builtin",
+          "passed": true,
+          "note": "Arb's own built-in pi() routine (FLINT/Arb C library), independent of the calculator's own Machin-series Python implementation.",
+          "pi_lower_preview": 3.141592653589793,
+          "pi_upper_preview": 3.141592653589793,
+          "width_preview": 6.908934844075556e-77
+        },
+        {
+          "id": "exp_minus_3_over_4_enclosure_arb_builtin",
+          "passed": true,
+          "note": "Arb's own built-in exp() routine, independent of the calculator's own alternating-series Python implementation.",
+          "free_lo_preview": 0.012446767091965986,
+          "free_hi_preview": 0.012446767091965986,
+          "arithmetic_half_width_preview": 2.698802673467014e-79,
+          "gate_arithmetic_half_width_approx": 2.5e-41
+        },
+        {
+          "id": "R_prime_recomputed_with_arb_and_slack_to_gate",
+          "passed": true,
+          "formula": "r = 2(D'+D'^2) + 51|tau|*s/pi + arithmetic_half_width; R'_own = up(r) on 10^-40",
+          "radius_lo_preview": 1.9122988079968718e-07,
+          "radius_hi_preview": 1.9122988079968718e-07,
+          "R_prime_own": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+          "R_prime_own_preview": 1.9122988079968718e-07,
+          "gate_R_prime": "1912298807996871790146581299723633/10000000000000000000000000000000000000000",
+          "gate_R_prime_preview": 1.9122988079968718e-07,
+          "slack": "0",
+          "slack_preview": 0.0,
+          "note": "R'_own is computed with Arb's own pi()/exp() (independent of the calculator's Machin/Taylor Python code) and the gate's own outward-rounding convention (round the upper bound of r UP to the nearest 1/10^40); it is checked here to be no smaller than the admitted gate R' -- an independent confirmation that the gate's radius is a valid, and very tightly matched, outward bound of the same formula."
+        },
+        {
+          "id": "bc2_restatement_changes_no_number",
+          "passed": true,
+          "note": "BC2's own node_replay_equals_ax2_gate check reads d, R' and D' by hash from the pinned AX2/AX1 gates and requires bit-for-bit equality, never a re-derivation as the headline; this script's independent Arb recomputation (check 4 above) confirms the SAME formula, evaluated with different transcendental-enclosure code, gives a radius that the gate's own R' already dominates -- so the BC2 restatement changes no number: d, R' and D' are identical across AX1, AX2 and BC2.",
+          "gate_datum_preview": 0.012446767091965986,
+          "bc2_datum_preview": 0.012446767091965986,
+          "gate_R_prime_preview": 1.9122988079968718e-07,
+          "bc2_R_prime_preview": 1.9122988079968718e-07,
+          "gate_D_prime_preview": 1.4445919214292387e-08,
+          "bc2_D_prime_preview": 1.4445919214292387e-08
+        }
+      ],
+      "interpretation": "Independent recomputation of the AX2 gate's radius formula R'=up(2(D'+D'^2)+51|tau|s/pi+arithmetic_half_width) with Arb's own pi() and exp() routines (never the admitted calculator's Taylor-series code, never imported), and D' and k' re-derived fresh from the AX1 gate's own stated formula and route-B incidence numbers. Confirms the BC2 restatement changes no number. Never evidence, never admission."
+    }
+  },
+  "all_passed": true
+}
