@@ -1,0 +1,1142 @@
+{
+  "checks": [
+    {
+      "id": "contract_sha256_pinned",
+      "passed": true,
+      "sha256": "a5c8416600c49b0728fdca05cd67c3ff2e53d9fd9e146d4305abcd2da775c1fc"
+    },
+    {
+      "freeze": {
+        "research/round33/skeptic/bd1-contract-review.md": "c518a38400e55504767c7d3276169046cec0fa534f2c10b3f211b699df3746aa",
+        "research/round33/skeptic/bd1-independent-derivation.md": "031b733bf38f18d1e23c8d17f51e0fe5246f3506d8484c53769d311c4184aed1",
+        "research/round33/skeptic/bd1-independent/results.json": "5a223e11082e865c410153f0e17b395765076ad32596ae190cf50ef9e3db8959",
+        "research/round33/skeptic/bd1_check.py": "6b0d954957c5372f98a466c8224a8565bfe70c11f90126fdbb318c4aea076977"
+      },
+      "id": "pre_comparison_package_unchanged_and_replayed",
+      "note": "the committed pre-comparison package (bf1f531, 06:10:08Z, after both BD1 producer commits a1010a4 and 5a792b0) is unchanged; bd1_check.py reproduces bd1-independent/results.json byte for byte in this interpreter mode",
+      "passed": true
+    },
+    {
+      "closure_files": 27,
+      "id": "forward_closure_and_inventory",
+      "inputs": 23,
+      "note": "27 closure files verified one by one; 23 inputs equal the contract-derived list and the names-only inventory recorded before production; every snapshot byte-identical to the repository",
+      "passed": true
+    },
+    {
+      "id": "forward_frozen_artifacts_pinned",
+      "passed": true,
+      "pinned": {
+        "check.py": "84030930cb1b34db3089c9d95151f744fa190bb463ef66520c50c9aa5ed94c07",
+        "freeze.json": "c2c0978b017b3012dade5a82509b82629b2902756cd29183dacdc4d30a716733",
+        "output/results.json": "adfa24fb448679f759781162caf4166af6574f51801cd45ac696c700ef9be4c3",
+        "output/source-manifest.json": "82a9c31c256cfb6c84dfbb95ce6aa78efde30bda9f66c1f631d6b14355c5aeb0",
+        "report.md": "d16d36328f12b070082bc825a542d11886149c217ca7595d093919eb875c2a8b"
+      }
+    },
+    {
+      "id": "forward_replay_byte_identical",
+      "note": "the producer replay in this interpreter mode (-B, or -B -O when this program runs under -O) reproduces output/",
+      "outputs": {
+        "results.json": "adfa24fb448679f759781162caf4166af6574f51801cd45ac696c700ef9be4c3",
+        "source-manifest.json": "82a9c31c256cfb6c84dfbb95ce6aa78efde30bda9f66c1f631d6b14355c5aeb0"
+      },
+      "passed": true
+    },
+    {
+      "closure_files": 27,
+      "id": "reverse_closure_and_inventory",
+      "inputs": 23,
+      "note": "27 closure files verified one by one; 23 inputs equal the contract-derived list and the names-only inventory recorded before production; every snapshot byte-identical to the repository",
+      "passed": true
+    },
+    {
+      "id": "reverse_frozen_artifacts_pinned",
+      "passed": true,
+      "pinned": {
+        "check.py": "0175b5f8d549fbed2d4b1c40dff977497a5c44f207569b5384d412123e5e296f",
+        "freeze.json": "d8a612a93644c7238e8150387fae030adfce605c3ba49c8a7aec4283a9749d4c",
+        "output/results.json": "8052d2e910ce491505ce93e3b1b3a4121e6fb9a66d6410060e30d035c7eb7629",
+        "output/source-manifest.json": "4634dd589e5761eed4b37ae74f4801c6ab81706e8d99d9bcc96f5aa30cd67d69",
+        "report.md": "399d296d2baaabe56f5b5fa9c598bde750848cc657c0bd6423db7c870b5a61d1"
+      }
+    },
+    {
+      "id": "reverse_replay_byte_identical",
+      "note": "the producer replay in this interpreter mode (-B, or -B -O when this program runs under -O) reproduces output/",
+      "outputs": {
+        "results.json": "8052d2e910ce491505ce93e3b1b3a4121e6fb9a66d6410060e30d035c7eb7629",
+        "source-manifest.json": "4634dd589e5761eed4b37ae74f4801c6ab81706e8d99d9bcc96f5aa30cd67d69"
+      },
+      "passed": true
+    },
+    {
+      "checked": [
+        "research/round33/forward/bd1/",
+        "research/round33/reverse/bd1/"
+      ],
+      "id": "no_interpreter_cache_in_either_closure",
+      "passed": true
+    },
+    {
+      "id": "forward_values_equal_independent_recomputation",
+      "note": "every exported moment, coefficient, series, obstruction cell, centre datum, Kato radius, box sum, flip-set count, torus count, GF(2) existence value, BB2 constant and bound, ledger status, label and gate field equals the own recomputation; nothing is read from either producer to compute a reference value",
+      "passed": true
+    },
+    {
+      "id": "reverse_values_equal_independent_recomputation",
+      "note": "every exported moment, coefficient, series, obstruction cell, centre datum, Kato radius, box sum, flip-set count, torus count, GF(2) existence value, BB2 constant and bound, ledger status, label and gate field equals the own recomputation; nothing is read from either producer to compute a reference value",
+      "passed": true
+    },
+    {
+      "cells_compared": 141,
+      "id": "cross_route_exact_agreement",
+      "note": "forward (characters), reverse (weyl_integration) and the three own routes (characters, Weyl constant terms on the SU(N) torus, Frobenius/hook and closed-form counts) agree exactly on every moment k=1..4 of the seven groups, every first-order coefficient and first-order derivative of omega(W^2), the one-plaquette series omega_0..omega_4, E_0..E_5 and omega(W^2)_0..2, and SU(5) E[W^5]; no cell is single-route",
+      "obstruction_values": {
+        "SO(3)": {
+          "E[W^3]": "1/27",
+          "d omega(W^2)/dtau": "1/2592",
+          "omega_2": "1/331776"
+        },
+        "SU(3)": {
+          "E[W^3]": "1/108",
+          "d omega(W^2)/dtau": "1/6912",
+          "omega_2": "1/589824"
+        }
+      },
+      "passed": true,
+      "su5_fourth_order": {
+        "exact": "1/63403380965376",
+        "factored": "1/(2^30 3^10)",
+        "preview": "1.57720295790e-14"
+      },
+      "table": {
+        "SO(3)": {
+          "E[W^1]": "0",
+          "E[W^2]": "1/9",
+          "E[W^3]": "1/27",
+          "E[W^4]": "1/27",
+          "c1": "1/864",
+          "d omega(W^2)/dtau": "1/2592",
+          "omega_2": "1/331776",
+          "omega_4": "-55/2972033482752"
+        },
+        "SU(2)": {
+          "E[W^1]": "0",
+          "E[W^2]": "1/4",
+          "E[W^3]": "0",
+          "E[W^4]": "1/8",
+          "c1": "1/144",
+          "d omega(W^2)/dtau": "0",
+          "omega_2": "0",
+          "omega_4": "0"
+        },
+        "SU(3)": {
+          "E[W^1]": "0",
+          "E[W^2]": "1/18",
+          "E[W^3]": "1/108",
+          "E[W^4]": "1/108",
+          "c1": "1/1152",
+          "d omega(W^2)/dtau": "1/6912",
+          "omega_2": "1/589824",
+          "omega_4": "-77/9393093476352"
+        },
+        "SU(4)": {
+          "E[W^1]": "0",
+          "E[W^2]": "1/32",
+          "E[W^3]": "0",
+          "E[W^4]": "7/2048",
+          "c1": "1/2880",
+          "d omega(W^2)/dtau": "0",
+          "omega_2": "0",
+          "omega_4": "0"
+        },
+        "SU(5)": {
+          "E[W^1]": "0",
+          "E[W^2]": "1/50",
+          "E[W^3]": "0",
+          "E[W^4]": "3/2500",
+          "c1": "1/5760",
+          "d omega(W^2)/dtau": "0",
+          "omega_2": "0",
+          "omega_4": "1/63403380965376"
+        },
+        "U(1)": {
+          "E[W^1]": "0",
+          "E[W^2]": "1/2",
+          "E[W^3]": "0",
+          "E[W^4]": "3/8",
+          "c1": "1/96",
+          "d omega(W^2)/dtau": "0",
+          "omega_2": "0",
+          "omega_4": "0"
+        },
+        "Z2": {
+          "E[W^1]": "0",
+          "E[W^2]": "1",
+          "E[W^3]": "0",
+          "E[W^4]": "1",
+          "c1": "1/48",
+          "d omega(W^2)/dtau": "0",
+          "omega_2": "0",
+          "omega_4": "0"
+        }
+      }
+    },
+    {
+      "equal": [
+        "seven first-order coefficients",
+        "SU(3) and SO(3) E[W^3], d omega(W^2)/dtau, omega_2",
+        "SU(5) omega_4",
+        "flip and parity columns",
+        "box, factor and torus counts"
+      ],
+      "id": "pre_comparison_predictions_equal_exactly",
+      "note": "the frozen pre-comparison rationals equal both producers digit for digit",
+      "passed": true
+    },
+    {
+      "contract_texts": {
+        "new_control_semantics.tier_mixing_rejected (excerpt)": "Haar moments and the second- and fourth-order one-plaquette coefficients of the obstruction cells are exact finite-model rationals with a route_of_computation and no tier; ... a tier on a moment or on a higher-order coefficient ... is rejected",
+        "preregistration.tier_label_rule": "every group coefficient carries the tier exact_first_order (exact rational from exact moments) and names its route (char..."
+      },
+      "forward": [
+        {
+          "entries": 14,
+          "kind": "first_order_coefficient",
+          "route_of_computation": "characters",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 7,
+          "kind": "first_order_derivative_C_duhamel",
+          "route_of_computation": "characters",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 7,
+          "kind": "first_order_derivative_C_state",
+          "route_of_computation": "characters",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 14,
+          "kind": "first_order_derivative_omega_W2",
+          "route_of_computation": "characters",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 7,
+          "kind": "fourth_order_coefficient_omega_W",
+          "route_of_computation": "characters",
+          "tier": "none"
+        },
+        {
+          "entries": 35,
+          "kind": "haar_moment",
+          "route_of_computation": "characters",
+          "tier": "none"
+        },
+        {
+          "entries": 7,
+          "kind": "second_order_coefficient_omega_W",
+          "route_of_computation": "characters",
+          "tier": "none"
+        }
+      ],
+      "id": "reading_R1_tier_labels_both_producers",
+      "note": "both producers put exact_first_order on every first-order coefficient and first-order derivative and no tier on moments or on second- and fourth-order coefficients, each with its own route label; neither packet is rejected by the control; the literal tier_label_rule (\"every group coefficient carries the tier\") conflicts with the control for higher-order coefficients: a contract defect, resolved by the more specific control (reading R1)",
+      "passed": true,
+      "reverse": [
+        {
+          "entries": 7,
+          "kind": "first_order_coefficient",
+          "route_of_computation": "weyl_integration",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 7,
+          "kind": "first_order_derivative_C_duhamel",
+          "route_of_computation": "weyl_integration",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 7,
+          "kind": "first_order_derivative_C_state",
+          "route_of_computation": "weyl_integration",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 9,
+          "kind": "first_order_derivative_omega_W2",
+          "route_of_computation": "weyl_integration",
+          "tier": "exact_first_order"
+        },
+        {
+          "entries": 1,
+          "kind": "fourth_order_coefficient_omega_W",
+          "route_of_computation": "weyl_integration",
+          "tier": "none"
+        },
+        {
+          "entries": 30,
+          "kind": "haar_moment",
+          "route_of_computation": "weyl_integration",
+          "tier": "none"
+        },
+        {
+          "entries": 2,
+          "kind": "second_order_coefficient_omega_W",
+          "route_of_computation": "weyl_integration",
+          "tier": "none"
+        }
+      ]
+    },
+    {
+      "forward_gate_field": "literal frozen description (names no group); the groups are in gate_field_groups.flip_transfer_scope_named",
+      "forward_named": "SU(2), SU(4), U(1), Z2 on H_FG(G) and the group-G whole-star box models H^G_N (operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), flip sets verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+      "frozen_description_names": [],
+      "id": "reading_R2_flip_scope_names_four_groups",
+      "note": "the gate must export flip_transfer_scope naming exactly SU(2), SU(4), U(1) and Z2 (gate_fields_rule: \"names the groups found\"); the frozen value is a description; the forward exports it literally (its validator requires the frozen dict at accepted) and names the groups beside it; the reverse names them in the field and adds two fields outside the contract list (obstructions, parity_transfer_scope), which belong in the accepted text",
+      "passed": true,
+      "recommended_gate_text": "SU(2), SU(4), U(1) and Z2 (central elements -I, -I, e^{i pi} and the nontrivial element, each acting as -1 on the Wilson representation), on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with the flip sets E_3 and E_2 verified; no AM2, AV1 or AQ statement for any group other than SU(2)",
+      "reverse_extra_fields": [
+        "obstructions",
+        "parity_transfer_scope"
+      ],
+      "reverse_gate_field": "SU(2), SU(4), U(1) and Z2 (central -I, -I, e^{i pi}, -1 acting as -1 on the Wilson representation), on their one-plaquette models H_FG(G) and group-G whole-star box models H^G_N (the operator identity in every box and cutoff; oddness of omega(W) in each box inside its Kato radius), with E_3 and E_2 verified; no AM2, AV1 or AQ statement for any group other than SU(2)"
+    },
+    {
+      "box_first_order": {
+        "SO(3)": "1/864",
+        "SU(2)": "1/144",
+        "SU(3)": "1/1152",
+        "SU(4)": "1/2880",
+        "SU(5)": "1/5760",
+        "U(1)": "1/96",
+        "Z2": "1/48"
+      },
+      "faces_sharing_one_link_with_W": 10,
+      "id": "kato_radii_and_box_sums",
+      "kato": {
+        "SO(3)": {
+          "box": {
+            "2": "1/56",
+            "3": "1/189",
+            "4": "1/448"
+          },
+          "one_plaquette": "96"
+        },
+        "SU(2)": {
+          "box": {
+            "2": "3/448",
+            "3": "1/504",
+            "4": "3/3584"
+          },
+          "one_plaquette": "36"
+        },
+        "SU(3)": {
+          "box": {
+            "2": "1/84",
+            "3": "2/567",
+            "4": "1/672"
+          },
+          "one_plaquette": "64"
+        },
+        "SU(4)": {
+          "box": {
+            "2": "15/896",
+            "3": "5/1008",
+            "4": "15/7168"
+          },
+          "one_plaquette": "90"
+        },
+        "SU(5)": {
+          "box": {
+            "2": "3/140",
+            "3": "2/315",
+            "4": "3/1120"
+          },
+          "one_plaquette": "576/5"
+        },
+        "U(1)": {
+          "box": {
+            "2": "1/112",
+            "3": "1/378",
+            "4": "1/896"
+          },
+          "one_plaquette": "48"
+        },
+        "Z2": {
+          "box": {
+            "2": "1/112",
+            "3": "1/378",
+            "4": "1/896"
+          },
+          "one_plaquette": "48"
+        }
+      },
+      "note": "H_0 on the full box space has the simple vacuum and gap 8 C_min (one excited link; C_min = C_F for all seven groups); ||V_1|| <= F_N/3 with F_N = 21(2N)^3 retained faces (1344, 4536, 10752 by own enumeration); the Riesz projection on |z| = 4 C_F is analytic and of rank one for |tau| F_N/3 < 4 C_F, i.e. |tau| < 12 C_F/F_N, so the ground eigenvalue is simple and lowest (spectrum moves by at most |tau| ||V_1||); the one-plaquette radius is 48 C_F; \"unique\" in contract items 1 and 6 is simplicity of the finite-box ground eigenvalue, not the excluded uniqueness of any ground state; with W the retained xz face at the origin every other retained face shares at most one link with W (own enumeration), so the N=2 sums over the 1344 faces reduce to f=W and the box first-order coefficients and d omega(W^2)/dtau equal the one-plaquette values",
+      "passed": true
+    },
+    {
+      "clauses": {
+        "forward": [
+          {
+            "clause": "and `uniqueness_of_ground_state_claimed`, `rate_in_a_claimed`, `continuum_claim`, `weak_coupling_claim`, `scientific_priority_verified` all `false`.",
+            "kind": "field or mutation identifier"
+          },
+          {
+            "clause": "uniqueness of any ground state",
+            "kind": "claim-exclusion list quoted verbatim"
+          },
+          {
+            "clause": "- Item 1 speaks of the ground state \"being unique\" while `uniqueness of any ground state` is excluded",
+            "kind": "negated or excluded"
+          }
+        ],
+        "reverse": [
+          {
+            "clause": "`continuum_claim`, `weak_coupling_claim`, `rate_in_a_claimed`, `uniqueness_of_ground_state_claimed`, `transfers_to_aq`, `uniform_wilson_claim`, `resolved_interaction_shif",
+            "kind": "field or mutation identifier"
+          },
+          {
+            "clause": "Exclusions, limitations and contract wording findings **Claim exclusions, exactly as the contract lists them:** - any AM2, AV1 or AQ statement for a group other than SU(2",
+            "kind": "negated or excluded"
+          },
+          {
+            "clause": "true` - `uniqueness_of_ground_state_claimed",
+            "kind": "field or mutation identifier"
+          }
+        ]
+      },
+      "id": "uniqueness_wording_classified",
+      "note": "every clause mentioning uniqueness in either report is negated or excluded, a field or mutation identifier, or the contract claim-exclusion item quoted verbatim; no clause asserts uniqueness of any ground state",
+      "passed": true
+    },
+    {
+      "id": "periodic_tori_reading",
+      "note": "E_3 and E_2 fail at the seam exactly when the keyed coordinate has an odd side; E_2 on the 3x4 torus (odd x side, even y side) meets every plaquette once, so it is a valid flip set there; own GF(2) elimination: some flip set exists iff every coordinate plane has an even plaquette count (2D: L_x L_y even; 3D: at most one odd side); the contract \"obstruction\" is a statement about E_3/E_2 at the seam, and \"not statements for periodic boxes with an odd side\" is a scope exclusion, not a proof that the flip lemma fails there",
+      "passed": true,
+      "tori": {
+        "3x3": {
+          "even": 3,
+          "gf2": false,
+          "plaquettes": 9
+        },
+        "3x3x3": {
+          "even": 27,
+          "gf2": false,
+          "plaquettes": 81
+        },
+        "3x3x4": {
+          "even": 24,
+          "gf2": false,
+          "plaquettes": 108
+        },
+        "3x4": {
+          "even": 0,
+          "gf2": true,
+          "plaquettes": 12
+        },
+        "3x4x3": {
+          "even": 24,
+          "gf2": false,
+          "plaquettes": 108
+        },
+        "3x4x4": {
+          "even": 16,
+          "gf2": true,
+          "plaquettes": 144
+        },
+        "3x5": {
+          "even": 3,
+          "gf2": false,
+          "plaquettes": 15
+        },
+        "4x3": {
+          "even": 4,
+          "gf2": true,
+          "plaquettes": 12
+        },
+        "4x3x4": {
+          "even": 16,
+          "gf2": true,
+          "plaquettes": 144
+        },
+        "4x4": {
+          "even": 0,
+          "gf2": true,
+          "plaquettes": 16
+        },
+        "4x4x3": {
+          "even": 16,
+          "gf2": true,
+          "plaquettes": 144
+        },
+        "4x4x4": {
+          "even": 0,
+          "gf2": true,
+          "plaquettes": 192
+        },
+        "5x5": {
+          "even": 5,
+          "gf2": false,
+          "plaquettes": 25
+        }
+      }
+    },
+    {
+      "bb2": {
+        "c'_site": "2/984375",
+        "q": "1/64"
+      },
+      "forward_read": {
+        "c'_site": "2/984375",
+        "e_bound": "e^x at most 1/(1-x) for x in [0,1) (directed)",
+        "q": "1/64"
+      },
+      "id": "area_parity_limit_through_bb2",
+      "note": "for each N and each sign, rho^{F1,N}_Y(-tau) = U_{E cap Y} rho^{F1,N}_Y(tau) U_{E cap Y}^* (AW1, U_E a product over links); BB2 item 1 bounds ||rho^{F,M}_Y - rho^{F,N}_Y||_1 by c'_site |Y| e^{|Y|/10^8} q^{d_Y} along the whole sequence at both signs; conjugation is trace-norm continuous, so the identity passes to the limit pointwise; the forward read c'_site = 2/984375 and q = 1/64 from the gate (not the labelled union value 1/500000)",
+      "own_planar_loops": 216,
+      "passed": true,
+      "reverse_rectangles": 6480,
+      "w_face_region": {
+        "max |y|_inf": 1,
+        "|Y|": 2
+      }
+    },
+    {
+      "id": "su3_torus_trap_avoided",
+      "note": "the reverse reduces exponents modulo the diagonal (the SU(N) torus, x_1...x_N = 1), so z^{c(1,...,1)} counts as the trivial character; the U(N) torus would give SU(3) E[W^3] = 0 and SU(4) E[W^4] = 3/1024; the forward-internal labelled Weyl cross-check reduces the same way; both substitutions are exercised below and abort",
+      "passed": true,
+      "reverse_values": {
+        "SU(3) E[W^3]": "1/108",
+        "SU(4) E[W^4]": "7/2048"
+      },
+      "unitary_torus_values": {
+        "SU(3)": [
+          "0",
+          "1/18",
+          "0",
+          "1/108",
+          "0"
+        ],
+        "SU(4)": [
+          "0",
+          "1/32",
+          "0",
+          "3/1024",
+          "0"
+        ],
+        "SU(5)": [
+          "0",
+          "1/50",
+          "0",
+          "3/2500",
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "phrase_tool_pinned",
+      "passed": true
+    },
+    {
+      "id": "phrase_scan_and_template_both_reports",
+      "passed": true,
+      "template_spans": 1,
+      "tool_exit": {
+        "forward": 0,
+        "reverse": 0
+      }
+    },
+    {
+      "forward_rows": 19,
+      "id": "report_previews_checked",
+      "note": "every exact value printed next to a decimal in either report is recomputed; all forward previews and all but one reverse preview are within one unit of their last digit; the reverse report prints 1.57720727258e-14 for omega_4 (section 7.3), while its results.json carries the correct 1.57720295790e-14: a non-blocking text defect",
+      "passed": true,
+      "reverse_report_defect": {
+        "correct_preview_truncated": "1.57720295790e-14",
+        "exact": "1/63403380965376",
+        "printed_preview": "1.57720727258e-14",
+        "results_json_preview": "1.57720295790e-14"
+      },
+      "reverse_rows": 12
+    },
+    {
+      "id": "damaged_packets_rejected_by_review_validators",
+      "passed": true,
+      "rows": [
+        {
+          "mutation": "SU(3) E[W^3] zeroed in its cell",
+          "producer": "forward",
+          "rejected_for": "forward moments SU(3)"
+        },
+        {
+          "mutation": "U(1) coefficient replaced by the SU(2) value",
+          "producer": "forward",
+          "rejected_for": "forward headline first-order"
+        },
+        {
+          "mutation": "SO(3) second-order coefficient under a tier",
+          "producer": "forward",
+          "rejected_for": "tier on a moment or a higher-order coefficient"
+        },
+        {
+          "mutation": "Z2 first-order coefficient without its tier",
+          "producer": "forward",
+          "rejected_for": "first-order value without exact_first_order"
+        },
+        {
+          "mutation": "SU(3) added to the flip groups",
+          "producer": "forward",
+          "rejected_for": "forward classification"
+        },
+        {
+          "mutation": "Z2 dropped from the named flip scope",
+          "producer": "forward",
+          "rejected_for": "forward flip scope groups"
+        },
+        {
+          "mutation": "E_2 on the 3x4 torus recorded with 3 even plaquettes",
+          "producer": "forward",
+          "rejected_for": "forward tori"
+        },
+        {
+          "mutation": "BB2 c'_site read as 1/500000",
+          "producer": "forward",
+          "rejected_for": "forward BB2 constants"
+        },
+        {
+          "mutation": "box Kato radius at N=2 doubled",
+          "producer": "forward",
+          "rejected_for": "forward Kato SU(3)"
+        },
+        {
+          "mutation": "uniqueness flag true",
+          "producer": "forward",
+          "rejected_for": "forward claim flag"
+        },
+        {
+          "mutation": "template trimmed in the supported statement",
+          "producer": "forward",
+          "rejected_for": "forward supported statement"
+        },
+        {
+          "mutation": "SU(5) fourth order zeroed",
+          "producer": "forward",
+          "rejected_for": "forward omega_4 SU(5)"
+        },
+        {
+          "mutation": "SU(4) omega_3 altered in the RS series",
+          "producer": "forward",
+          "rejected_for": "forward RS series SU(4)"
+        },
+        {
+          "mutation": "U(1) box mean sum zeroed",
+          "producer": "forward",
+          "rejected_for": "forward box terms U(1)"
+        },
+        {
+          "mutation": "SU(3) moments from the U(N) torus",
+          "producer": "reverse",
+          "rejected_for": "value differs: reverse moment SU(3) k=3"
+        },
+        {
+          "mutation": "SU(5) omega_4 preview as printed in the report",
+          "producer": "reverse",
+          "rejected_for": "reverse SU(5) cell"
+        },
+        {
+          "mutation": "SO(3) omega_2 entry under a tier",
+          "producer": "reverse",
+          "rejected_for": "tier on a moment or a higher-order coefficient"
+        },
+        {
+          "mutation": "flip scope without Z2",
+          "producer": "reverse",
+          "rejected_for": "reverse flip scope groups"
+        },
+        {
+          "mutation": "GF(2) existence on 3x3x4 set true",
+          "producer": "reverse",
+          "rejected_for": "reverse tori E_3 on 3x3x4"
+        },
+        {
+          "mutation": "Kato radius of SU(3) at N=2 doubled",
+          "producer": "reverse",
+          "rejected_for": "reverse Kato SU(3)"
+        },
+        {
+          "mutation": "SU(5) omega_4 zeroed",
+          "producer": "reverse",
+          "rejected_for": "reverse SU(5) cell"
+        },
+        {
+          "mutation": "SO(3) given a central -1",
+          "producer": "reverse",
+          "rejected_for": "reverse centre SO(3)"
+        },
+        {
+          "mutation": "SU(4) coefficient replaced by the SU(2) value",
+          "producer": "reverse",
+          "rejected_for": "value differs: reverse c1 SU(4)"
+        },
+        {
+          "mutation": "area fixture 3x1 sign not flipped",
+          "producer": "reverse",
+          "rejected_for": "reverse area fixture"
+        },
+        {
+          "mutation": "continuum flag true",
+          "producer": "reverse",
+          "rejected_for": "reverse claim flag continuum_claim"
+        },
+        {
+          "mutation": "template altered in the results",
+          "producer": "reverse",
+          "rejected_for": "reverse template in the results"
+        },
+        {
+          "mutation": "SU(3) cubic moment E[chi^3] zeroed",
+          "producer": "reverse",
+          "rejected_for": "reverse cubic moments SU(3)"
+        }
+      ]
+    },
+    {
+      "id": "unmutated_copies_and_runs_without_B",
+      "note": "an unmutated copy of each producer outside the checkout reproduces its frozen output byte for byte; a run without -B reproduces it too and writes no __pycache__ or .pyc anywhere in the copy",
+      "passed": true,
+      "rows": [
+        {
+          "producer": "forward",
+          "run": "unmutated copy"
+        },
+        {
+          "producer": "forward",
+          "run": "without -B and PYTHONDONTWRITEBYTECODE"
+        },
+        {
+          "producer": "reverse",
+          "run": "unmutated copy"
+        },
+        {
+          "producer": "reverse",
+          "run": "without -B and PYTHONDONTWRITEBYTECODE"
+        }
+      ]
+    },
+    {
+      "id": "control_validator_weakenings_both_producers",
+      "note": "one validator weakened per contract control and producer on a temporary copy (\"True or \" inserted into the require that rejects a labelled mutation, or the float branch returning a Fraction); each forward run aborts naming a mutation of that control; each reverse run aborts naming the validator, inside the control(...) call of that control (read from the traceback)",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "damaging mutation accepted: control_boolean_flipped_hash_rebound",
+          "control": "coherent_evidence_tampering",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: float_input",
+          "control": "exact_arithmetic_admission",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: continuum_claim_true",
+          "control": "no_priority_or_continuum_claim",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: SU2_value_under_SU3_label",
+          "control": "changed_model_relabelled",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: failed_cell_reported_accepted",
+          "control": "insufficient_verdict_retained",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: angle_bracket_placeholder_with_e_g",
+          "control": "placeholder_span_rejected",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: affirmative_forbidden_verb",
+          "control": "negation_aware_phrase_scan",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: not_applicable_without_reason",
+          "control": "parameters_declare_metric_weights_window",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: hypothesis_source_attached",
+          "control": "tier_mixing_rejected",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: Z2_electric_1_on_odd",
+          "control": "frozen_convention_used",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: SU3_alpha_dictionary",
+          "control": "su2_constants_not_transferred",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: SU3_flip_transfer",
+          "control": "flip_criterion_central_minus_one",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: SU3_parity_transfer",
+          "control": "parity_criterion_third_moment",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: floating_point_moment",
+          "control": "moment_tables_two_routes",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: su3_called_flip_transfer",
+          "control": "su3_obstruction_mandatory",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: so3_given_a_central_minus_one",
+          "control": "so3_obstruction_mandatory",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: E3_minus_one_link",
+          "control": "flip_sets_verified",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: periodic_box_with_odd_side",
+          "control": "area_parity_scope",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: transfers_to_aq_true",
+          "control": "one_plaquette_model_terms",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: transfer_text_with_forbidden_verb",
+          "control": "no_transfer_called_prediction",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: U1_am2_chain_transfer",
+          "control": "am2_not_reinstantiated",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted: su5_called_flip_transfer",
+          "control": "su5_flip_obstruction_fourth_order",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by validate_results_controls",
+          "control": "coherent_evidence_tampering",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by parse_q",
+          "control": "exact_arithmetic_admission",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by validate_claim_flags",
+          "control": "no_priority_or_continuum_claim",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by validate_cell",
+          "control": "changed_model_relabelled",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_outcome",
+          "control": "insufficient_verdict_retained",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_no_placeholder",
+          "control": "placeholder_span_rejected",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_phrase_scan",
+          "control": "negation_aware_phrase_scan",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by validate_parameters",
+          "control": "parameters_declare_metric_weights_window",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by validate_value_entry",
+          "control": "tier_mixing_rejected",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_first_order_cell",
+          "control": "frozen_convention_used",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_no_su2_constant",
+          "control": "su2_constants_not_transferred",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_flip_entry",
+          "control": "flip_criterion_central_minus_one",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_parity_entry",
+          "control": "parity_criterion_third_moment",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by compare_route_tables",
+          "control": "moment_tables_two_routes",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_obstruction_cell",
+          "control": "su3_obstruction_mandatory",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_obstruction_cell",
+          "control": "so3_obstruction_mandatory",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_flip_set",
+          "control": "flip_sets_verified",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_area_parity_claim",
+          "control": "area_parity_scope",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_fg_model",
+          "control": "one_plaquette_model_terms",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_no_forbidden_verbs",
+          "control": "no_transfer_called_prediction",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_chain_claims",
+          "control": "am2_not_reinstantiated",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "damaging mutation accepted by certify_su5_cell",
+          "control": "su5_flip_obstruction_fourth_order",
+          "producer": "reverse"
+        }
+      ],
+      "runs": 44
+    },
+    {
+      "id": "must_abort_substitutions",
+      "note": "the U(N) torus in either route, a zeroed SU(3) third moment in the characters route, other normalizations, an E_3 without its x-links, a perturbed SU(5) closed form, edited premise snapshots, an undeclared input and report edits all abort without output",
+      "passed": true,
+      "rows": [
+        {
+          "aborted_with": "AdmissionError: routes disagree on SU(2):E[W^2]",
+          "edit": "forward-internal Weyl cross-check on the U(N) torus (exponent 0 only)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check moments_characters_route",
+          "edit": "SU(3) third moment zeroed in the characters route",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check character_rules",
+          "edit": "Z2 odd-state Casimir 1/4 (another normalization)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: the flip does not reverse W_f for SU(2) at ((-8, -3, -2), (0, 1))",
+          "edit": "flip-set membership without x-links (E_3 and E_2)",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: admitted gate snapshot differs from its pinned sha256: research/round33/advisor/bb2-gate.json",
+          "edit": "input: BB2 gate c'_site edited",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: contract snapshot bytes differ from the frozen BD1 contract",
+          "edit": "input: contract snapshot edited",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: failed check premise_inventory",
+          "edit": "input: undeclared skeptic file",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: affirmative forbidden phrasing in report.md",
+          "edit": "report: forbidden phrase appended",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "AdmissionError: the mandatory template must appear once as one unbroken span",
+          "edit": "report: template altered",
+          "producer": "forward"
+        },
+        {
+          "aborted_with": "ProducerError: check failed: haar_moments_weyl_integration",
+          "edit": "Weyl integration on the U(N) torus (exponents not reduced modulo the diagonal)",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "ProducerError: first-order coefficient: closed form, torus RS and Hellmann-Feynman",
+          "edit": "first-order formula with face energy 24 C_F",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "ProducerError: SU(5) fourth-order coefficient",
+          "edit": "SU(5) closed form perturbed by 10^-30",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "Rejected: gate bytes do not match the pinned hash",
+          "edit": "input: BB2 gate c'_site edited",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "ProducerError: contract snapshot hash differs from the pinned value",
+          "edit": "input: contract snapshot edited",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "Rejected: inputs inventory differs from AGENTS.md, the contract and shared_premises",
+          "edit": "input: undeclared skeptic file",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "Rejected: affirmative forbidden phrase rejected (list indices [17, 20])",
+          "edit": "report: forbidden phrase appended",
+          "producer": "reverse"
+        },
+        {
+          "aborted_with": "Rejected: mandatory template must appear exactly once as one unbroken span",
+          "edit": "report: template altered",
+          "producer": "reverse"
+        }
+      ],
+      "runs": 17
+    },
+    {
+      "id": "silent_edits_accounted",
+      "passed": true,
+      "rows": [
+        {
+          "edit": "harmless: second RS stability depth ORDER+5",
+          "producer": "forward",
+          "producer_run": "completed",
+          "review_validator": "accepted (non-damaging: every exported admitted value unchanged)"
+        },
+        {
+          "edit": "BB2 c'_site read as the labelled union-comparison value 1/500000",
+          "producer": "forward",
+          "producer_run": "completed",
+          "review_validator": "rejected: forward BB2 constants"
+        },
+        {
+          "edit": "region bound without the factor e^{|Y|/10^8}",
+          "producer": "forward",
+          "producer_run": "completed",
+          "review_validator": "rejected: forward BB2 bound"
+        },
+        {
+          "edit": "harmless: previews with 13 digits",
+          "producer": "reverse",
+          "producer_run": "completed",
+          "review_validator": "accepted (non-damaging: every exported admitted value unchanged)"
+        },
+        {
+          "edit": "box Kato radius at N=2 doubled",
+          "producer": "reverse",
+          "producer_run": "completed",
+          "review_validator": "rejected: reverse Kato"
+        },
+        {
+          "edit": "one-plaquette Kato radius 96 C_min",
+          "producer": "reverse",
+          "producer_run": "completed",
+          "review_validator": "rejected: reverse Kato"
+        }
+      ]
+    },
+    {
+      "checked": [
+        "research/round33/forward/bd1/",
+        "research/round33/reverse/bd1/"
+      ],
+      "id": "no_interpreter_cache_after_all_runs",
+      "passed": true
+    }
+  ],
+  "commit_order_utc": [
+    {
+      "commit": "a1010a4",
+      "time": "05:53:54",
+      "what": "BD1 reverse producer"
+    },
+    {
+      "commit": "5a792b0",
+      "time": "05:54:17",
+      "what": "BD1 forward producer"
+    },
+    {
+      "commit": "37fa623",
+      "time": "06:00:06",
+      "what": "BD2 forward producer"
+    },
+    {
+      "commit": "bf1f531",
+      "time": "06:10:08",
+      "what": "skeptic BD1 and BD2 pre-comparison packages"
+    }
+  ],
+  "contract_sha256": "a5c8416600c49b0728fdca05cd67c3ff2e53d9fd9e146d4305abcd2da775c1fc",
+  "damaged_packets": 27,
+  "human_author": "Hruday N M (BUNZEEY)",
+  "loop": "BD1",
+  "producers": [
+    "forward (characters)",
+    "reverse (weyl_integration)"
+  ],
+  "reviewer": "skeptic (model agent, correlated ancestry; not human review)",
+  "source_edit_breakdown": {
+    "control_validator_weakenings": 44,
+    "must_abort_substitutions": 17,
+    "silent_edits": 6,
+    "unmutated_and_no_B": 4
+  },
+  "source_edit_runs": 71,
+  "stage": "post_comparison"
+}
