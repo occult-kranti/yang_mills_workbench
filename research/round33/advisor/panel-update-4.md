@@ -8,7 +8,7 @@ The user's request to apply the admitted solutions and new equations to their re
 
 ## Assistant findings
 
-- Historical assistant: flip sets, box counts and coarse-factor counts equal both BD1 routes; GF(2) elimination confirms flip-set existence on periodic tori exactly when at most one side is odd; SU(2), U(1) and Z2 moments and coefficients reproduced; the graph and 1x2 counts reproduced. Two bugs were in the assistant's own scripts and were fixed before comparison.
+- Historical assistant: flip sets, box counts and coarse-factor counts equal both BD1 routes; GF(2) elimination reproduces the finding that a flip set exists on a periodic torus exactly when at most one side is odd; SU(2), U(1) and Z2 moments and coefficients reproduced; the graph and 1x2 counts reproduced. Two bugs were in the assistant's own scripts and were fixed before comparison.
 - Jung assistant: the phrase scan of the BD texts, the findings summary and applications ledger and the roadmap has no hit; every transfer names its model; the 12 applications entries are bound to their gates with matching hashes and numbers.
 - Modern assistant: SU(3), SU(4), SU(5) and SO(3) moments and the obstruction coefficients reproduced by methods different from both producers; the BD2 constants lie in Arb enclosures; reading requests (a Wegner-duality source, a Kogut-Susskind strong-coupling source) recorded, nothing fetched.
 
