@@ -126,7 +126,8 @@ def main():
                 need(done.returncode == 0, 'skeptic-' + program + '-' + mode + ': ' + done.stdout[-1500:] + done.stderr[-2500:])
                 checks.append({'name': 'skeptic-' + program + '-' + mode, 'exit_code': done.returncode,
                                'stdout': done.stdout.strip().replace(str(external), '<external>'),
-                               'historical_tool_pins': sorted(pins) if pins else []})
+                               'historical_tool_pins': {tool: {'source': historical, 'sha256': pinned}
+                                                        for tool, (historical, pinned) in (pins or {}).items()}})
                 need(tree_files(target) == tree_files(work / 'research/round33/skeptic' / recorded),
                      'Changed independent skeptical output: ' + program)
             if pins:

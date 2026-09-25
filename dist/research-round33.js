@@ -96,7 +96,7 @@
   function subroundsPage() {
     return `<header class="r22-page-head"><p class="rc-kicker">Panel selection across the cycle</p><h1>Sub-rounds</h1><p>Each sub-round pairs two investigations: three research sub-rounds, then an applications stage. After each pair the panel may revise goals, direction and skills; see its selection note and panel update below.</p></header><div class="r29-grid">${subroundCards()}</div>${scope()}`;
   }
-  const applicationKinds={transfer:['accepted','Transfer'],obstruction:['limited','Recorded obstruction'],partial:['limited','Partial transfer']};
+  const applicationKinds={transfer:['accepted','Transfer'],obstruction:['limited','Recorded obstruction'],partial:['limited','Partial transfer'],not_attempted:['pending','Not attempted']};
   function applicationCards() {
     const rows=arr(D.applications);
     return rows.length ? rows.map(row=>{
@@ -105,7 +105,7 @@
     }).join('') : '<p class="r29-empty">No applications are recorded.</p>';
   }
   function applicationsPage() {
-    return `<header class="r22-page-head"><p class="rc-kicker">Applications stage · sub-round 4</p><h1>Applications, transfers and obstructions</h1><p>Each entry applies an admitted equation to a named related problem. A transfer holds only in its stated model and is checked there by its own exact controls; where an equation does not transfer, the obstruction is recorded as a result.</p></header><div class="r29-grid">${applicationCards()}</div>${scope()}`;
+    return `<header class="r22-page-head"><p class="rc-kicker">Applications stage · sub-round 4</p><h1>Applications, transfers and obstructions</h1><p>Each entry applies an admitted equation to a named related problem. A transfer holds only in its stated model and is checked there by its own exact controls; where an equation does not transfer, the obstruction is recorded as a result. Entries marked not attempted are candidates named in planning that no investigation ran; nothing is claimed for them.</p></header><div class="r29-grid">${applicationCards()}</div>${scope()}`;
   }
   function drafts() {
     const add=D.addendum ?? {}, r32=D.round32_addendum ?? {}, r31=D.round31_addendum ?? {}, old=D.previous_draft ?? {}, url=safePath(add.url);

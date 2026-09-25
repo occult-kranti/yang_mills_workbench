@@ -39,7 +39,7 @@ DIRECTIONS = {
     'statement+skeptic': ['forward'],
     'statement-only': ['forward'],
 }
-APPLICATION_KINDS = ('transfer', 'obstruction', 'partial')
+APPLICATION_KINDS = ('transfer', 'obstruction', 'partial', 'not_attempted')
 INHERITED_ALIAS_ROUNDS = ((31, 'research/round31/advisor/findings.json'),
                           (32, 'research/round32/advisor/findings.json'))
 PRESERVED_PDFS = (

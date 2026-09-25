@@ -32,9 +32,9 @@ Top-level fields of a built bundle:
   direction:"paired"|"single+skeptic"|"statement+skeptic"|"statement-only" (must equal the frozen
   contract direction; paired iff two producers), gate_path, gate_sha256, reviewer_path, sources[], all_sources[]}.
 - `applications`: optional list from `advisor/findings.json` `applications`, each
-  {loop_id (a reviewed loop, normally bd1/bd2), problem, equation, outcome, model, kind?:"transfer"|"obstruction"|"partial",
-  detail?, sources?[] (each bound by that loop's gate)}; the builder adds gate_path, gate_sha256 and route.
-  It lists the applications stage's labelled transfers and its recorded obstructions.
+  {loop_id (a reviewed loop, normally bd1/bd2), problem, equation, outcome, model, kind?:"transfer"|"obstruction"|"partial"|"not_attempted",
+  detail?, sources?[] (each that loop's gate file or a path the gate binds, i.e. an entry of the loop's all_sources)}; the builder adds gate_path, gate_sha256 and route.
+  It lists the applications stage's labelled transfers, partial transfers and recorded obstructions, and, with kind "not_attempted" (rendered with a pending "Not attempted" badge), the planning candidates that no investigation ran; nothing is claimed for them.
 - `roadmap`: contents of `advisor/roadmap.json` with a `goals` list (required when complete).
 - `network`: contents of `research/round33/network.json` (required when complete; built by
   `research/round33/build_network.py` from Round32's 476-node network).

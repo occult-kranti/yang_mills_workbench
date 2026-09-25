@@ -41,6 +41,7 @@ const fixture={
   applications:[
     {loop_id:'bd1',problem:'SYNTHETIC related problem one',equation:'SYNTHETIC omega(W) = tau/144 + O(tau^2)',outcome:'SYNTHETIC transfers with its own exact checks',model:'SYNTHETIC target model',kind:'transfer',detail:'SYNTHETIC detail',sources:['research/round33/skeptic/bd1.md'],gate_path:'research/round33/advisor/bd1-gate.json',gate_sha256:'a'.repeat(64),route:'round33-bd1'},
     {loop_id:'bd2',problem:'SYNTHETIC related problem two',equation:'SYNTHETIC flip lemma',outcome:'SYNTHETIC obstruction: -1 is not central',model:'SYNTHETIC SU(3) model',kind:'obstruction',detail:'',sources:[],gate_path:'research/round33/advisor/bd2-gate.json',gate_sha256:'a'.repeat(64),route:'round33-bd2'},
+    {loop_id:'bd2',problem:'SYNTHETIC candidate never run',equation:'SYNTHETIC criterion',outcome:'SYNTHETIC not attempted',model:'SYNTHETIC none',kind:'not_attempted',detail:'',sources:[],gate_path:'research/round33/advisor/bd2-gate.json',gate_sha256:'a'.repeat(64),route:'round33-bd2'},
   ],
   roadmap:{goals:[{id:'future',title:'SYNTHETIC future target',status:'planned_not_executed',target:'SYNTHETIC target'}]},
   survey:[{id:'synthetic-jung',area:'jung',title:'SYNTHETIC unread source',url:'https://example.test/primary',reading_depth:'Unread synthetic fixture',provenance:'SYNTHETIC record',use:'SYNTHETIC use',limits:'Inaccessible synthetic record',ledger:'research/round33/experts/jung/sources.json',passages:['SYNTHETIC section']},{id:'synthetic-modern',area:'modern',title:'SYNTHETIC modern source',url:'https://example.test/paper',reading_depth:'Selected synthetic passages',ledger:'research/round33/experts/modern/sources.json'}],
@@ -79,6 +80,7 @@ assert(R.render('round33-figures').includes('<img'));
 const appHTML=R.render('round33-applications');
 assert(appHTML.includes('SYNTHETIC related problem one')&&appHTML.includes('SYNTHETIC related problem two'));
 assert(appHTML.includes('Recorded obstruction')&&appHTML.includes('>Transfer<'));
+assert(appHTML.includes('SYNTHETIC candidate never run')&&appHTML.includes('r29-badge-pending">Not attempted<')&&appHTML.includes('nothing is claimed for them'));
 assert(appHTML.includes('SYNTHETIC omega(W) = tau/144 + O(tau^2)'));
 assert(appHTML.includes('href="#research/round33-bd1"')&&appHTML.includes('research/round33/skeptic/bd1.md'));
 assert(R.render('round33-bd1').includes('Recorded transfers and obstructions'));
