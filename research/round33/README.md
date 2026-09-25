@@ -12,7 +12,7 @@ The cycle starts from merged Round32 commit `519a9a2a26201422a8bfa9e3a83f9129b66
 | 2 | BB2 | accepted_within_scope (convergence_of_named_constructions; common_limit_of_named_constructions) | F1 and F2 reduced densities converge as whole sequences at rate q^(N-1), C' about 4.06e-6, to one common limit on every finite region; equal to every AQ1/F2 subsequential limit; coarse-translation invariant; correlation functions on \|theta\| at most 8 converge (rate 1/N only on 5<=N<=14000); BB1 hypotheses discharged by the BB1 gate; not uniqueness of any ground state |
 | 3 | BC1 | (in production: contract frozen; statement+skeptic) | |
 | 3 | BC2 | (in production: contract frozen; single+skeptic, route-B uniform model) | |
-| 4 | BD1 | (planned: applications) | |
-| 4 | BD2 | (planned: applications) | |
+| 4 | BD1 | (in production: contract frozen; paired, applications) | |
+| 4 | BD2 | (in production: contract frozen; single+skeptic, applications) | |
 
 Loop counts are never a fraction of the four-dimensional Yang–Mills problem, which remains open.
