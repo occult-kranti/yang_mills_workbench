@@ -211,8 +211,13 @@ if(bundleExists&&bundleData?.progress?.cycle_complete!==true&&!process.argv.incl
   for(const row of data.applications??[])assert(data.loops.some(loop=>loop.id===row.loop_id),'application loop '+row.loop_id);
   const actual=environment(data).R;assert(actual.complete());for(const route of routes)assert.equal((actual.render(route).match(/<h1(?:\s|>)/g)||[]).length,1,'real route '+route);
   for(const loop of data.loops)assert(actual.findingCards(loop.contribution_id).includes(loop.contribution_id));
-  const before=hash('dist/research-round33-data.js');const replay=spawnSync('python3',['-B','research/round33/presentation/build_site.py','--check'],{cwd:root,encoding:'utf8'});assert.equal(replay.status,0,replay.stderr||replay.stdout);assert.equal(hash('dist/research-round33-data.js'),before,'--check mutated the bundle');
-  release='actual gate hashes, contract directions, catalog preservation and exact nonmutating rebuild passed';
+  // Before the addendum PDF exists the complete bundle records it as unavailable;
+  // --require-release demands the published PDF, so the replay flag is never needed there.
+  const preAddendum=data.addendum?.available===false;
+  if(process.argv.includes('--require-release'))assert.equal(data.addendum?.available,true,'the Round33 release requires the published addendum PDF');
+  const replayArgs=['-B','research/round33/presentation/build_site.py','--check',...(preAddendum?['--allow-missing-addendum']:[])];
+  const before=hash('dist/research-round33-data.js');const replay=spawnSync('python3',replayArgs,{cwd:root,encoding:'utf8'});assert.equal(replay.status,0,replay.stderr||replay.stdout);assert.equal(hash('dist/research-round33-data.js'),before,'--check mutated the bundle');
+  release=`actual gate hashes, contract directions, catalog preservation and exact nonmutating rebuild passed${preAddendum?' (addendum PDF not yet published; replayed with --allow-missing-addendum)':''}`;
 } else if(process.argv.includes('--require-release')) {
   throw new Error('The real Round33 release bundle is required. Synthetic renderer tests are not publication verification.');
 }

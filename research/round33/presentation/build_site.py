@@ -128,6 +128,13 @@ def build(root=ROOT, allow_incomplete=False, allow_missing_addendum=False):
         require(isinstance(addendum, dict) and nonempty(addendum.get('title')),
                 'missing Round33 addendum metadata')
         path_value = addendum.get('path')
+        if nonempty(path_value) and not exists(path_value):
+            # The findings record may already name the future PDF; before it is
+            # built the addendum is published as unavailable, never bound.
+            require(safe_name(path_value), 'unsafe addendum path ' + path_value)
+            require(allow_missing_addendum,
+                    'Round33 addendum PDF is not yet built; pass --allow-missing-addendum')
+            path_value = None
         if nonempty(path_value):
             addendum_file = bind(path_value)
             require(addendum_file.read_bytes().startswith(b'%PDF-'), 'invalid Round33 addendum PDF')

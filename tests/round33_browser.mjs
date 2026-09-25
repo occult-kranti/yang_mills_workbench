@@ -72,6 +72,7 @@ try {
   });
   const page = await browser.newPage({viewport: {width: 1440, height: 1100}, deviceScaleFactor: 1});
   const errors = [], checks = [];
+  let sourceQueryUsed = null;
   page.on('pageerror', error => errors.push(String(error)));
 
   const prefix = site === 'docs'
@@ -155,15 +156,25 @@ try {
     for (const route of routes) await checkRoute(route);
     for (const route of ARCHIVE_ROUTES) await checkArchive(route);
 
-    // Sources: search, area filter to a non-matching area, reset.
+    // Sources: search, area filter to a non-matching area, reset. "Newton" is preferred
+    // (as in Round32); when no Round33 source record mentions it, the query is a
+    // recorded source id, which matches exactly one card, so another lens has none.
     await page.goto(base + '#research/round33-sources');
-    await page.locator('#r33-source-search').fill('Newton');
-    assert(await page.locator('.r33-source').count() > 0, 'source search for Newton must match at least one card');
-    const nonMatchingArea = await page.evaluate(() => {
+    const sourceQuery = await page.evaluate(() => {
+      const R = window.ResearchRound33;
       const areas = [...document.querySelectorAll('#r33-source-area option')].map(o => o.value).filter(v => v !== 'all');
-      return areas.find(area => window.ResearchRound33.filterSources('Newton', area).length === 0) ?? null;
+      const usable = term => R.filterSources(term).length > 0 && areas.some(area => R.filterSources(term, area).length === 0);
+      return ['Newton', ...(window.ROUND33_DATA?.survey ?? []).map(row => String(row.id))].find(usable) ?? null;
     });
-    assert(nonMatchingArea, 'no research lens without a Newton match was found');
+    assert(sourceQuery, 'no source search term matches a card while leaving a research lens empty');
+    sourceQueryUsed = sourceQuery;
+    await page.locator('#r33-source-search').fill(sourceQuery);
+    assert(await page.locator('.r33-source').count() > 0, 'source search for ' + sourceQuery + ' must match at least one card');
+    const nonMatchingArea = await page.evaluate(query => {
+      const areas = [...document.querySelectorAll('#r33-source-area option')].map(o => o.value).filter(v => v !== 'all');
+      return areas.find(area => window.ResearchRound33.filterSources(query, area).length === 0) ?? null;
+    }, sourceQuery);
+    assert(nonMatchingArea, 'no research lens without a match for ' + sourceQuery + ' was found');
     await page.locator('#r33-source-area').selectOption(nonMatchingArea);
     assert.equal(await page.locator('.r33-source').count(), 0);
     await page.locator('#r33-source-reset').click();
@@ -257,6 +268,7 @@ try {
     viewports: [{width: 1440, height: 1100}, {width: 390, height: 844}],
     checkpoint: {completed: snapshot.completed, placeholder: snapshot.placeholder},
     checks, pageErrors: errors,
+    ...(bundleIncomplete ? {} : {source_search_query: sourceQueryUsed}),
     source_sha256, screenshot_sha256,
     visual_review: {status: 'pending_manual_inspection', screenshots_inspected: []},
     scope: bundleIncomplete
