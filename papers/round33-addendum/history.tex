@@ -1,0 +1,324 @@
+\section{Process history of the Round33 cycle}
+\label{sec:history}
+
+This section records how the cycle was run, using the repository files named
+in each paragraph. It adds no mathematical claim, and none of the planning
+numbers below is an admitted value. All times are UTC. The contract freezer
+wrote the \sourcepath{frozen_at} stamps and the gate recorder the
+\sourcepath{completed_at} stamps, both from the machine clock; like commit
+dates, they are self-reported and are not trusted timestamps. The roles are
+those of the status section: an advisor who owns contracts, gates and
+publication; a skeptic; three methodological lenses; one research assistant
+per lens after each sub-round; and forward and reverse producers. All of them
+are model agents with correlated ancestry, working under the project's
+workflow contract \cite{agents}.
+
+\subsection{Authorization and brief}
+\label{sec:history-brief}
+After the merged Round32 cycle \cite{r32add}, the user asked on 24 September
+2026 to ``continue with the next 3 rounds - and then apply all these
+solutions and new equations to solve their related problems - if any''. As in
+Round32, a round was read as a sub-round of two investigations with the
+advisor, the skeptic and the expert panel, one research assistant per lens
+after each sub-round, and goal changes allowed after each. The advisor's
+brief \cite{r33panel} therefore fixed a panel deliberation of two loops, three
+research sub-rounds (BA, BB, BC), an applications stage (BD) that applies the
+admitted equations where they apply and records an explicit obstruction where
+they do not, and then integration and release. The brief restated the
+admitted Round32 equations and constants, the ranked Round32 roadmap and the
+ten closing-panel rules of Round32. The contract freezer, committed with the
+Round33 skeleton at 20:54 on 24 September, enforces rules R1--R5 and R8; the
+gate recorder enforces R6 and R7. The brief also listed the advisor's
+candidate directions, boundary-influence decay, a Lieb--Robinson comparison
+of the dynamics, restated certificates and a list of applications, as
+triage input, not decisions.
+
+\subsection{Two deliberation loops and plan~v2}
+\label{sec:history-loops}
+
+\paragraph{Loop 1: memos, triage and plan~v1.} Each lens wrote a memo, a
+source ledger and a structured recommendation \cite{r33lenses}, the Jung lens
+also kept the occult and government-record reading ledger \cite{r33occult},
+and the skeptic wrote a prospective triage with a control catalogue
+\cite{r33skeptic}. The advisor's synthesis records six points of
+convergence. The first corrected the brief: the smallness $JG(R)<1/64$ is
+absolute, and the per-step rate is the ball ratio $64JG(R)=37888|\tau|$,
+about $3.79\times10^{-4}$ at the cap, while the global Lipschitz constant is
+never a decay factor. The others were that a weighted norm and complex-coupling
+analyticity give the same coefficient decay; that coefficient decay is not
+decay of the reduced density, so marginal locality needs a new lemma and is
+the round's main risk; that the dynamics comparison is mechanical once the
+extra faces and their distances are counted; that consequences restate and
+never strengthen; and a first list of applications, with the SU(3)
+obstruction and the first-order coefficients per group recorded as previews
+for the producers to derive. Four dissents were recorded. The Jung lens
+asked for a separate Dobrushin/HTW loop, which the advisor did not schedule.
+The historical lens asked to split the dynamics into a derivation and a
+certification, adopted in substance. The modern lens reserved the word
+uniqueness for its strong form and set the Cauchy rate at $N^{-1}$, both
+adopted. The skeptic asked for margins of at least 2, frozen rate--constant
+pairs and per-constant scaling brackets, adopted as contract rules. Plan~v1
+fixed the four sub-rounds of Table~\ref{tab:plan}.
+
+\paragraph{Loop 2: sign-offs and the vetoed freeze.} All three lenses signed
+off plan~v1. The skeptic signed off the architecture with thirteen required
+changes, P1--P13, and vetoed the BA1 and BA2 freezes until its blocking edits
+were applied; its loop-2 review lists 16 blocking and 9 non-blocking entries
+for BA1 and 14 and 6 for BA2 \cite{r33skeptic}. Among the edits: the BA1
+floor target moved from $1/16$, whose margin was 1.99924, to $1/12$; the BA2
+reverse route was replaced, since a triangle inequality through the two
+limits misses the comparison target at every $N$; the within-family Cauchy
+targets were quantified over all $M>N$; and the Nachtergaele--Sims theorem was
+committed as a source excerpt \cite{ns}. The freezer's placeholder detector
+had misread inequality notation as a placeholder span and was repaired
+before the freeze (rule R1). The Jung lens kept a narrowed dissent, answered
+in the BB selection note. The loop-1 panel previews that justify the frozen
+margins are recorded only in the loop-2 synthesis, which is not a producer
+premise, so the producers derive their constants blind.
+
+\paragraph{Plan~v2.} The changes P1--P13 were recorded in
+\sourcepath{plan.json} and plan~v2 was frozen before BA1 and BA2
+(Section~\ref{sec:plan}). They fixed the forbidden phrasings of the round (P1),
+one tier and one route per constant (P2), a closed gate-field vocabulary (P3),
+the bracket, margin, excerpt and Cauchy rules (P4), the plan hash recorded at
+each freeze (P5), the directions of BB2, BC1, BC2, BD1 and BD2 (P6 and
+P8--P11), the isolation of the BB1 reverse from the lens memos and the
+triage (P7), and the recording of the changes (P12, P13). The plan history
+also carries a later correction entry for the BB1 secondary pair, recorded
+beside the earlier entry without editing it.
+
+\subsection{Contracts, gates and chronology}
+\label{sec:history-chronology}
+Table~\ref{tab:history-chronology} lists the eight contracts in freeze order.
+Each pair was frozen together, after a skeptic pre-freeze review of its
+drafts whose blocking edits were applied field by field. Five
+investigations are paired (BA1, BA2, BB1, BB2 and BD1), two are
+single-direction with a skeptic replay (BC2 and BD2) and one is a statement
+investigation (BC1).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Round33 chronology from the contract and gate records (UTC, 2026).
+Dir.: P = paired, S = single direction plus skeptic replay, T = statement plus
+skeptic. Every verdict is \recid{accepted_within_scope}.}
+\label{tab:history-chronology}
+\begin{tabular}{@{}lccccl@{}}
+\toprule
+Loop & Dir. & Contract frozen & Gate completed & Edits (B / NB) & Sub-labels\\
+\midrule
+BA1 & P & 09-24 21:56:46 & 09-24 23:11:31 & 16 / 9 & BD; SD\\
+BA2 & P & 09-24 21:56:46 & 09-24 23:08:07 & 14 / 6 & DW\\
+BB1 & P & 09-24 23:36:46 & 09-25 03:01:43 & 7 / 10 & BD; SD\\
+BB2 & P & 09-24 23:36:46 & 09-25 03:31:54 & 15 / 5 & CN; CL\\
+BC1 & T & 09-25 04:21:44 & 09-25 05:24:16 & 30 / 28 (both) & CR; RU, SD\\
+BC2 & S & 09-25 04:21:44 & 09-25 05:57:18 & (with BC1) & CN; CR, RU, SD\\
+BD1 & P & 09-25 05:09:10 & 09-25 07:52:23 & 34 / 21 (both) & TN; OR\\
+BD2 & S & 09-25 05:09:10 & 09-25 07:53:00 & (with BD1) & SF; TN, OR, SD\\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\begin{minipage}{0.94\linewidth}\footnotesize\raggedright
+Sub-labels, primary before the semicolon: BD = \recid{boundary_decay_rate_only};
+SD = \recid{static_not_dynamic}; DW = \recid{dynamics_on_compact_windows};
+CN = \recid{convergence_of_named_constructions};
+CL = \recid{common_limit_of_named_constructions};
+CR = \recid{certificate_restated_for_limit};
+RU = \recid{reference_unresolved};
+TN = \recid{transfer_to_named_model}; OR = \recid{obstruction_recorded};
+SF = \recid{sign_certified_finite_graph}. Edits: blocking (B) and
+non-blocking (NB) pre-freeze edits. The BA counts are the loop-2
+review's entries; the BB counts are per contract; the BC and BD counts are
+the reviews' totals over both contracts and the plan.
+\end{minipage}
+\end{table}
+
+The cycle ran from the BA freeze at 21:56 on 24 September to the BD2 gate at
+07:53 on 25 September.
+
+\paragraph{Sub-round 1: locality.} BA1 and BA2 were frozen at 21:56:46 on 24
+September, after the loop-2 edits. Their gates were completed at 23:08:07
+(BA2) and 23:11:31 (BA1), about 71 and 75 minutes after the freeze.
+
+\paragraph{Sub-round 2: the parallel freeze.} BB1 and BB2 were frozen
+together at 23:36:46, after the skeptic's pre-freeze review of the BB drafts,
+which vetoed both freezes until 7 blocking edits to BB1 and 15 to BB2 were
+applied, with 10 and 5 non-blocking ones. BB1 was still to be produced, so
+BB2 takes BB1's frozen targets as explicit hypotheses, and its producers
+marked every dependent statement as conditional on them. The plan history
+entry for this freeze was written afterwards, as the BB2 skeptic's defect D8
+records. The BB1 gate was completed at 03:01:43 and the BB2 gate at 03:31:54,
+after the skeptic's admission record had discharged every BB1 hypothesis item
+by item against the BB1 gate: 30 anchored entries, each a verbatim substring
+of the gate, cross-checked in 40 cells (Section~\ref{sec:bb2-discharge}).
+
+\paragraph{The Kotecký--Preiss repair.} The BB1 forward producer cited the
+Kotecký--Preiss criterion \cite{kp} in the form of Ueltschi \cite{ueltschi}
+without a committed excerpt, because the rule of plan~v2 that external
+theorems be quoted from committed excerpts had not been carried into the BB1
+contract (the BB1 review's contract defect D2). The skeptic ruled this a
+limitation, not a blocking issue. The advisor committed an excerpt of
+Ueltschi's paper at 02:51:54 on 25 September, after both BB1 freezes and
+outside every producer's inputs, and the skeptic's repair record compares the
+cited statement with it post hoc \cite{r33skeptic}. No frozen file and no
+bound value changed (Section~\ref{sec:bb1-forward}).
+
+\paragraph{Sub-round 3: consequences.} The BC drafts were written after the
+BB2 gate. The skeptic's pre-freeze review found 2 blocking issues for BC1, 5
+for BC2 and one shared with the plan, the closure of the gate-field
+vocabulary, and required 30 blocking edits (6 to BC1, 17 to BC2 and 7 to the
+plan) and 28 non-blocking ones. BC1 and BC2 were frozen at 04:21:44 on 25
+September. BC2 ran only because BB1 and BB2 had been accepted within scope,
+as the plan required. The gates were completed at 05:24:16 (BC1) and 05:57:18
+(BC2).
+
+\paragraph{Sub-round 4: applications.} Since no BD item depends on a BC
+outcome, the BD drafts were written during the BC production, at 04:27. The
+skeptic's pre-freeze review found 5 blocking issues for BD1 and 6 for BD2 and
+required 34 blocking edits (15 and 19) and 21 non-blocking ones. It also found
+the drafted BD2 width target of $1/10^{10}$ non-discriminating, and the
+advisor tightened it to $1/10^{16}$ at $D=8$. BD1 and BD2 were frozen at
+05:09:10, and their gates were completed at 07:52:23 and 07:53:00.
+
+\paragraph{The commit-order record.} For every loop the skeptic's
+pre-comparison package and the producer packets were committed separately,
+and each gate records the order (Table~\ref{tab:history-commits}). Where the
+skeptic's package was committed after a producer's, the review records that
+its values were final before that producer's commit, and every skeptic
+discloses its name-only exposures, such as file names in a \texttt{git
+status} or a commit subject line. Isolation rests on this disclosure and on
+content, not on the order alone.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Commit order of the producer packets and the skeptic's
+pre-comparison packages (UTC).}
+\label{tab:history-commits}
+\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Loop & Order\\
+\midrule
+BA1 & skeptic \texttt{09ae71e} (22:36:35) before forward \texttt{721ffe5} (22:38:15) and reverse \texttt{e87511b} (22:41:21)\\
+BA2 & skeptic \texttt{7daf273} (22:29:25) before reverse \texttt{9f207fe} (22:34:30) and forward \texttt{302347b} (22:34:46)\\
+BB1 & skeptic \texttt{09d0bdb} (00:28:59) before forward \texttt{33e0ae6} (00:49:30) and reverse \texttt{13ac349} (02:06:29)\\
+BB2 & forward \texttt{d05efda} (00:10:26), then skeptic \texttt{8921539} (00:14:56), then reverse \texttt{17c0ecf} (00:18:36)\\
+BC1 & forward \texttt{5816e0b} (04:57:15), then skeptic \texttt{5ec599f} (05:00:47); the skeptic's values were final at 04:53:13\\
+BC2 & skeptic \texttt{5ec599f} (05:00:47) before forward \texttt{ee45eed} (05:04:31)\\
+BD1 & reverse \texttt{a1010a4} (05:53:54) and forward \texttt{5a792b0} (05:54:17), then skeptic \texttt{bf1f531} (06:10:08); the skeptic's values were final at 05:45:05\\
+BD2 & forward \texttt{37fa623} (06:00:06), then skeptic \texttt{bf1f531} (06:10:08); the skeptic's values were final before the forward commit\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Closing statement.} The Round33 cycle consists of exactly eight
+gated investigations, BA1 to BD2, in three research sub-rounds and an
+applications stage, and all eight are accepted within their stated model
+scope. Nothing after the BD2 gate, including the findings record, the closing
+lens updates, the roadmap, this manuscript and the release checks, adds a
+research loop or changes an admission.
+
+\subsection{Sub-round updates, assistants and panel updates}
+\label{sec:history-updates}
+After each sub-round each lens reviewed the gates and wrote an update, one
+assistant per lens ran the tests that lens had asked for, and the advisor
+wrote a panel update \cite{r33panel,r33lenses}. The assistant packages count
+zero research loops, and nothing in them decides an admission. Every panel
+update kept the goals of the remaining sub-rounds and recorded that no
+occult, mystical or historical source changed any premise.
+
+\paragraph{Panel update~1 (24 September, after BA1 and BA2).} The historical
+assistant confirmed every count in both gates by an independent enumeration,
+among them the $28N(5N+1)$ extra faces, the padding sites and the nested
+source counts. The Jung assistant found the phrase scan of the BA gate,
+review and report text clean, and listed four bare ``rate'' phrasings in the
+frozen BA contracts, which stay unamended. The modern assistant reproduced
+every admitted BA1 and BA2 constant inside Arb and mpmath enclosures and
+reconciled the $0.68\%$ gap between the two loop-1 dynamics previews as two
+valid directed remainder bounds. The update adopted the modern lens's BB
+targets, froze BB2 with BB1 on BB1's targets, named the fixed-$N$ change of
+boundary prescription as its own BB1 item, and aligned the scanner with the
+plan vocabulary.
+
+\paragraph{Panel update~2 (25 September, after BB1 and BB2).} The historical
+assistant enumerated the every-site common-core lemma for all five BB1
+comparisons at $N=2,3,4$, found exactly 8 coarse translations among 64 fine
+ones, and found the first vacuous point of the item-5 bracket at $N=14419$
+independently of the skeptic. The Jung assistant found the four BB packets
+clean under the scanner and one closed-vocabulary defect, which the BB2 gate
+records. The modern assistant reproduced every BB1 constant of both routes
+and found the Kotecký--Preiss side conditions satisfied. The update carried
+three lessons into the next contracts: every rate claim carries its certified
+range of $N$ in the same clause; an external theorem that a route will use is
+a declared premise at freeze with its committed excerpt; and direct
+comparisons carry the targets, with union-volume and telescoped variants
+labelled only. It let BC2 run and adopted the modern lens's BC2 targets.
+
+\paragraph{Panel update~3 (25 September, after BC1 and BC2).} The historical
+assistant enumerated the route-B partition and incidence independently,
+recomputed $N_{\rm sign}=4$ and found the 21 reviewed obligation rows well
+formed. The Jung assistant found BC1 and BC2 clean under the scanner and ran a
+vocabulary-gap audit. It found no affirmative unscoped uniqueness phrasing,
+but identified a mechanism by which a heading followed by a list severs an
+exclusion cue from the listed items, and it recommended scanner additions.
+These were recorded for the next round and not applied mid-round, since a
+scanner change during the round would change the admission test of text
+already recorded. The modern assistant reproduced every BC2 constant exactly
+and inside Arb enclosures, and recomputed the AX2 radius exactly. The update
+kept the applications stage unchanged.
+
+\paragraph{Closing lens updates and the roadmap.} After the BD gates each
+lens wrote a closing update with a ranked proposal of at most five goals
+\cite{r33lenses}, and the advisor recorded the findings, the ranked roadmap
+and the handoff \cite{r33panel}. None of the three closing updates read a new
+source. The applications-stage assistant packages, one per lens, are
+recorded under \sourcepath{experts/<lens>/assistant-4/}; like the earlier
+ones, they count zero investigations and decide no admission.
+
+\subsection{Process rules and tools}
+\label{sec:history-rules}
+The shared tools compute no scientific result \cite{r33contracts}. The
+contract freezer enforces rules R1--R5 and R8 at freeze time and requires
+the pre-registration control list to equal the contract's. The freezing tool
+snapshots the declared premises into each producer's inputs, replays the
+checker under normal and \texttt{-O} Python into fresh external directories,
+requires byte-identical outputs and writes the freeze record; it also
+machine-checks the isolation of a reverse producer's inventory. The
+negation-aware phrase scanner, added at the start of the round, checks the
+round's forbidden phrasings and each contract's own list, with the mandatory
+sentence template removed as one literal; the gate recorder applies it and the
+template-span check at gate time. All admission arithmetic uses exact
+\sourcepath{fractions.Fraction}.
+
+Four lessons of the round are recorded as rules for the next contracts, in
+the panel updates and the handoff: every rate claim carries its range of $N$;
+external theorems are committed excerpts declared at freeze; an obligation
+row that an admitted result settles only in part is split and frozen with its
+reviewed name, as BC1's O1a and O1b were; and a single-direction loop names an
+adversarial substitution of another model's constants as a required control,
+as BC2's 22 route-A substitutions did. The scanner's vocabulary gap found in
+BC1 is a methods decision of the roadmap (Section~\ref{sec:limits-roadmap}),
+not a mid-round change.
+
+\subsection{Sources, attribution and disclosure}
+\label{sec:history-sources}
+Two external sources were committed as excerpts with their PDF hashes: the
+Nachtergaele--Sims paper, before the BA freeze, for the Lieb--Robinson
+inequality and the limit dynamics used by BA2 and BB2 \cite{ns}, and
+Ueltschi's paper, after the BB1 freezes, as the repair source above
+\cite{ueltschi}. The AQ1 construction and the AM2 creation expansion are
+inherited with the Round32 attribution sentence \cite{r32add}, which credits
+their strategy to Gauvin \cite{gauvin}. The lens ledgers record the sources
+the lenses read in Round33, at depths from search summaries to selected
+sections: four records in the historical ledger, two in the Jung ledger and
+27 in the modern ledger, with the occult and government-record reading ledger
+kept by the Jung lens \cite{r33lenses,r33occult}. They motivated
+methodological rules only. \emph{No occult, mystical or historical source
+changed any premise}, and no historical figure participated in or endorsed
+the work.
+
+\paragraph{AI assistance.} The advisor, the skeptic, the lenses, the
+assistants and the producers are AI model agents directed by the human
+author; several producer reports identify their author as a Claude model
+agent. The text of this addendum was also drafted with AI assistance. The
+agreement of these roles is correlated model-agent work, not external human
+peer review.
